@@ -1,6 +1,6 @@
 # Concrete case routes
 
-Execution evidence is written only by an actual run. The names below are expected output coordinates, not pre-existing success claims. Every case currently awaits the coordinator's isolated candidate execution receipt.
+The [coverage map](../../release/behaviour-coverage.json) links completed finite runs to their actual receipts and distinguishes reproduction recipes. Each route below names the outputs it produces.
 
 ## core
 
