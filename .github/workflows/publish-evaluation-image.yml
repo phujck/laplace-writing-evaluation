@@ -65,7 +65,7 @@ jobs:
         env:
           IMAGE: ghcr.io/phujck/laplace-writing-evaluation@${{ steps.publish.outputs.digest }}
         run: |
-          python deploy/evaluation/verify_image.py --image "$IMAGE" --output "$RUNNER_TEMP/image-verification"
+          python deploy/evaluation/verify_image.py --image "$IMAGE" --output "$RUNNER_TEMP/image-verification" --pull
       - uses: actions/upload-artifact@v4
         if: always()
         with:
