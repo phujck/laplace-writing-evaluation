@@ -5,8 +5,8 @@
   "files": [
     {
       "path": ".github/workflows/publish-evaluation-image.yml",
-      "sha256": "346af86a67e2683f3baec6eaa57c21dff6c7ca98a5ca5868e3cfd4bff4f8634b",
-      "bytes": 2642,
+      "sha256": "c148f70433952b59b7c18d1082a6da49bb339f7449632cd959f133bde3d37ca8",
+      "bytes": 2649,
       "reason": "explicit evaluation image publication and verification"
     },
     {
@@ -2969,8 +2969,8 @@
     },
     {
       "path": "docs/writing-container.md",
-      "sha256": "b9007e944bf0dfd939b8698d3ab2db4557deab122d2c3c1981272b7e7675d2ed",
-      "bytes": 4535,
+      "sha256": "0d9097e698ceb4f623e5cc2e12c8c107fa1b5694ba4c560e11dfe8c9886206d0",
+      "bytes": 4889,
       "reason": "complete application/resource family; app code base f4a0dbb4cd6903f0e082d1bf8d037980d40de98d; post-freeze examples/docs individually pinned"
     },
     {
@@ -23898,8 +23898,8 @@
       "bytes": 1669
     },
     "README.md": {
-      "sha256": "c8106768a700bc77936dfc6713bd4a5b3c2722010c801c2ef96d3e9b0e4c880b",
-      "bytes": 6834
+      "sha256": "6e43f9815c56c5601d0ec3e6e0bcdbc4b456f565968e9216772fe80648c63222",
+      "bytes": 6965
     },
     "REVIEWER_GUIDE.md": {
       "sha256": "95bf8baa2cdf46ae24713bcde0e2ba3439b9364352f9e20838b182607f420c99",
@@ -23962,7 +23962,7 @@
       "bytes": 2690
     },
     "release/application-closure.json": {
-      "sha256": "00938ea76270be23460ebba5e9f10391e6e0dc88eb314b44c7ecc21b334a5eca",
+      "sha256": "fd7aa322ecd1bbeb28e3d45cde200386269d2eef466781901e1c705f862b577f",
       "bytes": 499066
     },
     "release/behaviour-coverage.json": {
@@ -24097,6 +24097,26 @@
       "sha256": "61d2867c8eadb29a2f59b65abbf8e39def36bf58424df8837106d4dfa61bf7da",
       "bytes": 1138,
       "reason": "evaluation container build and publication resource"
+    },
+    "release/container-image.json": {
+      "sha256": "752624c36852cc8b33dcab6dfbd5caeb290b0ccac4073bbb73e11f146a896b5a",
+      "bytes": 2529,
+      "reason": "published evaluation container identity or verification resource"
+    },
+    "release/validation/container-image-anonymous.json": {
+      "sha256": "8df5dc6a559fa83d56c634afb54e5cbdefc1c5a856e911cc48200872b9b169b5",
+      "bytes": 5583,
+      "reason": "published evaluation container identity or verification resource"
+    },
+    "release/validation/container-image-evidence.zip": {
+      "sha256": "da0e7617d175d06fa2e74ff0935b71924572d5ea7f44d2f268fc4acdb902e90d",
+      "bytes": 525996,
+      "reason": "published evaluation container identity or verification resource"
+    },
+    ".github/workflows/verify-evaluation-image.yml": {
+      "sha256": "c50e83c232ed3139027e1324012f4fdd522e34dd9375de3caaa564eecddb0bf5",
+      "bytes": 1028,
+      "reason": "published evaluation container identity or verification resource"
     }
   },
   "scientific_support": {

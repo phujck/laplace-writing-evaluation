@@ -1,0 +1,132 @@
+{
+  "image": "ghcr.io/phujck/laplace-writing-evaluation@sha256:c87243e64b12b4d8ab08d9c33ca068fbce5f957bb3eb3ac0713480cd3693d828",
+  "volume": "evaluation-proof-a34f0bf9eee0",
+  "container": "evaluation-proof-a34f0bf9eee0",
+  "phases": [
+    "pins",
+    "owners",
+    "examples",
+    "tex",
+    "browser-save-undo-reopen",
+    "cold"
+  ],
+  "models_or_providers_called": false,
+  "host_repository_mounts": false,
+  "anonymous_pull": {
+    "empty_home": true,
+    "empty_docker_config": true,
+    "auth_supplied": false
+  },
+  "image_inspect": {
+    "Id": "sha256:c87243e64b12b4d8ab08d9c33ca068fbce5f957bb3eb3ac0713480cd3693d828",
+    "RepoTags": [
+      "ghcr.io/phujck/laplace-writing-evaluation@sha256:c87243e64b12b4d8ab08d9c33ca068fbce5f957bb3eb3ac0713480cd3693d828"
+    ],
+    "RepoDigests": [
+      "ghcr.io/phujck/laplace-writing-evaluation@sha256:c87243e64b12b4d8ab08d9c33ca068fbce5f957bb3eb3ac0713480cd3693d828"
+    ],
+    "Comment": "buildkit.dockerfile.v0",
+    "Created": "2026-11-12T16:50:28.764022162Z",
+    "Config": {
+      "User": "1000:1000",
+      "ExposedPorts": {
+        "8771/tcp": {}
+      },
+      "Env": [
+        "PATH=/usr/local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin",
+        "LANG=C.UTF-8",
+        "GPG_KEY=7169605F62C751356D054A26A821E680E5FA6305",
+        "PYTHON_VERSION=3.12.16",
+        "PYTHON_SHA256=b5796915dc45ff745cfb4e990a7e7c93d6f546328a102ce31448d69ebc37575c",
+        "DEBIAN_FRONTEND=noninteractive",
+        "PYTHONDONTWRITEBYTECODE=1",
+        "PYTHONUNBUFFERED=1",
+        "PLAYWRIGHT_BROWSERS_PATH=/opt/playwright",
+        "HOME=/data/accounts",
+        "XDG_CONFIG_HOME=/data/accounts/.config",
+        "XDG_CACHE_HOME=/data/accounts/.cache",
+        "XDG_STATE_HOME=/data/accounts/.local/state",
+        "LAPLACE_REPO_ROOT=/data/workspace",
+        "LAPLACE_STATE=/data/workspace/.laplace-state",
+        "LAPLACE_SESSION_WORKSPACES=/data/session-workspaces"
+      ],
+      "Entrypoint": [
+        "/usr/bin/tini",
+        "--",
+        "python",
+        "/usr/local/bin/evaluation-entrypoint.py"
+      ],
+      "Volumes": {
+        "/data": {}
+      },
+      "WorkingDir": "/tmp",
+      "Labels": {
+        "org.opencontainers.image.description": "Self-contained application, manuscripts, assets and genuine workflow records.",
+        "org.opencontainers.image.revision": "de43e35009b8c10f34ff2b7926102ab9b91b214b",
+        "org.opencontainers.image.source": "https://github.com/phujck/laplace-writing-evaluation",
+        "org.opencontainers.image.title": "Eigen writing and research evaluation",
+        "org.opencontainers.image.version": "2026-11-12"
+      },
+      "Healthcheck": {
+        "Test": [
+          "CMD",
+          "python",
+          "-c",
+          "import json,urllib.request; d=json.load(urllib.request.urlopen('http://127.0.0.1:8771/authoring/health',timeout=4)); assert d['runtime']=='writing'"
+        ],
+        "Interval": 10000000000,
+        "Timeout": 5000000000,
+        "StartPeriod": 60000000000,
+        "Retries": 6
+      }
+    },
+    "Architecture": "amd64",
+    "Os": "linux",
+    "Size": 7073598103,
+    "RootFS": {
+      "Type": "layers",
+      "Layers": [
+        "sha256:1d7b9dd8778ebc4d9bf2f64436dd358640718cb349f5640b33bebaea4ffd62c2",
+        "sha256:a3cfe73133965fb536427fde3fe66b2949ea6178f568733760bf45f5c8b5c405",
+        "sha256:5e63f01f0cee6291b52c44ffeee48c9eb7b94cdb19478259bcfce37db9eb680e",
+        "sha256:311a92d269bd002ca4ff3d801c6320df734027d3b425ff1ec860368f12b07a26",
+        "sha256:86d62e9cb7025b6e4c1616f003cb510a4becb2246cc48dbacc1b8fb70b3c4d56",
+        "sha256:02e0c2633bcd92f9921c47c9a327d8db0002e98ce61565c25b1ec41f94ffb686",
+        "sha256:4ffc161722c498c3171928877f452cab3b7dad5088d9f75e5751e9626b0cf95e",
+        "sha256:3487cffe88330f44e258e663298c3df8b144383d2515670b055ee05bc251c797",
+        "sha256:92f0b423c9b3fd726fd30d87a6487de9e2b4f7f1865c542b542e61afe6fca56a",
+        "sha256:102265d4b137465485c4d3d055b14ba3442a6b24348d5c843fe103da4f4011ed",
+        "sha256:0337782ca1a69943020a6d0fd24ecfc2c2268583520968913d000aa3fe83c52d",
+        "sha256:a0118bef1f88bcc45ed9383518641c3d93b1b9ea1386d5d638b5c7fac6dfc71f",
+        "sha256:de0b31d69acf8bb4b013d2cee7734e1438581eedc3828d7f1390b51a90af6e12",
+        "sha256:f64a0b62ed392b29954ffaba13ac5be1b38afaa734b1398b45205d8a0f8eb04c",
+        "sha256:3581b2ead1b4d3783d3413aa6a66d5345b7318adb1003fbb1e681425e47a7176",
+        "sha256:bfb13e971aaf7fb8991a1c63698515481a93ceb50d21594d3a86c8dd33aaf583",
+        "sha256:746d0457a6500837518e1baf54795286ac6517edda14c03d2e093a85c96099a5",
+        "sha256:ff2dee35bd90e656948f12a01a37505257ea998b53f446317565e0ae097bd3c8",
+        "sha256:91200974cc73102158ca5d826d6a297ab36fd2d04bb0a987834af0341035875e",
+        "sha256:16afb76c96c67633cb237d670bf85c6e8a2d91fc97e6865506456229d9d53698",
+        "sha256:dd760e1ca92a3a01506b08820a90f12fcb369a0e20d61053636ff6fe7f9a6646",
+        "sha256:b72bdeed0aead33e52f52db753e8def0b76d951a7de6e7c39c1c1c3fff14c04d",
+        "sha256:5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+      ]
+    },
+    "Metadata": {
+      "LastTagTime": "2026-11-12T17:01:42.543150536Z"
+    },
+    "Descriptor": {
+      "mediaType": "application/vnd.oci.image.index.v1+json",
+      "digest": "sha256:c87243e64b12b4d8ab08d9c33ca068fbce5f957bb3eb3ac0713480cd3693d828",
+      "size": 857
+    },
+    "Identity": {
+      "Pull": [
+        {
+          "Repository": "ghcr.io/phujck/laplace-writing-evaluation"
+        }
+      ]
+    }
+  },
+  "status": "PASS",
+  "owned_container_and_volume_removed": true
+}

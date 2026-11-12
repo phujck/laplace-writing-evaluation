@@ -1,0 +1,47 @@
+{
+  "schema": "eigen.evaluation-image-release/1",
+  "version": "2026-11-12",
+  "image": "ghcr.io/phujck/laplace-writing-evaluation:2026-11-12",
+  "latest_alias": "ghcr.io/phujck/laplace-writing-evaluation:latest",
+  "digest": "sha256:c87243e64b12b4d8ab08d9c33ca068fbce5f957bb3eb3ac0713480cd3693d828",
+  "immutable_image": "ghcr.io/phujck/laplace-writing-evaluation@sha256:c87243e64b12b4d8ab08d9c33ca068fbce5f957bb3eb3ac0713480cd3693d828",
+  "source_revision": "de43e35009b8c10f34ff2b7926102ab9b91b214b",
+  "platform": "linux/amd64",
+  "uncompressed_image_bytes": 7073598103,
+  "seed_manifest_sha256": "ab36b1e6e390f950cbbde5102439808cf8d0cc99832896d416d7eb6c5b408242",
+  "verified_seed_file_pins": 3936,
+  "run_command": "docker run --rm --name eigen-evaluation --platform linux/amd64 -p 127.0.0.1:8772:8771 -v eigen-evaluation:/data ghcr.io/phujck/laplace-writing-evaluation:2026-11-12",
+  "app_url": "http://127.0.0.1:8772/project?workspace=writing&app=projects",
+  "storage": {
+    "volume": "eigen-evaluation",
+    "mount": "/data",
+    "workspace": "/data/workspace",
+    "accounts": "/data/accounts",
+    "provider_cwd": "/data/session-workspaces"
+  },
+  "verification": {
+    "local_candidate": "PASS",
+    "anonymous_registry_pull": "PASS",
+    "empty_home_and_docker_config": true,
+    "host_repository_mounts": false,
+    "models_or_providers_called": false,
+    "phases": [
+      "pins",
+      "owners",
+      "examples",
+      "tex",
+      "browser-save-undo-reopen",
+      "cold"
+    ],
+    "source_record": "release/validation/container-image-anonymous.json",
+    "clean_runner_run": "https://github.com/phujck/laplace-writing-evaluation/actions/runs/43264997525",
+    "candidate_build_and_push_run": "https://github.com/phujck/laplace-writing-evaluation/actions/runs/43262242558",
+    "initial_post_push_probe": "Stopped before execution because remote digest was not pulled; workflow corrected and clean-download job rerun successfully."
+  },
+  "capability_boundaries": [
+    "GPU qualification requires an explicitly supported CUDA environment; no CPU fallback is represented as GPU evidence.",
+    "Lean/lake formal checking requires its configured toolchain.",
+    "Bubblewrap is installed; this Docker host denied nested namespaces/mounts, so the plain run is not qualified for nested Source-check isolation."
+  ],
+  "provenance": "Image source/seed remain the immutable source revision above. Release verification and these digest records are published afterward to avoid a self-referential image digest."
+}

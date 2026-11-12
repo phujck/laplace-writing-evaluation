@@ -19,7 +19,7 @@ With Docker, run the complete evaluation workspace:
 docker run --rm --name eigen-evaluation --platform linux/amd64 -p 127.0.0.1:8772:8771 -v eigen-evaluation:/data ghcr.io/phujck/laplace-writing-evaluation:2026-11-12
 ```
 
-Open <http://127.0.0.1:8772/project?workspace=writing&app=projects>. The image includes the app, all four papers, source and figure assets, and the genuine **Behaviour example** conversations, proposals, review, synthesis and research records. The named volume retains your edits and settings when the container is stopped. First initialization copies and verifies the bundled workspace; subsequent runs reopen it. Stop with Ctrl-C.
+Open <http://127.0.0.1:8772/project?workspace=writing&app=projects>. The image includes the app, all four papers, source and figure assets, and the genuine **Behaviour example** conversations, proposals, review, synthesis and research records. The named volume retains your edits and settings when the container is stopped. First initialization copies and verifies the bundled workspace; subsequent runs reopen it. Stop with Ctrl-C. The [published digest, image source revision and clean-download checks](release/container-image.json) identify this exact release.
 
 Codex and Claude CLIs are included; model use requires your own explicit sign-in and Send. See the [container guide](docs/writing-container.md) for accounts, persistent storage, prerequisites and the [image identity and verification record](https://github.com/phujck/laplace-writing-evaluation/blob/master/release/container-image.json).
 
