@@ -4,6 +4,12 @@
   "selection": "Explicit code/resource and canonical manuscript build closure. No author conversation or private project history is exported.",
   "files": [
     {
+      "path": ".github/workflows/publish-evaluation-image.yml",
+      "sha256": "d345669e0979def28793add281c04bda11180e34eb36c162ab8a7f83a5c0face",
+      "bytes": 1952,
+      "reason": "explicit evaluation image publication and verification"
+    },
+    {
       "path": "MANIFEST.in",
       "sha256": "df334ddcd301c057b32b84f6ded927afddc2e4199808d6fe59d8ef9b4f5bf88c",
       "bytes": 224,
@@ -2524,6 +2530,36 @@
       "reason": "explicit selected scientific source/result or real owner-generated public record/example closure"
     },
     {
+      "path": "deploy/evaluation/Dockerfile",
+      "sha256": "80810481174c0df4804980256318d58daaafccab071db39ba95a5aca0a0dd0c2",
+      "bytes": 4888,
+      "reason": "declared application or container resource"
+    },
+    {
+      "path": "deploy/evaluation/Dockerfile.dockerignore",
+      "sha256": "1a81ee7b837c96d5eab341224cfe0bd0b03f203ea4f956682c7513c71e40c1ce",
+      "bytes": 183,
+      "reason": "declared application or container resource"
+    },
+    {
+      "path": "deploy/evaluation/entrypoint.py",
+      "sha256": "50f095cb7a034b229d52830758431f3c1b5797e95bb97d06250942cf966bc5e3",
+      "bytes": 3569,
+      "reason": "declared application or container resource"
+    },
+    {
+      "path": "deploy/evaluation/verify_browser.mjs",
+      "sha256": "449676f2f80a582dda79e6d07adb3e96a0a11bca35992b54b241ac391bbd6da3",
+      "bytes": 6083,
+      "reason": "declared application or container resource"
+    },
+    {
+      "path": "deploy/evaluation/verify_image.py",
+      "sha256": "c7dbc461adb1ebb9bdf065c559366c03fefa79ad1bd259a3d2961e03e15e9127",
+      "bytes": 24373,
+      "reason": "declared application or container resource"
+    },
+    {
       "path": "docs/behaviours/README.md",
       "sha256": "191acf927fab6ecc143211e13230788751cd05193e59598d3dd26c4d687ad7ca",
       "bytes": 4114,
@@ -2885,8 +2921,8 @@
     },
     {
       "path": "docs/writing-account-setup.md",
-      "sha256": "949aec2847a469a6d0577d9d2533affa056c4d162fcbff52b1eaf4cbe4d255c1",
-      "bytes": 4939,
+      "sha256": "cfff37784b1ccdb449d53377e9ceb5def7a8bf7882ffa825d4538d16242b773d",
+      "bytes": 3039,
       "reason": "complete application/resource family; app code base f4a0dbb4cd6903f0e082d1bf8d037980d40de98d; post-freeze examples/docs individually pinned"
     },
     {
@@ -2927,14 +2963,14 @@
     },
     {
       "path": "docs/writing-container-download.md",
-      "sha256": "93b2d347440d83b916c1363f50d5aca0fa3ab1740f246b4f78d76058b4c9702c",
-      "bytes": 14066,
+      "sha256": "c9a46d7cca7974624b5694dab37e00dc0c97a0111934efb36e508ba6d139e432",
+      "bytes": 2075,
       "reason": "complete application/resource family; app code base f4a0dbb4cd6903f0e082d1bf8d037980d40de98d; post-freeze examples/docs individually pinned"
     },
     {
       "path": "docs/writing-container.md",
-      "sha256": "59979818db4eac2297a837e90c52be09bdfa2a74362c3f2fbee93efa425743c0",
-      "bytes": 15120,
+      "sha256": "b9007e944bf0dfd939b8698d3ab2db4557deab122d2c3c1981272b7e7675d2ed",
+      "bytes": 4535,
       "reason": "complete application/resource family; app code base f4a0dbb4cd6903f0e082d1bf8d037980d40de98d; post-freeze examples/docs individually pinned"
     },
     {
@@ -3029,8 +3065,8 @@
     },
     {
       "path": "docs/writing-registry.md",
-      "sha256": "ad41b895eb490c9ab0b3b32b9fcabfc63a942168a2955f857a08c9319e765ca0",
-      "bytes": 3319,
+      "sha256": "24cb897aa9b9044e7b0397ac858476073d594f2a79f0bbd49cb1ba3c9abf83d8",
+      "bytes": 1471,
       "reason": "complete application/resource family; app code base f4a0dbb4cd6903f0e082d1bf8d037980d40de98d; post-freeze examples/docs individually pinned"
     },
     {
@@ -5081,8 +5117,8 @@
     },
     {
       "path": "scripts/writing_eval_manifest.py",
-      "sha256": "ccce6f7f3a7e868c08b846a3e868d47a3da381c102d89766bf01b50c8d669a5f",
-      "bytes": 81898,
+      "sha256": "96e2fa197505d3e29fa35b3465b56905c75051a182df9fa58ce61838c5d3650f",
+      "bytes": 81919,
       "reason": "complete application/resource family; app code base f4a0dbb4cd6903f0e082d1bf8d037980d40de98d; post-freeze examples/docs individually pinned"
     },
     {
@@ -23862,8 +23898,8 @@
       "bytes": 1669
     },
     "README.md": {
-      "sha256": "5e7a067989970c6e02239ebe448dc9af97172d66b0cc64d7c5db6d2199f35c3d",
-      "bytes": 5776
+      "sha256": "e54482613c7f427f3e408eab11413250a6088a2ff3c8c0aa60359594b7470cf3",
+      "bytes": 6741
     },
     "REVIEWER_GUIDE.md": {
       "sha256": "95bf8baa2cdf46ae24713bcde0e2ba3439b9364352f9e20838b182607f420c99",
@@ -23926,8 +23962,8 @@
       "bytes": 2690
     },
     "release/application-closure.json": {
-      "sha256": "c69c1b14459938bb910a182d0ead6887a3d03255eb379124b85c136a10e28ea9",
-      "bytes": 491812
+      "sha256": "cc8ec767dfcc8d683a28617e40ec8df03a25fe98a10f31add53cb46e2ebbaaa2",
+      "bytes": 499161
     },
     "release/behaviour-coverage.json": {
       "sha256": "d96dd2c588ee223ffbbe2ae121e28315c00fb410668d1d4935746b616cbfb91b",
@@ -24675,6 +24711,16 @@
     "writing_projects/eigen-technical-due-diligence-briefing/reading/primary-foundations-passage-interpretation-20261015.md",
     "writing_projects/eigen-technical-due-diligence-briefing/reading/quantum-prototypes-interpretation-20261015.md"
   ],
-  "application_closure": "release/application-closure.json",
+  "application_closure": {
+    "path": "release/application-closure.json",
+    "files": 2753,
+    "private_exclusions": [
+      "src/laplace/pipeline/canon/wiki/voice_corpus",
+      "src/laplace/pipeline/canon/wiki/author",
+      "src/laplace/engine/AUTONOMY_BACKLOG.md",
+      "src/laplace/pipeline/census_verdicts.json",
+      "src/laplace/desktop/deploy"
+    ]
+  },
   "research_closure": "release/research-closure.json"
 }

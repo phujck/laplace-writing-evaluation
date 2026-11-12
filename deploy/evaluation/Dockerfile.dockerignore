@@ -1,0 +1,14 @@
+.git
+.venv
+**/__pycache__
+**/*.pyc
+**/node_modules
+.laplace-state
+.laplace-cache
+.accounts
+work
+build
+atlas/build
+src/*.egg-info
+registry_projects.json.lock
+**/.research-records.lock

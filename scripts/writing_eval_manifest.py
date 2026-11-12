@@ -142,7 +142,7 @@ _TOOLS_END = '# END OPERATIONAL-TOOLS\n'
 # A distribution includes complete implementation/resource families, not whichever files a
 # particular demo happened to read. Private author data is classified separately from code.
 APPLICATION_ROOTS = (
-    'src/laplace', 'src/atlas', 'templates', 'scripts', 'docs', 'tools',
+    'src/laplace', 'src/atlas', 'templates', 'scripts', 'docs', 'tools', 'deploy/evaluation',
     'profiles/workflows', 'profiles/pipeline', 'profiles/house_style',
     'profiles/typography', 'profiles/acceptance', 'profiles/selection',
 )

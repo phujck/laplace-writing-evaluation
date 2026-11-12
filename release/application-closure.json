@@ -407,6 +407,251 @@
       "sha256": "sha256:9d9d84061945ac32b925f65ee27e569f7bca0bdb88bb1b57f72295ffa9c11bbe"
     },
     {
+      "path": "deploy/evaluation/Dockerfile",
+      "bytes": 4888,
+      "sha256": "sha256:80810481174c0df4804980256318d58daaafccab071db39ba95a5aca0a0dd0c2"
+    },
+    {
+      "path": "deploy/evaluation/Dockerfile.dockerignore",
+      "bytes": 183,
+      "sha256": "sha256:1a81ee7b837c96d5eab341224cfe0bd0b03f203ea4f956682c7513c71e40c1ce"
+    },
+    {
+      "path": "deploy/evaluation/entrypoint.py",
+      "bytes": 3569,
+      "sha256": "sha256:50f095cb7a034b229d52830758431f3c1b5797e95bb97d06250942cf966bc5e3"
+    },
+    {
+      "path": "deploy/evaluation/verify_browser.mjs",
+      "bytes": 6083,
+      "sha256": "sha256:449676f2f80a582dda79e6d07adb3e96a0a11bca35992b54b241ac391bbd6da3"
+    },
+    {
+      "path": "deploy/evaluation/verify_image.py",
+      "bytes": 24373,
+      "sha256": "sha256:c7dbc461adb1ebb9bdf065c559366c03fefa79ad1bd259a3d2961e03e15e9127"
+    },
+    {
+      "path": "docs/behaviours/README.md",
+      "bytes": 4114,
+      "sha256": "sha256:191acf927fab6ecc143211e13230788751cd05193e59598d3dd26c4d687ad7ca"
+    },
+    {
+      "path": "docs/behaviours/analytics.md",
+      "bytes": 20853,
+      "sha256": "sha256:74167db8faceb0da41e3ffab5404a2bb7091d39a0d58d58a59ae510c642523e3"
+    },
+    {
+      "path": "docs/behaviours/argument.md",
+      "bytes": 11130,
+      "sha256": "sha256:c34d041fa8a7283110d50d34a42b0eb5256da33352755f3db93b8ea5e23bb0a3"
+    },
+    {
+      "path": "docs/behaviours/backlog.md",
+      "bytes": 12408,
+      "sha256": "sha256:9bb49a307a9c3e5c21acd4f7dbb41fff82992ef6853ad0e40840b1aad7694bf4"
+    },
+    {
+      "path": "docs/behaviours/cases.md",
+      "bytes": 6100,
+      "sha256": "sha256:82ea7ed7cd066392a219037a77189340cf9dfaa2e527fb4f73219923680e1471"
+    },
+    {
+      "path": "docs/behaviours/checkpoint.json",
+      "bytes": 30215,
+      "sha256": "sha256:1a3c06658c40e88a3e71a12eecb070b30f151e17672647ff3a191b2831040ad5"
+    },
+    {
+      "path": "docs/behaviours/context.md",
+      "bytes": 2918,
+      "sha256": "sha256:7d1ececedfa1db5c1cb781817d5d5a20afa910a468497ce4ba72f3090ee27daf"
+    },
+    {
+      "path": "docs/behaviours/conversation.md",
+      "bytes": 8046,
+      "sha256": "sha256:5b4f637a02a3a56d053a3673a4df99c8da704cbefc7adc77774d5d953419a9b2"
+    },
+    {
+      "path": "docs/behaviours/dependencies.md",
+      "bytes": 6038,
+      "sha256": "sha256:a971413b3a784b78150de93abf0980ceafab32a874c46442bdc7c27b023ec49d"
+    },
+    {
+      "path": "docs/behaviours/development.md",
+      "bytes": 8542,
+      "sha256": "sha256:53ab9911c6bd54a07b85e1c989f8001c75dc0f75373e51269d62d8fb8240f2c0"
+    },
+    {
+      "path": "docs/behaviours/editor-frame.md",
+      "bytes": 29432,
+      "sha256": "sha256:3996feb2043ee35c01709184a9ba10be8dcd767a50719fc6db9f4519f05909c9"
+    },
+    {
+      "path": "docs/behaviours/frame.md",
+      "bytes": 7102,
+      "sha256": "sha256:6b336025777d73e91d72c09bea9703a237c9b03da492db9df81117478da4ab22"
+    },
+    {
+      "path": "docs/behaviours/help.md",
+      "bytes": 4586,
+      "sha256": "sha256:e74497a8660826de0cb35a6acdd0f70b209df6f4049675737d028535067877cf"
+    },
+    {
+      "path": "docs/behaviours/history.md",
+      "bytes": 9984,
+      "sha256": "sha256:180d76b1a9d51fbc34708cbcb2d65d62d2e71d6ad6b065e9f408b46f9bbd992f"
+    },
+    {
+      "path": "docs/behaviours/home.md",
+      "bytes": 12035,
+      "sha256": "sha256:2c0255d9f537059380f9f874d16efcaa5f9c54423721f2d2c7a253dd6ee2af27"
+    },
+    {
+      "path": "docs/behaviours/index.md",
+      "bytes": 4600,
+      "sha256": "sha256:c3fa184d8f068b18d4a0e2394c0d0a1172615c03f1d0371a47cd9ba511a6505d"
+    },
+    {
+      "path": "docs/behaviours/literature-library.md",
+      "bytes": 37635,
+      "sha256": "sha256:971f9246b33f9bacb374e57c7521e8be3b6fd04845004286ee320a4e2241fa90"
+    },
+    {
+      "path": "docs/behaviours/literature.md",
+      "bytes": 10787,
+      "sha256": "sha256:3deb71512fcf74dedeae5a383a875b16280a0908ba0adfd5af702d2c84c7f638"
+    },
+    {
+      "path": "docs/behaviours/manuscript.md",
+      "bytes": 4344,
+      "sha256": "sha256:4fd21e1c3aa948267d2884fd2f0b8b9c355862206e154ac3a2bfcb755ca6352b"
+    },
+    {
+      "path": "docs/behaviours/material.md",
+      "bytes": 13841,
+      "sha256": "sha256:2b709a32aa2f344f05a808a21b7b7c469a039d4736f8e66f042c8ae1c201ce10"
+    },
+    {
+      "path": "docs/behaviours/native-operations.md",
+      "bytes": 69540,
+      "sha256": "sha256:b68df48feaadd111b67582e1afd7253e4c7f104bc5c9650681e871fe67c44f6a"
+    },
+    {
+      "path": "docs/behaviours/nav.md",
+      "bytes": 8969,
+      "sha256": "sha256:0e138c6b250578e7846c69fae68a998515385378cdbd917f22ed6ecf32e2e929"
+    },
+    {
+      "path": "docs/behaviours/now.md",
+      "bytes": 7436,
+      "sha256": "sha256:f3b7ad4a7082ebd7e3dbb67d58281da5afda1fdad43b338364ee20663a805eaa"
+    },
+    {
+      "path": "docs/behaviours/output.md",
+      "bytes": 5628,
+      "sha256": "sha256:b3549f954892a88d2cb31c4283f14bebaf294d20fec5ccd96e7b5d47a80cde33"
+    },
+    {
+      "path": "docs/behaviours/owners.md",
+      "bytes": 2418,
+      "sha256": "sha256:e623e3dab57c45e2bafce378b823d255ea3ae206df84341d9ca0051a8001da72"
+    },
+    {
+      "path": "docs/behaviours/preferences.md",
+      "bytes": 4234,
+      "sha256": "sha256:b7d87e29a10a8566bec605d9d02c3ee3189e055368634f9a7c45d6e628089abc"
+    },
+    {
+      "path": "docs/behaviours/profile.md",
+      "bytes": 1883,
+      "sha256": "sha256:1381290b7e8e4abe870540e7ed8fcda970579f980b0b8fa6966fd8c951969fd7"
+    },
+    {
+      "path": "docs/behaviours/projects.md",
+      "bytes": 5955,
+      "sha256": "sha256:31d3b5ee68cc30d7b83a010ae1c77051fa0729a7edb3d4be01f535bc34f501e1"
+    },
+    {
+      "path": "docs/behaviours/reader-plan.md",
+      "bytes": 7116,
+      "sha256": "sha256:18f42f2b55e13835d71fd37f2b58e3626bb1216661fe69dda76ed668552312c5"
+    },
+    {
+      "path": "docs/behaviours/research.md",
+      "bytes": 26213,
+      "sha256": "sha256:1493b8b002a78b15e0e56f5903fe1fdd4580dd96fb999b8d529dbb276aa74880"
+    },
+    {
+      "path": "docs/behaviours/review-evidence.md",
+      "bytes": 3592,
+      "sha256": "sha256:0ad2a2c1556c4aa795d20fb33ecc074752a9cb87d188941bff36c837e3df87a0"
+    },
+    {
+      "path": "docs/behaviours/review.md",
+      "bytes": 29317,
+      "sha256": "sha256:a2749fb62a3227b61c1008ebc31fc2f9ac976f11f3af241941e50dea02f3c1ca"
+    },
+    {
+      "path": "docs/behaviours/sessions.md",
+      "bytes": 2119,
+      "sha256": "sha256:bc534671daec22205d7ad903447123ca351685d2377597a8e3cc3afa6ee77492"
+    },
+    {
+      "path": "docs/behaviours/settings.md",
+      "bytes": 16285,
+      "sha256": "sha256:9f8824f6e42b51dc100cfe6a66a42bafad01eae38bd7c19c6ae2973fd5f5e675"
+    },
+    {
+      "path": "docs/behaviours/source.md",
+      "bytes": 1964,
+      "sha256": "sha256:0f8a005dafece8b97bd5275a2fdc61afe9edfe381ea8a31d0ed028e4b8aa57d7"
+    },
+    {
+      "path": "docs/behaviours/task.md",
+      "bytes": 1882,
+      "sha256": "sha256:22017c88f82468068d7f04a67cc09cc6703c75e684a8b533ffe01e1ba36b7aa1"
+    },
+    {
+      "path": "docs/behaviours/tasks.md",
+      "bytes": 5763,
+      "sha256": "sha256:ba003859028992bf5d18bfb8391f350a8afed604eff1856ad359bcd57a827c4a"
+    },
+    {
+      "path": "docs/behaviours/template.md",
+      "bytes": 2445,
+      "sha256": "sha256:cc707b892eb4cc1200ac0ce312e52142ce54e4c030cfca08611154a1e7364046"
+    },
+    {
+      "path": "docs/behaviours/topology.md",
+      "bytes": 5552,
+      "sha256": "sha256:b2e1f4274aa59af127c4422034649f698bf25976703e7b6da0eb622940fa0ec7"
+    },
+    {
+      "path": "docs/behaviours/work.md",
+      "bytes": 36378,
+      "sha256": "sha256:9bbdeb38a27c96bb87cca92926f97268a01cb538121ebb962f8cefb709ff971e"
+    },
+    {
+      "path": "docs/behaviours/workflow.md",
+      "bytes": 68101,
+      "sha256": "sha256:dd3f5932c8794f4dd15a31b226f4a93253789d76865b6d9feb902f9a3eca76b9"
+    },
+    {
+      "path": "docs/behaviours/workspace.md",
+      "bytes": 1912,
+      "sha256": "sha256:3f822f86763084a412a07a656803661b2c4f740f70ae0480f1ce587230f417f7"
+    },
+    {
+      "path": "docs/behaviours/writing-style.md",
+      "bytes": 6304,
+      "sha256": "sha256:42d5feb56ac62f54f3d86043c21d1f31449170afc5655458d17421c10c458766"
+    },
+    {
+      "path": "docs/behaviours/writing.md",
+      "bytes": 11086,
+      "sha256": "sha256:bf0288077b591ea50facdfabac9d0426700cb816377411f2313164a399519821"
+    },
+    {
       "path": "docs/development-source-use.md",
       "bytes": 20601,
       "sha256": "sha256:b95f1f35a432c7ff5328845eb3dae2f94abf5423e6950132e85b72cf33f7fdde"
@@ -415,6 +660,11 @@
       "path": "docs/evaluation-dependencies.md",
       "bytes": 3719,
       "sha256": "sha256:7464d0a8450f9755e2b598c328b5391310bc3f11558b36b3612bd6d36e99fb54"
+    },
+    {
+      "path": "docs/evaluation-scientific-evidence.md",
+      "bytes": 5828,
+      "sha256": "sha256:aabd524aae221572f9e782c6eb19539618aab32a9675feaef7a277b9ed8deb04"
     },
     {
       "path": "docs/evidence/writing-consolidation-20261105/evidence-index.json",
@@ -483,8 +733,8 @@
     },
     {
       "path": "docs/writing-account-setup.md",
-      "bytes": 4939,
-      "sha256": "sha256:949aec2847a469a6d0577d9d2533affa056c4d162fcbff52b1eaf4cbe4d255c1"
+      "bytes": 3039,
+      "sha256": "sha256:cfff37784b1ccdb449d53377e9ceb5def7a8bf7882ffa825d4538d16242b773d"
     },
     {
       "path": "docs/writing-agent-start.md",
@@ -518,13 +768,13 @@
     },
     {
       "path": "docs/writing-container-download.md",
-      "bytes": 14066,
-      "sha256": "sha256:93b2d347440d83b916c1363f50d5aca0fa3ab1740f246b4f78d76058b4c9702c"
+      "bytes": 2075,
+      "sha256": "sha256:c9a46d7cca7974624b5694dab37e00dc0c97a0111934efb36e508ba6d139e432"
     },
     {
       "path": "docs/writing-container.md",
-      "bytes": 15120,
-      "sha256": "sha256:59979818db4eac2297a837e90c52be09bdfa2a74362c3f2fbee93efa425743c0"
+      "bytes": 4535,
+      "sha256": "sha256:b9007e944bf0dfd939b8698d3ab2db4557deab122d2c3c1981272b7e7675d2ed"
     },
     {
       "path": "docs/writing-conversation-reading.md",
@@ -535,6 +785,11 @@
       "path": "docs/writing-engine-walkthrough.md",
       "bytes": 81326,
       "sha256": "sha256:7a98113785a63f441d03c9a8e5da784c94b3da7e8874aac8c69fd2b97c2fc8ee"
+    },
+    {
+      "path": "docs/writing-evaluation-first-use.md",
+      "bytes": 4762,
+      "sha256": "sha256:9b92d267772275484468ff11e9d9f6f68866bc914c431b35f014de56953dc1da"
     },
     {
       "path": "docs/writing-evaluation-release.md",
@@ -598,8 +853,8 @@
     },
     {
       "path": "docs/writing-registry.md",
-      "bytes": 3319,
-      "sha256": "sha256:ad41b895eb490c9ab0b3b32b9fcabfc63a942168a2955f857a08c9319e765ca0"
+      "bytes": 1471,
+      "sha256": "sha256:24cb897aa9b9044e7b0397ac858476073d594f2a79f0bbd49cb1ba3c9abf83d8"
     },
     {
       "path": "docs/writing-release-selection.md",
@@ -1717,6 +1972,11 @@
       "sha256": "sha256:bf86649a0d929c16fe05a3b46b38bc3f6f8ac403ef322489ec5875fd9a581a2b"
     },
     {
+      "path": "scripts/run_dynamic_memory_demo.py",
+      "bytes": 903,
+      "sha256": "sha256:f6fc602bf7b09501c241ca9efe5029c0b6ed5db179fca0fdac59561d6015960b"
+    },
+    {
       "path": "scripts/run_playwright_walks.py",
       "bytes": 31553,
       "sha256": "sha256:32fecc96d869e290a193fe6c79424df0cf715084288f5169a8c26dd813c7f4df"
@@ -2018,8 +2278,8 @@
     },
     {
       "path": "scripts/writing_eval_manifest.py",
-      "bytes": 81898,
-      "sha256": "sha256:ccce6f7f3a7e868c08b846a3e868d47a3da381c102d89766bf01b50c8d669a5f"
+      "bytes": 81919,
+      "sha256": "sha256:96e2fa197505d3e29fa35b3465b56905c75051a182df9fa58ce61838c5d3650f"
     },
     {
       "path": "scripts/writing_export_bytes.py",
@@ -13514,6 +13774,7 @@
     "scripts",
     "docs",
     "tools",
+    "deploy/evaluation",
     "profiles/workflows",
     "profiles/pipeline",
     "profiles/house_style",
@@ -13531,34 +13792,7 @@
     "src/laplace/pipeline/census_verdicts.json",
     "src/laplace/desktop/deploy"
   ],
-  "excluded_files": [
-    "src/laplace/desktop/deploy/DEPLOY.md",
-    "src/laplace/desktop/deploy/FRONT_LAUNCHER.md",
-    "src/laplace/desktop/deploy/INGESTION.md",
-    "src/laplace/desktop/deploy/eigen-dashboard-launch.sh",
-    "src/laplace/desktop/deploy/eigen-dashboard.desktop",
-    "src/laplace/desktop/deploy/eigen-face.service",
-    "src/laplace/desktop/deploy/laplace-atlas-watcher.service",
-    "src/laplace/desktop/deploy/otter-ingest.path",
-    "src/laplace/desktop/deploy/otter-ingest.service",
-    "src/laplace/engine/AUTONOMY_BACKLOG.md",
-    "src/laplace/pipeline/canon/wiki/author/the_author.md",
-    "src/laplace/pipeline/canon/wiki/voice_corpus/admin_proposal_register.md",
-    "src/laplace/pipeline/canon/wiki/voice_corpus/author_fact_ledger.md",
-    "src/laplace/pipeline/canon/wiki/voice_corpus/author_signals.md",
-    "src/laplace/pipeline/canon/wiki/voice_corpus/correspondence_register.md",
-    "src/laplace/pipeline/canon/wiki/voice_corpus/eppur_si_muove.md",
-    "src/laplace/pipeline/canon/wiki/voice_corpus/index.md",
-    "src/laplace/pipeline/canon/wiki/voice_corpus/ingestion_plan.md",
-    "src/laplace/pipeline/canon/wiki/voice_corpus/manuscript_register.md",
-    "src/laplace/pipeline/canon/wiki/voice_corpus/personal_register.md",
-    "src/laplace/pipeline/canon/wiki/voice_corpus/reader_protocol.md",
-    "src/laplace/pipeline/canon/wiki/voice_corpus/registers.md",
-    "src/laplace/pipeline/canon/wiki/voice_corpus/session_handoff.md",
-    "src/laplace/pipeline/canon/wiki/voice_corpus/source_map.md",
-    "src/laplace/pipeline/canon/wiki/voice_corpus/top_level_confluence.md",
-    "src/laplace/pipeline/census_verdicts.json"
-  ],
-  "scope": "Implementation/resource closure only; project records and example execution require their own explicit selection and observed results.",
-  "source_commit": "09584cee6ccf6e8b6575b7ede531669a536b2485"
+  "excluded_files": [],
+  "scope": "Implementation/resource closure only; project records and example execution require their own explicit selection and observed results. Container image build, bootstrap and clean-download verification are included in this edition.",
+  "source_commit": "f4a0dbb4cd6903f0e082d1bf8d037980d40de98d"
 }

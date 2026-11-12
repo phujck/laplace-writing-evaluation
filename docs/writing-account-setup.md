@@ -1,61 +1,38 @@
-# Writing App account setup
+# Optional model account setup
 
-This guide connects the Writing App to provider CLIs already installed for the same OS user. It does not copy credentials into the repository, create an OAuth system, or make the two provider accounts interchangeable.
+Reading papers, inspecting saved conversations/evidence, manual editing and organising projects do not require an AI account. Model work begins only when you explicitly send or start it. The evaluation image ships without credentials, provider-native transcripts, private author calibration or model weights.
 
-## Before setting up an account
+## Container accounts
 
-You can create projects, read sources, write and save text, and organise tasks
-without an AI account. Start with [the task recipes](writing-tasks.md). Account
-setup is needed when you want to Send a question or start supported AI work.
+The evaluation container keeps its runtime HOME at `/data/accounts` in your named volume. Authenticate the CLI inside the same container and OS account that runs the app; a host login is not automatically visible. The [container guide](writing-container.md) describes persistence and the separate provider working-directory location.
 
-Open **More → App settings** for provider readiness. Authenticate through the
-provider's own supported CLI as described below, then explicitly refresh the
-provider catalogue in the app. Choose the provider, model and effort before Send;
-**Next message context** shows what that message will use. Missing authentication
-or a catalogue is an unavailable prerequisite, not a request to copy credentials
-from another machine. Refresh may launch a discovery process; it sends no model
-turn. Only Send exercises the selected model account.
+Use the container name or ID from `docker ps` in place of `CONTAINER` below. The image recipe includes Codex and Claude Code; verify the installed executables in the actual downloaded image:
+
+```sh
+docker exec CONTAINER sh -lc 'command -v codex; command -v claude'
+```
+
+An absent executable is an unavailable prerequisite, not an authenticated model service. Do not bake your login cache into an image or repository. Persist your own account only in the intended account volume.
 
 ## Codex
 
-Install and authenticate Codex using the official Codex CLI flow. The supported browser login, `codex login status`, API-key stdin login, and optional device-auth details are documented by OpenAI at [Codex authentication](https://learn.chatgpt.com/docs/auth) and [Codex CLI](https://learn.chatgpt.com/docs/codex/cli).
+Codex supports ChatGPT sign-in for subscription access and API-key sign-in for separately metered API access. Choose the account path deliberately. For a headless container, the official documentation describes device-code authentication; it is a beta option that must be enabled for the account/workspace. [OpenAI authentication documentation](https://learn.chatgpt.com/docs/auth?surface=cli).
 
-After authentication, verify from the same OS account that will run the Writing App:
+When the image provides Codex and your account permits device login:
 
 ```sh
-codex login status
-command -v codex
+docker exec -it CONTAINER codex login --device-auth
+docker exec CONTAINER codex login status
 ```
 
-The Writing App discovers the executable and, on refresh, asks the local Codex app-server for its model catalogue. It starts that process with the selected project as its working directory. No Codex credential or model cache is part of a release checkout. API-key login has separate billing from browser account login; choose the account path deliberately and keep the key outside shell history and repositories.
+Complete the printed link/code in your own browser. If that flow is unavailable, use a supported alternative from the official guide. The documentation also explains credential storage and account restrictions; no account, quota or authentication success is inferred from the image containing a CLI.
 
 ## Claude Code
 
-Install Claude Code using the [official setup guide](https://code.claude.com/docs/en/setup). Run `claude` and complete its browser sign-in with your own account. Subscription, Console and organisation-managed authentication are described in [Authentication](https://code.claude.com/docs/en/authentication). The app uses the CLI's existing credentials. Available commands are documented in the [CLI reference](https://code.claude.com/docs/en/cli-reference).
+When the image provides Claude Code, authenticate inside that container using its supported interactive flow and verify its account status. Follow [Anthropic’s authentication guide](https://code.claude.com/docs/en/authentication) for the installed CLI/account. Its credentials remain provider-owned; a Codex login does not authenticate Claude.
 
-Verify locally without logging in from this guide:
+## Connect the application
 
-```sh
-claude --help
-claude auth --help
-claude auth status --json
-command -v claude
-```
+Open **More → App settings**, refresh provider readiness, and select the provider, model and effort before sending. Catalogue/auth discovery may start a local CLI process; it does not itself send a model turn. Inspect **Next message context** and explicitly Send when ready to exercise the selected account.
 
-The Writing App reads `claude auth status --json` during provider refresh and reports authentication as unverified, unauthenticated, or authenticated-untested. A model catalogue refresh uses the installed CLI in the selected project directory with a no-session-persistence probe. Claude credentials remain owned by Claude Code and are never transferred to Codex.
-
-## Connecting the app
-
-Run the Writing App under the same OS user that owns the authenticated CLIs. Open the project UI, use **Refresh providers**, select a provider/model/effort, and explicitly send a turn. Discovery can start a local CLI process to inspect authentication and available models; it does not send a model turn. Sending a message is the point at which the selected account/model is exercised and model usage begins.
-
-On Windows PowerShell, replace `command -v codex` and `command -v claude` with `Get-Command codex` and `Get-Command claude`. For Codex's browser sign-in run `codex login`; check the official guide for device authentication where a browser callback is unavailable. Complete login in the same environment as the server: a container login is separate from a host login.
-
-The browser/server route does not require GTK. The optional native window uses the system GTK/WebKit runtime and launches the backend for the selected checkout. A container has no access to host credentials unless the operator explicitly mounts/configures them inside that container; host login state is not assumed to be visible.
-
-Provider sessions own their native conversation history. The Writing App owns project context, author decisions, source-addressed edits, and receipts. Provider transcripts, credentials, private calibration sources, and personal author material remain outside a shareable evaluator repository.
-
-## Evaluator boundary
-
-Use a fresh checkout and its own project/state directories. Do not inherit the author’s checkout, shared runtime state, semantic caches, `AGENTS.md`/`CLAUDE.md` instructions, private profile sources, or provider transcripts. Provider credentials must be configured by each evaluator through the provider’s official CLI. Windows and macOS support require separate observed rehearsals; this guide does not certify them.
-
-The setup guide records the current integration contract. It is not a login receipt or a claim that either provider is authenticated on a particular machine.
+Imported example histories remain inspectable without their original provider-native bindings. They do not transfer the author’s account or permission to resume the original provider thread. A locally configured account supports new authorised work in your own environment.
