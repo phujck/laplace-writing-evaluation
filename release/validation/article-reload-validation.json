@@ -1,0 +1,49 @@
+{
+  "schema": "laplace.writing-reload-bounded-validation/1",
+  "basis_commit": "17df16684806f06c29145eda6b8018b009861e20",
+  "production_changed": false,
+  "source_lane_created": false,
+  "browser": {
+    "version": "151.0.7922.34"
+  },
+  "scope": "Actual disposable Article created through real UI; paragraph appended and saved through actual UI; real parent page.reload before/after save with frame/request trace. No providers/models or scientific work.",
+  "result": "PASS",
+  "observations": {
+    "initial-home-writing": true,
+    "reload-before-save": true,
+    "home-reentry-before-save": true,
+    "fresh-direct-before-save": true,
+    "saved-before-reload": true,
+    "reload-after-save": true,
+    "home-reentry-after-save": true,
+    "fresh-direct-after-save": true
+  },
+  "saved_witness": {
+    "containsWitness": true,
+    "sha256": "7defac31768e1173435a5ea95e862aef827dae9544250634ac1a3be07756be2e"
+  },
+  "keyboard_control": {
+    "browser": "Existing real Chrome tab via UI keyboard API",
+    "action": "Ctrl+R on same saved Article previously showing about:blank",
+    "result": "Real /walk and exact saved witness shown"
+  },
+  "original_anomaly": {
+    "operation": "CUA tab.reload",
+    "result": "Blank about:blank iframe, correct src, saved source retained",
+    "status": "Retained tool-operation-specific observation; not a proven general application defect or fixed-product claim"
+  },
+  "negative_control": "Unmodified Book parent reload and fresh-tab control both succeeded; no Save case inferred from that control.",
+  "harness_coordinate_correction": "First Article harness stopped before project creation because exact getByLabel Project category was unavailable. Retained failure; changed only selector to actual declared projects:category public control.",
+  "cleanup": {
+    "script_browser_closed": true,
+    "script_fixture_server_closed": true,
+    "script_scratch_removed": true
+  },
+  "limits": [
+    "Headless Chromium and one real Chrome keyboard control on existing Linux host; no broad browser/OS parity claim.",
+    "Earlier standalone baseline CUA anomaly is preserved; no speculative source patch was applied."
+  ],
+  "private_trace_sha256": "6180a514f123216f61e0d73f18ee6ca7bc746cee31f2a2db98e96b33256e5b89",
+  "executed_script_sha256": "7e36605705fefdcbf6341ed91d60356abfdc89370ca3883ca9185b650cedeaba",
+  "script_ancestry": "App-authored Article trace recovered from exact immutable action payload; coordination-only current HEAD and observed UI locator adaptations recorded separately."
+}

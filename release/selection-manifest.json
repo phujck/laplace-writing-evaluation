@@ -8549,8 +8549,8 @@
       "bytes": 888
     },
     "release/README.md": {
-      "sha256": "62391d1a254cd743ce37f0fb470cf38ff096c49b882ea8ea51a13af729fef1e9",
-      "bytes": 2339
+      "sha256": "e320e4c61712f202c71b07394eab746fa4b4538ac57c6c84ee02064b6f9871cb",
+      "bytes": 2690
     },
     "registry_projects.json": {
       "sha256": "0b0ab00c3ee773f17b1ed7b69b5d180545f778b9d88c1a01579bf27921ba74d8",
@@ -8593,8 +8593,8 @@
       "bytes": 19449
     },
     "docs/writing-evaluation-first-use.md": {
-      "sha256": "770411a7310bde5c36cb1403574a3c5251a9e8b0e0917a8cff6def5fe2d18117",
-      "bytes": 4104
+      "sha256": "9b92d267772275484468ff11e9d9f6f68866bc914c431b35f014de56953dc1da",
+      "bytes": 4762
     },
     "docs/evaluation-scientific-evidence.md": {
       "sha256": "16ccd11af117b808de2abd32f2a05f0e54347d59255f1e6b0baac0806058042c",
@@ -8661,12 +8661,20 @@
       "bytes": 3007
     },
     "release/validation/packaging-repairs.json": {
-      "sha256": "9bd74898aa6ca68d88a520add9331ad3bf39ab042209481de839669fa7e61839",
-      "bytes": 1816
+      "sha256": "bdbc22800b37192482a805b02a7a0320859feabe65b8e5820b9c7aacb758f593",
+      "bytes": 2064
     },
     "release/validation/packaging-owner-smoke.json": {
       "sha256": "8d70070adf531e63977f110069ac933af03c532c3525d728a0e04ab373f43822",
       "bytes": 3003
+    },
+    "release/validation/article-reload-validation.json": {
+      "sha256": "a66b701f7c925aaff90d2a13f2917f663e0d0cd465c3a44acb8ba96f5c5d0bc9",
+      "bytes": 2537
+    },
+    "release/validation/article-reload-basis.json": {
+      "sha256": "dd5dd3fffc17c1ea351486e7fe4ff80d8b637397584bcb840cabf863b01090d4",
+      "bytes": 992
     }
   },
   "scientific_support": {

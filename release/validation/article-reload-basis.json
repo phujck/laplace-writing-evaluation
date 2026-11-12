@@ -1,0 +1,13 @@
+{
+  "scope": "Basis clarification for the retained bounded Article validation; no new test or production patch.",
+  "public_package_before_documentation_delta": "17dff62828f2840d1f0a9a3383c21a967389a103",
+  "article_trace_basis": "Main 17df16684806f06c29145eda6b8018b009861e20 with disposable owner fixture, not a direct test of the public package Git commit",
+  "real_Chrome_keyboard_control_basis": "Independent clean standalone baseline 97a4e0c885a09b586bc9d617bb0e54c86e7c04db installed fixture",
+  "relevant_controller": {
+    "path": "src/laplace/web/static_shared/workspace-manuscript.mjs",
+    "sha256": "6f9f3ee728799ccef0d644d7552a5e3e67d725e818c5e51db689733f2740700e",
+    "unchanged_in_public_candidate": true
+  },
+  "static_source_tree_equality_Main_trace_vs_fd71": true,
+  "claim": "Normal parent-page reload and UI save checks succeeded on the stated unchanged-code fixtures. CUA tab.reload anomaly retained. No broad browser or OS parity claim; no inferred product repair."
+}

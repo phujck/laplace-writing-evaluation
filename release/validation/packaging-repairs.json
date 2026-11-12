@@ -16,5 +16,10 @@
     "packaging-owner-smoke-v2.json": "Test attempted JSON parsing without requesting format=json; owner returned its documented plain text."
   },
   "unchanged_scientific_outcomes": "Historical failed/superseded runs retain those outcomes; location repair does not relabel them successful.",
-  "pending": "Blank Write after saved Article reload is being repaired separately; not claimed fixed by this packaging work."
+  "article_save_reload_followup": {
+    "status": "PASS on stated unchanged-code fixtures; no product code change",
+    "receipt": "release/validation/article-reload-validation.json",
+    "basis": "release/validation/article-reload-basis.json",
+    "original_observation": "CUA tab.reload blank frame preserved separately; normal browser/page reload controls succeeded"
+  }
 }

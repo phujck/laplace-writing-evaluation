@@ -15,3 +15,5 @@ These observations are separate from publication acceptance and do not repin
 the preserved scientific evidence.
 
 The [first-use baseline](validation/first-use-baseline.txt), [clean-install baseline](validation/clean-install-baseline.json), [packaging repairs](validation/packaging-repairs.json) and [actual relocated owner smoke](validation/packaging-owner-smoke-v3.json) distinguish original observations from the repaired distribution. The [per-paper production record](manuscript-production.json) links the actual final-polish edits, applications, builds and scientific support.
+
+The [bounded Article save/reload validation](validation/article-reload-validation.json) records successful normal reload controls and preserves the distinct automation-tool anomaly. [Its basis note](validation/article-reload-basis.json) identifies the unchanged-code fixtures; no speculative application patch or browser-parity claim is substituted.

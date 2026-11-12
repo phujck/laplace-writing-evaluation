@@ -18,7 +18,9 @@ Choose **Projects → Create a project → Article**, enter a title and purpose,
 
 Project creation and saving write the registry, project manuscript/history and local records in this checkout. `.laplace-state` holds runtime state; it is not the only place where user work lives. Keep the checkout and drafts when retaining an evaluation session.
 
-The initial clean-session exercise saved and recovered text successfully through TeX, but observed a blank Write frame after reload. Its [historical report](../release/validation/first-use-baseline.txt) preserves that finding; final repair and retest status will be recorded separately before the release is frozen.
+Normal browser reload preserved the saved Article in the [bounded follow-up validation](../release/validation/article-reload-validation.json): creating an Article, appending and saving a paragraph, reloading the parent page, reopening through Home and opening a fresh tab all succeeded. Real Chrome Ctrl+R also restored the exact saved sentence in the standalone fixture. The [validation bases](../release/validation/article-reload-basis.json) distinguish those checks on unchanged application code from a direct test of the final package commit.
+
+The initial blank frame was observed with the automation tool’s `tab.reload` operation. That observation remains in the [historical report](../release/validation/first-use-baseline.txt); it did not reproduce as a general application failure under the normal reload controls. No speculative product patch was applied. The finite checks cover Chromium/Chrome on the observed Linux host, not every browser or operating system.
 
 ## Run the small example
 
