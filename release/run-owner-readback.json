@@ -1,0 +1,111 @@
+{
+  "scope": "Read-only actual candidate owner probe; source imports explicitly selected, no model or execution",
+  "runs": [
+    {
+      "id": "run-199b8e82dce9c620",
+      "home": "synthetics papers/corpus-as-a-state/reconstruction/output/pdf/v2.1",
+      "state": "FAILED",
+      "reason": "producer exited without a successful result",
+      "location_resolution": "explicit evaluation export aliases; original job and receipt bytes unchanged"
+    },
+    {
+      "id": "run-9240dd37e551b6c8",
+      "home": "synthetics papers/corpus-as-a-state/reconstruction/output/pdf/v2.1",
+      "state": "FAILED",
+      "reason": "producer exited without a successful result",
+      "location_resolution": "explicit evaluation export aliases; original job and receipt bytes unchanged"
+    },
+    {
+      "id": "run-d2f6d3cff17f0fbe",
+      "home": "synthetics papers/corpus-as-a-state/reconstruction/output/pdf/v2.1",
+      "state": "COMPLETE",
+      "reason": "producer exited",
+      "location_resolution": "explicit evaluation export aliases; original job and receipt bytes unchanged"
+    },
+    {
+      "id": "run-f190281c3b15f84f",
+      "home": "synthetics papers/corpus-as-a-state/reconstruction/output/pdf/v2.1",
+      "state": "STALE",
+      "reason": "producer code changed after successful receipt",
+      "location_resolution": "explicit evaluation export aliases; original job and receipt bytes unchanged"
+    },
+    {
+      "id": "run-ffd067439f493b83",
+      "home": "synthetics papers/corpus-as-a-state/reconstruction/output/pdf/v2.1",
+      "state": "STALE",
+      "reason": "producer declaration changed after successful receipt",
+      "location_resolution": "explicit evaluation export aliases; original job and receipt bytes unchanged"
+    },
+    {
+      "id": "run-567ebd09db726432",
+      "home": "synthetics papers/adaptive-normal-form/manuscript/tex",
+      "state": "COMPLETE",
+      "reason": "producer exited",
+      "location_resolution": "explicit evaluation export aliases; original job and receipt bytes unchanged"
+    },
+    {
+      "id": "run-68cbc97a85ad2f23",
+      "home": "synthetics papers/adaptive-normal-form/manuscript/tex",
+      "state": "COMPLETE",
+      "reason": "producer exited",
+      "location_resolution": "explicit evaluation export aliases; original job and receipt bytes unchanged"
+    },
+    {
+      "id": "run-703951e441395885",
+      "home": "synthetics papers/adaptive-normal-form/manuscript/tex",
+      "state": "FAILED",
+      "reason": "producer exited without a successful result",
+      "location_resolution": "explicit evaluation export aliases; original job and receipt bytes unchanged"
+    },
+    {
+      "id": "run-d2d4e9492ceb571c",
+      "home": "synthetics papers/adaptive-normal-form/manuscript/tex",
+      "state": "COMPLETE",
+      "reason": "producer exited",
+      "location_resolution": "explicit evaluation export aliases; original job and receipt bytes unchanged"
+    },
+    {
+      "id": "run-da409034fde5674c",
+      "home": "synthetics papers/adaptive-normal-form/manuscript/tex",
+      "state": "COMPLETE",
+      "reason": "producer exited",
+      "location_resolution": "explicit evaluation export aliases; original job and receipt bytes unchanged"
+    },
+    {
+      "id": "run-e46bf2a3172ea87e",
+      "home": "synthetics papers/adaptive-normal-form/manuscript/tex",
+      "state": "COMPLETE",
+      "reason": "producer exited",
+      "location_resolution": "explicit evaluation export aliases; original job and receipt bytes unchanged"
+    },
+    {
+      "id": "run-f25940ecc0511fa3",
+      "home": "synthetics papers/adaptive-normal-form/manuscript/tex",
+      "state": "COMPLETE",
+      "reason": "producer exited",
+      "location_resolution": "explicit evaluation export aliases; original job and receipt bytes unchanged"
+    },
+    {
+      "id": "run-0781a7b8f8513412",
+      "home": "synthetics papers/self-consistent-loss-geometries/manuscript/imported",
+      "state": "COMPLETE",
+      "reason": "producer exited",
+      "location_resolution": "explicit evaluation export aliases; original job and receipt bytes unchanged"
+    },
+    {
+      "id": "run-756cd502012e0adb",
+      "home": "synthetics papers/self-consistent-loss-geometries/manuscript/imported",
+      "state": "COMPLETE",
+      "reason": "producer exited",
+      "location_resolution": "explicit evaluation export aliases; original job and receipt bytes unchanged"
+    },
+    {
+      "id": "run-7f8022a64802820f",
+      "home": "synthetics papers/self-consistent-loss-geometries/manuscript/imported",
+      "state": "COMPLETE",
+      "reason": "producer exited",
+      "location_resolution": "explicit evaluation export aliases; original job and receipt bytes unchanged"
+    }
+  ],
+  "active": []
+}

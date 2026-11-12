@@ -1,0 +1,91 @@
+{
+  "scope": "Relocated selected data with newly built local packages installed into a separate target, using previously clean Python3.12 dependency environment. No Main data, model or new scientific execution. Not a repeated clean dependency install.",
+  "selected_base_commit": "97a4e0c885a09b586bc9d617bb0e54c86e7c04db",
+  "source_commit": "fd71f1010668ce6b1f640251c9e2b510790bf97e",
+  "checks": [
+    {
+      "check": "no unresolved run indexes",
+      "http": 200,
+      "active_runs": 0,
+      "active_work": []
+    },
+    {
+      "check": "built reference companions used by actual reader owner",
+      "project": "eigen-technical-due-diligence-briefing",
+      "http": 200,
+      "citations": 27,
+      "refs": 85
+    },
+    {
+      "check": "exact final PDF served",
+      "project": "eigen-technical-due-diligence-briefing",
+      "http": 200,
+      "bytes": 1032422,
+      "sha256": "cdc460272e715186479049198f2f87fbd54250742c3f65f532403bba44d1730c"
+    },
+    {
+      "check": "built reference companions used by actual reader owner",
+      "project": "memory-in-pieces",
+      "http": 200,
+      "citations": 11,
+      "refs": 39
+    },
+    {
+      "check": "exact final PDF served",
+      "project": "memory-in-pieces",
+      "http": 200,
+      "bytes": 780601,
+      "sha256": "22329182ad5f20e0aa52e322aa5d7f2ad77a621de33f820f02bdf708b7ae6c34"
+    },
+    {
+      "check": "built reference companions used by actual reader owner",
+      "project": "self-consistent-loss-geometries-coupled-evaluators",
+      "http": 200,
+      "citations": 4,
+      "refs": 76
+    },
+    {
+      "check": "exact final PDF served",
+      "project": "self-consistent-loss-geometries-coupled-evaluators",
+      "http": 200,
+      "bytes": 561760,
+      "sha256": "cb2fe498f79161b59522056ff12651f67197bdce439822dbc7ab2f8ccb11dd86"
+    },
+    {
+      "check": "built reference companions used by actual reader owner",
+      "project": "adaptive-normal-form-aek9",
+      "http": 200,
+      "citations": 2,
+      "refs": 54
+    },
+    {
+      "check": "exact final PDF served",
+      "project": "adaptive-normal-form-aek9",
+      "http": 200,
+      "bytes": 350045,
+      "sha256": "0478ee9e41b0082cccefea82a9ca3d1e46dcf91cf2c04cae4b3c7f9e7d4b8c2e"
+    },
+    {
+      "check": "retained run located through HTTP owner",
+      "project": "memory-in-pieces",
+      "http": 200,
+      "id": "run-d2f6d3cff17f0fbe",
+      "state": "COMPLETE",
+      "location_resolution": "explicit evaluation export aliases; original job and receipt bytes unchanged"
+    },
+    {
+      "check": "retained run located through HTTP owner",
+      "project": "adaptive-normal-form-aek9",
+      "http": 200,
+      "id": "run-68cbc97a85ad2f23",
+      "state": "COMPLETE",
+      "location_resolution": "explicit evaluation export aliases; original job and receipt bytes unchanged"
+    }
+  ],
+  "errors": [
+    "TypeError: q() got multiple values for argument 'path'"
+  ],
+  "status": "FAIL",
+  "server_stopped": true,
+  "server_exit": -2
+}

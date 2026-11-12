@@ -1,0 +1,177 @@
+%apsrev4-2.bst 2019-01-14 (MD) hand-edited version of apsrev4-1.bst
+%Control: key (0)
+%Control: author (8) initials jnrlst
+%Control: editor formatted (1) identically to author
+%Control: production of article title (0) allowed
+%Control: page (0) single
+%Control: year (1) truncated
+%Control: production of eprint (0) enabled
+\begin{thebibliography}{11}%
+\makeatletter
+\providecommand \@ifxundefined [1]{%
+ \@ifx{#1\undefined}
+}%
+\providecommand \@ifnum [1]{%
+ \ifnum #1\expandafter \@firstoftwo
+ \else \expandafter \@secondoftwo
+ \fi
+}%
+\providecommand \@ifx [1]{%
+ \ifx #1\expandafter \@firstoftwo
+ \else \expandafter \@secondoftwo
+ \fi
+}%
+\providecommand \natexlab [1]{#1}%
+\providecommand \enquote  [1]{``#1''}%
+\providecommand \bibnamefont  [1]{#1}%
+\providecommand \bibfnamefont [1]{#1}%
+\providecommand \citenamefont [1]{#1}%
+\providecommand \href@noop [0]{\@secondoftwo}%
+\providecommand \href [0]{\begingroup \@sanitize@url \@href}%
+\providecommand \@href[1]{\@@startlink{#1}\@@href}%
+\providecommand \@@href[1]{\endgroup#1\@@endlink}%
+\providecommand \@sanitize@url [0]{\catcode `\\12\catcode `\$12\catcode
+  `\&12\catcode `\#12\catcode `\^12\catcode `\_12\catcode `\%12\relax}%
+\providecommand \@@startlink[1]{}%
+\providecommand \@@endlink[0]{}%
+\providecommand \url  [0]{\begingroup\@sanitize@url \@url }%
+\providecommand \@url [1]{\endgroup\@href {#1}{\urlprefix }}%
+\providecommand \urlprefix  [0]{URL }%
+\providecommand \Eprint [0]{\href }%
+\providecommand \doibase [0]{https://doi.org/}%
+\providecommand \selectlanguage [0]{\@gobble}%
+\providecommand \bibinfo  [0]{\@secondoftwo}%
+\providecommand \bibfield  [0]{\@secondoftwo}%
+\providecommand \translation [1]{[#1]}%
+\providecommand \BibitemOpen [0]{}%
+\providecommand \bibitemStop [0]{}%
+\providecommand \bibitemNoStop [0]{.\EOS\space}%
+\providecommand \EOS [0]{\spacefactor3000\relax}%
+\providecommand \BibitemShut  [1]{\csname bibitem#1\endcsname}%
+\let\auto@bib@innerbib\@empty
+%</preamble>
+\bibitem [{\citenamefont {Tang}\ and\ \citenamefont
+  {Yang}(2024)}]{multihoprag}%
+  \BibitemOpen
+  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {Y.}~\bibnamefont
+  {Tang}}\ and\ \bibinfo {author} {\bibfnamefont {Y.}~\bibnamefont {Yang}},\
+  }\href {https://arxiv.org/abs/2401.15391} {\bibinfo {title} {{MultiHop-RAG}:
+  Benchmarking retrieval-augmented generation for multi-hop queries}} (\bibinfo
+  {year} {2024}),\ \Eprint {https://arxiv.org/abs/2401.15391}
+  {arXiv:2401.15391} \BibitemShut {NoStop}%
+\bibitem [{\citenamefont {Carbonell}\ and\ \citenamefont
+  {Goldstein}(1998)}]{mmr}%
+  \BibitemOpen
+  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {J.}~\bibnamefont
+  {Carbonell}}\ and\ \bibinfo {author} {\bibfnamefont {J.}~\bibnamefont
+  {Goldstein}},\ }\bibfield  {title} {\bibinfo {title} {The use of mmr,
+  diversity-based reranking for reordering documents and producing summaries},\
+  }in\ \href {https://doi.org/10.1145/290941.291025} {\emph {\bibinfo
+  {booktitle} {Proceedings of the 21st annual international ACM SIGIR
+  conference on Research and development in information retrieval}}}\ (\bibinfo
+   {publisher} {ACM},\ \bibinfo {year} {1998})\ pp.\ \bibinfo {pages}
+  {335--336}\BibitemShut {NoStop}%
+\bibitem [{\citenamefont {Sarthi}\ \emph {et~al.}(2024)\citenamefont {Sarthi},
+  \citenamefont {Abdullah}, \citenamefont {Tuli}, \citenamefont {Khanna},
+  \citenamefont {Goldie},\ and\ \citenamefont {Manning}}]{raptor}%
+  \BibitemOpen
+  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {P.}~\bibnamefont
+  {Sarthi}}, \bibinfo {author} {\bibfnamefont {S.}~\bibnamefont {Abdullah}},
+  \bibinfo {author} {\bibfnamefont {A.}~\bibnamefont {Tuli}}, \bibinfo {author}
+  {\bibfnamefont {S.}~\bibnamefont {Khanna}}, \bibinfo {author} {\bibfnamefont
+  {A.}~\bibnamefont {Goldie}},\ and\ \bibinfo {author} {\bibfnamefont {C.~D.}\
+  \bibnamefont {Manning}},\ }\href {https://arxiv.org/abs/2401.18059} {\bibinfo
+  {title} {{RAPTOR}: Recursive abstractive processing for tree-organized
+  retrieval}} (\bibinfo {year} {2024}),\ \Eprint
+  {https://arxiv.org/abs/2401.18059} {arXiv:2401.18059} \BibitemShut {NoStop}%
+\bibitem [{\citenamefont {Crutchfield}\ and\ \citenamefont
+  {Young}(1989)}]{Crutchfield198940eaeb}%
+  \BibitemOpen
+  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {J.~P.}\ \bibnamefont
+  {Crutchfield}}\ and\ \bibinfo {author} {\bibfnamefont {K.}~\bibnamefont
+  {Young}},\ }\bibfield  {title} {\bibinfo {title} {Inferring statistical
+  complexity},\ }\href {https://doi.org/10.1103/physrevlett.63.105} {\bibfield
+  {journal} {\bibinfo  {journal} {Physical Review Letters}\ }\textbf {\bibinfo
+  {volume} {63}},\ \bibinfo {pages} {105} (\bibinfo {year} {1989})}\BibitemShut
+  {NoStop}%
+\bibitem [{\citenamefont {Green}\ \emph {et~al.}(2007)\citenamefont {Green},
+  \citenamefont {Karvounarakis},\ and\ \citenamefont
+  {Tannen}}]{Green20074d5218}%
+  \BibitemOpen
+  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {T.~J.}\ \bibnamefont
+  {Green}}, \bibinfo {author} {\bibfnamefont {G.}~\bibnamefont
+  {Karvounarakis}},\ and\ \bibinfo {author} {\bibfnamefont {V.}~\bibnamefont
+  {Tannen}},\ }\bibfield  {title} {\bibinfo {title} {Provenance semirings},\
+  }in\ \href {https://doi.org/10.1145/1265530.1265535} {\emph {\bibinfo
+  {booktitle} {Proceedings of the twenty-sixth ACM SIGMOD-SIGACT-SIGART
+  symposium on Principles of database systems}}}\ (\bibinfo  {publisher}
+  {ACM},\ \bibinfo {year} {2007})\ pp.\ \bibinfo {pages} {31--40}\BibitemShut
+  {NoStop}%
+\bibitem [{\citenamefont {Bryant}(1986)}]{bryant1986}%
+  \BibitemOpen
+  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {R.~E.}\ \bibnamefont
+  {Bryant}},\ }\bibfield  {title} {\bibinfo {title} {Graph-based algorithms for
+  boolean function manipulation},\ }\href
+  {https://www.cs.cmu.edu/\textasciitilde{}bryant/pubdir/ieeetc86.pdf}
+  {\bibfield  {journal} {\bibinfo  {journal} {IEEE Transactions on Computers}\
+  }\textbf {\bibinfo {volume} {C-35}},\ \bibinfo {pages} {677} (\bibinfo {year}
+  {1986})}\BibitemShut {NoStop}%
+\bibitem [{\citenamefont {Gu}\ \emph {et~al.}(2012)\citenamefont {Gu},
+  \citenamefont {Wiesner}, \citenamefont {Rieper},\ and\ \citenamefont
+  {Vedral}}]{Gu2012e2bbbd}%
+  \BibitemOpen
+  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {M.}~\bibnamefont
+  {Gu}}, \bibinfo {author} {\bibfnamefont {K.}~\bibnamefont {Wiesner}},
+  \bibinfo {author} {\bibfnamefont {E.}~\bibnamefont {Rieper}},\ and\ \bibinfo
+  {author} {\bibfnamefont {V.}~\bibnamefont {Vedral}},\ }\bibfield  {title}
+  {\bibinfo {title} {Quantum mechanics can reduce the complexity of classical
+  models},\ }\bibfield  {journal} {\bibinfo  {journal} {Nature Communications}\
+  }\textbf {\bibinfo {volume} {3}},\ \href {https://doi.org/10.1038/ncomms1761}
+  {10.1038/ncomms1761} (\bibinfo {year} {2012})\BibitemShut {NoStop}%
+\bibitem [{\citenamefont {Darwiche}\ and\ \citenamefont
+  {Marquis}(2002)}]{darwiche2002}%
+  \BibitemOpen
+  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {A.}~\bibnamefont
+  {Darwiche}}\ and\ \bibinfo {author} {\bibfnamefont {P.}~\bibnamefont
+  {Marquis}},\ }\bibfield  {title} {\bibinfo {title} {A knowledge compilation
+  map},\ }\href {https://arxiv.org/pdf/1106.1819} {\bibfield  {journal}
+  {\bibinfo  {journal} {Journal of Artificial Intelligence Research}\ }\textbf
+  {\bibinfo {volume} {17}},\ \bibinfo {pages} {229} (\bibinfo {year}
+  {2002})}\BibitemShut {NoStop}%
+\bibitem [{\citenamefont {Mori}(1965)}]{mori}%
+  \BibitemOpen
+  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {H.}~\bibnamefont
+  {Mori}},\ }\bibfield  {title} {\bibinfo {title} {Transport, collective
+  motion, and brownian motion},\ }\href {https://doi.org/10.1143/PTP.33.423}
+  {\bibfield  {journal} {\bibinfo  {journal} {Progress of Theoretical Physics}\
+  }\textbf {\bibinfo {volume} {33}},\ \bibinfo {pages} {423} (\bibinfo {year}
+  {1965})}\BibitemShut {NoStop}%
+\bibitem [{\citenamefont {Krishna}\ \emph {et~al.}(2024)\citenamefont
+  {Krishna}, \citenamefont {Krishna}, \citenamefont {Mohananey}, \citenamefont
+  {Schwarcz}, \citenamefont {Stambler}, \citenamefont {Upadhyay},\ and\
+  \citenamefont {Faruqui}}]{frames}%
+  \BibitemOpen
+  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {S.}~\bibnamefont
+  {Krishna}}, \bibinfo {author} {\bibfnamefont {K.}~\bibnamefont {Krishna}},
+  \bibinfo {author} {\bibfnamefont {A.}~\bibnamefont {Mohananey}}, \bibinfo
+  {author} {\bibfnamefont {S.}~\bibnamefont {Schwarcz}}, \bibinfo {author}
+  {\bibfnamefont {A.}~\bibnamefont {Stambler}}, \bibinfo {author}
+  {\bibfnamefont {S.}~\bibnamefont {Upadhyay}},\ and\ \bibinfo {author}
+  {\bibfnamefont {M.}~\bibnamefont {Faruqui}},\ }\href
+  {https://arxiv.org/abs/2409.12941} {\bibinfo {title} {Fact, fetch, and
+  reason: A unified evaluation of retrieval-augmented generation}} (\bibinfo
+  {year} {2024})\BibitemShut {NoStop}%
+\bibitem [{\citenamefont {Wu}\ \emph {et~al.}(2025)\citenamefont {Wu},
+  \citenamefont {Wang}, \citenamefont {Yu}, \citenamefont {Zhang},
+  \citenamefont {Chang},\ and\ \citenamefont {Yu}}]{longmem}%
+  \BibitemOpen
+  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {D.}~\bibnamefont
+  {Wu}}, \bibinfo {author} {\bibfnamefont {H.}~\bibnamefont {Wang}}, \bibinfo
+  {author} {\bibfnamefont {W.}~\bibnamefont {Yu}}, \bibinfo {author}
+  {\bibfnamefont {Y.}~\bibnamefont {Zhang}}, \bibinfo {author} {\bibfnamefont
+  {K.-W.}\ \bibnamefont {Chang}},\ and\ \bibinfo {author} {\bibfnamefont
+  {D.}~\bibnamefont {Yu}},\ }\href {https://github.com/xiaowu0162/LongMemEval}
+  {\bibinfo {title} {{LongMemEval}: Benchmarking chat assistants on long-term
+  interactive memory}} (\bibinfo {year} {2025}),\ \bibinfo {note} {iCLR 2025;
+  official cleaned S dataset and evaluator}\BibitemShut {NoStop}%
+\end{thebibliography}%

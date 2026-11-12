@@ -43,7 +43,7 @@ RAPTOR builds a hierarchy of recursively clustered summaries, offering access at
 These constructions organise access to evidence.
 Our question is what calculation a retained representation supports, and what must remain available when its evidence changes.
 
-We begin with an admitted finite joint law of observations.
+We begin with a finite joint law of admitted observations - contributions whose fields, weights and source support have been specified.
 Each contribution keeps its source revision and a located supporting span.
 Observations that have the same conditional future share the remaining calculation, while their source contributions remain distinct.
 Sharing equivalent futures is an established way of reducing a predictive description.
@@ -107,9 +107,9 @@ The example concerns this ingested snapshot, not validation of every extracted f
 \end{figure*}
 
 For an enquiry about duration, the narrow quotation is insufficient.
-The stored implementation nevertheless retains the full five-field \emph{proposal}, its three-sentence input unit and the narrower located quotation.
+The implementation nevertheless retains the full five-field \emph{proposal}, the three-sentence input unit and the narrower located quotation.
 It does not automatically expand the quotation, split the assertion or reject the additional fields after deciding what they entail.
-The consequence field remains unsupported by that quotation alone.
+The proposed consequence remains unsupported by that quotation alone.
 Reading the full unit supplies the small-and-brief statement, but this contextual judgement is ours, not an executed entailment gate.
 
 We call a retained source location a \emph{witness}.
@@ -142,7 +142,7 @@ Take equally weighted records \((A,B,C)=000,011,101,110\).
 Every field is unbiased and every pair independent.
 Nevertheless, among records with \(A=B=0\), the field \(C\) is certainly zero.
 The relation survives in the joint records but disappears from their separate marginals.
-Tests on fields of one observation must act on the same source incidence.
+Tests on fields of one observation must refer to that same joint record and its source contributions.
 Combining evidence from several documents will later require an explicit assembly operation, not multiplication of unrelated observations.
 
 A field test is a function \(f_g(x_g)\) between zero and one at ordered position \(g\).
@@ -167,7 +167,8 @@ The selected population contains five records, four reporting the event, giving 
 The literal grammar makes the observation step exact in this controlled example.
 
 Read the fields from left to right.
-A \emph{prefix} contains the fields already read, a \emph{suffix} those still to come, and a \emph{cut} separates them.
+A \emph{prefix} contains the fields already read.
+The remaining fields form a \emph{suffix}, and the boundary between them is a \emph{cut}.
 Two supported prefixes share a continuation state when their normalised suffix laws agree.
 Table~\ref{tab:dm-states} instantiates the construction for the three-field parity records.
 Prefixes \(00\) and \(11\) share the future \(C=0\), while \(01\) and \(10\) share \(C=1\).
@@ -237,9 +238,9 @@ With terminal message \(m_D=1\),
               m_{g+1}\!\left(\delta_g(a,x)\right).
  \label{eq:adjoint}
 \end{equation}
-This is adjoint evaluation.
-Evaluating the matrix product is often called a contraction.
-Equal suffix laws reuse a message.
+Moving the test backwards in this way is \emph{adjoint evaluation}.
+Evaluating the matrix product is often called a \emph{contraction}.
+States with equal suffix laws can reuse the same message.
 A suffix of unrestricted tests has message one without further work, while a zero branch contributes nothing.
 Conditional recall is a ratio of two such calculations under the same law.
 
@@ -290,8 +291,9 @@ Each operation revises the supported calculation.}
 Five stored objects make the update precise.
 Source incidence maps an active revision to its tuple contributions and witnesses.
 An unmerged prefix occurrence is keyed by its field values, not by a source identity, and holds the aggregate count and child occurrences.
-Its canonical signature is the ordered list of reduced next-symbol probabilities paired with successor-signature identities.
-Identical signatures share one immutable continuation state, a procedure called hash-consing.
+The prefix's canonical signature lists its reduced next-symbol probabilities and successor-signature identities in a fixed order.
+Identical signatures share one immutable continuation state.
+Reusing states by their signatures is called \emph{hash-consing}.
 A query binding associates a raw prefix and query suffix with that state.
 The message cache stores a value for a canonical state and those remaining factors.
 A binding can become obsolete without making its old cached value false.
@@ -314,7 +316,7 @@ Supporting Information~\ref{app:dm-updates} gives the actual records and inciden
 Raw occurrences are essential when shared futures diverge: counts \((3,1)\) and \((12,4)\) share law \((3/4,1/4)\), but replacing the latter by \((8,4)\) splits them.
 Changing their shared state in place would revise the wrong sources.
 
-The work follows the retained dependencies.
+We can now account for the work by following these dependencies.
 Let \(N\) count distinct tuples, \(c_g\) categories at position \(g\), and \(Q\) queries.
 If \(A_g\leq Q\) queries remain active after the shortcuts, dense contraction uses
 \begin{equation}
@@ -379,7 +381,7 @@ Only the latency panels are shown: (a) one query, (b) 1024 queries.
 Points are medians of per-regime median timings, and shading spans the minimum to maximum across fixed-coordinate counts and locations.
 Each regime has two warmups and eleven synchronised samples.
 Direct methods scan packed rows or weighted unique rows, which have equal support size here.
-The blue \lq\lq exact recursive\rq\rq\ curve is exact continuation evaluation by backwards integer messages, with width two.
+The blue curve, labelled \lq\lq exact recursive\rq\rq\ in the saved plot, evaluates continuations by backwards integer messages, with width two.
 These are observations on the recorded 4 GB GPU, not hardware-independent latencies.
 The complete diagnostic figure and protocol appear in Supporting Information~\ref{app:dm-timings}.}
 \label{fig:locality}
@@ -400,7 +402,7 @@ One actual question asks whether Inter Miami's postseason prospects changed betw
 The first support set includes both the named ticket report and a separate match report from that outlet on 4 October.
 The second includes the 7 October article.
 Exact metadata support is therefore not yet exact semantic support.
-Within each set, labelled two-sentence windows are scored by cosine similarity plus \(0.5\) times normalised BM25, a keyword relevance score.
+Within each set, labelled two-sentence windows are scored by cosine similarity of their text vectors plus \(0.5\) times normalised BM25, a keyword relevance score.
 The facet-conditioned route takes the next window from each ranked facet in turn, removes duplicates and merges admitted spans in article order.
 Its retained 1989-token context discusses rising ticket prices, says Messi did not arrive for the earlier match, and explicitly states later playoff elimination.
 The first two observations do not themselves state the earlier postseason assessment.
@@ -438,7 +440,7 @@ The contexts cover 234, 211 and 205 annotated needed facts respectively.
 Coverage means that a located occurrence of a reference fact lies wholly within delivered original spans of its article.
 It is not a count of generated statements or a substitute for correctness.
 
-The instruction matters at this interpretive point.
+Changing the reader instruction changes the comparison.
 With common answer-form rules but no requirement table, the same configurations give 152, 152 and 148 exact matches.
 The facet-conditioned route therefore ties diversity ranking under that condition.
 The advantage in Table~\ref{tab:news} belongs to a particular assembly-and-reader configuration.
@@ -460,7 +462,7 @@ The completed LongMemEval-S comparison~\cite{longmem} exposes a different missin
 The two stored arm names \texttt{ours\_keys} and \texttt{dense\_keys} execute the \emph{same} dense score call on the shared index, followed by the same ordering and whole-turn packer.
 We call them the shared-dense arms here, rather than implying that one performed a compressed conditional reconstruction.
 Both give 44 correct answers at 4000 tokens and 45 at 8000, out of 48 including six abstentions.
-Both deliver all annotated turns on 41 of 42 positive-evidence cases.
+Both deliver all annotated turns on 41 of 42 cases with positive evidence, excluding the six abstention questions.
 The remaining miss asks for elapsed months since two charity events on consecutive days.
 Required primary turns rank 73--134, beyond packing frontiers at ranks 27 and 54.
 A paraphrase of one event is present, but the decisive pair is not delivered together.

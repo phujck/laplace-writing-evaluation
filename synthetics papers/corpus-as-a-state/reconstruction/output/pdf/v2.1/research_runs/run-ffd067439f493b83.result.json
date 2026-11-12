@@ -1,0 +1,3192 @@
+{
+  "schema_version": "dynamic-memory.witnessed-incremental-demo/1",
+  "status": "PASSED_LOCAL_CHECKS_NOT_INDEPENDENT_ACCEPTANCE",
+  "states": [
+    {
+      "step": 0,
+      "label": "initial",
+      "delta": {
+        "initial_versions": [
+          "d00-r1",
+          "d01-r1",
+          "d10-r1",
+          "d11-r1"
+        ]
+      },
+      "active_documents": [
+        {
+          "id": "d00",
+          "revision": "r1",
+          "path": "docs/d00-r1.txt",
+          "sha256": "8c6e68cec764125b1b8c39fc8da242af3db24b5a460f58808ccc5f296672e993",
+          "text": "Group 00 contains 4 records with A=0 and B=0.\n",
+          "weight": 4,
+          "key": [
+            0,
+            0
+          ],
+          "witness": [
+            0,
+            45
+          ],
+          "count_span": [
+            18,
+            19
+          ]
+        },
+        {
+          "id": "d01",
+          "revision": "r1",
+          "path": "docs/d01-r1.txt",
+          "sha256": "3e4eb18af330445b0f82068a602fd9c9578866c2f15bd76d1541918d600aa999",
+          "text": "Group 01 contains 1 records with A=0 and B=1.\n",
+          "weight": 1,
+          "key": [
+            0,
+            1
+          ],
+          "witness": [
+            0,
+            45
+          ],
+          "count_span": [
+            18,
+            19
+          ]
+        },
+        {
+          "id": "d10",
+          "revision": "r1",
+          "path": "docs/d10-r1.txt",
+          "sha256": "6a930cbadb5788b2cba6bee921372f593a84a2c3582a3d34a3f4df1d76517058",
+          "text": "Group 10 contains 1 records with A=1 and B=0.\n",
+          "weight": 1,
+          "key": [
+            1,
+            0
+          ],
+          "witness": [
+            0,
+            45
+          ],
+          "count_span": [
+            18,
+            19
+          ]
+        },
+        {
+          "id": "d11",
+          "revision": "r1",
+          "path": "docs/d11-r1.txt",
+          "sha256": "96bcadcf4cbf07212ba4663f56c6ae2f0ff7a2c360ef5f4ffcda5639af04a3e5",
+          "text": "Group 11 contains 4 records with A=1 and B=1.\n",
+          "weight": 4,
+          "key": [
+            1,
+            1
+          ],
+          "witness": [
+            0,
+            45
+          ],
+          "count_span": [
+            18,
+            19
+          ]
+        }
+      ],
+      "algorithm_work": {
+        "input_bytes_read": 184,
+        "source_documents_read": 4,
+        "source_documents_parsed": 4,
+        "input_read_hash_parse_ns": 189737,
+        "facts_added": 4,
+        "incidence_edges_added": 4,
+        "tuple_entries_touched": 4,
+        "prefixes_touched": 12,
+        "child_pointer_slots_copied": 6,
+        "hashcons_probes": 12,
+        "canonical_states_created": 8,
+        "active_refcount_updates": 17,
+        "raw_nodes_path_copied": 12,
+        "transition_slots_examined": 12,
+        "algorithm_update_ns": 545324,
+        "active_continuations_before": 4,
+        "active_continuations_after": 6,
+        "canonical_states_reused": 4
+      },
+      "oracle_and_query_validation_ns": 3353747,
+      "checks": {
+        "query_results": [
+          {
+            "id": "A-any__B-any",
+            "count": 10,
+            "probability": "1"
+          },
+          {
+            "id": "A-any__B-zero",
+            "count": 5,
+            "probability": "1/2"
+          },
+          {
+            "id": "A-any__B-one",
+            "count": 5,
+            "probability": "1/2"
+          },
+          {
+            "id": "A-any__B-empty",
+            "count": 0,
+            "probability": "0"
+          },
+          {
+            "id": "A-zero__B-any",
+            "count": 5,
+            "probability": "1/2"
+          },
+          {
+            "id": "A-zero__B-zero",
+            "count": 4,
+            "probability": "2/5"
+          },
+          {
+            "id": "A-zero__B-one",
+            "count": 1,
+            "probability": "1/10"
+          },
+          {
+            "id": "A-zero__B-empty",
+            "count": 0,
+            "probability": "0"
+          },
+          {
+            "id": "A-one__B-any",
+            "count": 5,
+            "probability": "1/2"
+          },
+          {
+            "id": "A-one__B-zero",
+            "count": 1,
+            "probability": "1/10"
+          },
+          {
+            "id": "A-one__B-one",
+            "count": 4,
+            "probability": "2/5"
+          },
+          {
+            "id": "A-one__B-empty",
+            "count": 0,
+            "probability": "0"
+          },
+          {
+            "id": "A-empty__B-any",
+            "count": 0,
+            "probability": "0"
+          },
+          {
+            "id": "A-empty__B-zero",
+            "count": 0,
+            "probability": "0"
+          },
+          {
+            "id": "A-empty__B-one",
+            "count": 0,
+            "probability": "0"
+          },
+          {
+            "id": "A-empty__B-empty",
+            "count": 0,
+            "probability": "0"
+          }
+        ],
+        "conditional": {
+          "query": "P(B=0 | A=0)",
+          "numerator": 4,
+          "denominator": 5,
+          "value": "4/5"
+        },
+        "source_witnesses": [
+          [
+            "d00",
+            "r1",
+            "8c6e68cec764125b1b8c39fc8da242af3db24b5a460f58808ccc5f296672e993",
+            0,
+            45,
+            [
+              0,
+              0
+            ],
+            4
+          ],
+          [
+            "d01",
+            "r1",
+            "3e4eb18af330445b0f82068a602fd9c9578866c2f15bd76d1541918d600aa999",
+            0,
+            45,
+            [
+              0,
+              1
+            ],
+            1
+          ],
+          [
+            "d10",
+            "r1",
+            "6a930cbadb5788b2cba6bee921372f593a84a2c3582a3d34a3f4df1d76517058",
+            0,
+            45,
+            [
+              1,
+              0
+            ],
+            1
+          ],
+          [
+            "d11",
+            "r1",
+            "96bcadcf4cbf07212ba4663f56c6ae2f0ff7a2c360ef5f4ffcda5639af04a3e5",
+            0,
+            45,
+            [
+              1,
+              1
+            ],
+            4
+          ]
+        ],
+        "tuple_counts": [
+          {
+            "A": 0,
+            "B": 0,
+            "count": 4
+          },
+          {
+            "A": 0,
+            "B": 1,
+            "count": 1
+          },
+          {
+            "A": 1,
+            "B": 0,
+            "count": 1
+          },
+          {
+            "A": 1,
+            "B": 1,
+            "count": 4
+          }
+        ],
+        "prefix_laws_verified": 7,
+        "shared_continuations": [
+          {
+            "cut": 2,
+            "prefixes": [
+              [
+                0,
+                0
+              ],
+              [
+                0,
+                1
+              ],
+              [
+                1,
+                0
+              ],
+              [
+                1,
+                1
+              ]
+            ],
+            "law": [
+              [
+                [],
+                "1"
+              ]
+            ]
+          }
+        ],
+        "query_work": {
+          "ones_suffix_shortcuts": 3,
+          "query_messages_recomputed": 12,
+          "query_dependency_edges_visited": 24,
+          "zero_factor_shortcuts": 7,
+          "canonical_message_hits": 10,
+          "query_validation_ns": 2762225
+        },
+        "oracle_full_documents_parsed": 4,
+        "oracle_full_prefix_nodes": 7,
+        "oracle_assertions": "exact full rebuild == direct integer/Fraction rows == incremental adjoint == forward channel"
+      },
+      "algorithm_retained_bytes": 30062,
+      "tracemalloc_current_bytes": 94891,
+      "tracemalloc_peak_bytes": 146007,
+      "active_quotient_state_counts": [
+        1,
+        2,
+        1
+      ],
+      "archived_canonical_states": 8,
+      "snapshot_materialisation_ns": 28171
+    },
+    {
+      "step": 1,
+      "label": "change",
+      "delta": {
+        "old": {
+          "id": "d00",
+          "revision": "r1",
+          "path": "docs/d00-r1.txt",
+          "sha256": "8c6e68cec764125b1b8c39fc8da242af3db24b5a460f58808ccc5f296672e993",
+          "text": "Group 00 contains 4 records with A=0 and B=0.\n",
+          "weight": 4,
+          "key": [
+            0,
+            0
+          ],
+          "witness": [
+            0,
+            45
+          ],
+          "count_span": [
+            18,
+            19
+          ]
+        },
+        "new": {
+          "id": "d00",
+          "revision": "r2",
+          "path": "docs/d00-r2.txt",
+          "sha256": "29948f2842a41afbd3e456621210ef6961c3c494ae4cbf6623e6f1dcf4fbf9f1",
+          "text": "Group 00 contains 3 records with A=0 and B=0.\n",
+          "weight": 3,
+          "key": [
+            0,
+            0
+          ],
+          "witness": [
+            0,
+            45
+          ],
+          "count_span": [
+            18,
+            19
+          ]
+        },
+        "noop": false
+      },
+      "active_documents": [
+        {
+          "id": "d00",
+          "revision": "r2",
+          "path": "docs/d00-r2.txt",
+          "sha256": "29948f2842a41afbd3e456621210ef6961c3c494ae4cbf6623e6f1dcf4fbf9f1",
+          "text": "Group 00 contains 3 records with A=0 and B=0.\n",
+          "weight": 3,
+          "key": [
+            0,
+            0
+          ],
+          "witness": [
+            0,
+            45
+          ],
+          "count_span": [
+            18,
+            19
+          ]
+        },
+        {
+          "id": "d01",
+          "revision": "r1",
+          "path": "docs/d01-r1.txt",
+          "sha256": "3e4eb18af330445b0f82068a602fd9c9578866c2f15bd76d1541918d600aa999",
+          "text": "Group 01 contains 1 records with A=0 and B=1.\n",
+          "weight": 1,
+          "key": [
+            0,
+            1
+          ],
+          "witness": [
+            0,
+            45
+          ],
+          "count_span": [
+            18,
+            19
+          ]
+        },
+        {
+          "id": "d10",
+          "revision": "r1",
+          "path": "docs/d10-r1.txt",
+          "sha256": "6a930cbadb5788b2cba6bee921372f593a84a2c3582a3d34a3f4df1d76517058",
+          "text": "Group 10 contains 1 records with A=1 and B=0.\n",
+          "weight": 1,
+          "key": [
+            1,
+            0
+          ],
+          "witness": [
+            0,
+            45
+          ],
+          "count_span": [
+            18,
+            19
+          ]
+        },
+        {
+          "id": "d11",
+          "revision": "r1",
+          "path": "docs/d11-r1.txt",
+          "sha256": "96bcadcf4cbf07212ba4663f56c6ae2f0ff7a2c360ef5f4ffcda5639af04a3e5",
+          "text": "Group 11 contains 4 records with A=1 and B=1.\n",
+          "weight": 4,
+          "key": [
+            1,
+            1
+          ],
+          "witness": [
+            0,
+            45
+          ],
+          "count_span": [
+            18,
+            19
+          ]
+        }
+      ],
+      "algorithm_work": {
+        "input_bytes_read": 46,
+        "source_documents_read": 1,
+        "source_documents_parsed": 1,
+        "input_read_hash_parse_ns": 56393,
+        "facts_retracted": 1,
+        "incidence_edges_retracted": 1,
+        "facts_added": 1,
+        "incidence_edges_added": 1,
+        "tuple_entries_touched": 1,
+        "query_messages_invalidated": 24,
+        "prefixes_touched": 3,
+        "child_pointer_slots_copied": 4,
+        "hashcons_probes": 3,
+        "canonical_states_reused": 1,
+        "active_refcount_updates": 6,
+        "raw_nodes_path_copied": 3,
+        "transition_slots_examined": 4,
+        "canonical_states_created": 2,
+        "algorithm_update_ns": 185509,
+        "active_continuations_before": 2,
+        "active_continuations_after": 2
+      },
+      "oracle_and_query_validation_ns": 3057856,
+      "checks": {
+        "query_results": [
+          {
+            "id": "A-any__B-any",
+            "count": 9,
+            "probability": "1"
+          },
+          {
+            "id": "A-any__B-zero",
+            "count": 4,
+            "probability": "4/9"
+          },
+          {
+            "id": "A-any__B-one",
+            "count": 5,
+            "probability": "5/9"
+          },
+          {
+            "id": "A-any__B-empty",
+            "count": 0,
+            "probability": "0"
+          },
+          {
+            "id": "A-zero__B-any",
+            "count": 4,
+            "probability": "4/9"
+          },
+          {
+            "id": "A-zero__B-zero",
+            "count": 3,
+            "probability": "1/3"
+          },
+          {
+            "id": "A-zero__B-one",
+            "count": 1,
+            "probability": "1/9"
+          },
+          {
+            "id": "A-zero__B-empty",
+            "count": 0,
+            "probability": "0"
+          },
+          {
+            "id": "A-one__B-any",
+            "count": 5,
+            "probability": "5/9"
+          },
+          {
+            "id": "A-one__B-zero",
+            "count": 1,
+            "probability": "1/9"
+          },
+          {
+            "id": "A-one__B-one",
+            "count": 4,
+            "probability": "4/9"
+          },
+          {
+            "id": "A-one__B-empty",
+            "count": 0,
+            "probability": "0"
+          },
+          {
+            "id": "A-empty__B-any",
+            "count": 0,
+            "probability": "0"
+          },
+          {
+            "id": "A-empty__B-zero",
+            "count": 0,
+            "probability": "0"
+          },
+          {
+            "id": "A-empty__B-one",
+            "count": 0,
+            "probability": "0"
+          },
+          {
+            "id": "A-empty__B-empty",
+            "count": 0,
+            "probability": "0"
+          }
+        ],
+        "conditional": {
+          "query": "P(B=0 | A=0)",
+          "numerator": 3,
+          "denominator": 4,
+          "value": "3/4"
+        },
+        "source_witnesses": [
+          [
+            "d00",
+            "r2",
+            "29948f2842a41afbd3e456621210ef6961c3c494ae4cbf6623e6f1dcf4fbf9f1",
+            0,
+            45,
+            [
+              0,
+              0
+            ],
+            3
+          ],
+          [
+            "d01",
+            "r1",
+            "3e4eb18af330445b0f82068a602fd9c9578866c2f15bd76d1541918d600aa999",
+            0,
+            45,
+            [
+              0,
+              1
+            ],
+            1
+          ],
+          [
+            "d10",
+            "r1",
+            "6a930cbadb5788b2cba6bee921372f593a84a2c3582a3d34a3f4df1d76517058",
+            0,
+            45,
+            [
+              1,
+              0
+            ],
+            1
+          ],
+          [
+            "d11",
+            "r1",
+            "96bcadcf4cbf07212ba4663f56c6ae2f0ff7a2c360ef5f4ffcda5639af04a3e5",
+            0,
+            45,
+            [
+              1,
+              1
+            ],
+            4
+          ]
+        ],
+        "tuple_counts": [
+          {
+            "A": 0,
+            "B": 0,
+            "count": 3
+          },
+          {
+            "A": 0,
+            "B": 1,
+            "count": 1
+          },
+          {
+            "A": 1,
+            "B": 0,
+            "count": 1
+          },
+          {
+            "A": 1,
+            "B": 1,
+            "count": 4
+          }
+        ],
+        "prefix_laws_verified": 7,
+        "shared_continuations": [
+          {
+            "cut": 2,
+            "prefixes": [
+              [
+                0,
+                0
+              ],
+              [
+                0,
+                1
+              ],
+              [
+                1,
+                0
+              ],
+              [
+                1,
+                1
+              ]
+            ],
+            "law": [
+              [
+                [],
+                "1"
+              ]
+            ]
+          }
+        ],
+        "query_work": {
+          "ones_suffix_shortcuts": 2,
+          "query_messages_recomputed": 10,
+          "query_dependency_edges_visited": 20,
+          "active_message_hits": 8,
+          "zero_factor_shortcuts": 7,
+          "canonical_message_hits": 5,
+          "query_validation_ns": 2469681
+        },
+        "oracle_full_documents_parsed": 4,
+        "oracle_full_prefix_nodes": 7,
+        "oracle_assertions": "exact full rebuild == direct integer/Fraction rows == incremental adjoint == forward channel"
+      },
+      "algorithm_retained_bytes": 36422,
+      "tracemalloc_current_bytes": 165584,
+      "tracemalloc_peak_bytes": 170192,
+      "active_quotient_state_counts": [
+        1,
+        2,
+        1
+      ],
+      "archived_canonical_states": 10,
+      "snapshot_materialisation_ns": 29670
+    },
+    {
+      "step": 2,
+      "label": "add",
+      "delta": {
+        "old": null,
+        "new": {
+          "id": "d02",
+          "revision": "r1",
+          "path": "docs/d02-r1.txt",
+          "sha256": "803cf93ca3e1124b27d06cbc03b84c619248e1cba454519f377ed0cd3a532420",
+          "text": "Group 02 contains 1 records with A=0 and B=1.\n",
+          "weight": 1,
+          "key": [
+            0,
+            1
+          ],
+          "witness": [
+            0,
+            45
+          ],
+          "count_span": [
+            18,
+            19
+          ]
+        },
+        "noop": false
+      },
+      "active_documents": [
+        {
+          "id": "d00",
+          "revision": "r2",
+          "path": "docs/d00-r2.txt",
+          "sha256": "29948f2842a41afbd3e456621210ef6961c3c494ae4cbf6623e6f1dcf4fbf9f1",
+          "text": "Group 00 contains 3 records with A=0 and B=0.\n",
+          "weight": 3,
+          "key": [
+            0,
+            0
+          ],
+          "witness": [
+            0,
+            45
+          ],
+          "count_span": [
+            18,
+            19
+          ]
+        },
+        {
+          "id": "d01",
+          "revision": "r1",
+          "path": "docs/d01-r1.txt",
+          "sha256": "3e4eb18af330445b0f82068a602fd9c9578866c2f15bd76d1541918d600aa999",
+          "text": "Group 01 contains 1 records with A=0 and B=1.\n",
+          "weight": 1,
+          "key": [
+            0,
+            1
+          ],
+          "witness": [
+            0,
+            45
+          ],
+          "count_span": [
+            18,
+            19
+          ]
+        },
+        {
+          "id": "d02",
+          "revision": "r1",
+          "path": "docs/d02-r1.txt",
+          "sha256": "803cf93ca3e1124b27d06cbc03b84c619248e1cba454519f377ed0cd3a532420",
+          "text": "Group 02 contains 1 records with A=0 and B=1.\n",
+          "weight": 1,
+          "key": [
+            0,
+            1
+          ],
+          "witness": [
+            0,
+            45
+          ],
+          "count_span": [
+            18,
+            19
+          ]
+        },
+        {
+          "id": "d10",
+          "revision": "r1",
+          "path": "docs/d10-r1.txt",
+          "sha256": "6a930cbadb5788b2cba6bee921372f593a84a2c3582a3d34a3f4df1d76517058",
+          "text": "Group 10 contains 1 records with A=1 and B=0.\n",
+          "weight": 1,
+          "key": [
+            1,
+            0
+          ],
+          "witness": [
+            0,
+            45
+          ],
+          "count_span": [
+            18,
+            19
+          ]
+        },
+        {
+          "id": "d11",
+          "revision": "r1",
+          "path": "docs/d11-r1.txt",
+          "sha256": "96bcadcf4cbf07212ba4663f56c6ae2f0ff7a2c360ef5f4ffcda5639af04a3e5",
+          "text": "Group 11 contains 4 records with A=1 and B=1.\n",
+          "weight": 4,
+          "key": [
+            1,
+            1
+          ],
+          "witness": [
+            0,
+            45
+          ],
+          "count_span": [
+            18,
+            19
+          ]
+        }
+      ],
+      "algorithm_work": {
+        "input_bytes_read": 46,
+        "source_documents_read": 1,
+        "source_documents_parsed": 1,
+        "input_read_hash_parse_ns": 53470,
+        "facts_added": 1,
+        "incidence_edges_added": 1,
+        "tuple_entries_touched": 1,
+        "query_messages_invalidated": 24,
+        "prefixes_touched": 3,
+        "child_pointer_slots_copied": 4,
+        "hashcons_probes": 3,
+        "canonical_states_reused": 1,
+        "active_refcount_updates": 6,
+        "raw_nodes_path_copied": 3,
+        "transition_slots_examined": 4,
+        "canonical_states_created": 2,
+        "algorithm_update_ns": 167309,
+        "active_continuations_before": 2,
+        "active_continuations_after": 2
+      },
+      "oracle_and_query_validation_ns": 3197622,
+      "checks": {
+        "query_results": [
+          {
+            "id": "A-any__B-any",
+            "count": 10,
+            "probability": "1"
+          },
+          {
+            "id": "A-any__B-zero",
+            "count": 4,
+            "probability": "2/5"
+          },
+          {
+            "id": "A-any__B-one",
+            "count": 6,
+            "probability": "3/5"
+          },
+          {
+            "id": "A-any__B-empty",
+            "count": 0,
+            "probability": "0"
+          },
+          {
+            "id": "A-zero__B-any",
+            "count": 5,
+            "probability": "1/2"
+          },
+          {
+            "id": "A-zero__B-zero",
+            "count": 3,
+            "probability": "3/10"
+          },
+          {
+            "id": "A-zero__B-one",
+            "count": 2,
+            "probability": "1/5"
+          },
+          {
+            "id": "A-zero__B-empty",
+            "count": 0,
+            "probability": "0"
+          },
+          {
+            "id": "A-one__B-any",
+            "count": 5,
+            "probability": "1/2"
+          },
+          {
+            "id": "A-one__B-zero",
+            "count": 1,
+            "probability": "1/10"
+          },
+          {
+            "id": "A-one__B-one",
+            "count": 4,
+            "probability": "2/5"
+          },
+          {
+            "id": "A-one__B-empty",
+            "count": 0,
+            "probability": "0"
+          },
+          {
+            "id": "A-empty__B-any",
+            "count": 0,
+            "probability": "0"
+          },
+          {
+            "id": "A-empty__B-zero",
+            "count": 0,
+            "probability": "0"
+          },
+          {
+            "id": "A-empty__B-one",
+            "count": 0,
+            "probability": "0"
+          },
+          {
+            "id": "A-empty__B-empty",
+            "count": 0,
+            "probability": "0"
+          }
+        ],
+        "conditional": {
+          "query": "P(B=0 | A=0)",
+          "numerator": 3,
+          "denominator": 5,
+          "value": "3/5"
+        },
+        "source_witnesses": [
+          [
+            "d00",
+            "r2",
+            "29948f2842a41afbd3e456621210ef6961c3c494ae4cbf6623e6f1dcf4fbf9f1",
+            0,
+            45,
+            [
+              0,
+              0
+            ],
+            3
+          ],
+          [
+            "d01",
+            "r1",
+            "3e4eb18af330445b0f82068a602fd9c9578866c2f15bd76d1541918d600aa999",
+            0,
+            45,
+            [
+              0,
+              1
+            ],
+            1
+          ],
+          [
+            "d02",
+            "r1",
+            "803cf93ca3e1124b27d06cbc03b84c619248e1cba454519f377ed0cd3a532420",
+            0,
+            45,
+            [
+              0,
+              1
+            ],
+            1
+          ],
+          [
+            "d10",
+            "r1",
+            "6a930cbadb5788b2cba6bee921372f593a84a2c3582a3d34a3f4df1d76517058",
+            0,
+            45,
+            [
+              1,
+              0
+            ],
+            1
+          ],
+          [
+            "d11",
+            "r1",
+            "96bcadcf4cbf07212ba4663f56c6ae2f0ff7a2c360ef5f4ffcda5639af04a3e5",
+            0,
+            45,
+            [
+              1,
+              1
+            ],
+            4
+          ]
+        ],
+        "tuple_counts": [
+          {
+            "A": 0,
+            "B": 0,
+            "count": 3
+          },
+          {
+            "A": 0,
+            "B": 1,
+            "count": 2
+          },
+          {
+            "A": 1,
+            "B": 0,
+            "count": 1
+          },
+          {
+            "A": 1,
+            "B": 1,
+            "count": 4
+          }
+        ],
+        "prefix_laws_verified": 7,
+        "shared_continuations": [
+          {
+            "cut": 2,
+            "prefixes": [
+              [
+                0,
+                0
+              ],
+              [
+                0,
+                1
+              ],
+              [
+                1,
+                0
+              ],
+              [
+                1,
+                1
+              ]
+            ],
+            "law": [
+              [
+                [],
+                "1"
+              ]
+            ]
+          }
+        ],
+        "query_work": {
+          "ones_suffix_shortcuts": 2,
+          "query_messages_recomputed": 10,
+          "query_dependency_edges_visited": 20,
+          "active_message_hits": 8,
+          "zero_factor_shortcuts": 7,
+          "canonical_message_hits": 5,
+          "query_validation_ns": 2566580
+        },
+        "oracle_full_documents_parsed": 5,
+        "oracle_full_prefix_nodes": 7,
+        "oracle_assertions": "exact full rebuild == direct integer/Fraction rows == incremental adjoint == forward channel"
+      },
+      "algorithm_retained_bytes": 45557,
+      "tracemalloc_current_bytes": 240067,
+      "tracemalloc_peak_bytes": 242483,
+      "active_quotient_state_counts": [
+        1,
+        2,
+        1
+      ],
+      "archived_canonical_states": 12,
+      "snapshot_materialisation_ns": 31029
+    },
+    {
+      "step": 3,
+      "label": "remove",
+      "delta": {
+        "old": {
+          "id": "d01",
+          "revision": "r1",
+          "path": "docs/d01-r1.txt",
+          "sha256": "3e4eb18af330445b0f82068a602fd9c9578866c2f15bd76d1541918d600aa999",
+          "text": "Group 01 contains 1 records with A=0 and B=1.\n",
+          "weight": 1,
+          "key": [
+            0,
+            1
+          ],
+          "witness": [
+            0,
+            45
+          ],
+          "count_span": [
+            18,
+            19
+          ]
+        },
+        "new": null,
+        "noop": false
+      },
+      "active_documents": [
+        {
+          "id": "d00",
+          "revision": "r2",
+          "path": "docs/d00-r2.txt",
+          "sha256": "29948f2842a41afbd3e456621210ef6961c3c494ae4cbf6623e6f1dcf4fbf9f1",
+          "text": "Group 00 contains 3 records with A=0 and B=0.\n",
+          "weight": 3,
+          "key": [
+            0,
+            0
+          ],
+          "witness": [
+            0,
+            45
+          ],
+          "count_span": [
+            18,
+            19
+          ]
+        },
+        {
+          "id": "d02",
+          "revision": "r1",
+          "path": "docs/d02-r1.txt",
+          "sha256": "803cf93ca3e1124b27d06cbc03b84c619248e1cba454519f377ed0cd3a532420",
+          "text": "Group 02 contains 1 records with A=0 and B=1.\n",
+          "weight": 1,
+          "key": [
+            0,
+            1
+          ],
+          "witness": [
+            0,
+            45
+          ],
+          "count_span": [
+            18,
+            19
+          ]
+        },
+        {
+          "id": "d10",
+          "revision": "r1",
+          "path": "docs/d10-r1.txt",
+          "sha256": "6a930cbadb5788b2cba6bee921372f593a84a2c3582a3d34a3f4df1d76517058",
+          "text": "Group 10 contains 1 records with A=1 and B=0.\n",
+          "weight": 1,
+          "key": [
+            1,
+            0
+          ],
+          "witness": [
+            0,
+            45
+          ],
+          "count_span": [
+            18,
+            19
+          ]
+        },
+        {
+          "id": "d11",
+          "revision": "r1",
+          "path": "docs/d11-r1.txt",
+          "sha256": "96bcadcf4cbf07212ba4663f56c6ae2f0ff7a2c360ef5f4ffcda5639af04a3e5",
+          "text": "Group 11 contains 4 records with A=1 and B=1.\n",
+          "weight": 4,
+          "key": [
+            1,
+            1
+          ],
+          "witness": [
+            0,
+            45
+          ],
+          "count_span": [
+            18,
+            19
+          ]
+        }
+      ],
+      "algorithm_work": {
+        "facts_retracted": 1,
+        "incidence_edges_retracted": 1,
+        "tuple_entries_touched": 1,
+        "query_messages_invalidated": 24,
+        "prefixes_touched": 3,
+        "child_pointer_slots_copied": 4,
+        "hashcons_probes": 3,
+        "canonical_states_reused": 3,
+        "active_refcount_updates": 6,
+        "raw_nodes_path_copied": 3,
+        "transition_slots_examined": 4,
+        "algorithm_update_ns": 99277,
+        "active_continuations_before": 2,
+        "active_continuations_after": 2
+      },
+      "oracle_and_query_validation_ns": 2845187,
+      "checks": {
+        "query_results": [
+          {
+            "id": "A-any__B-any",
+            "count": 9,
+            "probability": "1"
+          },
+          {
+            "id": "A-any__B-zero",
+            "count": 4,
+            "probability": "4/9"
+          },
+          {
+            "id": "A-any__B-one",
+            "count": 5,
+            "probability": "5/9"
+          },
+          {
+            "id": "A-any__B-empty",
+            "count": 0,
+            "probability": "0"
+          },
+          {
+            "id": "A-zero__B-any",
+            "count": 4,
+            "probability": "4/9"
+          },
+          {
+            "id": "A-zero__B-zero",
+            "count": 3,
+            "probability": "1/3"
+          },
+          {
+            "id": "A-zero__B-one",
+            "count": 1,
+            "probability": "1/9"
+          },
+          {
+            "id": "A-zero__B-empty",
+            "count": 0,
+            "probability": "0"
+          },
+          {
+            "id": "A-one__B-any",
+            "count": 5,
+            "probability": "5/9"
+          },
+          {
+            "id": "A-one__B-zero",
+            "count": 1,
+            "probability": "1/9"
+          },
+          {
+            "id": "A-one__B-one",
+            "count": 4,
+            "probability": "4/9"
+          },
+          {
+            "id": "A-one__B-empty",
+            "count": 0,
+            "probability": "0"
+          },
+          {
+            "id": "A-empty__B-any",
+            "count": 0,
+            "probability": "0"
+          },
+          {
+            "id": "A-empty__B-zero",
+            "count": 0,
+            "probability": "0"
+          },
+          {
+            "id": "A-empty__B-one",
+            "count": 0,
+            "probability": "0"
+          },
+          {
+            "id": "A-empty__B-empty",
+            "count": 0,
+            "probability": "0"
+          }
+        ],
+        "conditional": {
+          "query": "P(B=0 | A=0)",
+          "numerator": 3,
+          "denominator": 4,
+          "value": "3/4"
+        },
+        "source_witnesses": [
+          [
+            "d00",
+            "r2",
+            "29948f2842a41afbd3e456621210ef6961c3c494ae4cbf6623e6f1dcf4fbf9f1",
+            0,
+            45,
+            [
+              0,
+              0
+            ],
+            3
+          ],
+          [
+            "d02",
+            "r1",
+            "803cf93ca3e1124b27d06cbc03b84c619248e1cba454519f377ed0cd3a532420",
+            0,
+            45,
+            [
+              0,
+              1
+            ],
+            1
+          ],
+          [
+            "d10",
+            "r1",
+            "6a930cbadb5788b2cba6bee921372f593a84a2c3582a3d34a3f4df1d76517058",
+            0,
+            45,
+            [
+              1,
+              0
+            ],
+            1
+          ],
+          [
+            "d11",
+            "r1",
+            "96bcadcf4cbf07212ba4663f56c6ae2f0ff7a2c360ef5f4ffcda5639af04a3e5",
+            0,
+            45,
+            [
+              1,
+              1
+            ],
+            4
+          ]
+        ],
+        "tuple_counts": [
+          {
+            "A": 0,
+            "B": 0,
+            "count": 3
+          },
+          {
+            "A": 0,
+            "B": 1,
+            "count": 1
+          },
+          {
+            "A": 1,
+            "B": 0,
+            "count": 1
+          },
+          {
+            "A": 1,
+            "B": 1,
+            "count": 4
+          }
+        ],
+        "prefix_laws_verified": 7,
+        "shared_continuations": [
+          {
+            "cut": 2,
+            "prefixes": [
+              [
+                0,
+                0
+              ],
+              [
+                0,
+                1
+              ],
+              [
+                1,
+                0
+              ],
+              [
+                1,
+                1
+              ]
+            ],
+            "law": [
+              [
+                [],
+                "1"
+              ]
+            ]
+          }
+        ],
+        "query_work": {
+          "canonical_message_hits": 16,
+          "query_validation_ns": 2236140
+        },
+        "oracle_full_documents_parsed": 4,
+        "oracle_full_prefix_nodes": 7,
+        "oracle_assertions": "exact full rebuild == direct integer/Fraction rows == incremental adjoint == forward channel"
+      },
+      "algorithm_retained_bytes": 43846,
+      "tracemalloc_current_bytes": 303669,
+      "tracemalloc_peak_bytes": 306085,
+      "active_quotient_state_counts": [
+        1,
+        2,
+        1
+      ],
+      "archived_canonical_states": 12,
+      "snapshot_materialisation_ns": 29075
+    },
+    {
+      "step": 4,
+      "label": "idempotent-replay",
+      "delta": {
+        "old": {
+          "id": "d00",
+          "revision": "r2",
+          "path": "docs/d00-r2.txt",
+          "sha256": "29948f2842a41afbd3e456621210ef6961c3c494ae4cbf6623e6f1dcf4fbf9f1",
+          "text": "Group 00 contains 3 records with A=0 and B=0.\n",
+          "weight": 3,
+          "key": [
+            0,
+            0
+          ],
+          "witness": [
+            0,
+            45
+          ],
+          "count_span": [
+            18,
+            19
+          ]
+        },
+        "new": {
+          "id": "d00",
+          "revision": "r2",
+          "path": "docs/d00-r2.txt",
+          "sha256": "29948f2842a41afbd3e456621210ef6961c3c494ae4cbf6623e6f1dcf4fbf9f1",
+          "text": "Group 00 contains 3 records with A=0 and B=0.\n",
+          "weight": 3,
+          "key": [
+            0,
+            0
+          ],
+          "witness": [
+            0,
+            45
+          ],
+          "count_span": [
+            18,
+            19
+          ]
+        },
+        "noop": true
+      },
+      "active_documents": [
+        {
+          "id": "d00",
+          "revision": "r2",
+          "path": "docs/d00-r2.txt",
+          "sha256": "29948f2842a41afbd3e456621210ef6961c3c494ae4cbf6623e6f1dcf4fbf9f1",
+          "text": "Group 00 contains 3 records with A=0 and B=0.\n",
+          "weight": 3,
+          "key": [
+            0,
+            0
+          ],
+          "witness": [
+            0,
+            45
+          ],
+          "count_span": [
+            18,
+            19
+          ]
+        },
+        {
+          "id": "d02",
+          "revision": "r1",
+          "path": "docs/d02-r1.txt",
+          "sha256": "803cf93ca3e1124b27d06cbc03b84c619248e1cba454519f377ed0cd3a532420",
+          "text": "Group 02 contains 1 records with A=0 and B=1.\n",
+          "weight": 1,
+          "key": [
+            0,
+            1
+          ],
+          "witness": [
+            0,
+            45
+          ],
+          "count_span": [
+            18,
+            19
+          ]
+        },
+        {
+          "id": "d10",
+          "revision": "r1",
+          "path": "docs/d10-r1.txt",
+          "sha256": "6a930cbadb5788b2cba6bee921372f593a84a2c3582a3d34a3f4df1d76517058",
+          "text": "Group 10 contains 1 records with A=1 and B=0.\n",
+          "weight": 1,
+          "key": [
+            1,
+            0
+          ],
+          "witness": [
+            0,
+            45
+          ],
+          "count_span": [
+            18,
+            19
+          ]
+        },
+        {
+          "id": "d11",
+          "revision": "r1",
+          "path": "docs/d11-r1.txt",
+          "sha256": "96bcadcf4cbf07212ba4663f56c6ae2f0ff7a2c360ef5f4ffcda5639af04a3e5",
+          "text": "Group 11 contains 4 records with A=1 and B=1.\n",
+          "weight": 4,
+          "key": [
+            1,
+            1
+          ],
+          "witness": [
+            0,
+            45
+          ],
+          "count_span": [
+            18,
+            19
+          ]
+        }
+      ],
+      "algorithm_work": {
+        "source_documents_read": 1,
+        "input_bytes_read": 46,
+        "idempotent_replay": 1,
+        "algorithm_update_ns": 56520,
+        "active_continuations_before": 2,
+        "active_continuations_after": 2
+      },
+      "oracle_and_query_validation_ns": 2807019,
+      "checks": {
+        "query_results": [
+          {
+            "id": "A-any__B-any",
+            "count": 9,
+            "probability": "1"
+          },
+          {
+            "id": "A-any__B-zero",
+            "count": 4,
+            "probability": "4/9"
+          },
+          {
+            "id": "A-any__B-one",
+            "count": 5,
+            "probability": "5/9"
+          },
+          {
+            "id": "A-any__B-empty",
+            "count": 0,
+            "probability": "0"
+          },
+          {
+            "id": "A-zero__B-any",
+            "count": 4,
+            "probability": "4/9"
+          },
+          {
+            "id": "A-zero__B-zero",
+            "count": 3,
+            "probability": "1/3"
+          },
+          {
+            "id": "A-zero__B-one",
+            "count": 1,
+            "probability": "1/9"
+          },
+          {
+            "id": "A-zero__B-empty",
+            "count": 0,
+            "probability": "0"
+          },
+          {
+            "id": "A-one__B-any",
+            "count": 5,
+            "probability": "5/9"
+          },
+          {
+            "id": "A-one__B-zero",
+            "count": 1,
+            "probability": "1/9"
+          },
+          {
+            "id": "A-one__B-one",
+            "count": 4,
+            "probability": "4/9"
+          },
+          {
+            "id": "A-one__B-empty",
+            "count": 0,
+            "probability": "0"
+          },
+          {
+            "id": "A-empty__B-any",
+            "count": 0,
+            "probability": "0"
+          },
+          {
+            "id": "A-empty__B-zero",
+            "count": 0,
+            "probability": "0"
+          },
+          {
+            "id": "A-empty__B-one",
+            "count": 0,
+            "probability": "0"
+          },
+          {
+            "id": "A-empty__B-empty",
+            "count": 0,
+            "probability": "0"
+          }
+        ],
+        "conditional": {
+          "query": "P(B=0 | A=0)",
+          "numerator": 3,
+          "denominator": 4,
+          "value": "3/4"
+        },
+        "source_witnesses": [
+          [
+            "d00",
+            "r2",
+            "29948f2842a41afbd3e456621210ef6961c3c494ae4cbf6623e6f1dcf4fbf9f1",
+            0,
+            45,
+            [
+              0,
+              0
+            ],
+            3
+          ],
+          [
+            "d02",
+            "r1",
+            "803cf93ca3e1124b27d06cbc03b84c619248e1cba454519f377ed0cd3a532420",
+            0,
+            45,
+            [
+              0,
+              1
+            ],
+            1
+          ],
+          [
+            "d10",
+            "r1",
+            "6a930cbadb5788b2cba6bee921372f593a84a2c3582a3d34a3f4df1d76517058",
+            0,
+            45,
+            [
+              1,
+              0
+            ],
+            1
+          ],
+          [
+            "d11",
+            "r1",
+            "96bcadcf4cbf07212ba4663f56c6ae2f0ff7a2c360ef5f4ffcda5639af04a3e5",
+            0,
+            45,
+            [
+              1,
+              1
+            ],
+            4
+          ]
+        ],
+        "tuple_counts": [
+          {
+            "A": 0,
+            "B": 0,
+            "count": 3
+          },
+          {
+            "A": 0,
+            "B": 1,
+            "count": 1
+          },
+          {
+            "A": 1,
+            "B": 0,
+            "count": 1
+          },
+          {
+            "A": 1,
+            "B": 1,
+            "count": 4
+          }
+        ],
+        "prefix_laws_verified": 7,
+        "shared_continuations": [
+          {
+            "cut": 2,
+            "prefixes": [
+              [
+                0,
+                0
+              ],
+              [
+                0,
+                1
+              ],
+              [
+                1,
+                0
+              ],
+              [
+                1,
+                1
+              ]
+            ],
+            "law": [
+              [
+                [],
+                "1"
+              ]
+            ]
+          }
+        ],
+        "query_work": {
+          "active_message_hits": 16,
+          "query_validation_ns": 2152719
+        },
+        "oracle_full_documents_parsed": 4,
+        "oracle_full_prefix_nodes": 7,
+        "oracle_assertions": "exact full rebuild == direct integer/Fraction rows == incremental adjoint == forward channel"
+      },
+      "algorithm_retained_bytes": 43846,
+      "tracemalloc_current_bytes": 367215,
+      "tracemalloc_peak_bytes": 369631,
+      "active_quotient_state_counts": [
+        1,
+        2,
+        1
+      ],
+      "archived_canonical_states": 12,
+      "snapshot_materialisation_ns": 30040
+    },
+    {
+      "step": 5,
+      "label": "merge-continuations",
+      "delta": {
+        "old": {
+          "id": "d10",
+          "revision": "r1",
+          "path": "docs/d10-r1.txt",
+          "sha256": "6a930cbadb5788b2cba6bee921372f593a84a2c3582a3d34a3f4df1d76517058",
+          "text": "Group 10 contains 1 records with A=1 and B=0.\n",
+          "weight": 1,
+          "key": [
+            1,
+            0
+          ],
+          "witness": [
+            0,
+            45
+          ],
+          "count_span": [
+            18,
+            19
+          ]
+        },
+        "new": {
+          "id": "d10",
+          "revision": "r2",
+          "path": "docs/d10-r2.txt",
+          "sha256": "3c24c5ed464ef40d5219d43b04668e05d39c8bd5ad33bb4fb3011c9008b7b805",
+          "text": "Group 10 contains 12 records with A=1 and B=0.\n",
+          "weight": 12,
+          "key": [
+            1,
+            0
+          ],
+          "witness": [
+            0,
+            46
+          ],
+          "count_span": [
+            18,
+            20
+          ]
+        },
+        "noop": false
+      },
+      "active_documents": [
+        {
+          "id": "d00",
+          "revision": "r2",
+          "path": "docs/d00-r2.txt",
+          "sha256": "29948f2842a41afbd3e456621210ef6961c3c494ae4cbf6623e6f1dcf4fbf9f1",
+          "text": "Group 00 contains 3 records with A=0 and B=0.\n",
+          "weight": 3,
+          "key": [
+            0,
+            0
+          ],
+          "witness": [
+            0,
+            45
+          ],
+          "count_span": [
+            18,
+            19
+          ]
+        },
+        {
+          "id": "d02",
+          "revision": "r1",
+          "path": "docs/d02-r1.txt",
+          "sha256": "803cf93ca3e1124b27d06cbc03b84c619248e1cba454519f377ed0cd3a532420",
+          "text": "Group 02 contains 1 records with A=0 and B=1.\n",
+          "weight": 1,
+          "key": [
+            0,
+            1
+          ],
+          "witness": [
+            0,
+            45
+          ],
+          "count_span": [
+            18,
+            19
+          ]
+        },
+        {
+          "id": "d10",
+          "revision": "r2",
+          "path": "docs/d10-r2.txt",
+          "sha256": "3c24c5ed464ef40d5219d43b04668e05d39c8bd5ad33bb4fb3011c9008b7b805",
+          "text": "Group 10 contains 12 records with A=1 and B=0.\n",
+          "weight": 12,
+          "key": [
+            1,
+            0
+          ],
+          "witness": [
+            0,
+            46
+          ],
+          "count_span": [
+            18,
+            20
+          ]
+        },
+        {
+          "id": "d11",
+          "revision": "r1",
+          "path": "docs/d11-r1.txt",
+          "sha256": "96bcadcf4cbf07212ba4663f56c6ae2f0ff7a2c360ef5f4ffcda5639af04a3e5",
+          "text": "Group 11 contains 4 records with A=1 and B=1.\n",
+          "weight": 4,
+          "key": [
+            1,
+            1
+          ],
+          "witness": [
+            0,
+            45
+          ],
+          "count_span": [
+            18,
+            19
+          ]
+        }
+      ],
+      "algorithm_work": {
+        "input_bytes_read": 47,
+        "source_documents_read": 1,
+        "source_documents_parsed": 1,
+        "input_read_hash_parse_ns": 56338,
+        "facts_retracted": 1,
+        "incidence_edges_retracted": 1,
+        "facts_added": 1,
+        "incidence_edges_added": 1,
+        "tuple_entries_touched": 1,
+        "query_messages_invalidated": 24,
+        "prefixes_touched": 3,
+        "child_pointer_slots_copied": 4,
+        "hashcons_probes": 3,
+        "canonical_states_reused": 2,
+        "active_refcount_updates": 6,
+        "raw_nodes_path_copied": 3,
+        "transition_slots_examined": 4,
+        "canonical_states_created": 1,
+        "algorithm_update_ns": 190584,
+        "active_continuations_before": 2,
+        "active_continuations_after": 1
+      },
+      "oracle_and_query_validation_ns": 2836830,
+      "checks": {
+        "query_results": [
+          {
+            "id": "A-any__B-any",
+            "count": 20,
+            "probability": "1"
+          },
+          {
+            "id": "A-any__B-zero",
+            "count": 15,
+            "probability": "3/4"
+          },
+          {
+            "id": "A-any__B-one",
+            "count": 5,
+            "probability": "1/4"
+          },
+          {
+            "id": "A-any__B-empty",
+            "count": 0,
+            "probability": "0"
+          },
+          {
+            "id": "A-zero__B-any",
+            "count": 4,
+            "probability": "1/5"
+          },
+          {
+            "id": "A-zero__B-zero",
+            "count": 3,
+            "probability": "3/20"
+          },
+          {
+            "id": "A-zero__B-one",
+            "count": 1,
+            "probability": "1/20"
+          },
+          {
+            "id": "A-zero__B-empty",
+            "count": 0,
+            "probability": "0"
+          },
+          {
+            "id": "A-one__B-any",
+            "count": 16,
+            "probability": "4/5"
+          },
+          {
+            "id": "A-one__B-zero",
+            "count": 12,
+            "probability": "3/5"
+          },
+          {
+            "id": "A-one__B-one",
+            "count": 4,
+            "probability": "1/5"
+          },
+          {
+            "id": "A-one__B-empty",
+            "count": 0,
+            "probability": "0"
+          },
+          {
+            "id": "A-empty__B-any",
+            "count": 0,
+            "probability": "0"
+          },
+          {
+            "id": "A-empty__B-zero",
+            "count": 0,
+            "probability": "0"
+          },
+          {
+            "id": "A-empty__B-one",
+            "count": 0,
+            "probability": "0"
+          },
+          {
+            "id": "A-empty__B-empty",
+            "count": 0,
+            "probability": "0"
+          }
+        ],
+        "conditional": {
+          "query": "P(B=0 | A=0)",
+          "numerator": 3,
+          "denominator": 4,
+          "value": "3/4"
+        },
+        "source_witnesses": [
+          [
+            "d00",
+            "r2",
+            "29948f2842a41afbd3e456621210ef6961c3c494ae4cbf6623e6f1dcf4fbf9f1",
+            0,
+            45,
+            [
+              0,
+              0
+            ],
+            3
+          ],
+          [
+            "d02",
+            "r1",
+            "803cf93ca3e1124b27d06cbc03b84c619248e1cba454519f377ed0cd3a532420",
+            0,
+            45,
+            [
+              0,
+              1
+            ],
+            1
+          ],
+          [
+            "d10",
+            "r2",
+            "3c24c5ed464ef40d5219d43b04668e05d39c8bd5ad33bb4fb3011c9008b7b805",
+            0,
+            46,
+            [
+              1,
+              0
+            ],
+            12
+          ],
+          [
+            "d11",
+            "r1",
+            "96bcadcf4cbf07212ba4663f56c6ae2f0ff7a2c360ef5f4ffcda5639af04a3e5",
+            0,
+            45,
+            [
+              1,
+              1
+            ],
+            4
+          ]
+        ],
+        "tuple_counts": [
+          {
+            "A": 0,
+            "B": 0,
+            "count": 3
+          },
+          {
+            "A": 0,
+            "B": 1,
+            "count": 1
+          },
+          {
+            "A": 1,
+            "B": 0,
+            "count": 12
+          },
+          {
+            "A": 1,
+            "B": 1,
+            "count": 4
+          }
+        ],
+        "prefix_laws_verified": 7,
+        "shared_continuations": [
+          {
+            "cut": 1,
+            "prefixes": [
+              [
+                0
+              ],
+              [
+                1
+              ]
+            ],
+            "law": [
+              [
+                [
+                  0
+                ],
+                "3/4"
+              ],
+              [
+                [
+                  1
+                ],
+                "1/4"
+              ]
+            ]
+          },
+          {
+            "cut": 2,
+            "prefixes": [
+              [
+                0,
+                0
+              ],
+              [
+                0,
+                1
+              ],
+              [
+                1,
+                0
+              ],
+              [
+                1,
+                1
+              ]
+            ],
+            "law": [
+              [
+                [],
+                "1"
+              ]
+            ]
+          }
+        ],
+        "query_work": {
+          "ones_suffix_shortcuts": 1,
+          "query_messages_recomputed": 8,
+          "query_dependency_edges_visited": 16,
+          "canonical_message_hits": 16,
+          "zero_factor_shortcuts": 7,
+          "query_validation_ns": 2221741
+        },
+        "oracle_full_documents_parsed": 4,
+        "oracle_full_prefix_nodes": 7,
+        "oracle_assertions": "exact full rebuild == direct integer/Fraction rows == incremental adjoint == forward channel"
+      },
+      "algorithm_retained_bytes": 50187,
+      "tracemalloc_current_bytes": 442947,
+      "tracemalloc_peak_bytes": 445363,
+      "active_quotient_state_counts": [
+        1,
+        1,
+        1
+      ],
+      "archived_canonical_states": 13,
+      "snapshot_materialisation_ns": 30020
+    },
+    {
+      "step": 6,
+      "label": "split-continuations",
+      "delta": {
+        "old": {
+          "id": "d10",
+          "revision": "r2",
+          "path": "docs/d10-r2.txt",
+          "sha256": "3c24c5ed464ef40d5219d43b04668e05d39c8bd5ad33bb4fb3011c9008b7b805",
+          "text": "Group 10 contains 12 records with A=1 and B=0.\n",
+          "weight": 12,
+          "key": [
+            1,
+            0
+          ],
+          "witness": [
+            0,
+            46
+          ],
+          "count_span": [
+            18,
+            20
+          ]
+        },
+        "new": {
+          "id": "d10",
+          "revision": "r3",
+          "path": "docs/d10-r3.txt",
+          "sha256": "03d0c032fac627d2bbfd01def65789aa63dc52685ba547575d30fcc65e91e487",
+          "text": "Group 10 contains 8 records with A=1 and B=0.\n",
+          "weight": 8,
+          "key": [
+            1,
+            0
+          ],
+          "witness": [
+            0,
+            45
+          ],
+          "count_span": [
+            18,
+            19
+          ]
+        },
+        "noop": false
+      },
+      "active_documents": [
+        {
+          "id": "d00",
+          "revision": "r2",
+          "path": "docs/d00-r2.txt",
+          "sha256": "29948f2842a41afbd3e456621210ef6961c3c494ae4cbf6623e6f1dcf4fbf9f1",
+          "text": "Group 00 contains 3 records with A=0 and B=0.\n",
+          "weight": 3,
+          "key": [
+            0,
+            0
+          ],
+          "witness": [
+            0,
+            45
+          ],
+          "count_span": [
+            18,
+            19
+          ]
+        },
+        {
+          "id": "d02",
+          "revision": "r1",
+          "path": "docs/d02-r1.txt",
+          "sha256": "803cf93ca3e1124b27d06cbc03b84c619248e1cba454519f377ed0cd3a532420",
+          "text": "Group 02 contains 1 records with A=0 and B=1.\n",
+          "weight": 1,
+          "key": [
+            0,
+            1
+          ],
+          "witness": [
+            0,
+            45
+          ],
+          "count_span": [
+            18,
+            19
+          ]
+        },
+        {
+          "id": "d10",
+          "revision": "r3",
+          "path": "docs/d10-r3.txt",
+          "sha256": "03d0c032fac627d2bbfd01def65789aa63dc52685ba547575d30fcc65e91e487",
+          "text": "Group 10 contains 8 records with A=1 and B=0.\n",
+          "weight": 8,
+          "key": [
+            1,
+            0
+          ],
+          "witness": [
+            0,
+            45
+          ],
+          "count_span": [
+            18,
+            19
+          ]
+        },
+        {
+          "id": "d11",
+          "revision": "r1",
+          "path": "docs/d11-r1.txt",
+          "sha256": "96bcadcf4cbf07212ba4663f56c6ae2f0ff7a2c360ef5f4ffcda5639af04a3e5",
+          "text": "Group 11 contains 4 records with A=1 and B=1.\n",
+          "weight": 4,
+          "key": [
+            1,
+            1
+          ],
+          "witness": [
+            0,
+            45
+          ],
+          "count_span": [
+            18,
+            19
+          ]
+        }
+      ],
+      "algorithm_work": {
+        "input_bytes_read": 46,
+        "source_documents_read": 1,
+        "source_documents_parsed": 1,
+        "input_read_hash_parse_ns": 64847,
+        "facts_retracted": 1,
+        "incidence_edges_retracted": 1,
+        "facts_added": 1,
+        "incidence_edges_added": 1,
+        "tuple_entries_touched": 1,
+        "query_messages_invalidated": 24,
+        "prefixes_touched": 3,
+        "child_pointer_slots_copied": 4,
+        "hashcons_probes": 3,
+        "canonical_states_reused": 1,
+        "active_refcount_updates": 6,
+        "raw_nodes_path_copied": 3,
+        "transition_slots_examined": 4,
+        "canonical_states_created": 2,
+        "algorithm_update_ns": 190784,
+        "active_continuations_before": 1,
+        "active_continuations_after": 2
+      },
+      "oracle_and_query_validation_ns": 3263916,
+      "checks": {
+        "query_results": [
+          {
+            "id": "A-any__B-any",
+            "count": 16,
+            "probability": "1"
+          },
+          {
+            "id": "A-any__B-zero",
+            "count": 11,
+            "probability": "11/16"
+          },
+          {
+            "id": "A-any__B-one",
+            "count": 5,
+            "probability": "5/16"
+          },
+          {
+            "id": "A-any__B-empty",
+            "count": 0,
+            "probability": "0"
+          },
+          {
+            "id": "A-zero__B-any",
+            "count": 4,
+            "probability": "1/4"
+          },
+          {
+            "id": "A-zero__B-zero",
+            "count": 3,
+            "probability": "3/16"
+          },
+          {
+            "id": "A-zero__B-one",
+            "count": 1,
+            "probability": "1/16"
+          },
+          {
+            "id": "A-zero__B-empty",
+            "count": 0,
+            "probability": "0"
+          },
+          {
+            "id": "A-one__B-any",
+            "count": 12,
+            "probability": "3/4"
+          },
+          {
+            "id": "A-one__B-zero",
+            "count": 8,
+            "probability": "1/2"
+          },
+          {
+            "id": "A-one__B-one",
+            "count": 4,
+            "probability": "1/4"
+          },
+          {
+            "id": "A-one__B-empty",
+            "count": 0,
+            "probability": "0"
+          },
+          {
+            "id": "A-empty__B-any",
+            "count": 0,
+            "probability": "0"
+          },
+          {
+            "id": "A-empty__B-zero",
+            "count": 0,
+            "probability": "0"
+          },
+          {
+            "id": "A-empty__B-one",
+            "count": 0,
+            "probability": "0"
+          },
+          {
+            "id": "A-empty__B-empty",
+            "count": 0,
+            "probability": "0"
+          }
+        ],
+        "conditional": {
+          "query": "P(B=0 | A=0)",
+          "numerator": 3,
+          "denominator": 4,
+          "value": "3/4"
+        },
+        "source_witnesses": [
+          [
+            "d00",
+            "r2",
+            "29948f2842a41afbd3e456621210ef6961c3c494ae4cbf6623e6f1dcf4fbf9f1",
+            0,
+            45,
+            [
+              0,
+              0
+            ],
+            3
+          ],
+          [
+            "d02",
+            "r1",
+            "803cf93ca3e1124b27d06cbc03b84c619248e1cba454519f377ed0cd3a532420",
+            0,
+            45,
+            [
+              0,
+              1
+            ],
+            1
+          ],
+          [
+            "d10",
+            "r3",
+            "03d0c032fac627d2bbfd01def65789aa63dc52685ba547575d30fcc65e91e487",
+            0,
+            45,
+            [
+              1,
+              0
+            ],
+            8
+          ],
+          [
+            "d11",
+            "r1",
+            "96bcadcf4cbf07212ba4663f56c6ae2f0ff7a2c360ef5f4ffcda5639af04a3e5",
+            0,
+            45,
+            [
+              1,
+              1
+            ],
+            4
+          ]
+        ],
+        "tuple_counts": [
+          {
+            "A": 0,
+            "B": 0,
+            "count": 3
+          },
+          {
+            "A": 0,
+            "B": 1,
+            "count": 1
+          },
+          {
+            "A": 1,
+            "B": 0,
+            "count": 8
+          },
+          {
+            "A": 1,
+            "B": 1,
+            "count": 4
+          }
+        ],
+        "prefix_laws_verified": 7,
+        "shared_continuations": [
+          {
+            "cut": 2,
+            "prefixes": [
+              [
+                0,
+                0
+              ],
+              [
+                0,
+                1
+              ],
+              [
+                1,
+                0
+              ],
+              [
+                1,
+                1
+              ]
+            ],
+            "law": [
+              [
+                [],
+                "1"
+              ]
+            ]
+          }
+        ],
+        "query_work": {
+          "ones_suffix_shortcuts": 2,
+          "query_messages_recomputed": 10,
+          "query_dependency_edges_visited": 20,
+          "active_message_hits": 8,
+          "zero_factor_shortcuts": 7,
+          "canonical_message_hits": 5,
+          "query_validation_ns": 2639723
+        },
+        "oracle_full_documents_parsed": 4,
+        "oracle_full_prefix_nodes": 7,
+        "oracle_assertions": "exact full rebuild == direct integer/Fraction rows == incremental adjoint == forward channel"
+      },
+      "algorithm_retained_bytes": 58878,
+      "tracemalloc_current_bytes": 523745,
+      "tracemalloc_peak_bytes": 526161,
+      "active_quotient_state_counts": [
+        1,
+        2,
+        1
+      ],
+      "archived_canonical_states": 15,
+      "snapshot_materialisation_ns": 31962
+    },
+    {
+      "step": 7,
+      "label": "remove-witness-00",
+      "delta": {
+        "old": {
+          "id": "d00",
+          "revision": "r2",
+          "path": "docs/d00-r2.txt",
+          "sha256": "29948f2842a41afbd3e456621210ef6961c3c494ae4cbf6623e6f1dcf4fbf9f1",
+          "text": "Group 00 contains 3 records with A=0 and B=0.\n",
+          "weight": 3,
+          "key": [
+            0,
+            0
+          ],
+          "witness": [
+            0,
+            45
+          ],
+          "count_span": [
+            18,
+            19
+          ]
+        },
+        "new": null,
+        "noop": false
+      },
+      "active_documents": [
+        {
+          "id": "d02",
+          "revision": "r1",
+          "path": "docs/d02-r1.txt",
+          "sha256": "803cf93ca3e1124b27d06cbc03b84c619248e1cba454519f377ed0cd3a532420",
+          "text": "Group 02 contains 1 records with A=0 and B=1.\n",
+          "weight": 1,
+          "key": [
+            0,
+            1
+          ],
+          "witness": [
+            0,
+            45
+          ],
+          "count_span": [
+            18,
+            19
+          ]
+        },
+        {
+          "id": "d10",
+          "revision": "r3",
+          "path": "docs/d10-r3.txt",
+          "sha256": "03d0c032fac627d2bbfd01def65789aa63dc52685ba547575d30fcc65e91e487",
+          "text": "Group 10 contains 8 records with A=1 and B=0.\n",
+          "weight": 8,
+          "key": [
+            1,
+            0
+          ],
+          "witness": [
+            0,
+            45
+          ],
+          "count_span": [
+            18,
+            19
+          ]
+        },
+        {
+          "id": "d11",
+          "revision": "r1",
+          "path": "docs/d11-r1.txt",
+          "sha256": "96bcadcf4cbf07212ba4663f56c6ae2f0ff7a2c360ef5f4ffcda5639af04a3e5",
+          "text": "Group 11 contains 4 records with A=1 and B=1.\n",
+          "weight": 4,
+          "key": [
+            1,
+            1
+          ],
+          "witness": [
+            0,
+            45
+          ],
+          "count_span": [
+            18,
+            19
+          ]
+        }
+      ],
+      "algorithm_work": {
+        "facts_retracted": 1,
+        "incidence_edges_retracted": 1,
+        "tuple_entries_touched": 1,
+        "query_messages_invalidated": 24,
+        "prefixes_touched": 3,
+        "child_pointer_slots_copied": 4,
+        "raw_nodes_removed": 1,
+        "active_refcount_updates": 5,
+        "transition_slots_examined": 3,
+        "hashcons_probes": 2,
+        "canonical_states_created": 2,
+        "raw_nodes_path_copied": 2,
+        "algorithm_update_ns": 106397,
+        "active_continuations_before": 2,
+        "active_continuations_after": 2
+      },
+      "oracle_and_query_validation_ns": 2905702,
+      "checks": {
+        "query_results": [
+          {
+            "id": "A-any__B-any",
+            "count": 13,
+            "probability": "1"
+          },
+          {
+            "id": "A-any__B-zero",
+            "count": 8,
+            "probability": "8/13"
+          },
+          {
+            "id": "A-any__B-one",
+            "count": 5,
+            "probability": "5/13"
+          },
+          {
+            "id": "A-any__B-empty",
+            "count": 0,
+            "probability": "0"
+          },
+          {
+            "id": "A-zero__B-any",
+            "count": 1,
+            "probability": "1/13"
+          },
+          {
+            "id": "A-zero__B-zero",
+            "count": 0,
+            "probability": "0"
+          },
+          {
+            "id": "A-zero__B-one",
+            "count": 1,
+            "probability": "1/13"
+          },
+          {
+            "id": "A-zero__B-empty",
+            "count": 0,
+            "probability": "0"
+          },
+          {
+            "id": "A-one__B-any",
+            "count": 12,
+            "probability": "12/13"
+          },
+          {
+            "id": "A-one__B-zero",
+            "count": 8,
+            "probability": "8/13"
+          },
+          {
+            "id": "A-one__B-one",
+            "count": 4,
+            "probability": "4/13"
+          },
+          {
+            "id": "A-one__B-empty",
+            "count": 0,
+            "probability": "0"
+          },
+          {
+            "id": "A-empty__B-any",
+            "count": 0,
+            "probability": "0"
+          },
+          {
+            "id": "A-empty__B-zero",
+            "count": 0,
+            "probability": "0"
+          },
+          {
+            "id": "A-empty__B-one",
+            "count": 0,
+            "probability": "0"
+          },
+          {
+            "id": "A-empty__B-empty",
+            "count": 0,
+            "probability": "0"
+          }
+        ],
+        "conditional": {
+          "query": "P(B=0 | A=0)",
+          "numerator": 0,
+          "denominator": 1,
+          "value": "0"
+        },
+        "source_witnesses": [
+          [
+            "d02",
+            "r1",
+            "803cf93ca3e1124b27d06cbc03b84c619248e1cba454519f377ed0cd3a532420",
+            0,
+            45,
+            [
+              0,
+              1
+            ],
+            1
+          ],
+          [
+            "d10",
+            "r3",
+            "03d0c032fac627d2bbfd01def65789aa63dc52685ba547575d30fcc65e91e487",
+            0,
+            45,
+            [
+              1,
+              0
+            ],
+            8
+          ],
+          [
+            "d11",
+            "r1",
+            "96bcadcf4cbf07212ba4663f56c6ae2f0ff7a2c360ef5f4ffcda5639af04a3e5",
+            0,
+            45,
+            [
+              1,
+              1
+            ],
+            4
+          ]
+        ],
+        "tuple_counts": [
+          {
+            "A": 0,
+            "B": 1,
+            "count": 1
+          },
+          {
+            "A": 1,
+            "B": 0,
+            "count": 8
+          },
+          {
+            "A": 1,
+            "B": 1,
+            "count": 4
+          }
+        ],
+        "prefix_laws_verified": 6,
+        "shared_continuations": [
+          {
+            "cut": 2,
+            "prefixes": [
+              [
+                0,
+                1
+              ],
+              [
+                1,
+                0
+              ],
+              [
+                1,
+                1
+              ]
+            ],
+            "law": [
+              [
+                [],
+                "1"
+              ]
+            ]
+          }
+        ],
+        "query_work": {
+          "ones_suffix_shortcuts": 2,
+          "query_messages_recomputed": 10,
+          "query_dependency_edges_visited": 18,
+          "active_message_hits": 8,
+          "zero_factor_shortcuts": 7,
+          "canonical_message_hits": 5,
+          "query_validation_ns": 2377290
+        },
+        "oracle_full_documents_parsed": 3,
+        "oracle_full_prefix_nodes": 6,
+        "oracle_assertions": "exact full rebuild == direct integer/Fraction rows == incremental adjoint == forward channel"
+      },
+      "algorithm_retained_bytes": 64047,
+      "tracemalloc_current_bytes": 603263,
+      "tracemalloc_peak_bytes": 605679,
+      "active_quotient_state_counts": [
+        1,
+        2,
+        1
+      ],
+      "archived_canonical_states": 17,
+      "snapshot_materialisation_ns": 26203
+    },
+    {
+      "step": 8,
+      "label": "zero-conditioning-support",
+      "delta": {
+        "old": {
+          "id": "d02",
+          "revision": "r1",
+          "path": "docs/d02-r1.txt",
+          "sha256": "803cf93ca3e1124b27d06cbc03b84c619248e1cba454519f377ed0cd3a532420",
+          "text": "Group 02 contains 1 records with A=0 and B=1.\n",
+          "weight": 1,
+          "key": [
+            0,
+            1
+          ],
+          "witness": [
+            0,
+            45
+          ],
+          "count_span": [
+            18,
+            19
+          ]
+        },
+        "new": null,
+        "noop": false
+      },
+      "active_documents": [
+        {
+          "id": "d10",
+          "revision": "r3",
+          "path": "docs/d10-r3.txt",
+          "sha256": "03d0c032fac627d2bbfd01def65789aa63dc52685ba547575d30fcc65e91e487",
+          "text": "Group 10 contains 8 records with A=1 and B=0.\n",
+          "weight": 8,
+          "key": [
+            1,
+            0
+          ],
+          "witness": [
+            0,
+            45
+          ],
+          "count_span": [
+            18,
+            19
+          ]
+        },
+        {
+          "id": "d11",
+          "revision": "r1",
+          "path": "docs/d11-r1.txt",
+          "sha256": "96bcadcf4cbf07212ba4663f56c6ae2f0ff7a2c360ef5f4ffcda5639af04a3e5",
+          "text": "Group 11 contains 4 records with A=1 and B=1.\n",
+          "weight": 4,
+          "key": [
+            1,
+            1
+          ],
+          "witness": [
+            0,
+            45
+          ],
+          "count_span": [
+            18,
+            19
+          ]
+        }
+      ],
+      "algorithm_work": {
+        "facts_retracted": 1,
+        "incidence_edges_retracted": 1,
+        "tuple_entries_touched": 1,
+        "query_messages_invalidated": 24,
+        "prefixes_touched": 3,
+        "child_pointer_slots_copied": 3,
+        "raw_nodes_removed": 2,
+        "active_refcount_updates": 4,
+        "transition_slots_examined": 1,
+        "hashcons_probes": 1,
+        "canonical_states_created": 1,
+        "raw_nodes_path_copied": 1,
+        "algorithm_update_ns": 85683,
+        "active_continuations_before": 2,
+        "active_continuations_after": 1
+      },
+      "oracle_and_query_validation_ns": 1956140,
+      "checks": {
+        "query_results": [
+          {
+            "id": "A-any__B-any",
+            "count": 12,
+            "probability": "1"
+          },
+          {
+            "id": "A-any__B-zero",
+            "count": 8,
+            "probability": "2/3"
+          },
+          {
+            "id": "A-any__B-one",
+            "count": 4,
+            "probability": "1/3"
+          },
+          {
+            "id": "A-any__B-empty",
+            "count": 0,
+            "probability": "0"
+          },
+          {
+            "id": "A-zero__B-any",
+            "count": 0,
+            "probability": "0"
+          },
+          {
+            "id": "A-zero__B-zero",
+            "count": 0,
+            "probability": "0"
+          },
+          {
+            "id": "A-zero__B-one",
+            "count": 0,
+            "probability": "0"
+          },
+          {
+            "id": "A-zero__B-empty",
+            "count": 0,
+            "probability": "0"
+          },
+          {
+            "id": "A-one__B-any",
+            "count": 12,
+            "probability": "1"
+          },
+          {
+            "id": "A-one__B-zero",
+            "count": 8,
+            "probability": "2/3"
+          },
+          {
+            "id": "A-one__B-one",
+            "count": 4,
+            "probability": "1/3"
+          },
+          {
+            "id": "A-one__B-empty",
+            "count": 0,
+            "probability": "0"
+          },
+          {
+            "id": "A-empty__B-any",
+            "count": 0,
+            "probability": "0"
+          },
+          {
+            "id": "A-empty__B-zero",
+            "count": 0,
+            "probability": "0"
+          },
+          {
+            "id": "A-empty__B-one",
+            "count": 0,
+            "probability": "0"
+          },
+          {
+            "id": "A-empty__B-empty",
+            "count": 0,
+            "probability": "0"
+          }
+        ],
+        "conditional": {
+          "query": "P(B=0 | A=0)",
+          "numerator": 0,
+          "denominator": 0,
+          "value": "UNDEFINED"
+        },
+        "source_witnesses": [
+          [
+            "d10",
+            "r3",
+            "03d0c032fac627d2bbfd01def65789aa63dc52685ba547575d30fcc65e91e487",
+            0,
+            45,
+            [
+              1,
+              0
+            ],
+            8
+          ],
+          [
+            "d11",
+            "r1",
+            "96bcadcf4cbf07212ba4663f56c6ae2f0ff7a2c360ef5f4ffcda5639af04a3e5",
+            0,
+            45,
+            [
+              1,
+              1
+            ],
+            4
+          ]
+        ],
+        "tuple_counts": [
+          {
+            "A": 1,
+            "B": 0,
+            "count": 8
+          },
+          {
+            "A": 1,
+            "B": 1,
+            "count": 4
+          }
+        ],
+        "prefix_laws_verified": 4,
+        "shared_continuations": [
+          {
+            "cut": 2,
+            "prefixes": [
+              [
+                1,
+                0
+              ],
+              [
+                1,
+                1
+              ]
+            ],
+            "law": [
+              [
+                [],
+                "1"
+              ]
+            ]
+          }
+        ],
+        "query_work": {
+          "ones_suffix_shortcuts": 1,
+          "query_messages_recomputed": 8,
+          "query_dependency_edges_visited": 8,
+          "active_message_hits": 8,
+          "zero_factor_shortcuts": 7,
+          "query_validation_ns": 1568201
+        },
+        "oracle_full_documents_parsed": 2,
+        "oracle_full_prefix_nodes": 4,
+        "oracle_assertions": "exact full rebuild == direct integer/Fraction rows == incremental adjoint == forward channel"
+      },
+      "algorithm_retained_bytes": 67052,
+      "tracemalloc_current_bytes": 679301,
+      "tracemalloc_peak_bytes": 681717,
+      "active_quotient_state_counts": [
+        1,
+        1,
+        1
+      ],
+      "archived_canonical_states": 18,
+      "snapshot_materialisation_ns": 24694
+    }
+  ],
+  "rejected_edits": [
+    {
+      "label": "overflow",
+      "error_type": "OverflowError",
+      "error": "total overflow refused before mutation",
+      "unchanged": true,
+      "attempt_ns": 139968,
+      "input_source": {
+        "id": "d10",
+        "revision": "overflow",
+        "path": "docs/d10-overflow.txt",
+        "sha256": "3cc183c99b314e238cc4d830ab75721d923f47a8a82f37865d650adcbf385307",
+        "artifact_id": "ART-b25b857ad84d45a683d3737966e7fa4b"
+      },
+      "input_bytes": 64,
+      "prefixes_nodes_touched": 0,
+      "admitted": false
+    },
+    {
+      "label": "duplicate-group",
+      "error_type": "ValueError",
+      "error": "grammar/group identity",
+      "unchanged": true,
+      "attempt_ns": 99732,
+      "input_source": {
+        "id": "d02",
+        "revision": "duplicate-group",
+        "path": "docs/d02-duplicate-group.txt",
+        "sha256": "b7c47faa35031f63a8dad9354d2764f9cc98197463752191dde4e1f32676a77d",
+        "artifact_id": "ART-f0e35bcad4b24c2dbd3bca965f47bb32"
+      },
+      "input_bytes": 46,
+      "prefixes_nodes_touched": 0,
+      "admitted": false
+    }
+  ],
+  "channel_fixture": {
+    "tolerance": 1e-12,
+    "naive_raw_completeness": [
+      [
+        0.9999999999999999,
+        0.7999999999999999
+      ],
+      [
+        0.7999999999999999,
+        0.9999999999999999
+      ]
+    ],
+    "naive_identity_defect": 0.7999999999999999,
+    "gauged_completeness": [
+      [
+        0.9999999999999998,
+        -2.2204460492503128e-16
+      ],
+      [
+        -2.2204460492503128e-16,
+        0.9999999999999998
+      ]
+    ],
+    "gauged_identity_defect": 2.220446049250313e-16,
+    "gauged_joint": [
+      [
+        0.39999999999999986,
+        0.09999999999999996
+      ],
+      [
+        0.09999999999999996,
+        0.39999999999999986
+      ]
+    ],
+    "gauged_joint_defect": 1.6653345369377348e-16,
+    "singular_support_completeness": [
+      [
+        0.5,
+        0.5
+      ],
+      [
+        0.5,
+        0.5
+      ]
+    ],
+    "singular_support_defect": 0.0,
+    "domain": "Auxiliary finite instrument on environment support. Nonlinear positive-trace normalisation. No generic physical CP/Markov or time interpretation.",
+    "signed_factors": "Remain observable contractions, not positive TNI instruments."
+  },
+  "query_count": 16,
+  "state_count": 9,
+  "changes": 8,
+  "input_sha256": "21278d3ff0212c30ba197b3cc008f3506eff24f93b44694119a0cf6d88657b8d",
+  "code_sha256": "ee5eb349900e8c1e22875a3ef288c1a14a9b478c0bec6320a6ca2190b243c311",
+  "resources": {
+    "wall_ns_before_output": 53343216,
+    "CPU_ns_before_output": 53242343,
+    "peak_RSS_bytes": 43675648,
+    "tracemalloc_peak_bytes": 814664,
+    "address_space_hard_limit_bytes": 134217728,
+    "CPU_hard_limit_seconds": 60,
+    "strict_RSS_guard": "NOT_CLAIMED; observed RSS assertion plus RLIMIT_AS",
+    "supervisor_render_overhead": "Separate, not included in producer ru_maxrss; not measured here.",
+    "first_JSON_serialization_ns": 3022897,
+    "final_write_measurement": "Second serialization/file write not timed internally; native run covers whole process."
+  },
+  "limits": {
+    "formal": "NOT_CHECKED",
+    "model_network_calls": 0,
+    "continuous_fixture": "NOT_RUN",
+    "larger_replicas": "NOT_RUN",
+    "claim_scope": "Fixed A,B order, binary factors, <=5 controlled weighted-source groups. No universal update complexity or application performance claim.",
+    "algorithm": "New stdlib path-copy/count/hash-cons/refcount/message cache fixture; original GPU snapshot/full-build code not modified or executed.",
+    "retention": "Canonical immutable signatures and messages archived; charged retained storage, no hidden global rebuild in change().",
+    "cost_separation": "Incremental update work excludes charged full-rebuild/direct oracle and output materialisation. Query work includes exact forward/adjoint comparison in validation."
+  }
+}

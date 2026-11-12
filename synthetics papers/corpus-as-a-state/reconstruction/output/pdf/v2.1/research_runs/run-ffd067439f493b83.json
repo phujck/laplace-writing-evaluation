@@ -1,0 +1,137 @@
+{
+  "args": {},
+  "cancel_path": "/home/phujck/VScodeProjects/laplace/synthetics papers/corpus-as-a-state/reconstruction/output/pdf/v2.1/research_runs/run-ffd067439f493b83.cancel",
+  "cwd": "/home/phujck/VScodeProjects/laplace/writing_projects/memory-in-pieces",
+  "deadline_at": 1794429341.262668,
+  "execution_deadline_monotonic": 127117.648796642,
+  "id": "run-ffd067439f493b83",
+  "launch_token": "70c7e4b087624704be32d66ddb042f10",
+  "mode": "smoke",
+  "pid": 541856,
+  "producer_argv": [
+    "/home/phujck/.local/share/laplace/runtime/python/current/bin/python3.14",
+    "/home/phujck/VScodeProjects/laplace/writing_projects/memory-in-pieces/evidence/DYNAMIC_MEMORY_DEMO_2026-11-11/incremental_demo.py",
+    "--mode",
+    "smoke",
+    "--args-json",
+    "{}",
+    "--result",
+    "/home/phujck/VScodeProjects/laplace/synthetics papers/corpus-as-a-state/reconstruction/output/pdf/v2.1/research_runs/run-ffd067439f493b83.result.json"
+  ],
+  "producer_base": "/home/phujck/VScodeProjects/laplace/writing_projects/memory-in-pieces",
+  "producer_id": "dynamic-memory-incremental-demo-20261111",
+  "producer_path": "evidence/DYNAMIC_MEMORY_DEMO_2026-11-11/incremental_demo.py",
+  "project": "memory-in-pieces",
+  "provenance": {
+    "dependencies": [
+      {
+        "bytes": 6410,
+        "path": "evidence/DYNAMIC_MEMORY_DEMO_2026-11-11/input.json",
+        "sha256": "21278d3ff0212c30ba197b3cc008f3506eff24f93b44694119a0cf6d88657b8d",
+        "status": "PRESENT"
+      },
+      {
+        "bytes": 4374,
+        "path": "evidence/DYNAMIC_MEMORY_DEMO_2026-11-11/protocol.json",
+        "sha256": "006f10e17ab2abd1226ffe9bfac1c507f07c30a6a260861dc50fe969b4494b26",
+        "status": "PRESENT"
+      },
+      {
+        "bytes": 1574,
+        "path": "evidence/DYNAMIC_MEMORY_DEMO_2026-11-11/protocol-addendum.json",
+        "sha256": "1667f22b8c5b0fb940dadd43a547034c79315d7d00e5e5a734e78c34a3e446d7",
+        "status": "PRESENT"
+      },
+      {
+        "bytes": 510,
+        "path": "evidence/DYNAMIC_MEMORY_DEMO_2026-11-11/rejection-input.json",
+        "sha256": "c42a914adcc036c1905a54984785b2d8afd43c586e4e3754482daea00ca04dd9",
+        "status": "PRESENT"
+      },
+      {
+        "bytes": 46,
+        "path": "evidence/DYNAMIC_MEMORY_DEMO_2026-11-11/docs/d00-r1.txt",
+        "sha256": "8c6e68cec764125b1b8c39fc8da242af3db24b5a460f58808ccc5f296672e993",
+        "status": "PRESENT"
+      },
+      {
+        "bytes": 46,
+        "path": "evidence/DYNAMIC_MEMORY_DEMO_2026-11-11/docs/d00-r2.txt",
+        "sha256": "29948f2842a41afbd3e456621210ef6961c3c494ae4cbf6623e6f1dcf4fbf9f1",
+        "status": "PRESENT"
+      },
+      {
+        "bytes": 46,
+        "path": "evidence/DYNAMIC_MEMORY_DEMO_2026-11-11/docs/d01-r1.txt",
+        "sha256": "3e4eb18af330445b0f82068a602fd9c9578866c2f15bd76d1541918d600aa999",
+        "status": "PRESENT"
+      },
+      {
+        "bytes": 46,
+        "path": "evidence/DYNAMIC_MEMORY_DEMO_2026-11-11/docs/d10-r1.txt",
+        "sha256": "6a930cbadb5788b2cba6bee921372f593a84a2c3582a3d34a3f4df1d76517058",
+        "status": "PRESENT"
+      },
+      {
+        "bytes": 47,
+        "path": "evidence/DYNAMIC_MEMORY_DEMO_2026-11-11/docs/d10-r2.txt",
+        "sha256": "3c24c5ed464ef40d5219d43b04668e05d39c8bd5ad33bb4fb3011c9008b7b805",
+        "status": "PRESENT"
+      },
+      {
+        "bytes": 46,
+        "path": "evidence/DYNAMIC_MEMORY_DEMO_2026-11-11/docs/d10-r3.txt",
+        "sha256": "03d0c032fac627d2bbfd01def65789aa63dc52685ba547575d30fcc65e91e487",
+        "status": "PRESENT"
+      },
+      {
+        "bytes": 46,
+        "path": "evidence/DYNAMIC_MEMORY_DEMO_2026-11-11/docs/d11-r1.txt",
+        "sha256": "96bcadcf4cbf07212ba4663f56c6ae2f0ff7a2c360ef5f4ffcda5639af04a3e5",
+        "status": "PRESENT"
+      },
+      {
+        "bytes": 46,
+        "path": "evidence/DYNAMIC_MEMORY_DEMO_2026-11-11/docs/d02-r1.txt",
+        "sha256": "803cf93ca3e1124b27d06cbc03b84c619248e1cba454519f377ed0cd3a532420",
+        "status": "PRESENT"
+      },
+      {
+        "bytes": 64,
+        "path": "evidence/DYNAMIC_MEMORY_DEMO_2026-11-11/docs/d10-overflow.txt",
+        "sha256": "3cc183c99b314e238cc4d830ab75721d923f47a8a82f37865d650adcbf385307",
+        "status": "PRESENT"
+      },
+      {
+        "bytes": 46,
+        "path": "evidence/DYNAMIC_MEMORY_DEMO_2026-11-11/docs/d02-duplicate-group.txt",
+        "sha256": "b7c47faa35031f63a8dad9354d2764f9cc98197463752191dde4e1f32676a77d",
+        "status": "PRESENT"
+      }
+    ],
+    "producer": {
+      "bytes": 21128,
+      "path": "evidence/DYNAMIC_MEMORY_DEMO_2026-11-11/incremental_demo.py",
+      "scope": "project",
+      "sha256": "ee5eb349900e8c1e22875a3ef288c1a14a9b478c0bec6320a6ca2190b243c311",
+      "status": "PRESENT"
+    },
+    "producer_config": "e7a0384926c10af7269150100840cdcefebd57d6d25426ad483556d9395e7b2f"
+  },
+  "request_id": "dynamic-memory-demo-a804b130-initial",
+  "request_intent": "sha256:e9625dd384375bd25f760f4017cda157a43f54de146b1805a59f6a423cc95b2c",
+  "result_absolute": "/home/phujck/VScodeProjects/laplace/synthetics papers/corpus-as-a-state/reconstruction/output/pdf/v2.1/research_runs/run-ffd067439f493b83.result.json",
+  "result_path": "research_runs/run-ffd067439f493b83.result.json",
+  "started_at": 1794429281.2626672,
+  "state": "RUNNING",
+  "stderr_path": "/home/phujck/VScodeProjects/laplace/synthetics papers/corpus-as-a-state/reconstruction/output/pdf/v2.1/research_runs/run-ffd067439f493b83.stderr.log",
+  "stdout_path": "/home/phujck/VScodeProjects/laplace/synthetics papers/corpus-as-a-state/reconstruction/output/pdf/v2.1/research_runs/run-ffd067439f493b83.stdout.log",
+  "supervision": {
+    "cleanup_limit_seconds": 6.0,
+    "roles": {},
+    "schema_version": "laplace.research-supervision/1"
+  },
+  "supervision_index_path": "/home/phujck/VScodeProjects/laplace/synthetics papers/corpus-as-a-state/reconstruction/output/pdf/v2.1/research_runs/index.json",
+  "supervisor_start_token": "sha256:79b80bde1f6b12e4047762c6d0aa330bdd8ece958f00ffd257d968f94269af8b",
+  "timeout_seconds": 60
+}

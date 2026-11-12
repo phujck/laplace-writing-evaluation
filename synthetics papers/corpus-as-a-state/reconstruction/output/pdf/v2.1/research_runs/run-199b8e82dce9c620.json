@@ -1,0 +1,59 @@
+{
+  "args": {},
+  "cancel_path": "/home/phujck/VScodeProjects/laplace/synthetics papers/corpus-as-a-state/reconstruction/output/pdf/v2.1/research_runs/run-199b8e82dce9c620.cancel",
+  "cwd": "/home/phujck/VScodeProjects/laplace/writing_projects/memory-in-pieces",
+  "deadline_at": 1794391835.2073078,
+  "execution_deadline_monotonic": 89611.59343674,
+  "id": "run-199b8e82dce9c620",
+  "launch_token": "62dac23bd8f345f297c6da4bdf7447f6",
+  "mode": "full",
+  "pid": 185488,
+  "producer_argv": [
+    "/home/phujck/.local/share/laplace/runtime/python/current/bin/python3.14",
+    "/home/phujck/VScodeProjects/laplace/writing_projects/memory-in-pieces/evidence/MEMORY_RECOVERY_2026-11-11/forensic_audit.py",
+    "--mode",
+    "full",
+    "--args-json",
+    "{}",
+    "--result",
+    "/home/phujck/VScodeProjects/laplace/synthetics papers/corpus-as-a-state/reconstruction/output/pdf/v2.1/research_runs/run-199b8e82dce9c620.result.json"
+  ],
+  "producer_base": "/home/phujck/VScodeProjects/laplace/writing_projects/memory-in-pieces",
+  "producer_id": "memory-recovery-forensics-20261111",
+  "producer_path": "evidence/MEMORY_RECOVERY_2026-11-11/forensic_audit.py",
+  "project": "memory-in-pieces",
+  "provenance": {
+    "dependencies": [
+      {
+        "bytes": 559617,
+        "path": "evidence/MEMORY_RECOVERY_2026-11-11/forensic_input.json",
+        "sha256": "5104f91b443b74c4d8d3552ff83ecb2e60cd5ab39ae1156101ce4e9587f05a87",
+        "status": "PRESENT"
+      }
+    ],
+    "producer": {
+      "bytes": 3895,
+      "path": "evidence/MEMORY_RECOVERY_2026-11-11/forensic_audit.py",
+      "scope": "project",
+      "sha256": "81edca26c2f9cf7135513cc2b75686bcb5b41b91fcc7d153e76178a3d24e68ae",
+      "status": "PRESENT"
+    },
+    "producer_config": "49d7175d177409a62a7dd2eab2b56506b9878cbd6f5fb5e1f11567669862ac46"
+  },
+  "request_id": "memory-recovery-20261111-forensic-v2",
+  "request_intent": "sha256:377cdd2e3e2df98786a7a2bc4e53964fdc42659b67d9b7964dd7b75a4545747a",
+  "result_absolute": "/home/phujck/VScodeProjects/laplace/synthetics papers/corpus-as-a-state/reconstruction/output/pdf/v2.1/research_runs/run-199b8e82dce9c620.result.json",
+  "result_path": "research_runs/run-199b8e82dce9c620.result.json",
+  "started_at": 1794391775.2073073,
+  "state": "RUNNING",
+  "stderr_path": "/home/phujck/VScodeProjects/laplace/synthetics papers/corpus-as-a-state/reconstruction/output/pdf/v2.1/research_runs/run-199b8e82dce9c620.stderr.log",
+  "stdout_path": "/home/phujck/VScodeProjects/laplace/synthetics papers/corpus-as-a-state/reconstruction/output/pdf/v2.1/research_runs/run-199b8e82dce9c620.stdout.log",
+  "supervision": {
+    "cleanup_limit_seconds": 6.0,
+    "roles": {},
+    "schema_version": "laplace.research-supervision/1"
+  },
+  "supervision_index_path": "/home/phujck/VScodeProjects/laplace/synthetics papers/corpus-as-a-state/reconstruction/output/pdf/v2.1/research_runs/index.json",
+  "supervisor_start_token": "sha256:10220dd8b8ec5bb28446180b53841aaec5a04c278c113eed1f4953cfcf20425f",
+  "timeout_seconds": 60
+}

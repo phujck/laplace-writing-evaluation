@@ -1,0 +1,5 @@
+Traceback (most recent call last):
+  File "/home/phujck/VScodeProjects/laplace/writing_projects/memory-in-pieces/evidence/MEMORY_RECOVERY_2026-11-11/forensic_audit.py", line 40, in <module>
+    arm=str(r['set'])+'|'+str(r['key'])
+            ~^^^^^^^
+KeyError: 'set'

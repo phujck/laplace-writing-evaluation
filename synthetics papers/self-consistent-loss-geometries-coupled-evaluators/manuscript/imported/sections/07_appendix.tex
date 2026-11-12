@@ -150,9 +150,9 @@ Dividing by \(j\) and taking the limit proves
 \(f(n)=\kappa\log n\), with \(\kappa=f(2)/\log2\geq0\).
 The composition premise concerns a declared capacity label. It is not implied by statistical independence of probability-order ranks.
 
-For example, marginal probabilities \((0.7,0.3)\) and \((0.6,0.4)\) produce joint probabilities \(0.42,0.28,0.18,0.12\). The pair with marginal ranks \(2,1\) has joint probability-order rank 3, not their product 2. If labels are instead explicitly multiplicative capacities, their multiplicities remain in the reference measure. Two factors labelled \(\{1,2\}\) produce \(\{1,2,2,4\}\), so their cost-weighted partition sum is \((1+2^{-I})^2\).
+For example, marginal probabilities \((0.7,0.3)\) and \((0.6,0.4)\) produce joint probabilities \(0.42,0.28,0.18,0.12\). The pair with marginal ranks \(2,1\) has joint probability-order rank 3, not their product 2. If labels are instead explicitly multiplicative capacities, their multiplicities remain in the reference measure. Write \(I>0\) for the inverse statistical cost scale when the cost is \(\log r\). Two factors labelled \(\{1,2\}\) produce \(\{1,2,2,4\}\), so their cost-weighted partition sum is \((1+2^{-I})^2\).
 
-A separate consecutive-label model has one alternative at each \(r=1,\ldots,R\), cost \(\log r\), and distribution
+A separate consecutive-label model has one alternative at each \(r=1,\ldots,R\). With equal reference masses, equal gains, cost \(\log r\) and inverse cost scale \(I\), the selector specialises to
 \[
  p_I(r)=\frac{r^{-I}}{Z_R(I)},\qquad
  Z_R(I)=\sum_{r=1}^Rr^{-I}.
@@ -198,7 +198,7 @@ Reference controls matched six seed-0 noisy-step trajectories to the original po
 
 \subsection{Updates outside post-shift windows}
 
-Figure~\ref{fig:off-transition} retains the eighth accepted asset. It answers an auxiliary question about where revisions are spent. Excluding the four nonoverlapping 65-step post-shift windows from the 650-observation evaluation interval leaves 390 observations per stream. The off-transition rate is purchased updates in those observations divided by 390. It is not the share of promotions that were false, and it is not a false-positive probability. Useful adaptation to noisy observations can occur between the designated latent shifts.
+Figure~\ref{fig:off-transition} asks where revisions are spent outside the post-shift windows. Excluding the four nonoverlapping 65-step post-shift windows from the 650-observation evaluation interval leaves 390 observations per stream. The off-transition rate is purchased updates in those observations divided by 390. It is not the share of promotions that were false, and it is not a false-positive probability. Useful adaptation to noisy observations can occur between the designated latent shifts.
 
 \begin{figure*}[t]
 \centering
@@ -229,7 +229,13 @@ The equilibrium marginal generator
 \]
 reproduces \(\omega_S=e^{-K_{\mathrm{eff}}/\tau}/Z\) exactly. This equilibrium identity is distinct from minimising over extensions of an arbitrary prescribed marginal \(\sigma\).
 
-Define that constrained value by
+Here \(D(\rho\Vert\omega)=\operatorname{Tr}[\rho(\log\rho-\log\omega)]\) is quantum relative entropy, with \(0\log0=0\). The receiving functional is
+\[
+ \mathcal J_{\mathrm{eff}}(\sigma)
+ =\operatorname{Tr}\sigma K_{\mathrm{eff}}-\tau S(\sigma)
+ =\tau D(\sigma\Vert\omega_S)-\tau\log Z .
+\]
+Define the constrained value by
 \begin{align}
  C(\sigma)&=\min_{\rho:\operatorname{Tr}_E\rho=\sigma}
                          \mathcal J_K(\rho)\nonumber\\

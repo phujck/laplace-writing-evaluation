@@ -1,0 +1,88 @@
+{
+  "schema_version": "slg.policy-coverage-protocol/3",
+  "date": "2026-11-11",
+  "work_id": "WORK-eb51031fbac649669f3972030d47dac1",
+  "policy_source": "research/slg-analytic-20261111-v2/finite_checks.py",
+  "policy_source_sha256": "8f39b070b310baaaa58e6b3824ab7a59c0c86a9c8f5d1f3271e00b4a690a6ce7",
+  "policy_parameters": "research/slg-analytic-20261111-v2/parameters.json",
+  "policy_parameters_sha256": "25b9c7b5ded0567f804e1ba88debef5b76512f45a611ca2e229d429e501b5256",
+  "extraction": "Compile unmodified AST nodes of original v1 loop from before=state1 through v1_rows.append, plus original mse function. Execute same compiled code object in all four calls. Never execute original main.",
+  "tolerance_abs": 1e-12,
+  "comparison_convention": "Policy uses original strict > with no epsilon. Branch identity, actual carry, and tie score equality are exact execution checks. Independent Fraction-oracle value residuals use 1e-12 tolerance, not proof of bit equality to rational algebra.",
+  "fixtures": [
+    {
+      "id": "promote",
+      "n": 8,
+      "t": 7,
+      "x": "all 1",
+      "y": "all 4/5, represented by float .8",
+      "initial_theta": "1",
+      "costs": [
+        0,
+        0.02
+      ],
+      "expected_action": 1
+    },
+    {
+      "id": "carried_next",
+      "n": 9,
+      "t": 8,
+      "x": "all 1",
+      "y": "all 4/5, represented by float .8",
+      "initial_theta": "actual mutable state1 left by promote, never reset",
+      "costs": [
+        0,
+        0.02
+      ],
+      "expected_action": 1
+    },
+    {
+      "id": "stay",
+      "n": 8,
+      "t": 7,
+      "x": "all 1",
+      "y": "all 4/5, represented by float .8",
+      "initial_theta": "1",
+      "costs": [
+        0,
+        0.06
+      ],
+      "expected_action": 0
+    },
+    {
+      "id": "tie",
+      "n": 8,
+      "t": 7,
+      "x": "all 1",
+      "y": "all 4/5, represented by float .8",
+      "initial_theta": "1",
+      "costs": [
+        0,
+        "beta*(gain1-gain0) recorded from identical promote candidate calculation"
+      ],
+      "expected_action": 0
+    }
+  ],
+  "oracle": {
+    "number_system": "Fractions from exact decimal strings, independent scalar normal equations and residual polynomial",
+    "alpha": "11/50",
+    "beta": "5/2",
+    "ridge": "1/1000000",
+    "target_y": "4/5",
+    "initial_theta": "1",
+    "fit": "n*(4/5)/(n+1/1000000)",
+    "candidate": "theta+(11/50)*(fit-theta)",
+    "gain1": "2*delta*(4/5-theta)-delta^2",
+    "gain0": "0",
+    "carried_state": "exact promoted Fraction candidate then one new n=9 decision",
+    "tie_price": "(5/2)*gain1 in algebra; actual binary price is constructed from recorded same-policy gain for an exact binary score tie"
+  },
+  "expected_counts": {
+    "policy_calls": 4,
+    "promoted": 2,
+    "stay": 2,
+    "tie_calls": 1,
+    "carried_transition_calls": 1
+  },
+  "limits": "Four deterministic decision calls only. No v0 rerun, historical grid, policy rewrite, OR/quantum rerun, model-reader call, optimisation or original overwrite."
+}

@@ -87,7 +87,7 @@ The same boundary has a dynamical consequence. The joint density matrix evolves 
 \end{equation}
 The second term still depends on the joint state. Two preparations with the same $\rho_S$ but different correlations can have different subsequent motion, just as the same region mass had two different escape rates in the four-state example. One can retain more environmental coordinates, make a justified closure approximation, or eliminate them into a history-dependent term of the kind in Eq.~\eqref{eq:general-memory}. The mean-force operator reproduces equilibrium statistics. It is not, by that fact alone, the generator of the reduced real-time motion.
 
-This is the open-systems version of the representational question. An adequate description carries the influence that crosses its chosen boundary, not necessarily all the surrounding detail. The papers Equilibrium from the Inside Out  and Dual Representatives of Mean-Force Equilibrium  pursue explicit ways of representing that influence.~\cite{McCaulbab685} The construction keeps the environmental influence in an object defined on the subsystem itself, making the choice of boundary part of the calculation.
+This is the open-systems version of the representational question. An adequate description carries the influence that crosses its chosen boundary, not necessarily all the surrounding detail. The papers \emph{Equilibrium from the Inside Out} and \emph{Dual Representatives of Mean-Force Equilibrium} pursue explicit ways of representing that influence.~\cite{McCaulbab685} The construction keeps the environmental influence in an object defined on the subsystem itself, making the choice of boundary part of the calculation.
 
 \subsection{Absorb the difficult coupling before approximating}
 The ground-state extension turns that representational choice into an analytical calculation. A spin strongly coupled to oscillators can be difficult to describe in the uncoupled basis because each spin orientation shifts the oscillators' preferred positions. Conditional displacement builds those shifts into the basis exactly. What remains is a bounded spin-flip operator. The bath spectrum then predicts the ground energy, the local spin state and its conditional surroundings, with independent diagonalisation of the original Hamiltonian providing the comparison in Fig.~\ref{fig:dd-hmf-physical-ground-state-20261016}.~\cite{McCaul2026e37796}
@@ -111,7 +111,7 @@ $D(d)=\exp[\sum_kd_k(b_k^\dagger-b_k)]$. It changes coordinates without discardi
 \end{equation}
 The last identity is the useful change: $\|T_g\|=1$ for every $g$. An interaction that was unbounded in oscillator coordinates has been absorbed into the representation, leaving a correction of size $\Delta/2$.
 
-The retained spectral information is equally explicit. A spin flip exchanges the two displaced oscillator configurations. Its imaginary-time correlation, with $t$ measured in inverse energy, is
+A spin flip exchanges the two displaced oscillator configurations. Let $|0\rangle$ be the oscillator vacuum. The correlation is the matrix element $C_g(t)=\langle0|T_g e^{-tH_B}T_g|0\rangle$, with imaginary time $t$ measured in inverse energy. For the specified bath it is
 \begin{equation}
  C_g(t)=
  \exp\!\left[-4g^2\sum_k\frac{v_k^2}{\nu_k^2}
@@ -126,7 +126,7 @@ $S_g$ is the overlap of the two displaced vacua. $C_g(t)$ retains the distributi
  \qquad
  B_g=\int_0^\infty t[C_g(t)-S_g^2]\,dt.
 \]
-Subtracting $S_g^2$ removes the zero-excitation contribution. The remaining integrals weight virtual excitations by their inverse energies and inverse squared energies. On the positive-parity ground branch,
+Subtracting $S_g^2$ removes the zero-excitation contribution. In an eigenbasis $H_B|n\rangle=E_n|n\rangle$, the excited terms of the correlation are $|\langle n|T_g|0\rangle|^2e^{-tE_n}$. Integrating therefore gives $A_g=\sum_{n\ne0}|\langle n|T_g|0\rangle|^2/E_n$ and $B_g=\sum_{n\ne0}|\langle n|T_g|0\rangle|^2/E_n^2$. These are the virtual-excitation denominators in the perturbative expansion. On the positive-parity ground branch,
 \begin{equation}
  E_0=-g^2\lambda_0-\frac{\Delta S_g}{2}
                       -\frac{\Delta^2 A_g}{4}+O(\Delta^3),
@@ -135,7 +135,7 @@ Subtracting $S_g^2$ removes the zero-excitation contribution. The remaining inte
  \quad \langle\tau_z\rangle_0=0.
  \label{eq:hmf-ground-prediction}
 \end{equation}
-The first spin contribution comes from the overlap of the displaced vacua. The next comes from excursions through the excited bath. Both are calculated from the spectrum, without fitting the ground-state data. The fixed gap and bounded perturbation also give an explicit remainder for the displayed energy approximation $E_0^{(2)}$: for $\Delta<\varrho<\nu_{\min}$,
+The first spin contribution comes from the overlap of the displaced vacua. The next comes from excursions through the excited bath. The spin expectation follows from the energy by the Hellmann--Feynman identity $\langle\tau_x\rangle_0=-2\partial_\Delta E_0$. Both are calculated from the spectrum, without fitting the ground-state data. The fixed gap and bounded perturbation also give an explicit remainder for the displayed energy approximation $E_0^{(2)}$: for $\Delta<\varrho<\nu_{\min}$,
 \[
  |E_0-E_0^{(2)}|
  \le \frac{\varrho}{2}
@@ -202,12 +202,12 @@ The distinction between diagonal and off-diagonal residue is the mechanism. Let 
 \end{equation}
 Diagonal residue shifts eigenvalues. Off-diagonal residue rotates the spectral directions after the chosen coordinate transport has been removed. A small gap allows a given mismatch to rotate those directions strongly. Merely adjusting a list of scalar penalties cannot describe that rotation.
 
-A simple geometric example is a resolved direction $u_s=(\cos\nu s,\sin\nu s)^T$, with projector $\Pi_s=u_su_s^T$ and fixed nonzero rotation rate $\nu$. At $s=0$,
+For a fixed-coordinate example, choose $\mathsf J_s=0$ and a resolved direction $u_s=(\cos\nu s,\sin\nu s)^T$, with projector $\Pi_s=u_su_s^T$ and fixed nonzero rotation rate $\nu$. At $s=0$,
 \[
  \lim_{h\to0}\frac{[\Pi_0,\Pi_h]}h
  =\nu\begin{pmatrix}0&1\\-1&0\end{pmatrix}.
 \]
-The projectors themselves become arbitrarily close as $h$ shrinks, yet the rate at which their order matters stays finite. Law of Laws~\cite{McCaulad9572} proposes a self-similar regime in which off-diagonal residue remains significant relative to the spectral gap. The effective description then keeps a noncommuting algebra of resolved distinctions instead of settling into one fixed spectral basis. This is the precise quantum-like feature that the refinement argument brings into the programme.
+The projectors themselves become arbitrarily close as $h$ shrinks, yet in this fixed frame the rate at which their order matters stays finite. A co-rotating frame could remove this example's rotation. A residual claim therefore depends on which coordinate transport the comparison admits. Law of Laws~\cite{McCaulad9572} proposes a self-similar regime in which off-diagonal residue remains significant relative to the spectral gap. The effective description then keeps a noncommuting algebra of resolved distinctions instead of settling into one fixed spectral basis. This is the precise quantum-like feature that the refinement argument brings into the programme.
 
 Foundations places that feature beside two further constructions. Chapter 2 tests whether overlapping measurement contexts admit one global assignment, while Chapter 3 exhibits classical averaging and reversible Markov examples with noncommuting operations or rotating eigenspaces. The distinction is productive: the spectral calculation identifies the persistent operator structure, and the context experiment asks which probability accounts it can support. This is an author-proposed connection. Connecting these constructions into a physical quantum reconstruction requires the specified event algebra, composition and measurement rule, as well as a calibrated action scale. These conditions specify the next reconstruction problem.
 
@@ -308,7 +308,7 @@ The hierarchy in Phases of Hierarchy makes that change explicit. Let layer $\ell
 \end{equation}
 Here $L=1$ is the flat aggregate. The factor $c$ is attenuation relative to a flat group of the same total size, not the absolute gain of each local block. One more aggregation layer therefore raises the population threshold by $\pi/2$ within this model. Figure~\ref{fig:dd-hierarchy-stability} shows the resulting phase diagram: a population of $200$ lies beyond the flat threshold but below the two-layer threshold at $\alpha=0.35$ and $h/\tau_r=1$. Slower updates provide another way to remain stable because the plant has longer to relax before the next correction.~\cite{McCaul630942}
 
-Attenuating a response also has a cost. In the paper's separate depth-$L$ linear control cascade with attenuation $0<c<1$, the minimum input energy needed to produce a unit apex response scales as $c^{-2(L-1)}$, once the control horizon is long enough to reach the apex. The cascade provides a separate measure of the intervention cost of attenuation. Adaptive Normal Form supplies a related gradient-feedback construction, but its effective gain contains two response derivatives and scales differently.~\cite{McCaul74663e} The common design question is where an aggregate response should be represented and acted upon, with its stability, signal and control costs accounted for.
+Attenuating a response also has a cost. In the paper's separate depth-$L$ linear control cascade with attenuation $0<c<1$, the minimum squared-input effort needed to produce a unit apex response scales as $c^{-2(L-1)}$, once the control horizon is long enough to reach the apex. The cascade provides a separate measure of the intervention cost of attenuation. Adaptive Normal Form supplies a related gradient-feedback construction, but its effective gain contains two response derivatives and scales differently.~\cite{McCaul74663e} The common design question is where an aggregate response should be represented and acted upon, with its stability, signal and control costs accounted for.
 \begin{figure}[htbp]
 \centering
 \includegraphics[width=\linewidth]{figures/hierarchy-run-d9f38e92caf64d82.result/dd-hierarchy-stability.pdf}

@@ -1,0 +1,41 @@
+{
+  "source_commit": "fd71f1010668ce6b1f640251c9e2b510790bf97e",
+  "files": [
+    {
+      "path": "src/laplace/manuscript/reader_plan.py",
+      "sha256": "8a757dd6f30941d7e11acbd7b635f6e40f7e70ab0a421c4d9448889d4365f419",
+      "bytes": 114992,
+      "reason": "exact adopted visual-reader increment fd71f1010668ce6b1f640251c9e2b510790bf97e",
+      "before_sha256": "68a73391105cdc35c92e7baed38e1319e13bd00755f407d8bd611fd74bed318a"
+    },
+    {
+      "path": "src/laplace/pipeline/visual_production.py",
+      "sha256": "625d7fe9f1a4e6bacd0473f246e6ce7f4823f291e4183160cabaa317e54242c4",
+      "bytes": 46670,
+      "reason": "exact adopted visual-reader increment fd71f1010668ce6b1f640251c9e2b510790bf97e",
+      "before_sha256": "2ed8d330bd73d3a88eb0662266837b8a2bffd70fbfdc63f2b9e8b1c88ac3ee22"
+    },
+    {
+      "path": "tests/test_prepared_storyboard_work.py",
+      "sha256": "a11d6e7a2cbd22419ca33c00301d73e243af7ee0b54bb5378d20e84a0e5d97d4",
+      "bytes": 90558,
+      "reason": "exact adopted visual-reader increment fd71f1010668ce6b1f640251c9e2b510790bf97e",
+      "before_sha256": null
+    },
+    {
+      "path": "tests/test_reader_input_observation.py",
+      "sha256": "5b2128096a8d18bc4ee49682350c0b9db5320e8b017de5753482f27672d78b30",
+      "bytes": 23693,
+      "reason": "exact adopted visual-reader increment fd71f1010668ce6b1f640251c9e2b510790bf97e",
+      "before_sha256": null
+    },
+    {
+      "path": "tests/test_reader_plan_owner.py",
+      "sha256": "22c4a466c249a2098c2cef8a7c9ed0e7ffd3002605a342a0e41a25f1e5d0f5f9",
+      "bytes": 67554,
+      "reason": "exact adopted visual-reader increment fd71f1010668ce6b1f640251c9e2b510790bf97e",
+      "before_sha256": null
+    }
+  ],
+  "method": "Git object bytes equal actual Main source; no creative changes"
+}

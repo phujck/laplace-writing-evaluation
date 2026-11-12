@@ -2,7 +2,7 @@
 \label{hrec:sec:hierarchy}
 Return to the detector array. Instead of voting once across all leaves, let each block form a binary majority and pass its verdict upward. Specify a level-homogeneous product tree
 \(\mathcal T=(n_1,\ldots,n_L)\), with every span an odd integer at least three and
-\(\prod_{\ell=1}^L n_\ell=N\). Conditional on a fixed broadcast, disjoint subtrees have independent binary outputs with the same distribution at each level. If \(B_n(v)\) is the mean majority verdict for iid inputs of mean \(v\), the successive means satisfy
+\(\prod_{\ell=1}^L n_\ell=N\). Conditional on a fixed broadcast, disjoint subtrees have independent binary outputs with the same distribution at each level. If \(B_n(v)\) is the mean majority verdict for independent and identically distributed (iid) inputs of mean \(v\), the successive means satisfy
 \begin{equation}
  v_0(u)=\tanh(\beta u),\qquad
  v_\ell(u)=B_{n_\ell}(v_{\ell-1}(u)).
@@ -37,14 +37,16 @@ The distinction between amplification and attenuation is now concrete. A three-i
 
 Depth is also constrained by the leaves. In this class, \(L\le\lfloor\log_3N\rfloor\), and a depth is admitted only when the size factors into its allowed spans. For the explicit family \(N=3^k\), \(n_\ell=3^{j_\ell}\), the admissible level sequences are ordered compositions \(j_1+\cdots+j_L=k\) with positive \(j_\ell\). There are \(2^{k-1}\) sequences in total and \(\binom{k-1}{L-1}\) at depth \(L\). These are not all unbalanced trees on \(N\) leaves.
 
-A retained exact-rational enumeration covers all 255 such sequences for \(k=1,\ldots,8\). To state its gain test without identifying the controllers, write
+To place a tree in a controller, write its response as \(R_{\mathcal T}(u)=v_L(u)\). For the matched lagged comparison, replace both plant and target by \(M=F=R_{\mathcal T}\), evaluate the fixed-curve point at zero broadcast, and hold \(\alpha,r\) fixed. For the post-observation comparison, replace only \(R_N\) by \(R_{\mathcal T}\), holding the linear plant, target and response step fixed.
+
+A retained exact-rational enumeration covers all 255 such sequences for \(k=1,\ldots,8\). To express their controller-specific gain tests in one notation, write
 \begin{equation}
  \frac{K_{\mathcal T}}{K_c}
    =\eta\left(\frac{G_{\mathcal T}}{\beta}\right)^\nu,
  \qquad \eta>0.
  \label{hrec:eq:normalised-gain}
 \end{equation}
-The exponent \(\nu=1\) describes one response derivative, while \(\nu=2\) describes the matched gradient placement. The prefactor \(\eta\) contains the chosen controller and its own threshold. At the illustrative control \(\eta=1/8,\nu=1\), a slope \(G_{\mathcal T}/\beta<8\) is required. At \(N=243\), the flat slope is \(12.4505920090\), but the all-three depth-five slope is \(243/32=7.59375\). Exactly one of the 16 admitted level sequences meets the strict gain test. At \(N=729\), even the smallest attained slope, \(729/64=11.390625\), exceeds eight. None of its 32 sequences qualifies. A hierarchy can rescue a finite case without providing unlimited rescue.
+The exponent \(\nu=1\) describes the post-observation placement, with \(\eta=\varepsilon\beta/K_c\). The exponent \(\nu=2\) describes the matched gradient placement at zero broadcast, with \(\eta=\alpha\beta^2/(1+r)\) and transverse threshold \(K_c=1+r\). Thus each prefactor retains its controller's own threshold. At the illustrative control \(\eta=1/8,\nu=1\), a slope \(G_{\mathcal T}/\beta<8\) is required. At \(N=243\), the flat slope is \(12.4505920090\), but the all-three depth-five slope is \(243/32=7.59375\). Exactly one of the 16 admitted level sequences meets the strict gain test. At \(N=729\), even the smallest attained slope, \(729/64=11.390625\), exceeds eight. None of its 32 sequences qualifies. A hierarchy can rescue a finite case without providing unlimited rescue.
 
 There is an analytic obstruction for this entire odd-product class, not merely for those enumerated sizes. The exact block slopes satisfy
 \begin{equation}

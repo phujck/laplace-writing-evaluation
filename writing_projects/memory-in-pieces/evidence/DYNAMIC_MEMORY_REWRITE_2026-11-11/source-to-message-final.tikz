@@ -1,0 +1,42 @@
+\begin{tikzpicture}[font=\small,>=stealth]
+\node[font=\large\bfseries] at (7.3,7.5) {A source edit changes a recalled conditional};
+\node at (7.3,6.85) {$A=0$: selected population \qquad $B=0$: recorded event};
+\node[draw,rounded corners,align=left,text width=6.8cm,inner sep=7pt,fill=blue!4] (sources) at (3.5,4.95)
+{\textbf{Actual initial assertions}\\[4pt]
+\texttt{Group 00 contains 4 records}\\
+\texttt{with A=0 and B=0.}\\[3pt]
+\texttt{Group 01 contains 1 records}\\
+\texttt{with A=0 and B=1.}\\[4pt]
+$n_{00}=4,\ n_{01}=1,\quad P(B=0\mid A=0)=4/5$.};
+\node[draw,rounded corners,align=left,text width=6.8cm,inner sep=7pt,fill=green!4] (changed) at (11.1,4.95)
+{\textbf{Correct the first source}\\[4pt]
+\texttt{Group 00 contains 3 records}\\
+\texttt{with A=0 and B=0.}\\[4pt]
+Located assertion: source 00, revision 2.\\
+The count changes $4\to3$.\\[3pt]
+Total $W=9$. Root weight $P(A=0)=4/9$.\\
+Suffix message $P(B=0\mid A=0)=3/4$.};
+\draw[->,thick] (sources) -- (changed);
+\node[align=center] at (7.3,2.65) {Counts $\longrightarrow$ conditional transition $\longrightarrow$ adjoint message $\longrightarrow$ recalled ratio};
+\draw[thin] (0,2.2)--(14.6,2.2);
+\node[anchor=west,font=\bfseries] at (0,1.8) {Source operation};
+\node[font=\bfseries] at (5,1.8) {Counts $(n_{00},n_{01})$};
+\node[font=\bfseries] at (8.5,1.8) {Root$\times$suffix};
+\node[font=\bfseries] at (12.8,1.8) {Joint / condition};
+\node[anchor=west] at (0,1.05) {Correct $4\to3$ at$(0,0)$};
+\node at (5,1.05) {$(3,1)$};
+\node at (8.5,1.05) {$\frac49\times\frac34=\frac13$};
+\node at (12.8,1.05) {$\frac{1/3}{4/9}=\frac34$};
+\node[anchor=west] at (0,.15) {Add distinct new batch 02};
+\node at (5,.15) {$(3,2)$};
+\node at (8.5,.15) {$\frac12\times\frac35=\frac3{10}$};
+\node at (12.8,.15) {$\frac{3/10}{1/2}=\frac35$};
+\node[anchor=west] at (0,-.75) {Remove \emph{old} batch 01};
+\node at (5,-.75) {$(3,1)$};
+\node at (8.5,-.75) {$\frac49\times\frac34=\frac13$};
+\node at (12.8,-.75) {$\frac{1/3}{4/9}=\frac34$};
+\node[draw,rounded corners,align=center,text width=14.1cm,inner sep=6pt] at (7.3,-2.15)
+{Affected path: root $\to$ $A=0$ prefix $\to$ $(0,0)$ leaf.\\
+The $A=1$ conditional suffix is unchanged and reused. Root probabilities change.\\
+Terminal message is $1$. Removing all $A=0$ support makes the conditional undefined.};
+\end{tikzpicture}

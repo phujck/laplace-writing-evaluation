@@ -1,0 +1,164 @@
+{
+  "schema": "laplace.public-polish-delta/1",
+  "scope": "Selected literal source edits and before/after pins from the actual frozen author package. No private transcript or intake is included.",
+  "project": "adaptive-normal-form-aek9",
+  "author_session": "WS-701197cdbffd47fcb6f7c3fdfbf102aa",
+  "author_turn": "WT-2005540281534984abcd9c1c8d54f612",
+  "original_package_sha256": "59cdf6ec74be4500142c2afd4e0a96b10f8864c9211bccc45dff88c6a43bfeab",
+  "files": [
+    {
+      "path": "synthetics papers/adaptive-normal-form/manuscript/tex/main.tex",
+      "before_sha256": "ef43ae2893ee83f7873bfec595dabceb79271cefca26aebe6500d58646277213",
+      "after_sha256": "692c3659193e095e3791755e4e23c616764e5246d2c11cb88ba242a567fa0cc0",
+      "edits": [
+        {
+          "file": "synthetics papers/adaptive-normal-form/manuscript/tex/main.tex",
+          "line_start": 6,
+          "line_end": 6,
+          "before": "\\usepackage[colorlinks=true,linkcolor=blue,citecolor=blue,urlcolor=blue]{hyperref}",
+          "after": "\\usepackage[colorlinks=true,linkcolor=blue,citecolor=blue,urlcolor=blue]{hyperref}\n\\hypersetup{pdftitle={Hierarchy in sampled collective feedback}}",
+          "reason": "Align blank PDF title metadata mechanically with the existing visible title.",
+          "scope": "Prose/clarity only. Preserve mathematical content, numerical strata, evidence, citations and labels."
+        }
+      ]
+    },
+    {
+      "path": "synthetics papers/adaptive-normal-form/manuscript/tex/sections/01_introduction.tex",
+      "before_sha256": "f76813043d094e84f081aeb3f626f459ebd95c6328755b8a70fb6c7a62905640",
+      "after_sha256": "f00e05a9ae2f8d4abaf41625235c23031744b780f08b7ac656e0793944225f74",
+      "edits": [
+        {
+          "file": "synthetics papers/adaptive-normal-form/manuscript/tex/sections/01_introduction.tex",
+          "line_start": 9,
+          "line_end": 9,
+          "before": "We do this for two deterministic sampled models. One adjusts a broadcast by the gradient of a target response using an old report. The other first advances a relaxing plant, then applies a collective response to the newly observed mismatch. This apparently small timing and controller choice changes the stability calculation and the nonlinear result. We then replace a flat detector bank by exact, specified majority trees, and finally attach an independently defined actuator. The contribution is the resulting chain of calculations: from a microscopic vote to its derivative, from that derivative to the appropriate full-loop boundary, and from an admitted architecture to a reachable intervention within budget. The paper supplies its own proofs and numerical method. No inference requires an earlier version of the argument.",
+          "after": "We do this for two deterministic sampled models. One adjusts a broadcast by the gradient of a target response using an old report. The other first advances a relaxing plant, then applies a collective response to the newly observed mismatch. The placement of the response changes both the stability calculation and the nonlinear result. We then replace a flat detector bank by exact, specified majority trees, and finally attach an independently defined actuator. The contribution is the resulting chain of calculations: from a microscopic vote to its derivative, from that derivative to the appropriate full-loop boundary, and from an admitted architecture to a reachable intervention within budget. The derivations and numerical method are given below.",
+          "reason": "Name the consequential controller choice instead of judging its apparent size. Remove version-history framing from the standalone introduction.",
+          "scope": "Prose/clarity only. Preserve mathematical content, numerical strata, evidence, citations and labels."
+        }
+      ]
+    },
+    {
+      "path": "synthetics papers/adaptive-normal-form/manuscript/tex/sections/02_model.tex",
+      "before_sha256": "139216f0dbd8ab2911a527d372eba1c386924e29c62cd6910045d7a21771ce53",
+      "after_sha256": "8bd89e0d9e6e82241737fd548129b9d7108a767c7124b073c4198327d943dadb",
+      "edits": [
+        {
+          "file": "synthetics papers/adaptive-normal-form/manuscript/tex/sections/02_model.tex",
+          "line_start": 8,
+          "line_end": 8,
+          "before": "Here \\(\\beta\\) has inverse-signal units. We define the collective response as the \\emph{mean verdict}",
+          "after": "Here \\(\\beta\\) has inverse-signal units. We define the collective response as the \\emph{mean verdict}, the expected sign of the population vote:",
+          "reason": "Define the meaning of mean verdict before the displayed expectation.",
+          "scope": "Prose/clarity only. Preserve mathematical content, numerical strata, evidence, citations and labels."
+        }
+      ]
+    },
+    {
+      "path": "synthetics papers/adaptive-normal-form/manuscript/tex/sections/05_phases.tex",
+      "before_sha256": "f6821c7c76f2ced2b07847b093528e5d80ac23e2dd65130ebadb364fb2a9d488",
+      "after_sha256": "b36479337fef6d68fbc7b517e350ab163014833da6ffe6c1edb184649dd01c69",
+      "edits": [
+        {
+          "file": "synthetics papers/adaptive-normal-form/manuscript/tex/sections/05_phases.tex",
+          "line_start": 20,
+          "line_end": 20,
+          "before": "For the post-observation map, trace and determinant of Eq.~\\eqref{hrec:eq:post-jacobian} give the three real two-dimensional Schur conditions. On \\(b>s>0\\), \\(0\\le r<1\\), their nontrivial upper boundary is",
+          "after": "For the post-observation map, trace and determinant of Eq.~\\eqref{hrec:eq:post-jacobian} give the three real two-dimensional Schur conditions, which place both eigenvalues inside the unit disk. On \\(b>s>0\\), \\(0\\le r<1\\), their nontrivial upper boundary is",
+          "reason": "Explain the stability test at first use without changing it.",
+          "scope": "Prose/clarity only. Preserve mathematical content, numerical strata, evidence, citations and labels."
+        }
+      ]
+    },
+    {
+      "path": "synthetics papers/adaptive-normal-form/manuscript/tex/sections/06_hierarchy.tex",
+      "before_sha256": "fb3d9d59788ec05de78ecc14e08c4f348f663beed1d5c3a89ebf7510f3683410",
+      "after_sha256": "1aad0b9bc65e7cde7318a3e435cae8675aba85a181d2bdc8636144ffdf0e9c61",
+      "edits": [
+        {
+          "file": "synthetics papers/adaptive-normal-form/manuscript/tex/sections/06_hierarchy.tex",
+          "line_start": 5,
+          "line_end": 5,
+          "before": "\\(\\prod_{\\ell=1}^L n_\\ell=N\\). Conditional on a fixed broadcast, disjoint subtrees have independent binary outputs with the same distribution at each level. If \\(B_n(v)\\) is the mean majority verdict for iid inputs of mean \\(v\\), the successive means satisfy",
+          "after": "\\(\\prod_{\\ell=1}^L n_\\ell=N\\). Conditional on a fixed broadcast, disjoint subtrees have independent binary outputs with the same distribution at each level. If \\(B_n(v)\\) is the mean majority verdict for independent and identically distributed (iid) inputs of mean \\(v\\), the successive means satisfy",
+          "reason": "Expand iid at first use.",
+          "scope": "Prose/clarity only. Preserve mathematical content, numerical strata, evidence, citations and labels."
+        },
+        {
+          "file": "synthetics papers/adaptive-normal-form/manuscript/tex/sections/06_hierarchy.tex",
+          "line_start": 40,
+          "line_end": 40,
+          "before": "A retained exact-rational enumeration covers all 255 such sequences for \\(k=1,\\ldots,8\\). To state its gain test without identifying the controllers, write",
+          "after": "To place a tree in a controller, write its response as \\(R_{\\mathcal T}(u)=v_L(u)\\). For the matched lagged comparison, replace both plant and target by \\(M=F=R_{\\mathcal T}\\), evaluate the fixed-curve point at zero broadcast, and hold \\(\\alpha,r\\) fixed. For the post-observation comparison, replace only \\(R_N\\) by \\(R_{\\mathcal T}\\), holding the linear plant, target and response step fixed.\n\nA retained exact-rational enumeration covers all 255 such sequences for \\(k=1,\\ldots,8\\). To express their controller-specific gain tests in one notation, write",
+          "reason": "State which existing controller functions the exact tree replaces and preserve functional matching.",
+          "scope": "Prose/clarity only. Preserve mathematical content, numerical strata, evidence, citations and labels."
+        },
+        {
+          "file": "synthetics papers/adaptive-normal-form/manuscript/tex/sections/06_hierarchy.tex",
+          "line_start": 47,
+          "line_end": 47,
+          "before": "The exponent \\(\\nu=1\\) describes one response derivative, while \\(\\nu=2\\) describes the matched gradient placement. The prefactor \\(\\eta\\) contains the chosen controller and its own threshold. At the illustrative control \\(\\eta=1/8,\\nu=1\\), a slope \\(G_{\\mathcal T}/\\beta<8\\) is required. At \\(N=243\\), the flat slope is \\(12.4505920090\\), but the all-three depth-five slope is \\(243/32=7.59375\\). Exactly one of the 16 admitted level sequences meets the strict gain test. At \\(N=729\\), even the smallest attained slope, \\(729/64=11.390625\\), exceeds eight. None of its 32 sequences qualifies. A hierarchy can rescue a finite case without providing unlimited rescue.",
+          "after": "The exponent \\(\\nu=1\\) describes the post-observation placement, with \\(\\eta=\\varepsilon\\beta/K_c\\). The exponent \\(\\nu=2\\) describes the matched gradient placement at zero broadcast, with \\(\\eta=\\alpha\\beta^2/(1+r)\\) and transverse threshold \\(K_c=1+r\\). Thus each prefactor retains its controller's own threshold. At the illustrative control \\(\\eta=1/8,\\nu=1\\), a slope \\(G_{\\mathcal T}/\\beta<8\\) is required. At \\(N=243\\), the flat slope is \\(12.4505920090\\), but the all-three depth-five slope is \\(243/32=7.59375\\). Exactly one of the 16 admitted level sequences meets the strict gain test. At \\(N=729\\), even the smallest attained slope, \\(729/64=11.390625\\), exceeds eight. None of its 32 sequences qualifies. A hierarchy can rescue a finite case without providing unlimited rescue.",
+          "reason": "Define the normalised prefactor by the already stated controller gains and operating point.",
+          "scope": "Prose/clarity only. Preserve mathematical content, numerical strata, evidence, citations and labels."
+        }
+      ]
+    },
+    {
+      "path": "synthetics papers/adaptive-normal-form/manuscript/tex/sections/07_window.tex",
+      "before_sha256": "89f0f828a9e7e16f187eeee5474f3486bb30a6f19608412485409f452e622557",
+      "after_sha256": "88e82ad3779f260cd09c2fe013f6d65362427144ba1eed66bd1fd36c28597190",
+      "edits": [
+        {
+          "file": "synthetics papers/adaptive-normal-form/manuscript/tex/sections/07_window.tex",
+          "line_start": 81,
+          "line_end": 81,
+          "before": "The inequality refers to the corresponding controller's local criterion. It does not certify a global attractor. Static gain attenuation \\(d\\) and actuator transmission \\(c\\) enter different calculations. A relation such as \\(d=c^2\\) would be an additional coupling hypothesis, not a consequence of reversing a many-to-one majority map.",
+          "after": "The gain inequality is evaluated at the operating point specified for the chosen controller. For the matched comparison above, it tests transverse attraction near the zero-broadcast fixed-curve point, not return to a prescribed broadcast. For the post-observation comparison, it tests local attraction to the origin. Neither certifies a global attractor. Static gain attenuation \\(d\\) and actuator transmission \\(c\\) enter different calculations. A relation such as \\(d=c^2\\) would be an additional coupling hypothesis, not a consequence of reversing a many-to-one majority map.",
+          "reason": "Carry the controller-specific operating point into the feasibility test.",
+          "scope": "Prose/clarity only. Preserve mathematical content, numerical strata, evidence, citations and labels."
+        }
+      ]
+    },
+    {
+      "path": "synthetics papers/adaptive-normal-form/manuscript/tex/sections/10_conclusion.tex",
+      "before_sha256": "34a4fcbca9a289fba41034c0fa17def37d4a07eeb06f27d91a58986eb06a349f",
+      "after_sha256": "e92f7ca92aa3ff58b2cec291ce27a271c916454d32ace13385fb549545b008ee",
+      "edits": [
+        {
+          "file": "synthetics papers/adaptive-normal-form/manuscript/tex/sections/10_conclusion.tex",
+          "line_start": 7,
+          "line_end": 7,
+          "before": "The positive conclusion is therefore constructive. Hierarchy can be designed as a response transformation and tested against a controller-specific stability condition. Exact product trees make that test finite and reproducible: the \\(243\\)-leaf example gains an admissible subcritical architecture, while the \\(729\\)-leaf example does not. Reachability and minimum-norm control then price a declared intervention on a separately specified chain. These calculations replace an unrestricted depth prescription by the feasible set in Eq.~\\eqref{hrec:eq:feasibility}.",
+          "after": "The construction therefore gives a practical architecture test. Hierarchy can be designed as a response transformation and tested against a controller-specific stability condition. Exact product trees make that test finite and reproducible: the \\(243\\)-leaf example gains an admissible subcritical architecture, while the \\(729\\)-leaf example does not. Reachability and minimum-norm control then price a declared intervention on a separately specified chain. These calculations replace an unrestricted depth prescription by the feasible set in Eq.~\\eqref{hrec:eq:feasibility}.",
+          "reason": "Replace a generic conclusion announcement with the result's use.",
+          "scope": "Prose/clarity only. Preserve mathematical content, numerical strata, evidence, citations and labels."
+        }
+      ]
+    },
+    {
+      "path": "synthetics papers/adaptive-normal-form/manuscript/tex/sections/03_return_map.tex",
+      "before_sha256": "bc0e418371c827e718a701fb92500d5fb569f3a41bb9fae75c2b16bd70c00abb",
+      "after_sha256": "bc0e418371c827e718a701fb92500d5fb569f3a41bb9fae75c2b16bd70c00abb",
+      "edits": []
+    },
+    {
+      "path": "synthetics papers/adaptive-normal-form/manuscript/tex/sections/04_susceptibility.tex",
+      "before_sha256": "a82b43e474eb01e1a9ad0ba877fc11676a728bf3c4b309e5b5930b289722f5d9",
+      "after_sha256": "a82b43e474eb01e1a9ad0ba877fc11676a728bf3c4b309e5b5930b289722f5d9",
+      "edits": []
+    },
+    {
+      "path": "synthetics papers/adaptive-normal-form/manuscript/tex/sections/08_universality.tex",
+      "before_sha256": "4f18c97ae13d14dca0baa914c51f868d2148c9c9109c77a6707b9ccb1233f1c5",
+      "after_sha256": "4f18c97ae13d14dca0baa914c51f868d2148c9c9109c77a6707b9ccb1233f1c5",
+      "edits": []
+    },
+    {
+      "path": "synthetics papers/adaptive-normal-form/manuscript/tex/sections/09_discussion.tex",
+      "before_sha256": "6cb0648d898246332e7a574d72c635419ec8d5165fbfab64742202fef4608004",
+      "after_sha256": "6cb0648d898246332e7a574d72c635419ec8d5165fbfab64742202fef4608004",
+      "edits": []
+    }
+  ]
+}

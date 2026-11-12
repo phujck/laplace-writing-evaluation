@@ -136,7 +136,7 @@ Removing \texttt{d01-r1} retracts weight one from that tuple and removes that so
 The raw leaf survives with count one through \texttt{d02-r1}.
 Its parent now has counts \((3,1)\) and binds to law \((3/4,1/4)\).
 The previous canonical law is not edited.
-This is the distinction that source-labelled-prefix wording would obscure.
+Separate incidence entries therefore preserve source identity without duplicating the raw prefix.
 A canonical signature contains reduced rational outgoing probabilities and successor-signature identities in a fixed category order.
 Interning an already present signature reuses its immutable state.
 Reference counts track active occurrences of those states.
@@ -447,7 +447,7 @@ quotient & integer & query & logical\\
 (d) For \(D=19,Q=1024\), quotient storage, integer plan, query workspace and estimated logical reads are different costs.
 The last bar is an algorithmic byte-load estimate, not measured DRAM traffic.
 (e) Separate control laws, not the parity family: a repeated 64-world support favours weighted direct evaluation, while high-entropy unique support exceeds the continuation kernel's width capacity.
-All five original panels are retained as vector crops, with resource labels reset below (d) and an explicit method legend beside (e).
+The resource labels appear below (d), and the method legend beside (e).
 \lq\lq Exact recursive\rq\rq\ in the saved plot means exact continuation evaluation by the integer messages above.
 Orange circles denote raw packed scanning, green squares weighted-unique scanning and blue triangles continuation evaluation in (a,b).
 The same method colours apply to (e), whose blue cross is a refusal, not a timing.}
@@ -727,7 +727,7 @@ It also accepts token F1 at least .5, using the preserved scorer's token overlap
 This answer-form rule is not semantic correctness.
 Figure~\ref{fig:dm-frames} preserves both instead of treating them as the same accuracy measure.
 A simpler delivery configuration gives 62/58 judged successes, and an 8k explicit-step configuration before the extra pass gives 106/106.
-The large delivery recovery coexists with a small final matched difference.
+The extra delivery step improves both routes substantially, while their final matched difference remains small.
 \begin{figure*}[t]
 \includegraphics[width=.94\textwidth]{figures/generated/mip_frames_noactivation.pdf}
 \caption{FRAMES endpoint comparison.
@@ -771,7 +771,7 @@ The existing figure's \lq\lq Relational retrieval\rq\rq\ label denotes \texttt{o
 
 Correctness includes 48 questions and all six abstentions.
 Complete positive evidence uses 42 questions, excluding the six.
-Conditional and dense readouts give \(44/48\) and \(45/48\) correct at 4k and 8k, with \(41/42\) positive-evidence coverage at both allowances.
+The two shared-dense arms give \(44/48\) and \(45/48\) correct at 4k and 8k, with \(41/42\) positive-evidence coverage at both allowances.
 Hybrid gives \(40/48,44/48\) correct and \(33/42,37/42\) positive coverage.
 A separate nonempty-annotation endpoint has denominator 44 because two abstention questions also have annotated required turns.
 Its preserved counts are \(43/44\) for conditional and dense, and \(35/44,39/44\) for hybrid.

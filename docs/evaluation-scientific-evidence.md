@@ -1,0 +1,27 @@
+# Scientific evidence and reproduction paths
+
+Start with the [four papers](../README.md#read-the-papers). Each PDF has its editable TeX, bibliography and figure inputs alongside it. [Canonical build records](../release/paper-builds.json) identify the final editorial pass and actual build outputs, including the `.aux`/`.bbl` files used by the source reader. The included TeX logs record the builds; opening supplied PDFs needs no TeX installation.
+
+The [per-paper production record](../release/manuscript-production.json) gives the actual shared final-polish author session/turn, literal edit deltas, guarded application identities, canonical source hashes and build/PDF outputs. These are inspectable bundled records; private conversations are excluded.
+
+## Dynamic Memory
+
+The [controlled update calculation](../writing_projects/memory-in-pieces/evidence/DYNAMIC_MEMORY_DEMO_2026-11-11/derivation-and-implementation.md) explains the finite weighted-source fixture. Its [input](../writing_projects/memory-in-pieces/evidence/DYNAMIC_MEMORY_DEMO_2026-11-11/input.json), [protocol](../writing_projects/memory-in-pieces/evidence/DYNAMIC_MEMORY_DEMO_2026-11-11/protocol.json), [implementation](../writing_projects/memory-in-pieces/evidence/DYNAMIC_MEMORY_DEMO_2026-11-11/incremental_demo_checked.py) and [retained result](<../synthetics papers/corpus-as-a-state/reconstruction/output/pdf/v2.1/research_runs/run-d2f6d3cff17f0fbe.result.json>) are included. The [reviewer guide](../REVIEWER_GUIDE.md) gives the small model-free rerun command. Its nine states and sixteen queries test the declared update/oracle mechanism.
+
+For the text studies, [banked endpoint values and settings](../writing_projects/memory-in-pieces/evidence/MIP_CANDIDATE_2026-11-11/adopted-banked-results.json) preserve cohorts, model/delivery conditions and the distinction between completed and partial observations. [Visual inputs](../writing_projects/memory-in-pieces/evidence/MIP_VISUALS_2026-11-11/accepted-data.json) support the figures. [Research records](<../synthetics papers/corpus-as-a-state/reconstruction/output/pdf/v2.1/research_records.json>) and the [figure manifest](<../synthetics papers/corpus-as-a-state/reconstruction/output/pdf/v2.1/figure_manifest.json>) expose their exact source/result identities. The original editable [source-to-message diagram](../writing_projects/memory-in-pieces/evidence/DYNAMIC_MEMORY_REWRITE_2026-11-11/source-to-message-final.tikz) is included.
+
+## Self-Consistent Loss Geometries
+
+The full paper uses retained calculations shared with the base Loss Geometries project. Their original locations and identities remain intact: [five research records](<../synthetics papers/self-consistent-loss-geometries/manuscript/imported/research_records.json>), [finite analytic checks](../writing_projects/self-consistent-loss-geometries/research/slg-analytic-20261111-v2/finite_checks.py), [policy coverage checks](../writing_projects/self-consistent-loss-geometries/research/slg-policy-coverage-20261111-v3/coverage_checks.py), and [scientific table generator](../writing_projects/self-consistent-loss-geometries/research/slg-scientific-figures-20261111/scientific_tables.py).
+
+Inspect the retained [analytic result](<../synthetics papers/self-consistent-loss-geometries/manuscript/imported/research_runs/run-0781a7b8f8513412.result.json>), [coverage result](<../synthetics papers/self-consistent-loss-geometries/manuscript/imported/research_runs/run-756cd502012e0adb.result.json>) and [figure-table result](<../synthetics papers/self-consistent-loss-geometries/manuscript/imported/research_runs/run-7f8022a64802820f.result.json>). The selected full paper's Research panel does not own those separate-project records; these direct links are the support route. They have not been silently relocated or presented as new executions by the full-paper project.
+
+## Adaptive Normal Form
+
+The [six research records](<../synthetics papers/adaptive-normal-form/manuscript/tex/research_records.json>) connect the paper to bounded algebra, Jacobian/orbit, finite-tree, full-loop and actuation calculations. Source code is under [the project support directory](../writing_projects/adaptive-normal-form-aek9/); exact run definitions, receipts, numerical outputs and selected plot tables are under [research_runs](<../synthetics papers/adaptive-normal-form/manuscript/tex/research_runs/>). The [figure manifest](<../synthetics papers/adaptive-normal-form/manuscript/tex/figure_manifest.json>) records the data and drawing identities.
+
+## Read retained execution records
+
+The original run indexes, jobs, receipts and result bytes are preserved. [Explicit portability aliases](../writing-portability.json) resolve selected historical host coordinates inside this checkout; [coordinate proofs](../release/run-location-proofs.json) explain each mapping. The actual owner [readback](../release/run-owner-readback.json) distinguishes completed, failed and superseded runs. This changes location resolution, not historical outcomes or scientific acceptance.
+
+The [complete selected support index](../release/scientific-support.json) and [byte manifest](../release/selection-manifest.json) provide the broader paths and pins. Raw third-party benchmark corpora are not silently relicensed, and historical model/GPU experiments are retained evidence rather than automatic reruns. Install optional capabilities and explicitly authorize any account-backed reproduction separately.

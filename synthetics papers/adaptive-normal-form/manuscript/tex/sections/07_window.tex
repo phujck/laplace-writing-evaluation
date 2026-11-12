@@ -78,7 +78,7 @@ We can now combine the two constructions without conflating their coefficients. 
  \end{array}\right\}.
  \label{hrec:eq:feasibility}
 \end{equation}
-The inequality refers to the corresponding controller's local criterion. It does not certify a global attractor. Static gain attenuation \(d\) and actuator transmission \(c\) enter different calculations. A relation such as \(d=c^2\) would be an additional coupling hypothesis, not a consequence of reversing a many-to-one majority map.
+The gain inequality is evaluated at the operating point specified for the chosen controller. For the matched comparison above, it tests transverse attraction near the zero-broadcast fixed-curve point, not return to a prescribed broadcast. For the post-observation comparison, it tests local attraction to the origin. Neither certifies a global attractor. Static gain attenuation \(d\) and actuator transmission \(c\) enter different calculations. A relation such as \(d=c^2\) would be an additional coupling hypothesis, not a consequence of reversing a many-to-one majority map.
 
 A simple depth window is a conditional specialisation of Eq.~\eqref{hrec:eq:feasibility}. For the zero-initial-state shift task, \(0<c<1\), \(H\ge1\), and \(E_{\max}/E_0\ge1\),
 \begin{equation}

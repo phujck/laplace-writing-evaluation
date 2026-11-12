@@ -1,7 +1,7 @@
 \section{What consistent pricing buys in a tracking task}
 \label{sec:numerical-demonstrations}
 
-The action identity can be correct while the policy is a poor predictor. To examine that distinction, we use the retained finite synthetic experiment, with no new data generation or parameter selection. Its environment is
+The action identity can be correct while the policy is a poor predictor. The retained finite synthetic experiment tests that distinction. Its policies use a fixed observed-window scoring rule, not the adapting evaluator coordinate of the reuse-mode controller. No new data generation or parameter selection is used here. The environment is
 \begin{equation}
  y_t=\vartheta_t^*x_t+\xi_t,\qquad
  x_t\sim\mathcal N(0,1),\quad

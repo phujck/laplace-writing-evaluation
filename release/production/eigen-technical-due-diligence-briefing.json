@@ -1,0 +1,339 @@
+{
+  "schema": "laplace.public-polish-delta/1",
+  "scope": "Selected literal source edits and before/after pins from the actual frozen author package. No private transcript or intake is included.",
+  "project": "eigen-technical-due-diligence-briefing",
+  "author_session": "WS-701197cdbffd47fcb6f7c3fdfbf102aa",
+  "author_turn": "WT-2005540281534984abcd9c1c8d54f612",
+  "original_package_sha256": "2bda72047b8b9167fe5cbe33b59e162bc930b9673d4b6e3f4cf412d087d8a160",
+  "files": [
+    {
+      "path": "writing_projects/eigen-technical-due-diligence-briefing/manuscript/working-draft/Eigen-A-Theory-of-Efficient-Representation-and-Its-Working-Prototypes.tex",
+      "before_sha256": "a2e3271a8ad72111909bdb7eb99a0e5a60ad8942dabc3ab0915e80464e3b7dd4",
+      "after_sha256": "1e9be815d30acfa9b1dcbbcda3425f469100026d908b08ea4b827494730dcea5",
+      "edits": [
+        {
+          "file": "writing_projects/eigen-technical-due-diligence-briefing/manuscript/working-draft/Eigen-A-Theory-of-Efficient-Representation-and-Its-Working-Prototypes.tex",
+          "line_start": 22,
+          "line_end": 23,
+          "before": "\\vspace{0.5em}\n{\\small Private manuscript candidate - independent review pending\\par}",
+          "after": "",
+          "reason": "Remove the obsolete publication-facing review-pending line by direct user instruction. No acceptance substitute.",
+          "scope": "Prose/clarity only. Preserve mathematical content, numerical strata, evidence, citations and labels."
+        }
+      ]
+    },
+    {
+      "path": "writing_projects/eigen-technical-due-diligence-briefing/manuscript/working-draft/chapters/chapter-01.tex",
+      "before_sha256": "0a5b5c1e5549db324359b657fbbf39b10c09ce94bf5c37f4bcabad03b9a03979",
+      "after_sha256": "8a4a9ca80516c52fc80830463f7980704a5425db8b510cd8f37ab7df06c70615",
+      "edits": [
+        {
+          "file": "writing_projects/eigen-technical-due-diligence-briefing/manuscript/working-draft/chapters/chapter-01.tex",
+          "line_start": 6,
+          "line_end": 6,
+          "before": "The most useful evidence comes from constructions where we can see the choice change the answer. A conditional displacement absorbs a spin's coupling to its surrounding oscillators exactly, leaving a bounded correction from which its cold state can be predicted. A residual identifies a missing direction in a quantum trial space, and its excitation energy helps decide whether adding it is worthwhile. A compact continuation rule answers exact joint queries without scanning every record. These examples share a method: preserve the structure that makes the requested operation possible, then measure the cost of the remaining approximation.",
+          "after": "The examples below let us see a choice of representation change the answer. A conditional displacement absorbs a spin's coupling to its surrounding oscillators exactly, leaving a bounded correction from which its cold state can be predicted. A residual identifies a missing direction in a quantum trial space, and its excitation energy helps decide whether adding it is worthwhile. A compact continuation rule answers exact joint queries without scanning every record. These examples share a method: preserve the structure that makes the requested operation possible, then measure the cost of the remaining approximation.",
+          "reason": "Replace self-assessment with the concrete role of the examples.",
+          "scope": "Prose/clarity only. Preserve mathematical content, numerical strata, evidence, citations and labels."
+        },
+        {
+          "file": "writing_projects/eigen-technical-due-diligence-briefing/manuscript/working-draft/chapters/chapter-01.tex",
+          "line_start": 14,
+          "line_end": 14,
+          "before": "The evidence has different strengths at these three levels. Finite mathematical identities explain mechanisms. Simulations and archived comparisons establish particular outcomes under stated conditions. The software demonstrates persistent objects and recoverable operations. The SDK describes a product direction to evaluate. We develop each at the point where it advances the argument, so the reader can judge both the present contribution and the next useful test.",
+          "after": "The evidence has different strengths at these three levels. Finite mathematical identities explain mechanisms. Simulations and archived comparisons establish particular outcomes under stated conditions. The software implements persistent objects and recovery mechanisms, whose exercised coverage must be distinguished from their specification. The SDK describes a product direction to evaluate. These distinctions determine what each example establishes and which test should follow.",
+          "reason": "Distinguish implemented recovery from demonstrated coverage without adding an unobserved trace.",
+          "scope": "Prose/clarity only. Preserve mathematical content, numerical strata, evidence, citations and labels."
+        }
+      ]
+    },
+    {
+      "path": "writing_projects/eigen-technical-due-diligence-briefing/manuscript/working-draft/chapters/the-price-of-a-shared-description.tex",
+      "before_sha256": "9e8377ee761f2b54cad649db78f78857039fdc5aced4aeb9947ebc59d1e9870c",
+      "after_sha256": "9e75e2400815e125b81e5c2793cba0cb689344794b8ad53dc7c6f3d672cc79be",
+      "edits": [
+        {
+          "file": "writing_projects/eigen-technical-due-diligence-briefing/manuscript/working-draft/chapters/the-price-of-a-shared-description.tex",
+          "line_start": 98,
+          "line_end": 98,
+          "before": "Here $H$ is the uncertainty left after the stated condition is known. The conditional mutual information $I(Y;\\Omega|X)$ measures the predictive information about $Y$ available in $\\Omega$ but absent from $X$. Relative entropy is $D(p\\Vert q)=\\sum_y p(y)\\log[p(y)/q(y)]$: the excess expected logarithmic prediction loss from using $q$ when the outcomes follow $p$. The terms are intrinsic target uncertainty, distinctions lost by the encoder, and mismatch in the decoder. Better decoding cannot recover a distinction that was discarded. A larger description cannot remove randomness already present in the target.",
+          "after": "Here $H$ is the uncertainty left after the stated condition is known. The conditional mutual information $I(Y;\\Omega|X)$ measures the predictive information about $Y$ available in $\\Omega$ but absent from $X$. Relative entropy is $D(p\\Vert q)=\\sum_y p(y)\\log[p(y)/q(y)]$: the excess expected logarithmic prediction loss from using $q$ when the outcomes follow $p$. The three terms are the target's intrinsic uncertainty, the predictive information lost by the encoder, and the decoder's mismatch. Better decoding cannot recover a distinction that was discarded. A larger description cannot remove randomness already present in the target.",
+          "reason": "Keep the decomposition's explanatory terms parallel and specific.",
+          "scope": "Prose/clarity only. Preserve mathematical content, numerical strata, evidence, citations and labels."
+        }
+      ]
+    },
+    {
+      "path": "writing_projects/eigen-technical-due-diligence-briefing/manuscript/working-draft/chapters/what-a-useful-summary-must-remember.tex",
+      "before_sha256": "ecf35b660146c43328f711d2ef2c6c74b97f0f4a9d35f9a2edac82301b062b45",
+      "after_sha256": "10407362d9b1794c85310cad25c6a12d3bb65fd8245b6b47e686fb96a1979d6f",
+      "edits": [
+        {
+          "file": "writing_projects/eigen-technical-due-diligence-briefing/manuscript/working-draft/chapters/what-a-useful-summary-must-remember.tex",
+          "line_start": 95,
+          "line_end": 95,
+          "before": "Closure must still serve a task. The current Foundations chapter enumerates all 2,047 bipartitions of a twelve-state model with three motifs. Its exactly closed hub/spoke partition retains essentially none of the motif-label information the task asks for. Imposing a retention requirement instead exposes a useful trade-off between predictive closure and the distinctions being preserved. The source also finds that an appropriate sign cut of the slow eigenfunction selects a good partition. The task determines which spectral or closure criterion is useful.",
+          "after": "Closure must still serve a task. Foundations enumerates all 2,047 bipartitions of a twelve-state model with three motifs. Its exactly closed hub/spoke partition retains essentially none of the motif-label information the task asks for. Imposing a retention requirement instead exposes a useful trade-off between predictive closure and the distinctions being preserved. The source also finds that an appropriate sign cut of the slow eigenfunction selects a good partition. The task determines which spectral or closure criterion is useful.",
+          "reason": "Remove transient drafting status from the example's identity.",
+          "scope": "Prose/clarity only. Preserve mathematical content, numerical strata, evidence, citations and labels."
+        },
+        {
+          "file": "writing_projects/eigen-technical-due-diligence-briefing/manuscript/working-draft/chapters/what-a-useful-summary-must-remember.tex",
+          "line_start": 97,
+          "line_end": 97,
+          "before": "The constructive common theme is fidelity under a specified operation. A useful summary preserves a forecast or decision. A useful reduced dynamical state carries enough information to predict its evolution. A useful hierarchy carries the inherited cost of what it discarded. These requirements give the next representation a job, rather than treating increasing abstraction as an achievement in itself.",
+          "after": "Each repair preserves fidelity under a specified operation. A useful summary preserves a forecast or decision. A useful reduced dynamical state carries enough information to predict its evolution. A useful hierarchy carries the inherited cost of what it discarded. These requirements give the next representation a job, rather than treating increasing abstraction as an achievement in itself.",
+          "reason": "Link the section's closing statement to the repairs just developed.",
+          "scope": "Prose/clarity only. Preserve mathematical content, numerical strata, evidence, citations and labels."
+        }
+      ]
+    },
+    {
+      "path": "writing_projects/eigen-technical-due-diligence-briefing/manuscript/working-draft/chapters/loss-dynamics-and-the-choice-of-scale.tex",
+      "before_sha256": "28c971ffb63671d7be24c0b39d70d55368f3661dcd4d695d2b6f47677c8aa90d",
+      "after_sha256": "9a69f98b45d3473568b05491cdeae23e32cac817e95899dc2f82411b2af18d88",
+      "edits": [
+        {
+          "file": "writing_projects/eigen-technical-due-diligence-briefing/manuscript/working-draft/chapters/loss-dynamics-and-the-choice-of-scale.tex",
+          "line_start": 90,
+          "line_end": 90,
+          "before": "This is the open-systems version of the representational question. An adequate description carries the influence that crosses its chosen boundary, not necessarily all the surrounding detail. The papers Equilibrium from the Inside Out  and Dual Representatives of Mean-Force Equilibrium  pursue explicit ways of representing that influence.~\\cite{McCaulbab685} The construction keeps the environmental influence in an object defined on the subsystem itself, making the choice of boundary part of the calculation.",
+          "after": "This is the open-systems version of the representational question. An adequate description carries the influence that crosses its chosen boundary, not necessarily all the surrounding detail. The papers \\emph{Equilibrium from the Inside Out} and \\emph{Dual Representatives of Mean-Force Equilibrium} pursue explicit ways of representing that influence.~\\cite{McCaulbab685} The construction keeps the environmental influence in an object defined on the subsystem itself, making the choice of boundary part of the calculation.",
+          "reason": "Correct title typography and remove doubled spaces without changing source identities.",
+          "scope": "Prose/clarity only. Preserve mathematical content, numerical strata, evidence, citations and labels."
+        },
+        {
+          "file": "writing_projects/eigen-technical-due-diligence-briefing/manuscript/working-draft/chapters/loss-dynamics-and-the-choice-of-scale.tex",
+          "line_start": 114,
+          "line_end": 114,
+          "before": "The retained spectral information is equally explicit. A spin flip exchanges the two displaced oscillator configurations. Its imaginary-time correlation, with $t$ measured in inverse energy, is",
+          "after": "A spin flip exchanges the two displaced oscillator configurations. Let $|0\\rangle$ be the oscillator vacuum. The correlation is the matrix element $C_g(t)=\\langle0|T_g e^{-tH_B}T_g|0\\rangle$, with imaginary time $t$ measured in inverse energy. For the specified bath it is",
+          "reason": "Define the correlation's matrix element using the existing retained operator and vacuum.",
+          "scope": "Prose/clarity only. Preserve mathematical content, numerical strata, evidence, citations and labels."
+        },
+        {
+          "file": "writing_projects/eigen-technical-due-diligence-briefing/manuscript/working-draft/chapters/loss-dynamics-and-the-choice-of-scale.tex",
+          "line_start": 129,
+          "line_end": 129,
+          "before": "Subtracting $S_g^2$ removes the zero-excitation contribution. The remaining integrals weight virtual excitations by their inverse energies and inverse squared energies. On the positive-parity ground branch,",
+          "after": "Subtracting $S_g^2$ removes the zero-excitation contribution. In an eigenbasis $H_B|n\\rangle=E_n|n\\rangle$, the excited terms of the correlation are $|\\langle n|T_g|0\\rangle|^2e^{-tE_n}$. Integrating therefore gives $A_g=\\sum_{n\\ne0}|\\langle n|T_g|0\\rangle|^2/E_n$ and $B_g=\\sum_{n\\ne0}|\\langle n|T_g|0\\rangle|^2/E_n^2$. These are the virtual-excitation denominators in the perturbative expansion. On the positive-parity ground branch,",
+          "reason": "Supply the existing finding's short bridge from the correlation to its inverse moments, without a new theorem or computation.",
+          "scope": "Prose/clarity only. Preserve mathematical content, numerical strata, evidence, citations and labels."
+        },
+        {
+          "file": "writing_projects/eigen-technical-due-diligence-briefing/manuscript/working-draft/chapters/loss-dynamics-and-the-choice-of-scale.tex",
+          "line_start": 138,
+          "line_end": 138,
+          "before": "The first spin contribution comes from the overlap of the displaced vacua. The next comes from excursions through the excited bath. Both are calculated from the spectrum, without fitting the ground-state data. The fixed gap and bounded perturbation also give an explicit remainder for the displayed energy approximation $E_0^{(2)}$: for $\\Delta<\\varrho<\\nu_{\\min}$,",
+          "after": "The first spin contribution comes from the overlap of the displaced vacua. The next comes from excursions through the excited bath. The spin expectation follows from the energy by the Hellmann--Feynman identity $\\langle\\tau_x\\rangle_0=-2\\partial_\\Delta E_0$. Both are calculated from the spectrum, without fitting the ground-state data. The fixed gap and bounded perturbation also give an explicit remainder for the displayed energy approximation $E_0^{(2)}$: for $\\Delta<\\varrho<\\nu_{\\min}$,",
+          "reason": "Connect the already displayed energy and spin predictions using the identity identified in the existing finding.",
+          "scope": "Prose/clarity only. Preserve mathematical content, numerical strata, evidence, citations and labels."
+        },
+        {
+          "file": "writing_projects/eigen-technical-due-diligence-briefing/manuscript/working-draft/chapters/loss-dynamics-and-the-choice-of-scale.tex",
+          "line_start": 205,
+          "line_end": 205,
+          "before": "A simple geometric example is a resolved direction $u_s=(\\cos\\nu s,\\sin\\nu s)^T$, with projector $\\Pi_s=u_su_s^T$ and fixed nonzero rotation rate $\\nu$. At $s=0$,",
+          "after": "For a fixed-coordinate example, choose $\\mathsf J_s=0$ and a resolved direction $u_s=(\\cos\\nu s,\\sin\\nu s)^T$, with projector $\\Pi_s=u_su_s^T$ and fixed nonzero rotation rate $\\nu$. At $s=0$,",
+          "reason": "Specify the transport convention of the already printed rotating-projector example.",
+          "scope": "Prose/clarity only. Preserve mathematical content, numerical strata, evidence, citations and labels."
+        },
+        {
+          "file": "writing_projects/eigen-technical-due-diligence-briefing/manuscript/working-draft/chapters/loss-dynamics-and-the-choice-of-scale.tex",
+          "line_start": 210,
+          "line_end": 210,
+          "before": "The projectors themselves become arbitrarily close as $h$ shrinks, yet the rate at which their order matters stays finite. Law of Laws~\\cite{McCaulad9572} proposes a self-similar regime in which off-diagonal residue remains significant relative to the spectral gap. The effective description then keeps a noncommuting algebra of resolved distinctions instead of settling into one fixed spectral basis. This is the precise quantum-like feature that the refinement argument brings into the programme.",
+          "after": "The projectors themselves become arbitrarily close as $h$ shrinks, yet in this fixed frame the rate at which their order matters stays finite. A co-rotating frame could remove this example's rotation. A residual claim therefore depends on which coordinate transport the comparison admits. Law of Laws~\\cite{McCaulad9572} proposes a self-similar regime in which off-diagonal residue remains significant relative to the spectral gap. The effective description then keeps a noncommuting algebra of resolved distinctions instead of settling into one fixed spectral basis. This is the precise quantum-like feature that the refinement argument brings into the programme.",
+          "reason": "Separate fixed-frame rotation from a transport-independent residual claim.",
+          "scope": "Prose/clarity only. Preserve mathematical content, numerical strata, evidence, citations and labels."
+        },
+        {
+          "file": "writing_projects/eigen-technical-due-diligence-briefing/manuscript/working-draft/chapters/loss-dynamics-and-the-choice-of-scale.tex",
+          "line_start": 311,
+          "line_end": 311,
+          "before": "Attenuating a response also has a cost. In the paper's separate depth-$L$ linear control cascade with attenuation $0<c<1$, the minimum input energy needed to produce a unit apex response scales as $c^{-2(L-1)}$, once the control horizon is long enough to reach the apex. The cascade provides a separate measure of the intervention cost of attenuation. Adaptive Normal Form supplies a related gradient-feedback construction, but its effective gain contains two response derivatives and scales differently.~\\cite{McCaul74663e} The common design question is where an aggregate response should be represented and acted upon, with its stability, signal and control costs accounted for.",
+          "after": "Attenuating a response also has a cost. In the paper's separate depth-$L$ linear control cascade with attenuation $0<c<1$, the minimum squared-input effort needed to produce a unit apex response scales as $c^{-2(L-1)}$, once the control horizon is long enough to reach the apex. The cascade provides a separate measure of the intervention cost of attenuation. Adaptive Normal Form supplies a related gradient-feedback construction, but its effective gain contains two response derivatives and scales differently.~\\cite{McCaul74663e} The common design question is where an aggregate response should be represented and acted upon, with its stability, signal and control costs accounted for.",
+          "reason": "Use the established effort quantity rather than implying calibrated physical energy.",
+          "scope": "Prose/clarity only. Preserve mathematical content, numerical strata, evidence, citations and labels."
+        }
+      ]
+    },
+    {
+      "path": "writing_projects/eigen-technical-due-diligence-briefing/manuscript/working-draft/chapters/quantum-prototypes-changing-the-calculation.tex",
+      "before_sha256": "498bf1e12d38aef8132d12e6493d207832371e412da08eef1a4c101f588fddfa",
+      "after_sha256": "ad7efba528ba275aa462e399791646c83fefd0e48145b94e2968c773843f65af",
+      "edits": [
+        {
+          "file": "writing_projects/eigen-technical-due-diligence-briefing/manuscript/working-draft/chapters/quantum-prototypes-changing-the-calculation.tex",
+          "line_start": 4,
+          "line_end": 4,
+          "before": "The preceding examples show how representation changes the information available to a calculation. The next test is operational: can we use that information to choose better updates, trial states or measurements? We examine three operational methods: inspect feedback before its scalar projection, repair the retained trial space, and choose a spectral window whose measurements remain informative.",
+          "after": "The preceding examples show how representation changes the information available to a calculation. The next test is operational: can we use that information to choose better updates, trial states or measurements? We inspect feedback before its scalar projection, repair the retained trial space, and choose a spectral window whose measurements remain informative.",
+          "reason": "Remove the repeated operational announcement.",
+          "scope": "Prose/clarity only. Preserve mathematical content, numerical strata, evidence, citations and labels."
+        },
+        {
+          "file": "writing_projects/eigen-technical-due-diligence-briefing/manuscript/working-draft/chapters/quantum-prototypes-changing-the-calculation.tex",
+          "line_start": 8,
+          "line_end": 10,
+          "before": "The circuit $U$ preserves the state vector's norm. Its adjustable gates determine which states the calculation can prepare.\n\nA variational algorithm prepares a family of states $|\\psi(\\theta)\\rangle=U(\\theta)|\\psi_0\\rangle$ using a parameterised circuit $U$, measures an energy or other cost, and adjusts $\\theta$. It combines a quantum experiment with a classical optimiser. There are at least three different ways for this procedure to struggle. The measured scalar can conceal a useful operator change. The chosen trial family can omit the needed state. The measurement used to resolve a spectral feature can become ill-conditioned. The Eigen prototypes make those failures distinct and suggest a different repair for each.",
+          "after": "A variational algorithm prepares a family of states $|\\psi(\\theta)\\rangle=U(\\theta)|\\psi_0\\rangle$ using a parameterised circuit $U$, measures an energy or other cost, and adjusts $\\theta$. The circuit preserves the state vector's norm, while its adjustable gates determine which states it can prepare. The algorithm combines a quantum experiment with a classical optimiser. It can struggle in at least three distinct ways. The measured scalar can conceal a useful operator change. The chosen trial family can omit the needed state. The measurement used to resolve a spectral feature can become ill-conditioned. The Eigen prototypes suggest a different repair for each.",
+          "reason": "Introduce the circuit symbol with its construction and remove a dangling definition.",
+          "scope": "Prose/clarity only. Preserve mathematical content, numerical strata, evidence, citations and labels."
+        },
+        {
+          "file": "writing_projects/eigen-technical-due-diligence-briefing/manuscript/working-draft/chapters/quantum-prototypes-changing-the-calculation.tex",
+          "line_start": 15,
+          "line_end": 15,
+          "before": "The loss-operator construction starts before the scalar reading.~\\cite{McCaul0c5ec5}",
+          "after": "The loss-operator construction retains the transformed observable before taking its expectation in one input state:~\\cite{McCaul0c5ec5}",
+          "reason": "Name the operation instead of relying on an unexplained scalar reading.",
+          "scope": "Prose/clarity only. Preserve mathematical content, numerical strata, evidence, citations and labels."
+        }
+      ]
+    },
+    {
+      "path": "writing_projects/eigen-technical-due-diligence-briefing/manuscript/working-draft/chapters/memory-as-a-retained-and-reconstructable-object.tex",
+      "before_sha256": "ccfedf53b71c6342656e8e1f289dcf2f325453907cb06d341a0ed4dec8d63c05",
+      "after_sha256": "a7e0acb84f2673e65bbf23ef06424455867eb5db55d46fddffee954a9dd8d089",
+      "edits": [
+        {
+          "file": "writing_projects/eigen-technical-due-diligence-briefing/manuscript/working-draft/chapters/memory-as-a-retained-and-reconstructable-object.tex",
+          "line_start": 83,
+          "line_end": 83,
+          "before": "Figure~\\ref{fig:dd-memory-mechanism} follows the two constructions from source items to an answer. In the original route, local geometric summaries support projection and certified search. In Dynamic Memory, retained task/law coordinates and reconstruction travel together. A query selects a task or source-conditioned distribution, the decoder computes the requested quantity, and a residual or capacity failure can send the calculation back to finer records. A language model may compose a final response from returned witnesses, but its prose is not the same object as the numerical decoder.",
+          "after": "Figure~\\ref{fig:dd-memory-mechanism} compares geometric retention with the categorical continuation developed next. Local geometric summaries support projection and certified search. In the source-diffusion prototype, retained task/law coordinates travel with their reconstruction. A query selects a task or source-conditioned distribution, and the decoder estimates the requested quantity. A residual or capacity failure can send the calculation back to finer records. The categorical route instead retains joint discrete conditions. A language model may compose a final response from returned witnesses, but its prose is not the same object as either numerical decoder.",
+          "reason": "Match the narrative to the schematic and distinguish three retained representations.",
+          "scope": "Prose/clarity only. Preserve mathematical content, numerical strata, evidence, citations and labels."
+        },
+        {
+          "file": "writing_projects/eigen-technical-due-diligence-briefing/manuscript/working-draft/chapters/memory-as-a-retained-and-reconstructable-object.tex",
+          "line_start": 134,
+          "line_end": 142,
+          "before": "This propagator has a literal selective-channel representation, conditional on the stated positive filters. The matrices\n\\[\n K_{bax}=\\sqrt{t_g(a,x)f_g(x)}\\,|b\\rangle\\langle a|\n\\]\ndefine the map $\\rho\\mapsto\\sum_{b,a,x}K_{bax}\\rho K_{bax}^{\\dagger}$. Its diagonal populations follow $M_g^f$, and\n\\[\n \\sum_{b,a,x}K_{bax}^{\\dagger}K_{bax}\n =\\sum_a\\left[\\sum_x t_g(a,x)f_g(x)\\right]|a\\rangle\\langle a|\\leq I .\n\\]",
+          "after": "This propagator has a literal selective-channel representation, conditional on the stated positive filters. For each supported pair $(a,x)$, define\n\\[\n K_{ax}=\\sqrt{t_g(a,x)f_g(x)}\\,|\\delta_g(a,x)\\rangle\\langle a|.\n\\]\nThe map is $\\rho\\mapsto\\sum_{a,x}K_{ax}\\rho K_{ax}^{\\dagger}$. The output state is the deterministic successor, not an independently summed index. Its diagonal populations follow $M_g^f$, and\n\\[\n \\sum_{a,x}K_{ax}^{\\dagger}K_{ax}\n =\\sum_a\\left[\\sum_x t_g(a,x)f_g(x)\\right]|a\\rangle\\langle a|\\leq I .\n\\]",
+          "reason": "Repair the existing finding's concrete successor-index omission using the already defined deterministic transition. No new channel or result.",
+          "scope": "Prose/clarity only. Preserve mathematical content, numerical strata, evidence, citations and labels."
+        },
+        {
+          "file": "writing_projects/eigen-technical-due-diligence-briefing/manuscript/working-draft/chapters/memory-as-a-retained-and-reconstructable-object.tex",
+          "line_start": 187,
+          "line_end": 187,
+          "before": "Keeping the unmerged occurrences is essential. Counts $(3,1)$ and $(12,4)$ induce the same conditional law $(3/4,1/4)$, so they can share a future calculation. Changing the latter to $(8,4)$ splits the laws. The retained source-labelled occurrence says which use must change. Sharing a calculation need not merge the evidence that may later make its uses diverge. If conditioning support becomes zero, the conditional answer is undefined, rather than zero.",
+          "after": "Keeping the unmerged occurrences is essential. Counts $(3,1)$ and $(12,4)$ induce the same conditional law $(3/4,1/4)$, so they can share a future calculation. Changing the latter to $(8,4)$ splits the laws. The retained source incidence identifies which raw prefix occurrence must change. That occurrence is keyed by its field values, with source contributions recorded separately. Sharing a calculation need not merge the evidence that may later make its uses diverge. If conditioning support becomes zero, the conditional answer is undefined, rather than zero.",
+          "reason": "Preserve source-to-tuple incidence instead of incorrectly duplicating source-labelled prefixes.",
+          "scope": "Prose/clarity only. Preserve mathematical content, numerical strata, evidence, citations and labels."
+        },
+        {
+          "file": "writing_projects/eigen-technical-due-diligence-briefing/manuscript/working-draft/chapters/memory-as-a-retained-and-reconstructable-object.tex",
+          "line_start": 200,
+          "line_end": 200,
+          "before": "These propagator and update constructions are central proposals in Dynamic Memory. Their finite equations are explicit, and the source describes a small exact-arithmetic update fixture. Independent scientific verification of that implementation and its scaling remains pending. The older measured comparison below concerns already-built exact continuations on a particular parity/query family. It does not measure incremental source updates or establish a general semantic-memory advantage.",
+          "after": "Dynamic Memory specifies these propagator and update constructions and describes a small exact-arithmetic update fixture. That fixture does not establish update scaling. The older measured comparison below concerns already-built exact continuations on a particular parity/query family. It does not measure incremental source updates or establish a general semantic-memory advantage.",
+          "reason": "Replace a programme-status caveat with the precise evidence boundary, without implying acceptance.",
+          "scope": "Prose/clarity only. Preserve mathematical content, numerical strata, evidence, citations and labels."
+        },
+        {
+          "file": "writing_projects/eigen-technical-due-diligence-briefing/manuscript/working-draft/chapters/memory-as-a-retained-and-reconstructable-object.tex",
+          "line_start": 211,
+          "line_end": 211,
+          "before": "The language campaigns test a longer chain: extracting source descriptions, choosing evidence and composing an answer with a language model. Their controls keep those stages distinguishable. In the news experiment, 609 articles supply a 48-question held-out MultiHop slice. At a 2,000-token evidence budget, Parallax answers 40 questions correctly, flat retrieval 39 and the RAPTOR implementation 35. The comparison called the \\emph{metadata control} also answers 40. This is a deliberately simpler readout of the same ingested collection: it uses the same original passages, frozen passage embeddings, source identities and publication dates. The same query compiler separates the question into facets and applies any explicit source/date constraints. It then scores every passage directly by the query--passage inner product, selects up to twenty candidates per facet, and uses the common 2,000-token context packing and reader. It bypasses the semantic cards and the hierarchical representation. Thus the control measures what the shared ingestion and flat, condition-aware retrieval already achieve. The comparison holds Atlas's shared ingestion and conditional retrieval stages fixed. All 48 resulting contexts are byte-identical to Parallax's. For this query family the corrected method successfully preserves the same fine-passage target, while the accuracy result leaves the value of its different internal execution to be assessed through cost and scaling.",
+          "after": "The language campaigns test evidence delivery and a language reader, rather than the exact categorical query or incremental-update engine above. Their answer scores do not validate the source-diffusion closure or task-error bounds. In the news campaign, \\emph{Parallax} names the tested memory route and \\emph{Atlas} the shared ingestion and conditional-retrieval infrastructure. These are campaign labels, not alternative names for one unified executed engine. The news experiment uses 609 articles and an archived 48-question MultiHop slice. At a 2,000-token evidence budget, Parallax answers 40 questions correctly, flat retrieval 39 and the RAPTOR implementation 35. The comparison called the \\emph{metadata control} also answers 40. This is a deliberately simpler readout of the same ingested collection: it uses the same original passages, frozen passage embeddings, source identities and publication dates. The same query compiler separates the question into facets and applies any explicit source/date constraints. It then scores every passage directly by the query--passage inner product, selects up to twenty candidates per facet, and uses the common 2,000-token context packing and reader. It bypasses the semantic cards and the hierarchical representation. Thus the control measures what the shared ingestion and flat, condition-aware retrieval already achieve. The comparison holds the shared ingestion and conditional retrieval stages fixed. All 48 resulting contexts are byte-identical to Parallax's. For this query family the corrected method successfully preserves the same fine-passage target, while the accuracy result leaves the value of its different internal execution to be assessed through cost and scaling.",
+          "reason": "Define campaign names and distinguish tested language delivery from the mathematical routes. Do not renew an untouched held-out claim. Use the defined mechanism rather than reintroducing a system label.",
+          "scope": "Prose/clarity only. Preserve mathematical content, numerical strata, evidence, citations and labels."
+        },
+        {
+          "file": "writing_projects/eigen-technical-due-diligence-briefing/manuscript/working-draft/chapters/memory-as-a-retained-and-reconstructable-object.tex",
+          "line_start": 215,
+          "line_end": 215,
+          "before": "LongMem provides a sharper test of relations across a conversational history. With the same reader and a 4,000-token evidence budget, the memory implementation trails dense and hybrid retrieval both in evidence coverage and in final answers. Figure~\\ref{fig:dd-memory-reader-controls} shows the answer counts for all 48 questions and the nine-question temporal subset. The weakness falls on precisely the relations and ordering questions that motivate a richer retained representation.",
+          "after": "The archived LongMem campaign tests relations across a conversational history. Its counts below belong to that campaign, not the later shared-index comparison reported in Dynamic Memory. With the same reader and a 4,000-token evidence budget, the memory implementation trails dense and hybrid retrieval both in evidence coverage and in final answers. Figure~\\ref{fig:dd-memory-reader-controls} shows the answer counts for all 48 questions and the nine-question temporal subset. The weakness falls on precisely the relations and ordering questions that motivate a richer retained representation.",
+          "reason": "Keep the older 30/33/34 data distinct from the separate completed shared-dense follow-up.",
+          "scope": "Prose/clarity only. Preserve mathematical content, numerical strata, evidence, citations and labels."
+        }
+      ]
+    },
+    {
+      "path": "writing_projects/eigen-technical-due-diligence-briefing/manuscript/working-draft/chapters/the-backend-objects-authority-and-revision.tex",
+      "before_sha256": "559f5d62253b1c2cfe116043150fa60ce438ddcba0d75b9c9186805ea59d2267",
+      "after_sha256": "b50a235faf7e23b9cba2609ee1b451005dd357cc7c2c3018fedc05d9e2ff03b7",
+      "edits": [
+        {
+          "file": "writing_projects/eigen-technical-due-diligence-briefing/manuscript/working-draft/chapters/the-backend-objects-authority-and-revision.tex",
+          "line_start": 38,
+          "line_end": 38,
+          "before": "The return explains what happened and where to inspect it. For a numerical producer, that includes its inputs, execution outcome and output. For a source change, it includes the affected passage and recorded revision. If a write lands but a later recording step is interrupted, the retained source effect identifies the completed part, allowing recovery to finish the record without applying the edit twice. Recovery can therefore distinguish a committed source change from a pending record and resume the unfinished part.\\footnote{The linked implementation account identifies the source-inspected recovery branches. Executed examples and their bounds are recorded separately in the evidence below.}",
+          "after": "The return explains what happened and where to inspect it. For a numerical producer, that includes its inputs, execution outcome and output. For a source change, it includes the affected passage and recorded revision. If a write lands but a later recording step is interrupted, the recovery mechanism is designed to use the retained source effect to distinguish a committed edit from a pending record. It can then finish the record without replaying the source edit.\\footnote{The linked implementation account identifies source-inspected recovery branches. The successful figure application described below is not an interrupted-operation test. This account does not display an executed recovery trace.}",
+          "reason": "Remove the unfulfilled promise of an exercised recovery example and state the source-inspected scope.",
+          "scope": "Prose/clarity only. Preserve mathematical content, numerical strata, evidence, citations and labels."
+        }
+      ]
+    },
+    {
+      "path": "writing_projects/eigen-technical-due-diligence-briefing/manuscript/working-draft/chapters/research-that-can-inspect-its-own-results.tex",
+      "before_sha256": "cfe986d6e82646ad3b8d04cdeebce36f61b13d85cf3ea05f8479d44c52146cbc",
+      "after_sha256": "329b06c2bf2d48281899f13e07b183b3b81a8ca627a54e2148588a86307652fe",
+      "edits": [
+        {
+          "file": "writing_projects/eigen-technical-due-diligence-briefing/manuscript/working-draft/chapters/research-that-can-inspect-its-own-results.tex",
+          "line_start": 15,
+          "line_end": 15,
+          "before": "The Eigen SuperARC campaign  generated answers to 100 twelve-term binary sequences using a bare arm, an iterative loop and an execute/fix comparison arm. All three recorded correct outcomes on every target under their respective checking routes. Their answer forms differed sharply: the bare arm mostly printed the sequence, while the two active arms mostly produced generative-looking expressions. Figure~\\ref{fig:dd-superarc-controls} shows how those categories and the subsequent format controls affect the score.",
+          "after": "The Eigen SuperARC campaign generated answers to 100 twelve-term binary sequences using a bare arm, an iterative loop and an execute/fix comparison arm. All three recorded correct outcomes on every target under their respective checking routes. Their answer forms differed sharply: the bare arm mostly printed the sequence, while the two active arms mostly produced generative-looking expressions. Figure~\\ref{fig:dd-superarc-controls} shows how those categories and the subsequent format controls affect the score.",
+          "reason": "Remove doubled spacing.",
+          "scope": "Prose/clarity only. Preserve mathematical content, numerical strata, evidence, citations and labels."
+        },
+        {
+          "file": "writing_projects/eigen-technical-due-diligence-briefing/manuscript/working-draft/chapters/research-that-can-inspect-its-own-results.tex",
+          "line_start": 29,
+          "line_end": 29,
+          "before": "The same process can be applied to the system's own explanation. A book describing the present research environment was written and revised using that environment: The Living System Guide . It explains the objects, tools, human decisions and recoverable work described above. Writing it therefore tested whether the system could use its own evidence to make its operation clearer.",
+          "after": "The same process can be applied to the system's own explanation. The \\emph{Living System Guide}, a book describing the research environment, was written and revised using that environment. It explains the objects, tools, human decisions and recoverable work described above. Writing it therefore tested whether the system could use its own evidence to make its operation clearer.",
+          "reason": "Polish the existing account of the Guide without editing the Guide itself.",
+          "scope": "Prose/clarity only. Preserve mathematical content, numerical strata, evidence, citations and labels."
+        },
+        {
+          "file": "writing_projects/eigen-technical-due-diligence-briefing/manuscript/working-draft/chapters/research-that-can-inspect-its-own-results.tex",
+          "line_start": 35,
+          "line_end": 35,
+          "before": "A larger theoretical argument tests a different use of the same infrastructure. Foundations of Synthetics , the work from which the retained-state, residual and refinement constructions in this account were drawn, develops its argument through linked derivations, finite examples and explanatory figures. Those pieces retain their claims, evidence and revision history, so they can be extended and inspected separately while the manuscript explains how they fit together. The demonstration is the construction and maintenance of a connected argument, alongside the individual mathematical results it contains.",
+          "after": "A larger theoretical argument tests a different use of the same infrastructure. \\emph{Foundations of Synthetics}, from which this account draws its retained-state, residual and refinement constructions, develops its argument through linked derivations, finite examples and explanatory figures. Those pieces retain their claims, evidence and revision history, so they can be extended and inspected separately while the manuscript explains how they fit together. The demonstration is the construction and maintenance of a connected argument, alongside the individual mathematical results it contains.",
+          "reason": "Remove title-spacing damage and shorten the attribution.",
+          "scope": "Prose/clarity only. Preserve mathematical content, numerical strata, evidence, citations and labels."
+        }
+      ]
+    },
+    {
+      "path": "writing_projects/eigen-technical-due-diligence-briefing/manuscript/working-draft/chapters/from-a-working-core-to-an-extensible-sdk.tex",
+      "before_sha256": "58de420e79d2d2370bd92b86115fd5a17af32ecf380e6f9717ac0ff2548b1042",
+      "after_sha256": "850ac9817753cd4df1353203769886afe74674bc2281a84e0aaccee354c30f8d",
+      "edits": [
+        {
+          "file": "writing_projects/eigen-technical-due-diligence-briefing/manuscript/working-draft/chapters/from-a-working-core-to-an-extensible-sdk.tex",
+          "line_start": 19,
+          "line_end": 19,
+          "before": "The present system supplies the specialised objects, guarded tools, parent/worker/reviewer roles, bounded context and recorded acceptance used in this account. The next step is to package that working pattern as a standalone SDK. Its object templates should carry a description of their transitionable states, allowed operations, dependency effects and checks. Its extension instructions should travel with the code, so a developer can discover how a new capability fits rather than reconstructing the author's history.",
+          "after": "The present system supplies the specialised objects, guarded tools, parent/worker/reviewer roles, bounded context and recorded acceptance used in this account. The next step is to package that working pattern as a standalone SDK. Its object templates should describe their states, allowed transitions, dependency effects and checks. Its extension instructions should travel with the code, so a developer can discover how a new capability fits rather than reconstructing the author's history.",
+          "reason": "Replace transitionable with the precise state/transition distinction.",
+          "scope": "Prose/clarity only. Preserve mathematical content, numerical strata, evidence, citations and labels."
+        }
+      ]
+    },
+    {
+      "path": "writing_projects/eigen-technical-due-diligence-briefing/manuscript/working-draft/chapters/the-collection-and-the-next-tests.tex",
+      "before_sha256": "be80a3b37b87aaf59499a6099fa3785d0cbeb56e805b045519d654d3adda1982",
+      "after_sha256": "4eb497843d74de9791bddcd9bbdc6fba9d73c6debf4f341ddf47636a07aa68fb",
+      "edits": [
+        {
+          "file": "writing_projects/eigen-technical-due-diligence-briefing/manuscript/working-draft/chapters/the-collection-and-the-next-tests.tex",
+          "line_start": 14,
+          "line_end": 14,
+          "before": "The physical calculation now gives this programme a particularly useful test case. At a fixed bath gap, the analytical ground-state prediction and independent numerical comparison are in hand. Extending that control towards a gapless bath requires retaining the very low-frequency part of the spectrum and specifying how cooling, adding bath modes and removing a small symmetry-selecting bias are taken. The separate continuum approximation already identifies where further terms matter: when extrapolated to a bath with much more low-frequency weight, it misses the numerical phase boundary. The refinement residue and contextuality constructions likewise require explicit common-space, composition and measurement assumptions to become one physical reconstruction. These are specific next calculations, building on results that already turn representation into a predictive procedure.",
+          "after": "The physical calculation now gives this programme a particularly useful test case. At a fixed bath gap, the analytical ground-state prediction and independent numerical comparison are in hand. Extending that control towards a gapless bath requires retaining the very low-frequency part of the spectrum and specifying how cooling, adding bath modes and removing a small symmetry-selecting bias are taken. The refinement residue and contextuality constructions likewise require explicit common-space, composition and measurement assumptions to become one physical reconstruction. These are specific next calculations, building on results that already turn representation into a predictive procedure.",
+          "reason": "Remove the unexplained continuum comparison identified in the existing finding, while preserving the explicit gapless-limit conditions.",
+          "scope": "Prose/clarity only. Preserve mathematical content, numerical strata, evidence, citations and labels."
+        }
+      ]
+    }
+  ]
+}

@@ -85,7 +85,7 @@ These gains measure fit to observations already available. They are not held-out
 
 \subsection{Putting the evaluator on the register}
 
-The selector still needs a source of its gains, costs and authority weights. Return to the opening register with \(d>0\). Let
+The selector requires gains, costs and authority weights to be supplied at each decision. To examine an adapting evaluator separately, return to the opening register with \(d>0\). Let
 \(e=(a-b)/d\), \(\bar q=(a+b)/2\), and restrict the reused register to the segment
 \begin{align}
  q&=\bar q+\frac d2 m e,\qquad m\in[-1,1],\nonumber\\
@@ -101,7 +101,7 @@ Holding the evaluator coordinate \(\lambda\) fixed,
                   =\frac{d^2}{4}(m-\lambda).
  \label{eq:register-gradient}
 \end{equation}
-The conflict and fairness terms depend on \(\alpha\), not on \(m\), so they do not change this partial gradient. A gradient step with normalised gain \(a_m\) therefore gives the first component of the following controller.
+The conflict and fairness terms depend on \(\alpha\), not on \(m\), so they do not change this partial gradient. For model gradients we use the metric induced by the register coordinate, \(g_{mm}=d^2/4\). The resulting gradient is \(\operatorname{grad}_m J=m-\lambda\), so a step with gain \(a_m\) gives the first component of the following controller. This model metric is distinct from the joint-state norm used below to prove contraction.
 
 We introduce the evaluator step as an \emph{author-chosen model law}:
 \begin{align}
@@ -110,7 +110,7 @@ We introduce the evaluator step as an \emph{author-chosen model law}:
                       a_\lambda\tanh(km+h).
  \label{eq:regulator}
 \end{align}
-Both right-hand sides use the old state. This simultaneous protocol has model domain and evaluator domain \([-1,1]\). The finite parent drive \(h\) is frozen during the convergence analysis. The damping parameters satisfy \(0<a_m,a_\lambda\leq1\), and \(0\leq k<1\).
+Both right-hand sides use the old state. We apply this simultaneous map at every reuse-mode step, rather than choosing its components with the action selector. Its model and evaluator domains are \([-1,1]\). The finite parent drive \(h\) is frozen during the convergence analysis. The damping parameters satisfy \(0<a_m,a_\lambda\leq1\), and \(0\leq k<1\). No switching protocol connects this map to the static split comparison.
 
 The square is invariant, because each new coordinate is a convex combination of values in its interval. For any \(k<\nu<1\), use
 \(\|(\delta m,\delta\lambda)\|_\nu
@@ -133,7 +133,7 @@ There is a further distinction at the level of derivatives. The model step holds
 \(B'(m)\partial_\lambda J\).
 These are different update protocols. Treating one as the other quietly changes the model.
 
-Finally, stationarity does not establish alignment with an external improvement field. If a specified projected field is \(g_{\mathrm{ext}}\), a local diagnostic in a common metric is
+Finally, stationarity does not establish alignment with an external improvement field. Let \(g_{\mathrm{ext}}\) be a specified projected, undamped field in the same register-induced model metric. We compare fields, not one-step displacements, using
 \begin{equation}
  D_{\mathrm{align}}(m,\lambda)
        =\|-\operatorname{grad}_m J(m,\lambda)-g_{\mathrm{ext}}(m)\|.
@@ -141,4 +141,4 @@ Finally, stationarity does not establish alignment with an external improvement 
 \end{equation}
 The fixed-point residual instead measures
 \(\|(m,\lambda)-T(m,\lambda)\|\).
-A zero residual says that the declared controller has settled. A small alignment defect says that its model motion follows a separately specified target field. A general target field need not even admit a scalar potential. We therefore keep existence, attraction and alignment as separate questions. The tracking comparison below supplies an especially direct reason to do so.
+A zero residual says that the declared controller has settled. A small alignment defect says that its undamped model field is close to the specified target field. The actual model displacement includes the gain \(a_m\). A general target field need not even admit a scalar potential. We therefore keep existence, attraction and alignment as separate questions. The tracking comparison below supplies an especially direct reason to do so.

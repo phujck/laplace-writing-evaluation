@@ -1,0 +1,35 @@
+{
+  "pending_supervision": [
+    {
+      "id": "run-7f8022a64802820f",
+      "job_path": "synthetics papers/self-consistent-loss-geometries/manuscript/imported/research_runs/run-7f8022a64802820f.json",
+      "launch_token": "012a5ff0651e439d91e92badb1ae39c2",
+      "project": "self-consistent-loss-geometries"
+    }
+  ],
+  "run_handles": {
+    "run-0781a7b8f8513412": {
+      "id": "run-0781a7b8f8513412",
+      "job_path": "synthetics papers/self-consistent-loss-geometries/manuscript/imported/research_runs/run-0781a7b8f8513412.json",
+      "launch_token": "dee74483717d4c39801cc080f618e1da",
+      "project": "self-consistent-loss-geometries"
+    },
+    "run-756cd502012e0adb": {
+      "id": "run-756cd502012e0adb",
+      "job_path": "synthetics papers/self-consistent-loss-geometries/manuscript/imported/research_runs/run-756cd502012e0adb.json",
+      "launch_token": "38d91f0e4d65493d910deedb2760bed6",
+      "project": "self-consistent-loss-geometries"
+    },
+    "run-7f8022a64802820f": {
+      "id": "run-7f8022a64802820f",
+      "job_path": "synthetics papers/self-consistent-loss-geometries/manuscript/imported/research_runs/run-7f8022a64802820f.json",
+      "launch_token": "012a5ff0651e439d91e92badb1ae39c2",
+      "project": "self-consistent-loss-geometries"
+    }
+  },
+  "runs": [
+    "run-0781a7b8f8513412",
+    "run-756cd502012e0adb",
+    "run-7f8022a64802820f"
+  ]
+}

@@ -1,0 +1,217 @@
+FIRST-USE EVALUATION — 12 NOVEMBER 2026
+
+The repository demonstrates a working local research/writing application and a
+small reproducible Dynamic Memory calculation. A fresh Python installation,
+project creation, manual saving, source recovery, supplied PDF reading and
+retained result-file inspection worked. The first-use path is less persuasive
+than those capabilities: historical documentation and incompletely relocated
+research metadata produce confusing warnings and hide some supplied evidence.
+The Write view also went blank after a reload in the disposable editing journey.
+
+Scope and identity
+------------------
+Source supplied by task: /home/phujck/VScodeProjects/laplace-writing-evaluation
+Evaluated clone: /home/phujck/Documents/Codex/2026-11-12/eigen-clean-evaluation/work/laplace-writing-evaluation
+Clone command: git clone --no-local /home/phujck/VScodeProjects/laplace-writing-evaluation work/laplace-writing-evaluation
+Verified HEAD: 97a4e0c885a09b586bc9d617bb0e54c86e7c04db
+
+Only the clone was evaluated. No adjacent repository, original author state,
+credentials, earlier chat or memory was consulted. README.md, AGENTS.md and
+release/README.md were read first. Initial impressions were saved separately in
+initial-first-use.txt before inspecting application implementation. The original
+source repository was used only as the git clone source.
+
+This was a fresh venv on an existing Linux host, not a fresh operating system.
+CPython 3.12.3, user site disabled. Both laplace and atlas imported from this
+clone's .venv/lib/python3.12/site-packages in a standalone interpreter. Pip used
+available package caches/registry dependencies. No system package was installed.
+
+Executed commands and outcomes
+-----------------------------
+Commands below ran from the clone unless stated otherwise. See commands.txt and
+evaluation-evidence.zip for logs, dependency versions and target audits.
+
+1. python3.12 -m venv .venv
+   .venv/bin/python -m pip install ./atlas .
+   Both exited 0; both local wheels built and installed. No installation repair
+   or author-specific launcher was needed. Later pip check: no broken requirements.
+
+2. python3.12 scripts/check_evaluation_selection.py
+   Exit 0, PASS, 1,276 checked files, no errors. Run before project/doc changes.
+   This established the manifest's recorded byte identities, not completeness.
+
+3. Selected a free port by binding a temporary socket to 127.0.0.1:0: 40403.
+   .venv/bin/python -m laplace.web.writing_server --root . --host 127.0.0.1 --port 40403
+   Started successfully. Chrome opened
+   http://127.0.0.1:40403/project?workspace=writing
+   All four selected projects appeared. No model Send/Start was used.
+
+4. .venv/bin/python writing_projects/memory-in-pieces/evidence/DYNAMIC_MEMORY_DEMO_2026-11-11/incremental_demo_checked.py --mode smoke --args-json '{}' --result ../dynamic-memory-demo.json
+   Exit 0. Nine states, sixteen queries. Conditional sequence:
+   4/5, 3/4, 3/5, 3/4, 3/4, 3/4, 3/4, 0, UNDEFINED.
+   Status: PASSED_LOCAL_CHECKS_NOT_INDEPENDENT_ACCEPTANCE.
+   Overflow and duplicate-group rejection cases reported unchanged state.
+   The only deviation from REVIEWER_GUIDE.md was the output destination, kept
+   separate from retained evidence instead of /tmp/dynamic-memory-demo.json.
+   One repeat with a Python open audit checked path containment: fixture data
+   came from this clone, plus ordinary Python runtime files, and only the chosen
+   new result was written outside the clone. No benchmark/model run was added.
+   Timings and RSS are host-specific and were not treated as reproduced speedups.
+
+5. .venv/bin/python -m pip install '.[review]'
+   .venv/bin/python -m pytest tests/test_writing_portable_core.py -q
+   Exit 0; 2 passed in 3.42s. These existing tests exercise guarded proposal
+   application/replay and Work/source state in a synthetic workspace, then
+   foreground-server HTTP/project/guarded-write behaviour. They are not a full
+   application test suite. pytest.ini adds src/tests, so this command tests the
+   clone source; the separately launched browser server imports installed wheels.
+
+6. pdfinfo, pdftotext -layout and pdftoppm inspected the supplied PDFs.
+   40/21/20/10 pages respectively; 91 pages total. Text extraction succeeded.
+   Poppler emitted font-type mismatch warnings during extraction. Inspected
+   page-3 figure renders were legible in every paper; these warnings did not
+   prevent those renders. No full-page-by-page layout acceptance is claimed.
+   No manuscript compilation or scientific rerun was performed.
+
+Manual writing journey
+----------------------
+Projects > Create a project > Article created "Disposable first-use check".
+Writing opened its starter paragraph. Clicking and typing appended a distinctive
+sentence; Unsaved changes appeared. Save changes reported one saved edit in
+chapters/chapter-01.tex:2-2. After browser reload the Write iframe stayed blank.
+Home > Continue writing did not restore it in that attempt. The shell remained
+responsive. TeX > Source file > chapter-01.tex showed the saved addition.
+The addition was removed in TeX, saved and reloaded using Reload saved source;
+the restored original wording appeared. Whitespace changed during the reversal.
+This proves the text survived saving and could be reversed through the source
+editor; it does not establish a successful prose-view reopen or the Undo control.
+
+The blank frame's cause remains undiagnosed. Its DOM retained the correct /walk
+URL, AX exposed about:blank, and the screenshot was blank; captured console
+warnings/errors were empty. A different project could subsequently load its
+Writing view. No application fix or speculative data deletion was attempted.
+
+The disposable project, edit history, local records and registry entry remain in
+the clone. They are intentionally excluded from the documentation-only patch.
+No supplied manuscript source was edited. Runtime/project storage is broader
+than .laplace-state: creation/save also wrote the registry, project files and
+corpus_friction records. The README now explains this.
+
+Four papers, figures and evidence
+--------------------------------
+Eigen — 40 pages
+  Writing and supplied PDF opened. Mathematics/body were present. Its source
+  projection showed [?], ?? and some literal TeX. The supplied PDF's sampled
+  page has resolved figure/equation/citation numbering. Sixteen literal external
+  figure references resolved within the clone. A current Research-record chain
+  for the overview's full narrative was not demonstrated by this exercise.
+
+Dynamic Memory — 21 pages
+  Writing loaded; supplied PDF was inspected locally. Eleven literal external
+  figure references resolved. Research exposes five results: four CURRENT and
+  the incremental fixture STALE. Opening the retained fixture result JSON worked
+  with a SHA-256 and complete 77,021-character coverage. The live run view says
+  UNAVAILABLE with "Run result coordinates disagree or escape the located
+  Research home." Figure evidence is marked stale. The Diagram source control
+  names evidence/DYNAMIC_MEMORY_REWRITE_2026-11-11/source-to-message-final.tikz,
+  which is absent. The rendered figure is present; its missing editable drawing
+  cannot be inferred from that output. The separately documented CLI fixture
+  passed without needing this missing drawing or the historical owner's paths.
+
+Loss Geometries — 20 pages
+  Writing and the supplied PDF opened. Eight literal external figure references
+  resolved. The selected app project's Research results are 0 of 0, although
+  five retained records, producers, result JSON and visual provenance exist in
+  synthetics papers/self-consistent-loss-geometries/manuscript/imported/.
+  The selected paper lives instead under
+  synthetics papers/self-consistent-loss-geometries-coupled-evaluators/manuscript/imported/.
+  The support index makes the former discoverable on disk; no current app binding
+  between those two roots was established. Do not silently relocate the records.
+
+Adaptive Normal Form — 10 pages
+  Writing loaded; supplied PDF inspected locally. Two literal external figure
+  references resolved; other figure material can be inline TeX. Research exposes
+  six results, all STALE. D4a's retained JSON opens through Outputs. The run view
+  has the same refused historical coordinate issue as Dynamic Memory.
+
+Across all four declared manuscript closures, 37 literal includegraphics targets
+exist and resolve inside this checkout; this is a file-reference count, not a
+count of all inline/multipart figures. The corresponding 37 reference details
+are in the evidence bundle. No relative href/url companion targets were found
+by that bounded TeX scan. It was not a DOI/Internet citation audit.
+
+A separate audit checked 29 direct source/result/artifact fields in the eleven
+registered Dynamic Memory/Adaptive Normal Form result records: all targets were
+present inside the clone. This does not cover every nested provenance field or
+figure-spec source; the missing diagram above is outside that narrower audit.
+The supplied scientific-support index explicitly excludes third-party raw corpus
+snapshots. Historical model/GPU/corpus results were read as retained evidence.
+They were not independently validated or relabelled as new results.
+
+Concrete investigations after the first-use record
+-------------------------------------------------
+1. Initial Now screen showed CLEANUP_UNRESOLVED for two research run indexes.
+   research_runs.py::_inspect_pending_index (around line 473) treats an existing
+   run directory without index.json as unresolved. Both bundled run directories
+   lack that index. This explains the warning; it does not show a new running job.
+
+2. Historical execution availability refuses relocation.
+   research_runs.py::_result_target (around line 197) requires recorded relative
+   and absolute result coordinates to identify the same file in the selected
+   Research home. The bundled fixture job's result_absolute/producer_base/cwd
+   still name the original host checkout. The owner refuses that mismatch.
+   I read only the copied metadata strings, never their original targets.
+
+3. Source-reference placeholders have a packaging explanation.
+   manuscript/walk.py (around 2659) reads built .bbl/.aux files for citations and
+   references. None are distributed. The PDFs contain typeset numbering, whereas
+   a fresh source projection cannot recover it from absent auxiliary files.
+   This is a reader limitation, not evidence that the supplied PDF lacks references.
+
+4. Missing diagram source and unbound Loss Geometries records are confirmed by
+   the selected registry paths, manuscript_spec.json and local file existence.
+   The manifest checker passes because it checks selected listed bytes, not all
+   possible dependencies or application bindings.
+
+No dependency on author files was needed for the successful install/start/manual
+save/CLI fixture paths. Configured repository sources are '.' and 'atlas'; all
+four registered manuscript roots are local. There are no non-venv checkout
+symlinks. Historical records contain external coordinates that limit their current
+use. This was not a full server syscall audit or a test of every producer.
+
+Documentation changes and validation
+------------------------------------
+Changed only in the clone:
+  README.md — direct Projects URL, matching port advice, storage explanation,
+  safe Article creation route, clearly separated historical guides, reviewer link,
+  exact model-free example, and venv-qualified optional dependency installation.
+  docs/writing-evaluation-first-use.md — a short checkout-specific route with
+  expected PDF/source states, save/reopen limits and exact evidence limitations.
+  release/README.md — link to the bounded observed first-use route.
+
+No scientific files, historical receipts, acceptance records or manifest pins were
+rewritten. The documentation-only diff is documentation.diff. All new local
+Markdown link destinations exist; git diff --check passes, and git apply
+--reverse --check succeeds against this clone. All 1,265 copied source/science
+manifest entries still match their original hashes. The initial 1,276-pin PASS
+is preserved: modified README/release README/registry will legitimately differ
+from their old derived-document pins after this evaluation.
+
+Demonstrated capability and remaining limits
+-------------------------------------------
+Demonstrated: installable local Python application; four readable manuscript
+sources/PDFs and bundled figures; local Article creation and persistent human
+source editing; exact retained JSON inspection; a small model-free incremental
+memory calculation; guarded core transitions and HTTP operations in two existing
+synthetic tests. These provide a concrete practical basis for further evaluation.
+
+Not demonstrated: provider authoring/review, full scientific correctness, historical
+benchmark replication, large-corpus speedups, complete data provenance, native GTK,
+Windows/macOS parity, Lean checks, TeX rebuilding/export, exhaustive UI reliability,
+or a standalone extensible SDK product. No models were invoked, no new scientific
+benchmarks run, and nothing was purchased, sent, published or installed globally.
+
+Shutdown: owned server PID 742544 received SIGINT. Its foreground session exited
+130. A subsequent connection to 127.0.0.1:40403 returned ECONNREFUSED (111). The
+evaluation browser tab was closed. The two portable test servers exited under
+the test fixture; the tests passed. No evaluation server remains listening.

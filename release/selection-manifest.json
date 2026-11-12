@@ -1,6 +1,6 @@
 {
   "schema": "laplace.curated-evaluation-selection/1",
-  "source_commit": "40eba5da6cb1a27dbf45c1f82c74c90cca4f59a1",
+  "source_commit": "fd71f1010668ce6b1f640251c9e2b510790bf97e",
   "selection": "Explicit code/resource and canonical manuscript build closure. No author conversation or private project history is exported.",
   "files": [
     {
@@ -1745,9 +1745,9 @@
     },
     {
       "path": "src/laplace/manuscript/reader_plan.py",
-      "sha256": "68a73391105cdc35c92e7baed38e1319e13bd00755f407d8bd611fd74bed318a",
-      "bytes": 110248,
-      "reason": "application source or declared runtime resource"
+      "sha256": "8a757dd6f30941d7e11acbd7b635f6e40f7e70ab0a421c4d9448889d4365f419",
+      "bytes": 114992,
+      "reason": "exact adopted visual-reader increment fd71f1010668ce6b1f640251c9e2b510790bf97e"
     },
     {
       "path": "src/laplace/manuscript/reader_restructure.py",
@@ -2489,9 +2489,9 @@
     },
     {
       "path": "src/laplace/pipeline/visual_production.py",
-      "sha256": "2ed8d330bd73d3a88eb0662266837b8a2bffd70fbfdc63f2b9e8b1c88ac3ee22",
-      "bytes": 39291,
-      "reason": "application source or declared runtime resource"
+      "sha256": "625d7fe9f1a4e6bacd0473f246e6ce7f4823f291e4183160cabaa317e54242c4",
+      "bytes": 46670,
+      "reason": "exact adopted visual-reader increment fd71f1010668ce6b1f640251c9e2b510790bf97e"
     },
     {
       "path": "src/laplace/pipeline/voice_retrieval.py",
@@ -6067,463 +6067,463 @@
       "path": "writing_projects/eigen-technical-due-diligence-briefing/manuscript/figures/generated/dd-hmf-physical-ground-state-20261016.pdf",
       "sha256": "59c0464e50e58bf6886dd1a743bba3eadc23b453c5ddc415fd918662a10367f1",
       "bytes": 29598,
-      "reason": "canonical manuscript declared build input: eigen-technical-due-diligence-briefing"
+      "reason": "final polished canonical manuscript declared build input"
     },
     {
       "path": "writing_projects/eigen-technical-due-diligence-briefing/manuscript/working-draft/Eigen-A-Theory-of-Efficient-Representation-and-Its-Working-Prototypes.tex",
-      "sha256": "a2e3271a8ad72111909bdb7eb99a0e5a60ad8942dabc3ab0915e80464e3b7dd4",
-      "bytes": 1600,
-      "reason": "canonical manuscript declared build input: eigen-technical-due-diligence-briefing"
+      "sha256": "1e9be815d30acfa9b1dcbbcda3425f469100026d908b08ea4b827494730dcea5",
+      "bytes": 1515,
+      "reason": "final polished canonical manuscript declared build input"
     },
     {
       "path": "writing_projects/eigen-technical-due-diligence-briefing/manuscript/working-draft/chapters/chapter-01.tex",
-      "sha256": "0a5b5c1e5549db324359b657fbbf39b10c09ce94bf5c37f4bcabad03b9a03979",
-      "bytes": 4019,
-      "reason": "canonical manuscript declared build input: eigen-technical-due-diligence-briefing"
+      "sha256": "8a4a9ca80516c52fc80830463f7980704a5425db8b510cd8f37ab7df06c70615",
+      "bytes": 4014,
+      "reason": "final polished canonical manuscript declared build input"
     },
     {
       "path": "writing_projects/eigen-technical-due-diligence-briefing/manuscript/working-draft/chapters/from-a-working-core-to-an-extensible-sdk.tex",
-      "sha256": "58de420e79d2d2370bd92b86115fd5a17af32ecf380e6f9717ac0ff2548b1042",
-      "bytes": 5956,
-      "reason": "canonical manuscript declared build input: eigen-technical-due-diligence-briefing"
+      "sha256": "850ac9817753cd4df1353203769886afe74674bc2281a84e0aaccee354c30f8d",
+      "bytes": 5928,
+      "reason": "final polished canonical manuscript declared build input"
     },
     {
       "path": "writing_projects/eigen-technical-due-diligence-briefing/manuscript/working-draft/chapters/loss-dynamics-and-the-choice-of-scale.tex",
-      "sha256": "28c971ffb63671d7be24c0b39d70d55368f3661dcd4d695d2b6f47677c8aa90d",
-      "bytes": 35347,
-      "reason": "canonical manuscript declared build input: eigen-technical-due-diligence-briefing"
+      "sha256": "9a69f98b45d3473568b05491cdeae23e32cac817e95899dc2f82411b2af18d88",
+      "bytes": 35997,
+      "reason": "final polished canonical manuscript declared build input"
     },
     {
       "path": "writing_projects/eigen-technical-due-diligence-briefing/manuscript/working-draft/chapters/memory-as-a-retained-and-reconstructable-object.tex",
-      "sha256": "ccfedf53b71c6342656e8e1f289dcf2f325453907cb06d341a0ed4dec8d63c05",
-      "bytes": 34654,
-      "reason": "canonical manuscript declared build input: eigen-technical-due-diligence-briefing"
+      "sha256": "a7e0acb84f2673e65bbf23ef06424455867eb5db55d46fddffee954a9dd8d089",
+      "bytes": 35216,
+      "reason": "final polished canonical manuscript declared build input"
     },
     {
       "path": "writing_projects/eigen-technical-due-diligence-briefing/manuscript/working-draft/chapters/quantum-prototypes-changing-the-calculation.tex",
-      "sha256": "498bf1e12d38aef8132d12e6493d207832371e412da08eef1a4c101f588fddfa",
-      "bytes": 17070,
-      "reason": "canonical manuscript declared build input: eigen-technical-due-diligence-briefing"
+      "sha256": "ad7efba528ba275aa462e399791646c83fefd0e48145b94e2968c773843f65af",
+      "bytes": 17029,
+      "reason": "final polished canonical manuscript declared build input"
     },
     {
       "path": "writing_projects/eigen-technical-due-diligence-briefing/manuscript/working-draft/chapters/research-that-can-inspect-its-own-results.tex",
-      "sha256": "cfe986d6e82646ad3b8d04cdeebce36f61b13d85cf3ea05f8479d44c52146cbc",
-      "bytes": 7312,
-      "reason": "canonical manuscript declared build input: eigen-technical-due-diligence-briefing"
+      "sha256": "329b06c2bf2d48281899f13e07b183b3b81a8ca627a54e2148588a86307652fe",
+      "bytes": 7299,
+      "reason": "final polished canonical manuscript declared build input"
     },
     {
       "path": "writing_projects/eigen-technical-due-diligence-briefing/manuscript/working-draft/chapters/the-backend-objects-authority-and-revision.tex",
-      "sha256": "559f5d62253b1c2cfe116043150fa60ce438ddcba0d75b9c9186805ea59d2267",
-      "bytes": 10923,
-      "reason": "canonical manuscript declared build input: eigen-technical-due-diligence-briefing"
+      "sha256": "b50a235faf7e23b9cba2609ee1b451005dd357cc7c2c3018fedc05d9e2ff03b7",
+      "bytes": 10927,
+      "reason": "final polished canonical manuscript declared build input"
     },
     {
       "path": "writing_projects/eigen-technical-due-diligence-briefing/manuscript/working-draft/chapters/the-collection-and-the-next-tests.tex",
-      "sha256": "be80a3b37b87aaf59499a6099fa3785d0cbeb56e805b045519d654d3adda1982",
-      "bytes": 5385,
-      "reason": "canonical manuscript declared build input: eigen-technical-due-diligence-briefing"
+      "sha256": "4eb497843d74de9791bddcd9bbdc6fba9d73c6debf4f341ddf47636a07aa68fb",
+      "bytes": 5196,
+      "reason": "final polished canonical manuscript declared build input"
     },
     {
       "path": "writing_projects/eigen-technical-due-diligence-briefing/manuscript/working-draft/chapters/the-price-of-a-shared-description.tex",
-      "sha256": "9e8377ee761f2b54cad649db78f78857039fdc5aced4aeb9947ebc59d1e9870c",
-      "bytes": 12678,
-      "reason": "canonical manuscript declared build input: eigen-technical-due-diligence-briefing"
+      "sha256": "9e75e2400815e125b81e5c2793cba0cb689344794b8ad53dc7c6f3d672cc79be",
+      "bytes": 12703,
+      "reason": "final polished canonical manuscript declared build input"
     },
     {
       "path": "writing_projects/eigen-technical-due-diligence-briefing/manuscript/working-draft/chapters/what-a-useful-summary-must-remember.tex",
-      "sha256": "ecf35b660146c43328f711d2ef2c6c74b97f0f4a9d35f9a2edac82301b062b45",
-      "bytes": 7936,
-      "reason": "canonical manuscript declared build input: eigen-technical-due-diligence-briefing"
+      "sha256": "10407362d9b1794c85310cad25c6a12d3bb65fd8245b6b47e686fb96a1979d6f",
+      "bytes": 7905,
+      "reason": "final polished canonical manuscript declared build input"
     },
     {
       "path": "writing_projects/eigen-technical-due-diligence-briefing/manuscript/working-draft/figures/completion-run-7bd75062068b432b.result/dd-memory-reader-controls.pdf",
       "sha256": "7a43c64f42a5d42ce9333e14711729eb2f6eea1ee7ff708ddd38d5c9028afa9d",
       "bytes": 13340,
-      "reason": "canonical manuscript declared build input: eigen-technical-due-diligence-briefing"
+      "reason": "final polished canonical manuscript declared build input"
     },
     {
       "path": "writing_projects/eigen-technical-due-diligence-briefing/manuscript/working-draft/figures/hierarchy-run-d9f38e92caf64d82.result/dd-hierarchy-stability.pdf",
       "sha256": "a2cd437d3974f5a7c3a8c71ea3a9626928adf14d19029770b41e60c62a7d143f",
       "bytes": 40245,
-      "reason": "canonical manuscript declared build input: eigen-technical-due-diligence-briefing"
+      "reason": "final polished canonical manuscript declared build input"
     },
     {
       "path": "writing_projects/eigen-technical-due-diligence-briefing/manuscript/working-draft/figures/phase-run-939b6a8b76724d02.result/dd-register-phase-diagram.pdf",
       "sha256": "db346420980c61e2c8685918b4fba2b0b22d144862fe4cf5180027bae1faeeb9",
       "bytes": 43512,
-      "reason": "canonical manuscript declared build input: eigen-technical-due-diligence-briefing"
+      "reason": "final polished canonical manuscript declared build input"
     },
     {
       "path": "writing_projects/eigen-technical-due-diligence-briefing/manuscript/working-draft/figures/portable-run-b69220b3a27348ad.result/dd-gap-selection.pdf",
       "sha256": "cfe4740c85b7faabc89cc20377466cd07fb6be34b4989987a17c382b8bd79352",
       "bytes": 24557,
-      "reason": "canonical manuscript declared build input: eigen-technical-due-diligence-briefing"
+      "reason": "final polished canonical manuscript declared build input"
     },
     {
       "path": "writing_projects/eigen-technical-due-diligence-briefing/manuscript/working-draft/figures/portable-run-b69220b3a27348ad.result/dd-global-local-feedback.pdf",
       "sha256": "43cfe04aca10d4b53dfdd3619c3cfd338ed70580279bd5718cb81c687fba19f8",
       "bytes": 16052,
-      "reason": "canonical manuscript declared build input: eigen-technical-due-diligence-briefing"
+      "reason": "final polished canonical manuscript declared build input"
     },
     {
       "path": "writing_projects/eigen-technical-due-diligence-briefing/manuscript/working-draft/figures/portable-run-b69220b3a27348ad.result/dd-memory-parity.pdf",
       "sha256": "2564fc60c7f42928e65468ef12f5df29c4eb4ddc04e070f9e412fdca38a139ef",
       "bytes": 36289,
-      "reason": "canonical manuscript declared build input: eigen-technical-due-diligence-briefing"
+      "reason": "final polished canonical manuscript declared build input"
     },
     {
       "path": "writing_projects/eigen-technical-due-diligence-briefing/manuscript/working-draft/figures/portable-run-b69220b3a27348ad.result/dd-operator-projection.pdf",
       "sha256": "7d94866978362e2aedead4026d93306610d4035dd4d73666f672fa774f32f398",
       "bytes": 23963,
-      "reason": "canonical manuscript declared build input: eigen-technical-due-diligence-briefing"
+      "reason": "final polished canonical manuscript declared build input"
     },
     {
       "path": "writing_projects/eigen-technical-due-diligence-briefing/manuscript/working-draft/figures/portable-run-b69220b3a27348ad.result/dd-retention-memory.pdf",
       "sha256": "bf78b1f01cd1f36f401f1927d54887b1e4074ee94028a0904aa9e918817adee4",
       "bytes": 84614,
-      "reason": "canonical manuscript declared build input: eigen-technical-due-diligence-briefing"
+      "reason": "final polished canonical manuscript declared build input"
     },
     {
       "path": "writing_projects/eigen-technical-due-diligence-briefing/manuscript/working-draft/figures/portable-run-b69220b3a27348ad.result/dd-retention-trajectories.pdf",
       "sha256": "e3fd1623520c41c62481a5ffcd23e9aa6c8887b084a08de3a3b3c5d0c10f70cd",
       "bytes": 16117,
-      "reason": "canonical manuscript declared build input: eigen-technical-due-diligence-briefing"
+      "reason": "final polished canonical manuscript declared build input"
     },
     {
       "path": "writing_projects/eigen-technical-due-diligence-briefing/manuscript/working-draft/figures/portable-run-b69220b3a27348ad.result/dd-shared-register-price.pdf",
       "sha256": "b14bbfbd74728a450d78b2165abc1783f75fb12512afc5751563f113db195ba2",
       "bytes": 21119,
-      "reason": "canonical manuscript declared build input: eigen-technical-due-diligence-briefing"
+      "reason": "final polished canonical manuscript declared build input"
     },
     {
       "path": "writing_projects/eigen-technical-due-diligence-briefing/manuscript/working-draft/figures/portable-run-b69220b3a27348ad.result/dd-spectral-window.pdf",
       "sha256": "2cd6ad2afc5a4110384173a4eb2c61af07967dc9a6315d453fdf8bf786770689",
       "bytes": 86288,
-      "reason": "canonical manuscript declared build input: eigen-technical-due-diligence-briefing"
+      "reason": "final polished canonical manuscript declared build input"
     },
     {
       "path": "writing_projects/eigen-technical-due-diligence-briefing/manuscript/working-draft/figures/portable-run-b69220b3a27348ad.result/dd-superarc-controls.pdf",
       "sha256": "578cb4ad7f62ef17ddfb461199b4deaa81be05562c9e0bed4b7a1cf3715beb02",
       "bytes": 29223,
-      "reason": "canonical manuscript declared build input: eigen-technical-due-diligence-briefing"
+      "reason": "final polished canonical manuscript declared build input"
     },
     {
       "path": "writing_projects/eigen-technical-due-diligence-briefing/manuscript/working-draft/figures/robot-run-c4d4b3872a904ec0.result/dd-ai-tool-harness.pdf",
       "sha256": "27de7270a4073688a3a60f944c24f1b6f7936e9193e7b1fec764c38e82abcf3a",
       "bytes": 25745,
-      "reason": "canonical manuscript declared build input: eigen-technical-due-diligence-briefing"
+      "reason": "final polished canonical manuscript declared build input"
     },
     {
       "path": "writing_projects/eigen-technical-due-diligence-briefing/manuscript/working-draft/figures/robot-run-c4d4b3872a904ec0.result/dd-conceptric-envelope.pdf",
       "sha256": "c557be0648bb8a74309c5a2a1f5dc8f9f03cb9e3fd074dc5802ed4e678bd514d",
       "bytes": 63026,
-      "reason": "canonical manuscript declared build input: eigen-technical-due-diligence-briefing"
+      "reason": "final polished canonical manuscript declared build input"
     },
     {
       "path": "writing_projects/eigen-technical-due-diligence-briefing/manuscript/working-draft/figures/robot-run-c4d4b3872a904ec0.result/dd-nested-work-sdk.pdf",
       "sha256": "953a1ffa0171bcafd1d87f05c6c470e9e2474e83eca79699aacdcbe190feb5ca",
       "bytes": 36508,
-      "reason": "canonical manuscript declared build input: eigen-technical-due-diligence-briefing"
+      "reason": "final polished canonical manuscript declared build input"
     },
     {
       "path": "writing_projects/eigen-technical-due-diligence-briefing/manuscript/working-draft/refs.bib",
       "sha256": "df1f39df07ecc367c0a5f8597870dfe5fed89dcbe1787e20c67df72b6af86c52",
       "bytes": 9777,
-      "reason": "canonical manuscript declared build input: eigen-technical-due-diligence-briefing"
+      "reason": "final polished canonical manuscript declared build input"
     },
     {
       "path": "writing_projects/eigen-technical-due-diligence-briefing/manuscript/working-draft/Eigen-A-Theory-of-Efficient-Representation-and-Its-Working-Prototypes.pdf",
-      "sha256": "e53e1cbb323f7a71058d3dcb3f64df04ce09817984ff306175017bb82e91dee3",
-      "bytes": 1030172,
-      "reason": "canonical current manuscript PDF: eigen-technical-due-diligence-briefing"
+      "sha256": "cdc460272e715186479049198f2f87fbd54250742c3f65f532403bba44d1730c",
+      "bytes": 1032422,
+      "reason": "verified canonical final build output or reference-numbering companion"
     },
     {
       "path": "synthetics papers/corpus-as-a-state/reconstruction/extension/figures/controlled_effective_dynamics_v1.pdf",
       "sha256": "580bda307600c21b9c69268fae57ae4de77c61ef2cf058fb7ba32aa58aba424e",
       "bytes": 31516,
-      "reason": "exact canonical Dynamic Memory method/figure support"
+      "reason": "final polished canonical manuscript declared build input"
     },
     {
       "path": "synthetics papers/corpus-as-a-state/reconstruction/extension/figures/query_locality_completed_v1.pdf",
       "sha256": "d845800aa3e60456de4abc753d063835a0ad1ffe8b5222cbec81681abf5e74ee",
       "bytes": 42660,
-      "reason": "exact canonical Dynamic Memory method/figure support"
+      "reason": "final polished canonical manuscript declared build input"
     },
     {
       "path": "synthetics papers/corpus-as-a-state/reconstruction/output/pdf/v2.1/eigen-revtex.sty",
       "sha256": "163bd3e3bd460de738b010b4e4bef13b4fcb5f5b093d50a6aeb946941c18baae",
       "bytes": 7140,
-      "reason": "canonical manuscript declared build input: memory-in-pieces"
+      "reason": "final polished canonical manuscript declared build input"
     },
     {
       "path": "synthetics papers/corpus-as-a-state/reconstruction/output/pdf/v2.1/figures/generated/dm-source-recall-pipeline.pdf",
       "sha256": "8fff67f7654369dd700fd763c8bd1637e9d50d7fdfd3e713ff2b552c223dad94",
       "bytes": 43454,
-      "reason": "canonical visual output: memory-in-pieces"
+      "reason": "final polished canonical manuscript declared build input"
     },
     {
       "path": "synthetics papers/corpus-as-a-state/reconstruction/output/pdf/v2.1/figures/generated/dynamic-memory-witnessed-update.pdf",
       "sha256": "fdcb7947209c369476322e8a975e8f5b88e34f6023cafc4ab837cc2a71b0a177",
       "bytes": 143428,
-      "reason": "canonical visual output: memory-in-pieces"
+      "reason": "final polished canonical manuscript declared build input"
     },
     {
       "path": "synthetics papers/corpus-as-a-state/reconstruction/output/pdf/v2.1/figures/generated/mip_frames_noactivation.pdf",
       "sha256": "2e3496b21d55be9180b53cbb6318e7ccbd7bcc18940403ac696fe9a9815cb4e0",
       "bytes": 44414,
-      "reason": "canonical visual output: memory-in-pieces"
+      "reason": "final polished canonical manuscript declared build input"
     },
     {
       "path": "synthetics papers/corpus-as-a-state/reconstruction/output/pdf/v2.1/figures/generated/mip_longmem_completed.pdf",
       "sha256": "5b88b040a5d9ad130a402af893b83f2f9bffd949a16d7ad468aa5fc63afee80c",
       "bytes": 44103,
-      "reason": "canonical visual output: memory-in-pieces"
+      "reason": "final polished canonical manuscript declared build input"
     },
     {
       "path": "synthetics papers/corpus-as-a-state/reconstruction/output/pdf/v2.1/figures/generated/mip_news_matched.pdf",
       "sha256": "34fa25ec97deee136a21ec6f6b475a1608dff31aadcf48613bb95fa3190e1a3b",
       "bytes": 42069,
-      "reason": "canonical visual output: memory-in-pieces"
+      "reason": "final polished canonical manuscript declared build input"
     },
     {
       "path": "synthetics papers/corpus-as-a-state/reconstruction/output/pdf/v2.1/figures/generated/mip_wyoming_witness.pdf",
       "sha256": "d0442843ff40578f7d14500d2087c4ea4446fa0413437311c3305ac5e36fc6cb",
       "bytes": 55774,
-      "reason": "canonical visual output: memory-in-pieces"
+      "reason": "final polished canonical manuscript declared build input"
     },
     {
       "path": "synthetics papers/corpus-as-a-state/reconstruction/output/pdf/v2.1/reconstruction_appendices.tex",
-      "sha256": "e4c56872d48d9114d800f97982d755ceb0beff820fa9a1e89d2abb53c620b024",
-      "bytes": 55074,
-      "reason": "canonical manuscript declared build input: memory-in-pieces"
+      "sha256": "32c8f74c028d51cc6c1650928657581b86a9f24d2bdd9db7c3757b2d56c8e22c",
+      "bytes": 55066,
+      "reason": "final polished canonical manuscript declared build input"
     },
     {
       "path": "synthetics papers/corpus-as-a-state/reconstruction/output/pdf/v2.1/reconstruction_refs.bib",
       "sha256": "65b839f787944f545ab06f05306b95b35be7a189f1fe396e41070b400057f03c",
       "bytes": 5421,
-      "reason": "canonical manuscript declared build input: memory-in-pieces"
+      "reason": "final polished canonical manuscript declared build input"
     },
     {
       "path": "synthetics papers/corpus-as-a-state/reconstruction/output/pdf/v2.1/skein.tex",
-      "sha256": "44c61f4e96f71f5c61e2e10d8c5a1f1bb40c68536db8388b412f4df4fa51ca89",
-      "bytes": 34490,
-      "reason": "canonical manuscript declared build input: memory-in-pieces"
+      "sha256": "28292cd7cf3caa9705b1cac5e3060901f999c3ba6cf74343b103cd8e1cdce3a9",
+      "bytes": 34830,
+      "reason": "final polished canonical manuscript declared build input"
     },
     {
       "path": "synthetics papers/corpus-as-a-state/reconstruction/output/pdf/v2.1/skein.pdf",
-      "sha256": "ab9848ed238d6b67eaa7c54d26df43e7c8bb61293bf7ee297f1e358ab0f876a1",
-      "bytes": 780340,
-      "reason": "canonical current manuscript PDF: memory-in-pieces"
+      "sha256": "22329182ad5f20e0aa52e322aa5d7f2ad77a621de33f820f02bdf708b7ae6c34",
+      "bytes": 780601,
+      "reason": "verified canonical final build output or reference-numbering companion"
     },
     {
       "path": "synthetics papers/self-consistent-loss-geometries-coupled-evaluators/manuscript/imported/figures/generated/slg-off-transition-promotions-20261111.pdf",
       "sha256": "65da472448fbe9152a0d487ffaa5320e1dc9c1c7a9312ebc811b8630851d89d2",
       "bytes": 17403,
-      "reason": "canonical manuscript declared build input: self-consistent-loss-geometries-coupled-evaluators"
+      "reason": "final polished canonical manuscript declared build input"
     },
     {
       "path": "synthetics papers/self-consistent-loss-geometries-coupled-evaluators/manuscript/imported/figures/generated/slg-or-event-multiplicity-20261111.pdf",
       "sha256": "1ef6c7aa134e0fc8aedb5eeecfa52b8b6c5f41fcd09922326bdedc7e99aee851",
       "bytes": 23598,
-      "reason": "canonical manuscript declared build input: self-consistent-loss-geometries-coupled-evaluators"
+      "reason": "final polished canonical manuscript declared build input"
     },
     {
       "path": "synthetics papers/self-consistent-loss-geometries-coupled-evaluators/manuscript/imported/figures/generated/slg-or-hazard-defect-20261111.pdf",
       "sha256": "295124443814569562a09392a61fec0507cb81a672ab3ca91de4fc70fa4fae09",
       "bytes": 18117,
-      "reason": "canonical manuscript declared build input: self-consistent-loss-geometries-coupled-evaluators"
+      "reason": "final polished canonical manuscript declared build input"
     },
     {
       "path": "synthetics papers/self-consistent-loss-geometries-coupled-evaluators/manuscript/imported/figures/generated/slg-priced-policy-tracking-20261111.pdf",
       "sha256": "a39a222b231904ac52a00387062bb571d5bc5322202f15323ebf65aee2e5c7d8",
       "bytes": 18075,
-      "reason": "canonical manuscript declared build input: self-consistent-loss-geometries-coupled-evaluators"
+      "reason": "final polished canonical manuscript declared build input"
     },
     {
       "path": "synthetics papers/self-consistent-loss-geometries-coupled-evaluators/manuscript/imported/figures/generated/slg-promotion-frequency-20261111.pdf",
       "sha256": "da4d8494459abc46b3577db52ffa888a164b0026d63b4c8ad9e15879e4d71207",
       "bytes": 16940,
-      "reason": "canonical manuscript declared build input: self-consistent-loss-geometries-coupled-evaluators"
+      "reason": "final polished canonical manuscript declared build input"
     },
     {
       "path": "synthetics papers/self-consistent-loss-geometries-coupled-evaluators/manuscript/imported/figures/generated/slg-promotion-recovery-20261111.pdf",
       "sha256": "c25b0db1cb44e01156d852672799318746c742eadece4f7b04e023f9f6b9284a",
       "bytes": 17677,
-      "reason": "canonical manuscript declared build input: self-consistent-loss-geometries-coupled-evaluators"
+      "reason": "final polished canonical manuscript declared build input"
     },
     {
       "path": "synthetics papers/self-consistent-loss-geometries-coupled-evaluators/manuscript/imported/figures/generated/slg-promotion-risk-20261111.pdf",
       "sha256": "c0a9d2792a8cd2b3043850b6862bef0ee0c21d9722db7e02c1cc1a706864eacf",
       "bytes": 18016,
-      "reason": "canonical manuscript declared build input: self-consistent-loss-geometries-coupled-evaluators"
+      "reason": "final polished canonical manuscript declared build input"
     },
     {
       "path": "synthetics papers/self-consistent-loss-geometries-coupled-evaluators/manuscript/imported/figures/generated/slg-register-common-ledger-20261111.pdf",
       "sha256": "dd9922cd9f64503440f1321cba9e9f855f8326cbd135bdf1c9a890cb684127fe",
       "bytes": 16460,
-      "reason": "canonical manuscript declared build input: self-consistent-loss-geometries-coupled-evaluators"
+      "reason": "final polished canonical manuscript declared build input"
     },
     {
       "path": "synthetics papers/self-consistent-loss-geometries-coupled-evaluators/manuscript/imported/main.tex",
       "sha256": "43998d0a856ce23db45cf6abfbd05010de41aa1377c78a5fcc3f6d4684b68ad8",
       "bytes": 1125,
-      "reason": "canonical manuscript declared build input: self-consistent-loss-geometries-coupled-evaluators"
+      "reason": "final polished canonical manuscript declared build input"
     },
     {
       "path": "synthetics papers/self-consistent-loss-geometries-coupled-evaluators/manuscript/imported/references.bib",
       "sha256": "1750854986051e0187a8fe73bb76728969cd4a12c8770af62f94c25d24d0a050",
       "bytes": 24510,
-      "reason": "canonical manuscript declared build input: self-consistent-loss-geometries-coupled-evaluators"
+      "reason": "final polished canonical manuscript declared build input"
     },
     {
       "path": "synthetics papers/self-consistent-loss-geometries-coupled-evaluators/manuscript/imported/sections/00_abstract.tex",
-      "sha256": "a0bde297677a4767402964924888c812a3ae2e6099e036989aae409791f1c067",
-      "bytes": 1474,
-      "reason": "canonical manuscript declared build input: self-consistent-loss-geometries-coupled-evaluators"
+      "sha256": "b476ee95fc353f6b05bcd9958867c764537bbe27e81708803769b049fcc19bfa",
+      "bytes": 1497,
+      "reason": "final polished canonical manuscript declared build input"
     },
     {
       "path": "synthetics papers/self-consistent-loss-geometries-coupled-evaluators/manuscript/imported/sections/01_introduction.tex",
-      "sha256": "a3356144ef4137c9206b0bb6f51d4d7c628419b3f78c2b64238febeaad86a55e",
-      "bytes": 5041,
-      "reason": "canonical manuscript declared build input: self-consistent-loss-geometries-coupled-evaluators"
+      "sha256": "d2e2729791149b6221824efdc9255b26a788d1f646b82bef90241c890dcf02d0",
+      "bytes": 5012,
+      "reason": "final polished canonical manuscript declared build input"
     },
     {
       "path": "synthetics papers/self-consistent-loss-geometries-coupled-evaluators/manuscript/imported/sections/02_related_work_background.tex",
       "sha256": "331f78045b387cdb497a65ad07a8b1abeb59faec464da09127a012e312040f01",
       "bytes": 3441,
-      "reason": "canonical manuscript declared build input: self-consistent-loss-geometries-coupled-evaluators"
+      "reason": "final polished canonical manuscript declared build input"
     },
     {
       "path": "synthetics papers/self-consistent-loss-geometries-coupled-evaluators/manuscript/imported/sections/03_model_setup.tex",
       "sha256": "fc2a94b4267ce6db582292d84796796d60aa8046dc705a93ff10e77a8b14e7e9",
       "bytes": 5909,
-      "reason": "canonical manuscript declared build input: self-consistent-loss-geometries-coupled-evaluators"
+      "reason": "final polished canonical manuscript declared build input"
     },
     {
       "path": "synthetics papers/self-consistent-loss-geometries-coupled-evaluators/manuscript/imported/sections/04_self_consistent_loss_geometry.tex",
-      "sha256": "1a659cf20779293391ed1749ffe6d4bfa002332635ce8ac4c898ce2db4c26e66",
-      "bytes": 10910,
-      "reason": "canonical manuscript declared build input: self-consistent-loss-geometries-coupled-evaluators"
+      "sha256": "e84337c2a7e5aaebe5d707d5100ae891338e4d6e8284d4b2e2b5b794f0b3f11b",
+      "bytes": 11474,
+      "reason": "final polished canonical manuscript declared build input"
     },
     {
       "path": "synthetics papers/self-consistent-loss-geometries-coupled-evaluators/manuscript/imported/sections/04b_partition_covariance.tex",
       "sha256": "5c3a31c50cd6638847c29f63879085f60af7a00c23cf5ebf9c596db91d3a8005",
       "bytes": 6526,
-      "reason": "canonical manuscript declared build input: self-consistent-loss-geometries-coupled-evaluators"
+      "reason": "final polished canonical manuscript declared build input"
     },
     {
       "path": "synthetics papers/self-consistent-loss-geometries-coupled-evaluators/manuscript/imported/sections/05_evidence_examples.tex",
-      "sha256": "4d8aee85d27bedeac0b52fd49974fe475fd5b4dbaed116775e780adfc61b68ed",
-      "bytes": 11244,
-      "reason": "canonical manuscript declared build input: self-consistent-loss-geometries-coupled-evaluators"
+      "sha256": "11936a8e47a24049f881626798df13b6261da1c42f14a7dc60b8b7e0bad4bdab",
+      "bytes": 11267,
+      "reason": "final polished canonical manuscript declared build input"
     },
     {
       "path": "synthetics papers/self-consistent-loss-geometries-coupled-evaluators/manuscript/imported/sections/06_discussion.tex",
-      "sha256": "62bd1ec4e88e45ff3369e2445c490f2a6ce4b1878cc9da6a19df20175ad26604",
-      "bytes": 4261,
-      "reason": "canonical manuscript declared build input: self-consistent-loss-geometries-coupled-evaluators"
+      "sha256": "e714c62674bf83cade874c3602a7b8c97d10687eea82546c7bad9956cf5b2523",
+      "bytes": 4325,
+      "reason": "final polished canonical manuscript declared build input"
     },
     {
       "path": "synthetics papers/self-consistent-loss-geometries-coupled-evaluators/manuscript/imported/sections/07_appendix.tex",
-      "sha256": "5948e6f18e434862b85d46f333ba450a396b32ff391fe84ba347f1ff671df9e6",
-      "bytes": 22681,
-      "reason": "canonical manuscript declared build input: self-consistent-loss-geometries-coupled-evaluators"
+      "sha256": "fd19dd9b215c9880076d91386de98140b1bd21debff452d1c46240e5ad5c72bb",
+      "bytes": 23097,
+      "reason": "final polished canonical manuscript declared build input"
     },
     {
       "path": "synthetics papers/self-consistent-loss-geometries-coupled-evaluators/manuscript/imported/sections/09_numerical_demonstrations.tex",
-      "sha256": "dfb8e3d64f10488665bb0f41036e81114f6cd9a6b2e48bd9351ca902f483686e",
-      "bytes": 10650,
-      "reason": "canonical manuscript declared build input: self-consistent-loss-geometries-coupled-evaluators"
+      "sha256": "7eccbcd82d3443c18fb0c94ef34a73621b3bacf2b7e7d3e2fa0894894689dde7",
+      "bytes": 10768,
+      "reason": "final polished canonical manuscript declared build input"
     },
     {
       "path": "synthetics papers/self-consistent-loss-geometries-coupled-evaluators/manuscript/imported/main.pdf",
-      "sha256": "410e9727ad764d379b8773b9afa832ebf5e4210e3c8bd13a56ebb828b980fade",
-      "bytes": 560255,
-      "reason": "canonical current manuscript PDF: self-consistent-loss-geometries-coupled-evaluators"
+      "sha256": "cb2fe498f79161b59522056ff12651f67197bdce439822dbc7ab2f8ccb11dd86",
+      "bytes": 561760,
+      "reason": "verified canonical final build output or reference-numbering companion"
     },
     {
       "path": "synthetics papers/adaptive-normal-form/manuscript/tex/figures/generated/hierarchy-controller-timing-paper.pdf",
       "sha256": "46ea1d35f539dd77b7dda61ead36b47d3c718681b5f0e29468c5b287adf9fabf",
       "bytes": 11318,
-      "reason": "canonical visual output: adaptive-normal-form-aek9"
+      "reason": "final polished canonical manuscript declared build input"
     },
     {
       "path": "synthetics papers/adaptive-normal-form/manuscript/tex/figures/generated/persistent-terminal-effort-paper.pdf",
       "sha256": "95ab3181311dbc3e1aceb926bbed6a056765dad5a0ee1354cf4626ab7b71cd2b",
       "bytes": 21308,
-      "reason": "canonical visual output: adaptive-normal-form-aek9"
+      "reason": "final polished canonical manuscript declared build input"
     },
     {
       "path": "synthetics papers/adaptive-normal-form/manuscript/tex/main.tex",
-      "sha256": "ef43ae2893ee83f7873bfec595dabceb79271cefca26aebe6500d58646277213",
-      "bytes": 3128,
-      "reason": "canonical manuscript declared build input: adaptive-normal-form-aek9"
+      "sha256": "692c3659193e095e3791755e4e23c616764e5246d2c11cb88ba242a567fa0cc0",
+      "bytes": 3193,
+      "reason": "final polished canonical manuscript declared build input"
     },
     {
       "path": "synthetics papers/adaptive-normal-form/manuscript/tex/sections/01_introduction.tex",
-      "sha256": "f76813043d094e84f081aeb3f626f459ebd95c6328755b8a70fb6c7a62905640",
-      "bytes": 3058,
-      "reason": "canonical manuscript declared build input: adaptive-normal-form-aek9"
+      "sha256": "f00e05a9ae2f8d4abaf41625235c23031744b780f08b7ac656e0793944225f74",
+      "bytes": 2982,
+      "reason": "final polished canonical manuscript declared build input"
     },
     {
       "path": "synthetics papers/adaptive-normal-form/manuscript/tex/sections/02_model.tex",
-      "sha256": "139216f0dbd8ab2911a527d372eba1c386924e29c62cd6910045d7a21771ce53",
-      "bytes": 7084,
-      "reason": "canonical manuscript declared build input: adaptive-normal-form-aek9"
+      "sha256": "8bd89e0d9e6e82241737fd548129b9d7108a767c7124b073c4198327d943dadb",
+      "bytes": 7127,
+      "reason": "final polished canonical manuscript declared build input"
     },
     {
       "path": "synthetics papers/adaptive-normal-form/manuscript/tex/sections/03_return_map.tex",
       "sha256": "bc0e418371c827e718a701fb92500d5fb569f3a41bb9fae75c2b16bd70c00abb",
       "bytes": 1131,
-      "reason": "canonical manuscript declared build input: adaptive-normal-form-aek9"
+      "reason": "final polished canonical manuscript declared build input"
     },
     {
       "path": "synthetics papers/adaptive-normal-form/manuscript/tex/sections/04_susceptibility.tex",
       "sha256": "a82b43e474eb01e1a9ad0ba877fc11676a728bf3c4b309e5b5930b289722f5d9",
       "bytes": 5735,
-      "reason": "canonical manuscript declared build input: adaptive-normal-form-aek9"
+      "reason": "final polished canonical manuscript declared build input"
     },
     {
       "path": "synthetics papers/adaptive-normal-form/manuscript/tex/sections/05_phases.tex",
-      "sha256": "f6821c7c76f2ced2b07847b093528e5d80ac23e2dd65130ebadb364fb2a9d488",
-      "bytes": 6457,
-      "reason": "canonical manuscript declared build input: adaptive-normal-form-aek9"
+      "sha256": "b36479337fef6d68fbc7b517e350ab163014833da6ffe6c1edb184649dd01c69",
+      "bytes": 6508,
+      "reason": "final polished canonical manuscript declared build input"
     },
     {
       "path": "synthetics papers/adaptive-normal-form/manuscript/tex/sections/06_hierarchy.tex",
-      "sha256": "fb3d9d59788ec05de78ecc14e08c4f348f663beed1d5c3a89ebf7510f3683410",
-      "bytes": 6287,
-      "reason": "canonical manuscript declared build input: adaptive-normal-form-aek9"
+      "sha256": "1aad0b9bc65e7cde7318a3e435cae8675aba85a181d2bdc8636144ffdf0e9c61",
+      "bytes": 6853,
+      "reason": "final polished canonical manuscript declared build input"
     },
     {
       "path": "synthetics papers/adaptive-normal-form/manuscript/tex/sections/07_window.tex",
-      "sha256": "89f0f828a9e7e16f187eeee5474f3486bb30a6f19608412485409f452e622557",
-      "bytes": 7523,
-      "reason": "canonical manuscript declared build input: adaptive-normal-form-aek9"
+      "sha256": "88e82ad3779f260cd09c2fe013f6d65362427144ba1eed66bd1fd36c28597190",
+      "bytes": 7765,
+      "reason": "final polished canonical manuscript declared build input"
     },
     {
       "path": "synthetics papers/adaptive-normal-form/manuscript/tex/sections/08_universality.tex",
       "sha256": "4f18c97ae13d14dca0baa914c51f868d2148c9c9109c77a6707b9ccb1233f1c5",
       "bytes": 4424,
-      "reason": "canonical manuscript declared build input: adaptive-normal-form-aek9"
+      "reason": "final polished canonical manuscript declared build input"
     },
     {
       "path": "synthetics papers/adaptive-normal-form/manuscript/tex/sections/09_discussion.tex",
       "sha256": "6cb0648d898246332e7a574d72c635419ec8d5165fbfab64742202fef4608004",
       "bytes": 3511,
-      "reason": "canonical manuscript declared build input: adaptive-normal-form-aek9"
+      "reason": "final polished canonical manuscript declared build input"
     },
     {
       "path": "synthetics papers/adaptive-normal-form/manuscript/tex/sections/10_conclusion.tex",
-      "sha256": "34a4fcbca9a289fba41034c0fa17def37d4a07eeb06f27d91a58986eb06a349f",
-      "bytes": 2504,
-      "reason": "canonical manuscript declared build input: adaptive-normal-form-aek9"
+      "sha256": "e92f7ca92aa3ff58b2cec291ce27a271c916454d32ace13385fb549545b008ee",
+      "bytes": 2517,
+      "reason": "final polished canonical manuscript declared build input"
     },
     {
       "path": "synthetics papers/adaptive-normal-form/manuscript/tex/main.pdf",
-      "sha256": "6eb40794c3e27dd2d898842f43bcf7a0ffd21fea89855f4a9fe5888ff99eae93",
-      "bytes": 348834,
-      "reason": "canonical current manuscript PDF: adaptive-normal-form-aek9"
+      "sha256": "0478ee9e41b0082cccefea82a9ca3d1e46dcf91cf2c04cae4b3c7f9e7d4b8c2e",
+      "bytes": 350045,
+      "reason": "verified canonical final build output or reference-numbering companion"
     },
     {
       "path": "synthetics papers/corpus-as-a-state/reconstruction/output/pdf/v2.1/research_records.json",
@@ -6583,7 +6583,7 @@
       "path": "synthetics papers/corpus-as-a-state/reconstruction/output/pdf/v2.1/research_runs/run-d2f6d3cff17f0fbe.result.json",
       "sha256": "10f22f152572ec0141995aaceedaf82cf48dfe0e530814837883bb0ab09db35b",
       "bytes": 77021,
-      "reason": "run definition/receipt/result: result-61e7f91f157fdc79f4c7"
+      "reason": "complete exact indexed retained run family"
     },
     {
       "path": "writing_projects/memory-in-pieces/evidence/DYNAMIC_MEMORY_DEMO_2026-11-11/input.json",
@@ -6685,13 +6685,13 @@
       "path": "synthetics papers/corpus-as-a-state/reconstruction/output/pdf/v2.1/research_runs/run-d2f6d3cff17f0fbe.json",
       "sha256": "e5fbb416e66216fb7dd4dea882a8d2d3309ac502bfbd35a804847da69d199092",
       "bytes": 6287,
-      "reason": "run definition/receipt/result: result-61e7f91f157fdc79f4c7"
+      "reason": "complete exact indexed retained run family"
     },
     {
       "path": "synthetics papers/corpus-as-a-state/reconstruction/output/pdf/v2.1/research_runs/run-d2f6d3cff17f0fbe.receipt.json",
       "sha256": "6c62047edfd2743bc4f815ee09bfac8fbbe12606303b41ffda2c65f32f6d23a1",
       "bytes": 2362,
-      "reason": "run definition/receipt/result: result-61e7f91f157fdc79f4c7"
+      "reason": "complete exact indexed retained run family"
     },
     {
       "path": "synthetics papers/corpus-as-a-state/reconstruction/output/pdf/v2.1/figures/generated/mip_news_matched.png",
@@ -6835,19 +6835,19 @@
       "path": "synthetics papers/adaptive-normal-form/manuscript/tex/research_runs/run-da409034fde5674c.result.json",
       "sha256": "5204d445a256d1aee1023da0bfcf1b0e4ef1bc9c9566d5ae35e1a3a12d98bc0e",
       "bytes": 4297,
-      "reason": "run definition/receipt/result: anf-reconciliation-algebra-20261111-v2"
+      "reason": "complete exact indexed retained run family"
     },
     {
       "path": "synthetics papers/adaptive-normal-form/manuscript/tex/research_runs/run-da409034fde5674c.json",
       "sha256": "b518d0749d71ee1f214a92c535eaad75d27f04d6d144dc1c36ca4e4e0efd98a6",
       "bytes": 2731,
-      "reason": "run definition/receipt/result: anf-reconciliation-algebra-20261111-v2"
+      "reason": "complete exact indexed retained run family"
     },
     {
       "path": "synthetics papers/adaptive-normal-form/manuscript/tex/research_runs/run-da409034fde5674c.receipt.json",
       "sha256": "fdafe1f1309605743bbc3e0943f382ffdd3ef6f64dcb8860cd481eb17b138323",
       "bytes": 2361,
-      "reason": "run definition/receipt/result: anf-reconciliation-algebra-20261111-v2"
+      "reason": "complete exact indexed retained run family"
     },
     {
       "path": "writing_projects/adaptive-normal-form-aek9/D1/v2/jacobian_orbit_check.py",
@@ -6859,7 +6859,7 @@
       "path": "synthetics papers/adaptive-normal-form/manuscript/tex/research_runs/run-e46bf2a3172ea87e.result.json",
       "sha256": "5281094d3d9f3d8862d01fc5779200211beee81c66aee4d477be90929dcc680f",
       "bytes": 23948,
-      "reason": "run definition/receipt/result: anf-d1-v2-jacobian-orbits-20261111"
+      "reason": "complete exact indexed retained run family"
     },
     {
       "path": "writing_projects/adaptive-normal-form-aek9/D1/v2/source-inputs.json",
@@ -6871,13 +6871,13 @@
       "path": "synthetics papers/adaptive-normal-form/manuscript/tex/research_runs/run-e46bf2a3172ea87e.json",
       "sha256": "1eddd951d1babc30a1cf8a9ac379ec56132fe51dfec18a68f3a56095ce10564f",
       "bytes": 2878,
-      "reason": "run definition/receipt/result: anf-d1-v2-jacobian-orbits-20261111"
+      "reason": "complete exact indexed retained run family"
     },
     {
       "path": "synthetics papers/adaptive-normal-form/manuscript/tex/research_runs/run-e46bf2a3172ea87e.receipt.json",
       "sha256": "69167a193e5e24eda4ab6c37206ddb4f0bd3207b7767612ab6d8e2a3e1cb82df",
       "bytes": 2365,
-      "reason": "run definition/receipt/result: anf-d1-v2-jacobian-orbits-20261111"
+      "reason": "complete exact indexed retained run family"
     },
     {
       "path": "writing_projects/adaptive-normal-form-aek9/D4a/v1/feasible_tree_check.py",
@@ -6889,7 +6889,7 @@
       "path": "synthetics papers/adaptive-normal-form/manuscript/tex/research_runs/run-d2d4e9492ceb571c.result.json",
       "sha256": "2416bfdb70b2df3c4fab2e416f190c8a9fe0d1948d9508c66898ebdbad49dbc2",
       "bytes": 446177,
-      "reason": "run definition/receipt/result: anf-d4a-v1-feasible-trees-20261111"
+      "reason": "complete exact indexed retained run family"
     },
     {
       "path": "writing_projects/adaptive-normal-form-aek9/D4a/v1/source-inputs.json",
@@ -6901,13 +6901,13 @@
       "path": "synthetics papers/adaptive-normal-form/manuscript/tex/research_runs/run-d2d4e9492ceb571c.json",
       "sha256": "b04cc9c78ede875627775471a68a982167a8282e89a49b16deff76664bd63fa1",
       "bytes": 2881,
-      "reason": "run definition/receipt/result: anf-d4a-v1-feasible-trees-20261111"
+      "reason": "complete exact indexed retained run family"
     },
     {
       "path": "synthetics papers/adaptive-normal-form/manuscript/tex/research_runs/run-d2d4e9492ceb571c.receipt.json",
       "sha256": "5fd4e5e07e668fa3548a7f8f454e5bef6f12bcf4baef7a61e8e06fef911dee41",
       "bytes": 2361,
-      "reason": "run definition/receipt/result: anf-d4a-v1-feasible-trees-20261111"
+      "reason": "complete exact indexed retained run family"
     },
     {
       "path": "writing_projects/adaptive-normal-form-aek9/D2/v1/full_loop_probe.py",
@@ -6919,7 +6919,7 @@
       "path": "synthetics papers/adaptive-normal-form/manuscript/tex/research_runs/run-567ebd09db726432.result.json",
       "sha256": "8bbf1f3113f63bc7943172da73134a2ed61df6f9857a9a52ff4cf27caa665d6d",
       "bytes": 157224,
-      "reason": "run definition/receipt/result: anf-d2-v1-full-loop-20261111"
+      "reason": "complete exact indexed retained run family"
     },
     {
       "path": "writing_projects/adaptive-normal-form-aek9/D2/v1/protocol-source-inputs.json",
@@ -6931,25 +6931,25 @@
       "path": "synthetics papers/adaptive-normal-form/manuscript/tex/research_runs/run-567ebd09db726432.result.full-traces.npz",
       "sha256": "9eb7be38cbc0e435189e0284b51cd4ce0270342f70b358662184d31eb63e1ab0",
       "bytes": 2247198,
-      "reason": "exact declared current scientific dependency: anf-d2-v1-full-loop-20261111"
+      "reason": "complete exact indexed retained run family"
     },
     {
       "path": "synthetics papers/adaptive-normal-form/manuscript/tex/research_runs/run-567ebd09db726432.result.plot-samples.csv",
       "sha256": "aafe9c7783ab476d074dc9f2c82fb2bec68364507b8aa83e8dbd5fcf92ede449",
       "bytes": 1425779,
-      "reason": "exact declared current scientific dependency: anf-d2-v1-full-loop-20261111"
+      "reason": "complete exact indexed retained run family"
     },
     {
       "path": "synthetics papers/adaptive-normal-form/manuscript/tex/research_runs/run-567ebd09db726432.json",
       "sha256": "39ed525a067ceda77dcfaeb7c731be3043e5099d312fa743a28a5ca6aba9bb7a",
       "bytes": 2861,
-      "reason": "run definition/receipt/result: anf-d2-v1-full-loop-20261111"
+      "reason": "complete exact indexed retained run family"
     },
     {
       "path": "synthetics papers/adaptive-normal-form/manuscript/tex/research_runs/run-567ebd09db726432.receipt.json",
       "sha256": "b7998fcce136d587710d1153ef041c14bc6c49ed319ad7cde6dd225d36df1c59",
       "bytes": 2364,
-      "reason": "run definition/receipt/result: anf-d2-v1-full-loop-20261111"
+      "reason": "complete exact indexed retained run family"
     },
     {
       "path": "writing_projects/adaptive-normal-form-aek9/D2/v2/full_loop_probe.py",
@@ -6961,7 +6961,7 @@
       "path": "synthetics papers/adaptive-normal-form/manuscript/tex/research_runs/run-f25940ecc0511fa3.result.json",
       "sha256": "27e76ee4ac5c52d2280b3e21e0f7559f9558362910c0846608cf527ca4e4d8d0",
       "bytes": 14083,
-      "reason": "run definition/receipt/result: anf-d2-v2-seed-correction-20261111"
+      "reason": "complete exact indexed retained run family"
     },
     {
       "path": "writing_projects/adaptive-normal-form-aek9/D2/v2/protocol-amendment.json",
@@ -6973,25 +6973,25 @@
       "path": "synthetics papers/adaptive-normal-form/manuscript/tex/research_runs/run-f25940ecc0511fa3.result.full-traces.npz",
       "sha256": "e19b9eee33413b393247debe14ea564a095ac705dfebdc8ef4ff58f398655928",
       "bytes": 12735,
-      "reason": "exact declared current scientific dependency: anf-d2-v2-seed-correction-20261111"
+      "reason": "complete exact indexed retained run family"
     },
     {
       "path": "synthetics papers/adaptive-normal-form/manuscript/tex/research_runs/run-f25940ecc0511fa3.result.plot-samples.csv",
       "sha256": "d5d01f22f081a688ed43f3062888c14f83041c988fbda7abcfa35d96df6ff2e5",
       "bytes": 63406,
-      "reason": "exact declared current scientific dependency: anf-d2-v2-seed-correction-20261111"
+      "reason": "complete exact indexed retained run family"
     },
     {
       "path": "synthetics papers/adaptive-normal-form/manuscript/tex/research_runs/run-f25940ecc0511fa3.json",
       "sha256": "3893e20a0df9b338e23567ce71e1ff8d3f58d0bcc277db4c875bc2a635b91979",
       "bytes": 2870,
-      "reason": "run definition/receipt/result: anf-d2-v2-seed-correction-20261111"
+      "reason": "complete exact indexed retained run family"
     },
     {
       "path": "synthetics papers/adaptive-normal-form/manuscript/tex/research_runs/run-f25940ecc0511fa3.receipt.json",
       "sha256": "e602a9390aec3140d75e5812b0a7f5e152095ecaf70ffdc5624d1226ab49440a",
       "bytes": 2365,
-      "reason": "run definition/receipt/result: anf-d2-v2-seed-correction-20261111"
+      "reason": "complete exact indexed retained run family"
     },
     {
       "path": "writing_projects/adaptive-normal-form-aek9/D4b/v1/actuation_check.py",
@@ -7003,7 +7003,7 @@
       "path": "synthetics papers/adaptive-normal-form/manuscript/tex/research_runs/run-68cbc97a85ad2f23.result.json",
       "sha256": "ea77869fdf1d9a0a3289d3815328a7cc5633c9a47b4132847e871c51b958248d",
       "bytes": 331460,
-      "reason": "run definition/receipt/result: anf-d4b-v1-actuation-20261111"
+      "reason": "complete exact indexed retained run family"
     },
     {
       "path": "writing_projects/adaptive-normal-form-aek9/D4b/v1/protocol-source-inputs.json",
@@ -7021,19 +7021,19 @@
       "path": "synthetics papers/adaptive-normal-form/manuscript/tex/research_runs/run-68cbc97a85ad2f23.result.tasks.csv",
       "sha256": "d339f8e11a905640d09c3d517b73ef4ee1e00ce6ffb855b773ddf7d9578ad218",
       "bytes": 7332,
-      "reason": "exact declared current scientific dependency: anf-d4b-v1-actuation-20261111"
+      "reason": "complete exact indexed retained run family"
     },
     {
       "path": "synthetics papers/adaptive-normal-form/manuscript/tex/research_runs/run-68cbc97a85ad2f23.json",
       "sha256": "71c998a04882af75fa10953e7cc59ab75325e518f646970c11290ebe4b6c52ff",
       "bytes": 3067,
-      "reason": "run definition/receipt/result: anf-d4b-v1-actuation-20261111"
+      "reason": "complete exact indexed retained run family"
     },
     {
       "path": "synthetics papers/adaptive-normal-form/manuscript/tex/research_runs/run-68cbc97a85ad2f23.receipt.json",
       "sha256": "e001895d7056a4450a06568e2b89ba0132090f9fbb6e10e0453dadd0f505ac08",
       "bytes": 2362,
-      "reason": "run definition/receipt/result: anf-d4b-v1-actuation-20261111"
+      "reason": "complete exact indexed retained run family"
     },
     {
       "path": "synthetics papers/adaptive-normal-form/manuscript/tex/figures/generated/hierarchy-controller-timing.svg",
@@ -7147,19 +7147,19 @@
       "path": "synthetics papers/self-consistent-loss-geometries/manuscript/imported/research_runs/run-0781a7b8f8513412.result.json",
       "sha256": "9b9fcfe471149634d96923532d3eb1a9294288a51ff3d9321d76a4c2b51ae91c",
       "bytes": 70118,
-      "reason": "run definition/receipt/result: result-80359cb137df3cb111bb"
+      "reason": "complete exact indexed retained run family"
     },
     {
       "path": "synthetics papers/self-consistent-loss-geometries/manuscript/imported/research_runs/run-0781a7b8f8513412.json",
       "sha256": "9cb3772f72ecb5c75ac730ce051e29d20dce239ebb378e3cff3d84c76d6e0b48",
       "bytes": 3329,
-      "reason": "run definition/receipt/result: result-80359cb137df3cb111bb"
+      "reason": "complete exact indexed retained run family"
     },
     {
       "path": "synthetics papers/self-consistent-loss-geometries/manuscript/imported/research_runs/run-0781a7b8f8513412.receipt.json",
       "sha256": "05d5542fa6e17bdfacfc6fd5ead75304c34a5030b680cc5aa440a0fa33b6548d",
       "bytes": 2361,
-      "reason": "run definition/receipt/result: result-80359cb137df3cb111bb"
+      "reason": "complete exact indexed retained run family"
     },
     {
       "path": "writing_projects/self-consistent-loss-geometries/research/slg-policy-coverage-20261111-v3/coverage_checks.py",
@@ -7171,19 +7171,19 @@
       "path": "synthetics papers/self-consistent-loss-geometries/manuscript/imported/research_runs/run-756cd502012e0adb.result.json",
       "sha256": "e6d4078cf9ac756904838ca7cdaf67a3e3ceaefd80cbca020aa1930bf6a0d51a",
       "bytes": 27287,
-      "reason": "run definition/receipt/result: result-201adc1f43a2c98ae841"
+      "reason": "complete exact indexed retained run family"
     },
     {
       "path": "synthetics papers/self-consistent-loss-geometries/manuscript/imported/research_runs/run-756cd502012e0adb.json",
       "sha256": "530ca90349e4e118c647576e0007f8c40491c305a293cafbb5782d1ae4746a70",
       "bytes": 3565,
-      "reason": "run definition/receipt/result: result-201adc1f43a2c98ae841"
+      "reason": "complete exact indexed retained run family"
     },
     {
       "path": "synthetics papers/self-consistent-loss-geometries/manuscript/imported/research_runs/run-756cd502012e0adb.receipt.json",
       "sha256": "6776bcebcedbb47abf9b6d17e5d86ad7c369e8425393b745e549bcf76dbd235f",
       "bytes": 2362,
-      "reason": "run definition/receipt/result: result-201adc1f43a2c98ae841"
+      "reason": "complete exact indexed retained run family"
     },
     {
       "path": "writing_projects/self-consistent-loss-geometries/evidence/SLG_VISUAL_PRODUCTION_2026-11-11/finite-figure-protocol.json",
@@ -7201,7 +7201,7 @@
       "path": "synthetics papers/self-consistent-loss-geometries/manuscript/imported/research_runs/run-7f8022a64802820f.result.json",
       "sha256": "730a153523a22f9abc6d66c6e6527645d1bc43d92eb58273bfb560b0f002210e",
       "bytes": 20027,
-      "reason": "run definition/receipt/result: slg-or-hazard-projection-20261111"
+      "reason": "complete exact indexed retained run family"
     },
     {
       "path": "writing_projects/self-consistent-loss-geometries/research/slg-scientific-figures-20261111/outputs/run-7f8022a64802820f.result/per_stream_metrics.csv",
@@ -7255,13 +7255,13 @@
       "path": "synthetics papers/self-consistent-loss-geometries/manuscript/imported/research_runs/run-7f8022a64802820f.json",
       "sha256": "8c4b1a57705af0f50cd7faf8197c074b079b189b64c21376d4251c320094c49e",
       "bytes": 3611,
-      "reason": "run definition/receipt/result: slg-or-hazard-projection-20261111"
+      "reason": "complete exact indexed retained run family"
     },
     {
       "path": "synthetics papers/self-consistent-loss-geometries/manuscript/imported/research_runs/run-7f8022a64802820f.receipt.json",
       "sha256": "f146d663ec8e002b2de5beb27904002064f3bea9ff2da87942463de9b6cd4aa2",
       "bytes": 2363,
-      "reason": "run definition/receipt/result: slg-or-hazard-projection-20261111"
+      "reason": "complete exact indexed retained run family"
     },
     {
       "path": "writing_projects/self-consistent-loss-geometries/research/slg-scientific-figures-20261111/outputs/run-7f8022a64802820f.result/common_ledger_register.csv",
@@ -7592,6 +7592,402 @@
       "sha256": "67b1ee9bbd0a9709790c88bf31c2fbc77f41850baff764d2560b9817b41c7f52",
       "bytes": 6463,
       "reason": "banked numerical endpoint summary; no new run"
+    },
+    {
+      "path": "tests/test_prepared_storyboard_work.py",
+      "sha256": "a11d6e7a2cbd22419ca33c00301d73e243af7ee0b54bb5378d20e84a0e5d97d4",
+      "bytes": 90558,
+      "reason": "exact adopted visual-reader increment fd71f1010668ce6b1f640251c9e2b510790bf97e"
+    },
+    {
+      "path": "tests/test_reader_input_observation.py",
+      "sha256": "5b2128096a8d18bc4ee49682350c0b9db5320e8b017de5753482f27672d78b30",
+      "bytes": 23693,
+      "reason": "exact adopted visual-reader increment fd71f1010668ce6b1f640251c9e2b510790bf97e"
+    },
+    {
+      "path": "tests/test_reader_plan_owner.py",
+      "sha256": "22c4a466c249a2098c2cef8a7c9ed0e7ffd3002605a342a0e41a25f1e5d0f5f9",
+      "bytes": 67554,
+      "reason": "exact adopted visual-reader increment fd71f1010668ce6b1f640251c9e2b510790bf97e"
+    },
+    {
+      "path": "synthetics papers/corpus-as-a-state/reconstruction/output/pdf/v2.1/research_runs/index.json",
+      "sha256": "eed9fbe8fc61ff4911dfee96c1742ade8753c23da78a0499370cb02e5d59ff4e",
+      "bytes": 1958,
+      "reason": "original retained run index; immutable source bytes, not fabricated cleanup"
+    },
+    {
+      "path": "synthetics papers/corpus-as-a-state/reconstruction/output/pdf/v2.1/research_runs/run-199b8e82dce9c620.json",
+      "sha256": "cce23a8fc4647c0faabe3ccce737947ade5a8ac9cc4091a4f906ce0065324e74",
+      "bytes": 3020,
+      "reason": "complete exact indexed retained run family"
+    },
+    {
+      "path": "synthetics papers/corpus-as-a-state/reconstruction/output/pdf/v2.1/research_runs/run-199b8e82dce9c620.receipt.json",
+      "sha256": "d12b48950000860c0e92d7d552cd16fa45ddc600e75dcfb2c127a6c0b956778d",
+      "bytes": 2317,
+      "reason": "complete exact indexed retained run family"
+    },
+    {
+      "path": "synthetics papers/corpus-as-a-state/reconstruction/output/pdf/v2.1/research_runs/run-199b8e82dce9c620.stderr.log",
+      "sha256": "4390c821ec3cc6869a90e97bac887e30ecf6372c056b5b2e2c723a4eb24b413f",
+      "bytes": 267,
+      "reason": "complete exact indexed retained run family"
+    },
+    {
+      "path": "synthetics papers/corpus-as-a-state/reconstruction/output/pdf/v2.1/research_runs/run-199b8e82dce9c620.stdout.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0,
+      "reason": "complete exact indexed retained run family"
+    },
+    {
+      "path": "synthetics papers/corpus-as-a-state/reconstruction/output/pdf/v2.1/research_runs/run-9240dd37e551b6c8.json",
+      "sha256": "a5285d82312bedcade78f0421ceeca5169e43c25303fd59cfeb9a22be0dcafdb",
+      "bytes": 3006,
+      "reason": "complete exact indexed retained run family"
+    },
+    {
+      "path": "synthetics papers/corpus-as-a-state/reconstruction/output/pdf/v2.1/research_runs/run-9240dd37e551b6c8.receipt.json",
+      "sha256": "0c9f4dc87c9e654021997b2a5162e5f47db1e52a14463aeb443130707ea0a41c",
+      "bytes": 2326,
+      "reason": "complete exact indexed retained run family"
+    },
+    {
+      "path": "synthetics papers/corpus-as-a-state/reconstruction/output/pdf/v2.1/research_runs/run-9240dd37e551b6c8.stderr.log",
+      "sha256": "74ab98c144d2a88ba5b86a3d9982b8ce28bb9ed1652892883913b480e6942caf",
+      "bytes": 600,
+      "reason": "complete exact indexed retained run family"
+    },
+    {
+      "path": "synthetics papers/corpus-as-a-state/reconstruction/output/pdf/v2.1/research_runs/run-9240dd37e551b6c8.stdout.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0,
+      "reason": "complete exact indexed retained run family"
+    },
+    {
+      "path": "synthetics papers/corpus-as-a-state/reconstruction/output/pdf/v2.1/research_runs/run-f190281c3b15f84f.json",
+      "sha256": "ba6b133d62ebc6fa604e8a74274cc7c01ff9278abeca88e8f5e62e4ef50cd807",
+      "bytes": 3039,
+      "reason": "complete exact indexed retained run family"
+    },
+    {
+      "path": "synthetics papers/corpus-as-a-state/reconstruction/output/pdf/v2.1/research_runs/run-f190281c3b15f84f.receipt.json",
+      "sha256": "ad7427171c15fb047351b3147e451990171d33f3f0e6c8ff4b10c56937801047",
+      "bytes": 2363,
+      "reason": "complete exact indexed retained run family"
+    },
+    {
+      "path": "synthetics papers/corpus-as-a-state/reconstruction/output/pdf/v2.1/research_runs/run-f190281c3b15f84f.result.json",
+      "sha256": "1f6122914e5a6eee84be14bf60865c4878030bcf9841f3c8fe49f975bc0e2601",
+      "bytes": 76854,
+      "reason": "complete exact indexed retained run family"
+    },
+    {
+      "path": "synthetics papers/corpus-as-a-state/reconstruction/output/pdf/v2.1/research_runs/run-f190281c3b15f84f.stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0,
+      "reason": "complete exact indexed retained run family"
+    },
+    {
+      "path": "synthetics papers/corpus-as-a-state/reconstruction/output/pdf/v2.1/research_runs/run-f190281c3b15f84f.stdout.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0,
+      "reason": "complete exact indexed retained run family"
+    },
+    {
+      "path": "synthetics papers/corpus-as-a-state/reconstruction/output/pdf/v2.1/research_runs/run-ffd067439f493b83.json",
+      "sha256": "52383d210c3abf26b3acd048cc3b508399102e82959598b9b3cd9f23b9e1a11e",
+      "bytes": 6026,
+      "reason": "complete exact indexed retained run family"
+    },
+    {
+      "path": "synthetics papers/corpus-as-a-state/reconstruction/output/pdf/v2.1/research_runs/run-ffd067439f493b83.receipt.json",
+      "sha256": "ffe638a29755fe4bae30cf309115d7c641cb0773f08babc47bf0d68163186a51",
+      "bytes": 2363,
+      "reason": "complete exact indexed retained run family"
+    },
+    {
+      "path": "synthetics papers/corpus-as-a-state/reconstruction/output/pdf/v2.1/research_runs/run-ffd067439f493b83.result.json",
+      "sha256": "0be63e38d37c54b7d794493971f8ccc68b098f737e2611e51297d1412db0252c",
+      "bytes": 77018,
+      "reason": "complete exact indexed retained run family"
+    },
+    {
+      "path": "synthetics papers/corpus-as-a-state/reconstruction/output/pdf/v2.1/research_runs/run-ffd067439f493b83.stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0,
+      "reason": "complete exact indexed retained run family"
+    },
+    {
+      "path": "synthetics papers/corpus-as-a-state/reconstruction/output/pdf/v2.1/research_runs/run-ffd067439f493b83.stdout.log",
+      "sha256": "cf46a5b175beaedf853618e0fe15f4a08ab5297ef6feb06533696e940b3ab95d",
+      "bytes": 139,
+      "reason": "complete exact indexed retained run family"
+    },
+    {
+      "path": "synthetics papers/corpus-as-a-state/reconstruction/output/pdf/v2.1/research_runs/run-d2f6d3cff17f0fbe.stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0,
+      "reason": "complete exact indexed retained run family"
+    },
+    {
+      "path": "synthetics papers/corpus-as-a-state/reconstruction/output/pdf/v2.1/research_runs/run-d2f6d3cff17f0fbe.stdout.log",
+      "sha256": "3d08bb3e77c5f1f81eea5cded44a8fa7e3edce0513d7e84d30b343c9dcecd1ba",
+      "bytes": 139,
+      "reason": "complete exact indexed retained run family"
+    },
+    {
+      "path": "synthetics papers/adaptive-normal-form/manuscript/tex/research_runs/index.json",
+      "sha256": "3d58bae42c2389ca70cdb63f7b219219d7f2110947962e2691f57504c9818aee",
+      "bytes": 2572,
+      "reason": "original retained run index; immutable source bytes, not fabricated cleanup"
+    },
+    {
+      "path": "synthetics papers/adaptive-normal-form/manuscript/tex/research_runs/run-703951e441395885.json",
+      "sha256": "986b1367cd48ccb6c9ce803457649a761310ffffd19178d35efc36680ec54f75",
+      "bytes": 2719,
+      "reason": "complete exact indexed retained run family"
+    },
+    {
+      "path": "synthetics papers/adaptive-normal-form/manuscript/tex/research_runs/run-703951e441395885.receipt.json",
+      "sha256": "28767a70d83c7f0ef17a86f325fa9c13951442739bcbd06739d1ecaca3e3224b",
+      "bytes": 2322,
+      "reason": "complete exact indexed retained run family"
+    },
+    {
+      "path": "synthetics papers/adaptive-normal-form/manuscript/tex/research_runs/run-703951e441395885.stderr.log",
+      "sha256": "b8bd965b9d8151d170a4e59926869433fcf57fcfe2f028daf673dc86f0af33c0",
+      "bytes": 394,
+      "reason": "complete exact indexed retained run family"
+    },
+    {
+      "path": "synthetics papers/adaptive-normal-form/manuscript/tex/research_runs/run-703951e441395885.stdout.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0,
+      "reason": "complete exact indexed retained run family"
+    },
+    {
+      "path": "synthetics papers/adaptive-normal-form/manuscript/tex/research_runs/run-da409034fde5674c.stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0,
+      "reason": "complete exact indexed retained run family"
+    },
+    {
+      "path": "synthetics papers/adaptive-normal-form/manuscript/tex/research_runs/run-da409034fde5674c.stdout.log",
+      "sha256": "77d6bab3a69e34ec2224499991a909a5e98c0c1da668b0e402c31741d42ec217",
+      "bytes": 99,
+      "reason": "complete exact indexed retained run family"
+    },
+    {
+      "path": "synthetics papers/adaptive-normal-form/manuscript/tex/research_runs/run-e46bf2a3172ea87e.stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0,
+      "reason": "complete exact indexed retained run family"
+    },
+    {
+      "path": "synthetics papers/adaptive-normal-form/manuscript/tex/research_runs/run-e46bf2a3172ea87e.stdout.log",
+      "sha256": "015f07173c0637e92aa0150a59fad37f549457112a1ec9f3631e093794568e88",
+      "bytes": 168,
+      "reason": "complete exact indexed retained run family"
+    },
+    {
+      "path": "synthetics papers/adaptive-normal-form/manuscript/tex/research_runs/run-d2d4e9492ceb571c.stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0,
+      "reason": "complete exact indexed retained run family"
+    },
+    {
+      "path": "synthetics papers/adaptive-normal-form/manuscript/tex/research_runs/run-d2d4e9492ceb571c.stdout.log",
+      "sha256": "820a3f0522c1cf4f2e448a366480d313260259956bf4ca3195c0197ab9d84c17",
+      "bytes": 159,
+      "reason": "complete exact indexed retained run family"
+    },
+    {
+      "path": "synthetics papers/adaptive-normal-form/manuscript/tex/research_runs/run-567ebd09db726432.stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0,
+      "reason": "complete exact indexed retained run family"
+    },
+    {
+      "path": "synthetics papers/adaptive-normal-form/manuscript/tex/research_runs/run-567ebd09db726432.stdout.log",
+      "sha256": "d93274123c45e3ee43c9d0b41e49a71d3962f96624b175f6a369a79b1efb30b5",
+      "bytes": 129,
+      "reason": "complete exact indexed retained run family"
+    },
+    {
+      "path": "synthetics papers/adaptive-normal-form/manuscript/tex/research_runs/run-f25940ecc0511fa3.stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0,
+      "reason": "complete exact indexed retained run family"
+    },
+    {
+      "path": "synthetics papers/adaptive-normal-form/manuscript/tex/research_runs/run-f25940ecc0511fa3.stdout.log",
+      "sha256": "558052e7ca8ad58e63789b134a4df5bf4ab27f019d742543fb5c963328fa0f3b",
+      "bytes": 124,
+      "reason": "complete exact indexed retained run family"
+    },
+    {
+      "path": "synthetics papers/adaptive-normal-form/manuscript/tex/research_runs/run-68cbc97a85ad2f23.stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0,
+      "reason": "complete exact indexed retained run family"
+    },
+    {
+      "path": "synthetics papers/adaptive-normal-form/manuscript/tex/research_runs/run-68cbc97a85ad2f23.stdout.log",
+      "sha256": "aac9faedce32dd92387237031c222aac9917ea94546e63ca71a7a5bbc91ba502",
+      "bytes": 153,
+      "reason": "complete exact indexed retained run family"
+    },
+    {
+      "path": "synthetics papers/self-consistent-loss-geometries/manuscript/imported/research_runs/index.json",
+      "sha256": "6d177c6f7f7eed4335b7ed5c6d0a6f6197bacc46685b94d63a8846d5378883dd",
+      "bytes": 1384,
+      "reason": "original retained run index; immutable source bytes, not fabricated cleanup"
+    },
+    {
+      "path": "synthetics papers/self-consistent-loss-geometries/manuscript/imported/research_runs/run-0781a7b8f8513412.stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0,
+      "reason": "complete exact indexed retained run family"
+    },
+    {
+      "path": "synthetics papers/self-consistent-loss-geometries/manuscript/imported/research_runs/run-0781a7b8f8513412.stdout.log",
+      "sha256": "9464f5832f5192966d607ae5530e59ff5322125f0e4bccdbaff3ac416e686a5e",
+      "bytes": 274,
+      "reason": "complete exact indexed retained run family"
+    },
+    {
+      "path": "synthetics papers/self-consistent-loss-geometries/manuscript/imported/research_runs/run-756cd502012e0adb.stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0,
+      "reason": "complete exact indexed retained run family"
+    },
+    {
+      "path": "synthetics papers/self-consistent-loss-geometries/manuscript/imported/research_runs/run-756cd502012e0adb.stdout.log",
+      "sha256": "4aa6dbabc6f949e24819a96adf7b37e52237fc7e4dcf2793a79fb302d4cfab0f",
+      "bytes": 131,
+      "reason": "complete exact indexed retained run family"
+    },
+    {
+      "path": "synthetics papers/self-consistent-loss-geometries/manuscript/imported/research_runs/run-7f8022a64802820f.stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0,
+      "reason": "complete exact indexed retained run family"
+    },
+    {
+      "path": "synthetics papers/self-consistent-loss-geometries/manuscript/imported/research_runs/run-7f8022a64802820f.stdout.log",
+      "sha256": "5a92bd0571d8d7fecaff9ce30db83b942fd5460f3118b1b740ef7b3b071b2f19",
+      "bytes": 125,
+      "reason": "complete exact indexed retained run family"
+    },
+    {
+      "path": "writing_projects/memory-in-pieces/evidence/DYNAMIC_MEMORY_REWRITE_2026-11-11/source-to-message-final.tikz",
+      "sha256": "59204ffc945738b0bf2348a943e85eff891fcb91c8907845f6138a065eed3894",
+      "bytes": 2320,
+      "reason": "reached missing original diagram or indexed producer input"
+    },
+    {
+      "path": "writing_projects/memory-in-pieces/evidence/DYNAMIC_MEMORY_DEMO_2026-11-11/incremental_demo.py",
+      "sha256": "ee5eb349900e8c1e22875a3ef288c1a14a9b478c0bec6320a6ca2190b243c311",
+      "bytes": 21128,
+      "reason": "reached missing original diagram or indexed producer input"
+    },
+    {
+      "path": "synthetics papers/adaptive-normal-form/manuscript/tex/main.aux",
+      "sha256": "dc283a20398470d0426574f9f2aef3767fb8e19d5530f2e499bc4f0eec6f984f",
+      "bytes": 9164,
+      "reason": "verified canonical final build output or reference-numbering companion"
+    },
+    {
+      "path": "synthetics papers/adaptive-normal-form/manuscript/tex/main.bbl",
+      "sha256": "8958e589798442840738db51ade594dcba50650952ef83194921792065ccad28",
+      "bytes": 1982,
+      "reason": "verified canonical final build output or reference-numbering companion"
+    },
+    {
+      "path": "synthetics papers/adaptive-normal-form/manuscript/tex/main.log",
+      "sha256": "4eea9df571e416da372e494dbe3fe3730480e6b76a702bec0713bdad581c9637",
+      "bytes": 27254,
+      "reason": "canonical TeX build log; no new build by packager"
+    },
+    {
+      "path": "writing_projects/eigen-technical-due-diligence-briefing/manuscript/working-draft/Eigen-A-Theory-of-Efficient-Representation-and-Its-Working-Prototypes.aux",
+      "sha256": "d028118af832317da3655d66a489ad2a0c21fe58195885a4580337489b7a2cda",
+      "bytes": 36302,
+      "reason": "verified canonical final build output or reference-numbering companion"
+    },
+    {
+      "path": "writing_projects/eigen-technical-due-diligence-briefing/manuscript/working-draft/Eigen-A-Theory-of-Efficient-Representation-and-Its-Working-Prototypes.bbl",
+      "sha256": "3ddc43bd82987ccfa392ad2f39bd5d876d05c1e1733990df6ad38e1dc1fb89db",
+      "bytes": 4520,
+      "reason": "verified canonical final build output or reference-numbering companion"
+    },
+    {
+      "path": "writing_projects/eigen-technical-due-diligence-briefing/manuscript/working-draft/Eigen-A-Theory-of-Efficient-Representation-and-Its-Working-Prototypes.log",
+      "sha256": "38574bce33d19a3afb6a1ffc419177c024dd331a1c83a7cab2a9f88ac42de2ab",
+      "bytes": 37920,
+      "reason": "canonical TeX build log; no new build by packager"
+    },
+    {
+      "path": "synthetics papers/corpus-as-a-state/reconstruction/output/pdf/v2.1/skein.aux",
+      "sha256": "379118cda041311db36cf000a6c29226eab699694630a2592f6c2eecbdd1ca03",
+      "bytes": 19842,
+      "reason": "verified canonical final build output or reference-numbering companion"
+    },
+    {
+      "path": "synthetics papers/corpus-as-a-state/reconstruction/output/pdf/v2.1/skein.bbl",
+      "sha256": "2fa09085d6828d511aa0451d54e840a69db317980b99d624a70f18d8cbca5890",
+      "bytes": 9726,
+      "reason": "verified canonical final build output or reference-numbering companion"
+    },
+    {
+      "path": "synthetics papers/corpus-as-a-state/reconstruction/output/pdf/v2.1/skein.log",
+      "sha256": "e1a2e2db3bf92beb7a7c042ea1701789d3327f2f14682fbabea0111150bfd137",
+      "bytes": 49435,
+      "reason": "canonical TeX build log; no new build by packager"
+    },
+    {
+      "path": "synthetics papers/self-consistent-loss-geometries-coupled-evaluators/manuscript/imported/main.aux",
+      "sha256": "c3ed8768f92cfcfec6012c8e82d976fadaeea75998c72233527c8abf71b92d30",
+      "bytes": 20772,
+      "reason": "verified canonical final build output or reference-numbering companion"
+    },
+    {
+      "path": "synthetics papers/self-consistent-loss-geometries-coupled-evaluators/manuscript/imported/main.bbl",
+      "sha256": "30493d036b830fccc87c446410366007628f26da70db0f2d17eac424e0fa41f9",
+      "bytes": 3973,
+      "reason": "verified canonical final build output or reference-numbering companion"
+    },
+    {
+      "path": "synthetics papers/self-consistent-loss-geometries-coupled-evaluators/manuscript/imported/main.log",
+      "sha256": "b3da506ba75367658db774f84ee3d7caebd1121969a8edf5203543d0547c0c65",
+      "bytes": 26375,
+      "reason": "canonical TeX build log; no new build by packager"
+    },
+    {
+      "path": "writing_projects/self-consistent-loss-geometries/research/slg-policy-coverage-20261111-v3/parameters.json",
+      "sha256": "53f6884ef78e4b7f3da4c46c0de86ebd3b485e160c14efb1c01ecaea8b3cbe14",
+      "bytes": 3012,
+      "reason": "reached exact indexed run dependency"
+    },
+    {
+      "path": "writing_projects/self-consistent-loss-geometries/research/slg-analytic-20261111-v2/parameters.json",
+      "sha256": "25b9c7b5ded0567f804e1ba88debef5b76512f45a611ca2e229d429e501b5256",
+      "bytes": 2081,
+      "reason": "reached exact indexed run dependency"
+    },
+    {
+      "path": "writing_projects/self-consistent-loss-geometries/research/slg-analytic-20261111-v2/original_numerical_demonstrations_v0.py",
+      "sha256": "ebe2e17c4803b312197fd5ce415cae59c29ecd7ba62256cf7f2cf7aa86c5b6d7",
+      "bytes": 24578,
+      "reason": "reached exact indexed run dependency"
+    },
+    {
+      "path": "writing_projects/self-consistent-loss-geometries/research/slg-scientific-figures-20261111/original_numerical_demonstrations.py",
+      "sha256": "ebe2e17c4803b312197fd5ce415cae59c29ecd7ba62256cf7f2cf7aa86c5b6d7",
+      "bytes": 24578,
+      "reason": "reached exact indexed run dependency"
     }
   ],
   "papers": [
@@ -7696,7 +8092,54 @@
           "name": "plain",
           "status": "INSTALLED_TEX_REQUEST_UNVERIFIED"
         }
-      ]
+      ],
+      "final_build": {
+        "project": "eigen-technical-due-diligence-briefing",
+        "canonical_status_receipt_sha256": "8b249e46e6239e0db1b9135e0d7992d565bb95fd85fa61db43d13eb1e27c69c3",
+        "scope": "Projection of actual original-project canonical build observation; not a rebuild in the evaluation checkout.",
+        "pdf": "writing_projects/eigen-technical-due-diligence-briefing/manuscript/working-draft/Eigen-A-Theory-of-Efficient-Representation-and-Its-Working-Prototypes.pdf",
+        "build_job": "BLD-e3998606288045d583fe51a4acaf21c3",
+        "fresh": true,
+        "ok": true,
+        "inputs_current": true,
+        "outputs_current": true,
+        "output_proof": "VERIFIED",
+        "input_revisions": {
+          "writing_projects/eigen-technical-due-diligence-briefing/manuscript/figures/generated/dd-hmf-physical-ground-state-20261016.pdf": "59c0464e50e58bf6886dd1a743bba3eadc23b453c5ddc415fd918662a10367f1",
+          "writing_projects/eigen-technical-due-diligence-briefing/manuscript/working-draft/Eigen-A-Theory-of-Efficient-Representation-and-Its-Working-Prototypes.tex": "1e9be815d30acfa9b1dcbbcda3425f469100026d908b08ea4b827494730dcea5",
+          "writing_projects/eigen-technical-due-diligence-briefing/manuscript/working-draft/chapters/chapter-01.tex": "8a4a9ca80516c52fc80830463f7980704a5425db8b510cd8f37ab7df06c70615",
+          "writing_projects/eigen-technical-due-diligence-briefing/manuscript/working-draft/chapters/from-a-working-core-to-an-extensible-sdk.tex": "850ac9817753cd4df1353203769886afe74674bc2281a84e0aaccee354c30f8d",
+          "writing_projects/eigen-technical-due-diligence-briefing/manuscript/working-draft/chapters/loss-dynamics-and-the-choice-of-scale.tex": "9a69f98b45d3473568b05491cdeae23e32cac817e95899dc2f82411b2af18d88",
+          "writing_projects/eigen-technical-due-diligence-briefing/manuscript/working-draft/chapters/memory-as-a-retained-and-reconstructable-object.tex": "a7e0acb84f2673e65bbf23ef06424455867eb5db55d46fddffee954a9dd8d089",
+          "writing_projects/eigen-technical-due-diligence-briefing/manuscript/working-draft/chapters/quantum-prototypes-changing-the-calculation.tex": "ad7efba528ba275aa462e399791646c83fefd0e48145b94e2968c773843f65af",
+          "writing_projects/eigen-technical-due-diligence-briefing/manuscript/working-draft/chapters/research-that-can-inspect-its-own-results.tex": "329b06c2bf2d48281899f13e07b183b3b81a8ca627a54e2148588a86307652fe",
+          "writing_projects/eigen-technical-due-diligence-briefing/manuscript/working-draft/chapters/the-backend-objects-authority-and-revision.tex": "b50a235faf7e23b9cba2609ee1b451005dd357cc7c2c3018fedc05d9e2ff03b7",
+          "writing_projects/eigen-technical-due-diligence-briefing/manuscript/working-draft/chapters/the-collection-and-the-next-tests.tex": "4eb497843d74de9791bddcd9bbdc6fba9d73c6debf4f341ddf47636a07aa68fb",
+          "writing_projects/eigen-technical-due-diligence-briefing/manuscript/working-draft/chapters/the-price-of-a-shared-description.tex": "9e75e2400815e125b81e5c2793cba0cb689344794b8ad53dc7c6f3d672cc79be",
+          "writing_projects/eigen-technical-due-diligence-briefing/manuscript/working-draft/chapters/what-a-useful-summary-must-remember.tex": "10407362d9b1794c85310cad25c6a12d3bb65fd8245b6b47e686fb96a1979d6f",
+          "writing_projects/eigen-technical-due-diligence-briefing/manuscript/working-draft/figures/completion-run-7bd75062068b432b.result/dd-memory-reader-controls.pdf": "7a43c64f42a5d42ce9333e14711729eb2f6eea1ee7ff708ddd38d5c9028afa9d",
+          "writing_projects/eigen-technical-due-diligence-briefing/manuscript/working-draft/figures/hierarchy-run-d9f38e92caf64d82.result/dd-hierarchy-stability.pdf": "a2cd437d3974f5a7c3a8c71ea3a9626928adf14d19029770b41e60c62a7d143f",
+          "writing_projects/eigen-technical-due-diligence-briefing/manuscript/working-draft/figures/phase-run-939b6a8b76724d02.result/dd-register-phase-diagram.pdf": "db346420980c61e2c8685918b4fba2b0b22d144862fe4cf5180027bae1faeeb9",
+          "writing_projects/eigen-technical-due-diligence-briefing/manuscript/working-draft/figures/portable-run-b69220b3a27348ad.result/dd-gap-selection.pdf": "cfe4740c85b7faabc89cc20377466cd07fb6be34b4989987a17c382b8bd79352",
+          "writing_projects/eigen-technical-due-diligence-briefing/manuscript/working-draft/figures/portable-run-b69220b3a27348ad.result/dd-global-local-feedback.pdf": "43cfe04aca10d4b53dfdd3619c3cfd338ed70580279bd5718cb81c687fba19f8",
+          "writing_projects/eigen-technical-due-diligence-briefing/manuscript/working-draft/figures/portable-run-b69220b3a27348ad.result/dd-memory-parity.pdf": "2564fc60c7f42928e65468ef12f5df29c4eb4ddc04e070f9e412fdca38a139ef",
+          "writing_projects/eigen-technical-due-diligence-briefing/manuscript/working-draft/figures/portable-run-b69220b3a27348ad.result/dd-operator-projection.pdf": "7d94866978362e2aedead4026d93306610d4035dd4d73666f672fa774f32f398",
+          "writing_projects/eigen-technical-due-diligence-briefing/manuscript/working-draft/figures/portable-run-b69220b3a27348ad.result/dd-retention-memory.pdf": "bf78b1f01cd1f36f401f1927d54887b1e4074ee94028a0904aa9e918817adee4",
+          "writing_projects/eigen-technical-due-diligence-briefing/manuscript/working-draft/figures/portable-run-b69220b3a27348ad.result/dd-retention-trajectories.pdf": "e3fd1623520c41c62481a5ffcd23e9aa6c8887b084a08de3a3b3c5d0c10f70cd",
+          "writing_projects/eigen-technical-due-diligence-briefing/manuscript/working-draft/figures/portable-run-b69220b3a27348ad.result/dd-shared-register-price.pdf": "b14bbfbd74728a450d78b2165abc1783f75fb12512afc5751563f113db195ba2",
+          "writing_projects/eigen-technical-due-diligence-briefing/manuscript/working-draft/figures/portable-run-b69220b3a27348ad.result/dd-spectral-window.pdf": "2cd6ad2afc5a4110384173a4eb2c61af07967dc9a6315d453fdf8bf786770689",
+          "writing_projects/eigen-technical-due-diligence-briefing/manuscript/working-draft/figures/portable-run-b69220b3a27348ad.result/dd-superarc-controls.pdf": "578cb4ad7f62ef17ddfb461199b4deaa81be05562c9e0bed4b7a1cf3715beb02",
+          "writing_projects/eigen-technical-due-diligence-briefing/manuscript/working-draft/figures/robot-run-c4d4b3872a904ec0.result/dd-ai-tool-harness.pdf": "27de7270a4073688a3a60f944c24f1b6f7936e9193e7b1fec764c38e82abcf3a",
+          "writing_projects/eigen-technical-due-diligence-briefing/manuscript/working-draft/figures/robot-run-c4d4b3872a904ec0.result/dd-conceptric-envelope.pdf": "c557be0648bb8a74309c5a2a1f5dc8f9f03cb9e3fd074dc5802ed4e678bd514d",
+          "writing_projects/eigen-technical-due-diligence-briefing/manuscript/working-draft/figures/robot-run-c4d4b3872a904ec0.result/dd-nested-work-sdk.pdf": "953a1ffa0171bcafd1d87f05c6c470e9e2474e83eca79699aacdcbe190feb5ca",
+          "writing_projects/eigen-technical-due-diligence-briefing/manuscript/working-draft/refs.bib": "df1f39df07ecc367c0a5f8597870dfe5fed89dcbe1787e20c67df72b6af86c52"
+        },
+        "outputs": {
+          "writing_projects/eigen-technical-due-diligence-briefing/manuscript/working-draft/Eigen-A-Theory-of-Efficient-Representation-and-Its-Working-Prototypes.aux": "d028118af832317da3655d66a489ad2a0c21fe58195885a4580337489b7a2cda",
+          "writing_projects/eigen-technical-due-diligence-briefing/manuscript/working-draft/Eigen-A-Theory-of-Efficient-Representation-and-Its-Working-Prototypes.bbl": "3ddc43bd82987ccfa392ad2f39bd5d876d05c1e1733990df6ad38e1dc1fb89db",
+          "writing_projects/eigen-technical-due-diligence-briefing/manuscript/working-draft/Eigen-A-Theory-of-Efficient-Representation-and-Its-Working-Prototypes.pdf": "cdc460272e715186479049198f2f87fbd54250742c3f65f532403bba44d1730c"
+        }
+      }
     },
     {
       "project": "memory-in-pieces",
@@ -7818,7 +8261,38 @@
           "name": "lmodern.sty",
           "status": "INSTALLED_TEX_REQUEST_UNVERIFIED"
         }
-      ]
+      ],
+      "final_build": {
+        "project": "memory-in-pieces",
+        "canonical_status_receipt_sha256": "3b02b930d4e9810a6729c298e38cfd61ef769262f9cbc5110570b1fe62d9c599",
+        "scope": "Projection of actual original-project canonical build observation; not a rebuild in the evaluation checkout.",
+        "pdf": "synthetics papers/corpus-as-a-state/reconstruction/output/pdf/v2.1/skein.pdf",
+        "build_job": "BLD-153bcc272d094a17b1dc49d6d46e8285",
+        "fresh": true,
+        "ok": true,
+        "inputs_current": true,
+        "outputs_current": true,
+        "output_proof": "VERIFIED",
+        "input_revisions": {
+          "synthetics papers/corpus-as-a-state/reconstruction/extension/figures/controlled_effective_dynamics_v1.pdf": "580bda307600c21b9c69268fae57ae4de77c61ef2cf058fb7ba32aa58aba424e",
+          "synthetics papers/corpus-as-a-state/reconstruction/extension/figures/query_locality_completed_v1.pdf": "d845800aa3e60456de4abc753d063835a0ad1ffe8b5222cbec81681abf5e74ee",
+          "synthetics papers/corpus-as-a-state/reconstruction/output/pdf/v2.1/eigen-revtex.sty": "163bd3e3bd460de738b010b4e4bef13b4fcb5f5b093d50a6aeb946941c18baae",
+          "synthetics papers/corpus-as-a-state/reconstruction/output/pdf/v2.1/figures/generated/dm-source-recall-pipeline.pdf": "8fff67f7654369dd700fd763c8bd1637e9d50d7fdfd3e713ff2b552c223dad94",
+          "synthetics papers/corpus-as-a-state/reconstruction/output/pdf/v2.1/figures/generated/dynamic-memory-witnessed-update.pdf": "fdcb7947209c369476322e8a975e8f5b88e34f6023cafc4ab837cc2a71b0a177",
+          "synthetics papers/corpus-as-a-state/reconstruction/output/pdf/v2.1/figures/generated/mip_frames_noactivation.pdf": "2e3496b21d55be9180b53cbb6318e7ccbd7bcc18940403ac696fe9a9815cb4e0",
+          "synthetics papers/corpus-as-a-state/reconstruction/output/pdf/v2.1/figures/generated/mip_longmem_completed.pdf": "5b88b040a5d9ad130a402af893b83f2f9bffd949a16d7ad468aa5fc63afee80c",
+          "synthetics papers/corpus-as-a-state/reconstruction/output/pdf/v2.1/figures/generated/mip_news_matched.pdf": "34fa25ec97deee136a21ec6f6b475a1608dff31aadcf48613bb95fa3190e1a3b",
+          "synthetics papers/corpus-as-a-state/reconstruction/output/pdf/v2.1/figures/generated/mip_wyoming_witness.pdf": "d0442843ff40578f7d14500d2087c4ea4446fa0413437311c3305ac5e36fc6cb",
+          "synthetics papers/corpus-as-a-state/reconstruction/output/pdf/v2.1/reconstruction_appendices.tex": "32c8f74c028d51cc6c1650928657581b86a9f24d2bdd9db7c3757b2d56c8e22c",
+          "synthetics papers/corpus-as-a-state/reconstruction/output/pdf/v2.1/reconstruction_refs.bib": "65b839f787944f545ab06f05306b95b35be7a189f1fe396e41070b400057f03c",
+          "synthetics papers/corpus-as-a-state/reconstruction/output/pdf/v2.1/skein.tex": "28292cd7cf3caa9705b1cac5e3060901f999c3ba6cf74343b103cd8e1cdce3a9"
+        },
+        "outputs": {
+          "synthetics papers/corpus-as-a-state/reconstruction/output/pdf/v2.1/skein.aux": "379118cda041311db36cf000a6c29226eab699694630a2592f6c2eecbdd1ca03",
+          "synthetics papers/corpus-as-a-state/reconstruction/output/pdf/v2.1/skein.bbl": "2fa09085d6828d511aa0451d54e840a69db317980b99d624a70f18d8cbca5890",
+          "synthetics papers/corpus-as-a-state/reconstruction/output/pdf/v2.1/skein.pdf": "22329182ad5f20e0aa52e322aa5d7f2ad77a621de33f820f02bdf708b7ae6c34"
+        }
+      }
     },
     {
       "project": "self-consistent-loss-geometries-coupled-evaluators",
@@ -7903,11 +8377,50 @@
           "name": "apsrev4-2",
           "status": "INSTALLED_TEX_REQUEST_UNVERIFIED"
         }
-      ]
+      ],
+      "final_build": {
+        "project": "self-consistent-loss-geometries-coupled-evaluators",
+        "canonical_status_receipt_sha256": "82d0ed3ded94e3f1e99eeeef5a9f27051bd473aae78dba39eaf0d66ac43b17d1",
+        "scope": "Projection of actual original-project canonical build observation; not a rebuild in the evaluation checkout.",
+        "pdf": "synthetics papers/self-consistent-loss-geometries-coupled-evaluators/manuscript/imported/main.pdf",
+        "build_job": "BLD-af42eb07d5f645ff8b2fd166e0d80746",
+        "fresh": true,
+        "ok": true,
+        "inputs_current": true,
+        "outputs_current": true,
+        "output_proof": "VERIFIED",
+        "input_revisions": {
+          "synthetics papers/self-consistent-loss-geometries-coupled-evaluators/manuscript/imported/figures/generated/slg-off-transition-promotions-20261111.pdf": "65da472448fbe9152a0d487ffaa5320e1dc9c1c7a9312ebc811b8630851d89d2",
+          "synthetics papers/self-consistent-loss-geometries-coupled-evaluators/manuscript/imported/figures/generated/slg-or-event-multiplicity-20261111.pdf": "1ef6c7aa134e0fc8aedb5eeecfa52b8b6c5f41fcd09922326bdedc7e99aee851",
+          "synthetics papers/self-consistent-loss-geometries-coupled-evaluators/manuscript/imported/figures/generated/slg-or-hazard-defect-20261111.pdf": "295124443814569562a09392a61fec0507cb81a672ab3ca91de4fc70fa4fae09",
+          "synthetics papers/self-consistent-loss-geometries-coupled-evaluators/manuscript/imported/figures/generated/slg-priced-policy-tracking-20261111.pdf": "a39a222b231904ac52a00387062bb571d5bc5322202f15323ebf65aee2e5c7d8",
+          "synthetics papers/self-consistent-loss-geometries-coupled-evaluators/manuscript/imported/figures/generated/slg-promotion-frequency-20261111.pdf": "da4d8494459abc46b3577db52ffa888a164b0026d63b4c8ad9e15879e4d71207",
+          "synthetics papers/self-consistent-loss-geometries-coupled-evaluators/manuscript/imported/figures/generated/slg-promotion-recovery-20261111.pdf": "c25b0db1cb44e01156d852672799318746c742eadece4f7b04e023f9f6b9284a",
+          "synthetics papers/self-consistent-loss-geometries-coupled-evaluators/manuscript/imported/figures/generated/slg-promotion-risk-20261111.pdf": "c0a9d2792a8cd2b3043850b6862bef0ee0c21d9722db7e02c1cc1a706864eacf",
+          "synthetics papers/self-consistent-loss-geometries-coupled-evaluators/manuscript/imported/figures/generated/slg-register-common-ledger-20261111.pdf": "dd9922cd9f64503440f1321cba9e9f855f8326cbd135bdf1c9a890cb684127fe",
+          "synthetics papers/self-consistent-loss-geometries-coupled-evaluators/manuscript/imported/main.tex": "43998d0a856ce23db45cf6abfbd05010de41aa1377c78a5fcc3f6d4684b68ad8",
+          "synthetics papers/self-consistent-loss-geometries-coupled-evaluators/manuscript/imported/references.bib": "1750854986051e0187a8fe73bb76728969cd4a12c8770af62f94c25d24d0a050",
+          "synthetics papers/self-consistent-loss-geometries-coupled-evaluators/manuscript/imported/sections/00_abstract.tex": "b476ee95fc353f6b05bcd9958867c764537bbe27e81708803769b049fcc19bfa",
+          "synthetics papers/self-consistent-loss-geometries-coupled-evaluators/manuscript/imported/sections/01_introduction.tex": "d2e2729791149b6221824efdc9255b26a788d1f646b82bef90241c890dcf02d0",
+          "synthetics papers/self-consistent-loss-geometries-coupled-evaluators/manuscript/imported/sections/02_related_work_background.tex": "331f78045b387cdb497a65ad07a8b1abeb59faec464da09127a012e312040f01",
+          "synthetics papers/self-consistent-loss-geometries-coupled-evaluators/manuscript/imported/sections/03_model_setup.tex": "fc2a94b4267ce6db582292d84796796d60aa8046dc705a93ff10e77a8b14e7e9",
+          "synthetics papers/self-consistent-loss-geometries-coupled-evaluators/manuscript/imported/sections/04_self_consistent_loss_geometry.tex": "e84337c2a7e5aaebe5d707d5100ae891338e4d6e8284d4b2e2b5b794f0b3f11b",
+          "synthetics papers/self-consistent-loss-geometries-coupled-evaluators/manuscript/imported/sections/04b_partition_covariance.tex": "5c3a31c50cd6638847c29f63879085f60af7a00c23cf5ebf9c596db91d3a8005",
+          "synthetics papers/self-consistent-loss-geometries-coupled-evaluators/manuscript/imported/sections/05_evidence_examples.tex": "11936a8e47a24049f881626798df13b6261da1c42f14a7dc60b8b7e0bad4bdab",
+          "synthetics papers/self-consistent-loss-geometries-coupled-evaluators/manuscript/imported/sections/06_discussion.tex": "e714c62674bf83cade874c3602a7b8c97d10687eea82546c7bad9956cf5b2523",
+          "synthetics papers/self-consistent-loss-geometries-coupled-evaluators/manuscript/imported/sections/07_appendix.tex": "fd19dd9b215c9880076d91386de98140b1bd21debff452d1c46240e5ad5c72bb",
+          "synthetics papers/self-consistent-loss-geometries-coupled-evaluators/manuscript/imported/sections/09_numerical_demonstrations.tex": "7eccbcd82d3443c18fb0c94ef34a73621b3bacf2b7e7d3e2fa0894894689dde7"
+        },
+        "outputs": {
+          "synthetics papers/self-consistent-loss-geometries-coupled-evaluators/manuscript/imported/main.aux": "c3ed8768f92cfcfec6012c8e82d976fadaeea75998c72233527c8abf71b92d30",
+          "synthetics papers/self-consistent-loss-geometries-coupled-evaluators/manuscript/imported/main.bbl": "30493d036b830fccc87c446410366007628f26da70db0f2d17eac424e0fa41f9",
+          "synthetics papers/self-consistent-loss-geometries-coupled-evaluators/manuscript/imported/main.pdf": "cb2fe498f79161b59522056ff12651f67197bdce439822dbc7ab2f8ccb11dd86"
+        }
+      }
     },
     {
       "project": "adaptive-normal-form-aek9",
-      "title": "Adaptive Normal Form",
+      "title": "Hierarchy in sampled collective feedback",
       "root": "synthetics papers/adaptive-normal-form/manuscript/tex/main.tex",
       "pdf": "synthetics papers/adaptive-normal-form/manuscript/tex/main.pdf",
       "files": [
@@ -7976,7 +8489,39 @@
           "name": "revtex4-2",
           "status": "INSTALLED_TEX_REQUEST_UNVERIFIED"
         }
-      ]
+      ],
+      "final_build": {
+        "project": "adaptive-normal-form-aek9",
+        "canonical_status_receipt_sha256": "66e6e0a641bcd3c5a67cc62055492d6d92d5c1292cc302780a82bdd0ef830e7f",
+        "scope": "Projection of actual original-project canonical build observation; not a rebuild in the evaluation checkout.",
+        "pdf": "synthetics papers/adaptive-normal-form/manuscript/tex/main.pdf",
+        "build_job": "BLD-903a718e217e492a8db664fa74933f58",
+        "fresh": true,
+        "ok": true,
+        "inputs_current": true,
+        "outputs_current": true,
+        "output_proof": "VERIFIED",
+        "input_revisions": {
+          "synthetics papers/adaptive-normal-form/manuscript/tex/figures/generated/hierarchy-controller-timing-paper.pdf": "46ea1d35f539dd77b7dda61ead36b47d3c718681b5f0e29468c5b287adf9fabf",
+          "synthetics papers/adaptive-normal-form/manuscript/tex/figures/generated/persistent-terminal-effort-paper.pdf": "95ab3181311dbc3e1aceb926bbed6a056765dad5a0ee1354cf4626ab7b71cd2b",
+          "synthetics papers/adaptive-normal-form/manuscript/tex/main.tex": "692c3659193e095e3791755e4e23c616764e5246d2c11cb88ba242a567fa0cc0",
+          "synthetics papers/adaptive-normal-form/manuscript/tex/sections/01_introduction.tex": "f00e05a9ae2f8d4abaf41625235c23031744b780f08b7ac656e0793944225f74",
+          "synthetics papers/adaptive-normal-form/manuscript/tex/sections/02_model.tex": "8bd89e0d9e6e82241737fd548129b9d7108a767c7124b073c4198327d943dadb",
+          "synthetics papers/adaptive-normal-form/manuscript/tex/sections/03_return_map.tex": "bc0e418371c827e718a701fb92500d5fb569f3a41bb9fae75c2b16bd70c00abb",
+          "synthetics papers/adaptive-normal-form/manuscript/tex/sections/04_susceptibility.tex": "a82b43e474eb01e1a9ad0ba877fc11676a728bf3c4b309e5b5930b289722f5d9",
+          "synthetics papers/adaptive-normal-form/manuscript/tex/sections/05_phases.tex": "b36479337fef6d68fbc7b517e350ab163014833da6ffe6c1edb184649dd01c69",
+          "synthetics papers/adaptive-normal-form/manuscript/tex/sections/06_hierarchy.tex": "1aad0b9bc65e7cde7318a3e435cae8675aba85a181d2bdc8636144ffdf0e9c61",
+          "synthetics papers/adaptive-normal-form/manuscript/tex/sections/07_window.tex": "88e82ad3779f260cd09c2fe013f6d65362427144ba1eed66bd1fd36c28597190",
+          "synthetics papers/adaptive-normal-form/manuscript/tex/sections/08_universality.tex": "4f18c97ae13d14dca0baa914c51f868d2148c9c9109c77a6707b9ccb1233f1c5",
+          "synthetics papers/adaptive-normal-form/manuscript/tex/sections/09_discussion.tex": "6cb0648d898246332e7a574d72c635419ec8d5165fbfab64742202fef4608004",
+          "synthetics papers/adaptive-normal-form/manuscript/tex/sections/10_conclusion.tex": "e92f7ca92aa3ff58b2cec291ce27a271c916454d32ace13385fb549545b008ee"
+        },
+        "outputs": {
+          "synthetics papers/adaptive-normal-form/manuscript/tex/main.aux": "dc283a20398470d0426574f9f2aef3767fb8e19d5530f2e499bc4f0eec6f984f",
+          "synthetics papers/adaptive-normal-form/manuscript/tex/main.bbl": "8958e589798442840738db51ade594dcba50650952ef83194921792065ccad28",
+          "synthetics papers/adaptive-normal-form/manuscript/tex/main.pdf": "0478ee9e41b0082cccefea82a9ca3d1e46dcf91cf2c04cae4b3c7f9e7d4b8c2e"
+        }
+      }
     }
   ],
   "excluded": [
@@ -7992,8 +8537,8 @@
   ],
   "derived_files": {
     "README.md": {
-      "sha256": "35fbb33f8628212cde09ad8e4ff5653a8ceeafbe85cd4d08ecc85640837bc475",
-      "bytes": 4168
+      "sha256": "1d42bea9c3460c34d966565173b9ad3d6e6f9167cc8e5a1714e0e5966f115f44",
+      "bytes": 5683
     },
     "AGENTS.md": {
       "sha256": "7ea5ba34e4507070abd415695990458e5f60a2d544654f0b0ead5b58373b8acd",
@@ -8004,12 +8549,12 @@
       "bytes": 888
     },
     "release/README.md": {
-      "sha256": "2f94c6d3a17539a382cc73d19cd7a123c16a644113e06d33bf2d10ce1bb702df",
-      "bytes": 1373
+      "sha256": "62391d1a254cd743ce37f0fb470cf38ff096c49b882ea8ea51a13af729fef1e9",
+      "bytes": 2339
     },
     "registry_projects.json": {
-      "sha256": "94d321fdeba50dd27b83fb5760ac504a1e98dcfaa1006ed6530ffafd21021b2e",
-      "bytes": 3841
+      "sha256": "0b0ab00c3ee773f17b1ed7b69b5d180545f778b9d88c1a01579bf27921ba74d8",
+      "bytes": 3861
     },
     "profiles/writing_sources.json": {
       "sha256": "915e5a2590e83c1469fda97a372712653ad84d23c02e4268255ab87b567b77a5",
@@ -8034,6 +8579,94 @@
     ".gitattributes": {
       "sha256": "1bd595aab7e24549711b8ca06871744d38795280f1cade85a17d27627b571b5e",
       "bytes": 68
+    },
+    "writing-portability.json": {
+      "sha256": "b98b501b987bda647cad10e7386743eaa5d90fffc3ac1a1fe024ac348c7ace01",
+      "bytes": 26207
+    },
+    "release/run-location-proofs.json": {
+      "sha256": "2951c45df134bc1ebd4773911eaada20735b73a80405ebdac3b79cd824580223",
+      "bytes": 47731
+    },
+    "release/paper-builds.json": {
+      "sha256": "33dcf2abdbf8d27c9bbd4f67a65ff9395dda9189a4e5daf658db77fef5432087",
+      "bytes": 19449
+    },
+    "docs/writing-evaluation-first-use.md": {
+      "sha256": "770411a7310bde5c36cb1403574a3c5251a9e8b0e0917a8cff6def5fe2d18117",
+      "bytes": 4104
+    },
+    "docs/evaluation-scientific-evidence.md": {
+      "sha256": "16ccd11af117b808de2abd32f2a05f0e54347d59255f1e6b0baac0806058042c",
+      "bytes": 5463
+    },
+    "release/validation/first-use-baseline.txt": {
+      "sha256": "994372884968e85f717885278369b013cbc79c4996044a6f15584eb2c9bad980",
+      "bytes": 13535
+    },
+    "release/validation/clean-install-baseline.json": {
+      "sha256": "24bda07f227d10e1ddcbc974e516792a3ab213641d1499b06418cac9de552d6e",
+      "bytes": 2700
+    },
+    "release/scientific-support.json": {
+      "sha256": "e41af4a79279fb6f486df62860ce5ca90ac3b04aa3855a92f19055129f77aa49",
+      "bytes": 37142
+    },
+    "release/run-owner-readback.json": {
+      "sha256": "737ba77ffe89b1bec90d955f814876bd0dde0c89f101ba392fb8a460696be8b2",
+      "bytes": 4751
+    },
+    "release/visual-reader-refresh.json": {
+      "sha256": "de6c15c9c3ed5d93c4c182a12c34ff7c9d0f97787a2881c85287c5d8348ec760",
+      "bytes": 1786
+    },
+    "release/initial-wheel-build.json": {
+      "sha256": "d153f5a45605ef8e2f916b68c3fc697859e305fd050bf30e36d056e1df498167",
+      "bytes": 466
+    },
+    "release/manuscript-production.json": {
+      "sha256": "6131f4b711238f794192490906c6e29ad9cc5af714bd5e84dc7e79128a3669c7",
+      "bytes": 27036
+    },
+    "release/final-paper-summary.json": {
+      "sha256": "a249bc3350a453d54c29c38d7b58333087f9304e45444477d96210334d7e4b83",
+      "bytes": 1985
+    },
+    "release/production/self-consistent-loss-geometries-coupled-evaluators.json": {
+      "sha256": "9cc6f1d7337a4ebf0c0e44e623834154ebc1134fb108fa4e3eef0954b0d9027f",
+      "bytes": 23603
+    },
+    "release/production/memory-in-pieces.json": {
+      "sha256": "d53c809ce5e91448e3ce137789d7c93dcdd889b81d59c707623f5e4e2e52162a",
+      "bytes": 11812
+    },
+    "release/production/adaptive-normal-form-aek9.json": {
+      "sha256": "a0d01f9a770bc7424407e663725cf23825e0530cb73bb7508a8444dd3206fdd3",
+      "bytes": 15325
+    },
+    "release/production/eigen-technical-due-diligence-briefing.json": {
+      "sha256": "8274658102609dc4184185c2ea0752344a2fb4262c95a7fd701be9fff1fde520",
+      "bytes": 48076
+    },
+    "release/validation/packaging-owner-smoke.py": {
+      "sha256": "a3a06859538af22853d9f7528397449a01b77202b9facc0c009dcb0781d32fb8",
+      "bytes": 4819
+    },
+    "release/validation/packaging-owner-smoke-v3.json": {
+      "sha256": "369b7826cb2f20bdd5b343b70492a8c7fa6258eeab810334830041d0f6afbd40",
+      "bytes": 3178
+    },
+    "release/validation/packaging-owner-smoke-v2.json": {
+      "sha256": "4b753c47919a5ecc61f5341e5c0a91a9c51bb11091d0a26b74b252fe92e6197e",
+      "bytes": 3007
+    },
+    "release/validation/packaging-repairs.json": {
+      "sha256": "9bd74898aa6ca68d88a520add9331ad3bf39ab042209481de839669fa7e61839",
+      "bytes": 1816
+    },
+    "release/validation/packaging-owner-smoke.json": {
+      "sha256": "8d70070adf531e63977f110069ac933af03c532c3525d728a0e04ab373f43822",
+      "bytes": 3003
     }
   },
   "scientific_support": {
@@ -8071,38 +8704,71 @@
       "synthetics papers/adaptive-normal-form/manuscript/tex/figures/generated/persistent-terminal-effort.pdf",
       "synthetics papers/adaptive-normal-form/manuscript/tex/figures/generated/persistent-terminal-effort.png",
       "synthetics papers/adaptive-normal-form/manuscript/tex/figures/generated/persistent-terminal-effort.svg",
+      "synthetics papers/adaptive-normal-form/manuscript/tex/main.aux",
+      "synthetics papers/adaptive-normal-form/manuscript/tex/main.bbl",
+      "synthetics papers/adaptive-normal-form/manuscript/tex/main.log",
+      "synthetics papers/adaptive-normal-form/manuscript/tex/main.pdf",
+      "synthetics papers/adaptive-normal-form/manuscript/tex/main.tex",
       "synthetics papers/adaptive-normal-form/manuscript/tex/manuscript_spec.json",
       "synthetics papers/adaptive-normal-form/manuscript/tex/research_producers.json",
       "synthetics papers/adaptive-normal-form/manuscript/tex/research_records.json",
+      "synthetics papers/adaptive-normal-form/manuscript/tex/research_runs/index.json",
       "synthetics papers/adaptive-normal-form/manuscript/tex/research_runs/run-567ebd09db726432.json",
       "synthetics papers/adaptive-normal-form/manuscript/tex/research_runs/run-567ebd09db726432.receipt.json",
       "synthetics papers/adaptive-normal-form/manuscript/tex/research_runs/run-567ebd09db726432.result.full-traces.npz",
       "synthetics papers/adaptive-normal-form/manuscript/tex/research_runs/run-567ebd09db726432.result.json",
       "synthetics papers/adaptive-normal-form/manuscript/tex/research_runs/run-567ebd09db726432.result.plot-samples.csv",
+      "synthetics papers/adaptive-normal-form/manuscript/tex/research_runs/run-567ebd09db726432.stderr.log",
+      "synthetics papers/adaptive-normal-form/manuscript/tex/research_runs/run-567ebd09db726432.stdout.log",
       "synthetics papers/adaptive-normal-form/manuscript/tex/research_runs/run-68cbc97a85ad2f23.json",
       "synthetics papers/adaptive-normal-form/manuscript/tex/research_runs/run-68cbc97a85ad2f23.receipt.json",
       "synthetics papers/adaptive-normal-form/manuscript/tex/research_runs/run-68cbc97a85ad2f23.result.json",
       "synthetics papers/adaptive-normal-form/manuscript/tex/research_runs/run-68cbc97a85ad2f23.result.tasks.csv",
+      "synthetics papers/adaptive-normal-form/manuscript/tex/research_runs/run-68cbc97a85ad2f23.stderr.log",
+      "synthetics papers/adaptive-normal-form/manuscript/tex/research_runs/run-68cbc97a85ad2f23.stdout.log",
+      "synthetics papers/adaptive-normal-form/manuscript/tex/research_runs/run-703951e441395885.json",
+      "synthetics papers/adaptive-normal-form/manuscript/tex/research_runs/run-703951e441395885.receipt.json",
+      "synthetics papers/adaptive-normal-form/manuscript/tex/research_runs/run-703951e441395885.stderr.log",
+      "synthetics papers/adaptive-normal-form/manuscript/tex/research_runs/run-703951e441395885.stdout.log",
       "synthetics papers/adaptive-normal-form/manuscript/tex/research_runs/run-d2d4e9492ceb571c.json",
       "synthetics papers/adaptive-normal-form/manuscript/tex/research_runs/run-d2d4e9492ceb571c.receipt.json",
       "synthetics papers/adaptive-normal-form/manuscript/tex/research_runs/run-d2d4e9492ceb571c.result.json",
+      "synthetics papers/adaptive-normal-form/manuscript/tex/research_runs/run-d2d4e9492ceb571c.stderr.log",
+      "synthetics papers/adaptive-normal-form/manuscript/tex/research_runs/run-d2d4e9492ceb571c.stdout.log",
       "synthetics papers/adaptive-normal-form/manuscript/tex/research_runs/run-da409034fde5674c.json",
       "synthetics papers/adaptive-normal-form/manuscript/tex/research_runs/run-da409034fde5674c.receipt.json",
       "synthetics papers/adaptive-normal-form/manuscript/tex/research_runs/run-da409034fde5674c.result.json",
+      "synthetics papers/adaptive-normal-form/manuscript/tex/research_runs/run-da409034fde5674c.stderr.log",
+      "synthetics papers/adaptive-normal-form/manuscript/tex/research_runs/run-da409034fde5674c.stdout.log",
       "synthetics papers/adaptive-normal-form/manuscript/tex/research_runs/run-e46bf2a3172ea87e.json",
       "synthetics papers/adaptive-normal-form/manuscript/tex/research_runs/run-e46bf2a3172ea87e.receipt.json",
       "synthetics papers/adaptive-normal-form/manuscript/tex/research_runs/run-e46bf2a3172ea87e.result.json",
+      "synthetics papers/adaptive-normal-form/manuscript/tex/research_runs/run-e46bf2a3172ea87e.stderr.log",
+      "synthetics papers/adaptive-normal-form/manuscript/tex/research_runs/run-e46bf2a3172ea87e.stdout.log",
       "synthetics papers/adaptive-normal-form/manuscript/tex/research_runs/run-f25940ecc0511fa3.json",
       "synthetics papers/adaptive-normal-form/manuscript/tex/research_runs/run-f25940ecc0511fa3.receipt.json",
       "synthetics papers/adaptive-normal-form/manuscript/tex/research_runs/run-f25940ecc0511fa3.result.full-traces.npz",
       "synthetics papers/adaptive-normal-form/manuscript/tex/research_runs/run-f25940ecc0511fa3.result.json",
       "synthetics papers/adaptive-normal-form/manuscript/tex/research_runs/run-f25940ecc0511fa3.result.plot-samples.csv",
+      "synthetics papers/adaptive-normal-form/manuscript/tex/research_runs/run-f25940ecc0511fa3.stderr.log",
+      "synthetics papers/adaptive-normal-form/manuscript/tex/research_runs/run-f25940ecc0511fa3.stdout.log",
+      "synthetics papers/adaptive-normal-form/manuscript/tex/sections/01_introduction.tex",
+      "synthetics papers/adaptive-normal-form/manuscript/tex/sections/02_model.tex",
+      "synthetics papers/adaptive-normal-form/manuscript/tex/sections/03_return_map.tex",
+      "synthetics papers/adaptive-normal-form/manuscript/tex/sections/04_susceptibility.tex",
+      "synthetics papers/adaptive-normal-form/manuscript/tex/sections/05_phases.tex",
+      "synthetics papers/adaptive-normal-form/manuscript/tex/sections/06_hierarchy.tex",
+      "synthetics papers/adaptive-normal-form/manuscript/tex/sections/07_window.tex",
+      "synthetics papers/adaptive-normal-form/manuscript/tex/sections/08_universality.tex",
+      "synthetics papers/adaptive-normal-form/manuscript/tex/sections/09_discussion.tex",
+      "synthetics papers/adaptive-normal-form/manuscript/tex/sections/10_conclusion.tex",
       "synthetics papers/corpus-as-a-state/reconstruction/extension/figures/controlled_effective_dynamics_v1.pdf",
       "synthetics papers/corpus-as-a-state/reconstruction/extension/figures/generate_completed_figures.py",
       "synthetics papers/corpus-as-a-state/reconstruction/extension/figures/query_locality_completed_v1.pdf",
       "synthetics papers/corpus-as-a-state/reconstruction/extension/physics_illustrations.py",
       "synthetics papers/corpus-as-a-state/reconstruction/extension/results/physics_illustrations_v1.json",
       "synthetics papers/corpus-as-a-state/reconstruction/extension/results/query_locality_matrix_v1.json",
+      "synthetics papers/corpus-as-a-state/reconstruction/output/pdf/v2.1/eigen-revtex.sty",
       "synthetics papers/corpus-as-a-state/reconstruction/output/pdf/v2.1/figure_manifest.json",
       "synthetics papers/corpus-as-a-state/reconstruction/output/pdf/v2.1/figures/generated/dm-source-recall-pipeline.pdf",
       "synthetics papers/corpus-as-a-state/reconstruction/output/pdf/v2.1/figures/generated/dm-source-recall-pipeline.png",
@@ -8129,15 +8795,67 @@
       "synthetics papers/corpus-as-a-state/reconstruction/output/pdf/v2.1/figures/generated/mip_wyoming_witness.svg",
       "synthetics papers/corpus-as-a-state/reconstruction/output/pdf/v2.1/figures/generated/mip_wyoming_witness.tikz",
       "synthetics papers/corpus-as-a-state/reconstruction/output/pdf/v2.1/manuscript_spec.json",
+      "synthetics papers/corpus-as-a-state/reconstruction/output/pdf/v2.1/reconstruction_appendices.tex",
+      "synthetics papers/corpus-as-a-state/reconstruction/output/pdf/v2.1/reconstruction_refs.bib",
       "synthetics papers/corpus-as-a-state/reconstruction/output/pdf/v2.1/research_producers.json",
       "synthetics papers/corpus-as-a-state/reconstruction/output/pdf/v2.1/research_records.json",
+      "synthetics papers/corpus-as-a-state/reconstruction/output/pdf/v2.1/research_runs/index.json",
+      "synthetics papers/corpus-as-a-state/reconstruction/output/pdf/v2.1/research_runs/run-199b8e82dce9c620.json",
+      "synthetics papers/corpus-as-a-state/reconstruction/output/pdf/v2.1/research_runs/run-199b8e82dce9c620.receipt.json",
+      "synthetics papers/corpus-as-a-state/reconstruction/output/pdf/v2.1/research_runs/run-199b8e82dce9c620.stderr.log",
+      "synthetics papers/corpus-as-a-state/reconstruction/output/pdf/v2.1/research_runs/run-199b8e82dce9c620.stdout.log",
+      "synthetics papers/corpus-as-a-state/reconstruction/output/pdf/v2.1/research_runs/run-9240dd37e551b6c8.json",
+      "synthetics papers/corpus-as-a-state/reconstruction/output/pdf/v2.1/research_runs/run-9240dd37e551b6c8.receipt.json",
+      "synthetics papers/corpus-as-a-state/reconstruction/output/pdf/v2.1/research_runs/run-9240dd37e551b6c8.stderr.log",
+      "synthetics papers/corpus-as-a-state/reconstruction/output/pdf/v2.1/research_runs/run-9240dd37e551b6c8.stdout.log",
       "synthetics papers/corpus-as-a-state/reconstruction/output/pdf/v2.1/research_runs/run-d2f6d3cff17f0fbe.json",
       "synthetics papers/corpus-as-a-state/reconstruction/output/pdf/v2.1/research_runs/run-d2f6d3cff17f0fbe.receipt.json",
       "synthetics papers/corpus-as-a-state/reconstruction/output/pdf/v2.1/research_runs/run-d2f6d3cff17f0fbe.result.json",
+      "synthetics papers/corpus-as-a-state/reconstruction/output/pdf/v2.1/research_runs/run-d2f6d3cff17f0fbe.stderr.log",
+      "synthetics papers/corpus-as-a-state/reconstruction/output/pdf/v2.1/research_runs/run-d2f6d3cff17f0fbe.stdout.log",
+      "synthetics papers/corpus-as-a-state/reconstruction/output/pdf/v2.1/research_runs/run-f190281c3b15f84f.json",
+      "synthetics papers/corpus-as-a-state/reconstruction/output/pdf/v2.1/research_runs/run-f190281c3b15f84f.receipt.json",
+      "synthetics papers/corpus-as-a-state/reconstruction/output/pdf/v2.1/research_runs/run-f190281c3b15f84f.result.json",
+      "synthetics papers/corpus-as-a-state/reconstruction/output/pdf/v2.1/research_runs/run-f190281c3b15f84f.stderr.log",
+      "synthetics papers/corpus-as-a-state/reconstruction/output/pdf/v2.1/research_runs/run-f190281c3b15f84f.stdout.log",
+      "synthetics papers/corpus-as-a-state/reconstruction/output/pdf/v2.1/research_runs/run-ffd067439f493b83.json",
+      "synthetics papers/corpus-as-a-state/reconstruction/output/pdf/v2.1/research_runs/run-ffd067439f493b83.receipt.json",
+      "synthetics papers/corpus-as-a-state/reconstruction/output/pdf/v2.1/research_runs/run-ffd067439f493b83.result.json",
+      "synthetics papers/corpus-as-a-state/reconstruction/output/pdf/v2.1/research_runs/run-ffd067439f493b83.stderr.log",
+      "synthetics papers/corpus-as-a-state/reconstruction/output/pdf/v2.1/research_runs/run-ffd067439f493b83.stdout.log",
+      "synthetics papers/corpus-as-a-state/reconstruction/output/pdf/v2.1/skein.aux",
+      "synthetics papers/corpus-as-a-state/reconstruction/output/pdf/v2.1/skein.bbl",
+      "synthetics papers/corpus-as-a-state/reconstruction/output/pdf/v2.1/skein.log",
+      "synthetics papers/corpus-as-a-state/reconstruction/output/pdf/v2.1/skein.pdf",
+      "synthetics papers/corpus-as-a-state/reconstruction/output/pdf/v2.1/skein.tex",
       "synthetics papers/relational-frontend/imported/code/reconstruction/raptor_baseline.py",
       "synthetics papers/relational-frontend/imported/results/extension_reviews/longmem_split_manifest.json",
       "synthetics papers/relational-frontend/src/relational/query.py",
       "synthetics papers/relational-frontend/src/relational/witness_compile.py",
+      "synthetics papers/self-consistent-loss-geometries-coupled-evaluators/manuscript/imported/figures/generated/slg-off-transition-promotions-20261111.pdf",
+      "synthetics papers/self-consistent-loss-geometries-coupled-evaluators/manuscript/imported/figures/generated/slg-or-event-multiplicity-20261111.pdf",
+      "synthetics papers/self-consistent-loss-geometries-coupled-evaluators/manuscript/imported/figures/generated/slg-or-hazard-defect-20261111.pdf",
+      "synthetics papers/self-consistent-loss-geometries-coupled-evaluators/manuscript/imported/figures/generated/slg-priced-policy-tracking-20261111.pdf",
+      "synthetics papers/self-consistent-loss-geometries-coupled-evaluators/manuscript/imported/figures/generated/slg-promotion-frequency-20261111.pdf",
+      "synthetics papers/self-consistent-loss-geometries-coupled-evaluators/manuscript/imported/figures/generated/slg-promotion-recovery-20261111.pdf",
+      "synthetics papers/self-consistent-loss-geometries-coupled-evaluators/manuscript/imported/figures/generated/slg-promotion-risk-20261111.pdf",
+      "synthetics papers/self-consistent-loss-geometries-coupled-evaluators/manuscript/imported/figures/generated/slg-register-common-ledger-20261111.pdf",
+      "synthetics papers/self-consistent-loss-geometries-coupled-evaluators/manuscript/imported/main.aux",
+      "synthetics papers/self-consistent-loss-geometries-coupled-evaluators/manuscript/imported/main.bbl",
+      "synthetics papers/self-consistent-loss-geometries-coupled-evaluators/manuscript/imported/main.log",
+      "synthetics papers/self-consistent-loss-geometries-coupled-evaluators/manuscript/imported/main.pdf",
+      "synthetics papers/self-consistent-loss-geometries-coupled-evaluators/manuscript/imported/main.tex",
+      "synthetics papers/self-consistent-loss-geometries-coupled-evaluators/manuscript/imported/references.bib",
+      "synthetics papers/self-consistent-loss-geometries-coupled-evaluators/manuscript/imported/sections/00_abstract.tex",
+      "synthetics papers/self-consistent-loss-geometries-coupled-evaluators/manuscript/imported/sections/01_introduction.tex",
+      "synthetics papers/self-consistent-loss-geometries-coupled-evaluators/manuscript/imported/sections/02_related_work_background.tex",
+      "synthetics papers/self-consistent-loss-geometries-coupled-evaluators/manuscript/imported/sections/03_model_setup.tex",
+      "synthetics papers/self-consistent-loss-geometries-coupled-evaluators/manuscript/imported/sections/04_self_consistent_loss_geometry.tex",
+      "synthetics papers/self-consistent-loss-geometries-coupled-evaluators/manuscript/imported/sections/04b_partition_covariance.tex",
+      "synthetics papers/self-consistent-loss-geometries-coupled-evaluators/manuscript/imported/sections/05_evidence_examples.tex",
+      "synthetics papers/self-consistent-loss-geometries-coupled-evaluators/manuscript/imported/sections/06_discussion.tex",
+      "synthetics papers/self-consistent-loss-geometries-coupled-evaluators/manuscript/imported/sections/07_appendix.tex",
+      "synthetics papers/self-consistent-loss-geometries-coupled-evaluators/manuscript/imported/sections/09_numerical_demonstrations.tex",
       "synthetics papers/self-consistent-loss-geometries/manuscript/imported/figure_manifest.json",
       "synthetics papers/self-consistent-loss-geometries/manuscript/imported/figures/generated/slg-off-transition-promotions-20261111.pdf",
       "synthetics papers/self-consistent-loss-geometries/manuscript/imported/figures/generated/slg-off-transition-promotions-20261111.png",
@@ -8166,15 +8884,22 @@
       "synthetics papers/self-consistent-loss-geometries/manuscript/imported/manuscript_spec.json",
       "synthetics papers/self-consistent-loss-geometries/manuscript/imported/research_producers.json",
       "synthetics papers/self-consistent-loss-geometries/manuscript/imported/research_records.json",
+      "synthetics papers/self-consistent-loss-geometries/manuscript/imported/research_runs/index.json",
       "synthetics papers/self-consistent-loss-geometries/manuscript/imported/research_runs/run-0781a7b8f8513412.json",
       "synthetics papers/self-consistent-loss-geometries/manuscript/imported/research_runs/run-0781a7b8f8513412.receipt.json",
       "synthetics papers/self-consistent-loss-geometries/manuscript/imported/research_runs/run-0781a7b8f8513412.result.json",
+      "synthetics papers/self-consistent-loss-geometries/manuscript/imported/research_runs/run-0781a7b8f8513412.stderr.log",
+      "synthetics papers/self-consistent-loss-geometries/manuscript/imported/research_runs/run-0781a7b8f8513412.stdout.log",
       "synthetics papers/self-consistent-loss-geometries/manuscript/imported/research_runs/run-756cd502012e0adb.json",
       "synthetics papers/self-consistent-loss-geometries/manuscript/imported/research_runs/run-756cd502012e0adb.receipt.json",
       "synthetics papers/self-consistent-loss-geometries/manuscript/imported/research_runs/run-756cd502012e0adb.result.json",
+      "synthetics papers/self-consistent-loss-geometries/manuscript/imported/research_runs/run-756cd502012e0adb.stderr.log",
+      "synthetics papers/self-consistent-loss-geometries/manuscript/imported/research_runs/run-756cd502012e0adb.stdout.log",
       "synthetics papers/self-consistent-loss-geometries/manuscript/imported/research_runs/run-7f8022a64802820f.json",
       "synthetics papers/self-consistent-loss-geometries/manuscript/imported/research_runs/run-7f8022a64802820f.receipt.json",
       "synthetics papers/self-consistent-loss-geometries/manuscript/imported/research_runs/run-7f8022a64802820f.result.json",
+      "synthetics papers/self-consistent-loss-geometries/manuscript/imported/research_runs/run-7f8022a64802820f.stderr.log",
+      "synthetics papers/self-consistent-loss-geometries/manuscript/imported/research_runs/run-7f8022a64802820f.stdout.log",
       "writing_projects/adaptive-normal-form-aek9/D1/v2/jacobian_orbit_check.py",
       "writing_projects/adaptive-normal-form-aek9/D1/v2/source-inputs.json",
       "writing_projects/adaptive-normal-form-aek9/D2/v1/full_loop_probe.py",
@@ -8187,6 +8912,38 @@
       "writing_projects/adaptive-normal-form-aek9/D4b/v1/actuation_check.py",
       "writing_projects/adaptive-normal-form-aek9/D4b/v1/protocol-source-inputs.json",
       "writing_projects/adaptive-normal-form-aek9/reconciliation/2026-11-11/algebra_checks_v2.py",
+      "writing_projects/eigen-technical-due-diligence-briefing/manuscript/figures/generated/dd-hmf-physical-ground-state-20261016.pdf",
+      "writing_projects/eigen-technical-due-diligence-briefing/manuscript/working-draft/Eigen-A-Theory-of-Efficient-Representation-and-Its-Working-Prototypes.aux",
+      "writing_projects/eigen-technical-due-diligence-briefing/manuscript/working-draft/Eigen-A-Theory-of-Efficient-Representation-and-Its-Working-Prototypes.bbl",
+      "writing_projects/eigen-technical-due-diligence-briefing/manuscript/working-draft/Eigen-A-Theory-of-Efficient-Representation-and-Its-Working-Prototypes.log",
+      "writing_projects/eigen-technical-due-diligence-briefing/manuscript/working-draft/Eigen-A-Theory-of-Efficient-Representation-and-Its-Working-Prototypes.pdf",
+      "writing_projects/eigen-technical-due-diligence-briefing/manuscript/working-draft/Eigen-A-Theory-of-Efficient-Representation-and-Its-Working-Prototypes.tex",
+      "writing_projects/eigen-technical-due-diligence-briefing/manuscript/working-draft/chapters/chapter-01.tex",
+      "writing_projects/eigen-technical-due-diligence-briefing/manuscript/working-draft/chapters/from-a-working-core-to-an-extensible-sdk.tex",
+      "writing_projects/eigen-technical-due-diligence-briefing/manuscript/working-draft/chapters/loss-dynamics-and-the-choice-of-scale.tex",
+      "writing_projects/eigen-technical-due-diligence-briefing/manuscript/working-draft/chapters/memory-as-a-retained-and-reconstructable-object.tex",
+      "writing_projects/eigen-technical-due-diligence-briefing/manuscript/working-draft/chapters/quantum-prototypes-changing-the-calculation.tex",
+      "writing_projects/eigen-technical-due-diligence-briefing/manuscript/working-draft/chapters/research-that-can-inspect-its-own-results.tex",
+      "writing_projects/eigen-technical-due-diligence-briefing/manuscript/working-draft/chapters/the-backend-objects-authority-and-revision.tex",
+      "writing_projects/eigen-technical-due-diligence-briefing/manuscript/working-draft/chapters/the-collection-and-the-next-tests.tex",
+      "writing_projects/eigen-technical-due-diligence-briefing/manuscript/working-draft/chapters/the-price-of-a-shared-description.tex",
+      "writing_projects/eigen-technical-due-diligence-briefing/manuscript/working-draft/chapters/what-a-useful-summary-must-remember.tex",
+      "writing_projects/eigen-technical-due-diligence-briefing/manuscript/working-draft/figures/completion-run-7bd75062068b432b.result/dd-memory-reader-controls.pdf",
+      "writing_projects/eigen-technical-due-diligence-briefing/manuscript/working-draft/figures/hierarchy-run-d9f38e92caf64d82.result/dd-hierarchy-stability.pdf",
+      "writing_projects/eigen-technical-due-diligence-briefing/manuscript/working-draft/figures/phase-run-939b6a8b76724d02.result/dd-register-phase-diagram.pdf",
+      "writing_projects/eigen-technical-due-diligence-briefing/manuscript/working-draft/figures/portable-run-b69220b3a27348ad.result/dd-gap-selection.pdf",
+      "writing_projects/eigen-technical-due-diligence-briefing/manuscript/working-draft/figures/portable-run-b69220b3a27348ad.result/dd-global-local-feedback.pdf",
+      "writing_projects/eigen-technical-due-diligence-briefing/manuscript/working-draft/figures/portable-run-b69220b3a27348ad.result/dd-memory-parity.pdf",
+      "writing_projects/eigen-technical-due-diligence-briefing/manuscript/working-draft/figures/portable-run-b69220b3a27348ad.result/dd-operator-projection.pdf",
+      "writing_projects/eigen-technical-due-diligence-briefing/manuscript/working-draft/figures/portable-run-b69220b3a27348ad.result/dd-retention-memory.pdf",
+      "writing_projects/eigen-technical-due-diligence-briefing/manuscript/working-draft/figures/portable-run-b69220b3a27348ad.result/dd-retention-trajectories.pdf",
+      "writing_projects/eigen-technical-due-diligence-briefing/manuscript/working-draft/figures/portable-run-b69220b3a27348ad.result/dd-shared-register-price.pdf",
+      "writing_projects/eigen-technical-due-diligence-briefing/manuscript/working-draft/figures/portable-run-b69220b3a27348ad.result/dd-spectral-window.pdf",
+      "writing_projects/eigen-technical-due-diligence-briefing/manuscript/working-draft/figures/portable-run-b69220b3a27348ad.result/dd-superarc-controls.pdf",
+      "writing_projects/eigen-technical-due-diligence-briefing/manuscript/working-draft/figures/robot-run-c4d4b3872a904ec0.result/dd-ai-tool-harness.pdf",
+      "writing_projects/eigen-technical-due-diligence-briefing/manuscript/working-draft/figures/robot-run-c4d4b3872a904ec0.result/dd-conceptric-envelope.pdf",
+      "writing_projects/eigen-technical-due-diligence-briefing/manuscript/working-draft/figures/robot-run-c4d4b3872a904ec0.result/dd-nested-work-sdk.pdf",
+      "writing_projects/eigen-technical-due-diligence-briefing/manuscript/working-draft/refs.bib",
       "writing_projects/memory-in-pieces/evidence/DYNAMIC_MEMORY_DEMO_2026-11-11/derivation-and-implementation.md",
       "writing_projects/memory-in-pieces/evidence/DYNAMIC_MEMORY_DEMO_2026-11-11/docs/d00-r1.txt",
       "writing_projects/memory-in-pieces/evidence/DYNAMIC_MEMORY_DEMO_2026-11-11/docs/d00-r2.txt",
@@ -8199,6 +8956,7 @@
       "writing_projects/memory-in-pieces/evidence/DYNAMIC_MEMORY_DEMO_2026-11-11/docs/d10-r3.txt",
       "writing_projects/memory-in-pieces/evidence/DYNAMIC_MEMORY_DEMO_2026-11-11/docs/d11-r1.txt",
       "writing_projects/memory-in-pieces/evidence/DYNAMIC_MEMORY_DEMO_2026-11-11/drawing-code-readability.js",
+      "writing_projects/memory-in-pieces/evidence/DYNAMIC_MEMORY_DEMO_2026-11-11/incremental_demo.py",
       "writing_projects/memory-in-pieces/evidence/DYNAMIC_MEMORY_DEMO_2026-11-11/incremental_demo_checked.py",
       "writing_projects/memory-in-pieces/evidence/DYNAMIC_MEMORY_DEMO_2026-11-11/input.json",
       "writing_projects/memory-in-pieces/evidence/DYNAMIC_MEMORY_DEMO_2026-11-11/oracle-correction.json",
@@ -8207,6 +8965,7 @@
       "writing_projects/memory-in-pieces/evidence/DYNAMIC_MEMORY_DEMO_2026-11-11/rejection-input.json",
       "writing_projects/memory-in-pieces/evidence/DYNAMIC_MEMORY_DEMO_2026-11-11/visual-data.json",
       "writing_projects/memory-in-pieces/evidence/DYNAMIC_MEMORY_DEMO_2026-11-11/witnessed-update-readable.tikz",
+      "writing_projects/memory-in-pieces/evidence/DYNAMIC_MEMORY_REWRITE_2026-11-11/source-to-message-final.tikz",
       "writing_projects/memory-in-pieces/evidence/MIP_CANDIDATE_2026-11-11/adopted-banked-results.json",
       "writing_projects/memory-in-pieces/evidence/MIP_VISUALS_2026-11-11/accepted-data.json",
       "writing_projects/memory-in-pieces/evidence/MIP_VISUALS_2026-11-11/drawing-code.json",
@@ -8214,7 +8973,11 @@
       "writing_projects/memory-in-pieces/evidence/MIP_VISUALS_2026-11-11/wyoming-witness-context.json",
       "writing_projects/self-consistent-loss-geometries/evidence/SLG_VISUAL_PRODUCTION_2026-11-11/finite-figure-protocol.json",
       "writing_projects/self-consistent-loss-geometries/research/slg-analytic-20261111-v2/finite_checks.py",
+      "writing_projects/self-consistent-loss-geometries/research/slg-analytic-20261111-v2/original_numerical_demonstrations_v0.py",
+      "writing_projects/self-consistent-loss-geometries/research/slg-analytic-20261111-v2/parameters.json",
       "writing_projects/self-consistent-loss-geometries/research/slg-policy-coverage-20261111-v3/coverage_checks.py",
+      "writing_projects/self-consistent-loss-geometries/research/slg-policy-coverage-20261111-v3/parameters.json",
+      "writing_projects/self-consistent-loss-geometries/research/slg-scientific-figures-20261111/original_numerical_demonstrations.py",
       "writing_projects/self-consistent-loss-geometries/research/slg-scientific-figures-20261111/outputs/run-7f8022a64802820f.result/common_ledger_register.csv",
       "writing_projects/self-consistent-loss-geometries/research/slg-scientific-figures-20261111/outputs/run-7f8022a64802820f.result/off_transition_curve.csv",
       "writing_projects/self-consistent-loss-geometries/research/slg-scientific-figures-20261111/outputs/run-7f8022a64802820f.result/or_hazard_projection.csv",
@@ -8229,6 +8992,64 @@
     ],
     "missing_optional_inputs": [],
     "scope": "Exact current-record dependencies, numerical results, method code and visual provenance; no claim to contain third-party raw benchmark corpora or to rerun historical model calls.",
-    "excluded_raw_data": "Third-party corpus/dataset snapshots and question draws are not relicensed or silently distributed; supplied method sources retain their original dataset references."
-  }
+    "excluded_raw_data": "Third-party corpus/dataset snapshots and question draws are not relicensed or silently distributed; supplied method sources retain their original dataset references.",
+    "omitted_failed_run_corpus_inputs": {
+      "paths": [
+        "writing_projects/memory-in-pieces/evidence/MIP_RAPTOR_AUDIT_2026-11-11/case-audit-input.json",
+        "writing_projects/memory-in-pieces/evidence/MEMORY_RECOVERY_2026-11-11/forensic_input.json"
+      ],
+      "reason": "Failed historical forensic jobs preserve their original job/receipt/outcome; third-party corpus excerpts are outside the public input selection. No missing result or cleanup record fabricated."
+    }
+  },
+  "source_refreshes": [
+    {
+      "commit": "fd71f1010668ce6b1f640251c9e2b510790bf97e",
+      "paths": [
+        {
+          "path": "src/laplace/manuscript/reader_plan.py",
+          "sha256": "8a757dd6f30941d7e11acbd7b635f6e40f7e70ab0a421c4d9448889d4365f419",
+          "bytes": 114992,
+          "reason": "exact adopted visual-reader increment fd71f1010668ce6b1f640251c9e2b510790bf97e",
+          "before_sha256": "68a73391105cdc35c92e7baed38e1319e13bd00755f407d8bd611fd74bed318a"
+        },
+        {
+          "path": "src/laplace/pipeline/visual_production.py",
+          "sha256": "625d7fe9f1a4e6bacd0473f246e6ce7f4823f291e4183160cabaa317e54242c4",
+          "bytes": 46670,
+          "reason": "exact adopted visual-reader increment fd71f1010668ce6b1f640251c9e2b510790bf97e",
+          "before_sha256": "2ed8d330bd73d3a88eb0662266837b8a2bffd70fbfdc63f2b9e8b1c88ac3ee22"
+        },
+        {
+          "path": "tests/test_prepared_storyboard_work.py",
+          "sha256": "a11d6e7a2cbd22419ca33c00301d73e243af7ee0b54bb5378d20e84a0e5d97d4",
+          "bytes": 90558,
+          "reason": "exact adopted visual-reader increment fd71f1010668ce6b1f640251c9e2b510790bf97e",
+          "before_sha256": null
+        },
+        {
+          "path": "tests/test_reader_input_observation.py",
+          "sha256": "5b2128096a8d18bc4ee49682350c0b9db5320e8b017de5753482f27672d78b30",
+          "bytes": 23693,
+          "reason": "exact adopted visual-reader increment fd71f1010668ce6b1f640251c9e2b510790bf97e",
+          "before_sha256": null
+        },
+        {
+          "path": "tests/test_reader_plan_owner.py",
+          "sha256": "22c4a466c249a2098c2cef8a7c9ed0e7ffd3002605a342a0e41a25f1e5d0f5f9",
+          "bytes": 67554,
+          "reason": "exact adopted visual-reader increment fd71f1010668ce6b1f640251c9e2b510790bf97e",
+          "before_sha256": null
+        }
+      ]
+    }
+  ],
+  "retained_dependency_differences": [],
+  "omitted_failed_run_corpus_inputs": {
+    "paths": [
+      "writing_projects/memory-in-pieces/evidence/MIP_RAPTOR_AUDIT_2026-11-11/case-audit-input.json",
+      "writing_projects/memory-in-pieces/evidence/MEMORY_RECOVERY_2026-11-11/forensic_input.json"
+    ],
+    "reason": "Failed historical forensic jobs preserve their original job/receipt/outcome; third-party corpus excerpts are outside the public input selection. No missing result or cleanup record fabricated."
+  },
+  "source_commit_scope": "Application code base only; manuscript/scientific data are separate owner outputs pinned individually."
 }

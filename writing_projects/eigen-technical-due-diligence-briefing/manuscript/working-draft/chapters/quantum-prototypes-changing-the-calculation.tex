@@ -1,18 +1,16 @@
 \section{Quantum prototypes: changing the calculation}
 \label{section:quantum-prototypes-changing-the-calculation}
 
-The preceding examples show how representation changes the information available to a calculation. The next test is operational: can we use that information to choose better updates, trial states or measurements? We examine three operational methods: inspect feedback before its scalar projection, repair the retained trial space, and choose a spectral window whose measurements remain informative.
+The preceding examples show how representation changes the information available to a calculation. The next test is operational: can we use that information to choose better updates, trial states or measurements? We inspect feedback before its scalar projection, repair the retained trial space, and choose a spectral window whose measurements remain informative.
 
 A pure quantum state is a vector of complex amplitudes. Their squared magnitudes give outcome probabilities in a chosen measurement basis. An observable is a Hermitian operator, and its expectation value is the average score obtained by repeatedly preparing and measuring the state. A Hamiltonian $H$ is the observable for energy. Finding its lowest-energy state is useful in molecular and materials calculations, but a general $n$-qubit state has $2^n$ amplitudes. The choice of accessible states and measurements is therefore central to the calculation.
 
-The circuit $U$ preserves the state vector's norm. Its adjustable gates determine which states the calculation can prepare.
-
-A variational algorithm prepares a family of states $|\psi(\theta)\rangle=U(\theta)|\psi_0\rangle$ using a parameterised circuit $U$, measures an energy or other cost, and adjusts $\theta$. It combines a quantum experiment with a classical optimiser. There are at least three different ways for this procedure to struggle. The measured scalar can conceal a useful operator change. The chosen trial family can omit the needed state. The measurement used to resolve a spectral feature can become ill-conditioned. The Eigen prototypes make those failures distinct and suggest a different repair for each.
+A variational algorithm prepares a family of states $|\psi(\theta)\rangle=U(\theta)|\psi_0\rangle$ using a parameterised circuit $U$, measures an energy or other cost, and adjusts $\theta$. The circuit preserves the state vector's norm, while its adjustable gates determine which states it can prepare. The algorithm combines a quantum experiment with a classical optimiser. It can struggle in at least three distinct ways. The measured scalar can conceal a useful operator change. The chosen trial family can omit the needed state. The measurement used to resolve a spectral feature can become ill-conditioned. The Eigen prototypes suggest a different repair for each.
 
 Three operators now have distinct jobs. The differential operator $H_V$ in Eq.~\eqref{eq:loss-operator} describes relaxation of a classical density. The circuit loss operator $\mathcal L(\theta)$ describes the changing quantum observable. The Hamiltonian $H$ in the residual calculation describes the physical system whose low-energy state we seek. Spectral analysis is useful in each of these spaces.
 
 \subsection{Operator diagnostics before scalar feedback}
-The loss-operator construction starts before the scalar reading.~\cite{McCaul0c5ec5}
+The loss-operator construction retains the transformed observable before taking its expectation in one input state:~\cite{McCaul0c5ec5}
 
 \begin{equation}
  {\cal L}(\theta)=U(\theta)^\dagger O U(\theta),\qquad C(\theta)=\langle\psi_0|{\cal L}(\theta)|\psi_0\rangle.

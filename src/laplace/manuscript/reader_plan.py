@@ -110,6 +110,32 @@ def _architecture(section, sections, root, *, cache=None):
     return {key: value for key, value in profile.items() if key != 'fields'} | {'effective_projection': effective}
 
 
+class _InputPins(dict):
+    """Internal request-local pins plus qualification, serialised as ordinary pins.
+    The persisted/public qualifier remains reader-basis/1.unobserved_inputs.
+    """
+    def __init__(self, pins, links):
+        super().__init__(pins)
+        self.unobserved_inputs = sorted({row['input_key'] for row in links
+            if row.get('input_key') and row.get('status') not in {'AVAILABLE', 'CURRENT'}})
+
+
+def _visual_inputs(project, root, ids, cache):
+    from laplace.pipeline import registry, visual_production
+    record = registry.resolve(project, repo_root=root)
+    manuscript = record.path(record.manuscript_dir, root) if record and record.manuscript_dir else None
+    base = record.path(record.project_dir, root) if record and record.project_dir else manuscript
+    if manuscript is None:
+        return {ident: {'id': ident, 'status': 'UNRESOLVED', 'problems': ['Visual owner namespace unavailable'],
+                       'observation': {'id': ident, 'status': 'UNAVAILABLE'}} for ident in ids}
+    visual_cache = cache.setdefault('reader_visuals', {})
+    observed = visual_production.reader_inputs(manuscript, ids, base, cache=visual_cache)
+    for row in observed.values():
+        row['observation']['manuscript'] = manuscript.relative_to(Path(root)).as_posix()
+        row['observation']['input_base'] = base.relative_to(Path(root)).as_posix()
+    return observed
+
+
 def _inputs(project, root, section, sections, subject, contracts, architecture, *, paragraph=False, cache=None):
     """Pin consumed subject projections, not whole sibling artifacts or source files."""
     from laplace.research import corpus_ingest
@@ -135,7 +161,9 @@ def _inputs(project, root, section, sections, subject, contracts, architecture, 
             pins['reader-neighbors'] = fingerprint({'previous': neighbor(index - 1), 'next': neighbor(index + 1)})
     for ident in dict.fromkeys(subject.get('depends_on', []) + subject.get('forward_uses', [])):
         pins['section:' + ident] = fingerprint(_subject(contracts, 'section_id', ident))
-        links.append({'kind': 'reader-plan', 'label': ident, 'read': read_handle(project, ident)})
+        links.append({'kind': 'reader-plan', 'label': ident, 'input_key': 'section:' + ident,
+            'status': 'AVAILABLE' if _subject(contracts, 'section_id', ident) is not None else 'UNRESOLVED',
+            'read': read_handle(project, ident)})
     node_ids = list(dict.fromkeys(subject.get('input_nodes', section.get('node_ids', []))))
     if len(node_ids) > 80:
         raise ValueError('Reader input scope exceeds 80 canonical objects; narrow the authored subject.')
@@ -152,7 +180,7 @@ def _inputs(project, root, section, sections, subject, contracts, architecture, 
         # source-file byte or unrelated placement/display metadata on the node.
         pins['concept:' + ident] = concept_input_revision(net.get('nodes') or {}, ident, net)
         result_ids.extend(str(row['id']) for row in ((node or {}).get('projection') or {}).get('result_bindings', []) if isinstance(row, dict) and row.get('id'))
-        links.append({'kind': 'argument', 'label': _node_row(net.get('nodes') or {}, ident)['label'], 'status': 'AVAILABLE' if node else 'UNRESOLVED',
+        links.append({'kind': 'argument', 'input_key': 'concept:' + ident, 'label': _node_row(net.get('nodes') or {}, ident)['label'], 'status': 'AVAILABLE' if node else 'UNRESOLVED',
             'read': {'operation': 'concept', 'payload': {'node': ident},
                 'http': {'method': 'GET', 'route': '/concepts/context', 'query': {'corpus': project, 'node': ident}}}})
     if result_ids:
@@ -167,7 +195,7 @@ def _inputs(project, root, section, sections, subject, contracts, architecture, 
         by_id = {row['id']: row for row in observed['bindings']}
         for ident in dict.fromkeys(result_ids):
             pins['result:' + ident] = fingerprint(by_id.get(ident))
-            links.append({'kind': 'result', 'label': ident, 'status': by_id.get(ident, {}).get('currentness', 'UNRESOLVED'), 'read': {
+            links.append({'kind': 'result', 'input_key': 'result:' + ident, 'label': ident, 'status': by_id.get(ident, {}).get('currentness', 'UNRESOLVED'), 'read': {
                 'operation': 'research', 'payload': {'view': 'result', 'id': ident},
                 'http': {'method': 'GET', 'route': '/research/result', 'query': {'project': project, 'id': ident}}}})
     # Bibliography entry text is the consumed input, not an unrelated .bib edit.
@@ -187,27 +215,37 @@ def _inputs(project, root, section, sections, subject, contracts, architecture, 
     entries = cache.get('bibliography', {})
     for key in subject.get('citations', []):
         pins['citation:' + key] = fingerprint(entries.get(key))
-        links.append({'kind': 'literature', 'label': key, 'status': 'AVAILABLE' if len(entries.get(key, [])) == 1 else 'UNRESOLVED', 'read': {
+        links.append({'kind': 'literature', 'input_key': 'citation:' + key, 'label': key, 'status': 'AVAILABLE' if len(entries.get(key, [])) == 1 else 'UNRESOLVED', 'read': {
             'operation': 'references_attached', 'payload': {'citekey': key},
             'http': {'method': 'GET', 'route': '/references/attached', 'query': {'project': project, 'citekey': key}}}})
     from laplace.pipeline import projection_spec
-    needs_assets = any(subject.get(key) for key in ('equations', 'figures', 'tables', 'equation_anchor', 'figure_anchor')) or cache.get('need_choices')
+    needs_assets = any(subject.get(key) for key in ('equations', 'tables', 'equation_anchor')) or cache.get('need_choices')
     if needs_assets and 'spec' not in cache:
         cache['spec'] = projection_spec.load_spec(project, root) or {}
         cache['equations'] = projection_spec.effective_equation_ledger(project, root)
+    figures = subject.get('figures', []) + ([subject['figure_anchor']] if subject.get('figure_anchor') else [])
+    for ident, row in _visual_inputs(project, root, figures, cache).items() if figures else []:
+        pins['figures:' + ident] = fingerprint(row['observation'])
+        links.append({'kind': 'visual', 'input_key': 'figures:' + ident, 'label': ident,
+            'status': row['status'], 'reason': '; '.join(row['problems']),
+            'read': {'operation': 'visuals', 'payload': {'id': ident},
+                'http': {'method': 'GET', 'route': '/visuals/state', 'query': {'project': project, 'id': ident}}}})
     for kind, requested in (
         ('equations', subject.get('equations', []) + ([subject['equation_anchor']] if subject.get('equation_anchor') else [])),
-        ('figures', subject.get('figures', []) + ([subject['figure_anchor']] if subject.get('figure_anchor') else [])),
         ('tables', subject.get('tables', []))):
         available = cache.get('equations', {}) if kind == 'equations' else cache.get('spec', {}).get(kind, {})
         for ident in requested:
-            pins[kind + ':' + ident] = fingerprint(available.get(ident))
-    return pins, links
+            value = available.get(ident) if isinstance(available, dict) else None
+            pins[kind + ':' + ident] = fingerprint(value)
+            links.append({'kind': kind, 'input_key': kind + ':' + ident, 'label': ident,
+                'status': 'AVAILABLE' if isinstance(value, dict) and value else 'UNRESOLVED',
+                'read': read_handle(project, section['id'], edit_choices=True)})
+    return _InputPins(pins, links), links
 
 
 def _basis(project, path, subject_id, subject, inputs, section_id):
     return {'schema_version': 'laplace.reader-basis/1', 'project': project, 'path': path,
-            'section_id': section_id, 'subject_id': subject_id, 'subject_revision': fingerprint(subject), 'inputs': inputs, 'unobserved_inputs': []}
+            'section_id': section_id, 'subject_id': subject_id, 'subject_revision': fingerprint(subject), 'inputs': dict(inputs), 'unobserved_inputs': list(getattr(inputs, 'unobserved_inputs', []))}
 
 
 def standing_projection(recorded, current):
@@ -221,8 +259,9 @@ def standing_projection(recorded, current):
     changed = sorted(key for key in set(retained) | set(observed) if retained.get(key) != observed.get(key))
     if recorded.get('subject_revision') != current['subject_revision']:
         changed.insert(0, 'authored-subject')
-    return {'status': 'UNOBSERVED' if recorded.get('unobserved_inputs') else 'STALE' if changed else 'CURRENT',
-            'unobserved_inputs': list(recorded.get('unobserved_inputs', [])), 'changed_inputs': changed,
+    unobserved = sorted(set(recorded.get('unobserved_inputs', [])) | set(current.get('unobserved_inputs', [])))
+    return {'status': 'UNOBSERVED' if unobserved else 'STALE' if changed else 'CURRENT',
+            'unobserved_inputs': unobserved, 'changed_inputs': changed,
             'reason': 'Input observation is not a judgement of intelligibility or accepted review.'}
 
 
@@ -296,6 +335,11 @@ def section_view(project, root, section, sections, plan_revision, *, paragraph_o
         raise ValueError('CHANGED_INPUT: paragraph plan changed between reads; inspect the selected section again.')
     fields = contract or {'section_id': section['id']}
     inputs, links = _inputs(project, root, section, sections, fields, contracts, architecture, cache=input_cache)
+    if edit_choices:
+        from laplace.pipeline import visual_production
+        record = registry.resolve(project, repo_root=root)
+        manuscript = record.path(record.manuscript_dir, root) if record and record.manuscript_dir else None
+        input_cache['visual_choices'] = visual_production.reader_catalogue(manuscript) if manuscript else {'specs': [], 'problems': ['unavailable']}
     enrich_descriptors(project, section, sections, contract_fields + paragraph_fields, input_cache)
     basis = _basis(project, cp, section['id'], contract, inputs, section['id'])
     currentness = _standing(root, project, cp, section['id'], basis)
@@ -1129,7 +1173,7 @@ def _change(project, payload, root, *, actor=None):
             contracts, view['reader_inputs']['architecture_prior'], paragraph=operation == 'paragraph_plan',
             cache={'paragraph_rows': document.get('paragraphs', [])})
         observed_inputs = {**payload.get('input_observations', {}), **original_basis['inputs']}
-        unobserved = [key for key in inputs if key not in observed_inputs]
+        unobserved = sorted(set(key for key in inputs if key not in observed_inputs) | set(inputs.unobserved_inputs))
         consumed_inputs = {key: observed_inputs.get(key, fingerprint({'unobserved': key})) for key in inputs}
         subjects[subject_id] = _basis(project, rel, subject_id, updated, consumed_inputs, sid)
         subjects[subject_id]['unobserved_inputs'] = unobserved
@@ -1180,6 +1224,9 @@ def _observe_inputs(root, project, rel, sid, subject_id, subject, inputs, observ
     unknown = sorted(set(observations) - set(inputs))
     if unknown:
         raise ValueError('CHANGED_INPUT: input_observations names inputs this subject does not consume: ' + ', '.join(unknown[:8]))
+    unavailable = sorted(set(observations) & set(inputs.unobserved_inputs))
+    if unavailable:
+        raise ValueError('INPUT_UNRESOLVED: observation cannot qualify unavailable inputs: ' + ', '.join(unavailable[:8]))
     moved = sorted(key for key, pin in observations.items() if pin != inputs[key])
     if moved:
         raise ValueError('CHANGED_INPUT: these inputs are not at the inspected pin; re-read the subject: ' + ', '.join(moved[:8]))
@@ -1281,7 +1328,10 @@ def subjects_ref_current(project, root, ref, *, cache=None):
     for ident in ref['subject_ids']:
         probe = {'schema_version': 'laplace.reader-basis/1', 'project': project, 'path': contract_path if ident == sid else narrative_path,
                  'section_id': sid, 'subject_id': ident, 'subject_revision': 'sha256:' + '0' * 64, 'inputs': {}, 'unobserved_inputs': []}
-        observed.append(_subject_tuple(observe_basis(project, root, probe, cache=cache)))
+        current = observe_basis(project, root, probe, cache=cache)
+        if current.get('unobserved_inputs'):
+            return False
+        observed.append(_subject_tuple(current))
     return fingerprint(observed) == ref['digest']
 
 
@@ -1342,6 +1392,11 @@ def compare_basis(project, root, basis, *, cache=None):
                if basis['inputs'].get(key) != current['inputs'].get(key)]
     if basis['subject_revision'] != current['subject_revision']:
         changed.insert(0, 'authored-subject')
+    unqualified = sorted(set(basis.get('unobserved_inputs', [])) | set(current.get('unobserved_inputs', [])))
+    if unqualified:
+        return {'status': 'STALE', 'kind': 'READER_INPUT_UNQUALIFIED',
+                'reason': 'Consumed inputs remain unobserved or unavailable.', 'unobserved_inputs': unqualified,
+                'changed_inputs': changed, 'reads': [read_handle(project, basis['section_id'])]}
     return {'status': 'STALE' if changed else 'CURRENT', 'kind': 'READER_INPUT_CHANGED' if changed else 'READER_INPUTS_CURRENT',
             'reason': 'Reader subject or consumed inputs changed.' if changed else 'The reviewed subject and consumed inputs still match.',
             'changed_inputs': changed, 'reads': [read_handle(project, basis['section_id'])]}
@@ -1440,7 +1495,7 @@ def input_diagnostics(subject, links, *, contract=False):
     missing = [{'kind': 'AUTHORED_FIELD_EMPTY', 'field': key,
                 'reason': 'The intended reader transition has not been authored.'} for key in required if not subject.get(key)]
     return missing + [{'kind': 'INPUT_UNRESOLVED', 'subject': row['label'], 'status': row['status'],
-        'reason': 'Supporting input is missing, ambiguous, or stale; observation is not validation.', 'read': row['read']}
+        'reason': row.get('reason') or 'Supporting input is missing, ambiguous, or stale; observation is not validation.', 'read': row['read']}
         for row in links if row.get('status') not in {None, 'AVAILABLE', 'CURRENT'}]
 
 
@@ -1463,7 +1518,20 @@ def enrich_descriptors(project, section, sections, descriptors, cache):
                 'read': {'operation': 'references_attached', 'payload': {'citekey': key},
                     'http': {'method': 'GET', 'route': '/references/attached', 'query': {'project': project, 'citekey': key}}}}
                 for key in sorted(cache.get('bibliography', {}))][:80]
-        elif name in {'equations', 'figures', 'tables'}:
+        elif name in {'figures', 'figure_anchor'}:
+            # Choice navigation uses the same list identities without rendering or
+            # hashing every unconsumed asset. A chosen ID is qualified by _inputs.
+            visual_cache = cache.get('reader_visuals', {})
+            catalogue = visual_cache.get('catalogue')
+            if catalogue is None:
+                catalogue = cache.get('visual_choices', {'specs': [], 'problems': []})
+            rows = catalogue['specs']
+            ids = [row.get('id') for row in rows if isinstance(row, dict)]
+            field['choices'] = [{'value': row['id'], 'label': str(row.get('caption') or row.get('title') or row['id'])[:240],
+                'input_key': 'figures:' + row['id'], 'read': {'operation': 'visuals', 'payload': {'id': row['id']}}}
+                for row in rows if isinstance(row, dict) and isinstance(row.get('id'), str)
+                and ids.count(row['id']) == 1 and not catalogue['problems']][:80]
+        elif name in {'equations', 'tables'}:
             available = cache.get('equations', {}) if name == 'equations' else cache.get('spec', {}).get(name, {})
             field['choices'] = [{'value': key, 'input_key': name + ':' + key, 'input_revision': fingerprint(value), 'label': str(value.get('caption') or value.get('title') or key)[:240],
                 **({'read': {'operation': 'concept', 'payload': {'node': value['node']}}} if value.get('node') in nodes else {})}

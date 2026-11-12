@@ -1,0 +1,2514 @@
+{
+  "schema_version": "mip.deterministic-miss-audit/1",
+  "kind": "diagnostic_no_rescoring",
+  "longmem": {
+    "qid": "b46e15ed",
+    "cells": {
+      "ours_keys@4000": {
+        "selected": [
+          476,
+          448,
+          477,
+          398,
+          119,
+          121,
+          83,
+          151,
+          193,
+          392,
+          452,
+          143,
+          89,
+          155,
+          394,
+          183,
+          255,
+          446,
+          412,
+          209,
+          450,
+          149,
+          277,
+          279,
+          24
+        ],
+        "used_tokens_with_header_allowance": 3996,
+        "remaining": 4,
+        "last_visited_rank": 27,
+        "skipped": [
+          {
+            "local": 225,
+            "rank": 16,
+            "cost": 2508,
+            "remaining": 849
+          },
+          {
+            "local": 253,
+            "rank": 26,
+            "cost": 2666,
+            "remaining": 96
+          }
+        ],
+        "matches_stored_selection": true,
+        "required_trace": [
+          {
+            "id": "observation:5ad1e4a47814d1c2668632cf",
+            "local": 70,
+            "rank": 100,
+            "visited": false,
+            "delivered": false
+          },
+          {
+            "id": "observation:653fda33e3b0c0a5280a45de",
+            "local": 269,
+            "rank": 88,
+            "visited": false,
+            "delivered": false
+          },
+          {
+            "id": "observation:4833d4a137a0c7a2f30a9143",
+            "local": 454,
+            "rank": 134,
+            "visited": false,
+            "delivered": false
+          },
+          {
+            "id": "observation:30bf2550c98b8c136335b994",
+            "local": 466,
+            "rank": 116,
+            "visited": false,
+            "delivered": false
+          },
+          {
+            "id": "observation:4487de62f08f3701c05d0adb",
+            "local": 472,
+            "rank": 73,
+            "visited": false,
+            "delivered": false
+          }
+        ],
+        "accepted_answer": "Insufficient information: the excerpts don't say when two consecutive-day charity events happened.",
+        "accepted_correct": false
+      },
+      "ours_keys@8000": {
+        "selected": [
+          476,
+          448,
+          477,
+          398,
+          119,
+          121,
+          83,
+          151,
+          193,
+          392,
+          452,
+          143,
+          89,
+          155,
+          394,
+          225,
+          183,
+          255,
+          446,
+          412,
+          209,
+          450,
+          149,
+          277,
+          279,
+          24,
+          323,
+          444,
+          141,
+          185,
+          396,
+          335,
+          345,
+          295,
+          181,
+          46,
+          0,
+          36,
+          195,
+          154,
+          468,
+          22,
+          156,
+          223,
+          221,
+          325,
+          263,
+          442,
+          153,
+          2,
+          357,
+          196
+        ],
+        "used_tokens_with_header_allowance": 7982,
+        "remaining": 18,
+        "last_visited_rank": 54,
+        "skipped": [
+          {
+            "local": 253,
+            "rank": 26,
+            "cost": 2666,
+            "remaining": 1588
+          },
+          {
+            "local": 191,
+            "rank": 50,
+            "cost": 212,
+            "remaining": 203
+          }
+        ],
+        "matches_stored_selection": true,
+        "required_trace": [
+          {
+            "id": "observation:5ad1e4a47814d1c2668632cf",
+            "local": 70,
+            "rank": 100,
+            "visited": false,
+            "delivered": false
+          },
+          {
+            "id": "observation:653fda33e3b0c0a5280a45de",
+            "local": 269,
+            "rank": 88,
+            "visited": false,
+            "delivered": false
+          },
+          {
+            "id": "observation:4833d4a137a0c7a2f30a9143",
+            "local": 454,
+            "rank": 134,
+            "visited": false,
+            "delivered": false
+          },
+          {
+            "id": "observation:30bf2550c98b8c136335b994",
+            "local": 466,
+            "rank": 116,
+            "visited": false,
+            "delivered": false
+          },
+          {
+            "id": "observation:4487de62f08f3701c05d0adb",
+            "local": 472,
+            "rank": 73,
+            "visited": false,
+            "delivered": false
+          }
+        ],
+        "accepted_answer": "Insufficient information: the excerpts give no dates for two charity events on consecutive days.",
+        "accepted_correct": false
+      },
+      "dense_keys@4000": {
+        "selected": [
+          476,
+          448,
+          477,
+          398,
+          119,
+          121,
+          83,
+          151,
+          193,
+          392,
+          452,
+          143,
+          89,
+          155,
+          394,
+          183,
+          255,
+          446,
+          412,
+          209,
+          450,
+          149,
+          277,
+          279,
+          24
+        ],
+        "used_tokens_with_header_allowance": 3996,
+        "remaining": 4,
+        "last_visited_rank": 27,
+        "skipped": [
+          {
+            "local": 225,
+            "rank": 16,
+            "cost": 2508,
+            "remaining": 849
+          },
+          {
+            "local": 253,
+            "rank": 26,
+            "cost": 2666,
+            "remaining": 96
+          }
+        ],
+        "matches_stored_selection": true,
+        "required_trace": [
+          {
+            "id": "observation:5ad1e4a47814d1c2668632cf",
+            "local": 70,
+            "rank": 100,
+            "visited": false,
+            "delivered": false
+          },
+          {
+            "id": "observation:653fda33e3b0c0a5280a45de",
+            "local": 269,
+            "rank": 88,
+            "visited": false,
+            "delivered": false
+          },
+          {
+            "id": "observation:4833d4a137a0c7a2f30a9143",
+            "local": 454,
+            "rank": 134,
+            "visited": false,
+            "delivered": false
+          },
+          {
+            "id": "observation:30bf2550c98b8c136335b994",
+            "local": 466,
+            "rank": 116,
+            "visited": false,
+            "delivered": false
+          },
+          {
+            "id": "observation:4487de62f08f3701c05d0adb",
+            "local": 472,
+            "rank": 73,
+            "visited": false,
+            "delivered": false
+          }
+        ],
+        "accepted_answer": "Insufficient information: the excerpts don't say when two consecutive-day charity events happened.",
+        "accepted_correct": false
+      },
+      "dense_keys@8000": {
+        "selected": [
+          476,
+          448,
+          477,
+          398,
+          119,
+          121,
+          83,
+          151,
+          193,
+          392,
+          452,
+          143,
+          89,
+          155,
+          394,
+          225,
+          183,
+          255,
+          446,
+          412,
+          209,
+          450,
+          149,
+          277,
+          279,
+          24,
+          323,
+          444,
+          141,
+          185,
+          396,
+          335,
+          345,
+          295,
+          181,
+          46,
+          0,
+          36,
+          195,
+          154,
+          468,
+          22,
+          156,
+          223,
+          221,
+          325,
+          263,
+          442,
+          153,
+          2,
+          357,
+          196
+        ],
+        "used_tokens_with_header_allowance": 7982,
+        "remaining": 18,
+        "last_visited_rank": 54,
+        "skipped": [
+          {
+            "local": 253,
+            "rank": 26,
+            "cost": 2666,
+            "remaining": 1588
+          },
+          {
+            "local": 191,
+            "rank": 50,
+            "cost": 212,
+            "remaining": 203
+          }
+        ],
+        "matches_stored_selection": true,
+        "required_trace": [
+          {
+            "id": "observation:5ad1e4a47814d1c2668632cf",
+            "local": 70,
+            "rank": 100,
+            "visited": false,
+            "delivered": false
+          },
+          {
+            "id": "observation:653fda33e3b0c0a5280a45de",
+            "local": 269,
+            "rank": 88,
+            "visited": false,
+            "delivered": false
+          },
+          {
+            "id": "observation:4833d4a137a0c7a2f30a9143",
+            "local": 454,
+            "rank": 134,
+            "visited": false,
+            "delivered": false
+          },
+          {
+            "id": "observation:30bf2550c98b8c136335b994",
+            "local": 466,
+            "rank": 116,
+            "visited": false,
+            "delivered": false
+          },
+          {
+            "id": "observation:4487de62f08f3701c05d0adb",
+            "local": 472,
+            "rank": 73,
+            "visited": false,
+            "delivered": false
+          }
+        ],
+        "accepted_answer": "Insufficient information: the excerpts give no dates for two charity events on consecutive days.",
+        "accepted_correct": false
+      },
+      "hybrid_keys@4000": {
+        "selected": [
+          476,
+          477,
+          430,
+          472,
+          345,
+          449,
+          193,
+          24,
+          406,
+          474,
+          149,
+          183,
+          127
+        ],
+        "used_tokens_with_header_allowance": 3994,
+        "remaining": 6,
+        "last_visited_rank": 16,
+        "skipped": [
+          {
+            "local": 465,
+            "rank": 12,
+            "cost": 569,
+            "remaining": 153
+          },
+          {
+            "local": 297,
+            "rank": 14,
+            "cost": 77,
+            "remaining": 76
+          },
+          {
+            "local": 443,
+            "rank": 15,
+            "cost": 198,
+            "remaining": 76
+          }
+        ],
+        "matches_stored_selection": true,
+        "required_trace": [
+          {
+            "id": "observation:5ad1e4a47814d1c2668632cf",
+            "local": 70,
+            "rank": 28,
+            "visited": false,
+            "delivered": false
+          },
+          {
+            "id": "observation:653fda33e3b0c0a5280a45de",
+            "local": 269,
+            "rank": 29,
+            "visited": false,
+            "delivered": false
+          },
+          {
+            "id": "observation:4833d4a137a0c7a2f30a9143",
+            "local": 454,
+            "rank": 25,
+            "visited": false,
+            "delivered": false
+          },
+          {
+            "id": "observation:30bf2550c98b8c136335b994",
+            "local": 466,
+            "rank": 23,
+            "visited": false,
+            "delivered": false
+          },
+          {
+            "id": "observation:4487de62f08f3701c05d0adb",
+            "local": 472,
+            "rank": 4,
+            "visited": true,
+            "delivered": true
+          }
+        ],
+        "accepted_answer": "Insufficient information: the excerpts don't mention two charity events on consecutive days or give their dates.",
+        "accepted_correct": false
+      },
+      "hybrid_keys@8000": {
+        "selected": [
+          476,
+          477,
+          430,
+          472,
+          345,
+          449,
+          193,
+          24,
+          406,
+          474,
+          149,
+          465,
+          183,
+          297,
+          443,
+          127,
+          452,
+          255,
+          279,
+          344,
+          277,
+          184,
+          466,
+          302,
+          454,
+          423,
+          453,
+          70,
+          269,
+          400,
+          349
+        ],
+        "used_tokens_with_header_allowance": 7980,
+        "remaining": 20,
+        "last_visited_rank": 31,
+        "skipped": [],
+        "matches_stored_selection": true,
+        "required_trace": [
+          {
+            "id": "observation:5ad1e4a47814d1c2668632cf",
+            "local": 70,
+            "rank": 28,
+            "visited": true,
+            "delivered": true
+          },
+          {
+            "id": "observation:653fda33e3b0c0a5280a45de",
+            "local": 269,
+            "rank": 29,
+            "visited": true,
+            "delivered": true
+          },
+          {
+            "id": "observation:4833d4a137a0c7a2f30a9143",
+            "local": 454,
+            "rank": 25,
+            "visited": true,
+            "delivered": true
+          },
+          {
+            "id": "observation:30bf2550c98b8c136335b994",
+            "local": 466,
+            "rank": 23,
+            "visited": true,
+            "delivered": true
+          },
+          {
+            "id": "observation:4487de62f08f3701c05d0adb",
+            "local": 472,
+            "rank": 4,
+            "visited": true,
+            "delivered": true
+          }
+        ],
+        "accepted_answer": "2 months",
+        "accepted_correct": true
+      }
+    },
+    "all_required_turn_cost": 376,
+    "same_relational_dense_order": true
+  },
+  "news": {
+    "miss_count": 20,
+    "groups": {
+      "all_needed_spans_delivered": 9,
+      "some_needed_spans_missing": 11,
+      "exact_match_miss_containment_proxy_true": 1
+    },
+    "rows": [
+      {
+        "qid": "9410df4f1efea4e0919271cbee22c3d6268bad9b30ecef8cab8fa7ed8cc39b0e",
+        "question": "Does the TechCrunch article suggest that Sam Bankman-Fried's actions were motivated by personal gain, while The Verge article focuses on his challenges in managing FTX and Alameda Research due to their growth?",
+        "type": "comparison_query",
+        "diag_covered": [
+          1,
+          0
+        ],
+        "accepted_outcome": {
+          "em": false,
+          "f1": 0,
+          "cont": false,
+          "abstain": false,
+          "answer": "No"
+        },
+        "context_sha256": "325b6ddb4cefe5300f8b480840a2cd3e707e403a989396205cbbd081e0df797c",
+        "context_tokens": 1978,
+        "passage_ids": [
+          "d11",
+          "d121",
+          "d9",
+          "d305",
+          "d415",
+          "d10",
+          "d175",
+          "d86",
+          "d30",
+          "d293"
+        ],
+        "source_pointer": "/rows/130"
+      },
+      {
+        "qid": "926f8ad0b774544b5953ff71445bcbe70b4bb207c7e3770964d9a31c3ca91b38",
+        "question": "Did both the report from The Age after September 26, 2023, mentioning Travis Kelce's activities and the Yardbarker report after December 24, 2023, discussing Travis Kelce's performance expectations, indicate no change in the focus of Travis Kelce's professional commitments?",
+        "type": "temporal_query",
+        "diag_covered": [
+          1,
+          1
+        ],
+        "accepted_outcome": {
+          "em": false,
+          "f1": 0,
+          "cont": false,
+          "abstain": false,
+          "answer": "Yes"
+        },
+        "context_sha256": "b0dc675d854ffcf0e8228f279c255fa446a7ffcc89e541054b2e321cfe4ba4e8",
+        "context_tokens": 1993,
+        "passage_ids": [
+          "continuation",
+          "d44",
+          "d3"
+        ],
+        "source_pointer": "/rows/320"
+      },
+      {
+        "qid": "c88670de268615c4fdb8736032540da7ca4a59c8a15e0372c0ff1d4eec9adaaa",
+        "question": "Does the 'Fortune' article claim that Sam Bankman-Fried used Caroline Ellison as a front for secret access to customer funds at Alameda Research align with the 'The Verge' article's claim that he used $1 billion of FTX customer funds to buy out Binance, and does the 'TechCrunch' article also support the notion that Sam Bankman-Fried knowingly committed fraud, or do these articles present the same allegations regarding his actions?",
+        "type": "comparison_query",
+        "diag_covered": [
+          1,
+          1,
+          1
+        ],
+        "accepted_outcome": {
+          "em": false,
+          "f1": 0,
+          "cont": false,
+          "abstain": false,
+          "answer": "Yes"
+        },
+        "context_sha256": "ef6d982979381c91920f4b9ba104dd64a70670fa51cf18bc83e2028b3561a39c",
+        "context_tokens": 1985,
+        "passage_ids": [
+          "d31",
+          "d86",
+          "d10",
+          "d11",
+          "d9",
+          "d83",
+          "d162",
+          "d293"
+        ],
+        "source_pointer": "/rows/440"
+      },
+      {
+        "qid": "4588acb7453f36dca7b88eb0152e40c1681fdb6c7c6d0e1f688f326cbd8053e7",
+        "question": "Between the TechCrunch report on Sam Bankman-Fried's intentions with his wealth published on October 2, 2023, and the TechCrunch report on the allegations against Sam Bankman-Fried published on October 7, 2023, was there no change in the portrayal of Sam Bankman-Fried's actions and intentions?",
+        "type": "temporal_query",
+        "diag_covered": [
+          0,
+          0,
+          1
+        ],
+        "accepted_outcome": {
+          "em": false,
+          "f1": 0,
+          "cont": false,
+          "abstain": false,
+          "answer": "Yes"
+        },
+        "context_sha256": "134e47a664845636b76759f48e236d7e7f5217cf781a29213e6dced83f7e58c7",
+        "context_tokens": 1992,
+        "passage_ids": [
+          "continuation",
+          "d30",
+          "d11",
+          "d468"
+        ],
+        "source_pointer": "/rows/460"
+      },
+      {
+        "qid": "e4094d8c4cfdcfe91a46c3cca5f744a658c6bb851a93f2a7930554563ca11e08",
+        "question": "Does the 'Fortune' article suggest the same perspective on Sam Bankman-Fried's legal situation as the 'TechCrunch' articles, with 'Fortune' focusing on the jury's determination of truthfulness and 'TechCrunch' alleging fraudulent intentions for personal gain?",
+        "type": "comparison_query",
+        "diag_covered": [
+          1,
+          0,
+          1
+        ],
+        "accepted_outcome": {
+          "em": false,
+          "f1": 0,
+          "cont": false,
+          "abstain": false,
+          "answer": "Yes"
+        },
+        "context_sha256": "917b8223e8b526d5672d1e58be2caf9fd9a5577fa31f411505431491d4ba96e2",
+        "context_tokens": 1981,
+        "passage_ids": [
+          "d31",
+          "d11",
+          "d333",
+          "d9",
+          "d10",
+          "d415",
+          "d30"
+        ],
+        "source_pointer": "/rows/470"
+      },
+      {
+        "qid": "84f3120fc91d7ce41e2dda5f5d25c79bd632017b7660a2230e71523aebe0ed25",
+        "question": "Between the TechCrunch report on EU's call for AI safeguards related to deepfake election risks and the subsequent TechCrunch report on a news publisher filing an antitrust suit against Google, citing AI's harm to their bottom line, was there a change in the portrayal of Google's involvement with AI-related issues?",
+        "type": "temporal_query",
+        "diag_covered": [
+          1,
+          0,
+          1
+        ],
+        "accepted_outcome": {
+          "em": false,
+          "f1": 0,
+          "cont": false,
+          "abstain": false,
+          "answer": "Yes"
+        },
+        "context_sha256": "1bba6128d8c5083e1fb8dd02cc4c8755b902ac792017b32c091122a050065a32",
+        "context_tokens": 1987,
+        "passage_ids": [
+          "d33",
+          "d248"
+        ],
+        "source_pointer": "/rows/580"
+      },
+      {
+        "qid": "7fd38ade92145bca1176b2586574184bdd877fe6c9468879f7e30501144c0e43",
+        "question": "Did the Sporting News article that discusses Michigan's performance against Penn State with Jim Harbaugh suggest the same involvement of Harbaugh during the game compared to the Sporting News article regarding the sign-stealing scandal and his suspension?",
+        "type": "comparison_query",
+        "diag_covered": [
+          0,
+          1
+        ],
+        "accepted_outcome": {
+          "em": false,
+          "f1": 0,
+          "cont": false,
+          "abstain": false,
+          "answer": "Yes"
+        },
+        "context_sha256": "6315753d4a7c7bec61a7a0b3228a36ccbef0186926edffc42c1b9cb88aab4114",
+        "context_tokens": 1992,
+        "passage_ids": [
+          "d180",
+          "d79"
+        ],
+        "source_pointer": "/rows/590"
+      },
+      {
+        "qid": "c0a65396f672416432b8642f5604f083ef39f6c4854ab70d1e83a48eb2c30474",
+        "question": "Between the TechCrunch report on Sam Bankman-Fried's intentions published on October 2, 2023, and the TechCrunch report on allegations against Sam Bankman-Fried published on October 7, 2023, was there a change in the portrayal of Sam Bankman-Fried's use of wealth and influence?\n\nBetween the TechCrunch report on allegations against Sam Bankman-Fried published on October 7, 2023, and The Verge report on Sam Bankman-Fried's financial decisions published on October 10, 2023, was the consistency in reporting Sam Bankman-Fried's financial conduct maintained?",
+        "type": "temporal_query",
+        "diag_covered": [
+          1,
+          0,
+          1
+        ],
+        "accepted_outcome": {
+          "em": false,
+          "f1": 0.6666666666666666,
+          "cont": true,
+          "abstain": false,
+          "answer": "No; Yes"
+        },
+        "context_sha256": "71872e9a4223db47dc64806ae85909925efbe8814ba3eca4ca5cbecefe46fcfa",
+        "context_tokens": 1988,
+        "passage_ids": [
+          "continuation",
+          "d30",
+          "d11",
+          "d86",
+          "d468"
+        ],
+        "source_pointer": "/rows/630"
+      },
+      {
+        "qid": "39a32cd3cd42697e63c13a264e7283d048514d7ba31ca05062860ebb78d349a2",
+        "question": "Which country, according to a Peace Studies scholar, faces a starvation risk in a region under its blockade, has previously reached understandings to cease hostilities and return life to normal, and is considered to have experienced a massive intelligence failure due to a surprise attack, as reported by sources including 'Fortune', 'Globes English | Israel Business Arena', and 'Business Today | Latest Stock Market And Economy News India'?",
+        "type": "inference_query",
+        "diag_covered": [
+          0,
+          1,
+          1
+        ],
+        "accepted_outcome": {
+          "em": false,
+          "f1": 0,
+          "cont": false,
+          "abstain": false,
+          "answer": "Israel"
+        },
+        "context_sha256": "cb2639067da04eef22f2d4aa707752b16b62618cd4fb5cc16703122cfd07210b",
+        "context_tokens": 1991,
+        "passage_ids": [
+          "d135",
+          "d78",
+          "d134",
+          "d486"
+        ],
+        "source_pointer": "/rows/650"
+      },
+      {
+        "qid": "34f651af686fcf3ee11034d54830ab42c7ece20591ae143e35514abd847880e8",
+        "question": "Does the Queensland Rugby Union's stance on maintaining control over their high-performance model, as reported by The Roar | Sports Writers Blog, align with Rugby Australia's efforts to centralize high-performance programs across Super Rugby teams, or are their approaches different?",
+        "type": "comparison_query",
+        "diag_covered": [
+          1,
+          1
+        ],
+        "accepted_outcome": {
+          "em": false,
+          "f1": 0,
+          "cont": false,
+          "abstain": false,
+          "answer": "Align"
+        },
+        "context_sha256": "8d98f615ff19dc885b74081640ef17c94dec8ab642ee93e46b737df926ad678e",
+        "context_tokens": 1994,
+        "passage_ids": [
+          "d493",
+          "d492",
+          "d407"
+        ],
+        "source_pointer": "/rows/690"
+      },
+      {
+        "qid": "2acc6b3d5c0c852493c75622dd2f09d15a1a83d72b821582b4249353efe7759c",
+        "question": "Did TechCrunch, after reporting on September 28, 2023, that OpenAI would not make GPT-4 with vision available alongside the launch of GPT-4 Turbo API, maintain consistency in its view of OpenAI's strategy when reporting on December 19, 2023, about OpenAI pushing an \"app store for AI\" as the primary platform for obtaining AI tools and toys?",
+        "type": "temporal_query",
+        "diag_covered": [
+          1,
+          1
+        ],
+        "accepted_outcome": {
+          "em": false,
+          "f1": 0,
+          "cont": false,
+          "abstain": false,
+          "answer": "Yes"
+        },
+        "context_sha256": "1e0aa4a959934bd29c077388b22057a17eb33956b69c7513bba719816aee59e7",
+        "context_tokens": 1995,
+        "passage_ids": [
+          "continuation",
+          "d48",
+          "d365"
+        ],
+        "source_pointer": "/rows/760"
+      },
+      {
+        "qid": "7086d5444d9785e59a51cba0ae1bcd4481c6e33fe5c91d995c92fe32a953c286",
+        "question": "Does the TechCrunch article suggest that Alameda Research misused FTX customer funds for unauthorized purposes, while the Fortune article claims that Alameda Research's business practices with FTX were legal, and how does this compare to The Verge's assertion that Alameda was managing losses to maintain FTX's balance sheet?",
+        "type": "comparison_query",
+        "diag_covered": [
+          1,
+          1,
+          1
+        ],
+        "accepted_outcome": {
+          "em": false,
+          "f1": 0,
+          "cont": false,
+          "abstain": false,
+          "answer": "Yes"
+        },
+        "context_sha256": "838bb17ad54a77255f062225c0f5c43b5e18a6561e56581ba16ef3a187b4483b",
+        "context_tokens": 1972,
+        "passage_ids": [
+          "d9",
+          "d31",
+          "d121",
+          "d293",
+          "d10",
+          "d162",
+          "d53",
+          "d305",
+          "d30",
+          "d529"
+        ],
+        "source_pointer": "/rows/770"
+      },
+      {
+        "qid": "1bdf980169e902e26bd572de55031a6141954e604525b5decea6d5bf8263b5eb",
+        "question": "Do the articles from The Roar | Sports Writers Blog discussing The All Blacks' actions in the Rugby World Cup final and their previous encounters with Argentina both present The All Blacks as having effortlessly dominated in their gameplay, or do they portray different situations regarding The All Blacks' performance?",
+        "type": "comparison_query",
+        "diag_covered": [
+          0,
+          0,
+          1
+        ],
+        "accepted_outcome": {
+          "em": false,
+          "f1": 0,
+          "cont": false,
+          "abstain": false,
+          "answer": "different"
+        },
+        "context_sha256": "f29c853f997818666746c1c9f064e8936129a4f4572042c10d579bc9a6e42ede",
+        "context_tokens": 1989,
+        "passage_ids": [
+          "d23",
+          "d493",
+          "d22",
+          "d176"
+        ],
+        "source_pointer": "/rows/780"
+      },
+      {
+        "qid": "57467945cd979ff24310a46264e65dbf8c0447a131975a11ff1f4ba8962ba630",
+        "question": "Does the Sportskeeda article consider Malik Willis the most naturally gifted quarterback in the 2022 NFL Draft class, while The New York Times article focuses on the San Francisco 49ers' use of a draft pick on a kicker in the 2023 draft?",
+        "type": "comparison_query",
+        "diag_covered": [
+          1,
+          1
+        ],
+        "accepted_outcome": {
+          "em": false,
+          "f1": 0,
+          "cont": false,
+          "abstain": false,
+          "answer": "No"
+        },
+        "context_sha256": "72220683a9e502e408f6c18f11d2aafcc5be251bbb4febd4938be910245eca5d",
+        "context_tokens": 1994,
+        "passage_ids": [
+          "d362",
+          "d316",
+          "d322"
+        ],
+        "source_pointer": "/rows/1040"
+      },
+      {
+        "qid": "70a79174b68e14df882334e071c2dd1802f9392fdf7c84300e90056e54013d70",
+        "question": "After the TechCrunch report on November 18, 2023, suggesting that Sam Altman was not being fully truthful with the board, and the Fortune article on the same day stating that Sam Altman and the ex-chairman were shocked and saddened by the board's actions, was the reporting from TechCrunch later on November 18, 2023, about Sam Altman's plans consistent with the earlier reports from TechCrunch and Fortune?",
+        "type": "temporal_query",
+        "diag_covered": [
+          1,
+          0,
+          0
+        ],
+        "accepted_outcome": {
+          "em": false,
+          "f1": 0,
+          "cont": false,
+          "abstain": false,
+          "answer": "No"
+        },
+        "context_sha256": "959b2a9cd6819ba42ff978ca7d53017708be729ddbd59b0e7c1bb67ca578c748",
+        "context_tokens": 1990,
+        "passage_ids": [
+          "continuation",
+          "d415",
+          "d332"
+        ],
+        "source_pointer": "/rows/1080"
+      },
+      {
+        "qid": "cc197cac908519258f5d40592ffc33e02598f790594139130b482eff49dbaab8",
+        "question": "Does the 'Fortune' article suggest that '\"Renaissance\"' had a different level of financial success in its theatrical run compared to 'The Eras Tour', while the 'Business Line' article indicates that Stocks with lower PE ratios are not necessarily valued the same as TCS?",
+        "type": "comparison_query",
+        "diag_covered": [
+          1,
+          1
+        ],
+        "accepted_outcome": {
+          "em": false,
+          "f1": 0,
+          "cont": false,
+          "abstain": false,
+          "answer": "Yes"
+        },
+        "context_sha256": "4bc39af34c6e9d4735cad0cc3c9ed88d3677d9c96975fafb747487b09280e89b",
+        "context_tokens": 1989,
+        "passage_ids": [
+          "d173",
+          "d418",
+          "d419",
+          "d252"
+        ],
+        "source_pointer": "/rows/1190"
+      },
+      {
+        "qid": "351a3d54f74ba84a6580385397fe40a57fa4b9025af38949e1becdfda335c9b5",
+        "question": "Does the Sporting News article expect T.J. Hockenson to participate in the upcoming Sunday game, similar to how The Guardian reports on Cyril Baille and Jonathan Danty's participation in the game against Italy, or is there a discrepancy in their expected involvement?",
+        "type": "comparison_query",
+        "diag_covered": [
+          1,
+          1
+        ],
+        "accepted_outcome": {
+          "em": false,
+          "f1": 0,
+          "cont": false,
+          "abstain": false,
+          "answer": "Yes"
+        },
+        "context_sha256": "b1137805d113841eb059459e86b43f9721fe7b57efbd1cc096379dd43b2c2326",
+        "context_tokens": 1986,
+        "passage_ids": [
+          "d288",
+          "d414",
+          "d352",
+          "d92",
+          "d242",
+          "d206",
+          "d150"
+        ],
+        "source_pointer": "/rows/1290"
+      },
+      {
+        "qid": "2b5408f924c0c00d39c9734b5fd2f884d2a2d248fb74afd3ead50876cd720908",
+        "question": "Did the reporting on player actions in sports by Sporting News change between the article featuring Jones from the USC vs. Notre Dame game published on October 14, 2023, and the article discussing Cristian Romero's tackle in the Tottenham vs Chelsea game published on November 6, 2023?",
+        "type": "temporal_query",
+        "diag_covered": [
+          0,
+          1
+        ],
+        "accepted_outcome": {
+          "em": false,
+          "f1": 0,
+          "cont": false,
+          "abstain": false,
+          "answer": "Yes"
+        },
+        "context_sha256": "f8efe4cc0fe1fe5e61e55f59ca784dbb7cdd6d048feec203024f3968399fb218",
+        "context_tokens": 1995,
+        "passage_ids": [
+          "continuation",
+          "d379",
+          "d378"
+        ],
+        "source_pointer": "/rows/1360"
+      },
+      {
+        "qid": "c7205ec0ba83e1745f0acfc793d353b3d9763df846e02e18cd38101c6410b2c4",
+        "question": "Has the portrayal of the 'vampire cause' in Polygon articles changed between the November 9, 2023, article discussing the undermining of vampires' menacing air and the November 15, 2023, article highlighting vampires as a hidden presence in the best versions of stories?",
+        "type": "temporal_query",
+        "diag_covered": [
+          1,
+          1
+        ],
+        "accepted_outcome": {
+          "em": false,
+          "f1": 0,
+          "cont": false,
+          "abstain": false,
+          "answer": "Yes"
+        },
+        "context_sha256": "3c14f36771e64aba3a492f94cf1bcfe2e77952f584bbfefbf71b3a88c0d30593",
+        "context_tokens": 1987,
+        "passage_ids": [
+          "continuation",
+          "d452",
+          "d453"
+        ],
+        "source_pointer": "/rows/1380"
+      },
+      {
+        "qid": "c2d17c8c4642a754dcd3df3ca980b5c70cb3a9fa548e10e9afc8cf30cf8fdd9b",
+        "question": "Has the approach of Sportsbooks in adjusting betting lines and odds, as reported by Sporting News after October 4, 2023, and before November 1, 2023, remained consistent?",
+        "type": "temporal_query",
+        "diag_covered": [
+          0,
+          1
+        ],
+        "accepted_outcome": {
+          "em": false,
+          "f1": 0,
+          "cont": false,
+          "abstain": false,
+          "answer": "Yes"
+        },
+        "context_sha256": "3b5db417c67b471c2596ef46b40836c6dcce1155aa1e874075cf9a25d5292523",
+        "context_tokens": 1988,
+        "passage_ids": [
+          "d60",
+          "d61",
+          "d201",
+          "d359",
+          "d589"
+        ],
+        "source_pointer": "/rows/1440"
+      }
+    ]
+  },
+  "frames": {
+    "judged_miss_count": 63,
+    "proxy_miss_count": 67,
+    "stage_evidence_counts": {
+      "answer_bearing_support_unresolved": 41,
+      "reference_string_delivered_rubric_wrong": 8,
+      "linked_page_delivery_gap": 11,
+      "answer_string_passage_delivery_gap": 3
+    },
+    "judged_misses": [
+      {
+        "qid": "3e3a8f2e66e7dee7374be8dd2f37e4dbd5a964ec4005922e5ecfee624ae9a3c4",
+        "stage_evidence": "answer_bearing_support_unresolved",
+        "accepted_answer": {
+          "answer": "Insufficient information",
+          "em": false,
+          "cont": false,
+          "abstain": true,
+          "source": "p2"
+        },
+        "judged": false,
+        "delivery": [
+          null,
+          true,
+          2,
+          2
+        ],
+        "delivery_source": "world_pass2_B_scored",
+        "gold": "1777 days",
+        "type": "Temporal reasoning"
+      },
+      {
+        "qid": "010c7d0f0eb4bf09065dbda0073155e33f797af4744a8f06e71ff474d59f6654",
+        "stage_evidence": "reference_string_delivered_rubric_wrong",
+        "accepted_answer": {
+          "answer": "25",
+          "em": false,
+          "cont": false,
+          "abstain": false,
+          "source": "p2"
+        },
+        "judged": false,
+        "delivery": [
+          true,
+          true,
+          3,
+          3
+        ],
+        "delivery_source": "world_pass2_B_scored",
+        "gold": "13",
+        "type": "Post processing"
+      },
+      {
+        "qid": "70cea280902599af6097f2beb86a6a6e7c62d8846318f3a8e2ae350458f286a3",
+        "stage_evidence": "linked_page_delivery_gap",
+        "accepted_answer": {
+          "answer": "Insufficient information",
+          "em": false,
+          "cont": false,
+          "abstain": true,
+          "source": "p2"
+        },
+        "judged": false,
+        "delivery": [
+          null,
+          false,
+          1,
+          3
+        ],
+        "delivery_source": "world_pass2_B_scored",
+        "gold": "The actor who starred in the People's Choice Award for Favorite Comedic Movie in 1993 who later became the 45th President of the United States, Donald Trump. ",
+        "type": "Multiple constraints"
+      },
+      {
+        "qid": "44355345b12332ce0f64ab3b5c486e95038daf3f7331d1e5362aa8051072fe4d",
+        "stage_evidence": "answer_bearing_support_unresolved",
+        "accepted_answer": {
+          "answer": "Insufficient information",
+          "em": false,
+          "cont": false,
+          "abstain": true,
+          "source": "p2"
+        },
+        "judged": false,
+        "delivery": [
+          null,
+          true,
+          2,
+          2
+        ],
+        "delivery_source": "world_pass2_B_scored",
+        "gold": "Eugene II",
+        "type": "Temporal reasoning"
+      },
+      {
+        "qid": "ced523804d65b24c95da4b3cc42aee8ff904dc5bf8305fc3674d4982fbf01c85",
+        "stage_evidence": "linked_page_delivery_gap",
+        "accepted_answer": {
+          "answer": "Insufficient information",
+          "em": false,
+          "cont": false,
+          "abstain": true,
+          "source": "p2"
+        },
+        "judged": false,
+        "delivery": [
+          false,
+          false,
+          2,
+          3
+        ],
+        "delivery_source": "world_pass2_B_scored",
+        "gold": "Luka Dončić",
+        "type": "Tabular reasoning"
+      },
+      {
+        "qid": "6318e044da1559c18a7d0ced69a338b29579e63f8d6441808f8f9cd91ac0e5d2",
+        "stage_evidence": "answer_bearing_support_unresolved",
+        "accepted_answer": {
+          "answer": "Insufficient information",
+          "em": false,
+          "cont": false,
+          "abstain": true,
+          "source": "p2"
+        },
+        "judged": false,
+        "delivery": [
+          null,
+          true,
+          3,
+          3
+        ],
+        "delivery_source": "world_pass2_B_scored",
+        "gold": "Derek Schiller",
+        "type": "Multiple constraints"
+      },
+      {
+        "qid": "67d1fe0777706aecf2e7af7289d09696b296ce8ef18f21a82d00b1742831e94f",
+        "stage_evidence": "linked_page_delivery_gap",
+        "accepted_answer": {
+          "answer": "Insufficient information",
+          "em": false,
+          "cont": false,
+          "abstain": true,
+          "source": "p2"
+        },
+        "judged": false,
+        "delivery": [
+          null,
+          false,
+          2,
+          3
+        ],
+        "delivery_source": "world_pass2_B_scored",
+        "gold": "Mike Shanahan",
+        "type": "Tabular reasoning"
+      },
+      {
+        "qid": "b46670ce4447cccb3a87075ad16ee26c0e55d721bd41095e487253fe9a7e7e5a",
+        "stage_evidence": "answer_bearing_support_unresolved",
+        "accepted_answer": {
+          "answer": "Insufficient information",
+          "em": false,
+          "cont": false,
+          "abstain": true,
+          "source": "p2"
+        },
+        "judged": false,
+        "delivery": [
+          null,
+          true,
+          2,
+          2
+        ],
+        "delivery_source": "world_pass2_B_scored",
+        "gold": "56",
+        "type": "Numerical reasoning"
+      },
+      {
+        "qid": "e423e887589e02203e1ba43c4facc9a99efab3b2052c7a5ac9d22cc9824f0dec",
+        "stage_evidence": "linked_page_delivery_gap",
+        "accepted_answer": {
+          "answer": "Insufficient information",
+          "em": false,
+          "cont": false,
+          "abstain": true,
+          "source": "p2"
+        },
+        "judged": false,
+        "delivery": [
+          null,
+          false,
+          6,
+          7
+        ],
+        "delivery_source": "world_pass2_B_scored",
+        "gold": "No one, he was the youngest.",
+        "type": "Temporal reasoning"
+      },
+      {
+        "qid": "b622743a73bc2b685a2ef66db8d2098dc167d232c087aaab54677ca43db09ff0",
+        "stage_evidence": "answer_bearing_support_unresolved",
+        "accepted_answer": {
+          "answer": "1961",
+          "em": false,
+          "cont": true,
+          "abstain": false,
+          "source": "p1"
+        },
+        "judged": false,
+        "delivery": [
+          null,
+          true,
+          3,
+          3
+        ],
+        "delivery_source": "world_pass1_scored",
+        "gold": "April 2, 1961",
+        "type": "Multiple constraints"
+      },
+      {
+        "qid": "5f0bc7ef4dca86dc3fcc170b53f0ed63968b3b2e74ee3ad6872c12a1b5b2a04b",
+        "stage_evidence": "answer_bearing_support_unresolved",
+        "accepted_answer": {
+          "answer": "Insufficient information",
+          "em": false,
+          "cont": false,
+          "abstain": true,
+          "source": "p2"
+        },
+        "judged": false,
+        "delivery": [
+          null,
+          true,
+          2,
+          2
+        ],
+        "delivery_source": "world_pass2_B_scored",
+        "gold": "Itanihomi is in Minas Gerais, and the state directly south of this is Sao Paulo. ",
+        "type": "Multiple constraints"
+      },
+      {
+        "qid": "65e79dabbc18f5f1b652f8913eb91ed91f215b73327e6a7ea5c604b350bb5ebd",
+        "stage_evidence": "answer_bearing_support_unresolved",
+        "accepted_answer": {
+          "answer": "Donald Trump",
+          "em": false,
+          "cont": false,
+          "abstain": false,
+          "source": "p2"
+        },
+        "judged": false,
+        "delivery": [
+          null,
+          true,
+          4,
+          4
+        ],
+        "delivery_source": "world_pass2_B_scored",
+        "gold": "Former President Bill Clinton has published seven books through 2024.",
+        "type": "Numerical reasoning"
+      },
+      {
+        "qid": "da3715c9e18dd5ef3e3be428df5cc8e6f9d1b2d50620014f088520871648005d",
+        "stage_evidence": "answer_bearing_support_unresolved",
+        "accepted_answer": {
+          "answer": "Insufficient information",
+          "em": false,
+          "cont": false,
+          "abstain": true,
+          "source": "p2"
+        },
+        "judged": false,
+        "delivery": [
+          null,
+          true,
+          3,
+          3
+        ],
+        "delivery_source": "world_pass2_B_scored",
+        "gold": "....-",
+        "type": "Post processing"
+      },
+      {
+        "qid": "3c22f87d6bef33b1d3ccde81481255eaf918577d5302d728bb6bd941de19be63",
+        "stage_evidence": "answer_bearing_support_unresolved",
+        "accepted_answer": {
+          "answer": "Insufficient information",
+          "em": false,
+          "cont": false,
+          "abstain": true,
+          "source": "p2"
+        },
+        "judged": false,
+        "delivery": [
+          null,
+          true,
+          2,
+          2
+        ],
+        "delivery_source": "world_pass2_B_scored",
+        "gold": "Blue Yodel No. 1 (T for Texas)",
+        "type": "Tabular reasoning"
+      },
+      {
+        "qid": "59c3df9c434eb90d9be9ffc7b96d65be73330396fb361bff167cda5c63e66083",
+        "stage_evidence": "answer_bearing_support_unresolved",
+        "accepted_answer": {
+          "answer": "Insufficient information",
+          "em": false,
+          "cont": false,
+          "abstain": true,
+          "source": "p2"
+        },
+        "judged": false,
+        "delivery": [
+          null,
+          true,
+          3,
+          3
+        ],
+        "delivery_source": "world_pass2_B_scored",
+        "gold": "58,692",
+        "type": "Post processing"
+      },
+      {
+        "qid": "7f225d866c7d7a89c6940087e12da38e22218f303cc646e05cc18d0e48459448",
+        "stage_evidence": "answer_bearing_support_unresolved",
+        "accepted_answer": {
+          "answer": "9,160",
+          "em": false,
+          "cont": true,
+          "abstain": false,
+          "source": "p1"
+        },
+        "judged": false,
+        "delivery": [
+          null,
+          true,
+          3,
+          3
+        ],
+        "delivery_source": "world_pass1_scored",
+        "gold": "9,162 was the population of Shaftesbury (the birthplace of Charles Fox Bennett) in the 2021 census.",
+        "type": "Tabular reasoning"
+      },
+      {
+        "qid": "d73896bea9de2677ba36593769566978b56403408e78ed83fa8f4c8d43b76907",
+        "stage_evidence": "answer_bearing_support_unresolved",
+        "accepted_answer": {
+          "answer": "Insufficient information",
+          "em": false,
+          "cont": false,
+          "abstain": true,
+          "source": "p2"
+        },
+        "judged": false,
+        "delivery": [
+          null,
+          true,
+          3,
+          3
+        ],
+        "delivery_source": "world_pass2_B_scored",
+        "gold": "26,751",
+        "type": "Tabular reasoning"
+      },
+      {
+        "qid": "25bb9fd91120848c2a2494be9d9b5c26e5530207258c4c0af9f1746d1ae43679",
+        "stage_evidence": "answer_bearing_support_unresolved",
+        "accepted_answer": {
+          "answer": "The film was longer, by 34 minutes (3 h 14 min versus about 2 h 40 min).",
+          "em": false,
+          "cont": false,
+          "abstain": false,
+          "source": "p2"
+        },
+        "judged": false,
+        "delivery": [
+          null,
+          true,
+          2,
+          2
+        ],
+        "delivery_source": "world_pass2_B_scored",
+        "gold": "James Cameron's film Titanic was longer than the actual sinking Titanic, with a running time of 195 minutes, 35 minutes longer than the actual sinking of the Titanic in 1912.",
+        "type": "Numerical reasoning"
+      },
+      {
+        "qid": "10f0967411a7cde72b1b30ffba5e0b0f0f4c9a2ae7dbd7574f55525ddece9697",
+        "stage_evidence": "answer_bearing_support_unresolved",
+        "accepted_answer": {
+          "answer": "Insufficient information",
+          "em": false,
+          "cont": false,
+          "abstain": true,
+          "source": "p2"
+        },
+        "judged": false,
+        "delivery": [
+          null,
+          true,
+          3,
+          3
+        ],
+        "delivery_source": "world_pass2_B_scored",
+        "gold": "Two million.",
+        "type": "Post processing"
+      },
+      {
+        "qid": "3361b11149b06107f2ec728fff3fb4f511bd36f45eddd4f94f7fa1da8c997d15",
+        "stage_evidence": "answer_bearing_support_unresolved",
+        "accepted_answer": {
+          "answer": "Insufficient information",
+          "em": false,
+          "cont": false,
+          "abstain": true,
+          "source": "p2"
+        },
+        "judged": false,
+        "delivery": [
+          null,
+          true,
+          2,
+          2
+        ],
+        "delivery_source": "world_pass2_B_scored",
+        "gold": "Park Byeong-ju",
+        "type": "Tabular reasoning"
+      },
+      {
+        "qid": "342baa62c289cc0258bdf72ab7272a9387a60ab73982d45b524b19739e034357",
+        "stage_evidence": "answer_string_passage_delivery_gap",
+        "accepted_answer": {
+          "answer": "Insufficient information",
+          "em": false,
+          "cont": false,
+          "abstain": true,
+          "source": "p2"
+        },
+        "judged": false,
+        "delivery": [
+          false,
+          true,
+          2,
+          2
+        ],
+        "delivery_source": "world_pass2_B_scored",
+        "gold": "1190",
+        "type": "Temporal reasoning"
+      },
+      {
+        "qid": "8c8dc7c8e92e6bec29fc5f4114c7cdcfe089dcd0902a0104dd7290d1b3ed550c",
+        "stage_evidence": "answer_bearing_support_unresolved",
+        "accepted_answer": {
+          "answer": "Insufficient information",
+          "em": false,
+          "cont": false,
+          "abstain": true,
+          "source": "p2"
+        },
+        "judged": false,
+        "delivery": [
+          null,
+          true,
+          4,
+          4
+        ],
+        "delivery_source": "world_pass2_B_scored",
+        "gold": "10 July 2000",
+        "type": "Tabular reasoning"
+      },
+      {
+        "qid": "fc8b8a2ce086b7db866d74b3a9e6f6b06e4f4f86024f5de526fe722036568b73",
+        "stage_evidence": "linked_page_delivery_gap",
+        "accepted_answer": {
+          "answer": "Insufficient information",
+          "em": false,
+          "cont": false,
+          "abstain": true,
+          "source": "p2"
+        },
+        "judged": false,
+        "delivery": [
+          null,
+          false,
+          1,
+          2
+        ],
+        "delivery_source": "world_pass2_B_scored",
+        "gold": "the Oude Rijn.",
+        "type": "Multiple constraints"
+      },
+      {
+        "qid": "f206c030f0b477cf103c5adb532b46d512cb90e90cefd9f2610fd0d585c856fa",
+        "stage_evidence": "answer_bearing_support_unresolved",
+        "accepted_answer": {
+          "answer": "Robert Borden",
+          "em": false,
+          "cont": true,
+          "abstain": false,
+          "source": "p2"
+        },
+        "judged": false,
+        "delivery": [
+          null,
+          true,
+          2,
+          2
+        ],
+        "delivery_source": "world_pass2_B_scored",
+        "gold": "R. B. Bennett",
+        "type": "Multiple constraints"
+      },
+      {
+        "qid": "1e4fff44e338d914b9f7be598b9c299f84edb53a127b18d0a2dabd081b5032ed",
+        "stage_evidence": "linked_page_delivery_gap",
+        "accepted_answer": {
+          "answer": "Insufficient information",
+          "em": false,
+          "cont": false,
+          "abstain": true,
+          "source": "p2"
+        },
+        "judged": false,
+        "delivery": [
+          null,
+          false,
+          2,
+          3
+        ],
+        "delivery_source": "world_pass2_B_scored",
+        "gold": "Robert E Pattison",
+        "type": "Tabular reasoning"
+      },
+      {
+        "qid": "2d6624983ba7928c5b1835ebf7dad082325ccffdd5f9db92038dbb6a178a9d9c",
+        "stage_evidence": "answer_bearing_support_unresolved",
+        "accepted_answer": {
+          "answer": "Insufficient information",
+          "em": false,
+          "cont": false,
+          "abstain": true,
+          "source": "p2"
+        },
+        "judged": false,
+        "delivery": [
+          null,
+          true,
+          3,
+          3
+        ],
+        "delivery_source": "world_pass2_B_scored",
+        "gold": "Edward Shearmur",
+        "type": "Tabular reasoning"
+      },
+      {
+        "qid": "38e6ed3ad601d2c1728917babf502e7d2ffccf805357b94d2b64676968f60293",
+        "stage_evidence": "reference_string_delivered_rubric_wrong",
+        "accepted_answer": {
+          "answer": "Insufficient information",
+          "em": false,
+          "cont": false,
+          "abstain": true,
+          "source": "p2"
+        },
+        "judged": false,
+        "delivery": [
+          true,
+          true,
+          4,
+          4
+        ],
+        "delivery_source": "world_pass2_B_scored",
+        "gold": "The Last of Us Part II",
+        "type": "Multiple constraints"
+      },
+      {
+        "qid": "8e73f68e64e1f8d745bb38e4c1e9a2ccb7431f09e6806f0cf02520d8abbfbd92",
+        "stage_evidence": "linked_page_delivery_gap",
+        "accepted_answer": {
+          "answer": "Insufficient information",
+          "em": false,
+          "cont": false,
+          "abstain": true,
+          "source": "p2"
+        },
+        "judged": false,
+        "delivery": [
+          true,
+          false,
+          2,
+          3
+        ],
+        "delivery_source": "world_pass2_B_scored",
+        "gold": "Sailing",
+        "type": "Tabular reasoning"
+      },
+      {
+        "qid": "98afbf80be3bbf14884120d1d3492b65447bc2382c873555eaafa087d31e6f7f",
+        "stage_evidence": "answer_bearing_support_unresolved",
+        "accepted_answer": {
+          "answer": "49",
+          "em": false,
+          "cont": false,
+          "abstain": false,
+          "source": "p2"
+        },
+        "judged": false,
+        "delivery": [
+          null,
+          true,
+          2,
+          2
+        ],
+        "delivery_source": "world_pass2_B_scored",
+        "gold": "Edmund Fitzgerald, the man for whom the ill-fated ship SS Edmund Fitzgerald was named was born in 1895, he was 80 years old in 1975 when she sank.",
+        "type": "Post processing"
+      },
+      {
+        "qid": "14aa9d54bb811777325fe61e5f33c2565b8b0a09afc8cd0c4a1035bb416bbe90",
+        "stage_evidence": "answer_bearing_support_unresolved",
+        "accepted_answer": {
+          "answer": "Insufficient information",
+          "em": false,
+          "cont": false,
+          "abstain": true,
+          "source": "p2"
+        },
+        "judged": false,
+        "delivery": [
+          null,
+          true,
+          2,
+          2
+        ],
+        "delivery_source": "world_pass2_B_scored",
+        "gold": "Enchantment",
+        "type": "Temporal reasoning"
+      },
+      {
+        "qid": "d0fe15dec3487f343a772f207043898cc324a6250fb31ad6d12dc5b1f75afcac",
+        "stage_evidence": "reference_string_delivered_rubric_wrong",
+        "accepted_answer": {
+          "answer": "Insufficient information",
+          "em": false,
+          "cont": false,
+          "abstain": true,
+          "source": "p2"
+        },
+        "judged": false,
+        "delivery": [
+          true,
+          true,
+          2,
+          2
+        ],
+        "delivery_source": "world_pass2_B_scored",
+        "gold": "10",
+        "type": "Tabular reasoning"
+      },
+      {
+        "qid": "db655685bca455c9048c5518405a41d95301a084cb7ba5c23a954b45a3848fd7",
+        "stage_evidence": "answer_bearing_support_unresolved",
+        "accepted_answer": {
+          "answer": "Assault date: Dreamspace (9 Feb 1994) is closest. Plea deal date: Inside Out (26 July 1994) is closest.",
+          "em": false,
+          "cont": false,
+          "abstain": false,
+          "source": "p1"
+        },
+        "judged": false,
+        "delivery": [
+          null,
+          true,
+          5,
+          5
+        ],
+        "delivery_source": "world_pass1_scored",
+        "gold": "Dreamspace' by Stratovarius.",
+        "type": "Post processing"
+      },
+      {
+        "qid": "64a23c45087837c680bfb202d9d3da04ddb92ab647bbe15d0e3ddb5ae819456b",
+        "stage_evidence": "answer_bearing_support_unresolved",
+        "accepted_answer": {
+          "answer": "Insufficient information",
+          "em": false,
+          "cont": false,
+          "abstain": true,
+          "source": "p2"
+        },
+        "judged": false,
+        "delivery": [
+          null,
+          true,
+          3,
+          3
+        ],
+        "delivery_source": "world_pass2_B_scored",
+        "gold": "35 years.",
+        "type": "Temporal reasoning"
+      },
+      {
+        "qid": "51bad18d50782c9027284bb25b241bba5af71e864d0bc3d99f7c8b474f17ab06",
+        "stage_evidence": "reference_string_delivered_rubric_wrong",
+        "accepted_answer": {
+          "answer": "Insufficient information",
+          "em": false,
+          "cont": false,
+          "abstain": true,
+          "source": "p2"
+        },
+        "judged": false,
+        "delivery": [
+          true,
+          true,
+          4,
+          4
+        ],
+        "delivery_source": "world_pass2_B_scored",
+        "gold": "Tenerife",
+        "type": "Numerical reasoning"
+      },
+      {
+        "qid": "c74325608be9d3bc750432ecb2697aa706fde6108721394115c46836bbf47c8b",
+        "stage_evidence": "reference_string_delivered_rubric_wrong",
+        "accepted_answer": {
+          "answer": "1636",
+          "em": false,
+          "cont": false,
+          "abstain": false,
+          "source": "p1"
+        },
+        "judged": false,
+        "delivery": [
+          true,
+          true,
+          4,
+          4
+        ],
+        "delivery_source": "world_pass1_scored",
+        "gold": "1701",
+        "type": "Multiple constraints"
+      },
+      {
+        "qid": "dfc31e6ef3a82c2ff4855d1f5afbfef456964041225db40db0b3e16d8f6dd131",
+        "stage_evidence": "answer_string_passage_delivery_gap",
+        "accepted_answer": {
+          "answer": "Steve Jobs and Steve Wozniak",
+          "em": false,
+          "cont": true,
+          "abstain": false,
+          "source": "p1"
+        },
+        "judged": false,
+        "delivery": [
+          false,
+          true,
+          2,
+          2
+        ],
+        "delivery_source": "world_pass1_scored",
+        "gold": "Steve Jobs, Steve Wozniak and Ronald Wayne",
+        "type": "Multiple constraints"
+      },
+      {
+        "qid": "00f146fd3ce5a0e43e4b08d7440734ca9c5f70fb9e6834b7ef6bc442b1075a01",
+        "stage_evidence": "answer_bearing_support_unresolved",
+        "accepted_answer": {
+          "answer": "Insufficient information",
+          "em": false,
+          "cont": false,
+          "abstain": true,
+          "source": "p2"
+        },
+        "judged": false,
+        "delivery": [
+          null,
+          true,
+          2,
+          2
+        ],
+        "delivery_source": "world_pass2_B_scored",
+        "gold": "Peter Norman was born in Coburg, Victoria, Australia.",
+        "type": "Multiple constraints"
+      },
+      {
+        "qid": "1c90629cf33de0fec265c90a545c35fb8c5ef8f8a1feae05b040fc40b126c0f5",
+        "stage_evidence": "answer_bearing_support_unresolved",
+        "accepted_answer": {
+          "answer": "About 1,033,233% increase (from 300 to 3,100,000 deaths)",
+          "em": false,
+          "cont": false,
+          "abstain": false,
+          "source": "p1"
+        },
+        "judged": false,
+        "delivery": [
+          null,
+          true,
+          2,
+          2
+        ],
+        "delivery_source": "world_pass1_scored",
+        "gold": "66409.3% increase",
+        "type": "Tabular reasoning"
+      },
+      {
+        "qid": "0eb02ceaaf38d4f633f8b405d53764e9e408d42db1dd2b4839e06a71b77f5be7",
+        "stage_evidence": "answer_bearing_support_unresolved",
+        "accepted_answer": {
+          "answer": "Insufficient information",
+          "em": false,
+          "cont": false,
+          "abstain": true,
+          "source": "p2"
+        },
+        "judged": false,
+        "delivery": [
+          null,
+          true,
+          8,
+          8
+        ],
+        "delivery_source": "world_pass2_B_scored",
+        "gold": "3407",
+        "type": "Post processing"
+      },
+      {
+        "qid": "d1f6f69c6b50562c7b2fa93bd875606113e4f17b228a376609327df1bf7ef2f3",
+        "stage_evidence": "answer_bearing_support_unresolved",
+        "accepted_answer": {
+          "answer": "Insufficient information",
+          "em": false,
+          "cont": false,
+          "abstain": true,
+          "source": "p2"
+        },
+        "judged": false,
+        "delivery": [
+          null,
+          true,
+          6,
+          6
+        ],
+        "delivery_source": "world_pass2_B_scored",
+        "gold": "Firework by Katy Perry was inspired by \"On the Road\" by Jack Kerouac ",
+        "type": "Post processing"
+      },
+      {
+        "qid": "b826210de4fa4e03a7e243af3d5f627ac6766b420b2c8c6d1bd9fbf92389a23d",
+        "stage_evidence": "answer_bearing_support_unresolved",
+        "accepted_answer": {
+          "answer": "51 years",
+          "em": false,
+          "cont": true,
+          "abstain": false,
+          "source": "p2"
+        },
+        "judged": false,
+        "delivery": [
+          null,
+          true,
+          5,
+          5
+        ],
+        "delivery_source": "world_pass2_B_scored",
+        "gold": "20 years.",
+        "type": "Temporal reasoning"
+      },
+      {
+        "qid": "e0de9c9a3b3acee95528d23a5869a3f3083ea6a67c5e249b0d74f701281b3472",
+        "stage_evidence": "linked_page_delivery_gap",
+        "accepted_answer": {
+          "answer": "Insufficient information",
+          "em": false,
+          "cont": false,
+          "abstain": true,
+          "source": "p2"
+        },
+        "judged": false,
+        "delivery": [
+          true,
+          false,
+          3,
+          4
+        ],
+        "delivery_source": "world_pass2_B_scored",
+        "gold": "The Life & Casualty Tower",
+        "type": "Tabular reasoning"
+      },
+      {
+        "qid": "5a9a0307304b67d56abb49297e525b5185f9b96500ecb9c2cbf2843a54ba7609",
+        "stage_evidence": "linked_page_delivery_gap",
+        "accepted_answer": {
+          "answer": "1",
+          "em": false,
+          "cont": false,
+          "abstain": false,
+          "source": "p2"
+        },
+        "judged": false,
+        "delivery": [
+          null,
+          false,
+          5,
+          7
+        ],
+        "delivery_source": "world_pass2_B_scored",
+        "gold": "Of the six hockey teams that Hutchinson played on during his career, two, the Flin Flon Bombers and the Vancouver Canucks, took home League Championships during his time on the roster. ",
+        "type": "Tabular reasoning"
+      },
+      {
+        "qid": "f3cc8dfa3666be08c0577b0a1377a6fea6b0da7c3cdb65d90574e0a3799ff9d3",
+        "stage_evidence": "answer_bearing_support_unresolved",
+        "accepted_answer": {
+          "answer": "Insufficient information",
+          "em": false,
+          "cont": false,
+          "abstain": true,
+          "source": "p2"
+        },
+        "judged": false,
+        "delivery": [
+          null,
+          true,
+          3,
+          3
+        ],
+        "delivery_source": "world_pass2_B_scored",
+        "gold": "As I Love You",
+        "type": "Tabular reasoning"
+      },
+      {
+        "qid": "cfccc1b56156a76d857afb87d1b932849163a5c032e7bb5f981211c7e7d3ddc8",
+        "stage_evidence": "answer_bearing_support_unresolved",
+        "accepted_answer": {
+          "answer": "Insufficient information",
+          "em": false,
+          "cont": false,
+          "abstain": true,
+          "source": "p2"
+        },
+        "judged": false,
+        "delivery": [
+          null,
+          true,
+          2,
+          2
+        ],
+        "delivery_source": "world_pass2_B_scored",
+        "gold": "The Stirling Prize.",
+        "type": "Temporal reasoning"
+      },
+      {
+        "qid": "08d7ca0e2ffc24049786a0db78e395605450bf0e7f00a2df31432ed8160bda57",
+        "stage_evidence": "answer_bearing_support_unresolved",
+        "accepted_answer": {
+          "answer": "1 October 2022; 12 years (2009 to 2022 is 13 calendar years apart)",
+          "em": false,
+          "cont": false,
+          "abstain": false,
+          "source": "p1"
+        },
+        "judged": false,
+        "delivery": [
+          null,
+          true,
+          2,
+          2
+        ],
+        "delivery_source": "world_pass1_scored",
+        "gold": "The debut date was October 1st, 2022. It debuted 13 years after the release of the movie.",
+        "type": "Temporal reasoning"
+      },
+      {
+        "qid": "a9cbf3f5d7123598655321e4b188dff562ddf2d2fa597483578befbf76932b7c",
+        "stage_evidence": "answer_bearing_support_unresolved",
+        "accepted_answer": {
+          "answer": "James Joyce and Virginia Woolf; Joyce lived longer, by 40 days",
+          "em": false,
+          "cont": true,
+          "abstain": false,
+          "source": "p1"
+        },
+        "judged": false,
+        "delivery": [
+          null,
+          true,
+          3,
+          3
+        ],
+        "delivery_source": "world_pass1_scored",
+        "gold": "Virginia Woolf and James Joyce. Virginia Woolf lived 82 days longer.",
+        "type": "Temporal reasoning"
+      },
+      {
+        "qid": "78c76d41a05f7ad435cf4feaa2973e1966c47aa338e04d66fceac430d0012280",
+        "stage_evidence": "answer_bearing_support_unresolved",
+        "accepted_answer": {
+          "answer": "2,943,414 kg",
+          "em": false,
+          "cont": false,
+          "abstain": false,
+          "source": "p1"
+        },
+        "judged": false,
+        "delivery": [
+          null,
+          true,
+          3,
+          3
+        ],
+        "delivery_source": "world_pass1_scored",
+        "gold": "The average launch mass in kilograms rounded to the nearest integer of Apollo 11, Apollo 12, and Apollo 13 is 47,906 kilograms.",
+        "type": "Numerical reasoning"
+      },
+      {
+        "qid": "79564a96ad02a3575bd3a44c6fbbac0e6d1090f971ec5be005232a325478b0c2",
+        "stage_evidence": "reference_string_delivered_rubric_wrong",
+        "accepted_answer": {
+          "answer": "Linnaean taxonomy",
+          "em": false,
+          "cont": false,
+          "abstain": false,
+          "source": "p1"
+        },
+        "judged": false,
+        "delivery": [
+          true,
+          true,
+          3,
+          3
+        ],
+        "delivery_source": "world_pass1_scored",
+        "gold": "Binomial nomenclature",
+        "type": "Post processing"
+      },
+      {
+        "qid": "51a72f1b2a7ecda57e430aa7e0632d7e501c5fb30c1546cedbcd537e7a06701c",
+        "stage_evidence": "answer_bearing_support_unresolved",
+        "accepted_answer": {
+          "answer": "February 2011",
+          "em": false,
+          "cont": true,
+          "abstain": false,
+          "source": "p2"
+        },
+        "judged": false,
+        "delivery": [
+          null,
+          true,
+          2,
+          2
+        ],
+        "delivery_source": "world_pass2_B_scored",
+        "gold": "February 5, 2011",
+        "type": "Numerical reasoning"
+      },
+      {
+        "qid": "3b1fcb0d8bc0d57c4929e54a5bee41ebf9492c99b49b0afb17edc6666bb39da6",
+        "stage_evidence": "answer_bearing_support_unresolved",
+        "accepted_answer": {
+          "answer": "Insufficient information",
+          "em": false,
+          "cont": false,
+          "abstain": true,
+          "source": "p2"
+        },
+        "judged": false,
+        "delivery": [
+          null,
+          true,
+          2,
+          2
+        ],
+        "delivery_source": "world_pass2_B_scored",
+        "gold": "The MacDonald Bridge (1300 metres) is 100 metres longer than the MacKay (1200 metres).",
+        "type": "Numerical reasoning"
+      },
+      {
+        "qid": "4db12d5a7e35e64205fb1ca2f64f4acb62b446732ccd2dfc161d6dc312c1b79a",
+        "stage_evidence": "linked_page_delivery_gap",
+        "accepted_answer": {
+          "answer": "Insufficient information",
+          "em": false,
+          "cont": false,
+          "abstain": true,
+          "source": "p2"
+        },
+        "judged": false,
+        "delivery": [
+          null,
+          false,
+          3,
+          4
+        ],
+        "delivery_source": "world_pass2_B_scored",
+        "gold": "August 7, 1974",
+        "type": "Post processing"
+      },
+      {
+        "qid": "4c5f1cf6cdc5460bb47829bb328726aa9a31b6b3c81daedcd8045447488f6437",
+        "stage_evidence": "answer_bearing_support_unresolved",
+        "accepted_answer": {
+          "answer": "About 2 years, 9 months and 3 days (Cinthia Piñeiro is older than Ana Ligia Fabian)",
+          "em": false,
+          "cont": false,
+          "abstain": false,
+          "source": "p1"
+        },
+        "judged": false,
+        "delivery": [
+          null,
+          true,
+          3,
+          3
+        ],
+        "delivery_source": "world_pass1_scored",
+        "gold": "2 years",
+        "type": "Numerical reasoning"
+      },
+      {
+        "qid": "8a5252581335c1910d478bd8a6d2d3fe2d61e4015e75a52fedcbf4ff30b05201",
+        "stage_evidence": "answer_bearing_support_unresolved",
+        "accepted_answer": {
+          "answer": "Insufficient information",
+          "em": false,
+          "cont": false,
+          "abstain": true,
+          "source": "p2"
+        },
+        "judged": false,
+        "delivery": [
+          null,
+          true,
+          3,
+          3
+        ],
+        "delivery_source": "world_pass2_B_scored",
+        "gold": "14.3 PPG  22.7 - 8.4 = 14.3",
+        "type": "Post processing"
+      },
+      {
+        "qid": "52c9a27c612b091d9d9c3ec7fed8dd019708459ef4dbc8728ea822a37f043b15",
+        "stage_evidence": "answer_string_passage_delivery_gap",
+        "accepted_answer": {
+          "answer": "1993",
+          "em": false,
+          "cont": false,
+          "abstain": false,
+          "source": "p2"
+        },
+        "judged": false,
+        "delivery": [
+          false,
+          true,
+          5,
+          5
+        ],
+        "delivery_source": "world_pass2_B_scored",
+        "gold": "1979",
+        "type": "Temporal reasoning"
+      },
+      {
+        "qid": "7860caf9a8770e216cb95e45f253a60bacfc17fe7a380a35422bd3c35f55432f",
+        "stage_evidence": "answer_bearing_support_unresolved",
+        "accepted_answer": {
+          "answer": "Marie Curie and Irène Joliot-Curie",
+          "em": false,
+          "cont": true,
+          "abstain": false,
+          "source": "p2"
+        },
+        "judged": false,
+        "delivery": [
+          null,
+          true,
+          4,
+          4
+        ],
+        "delivery_source": "world_pass2_B_scored",
+        "gold": "Marie Curie and Grazia Deledda",
+        "type": "Numerical reasoning"
+      },
+      {
+        "qid": "55957b76a8057fdf32f562b5f6c9a9e62cd17635db19092d5482ea929169e436",
+        "stage_evidence": "answer_bearing_support_unresolved",
+        "accepted_answer": {
+          "answer": "216",
+          "em": false,
+          "cont": false,
+          "abstain": false,
+          "source": "p2"
+        },
+        "judged": false,
+        "delivery": [
+          null,
+          true,
+          3,
+          3
+        ],
+        "delivery_source": "world_pass2_B_scored",
+        "gold": "228 times larger",
+        "type": "Post processing"
+      },
+      {
+        "qid": "851204df3d6e2cfda830b3a243cf4501c9228492063ec48d1a3fdc7f691165c2",
+        "stage_evidence": "answer_bearing_support_unresolved",
+        "accepted_answer": {
+          "answer": "Ithaca, New York",
+          "em": false,
+          "cont": false,
+          "abstain": false,
+          "source": "p2"
+        },
+        "judged": false,
+        "delivery": [
+          null,
+          true,
+          2,
+          2
+        ],
+        "delivery_source": "world_pass2_B_scored",
+        "gold": "Manhattan Beach,  CA",
+        "type": "Post processing"
+      },
+      {
+        "qid": "109f1a30833262cef563318156d178993fc6112ac31468166e1b58ca6b7ce923",
+        "stage_evidence": "reference_string_delivered_rubric_wrong",
+        "accepted_answer": {
+          "answer": "6",
+          "em": false,
+          "cont": false,
+          "abstain": false,
+          "source": "p2"
+        },
+        "judged": false,
+        "delivery": [
+          true,
+          true,
+          2,
+          2
+        ],
+        "delivery_source": "world_pass2_B_scored",
+        "gold": "Seven",
+        "type": "Numerical reasoning"
+      },
+      {
+        "qid": "cc5c62176b05ad48dc6447131d350c2e534e823c07aee41e362cf9d2ce12a4ff",
+        "stage_evidence": "answer_bearing_support_unresolved",
+        "accepted_answer": {
+          "answer": "Insufficient information",
+          "em": false,
+          "cont": false,
+          "abstain": true,
+          "source": "p2"
+        },
+        "judged": false,
+        "delivery": [
+          null,
+          true,
+          5,
+          5
+        ],
+        "delivery_source": "world_pass2_B_scored",
+        "gold": "16,500",
+        "type": "Numerical reasoning"
+      },
+      {
+        "qid": "4006f9f936cedc2570807347adc29407837c63c8f46412d24edd9122c2d40c9c",
+        "stage_evidence": "answer_bearing_support_unresolved",
+        "accepted_answer": {
+          "answer": "Insufficient information",
+          "em": false,
+          "cont": false,
+          "abstain": true,
+          "source": "p2"
+        },
+        "judged": false,
+        "delivery": [
+          null,
+          true,
+          2,
+          2
+        ],
+        "delivery_source": "world_pass2_B_scored",
+        "gold": "2,452 ft",
+        "type": "Post processing"
+      },
+      {
+        "qid": "f3a887b67c20691b40fd32b387e259b60a0fc591262bd7d8839317dfa5e5ad69",
+        "stage_evidence": "reference_string_delivered_rubric_wrong",
+        "accepted_answer": {
+          "answer": "17",
+          "em": false,
+          "cont": false,
+          "abstain": false,
+          "source": "p2"
+        },
+        "judged": false,
+        "delivery": [
+          true,
+          true,
+          3,
+          3
+        ],
+        "delivery_source": "world_pass2_B_scored",
+        "gold": "18",
+        "type": "Numerical reasoning"
+      },
+      {
+        "qid": "70e94a08e39a1fb04215a06e2d4baae9a66310bf631860967cb660dace1ceca0",
+        "stage_evidence": "linked_page_delivery_gap",
+        "accepted_answer": {
+          "answer": "Insufficient information",
+          "em": false,
+          "cont": false,
+          "abstain": true,
+          "source": "p2"
+        },
+        "judged": false,
+        "delivery": [
+          null,
+          false,
+          2,
+          3
+        ],
+        "delivery_source": "world_pass2_B_scored",
+        "gold": "21 years.",
+        "type": "Numerical reasoning"
+      }
+    ],
+    "proxy_miss_qids": [
+      "3e3a8f2e66e7dee7374be8dd2f37e4dbd5a964ec4005922e5ecfee624ae9a3c4",
+      "010c7d0f0eb4bf09065dbda0073155e33f797af4744a8f06e71ff474d59f6654",
+      "70cea280902599af6097f2beb86a6a6e7c62d8846318f3a8e2ae350458f286a3",
+      "44355345b12332ce0f64ab3b5c486e95038daf3f7331d1e5362aa8051072fe4d",
+      "ced523804d65b24c95da4b3cc42aee8ff904dc5bf8305fc3674d4982fbf01c85",
+      "9a8c2d540c38e243b7b0fd2676606c1788e54276e514ebdfe4e5c0743f08acca",
+      "6318e044da1559c18a7d0ced69a338b29579e63f8d6441808f8f9cd91ac0e5d2",
+      "67d1fe0777706aecf2e7af7289d09696b296ce8ef18f21a82d00b1742831e94f",
+      "b46670ce4447cccb3a87075ad16ee26c0e55d721bd41095e487253fe9a7e7e5a",
+      "57c8a449613c5a342e245d157c8f203c0be82e4802b1e99a225cf0fc5cf9558b",
+      "e423e887589e02203e1ba43c4facc9a99efab3b2052c7a5ac9d22cc9824f0dec",
+      "5f0bc7ef4dca86dc3fcc170b53f0ed63968b3b2e74ee3ad6872c12a1b5b2a04b",
+      "65e79dabbc18f5f1b652f8913eb91ed91f215b73327e6a7ea5c604b350bb5ebd",
+      "da3715c9e18dd5ef3e3be428df5cc8e6f9d1b2d50620014f088520871648005d",
+      "3c22f87d6bef33b1d3ccde81481255eaf918577d5302d728bb6bd941de19be63",
+      "59c3df9c434eb90d9be9ffc7b96d65be73330396fb361bff167cda5c63e66083",
+      "36b8a337410358403d5cf00a77c1b414a87ee568817a6b363e0a66ef0e0683ea",
+      "31584adeb8cfa87266b5d3c363f4147e8b82ae15a98eafb2a97062512e52bac5",
+      "d73896bea9de2677ba36593769566978b56403408e78ed83fa8f4c8d43b76907",
+      "25bb9fd91120848c2a2494be9d9b5c26e5530207258c4c0af9f1746d1ae43679",
+      "0310c60d3088a705b45c0e31164b1bfaf82971f66f4cd905f0e431f482ca11de",
+      "10f0967411a7cde72b1b30ffba5e0b0f0f4c9a2ae7dbd7574f55525ddece9697",
+      "3361b11149b06107f2ec728fff3fb4f511bd36f45eddd4f94f7fa1da8c997d15",
+      "342baa62c289cc0258bdf72ab7272a9387a60ab73982d45b524b19739e034357",
+      "8c8dc7c8e92e6bec29fc5f4114c7cdcfe089dcd0902a0104dd7290d1b3ed550c",
+      "fc8b8a2ce086b7db866d74b3a9e6f6b06e4f4f86024f5de526fe722036568b73",
+      "1e4fff44e338d914b9f7be598b9c299f84edb53a127b18d0a2dabd081b5032ed",
+      "2d6624983ba7928c5b1835ebf7dad082325ccffdd5f9db92038dbb6a178a9d9c",
+      "38e6ed3ad601d2c1728917babf502e7d2ffccf805357b94d2b64676968f60293",
+      "8e73f68e64e1f8d745bb38e4c1e9a2ccb7431f09e6806f0cf02520d8abbfbd92",
+      "98afbf80be3bbf14884120d1d3492b65447bc2382c873555eaafa087d31e6f7f",
+      "14aa9d54bb811777325fe61e5f33c2565b8b0a09afc8cd0c4a1035bb416bbe90",
+      "d0fe15dec3487f343a772f207043898cc324a6250fb31ad6d12dc5b1f75afcac",
+      "db655685bca455c9048c5518405a41d95301a084cb7ba5c23a954b45a3848fd7",
+      "64a23c45087837c680bfb202d9d3da04ddb92ab647bbe15d0e3ddb5ae819456b",
+      "51bad18d50782c9027284bb25b241bba5af71e864d0bc3d99f7c8b474f17ab06",
+      "b97930a4031d0705f2232d0f264dc555ab40c5e5fcc7eb8f13af91a2715d9e22",
+      "c74325608be9d3bc750432ecb2697aa706fde6108721394115c46836bbf47c8b",
+      "00f146fd3ce5a0e43e4b08d7440734ca9c5f70fb9e6834b7ef6bc442b1075a01",
+      "1c90629cf33de0fec265c90a545c35fb8c5ef8f8a1feae05b040fc40b126c0f5",
+      "0eb02ceaaf38d4f633f8b405d53764e9e408d42db1dd2b4839e06a71b77f5be7",
+      "d1f6f69c6b50562c7b2fa93bd875606113e4f17b228a376609327df1bf7ef2f3",
+      "ab3a8bc6f03582e3f60e1da11181b76b1e2c33353d98157392bf71ed795fd6c3",
+      "1cb721cff5a98bbb06aef88abad769b49da266d8e13206eee4d037abcaad0ef6",
+      "e0de9c9a3b3acee95528d23a5869a3f3083ea6a67c5e249b0d74f701281b3472",
+      "5a9a0307304b67d56abb49297e525b5185f9b96500ecb9c2cbf2843a54ba7609",
+      "f3cc8dfa3666be08c0577b0a1377a6fea6b0da7c3cdb65d90574e0a3799ff9d3",
+      "cfccc1b56156a76d857afb87d1b932849163a5c032e7bb5f981211c7e7d3ddc8",
+      "d4b13c1d21154ad064a2cdb79546d402d87bdc438e6a18d2ae7a9e43e0a825b3",
+      "08d7ca0e2ffc24049786a0db78e395605450bf0e7f00a2df31432ed8160bda57",
+      "3ae575371858fd0b7b9ac3bc8c2f679783866d7302e043380c0d128ab83c835e",
+      "78c76d41a05f7ad435cf4feaa2973e1966c47aa338e04d66fceac430d0012280",
+      "79564a96ad02a3575bd3a44c6fbbac0e6d1090f971ec5be005232a325478b0c2",
+      "3b1fcb0d8bc0d57c4929e54a5bee41ebf9492c99b49b0afb17edc6666bb39da6",
+      "4db12d5a7e35e64205fb1ca2f64f4acb62b446732ccd2dfc161d6dc312c1b79a",
+      "4c5f1cf6cdc5460bb47829bb328726aa9a31b6b3c81daedcd8045447488f6437",
+      "8a5252581335c1910d478bd8a6d2d3fe2d61e4015e75a52fedcbf4ff30b05201",
+      "52c9a27c612b091d9d9c3ec7fed8dd019708459ef4dbc8728ea822a37f043b15",
+      "55957b76a8057fdf32f562b5f6c9a9e62cd17635db19092d5482ea929169e436",
+      "851204df3d6e2cfda830b3a243cf4501c9228492063ec48d1a3fdc7f691165c2",
+      "d45b3307c3935f8c3e67a21bba9c4c5fe885bd89852526dcb0d760f97af887ba",
+      "109f1a30833262cef563318156d178993fc6112ac31468166e1b58ca6b7ce923",
+      "cc5c62176b05ad48dc6447131d350c2e534e823c07aee41e362cf9d2ce12a4ff",
+      "4006f9f936cedc2570807347adc29407837c63c8f46412d24edd9122c2d40c9c",
+      "f3a887b67c20691b40fd32b387e259b60a0fc591262bd7d8839317dfa5e5ad69",
+      "f7a2570f23c9c9441cba8f4ccbdac623ceac6c65c7662781d68127bba6ce154f",
+      "70e94a08e39a1fb04215a06e2d4baae9a66310bf631860967cb660dace1ceca0"
+    ]
+  },
+  "limits": [
+    "No new score/judgement, causal experiment, ranking inference or full raw-source recomputation.",
+    "Delivered reference strings or linked pages do not prove semantic answer support.",
+    "Any gold-labelled turn costs are diagnosis only and never selector input."
+  ],
+  "resources": {
+    "wall_seconds": 0.00301644200226292,
+    "cpu_seconds": 0.0023228590000000035,
+    "maxrss_kib": 42632
+  }
+}

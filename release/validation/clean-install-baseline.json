@@ -1,0 +1,66 @@
+{
+  "schema": "laplace.clean-standalone-qualification/1",
+  "candidate_commit": "97a4e0c885a09b586bc9d617bb0e54c86e7c04db",
+  "source_base": "40eba5da6cb1a27dbf45c1f82c74c90cca4f59a1",
+  "scope": "Committed curated baseline before final paper/software refresh. Independent zero-context exercise remains separate.",
+  "install": {
+    "status": "PASS",
+    "interpreter": "/tmp/laplace-evaluation-corrected-1sh0z3go/venv/bin/python",
+    "system_site_packages": false,
+    "command": [
+      "python",
+      "-m",
+      "pip",
+      "install",
+      "--no-cache-dir",
+      "./atlas",
+      ".[review]"
+    ]
+  },
+  "selection_integrity": {
+    "commit": "97a4e0c885a09b586bc9d617bb0e54c86e7c04db",
+    "checked": 1276,
+    "mismatches": []
+  },
+  "portable_core": {
+    "clone_source_tests": "2 passed",
+    "installed_wheel_tests": "2 passed",
+    "installed_origin_count": 166,
+    "guards": "stale identity refusal, one guarded source apply, idempotent replay, headless core, loopback HTTP Work stale/current guards"
+  },
+  "demo": {
+    "status": "PASS",
+    "states": 9,
+    "queries": 16,
+    "models": false,
+    "network": false,
+    "claim": "finite tiny synthetic demo only"
+  },
+  "four_papers": {
+    "status": "PASS",
+    "routes": "metadata/Work/research/structure/current document + exact selected PDF bytes",
+    "pdf_recompiled": false
+  },
+  "server_stopped": true,
+  "private_resources_absent": {
+    "pipeline/canon": false,
+    "engine/AUTONOMY_BACKLOG.md": false,
+    "pipeline/census_verdicts.json": false,
+    "desktop/deploy": false
+  },
+  "limits": [
+    "No model/provider or paid service exercised.",
+    "Existing paper PDFs served and hashed, not rebuilt in this Python-only test.",
+    "Final source/paper refresh must be repinned and checked before publication.",
+    "Caller mistakes /health and incomplete template view retained and corrected; not counted as product defects."
+  ],
+  "receipts": {
+    "committed-install-result.json": "e6d65e37b221743a8a88a254c3160bdc6660806d6a138a973e4c0556bed79086",
+    "committed-post-test-integrity.json": "99af8e646410cd67b4f26fd41ff3f147eec12d57561ee52edfd3cc81b7472254",
+    "committed-demo-result.json": "c7984550305bc9f80ffda23b5113f1016a466d0e447dffb082d6ddb20c7eb956",
+    "committed-portable-core-result.json": "10863830df2b814f90939763b3e5e8e85b6dc10cab4ea1062f2d93360e8f8611",
+    "installed-portable-core-result.json": "f3dd2df2d69a9e50ec1e243b2a4cf2d558c65df83a6baa875dbc6e4c6114e207",
+    "committed-four-paper-owner-pdf-smoke.json": "dca8a6f83d8b9e132f3334f342a5efbefc133477774e8cef9d9b1ed1e2fb7176",
+    "committed-owner-server-exit.json": "b70691922426b2c13a4db7b183b8739faf71eb6750984d063898719fa20ae6a1"
+  }
+}

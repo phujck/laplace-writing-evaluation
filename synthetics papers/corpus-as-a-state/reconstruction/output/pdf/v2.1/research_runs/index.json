@@ -1,0 +1,49 @@
+{
+  "pending_supervision": [
+    {
+      "id": "run-d2f6d3cff17f0fbe",
+      "job_path": "synthetics papers/corpus-as-a-state/reconstruction/output/pdf/v2.1/research_runs/run-d2f6d3cff17f0fbe.json",
+      "launch_token": "e8e52c1b16fc4cab995bd9888ed1fc68",
+      "project": "memory-in-pieces"
+    }
+  ],
+  "run_handles": {
+    "run-199b8e82dce9c620": {
+      "id": "run-199b8e82dce9c620",
+      "job_path": "synthetics papers/corpus-as-a-state/reconstruction/output/pdf/v2.1/research_runs/run-199b8e82dce9c620.json",
+      "launch_token": "62dac23bd8f345f297c6da4bdf7447f6",
+      "project": "memory-in-pieces"
+    },
+    "run-9240dd37e551b6c8": {
+      "id": "run-9240dd37e551b6c8",
+      "job_path": "synthetics papers/corpus-as-a-state/reconstruction/output/pdf/v2.1/research_runs/run-9240dd37e551b6c8.json",
+      "launch_token": "1be7f16bfcc04929b34d343fdf91b105",
+      "project": "memory-in-pieces"
+    },
+    "run-d2f6d3cff17f0fbe": {
+      "id": "run-d2f6d3cff17f0fbe",
+      "job_path": "synthetics papers/corpus-as-a-state/reconstruction/output/pdf/v2.1/research_runs/run-d2f6d3cff17f0fbe.json",
+      "launch_token": "e8e52c1b16fc4cab995bd9888ed1fc68",
+      "project": "memory-in-pieces"
+    },
+    "run-f190281c3b15f84f": {
+      "id": "run-f190281c3b15f84f",
+      "job_path": "synthetics papers/corpus-as-a-state/reconstruction/output/pdf/v2.1/research_runs/run-f190281c3b15f84f.json",
+      "launch_token": "11269901fa0d424a9047fc9cdc573e82",
+      "project": "memory-in-pieces"
+    },
+    "run-ffd067439f493b83": {
+      "id": "run-ffd067439f493b83",
+      "job_path": "synthetics papers/corpus-as-a-state/reconstruction/output/pdf/v2.1/research_runs/run-ffd067439f493b83.json",
+      "launch_token": "70c7e4b087624704be32d66ddb042f10",
+      "project": "memory-in-pieces"
+    }
+  },
+  "runs": [
+    "run-199b8e82dce9c620",
+    "run-9240dd37e551b6c8",
+    "run-f190281c3b15f84f",
+    "run-ffd067439f493b83",
+    "run-d2f6d3cff17f0fbe"
+  ]
+}

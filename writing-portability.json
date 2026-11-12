@@ -1,0 +1,293 @@
+{
+  "schema": "laplace.writing-portability/1",
+  "source_aliases": {
+    "/home/phujck/VScodeProjects/laplace/synthetics papers/corpus-as-a-state/reconstruction/output/pdf/v2.1/research_runs/run-199b8e82dce9c620.result.json": {
+      "path": "synthetics papers/corpus-as-a-state/reconstruction/output/pdf/v2.1/research_runs/run-199b8e82dce9c620.result.json",
+      "proof": "original optional cancellation/failed-result coordinate; absent, no file fabricated"
+    },
+    "/home/phujck/VScodeProjects/laplace/synthetics papers/corpus-as-a-state/reconstruction/output/pdf/v2.1/research_runs/run-199b8e82dce9c620.stdout.log": {
+      "path": "synthetics papers/corpus-as-a-state/reconstruction/output/pdf/v2.1/research_runs/run-199b8e82dce9c620.stdout.log",
+      "original_sha256": "sha256:e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "proof": "exact recorded source path and copied bytes"
+    },
+    "/home/phujck/VScodeProjects/laplace/synthetics papers/corpus-as-a-state/reconstruction/output/pdf/v2.1/research_runs/run-199b8e82dce9c620.stderr.log": {
+      "path": "synthetics papers/corpus-as-a-state/reconstruction/output/pdf/v2.1/research_runs/run-199b8e82dce9c620.stderr.log",
+      "original_sha256": "sha256:4390c821ec3cc6869a90e97bac887e30ecf6372c056b5b2e2c723a4eb24b413f",
+      "proof": "exact recorded source path and copied bytes"
+    },
+    "/home/phujck/VScodeProjects/laplace/synthetics papers/corpus-as-a-state/reconstruction/output/pdf/v2.1/research_runs/run-199b8e82dce9c620.cancel": {
+      "path": "synthetics papers/corpus-as-a-state/reconstruction/output/pdf/v2.1/research_runs/run-199b8e82dce9c620.cancel",
+      "proof": "original optional cancellation/failed-result coordinate; absent, no file fabricated"
+    },
+    "/home/phujck/VScodeProjects/laplace/synthetics papers/corpus-as-a-state/reconstruction/output/pdf/v2.1/research_runs/run-9240dd37e551b6c8.result.json": {
+      "path": "synthetics papers/corpus-as-a-state/reconstruction/output/pdf/v2.1/research_runs/run-9240dd37e551b6c8.result.json",
+      "proof": "original optional cancellation/failed-result coordinate; absent, no file fabricated"
+    },
+    "/home/phujck/VScodeProjects/laplace/synthetics papers/corpus-as-a-state/reconstruction/output/pdf/v2.1/research_runs/run-9240dd37e551b6c8.stdout.log": {
+      "path": "synthetics papers/corpus-as-a-state/reconstruction/output/pdf/v2.1/research_runs/run-9240dd37e551b6c8.stdout.log",
+      "original_sha256": "sha256:e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "proof": "exact recorded source path and copied bytes"
+    },
+    "/home/phujck/VScodeProjects/laplace/synthetics papers/corpus-as-a-state/reconstruction/output/pdf/v2.1/research_runs/run-9240dd37e551b6c8.stderr.log": {
+      "path": "synthetics papers/corpus-as-a-state/reconstruction/output/pdf/v2.1/research_runs/run-9240dd37e551b6c8.stderr.log",
+      "original_sha256": "sha256:74ab98c144d2a88ba5b86a3d9982b8ce28bb9ed1652892883913b480e6942caf",
+      "proof": "exact recorded source path and copied bytes"
+    },
+    "/home/phujck/VScodeProjects/laplace/synthetics papers/corpus-as-a-state/reconstruction/output/pdf/v2.1/research_runs/run-9240dd37e551b6c8.cancel": {
+      "path": "synthetics papers/corpus-as-a-state/reconstruction/output/pdf/v2.1/research_runs/run-9240dd37e551b6c8.cancel",
+      "proof": "original optional cancellation/failed-result coordinate; absent, no file fabricated"
+    },
+    "/home/phujck/VScodeProjects/laplace/synthetics papers/corpus-as-a-state/reconstruction/output/pdf/v2.1/research_runs/run-d2f6d3cff17f0fbe.result.json": {
+      "path": "synthetics papers/corpus-as-a-state/reconstruction/output/pdf/v2.1/research_runs/run-d2f6d3cff17f0fbe.result.json",
+      "original_sha256": "sha256:10f22f152572ec0141995aaceedaf82cf48dfe0e530814837883bb0ab09db35b",
+      "proof": "exact recorded source path and copied bytes"
+    },
+    "/home/phujck/VScodeProjects/laplace/synthetics papers/corpus-as-a-state/reconstruction/output/pdf/v2.1/research_runs/run-d2f6d3cff17f0fbe.stdout.log": {
+      "path": "synthetics papers/corpus-as-a-state/reconstruction/output/pdf/v2.1/research_runs/run-d2f6d3cff17f0fbe.stdout.log",
+      "original_sha256": "sha256:3d08bb3e77c5f1f81eea5cded44a8fa7e3edce0513d7e84d30b343c9dcecd1ba",
+      "proof": "exact recorded source path and copied bytes"
+    },
+    "/home/phujck/VScodeProjects/laplace/synthetics papers/corpus-as-a-state/reconstruction/output/pdf/v2.1/research_runs/run-d2f6d3cff17f0fbe.stderr.log": {
+      "path": "synthetics papers/corpus-as-a-state/reconstruction/output/pdf/v2.1/research_runs/run-d2f6d3cff17f0fbe.stderr.log",
+      "original_sha256": "sha256:e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "proof": "exact recorded source path and copied bytes"
+    },
+    "/home/phujck/VScodeProjects/laplace/synthetics papers/corpus-as-a-state/reconstruction/output/pdf/v2.1/research_runs/run-d2f6d3cff17f0fbe.cancel": {
+      "path": "synthetics papers/corpus-as-a-state/reconstruction/output/pdf/v2.1/research_runs/run-d2f6d3cff17f0fbe.cancel",
+      "proof": "original optional cancellation/failed-result coordinate; absent, no file fabricated"
+    },
+    "/home/phujck/VScodeProjects/laplace/synthetics papers/corpus-as-a-state/reconstruction/output/pdf/v2.1/research_runs/run-f190281c3b15f84f.result.json": {
+      "path": "synthetics papers/corpus-as-a-state/reconstruction/output/pdf/v2.1/research_runs/run-f190281c3b15f84f.result.json",
+      "original_sha256": "sha256:1f6122914e5a6eee84be14bf60865c4878030bcf9841f3c8fe49f975bc0e2601",
+      "proof": "exact recorded source path and copied bytes"
+    },
+    "/home/phujck/VScodeProjects/laplace/synthetics papers/corpus-as-a-state/reconstruction/output/pdf/v2.1/research_runs/run-f190281c3b15f84f.stdout.log": {
+      "path": "synthetics papers/corpus-as-a-state/reconstruction/output/pdf/v2.1/research_runs/run-f190281c3b15f84f.stdout.log",
+      "original_sha256": "sha256:e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "proof": "exact recorded source path and copied bytes"
+    },
+    "/home/phujck/VScodeProjects/laplace/synthetics papers/corpus-as-a-state/reconstruction/output/pdf/v2.1/research_runs/run-f190281c3b15f84f.stderr.log": {
+      "path": "synthetics papers/corpus-as-a-state/reconstruction/output/pdf/v2.1/research_runs/run-f190281c3b15f84f.stderr.log",
+      "original_sha256": "sha256:e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "proof": "exact recorded source path and copied bytes"
+    },
+    "/home/phujck/VScodeProjects/laplace/synthetics papers/corpus-as-a-state/reconstruction/output/pdf/v2.1/research_runs/run-f190281c3b15f84f.cancel": {
+      "path": "synthetics papers/corpus-as-a-state/reconstruction/output/pdf/v2.1/research_runs/run-f190281c3b15f84f.cancel",
+      "proof": "original optional cancellation/failed-result coordinate; absent, no file fabricated"
+    },
+    "/home/phujck/VScodeProjects/laplace/synthetics papers/corpus-as-a-state/reconstruction/output/pdf/v2.1/research_runs/run-ffd067439f493b83.result.json": {
+      "path": "synthetics papers/corpus-as-a-state/reconstruction/output/pdf/v2.1/research_runs/run-ffd067439f493b83.result.json",
+      "original_sha256": "sha256:0be63e38d37c54b7d794493971f8ccc68b098f737e2611e51297d1412db0252c",
+      "proof": "exact recorded source path and copied bytes"
+    },
+    "/home/phujck/VScodeProjects/laplace/synthetics papers/corpus-as-a-state/reconstruction/output/pdf/v2.1/research_runs/run-ffd067439f493b83.stdout.log": {
+      "path": "synthetics papers/corpus-as-a-state/reconstruction/output/pdf/v2.1/research_runs/run-ffd067439f493b83.stdout.log",
+      "original_sha256": "sha256:cf46a5b175beaedf853618e0fe15f4a08ab5297ef6feb06533696e940b3ab95d",
+      "proof": "exact recorded source path and copied bytes"
+    },
+    "/home/phujck/VScodeProjects/laplace/synthetics papers/corpus-as-a-state/reconstruction/output/pdf/v2.1/research_runs/run-ffd067439f493b83.stderr.log": {
+      "path": "synthetics papers/corpus-as-a-state/reconstruction/output/pdf/v2.1/research_runs/run-ffd067439f493b83.stderr.log",
+      "original_sha256": "sha256:e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "proof": "exact recorded source path and copied bytes"
+    },
+    "/home/phujck/VScodeProjects/laplace/synthetics papers/corpus-as-a-state/reconstruction/output/pdf/v2.1/research_runs/run-ffd067439f493b83.cancel": {
+      "path": "synthetics papers/corpus-as-a-state/reconstruction/output/pdf/v2.1/research_runs/run-ffd067439f493b83.cancel",
+      "proof": "original optional cancellation/failed-result coordinate; absent, no file fabricated"
+    },
+    "/home/phujck/VScodeProjects/laplace/synthetics papers/adaptive-normal-form/manuscript/tex/research_runs/run-567ebd09db726432.result.json": {
+      "path": "synthetics papers/adaptive-normal-form/manuscript/tex/research_runs/run-567ebd09db726432.result.json",
+      "original_sha256": "sha256:8bbf1f3113f63bc7943172da73134a2ed61df6f9857a9a52ff4cf27caa665d6d",
+      "proof": "exact recorded source path and copied bytes"
+    },
+    "/home/phujck/VScodeProjects/laplace/synthetics papers/adaptive-normal-form/manuscript/tex/research_runs/run-567ebd09db726432.stdout.log": {
+      "path": "synthetics papers/adaptive-normal-form/manuscript/tex/research_runs/run-567ebd09db726432.stdout.log",
+      "original_sha256": "sha256:d93274123c45e3ee43c9d0b41e49a71d3962f96624b175f6a369a79b1efb30b5",
+      "proof": "exact recorded source path and copied bytes"
+    },
+    "/home/phujck/VScodeProjects/laplace/synthetics papers/adaptive-normal-form/manuscript/tex/research_runs/run-567ebd09db726432.stderr.log": {
+      "path": "synthetics papers/adaptive-normal-form/manuscript/tex/research_runs/run-567ebd09db726432.stderr.log",
+      "original_sha256": "sha256:e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "proof": "exact recorded source path and copied bytes"
+    },
+    "/home/phujck/VScodeProjects/laplace/synthetics papers/adaptive-normal-form/manuscript/tex/research_runs/run-567ebd09db726432.cancel": {
+      "path": "synthetics papers/adaptive-normal-form/manuscript/tex/research_runs/run-567ebd09db726432.cancel",
+      "proof": "original optional cancellation/failed-result coordinate; absent, no file fabricated"
+    },
+    "/home/phujck/VScodeProjects/laplace/synthetics papers/adaptive-normal-form/manuscript/tex/research_runs/run-68cbc97a85ad2f23.result.json": {
+      "path": "synthetics papers/adaptive-normal-form/manuscript/tex/research_runs/run-68cbc97a85ad2f23.result.json",
+      "original_sha256": "sha256:ea77869fdf1d9a0a3289d3815328a7cc5633c9a47b4132847e871c51b958248d",
+      "proof": "exact recorded source path and copied bytes"
+    },
+    "/home/phujck/VScodeProjects/laplace/synthetics papers/adaptive-normal-form/manuscript/tex/research_runs/run-68cbc97a85ad2f23.stdout.log": {
+      "path": "synthetics papers/adaptive-normal-form/manuscript/tex/research_runs/run-68cbc97a85ad2f23.stdout.log",
+      "original_sha256": "sha256:aac9faedce32dd92387237031c222aac9917ea94546e63ca71a7a5bbc91ba502",
+      "proof": "exact recorded source path and copied bytes"
+    },
+    "/home/phujck/VScodeProjects/laplace/synthetics papers/adaptive-normal-form/manuscript/tex/research_runs/run-68cbc97a85ad2f23.stderr.log": {
+      "path": "synthetics papers/adaptive-normal-form/manuscript/tex/research_runs/run-68cbc97a85ad2f23.stderr.log",
+      "original_sha256": "sha256:e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "proof": "exact recorded source path and copied bytes"
+    },
+    "/home/phujck/VScodeProjects/laplace/synthetics papers/adaptive-normal-form/manuscript/tex/research_runs/run-68cbc97a85ad2f23.cancel": {
+      "path": "synthetics papers/adaptive-normal-form/manuscript/tex/research_runs/run-68cbc97a85ad2f23.cancel",
+      "proof": "original optional cancellation/failed-result coordinate; absent, no file fabricated"
+    },
+    "/home/phujck/VScodeProjects/laplace/synthetics papers/adaptive-normal-form/manuscript/tex/research_runs/run-703951e441395885.result.json": {
+      "path": "synthetics papers/adaptive-normal-form/manuscript/tex/research_runs/run-703951e441395885.result.json",
+      "proof": "original optional cancellation/failed-result coordinate; absent, no file fabricated"
+    },
+    "/home/phujck/VScodeProjects/laplace/synthetics papers/adaptive-normal-form/manuscript/tex/research_runs/run-703951e441395885.stdout.log": {
+      "path": "synthetics papers/adaptive-normal-form/manuscript/tex/research_runs/run-703951e441395885.stdout.log",
+      "original_sha256": "sha256:e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "proof": "exact recorded source path and copied bytes"
+    },
+    "/home/phujck/VScodeProjects/laplace/synthetics papers/adaptive-normal-form/manuscript/tex/research_runs/run-703951e441395885.stderr.log": {
+      "path": "synthetics papers/adaptive-normal-form/manuscript/tex/research_runs/run-703951e441395885.stderr.log",
+      "original_sha256": "sha256:b8bd965b9d8151d170a4e59926869433fcf57fcfe2f028daf673dc86f0af33c0",
+      "proof": "exact recorded source path and copied bytes"
+    },
+    "/home/phujck/VScodeProjects/laplace/synthetics papers/adaptive-normal-form/manuscript/tex/research_runs/run-703951e441395885.cancel": {
+      "path": "synthetics papers/adaptive-normal-form/manuscript/tex/research_runs/run-703951e441395885.cancel",
+      "proof": "original optional cancellation/failed-result coordinate; absent, no file fabricated"
+    },
+    "/home/phujck/VScodeProjects/laplace/synthetics papers/adaptive-normal-form/manuscript/tex/research_runs/run-d2d4e9492ceb571c.result.json": {
+      "path": "synthetics papers/adaptive-normal-form/manuscript/tex/research_runs/run-d2d4e9492ceb571c.result.json",
+      "original_sha256": "sha256:2416bfdb70b2df3c4fab2e416f190c8a9fe0d1948d9508c66898ebdbad49dbc2",
+      "proof": "exact recorded source path and copied bytes"
+    },
+    "/home/phujck/VScodeProjects/laplace/synthetics papers/adaptive-normal-form/manuscript/tex/research_runs/run-d2d4e9492ceb571c.stdout.log": {
+      "path": "synthetics papers/adaptive-normal-form/manuscript/tex/research_runs/run-d2d4e9492ceb571c.stdout.log",
+      "original_sha256": "sha256:820a3f0522c1cf4f2e448a366480d313260259956bf4ca3195c0197ab9d84c17",
+      "proof": "exact recorded source path and copied bytes"
+    },
+    "/home/phujck/VScodeProjects/laplace/synthetics papers/adaptive-normal-form/manuscript/tex/research_runs/run-d2d4e9492ceb571c.stderr.log": {
+      "path": "synthetics papers/adaptive-normal-form/manuscript/tex/research_runs/run-d2d4e9492ceb571c.stderr.log",
+      "original_sha256": "sha256:e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "proof": "exact recorded source path and copied bytes"
+    },
+    "/home/phujck/VScodeProjects/laplace/synthetics papers/adaptive-normal-form/manuscript/tex/research_runs/run-d2d4e9492ceb571c.cancel": {
+      "path": "synthetics papers/adaptive-normal-form/manuscript/tex/research_runs/run-d2d4e9492ceb571c.cancel",
+      "proof": "original optional cancellation/failed-result coordinate; absent, no file fabricated"
+    },
+    "/home/phujck/VScodeProjects/laplace/synthetics papers/adaptive-normal-form/manuscript/tex/research_runs/run-da409034fde5674c.result.json": {
+      "path": "synthetics papers/adaptive-normal-form/manuscript/tex/research_runs/run-da409034fde5674c.result.json",
+      "original_sha256": "sha256:5204d445a256d1aee1023da0bfcf1b0e4ef1bc9c9566d5ae35e1a3a12d98bc0e",
+      "proof": "exact recorded source path and copied bytes"
+    },
+    "/home/phujck/VScodeProjects/laplace/synthetics papers/adaptive-normal-form/manuscript/tex/research_runs/run-da409034fde5674c.stdout.log": {
+      "path": "synthetics papers/adaptive-normal-form/manuscript/tex/research_runs/run-da409034fde5674c.stdout.log",
+      "original_sha256": "sha256:77d6bab3a69e34ec2224499991a909a5e98c0c1da668b0e402c31741d42ec217",
+      "proof": "exact recorded source path and copied bytes"
+    },
+    "/home/phujck/VScodeProjects/laplace/synthetics papers/adaptive-normal-form/manuscript/tex/research_runs/run-da409034fde5674c.stderr.log": {
+      "path": "synthetics papers/adaptive-normal-form/manuscript/tex/research_runs/run-da409034fde5674c.stderr.log",
+      "original_sha256": "sha256:e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "proof": "exact recorded source path and copied bytes"
+    },
+    "/home/phujck/VScodeProjects/laplace/synthetics papers/adaptive-normal-form/manuscript/tex/research_runs/run-da409034fde5674c.cancel": {
+      "path": "synthetics papers/adaptive-normal-form/manuscript/tex/research_runs/run-da409034fde5674c.cancel",
+      "proof": "original optional cancellation/failed-result coordinate; absent, no file fabricated"
+    },
+    "/home/phujck/VScodeProjects/laplace/synthetics papers/adaptive-normal-form/manuscript/tex/research_runs/run-e46bf2a3172ea87e.result.json": {
+      "path": "synthetics papers/adaptive-normal-form/manuscript/tex/research_runs/run-e46bf2a3172ea87e.result.json",
+      "original_sha256": "sha256:5281094d3d9f3d8862d01fc5779200211beee81c66aee4d477be90929dcc680f",
+      "proof": "exact recorded source path and copied bytes"
+    },
+    "/home/phujck/VScodeProjects/laplace/synthetics papers/adaptive-normal-form/manuscript/tex/research_runs/run-e46bf2a3172ea87e.stdout.log": {
+      "path": "synthetics papers/adaptive-normal-form/manuscript/tex/research_runs/run-e46bf2a3172ea87e.stdout.log",
+      "original_sha256": "sha256:015f07173c0637e92aa0150a59fad37f549457112a1ec9f3631e093794568e88",
+      "proof": "exact recorded source path and copied bytes"
+    },
+    "/home/phujck/VScodeProjects/laplace/synthetics papers/adaptive-normal-form/manuscript/tex/research_runs/run-e46bf2a3172ea87e.stderr.log": {
+      "path": "synthetics papers/adaptive-normal-form/manuscript/tex/research_runs/run-e46bf2a3172ea87e.stderr.log",
+      "original_sha256": "sha256:e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "proof": "exact recorded source path and copied bytes"
+    },
+    "/home/phujck/VScodeProjects/laplace/synthetics papers/adaptive-normal-form/manuscript/tex/research_runs/run-e46bf2a3172ea87e.cancel": {
+      "path": "synthetics papers/adaptive-normal-form/manuscript/tex/research_runs/run-e46bf2a3172ea87e.cancel",
+      "proof": "original optional cancellation/failed-result coordinate; absent, no file fabricated"
+    },
+    "/home/phujck/VScodeProjects/laplace/synthetics papers/adaptive-normal-form/manuscript/tex/research_runs/run-f25940ecc0511fa3.result.json": {
+      "path": "synthetics papers/adaptive-normal-form/manuscript/tex/research_runs/run-f25940ecc0511fa3.result.json",
+      "original_sha256": "sha256:27e76ee4ac5c52d2280b3e21e0f7559f9558362910c0846608cf527ca4e4d8d0",
+      "proof": "exact recorded source path and copied bytes"
+    },
+    "/home/phujck/VScodeProjects/laplace/synthetics papers/adaptive-normal-form/manuscript/tex/research_runs/run-f25940ecc0511fa3.stdout.log": {
+      "path": "synthetics papers/adaptive-normal-form/manuscript/tex/research_runs/run-f25940ecc0511fa3.stdout.log",
+      "original_sha256": "sha256:558052e7ca8ad58e63789b134a4df5bf4ab27f019d742543fb5c963328fa0f3b",
+      "proof": "exact recorded source path and copied bytes"
+    },
+    "/home/phujck/VScodeProjects/laplace/synthetics papers/adaptive-normal-form/manuscript/tex/research_runs/run-f25940ecc0511fa3.stderr.log": {
+      "path": "synthetics papers/adaptive-normal-form/manuscript/tex/research_runs/run-f25940ecc0511fa3.stderr.log",
+      "original_sha256": "sha256:e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "proof": "exact recorded source path and copied bytes"
+    },
+    "/home/phujck/VScodeProjects/laplace/synthetics papers/adaptive-normal-form/manuscript/tex/research_runs/run-f25940ecc0511fa3.cancel": {
+      "path": "synthetics papers/adaptive-normal-form/manuscript/tex/research_runs/run-f25940ecc0511fa3.cancel",
+      "proof": "original optional cancellation/failed-result coordinate; absent, no file fabricated"
+    },
+    "/home/phujck/VScodeProjects/laplace/synthetics papers/self-consistent-loss-geometries/manuscript/imported/research_runs/run-0781a7b8f8513412.result.json": {
+      "path": "synthetics papers/self-consistent-loss-geometries/manuscript/imported/research_runs/run-0781a7b8f8513412.result.json",
+      "original_sha256": "sha256:9b9fcfe471149634d96923532d3eb1a9294288a51ff3d9321d76a4c2b51ae91c",
+      "proof": "exact recorded source path and copied bytes"
+    },
+    "/home/phujck/VScodeProjects/laplace/synthetics papers/self-consistent-loss-geometries/manuscript/imported/research_runs/run-0781a7b8f8513412.stdout.log": {
+      "path": "synthetics papers/self-consistent-loss-geometries/manuscript/imported/research_runs/run-0781a7b8f8513412.stdout.log",
+      "original_sha256": "sha256:9464f5832f5192966d607ae5530e59ff5322125f0e4bccdbaff3ac416e686a5e",
+      "proof": "exact recorded source path and copied bytes"
+    },
+    "/home/phujck/VScodeProjects/laplace/synthetics papers/self-consistent-loss-geometries/manuscript/imported/research_runs/run-0781a7b8f8513412.stderr.log": {
+      "path": "synthetics papers/self-consistent-loss-geometries/manuscript/imported/research_runs/run-0781a7b8f8513412.stderr.log",
+      "original_sha256": "sha256:e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "proof": "exact recorded source path and copied bytes"
+    },
+    "/home/phujck/VScodeProjects/laplace/synthetics papers/self-consistent-loss-geometries/manuscript/imported/research_runs/run-0781a7b8f8513412.cancel": {
+      "path": "synthetics papers/self-consistent-loss-geometries/manuscript/imported/research_runs/run-0781a7b8f8513412.cancel",
+      "proof": "original optional cancellation/failed-result coordinate; absent, no file fabricated"
+    },
+    "/home/phujck/VScodeProjects/laplace/synthetics papers/self-consistent-loss-geometries/manuscript/imported/research_runs/run-756cd502012e0adb.result.json": {
+      "path": "synthetics papers/self-consistent-loss-geometries/manuscript/imported/research_runs/run-756cd502012e0adb.result.json",
+      "original_sha256": "sha256:e6d4078cf9ac756904838ca7cdaf67a3e3ceaefd80cbca020aa1930bf6a0d51a",
+      "proof": "exact recorded source path and copied bytes"
+    },
+    "/home/phujck/VScodeProjects/laplace/synthetics papers/self-consistent-loss-geometries/manuscript/imported/research_runs/run-756cd502012e0adb.stdout.log": {
+      "path": "synthetics papers/self-consistent-loss-geometries/manuscript/imported/research_runs/run-756cd502012e0adb.stdout.log",
+      "original_sha256": "sha256:4aa6dbabc6f949e24819a96adf7b37e52237fc7e4dcf2793a79fb302d4cfab0f",
+      "proof": "exact recorded source path and copied bytes"
+    },
+    "/home/phujck/VScodeProjects/laplace/synthetics papers/self-consistent-loss-geometries/manuscript/imported/research_runs/run-756cd502012e0adb.stderr.log": {
+      "path": "synthetics papers/self-consistent-loss-geometries/manuscript/imported/research_runs/run-756cd502012e0adb.stderr.log",
+      "original_sha256": "sha256:e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "proof": "exact recorded source path and copied bytes"
+    },
+    "/home/phujck/VScodeProjects/laplace/synthetics papers/self-consistent-loss-geometries/manuscript/imported/research_runs/run-756cd502012e0adb.cancel": {
+      "path": "synthetics papers/self-consistent-loss-geometries/manuscript/imported/research_runs/run-756cd502012e0adb.cancel",
+      "proof": "original optional cancellation/failed-result coordinate; absent, no file fabricated"
+    },
+    "/home/phujck/VScodeProjects/laplace/synthetics papers/self-consistent-loss-geometries/manuscript/imported/research_runs/run-7f8022a64802820f.result.json": {
+      "path": "synthetics papers/self-consistent-loss-geometries/manuscript/imported/research_runs/run-7f8022a64802820f.result.json",
+      "original_sha256": "sha256:730a153523a22f9abc6d66c6e6527645d1bc43d92eb58273bfb560b0f002210e",
+      "proof": "exact recorded source path and copied bytes"
+    },
+    "/home/phujck/VScodeProjects/laplace/synthetics papers/self-consistent-loss-geometries/manuscript/imported/research_runs/run-7f8022a64802820f.stdout.log": {
+      "path": "synthetics papers/self-consistent-loss-geometries/manuscript/imported/research_runs/run-7f8022a64802820f.stdout.log",
+      "original_sha256": "sha256:5a92bd0571d8d7fecaff9ce30db83b942fd5460f3118b1b740ef7b3b071b2f19",
+      "proof": "exact recorded source path and copied bytes"
+    },
+    "/home/phujck/VScodeProjects/laplace/synthetics papers/self-consistent-loss-geometries/manuscript/imported/research_runs/run-7f8022a64802820f.stderr.log": {
+      "path": "synthetics papers/self-consistent-loss-geometries/manuscript/imported/research_runs/run-7f8022a64802820f.stderr.log",
+      "original_sha256": "sha256:e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "proof": "exact recorded source path and copied bytes"
+    },
+    "/home/phujck/VScodeProjects/laplace/synthetics papers/self-consistent-loss-geometries/manuscript/imported/research_runs/run-7f8022a64802820f.cancel": {
+      "path": "synthetics papers/self-consistent-loss-geometries/manuscript/imported/research_runs/run-7f8022a64802820f.cancel",
+      "proof": "original optional cancellation/failed-result coordinate; absent, no file fabricated"
+    }
+  },
+  "directory_aliases": {
+    "/home/phujck/VScodeProjects/laplace/writing_projects/memory-in-pieces": "writing_projects/memory-in-pieces",
+    "/home/phujck/VScodeProjects/laplace/writing_projects/adaptive-normal-form-aek9": "writing_projects/adaptive-normal-form-aek9",
+    "/home/phujck/VScodeProjects/laplace/writing_projects/self-consistent-loss-geometries": "writing_projects/self-consistent-loss-geometries"
+  },
+  "scope": "Exact selected historical run coordinates; original jobs, indexes, results and receipts unchanged. Resolution only, not a new execution or renewed result acceptance."
+}

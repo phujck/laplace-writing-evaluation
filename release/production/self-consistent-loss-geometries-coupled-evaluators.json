@@ -1,0 +1,209 @@
+{
+  "schema": "laplace.public-polish-delta/1",
+  "scope": "Selected literal source edits and before/after pins from the actual frozen author package. No private transcript or intake is included.",
+  "project": "self-consistent-loss-geometries-coupled-evaluators",
+  "author_session": "WS-701197cdbffd47fcb6f7c3fdfbf102aa",
+  "author_turn": "WT-2005540281534984abcd9c1c8d54f612",
+  "original_package_sha256": "c6a6f2003bfec0b2517669c4891d84bcf8aa9d7fcedbce1610d786fd879a64ba",
+  "files": [
+    {
+      "path": "synthetics papers/self-consistent-loss-geometries-coupled-evaluators/manuscript/imported/main.tex",
+      "before_sha256": "43998d0a856ce23db45cf6abfbd05010de41aa1377c78a5fcc3f6d4684b68ad8",
+      "after_sha256": "43998d0a856ce23db45cf6abfbd05010de41aa1377c78a5fcc3f6d4684b68ad8",
+      "edits": []
+    },
+    {
+      "path": "synthetics papers/self-consistent-loss-geometries-coupled-evaluators/manuscript/imported/sections/00_abstract.tex",
+      "before_sha256": "a0bde297677a4767402964924888c812a3ae2e6099e036989aae409791f1c067",
+      "after_sha256": "b476ee95fc353f6b05bcd9958867c764537bbe27e81708803769b049fcc19bfa",
+      "edits": [
+        {
+          "file": "synthetics papers/self-consistent-loss-geometries-coupled-evaluators/manuscript/imported/sections/00_abstract.tex",
+          "line_start": 1,
+          "line_end": 1,
+          "before": "A learner with finite representational resources must decide not only how to change its model, but which changes deserve authority and when additional capacity is worth buying. We develop a finite framework in which the evaluator is part of the state being regulated. A shared quadratic register supplies a common cost ledger and an exact boundary between reuse, arbitration and partition purchase. Relative-entropy regularisation then gives a normalised selector over the actions actually available, with gains evaluated at the states those actions execute. An explicit model/evaluator controller converges under stated damping and coupling conditions, without assuming that convergence establishes adaptive value. We derive weighted free-energy contraction and show that OR aggregation of externally frozen independent update opportunities closes exactly in cumulative hazard. A smaller common-intercept representation has a calculable event-probability error, while its threshold response equals conditional event multiplicity. The same distinction between marginalisation and constrained closure leads to a quantum recovery criterion. A sequence of figures connects the calculations to a matched synthetic policy comparison, including its adverse predictive result. The proposed laws of learning are thus operational requirements on an embodied model-revision scheme: declare its evaluator, price its executed actions, and test what survives a change of representation.",
+          "after": "A learner with finite representational resources must decide how to change its model, which changes deserve authority and when additional capacity is worth buying. We develop a finite framework in which the evaluator can itself be part of the regulated state. A shared quadratic register supplies a common cost ledger and an exact boundary between reuse, arbitration and partition purchase. Relative-entropy regularisation gives a normalised selector over available actions, with gains evaluated at the states those actions execute. A separately specified model/evaluator controller converges in reuse mode under stated damping and coupling conditions, without assuming that convergence establishes adaptive value. We derive weighted free-energy contraction and show that OR aggregation of externally frozen independent update opportunities closes exactly in cumulative hazard. A smaller common-intercept representation has a calculable event-probability error, while its threshold response equals conditional event multiplicity. The distinction between marginalisation and constrained closure also leads to a quantum recovery criterion. A matched synthetic policy comparison exposes the difference between consistent action pricing and predictive success, retaining the adverse predictive result. The proposed laws of learning are operational requirements on an embodied model-revision scheme: declare its evaluator, price its executed actions, and test what survives a change of representation.",
+          "reason": "Clarify the scope of the separate constructions and lead the comparison with what it tests.",
+          "scope": "Prose/clarity only. Preserve mathematical content, numerical strata, evidence, citations and labels."
+        }
+      ]
+    },
+    {
+      "path": "synthetics papers/self-consistent-loss-geometries-coupled-evaluators/manuscript/imported/sections/01_introduction.tex",
+      "before_sha256": "a3356144ef4137c9206b0bb6f51d4d7c628419b3f78c2b64238febeaad86a55e",
+      "after_sha256": "d2e2729791149b6221824efdc9255b26a788d1f646b82bef90241c890dcf02d0",
+      "edits": [
+        {
+          "file": "synthetics papers/self-consistent-loss-geometries-coupled-evaluators/manuscript/imported/sections/01_introduction.tex",
+          "line_start": 20,
+          "line_end": 20,
+          "before": "The paper is self-contained. Section~\\ref{sec:yba-setup} derives the register purchase. Section~\\ref{sec:self-consistent-loss-geometry} constructs the action selector and coupled regulator. Section~\\ref{sec:partition-covariance-reuse} moves the construction inside a larger controller. Section~\\ref{sec:numerical-demonstrations} examines a synthetic tracking problem and retains the finding that consistent action pricing does not deliver a predictive victory. Section~\\ref{sec:yba-examples} develops exact contraction, the OR example and dynamical receiving-map tests. We then identify the primary methods used and develop the consequences for further modelling. The appendices provide proofs, the complete finite protocol and the quantum extension.",
+          "after": "Section~\\ref{sec:yba-setup} derives the register purchase. Section~\\ref{sec:self-consistent-loss-geometry} constructs the action selector and coupled regulator. Section~\\ref{sec:partition-covariance-reuse} moves the construction inside a larger controller. Section~\\ref{sec:numerical-demonstrations} examines a synthetic tracking problem and retains the finding that consistent action pricing does not deliver a predictive victory. Section~\\ref{sec:yba-examples} develops exact contraction, the OR example and dynamical receiving-map tests. We then identify the primary methods used and develop the consequences for further modelling. The appendices provide proofs, the complete finite protocol and the quantum extension.",
+          "reason": "Remove self-assessment from the roadmap.",
+          "scope": "Prose/clarity only. Preserve mathematical content, numerical strata, evidence, citations and labels."
+        }
+      ]
+    },
+    {
+      "path": "synthetics papers/self-consistent-loss-geometries-coupled-evaluators/manuscript/imported/sections/03_model_setup.tex",
+      "before_sha256": "fc2a94b4267ce6db582292d84796796d60aa8046dc705a93ff10e77a8b14e7e9",
+      "after_sha256": "fc2a94b4267ce6db582292d84796796d60aa8046dc705a93ff10e77a8b14e7e9",
+      "edits": []
+    },
+    {
+      "path": "synthetics papers/self-consistent-loss-geometries-coupled-evaluators/manuscript/imported/sections/04_self_consistent_loss_geometry.tex",
+      "before_sha256": "1a659cf20779293391ed1749ffe6d4bfa002332635ce8ac4c898ce2db4c26e66",
+      "after_sha256": "e84337c2a7e5aaebe5d707d5100ae891338e4d6e8284d4b2e2b5b794f0b3f11b",
+      "edits": [
+        {
+          "file": "synthetics papers/self-consistent-loss-geometries-coupled-evaluators/manuscript/imported/sections/04_self_consistent_loss_geometry.tex",
+          "line_start": 88,
+          "line_end": 88,
+          "before": "The selector still needs a source of its gains, costs and authority weights. Return to the opening register with \\(d>0\\). Let",
+          "after": "The selector requires gains, costs and authority weights to be supplied at each decision. To examine an adapting evaluator separately, return to the opening register with \\(d>0\\). Let",
+          "reason": "Do not imply that the reuse controller implements the selector's purchase decision.",
+          "scope": "Prose/clarity only. Preserve mathematical content, numerical strata, evidence, citations and labels."
+        },
+        {
+          "file": "synthetics papers/self-consistent-loss-geometries-coupled-evaluators/manuscript/imported/sections/04_self_consistent_loss_geometry.tex",
+          "line_start": 104,
+          "line_end": 104,
+          "before": "The conflict and fairness terms depend on \\(\\alpha\\), not on \\(m\\), so they do not change this partial gradient. A gradient step with normalised gain \\(a_m\\) therefore gives the first component of the following controller.",
+          "after": "The conflict and fairness terms depend on \\(\\alpha\\), not on \\(m\\), so they do not change this partial gradient. For model gradients we use the metric induced by the register coordinate, \\(g_{mm}=d^2/4\\). The resulting gradient is \\(\\operatorname{grad}_m J=m-\\lambda\\), so a step with gain \\(a_m\\) gives the first component of the following controller. This model metric is distinct from the joint-state norm used below to prove contraction.",
+          "reason": "Make the existing normalised-gradient convention explicit.",
+          "scope": "Prose/clarity only. Preserve mathematical content, numerical strata, evidence, citations and labels."
+        },
+        {
+          "file": "synthetics papers/self-consistent-loss-geometries-coupled-evaluators/manuscript/imported/sections/04_self_consistent_loss_geometry.tex",
+          "line_start": 113,
+          "line_end": 113,
+          "before": "Both right-hand sides use the old state. This simultaneous protocol has model domain and evaluator domain \\([-1,1]\\). The finite parent drive \\(h\\) is frozen during the convergence analysis. The damping parameters satisfy \\(0<a_m,a_\\lambda\\leq1\\), and \\(0\\leq k<1\\).",
+          "after": "Both right-hand sides use the old state. We apply this simultaneous map at every reuse-mode step, rather than choosing its components with the action selector. Its model and evaluator domains are \\([-1,1]\\). The finite parent drive \\(h\\) is frozen during the convergence analysis. The damping parameters satisfy \\(0<a_m,a_\\lambda\\leq1\\), and \\(0\\leq k<1\\). No switching protocol connects this map to the static split comparison.",
+          "reason": "State the interface between the three already separate examples.",
+          "scope": "Prose/clarity only. Preserve mathematical content, numerical strata, evidence, citations and labels."
+        },
+        {
+          "file": "synthetics papers/self-consistent-loss-geometries-coupled-evaluators/manuscript/imported/sections/04_self_consistent_loss_geometry.tex",
+          "line_start": 136,
+          "line_end": 136,
+          "before": "Finally, stationarity does not establish alignment with an external improvement field. If a specified projected field is \\(g_{\\mathrm{ext}}\\), a local diagnostic in a common metric is",
+          "after": "Finally, stationarity does not establish alignment with an external improvement field. Let \\(g_{\\mathrm{ext}}\\) be a specified projected, undamped field in the same register-induced model metric. We compare fields, not one-step displacements, using",
+          "reason": "Fix the metric and step convention of the alignment diagnostic.",
+          "scope": "Prose/clarity only. Preserve mathematical content, numerical strata, evidence, citations and labels."
+        },
+        {
+          "file": "synthetics papers/self-consistent-loss-geometries-coupled-evaluators/manuscript/imported/sections/04_self_consistent_loss_geometry.tex",
+          "line_start": 144,
+          "line_end": 144,
+          "before": "A zero residual says that the declared controller has settled. A small alignment defect says that its model motion follows a separately specified target field. A general target field need not even admit a scalar potential. We therefore keep existence, attraction and alignment as separate questions. The tracking comparison below supplies an especially direct reason to do so.",
+          "after": "A zero residual says that the declared controller has settled. A small alignment defect says that its undamped model field is close to the specified target field. The actual model displacement includes the gain \\(a_m\\). A general target field need not even admit a scalar potential. We therefore keep existence, attraction and alignment as separate questions. The tracking comparison below supplies an especially direct reason to do so.",
+          "reason": "Do not identify field alignment with an unnormalised executed displacement.",
+          "scope": "Prose/clarity only. Preserve mathematical content, numerical strata, evidence, citations and labels."
+        }
+      ]
+    },
+    {
+      "path": "synthetics papers/self-consistent-loss-geometries-coupled-evaluators/manuscript/imported/sections/04b_partition_covariance.tex",
+      "before_sha256": "5c3a31c50cd6638847c29f63879085f60af7a00c23cf5ebf9c596db91d3a8005",
+      "after_sha256": "5c3a31c50cd6638847c29f63879085f60af7a00c23cf5ebf9c596db91d3a8005",
+      "edits": []
+    },
+    {
+      "path": "synthetics papers/self-consistent-loss-geometries-coupled-evaluators/manuscript/imported/sections/09_numerical_demonstrations.tex",
+      "before_sha256": "dfb8e3d64f10488665bb0f41036e81114f6cd9a6b2e48bd9351ca902f483686e",
+      "after_sha256": "7eccbcd82d3443c18fb0c94ef34a73621b3bacf2b7e7d3e2fa0894894689dde7",
+      "edits": [
+        {
+          "file": "synthetics papers/self-consistent-loss-geometries-coupled-evaluators/manuscript/imported/sections/09_numerical_demonstrations.tex",
+          "line_start": 4,
+          "line_end": 4,
+          "before": "The action identity can be correct while the policy is a poor predictor. To examine that distinction, we use the retained finite synthetic experiment, with no new data generation or parameter selection. Its environment is",
+          "after": "The action identity can be correct while the policy is a poor predictor. The retained finite synthetic experiment tests that distinction. Its policies use a fixed observed-window scoring rule, not the adapting evaluator coordinate of the reuse-mode controller. No new data generation or parameter selection is used here. The environment is",
+          "reason": "Identify exactly which evaluator the tracking comparison exercises.",
+          "scope": "Prose/clarity only. Preserve mathematical content, numerical strata, evidence, citations and labels."
+        }
+      ]
+    },
+    {
+      "path": "synthetics papers/self-consistent-loss-geometries-coupled-evaluators/manuscript/imported/sections/05_evidence_examples.tex",
+      "before_sha256": "4d8aee85d27bedeac0b52fd49974fe475fd5b4dbaed116775e780adfc61b68ed",
+      "after_sha256": "11936a8e47a24049f881626798df13b6261da1c42f14a7dc60b8b7e0bad4bdab",
+      "edits": [
+        {
+          "file": "synthetics papers/self-consistent-loss-geometries-coupled-evaluators/manuscript/imported/sections/05_evidence_examples.tex",
+          "line_start": 133,
+          "line_end": 133,
+          "before": "A slope above one therefore needs no critical or unstable mechanism. No iterated rescaled coupling transformation or fixed point has been defined here from which an RG eigenvalue could be extracted. Similarly, a negative effective intercept is an event log-odds offset produced by multiple opportunities, not negative physical work.",
+          "after": "A slope above one therefore needs no critical or unstable mechanism. No iterated rescaled coupling transformation or fixed point has been defined here from which a renormalisation-group (RG) eigenvalue could be extracted. Similarly, a negative effective intercept is an event log-odds offset produced by multiple opportunities, not negative physical work.",
+          "reason": "Expand RG at first use.",
+          "scope": "Prose/clarity only. Preserve mathematical content, numerical strata, evidence, citations and labels."
+        }
+      ]
+    },
+    {
+      "path": "synthetics papers/self-consistent-loss-geometries-coupled-evaluators/manuscript/imported/sections/02_related_work_background.tex",
+      "before_sha256": "331f78045b387cdb497a65ad07a8b1abeb59faec464da09127a012e312040f01",
+      "after_sha256": "331f78045b387cdb497a65ad07a8b1abeb59faec464da09127a012e312040f01",
+      "edits": []
+    },
+    {
+      "path": "synthetics papers/self-consistent-loss-geometries-coupled-evaluators/manuscript/imported/sections/06_discussion.tex",
+      "before_sha256": "62bd1ec4e88e45ff3369e2445c490f2a6ce4b1878cc9da6a19df20175ad26604",
+      "after_sha256": "e714c62674bf83cade874c3602a7b8c97d10687eea82546c7bad9956cf5b2523",
+      "edits": [
+        {
+          "file": "synthetics papers/self-consistent-loss-geometries-coupled-evaluators/manuscript/imported/sections/06_discussion.tex",
+          "line_start": 6,
+          "line_end": 6,
+          "before": "Making that purchase endogenous introduces a further state: the mechanism that estimates gain and authorises cost. Our explicit reuse-mode controller shows that such a mechanism can converge together with the model under stated conditions. It also shows why an equation of mutual determination is not a convergence theorem. The damping, coupling, parent drive and update order carry the result. A switched architecture with a learning parent must include those additional states in its own analysis.",
+          "after": "An endogenous evaluator introduces a further state. Our explicit reuse-mode controller shows that its authority coordinate can converge together with the model under stated conditions. It does not implement or establish convergence of a capacity-purchase mechanism. The purchase boundary remains a static comparison, and the tracking policies use their own fixed scoring rule. The damping, coupling, parent drive and update order carry the reuse-mode result. A switched architecture with a learning parent must include those additional states in its own analysis.",
+          "reason": "Remove the implication that a convergent capacity-purchase mechanism was demonstrated.",
+          "scope": "Prose/clarity only. Preserve mathematical content, numerical strata, evidence, citations and labels."
+        }
+      ]
+    },
+    {
+      "path": "synthetics papers/self-consistent-loss-geometries-coupled-evaluators/manuscript/imported/sections/07_appendix.tex",
+      "before_sha256": "5948e6f18e434862b85d46f333ba450a396b32ff391fe84ba347f1ff671df9e6",
+      "after_sha256": "fd19dd9b215c9880076d91386de98140b1bd21debff452d1c46240e5ad5c72bb",
+      "edits": [
+        {
+          "file": "synthetics papers/self-consistent-loss-geometries-coupled-evaluators/manuscript/imported/sections/07_appendix.tex",
+          "line_start": 153,
+          "line_end": 153,
+          "before": "For example, marginal probabilities \\((0.7,0.3)\\) and \\((0.6,0.4)\\) produce joint probabilities \\(0.42,0.28,0.18,0.12\\). The pair with marginal ranks \\(2,1\\) has joint probability-order rank 3, not their product 2. If labels are instead explicitly multiplicative capacities, their multiplicities remain in the reference measure. Two factors labelled \\(\\{1,2\\}\\) produce \\(\\{1,2,2,4\\}\\), so their cost-weighted partition sum is \\((1+2^{-I})^2\\).",
+          "after": "For example, marginal probabilities \\((0.7,0.3)\\) and \\((0.6,0.4)\\) produce joint probabilities \\(0.42,0.28,0.18,0.12\\). The pair with marginal ranks \\(2,1\\) has joint probability-order rank 3, not their product 2. If labels are instead explicitly multiplicative capacities, their multiplicities remain in the reference measure. Write \\(I>0\\) for the inverse statistical cost scale when the cost is \\(\\log r\\). Two factors labelled \\(\\{1,2\\}\\) produce \\(\\{1,2,2,4\\}\\), so their cost-weighted partition sum is \\((1+2^{-I})^2\\).",
+          "reason": "Define the cost-sensitivity parameter at first use.",
+          "scope": "Prose/clarity only. Preserve mathematical content, numerical strata, evidence, citations and labels."
+        },
+        {
+          "file": "synthetics papers/self-consistent-loss-geometries-coupled-evaluators/manuscript/imported/sections/07_appendix.tex",
+          "line_start": 155,
+          "line_end": 155,
+          "before": "A separate consecutive-label model has one alternative at each \\(r=1,\\ldots,R\\), cost \\(\\log r\\), and distribution",
+          "after": "A separate consecutive-label model has one alternative at each \\(r=1,\\ldots,R\\). With equal reference masses, equal gains, cost \\(\\log r\\) and inverse cost scale \\(I\\), the selector specialises to",
+          "reason": "State the local selection conventions behind the displayed illustrative distribution.",
+          "scope": "Prose/clarity only. Preserve mathematical content, numerical strata, evidence, citations and labels."
+        },
+        {
+          "file": "synthetics papers/self-consistent-loss-geometries-coupled-evaluators/manuscript/imported/sections/07_appendix.tex",
+          "line_start": 201,
+          "line_end": 201,
+          "before": "Figure~\\ref{fig:off-transition} retains the eighth accepted asset. It answers an auxiliary question about where revisions are spent. Excluding the four nonoverlapping 65-step post-shift windows from the 650-observation evaluation interval leaves 390 observations per stream. The off-transition rate is purchased updates in those observations divided by 390. It is not the share of promotions that were false, and it is not a false-positive probability. Useful adaptation to noisy observations can occur between the designated latent shifts.",
+          "after": "Figure~\\ref{fig:off-transition} asks where revisions are spent outside the post-shift windows. Excluding the four nonoverlapping 65-step post-shift windows from the 650-observation evaluation interval leaves 390 observations per stream. The off-transition rate is purchased updates in those observations divided by 390. It is not the share of promotions that were false, and it is not a false-positive probability. Useful adaptation to noisy observations can occur between the designated latent shifts.",
+          "reason": "Replace asset-acceptance history with the figure's scientific question.",
+          "scope": "Prose/clarity only. Preserve mathematical content, numerical strata, evidence, citations and labels."
+        },
+        {
+          "file": "synthetics papers/self-consistent-loss-geometries-coupled-evaluators/manuscript/imported/sections/07_appendix.tex",
+          "line_start": 232,
+          "line_end": 232,
+          "before": "Define that constrained value by",
+          "after": "Here \\(D(\\rho\\Vert\\omega)=\\operatorname{Tr}[\\rho(\\log\\rho-\\log\\omega)]\\) is quantum relative entropy, with \\(0\\log0=0\\). The receiving functional is\n\\[\n \\mathcal J_{\\mathrm{eff}}(\\sigma)\n =\\operatorname{Tr}\\sigma K_{\\mathrm{eff}}-\\tau S(\\sigma)\n =\\tau D(\\sigma\\Vert\\omega_S)-\\tau\\log Z .\n\\]\nDefine the constrained value by",
+          "reason": "Define the already-used receiving functional and relative entropy before the gap identity.",
+          "scope": "Prose/clarity only. Preserve mathematical content, numerical strata, evidence, citations and labels."
+        }
+      ]
+    }
+  ]
+}

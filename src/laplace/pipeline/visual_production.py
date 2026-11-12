@@ -78,6 +78,121 @@ def render_readiness(spec:dict, observed:dict|None=None)->dict:
          'help':{'operation':'help','payload':{'operation':'visual_render'}},
          'current_revision':digest(spec)}
 
+
+
+def reader_catalogue(manuscript:Path)->dict:
+ """Read the existing list authority, without folding away duplicate identities.
+ Invalid canonical presence never borrows a legacy catalogue's qualification.
+ """
+ problems=[]
+ def unique_object(pairs):
+  value={}
+  for key,item in pairs:
+   if key in value:raise ValueError('ambiguous duplicate visual JSON key: '+key)
+   value[key]=item
+  return value
+ for name,field in (('manuscript_spec.json','figure_specs'),('visual_specs.json','specs')):
+  path=manuscript/name
+  if not path.exists():continue
+  try:
+   if not path.is_file() or path.stat().st_size>2_000_000:raise ValueError('visual catalogue is not a bounded file')
+   value=json.loads(path.read_bytes(),object_pairs_hook=unique_object)
+   if not isinstance(value,dict):raise ValueError('visual catalogue must be an object')
+   if field not in value:
+    if name=='manuscript_spec.json':continue
+    raise ValueError('legacy visual catalogue has no specs list')
+   if not isinstance(value[field],list):raise ValueError(field+' must be a list')
+   # load owns documented canonical-list/legacy-list precedence.
+   loaded=load(manuscript)
+   rows=loaded['specs']
+   if rows!=value[field] or not loaded['authority'].startswith(name):
+    problems.append('visual catalogue changed during observation')
+   if any(not isinstance(row,dict) or not isinstance(row.get('id'),str)
+          or not re.fullmatch(r'[A-Za-z0-9_-]+',row['id']) for row in rows):
+    problems.append('visual catalogue contains a malformed member or identity')
+   return {'authority':loaded['authority'],'specs':rows,'problems':problems}
+  except (OSError,ValueError,TypeError) as exc:
+   return {'authority':name,'specs':[],'problems':[str(exc)]}
+ return {'authority':'manuscript_spec.json','specs':[],'problems':[]}
+
+
+def reader_inputs(manuscript:Path, ids:list[str], project_root:Path|None=None, *, cache=None)->dict:
+ """Bounded named scientific/byte observations for reader planning, not placement.
+ Reuse renderer preflight and provenance. Equality of a failed observation never
+ qualifies it. No write, whole-catalogue hash, timestamp or scientific grade.
+ """
+ if len(ids)>80:raise ValueError('Reader visual scope exceeds 80 exact IDs.')
+ cache={} if cache is None else cache
+ if 'catalogue' not in cache:cache['catalogue']=reader_catalogue(manuscript)
+ catalogue=cache['catalogue']; rows=catalogue['specs']; result={}
+ for ident in dict.fromkeys(ids):
+  cache_key=('input',ident)
+  if cache_key in cache:
+   result[ident]=cache[cache_key];continue
+  matches=[row for row in rows if isinstance(row,dict) and row.get('id')==ident]
+  problems=list(catalogue['problems'])
+  if not re.fullmatch(r'[A-Za-z0-9_-]+',ident):
+   problems.append('figure reference must be one exact visual ID, not a comma list')
+  if len(matches)!=1:problems.append('visual identity is missing' if not matches else 'visual identity is duplicated or ambiguous')
+  observation={'schema_version':'laplace.reader-visual-input/1','id':ident,
+               'authority':catalogue['authority']}
+  if len(matches)==1:
+   spec=matches[0]
+   # Preserve the selected scientific values even if validation/provenance fails.
+   authored=set(authoring_contract()['patch']['properties'])-set(update_transport_fields()['protected'])-set(update_transport_fields()['read'])
+   observation['spec']={key:value for key,value in spec.items() if key in authored}
+   stored=spec.get('render') if isinstance(spec.get('render'),dict) else {}
+   observation['renderer']=stored.get('renderer')
+   expected_renderer={'plot':'matplotlib','diagram':'graphviz-dot','tikz':'tikz-pdf','artifact':'supervised-run-artifact'}.get(spec.get('kind'))
+   if stored and (expected_renderer is None or stored.get('renderer')!=expected_renderer):
+    problems.append('render receipt has no matching known renderer')
+   declared=stored.get('outputs')
+   actual={}
+   if not isinstance(declared,list) or not declared or any(not isinstance(p,str) for p in declared):
+    problems.append('visual has no complete named render outputs')
+   else:
+    if len(declared)!=len(set(declared)) or not any(p.endswith('.pdf') for p in declared):
+     problems.append('render output coverage is duplicate or lacks a PDF')
+    # Observe ALL current bytes even while already stale/missing, not just the
+    # first failed output in provenance's renderer guard.
+    for rel in declared:
+     path=_inside(manuscript,rel)
+     try:actual[rel]=hashlib.sha256(path.read_bytes()).hexdigest() if path and path.is_file() else None
+     except OSError:actual[rel]=None
+    if any(value is None for value in actual.values()):problems.append('rendered output bytes unavailable')
+    if actual!=stored.get('output_digests'):problems.append('rendered bytes differ from receipt')
+   observation['outputs']={'declared':declared,'current_digests':actual,
+                           'receipt_digests':stored.get('output_digests')}
+   try:
+    observed=provenance(manuscript,spec,project_root)
+    readiness=render_readiness(spec,observed)
+    expected_formats=({'pdf','svg','png'} if spec.get('kind') in {'plot','diagram'} else
+                      {'pdf','png'} if spec.get('kind')=='tikz' else
+                      set((observed['drawing_inputs'].get('supervised_run') or {}).get('source_paths', {})))
+    actual_formats={Path(path).suffix.lower().lstrip('.') for path in actual}
+    if not expected_formats or not expected_formats.issubset(actual_formats):
+     problems.append('render receipt has incomplete renderer output coverage')
+    observation['provenance']={key:observed.get(key) for key in
+        ('drawing_inputs','input_files','style_version','research_bindings','research_binding',
+         'presentation_metadata','drawing_freshness','evidence_binding_status','presentation_status',
+         'input_error','output_error','evidence_gap')}
+    if not readiness['can_render']:problems.extend(row['reason'] for row in readiness['issues'])
+    if observed['drawing_freshness']!='CURRENT':problems.append('drawing is '+observed['drawing_freshness'])
+    if observed['evidence_binding_status'] not in {'CURRENT','THEORY_ONLY'}:
+     problems.append('linked result is '+observed['evidence_binding_status'])
+    if observed['presentation_status']!='CURRENT':problems.append('visual metadata is '+observed['presentation_status'])
+   except (OSError,ValueError,TypeError,KeyError) as exc:
+    problems.append('visual provenance unavailable: '+str(exc))
+  elif matches:
+   # Do not silently pick a first/last row. Keep conflicting actual values so
+   # further meaningful mutations are visible while the identity stays invalid.
+   observation['conflicting_specs']=matches
+  problems=list(dict.fromkeys(problems))
+  value={'id':ident,'status':'UNRESOLVED' if problems else 'CURRENT',
+         'problems':problems,'observation':observation}
+  cache[cache_key]=value;result[ident]=value
+ return result
+
 def update_transport_fields()->dict:
  """Existing protected receipts and echoed read views, not authored metadata."""
  return {'protected':{
@@ -202,9 +317,18 @@ def _supervised_artifact(manuscript:Path,base:Path,spec:dict)->dict:
  if result_sha!=run.get('result_sha256'):raise ValueError('supervised run result changed after its completion receipt')
  try:result_data=json.loads(result.read_text())
  except (OSError,ValueError,TypeError):raise ValueError('supervised run result is not readable JSON')
- artifact=next((row for row in result_data.get('artifacts') or []
-                if isinstance(row,dict) and row.get('id')==artifact_id),None)
- if artifact is None:raise ValueError('artifact_id is not declared by the supervised run result')
+ if not isinstance(result_data,dict):
+  raise ValueError('malformed supervised run result: expected a JSON object')
+ artifacts=result_data.get('artifacts')
+ if (not isinstance(artifacts,list) or
+     any(not isinstance(row,dict) or not isinstance(row.get('id'),str) or not row['id'].strip()
+         for row in artifacts)):
+  raise ValueError('malformed supervised run result artifacts: expected objects with nonempty ids')
+ matches=[row for row in artifacts if row['id']==artifact_id]
+ if not matches:raise ValueError('artifact_id is not declared by the supervised run result')
+ if len(matches)!=1:
+  raise ValueError('artifact_id is ambiguous in the supervised run result; exactly one matching artifact is required')
+ artifact=matches[0]
  sources={};digests={}
  for fmt in ('pdf','svg','png'):
   raw=artifact.get(fmt)
