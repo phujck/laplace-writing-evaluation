@@ -5,8 +5,8 @@
   "files": [
     {
       "path": ".github/workflows/publish-evaluation-image.yml",
-      "sha256": "d345669e0979def28793add281c04bda11180e34eb36c162ab8a7f83a5c0face",
-      "bytes": 1952,
+      "sha256": "346af86a67e2683f3baec6eaa57c21dff6c7ca98a5ca5868e3cfd4bff4f8634b",
+      "bytes": 2642,
       "reason": "explicit evaluation image publication and verification"
     },
     {
@@ -2549,14 +2549,14 @@
     },
     {
       "path": "deploy/evaluation/verify_browser.mjs",
-      "sha256": "449676f2f80a582dda79e6d07adb3e96a0a11bca35992b54b241ac391bbd6da3",
-      "bytes": 6083,
+      "sha256": "9f5e6d7e9fb8d8b87ff9b5ef2f476c795cf0f001e78b875e48ccc8241441730f",
+      "bytes": 6071,
       "reason": "declared application or container resource"
     },
     {
       "path": "deploy/evaluation/verify_image.py",
-      "sha256": "c7dbc461adb1ebb9bdf065c559366c03fefa79ad1bd259a3d2961e03e15e9127",
-      "bytes": 24373,
+      "sha256": "892147fc8258211d74c78c85ecd783622297d10d8ff9158e862eb8909b9cf5df",
+      "bytes": 24538,
       "reason": "declared application or container resource"
     },
     {
@@ -23898,8 +23898,8 @@
       "bytes": 1669
     },
     "README.md": {
-      "sha256": "e54482613c7f427f3e408eab11413250a6088a2ff3c8c0aa60359594b7470cf3",
-      "bytes": 6741
+      "sha256": "c8106768a700bc77936dfc6713bd4a5b3c2722010c801c2ef96d3e9b0e4c880b",
+      "bytes": 6834
     },
     "REVIEWER_GUIDE.md": {
       "sha256": "95bf8baa2cdf46ae24713bcde0e2ba3439b9364352f9e20838b182607f420c99",
@@ -23962,8 +23962,8 @@
       "bytes": 2690
     },
     "release/application-closure.json": {
-      "sha256": "cc8ec767dfcc8d683a28617e40ec8df03a25fe98a10f31add53cb46e2ebbaaa2",
-      "bytes": 499161
+      "sha256": "00938ea76270be23460ebba5e9f10391e6e0dc88eb314b44c7ecc21b334a5eca",
+      "bytes": 499066
     },
     "release/behaviour-coverage.json": {
       "sha256": "d96dd2c588ee223ffbbe2ae121e28315c00fb410668d1d4935746b616cbfb91b",
@@ -24092,6 +24092,11 @@
     "writing-portability.json": {
       "sha256": "62808b943870e7863b448a612b71f454ab470d7a0029dd1b4a6ac60f7112e95c",
       "bytes": 97650
+    },
+    "release/container-build.json": {
+      "sha256": "61d2867c8eadb29a2f59b65abbf8e39def36bf58424df8837106d4dfa61bf7da",
+      "bytes": 1138,
+      "reason": "evaluation container build and publication resource"
     }
   },
   "scientific_support": {

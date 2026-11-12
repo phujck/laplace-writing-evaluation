@@ -29,7 +29,7 @@ async function get(route){const r=await fetch(base+route);if(!r.ok)throw Error(r
 try{
   await page.goto(base+'/project?workspace=writing&app=projects&start=create',{waitUntil:'domcontentloaded'});
   await page.getByLabel('Working title',{exact:true}).fill('Container writing check '+randomUUID().slice(0,8));
-  await page.getByLabel('Project category',{exact:true}).selectOption('paper');
+  await page.getByLabel(/^Project category/).selectOption('paper');
   await page.getByLabel('Purpose',{exact:true}).fill('Disposable persistent volume check; no provider calls.');
   await Promise.all([page.waitForURL(u=>u.pathname==='/project'&&u.searchParams.get('corpus')&&u.searchParams.get('view')==='overview'),
     page.getByRole('button',{name:'Create project',exact:true}).click()]);

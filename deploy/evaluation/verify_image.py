@@ -123,11 +123,13 @@ def inside(args):
                 assert not doc.get("citations_note") and not doc.get("refs_note"), project
                 pdf = get("/projection/pdf", file=paper["pdf"], corpus=project)
                 assert hashlib.sha256(pdf).hexdigest() == paper["final_build"]["outputs"][paper["pdf"]], project
-                image_routes = sorted({image["route"] for block in doc.get("blocks", [])
+                blocks = [block for section in doc.get("sections", []) for block in section.get("blocks", [])]
+                image_routes = sorted({image["route"] for block in blocks
                                        for image in block.get("images", []) if image.get("route")})
-                missing_images = [image for block in doc.get("blocks", []) for image in block.get("images", [])
+                missing_images = [image for block in blocks for image in block.get("images", [])
                                   if not image.get("exists") or not image.get("route")]
                 assert not missing_images, (project, missing_images)
+                assert image_routes, (project, "No actual figure route discovered")
                 for route in image_routes:
                     assert route.startswith("/") and not route.startswith("//"), route
                     served = request("http://127.0.0.1:8771", route)

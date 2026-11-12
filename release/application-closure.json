@@ -423,13 +423,13 @@
     },
     {
       "path": "deploy/evaluation/verify_browser.mjs",
-      "bytes": 6083,
-      "sha256": "sha256:449676f2f80a582dda79e6d07adb3e96a0a11bca35992b54b241ac391bbd6da3"
+      "bytes": 6071,
+      "sha256": "sha256:9f5e6d7e9fb8d8b87ff9b5ef2f476c795cf0f001e78b875e48ccc8241441730f"
     },
     {
       "path": "deploy/evaluation/verify_image.py",
-      "bytes": 24373,
-      "sha256": "sha256:c7dbc461adb1ebb9bdf065c559366c03fefa79ad1bd259a3d2961e03e15e9127"
+      "bytes": 24538,
+      "sha256": "sha256:892147fc8258211d74c78c85ecd783622297d10d8ff9158e862eb8909b9cf5df"
     },
     {
       "path": "docs/behaviours/README.md",
@@ -13793,6 +13793,6 @@
     "src/laplace/desktop/deploy"
   ],
   "excluded_files": [],
-  "scope": "Implementation/resource closure only; project records and example execution require their own explicit selection and observed results. Container image build, bootstrap and clean-download verification are included in this edition.",
+  "scope": "Implementation/resource closure only; project records and example execution require their own explicit selection and observed results.",
   "source_commit": "f4a0dbb4cd6903f0e082d1bf8d037980d40de98d"
 }

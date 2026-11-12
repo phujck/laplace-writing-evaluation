@@ -21,7 +21,7 @@ docker run --rm --name eigen-evaluation --platform linux/amd64 -p 127.0.0.1:8772
 
 Open <http://127.0.0.1:8772/project?workspace=writing&app=projects>. The image includes the app, all four papers, source and figure assets, and the genuine **Behaviour example** conversations, proposals, review, synthesis and research records. The named volume retains your edits and settings when the container is stopped. First initialization copies and verifies the bundled workspace; subsequent runs reopen it. Stop with Ctrl-C.
 
-Codex and Claude CLIs are included; model use requires your own explicit sign-in and Send. See the [container guide](docs/writing-container.md) for accounts, persistent storage, prerequisites and the exact image verification record.
+Codex and Claude CLIs are included; model use requires your own explicit sign-in and Send. See the [container guide](docs/writing-container.md) for accounts, persistent storage, prerequisites and the [image identity and verification record](https://github.com/phujck/laplace-writing-evaluation/blob/master/release/container-image.json).
 
 For a source installation instead, use the following Python setup.
 
@@ -40,7 +40,7 @@ On Windows PowerShell use `py -3.12 -m venv .venv` and replace `.venv/bin/python
 
 Open one of the four titles, then choose **Writing**. **PDF** opens the supplied typeset document; **TeX** opens its editable source. For a safe editing exercise, use **Projects → Create a project → Article**, then edit that new project. Follow the [evaluation first-use route](docs/writing-evaluation-first-use.md) for expected states, the save/reopen journey and known limitations.
 
-The [task recipes](docs/writing-tasks.md) explain the controls, and [source navigation](docs/writing-source-map.md) locates their implementation. The longer workspace, evaluator and container guides include historical host/release examples, excluded projects and acceptance records. Their project counts, account checks, desktop instructions and missing acceptance links are not results for this four-paper checkout; use this README and the [reviewer guide](REVIEWER_GUIDE.md) for the evaluation commands.
+The [task recipes](docs/writing-tasks.md) explain the controls, and [source navigation](docs/writing-source-map.md) locates their implementation. The longer workspace and evaluator guides include historical host/release examples, excluded projects and acceptance records. Their project counts, account checks, desktop instructions and missing acceptance links are not results for this four-paper checkout; use this README and the [reviewer guide](REVIEWER_GUIDE.md) for the evaluation commands.
 
 TeX builds need a local TeX distribution with `pdflatex`, `bibtex`/`biber` and the packages requested by each paper. PDF inspection uses Poppler. Numerical figure generation uses optional Python dependencies: `.venv/bin/python -m pip install '.[research]'`. Node is needed for JavaScript tests. These capabilities are separate from opening the app. Missing tools must remain visible as unavailable.
 

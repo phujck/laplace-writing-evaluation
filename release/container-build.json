@@ -1,0 +1,31 @@
+{
+  "schema": "eigen.evaluation-container-build/1",
+  "version": "2026-11-12",
+  "registry": "ghcr.io/phujck/laplace-writing-evaluation",
+  "platform": "linux/amd64",
+  "layout": {
+    "seed": "/opt/evaluation/seed",
+    "volume": "/data",
+    "workspace": "/data/workspace",
+    "provider_cwd": "/data/session-workspaces",
+    "accounts": "/data/accounts"
+  },
+  "providers_started_at_boot": false,
+  "source_credentials_baked": false,
+  "local_qualification": {
+    "status": "PASS",
+    "image": "laplace-writing-evaluation:build",
+    "source_revision": "ce86dcfecfb0f638571714ed0b386b795ba1bdc4",
+    "checks": [
+      "full seed/workspace pins with exact runtime overlay",
+      "installed Atlas fixture",
+      "five project owners and genuine records",
+      "four PDFs and34 figure routes",
+      "nine model-free groups and RSS fixture",
+      "new native TeX build",
+      "browser editing/save/reload/Undo",
+      "cold volume recreation"
+    ]
+  },
+  "publication_identity": "Registry digest and final clean-download proof are published separately in release/container-image.json to avoid a self-referential image digest."
+}
