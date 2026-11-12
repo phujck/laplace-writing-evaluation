@@ -17,7 +17,7 @@ The [scientific support index](release/scientific-support.json) identifies pinne
 The controlled Dynamic Memory update fixture is small and model-free. On Linux or macOS, from this repository:
 
 ```sh
-.venv/bin/python writing_projects/memory-in-pieces/evidence/DYNAMIC_MEMORY_DEMO_2026-11-11/incremental_demo_checked.py --mode smoke --args-json '{}' --result /tmp/dynamic-memory-demo.json
+.venv/bin/python scripts/run_dynamic_memory_demo.py --mode smoke --args-json '{}' --result /tmp/dynamic-memory-demo.json
 ```
 
 It reads bundled synthetic weighted-source documents and compares incremental edits with exact rebuilding/oracle checks. It uses POSIX `resource` limits; this particular script is not a Windows parity claim. Its scope is the stated finite fixture, not general text-retrieval performance. Keep new outputs separate from the preserved historical results.

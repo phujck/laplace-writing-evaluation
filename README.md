@@ -46,7 +46,7 @@ Run the small model-free [Dynamic Memory update fixture](REVIEWER_GUIDE.md) on L
 
 ```sh
 mkdir -p work
-.venv/bin/python writing_projects/memory-in-pieces/evidence/DYNAMIC_MEMORY_DEMO_2026-11-11/incremental_demo_checked.py --mode smoke --args-json '{}' --result work/dynamic-memory-demo.json
+.venv/bin/python scripts/run_dynamic_memory_demo.py --mode smoke --args-json '{}' --result work/dynamic-memory-demo.json
 ```
 
 It checks nine states and sixteen queries over bundled synthetic documents. Its conditional values are `4/5 → 3/4 → 3/5 → 3/4`, followed by replay/merge/split checks, `0` and `UNDEFINED`. Successful local checks do not reproduce the historical language-model or GPU benchmarks. Keep the new output separate from the retained evidence.
