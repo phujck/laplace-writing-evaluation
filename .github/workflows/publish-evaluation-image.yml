@@ -30,6 +30,22 @@ jobs:
           RELEASE: ${{ inputs.release }}
         run: '[[ "$RELEASE" =~ ^[a-zA-Z0-9][a-zA-Z0-9_.-]{0,100}$ ]]'
       - uses: docker/build-push-action@v6
+        id: candidate
+        with:
+          context: .
+          file: deploy/evaluation/Dockerfile
+          platforms: linux/amd64
+          load: true
+          tags: laplace-writing-evaluation:candidate
+          build-args: |
+            SOURCE_REVISION=${{ github.sha }}
+            RELEASE_VERSION=${{ inputs.release }}
+          provenance: false
+          cache-from: type=gha
+          cache-to: type=gha,mode=max
+      - name: Verify candidate before publication
+        run: python deploy/evaluation/verify_image.py --image laplace-writing-evaluation:candidate --output "$RUNNER_TEMP/candidate-verification"
+      - uses: docker/build-push-action@v6
         id: publish
         with:
           context: .
@@ -45,8 +61,7 @@ jobs:
           provenance: mode=max
           sbom: true
           cache-from: type=gha
-          cache-to: type=gha,mode=max
-      - name: Verify the published immutable image on new storage
+      - name: Verify published immutable image on new storage
         env:
           IMAGE: ghcr.io/phujck/laplace-writing-evaluation@${{ steps.publish.outputs.digest }}
         run: |
@@ -55,4 +70,6 @@ jobs:
         if: always()
         with:
           name: evaluation-image-verification
-          path: ${{ runner.temp }}/image-verification
+          path: |
+            ${{ runner.temp }}/candidate-verification
+            ${{ runner.temp }}/image-verification
