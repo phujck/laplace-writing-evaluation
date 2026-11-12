@@ -1,0 +1,32 @@
+\begin{tikzpicture}[font=\sffamily\small,>=stealth]
+\node[font=\sffamily\bfseries\large] at (6.2,7) {Source edits update conditional recall};
+\node[align=center] at (6.2,6.35) {Weighted record groups with binary fields $A$ then $B$};
+\node[draw,rounded corners,fill=blue!5,text width=2.8cm,minimum height=1.3cm,align=center] (b0) at (0,4.9) {\textbf{Source document}\\[3pt]Change, add or remove an assertion};
+\node[draw,rounded corners,fill=blue!5,text width=2.8cm,minimum height=1.3cm,align=center] (b1) at (4.1,4.9) {\textbf{Located witness}\\[3pt]Retract old contribution, add new};
+\draw[->,thick] (b0) -- (b1);
+\node[draw,rounded corners,fill=blue!5,text width=2.8cm,minimum height=1.3cm,align=center] (b2) at (8.2,4.9) {\textbf{Conditional counts}\\[3pt]Copy affected prefix paths};
+\draw[->,thick] (b1) -- (b2);
+\node[draw,rounded corners,fill=blue!5,text width=2.8cm,minimum height=1.3cm,align=center] (b3) at (12.299999999999999,4.9) {\textbf{Recovered answer}\\[3pt]Evaluate $P(B=0\mid A=0)$};
+\draw[->,thick] (b2) -- (b3);
+\node[anchor=west,font=\bfseries] at (-1.45,3.45) {Source operation};
+\node[font=\bfseries] at (4.1,3.45) {Located contribution};
+\node[font=\bfseries] at (8.3,3.45) {Counts within $A=0$};
+\node[font=\bfseries] at (12.3,3.45) {Conditional recall};
+\node[anchor=west] at (-1.45,2.65) {Initial sources};
+\node at (4.1,2.65) {4 records at (0,0)};
+\node at (8.3,2.65) {$(4,1)$};
+\node[draw,rounded corners,fill=green!8,minimum width=1.6cm,minimum height=.55cm] at (12.3,2.65) {$\displaystyle\frac{4}{5}$};
+\node[anchor=west] at (-1.45,1.75) {Change Group 00};
+\node at (4.1,1.75) {4 to 3 records at (0,0)};
+\node at (8.3,1.75) {$(3,1)$};
+\node[draw,rounded corners,fill=green!8,minimum width=1.6cm,minimum height=.55cm] at (12.3,1.75) {$\displaystyle\frac{3}{4}$};
+\node[anchor=west] at (-1.45,0.8499999999999999) {Add Group 02};
+\node at (4.1,0.8499999999999999) {+1 record at (0,1)};
+\node at (8.3,0.8499999999999999) {$(3,2)$};
+\node[draw,rounded corners,fill=green!8,minimum width=1.6cm,minimum height=.55cm] at (12.3,0.8499999999999999) {$\displaystyle\frac{3}{5}$};
+\node[anchor=west] at (-1.45,-0.050000000000000266) {Remove Group 01};
+\node at (4.1,-0.050000000000000266) {-1 record at (0,1)};
+\node at (8.3,-0.050000000000000266) {$(3,1)$};
+\node[draw,rounded corners,fill=green!8,minimum width=1.6cm,minimum height=.55cm] at (12.3,-0.050000000000000266) {$\displaystyle\frac{3}{4}$};
+\node[align=center,text width=15cm] at (6.2,-1.25) {Counts are $(n(A=0,B=0),\,n(A=0,B=1))$. Each contribution retains its exact source span.\\[4pt] All 16 fixed queries agree with fresh reconstruction and direct row counts.\\[4pt] Removing all $A=0$ support makes conditional recall undefined.};
+\end{tikzpicture}

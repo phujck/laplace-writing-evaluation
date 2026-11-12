@@ -1,0 +1,213 @@
+/* THE DESIGN TOKENS (M5 C3). One vocabulary for the shell page and the embedded walk.
+   This file is linked before workspace.css in the shell page and before the inline
+   style in walk.html, where the walk's own colour names are aliased to these tokens.
+   Component files consume the names; none redefines them. */
+:root {
+  /* ink and surfaces */
+  --ink: #e8efee;        /* body text */
+  --ink2: #b0c0c8;       /* secondary text, labels, muted copy */
+  --bg: #101820;         /* the page */
+  --panel: #15212b;      /* cards, dialogs, the paper */
+  --panel2: #121e26;     /* rails: navigation, conversation, spine */
+  --edge: #344751;       /* borders between regions */
+  --edge2: #2a3a44;      /* soft separators inside a region */
+  --accent: #b5daca;     /* the one accent: selection, primary action, live marks */
+  --ok: #8fd3a8;         /* confirmed, current, complete */
+  --warn: #e6c35e;       /* held, pending, attention */
+  --bad: #ffbcae;        /* refused, failed, stale */
+  --dim: #7d8f97;        /* disabled and faint marks */
+  --held: #e6c35e;       /* a held / parked draft: the --warn value as its own literal, so a page
+                            that aliases --warn to its refusal colour (the walk) keeps held distinct */
+
+  /* type */
+  --serif: Georgia, "Lora", serif;
+  --mono: ui-monospace, SFMono-Regular, Menlo, monospace;
+  --display: Georgia, "Lora", serif;
+
+  /* rhythm */
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 8px;
+  --space-4: 16px;
+  --space-5: 16px;
+  --space-6: 24px;
+  --space-7: 32px;
+  --space-8: 48px;
+  --radius-1: var(--radius);
+  --radius-2: var(--radius);
+
+  /* focus, motion, depth */
+  --focus-ring: 2px solid var(--accent);
+  --motion-fast: 120ms;
+  --shadow-1: 0 8px 24px rgba(0, 0, 0, .5);
+}
+
+/* THE SHELL'S VISUAL SYSTEM (frontend redesign wave 4, design-a, 6 November 2026). The shell style sheets use only
+   these names. Colour roles: page (the surface), raised (a raised surface), border, text, muted (muted text), accent,
+   and one each for good, caution and problem; each has a quiet tint for a background. A state is never shown by
+   colour alone: every role colour sits beside the owner's word. Type: 13 px meta (the floor), 15 px body and controls,
+   18 px reading, 22 and 28 px headings. Spacing: an 8 px grid (4 px only inside a control). Geometry: one radius,
+   one 1 px border, 40 px control targets with 8 px 14 px padding and 8 px gaps. */
+:root {
+  --page: var(--bg);
+  --raised: var(--panel);
+  --border: var(--edge);
+  --text: var(--ink);
+  --muted: var(--ink2);
+  --good: var(--ok);
+  --caution: var(--warn);
+  --problem: var(--bad);
+  --on-accent: #0f1d17;   /* text set on an accent fill */
+  --accent-quiet: color-mix(in srgb, var(--accent) 16%, var(--bg));
+  --good-quiet: color-mix(in srgb, var(--ok) 16%, var(--bg));
+  --caution-quiet: color-mix(in srgb, var(--warn) 16%, var(--bg));
+  --problem-quiet: color-mix(in srgb, var(--bad) 16%, var(--bg));
+
+  --font-ui: system-ui, sans-serif;
+  --fs-meta: 13px;
+  --fs-body: 15px;
+  --fs-control: 15px;
+  --fs-reading: 18px;
+  --fs-h2: 22px;
+  --fs-h1: 28px;
+  --measure: 68ch;
+
+  --s-half: 4px;
+  --s1: 8px;
+  --s2: 16px;
+  --s3: 24px;
+  --s4: 32px;
+  --s5: 40px;
+  --s6: 48px;
+  --s8: 64px;
+
+  --radius: 6px;
+  --rule: 1px solid var(--edge);
+  --control-h: 40px;
+  --control-gap: 8px;
+  --control-weight: 500;
+}
+
+/* THE EXTENDED PALETTE (M5 C11, 2026-10-14). The colour literals of the app stylesheets, modules
+   and the walk page were migrated to tokens: literals within dE 8 (CIELAB) of a semantic token above
+   became that token; the rest were clustered at dE 6 into this palette, named by hue family and
+   L* step (grey-20, teal-70, gold-a20 ...). It is DERIVED from what the surfaces used, not designed:
+   reducing it toward the semantic set above is design work measured by this list shrinking. Every
+   name here is referenced by at least one rule; the lint (tests/test_design_tokens.py) keeps colour
+   literals out of every other file. */
+:root {
+  --paper: #ffffff;
+  --black: #000000;
+  --mint-30: #294239;
+  --sky-50: #718397;
+  --cyan-70: #8aaac5;
+  --green-40: #40594c;
+  --green-60: #7d9786;
+  --green-10: #101b14;
+  --green-60-b: #6d947c;
+  --gold-70: #c8ad70;
+  --green-50: #668071;
+  --red-70: #d6948c;
+  --orange-70: #d2a276;
+  --mint-70: #83b8a4;
+  --teal-80: #81d9f0;
+  --mint-10: #132820;
+  --cyan-40: #4b6470;
+  --green-30: #294c3a;
+  --sky-30: #3a4a60;
+  --gold-80: #edcf8f;
+  --mint-70-b: #8fb3a2;
+  --orange-70-b: #d5a666;
+  --red-70-b: #d4a7a2;
+  --green-90: #bbe8c9;
+  --red-50: #b47261;
+  --grey-70: #9faeaa;
+  --grey-90: #d9dee8;
+  --green-70: #a5bdb0;
+  --grey-90-b: #d2edda;
+  --orange-80: #e7c28a;
+  --green-80: #8dc5a6;
+  --orange-70-c: #d6a995;
+  --cyan-90: #c6dced;
+  --orange-80-b: #d7c5b5;
+  --grey-80: #c4d3cc;
+  --mint-80: #72e0ca;
+  --blue-70: #b4a5ee;
+  --cyan-50: #677581;
+  --sky-70-c: #8bb4e0;
+  --sky-20: #202c40;
+  --cyan-70-b: #75b8d8;
+  --green-80-b: #9bc5ad;
+  --green-20: #203a2a;
+  --green-50-b: #567162;
+  --orange-90: #edd4bd;
+  --orange-70-d: #b99c68;
+  --sky-70-e: #98a8b9;
+  --red-20-c: #362625;
+  --red-50-b: #a46b67;
+  --orange-80-f: #d9bea1;
+  --green-20-b: #122b1b;
+  --green-80-c: #a7d5b6;
+  --orange-90-b: #efd2a7;
+  --grey-80-b: #c9cbb6;
+  --orange-60-c: #bc762b;
+  --green-50-c: #628760;
+  --red-90-b: #f2d5d1;
+  --orange-100: #fff0d6;
+  --orange-60-d: #b99265;
+  --gold-10: #252218;
+  --orange-40: #75674d;
+  --sky-60: #7396b9;
+  --red-80: #e8c4bf;
+  --gold-90-c: #e5dfc6;
+  --gold-60: #9a8b5d;
+  --gold-20: #3c3521;
+  --grey-60: #89938d;
+  --cyan-50-b: #237dcc;
+  --green-70-b: #7fa98e;
+  --indigo-60: #9889c4;
+  --grey-90-d: #e9e4d7;
+  --lime-80: #b7d487;
+  --gold-80-b: #e2bd72;
+  --red-60: #d48772;
+  --cyan-70-c: #89bfd3;
+  --red-70-c: #ff9a8b;
+  --shade-47: rgba(0, 0, 0, 0.47);
+  --shade-60: rgba(0, 0, 0, 0.60);
+  --shade-53: rgba(0, 0, 0, 0.53);
+  --shade-73: rgba(0, 0, 0, 0.73);
+  --shade-40: rgba(0, 0, 0, 0.40);
+  --red-40-a32: rgba(159, 79, 73, 0.32);
+  --green-60-a32: rgba(79, 149, 96, 0.32);
+  --orange-60-c-a31: rgba(185, 120, 40, 0.31);
+  --mint-80-a13: rgba(94, 230, 176, 0.13);
+  --bg-a88: rgba(11, 13, 18, 0.88);
+  --edge2-a14: rgba(35, 64, 81, 0.14);
+  --shade-33: rgba(0, 0, 0, 0.33);
+  --bg-a60: rgba(3, 10, 15, 0.60);
+  --bg-a73: rgba(8, 16, 22, 0.73);
+  --bg-a72: rgba(5, 10, 16, 0.72);
+  --bg-a40: rgba(5, 11, 17, 0.40);
+  --shade-13: rgba(0, 0, 0, 0.13);
+  --green-20-a18: rgba(31, 60, 41, 0.18);
+  --gold-20-a13: rgba(61, 51, 36, 0.13);
+  --edge2-a14-b: rgba(32, 48, 67, 0.14);
+  --green-30-a20: rgba(39, 71, 50, 0.20);
+  --red-20-a12: rgba(61, 38, 35, 0.12);
+  --red-40-a28: rgba(159, 79, 73, 0.28);
+  --red-50-a50: rgba(184, 112, 104, 0.50);
+  --green-70-a44: rgba(113, 172, 125, 0.44);
+  --orange-70-b-a44: rgba(217, 161, 93, 0.44);
+  --shade-20: rgba(0, 0, 0, 0.20);
+  --red-30-a40: rgba(116, 59, 59, 0.40);
+  --mint-40-b-a53: rgba(53, 96, 70, 0.53);
+  --mint-10-a15: rgba(25, 42, 32, 0.15);
+  --sky-50-a40: rgba(56, 124, 240, 0.40);
+  --cyan-50-b-a17: rgba(41, 127, 199, 0.17);
+  --cyan-50-a50: rgba(34, 117, 183, 0.50);
+  --cyan-50-b-a20: rgba(41, 127, 199, 0.20);
+  --mint-80-a30: rgba(94, 230, 176, 0.30);
+  --orange-70-a20: rgba(216, 166, 87, 0.20);
+  --shade-45: rgba(0, 0, 0, 0.45);
+  --mint-80-a10: rgba(94, 230, 176, 0.10);
+}

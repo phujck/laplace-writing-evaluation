@@ -1,0 +1,338 @@
+{
+  "figure_specs": [
+    {
+      "id": "mip_news_matched",
+      "title": "News answers under matched delivery",
+      "question": "How do three retrieval routes compare under common evidence delivery and answer reading?",
+      "caption": "Normalised exact matches on 172 previously examined MultiHop-RAG questions. All three retrieval routes use labelled two-sentence windows, cosine plus 0.5 normalised BM25, article-ordered span delivery within 2000 cl100k tokens and the same Claude Sonnet 5.5 low-effort reader with answer-form rules. Facet-conditioned retrieval ranks within exact outlet/date supports and merges facets round-robin. RAG uses MMR relevance coefficient 0.7 over 200 candidates. RAPTOR searches 1747 summary nodes plus labelled windows without MMR. Answer rules were developed using failures from all 172 questions. The matched observation is a tie at 152 for facet-conditioned retrieval and RAG, with RAPTOR at 148.",
+      "kind": "tikz",
+      "tikz": "\\begin{tikzpicture}[font=\\sffamily\\fontsize{10}{12}\\selectfont,x=1cm,y=1cm]\n\\node[anchor=west,font=\\sffamily\\bfseries\\fontsize{13}{15}\\selectfont] at (-5.1,4.1) {News answers under matched delivery};\n\\node[anchor=west] at (-5.1,3.55) {172 examined questions \\quad 2000-token allowance \\quad common answer rules};\n\\draw[gray!20] (0.0000,0) -- (0.0000,3.15);\n\\node[anchor=north] at (0.0000,-0.08) {0};\n\\draw[gray!20] (3.0523,0) -- (3.0523,3.15);\n\\node[anchor=north] at (3.0523,-0.08) {50};\n\\draw[gray!20] (6.1047,0) -- (6.1047,3.15);\n\\node[anchor=north] at (6.1047,-0.08) {100};\n\\draw[gray!20] (9.1570,0) -- (9.1570,3.15);\n\\node[anchor=north] at (9.1570,-0.08) {150};\n\\draw[gray!20] (10.5000,0) -- (10.5000,3.15);\n\\node[anchor=north] at (10.5000,-0.08) {172};\n\\node[anchor=east,align=right,text width=4.8cm] at (-0.25,2.7) {Facet-conditioned retrieval};\n\\fill[blue!70!black] (0,2.46) rectangle (9.2791,2.9400000000000004);\n\\node[anchor=west,fill=white,inner sep=2pt] at (9.4191,2.7) {152/172};\n\\node[anchor=east,align=right,text width=4.8cm] at (-0.25,1.6500000000000001) {RAG (MMR)};\n\\fill[green!50!black] (0,1.4100000000000001) rectangle (9.2791,1.8900000000000001);\n\\node[anchor=west,fill=white,inner sep=2pt] at (9.4191,1.6500000000000001) {152/172};\n\\node[anchor=east,align=right,text width=4.8cm] at (-0.25,0.6000000000000001) {RAPTOR\\\\(summary + window)};\n\\fill[violet!65!black] (0,0.3600000000000001) rectangle (9.0349,0.8400000000000001);\n\\node[anchor=west,fill=white,inner sep=2pt] at (9.174900000000001,0.6000000000000001) {148/172};\n\\draw (0,0) -- (10.5,0);\n\\node[anchor=north] at (5.25,-0.65) {Normalised exact matches (questions)};\n\\node[anchor=west,align=left,text width=15.7cm,font=\\sffamily\\fontsize{9}{11}\\selectfont] at (-5.1,-1.5) {Claude Sonnet 5.5, low effort. Answer rules developed on all 172 examined questions.};\n\\end{tikzpicture}",
+      "result_ids": [
+        "mip-news-recovery-20261110"
+      ],
+      "style": {
+        "preview_dpi": 180,
+        "font_size": 10
+      },
+      "render": {
+        "outputs": [
+          "figures/generated/mip_news_matched.pdf",
+          "figures/generated/mip_news_matched.png",
+          "figures/generated/mip_news_matched.svg",
+          "figures/generated/mip_news_matched.tikz"
+        ],
+        "renderer": "tikz-pdf",
+        "input_digest": "5ae6eab58cf6aabd44e49b2cbdbb6f6acb83531c778972aba391a15c8d7a40c3",
+        "drawing_input_digest": "5ae6eab58cf6aabd44e49b2cbdbb6f6acb83531c778972aba391a15c8d7a40c3",
+        "drawing_inputs": {
+          "spec": {
+            "id": "mip_news_matched",
+            "kind": "tikz"
+          },
+          "tikz": "659bd08e39a73cc1b14decab5ac7fce526c90de27bc186b111a33c2624763100"
+        },
+        "research_bindings": [
+          {
+            "id": "mip-news-recovery-20261110",
+            "revision": "sha256:c1c94981d11fb953597bc29bfc3fafa851ab16092affd919bf194c033acf176d",
+            "currentness": "CURRENT"
+          }
+        ],
+        "presentation_metadata": {
+          "title": "News answers under matched delivery",
+          "question": "How do three retrieval routes compare under common evidence delivery and answer reading?",
+          "caption": "Normalised exact matches on 172 previously examined MultiHop-RAG questions. All three retrieval routes use labelled two-sentence windows, cosine plus 0.5 normalised BM25, article-ordered span delivery within 2000 cl100k tokens and the same Claude Sonnet 5.5 low-effort reader with answer-form rules. Facet-conditioned retrieval ranks within exact outlet/date supports and merges facets round-robin. RAG uses MMR relevance coefficient 0.7 over 200 candidates. RAPTOR searches 1747 summary nodes plus labelled windows without MMR. Answer rules were developed using failures from all 172 questions. The matched observation is a tie at 152 for facet-conditioned retrieval and RAG, with RAPTOR at 148.",
+          "source_data": null,
+          "source": null
+        },
+        "style_version": "622eccd229617fd9f7e74fc06bebc3d598ba6b47b95ccab5b4972220b76952b4",
+        "style_profile": "profiles/visual_style.json",
+        "visual_review": "pending",
+        "output_digests": {
+          "figures/generated/mip_news_matched.pdf": "34fa25ec97deee136a21ec6f6b475a1608dff31aadcf48613bb95fa3190e1a3b",
+          "figures/generated/mip_news_matched.png": "612f51f068a0a5cf9f88ad12f4e84f8439866f78614cc3c4bd35b61ca6d20c5f",
+          "figures/generated/mip_news_matched.svg": "738ff52bc7b7d5795057c2ca0fe12eaba342a404d4b21c6c27b4e76e955e097f",
+          "figures/generated/mip_news_matched.tikz": "659bd08e39a73cc1b14decab5ac7fce526c90de27bc186b111a33c2624763100"
+        }
+      }
+    },
+    {
+      "id": "mip_frames_noactivation",
+      "title": "FRAMES: distinguish the endpoint",
+      "question": "How do answer-form matching and rubric correctness compare after one missing-needs retrieval pass?",
+      "caption": "FRAMES answer endpoints on 190 previously examined questions. Linked-passage retrieval uses a 50-piece head and a one-hop link witness, with activation off and merged-section delivery. Both arms receive 8000 initial tokens, the same steps instruction and at most one triggered retrieval of 4000 new tokens for reader-declared missing needs. RAG uses MMR relevance coefficient 0.7 over 200 candidates. Its relevance score is s + 0.4 h/max(h), where s is cosine plus 0.2 normalised BM25 and h is the dense seed. Pass-2 missing-need ranking adds 0.5 times the question score to the phrase score. The containment proxy counts exact matches or normalised substring/first-clause matches or token-F1 at least 0.5, with a three-times-reference length guard on the proxy. Judged correctness uses the banked majority rubric. The judged discordances are seven linked-passage-only successes and six RAG-only successes. Page presence and answer-bearing passage delivery are distinct, particularly for tables omitted from the plaintext corpus.",
+      "kind": "tikz",
+      "tikz": "\\begin{tikzpicture}[font=\\sffamily\\fontsize{10}{12}\\selectfont,x=1cm,y=1cm]\n\\node[anchor=west,font=\\sffamily\\bfseries\\fontsize{13}{15}\\selectfont] at (-6.0,5.15) {FRAMES: two distinct answer endpoints};\n\\node[anchor=west] at (-6.0,4.6) {190 examined questions \\quad 8000 tokens + one triggered pass of up to 4000 new tokens};\n\\node[anchor=west,font=\\sffamily\\bfseries] at (-6.0,3.92) {Containment proxy};\n\\node[anchor=west,font=\\sffamily\\bfseries] at (-6.0,1.67) {Judged correctness};\n\\draw[gray!20] (0.0000,-0.4) -- (0.0000,3.65);\n\\node[anchor=north] at (0.0000,-0.48) {0};\n\\draw[gray!20] (2.6316,-0.4) -- (2.6316,3.65);\n\\node[anchor=north] at (2.6316,-0.48) {50};\n\\draw[gray!20] (5.2632,-0.4) -- (5.2632,3.65);\n\\node[anchor=north] at (5.2632,-0.48) {100};\n\\draw[gray!20] (7.8947,-0.4) -- (7.8947,3.65);\n\\node[anchor=north] at (7.8947,-0.48) {150};\n\\draw[gray!20] (10.0000,-0.4) -- (10.0000,3.65);\n\\node[anchor=north] at (10.0000,-0.48) {190};\n\\node[anchor=east,align=right,text width=5.6cm,font=\\sffamily\\fontsize{9.5}{11}\\selectfont] at (-.25,3.13) {Linked-passage retrieval\\\\(head + link witness)};\n\\fill[blue!70!black] (0,2.9099999999999997) rectangle (6.473684210526316,3.35);\n\\node[anchor=west] at (6.593684210526316,3.13) {123/190};\n\\node[anchor=east,align=right,text width=5.6cm,font=\\sffamily\\fontsize{9.5}{11}\\selectfont] at (-.25,2.31) {RAG (MMR)};\n\\fill[green!50!black] (0,2.09) rectangle (6.157894736842105,2.5300000000000002);\n\\node[anchor=west] at (6.277894736842105,2.31) {117/190};\n\\node[anchor=east,align=right,text width=5.6cm,font=\\sffamily\\fontsize{9.5}{11}\\selectfont] at (-.25,0.8799999999999999) {Linked-passage retrieval\\\\(head + link witness)};\n\\fill[blue!70!black] (0,0.6599999999999999) rectangle (6.684210526315789,1.0999999999999999);\n\\node[anchor=west] at (6.8042105263157895,0.8799999999999999) {127/190};\n\\node[anchor=east,align=right,text width=5.6cm,font=\\sffamily\\fontsize{9.5}{11}\\selectfont] at (-.25,0.05999999999999994) {RAG (MMR)};\n\\fill[green!50!black] (0,-0.16000000000000006) rectangle (6.63157894736842,0.2799999999999999);\n\\node[anchor=west] at (6.7515789473684205,0.05999999999999994) {126/190};\n\\draw (0,-.4) -- (10,-.4);\n\\node[anchor=north] at (5,-1.1) {Questions meeting the named endpoint};\n\\node[anchor=west,align=left,text width=16.3cm,font=\\sffamily\\fontsize{9}{11}\\selectfont] at (-6.0,-2) {Judged discordances: 7 linked-passage-only successes, 6 RAG-only successes.\\\\Sonnet 5.5, low effort. Proxy: answer-form match. Judged: majority-rubric correctness.};\n\\end{tikzpicture}",
+      "result_ids": [
+        "mip-frames-recovery-20261110"
+      ],
+      "style": {
+        "preview_dpi": 180,
+        "font_size": 10
+      },
+      "render": {
+        "outputs": [
+          "figures/generated/mip_frames_noactivation.pdf",
+          "figures/generated/mip_frames_noactivation.png",
+          "figures/generated/mip_frames_noactivation.svg",
+          "figures/generated/mip_frames_noactivation.tikz"
+        ],
+        "renderer": "tikz-pdf",
+        "input_digest": "b373fb052b256a4ec6cc4a9f59f8396bb8418443780174bdc3e3aa8f313a11df",
+        "drawing_input_digest": "b373fb052b256a4ec6cc4a9f59f8396bb8418443780174bdc3e3aa8f313a11df",
+        "drawing_inputs": {
+          "spec": {
+            "id": "mip_frames_noactivation",
+            "kind": "tikz"
+          },
+          "tikz": "81b19bbe9737ce00e2a5240184e2b5d420173010bcb6549f32cb4153e724dec6"
+        },
+        "research_bindings": [
+          {
+            "id": "mip-frames-recovery-20261110",
+            "revision": "sha256:ba031df03c139da9cd2c4a9d4a70e5fef0fa88f940f4a764e8dfb1a7c12386b0",
+            "currentness": "CURRENT"
+          }
+        ],
+        "presentation_metadata": {
+          "title": "FRAMES: distinguish the endpoint",
+          "question": "How do answer-form matching and rubric correctness compare after one missing-needs retrieval pass?",
+          "caption": "FRAMES answer endpoints on 190 previously examined questions. Linked-passage retrieval uses a 50-piece head and a one-hop link witness, with activation off and merged-section delivery. Both arms receive 8000 initial tokens, the same steps instruction and at most one triggered retrieval of 4000 new tokens for reader-declared missing needs. RAG uses MMR relevance coefficient 0.7 over 200 candidates. Its relevance score is s + 0.4 h/max(h), where s is cosine plus 0.2 normalised BM25 and h is the dense seed. Pass-2 missing-need ranking adds 0.5 times the question score to the phrase score. The containment proxy counts exact matches or normalised substring/first-clause matches or token-F1 at least 0.5, with a three-times-reference length guard on the proxy. Judged correctness uses the banked majority rubric. The judged discordances are seven linked-passage-only successes and six RAG-only successes. Page presence and answer-bearing passage delivery are distinct, particularly for tables omitted from the plaintext corpus.",
+          "source_data": null,
+          "source": null
+        },
+        "style_version": "622eccd229617fd9f7e74fc06bebc3d598ba6b47b95ccab5b4972220b76952b4",
+        "style_profile": "profiles/visual_style.json",
+        "visual_review": "pending",
+        "output_digests": {
+          "figures/generated/mip_frames_noactivation.pdf": "2e3496b21d55be9180b53cbb6318e7ccbd7bcc18940403ac696fe9a9815cb4e0",
+          "figures/generated/mip_frames_noactivation.png": "0edac505a31de208636fb85c6a9aeea99f7703f27cdbdfaad38e00a2959b0756",
+          "figures/generated/mip_frames_noactivation.svg": "22d3372fb30e502fd9444282b4bed4f1499dd6d9d0e98127b055f130edab98cc",
+          "figures/generated/mip_frames_noactivation.tikz": "81b19bbe9737ce00e2a5240184e2b5d420173010bcb6549f32cb4153e724dec6"
+        }
+      }
+    },
+    {
+      "id": "mip_wyoming_witness",
+      "title": "Source context supports an extracted assertion",
+      "question": "Which extracted fields are supported by the located quote, and which require surrounding source context?",
+      "caption": "Source context for the extracted Wyoming climate assertion. The located witness is the first sentence of the three-sentence source unit, supporting southeastern vulnerability to tornadoes. The following two sentences supply the westward decline and small, brief character of tornadoes represented in the extracted fields. The Climate section identifies the state as Wyoming. The diagram separates exact span location from the contextual reading needed to support the full five-field assertion.",
+      "kind": "tikz",
+      "tikz": "\\begin{tikzpicture}[font=\\sffamily\\fontsize{9.5}{12}\\selectfont,x=1cm,y=1cm]\n\\node[anchor=west,font=\\sffamily\\bfseries\\fontsize{13}{15}\\selectfont] at (0,.7) {Source context supports an extracted assertion};\n\\node[draw=black!35,fill=gray!4,rounded corners,anchor=north west,align=left,text width=16cm,inner sep=8pt] (source) at (0,0) {\\textbf{Source unit: Wyoming - Climate}\\\\[5pt]\n\\textcolor{blue!70!black}{The southeastern corner of the state is the most vulnerable part of the state to tornado activity.}\\\\[4pt]\nMoving away from that point and westwards, the incidence of tornadoes drops dramatically with the west part of the state showing little vulnerability. Tornadoes, where they occur, tend to be small and brief, unlike some of those that occur farther east.};\n\\node[draw=blue!70!black,rounded corners,anchor=north west,align=left,text width=7.35cm,inner sep=8pt] (assertion) at (0,-3.8) {\\textbf{Extracted five-field assertion}\\\\[5pt]\n\\textbf{Subject:} southeastern corner of the state\\\\[3pt]\n\\textbf{Object:} tornado vulnerability\\\\[3pt]\n\\textbf{Mechanism:} Most vulnerable to tornadoes; incidence drops dramatically moving west\\\\[3pt]\n\\textbf{Conditions:} Where they occur\\\\[3pt]\n\\textbf{Consequences:} Tornadoes tend to be small and brief, unlike some farther east\\\\[3pt]\n};\n\\node[draw=blue!70!black,rounded corners,anchor=north west,align=left,text width=7.35cm,inner sep=8pt] (quote) at (8.75,-3.8) {\\textbf{Located witness}\\\\[5pt]\n\\lq\\lq The southeastern corner of the state is the most vulnerable part of the state to tornado activity.\\rq\\rq\\\\[5pt]\nWitness support: southeastern vulnerability. Full assertion support: the three-sentence source.};\n\\node[draw=black!35,fill=gray!4,rounded corners,anchor=north west,align=left,text width=7.35cm,inner sep=8pt] (context) at ([yshift=-.45cm]quote.south west) {\\textbf{Additional support from context}\\\\[5pt]\nThe second and third source sentences supply those additional claims. The source section identifies the state as Wyoming.};\n\\draw[->,thick] (source.south -| assertion.north) -- node[right,font=\\sffamily\\fontsize{9}{11}\\selectfont] {extraction} (assertion.north);\n\\draw[->,thick] (source.south -| quote.north) -- node[right,font=\\sffamily\\fontsize{9}{11}\\selectfont] {span location} (quote.north);\n\\end{tikzpicture}",
+      "result_ids": [
+        "mip-wyoming-source-context"
+      ],
+      "style": {
+        "preview_dpi": 180,
+        "font_size": 10
+      },
+      "render": {
+        "outputs": [
+          "figures/generated/mip_wyoming_witness.pdf",
+          "figures/generated/mip_wyoming_witness.png",
+          "figures/generated/mip_wyoming_witness.svg",
+          "figures/generated/mip_wyoming_witness.tikz"
+        ],
+        "renderer": "tikz-pdf",
+        "input_digest": "290c4c6ae340082babec141b3bada5dda2c74fbaaf4b13fed319b16f7b1b84eb",
+        "drawing_input_digest": "290c4c6ae340082babec141b3bada5dda2c74fbaaf4b13fed319b16f7b1b84eb",
+        "drawing_inputs": {
+          "spec": {
+            "id": "mip_wyoming_witness",
+            "kind": "tikz"
+          },
+          "tikz": "5df3567e35e203505d6666211b98d236ef7dd76c8fa2b901d904b7caa42a37cc"
+        },
+        "research_bindings": [
+          {
+            "id": "mip-wyoming-source-context",
+            "revision": "sha256:d7d715e4ca5f527a29ac15a2c015ccd9796f7535eeab7c62be7c4bb1d239f32d",
+            "currentness": "CURRENT"
+          }
+        ],
+        "presentation_metadata": {
+          "title": "Source context supports an extracted assertion",
+          "question": "Which extracted fields are supported by the located quote, and which require surrounding source context?",
+          "caption": "Source context for the extracted Wyoming climate assertion. The located witness is the first sentence of the three-sentence source unit, supporting southeastern vulnerability to tornadoes. The following two sentences supply the westward decline and small, brief character of tornadoes represented in the extracted fields. The Climate section identifies the state as Wyoming. The diagram separates exact span location from the contextual reading needed to support the full five-field assertion.",
+          "source_data": null,
+          "source": null
+        },
+        "style_version": "622eccd229617fd9f7e74fc06bebc3d598ba6b47b95ccab5b4972220b76952b4",
+        "style_profile": "profiles/visual_style.json",
+        "visual_review": "pending",
+        "output_digests": {
+          "figures/generated/mip_wyoming_witness.pdf": "d0442843ff40578f7d14500d2087c4ea4446fa0413437311c3305ac5e36fc6cb",
+          "figures/generated/mip_wyoming_witness.png": "f3d2cd31ea140434c5ae696517a65e5b9ae6d512fee23c5ed48ab365bec3eb2c",
+          "figures/generated/mip_wyoming_witness.svg": "49bab5d23cf2849771c6cd5e838e787c07938b2ec915676879e34e74cec30453",
+          "figures/generated/mip_wyoming_witness.tikz": "5df3567e35e203505d6666211b98d236ef7dd76c8fa2b901d904b7caa42a37cc"
+        }
+      }
+    },
+    {
+      "id": "mip_longmem_completed",
+      "title": "LongMem outcomes at two evidence allowances",
+      "question": "How does evidence allowance affect answer correctness and complete required-turn coverage?",
+      "caption": "Completed LongMem outcomes at 4000- and 8000-token evidence allowances on a shared improved index, with the same Claude Sonnet 5.5 low-effort reader and rules instruction. Answer correctness uses all 48 questions, including six abstention questions. Complete required-turn coverage counts positive-evidence questions for which every annotated required turn ID is delivered, out of 42 such questions. This endpoint measures source-turn presence. Relational and dense retrieval coincide on both endpoints in this shared-index setting. Hybrid retrieval reaches 40 and 44 correct answers, with complete positive-evidence turn coverage on 33 and 37 questions at the two allowances.",
+      "kind": "tikz",
+      "tikz": "\\begin{tikzpicture}[font=\\sffamily\\fontsize{10}{12}\\selectfont]\n\\node[anchor=north west,align=left] at (0,0) {\\begin{minipage}{16.8cm}\n{\\sffamily\\bfseries\\fontsize{13}{15}\\selectfont LongMem outcomes at two evidence allowances}\\\\[6pt]\n48 completed questions \\quad shared improved index \\quad Sonnet 5.5, low effort\\\\[12pt]\n\\renewcommand{\\arraystretch}{1.6}\n\\begin{tabular}{lrrrr}\n & \\multicolumn{2}{c}{Answer correctness} & \\multicolumn{2}{c}{Complete turn coverage}\\\\\nMethod & 4000 tokens & 8000 tokens & 4000 tokens & 8000 tokens\\\\ \\hline\nRelational retrieval & 44/48 & 45/48 & 41/42 & 41/42 \\\\\nDense retrieval & 44/48 & 45/48 & 41/42 & 41/42 \\\\\nHybrid retrieval & 40/48 & 44/48 & 33/42 & 37/42 \\\\\n\\hline\n\\end{tabular}\\\\[12pt]\n\\textbf{Correctness:} all 48 questions, including six abstention questions.\\\\[4pt]\n\\textbf{Turn coverage:} number of 42 positive-evidence questions for which\\\\\nall annotated required turn IDs are delivered.\\\\[6pt]\nToken values are evidence-context allowances.\n\\end{minipage}};\n\\end{tikzpicture}",
+      "result_ids": [
+        "mip-longmem-recovery-20261110"
+      ],
+      "style": {
+        "preview_dpi": 180,
+        "font_size": 10
+      },
+      "render": {
+        "outputs": [
+          "figures/generated/mip_longmem_completed.pdf",
+          "figures/generated/mip_longmem_completed.png",
+          "figures/generated/mip_longmem_completed.svg",
+          "figures/generated/mip_longmem_completed.tikz"
+        ],
+        "renderer": "tikz-pdf",
+        "input_digest": "76118bd23a6ec119a1f7be8d56a5a0ada2df36a195d2fac47f0cf1b3b160f5de",
+        "drawing_input_digest": "76118bd23a6ec119a1f7be8d56a5a0ada2df36a195d2fac47f0cf1b3b160f5de",
+        "drawing_inputs": {
+          "spec": {
+            "id": "mip_longmem_completed",
+            "kind": "tikz"
+          },
+          "tikz": "fdcdfa4d0606bff0d825698386c0f134aaff7ba57bcad5838786e2c34ffe9260"
+        },
+        "research_bindings": [
+          {
+            "id": "mip-longmem-recovery-20261110",
+            "revision": "sha256:96f8f6b0f392bb437d71f400845e920b4a8b12aff6c0080b081a2c543c952c4d",
+            "currentness": "CURRENT"
+          }
+        ],
+        "presentation_metadata": {
+          "title": "LongMem outcomes at two evidence allowances",
+          "question": "How does evidence allowance affect answer correctness and complete required-turn coverage?",
+          "caption": "Completed LongMem outcomes at 4000- and 8000-token evidence allowances on a shared improved index, with the same Claude Sonnet 5.5 low-effort reader and rules instruction. Answer correctness uses all 48 questions, including six abstention questions. Complete required-turn coverage counts positive-evidence questions for which every annotated required turn ID is delivered, out of 42 such questions. This endpoint measures source-turn presence. Relational and dense retrieval coincide on both endpoints in this shared-index setting. Hybrid retrieval reaches 40 and 44 correct answers, with complete positive-evidence turn coverage on 33 and 37 questions at the two allowances.",
+          "source_data": null,
+          "source": null
+        },
+        "style_version": "622eccd229617fd9f7e74fc06bebc3d598ba6b47b95ccab5b4972220b76952b4",
+        "style_profile": "profiles/visual_style.json",
+        "visual_review": "pending",
+        "output_digests": {
+          "figures/generated/mip_longmem_completed.pdf": "5b88b040a5d9ad130a402af893b83f2f9bffd949a16d7ad468aa5fc63afee80c",
+          "figures/generated/mip_longmem_completed.png": "1de8c3769e68c414722ab186fefce0f305e10242eab23f3b63284bb0db9ca491",
+          "figures/generated/mip_longmem_completed.svg": "ccfa57b4928b14685117d8bf9ce10c0ebad936c5c6babf0a471dd8a3b18ca21f",
+          "figures/generated/mip_longmem_completed.tikz": "fdcdfa4d0606bff0d825698386c0f134aaff7ba57bcad5838786e2c34ffe9260"
+        }
+      }
+    },
+    {
+      "id": "dynamic-memory-witnessed-update",
+      "kind": "tikz",
+      "title": "Source edits update conditional recall",
+      "question": "How do local source changes update P(B=0 | A=0) exactly? Entry: Reader knows a document can state a weighted group of observations and can read a conditional fraction. Introduce binary fields A,B and fixed order A then B. Exit: Reader can trace changed/added/removed source contributions to numerator/denominator and exact recalled fraction; knows source provenance, conditional support and incremental work are separate from full-rebuild verification.",
+      "caption": "Actual source statements and revised conditional recall in the controlled weighted-record corpus. Tuple order(A,B), selected population A=0 and recorded event B=0. Both n00=4 and n01=1 initially contribute. Replacing4by3 changes root mass4/9 and suffix3/4; adding a distinct batch gives1/2 and3/5, and removing OLD batch01 retracts only its contribution. The affected root/A0/leaf changes while A1suffix is reused. Exact witness spans and complete verification/cost details are in the paper's supporting appendix. This is explanatory repair from unchanged accepted data, not a new language extraction or benchmark result.",
+      "source": "evidence/DYNAMIC_MEMORY_REWRITE_2026-11-11/source-to-message-final.tikz",
+      "result_ids": [
+        "result-61e7f91f157fdc79f4c7"
+      ],
+      "render": {
+        "outputs": [
+          "figures/generated/dynamic-memory-witnessed-update.pdf",
+          "figures/generated/dynamic-memory-witnessed-update.png",
+          "figures/generated/dynamic-memory-witnessed-update.svg",
+          "figures/generated/dynamic-memory-witnessed-update.tikz"
+        ],
+        "renderer": "tikz-pdf",
+        "input_digest": "8208d5413e5aa9da274135c366c45ee4e35b36030af6fb5579d55c01112c0d53",
+        "drawing_input_digest": "8208d5413e5aa9da274135c366c45ee4e35b36030af6fb5579d55c01112c0d53",
+        "drawing_inputs": {
+          "spec": {
+            "id": "dynamic-memory-witnessed-update",
+            "kind": "tikz"
+          },
+          "tikz": "59204ffc945738b0bf2348a943e85eff891fcb91c8907845f6138a065eed3894"
+        },
+        "research_bindings": [
+          {
+            "id": "result-61e7f91f157fdc79f4c7",
+            "revision": "sha256:58e1f15e071243b3d5cb63b41e91a1164bb2ff6a78cabeff36b2e85202276f6a",
+            "currentness": "CURRENT"
+          }
+        ],
+        "presentation_metadata": {
+          "title": "Source edits update conditional recall",
+          "question": "How do local source changes update P(B=0 | A=0) exactly? Entry: Reader knows a document can state a weighted group of observations and can read a conditional fraction. Introduce binary fields A,B and fixed order A then B. Exit: Reader can trace changed/added/removed source contributions to numerator/denominator and exact recalled fraction; knows source provenance, conditional support and incremental work are separate from full-rebuild verification.",
+          "caption": "Actual source statements and revised conditional recall in the controlled weighted-record corpus. Tuple order(A,B), selected population A=0 and recorded event B=0. Both n00=4 and n01=1 initially contribute. Replacing4by3 changes root mass4/9 and suffix3/4; adding a distinct batch gives1/2 and3/5, and removing OLD batch01 retracts only its contribution. The affected root/A0/leaf changes while A1suffix is reused. Exact witness spans and complete verification/cost details are in the paper's supporting appendix. This is explanatory repair from unchanged accepted data, not a new language extraction or benchmark result.",
+          "source_data": null,
+          "source": "evidence/DYNAMIC_MEMORY_REWRITE_2026-11-11/source-to-message-final.tikz"
+        },
+        "style_version": "a52b7af5b0793b1803d7220d6682ba6564c38bb38650f7366410d709347f3364",
+        "style_profile": "profiles/visual_style.json",
+        "visual_review": "pending",
+        "output_digests": {
+          "figures/generated/dynamic-memory-witnessed-update.pdf": "fdcb7947209c369476322e8a975e8f5b88e34f6023cafc4ab837cc2a71b0a177",
+          "figures/generated/dynamic-memory-witnessed-update.png": "9ae8a3c868845795f9c02c5e849550b1af46a202b1874293d0f4eac0f5d7f65c",
+          "figures/generated/dynamic-memory-witnessed-update.svg": "d81f51997cd6dd3a3f35461b2f823daa154a90371198257790e38eaf766c81eb",
+          "figures/generated/dynamic-memory-witnessed-update.tikz": "59204ffc945738b0bf2348a943e85eff891fcb91c8907845f6138a065eed3894"
+        }
+      }
+    },
+    {
+      "id": "dm-source-recall-pipeline",
+      "title": "From a source observation to revisable recall",
+      "question": "What is retained, what is propagated, and which text interfaces are actually tested?",
+      "caption": "Construction and implemented study interfaces. Located source observations feed a joint empirical law, whose repeated conditional futures support exact recall and witnessed updates. The text study compiles source/date requirements and assembles original spans for a fixed reader. These are separately tested interfaces. Continuous reduced dynamics is an optional mathematical extension, not a stage used to produce the text scores.",
+      "kind": "tikz",
+      "tikz": "\\begin{tikzpicture}[font=\\rmfamily\\fontsize{9}{11}\\selectfont,box/.style={draw,rounded corners=2pt,align=center,text width=4.3cm,minimum height=1.85cm,inner sep=5pt},>=stealth]\n\\node[box] (src) at (0,0) {\\textbf{Located observation}\\\\Source revision and original span\\\\with admitted field values};\n\\node[box] (law) at (5.8,0) {\\textbf{Retained joint law}\\\\Source contributions, prefix counts\\\\and shared conditional futures};\n\\node[box] (ans) at (11.6,0) {\\textbf{Calculated recall}\\\\Apply field tests, propagate mass\\\\and normalise on positive support};\n\\draw[->,thick] (src)--node[above,font=\\fontsize{8}{10}\\selectfont]{admit}(law);\n\\draw[->,thick] (law)--node[above,font=\\fontsize{8}{10}\\selectfont]{query}(ans);\n\\draw[->,thick] (src.south) .. controls (0,-1.65) and (5.8,-1.65) .. node[below,font=\\fontsize{8}{10}\\selectfont]{correction: revise affected counts and messages}(law.south);\n\\node[box] (need) at (0,-3.4) {\\textbf{Text question}\\\\Compile explicit outlet/date needs\\\\from the question's words};\n\\node[box] (pack) at (5.8,-3.4) {\\textbf{Evidence assembly}\\\\Rank original windows in supports\\\\then merge and pack located spans};\n\\node[box] (read) at (11.6,-3.4) {\\textbf{Reader response}\\\\Answer from delivered passages\\\\score support and answer separately};\n\\draw[->,thick] (need)--node[above,font=\\fontsize{8}{10}\\selectfont]{support}(pack);\n\\draw[->,thick] (pack)--node[above,font=\\fontsize{8}{10}\\selectfont]{context}(read);\n\\end{tikzpicture}",
+      "result_ids": [
+        "result-61e7f91f157fdc79f4c7",
+        "mip-news-recovery-20261110"
+      ],
+      "render": {
+        "outputs": [
+          "figures/generated/dm-source-recall-pipeline.pdf",
+          "figures/generated/dm-source-recall-pipeline.png",
+          "figures/generated/dm-source-recall-pipeline.svg",
+          "figures/generated/dm-source-recall-pipeline.tikz"
+        ],
+        "renderer": "tikz-pdf",
+        "input_digest": "c51c2d5c9930808d9985951f25025517a49303c8676ad52dc1546a095ed30021",
+        "drawing_input_digest": "c51c2d5c9930808d9985951f25025517a49303c8676ad52dc1546a095ed30021",
+        "drawing_inputs": {
+          "spec": {
+            "id": "dm-source-recall-pipeline",
+            "kind": "tikz"
+          },
+          "tikz": "2c5935be0b5f156bf49026861c3c3285ec0c23e8950f3abf9372492adf1f08f8"
+        },
+        "research_bindings": [
+          {
+            "id": "result-61e7f91f157fdc79f4c7",
+            "revision": "sha256:58e1f15e071243b3d5cb63b41e91a1164bb2ff6a78cabeff36b2e85202276f6a",
+            "currentness": "CURRENT"
+          },
+          {
+            "id": "mip-news-recovery-20261110",
+            "revision": "sha256:c1c94981d11fb953597bc29bfc3fafa851ab16092affd919bf194c033acf176d",
+            "currentness": "CURRENT"
+          }
+        ],
+        "presentation_metadata": {
+          "title": "From a source observation to revisable recall",
+          "question": "What is retained, what is propagated, and which text interfaces are actually tested?",
+          "caption": "Construction and implemented study interfaces. Located source observations feed a joint empirical law, whose repeated conditional futures support exact recall and witnessed updates. The text study compiles source/date requirements and assembles original spans for a fixed reader. These are separately tested interfaces. Continuous reduced dynamics is an optional mathematical extension, not a stage used to produce the text scores.",
+          "source_data": null,
+          "source": null
+        },
+        "style_version": "a52b7af5b0793b1803d7220d6682ba6564c38bb38650f7366410d709347f3364",
+        "style_profile": "profiles/visual_style.json",
+        "visual_review": "pending",
+        "output_digests": {
+          "figures/generated/dm-source-recall-pipeline.pdf": "8fff67f7654369dd700fd763c8bd1637e9d50d7fdfd3e713ff2b552c223dad94",
+          "figures/generated/dm-source-recall-pipeline.png": "99b837d2ee2cefd195dadc132e956c9c54757aff42a37957c37d0f693e925040",
+          "figures/generated/dm-source-recall-pipeline.svg": "b9523eec8217e2588e77316a4c8da9f94267331b6ee73bc7750d6b1b7cbf9f69",
+          "figures/generated/dm-source-recall-pipeline.tikz": "2c5935be0b5f156bf49026861c3c3285ec0c23e8950f3abf9372492adf1f08f8"
+        }
+      }
+    }
+  ]
+}

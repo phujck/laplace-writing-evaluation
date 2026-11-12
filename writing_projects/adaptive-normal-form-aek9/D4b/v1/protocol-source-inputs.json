@@ -1,0 +1,1437 @@
+{
+  "schema": "anf.D4b-preregistered-protocol/1",
+  "status": "DECLARED_BEFORE_EXECUTION",
+  "work": "WORK-040fb19d62c44132809c9f0e0efcbd33",
+  "session": "WS-f989d076ce2a4ce0aab628e6712f800b",
+  "turn": "WT-c89b25f118e94ddca03762c1a8e12e28",
+  "question": "How do persistence, finite horizon and terminal target/metric change chain reachability and minimum input effort?",
+  "derivation_before_checks": {
+    "path": "D4b/v1/actuation-proof.md",
+    "sha256": "225d2638ac06b1ddd662b42c0ea17c68205db547720ea52f261a5dd6a3103d55"
+  },
+  "review_contract": {
+    "obligation": "independent-science-d4b",
+    "scope": "source",
+    "required": true,
+    "independent": true,
+    "inputs": [],
+    "meaning": "ALL handoff file pins, including code/input/raw/data/spec/media if any."
+  },
+  "source_pins": [
+    {
+      "repository": "laplace",
+      "path": "synthetics papers/adaptive-normal-form/scripts/R5_check.py",
+      "sha256": "8e74a837901bbf9149e857980ffa9b05c070e78e795b159fb8c62110dfd6a445",
+      "line_start": 1,
+      "line_end": 189,
+      "read_receipts": [
+        "READ-2c619b8916a94e67b7134419b7e5b08c"
+      ]
+    },
+    {
+      "repository": "laplace",
+      "path": "synthetics papers/adaptive-normal-form/workflow/state/derivations/R5_derivation.md",
+      "sha256": "3d011ee8e78ec8c51a2631c1d8a8ea0a5f645a1c6b3403166b12e4915b2de179",
+      "line_start": 1,
+      "line_end": 54,
+      "read_receipts": [
+        "READ-76267ddb23b64ee0ab2e8eb6113fa5b2"
+      ]
+    },
+    {
+      "repository": "laplace",
+      "path": "synthetics papers/adaptive-normal-form/workflow/state/results/R5_inertial_window.md",
+      "sha256": "e4c8c3b6f2ac37b2781bad493e41357f3fe82d8b3eccf707c3bb25e4fe6f93ee",
+      "line_start": 1,
+      "line_end": 59,
+      "read_receipts": [
+        "READ-66421ef61dda4039942545be48cd2367"
+      ]
+    },
+    {
+      "repository": "laplace",
+      "path": "synthetics papers/adaptive-normal-form/manuscript/tex/sections/07_window.tex",
+      "sha256": "2c43fb39c421b4d0020ed480379a6f5dbc3161cb043096328be4d0cae814baf8",
+      "line_start": 1,
+      "line_end": 181,
+      "read_receipts": [
+        "READ-4e96b978b116446db4df1ab5d87c20ec"
+      ]
+    },
+    {
+      "repository": "laplace",
+      "path": "writing_projects/adaptive-normal-form-aek9/D4a/v1/03-conditional-resource-proof.md",
+      "sha256": "ca2425f9d2df11cc6fab4d6dbbbad3e714374ccbeb2d4adb7cf30ba096ca3951",
+      "line_start": 1,
+      "line_end": 51,
+      "read_receipts": [
+        "READ-88c047f507aa4ea7b50ac05a25905fbe"
+      ]
+    },
+    {
+      "repository": "laplace",
+      "path": "writing_projects/adaptive-normal-form-aek9/D4a/v1/result-repair-report.json",
+      "sha256": "27a8e8776d0fb7cce90fbe1f12120ddcf6787fea56e7b83edbc3fa6eaa5b4e39",
+      "line_start": 1,
+      "line_end": 3592,
+      "read_receipts": [
+        "READ-7a23bceea7084444aec3c74341a0300c",
+        "READ-8e583af30fa14e25883b728af4c4aff5",
+        "READ-97c587a271da4380a0127200a5607275",
+        "READ-fe2bf019ec9f44b8a889a7ef2fd010c8",
+        "READ-0766fb6abe244dd6868948f0bc51bc65",
+        "READ-61dc5c41b42d416c9defe82d21900a56",
+        "READ-eaf41611085646a4b4e4e01243188804",
+        "READ-6f88aa38c3b5438f89e3e3cdc0fdb5d7",
+        "READ-1738d5550dac4ec69709f8c6fc090d39"
+      ]
+    },
+    {
+      "repository": "laplace",
+      "path": "synthetics papers/the-phases-of-hierarchy/manuscript/tex_v4/sections/D_cost_functions_inertia.tex",
+      "sha256": "3860f3b7bde9bdb6574a7185f07eca8fa0fa9300ebd3aac65a2629081e009200",
+      "line_start": 1,
+      "line_end": 78,
+      "read_receipts": [
+        "READ-1898923a3f494ae4aaa8b0127ec212fe"
+      ]
+    }
+  ],
+  "faithful_source_snapshot": {
+    "path": "synthetics papers/adaptive-normal-form/scripts/R5_check.py",
+    "sha256": "8e74a837901bbf9149e857980ffa9b05c070e78e795b159fb8c62110dfd6a445",
+    "offset": 1908,
+    "end_offset": 3385,
+    "units": "Unicode characters",
+    "text": "def cascade_A(L):\n    \"\"\"Reconfiguration cascade: c on the first subdiagonal, input at the base.\"\"\"\n    A = np.zeros((L, L))\n    for i in range(1, L):\n        A[i, i - 1] = C_ATT\n    return A\n\ndef top_reachability(L, H):\n    \"\"\"e_L^T W_H e_L via the controllability Gramian over horizon H.\"\"\"\n    A = cascade_A(L)\n    B = np.zeros((L, 1)); B[0, 0] = 1.0\n    W = np.zeros((L, L))\n    At = np.eye(L)               # At = A^t, starting at t=0\n    for _ in range(H):\n        W += At @ B @ B.T @ At.T  # accumulate A^t B B^T (A^T)^t\n        At = A @ At               # advance to A^{t+1}\n    return W[L - 1, L - 1]\n\ndef energy_via_control_law(L, H):\n    \"\"\"Independent route: min-energy reconfiguration via the controllability matrix\n    pseudo-inverse. E_min = || u* ||^2 for a unit displacement at the top.\"\"\"\n    A = cascade_A(L)\n    B = np.zeros((L, 1)); B[0, 0] = 1.0\n    # controllability matrix over horizon H: [A^{H-1}B, ..., AB, B]\n    cols = []\n    Ai = np.eye(L)\n    powers = [np.eye(L)]\n    for _ in range(1, H):\n        powers.append(powers[-1] @ A)\n    for t in range(H):\n        cols.append((powers[t] @ B).flatten())\n    Cmat = np.column_stack(cols)          # L x H\n    target = np.zeros(L); target[L - 1] = 1.0\n    # minimum-norm u with Cmat @ u = target; infeasible if target not in range\n    u, *_ = np.linalg.lstsq(Cmat, target, rcond=None)\n    residual = np.linalg.norm(Cmat @ u - target)\n    if residual > 1e-8:\n        return np.inf\n    return float(u @ u)\n\n",
+    "use": "Readable source-input mapping, not imported/executed original module with its plotting/sweep side effects. New general A=aI+cS reduces to exact cascade_A at a0,c=C_ATT,g1."
+  },
+  "model": {
+    "update": "x[t+1]=A x[t]+B u[t], A=aI+cS,B=g e1, top=ell x with ell=eL^T",
+    "convention": "u chronological t0..H-1, C=[A^(H-1)B,...,B]. Original R5 ascending-powers columns permute chronology but preserve norm/reachability.",
+    "metric": "J=u^T diag(weights)u. Uniform w unless explicitly overridden.",
+    "units": "Dimensionless illustrative state/input and chosen squared-input effort units, k/t update count. Not heat or physical calibration.",
+    "default_initial": "zero",
+    "output_vs_full": "top delta versus full delta eL is fair nested task. full ones is a separate vector with same top."
+  },
+  "cases": [
+    {
+      "id": "L2_a0_H1",
+      "L": 2,
+      "a": "0",
+      "c": "1/2",
+      "g": "1",
+      "H": 1,
+      "w": "1",
+      "x0": [
+        "0",
+        "0"
+      ],
+      "tasks": [
+        {
+          "id": "top",
+          "kind": "output",
+          "delta": "1"
+        },
+        {
+          "id": "apex",
+          "kind": "full",
+          "target": [
+            "0",
+            "1"
+          ]
+        },
+        {
+          "id": "ones",
+          "kind": "full",
+          "target": [
+            "1",
+            "1"
+          ],
+          "note": "Different full-vector task, not the same pure-apex target."
+        }
+      ]
+    },
+    {
+      "id": "L2_a0_H2",
+      "L": 2,
+      "a": "0",
+      "c": "1/2",
+      "g": "1",
+      "H": 2,
+      "w": "1",
+      "x0": [
+        "0",
+        "0"
+      ],
+      "tasks": [
+        {
+          "id": "top",
+          "kind": "output",
+          "delta": "1"
+        },
+        {
+          "id": "apex",
+          "kind": "full",
+          "target": [
+            "0",
+            "1"
+          ]
+        },
+        {
+          "id": "ones",
+          "kind": "full",
+          "target": [
+            "1",
+            "1"
+          ],
+          "note": "Different full-vector task, not the same pure-apex target."
+        }
+      ]
+    },
+    {
+      "id": "L2_a0_H4",
+      "L": 2,
+      "a": "0",
+      "c": "1/2",
+      "g": "1",
+      "H": 4,
+      "w": "1",
+      "x0": [
+        "0",
+        "0"
+      ],
+      "tasks": [
+        {
+          "id": "top",
+          "kind": "output",
+          "delta": "1"
+        },
+        {
+          "id": "apex",
+          "kind": "full",
+          "target": [
+            "0",
+            "1"
+          ]
+        },
+        {
+          "id": "ones",
+          "kind": "full",
+          "target": [
+            "1",
+            "1"
+          ],
+          "note": "Different full-vector task, not the same pure-apex target."
+        }
+      ]
+    },
+    {
+      "id": "L2_a1p2_H1",
+      "L": 2,
+      "a": "1/2",
+      "c": "1/2",
+      "g": "1",
+      "H": 1,
+      "w": "1",
+      "x0": [
+        "0",
+        "0"
+      ],
+      "tasks": [
+        {
+          "id": "top",
+          "kind": "output",
+          "delta": "1"
+        },
+        {
+          "id": "apex",
+          "kind": "full",
+          "target": [
+            "0",
+            "1"
+          ]
+        },
+        {
+          "id": "ones",
+          "kind": "full",
+          "target": [
+            "1",
+            "1"
+          ],
+          "note": "Different full-vector task, not the same pure-apex target."
+        }
+      ]
+    },
+    {
+      "id": "L2_a1p2_H2",
+      "L": 2,
+      "a": "1/2",
+      "c": "1/2",
+      "g": "1",
+      "H": 2,
+      "w": "1",
+      "x0": [
+        "0",
+        "0"
+      ],
+      "tasks": [
+        {
+          "id": "top",
+          "kind": "output",
+          "delta": "1"
+        },
+        {
+          "id": "apex",
+          "kind": "full",
+          "target": [
+            "0",
+            "1"
+          ]
+        },
+        {
+          "id": "ones",
+          "kind": "full",
+          "target": [
+            "1",
+            "1"
+          ],
+          "note": "Different full-vector task, not the same pure-apex target."
+        }
+      ]
+    },
+    {
+      "id": "L2_a1p2_H4",
+      "L": 2,
+      "a": "1/2",
+      "c": "1/2",
+      "g": "1",
+      "H": 4,
+      "w": "1",
+      "x0": [
+        "0",
+        "0"
+      ],
+      "tasks": [
+        {
+          "id": "top",
+          "kind": "output",
+          "delta": "1"
+        },
+        {
+          "id": "apex",
+          "kind": "full",
+          "target": [
+            "0",
+            "1"
+          ]
+        },
+        {
+          "id": "ones",
+          "kind": "full",
+          "target": [
+            "1",
+            "1"
+          ],
+          "note": "Different full-vector task, not the same pure-apex target."
+        }
+      ]
+    },
+    {
+      "id": "L2_a1_H1",
+      "L": 2,
+      "a": "1",
+      "c": "1/2",
+      "g": "1",
+      "H": 1,
+      "w": "1",
+      "x0": [
+        "0",
+        "0"
+      ],
+      "tasks": [
+        {
+          "id": "top",
+          "kind": "output",
+          "delta": "1"
+        },
+        {
+          "id": "apex",
+          "kind": "full",
+          "target": [
+            "0",
+            "1"
+          ]
+        },
+        {
+          "id": "ones",
+          "kind": "full",
+          "target": [
+            "1",
+            "1"
+          ],
+          "note": "Different full-vector task, not the same pure-apex target."
+        },
+        {
+          "id": "top_zero",
+          "kind": "output",
+          "delta": "0"
+        },
+        {
+          "id": "full_zero",
+          "kind": "full",
+          "target": [
+            "0",
+            "0"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "L2_a1_H2",
+      "L": 2,
+      "a": "1",
+      "c": "1/2",
+      "g": "1",
+      "H": 2,
+      "w": "1",
+      "x0": [
+        "0",
+        "0"
+      ],
+      "tasks": [
+        {
+          "id": "top",
+          "kind": "output",
+          "delta": "1"
+        },
+        {
+          "id": "apex",
+          "kind": "full",
+          "target": [
+            "0",
+            "1"
+          ]
+        },
+        {
+          "id": "ones",
+          "kind": "full",
+          "target": [
+            "1",
+            "1"
+          ],
+          "note": "Different full-vector task, not the same pure-apex target."
+        },
+        {
+          "id": "nonstrict_target",
+          "kind": "full",
+          "target": [
+            "6",
+            "1"
+          ],
+          "note": "Different vector designed analytically to test equality of full-state effort at H2/H3."
+        }
+      ]
+    },
+    {
+      "id": "L2_a1_H4",
+      "L": 2,
+      "a": "1",
+      "c": "1/2",
+      "g": "1",
+      "H": 4,
+      "w": "1",
+      "x0": [
+        "0",
+        "0"
+      ],
+      "tasks": [
+        {
+          "id": "top",
+          "kind": "output",
+          "delta": "1"
+        },
+        {
+          "id": "apex",
+          "kind": "full",
+          "target": [
+            "0",
+            "1"
+          ]
+        },
+        {
+          "id": "ones",
+          "kind": "full",
+          "target": [
+            "1",
+            "1"
+          ],
+          "note": "Different full-vector task, not the same pure-apex target."
+        }
+      ]
+    },
+    {
+      "id": "L3_a0_H2",
+      "L": 3,
+      "a": "0",
+      "c": "1/2",
+      "g": "1",
+      "H": 2,
+      "w": "1",
+      "x0": [
+        "0",
+        "0",
+        "0"
+      ],
+      "tasks": [
+        {
+          "id": "top",
+          "kind": "output",
+          "delta": "1"
+        },
+        {
+          "id": "apex",
+          "kind": "full",
+          "target": [
+            "0",
+            "0",
+            "1"
+          ]
+        },
+        {
+          "id": "ones",
+          "kind": "full",
+          "target": [
+            "1",
+            "1",
+            "1"
+          ],
+          "note": "Different full-vector task, not the same pure-apex target."
+        }
+      ]
+    },
+    {
+      "id": "L3_a0_H3",
+      "L": 3,
+      "a": "0",
+      "c": "1/2",
+      "g": "1",
+      "H": 3,
+      "w": "1",
+      "x0": [
+        "0",
+        "0",
+        "0"
+      ],
+      "tasks": [
+        {
+          "id": "top",
+          "kind": "output",
+          "delta": "1"
+        },
+        {
+          "id": "apex",
+          "kind": "full",
+          "target": [
+            "0",
+            "0",
+            "1"
+          ]
+        },
+        {
+          "id": "ones",
+          "kind": "full",
+          "target": [
+            "1",
+            "1",
+            "1"
+          ],
+          "note": "Different full-vector task, not the same pure-apex target."
+        }
+      ]
+    },
+    {
+      "id": "L3_a0_H6",
+      "L": 3,
+      "a": "0",
+      "c": "1/2",
+      "g": "1",
+      "H": 6,
+      "w": "1",
+      "x0": [
+        "0",
+        "0",
+        "0"
+      ],
+      "tasks": [
+        {
+          "id": "top",
+          "kind": "output",
+          "delta": "1"
+        },
+        {
+          "id": "apex",
+          "kind": "full",
+          "target": [
+            "0",
+            "0",
+            "1"
+          ]
+        },
+        {
+          "id": "ones",
+          "kind": "full",
+          "target": [
+            "1",
+            "1",
+            "1"
+          ],
+          "note": "Different full-vector task, not the same pure-apex target."
+        }
+      ]
+    },
+    {
+      "id": "L3_a1p2_H2",
+      "L": 3,
+      "a": "1/2",
+      "c": "1/2",
+      "g": "1",
+      "H": 2,
+      "w": "1",
+      "x0": [
+        "0",
+        "0",
+        "0"
+      ],
+      "tasks": [
+        {
+          "id": "top",
+          "kind": "output",
+          "delta": "1"
+        },
+        {
+          "id": "apex",
+          "kind": "full",
+          "target": [
+            "0",
+            "0",
+            "1"
+          ]
+        },
+        {
+          "id": "ones",
+          "kind": "full",
+          "target": [
+            "1",
+            "1",
+            "1"
+          ],
+          "note": "Different full-vector task, not the same pure-apex target."
+        }
+      ]
+    },
+    {
+      "id": "L3_a1p2_H3",
+      "L": 3,
+      "a": "1/2",
+      "c": "1/2",
+      "g": "1",
+      "H": 3,
+      "w": "1",
+      "x0": [
+        "0",
+        "0",
+        "0"
+      ],
+      "tasks": [
+        {
+          "id": "top",
+          "kind": "output",
+          "delta": "1"
+        },
+        {
+          "id": "apex",
+          "kind": "full",
+          "target": [
+            "0",
+            "0",
+            "1"
+          ]
+        },
+        {
+          "id": "ones",
+          "kind": "full",
+          "target": [
+            "1",
+            "1",
+            "1"
+          ],
+          "note": "Different full-vector task, not the same pure-apex target."
+        }
+      ]
+    },
+    {
+      "id": "L3_a1p2_H6",
+      "L": 3,
+      "a": "1/2",
+      "c": "1/2",
+      "g": "1",
+      "H": 6,
+      "w": "1",
+      "x0": [
+        "0",
+        "0",
+        "0"
+      ],
+      "tasks": [
+        {
+          "id": "top",
+          "kind": "output",
+          "delta": "1"
+        },
+        {
+          "id": "apex",
+          "kind": "full",
+          "target": [
+            "0",
+            "0",
+            "1"
+          ]
+        },
+        {
+          "id": "ones",
+          "kind": "full",
+          "target": [
+            "1",
+            "1",
+            "1"
+          ],
+          "note": "Different full-vector task, not the same pure-apex target."
+        }
+      ]
+    },
+    {
+      "id": "L3_a1_H2",
+      "L": 3,
+      "a": "1",
+      "c": "1/2",
+      "g": "1",
+      "H": 2,
+      "w": "1",
+      "x0": [
+        "0",
+        "0",
+        "0"
+      ],
+      "tasks": [
+        {
+          "id": "top",
+          "kind": "output",
+          "delta": "1"
+        },
+        {
+          "id": "apex",
+          "kind": "full",
+          "target": [
+            "0",
+            "0",
+            "1"
+          ]
+        },
+        {
+          "id": "ones",
+          "kind": "full",
+          "target": [
+            "1",
+            "1",
+            "1"
+          ],
+          "note": "Different full-vector task, not the same pure-apex target."
+        }
+      ]
+    },
+    {
+      "id": "L3_a1_H3",
+      "L": 3,
+      "a": "1",
+      "c": "1/2",
+      "g": "1",
+      "H": 3,
+      "w": "1",
+      "x0": [
+        "0",
+        "0",
+        "0"
+      ],
+      "tasks": [
+        {
+          "id": "top",
+          "kind": "output",
+          "delta": "1"
+        },
+        {
+          "id": "apex",
+          "kind": "full",
+          "target": [
+            "0",
+            "0",
+            "1"
+          ]
+        },
+        {
+          "id": "ones",
+          "kind": "full",
+          "target": [
+            "1",
+            "1",
+            "1"
+          ],
+          "note": "Different full-vector task, not the same pure-apex target."
+        }
+      ]
+    },
+    {
+      "id": "L3_a1_H6",
+      "L": 3,
+      "a": "1",
+      "c": "1/2",
+      "g": "1",
+      "H": 6,
+      "w": "1",
+      "x0": [
+        "0",
+        "0",
+        "0"
+      ],
+      "tasks": [
+        {
+          "id": "top",
+          "kind": "output",
+          "delta": "1"
+        },
+        {
+          "id": "apex",
+          "kind": "full",
+          "target": [
+            "0",
+            "0",
+            "1"
+          ]
+        },
+        {
+          "id": "ones",
+          "kind": "full",
+          "target": [
+            "1",
+            "1",
+            "1"
+          ],
+          "note": "Different full-vector task, not the same pure-apex target."
+        }
+      ]
+    },
+    {
+      "id": "L2_a1_H3",
+      "L": 2,
+      "a": "1",
+      "c": "1/2",
+      "g": "1",
+      "H": 3,
+      "w": "1",
+      "x0": [
+        "0",
+        "0"
+      ],
+      "tasks": [
+        {
+          "id": "top",
+          "kind": "output",
+          "delta": "1"
+        },
+        {
+          "id": "apex",
+          "kind": "full",
+          "target": [
+            "0",
+            "1"
+          ]
+        },
+        {
+          "id": "ones",
+          "kind": "full",
+          "target": [
+            "1",
+            "1"
+          ],
+          "note": "Different full-vector task, not the same pure-apex target."
+        },
+        {
+          "id": "nonstrict_target",
+          "kind": "full",
+          "target": [
+            "6",
+            "1"
+          ],
+          "note": "Different vector designed analytically to test equality of full-state effort at H2/H3."
+        }
+      ]
+    },
+    {
+      "id": "H0_L2",
+      "L": 2,
+      "a": "1",
+      "c": "1/2",
+      "g": "1",
+      "H": 0,
+      "w": "1",
+      "x0": [
+        "0",
+        "0"
+      ],
+      "tasks": [
+        {
+          "id": "top",
+          "kind": "output",
+          "delta": "1"
+        },
+        {
+          "id": "apex",
+          "kind": "full",
+          "target": [
+            "0",
+            "1"
+          ]
+        },
+        {
+          "id": "ones",
+          "kind": "full",
+          "target": [
+            "1",
+            "1"
+          ],
+          "note": "Different full-vector task, not the same pure-apex target."
+        },
+        {
+          "id": "top_zero",
+          "kind": "output",
+          "delta": "0"
+        },
+        {
+          "id": "full_zero",
+          "kind": "full",
+          "target": [
+            "0",
+            "0"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "H0_L1",
+      "L": 1,
+      "a": "0",
+      "c": "1/2",
+      "g": "1",
+      "H": 0,
+      "w": "1",
+      "x0": [
+        "0"
+      ],
+      "tasks": [
+        {
+          "id": "top",
+          "kind": "output",
+          "delta": "1"
+        },
+        {
+          "id": "apex",
+          "kind": "full",
+          "target": [
+            "1"
+          ]
+        },
+        {
+          "id": "ones",
+          "kind": "full",
+          "target": [
+            "1"
+          ],
+          "note": "Different full-vector task, not the same pure-apex target."
+        },
+        {
+          "id": "top_zero",
+          "kind": "output",
+          "delta": "0"
+        },
+        {
+          "id": "full_zero",
+          "kind": "full",
+          "target": [
+            "0"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "H1_L1",
+      "L": 1,
+      "a": "0",
+      "c": "1/2",
+      "g": "1",
+      "H": 1,
+      "w": "1",
+      "x0": [
+        "0"
+      ],
+      "tasks": [
+        {
+          "id": "top",
+          "kind": "output",
+          "delta": "1"
+        },
+        {
+          "id": "apex",
+          "kind": "full",
+          "target": [
+            "1"
+          ]
+        },
+        {
+          "id": "ones",
+          "kind": "full",
+          "target": [
+            "1"
+          ],
+          "note": "Different full-vector task, not the same pure-apex target."
+        },
+        {
+          "id": "top_zero",
+          "kind": "output",
+          "delta": "0"
+        },
+        {
+          "id": "full_zero",
+          "kind": "full",
+          "target": [
+            "0"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "g_zero",
+      "L": 2,
+      "a": "1",
+      "c": "1/2",
+      "g": "0",
+      "H": 2,
+      "w": "1",
+      "x0": [
+        "0",
+        "0"
+      ],
+      "tasks": [
+        {
+          "id": "top",
+          "kind": "output",
+          "delta": "1"
+        },
+        {
+          "id": "apex",
+          "kind": "full",
+          "target": [
+            "0",
+            "1"
+          ]
+        },
+        {
+          "id": "ones",
+          "kind": "full",
+          "target": [
+            "1",
+            "1"
+          ],
+          "note": "Different full-vector task, not the same pure-apex target."
+        },
+        {
+          "id": "top_zero",
+          "kind": "output",
+          "delta": "0"
+        },
+        {
+          "id": "full_zero",
+          "kind": "full",
+          "target": [
+            "0",
+            "0"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "c_zero",
+      "L": 2,
+      "a": "1",
+      "c": "0",
+      "g": "1",
+      "H": 2,
+      "w": "1",
+      "x0": [
+        "0",
+        "0"
+      ],
+      "tasks": [
+        {
+          "id": "top",
+          "kind": "output",
+          "delta": "1"
+        },
+        {
+          "id": "apex",
+          "kind": "full",
+          "target": [
+            "0",
+            "1"
+          ]
+        },
+        {
+          "id": "ones",
+          "kind": "full",
+          "target": [
+            "1",
+            "1"
+          ],
+          "note": "Different full-vector task, not the same pure-apex target."
+        },
+        {
+          "id": "top_zero",
+          "kind": "output",
+          "delta": "0"
+        },
+        {
+          "id": "full_zero",
+          "kind": "full",
+          "target": [
+            "0",
+            "0"
+          ]
+        },
+        {
+          "id": "base_only",
+          "kind": "full",
+          "target": [
+            "1",
+            "0"
+          ]
+        }
+      ]
+    },
+    {
+      "L": 2,
+      "a": "1",
+      "c": "1/2",
+      "g": "1",
+      "H": 3,
+      "w": "1",
+      "x0": [
+        "0",
+        "0"
+      ],
+      "id": "target_times2",
+      "tasks": [
+        {
+          "id": "top",
+          "kind": "output",
+          "delta": "2"
+        },
+        {
+          "id": "apex",
+          "kind": "full",
+          "target": [
+            "0",
+            "2"
+          ]
+        },
+        {
+          "id": "ones",
+          "kind": "full",
+          "target": [
+            "2",
+            "2"
+          ],
+          "note": "Different full-vector task, not the same pure-apex target."
+        }
+      ]
+    },
+    {
+      "L": 2,
+      "a": "1",
+      "c": "1/2",
+      "g": "2",
+      "H": 3,
+      "w": "1",
+      "x0": [
+        "0",
+        "0"
+      ],
+      "id": "gain_times2",
+      "tasks": [
+        {
+          "id": "top",
+          "kind": "output",
+          "delta": "1"
+        },
+        {
+          "id": "apex",
+          "kind": "full",
+          "target": [
+            "0",
+            "1"
+          ]
+        },
+        {
+          "id": "ones",
+          "kind": "full",
+          "target": [
+            "1",
+            "1"
+          ],
+          "note": "Different full-vector task, not the same pure-apex target."
+        }
+      ]
+    },
+    {
+      "L": 2,
+      "a": "1",
+      "c": "1/2",
+      "g": "1",
+      "H": 3,
+      "w": "3",
+      "x0": [
+        "0",
+        "0"
+      ],
+      "id": "weight_times3",
+      "tasks": [
+        {
+          "id": "top",
+          "kind": "output",
+          "delta": "1"
+        },
+        {
+          "id": "apex",
+          "kind": "full",
+          "target": [
+            "0",
+            "1"
+          ]
+        },
+        {
+          "id": "ones",
+          "kind": "full",
+          "target": [
+            "1",
+            "1"
+          ],
+          "note": "Different full-vector task, not the same pure-apex target."
+        }
+      ]
+    },
+    {
+      "L": 2,
+      "a": "1",
+      "c": "1/2",
+      "g": "1",
+      "H": 3,
+      "w": "1",
+      "x0": [
+        "0",
+        "0"
+      ],
+      "id": "state_units_T23",
+      "state_scale": [
+        "2",
+        "3"
+      ],
+      "tasks": [
+        {
+          "id": "top",
+          "kind": "output",
+          "delta": "1"
+        },
+        {
+          "id": "apex",
+          "kind": "full",
+          "target": [
+            "0",
+            "1"
+          ]
+        },
+        {
+          "id": "ones",
+          "kind": "full",
+          "target": [
+            "1",
+            "1"
+          ],
+          "note": "Different full-vector task, not the same pure-apex target."
+        }
+      ],
+      "note": "Targets and x0 transformed by T, output ell by T^-1. Same physical task."
+    },
+    {
+      "L": 2,
+      "a": "1",
+      "c": "1/2",
+      "g": "1/2",
+      "H": 3,
+      "w": "1/4",
+      "x0": [
+        "0",
+        "0"
+      ],
+      "id": "input_units_kappa2",
+      "tasks": [
+        {
+          "id": "top",
+          "kind": "output",
+          "delta": "1"
+        },
+        {
+          "id": "apex",
+          "kind": "full",
+          "target": [
+            "0",
+            "1"
+          ]
+        },
+        {
+          "id": "ones",
+          "kind": "full",
+          "target": [
+            "1",
+            "1"
+          ],
+          "note": "Different full-vector task, not the same pure-apex target."
+        }
+      ],
+      "note": "u_tilde=2u, g_tilde=g/2, w_tilde=w/4. Same effort task."
+    },
+    {
+      "L": 2,
+      "a": "1",
+      "c": "1/2",
+      "g": "1",
+      "H": 3,
+      "w": "1",
+      "x0": [
+        "0",
+        "0"
+      ],
+      "id": "time_weights_123",
+      "weights": [
+        "1",
+        "2",
+        "3"
+      ],
+      "tasks": [
+        {
+          "id": "top",
+          "kind": "output",
+          "delta": "1"
+        },
+        {
+          "id": "apex",
+          "kind": "full",
+          "target": [
+            "0",
+            "1"
+          ]
+        },
+        {
+          "id": "ones",
+          "kind": "full",
+          "target": [
+            "1",
+            "1"
+          ],
+          "note": "Different full-vector task, not the same pure-apex target."
+        }
+      ],
+      "note": "Different positive metric, no uniform-weight horizon theorem asserted."
+    },
+    {
+      "L": 2,
+      "a": "1",
+      "c": "1/2",
+      "g": "1",
+      "H": 2,
+      "w": "1",
+      "x0": [
+        "1",
+        "0"
+      ],
+      "id": "nonzero_x0_H2",
+      "tasks": [
+        {
+          "id": "top",
+          "kind": "output",
+          "delta": "1"
+        },
+        {
+          "id": "apex",
+          "kind": "full",
+          "target": [
+            "0",
+            "1"
+          ]
+        },
+        {
+          "id": "ones",
+          "kind": "full",
+          "target": [
+            "1",
+            "1"
+          ],
+          "note": "Different full-vector task, not the same pure-apex target."
+        }
+      ],
+      "note": "q=xstar-A^H x0, no zero-initial horizon monotonicity inference."
+    }
+  ],
+  "case_count": 31,
+  "task_count": 108,
+  "budget": {
+    "one_initial_run": true,
+    "max_case_count": 31,
+    "max_task_solves": 120,
+    "max_L": 3,
+    "max_H": 6,
+    "timeout_seconds": 20,
+    "no_adaptive_cases": true,
+    "no_population_or_MonteCarlo_or_model_reader": true,
+    "additional_runs": "Only separately declared amendment for an actual failed check/producer defect, not search for a desired result."
+  },
+  "methods": {
+    "analytic_reference": "Impulse binomial formula and rank min(H,L) when g*c nonzero. Exact Fraction rational elimination independently checks reachability/rank and weighted reduced-row Gramian optimum for every task.",
+    "numeric": "Direct matrix powers/chronological controllability, weighted SVD minimum-norm, weighted Gramian pseudoinverse after exact reachable test, direct forward simulation, nullspace/KKT stationarity.",
+    "data": "Every A,B,ell,C,W,singular value,target/defect, optimum controls, all forward states, exact rational references and residuals retained. One CSV of all task summaries, full JSON raw result. No decimation/clipping or binary dataset. No figure/media rendering."
+  },
+  "tolerances": {
+    "float_rank_relative": "1e-12 times largest singular value",
+    "numeric_residual": 1e-9,
+    "reference_effort_relative": 1e-9,
+    "impulse_absolute": 1e-12,
+    "stationarity": 1e-9
+  },
+  "predeclared_predictions": [
+    "Nonzero top defect unreachable forH<L, zero defect reachable with zero effort includingH0. Singular pseudoinverse quadratic alone can misleadingly be0.",
+    "Shift pure-apex full and output costs coincide H>=L, extra horizon gives no benefit. Other full vectors cost additional effort.",
+    "Persistent top-only effort strictly decreases afterL under zero-initial/uniform metric/nonzero target assumptions. Full effort nonincreasing, not always strict.",
+    "L2a1c1/2g=w1: output/apex costsH2:4/8,H3:4/5 and2,H4:2/7 and4/5. Target(6,1) full cost20 atH2 andH3.",
+    "Target*2 cost*4, gain*2 cost/4, uniformweight*3 cost*3. Consistent state/input reparameterisation preserves effort.",
+    "Timeweights are a different metric and nonzero initial state changes required defect. No physical calibration/static attenuation coupling is inferred."
+  ],
+  "failure_policy": "Retain per-task/case exceptions and all assertion failures. UNREACHABLE is an expected mathematical finding with min_effort=null, extended value +infinity, not a passing zero-cost pinv solution. Failed consistency checks remain failures. No oracle tuned after output.",
+  "scientific_scope": "Finite small-matrix consistency of an author proof, formal NOT_CHECKED and independent science pending. No maintenance/global dynamics/physical hierarchy/thermodynamics or family acceptance."
+}

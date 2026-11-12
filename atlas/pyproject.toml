@@ -1,0 +1,49 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "atlas"
+version = "0.1.0"
+description = "The record's navigation layer: immutable snapshots, span segmentation, versioned projections. Sealed from the laplace engine."
+readme = "README.md"
+requires-python = ">=3.10"
+authors = [{name = "Gerard McCaul"}]
+# ONE runtime dependency, deliberately. Phase 1 uses no third-party code at all; numpy is
+# declared because the projection layer (Phase 4) is numeric and nothing else will be added
+# without a measurement saying why. pyyaml in particular is NOT here - see structured.py for
+# what the YAML segmenter does instead and what that bound costs.
+dependencies = [
+    "numpy>=1.24.0",
+]
+
+[project.optional-dependencies]
+encoders = ["fastembed>=0.5"]   # the real bge-small/ONNX arm; never needed by the unit suite
+# The bench's figures, and nothing else. matplotlib is NOT a runtime dependency: atlas.bench
+# imports it inside atlas/bench/figures.py:draw, so the unit suite, the runner and the summary
+# all work without it and figures are skipped by name rather than faked.
+bench = ["matplotlib>=3.7"]
+# Supported corpus-as-a-state subset. Code ships in this wheel; dependencies are
+# explicit optional capabilities. These lower bounds name the observed runtime,
+# not an assertion that arbitrary devices/builds or future versions are valid.
+# The plan-shape/context modules need none of these extras. gpu_budget needs Torch
+# even for its pure integer calculation. Kernels require Triton; spectral Atlas
+# proposal paths require an explicitly selected CUDA12 CuPy build.
+reconstruction = ["torch>=2.11,<3", "regex>=2026.9.10"]
+reconstruction-kernels = ["torch>=2.11,<3", "triton>=3.6,<4"]
+reconstruction-spectral = ["torch>=2.11,<3", "cupy-cuda12x>=14.2,<15"]
+
+# The authoritative Atlas source lives in the Writing source home, src/atlas beside src/laplace (core
+# consolidation R2, 2026-10-19). This distribution reads it from there; the laplace-engine distribution
+# includes only laplace*, so no Atlas file ships from two wheels and no sibling checkout is consulted.
+[tool.setuptools.packages.find]
+where = ["../src"]
+include = ["atlas*"]
+
+[tool.ruff]
+target-version = "py310"
+line-length = 100
+
+[tool.ruff.lint]
+select = ["E", "F", "W", "I", "B"]
+ignore = ["E501", "B008"]

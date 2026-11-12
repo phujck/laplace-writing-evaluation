@@ -1,0 +1,811 @@
+{
+  "placed": [
+    {
+      "asset_id": "figure:mip_news_matched",
+      "label": "fig:mip_news_matched",
+      "artefact": "figures/generated/mip_news_matched.pdf",
+      "generator": "manuscript_spec.json",
+      "spec_id": "mip_news_matched",
+      "promise": "How do three retrieval routes compare under common evidence delivery and answer reading?",
+      "matched": true,
+      "caption": "Normalised exact matches on 172 previously examined MultiHop-RAG questions. All three retrieval routes use labelled two-sentence windows, cosine plus 0.5 normalised BM25, article-ordered span delivery within 2000 cl100k tokens and the same Claude Sonnet 5.5 low-effort reader with answer-form rules. Facet-conditioned retrieval ranks within exact outlet/date supports and merges facets round-robin. RAG uses MMR relevance coefficient 0.7 over 200 candidates. RAPTOR searches 1747 summary nodes plus labelled windows without MMR. Answer rules were developed using failures from all 172 questions. The matched observation is a tie at 152 for facet-conditioned retrieval and RAG, with RAPTOR at 148.",
+      "result_ids": [
+        "mip-news-recovery-20261110"
+      ],
+      "placed_at": null,
+      "research_binding": {
+        "status": "CURRENT",
+        "bindings": [
+          {
+            "id": "mip-news-recovery-20261110",
+            "revision": "sha256:c1c94981d11fb953597bc29bfc3fafa851ab16092affd919bf194c033acf176d",
+            "currentness": "CURRENT",
+            "reason": "all explicitly declared dependencies match their recorded identities",
+            "dependencies": [
+              {
+                "record_id": "mip-news-recovery-20261110",
+                "dependencies": [
+                  {
+                    "path": "evidence/MIP_CANDIDATE_2026-11-11/adopted-banked-results.json",
+                    "status": "PRESENT",
+                    "bytes": 19126,
+                    "sha256": "7b51f767487d32dfc2e17d83d7f130200583a0bffe4c8fb699d8bbaf5a7e002f"
+                  }
+                ],
+                "status": "CURRENT",
+                "reason": "all pinned dependencies match",
+                "coverage": {
+                  "snapshot_schema": "laplace.research-dependencies/3",
+                  "newly_untracked": [],
+                  "changed_pins": [],
+                  "removed_pins": [],
+                  "retired_derived_presentation_pins": [],
+                  "historical_verification": "PINNED_DEPENDENCIES_ONLY"
+                }
+              }
+            ]
+          }
+        ],
+        "gaps": []
+      },
+      "render": {
+        "outputs": [
+          "figures/generated/mip_news_matched.pdf",
+          "figures/generated/mip_news_matched.png",
+          "figures/generated/mip_news_matched.svg",
+          "figures/generated/mip_news_matched.tikz"
+        ],
+        "renderer": "tikz-pdf",
+        "input_digest": "5ae6eab58cf6aabd44e49b2cbdbb6f6acb83531c778972aba391a15c8d7a40c3",
+        "drawing_input_digest": "5ae6eab58cf6aabd44e49b2cbdbb6f6acb83531c778972aba391a15c8d7a40c3",
+        "drawing_inputs": {
+          "spec": {
+            "id": "mip_news_matched",
+            "kind": "tikz"
+          },
+          "tikz": "659bd08e39a73cc1b14decab5ac7fce526c90de27bc186b111a33c2624763100"
+        },
+        "research_bindings": [
+          {
+            "id": "mip-news-recovery-20261110",
+            "revision": "sha256:c1c94981d11fb953597bc29bfc3fafa851ab16092affd919bf194c033acf176d",
+            "currentness": "CURRENT"
+          }
+        ],
+        "presentation_metadata": {
+          "title": "News answers under matched delivery",
+          "question": "How do three retrieval routes compare under common evidence delivery and answer reading?",
+          "caption": "Normalised exact matches on 172 previously examined MultiHop-RAG questions. All three retrieval routes use labelled two-sentence windows, cosine plus 0.5 normalised BM25, article-ordered span delivery within 2000 cl100k tokens and the same Claude Sonnet 5.5 low-effort reader with answer-form rules. Facet-conditioned retrieval ranks within exact outlet/date supports and merges facets round-robin. RAG uses MMR relevance coefficient 0.7 over 200 candidates. RAPTOR searches 1747 summary nodes plus labelled windows without MMR. Answer rules were developed using failures from all 172 questions. The matched observation is a tie at 152 for facet-conditioned retrieval and RAG, with RAPTOR at 148.",
+          "source_data": null,
+          "source": null
+        },
+        "style_version": "622eccd229617fd9f7e74fc06bebc3d598ba6b47b95ccab5b4972220b76952b4",
+        "style_profile": "profiles/visual_style.json",
+        "visual_review": "pending",
+        "output_digests": {
+          "figures/generated/mip_news_matched.pdf": "34fa25ec97deee136a21ec6f6b475a1608dff31aadcf48613bb95fa3190e1a3b",
+          "figures/generated/mip_news_matched.png": "612f51f068a0a5cf9f88ad12f4e84f8439866f78614cc3c4bd35b61ca6d20c5f",
+          "figures/generated/mip_news_matched.svg": "738ff52bc7b7d5795057c2ca0fe12eaba342a404d4b21c6c27b4e76e955e097f",
+          "figures/generated/mip_news_matched.tikz": "659bd08e39a73cc1b14decab5ac7fce526c90de27bc186b111a33c2624763100"
+        }
+      },
+      "visual_review": "pending",
+      "source_kind": "schematic"
+    },
+    {
+      "asset_id": "figure:mip_frames_noactivation",
+      "label": "fig:mip_frames_noactivation",
+      "artefact": "figures/generated/mip_frames_noactivation.pdf",
+      "generator": "manuscript_spec.json",
+      "spec_id": "mip_frames_noactivation",
+      "promise": "How do answer-form matching and rubric correctness compare after one missing-needs retrieval pass?",
+      "matched": true,
+      "caption": "FRAMES answer endpoints on 190 previously examined questions. Linked-passage retrieval uses a 50-piece head and a one-hop link witness, with activation off and merged-section delivery. Both arms receive 8000 initial tokens, the same steps instruction and at most one triggered retrieval of 4000 new tokens for reader-declared missing needs. RAG uses MMR relevance coefficient 0.7 over 200 candidates. Its relevance score is s + 0.4 h/max(h), where s is cosine plus 0.2 normalised BM25 and h is the dense seed. Pass-2 missing-need ranking adds 0.5 times the question score to the phrase score. The containment proxy counts exact matches or normalised substring/first-clause matches or token-F1 at least 0.5, with a three-times-reference length guard on the proxy. Judged correctness uses the banked majority rubric. The judged discordances are seven linked-passage-only successes and six RAG-only successes. Page presence and answer-bearing passage delivery are distinct, particularly for tables omitted from the plaintext corpus.",
+      "result_ids": [
+        "mip-frames-recovery-20261110"
+      ],
+      "placed_at": null,
+      "research_binding": {
+        "status": "CURRENT",
+        "bindings": [
+          {
+            "id": "mip-frames-recovery-20261110",
+            "revision": "sha256:ba031df03c139da9cd2c4a9d4a70e5fef0fa88f940f4a764e8dfb1a7c12386b0",
+            "currentness": "CURRENT",
+            "reason": "all explicitly declared dependencies match their recorded identities",
+            "dependencies": [
+              {
+                "record_id": "mip-frames-recovery-20261110",
+                "dependencies": [
+                  {
+                    "path": "evidence/MIP_CANDIDATE_2026-11-11/adopted-banked-results.json",
+                    "status": "PRESENT",
+                    "bytes": 19126,
+                    "sha256": "7b51f767487d32dfc2e17d83d7f130200583a0bffe4c8fb699d8bbaf5a7e002f"
+                  }
+                ],
+                "status": "CURRENT",
+                "reason": "all pinned dependencies match",
+                "coverage": {
+                  "snapshot_schema": "laplace.research-dependencies/3",
+                  "newly_untracked": [],
+                  "changed_pins": [],
+                  "removed_pins": [],
+                  "retired_derived_presentation_pins": [],
+                  "historical_verification": "PINNED_DEPENDENCIES_ONLY"
+                }
+              }
+            ]
+          }
+        ],
+        "gaps": []
+      },
+      "render": {
+        "outputs": [
+          "figures/generated/mip_frames_noactivation.pdf",
+          "figures/generated/mip_frames_noactivation.png",
+          "figures/generated/mip_frames_noactivation.svg",
+          "figures/generated/mip_frames_noactivation.tikz"
+        ],
+        "renderer": "tikz-pdf",
+        "input_digest": "b373fb052b256a4ec6cc4a9f59f8396bb8418443780174bdc3e3aa8f313a11df",
+        "drawing_input_digest": "b373fb052b256a4ec6cc4a9f59f8396bb8418443780174bdc3e3aa8f313a11df",
+        "drawing_inputs": {
+          "spec": {
+            "id": "mip_frames_noactivation",
+            "kind": "tikz"
+          },
+          "tikz": "81b19bbe9737ce00e2a5240184e2b5d420173010bcb6549f32cb4153e724dec6"
+        },
+        "research_bindings": [
+          {
+            "id": "mip-frames-recovery-20261110",
+            "revision": "sha256:ba031df03c139da9cd2c4a9d4a70e5fef0fa88f940f4a764e8dfb1a7c12386b0",
+            "currentness": "CURRENT"
+          }
+        ],
+        "presentation_metadata": {
+          "title": "FRAMES: distinguish the endpoint",
+          "question": "How do answer-form matching and rubric correctness compare after one missing-needs retrieval pass?",
+          "caption": "FRAMES answer endpoints on 190 previously examined questions. Linked-passage retrieval uses a 50-piece head and a one-hop link witness, with activation off and merged-section delivery. Both arms receive 8000 initial tokens, the same steps instruction and at most one triggered retrieval of 4000 new tokens for reader-declared missing needs. RAG uses MMR relevance coefficient 0.7 over 200 candidates. Its relevance score is s + 0.4 h/max(h), where s is cosine plus 0.2 normalised BM25 and h is the dense seed. Pass-2 missing-need ranking adds 0.5 times the question score to the phrase score. The containment proxy counts exact matches or normalised substring/first-clause matches or token-F1 at least 0.5, with a three-times-reference length guard on the proxy. Judged correctness uses the banked majority rubric. The judged discordances are seven linked-passage-only successes and six RAG-only successes. Page presence and answer-bearing passage delivery are distinct, particularly for tables omitted from the plaintext corpus.",
+          "source_data": null,
+          "source": null
+        },
+        "style_version": "622eccd229617fd9f7e74fc06bebc3d598ba6b47b95ccab5b4972220b76952b4",
+        "style_profile": "profiles/visual_style.json",
+        "visual_review": "pending",
+        "output_digests": {
+          "figures/generated/mip_frames_noactivation.pdf": "2e3496b21d55be9180b53cbb6318e7ccbd7bcc18940403ac696fe9a9815cb4e0",
+          "figures/generated/mip_frames_noactivation.png": "0edac505a31de208636fb85c6a9aeea99f7703f27cdbdfaad38e00a2959b0756",
+          "figures/generated/mip_frames_noactivation.svg": "22d3372fb30e502fd9444282b4bed4f1499dd6d9d0e98127b055f130edab98cc",
+          "figures/generated/mip_frames_noactivation.tikz": "81b19bbe9737ce00e2a5240184e2b5d420173010bcb6549f32cb4153e724dec6"
+        }
+      },
+      "visual_review": "pending",
+      "source_kind": "schematic"
+    },
+    {
+      "asset_id": "figure:mip_wyoming_witness",
+      "label": "fig:mip_wyoming_witness",
+      "artefact": "figures/generated/mip_wyoming_witness.pdf",
+      "generator": "manuscript_spec.json",
+      "spec_id": "mip_wyoming_witness",
+      "promise": "Which extracted fields are supported by the located quote, and which require surrounding source context?",
+      "matched": true,
+      "caption": "Source context for the extracted Wyoming climate assertion. The located witness is the first sentence of the three-sentence source unit, supporting southeastern vulnerability to tornadoes. The following two sentences supply the westward decline and small, brief character of tornadoes represented in the extracted fields. The Climate section identifies the state as Wyoming. The diagram separates exact span location from the contextual reading needed to support the full five-field assertion.",
+      "result_ids": [
+        "mip-wyoming-source-context"
+      ],
+      "placed_at": null,
+      "research_binding": {
+        "status": "CURRENT",
+        "bindings": [
+          {
+            "id": "mip-wyoming-source-context",
+            "revision": "sha256:d7d715e4ca5f527a29ac15a2c015ccd9796f7535eeab7c62be7c4bb1d239f32d",
+            "currentness": "CURRENT",
+            "reason": "all explicitly declared dependencies match their recorded identities",
+            "dependencies": [
+              {
+                "record_id": "mip-wyoming-source-context",
+                "dependencies": [
+                  {
+                    "path": "evidence/MIP_VISUALS_2026-11-11/reader-purpose-specifications.json",
+                    "status": "PRESENT",
+                    "bytes": 20270,
+                    "sha256": "ad3dba85816d849234a6f114a895e2d30945a9eced8c5b0fe6bbd023c6f23c14"
+                  },
+                  {
+                    "path": "evidence/MIP_VISUALS_2026-11-11/wyoming-witness-context.json",
+                    "status": "PRESENT",
+                    "bytes": 6564,
+                    "sha256": "46deff7fd032354e59c40dfd7d2c03d79be49a393929101d73f4206e470811dc"
+                  },
+                  {
+                    "path": "evidence/MIP_VISUALS_2026-11-11/accepted-data.json",
+                    "status": "PRESENT",
+                    "bytes": 74867,
+                    "sha256": "d4082c8bbe5ec277386a1e3f5cf266b111739fe6b0559fce82320163819bf282"
+                  }
+                ],
+                "status": "CURRENT",
+                "reason": "all pinned dependencies match",
+                "coverage": {
+                  "snapshot_schema": "laplace.research-dependencies/3",
+                  "newly_untracked": [],
+                  "changed_pins": [],
+                  "removed_pins": [],
+                  "retired_derived_presentation_pins": [],
+                  "historical_verification": "PINNED_DEPENDENCIES_ONLY"
+                }
+              }
+            ]
+          }
+        ],
+        "gaps": []
+      },
+      "render": {
+        "outputs": [
+          "figures/generated/mip_wyoming_witness.pdf",
+          "figures/generated/mip_wyoming_witness.png",
+          "figures/generated/mip_wyoming_witness.svg",
+          "figures/generated/mip_wyoming_witness.tikz"
+        ],
+        "renderer": "tikz-pdf",
+        "input_digest": "290c4c6ae340082babec141b3bada5dda2c74fbaaf4b13fed319b16f7b1b84eb",
+        "drawing_input_digest": "290c4c6ae340082babec141b3bada5dda2c74fbaaf4b13fed319b16f7b1b84eb",
+        "drawing_inputs": {
+          "spec": {
+            "id": "mip_wyoming_witness",
+            "kind": "tikz"
+          },
+          "tikz": "5df3567e35e203505d6666211b98d236ef7dd76c8fa2b901d904b7caa42a37cc"
+        },
+        "research_bindings": [
+          {
+            "id": "mip-wyoming-source-context",
+            "revision": "sha256:d7d715e4ca5f527a29ac15a2c015ccd9796f7535eeab7c62be7c4bb1d239f32d",
+            "currentness": "CURRENT"
+          }
+        ],
+        "presentation_metadata": {
+          "title": "Source context supports an extracted assertion",
+          "question": "Which extracted fields are supported by the located quote, and which require surrounding source context?",
+          "caption": "Source context for the extracted Wyoming climate assertion. The located witness is the first sentence of the three-sentence source unit, supporting southeastern vulnerability to tornadoes. The following two sentences supply the westward decline and small, brief character of tornadoes represented in the extracted fields. The Climate section identifies the state as Wyoming. The diagram separates exact span location from the contextual reading needed to support the full five-field assertion.",
+          "source_data": null,
+          "source": null
+        },
+        "style_version": "622eccd229617fd9f7e74fc06bebc3d598ba6b47b95ccab5b4972220b76952b4",
+        "style_profile": "profiles/visual_style.json",
+        "visual_review": "pending",
+        "output_digests": {
+          "figures/generated/mip_wyoming_witness.pdf": "d0442843ff40578f7d14500d2087c4ea4446fa0413437311c3305ac5e36fc6cb",
+          "figures/generated/mip_wyoming_witness.png": "f3d2cd31ea140434c5ae696517a65e5b9ae6d512fee23c5ed48ab365bec3eb2c",
+          "figures/generated/mip_wyoming_witness.svg": "49bab5d23cf2849771c6cd5e838e787c07938b2ec915676879e34e74cec30453",
+          "figures/generated/mip_wyoming_witness.tikz": "5df3567e35e203505d6666211b98d236ef7dd76c8fa2b901d904b7caa42a37cc"
+        }
+      },
+      "visual_review": "pending",
+      "source_kind": "schematic"
+    },
+    {
+      "asset_id": "figure:mip_longmem_completed",
+      "label": "fig:mip_longmem_completed",
+      "artefact": "figures/generated/mip_longmem_completed.pdf",
+      "generator": "manuscript_spec.json",
+      "spec_id": "mip_longmem_completed",
+      "promise": "How does evidence allowance affect answer correctness and complete required-turn coverage?",
+      "matched": true,
+      "caption": "Completed LongMem outcomes at 4000- and 8000-token evidence allowances on a shared improved index, with the same Claude Sonnet 5.5 low-effort reader and rules instruction. Answer correctness uses all 48 questions, including six abstention questions. Complete required-turn coverage counts positive-evidence questions for which every annotated required turn ID is delivered, out of 42 such questions. This endpoint measures source-turn presence. Relational and dense retrieval coincide on both endpoints in this shared-index setting. Hybrid retrieval reaches 40 and 44 correct answers, with complete positive-evidence turn coverage on 33 and 37 questions at the two allowances.",
+      "result_ids": [
+        "mip-longmem-recovery-20261110"
+      ],
+      "placed_at": null,
+      "research_binding": {
+        "status": "CURRENT",
+        "bindings": [
+          {
+            "id": "mip-longmem-recovery-20261110",
+            "revision": "sha256:96f8f6b0f392bb437d71f400845e920b4a8b12aff6c0080b081a2c543c952c4d",
+            "currentness": "CURRENT",
+            "reason": "all explicitly declared dependencies match their recorded identities",
+            "dependencies": [
+              {
+                "record_id": "mip-longmem-recovery-20261110",
+                "dependencies": [
+                  {
+                    "path": "evidence/MIP_CANDIDATE_2026-11-11/adopted-banked-results.json",
+                    "status": "PRESENT",
+                    "bytes": 19126,
+                    "sha256": "7b51f767487d32dfc2e17d83d7f130200583a0bffe4c8fb699d8bbaf5a7e002f"
+                  }
+                ],
+                "status": "CURRENT",
+                "reason": "all pinned dependencies match",
+                "coverage": {
+                  "snapshot_schema": "laplace.research-dependencies/3",
+                  "newly_untracked": [],
+                  "changed_pins": [],
+                  "removed_pins": [],
+                  "retired_derived_presentation_pins": [],
+                  "historical_verification": "PINNED_DEPENDENCIES_ONLY"
+                }
+              }
+            ]
+          }
+        ],
+        "gaps": []
+      },
+      "render": {
+        "outputs": [
+          "figures/generated/mip_longmem_completed.pdf",
+          "figures/generated/mip_longmem_completed.png",
+          "figures/generated/mip_longmem_completed.svg",
+          "figures/generated/mip_longmem_completed.tikz"
+        ],
+        "renderer": "tikz-pdf",
+        "input_digest": "76118bd23a6ec119a1f7be8d56a5a0ada2df36a195d2fac47f0cf1b3b160f5de",
+        "drawing_input_digest": "76118bd23a6ec119a1f7be8d56a5a0ada2df36a195d2fac47f0cf1b3b160f5de",
+        "drawing_inputs": {
+          "spec": {
+            "id": "mip_longmem_completed",
+            "kind": "tikz"
+          },
+          "tikz": "fdcdfa4d0606bff0d825698386c0f134aaff7ba57bcad5838786e2c34ffe9260"
+        },
+        "research_bindings": [
+          {
+            "id": "mip-longmem-recovery-20261110",
+            "revision": "sha256:96f8f6b0f392bb437d71f400845e920b4a8b12aff6c0080b081a2c543c952c4d",
+            "currentness": "CURRENT"
+          }
+        ],
+        "presentation_metadata": {
+          "title": "LongMem outcomes at two evidence allowances",
+          "question": "How does evidence allowance affect answer correctness and complete required-turn coverage?",
+          "caption": "Completed LongMem outcomes at 4000- and 8000-token evidence allowances on a shared improved index, with the same Claude Sonnet 5.5 low-effort reader and rules instruction. Answer correctness uses all 48 questions, including six abstention questions. Complete required-turn coverage counts positive-evidence questions for which every annotated required turn ID is delivered, out of 42 such questions. This endpoint measures source-turn presence. Relational and dense retrieval coincide on both endpoints in this shared-index setting. Hybrid retrieval reaches 40 and 44 correct answers, with complete positive-evidence turn coverage on 33 and 37 questions at the two allowances.",
+          "source_data": null,
+          "source": null
+        },
+        "style_version": "622eccd229617fd9f7e74fc06bebc3d598ba6b47b95ccab5b4972220b76952b4",
+        "style_profile": "profiles/visual_style.json",
+        "visual_review": "pending",
+        "output_digests": {
+          "figures/generated/mip_longmem_completed.pdf": "5b88b040a5d9ad130a402af893b83f2f9bffd949a16d7ad468aa5fc63afee80c",
+          "figures/generated/mip_longmem_completed.png": "1de8c3769e68c414722ab186fefce0f305e10242eab23f3b63284bb0db9ca491",
+          "figures/generated/mip_longmem_completed.svg": "ccfa57b4928b14685117d8bf9ce10c0ebad936c5c6babf0a471dd8a3b18ca21f",
+          "figures/generated/mip_longmem_completed.tikz": "fdcdfa4d0606bff0d825698386c0f134aaff7ba57bcad5838786e2c34ffe9260"
+        }
+      },
+      "visual_review": "pending",
+      "source_kind": "schematic"
+    },
+    {
+      "asset_id": "figure:dynamic-memory-witnessed-update",
+      "label": "fig:dynamic-memory-witnessed-update",
+      "artefact": "figures/generated/dynamic-memory-witnessed-update.pdf",
+      "generator": "manuscript_spec.json",
+      "spec_id": "dynamic-memory-witnessed-update",
+      "promise": "How do local source changes update P(B=0 | A=0) exactly? Entry: Reader knows a document can state a weighted group of observations and can read a conditional fraction. Introduce binary fields A,B and fixed order A then B. Exit: Reader can trace changed/added/removed source contributions to numerator/denominator and exact recalled fraction; knows source provenance, conditional support and incremental work are separate from full-rebuild verification.",
+      "matched": true,
+      "caption": "Actual source statements and revised conditional recall in the controlled weighted-record corpus. Tuple order(A,B), selected population A=0 and recorded event B=0. Both n00=4 and n01=1 initially contribute. Replacing4by3 changes root mass4/9 and suffix3/4; adding a distinct batch gives1/2 and3/5, and removing OLD batch01 retracts only its contribution. The affected root/A0/leaf changes while A1suffix is reused. Exact witness spans and complete verification/cost details are in the paper's supporting appendix. This is explanatory repair from unchanged accepted data, not a new language extraction or benchmark result.",
+      "result_ids": [
+        "result-61e7f91f157fdc79f4c7"
+      ],
+      "placed_at": null,
+      "research_binding": {
+        "status": "CURRENT",
+        "bindings": [
+          {
+            "id": "result-61e7f91f157fdc79f4c7",
+            "revision": "sha256:58e1f15e071243b3d5cb63b41e91a1164bb2ff6a78cabeff36b2e85202276f6a",
+            "currentness": "CURRENT",
+            "reason": "all explicitly declared dependencies match their recorded identities",
+            "dependencies": [
+              {
+                "record_id": "result-61e7f91f157fdc79f4c7",
+                "dependencies": [
+                  {
+                    "path": "evidence/DYNAMIC_MEMORY_DEMO_2026-11-11/incremental_demo_checked.py",
+                    "status": "PRESENT",
+                    "bytes": 21833,
+                    "sha256": "81e6d6b3989160c01f3a6ef8cacb1a79cd602d9362fc3f19593b09a3873a759a"
+                  },
+                  {
+                    "path": "research_runs/run-d2f6d3cff17f0fbe.result.json",
+                    "status": "PRESENT",
+                    "bytes": 77021,
+                    "sha256": "10f22f152572ec0141995aaceedaf82cf48dfe0e530814837883bb0ab09db35b",
+                    "scope": "manuscript"
+                  },
+                  {
+                    "path": "evidence/DYNAMIC_MEMORY_DEMO_2026-11-11/input.json",
+                    "status": "PRESENT",
+                    "bytes": 6410,
+                    "sha256": "21278d3ff0212c30ba197b3cc008f3506eff24f93b44694119a0cf6d88657b8d"
+                  },
+                  {
+                    "path": "evidence/DYNAMIC_MEMORY_DEMO_2026-11-11/protocol.json",
+                    "status": "PRESENT",
+                    "bytes": 4374,
+                    "sha256": "006f10e17ab2abd1226ffe9bfac1c507f07c30a6a260861dc50fe969b4494b26"
+                  },
+                  {
+                    "path": "evidence/DYNAMIC_MEMORY_DEMO_2026-11-11/protocol-addendum.json",
+                    "status": "PRESENT",
+                    "bytes": 1574,
+                    "sha256": "1667f22b8c5b0fb940dadd43a547034c79315d7d00e5e5a734e78c34a3e446d7"
+                  },
+                  {
+                    "path": "evidence/DYNAMIC_MEMORY_DEMO_2026-11-11/rejection-input.json",
+                    "status": "PRESENT",
+                    "bytes": 510,
+                    "sha256": "c42a914adcc036c1905a54984785b2d8afd43c586e4e3754482daea00ca04dd9"
+                  },
+                  {
+                    "path": "evidence/DYNAMIC_MEMORY_DEMO_2026-11-11/docs/d00-r1.txt",
+                    "status": "PRESENT",
+                    "bytes": 46,
+                    "sha256": "8c6e68cec764125b1b8c39fc8da242af3db24b5a460f58808ccc5f296672e993"
+                  },
+                  {
+                    "path": "evidence/DYNAMIC_MEMORY_DEMO_2026-11-11/docs/d00-r2.txt",
+                    "status": "PRESENT",
+                    "bytes": 46,
+                    "sha256": "29948f2842a41afbd3e456621210ef6961c3c494ae4cbf6623e6f1dcf4fbf9f1"
+                  },
+                  {
+                    "path": "evidence/DYNAMIC_MEMORY_DEMO_2026-11-11/docs/d01-r1.txt",
+                    "status": "PRESENT",
+                    "bytes": 46,
+                    "sha256": "3e4eb18af330445b0f82068a602fd9c9578866c2f15bd76d1541918d600aa999"
+                  },
+                  {
+                    "path": "evidence/DYNAMIC_MEMORY_DEMO_2026-11-11/docs/d10-r1.txt",
+                    "status": "PRESENT",
+                    "bytes": 46,
+                    "sha256": "6a930cbadb5788b2cba6bee921372f593a84a2c3582a3d34a3f4df1d76517058"
+                  },
+                  {
+                    "path": "evidence/DYNAMIC_MEMORY_DEMO_2026-11-11/docs/d10-r2.txt",
+                    "status": "PRESENT",
+                    "bytes": 47,
+                    "sha256": "3c24c5ed464ef40d5219d43b04668e05d39c8bd5ad33bb4fb3011c9008b7b805"
+                  },
+                  {
+                    "path": "evidence/DYNAMIC_MEMORY_DEMO_2026-11-11/docs/d10-r3.txt",
+                    "status": "PRESENT",
+                    "bytes": 46,
+                    "sha256": "03d0c032fac627d2bbfd01def65789aa63dc52685ba547575d30fcc65e91e487"
+                  },
+                  {
+                    "path": "evidence/DYNAMIC_MEMORY_DEMO_2026-11-11/docs/d11-r1.txt",
+                    "status": "PRESENT",
+                    "bytes": 46,
+                    "sha256": "96bcadcf4cbf07212ba4663f56c6ae2f0ff7a2c360ef5f4ffcda5639af04a3e5"
+                  },
+                  {
+                    "path": "evidence/DYNAMIC_MEMORY_DEMO_2026-11-11/docs/d02-r1.txt",
+                    "status": "PRESENT",
+                    "bytes": 46,
+                    "sha256": "803cf93ca3e1124b27d06cbc03b84c619248e1cba454519f377ed0cd3a532420"
+                  },
+                  {
+                    "path": "evidence/DYNAMIC_MEMORY_DEMO_2026-11-11/docs/d10-overflow.txt",
+                    "status": "PRESENT",
+                    "bytes": 64,
+                    "sha256": "3cc183c99b314e238cc4d830ab75721d923f47a8a82f37865d650adcbf385307"
+                  },
+                  {
+                    "path": "evidence/DYNAMIC_MEMORY_DEMO_2026-11-11/docs/d02-duplicate-group.txt",
+                    "status": "PRESENT",
+                    "bytes": 46,
+                    "sha256": "b7c47faa35031f63a8dad9354d2764f9cc98197463752191dde4e1f32676a77d"
+                  },
+                  {
+                    "path": "evidence/DYNAMIC_MEMORY_DEMO_2026-11-11/oracle-correction.json",
+                    "status": "PRESENT",
+                    "bytes": 1432,
+                    "sha256": "e06e1cd7e8d93d0815290da983bfc9f00b53d2fc2c7fbd92b6e0f75fa9d05fb2"
+                  },
+                  {
+                    "path": "evidence/DYNAMIC_MEMORY_DEMO_2026-11-11/derivation-and-implementation.md",
+                    "status": "PRESENT",
+                    "bytes": 8801,
+                    "sha256": "a30b342cd72da75aa73e921be934475eeb8a5744263bd6694dc9368662d07079",
+                    "scope": "project"
+                  }
+                ],
+                "status": "CURRENT",
+                "reason": "all pinned dependencies match",
+                "coverage": {
+                  "snapshot_schema": "laplace.research-dependencies/3",
+                  "newly_untracked": [],
+                  "changed_pins": [],
+                  "removed_pins": [],
+                  "retired_derived_presentation_pins": [],
+                  "historical_verification": "PINNED_DEPENDENCIES_ONLY"
+                }
+              }
+            ]
+          }
+        ],
+        "gaps": []
+      },
+      "render": {
+        "outputs": [
+          "figures/generated/dynamic-memory-witnessed-update.pdf",
+          "figures/generated/dynamic-memory-witnessed-update.png",
+          "figures/generated/dynamic-memory-witnessed-update.svg",
+          "figures/generated/dynamic-memory-witnessed-update.tikz"
+        ],
+        "renderer": "tikz-pdf",
+        "input_digest": "8208d5413e5aa9da274135c366c45ee4e35b36030af6fb5579d55c01112c0d53",
+        "drawing_input_digest": "8208d5413e5aa9da274135c366c45ee4e35b36030af6fb5579d55c01112c0d53",
+        "drawing_inputs": {
+          "spec": {
+            "id": "dynamic-memory-witnessed-update",
+            "kind": "tikz"
+          },
+          "tikz": "59204ffc945738b0bf2348a943e85eff891fcb91c8907845f6138a065eed3894"
+        },
+        "research_bindings": [
+          {
+            "id": "result-61e7f91f157fdc79f4c7",
+            "revision": "sha256:58e1f15e071243b3d5cb63b41e91a1164bb2ff6a78cabeff36b2e85202276f6a",
+            "currentness": "CURRENT"
+          }
+        ],
+        "presentation_metadata": {
+          "title": "Source edits update conditional recall",
+          "question": "How do local source changes update P(B=0 | A=0) exactly? Entry: Reader knows a document can state a weighted group of observations and can read a conditional fraction. Introduce binary fields A,B and fixed order A then B. Exit: Reader can trace changed/added/removed source contributions to numerator/denominator and exact recalled fraction; knows source provenance, conditional support and incremental work are separate from full-rebuild verification.",
+          "caption": "Actual source statements and revised conditional recall in the controlled weighted-record corpus. Tuple order(A,B), selected population A=0 and recorded event B=0. Both n00=4 and n01=1 initially contribute. Replacing4by3 changes root mass4/9 and suffix3/4; adding a distinct batch gives1/2 and3/5, and removing OLD batch01 retracts only its contribution. The affected root/A0/leaf changes while A1suffix is reused. Exact witness spans and complete verification/cost details are in the paper's supporting appendix. This is explanatory repair from unchanged accepted data, not a new language extraction or benchmark result.",
+          "source_data": null,
+          "source": "evidence/DYNAMIC_MEMORY_REWRITE_2026-11-11/source-to-message-final.tikz"
+        },
+        "style_version": "a52b7af5b0793b1803d7220d6682ba6564c38bb38650f7366410d709347f3364",
+        "style_profile": "profiles/visual_style.json",
+        "visual_review": "pending",
+        "output_digests": {
+          "figures/generated/dynamic-memory-witnessed-update.pdf": "fdcb7947209c369476322e8a975e8f5b88e34f6023cafc4ab837cc2a71b0a177",
+          "figures/generated/dynamic-memory-witnessed-update.png": "9ae8a3c868845795f9c02c5e849550b1af46a202b1874293d0f4eac0f5d7f65c",
+          "figures/generated/dynamic-memory-witnessed-update.svg": "d81f51997cd6dd3a3f35461b2f823daa154a90371198257790e38eaf766c81eb",
+          "figures/generated/dynamic-memory-witnessed-update.tikz": "59204ffc945738b0bf2348a943e85eff891fcb91c8907845f6138a065eed3894"
+        }
+      },
+      "visual_review": "pending",
+      "source_kind": "schematic"
+    },
+    {
+      "asset_id": "figure:dm-source-recall-pipeline",
+      "label": "fig:dm-source-recall-pipeline",
+      "artefact": "figures/generated/dm-source-recall-pipeline.pdf",
+      "generator": "manuscript_spec.json",
+      "spec_id": "dm-source-recall-pipeline",
+      "promise": "What is retained, what is propagated, and which text interfaces are actually tested?",
+      "matched": true,
+      "caption": "Construction and implemented study interfaces. Located source observations feed a joint empirical law, whose repeated conditional futures support exact recall and witnessed updates. The text study compiles source/date requirements and assembles original spans for a fixed reader. These are separately tested interfaces. Continuous reduced dynamics is an optional mathematical extension, not a stage used to produce the text scores.",
+      "result_ids": [
+        "result-61e7f91f157fdc79f4c7",
+        "mip-news-recovery-20261110"
+      ],
+      "placed_at": null,
+      "research_binding": {
+        "status": "CURRENT",
+        "bindings": [
+          {
+            "id": "result-61e7f91f157fdc79f4c7",
+            "revision": "sha256:58e1f15e071243b3d5cb63b41e91a1164bb2ff6a78cabeff36b2e85202276f6a",
+            "currentness": "CURRENT",
+            "reason": "all explicitly declared dependencies match their recorded identities",
+            "dependencies": [
+              {
+                "record_id": "result-61e7f91f157fdc79f4c7",
+                "dependencies": [
+                  {
+                    "path": "evidence/DYNAMIC_MEMORY_DEMO_2026-11-11/incremental_demo_checked.py",
+                    "status": "PRESENT",
+                    "bytes": 21833,
+                    "sha256": "81e6d6b3989160c01f3a6ef8cacb1a79cd602d9362fc3f19593b09a3873a759a"
+                  },
+                  {
+                    "path": "research_runs/run-d2f6d3cff17f0fbe.result.json",
+                    "status": "PRESENT",
+                    "bytes": 77021,
+                    "sha256": "10f22f152572ec0141995aaceedaf82cf48dfe0e530814837883bb0ab09db35b",
+                    "scope": "manuscript"
+                  },
+                  {
+                    "path": "evidence/DYNAMIC_MEMORY_DEMO_2026-11-11/input.json",
+                    "status": "PRESENT",
+                    "bytes": 6410,
+                    "sha256": "21278d3ff0212c30ba197b3cc008f3506eff24f93b44694119a0cf6d88657b8d"
+                  },
+                  {
+                    "path": "evidence/DYNAMIC_MEMORY_DEMO_2026-11-11/protocol.json",
+                    "status": "PRESENT",
+                    "bytes": 4374,
+                    "sha256": "006f10e17ab2abd1226ffe9bfac1c507f07c30a6a260861dc50fe969b4494b26"
+                  },
+                  {
+                    "path": "evidence/DYNAMIC_MEMORY_DEMO_2026-11-11/protocol-addendum.json",
+                    "status": "PRESENT",
+                    "bytes": 1574,
+                    "sha256": "1667f22b8c5b0fb940dadd43a547034c79315d7d00e5e5a734e78c34a3e446d7"
+                  },
+                  {
+                    "path": "evidence/DYNAMIC_MEMORY_DEMO_2026-11-11/rejection-input.json",
+                    "status": "PRESENT",
+                    "bytes": 510,
+                    "sha256": "c42a914adcc036c1905a54984785b2d8afd43c586e4e3754482daea00ca04dd9"
+                  },
+                  {
+                    "path": "evidence/DYNAMIC_MEMORY_DEMO_2026-11-11/docs/d00-r1.txt",
+                    "status": "PRESENT",
+                    "bytes": 46,
+                    "sha256": "8c6e68cec764125b1b8c39fc8da242af3db24b5a460f58808ccc5f296672e993"
+                  },
+                  {
+                    "path": "evidence/DYNAMIC_MEMORY_DEMO_2026-11-11/docs/d00-r2.txt",
+                    "status": "PRESENT",
+                    "bytes": 46,
+                    "sha256": "29948f2842a41afbd3e456621210ef6961c3c494ae4cbf6623e6f1dcf4fbf9f1"
+                  },
+                  {
+                    "path": "evidence/DYNAMIC_MEMORY_DEMO_2026-11-11/docs/d01-r1.txt",
+                    "status": "PRESENT",
+                    "bytes": 46,
+                    "sha256": "3e4eb18af330445b0f82068a602fd9c9578866c2f15bd76d1541918d600aa999"
+                  },
+                  {
+                    "path": "evidence/DYNAMIC_MEMORY_DEMO_2026-11-11/docs/d10-r1.txt",
+                    "status": "PRESENT",
+                    "bytes": 46,
+                    "sha256": "6a930cbadb5788b2cba6bee921372f593a84a2c3582a3d34a3f4df1d76517058"
+                  },
+                  {
+                    "path": "evidence/DYNAMIC_MEMORY_DEMO_2026-11-11/docs/d10-r2.txt",
+                    "status": "PRESENT",
+                    "bytes": 47,
+                    "sha256": "3c24c5ed464ef40d5219d43b04668e05d39c8bd5ad33bb4fb3011c9008b7b805"
+                  },
+                  {
+                    "path": "evidence/DYNAMIC_MEMORY_DEMO_2026-11-11/docs/d10-r3.txt",
+                    "status": "PRESENT",
+                    "bytes": 46,
+                    "sha256": "03d0c032fac627d2bbfd01def65789aa63dc52685ba547575d30fcc65e91e487"
+                  },
+                  {
+                    "path": "evidence/DYNAMIC_MEMORY_DEMO_2026-11-11/docs/d11-r1.txt",
+                    "status": "PRESENT",
+                    "bytes": 46,
+                    "sha256": "96bcadcf4cbf07212ba4663f56c6ae2f0ff7a2c360ef5f4ffcda5639af04a3e5"
+                  },
+                  {
+                    "path": "evidence/DYNAMIC_MEMORY_DEMO_2026-11-11/docs/d02-r1.txt",
+                    "status": "PRESENT",
+                    "bytes": 46,
+                    "sha256": "803cf93ca3e1124b27d06cbc03b84c619248e1cba454519f377ed0cd3a532420"
+                  },
+                  {
+                    "path": "evidence/DYNAMIC_MEMORY_DEMO_2026-11-11/docs/d10-overflow.txt",
+                    "status": "PRESENT",
+                    "bytes": 64,
+                    "sha256": "3cc183c99b314e238cc4d830ab75721d923f47a8a82f37865d650adcbf385307"
+                  },
+                  {
+                    "path": "evidence/DYNAMIC_MEMORY_DEMO_2026-11-11/docs/d02-duplicate-group.txt",
+                    "status": "PRESENT",
+                    "bytes": 46,
+                    "sha256": "b7c47faa35031f63a8dad9354d2764f9cc98197463752191dde4e1f32676a77d"
+                  },
+                  {
+                    "path": "evidence/DYNAMIC_MEMORY_DEMO_2026-11-11/oracle-correction.json",
+                    "status": "PRESENT",
+                    "bytes": 1432,
+                    "sha256": "e06e1cd7e8d93d0815290da983bfc9f00b53d2fc2c7fbd92b6e0f75fa9d05fb2"
+                  },
+                  {
+                    "path": "evidence/DYNAMIC_MEMORY_DEMO_2026-11-11/derivation-and-implementation.md",
+                    "status": "PRESENT",
+                    "bytes": 8801,
+                    "sha256": "a30b342cd72da75aa73e921be934475eeb8a5744263bd6694dc9368662d07079",
+                    "scope": "project"
+                  }
+                ],
+                "status": "CURRENT",
+                "reason": "all pinned dependencies match",
+                "coverage": {
+                  "snapshot_schema": "laplace.research-dependencies/3",
+                  "newly_untracked": [],
+                  "changed_pins": [],
+                  "removed_pins": [],
+                  "retired_derived_presentation_pins": [],
+                  "historical_verification": "PINNED_DEPENDENCIES_ONLY"
+                }
+              }
+            ]
+          },
+          {
+            "id": "mip-news-recovery-20261110",
+            "revision": "sha256:c1c94981d11fb953597bc29bfc3fafa851ab16092affd919bf194c033acf176d",
+            "currentness": "CURRENT",
+            "reason": "all explicitly declared dependencies match their recorded identities",
+            "dependencies": [
+              {
+                "record_id": "mip-news-recovery-20261110",
+                "dependencies": [
+                  {
+                    "path": "evidence/MIP_CANDIDATE_2026-11-11/adopted-banked-results.json",
+                    "status": "PRESENT",
+                    "bytes": 19126,
+                    "sha256": "7b51f767487d32dfc2e17d83d7f130200583a0bffe4c8fb699d8bbaf5a7e002f"
+                  }
+                ],
+                "status": "CURRENT",
+                "reason": "all pinned dependencies match",
+                "coverage": {
+                  "snapshot_schema": "laplace.research-dependencies/3",
+                  "newly_untracked": [],
+                  "changed_pins": [],
+                  "removed_pins": [],
+                  "retired_derived_presentation_pins": [],
+                  "historical_verification": "PINNED_DEPENDENCIES_ONLY"
+                }
+              }
+            ]
+          }
+        ],
+        "gaps": []
+      },
+      "render": {
+        "outputs": [
+          "figures/generated/dm-source-recall-pipeline.pdf",
+          "figures/generated/dm-source-recall-pipeline.png",
+          "figures/generated/dm-source-recall-pipeline.svg",
+          "figures/generated/dm-source-recall-pipeline.tikz"
+        ],
+        "renderer": "tikz-pdf",
+        "input_digest": "c51c2d5c9930808d9985951f25025517a49303c8676ad52dc1546a095ed30021",
+        "drawing_input_digest": "c51c2d5c9930808d9985951f25025517a49303c8676ad52dc1546a095ed30021",
+        "drawing_inputs": {
+          "spec": {
+            "id": "dm-source-recall-pipeline",
+            "kind": "tikz"
+          },
+          "tikz": "2c5935be0b5f156bf49026861c3c3285ec0c23e8950f3abf9372492adf1f08f8"
+        },
+        "research_bindings": [
+          {
+            "id": "result-61e7f91f157fdc79f4c7",
+            "revision": "sha256:58e1f15e071243b3d5cb63b41e91a1164bb2ff6a78cabeff36b2e85202276f6a",
+            "currentness": "CURRENT"
+          },
+          {
+            "id": "mip-news-recovery-20261110",
+            "revision": "sha256:c1c94981d11fb953597bc29bfc3fafa851ab16092affd919bf194c033acf176d",
+            "currentness": "CURRENT"
+          }
+        ],
+        "presentation_metadata": {
+          "title": "From a source observation to revisable recall",
+          "question": "What is retained, what is propagated, and which text interfaces are actually tested?",
+          "caption": "Construction and implemented study interfaces. Located source observations feed a joint empirical law, whose repeated conditional futures support exact recall and witnessed updates. The text study compiles source/date requirements and assembles original spans for a fixed reader. These are separately tested interfaces. Continuous reduced dynamics is an optional mathematical extension, not a stage used to produce the text scores.",
+          "source_data": null,
+          "source": null
+        },
+        "style_version": "a52b7af5b0793b1803d7220d6682ba6564c38bb38650f7366410d709347f3364",
+        "style_profile": "profiles/visual_style.json",
+        "visual_review": "pending",
+        "output_digests": {
+          "figures/generated/dm-source-recall-pipeline.pdf": "8fff67f7654369dd700fd763c8bd1637e9d50d7fdfd3e713ff2b552c223dad94",
+          "figures/generated/dm-source-recall-pipeline.png": "99b837d2ee2cefd195dadc132e956c9c54757aff42a37957c37d0f693e925040",
+          "figures/generated/dm-source-recall-pipeline.svg": "b9523eec8217e2588e77316a4c8da9f94267331b6ee73bc7750d6b1b7cbf9f69",
+          "figures/generated/dm-source-recall-pipeline.tikz": "2c5935be0b5f156bf49026861c3c3285ec0c23e8950f3abf9372492adf1f08f8"
+        }
+      },
+      "visual_review": "pending",
+      "source_kind": "schematic"
+    }
+  ]
+}

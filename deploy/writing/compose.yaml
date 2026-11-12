@@ -1,0 +1,90 @@
+x-writing: &writing
+  build:
+    context: ../..
+    dockerfile: deploy/writing/Dockerfile
+    target: runtime
+    args:
+      LAPLACE_UID: ${LAPLACE_UID:-1000}
+      LAPLACE_GID: ${LAPLACE_GID:-1000}
+  init: true
+  ports:
+    - "127.0.0.1:${LAPLACE_PORT:-8771}:8771"
+  volumes:
+    - type: bind
+      source: ${LAPLACE_WORKSPACE:?Set LAPLACE_WORKSPACE to the exported workspace directory}
+      target: /workspace
+    - session-workspaces:/var/lib/laplace/session-workspaces
+  environment:
+    LAPLACE_CONTAINER_PROFILE: browser
+  restart: "no"
+
+services:
+  writing:
+    <<: *writing
+
+  writing-codex:
+    <<: *writing
+    profiles: [codex]
+    build:
+      context: ../..
+      dockerfile: deploy/writing/Dockerfile
+      target: provider-codex
+      args:
+        LAPLACE_UID: ${LAPLACE_UID:-1000}
+        LAPLACE_GID: ${LAPLACE_GID:-1000}
+        CODEX_NPM_SPEC: ${CODEX_NPM_SPEC:-@openai/codex@0.160.1}
+    environment:
+      LAPLACE_CONTAINER_PROFILE: codex
+    volumes:
+      - type: bind
+        source: ${LAPLACE_WORKSPACE:?Set LAPLACE_WORKSPACE to the exported workspace directory}
+        target: /workspace
+      - session-workspaces:/var/lib/laplace/session-workspaces
+      - codex-auth:/home/laplace/.codex
+
+  writing-claude:
+    <<: *writing
+    profiles: [claude]
+    build:
+      context: ../..
+      dockerfile: deploy/writing/Dockerfile
+      target: provider-claude
+      args:
+        LAPLACE_UID: ${LAPLACE_UID:-1000}
+        LAPLACE_GID: ${LAPLACE_GID:-1000}
+        CLAUDE_NPM_SPEC: ${CLAUDE_NPM_SPEC:-@anthropic-ai/claude-code@2.1.304}
+    environment:
+      LAPLACE_CONTAINER_PROFILE: claude
+    volumes:
+      - type: bind
+        source: ${LAPLACE_WORKSPACE:?Set LAPLACE_WORKSPACE to the exported workspace directory}
+        target: /workspace
+      - session-workspaces:/var/lib/laplace/session-workspaces
+      - claude-auth:/home/laplace/.claude
+
+  writing-providers:
+    <<: *writing
+    profiles: [providers]
+    build:
+      context: ../..
+      dockerfile: deploy/writing/Dockerfile
+      target: provider-both
+      args:
+        LAPLACE_UID: ${LAPLACE_UID:-1000}
+        LAPLACE_GID: ${LAPLACE_GID:-1000}
+        CODEX_NPM_SPEC: ${CODEX_NPM_SPEC:-@openai/codex@0.160.1}
+        CLAUDE_NPM_SPEC: ${CLAUDE_NPM_SPEC:-@anthropic-ai/claude-code@2.1.304}
+    environment:
+      LAPLACE_CONTAINER_PROFILE: providers
+    volumes:
+      - type: bind
+        source: ${LAPLACE_WORKSPACE:?Set LAPLACE_WORKSPACE to the exported workspace directory}
+        target: /workspace
+      - session-workspaces:/var/lib/laplace/session-workspaces
+      - codex-auth:/home/laplace/.codex
+      - claude-auth:/home/laplace/.claude
+
+volumes:
+  session-workspaces:
+  codex-auth:
+  claude-auth:

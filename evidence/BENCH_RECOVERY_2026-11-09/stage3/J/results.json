@@ -1,0 +1,721 @@
+{
+ "before": {
+  "containment": {
+   "ours": 25,
+   "ours_noact": 51,
+   "rag": 52
+  },
+  "judged": {
+   "ours": 27,
+   "ours_noact": 62,
+   "rag": 58
+  },
+  "source": "stage3/S/RETURN.md"
+ },
+ "cells": {
+  "A 8k frozen instruction: ours (D's link witness + activation)": {
+   "file": "results/read_A8k_j.json",
+   "cell": "ours_D|v0",
+   "stages": "1 (imported leaves), 6 (seed s = cos + 0.2 BM25, head 50), D's one-hop link witness, F-C activation, 8 (merged sections), V0 reading",
+   "n": 190,
+   "containment": 95,
+   "containment_fit": 50,
+   "containment_check": 45,
+   "abstained": 69,
+   "judged": 106,
+   "judged_fit": 55,
+   "judged_check": 51,
+   "judge_file": "results/judge_A8k.json"
+  },
+  "A 8k frozen instruction: RAG": {
+   "file": "results/read_A8k_j.json",
+   "cell": "rag_8k|v0",
+   "stages": "RAG: MMR over s, merged sections",
+   "n": 190,
+   "containment": 93,
+   "containment_fit": 50,
+   "containment_check": 43,
+   "abstained": 73,
+   "judged": 101,
+   "judged_fit": 52,
+   "judged_check": 49,
+   "judge_file": "results/judge_A8k.json"
+  },
+  "A 8k steps reading: ours": {
+   "file": "results/read_A8k_j.json",
+   "cell": "ours_D|steps",
+   "stages": "as above + stage 9 steps reading",
+   "n": 190,
+   "containment": 98,
+   "containment_fit": 53,
+   "containment_check": 45,
+   "abstained": 62,
+   "judged": 105,
+   "judged_fit": 55,
+   "judged_check": 50,
+   "judge_file": "results/judge_A8k.json"
+  },
+  "A 8k steps reading: RAG": {
+   "file": "results/read_A8k_j.json",
+   "cell": "rag_8k|steps",
+   "stages": "RAG + steps reading",
+   "n": 190,
+   "containment": 97,
+   "containment_fit": 53,
+   "containment_check": 44,
+   "abstained": 63,
+   "judged": 106,
+   "judged_fit": 55,
+   "judged_check": 51,
+   "judge_file": "results/judge_A8k.json"
+  },
+  "A 8k steps: ours without activation": {
+   "file": "results/read_B_steps.json",
+   "cell": "ours_noact|steps",
+   "stages": "head 50 + link witness, no activation",
+   "n": 190,
+   "containment": 101,
+   "containment_fit": 55,
+   "containment_check": 46,
+   "abstained": 64,
+   "judged": 106,
+   "judged_fit": 55,
+   "judged_check": 51,
+   "judge_file": "results/judge_ALL.json"
+  },
+  "A 8k steps: ours with requirement chain": {
+   "file": "results/read_B_steps.json",
+   "cell": "req_rel5|steps",
+   "stages": "head 50 + stage 5/7 requirement witnesses + link:rel",
+   "n": 190,
+   "containment": 97,
+   "containment_fit": 53,
+   "containment_check": 44,
+   "abstained": 68,
+   "judged": 105,
+   "judged_fit": 55,
+   "judged_check": 50,
+   "judge_file": "results/judge_ALL.json"
+  },
+  "A 4k steps: RAG": {
+   "file": "results/read_B_steps.json",
+   "cell": "rag_4k|steps",
+   "stages": "RAG at 4k",
+   "n": 190,
+   "containment": 82,
+   "containment_fit": 46,
+   "containment_check": 36,
+   "abstained": 88,
+   "judged": 88,
+   "judged_fit": 47,
+   "judged_check": 41,
+   "judge_file": "results/judge_ALL.json"
+  },
+  "A 4k steps: ours without activation": {
+   "file": "results/read_B_steps.json",
+   "cell": "ours_noact_4k|steps",
+   "stages": "head 25 + link witness",
+   "n": 190,
+   "containment": 81,
+   "containment_fit": 41,
+   "containment_check": 40,
+   "abstained": 82,
+   "judged": 89,
+   "judged_fit": 42,
+   "judged_check": 47,
+   "judge_file": "results/judge_ALL.json"
+  },
+  "A 4k steps: ours with requirement chain": {
+   "file": "results/read_B_steps.json",
+   "cell": "req_rel5_4k|steps",
+   "stages": "head 15 + requirement witnesses + link:rel",
+   "n": 190,
+   "containment": 83,
+   "containment_fit": 42,
+   "containment_check": 41,
+   "abstained": 80,
+   "judged": 92,
+   "judged_fit": 45,
+   "judged_check": 47,
+   "judge_file": "results/judge_ALL.json"
+  },
+  "B 8k pass 2: ours (D)": {
+   "file": "results/final_A8k_p2.json",
+   "cell": "ours_D|steps+p2",
+   "stages": "pass 1 as 'A 8k steps: ours' + pass 2: the reader's stated needs, title-bound pages first then the need ranking, +4,000 tokens",
+   "n": 190,
+   "containment": 121,
+   "containment_fit": 65,
+   "containment_check": 56,
+   "abstained": 38,
+   "judged": 127,
+   "judged_fit": 66,
+   "judged_check": 61,
+   "judge_file": "results/judge_ALL.json"
+  },
+  "B 8k pass 2: RAG": {
+   "file": "results/final_A8k_p2.json",
+   "cell": "rag_8k|steps+p2",
+   "stages": "RAG + pass 2: the stated needs through RAG's own ranking (MMR), +4,000 tokens",
+   "n": 190,
+   "containment": 117,
+   "containment_fit": 63,
+   "containment_check": 54,
+   "abstained": 40,
+   "judged": 126,
+   "judged_fit": 65,
+   "judged_check": 61,
+   "judge_file": "results/judge_ALL.json"
+  },
+  "B 8k pass 2: ours without activation": {
+   "file": "results/final_B_p2.json",
+   "cell": "ours_noact|steps+p2",
+   "stages": "",
+   "n": 190,
+   "containment": 123,
+   "containment_fit": 66,
+   "containment_check": 57,
+   "abstained": 38,
+   "judged": 127,
+   "judged_fit": 66,
+   "judged_check": 61,
+   "judge_file": "results/judge_ALL.json"
+  },
+  "B 8k pass 2: ours with requirement chain": {
+   "file": "results/final_B_p2.json",
+   "cell": "req_rel5|steps+p2",
+   "stages": "",
+   "n": 190,
+   "containment": 118,
+   "containment_fit": 60,
+   "containment_check": 58,
+   "abstained": 41,
+   "judged": 128,
+   "judged_fit": 64,
+   "judged_check": 64,
+   "judge_file": "results/judge_ALL.json"
+  },
+  "B 4k pass 2: RAG": {
+   "file": "results/final_B_p2.json",
+   "cell": "rag_4k|steps+p2",
+   "stages": "",
+   "n": 190,
+   "containment": 113,
+   "containment_fit": 62,
+   "containment_check": 51,
+   "abstained": 46,
+   "judged": 125,
+   "judged_fit": 65,
+   "judged_check": 60,
+   "judge_file": "results/judge_ALL.json"
+  },
+  "B 4k pass 2: ours without activation": {
+   "file": "results/final_B_p2.json",
+   "cell": "ours_noact_4k|steps+p2",
+   "stages": "",
+   "n": 190,
+   "containment": 111,
+   "containment_fit": 61,
+   "containment_check": 50,
+   "abstained": 45,
+   "judged": 121,
+   "judged_fit": 63,
+   "judged_check": 58,
+   "judge_file": "results/judge_ALL.json"
+  },
+  "B 4k pass 2: ours with requirement chain": {
+   "file": "results/final_B_p2.json",
+   "cell": "req_rel5_4k|steps+p2",
+   "stages": "",
+   "n": 190,
+   "containment": 116,
+   "containment_fit": 62,
+   "containment_check": 54,
+   "abstained": 42,
+   "judged": 124,
+   "judged_fit": 63,
+   "judged_check": 61,
+   "judge_file": "results/judge_ALL.json"
+  },
+  "labelled: final reading must answer, ours": {
+   "file": "results/final_A8k_F.json",
+   "cell": "ours_D|steps+p2+F",
+   "stages": "",
+   "n": 190,
+   "containment": 133,
+   "containment_fit": 69,
+   "containment_check": 64,
+   "abstained": 0,
+   "judged": 141,
+   "judged_fit": 74,
+   "judged_check": 67,
+   "judge_file": "results/judge_ALL.json"
+  },
+  "labelled: final reading must answer, RAG": {
+   "file": "results/final_A8k_F.json",
+   "cell": "rag_8k|steps+p2+F",
+   "stages": "",
+   "n": 190,
+   "containment": 128,
+   "containment_fit": 69,
+   "containment_check": 59,
+   "abstained": 1,
+   "judged": 141,
+   "judged_fit": 73,
+   "judged_check": 68,
+   "judge_file": "results/judge_ALL.json"
+  }
+ },
+ "paired": {
+  "ours_D|v0 vs rag_8k|v0": {
+   "containment": {
+    "wins": 9,
+    "losses": 7,
+    "one_sided_p": 0.4018
+   },
+   "judged": {
+    "wins": 9,
+    "losses": 4,
+    "one_sided_p": 0.1334
+   }
+  },
+  "ours_D|steps vs rag_8k|steps": {
+   "containment": {
+    "wins": 11,
+    "losses": 10,
+    "one_sided_p": 0.5
+   },
+   "judged": {
+    "wins": 10,
+    "losses": 11,
+    "one_sided_p": 0.6682
+   }
+  },
+  "ours_D|steps+p2 vs rag_8k|steps+p2": {
+   "containment": {
+    "wins": 10,
+    "losses": 6,
+    "one_sided_p": 0.2272
+   },
+   "judged": {
+    "wins": 8,
+    "losses": 7,
+    "one_sided_p": 0.5
+   }
+  },
+  "req_rel5|steps+p2 vs rag_8k|steps+p2": {
+   "containment": {
+    "wins": 9,
+    "losses": 8,
+    "one_sided_p": 0.5
+   },
+   "judged": {
+    "wins": 6,
+    "losses": 4,
+    "one_sided_p": 0.377
+   }
+  },
+  "ours_noact|steps+p2 vs rag_8k|steps+p2": {
+   "containment": {
+    "wins": 10,
+    "losses": 4,
+    "one_sided_p": 0.0898
+   },
+   "judged": {
+    "wins": 7,
+    "losses": 6,
+    "one_sided_p": 0.5
+   }
+  },
+  "req_rel5_4k|steps+p2 vs rag_4k|steps+p2": {
+   "containment": {
+    "wins": 8,
+    "losses": 5,
+    "one_sided_p": 0.2905
+   },
+   "judged": {
+    "wins": 6,
+    "losses": 7,
+    "one_sided_p": 0.7095
+   }
+  },
+  "ours_noact_4k|steps+p2 vs rag_4k|steps+p2": {
+   "containment": {
+    "wins": 10,
+    "losses": 12,
+    "one_sided_p": 0.7383
+   },
+   "judged": {
+    "wins": 8,
+    "losses": 12,
+    "one_sided_p": 0.8684
+   }
+  },
+  "ours_D|steps+p2+F vs rag_8k|steps+p2+F": {
+   "containment": {
+    "wins": 15,
+    "losses": 10,
+    "one_sided_p": 0.2122
+   },
+   "judged": {
+    "wins": 11,
+    "losses": 11,
+    "one_sided_p": 0.5841
+   }
+  }
+ },
+ "delivery_zero_call": {
+  "D_ours@8k": {
+   "all": {
+    "all_gold": 159,
+    "answer_covered": 50,
+    "gold_present": 549
+   },
+   "check": {
+    "all_gold": 78,
+    "answer_covered": 26,
+    "gold_present": 271
+   },
+   "fit": {
+    "all_gold": 81,
+    "answer_covered": 24,
+    "gold_present": 278
+   }
+  },
+  "ours_noact@4k": {
+   "all": {
+    "all_gold": 130,
+    "answer_covered": 39,
+    "gold_present": 509
+   },
+   "check": {
+    "all_gold": 65,
+    "answer_covered": 24,
+    "gold_present": 251
+   },
+   "fit": {
+    "all_gold": 65,
+    "answer_covered": 15,
+    "gold_present": 258
+   }
+  },
+  "ours_noact@8k": {
+   "all": {
+    "all_gold": 153,
+    "answer_covered": 52,
+    "gold_present": 541
+   },
+   "check": {
+    "all_gold": 76,
+    "answer_covered": 27,
+    "gold_present": 267
+   },
+   "fit": {
+    "all_gold": 77,
+    "answer_covered": 25,
+    "gold_present": 274
+   }
+  },
+  "rag@4k": {
+   "all": {
+    "all_gold": 131,
+    "answer_covered": 36,
+    "gold_present": 500
+   },
+   "check": {
+    "all_gold": 62,
+    "answer_covered": 22,
+    "gold_present": 245
+   },
+   "fit": {
+    "all_gold": 69,
+    "answer_covered": 14,
+    "gold_present": 255
+   }
+  },
+  "rag@8k": {
+   "all": {
+    "all_gold": 150,
+    "answer_covered": 46,
+    "gold_present": 537
+   },
+   "check": {
+    "all_gold": 74,
+    "answer_covered": 25,
+    "gold_present": 265
+   },
+   "fit": {
+    "all_gold": 76,
+    "answer_covered": 21,
+    "gold_present": 272
+   }
+  },
+  "rel5@4k": {
+   "all": {
+    "all_gold": 133,
+    "answer_covered": 40,
+    "gold_present": 512
+   },
+   "check": {
+    "all_gold": 66,
+    "answer_covered": 24,
+    "gold_present": 253
+   },
+   "fit": {
+    "all_gold": 67,
+    "answer_covered": 16,
+    "gold_present": 259
+   }
+  },
+  "rel5@8k": {
+   "all": {
+    "all_gold": 153,
+    "answer_covered": 51,
+    "gold_present": 541
+   },
+   "check": {
+    "all_gold": 77,
+    "answer_covered": 27,
+    "gold_present": 268
+   },
+   "fit": {
+    "all_gold": 76,
+    "answer_covered": 24,
+    "gold_present": 273
+   }
+  },
+  "rel5h40@8k": {
+   "all": {
+    "all_gold": 154,
+    "answer_covered": 51,
+    "gold_present": 542
+   },
+   "check": {
+    "all_gold": 77,
+    "answer_covered": 27,
+    "gold_present": 268
+   },
+   "fit": {
+    "all_gold": 77,
+    "answer_covered": 24,
+    "gold_present": 274
+   }
+  },
+  "rel8@8k": {
+   "all": {
+    "all_gold": 153,
+    "answer_covered": 51,
+    "gold_present": 540
+   },
+   "check": {
+    "all_gold": 76,
+    "answer_covered": 27,
+    "gold_present": 267
+   },
+   "fit": {
+    "all_gold": 77,
+    "answer_covered": 24,
+    "gold_present": 273
+   }
+  },
+  "req@8k": {
+   "all": {
+    "all_gold": 154,
+    "answer_covered": 52,
+    "gold_present": 543
+   },
+   "check": {
+    "all_gold": 77,
+    "answer_covered": 27,
+    "gold_present": 268
+   },
+   "fit": {
+    "all_gold": 77,
+    "answer_covered": 25,
+    "gold_present": 275
+   }
+  },
+  "req_P3_rel5_h30@8k": {
+   "all": {
+    "all_gold": 158,
+    "answer_covered": 52,
+    "gold_present": 550
+   },
+   "check": {
+    "all_gold": 80,
+    "answer_covered": 27,
+    "gold_present": 274
+   },
+   "fit": {
+    "all_gold": 78,
+    "answer_covered": 25,
+    "gold_present": 276
+   }
+  },
+  "req_h30@8k": {
+   "all": {
+    "all_gold": 153,
+    "answer_covered": 51,
+    "gold_present": 542
+   },
+   "check": {
+    "all_gold": 76,
+    "answer_covered": 27,
+    "gold_present": 267
+   },
+   "fit": {
+    "all_gold": 77,
+    "answer_covered": 24,
+    "gold_present": 275
+   }
+  },
+  "req_l05_rel5@8k": {
+   "all": {
+    "all_gold": 158,
+    "answer_covered": 51,
+    "gold_present": 550
+   },
+   "check": {
+    "all_gold": 80,
+    "answer_covered": 27,
+    "gold_present": 273
+   },
+   "fit": {
+    "all_gold": 78,
+    "answer_covered": 24,
+    "gold_present": 277
+   }
+  },
+  "req_mass@8k": {
+   "all": {
+    "all_gold": 157,
+    "answer_covered": 52,
+    "gold_present": 548
+   },
+   "check": {
+    "all_gold": 79,
+    "answer_covered": 26,
+    "gold_present": 271
+   },
+   "fit": {
+    "all_gold": 78,
+    "answer_covered": 26,
+    "gold_present": 277
+   }
+  },
+  "req_rel3_h20@4k": {
+   "all": {
+    "all_gold": 138,
+    "answer_covered": 40,
+    "gold_present": 518
+   },
+   "check": {
+    "all_gold": 68,
+    "answer_covered": 24,
+    "gold_present": 255
+   },
+   "fit": {
+    "all_gold": 70,
+    "answer_covered": 16,
+    "gold_present": 263
+   }
+  },
+  "req_rel5@4k": {
+   "all": {
+    "all_gold": 142,
+    "answer_covered": 39,
+    "gold_present": 524
+   },
+   "check": {
+    "all_gold": 73,
+    "answer_covered": 23,
+    "gold_present": 261
+   },
+   "fit": {
+    "all_gold": 69,
+    "answer_covered": 16,
+    "gold_present": 263
+   }
+  },
+  "req_rel5@8k": {
+   "all": {
+    "all_gold": 159,
+    "answer_covered": 51,
+    "gold_present": 550
+   },
+   "check": {
+    "all_gold": 81,
+    "answer_covered": 26,
+    "gold_present": 273
+   },
+   "fit": {
+    "all_gold": 78,
+    "answer_covered": 25,
+    "gold_present": 277
+   }
+  },
+  "req_rel5_h30@8k": {
+   "all": {
+    "all_gold": 158,
+    "answer_covered": 51,
+    "gold_present": 548
+   },
+   "check": {
+    "all_gold": 80,
+    "answer_covered": 27,
+    "gold_present": 272
+   },
+   "fit": {
+    "all_gold": 78,
+    "answer_covered": 24,
+    "gold_present": 276
+   }
+  },
+  "seed_noact@4k": {
+   "all": {
+    "all_gold": 127,
+    "answer_covered": 40,
+    "gold_present": 494
+   },
+   "check": {
+    "all_gold": 61,
+    "answer_covered": 24,
+    "gold_present": 240
+   },
+   "fit": {
+    "all_gold": 66,
+    "answer_covered": 16,
+    "gold_present": 254
+   }
+  },
+  "seed_noact@8k": {
+   "all": {
+    "all_gold": 148,
+    "answer_covered": 52,
+    "gold_present": 535
+   },
+   "check": {
+    "all_gold": 73,
+    "answer_covered": 27,
+    "gold_present": 263
+   },
+   "fit": {
+    "all_gold": 75,
+    "answer_covered": 25,
+    "gold_present": 272
+   }
+  }
+ },
+ "calls": {
+  "reader": {
+   "sends": 2587,
+   "errors": 5,
+   "cost_usd_reported": 148.97
+  },
+  "judge": {
+   "sends": 128,
+   "errors": 0,
+   "cost_usd_reported": 3.67
+  }
+ }
+}

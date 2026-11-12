@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>growth cockpit · the eigen engine</title>
+<!-- THE GROWTH COCKPIT (E3): /conceptric's first engine surface. The resting DOM is the
+     composed BRIEF plus one-line counts — nothing is materialised until a focus summons it.
+     Colour + type ride hymn.css (the one palette); the focus/geometry runtime is engine.mjs;
+     the surface logic is cockpit-panes.mjs. The read-and-rule stock map is retained at
+     /conceptric/map, reachable as a door from the brief. -->
+<link rel="stylesheet" href="/shared/hymn.css">
+<script defer src="/shared/shell.js"></script>
+<style>
+*{box-sizing:border-box}
+html,body{margin:0;min-height:100%;background:var(--bg);color:var(--ink);
+  font:13px/1.5 -apple-system,"Segoe UI",Roboto,sans-serif}
+body{overflow-x:hidden}
+</style>
+</head>
+<body>
+<main id="cockpit-page">
+  <div class="ck-ctx">
+    <span class="ck-surface">growth cockpit</span>
+    <span class="ck-purpose">— where the project sits, what it covers, and the one decision waiting on you</span>
+  </div>
+  <!-- the engine root: the brief is the resting altitude; the rail + focus are built on pin -->
+  <div id="eng-root">
+    <div class="eng-brief"><div class="ck-brief-prose">resolving the project…</div></div>
+  </div>
+</main>
+<script type="module">
+import { initCockpit } from "/shared/cockpit-panes.mjs";
+initCockpit();
+</script>
+</body>
+</html>

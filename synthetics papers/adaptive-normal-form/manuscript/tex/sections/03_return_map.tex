@@ -1,0 +1,22 @@
+\section{Exact majority response}
+\label{hrec:app:majority}
+With \(p=(1+v)/2\), the mean-majority polynomial is
+\begin{equation}
+ B_N(v)=\sum_{j=0}^N
+ \operatorname{sign}(2j-N)\binom Nj p^j(1-p)^{N-j}.
+\end{equation}
+At \(u=0\), each spin configuration has probability \(2^{-N}\). Differentiation using Eq.~\eqref{hrec:eq:detector} multiplies that probability by \(\beta S_N\), giving the first line of Eq.~\eqref{hrec:eq:exact-slope}. For the binomial sum, use
+\[
+ (2j-N)\binom Nj
+ =N\left[\binom{N-1}{j-1}-\binom{N-1}j\right].
+\]
+Summing over \(j>N/2\) telescopes. Doubling the positive contribution by symmetry yields
+\(\E|S_N|=N2^{-(N-1)}\binom{N-1}{\lfloor(N-1)/2\rfloor}\).
+A tie contributes zero to this derivative.
+
+For \(N=2j\), Stirling expansion of the central binomial coefficient gives
+\(\E|S_N|=\sqrt{2N/\pi}[1-1/(4N)+O(N^{-2})]\).
+For \(N=2j+1\), the corresponding expansion has \(+1/(4N)\).
+For even \(N\), the literal-zero tie rule has variance
+\(1-\Pr(S_N=0)\) at zero bias, while a fair binary tie-break has variance one. Their equal mean laws therefore do not license an identical binary stochastic recursion.
+

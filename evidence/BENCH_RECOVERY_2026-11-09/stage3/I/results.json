@@ -1,0 +1,2915 @@
+{
+ "label": "DEV-ONLY: 172 consumed MultiHop-RAG W3 questions; gold used only to score",
+ "reader": "claude-sonnet-5-5, effort low, stage3/C/claude_client.py",
+ "headline": {
+  "endpoint": "exact match of 172 (sealed scorer, evaluation_scoring.answer_scores); fit 88 / check 84",
+  "before": {
+   "ours": 133,
+   "rag": 125,
+   "raptor": 118,
+   "source": "stage3/S/results.json news.table"
+  },
+  "rows": [
+   {
+    "row": "A, frozen instruction",
+    "ours_stages": "stages 1 (labelled two-sentence windows), 5 (exact outlet/date support per compiled facet), 6 seed only (cosine + 0.5 keyword; no statement fields, no diffusion), 7 round-robin over facets, 8 deterministic delivery",
+    "reading": "frozen V0 instruction",
+    "ours": {
+     "arm": "ours_g@2000",
+     "em": 141,
+     "fit": 71,
+     "check": 70,
+     "em_or_containment": 143,
+     "facts": 234
+    },
+    "rag": {
+     "arm": "rag_g@2000",
+     "em": 138,
+     "fit": 71,
+     "check": 67,
+     "em_or_containment": 141,
+     "facts": 211
+    },
+    "raptor_equal_settings": null,
+    "raptor_as_banked": {
+     "arm": "raptor@2000",
+     "em": 118,
+     "fit": 57,
+     "check": 61,
+     "em_or_containment": 122,
+     "facts": 63
+    },
+    "ours_vs_rag": {
+     "wins": 10,
+     "losses": 7,
+     "net": 3,
+     "one_sided_p": 0.3145
+    },
+    "ours_vs_raptor_equal": null,
+    "ours_vs_raptor_banked": {
+     "wins": 31,
+     "losses": 8,
+     "net": 23,
+     "one_sided_p": 0.0001
+    }
+   },
+   {
+    "row": "A + answer-form rules (RECOMMENDED FREEZE)",
+    "ours_stages": "stages 1 (labelled two-sentence windows), 5 (exact outlet/date support per compiled facet), 6 seed only (cosine + 0.5 keyword; no statement fields, no diffusion), 7 round-robin over facets, 8 deterministic delivery",
+    "reading": "rules instruction, single pass",
+    "ours": {
+     "arm": "ours_g@2000+rules",
+     "em": 152,
+     "fit": 76,
+     "check": 76,
+     "em_or_containment": 153,
+     "facts": 234
+    },
+    "rag": {
+     "arm": "rag_g@2000+rules",
+     "em": 152,
+     "fit": 77,
+     "check": 75,
+     "em_or_containment": 154,
+     "facts": 211
+    },
+    "raptor_equal_settings": {
+     "arm": "raptor_g@2000+rules",
+     "em": 148,
+     "fit": 75,
+     "check": 73,
+     "em_or_containment": 152,
+     "facts": 205
+    },
+    "raptor_as_banked": {
+     "arm": "raptor@2000+rules",
+     "em": 142,
+     "fit": 72,
+     "check": 70,
+     "em_or_containment": 143,
+     "facts": 63
+    },
+    "ours_vs_rag": {
+     "wins": 6,
+     "losses": 6,
+     "net": 0,
+     "one_sided_p": 0.6128
+    },
+    "ours_vs_raptor_equal": {
+     "wins": 9,
+     "losses": 5,
+     "net": 4,
+     "one_sided_p": 0.212
+    },
+    "ours_vs_raptor_banked": {
+     "wins": 14,
+     "losses": 4,
+     "net": 10,
+     "one_sided_p": 0.0154
+    }
+   },
+   {
+    "row": "A + rules + agreement rule",
+    "ours_stages": "stages 1 (labelled two-sentence windows), 5 (exact outlet/date support per compiled facet), 6 seed only (cosine + 0.5 keyword; no statement fields, no diffusion), 7 round-robin over facets, 8 deterministic delivery",
+    "reading": "rules; agreement rule on agree-form yes/no questions",
+    "ours": {
+     "arm": "ours_g@2000+rules+A",
+     "em": 155,
+     "fit": 78,
+     "check": 77,
+     "em_or_containment": 156,
+     "facts": 234
+    },
+    "rag": {
+     "arm": "rag_g@2000+rules+A",
+     "em": 153,
+     "fit": 77,
+     "check": 76,
+     "em_or_containment": 155,
+     "facts": 211
+    },
+    "raptor_equal_settings": {
+     "arm": "raptor_g@2000+rules+A",
+     "em": 152,
+     "fit": 77,
+     "check": 75,
+     "em_or_containment": 156,
+     "facts": 205
+    },
+    "raptor_as_banked": null,
+    "ours_vs_rag": {
+     "wins": 8,
+     "losses": 6,
+     "net": 2,
+     "one_sided_p": 0.3953
+    },
+    "ours_vs_raptor_equal": {
+     "wins": 9,
+     "losses": 6,
+     "net": 3,
+     "one_sided_p": 0.3036
+    },
+    "ours_vs_raptor_banked": null
+   },
+   {
+    "row": "A + rules, 4,000 tokens",
+    "ours_stages": "stages 1 (labelled two-sentence windows), 5 (exact outlet/date support per compiled facet), 6 seed only (cosine + 0.5 keyword; no statement fields, no diffusion), 7 round-robin over facets, 8 deterministic delivery",
+    "reading": "rules instruction, single pass",
+    "ours": {
+     "arm": "ours_g@4000+rules",
+     "em": 153,
+     "fit": 76,
+     "check": 77,
+     "em_or_containment": 154,
+     "facts": 263
+    },
+    "rag": {
+     "arm": "rag_g@4000+rules",
+     "em": 152,
+     "fit": 76,
+     "check": 76,
+     "em_or_containment": 154,
+     "facts": 248
+    },
+    "raptor_equal_settings": null,
+    "raptor_as_banked": {
+     "arm": "raptor@4000+rules",
+     "em": 147,
+     "fit": 75,
+     "check": 72,
+     "em_or_containment": 148,
+     "facts": 91
+    },
+    "ours_vs_rag": {
+     "wins": 6,
+     "losses": 5,
+     "net": 1,
+     "one_sided_p": 0.5
+    },
+    "ours_vs_raptor_equal": null,
+    "ours_vs_raptor_banked": {
+     "wins": 10,
+     "losses": 4,
+     "net": 6,
+     "one_sided_p": 0.0898
+    }
+   },
+   {
+    "row": "A, model delivery instead of stage 8 (top 6 articles read whole, verbatim sentences)",
+    "ours_stages": "stages 1 (labelled two-sentence windows), 5 (exact outlet/date support per compiled facet), 6 seed only (cosine + 0.5 keyword; no statement fields, no diffusion), 7 round-robin over facets, 8 model delivery",
+    "reading": "rules instruction, single pass",
+    "ours": {
+     "arm": "ours_x@2000+rules",
+     "em": 155,
+     "fit": 78,
+     "check": 77,
+     "em_or_containment": 157,
+     "facts": 232
+    },
+    "rag": {
+     "arm": "rag_x@2000+rules",
+     "em": 154,
+     "fit": 76,
+     "check": 78,
+     "em_or_containment": 155,
+     "facts": 206
+    },
+    "raptor_equal_settings": null,
+    "raptor_as_banked": {
+     "arm": "raptor_x@2000+rules",
+     "em": 139,
+     "fit": 72,
+     "check": 67,
+     "em_or_containment": 140,
+     "facts": 174
+    },
+    "ours_vs_rag": {
+     "wins": 4,
+     "losses": 3,
+     "net": 1,
+     "one_sided_p": 0.5
+    },
+    "ours_vs_raptor_equal": null,
+    "ours_vs_raptor_banked": {
+     "wins": 19,
+     "losses": 3,
+     "net": 16,
+     "one_sided_p": 0.0004
+    }
+   },
+   {
+    "row": "A, single-pass requirement table (I's table2; NOT R's stage-9 protocol)",
+    "ours_stages": "stages 1 (labelled two-sentence windows), 5 (exact outlet/date support per compiled facet), 6 seed only (cosine + 0.5 keyword; no statement fields, no diffusion), 7 round-robin over facets, 8 deterministic delivery",
+    "reading": "table2: one row per compiled requirement, then the answer, one pass",
+    "ours": {
+     "arm": "ours_g@2000+table2",
+     "em": 153,
+     "fit": 78,
+     "check": 75,
+     "em_or_containment": 154,
+     "facts": 234
+    },
+    "rag": {
+     "arm": "rag_g@2000+table2",
+     "em": 145,
+     "fit": 75,
+     "check": 70,
+     "em_or_containment": 146,
+     "facts": 211
+    },
+    "raptor_equal_settings": {
+     "arm": "raptor_g@2000+table2",
+     "em": 147,
+     "fit": 77,
+     "check": 70,
+     "em_or_containment": 148,
+     "facts": 205
+    },
+    "raptor_as_banked": {
+     "arm": "raptor@2000+table2",
+     "em": 132,
+     "fit": 65,
+     "check": 67,
+     "em_or_containment": 133,
+     "facts": 63
+    },
+    "ours_vs_rag": {
+     "wins": 9,
+     "losses": 1,
+     "net": 8,
+     "one_sided_p": 0.0107
+    },
+    "ours_vs_raptor_equal": {
+     "wins": 7,
+     "losses": 1,
+     "net": 6,
+     "one_sided_p": 0.0352
+    },
+    "ours_vs_raptor_banked": {
+     "wins": 25,
+     "losses": 4,
+     "net": 21,
+     "one_sided_p": 0.0001
+    }
+   },
+   {
+    "row": "B: statement fields in the seed, single-pass requirement table",
+    "ours_stages": "stages 1, 2-3 (X statement fields as a 0.3 seed term), 5 (bindings as a gate, not the design's weight), 6 seed only (no diffusion), 7 round-robin (not the witness readout), 8 deterministic delivery",
+    "reading": "table2, one pass",
+    "ours": {
+     "arm": "B_nodiff@2000+table2",
+     "em": 151,
+     "fit": 78,
+     "check": 73,
+     "em_or_containment": 152,
+     "facts": 238
+    },
+    "rag": {
+     "arm": "rag_g@2000+table2",
+     "em": 145,
+     "fit": 75,
+     "check": 70,
+     "em_or_containment": 146,
+     "facts": 211
+    },
+    "raptor_equal_settings": {
+     "arm": "raptor_g@2000+table2",
+     "em": 147,
+     "fit": 77,
+     "check": 70,
+     "em_or_containment": 148,
+     "facts": 205
+    },
+    "raptor_as_banked": {
+     "arm": "raptor@2000+table2",
+     "em": 132,
+     "fit": 65,
+     "check": 67,
+     "em_or_containment": 133,
+     "facts": 63
+    },
+    "ours_vs_rag": {
+     "wins": 8,
+     "losses": 2,
+     "net": 6,
+     "one_sided_p": 0.0547
+    },
+    "ours_vs_raptor_equal": {
+     "wins": 6,
+     "losses": 2,
+     "net": 4,
+     "one_sided_p": 0.1445
+    },
+    "ours_vs_raptor_banked": {
+     "wins": 25,
+     "losses": 6,
+     "net": 19,
+     "one_sided_p": 0.0004
+    }
+   },
+   {
+    "row": "B with stage 7 by September's witness readout, single-pass requirement table",
+    "ours_stages": "stages 1, 2-3 (X statement fields as a 0.3 seed term), 5 (bindings as a gate, not the design's weight), 6 seed only (no diffusion), 7 witness readout (X/witness_readout.py), 8 deterministic delivery",
+    "reading": "table2, one pass",
+    "ours": {
+     "arm": "B_readout_seed@2000+table2",
+     "em": 151,
+     "fit": 78,
+     "check": 73,
+     "em_or_containment": 152,
+     "facts": null
+    },
+    "rag": {
+     "arm": "rag_g@2000+table2",
+     "em": 145,
+     "fit": 75,
+     "check": 70,
+     "em_or_containment": 146,
+     "facts": 211
+    },
+    "raptor_equal_settings": {
+     "arm": "raptor_g@2000+table2",
+     "em": 147,
+     "fit": 77,
+     "check": 70,
+     "em_or_containment": 148,
+     "facts": 205
+    },
+    "raptor_as_banked": {
+     "arm": "raptor@2000+table2",
+     "em": 132,
+     "fit": 65,
+     "check": 67,
+     "em_or_containment": 133,
+     "facts": 63
+    },
+    "ours_vs_rag": {
+     "wins": 8,
+     "losses": 2,
+     "net": 6,
+     "one_sided_p": 0.0547
+    },
+    "ours_vs_raptor_equal": {
+     "wins": 6,
+     "losses": 2,
+     "net": 4,
+     "one_sided_p": 0.1445
+    },
+    "ours_vs_raptor_banked": {
+     "wins": 25,
+     "losses": 6,
+     "net": 19,
+     "one_sided_p": 0.0004
+    }
+   }
+  ]
+ },
+ "frozen_settings_recommended": {
+  "pieces": "two-sentence windows, stride one sentence (G/scripts/g_common.windows); embedded with '<title> | <outlet> | <YYYY-MM-DD>' label (G/vectors/news_s2_ctx.f16.npy)",
+  "score": "cosine + 0.5 x BM25(label+window)/max for every arm; ours: per compiled facet inside its exact outlet/date support, round-robin; RAG: whole corpus, pool 200, MMR 0.7; RAPTOR: the 1,747 summary nodes plus the labelled windows, no MMR (raptor_g, G's frozen RAPTOR arm)",
+  "delivery": "one block per article, spans merged in article order, extended to whole sentences (g_common.delivered_pack; RAPTOR summaries as their own blocks, delivered_pack_mixed); 2,000 cl100k tokens",
+  "reader": "claude-sonnet-5-5 low, i_lib.RULES_INSTRUCTION + ANSWER_SCHEMA, identical for every arm",
+  "not_frozen": [
+   "statement-field term (gamma 0.3: +5 facts fit, +1 check; b1_sweep)",
+   "query-time diffusion (rel / lang / both: within +-2 facts; EM 149-152 under table2)",
+   "statements shown to the reader (-21 facts, EM +1)",
+   "4,000 tokens (+29 facts, EM +1)",
+   "model delivery (+3 EM for ours and RAG, +1,995 calls per 172 questions)",
+   "witness readout for stage 7 (results/readout_sweep.json; see 'readout')",
+   "agreement rule (results/agree_rule.json; see step_d.agree_rule)"
+  ],
+  "caveat": "the rules instruction's three rules were written from failures read on all 172 questions, so its check-half gain is not a held-out test; the untouched draw is"
+ },
+ "calls": {
+  "reader": {
+   "sends": 5993,
+   "ok": 5993,
+   "errors": 0,
+   "usage_limit_stops": 0,
+   "cost_usd_cli_reported": 127.7,
+   "ceiling": 6000
+  },
+  "delivery": {
+   "sends": 1995,
+   "ok": 1995,
+   "errors": 0,
+   "usage_limit_stops": 0,
+   "cost_usd_cli_reported": 46.99,
+   "ceiling": 2500
+  }
+ },
+ "reader_noise": {
+  "rag_x@2000+rules#s1": {
+   "flips": 1,
+   "em_first": 154,
+   "em_second": 153
+  },
+  "ours_x@2000+rules#s1": {
+   "flips": 2,
+   "em_first": 155,
+   "em_second": 155
+  }
+ },
+ "step_d": {
+  "step_d_failures_B": {
+   "arm": "B_nodiff@2000+table2",
+   "classes": {
+    "a needed fact missing: lost in packing": 6,
+    "every needed fact delivered; reader answered wrong": 7,
+    "a needed fact missing: lost in witness selection/never seeded": 2,
+    "a needed fact missing: lost in ranking": 1,
+    "a needed fact missing: lost in witness selection": 4,
+    "a needed fact missing: never seeded": 1
+   },
+   "n_rows": 21
+  },
+  "step_d_failures_best": {
+   "arm": "ours_x@2000+rules",
+   "classes": {
+    "comparison_query|needed fact missing, reader answered wrong": 4,
+    "inference_query|format (containment right, EM wrong)": 1,
+    "temporal_query|needed fact missing, reader answered wrong": 2,
+    "comparison_query|every needed fact delivered, reader judgement differs from gold": 5,
+    "temporal_query|format (containment right, EM wrong)": 1,
+    "inference_query|needed fact missing, reader answered wrong": 1,
+    "temporal_query|every needed fact delivered, reader judgement differs from gold": 3
+   },
+   "n_rows": 17
+  },
+  "step_d_failures_rulesA": {
+   "source": "results/agree_rule.json",
+   "by_arm": {
+    "ours_g@2000+rules+A": {
+     "failures": 17,
+     "classes": {
+      "format (containment right)": 1,
+      "format (containment right) | a needed fact missing": 1,
+      "no on gold yes": 3,
+      "no on gold yes | a needed fact missing": 2,
+      "no on gold yes | all needed facts delivered": 1,
+      "other wrong answer": 5,
+      "other wrong answer | a needed fact missing": 2,
+      "other wrong answer | all needed facts delivered": 3,
+      "yes on gold no": 8,
+      "yes on gold no | a needed fact missing": 5,
+      "yes on gold no | all needed facts delivered": 3
+     },
+     "rows": [
+      {
+       "qid": "9410df4f1efea4e0919271cbee22c3d6268bad9b30ecef8cab8fa7ed8cc39b0e",
+       "type": "comparison_query",
+       "answer": "No",
+       "gold": "Yes",
+       "class": "no on gold yes",
+       "delivery": "a needed fact missing",
+       "delivered": [
+        1,
+        0
+       ]
+      },
+      {
+       "qid": "926f8ad0b774544b5953ff71445bcbe70b4bb207c7e3770964d9a31c3ca91b38",
+       "type": "temporal_query",
+       "answer": "Yes",
+       "gold": "no",
+       "class": "yes on gold no",
+       "delivery": "all needed facts delivered",
+       "delivered": [
+        1,
+        1
+       ]
+      },
+      {
+       "qid": "c88670de268615c4fdb8736032540da7ca4a59c8a15e0372c0ff1d4eec9adaaa",
+       "type": "comparison_query",
+       "answer": "Yes",
+       "gold": "no",
+       "class": "yes on gold no",
+       "delivery": "all needed facts delivered",
+       "delivered": [
+        1,
+        1,
+        1
+       ]
+      },
+      {
+       "qid": "4588acb7453f36dca7b88eb0152e40c1681fdb6c7c6d0e1f688f326cbd8053e7",
+       "type": "temporal_query",
+       "answer": "Yes",
+       "gold": "no",
+       "class": "yes on gold no",
+       "delivery": "a needed fact missing",
+       "delivered": [
+        0,
+        0,
+        1
+       ]
+      },
+      {
+       "qid": "e4094d8c4cfdcfe91a46c3cca5f744a658c6bb851a93f2a7930554563ca11e08",
+       "type": "comparison_query",
+       "answer": "Yes",
+       "gold": "no",
+       "class": "yes on gold no",
+       "delivery": "a needed fact missing",
+       "delivered": [
+        1,
+        0,
+        1
+       ]
+      },
+      {
+       "qid": "84f3120fc91d7ce41e2dda5f5d25c79bd632017b7660a2230e71523aebe0ed25",
+       "type": "temporal_query",
+       "answer": "Yes",
+       "gold": "No",
+       "class": "yes on gold no",
+       "delivery": "a needed fact missing",
+       "delivered": [
+        1,
+        0,
+        1
+       ]
+      },
+      {
+       "qid": "7fd38ade92145bca1176b2586574184bdd877fe6c9468879f7e30501144c0e43",
+       "type": "comparison_query",
+       "answer": "Yes",
+       "gold": "no",
+       "class": "yes on gold no",
+       "delivery": "a needed fact missing",
+       "delivered": [
+        0,
+        1
+       ]
+      },
+      {
+       "qid": "c0a65396f672416432b8642f5604f083ef39f6c4854ab70d1e83a48eb2c30474",
+       "type": "temporal_query",
+       "answer": "No; Yes",
+       "gold": "Yes",
+       "class": "format (containment right)",
+       "delivery": "a needed fact missing",
+       "delivered": [
+        1,
+        0,
+        1
+       ]
+      },
+      {
+       "qid": "39a32cd3cd42697e63c13a264e7283d048514d7ba31ca05062860ebb78d349a2",
+       "type": "inference_query",
+       "answer": "Israel",
+       "gold": "Gaza",
+       "class": "other wrong answer",
+       "delivery": "a needed fact missing",
+       "delivered": [
+        0,
+        1,
+        1
+       ]
+      },
+      {
+       "qid": "34f651af686fcf3ee11034d54830ab42c7ece20591ae143e35514abd847880e8",
+       "type": "comparison_query",
+       "answer": "Align",
+       "gold": "Different",
+       "class": "other wrong answer",
+       "delivery": "all needed facts delivered",
+       "delivered": [
+        1,
+        1
+       ]
+      },
+      {
+       "qid": "7086d5444d9785e59a51cba0ae1bcd4481c6e33fe5c91d995c92fe32a953c286",
+       "type": "comparison_query",
+       "answer": "Yes",
+       "gold": "Contradictory",
+       "class": "other wrong answer",
+       "delivery": "all needed facts delivered",
+       "delivered": [
+        1,
+        1,
+        1
+       ]
+      },
+      {
+       "qid": "1bdf980169e902e26bd572de55031a6141954e604525b5decea6d5bf8263b5eb",
+       "type": "comparison_query",
+       "answer": "different",
+       "gold": "no",
+       "class": "other wrong answer",
+       "delivery": "a needed fact missing",
+       "delivered": [
+        0,
+        0,
+        1
+       ]
+      },
+      {
+       "qid": "57467945cd979ff24310a46264e65dbf8c0447a131975a11ff1f4ba8962ba630",
+       "type": "comparison_query",
+       "answer": "No",
+       "gold": "Yes",
+       "class": "no on gold yes",
+       "delivery": "all needed facts delivered",
+       "delivered": [
+        1,
+        1
+       ]
+      },
+      {
+       "qid": "70a79174b68e14df882334e071c2dd1802f9392fdf7c84300e90056e54013d70",
+       "type": "temporal_query",
+       "answer": "No",
+       "gold": "Yes",
+       "class": "no on gold yes",
+       "delivery": "a needed fact missing",
+       "delivered": [
+        1,
+        0,
+        0
+       ]
+      },
+      {
+       "qid": "cc197cac908519258f5d40592ffc33e02598f790594139130b482eff49dbaab8",
+       "type": "comparison_query",
+       "answer": "Yes",
+       "gold": "True",
+       "class": "other wrong answer",
+       "delivery": "all needed facts delivered",
+       "delivered": [
+        1,
+        1
+       ]
+      },
+      {
+       "qid": "2b5408f924c0c00d39c9734b5fd2f884d2a2d248fb74afd3ead50876cd720908",
+       "type": "temporal_query",
+       "answer": "Yes",
+       "gold": "no",
+       "class": "yes on gold no",
+       "delivery": "a needed fact missing",
+       "delivered": [
+        0,
+        1
+       ]
+      },
+      {
+       "qid": "c7205ec0ba83e1745f0acfc793d353b3d9763df846e02e18cd38101c6410b2c4",
+       "type": "temporal_query",
+       "answer": "Yes",
+       "gold": "no",
+       "class": "yes on gold no",
+       "delivery": "all needed facts delivered",
+       "delivered": [
+        1,
+        1
+       ]
+      }
+     ]
+    },
+    "rag_g@2000+rules+A": {
+     "failures": 19,
+     "classes": {
+      "format (containment right)": 2,
+      "format (containment right) | no gold facts listed": 2,
+      "no on gold yes": 7,
+      "no on gold yes | a needed fact missing": 6,
+      "no on gold yes | all needed facts delivered": 1,
+      "other wrong answer": 6,
+      "other wrong answer | a needed fact missing": 2,
+      "other wrong answer | all needed facts delivered": 4,
+      "yes on gold no": 4,
+      "yes on gold no | a needed fact missing": 4
+     },
+     "rows": [
+      {
+       "qid": "9410df4f1efea4e0919271cbee22c3d6268bad9b30ecef8cab8fa7ed8cc39b0e",
+       "type": "comparison_query",
+       "answer": "No",
+       "gold": "Yes",
+       "class": "no on gold yes",
+       "delivery": "a needed fact missing",
+       "delivered": [
+        0,
+        0
+       ]
+      },
+      {
+       "qid": "730a99fd8b5cbdf67bf7659940d047b4bb84931fb60adf0fe5f6e0adb14e5dc9",
+       "type": "temporal_query",
+       "answer": "No",
+       "gold": "Yes",
+       "class": "no on gold yes",
+       "delivery": "all needed facts delivered",
+       "delivered": [
+        1,
+        1
+       ]
+      },
+      {
+       "qid": "527636c69a3ebbe0563efcbceb063c83b870029349cc78f4c61d6b29c187184f",
+       "type": "temporal_query",
+       "answer": "No",
+       "gold": "Yes",
+       "class": "no on gold yes",
+       "delivery": "a needed fact missing",
+       "delivered": [
+        0,
+        1,
+        0
+       ]
+      },
+      {
+       "qid": "84f3120fc91d7ce41e2dda5f5d25c79bd632017b7660a2230e71523aebe0ed25",
+       "type": "temporal_query",
+       "answer": "Yes",
+       "gold": "No",
+       "class": "yes on gold no",
+       "delivery": "a needed fact missing",
+       "delivered": [
+        1,
+        0,
+        1
+       ]
+      },
+      {
+       "qid": "7fd38ade92145bca1176b2586574184bdd877fe6c9468879f7e30501144c0e43",
+       "type": "comparison_query",
+       "answer": "Yes",
+       "gold": "no",
+       "class": "yes on gold no",
+       "delivery": "a needed fact missing",
+       "delivered": [
+        0,
+        1
+       ]
+      },
+      {
+       "qid": "39a32cd3cd42697e63c13a264e7283d048514d7ba31ca05062860ebb78d349a2",
+       "type": "inference_query",
+       "answer": "Israel",
+       "gold": "Gaza",
+       "class": "other wrong answer",
+       "delivery": "a needed fact missing",
+       "delivered": [
+        0,
+        0,
+        1
+       ]
+      },
+      {
+       "qid": "34f651af686fcf3ee11034d54830ab42c7ece20591ae143e35514abd847880e8",
+       "type": "comparison_query",
+       "answer": "They align on high-performance centralisation, since the QRU supports it. They differ on commercial control, because the QRU won't centralise commercial or corporate functions or hand its keys to Rugby Australia.",
+       "gold": "Different",
+       "class": "other wrong answer",
+       "delivery": "all needed facts delivered",
+       "delivered": [
+        1,
+        1
+       ]
+      },
+      {
+       "qid": "7086d5444d9785e59a51cba0ae1bcd4481c6e33fe5c91d995c92fe32a953c286",
+       "type": "comparison_query",
+       "answer": "Yes",
+       "gold": "Contradictory",
+       "class": "other wrong answer",
+       "delivery": "all needed facts delivered",
+       "delivered": [
+        1,
+        1,
+        1
+       ]
+      },
+      {
+       "qid": "1bdf980169e902e26bd572de55031a6141954e604525b5decea6d5bf8263b5eb",
+       "type": "comparison_query",
+       "answer": "Different",
+       "gold": "no",
+       "class": "other wrong answer",
+       "delivery": "a needed fact missing",
+       "delivered": [
+        0,
+        0,
+        1
+       ]
+      },
+      {
+       "qid": "a001034c0b4ffbf773073d3cd13349d47191fa09fc4977c6982ffff3c93ad11b",
+       "type": "temporal_query",
+       "answer": "No",
+       "gold": "Yes",
+       "class": "no on gold yes",
+       "delivery": "a needed fact missing",
+       "delivered": [
+        0,
+        0,
+        0
+       ]
+      },
+      {
+       "qid": "b53d4e307cb7b1346850e7bf57f1bcfefe85000f71481d8a28e5e4b9eb4c61e2",
+       "type": "null_query",
+       "answer": "S",
+       "gold": "Insufficient information.",
+       "class": "format (containment right)",
+       "delivery": "no gold facts listed",
+       "delivered": []
+      },
+      {
+       "qid": "f41a5c660100050e4b94652239c3303d36d5f2fc55f238c36713520296578761",
+       "type": "comparison_query",
+       "answer": "No",
+       "gold": "Yes",
+       "class": "no on gold yes",
+       "delivery": "a needed fact missing",
+       "delivered": [
+        1,
+        0
+       ]
+      },
+      {
+       "qid": "70a79174b68e14df882334e071c2dd1802f9392fdf7c84300e90056e54013d70",
+       "type": "temporal_query",
+       "answer": "No",
+       "gold": "Yes",
+       "class": "no on gold yes",
+       "delivery": "a needed fact missing",
+       "delivered": [
+        1,
+        0,
+        0
+       ]
+      },
+      {
+       "qid": "5abc9ce222a1a2346462117821e2d4c9de512e28a88e3f0ad0e1b4d0ddad6d0e",
+       "type": "temporal_query",
+       "answer": "After",
+       "gold": "Before",
+       "class": "other wrong answer",
+       "delivery": "all needed facts delivered",
+       "delivered": [
+        1,
+        1
+       ]
+      },
+      {
+       "qid": "5dbb6336da60d5145cc4a915a833f806f0cad0741b7d4c4ad75e9db9718e7bf9",
+       "type": "null_query",
+       "answer": "F",
+       "gold": "Insufficient information.",
+       "class": "format (containment right)",
+       "delivery": "no gold facts listed",
+       "delivered": []
+      },
+      {
+       "qid": "cc197cac908519258f5d40592ffc33e02598f790594139130b482eff49dbaab8",
+       "type": "comparison_query",
+       "answer": "Yes",
+       "gold": "True",
+       "class": "other wrong answer",
+       "delivery": "all needed facts delivered",
+       "delivered": [
+        1,
+        1
+       ]
+      },
+      {
+       "qid": "2b5408f924c0c00d39c9734b5fd2f884d2a2d248fb74afd3ead50876cd720908",
+       "type": "temporal_query",
+       "answer": "Yes",
+       "gold": "no",
+       "class": "yes on gold no",
+       "delivery": "a needed fact missing",
+       "delivered": [
+        0,
+        1
+       ]
+      },
+      {
+       "qid": "54a88d9a188f9f10112b28a012b7e4f985a072c4a4b8504887c7b6b2f3664636",
+       "type": "temporal_query",
+       "answer": "No",
+       "gold": "Yes",
+       "class": "no on gold yes",
+       "delivery": "a needed fact missing",
+       "delivered": [
+        0,
+        1,
+        0
+       ]
+      },
+      {
+       "qid": "c7205ec0ba83e1745f0acfc793d353b3d9763df846e02e18cd38101c6410b2c4",
+       "type": "temporal_query",
+       "answer": "Yes",
+       "gold": "no",
+       "class": "yes on gold no",
+       "delivery": "a needed fact missing",
+       "delivered": [
+        1,
+        0
+       ]
+      }
+     ]
+    },
+    "raptor_g@2000+rules+A": {
+     "failures": 20,
+     "classes": {
+      "format (containment right)": 4,
+      "format (containment right) | a needed fact missing": 1,
+      "format (containment right) | all needed facts delivered": 1,
+      "format (containment right) | no gold facts listed": 2,
+      "no on gold yes": 7,
+      "no on gold yes | a needed fact missing": 6,
+      "no on gold yes | all needed facts delivered": 1,
+      "other wrong answer": 5,
+      "other wrong answer | a needed fact missing": 3,
+      "other wrong answer | all needed facts delivered": 2,
+      "yes on gold no": 4,
+      "yes on gold no | a needed fact missing": 3,
+      "yes on gold no | all needed facts delivered": 1
+     },
+     "rows": [
+      {
+       "qid": "3315d7cb9dc995ee6bfd41b80e87b01706b69f59bec7959199c3f030feb71d6a",
+       "type": "inference_query",
+       "answer": "The Fed",
+       "gold": "The Federal Reserve",
+       "class": "format (containment right)",
+       "delivery": "all needed facts delivered",
+       "delivered": [
+        1,
+        1
+       ]
+      },
+      {
+       "qid": "9410df4f1efea4e0919271cbee22c3d6268bad9b30ecef8cab8fa7ed8cc39b0e",
+       "type": "comparison_query",
+       "answer": "No",
+       "gold": "Yes",
+       "class": "no on gold yes",
+       "delivery": "a needed fact missing",
+       "delivered": [
+        0,
+        0
+       ]
+      },
+      {
+       "qid": "f0d081eaba78817cb09d910654c51d32871bf64b8c163027c2ce4a680905d0ce",
+       "type": "inference_query",
+       "answer": "Travis Kelce and Taylor Swift",
+       "gold": "Taylor Swift and Travis Kelce",
+       "class": "format (containment right)",
+       "delivery": "a needed fact missing",
+       "delivered": [
+        0,
+        0,
+        1
+       ]
+      },
+      {
+       "qid": "730a99fd8b5cbdf67bf7659940d047b4bb84931fb60adf0fe5f6e0adb14e5dc9",
+       "type": "temporal_query",
+       "answer": "No",
+       "gold": "Yes",
+       "class": "no on gold yes",
+       "delivery": "all needed facts delivered",
+       "delivered": [
+        1,
+        1
+       ]
+      },
+      {
+       "qid": "527636c69a3ebbe0563efcbceb063c83b870029349cc78f4c61d6b29c187184f",
+       "type": "temporal_query",
+       "answer": "No",
+       "gold": "Yes",
+       "class": "no on gold yes",
+       "delivery": "a needed fact missing",
+       "delivered": [
+        0,
+        0,
+        0
+       ]
+      },
+      {
+       "qid": "84f3120fc91d7ce41e2dda5f5d25c79bd632017b7660a2230e71523aebe0ed25",
+       "type": "temporal_query",
+       "answer": "Yes",
+       "gold": "No",
+       "class": "yes on gold no",
+       "delivery": "a needed fact missing",
+       "delivered": [
+        1,
+        0,
+        1
+       ]
+      },
+      {
+       "qid": "7fd38ade92145bca1176b2586574184bdd877fe6c9468879f7e30501144c0e43",
+       "type": "comparison_query",
+       "answer": "Yes",
+       "gold": "no",
+       "class": "yes on gold no",
+       "delivery": "a needed fact missing",
+       "delivered": [
+        0,
+        1
+       ]
+      },
+      {
+       "qid": "39a32cd3cd42697e63c13a264e7283d048514d7ba31ca05062860ebb78d349a2",
+       "type": "inference_query",
+       "answer": "Israel",
+       "gold": "Gaza",
+       "class": "other wrong answer",
+       "delivery": "a needed fact missing",
+       "delivered": [
+        0,
+        0,
+        1
+       ]
+      },
+      {
+       "qid": "34f651af686fcf3ee11034d54830ab42c7ece20591ae143e35514abd847880e8",
+       "type": "comparison_query",
+       "answer": "Align",
+       "gold": "Different",
+       "class": "other wrong answer",
+       "delivery": "all needed facts delivered",
+       "delivered": [
+        1,
+        1
+       ]
+      },
+      {
+       "qid": "7086d5444d9785e59a51cba0ae1bcd4481c6e33fe5c91d995c92fe32a953c286",
+       "type": "comparison_query",
+       "answer": "Yes",
+       "gold": "Contradictory",
+       "class": "other wrong answer",
+       "delivery": "a needed fact missing",
+       "delivered": [
+        0,
+        1,
+        1
+       ]
+      },
+      {
+       "qid": "1bdf980169e902e26bd572de55031a6141954e604525b5decea6d5bf8263b5eb",
+       "type": "comparison_query",
+       "answer": "Different",
+       "gold": "no",
+       "class": "other wrong answer",
+       "delivery": "a needed fact missing",
+       "delivered": [
+        0,
+        0,
+        1
+       ]
+      },
+      {
+       "qid": "a001034c0b4ffbf773073d3cd13349d47191fa09fc4977c6982ffff3c93ad11b",
+       "type": "temporal_query",
+       "answer": "No",
+       "gold": "Yes",
+       "class": "no on gold yes",
+       "delivery": "a needed fact missing",
+       "delivered": [
+        0,
+        0,
+        0
+       ]
+      },
+      {
+       "qid": "b53d4e307cb7b1346850e7bf57f1bcfefe85000f71481d8a28e5e4b9eb4c61e2",
+       "type": "null_query",
+       "answer": "S",
+       "gold": "Insufficient information.",
+       "class": "format (containment right)",
+       "delivery": "no gold facts listed",
+       "delivered": []
+      },
+      {
+       "qid": "f41a5c660100050e4b94652239c3303d36d5f2fc55f238c36713520296578761",
+       "type": "comparison_query",
+       "answer": "No",
+       "gold": "Yes",
+       "class": "no on gold yes",
+       "delivery": "a needed fact missing",
+       "delivered": [
+        1,
+        0
+       ]
+      },
+      {
+       "qid": "70a79174b68e14df882334e071c2dd1802f9392fdf7c84300e90056e54013d70",
+       "type": "temporal_query",
+       "answer": "No",
+       "gold": "Yes",
+       "class": "no on gold yes",
+       "delivery": "a needed fact missing",
+       "delivered": [
+        1,
+        0,
+        0
+       ]
+      },
+      {
+       "qid": "5dbb6336da60d5145cc4a915a833f806f0cad0741b7d4c4ad75e9db9718e7bf9",
+       "type": "null_query",
+       "answer": "F",
+       "gold": "Insufficient information.",
+       "class": "format (containment right)",
+       "delivery": "no gold facts listed",
+       "delivered": []
+      },
+      {
+       "qid": "cc197cac908519258f5d40592ffc33e02598f790594139130b482eff49dbaab8",
+       "type": "comparison_query",
+       "answer": "Yes",
+       "gold": "True",
+       "class": "other wrong answer",
+       "delivery": "all needed facts delivered",
+       "delivered": [
+        1,
+        1
+       ]
+      },
+      {
+       "qid": "2b5408f924c0c00d39c9734b5fd2f884d2a2d248fb74afd3ead50876cd720908",
+       "type": "temporal_query",
+       "answer": "Yes",
+       "gold": "no",
+       "class": "yes on gold no",
+       "delivery": "a needed fact missing",
+       "delivered": [
+        0,
+        1
+       ]
+      },
+      {
+       "qid": "54a88d9a188f9f10112b28a012b7e4f985a072c4a4b8504887c7b6b2f3664636",
+       "type": "temporal_query",
+       "answer": "No",
+       "gold": "Yes",
+       "class": "no on gold yes",
+       "delivery": "a needed fact missing",
+       "delivered": [
+        0,
+        1,
+        0
+       ]
+      },
+      {
+       "qid": "c7205ec0ba83e1745f0acfc793d353b3d9763df846e02e18cd38101c6410b2c4",
+       "type": "temporal_query",
+       "answer": "Yes",
+       "gold": "no",
+       "class": "yes on gold no",
+       "delivery": "all needed facts delivered",
+       "delivered": [
+        1,
+        1
+       ]
+      }
+     ]
+    }
+   },
+   "n_rows": 0
+  },
+  "agree_rule": {
+   "reader": "sonnet",
+   "contexts": [
+    "results/read_c1_rules.json",
+    "results/read_raptor_g.json",
+    "results/read_agree_fit.json",
+    "results/read_agree_check.json"
+   ],
+   "table": {
+    "ours_g@2000+rules+A": {
+     "scored": 172,
+     "em": 155,
+     "em_or_containment": 156,
+     "abstained": 43,
+     "fit_em": 78,
+     "check_em": 77,
+     "by_type": {
+      "comparison_query": 34,
+      "temporal_query": 36,
+      "inference_query": 42,
+      "null_query": 43
+     },
+     "agree_rule": {
+      "agree_q_read": 39,
+      "changed_answer": 3,
+      "em_gain": 3,
+      "em_loss": 0,
+      "fit": {
+       "read": 19,
+       "gain": 2,
+       "loss": 0
+      },
+      "check": {
+       "read": 20,
+       "gain": 1,
+       "loss": 0
+      }
+     },
+     "median_context_tokens": null
+    },
+    "rag_g@2000+rules+A": {
+     "scored": 172,
+     "em": 153,
+     "em_or_containment": 155,
+     "abstained": 41,
+     "fit_em": 77,
+     "check_em": 76,
+     "by_type": {
+      "comparison_query": 36,
+      "temporal_query": 34,
+      "inference_query": 42,
+      "null_query": 41
+     },
+     "agree_rule": {
+      "agree_q_read": 39,
+      "changed_answer": 10,
+      "em_gain": 5,
+      "em_loss": 4,
+      "fit": {
+       "read": 19,
+       "gain": 2,
+       "loss": 2
+      },
+      "check": {
+       "read": 20,
+       "gain": 3,
+       "loss": 2
+      }
+     },
+     "median_context_tokens": null
+    },
+    "raptor_g@2000+rules+A": {
+     "scored": 172,
+     "em": 152,
+     "em_or_containment": 156,
+     "abstained": 41,
+     "fit_em": 77,
+     "check_em": 75,
+     "by_type": {
+      "comparison_query": 36,
+      "temporal_query": 35,
+      "inference_query": 40,
+      "null_query": 41
+     },
+     "agree_rule": {
+      "agree_q_read": 39,
+      "changed_answer": 11,
+      "em_gain": 6,
+      "em_loss": 2,
+      "fit": {
+       "read": 19,
+       "gain": 3,
+       "loss": 1
+      },
+      "check": {
+       "read": 20,
+       "gain": 3,
+       "loss": 1
+      }
+     },
+     "median_context_tokens": null
+    }
+   },
+   "paired": {
+    "ours_g@2000+rules+A_vs_rag_g@2000+rules+A": {
+     "wins": 8,
+     "losses": 6,
+     "net": 2,
+     "one_sided_p": 0.3953
+    },
+    "ours_g@2000+rules+A_vs_raptor_g@2000+rules+A": {
+     "wins": 9,
+     "losses": 6,
+     "net": 3,
+     "one_sided_p": 0.3036
+    },
+    "raptor_g@2000+rules+A_vs_rag_g@2000+rules+A": {
+     "wins": 1,
+     "losses": 2,
+     "net": -1,
+     "one_sided_p": 0.875
+    }
+   }
+  }
+ },
+ "readout": {
+  "base_config": {
+   "beta": 0.0,
+   "bind": 0.0,
+   "budget": 2000,
+   "gamma": 0.3,
+   "gate": "slots",
+   "header": true,
+   "kw": 0.5,
+   "links": "none",
+   "merge": "rr",
+   "pool": 300,
+   "qmix": 0.0,
+   "query": "question",
+   "statements": false
+  },
+  "gpu_peak_MiB": 5.90283203125,
+  "k": 300,
+  "summary": {
+   "cos_need": {
+    "all": 171,
+    "check": 84,
+    "fit": 87,
+    "q_all": 42,
+    "status": {
+     "selected_with_unresolved_support": 172
+    }
+   },
+   "cos_q": {
+    "all": 194,
+    "check": 92,
+    "fit": 102,
+    "q_all": 42,
+    "status": {
+     "selected_with_unresolved_support": 172
+    }
+   },
+   "rr": {
+    "all": 238,
+    "check": 110,
+    "fit": 128,
+    "q_all": 58,
+    "status": null
+   },
+   "seed": {
+    "all": 238,
+    "check": 110,
+    "fit": 128,
+    "q_all": 58,
+    "status": {
+     "selected_with_unresolved_support": 172
+    }
+   }
+  }
+ },
+ "r_protocol": {
+  "ours_g": {
+   "arm": "ours_g",
+   "lift_flag": false,
+   "cells": 133,
+   "max_calls": 226,
+   "cap": 230,
+   "halted": "author's halt 2026-11-10: news and FRAMES runs wait for the redesigned ingestion cut and reader delivery (the old cut: news leaf100-cl100k, FRAMES frames-units-v1): news and FRAMES model runs need the author's explicit lift (--lift-author-halt)",
+   "sent": 0,
+   "command": "scripts/laplace-python I/scripts/i_r_e3.py I/r_contexts/ours_g --exp E3 --out I/r_runs/E3-ours_g-claude --lift-author-halt --fire"
+  },
+  "ours_g --lift-author-halt": {
+   "arm": "ours_g",
+   "lift_flag": true,
+   "cells": 133,
+   "max_calls": 226,
+   "cap": 230,
+   "sent": 0,
+   "command": "scripts/laplace-python I/scripts/i_r_e3.py I/r_contexts/ours_g --exp E3 --out I/r_runs/E3-ours_g-claude --lift-author-halt --fire"
+  },
+  "B_nodiff": {
+   "arm": "B_nodiff",
+   "lift_flag": false,
+   "cells": 133,
+   "max_calls": 226,
+   "cap": 230,
+   "halted": "author's halt 2026-11-10: news and FRAMES runs wait for the redesigned ingestion cut and reader delivery (the old cut: news leaf100-cl100k, FRAMES frames-units-v1): news and FRAMES model runs need the author's explicit lift (--lift-author-halt)",
+   "sent": 0,
+   "command": "scripts/laplace-python I/scripts/i_r_e3.py I/r_contexts/B_nodiff --exp E3 --out I/r_runs/E3-B_nodiff-claude --lift-author-halt --fire"
+  },
+  "B_nodiff --lift-author-halt": {
+   "arm": "B_nodiff",
+   "lift_flag": true,
+   "cells": 133,
+   "max_calls": 226,
+   "cap": 230,
+   "sent": 0,
+   "command": "scripts/laplace-python I/scripts/i_r_e3.py I/r_contexts/B_nodiff --exp E3 --out I/r_runs/E3-B_nodiff-claude --lift-author-halt --fire"
+  }
+ },
+ "arms": {
+  "ours_g@2000": {
+   "scored": 172,
+   "em": 141,
+   "em_or_containment": 143,
+   "abstained": 50,
+   "fit_em": 71,
+   "check_em": 70,
+   "by_type": {
+    "comparison_query": 29,
+    "temporal_query": 29,
+    "inference_query": 40,
+    "null_query": 43
+   },
+   "median_context_tokens": 1986,
+   "file": "results/read_a.json",
+   "needed_facts_delivered": 234,
+   "needed_facts_delivered_fit": 124,
+   "needed_facts_delivered_check": 110,
+   "questions_all_facts_delivered": 59,
+   "paired": {
+    "rag_g@2000": {
+     "wins": 10,
+     "losses": 7,
+     "net": 3,
+     "one_sided_p": 0.3145
+    },
+    "raptor@2000": {
+     "wins": 31,
+     "losses": 8,
+     "net": 23,
+     "one_sided_p": 0.0001
+    }
+   }
+  },
+  "rag_g@2000": {
+   "scored": 172,
+   "em": 138,
+   "em_or_containment": 141,
+   "abstained": 57,
+   "fit_em": 71,
+   "check_em": 67,
+   "by_type": {
+    "comparison_query": 28,
+    "temporal_query": 28,
+    "inference_query": 41,
+    "null_query": 41
+   },
+   "median_context_tokens": 1978,
+   "file": "results/read_a.json",
+   "needed_facts_delivered": 211,
+   "needed_facts_delivered_fit": 110,
+   "needed_facts_delivered_check": 101,
+   "questions_all_facts_delivered": 52,
+   "paired": {
+    "raptor@2000": {
+     "wins": 26,
+     "losses": 6,
+     "net": 20,
+     "one_sided_p": 0.0003
+    }
+   }
+  },
+  "raptor@2000": {
+   "scored": 172,
+   "em": 118,
+   "em_or_containment": 122,
+   "abstained": 75,
+   "fit_em": 57,
+   "check_em": 61,
+   "by_type": {
+    "comparison_query": 17,
+    "temporal_query": 21,
+    "inference_query": 38,
+    "null_query": 42
+   },
+   "median_context_tokens": 1944,
+   "file": "results/read_a.json",
+   "needed_facts_delivered": 63,
+   "needed_facts_delivered_fit": 32,
+   "needed_facts_delivered_check": 31,
+   "questions_all_facts_delivered": 5,
+   "paired": {
+    "rag_g@2000": {
+     "wins": 6,
+     "losses": 26,
+     "net": -20,
+     "one_sided_p": 0.9999
+    }
+   }
+  },
+  "raptor_deliv@2000": {
+   "scored": 172,
+   "em": 117,
+   "em_or_containment": 120,
+   "abstained": 78,
+   "fit_em": 57,
+   "check_em": 60,
+   "by_type": {
+    "comparison_query": 15,
+    "temporal_query": 21,
+    "inference_query": 39,
+    "null_query": 42
+   },
+   "median_context_tokens": 1958,
+   "file": "results/read_a.json",
+   "needed_facts_delivered": 87,
+   "needed_facts_delivered_fit": 49,
+   "needed_facts_delivered_check": 38,
+   "questions_all_facts_delivered": 7,
+   "paired": {
+    "rag_g@2000": {
+     "wins": 6,
+     "losses": 27,
+     "net": -21,
+     "one_sided_p": 1.0
+    },
+    "raptor@2000": {
+     "wins": 6,
+     "losses": 7,
+     "net": -1,
+     "one_sided_p": 0.7095
+    }
+   }
+  },
+  "ours_g@4000": {
+   "scored": 172,
+   "em": 140,
+   "em_or_containment": 142,
+   "abstained": 52,
+   "fit_em": 69,
+   "check_em": 71,
+   "by_type": {
+    "comparison_query": 29,
+    "temporal_query": 28,
+    "inference_query": 40,
+    "null_query": 43
+   },
+   "median_context_tokens": 3978,
+   "file": "results/read_a.json",
+   "needed_facts_delivered": 263,
+   "needed_facts_delivered_fit": 138,
+   "needed_facts_delivered_check": 125,
+   "questions_all_facts_delivered": 69,
+   "paired": {
+    "rag_g@4000": {
+     "wins": 5,
+     "losses": 6,
+     "net": -1,
+     "one_sided_p": 0.7256
+    },
+    "raptor@4000": {
+     "wins": 25,
+     "losses": 9,
+     "net": 16,
+     "one_sided_p": 0.0045
+    }
+   }
+  },
+  "rag_g@4000": {
+   "scored": 172,
+   "em": 141,
+   "em_or_containment": 144,
+   "abstained": 52,
+   "fit_em": 72,
+   "check_em": 69,
+   "by_type": {
+    "comparison_query": 30,
+    "temporal_query": 29,
+    "inference_query": 41,
+    "null_query": 41
+   },
+   "median_context_tokens": 3964,
+   "file": "results/read_a.json",
+   "needed_facts_delivered": 248,
+   "needed_facts_delivered_fit": 129,
+   "needed_facts_delivered_check": 119,
+   "questions_all_facts_delivered": 63,
+   "paired": {
+    "raptor@4000": {
+     "wins": 23,
+     "losses": 6,
+     "net": 17,
+     "one_sided_p": 0.0012
+    }
+   }
+  },
+  "raptor@4000": {
+   "scored": 172,
+   "em": 124,
+   "em_or_containment": 128,
+   "abstained": 69,
+   "fit_em": 62,
+   "check_em": 62,
+   "by_type": {
+    "comparison_query": 21,
+    "temporal_query": 23,
+    "inference_query": 38,
+    "null_query": 42
+   },
+   "median_context_tokens": 3951,
+   "file": "results/read_a.json",
+   "needed_facts_delivered": 91,
+   "needed_facts_delivered_fit": 44,
+   "needed_facts_delivered_check": 47,
+   "questions_all_facts_delivered": 11,
+   "paired": {
+    "rag_g@4000": {
+     "wins": 6,
+     "losses": 23,
+     "net": -17,
+     "one_sided_p": 0.9997
+    }
+   }
+  },
+  "raptor_deliv@4000": {
+   "scored": 172,
+   "em": 126,
+   "em_or_containment": 129,
+   "abstained": 67,
+   "fit_em": 64,
+   "check_em": 62,
+   "by_type": {
+    "comparison_query": 21,
+    "temporal_query": 23,
+    "inference_query": 40,
+    "null_query": 42
+   },
+   "median_context_tokens": 3952,
+   "file": "results/read_a.json",
+   "needed_facts_delivered": 127,
+   "needed_facts_delivered_fit": 66,
+   "needed_facts_delivered_check": 61,
+   "questions_all_facts_delivered": 20,
+   "paired": {
+    "rag_g@4000": {
+     "wins": 5,
+     "losses": 20,
+     "net": -15,
+     "one_sided_p": 0.9995
+    },
+    "raptor@4000": {
+     "wins": 6,
+     "losses": 4,
+     "net": 2,
+     "one_sided_p": 0.377
+    }
+   }
+  },
+  "ours_g@2000+rules": {
+   "scored": 172,
+   "em": 152,
+   "em_or_containment": 153,
+   "abstained": 43,
+   "fit_em": 76,
+   "check_em": 76,
+   "by_type": {
+    "comparison_query": 33,
+    "temporal_query": 34,
+    "inference_query": 42,
+    "null_query": 43
+   },
+   "median_context_tokens": 1986,
+   "file": "results/read_c1.json",
+   "needed_facts_delivered": 234,
+   "needed_facts_delivered_fit": 124,
+   "needed_facts_delivered_check": 110,
+   "questions_all_facts_delivered": 59,
+   "paired": {
+    "rag_g@2000+rules": {
+     "wins": 6,
+     "losses": 6,
+     "net": 0,
+     "one_sided_p": 0.6128
+    },
+    "raptor_g@2000+rules": {
+     "wins": 9,
+     "losses": 5,
+     "net": 4,
+     "one_sided_p": 0.212
+    },
+    "raptor@2000+rules": {
+     "wins": 14,
+     "losses": 4,
+     "net": 10,
+     "one_sided_p": 0.0154
+    }
+   }
+  },
+  "rag_g@2000+rules": {
+   "scored": 172,
+   "em": 152,
+   "em_or_containment": 154,
+   "abstained": 43,
+   "fit_em": 77,
+   "check_em": 75,
+   "by_type": {
+    "comparison_query": 34,
+    "temporal_query": 35,
+    "inference_query": 42,
+    "null_query": 41
+   },
+   "median_context_tokens": 1978,
+   "file": "results/read_c1.json",
+   "needed_facts_delivered": 211,
+   "needed_facts_delivered_fit": 110,
+   "needed_facts_delivered_check": 101,
+   "questions_all_facts_delivered": 52,
+   "paired": {
+    "raptor_g@2000+rules": {
+     "wins": 5,
+     "losses": 1,
+     "net": 4,
+     "one_sided_p": 0.1094
+    },
+    "raptor@2000+rules": {
+     "wins": 14,
+     "losses": 4,
+     "net": 10,
+     "one_sided_p": 0.0154
+    }
+   }
+  },
+  "raptor@2000+rules": {
+   "scored": 172,
+   "em": 142,
+   "em_or_containment": 143,
+   "abstained": 48,
+   "fit_em": 72,
+   "check_em": 70,
+   "by_type": {
+    "comparison_query": 25,
+    "temporal_query": 33,
+    "inference_query": 42,
+    "null_query": 42
+   },
+   "median_context_tokens": 1944,
+   "file": "results/read_c1.json",
+   "needed_facts_delivered": 63,
+   "needed_facts_delivered_fit": 32,
+   "needed_facts_delivered_check": 31,
+   "questions_all_facts_delivered": 5,
+   "paired": {
+    "rag_g@2000+rules": {
+     "wins": 4,
+     "losses": 14,
+     "net": -10,
+     "one_sided_p": 0.9962
+    },
+    "raptor_g@2000+rules": {
+     "wins": 7,
+     "losses": 13,
+     "net": -6,
+     "one_sided_p": 0.9423
+    }
+   }
+  },
+  "ours_g@2000+notes2": {
+   "scored": 172,
+   "em": 152,
+   "em_or_containment": 152,
+   "abstained": 43,
+   "fit_em": 75,
+   "check_em": 77,
+   "by_type": {
+    "comparison_query": 32,
+    "temporal_query": 35,
+    "inference_query": 42,
+    "null_query": 43
+   },
+   "median_context_tokens": 1986,
+   "file": "results/read_c1.json",
+   "needed_facts_delivered": 234,
+   "needed_facts_delivered_fit": 124,
+   "needed_facts_delivered_check": 110,
+   "questions_all_facts_delivered": 59,
+   "paired": {
+    "rag_g@2000+notes2": {
+     "wins": 6,
+     "losses": 5,
+     "net": 1,
+     "one_sided_p": 0.5
+    },
+    "raptor@2000+notes2": {
+     "wins": 20,
+     "losses": 2,
+     "net": 18,
+     "one_sided_p": 0.0001
+    }
+   }
+  },
+  "rag_g@2000+notes2": {
+   "scored": 172,
+   "em": 151,
+   "em_or_containment": 153,
+   "abstained": 45,
+   "fit_em": 77,
+   "check_em": 74,
+   "by_type": {
+    "comparison_query": 33,
+    "temporal_query": 36,
+    "inference_query": 41,
+    "null_query": 41
+   },
+   "median_context_tokens": 1978,
+   "file": "results/read_c1.json",
+   "needed_facts_delivered": 211,
+   "needed_facts_delivered_fit": 110,
+   "needed_facts_delivered_check": 101,
+   "questions_all_facts_delivered": 52,
+   "paired": {
+    "raptor@2000+notes2": {
+     "wins": 21,
+     "losses": 4,
+     "net": 17,
+     "one_sided_p": 0.0005
+    }
+   }
+  },
+  "raptor@2000+notes2": {
+   "scored": 172,
+   "em": 134,
+   "em_or_containment": 135,
+   "abstained": 49,
+   "fit_em": 65,
+   "check_em": 69,
+   "by_type": {
+    "comparison_query": 19,
+    "temporal_query": 32,
+    "inference_query": 41,
+    "null_query": 42
+   },
+   "median_context_tokens": 1944,
+   "file": "results/read_c1.json",
+   "needed_facts_delivered": 63,
+   "needed_facts_delivered_fit": 32,
+   "needed_facts_delivered_check": 31,
+   "questions_all_facts_delivered": 5,
+   "paired": {
+    "rag_g@2000+notes2": {
+     "wins": 4,
+     "losses": 21,
+     "net": -17,
+     "one_sided_p": 0.9999
+    }
+   }
+  },
+  "ours_g@2000+table2": {
+   "scored": 172,
+   "em": 153,
+   "em_or_containment": 154,
+   "abstained": 45,
+   "fit_em": 78,
+   "check_em": 75,
+   "by_type": {
+    "comparison_query": 34,
+    "temporal_query": 34,
+    "inference_query": 42,
+    "null_query": 43
+   },
+   "median_context_tokens": 1986,
+   "file": "results/read_c1.json",
+   "needed_facts_delivered": 234,
+   "needed_facts_delivered_fit": 124,
+   "needed_facts_delivered_check": 110,
+   "questions_all_facts_delivered": 59,
+   "paired": {
+    "rag_g@2000+table2": {
+     "wins": 9,
+     "losses": 1,
+     "net": 8,
+     "one_sided_p": 0.0107
+    },
+    "raptor_g@2000+table2": {
+     "wins": 7,
+     "losses": 1,
+     "net": 6,
+     "one_sided_p": 0.0352
+    },
+    "raptor@2000+table2": {
+     "wins": 25,
+     "losses": 4,
+     "net": 21,
+     "one_sided_p": 0.0001
+    }
+   }
+  },
+  "rag_g@2000+table2": {
+   "scored": 172,
+   "em": 145,
+   "em_or_containment": 146,
+   "abstained": 53,
+   "fit_em": 75,
+   "check_em": 70,
+   "by_type": {
+    "comparison_query": 31,
+    "temporal_query": 31,
+    "inference_query": 41,
+    "null_query": 42
+   },
+   "median_context_tokens": 1978,
+   "file": "results/read_c1.json",
+   "needed_facts_delivered": 211,
+   "needed_facts_delivered_fit": 110,
+   "needed_facts_delivered_check": 101,
+   "questions_all_facts_delivered": 52,
+   "paired": {
+    "raptor_g@2000+table2": {
+     "wins": 2,
+     "losses": 4,
+     "net": -2,
+     "one_sided_p": 0.8906
+    },
+    "raptor@2000+table2": {
+     "wins": 19,
+     "losses": 6,
+     "net": 13,
+     "one_sided_p": 0.0073
+    }
+   }
+  },
+  "raptor@2000+table2": {
+   "scored": 172,
+   "em": 132,
+   "em_or_containment": 133,
+   "abstained": 54,
+   "fit_em": 65,
+   "check_em": 67,
+   "by_type": {
+    "comparison_query": 19,
+    "temporal_query": 29,
+    "inference_query": 42,
+    "null_query": 42
+   },
+   "median_context_tokens": 1944,
+   "file": "results/read_c1.json",
+   "needed_facts_delivered": 63,
+   "needed_facts_delivered_fit": 32,
+   "needed_facts_delivered_check": 31,
+   "questions_all_facts_delivered": 5,
+   "paired": {
+    "rag_g@2000+table2": {
+     "wins": 6,
+     "losses": 19,
+     "net": -13,
+     "one_sided_p": 0.998
+    },
+    "raptor_g@2000+table2": {
+     "wins": 6,
+     "losses": 21,
+     "net": -15,
+     "one_sided_p": 0.9992
+    }
+   }
+  },
+  "rag_x@2000+rules": {
+   "scored": 172,
+   "em": 154,
+   "em_or_containment": 155,
+   "abstained": 45,
+   "fit_em": 76,
+   "check_em": 78,
+   "by_type": {
+    "comparison_query": 34,
+    "temporal_query": 36,
+    "inference_query": 42,
+    "null_query": 42
+   },
+   "median_context_tokens": 487,
+   "file": "results/read_batch3.json",
+   "needed_facts_delivered": 206,
+   "needed_facts_delivered_fit": 103,
+   "needed_facts_delivered_check": 103,
+   "questions_all_facts_delivered": 47,
+   "paired": {
+    "raptor_x@2000+rules": {
+     "wins": 17,
+     "losses": 2,
+     "net": 15,
+     "one_sided_p": 0.0004
+    }
+   }
+  },
+  "ours_x@2000+rules": {
+   "scored": 172,
+   "em": 155,
+   "em_or_containment": 157,
+   "abstained": 44,
+   "fit_em": 78,
+   "check_em": 77,
+   "by_type": {
+    "comparison_query": 34,
+    "temporal_query": 37,
+    "inference_query": 41,
+    "null_query": 43
+   },
+   "median_context_tokens": 509,
+   "file": "results/read_batch3.json",
+   "needed_facts_delivered": 232,
+   "needed_facts_delivered_fit": 120,
+   "needed_facts_delivered_check": 112,
+   "questions_all_facts_delivered": 52,
+   "paired": {
+    "rag_x@2000+rules": {
+     "wins": 4,
+     "losses": 3,
+     "net": 1,
+     "one_sided_p": 0.5
+    },
+    "raptor_x@2000+rules": {
+     "wins": 19,
+     "losses": 3,
+     "net": 16,
+     "one_sided_p": 0.0004
+    }
+   }
+  },
+  "rag_x@2000+table2": {
+   "scored": 172,
+   "em": 143,
+   "em_or_containment": 144,
+   "abstained": 54,
+   "fit_em": 74,
+   "check_em": 69,
+   "by_type": {
+    "comparison_query": 30,
+    "temporal_query": 31,
+    "inference_query": 40,
+    "null_query": 42
+   },
+   "median_context_tokens": 487,
+   "file": "results/read_batch2.json",
+   "needed_facts_delivered": 206,
+   "needed_facts_delivered_fit": 103,
+   "needed_facts_delivered_check": 103,
+   "questions_all_facts_delivered": 47,
+   "paired": {}
+  },
+  "ours_x@2000+table2": {
+   "scored": 172,
+   "em": 151,
+   "em_or_containment": 151,
+   "abstained": 44,
+   "fit_em": 77,
+   "check_em": 74,
+   "by_type": {
+    "comparison_query": 30,
+    "temporal_query": 36,
+    "inference_query": 42,
+    "null_query": 43
+   },
+   "median_context_tokens": 509,
+   "file": "results/read_batch2.json",
+   "needed_facts_delivered": 232,
+   "needed_facts_delivered_fit": 120,
+   "needed_facts_delivered_check": 112,
+   "questions_all_facts_delivered": 52,
+   "paired": {
+    "rag_x@2000+table2": {
+     "wins": 9,
+     "losses": 1,
+     "net": 8,
+     "one_sided_p": 0.0107
+    }
+   }
+  },
+  "B_nodiff@2000+table2": {
+   "scored": 172,
+   "em": 151,
+   "em_or_containment": 152,
+   "abstained": 45,
+   "fit_em": 78,
+   "check_em": 73,
+   "by_type": {
+    "comparison_query": 33,
+    "temporal_query": 33,
+    "inference_query": 42,
+    "null_query": 43
+   },
+   "median_context_tokens": 1986,
+   "file": "results/read_batch2.json",
+   "needed_facts_delivered": 238,
+   "needed_facts_delivered_fit": 128,
+   "needed_facts_delivered_check": 110,
+   "questions_all_facts_delivered": 58,
+   "paired": {
+    "rag_g@2000+table2": {
+     "wins": 8,
+     "losses": 2,
+     "net": 6,
+     "one_sided_p": 0.0547
+    },
+    "raptor_g@2000+table2": {
+     "wins": 6,
+     "losses": 2,
+     "net": 4,
+     "one_sided_p": 0.1445
+    },
+    "raptor@2000+table2": {
+     "wins": 25,
+     "losses": 6,
+     "net": 19,
+     "one_sided_p": 0.0004
+    }
+   }
+  },
+  "B_both@2000+table2": {
+   "scored": 172,
+   "em": 150,
+   "em_or_containment": 151,
+   "abstained": 45,
+   "fit_em": 75,
+   "check_em": 75,
+   "by_type": {
+    "comparison_query": 32,
+    "temporal_query": 33,
+    "inference_query": 42,
+    "null_query": 43
+   },
+   "median_context_tokens": 1986,
+   "file": "results/read_batch2.json",
+   "needed_facts_delivered": 236,
+   "needed_facts_delivered_fit": 126,
+   "needed_facts_delivered_check": 110,
+   "questions_all_facts_delivered": 58,
+   "paired": {
+    "rag_g@2000+table2": {
+     "wins": 8,
+     "losses": 3,
+     "net": 5,
+     "one_sided_p": 0.1133
+    },
+    "raptor_g@2000+table2": {
+     "wins": 7,
+     "losses": 4,
+     "net": 3,
+     "one_sided_p": 0.2744
+    },
+    "raptor@2000+table2": {
+     "wins": 24,
+     "losses": 6,
+     "net": 18,
+     "one_sided_p": 0.0007
+    }
+   }
+  },
+  "B_nodiff_stmt@2000+table2": {
+   "scored": 172,
+   "em": 152,
+   "em_or_containment": 152,
+   "abstained": 44,
+   "fit_em": 77,
+   "check_em": 75,
+   "by_type": {
+    "comparison_query": 33,
+    "temporal_query": 34,
+    "inference_query": 42,
+    "null_query": 43
+   },
+   "median_context_tokens": 1989,
+   "file": "results/read_batch2.json",
+   "needed_facts_delivered": 217,
+   "needed_facts_delivered_fit": 115,
+   "needed_facts_delivered_check": 102,
+   "questions_all_facts_delivered": 51,
+   "paired": {
+    "rag_g@2000+table2": {
+     "wins": 9,
+     "losses": 2,
+     "net": 7,
+     "one_sided_p": 0.0327
+    },
+    "raptor_g@2000+table2": {
+     "wins": 7,
+     "losses": 2,
+     "net": 5,
+     "one_sided_p": 0.0898
+    },
+    "raptor@2000+table2": {
+     "wins": 24,
+     "losses": 4,
+     "net": 20,
+     "one_sided_p": 0.0001
+    }
+   }
+  },
+  "ours_g@4000+rules": {
+   "scored": 172,
+   "em": 153,
+   "em_or_containment": 154,
+   "abstained": 44,
+   "fit_em": 76,
+   "check_em": 77,
+   "by_type": {
+    "comparison_query": 34,
+    "temporal_query": 34,
+    "inference_query": 42,
+    "null_query": 43
+   },
+   "median_context_tokens": 3978,
+   "file": "results/read_batch2.json",
+   "needed_facts_delivered": 263,
+   "needed_facts_delivered_fit": 138,
+   "needed_facts_delivered_check": 125,
+   "questions_all_facts_delivered": 69,
+   "paired": {
+    "rag_g@4000+rules": {
+     "wins": 6,
+     "losses": 5,
+     "net": 1,
+     "one_sided_p": 0.5
+    },
+    "raptor@4000+rules": {
+     "wins": 10,
+     "losses": 4,
+     "net": 6,
+     "one_sided_p": 0.0898
+    }
+   }
+  },
+  "rag_g@4000+rules": {
+   "scored": 172,
+   "em": 152,
+   "em_or_containment": 154,
+   "abstained": 41,
+   "fit_em": 76,
+   "check_em": 76,
+   "by_type": {
+    "comparison_query": 34,
+    "temporal_query": 35,
+    "inference_query": 42,
+    "null_query": 41
+   },
+   "median_context_tokens": 3964,
+   "file": "results/read_batch2.json",
+   "needed_facts_delivered": 248,
+   "needed_facts_delivered_fit": 129,
+   "needed_facts_delivered_check": 119,
+   "questions_all_facts_delivered": 63,
+   "paired": {
+    "raptor@4000+rules": {
+     "wins": 9,
+     "losses": 4,
+     "net": 5,
+     "one_sided_p": 0.1334
+    }
+   }
+  },
+  "raptor@4000+rules": {
+   "scored": 172,
+   "em": 147,
+   "em_or_containment": 148,
+   "abstained": 48,
+   "fit_em": 75,
+   "check_em": 72,
+   "by_type": {
+    "comparison_query": 30,
+    "temporal_query": 33,
+    "inference_query": 42,
+    "null_query": 42
+   },
+   "median_context_tokens": 3951,
+   "file": "results/read_batch2.json",
+   "needed_facts_delivered": 91,
+   "needed_facts_delivered_fit": 44,
+   "needed_facts_delivered_check": 47,
+   "questions_all_facts_delivered": 11,
+   "paired": {
+    "rag_g@4000+rules": {
+     "wins": 4,
+     "losses": 9,
+     "net": -5,
+     "one_sided_p": 0.9539
+    }
+   }
+  },
+  "ours_g@4000+table2": {
+   "scored": 172,
+   "em": 150,
+   "em_or_containment": 150,
+   "abstained": 46,
+   "fit_em": 76,
+   "check_em": 74,
+   "by_type": {
+    "comparison_query": 32,
+    "temporal_query": 33,
+    "inference_query": 42,
+    "null_query": 43
+   },
+   "median_context_tokens": 3978,
+   "file": "results/read_batch2.json",
+   "needed_facts_delivered": 263,
+   "needed_facts_delivered_fit": 138,
+   "needed_facts_delivered_check": 125,
+   "questions_all_facts_delivered": 69,
+   "paired": {
+    "rag_g@4000+table2": {
+     "wins": 6,
+     "losses": 3,
+     "net": 3,
+     "one_sided_p": 0.2539
+    },
+    "raptor@4000+table2": {
+     "wins": 19,
+     "losses": 6,
+     "net": 13,
+     "one_sided_p": 0.0073
+    }
+   }
+  },
+  "rag_g@4000+table2": {
+   "scored": 172,
+   "em": 147,
+   "em_or_containment": 148,
+   "abstained": 52,
+   "fit_em": 75,
+   "check_em": 72,
+   "by_type": {
+    "comparison_query": 34,
+    "temporal_query": 30,
+    "inference_query": 41,
+    "null_query": 42
+   },
+   "median_context_tokens": 3964,
+   "file": "results/read_batch2.json",
+   "needed_facts_delivered": 248,
+   "needed_facts_delivered_fit": 129,
+   "needed_facts_delivered_check": 119,
+   "questions_all_facts_delivered": 63,
+   "paired": {
+    "raptor@4000+table2": {
+     "wins": 18,
+     "losses": 8,
+     "net": 10,
+     "one_sided_p": 0.0378
+    }
+   }
+  },
+  "raptor@4000+table2": {
+   "scored": 172,
+   "em": 137,
+   "em_or_containment": 138,
+   "abstained": 55,
+   "fit_em": 68,
+   "check_em": 69,
+   "by_type": {
+    "comparison_query": 25,
+    "temporal_query": 30,
+    "inference_query": 40,
+    "null_query": 42
+   },
+   "median_context_tokens": 3951,
+   "file": "results/read_batch2.json",
+   "needed_facts_delivered": 91,
+   "needed_facts_delivered_fit": 44,
+   "needed_facts_delivered_check": 47,
+   "questions_all_facts_delivered": 11,
+   "paired": {
+    "rag_g@4000+table2": {
+     "wins": 8,
+     "losses": 18,
+     "net": -10,
+     "one_sided_p": 0.9855
+    }
+   }
+  },
+  "raptor_x@2000+rules": {
+   "scored": 172,
+   "em": 139,
+   "em_or_containment": 140,
+   "abstained": 50,
+   "fit_em": 72,
+   "check_em": 67,
+   "by_type": {
+    "comparison_query": 21,
+    "temporal_query": 35,
+    "inference_query": 41,
+    "null_query": 42
+   },
+   "median_context_tokens": 398,
+   "file": "results/read_batch3.json",
+   "needed_facts_delivered": 174,
+   "needed_facts_delivered_fit": 88,
+   "needed_facts_delivered_check": 86,
+   "questions_all_facts_delivered": 28,
+   "paired": {
+    "rag_x@2000+rules": {
+     "wins": 2,
+     "losses": 17,
+     "net": -15,
+     "one_sided_p": 1.0
+    }
+   }
+  },
+  "rag_x@2000+rules#s1": {
+   "scored": 172,
+   "em": 153,
+   "em_or_containment": 154,
+   "abstained": 43,
+   "fit_em": 76,
+   "check_em": 77,
+   "by_type": {
+    "comparison_query": 34,
+    "temporal_query": 36,
+    "inference_query": 42,
+    "null_query": 41
+   },
+   "median_context_tokens": 487,
+   "file": "results/read_batch3.json",
+   "needed_facts_delivered": 206,
+   "needed_facts_delivered_fit": 103,
+   "needed_facts_delivered_check": 103,
+   "questions_all_facts_delivered": 47,
+   "paired": {
+    "raptor_x@2000+rules": {
+     "wins": 17,
+     "losses": 3,
+     "net": 14,
+     "one_sided_p": 0.0013
+    }
+   }
+  },
+  "ours_x@2000+rules#s1": {
+   "scored": 172,
+   "em": 155,
+   "em_or_containment": 156,
+   "abstained": 43,
+   "fit_em": 78,
+   "check_em": 77,
+   "by_type": {
+    "comparison_query": 34,
+    "temporal_query": 36,
+    "inference_query": 42,
+    "null_query": 43
+   },
+   "median_context_tokens": 509,
+   "file": "results/read_batch3.json",
+   "needed_facts_delivered": 232,
+   "needed_facts_delivered_fit": 120,
+   "needed_facts_delivered_check": 112,
+   "questions_all_facts_delivered": 52,
+   "paired": {
+    "rag_x@2000+rules": {
+     "wins": 4,
+     "losses": 3,
+     "net": 1,
+     "one_sided_p": 0.5
+    },
+    "raptor_x@2000+rules": {
+     "wins": 19,
+     "losses": 3,
+     "net": 16,
+     "one_sided_p": 0.0004
+    }
+   }
+  },
+  "B_rel@2000+table2": {
+   "scored": 172,
+   "em": 149,
+   "em_or_containment": 150,
+   "abstained": 45,
+   "fit_em": 76,
+   "check_em": 73,
+   "by_type": {
+    "comparison_query": 32,
+    "temporal_query": 32,
+    "inference_query": 42,
+    "null_query": 43
+   },
+   "median_context_tokens": 1986,
+   "file": "results/read_batch4.json",
+   "needed_facts_delivered": 236,
+   "needed_facts_delivered_fit": 126,
+   "needed_facts_delivered_check": 110,
+   "questions_all_facts_delivered": 58,
+   "paired": {
+    "rag_g@2000+table2": {
+     "wins": 8,
+     "losses": 4,
+     "net": 4,
+     "one_sided_p": 0.1938
+    },
+    "raptor_g@2000+table2": {
+     "wins": 6,
+     "losses": 4,
+     "net": 2,
+     "one_sided_p": 0.377
+    },
+    "raptor@2000+table2": {
+     "wins": 24,
+     "losses": 7,
+     "net": 17,
+     "one_sided_p": 0.0017
+    }
+   }
+  },
+  "B_lang@2000+table2": {
+   "scored": 172,
+   "em": 151,
+   "em_or_containment": 151,
+   "abstained": 43,
+   "fit_em": 75,
+   "check_em": 76,
+   "by_type": {
+    "comparison_query": 32,
+    "temporal_query": 34,
+    "inference_query": 42,
+    "null_query": 43
+   },
+   "median_context_tokens": 1985,
+   "file": "results/read_batch4.json",
+   "needed_facts_delivered": 236,
+   "needed_facts_delivered_fit": 126,
+   "needed_facts_delivered_check": 110,
+   "questions_all_facts_delivered": 58,
+   "paired": {
+    "rag_g@2000+table2": {
+     "wins": 9,
+     "losses": 3,
+     "net": 6,
+     "one_sided_p": 0.073
+    },
+    "raptor_g@2000+table2": {
+     "wins": 9,
+     "losses": 5,
+     "net": 4,
+     "one_sided_p": 0.212
+    },
+    "raptor@2000+table2": {
+     "wins": 23,
+     "losses": 4,
+     "net": 19,
+     "one_sided_p": 0.0002
+    }
+   }
+  },
+  "raptor_g@2000+rules": {
+   "scored": 172,
+   "em": 148,
+   "em_or_containment": 152,
+   "abstained": 44,
+   "fit_em": 75,
+   "check_em": 73,
+   "by_type": {
+    "comparison_query": 34,
+    "temporal_query": 33,
+    "inference_query": 40,
+    "null_query": 41
+   },
+   "median_context_tokens": 1982,
+   "file": "results/read_raptor_g.json",
+   "needed_facts_delivered": 205,
+   "needed_facts_delivered_fit": 106,
+   "needed_facts_delivered_check": 99,
+   "questions_all_facts_delivered": 49,
+   "paired": {
+    "rag_g@2000+rules": {
+     "wins": 1,
+     "losses": 5,
+     "net": -4,
+     "one_sided_p": 0.9844
+    },
+    "raptor@2000+rules": {
+     "wins": 13,
+     "losses": 7,
+     "net": 6,
+     "one_sided_p": 0.1316
+    }
+   }
+  },
+  "raptor_g@2000+table2": {
+   "scored": 172,
+   "em": 147,
+   "em_or_containment": 148,
+   "abstained": 52,
+   "fit_em": 77,
+   "check_em": 70,
+   "by_type": {
+    "comparison_query": 33,
+    "temporal_query": 30,
+    "inference_query": 42,
+    "null_query": 42
+   },
+   "median_context_tokens": 1982,
+   "file": "results/read_raptor_g.json",
+   "needed_facts_delivered": 205,
+   "needed_facts_delivered_fit": 106,
+   "needed_facts_delivered_check": 99,
+   "questions_all_facts_delivered": 49,
+   "paired": {
+    "rag_g@2000+table2": {
+     "wins": 4,
+     "losses": 2,
+     "net": 2,
+     "one_sided_p": 0.3438
+    },
+    "raptor@2000+table2": {
+     "wins": 21,
+     "losses": 6,
+     "net": 15,
+     "one_sided_p": 0.003
+    }
+   }
+  },
+  "ours_g@2000+rulesA": {
+   "scored": 20,
+   "em": 17,
+   "em_or_containment": 17,
+   "abstained": 0,
+   "fit_em": 0,
+   "check_em": 17,
+   "by_type": {
+    "comparison_query": 5,
+    "temporal_query": 12,
+    "inference_query": 0,
+    "null_query": 0
+   },
+   "median_context_tokens": 1991,
+   "file": "results/read_agree_check.json",
+   "needed_facts_delivered": 234,
+   "needed_facts_delivered_fit": 124,
+   "needed_facts_delivered_check": 110,
+   "questions_all_facts_delivered": 59,
+   "paired": {
+    "rag_g@2000+rulesA": {
+     "wins": 1,
+     "losses": 2,
+     "net": -1,
+     "one_sided_p": 0.875
+    },
+    "raptor_g@2000+rulesA": {
+     "wins": 1,
+     "losses": 2,
+     "net": -1,
+     "one_sided_p": 0.875
+    }
+   }
+  },
+  "rag_g@2000+rulesA": {
+   "scored": 20,
+   "em": 18,
+   "em_or_containment": 18,
+   "abstained": 0,
+   "fit_em": 0,
+   "check_em": 18,
+   "by_type": {
+    "comparison_query": 6,
+    "temporal_query": 12,
+    "inference_query": 0,
+    "null_query": 0
+   },
+   "median_context_tokens": 1986,
+   "file": "results/read_agree_check.json",
+   "needed_facts_delivered": 211,
+   "needed_facts_delivered_fit": 110,
+   "needed_facts_delivered_check": 101,
+   "questions_all_facts_delivered": 52,
+   "paired": {
+    "raptor_g@2000+rulesA": {
+     "wins": 0,
+     "losses": 0,
+     "net": 0,
+     "one_sided_p": null
+    }
+   }
+  },
+  "raptor_g@2000+rulesA": {
+   "scored": 20,
+   "em": 18,
+   "em_or_containment": 18,
+   "abstained": 0,
+   "fit_em": 0,
+   "check_em": 18,
+   "by_type": {
+    "comparison_query": 6,
+    "temporal_query": 12,
+    "inference_query": 0,
+    "null_query": 0
+   },
+   "median_context_tokens": 1987,
+   "file": "results/read_agree_check.json",
+   "needed_facts_delivered": 205,
+   "needed_facts_delivered_fit": 106,
+   "needed_facts_delivered_check": 99,
+   "questions_all_facts_delivered": 49,
+   "paired": {
+    "rag_g@2000+rulesA": {
+     "wins": 0,
+     "losses": 0,
+     "net": 0,
+     "one_sided_p": null
+    }
+   }
+  },
+  "ours_g@2000+rules+A": {
+   "scored": 172,
+   "em": 155,
+   "em_or_containment": 156,
+   "abstained": 43,
+   "fit_em": 78,
+   "check_em": 77,
+   "by_type": {
+    "comparison_query": 34,
+    "temporal_query": 36,
+    "inference_query": 42,
+    "null_query": 43
+   },
+   "agree_rule": {
+    "agree_q_read": 39,
+    "changed_answer": 3,
+    "em_gain": 3,
+    "em_loss": 0,
+    "fit": {
+     "read": 19,
+     "gain": 2,
+     "loss": 0
+    },
+    "check": {
+     "read": 20,
+     "gain": 1,
+     "loss": 0
+    }
+   },
+   "median_context_tokens": null,
+   "file": "results/agree_rule.json",
+   "needed_facts_delivered": 234,
+   "needed_facts_delivered_fit": 124,
+   "needed_facts_delivered_check": 110,
+   "questions_all_facts_delivered": 59,
+   "paired": {
+    "rag_g@2000+rules+A": {
+     "wins": 8,
+     "losses": 6,
+     "net": 2,
+     "one_sided_p": 0.3953
+    },
+    "raptor_g@2000+rules+A": {
+     "wins": 9,
+     "losses": 6,
+     "net": 3,
+     "one_sided_p": 0.3036
+    }
+   }
+  },
+  "rag_g@2000+rules+A": {
+   "scored": 172,
+   "em": 153,
+   "em_or_containment": 155,
+   "abstained": 41,
+   "fit_em": 77,
+   "check_em": 76,
+   "by_type": {
+    "comparison_query": 36,
+    "temporal_query": 34,
+    "inference_query": 42,
+    "null_query": 41
+   },
+   "agree_rule": {
+    "agree_q_read": 39,
+    "changed_answer": 10,
+    "em_gain": 5,
+    "em_loss": 4,
+    "fit": {
+     "read": 19,
+     "gain": 2,
+     "loss": 2
+    },
+    "check": {
+     "read": 20,
+     "gain": 3,
+     "loss": 2
+    }
+   },
+   "median_context_tokens": null,
+   "file": "results/agree_rule.json",
+   "needed_facts_delivered": 211,
+   "needed_facts_delivered_fit": 110,
+   "needed_facts_delivered_check": 101,
+   "questions_all_facts_delivered": 52,
+   "paired": {
+    "raptor_g@2000+rules+A": {
+     "wins": 2,
+     "losses": 1,
+     "net": 1,
+     "one_sided_p": 0.5
+    }
+   }
+  },
+  "raptor_g@2000+rules+A": {
+   "scored": 172,
+   "em": 152,
+   "em_or_containment": 156,
+   "abstained": 41,
+   "fit_em": 77,
+   "check_em": 75,
+   "by_type": {
+    "comparison_query": 36,
+    "temporal_query": 35,
+    "inference_query": 40,
+    "null_query": 41
+   },
+   "agree_rule": {
+    "agree_q_read": 39,
+    "changed_answer": 11,
+    "em_gain": 6,
+    "em_loss": 2,
+    "fit": {
+     "read": 19,
+     "gain": 3,
+     "loss": 1
+    },
+    "check": {
+     "read": 20,
+     "gain": 3,
+     "loss": 1
+    }
+   },
+   "median_context_tokens": null,
+   "file": "results/agree_rule.json",
+   "needed_facts_delivered": 205,
+   "needed_facts_delivered_fit": 106,
+   "needed_facts_delivered_check": 99,
+   "questions_all_facts_delivered": 49,
+   "paired": {
+    "rag_g@2000+rules+A": {
+     "wins": 1,
+     "losses": 2,
+     "net": -1,
+     "one_sided_p": 0.875
+    }
+   }
+  },
+  "B_readout_seed@2000+table2": {
+   "scored": 172,
+   "em": 151,
+   "em_or_containment": 152,
+   "abstained": 45,
+   "fit_em": 78,
+   "check_em": 73,
+   "by_type": {
+    "comparison_query": 33,
+    "temporal_query": 33,
+    "inference_query": 42,
+    "null_query": 43
+   },
+   "median_context_tokens": 1986,
+   "file": "results/read_readout.json",
+   "paired": {
+    "rag_g@2000+table2": {
+     "wins": 8,
+     "losses": 2,
+     "net": 6,
+     "one_sided_p": 0.0547
+    },
+    "raptor_g@2000+table2": {
+     "wins": 6,
+     "losses": 2,
+     "net": 4,
+     "one_sided_p": 0.1445
+    },
+    "raptor@2000+table2": {
+     "wins": 25,
+     "losses": 6,
+     "net": 19,
+     "one_sided_p": 0.0004
+    }
+   }
+  }
+ }
+}

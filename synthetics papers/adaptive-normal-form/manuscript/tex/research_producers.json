@@ -1,0 +1,99 @@
+{
+  "producers": [
+    {
+      "id": "anf-reconciliation-algebra-20261111",
+      "scope": "project",
+      "executable": "reconciliation/2026-11-11/algebra_checks.py",
+      "modes": [
+        "smoke"
+      ],
+      "allowed_args": {},
+      "dependencies": [],
+      "timeout_seconds": 15,
+      "project": "adaptive-normal-form-aek9"
+    },
+    {
+      "id": "anf-reconciliation-algebra-20261111-v2",
+      "scope": "project",
+      "executable": "reconciliation/2026-11-11/algebra_checks_v2.py",
+      "modes": [
+        "smoke"
+      ],
+      "allowed_args": {},
+      "dependencies": [],
+      "timeout_seconds": 15,
+      "project": "adaptive-normal-form-aek9"
+    },
+    {
+      "id": "anf-d1-v2-jacobian-orbits-20261111",
+      "scope": "project",
+      "executable": "D1/v2/jacobian_orbit_check.py",
+      "modes": [
+        "smoke"
+      ],
+      "allowed_args": {},
+      "dependencies": [
+        "D1/v2/source-inputs.json"
+      ],
+      "timeout_seconds": 20,
+      "project": "adaptive-normal-form-aek9"
+    },
+    {
+      "id": "anf-d4a-v1-feasible-trees-20261111",
+      "scope": "project",
+      "executable": "D4a/v1/feasible_tree_check.py",
+      "modes": [
+        "smoke"
+      ],
+      "allowed_args": {},
+      "dependencies": [
+        "D4a/v1/source-inputs.json"
+      ],
+      "timeout_seconds": 20,
+      "project": "adaptive-normal-form-aek9"
+    },
+    {
+      "id": "anf-d2-v1-full-loop-20261111",
+      "scope": "project",
+      "executable": "D2/v1/full_loop_probe.py",
+      "modes": [
+        "smoke"
+      ],
+      "allowed_args": {},
+      "dependencies": [
+        "D2/v1/protocol-source-inputs.json"
+      ],
+      "timeout_seconds": 30,
+      "project": "adaptive-normal-form-aek9"
+    },
+    {
+      "id": "anf-d2-v2-seed-correction-20261111",
+      "scope": "project",
+      "executable": "D2/v2/full_loop_probe.py",
+      "modes": [
+        "smoke"
+      ],
+      "allowed_args": {},
+      "dependencies": [
+        "D2/v2/protocol-amendment.json"
+      ],
+      "timeout_seconds": 20,
+      "project": "adaptive-normal-form-aek9"
+    },
+    {
+      "id": "anf-d4b-v1-actuation-20261111",
+      "executable": "D4b/v1/actuation_check.py",
+      "scope": "project",
+      "modes": [
+        "smoke"
+      ],
+      "allowed_args": {},
+      "dependencies": [
+        "D4b/v1/protocol-source-inputs.json",
+        "D4b/v1/actuation-proof.md"
+      ],
+      "timeout_seconds": 20,
+      "project": "adaptive-normal-form-aek9"
+    }
+  ]
+}

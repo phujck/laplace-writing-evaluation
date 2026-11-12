@@ -1,0 +1,65 @@
+{
+  "args": {},
+  "cancel_path": "/home/phujck/VScodeProjects/laplace/synthetics papers/self-consistent-loss-geometries/manuscript/imported/research_runs/run-0781a7b8f8513412.cancel",
+  "cwd": "/home/phujck/VScodeProjects/laplace/writing_projects/self-consistent-loss-geometries",
+  "deadline_at": 1794408197.529617,
+  "execution_deadline_monotonic": 105973.91574644,
+  "id": "run-0781a7b8f8513412",
+  "launch_token": "dee74483717d4c39801cc080f618e1da",
+  "mode": "smoke",
+  "pid": 349597,
+  "producer_argv": [
+    "/home/phujck/.local/share/laplace/runtime/python/current/bin/python3.14",
+    "/home/phujck/VScodeProjects/laplace/writing_projects/self-consistent-loss-geometries/research/slg-analytic-20261111-v2/finite_checks.py",
+    "--mode",
+    "smoke",
+    "--args-json",
+    "{}",
+    "--result",
+    "/home/phujck/VScodeProjects/laplace/synthetics papers/self-consistent-loss-geometries/manuscript/imported/research_runs/run-0781a7b8f8513412.result.json"
+  ],
+  "producer_base": "/home/phujck/VScodeProjects/laplace/writing_projects/self-consistent-loss-geometries",
+  "producer_id": "slg-finite-analytic-20261111-v2",
+  "producer_path": "research/slg-analytic-20261111-v2/finite_checks.py",
+  "project": "self-consistent-loss-geometries",
+  "provenance": {
+    "dependencies": [
+      {
+        "bytes": 2081,
+        "path": "research/slg-analytic-20261111-v2/parameters.json",
+        "sha256": "25b9c7b5ded0567f804e1ba88debef5b76512f45a611ca2e229d429e501b5256",
+        "status": "PRESENT"
+      },
+      {
+        "bytes": 24578,
+        "path": "research/slg-analytic-20261111-v2/original_numerical_demonstrations_v0.py",
+        "sha256": "ebe2e17c4803b312197fd5ce415cae59c29ecd7ba62256cf7f2cf7aa86c5b6d7",
+        "status": "PRESENT"
+      }
+    ],
+    "producer": {
+      "bytes": 14840,
+      "path": "research/slg-analytic-20261111-v2/finite_checks.py",
+      "scope": "project",
+      "sha256": "8f39b070b310baaaa58e6b3824ab7a59c0c86a9c8f5d1f3271e00b4a690a6ce7",
+      "status": "PRESENT"
+    },
+    "producer_config": "64ac394a368dcf64b8219364c895f2cffce76fa5bd21d2de852e51046f4210b6"
+  },
+  "request_id": "slg-finite-analytic-20261111-v2-run1",
+  "request_intent": "sha256:67032b03e52bcc58e4ffbf76a387e5068be887d426ee10b80a2fee8460f590d6",
+  "result_absolute": "/home/phujck/VScodeProjects/laplace/synthetics papers/self-consistent-loss-geometries/manuscript/imported/research_runs/run-0781a7b8f8513412.result.json",
+  "result_path": "research_runs/run-0781a7b8f8513412.result.json",
+  "started_at": 1794408137.5296168,
+  "state": "RUNNING",
+  "stderr_path": "/home/phujck/VScodeProjects/laplace/synthetics papers/self-consistent-loss-geometries/manuscript/imported/research_runs/run-0781a7b8f8513412.stderr.log",
+  "stdout_path": "/home/phujck/VScodeProjects/laplace/synthetics papers/self-consistent-loss-geometries/manuscript/imported/research_runs/run-0781a7b8f8513412.stdout.log",
+  "supervision": {
+    "cleanup_limit_seconds": 6.0,
+    "roles": {},
+    "schema_version": "laplace.research-supervision/1"
+  },
+  "supervision_index_path": "/home/phujck/VScodeProjects/laplace/synthetics papers/self-consistent-loss-geometries/manuscript/imported/research_runs/index.json",
+  "supervisor_start_token": "sha256:dae2d9f12405ad15cbc7b5a55dcf28d1bacb3dcf7f6dbddb5739c1a6e5245de7",
+  "timeout_seconds": 60
+}

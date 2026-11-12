@@ -1,0 +1,60 @@
+# THE DIALS — dials-arm-opus: the MEASURED-ARM policy (B17).
+#
+# Purpose: a benchmark arm whose claim is "the engine, not the model" is only
+# truthful if no stage of the run rides a cheaper tier than the arm names. This
+# profile is that pin, and it is the whole arm policy in one file because both
+# model policies read from here:
+#   * the four .claude/workflows/*.js organs take every stage's model+effort from
+#     `roles.<role>.model` (`opts(role)`), so pinning the roster pins the JS leg;
+#   * the python leg (pipeline.dispatch.compile_dispatch) stamps from the
+#     per-worker constant schema.WORKER_MODEL — mostly sonnet — so it needs the
+#     `dispatch.model_pin` floor below, applied BEFORE schema.clamp_model.
+# Pin-then-clamp: the pin raises, the ceiling still binds (his law, 2026-07-11 —
+# dispatched agents are opus-level or less), so this profile cannot be edited into
+# a policy that dispatches above the orchestrator.
+#
+# Parallel-artefact discipline (his 2026-07-09 versioning law): a new calibration
+# is a NEW versioned file, never an edit to the live one. dials-v1.yaml stays the
+# LIVE profile and is untouched; this profile is consumed only by an arm run
+# (`--dials profiles/pipeline/dials-arm-opus.yaml` for the organs, or
+# `compile_dispatch(dials_profile='dials-arm-opus.yaml')` for the python leg).
+#
+# Effort is not pinned, deliberately. The arm's claim is about the model tier;
+# each role's effort stays at its designed value so the pin changes ONE variable.
+# sealed_reader keeps `low` for the same reason it exists — a context-starved
+# reader that still recovers the argument is the sharp test, and raising it would
+# quietly weaken the hold-out read rather than strengthen the arm.
+#
+# The `load-dials` bootstrap stage of every organ is NOT covered by this file and
+# cannot be: it is the agent that FETCHES these dials, so it runs at a hardcoded
+# haiku before any dial is in hand. It is exempted BY LABEL in
+# scripts/audit_dispatch_models.py, emitted as an explicit audit row, and must be
+# disclosed as such wherever the arm's fairness protocol is stated.
+#
+# Date: 2026-08-04.
+
+version: dials-arm-opus
+
+# --- model tier per role: every seat at the apex ----------------------------
+roles:
+  builder:        {model: opus, effort: high}
+  welder:         {model: opus, effort: high}
+  judge:          {model: opus, effort: medium}
+  sealed_reader:  {model: opus, effort: low}      # tier pinned; starved by design
+  referee:        {model: opus, effort: high}
+  vision:         {model: opus, effort: medium}
+  voice_washer:   {model: opus, effort: high}
+  fixer:          {model: opus, effort: medium}
+  utility:        {model: opus, effort: low}
+  planner:        {model: opus, effort: medium}   # staged narrative planners
+  realiser:       {model: opus, effort: medium}   # staged prose realisers
+  staged_utility: {model: opus, effort: low}      # read-manifest / compile / validate / post-weld
+
+# --- the python leg's floor + the id the ledger records ---------------------
+# model_pin is a TIER (MODEL_RANK has no version granularity, so `opus-5` is not
+# a token the rank or the audit can read). model_id is the exact provider string,
+# recorded verbatim on every compiled dispatch: the audit enforces the tier, the
+# ledger proves the id, and the two together are what a referee can check.
+dispatch:
+  model_pin: opus
+  model_id: claude-opus-5

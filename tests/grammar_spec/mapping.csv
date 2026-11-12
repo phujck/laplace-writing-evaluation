@@ -1,0 +1,218 @@
+operation,old_verb,verb,concept,old_guards,homes,owner,level,because
+apply_revision,apply_revision,change,prose@paragraph,-,-,authoring_surface.py,leaf,
+apply_revision,apply_revision,change,prose@paragraph,-,-,authoring_surface.py,leaf,
+argument,argument,change,argument@plan,base_revision,authoring-state,writing/operations.py,leaf,
+author_changes,author_changes,read,change-history@project,-,-,manuscript_fragments.py,leaf,
+author_history,view=activity,read,act-ledger@project,-,-,author_history.py,leaf,
+author_history,view=corrections,read,note@project,-,-,author_history.py,leaf,
+author_history,view=record,read,act-ledger@project,-,-,author_history.py,leaf,
+author_history,view=telemetry,read,act-ledger@project,-,-,author_history.py,leaf,
+block_change,operation=delete,delete,block@paragraph,-,-,manuscript_blocks.py,leaf,
+block_change,operation=insert,create,block@paragraph,-,-,manuscript_blocks.py,leaf,
+block_change,operation=insert-at-caret,create,block@paragraph,-,-,manuscript_blocks.py,leaf,
+block_change,operation=move,move,block@paragraph,-,-,manuscript_blocks.py,leaf,
+block_change,operation=undo,change,block@paragraph,-,-,manuscript_blocks.py,leaf,
+build,build,run,build@project,-,-,manuscript_source.py,leaf,
+build_status,build_status,read,build@project,-,-,manuscript_source.py,leaf,
+chapter,chapter,create,chapter@chapter,expected_root_digest,selected-edition?,manuscript_structure.py,leaf,
+concept,concept,read,concept-node@claim,-,-,concepts_surface.py,leaf,
+concept_change,operation=add_edge,bind,relation@relation,base_revision/mutation_revision,concept-network/concept-node?,concepts_surface.py,leaf,
+concept_change,operation=remove_edge,delete,relation@relation,base_revision/mutation_revision,concept-network/concept-node?,concepts_surface.py,leaf,
+concept_change,operation=retype_edge,change,relation@relation,base_revision/mutation_revision,concept-network/concept-node?,concepts_surface.py,leaf,
+concept_change,operation=edit_node,change,concept-node@claim,base_revision/mutation_revision,concept-network?/concept-node?,concepts_surface.py,leaf,
+concept_change,operation=add_node,create,concept-node@claim,base_revision/mutation_revision/supersedes,"concept-network/concept-node?/NONE (the id of the note being replaced: a payload reference, not an identity (writing_contracts.py:433, :436))",concepts_surface.py,leaf,
+concept_change,operation=set_source,bind,source-ref@claim,base_revision/mutation_revision,concept-network?/concept-node?,concepts_surface.py,leaf,
+concept_change,operation=set_projection,change,concept-node@claim,base_revision/mutation_revision,concept-network?/concept-node?,concepts_surface.py,leaf,
+concept_change,operation=set_mathematics,change,concept-node@claim,base_revision/mutation_revision,concept-network?/concept-node?,concepts_surface.py,leaf,
+concept_change,operation=set_kind,change,concept-node@claim,base_revision/mutation_revision,concept-network?/concept-node?,concepts_surface.py,leaf,
+concept_change,operation=set_status,change,concept-node@claim,base_revision/mutation_revision,concept-network?/concept-node?,concepts_surface.py,leaf,
+concept_change,operation=set_spine,place,spine-position@plan,base_revision/mutation_revision,concept-network/concept-node?,concepts_surface.py,leaf,
+concept_change,operation=unset_spine,delete,spine-position@plan,base_revision/mutation_revision,concept-network/concept-node?,concepts_surface.py,leaf,
+concept_change,operation=move_node,move,concept-node@claim,base_revision/mutation_revision,concept-network/concept-node?,concepts_surface.py,leaf,
+concept_history,concept_history,read,concept-node@claim,-,-,concepts_surface.py,leaf,
+concept_tree,concept_tree,read,concept-network@claim,-,-,concepts_surface.py,leaf,
+conversation_history,conversation_history,read,turn@project,before,"NONE (pagination cursor, not an identity (writing_contracts.py:386))",authoring_surface.py,leaf,
+document,document,read,document-form@project,-,-,document_style.py,leaf,
+experiment_run,mode=full,run,experiment@run,-,-,research_surface.py,leaf,
+experiment_run,mode=smoke,run,experiment@run,-,-,research_surface.py,leaf,
+export_pdf,mode=selected-source,run,export@project,-,-,document_style.py,leaf,
+export_pdf,mode=style-preview,run,export@project,-,-,document_style.py,leaf,
+framing,framing,change,framing@plan,base_revision,authoring-state,writing/operations.py,leaf,
+help,help,read,contract@project,-,-,writing_operating.py,leaf,
+literature_bind,literature_bind,bind,reference@evidence,claim_revision,claim-meaning?,references_surface.py,leaf,
+literature_discover,literature_discover,read,reference-candidate@evidence,-,-,references_surface.py,leaf,
+literature_import,literature_import,create,reference@evidence,-,-,references_surface.py,leaf,
+literature_lookup,literature_lookup,read,reference@evidence,-,-,references_surface.py,leaf,
+literature_scope,literature_scope,read,reference@claim,-,-,references_surface.py,leaf,
+literature_uses,literature_uses,read,reference@claim,-,-,references_surface.py,leaf,
+logical_plan,view=attention,read,concept-network@plan,-,-,concepts_surface.py,leaf,
+logical_plan,view=catalog,read,concept-catalogue@plan,-,-,concepts_surface.py,leaf,
+logical_plan_change,operation=add_object,create,concept-node@claim,base_revision,concept-network,concepts_surface.py,leaf,
+logical_plan_change,operation=edit_meaning,change,claim-meaning@claim,base_revision,concept-network,concepts_surface.py,leaf,
+logical_plan_change,operation=connect,bind,relation@relation,base_revision,concept-network,concepts_surface.py,leaf,
+logical_plan_change,operation=add_obligation,create,obligation@claim,base_revision,concept-network,concepts_surface.py,leaf,
+logical_plan_change,operation=update_obligation,change,obligation@claim,base_revision,concept-network,concepts_surface.py,leaf,
+logical_plan_change,operation=route_obligation,bind,task@claim,base_revision,concept-network,concepts_surface.py,leaf,
+note,note,create,note@claim,supersedes,"NONE (the id of the note being replaced: a payload reference, not an identity (writing_contracts.py:433, :436))",writing/operations.py,leaf,
+note_status,note_status,change,note@claim,base_revision,authoring-state?,writing/operations.py,leaf,
+note_status,status=resolved,delete,note@claim,base_revision,authoring-state?,writing/operations.py,status,"resolved retires the note: pipeline/authoring.py:1255-1256 writes the row's new status and bumps the authoring counter, and the row stops being an open instruction --- the retiring door synthesis.md §1.4 says no operation had"
+note_status,status=dismissed,delete,note@claim,base_revision,authoring-state?,writing/operations.py,status,dismissed retires it the same way and differs only in the reason recorded (pipeline/authoring.py:1191-1192 accepts both terminal values)
+note_status,status=open,change,note@claim,base_revision,authoring-state?,writing/operations.py,status,"open REVIVES a retired note: it is the inverse of the two retirements and the one act of this operation that is not one, so without this pair the grammar could express retiring a note and not reopening it. The measurement that demands it: writing_contracts.py:439 declares the third enum value and pipeline/authoring.py:1191-1192 enforces it"
+pipeline,view=audit,read,pipeline@project,-,-,writing_pipeline.py,leaf,
+pipeline,view=summary,read,pipeline@project,-,-,writing_pipeline.py,leaf,
+project,project,read,project@project,-,-,writing/operations.py,leaf,
+project_guidance,project_guidance,read,guide-document@project,-,-,project_protocol.py,leaf,
+project_guidance_change,operation=configure,change,guide-catalogue@project,before/expected_catalog_revision,guide-document?/guide-catalogue,project_protocol.py,leaf,
+project_guidance_change,operation=write,change,guide-document@project,before/expected_catalog_revision,guide-document?/guide-catalogue,project_protocol.py,leaf,
+project_metadata,project_metadata,read,project-metadata@project,-,-,writing_projects.py,leaf,
+project_metadata_change,project_metadata_change,change,project-metadata@project,expected_revision,project-metadata,writing_projects.py,leaf,
+proof_check,proof_check,run,proof@claim,concept_revision/result_revision/source_revision,concept-network?/result?/producer?,formal_surface.py,leaf,
+proof_targets,proof_targets,read,proof@claim,-,-,formal_surface.py,leaf,
+proofs,proofs,read,proof@project,-,-,formal_surface.py,leaf,
+proposal_supersede,proposal_supersede,delete,proposal@paragraph,-,-,writing/operations.py,leaf,
+propose_revision,propose_revision,create,proposal@paragraph,-,-,authoring_surface.py,leaf,
+read_artifact,read_artifact,read,artifact@project,-,-,writing/operations.py,leaf,
+read_artifact,read_artifact,read,artifact@project,-,-,writing/operations.py,leaf,
+reference,reference,read,reference@evidence,-,-,references_surface.py,leaf,
+reference_attach,reference_attach,create,reference@evidence,-,-,references_surface.py,leaf,
+reference_fetch,reference_fetch,run,reference-text@evidence,-,-,references_surface.py,leaf,
+reference_refresh,reference_refresh,run,reference@project,-,-,references_surface.py,leaf,
+reference_source,reference_source,read,reference@evidence,-,-,references_surface.py,leaf,
+reference_text,reference_text,read,reference-text@evidence,-,-,references_surface.py,leaf,
+reference_update,reference_update,change,reference@evidence,-,-,references_surface.py,leaf,
+references,references,read,reference@project,-,-,references_surface.py,leaf,
+references_attached,references_attached,read,reference@project,-,-,references_surface.py,leaf,
+repository,action=list,read,repository@project,-,-,writing_sources.py,leaf,
+repository,action=files,read,repository-file@paragraph,-,-,writing_sources.py,leaf,
+repository,action=search,read,repository-file@paragraph,-,-,writing_sources.py,leaf,
+repository,action=read,read,repository-file@paragraph,-,-,writing_sources.py,leaf,
+repository,action=view,read,repository@project,-,-,writing_sources.py,leaf,
+research,view=full,read,result@project,-,-,research_surface.py,leaf,
+research,view=result,read,result@project,-,-,research_surface.py,leaf,
+research,view=summary,read,result@project,-,-,research_surface.py,leaf,
+research_producer,research_producer,create,producer@run,-,-,research_surface.py,leaf,
+research_reconcile,research_reconcile,change,result-binding@evidence,-,-,research_surface.py,leaf,
+research_record,research_record,record,result@run,expected_revision,result?,research_surface.py,leaf,
+run_cancel,run_cancel,change,run@run,-,-,research_surface.py,leaf,
+run_status,run_status,read,run@run,-,-,research_surface.py,leaf,
+section_change,operation=convert,change,section@section,expected_plan_revision/expected_source_digest,plan|plan-file?/source-file,manuscript_structure.py,leaf,
+section_change,operation=create,create,section@section,expected_plan_revision/expected_source_digest,plan|plan-file?/source-file,manuscript_structure.py,leaf,
+section_change,operation=create-section,create,section@section,expected_plan_revision/expected_source_digest,plan|plan-file?/source-file,manuscript_structure.py,leaf,
+section_change,operation=delete,delete,section@section,expected_plan_revision/expected_source_digest,plan|plan-file?/source-file,manuscript_structure.py,leaf,
+section_change,operation=delete-section,delete,section@section,expected_plan_revision/expected_source_digest,plan|plan-file?/source-file,manuscript_structure.py,leaf,
+section_change,operation=insert-heading,create,heading@section,expected_plan_revision/expected_source_digest,plan|plan-file?/source-file,manuscript_structure.py,leaf,
+section_change,operation=restore,create,section@section,expected_plan_revision/expected_source_digest,plan|plan-file?/source-file,manuscript_structure.py,leaf,
+section_change,operation=restore-section,create,section@section,expected_plan_revision/expected_source_digest,plan|plan-file?/source-file,manuscript_structure.py,leaf,
+section_change,operation=undo-create,delete,section@section,expected_plan_revision/expected_source_digest,plan|plan-file?/source-file,manuscript_structure.py,leaf,
+source,source,read,source-file@paragraph,-,-,writing/operations.py,leaf,
+store_artifact,store_artifact,change,artifact@project,before,artifact,writing/operations.py,leaf,
+store_artifact,store_artifact,change,artifact@project,expected_revision,artifact,writing/operations.py,leaf,
+structure,structure,read,plan@plan,-,-,project_structure.py,leaf,
+structure_change,operation=section_contract,change,artifact@section,expected_plan_revision,plan-file,project_structure.py,leaf,
+structure_change,operation=paragraph_plan,change,artifact@paragraph,expected_plan_revision,plan-file,project_structure.py,leaf,
+structure_change,operation=prepare_work,create,task@project,expected_plan_revision,plan-file,project_structure.py,leaf,"prepare an inspected storyboard cut through existing project Work and artifact owners; no provider starts"
+structure_change,operation=bind_source,bind,plan-section@section,expected_plan_revision,plan-file,project_structure.py,leaf,
+structure_change,operation=start_authoring,create,plan@plan,expected_project_lifecycle,project-lifecycle,project_structure.py,leaf,"shares (create, plan@plan) with operation=initialize: a source-optional project starts its manuscript and/or declares its reader-plan owner through writing.project_lifecycle; initialize then creates the plan; no plan, prose or concept is written here"
+structure_change,operation=initialize,create,plan@plan,expected_revision/expected_source_revision,plan/selected-edition,project_structure.py,leaf,
+structure_change,operation=plan,change,plan-section@section,expected_revision,plan,project_structure.py,leaf,
+structure_change operation=plan,op.kind=add-section,create,plan-section@section,expected_revision,plan,project_structure.py,nested,
+structure_change operation=plan,op.kind=remove-section,delete,plan-section@section,expected_revision,plan,project_structure.py,nested,
+structure_change operation=plan,op.kind=restore-section,create,plan-section@section,expected_revision,plan,project_structure.py,nested,
+structure_change operation=plan,op.kind=set-outline,change,plan@plan,expected_revision,plan,project_structure.py,nested,
+structure_change operation=plan,op.kind=reorder-sections,move,plan-section@section,expected_revision,plan,project_structure.py,nested,
+structure_change operation=plan,op.kind=reorder-appendices,move,plan-section@section,expected_revision,plan,project_structure.py,nested,
+structure_change operation=plan,op.kind=retitle,change,plan-section@section,expected_revision,plan,project_structure.py,nested,
+structure_change operation=plan,op.kind=reorder-nodes,move,claim-position@section,expected_revision,plan,project_structure.py,nested,
+structure_change operation=plan,op.kind=edit-job,change,plan-section@section,expected_revision,plan,project_structure.py,nested,
+structure_change operation=plan,op.kind=edit-notes,change,plan-section@section,expected_revision,plan,project_structure.py,nested,
+structure_change operation=plan,op.kind=set-refs,bind,reference@section,expected_revision,plan,project_structure.py,nested,
+structure_change operation=plan,op.kind=move-node,move,claim-position@section,expected_revision,plan,project_structure.py,nested,
+structure_change operation=plan,op.kind=add-node,place,claim-position@section,expected_revision,plan,project_structure.py,nested,
+structure_change operation=plan,op.kind=remove-node,delete,claim-position@section,expected_revision,plan,project_structure.py,nested,
+structure_change operation=plan,op.kind=toggle-beat,change,plan-section@section,expected_revision,plan,project_structure.py,nested,
+structure_change operation=plan,op.kind=set-nodes,place,claim-position@section,expected_revision,plan,project_structure.py,nested,
+structure_change operation=plan,op.kind=set-meta,change,plan-section@section,expected_revision,plan,project_structure.py,nested,
+structure_change operation=plan,op.kind=set-serves,bind,claim-position@section,expected_revision,plan,project_structure.py,nested,
+structure_change,operation=spine,move,spine-position@plan,expected_revision,plan,project_structure.py,leaf,
+structure_change operation=spine,op.kind=reorder-spine,move,spine-position@plan,expected_revision,plan,project_structure.py,nested,
+structure_change operation=spine,op.kind=set-narrative,place,spine-position@plan,expected_revision,plan,project_structure.py,nested,
+structure_change operation=spine,op.kind=unset-spine,delete,spine-position@plan,expected_revision,plan,project_structure.py,nested,
+structure_change,operation=reconcile,run,plan@plan,expected_revision,plan,project_structure.py,leaf,
+structure_change,operation=bind_results,bind,result@claim,expected_concept_revision/expected_revision,concept-network/plan,project_structure.py,leaf,
+style,style,change,document-form@project,-,-,writing_style.py,leaf,
+task,task,create,task@section,-,-,writing/operations.py,leaf,
+task_status,task_status,change,task@evidence,-,-,writing/operations.py,leaf,
+visual_create,visual_create,create,visual-spec@run,-,-,visuals_surface.py,leaf,
+visual_create,visual_create,create,visual-spec@run,expected_revision,visual-spec,visuals_surface.py,leaf,
+visual_place,visual_place,place,visual@section,-,-,visuals_surface.py,leaf,
+visual_place,visual_place,place,visual@section,-,-,visuals_surface.py,leaf,
+visual_render,visual_render,run,visual@run,-,-,visuals_surface.py,leaf,
+visuals,visuals,read,visual@project,-,-,visuals_surface.py,leaf,
+writing_stage,view=full,read,stage@project,known_revision,stage?,writing_stages.py,leaf,
+writing_stage,view=guidance,read,stage@project,known_revision,stage?,writing_stages.py,leaf,
+writing_stage,view=materials,read,stage@project,known_revision,stage?,writing_stages.py,leaf,
+writing_stage,view=summary,read,stage@project,known_revision,stage?,writing_stages.py,leaf,
+writing_style,view=profile,read,style-profile@project,-,-,writing_style.py,leaf,
+writing_style,view=provenance,read,style-provenance@project,-,-,writing_style.py,leaf,
+writing_style,view=summary,read,style-state@project,-,-,writing_style.py,leaf,
+writing_style_calibration,writing_style_calibration,read,style-calibration@project,-,-,writing_style.py,leaf,
+writing_style_change,writing_style_change,change,style-state@project,expected_revision,style-state,project_work.py,leaf,
+writing_style_profile_change,basis=author_preference,change,style-profile@project,expected_profile_revision/expected_provenance_revision,style-profile/style-provenance?,project_work.py,leaf,
+writing_style_profile_change,basis=source_calibration,change,style-profile@project,expected_profile_revision/expected_provenance_revision,style-profile/style-provenance,project_work.py,leaf,
+materials,materials,read,artifact@project,-,-,project_work_surface.py,extension,bounded canonical recorded-artifact discovery shared by human and agent; added after verb audit
+storage,storage,read,storage@project,-,-,writing_storage.py,extension,derived byte census over existing project artifacts and stores
+storage_prune,storage_prune,delete,storage@project,-,-,writing_storage.py,extension,confirmed removal of verified empty orphan provider cwd artifacts
+repository,action=interface,read,contract@project,-,-,writing_sources.py,extension,bounded derived HTTP interface projection added after the verb audit
+session_settings,session_settings,read,turn@project,-,-,authoring_surface.py,extension,"the HTTP settings door's own read, given a tool-door verb, added after the verb audit"
+session_settings_change,session_settings_change,change,turn@project,-,-,authoring_surface.py,extension,"the HTTP settings door's own change (configure_session), given a tool-door verb, added after the verb audit"
+dispatch_plan,dispatch_plan,create,task@project,-,-,project_work.py,extension,"a dispatch's plan, written as a project artifact and its task row minted at the project altitude; added after the verb audit"
+dispatch,dispatch,read,task@project,-,-,project_work.py,extension,the bounded read of one dispatch row and its prompt projection; added after the verb audit
+dispatch_launch,dispatch_launch,run,task@project,-,-,authoring_surface.py,extension,"launching a dispatch's children is the one verb whose receipt is not final at return (started, then terminal from the durable row); added after the verb audit"
+dispatch_status,dispatch_status,read,task@project,-,-,authoring_surface.py,extension,"the terminal state of a launched dispatch, read from the durable row and each child's session; added after the verb audit"
+dispatch_returns,dispatch_returns,read,task@project,-,-,writing/operations.py,extension,each child's return read through the bounded artifact reader and validated by check-return; added after the verb audit
+app_settings,scope=application,read,contract@project,-,-,writing_projects.py,extension,read-only application metadata over existing global owners without a dummy project
+material_references,material_references,read,material-reference@project,-,-,writing_projects.py,extension,registry material membership and exact stored owner read added after verb audit
+material_reference_change,action=attach,create,material-reference@project,expected_revision,project-metadata,writing_projects.py,extension,registry material membership and exact stored owner read added after verb audit
+material_reference_change,action=adopt,change,material-reference@project,expected_revision,project-metadata,writing_projects.py,extension,registry material membership and exact stored owner read added after verb audit
+material_reference_change,action=remove,delete,material-reference@project,expected_revision,project-metadata,writing_projects.py,extension,registry material membership and exact stored owner read added after verb audit
+author_history,view=source,read,act-ledger@project,-,-,author_history.py,leaf,"Exact read-only archived source, distinct from current writable source"
+profile family=architecture scope=workspace,view=summary,read,architecture-profile@project,-,-,writing/operations.py,extension,"M4 actual scoped architecture/voice profile owner inspection, not a new profile store"
+profile family=architecture scope=workspace,view=content,read,architecture-profile@project,-,-,writing/operations.py,extension,"M4 actual scoped architecture/voice profile owner inspection, not a new profile store"
+profile_change family=architecture scope=workspace,action=propose,change,architecture-profile@project,-,-,writing/operations.py,extension,M4 immutable typed preference candidate over existing proposal custody
+profile family=voice scope=workspace,view=summary,read,style-profile@project,-,-,writing/operations.py,extension,"M4 actual scoped architecture/voice profile owner inspection, not a new profile store"
+profile family=voice scope=workspace,view=content,read,style-profile@project,-,-,writing/operations.py,extension,"M4 actual scoped architecture/voice profile owner inspection, not a new profile store"
+profile_change family=voice scope=workspace,action=propose,change,style-profile@project,-,-,writing/operations.py,extension,M4 immutable typed preference candidate over existing proposal custody
+profile family=voice scope=project,view=summary,read,style-state@project,-,-,writing/operations.py,extension,"M4 actual scoped architecture/voice profile owner inspection, not a new profile store"
+profile family=voice scope=project,view=content,read,style-state@project,-,-,writing/operations.py,extension,"M4 actual scoped architecture/voice profile owner inspection, not a new profile store"
+profile_change family=voice scope=project,action=propose,change,style-state@project,-,-,writing/operations.py,extension,M4 immutable typed preference candidate over existing proposal custody
+profile,view=candidate,read,profile-candidate@project,-,-,writing/operations.py,extension,"Exact typed profile candidate discovery/read, never a paragraph source edit"
+profile,view=candidates,read,profile-candidate@project,-,-,writing/operations.py,extension,"Exact typed profile candidate discovery/read, never a paragraph source edit"
+profile_change,action=apply,change,profile-candidate@project,-,-,writing/operations.py,extension,Existing guarded profile family consumer applies exact immutable candidate
+profile_change family=architecture scope=workspace,action=confirm,change,architecture-profile@project,-,-,writing/operations.py,extension,Separate explicit human confirmation of exact architecture field values
+work_review,work_review,record,task@evidence,-,-,project_work_review.py,extension,"M5 lane pair (identity_doors): one Work review-lifecycle phase (handoff, scoped review, synthesis, linked follow-up) recorded as evidence of an existing Work by the project Work owner"
+development_source,action=grant,bind,repository@project,-,-,writing/operations.py,extension,in-harness join (2026-10-20): one local Work grant over a configured repository
+development_source,action=delegate,bind,repository@project,-,-,writing/operations.py,extension,residual closure (2026-10-20): the authorised parent session narrows its root grant to a child session (never widens)
+development_source,action=revoke,change,repository@project,-,-,writing/operations.py,extension,in-harness join (2026-10-20): explicit withdrawal of the grant
+development_source,action=read,read,repository@project,-,-,writing/operations.py,extension,in-harness join (2026-10-20): exact file pin under the grant (the repository pair: its action=read selector is unique there; the file pair's action=read belongs to repository)
+development_source,action=status,read,repository@project,-,-,writing/operations.py,extension,causal correction (2026-10-20): the Work's bounded development facet page (grants, candidates, effects, checks)
+development_source,action=candidate,create,repository-file@paragraph,-,-,writing/operations.py,extension,in-harness join (2026-10-20): inspectable whole-file candidate with preimage pins
+development_source,action=apply,change,repository-file@paragraph,-,-,writing/operations.py,extension,in-harness join (2026-10-20): transactional apply with the shared source-effect receipt
+development_source,action=check,run,repository@project,-,-,writing/operations.py,extension,in-harness join (2026-10-20): one registered check profile under the isolation launcher
+work_delivery,action=bind,bind,task@evidence,-,-,writing/operations.py,extension,in-harness join (2026-10-20): author-approved recipient binding for a Work
+work_delivery,action=submit,record,task@evidence,-,-,writing/operations.py,extension,in-harness join (2026-10-20): durable idempotent delivery event of a handed-off obligation
+work_delivery,action=recover,run,task@evidence,-,-,writing/operations.py,extension,in-harness join (2026-10-20): same-request recovery of a delivery within its budget
+work_delivery,action=status,read,task@evidence,-,-,writing/operations.py,extension,in-harness join (2026-10-20): the event's distinct facts
+workflow_definition_change,action=save,change,workflow-definition@project,-,-,pipeline/workflow_definitions.py,leaf,Save guards remain exact owner payload values; no execution admission
+workflow_definition_change,action=prepare,create,task@project,-,-,writing/workflow_dispatch.py,leaf,Exact saved selected slice prepares existing dispatch Work/plan; Start remains explicit
+dispatch_continue,dispatch_continue,run,task@project,-,-,writing/tool_work.py,extension,"explicit guarded failed-judge continuation; packet presence selects it without shadowing initial launch"
+research_object_change,operation=save-question,create,concept-node@claim,-,-,writing/operations.py,extension,Existing owner-qualified scientific decisions or selected artifact handover; exact authority remains the owner contract.
+research_object_change,operation=save-object,create,concept-node@claim,-,-,writing/operations.py,extension,Existing owner-qualified scientific decisions or selected artifact handover; exact authority remains the owner contract.
+research_object_change,operation=settle-question,change,concept-node@claim,-,-,writing/operations.py,extension,Existing owner-qualified scientific decisions or selected artifact handover; exact authority remains the owner contract.
+research_object_change,operation=bind-consumed,bind,concept-node@claim,-,-,writing/operations.py,extension,Existing owner-qualified scientific decisions or selected artifact handover; exact authority remains the owner contract.
+research_object_change,operation=mark-reconsideration,record,concept-node@claim,-,-,writing/operations.py,extension,Existing owner-qualified scientific decisions or selected artifact handover; exact authority remains the owner contract.
+research_object_change,operation=clear-reconsideration,record,concept-node@claim,-,-,writing/operations.py,extension,Existing owner-qualified scientific decisions or selected artifact handover; exact authority remains the owner contract.
+research_handover,action=prepare,create,artifact@project,-,-,writing/operations.py,extension,Existing owner-qualified scientific decisions or selected artifact handover; exact authority remains the owner contract.
+research_handover,action=read,read,artifact@project,-,-,writing/operations.py,extension,Existing owner-qualified scientific decisions or selected artifact handover; exact authority remains the owner contract.
+research_handover,action=request,read,artifact@project,-,-,writing/operations.py,extension,Existing owner-qualified scientific decisions or selected artifact handover; exact authority remains the owner contract.
+research_handover,action=export,change,artifact@project,-,-,writing/operations.py,extension,Existing owner-qualified scientific decisions or selected artifact handover; exact authority remains the owner contract.
+research_handover,action=inspect,read,artifact@project,-,-,writing/operations.py,extension,Existing owner-qualified scientific decisions or selected artifact handover; exact authority remains the owner contract.

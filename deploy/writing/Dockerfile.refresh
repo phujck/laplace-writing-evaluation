@@ -1,0 +1,68 @@
+# syntax=docker/dockerfile:1.7
+# Optional source refresh of a previously qualified image. Supply its local tag (or a qualified registry digest);
+# the release acceptance names that ID and verifies every installed source file.
+# Clean builds use Dockerfile --target provider-both. No projects, history or auth are copied.
+ARG BASE_IMAGE
+FROM ${BASE_IMAGE}
+USER root
+WORKDIR /opt/laplace
+# Empty keeps the base provider bytes; an explicit pin updates only Claude.
+# This dependency step precedes APP inputs so source-only changes can reuse it.
+ARG CLAUDE_NPM_SPEC=
+RUN if [ -n "${CLAUDE_NPM_SPEC}" ]; then \
+      command -v npm >/dev/null && command -v claude >/dev/null \
+      && npm install --global --omit=dev "${CLAUDE_NPM_SPEC}" \
+      && npm cache clean --force; \
+    fi
+# Retire every previously installed copy before the final namespace is copied. The installed distributions leave
+# through their own pip RECORD manifests (package modules, console scripts such as laplace-wake/laplace-writing and
+# their old entry points, dist-info), so no old executable forwarder survives; then every tree the APP block copies
+# is removed whole, including the RETIRED pre-R2 Atlas source location (/opt/laplace/atlas/src, carried by images
+# built before 2026-10-19), so a module or resource deleted or moved upstream (the 2026-10-21 laplace/<subsystem>
+# package move) cannot linger, and the setuptools build trees of the old install (/opt/laplace/build,
+# /opt/laplace/atlas/build) are cleared so the new build cannot reuse an old module or resource from them. The refreshed
+# image then holds exactly one authoritative source copy, under /opt/laplace/src.
+RUN python -m pip install --no-cache-dir 'pytest>=8.0,<10' \
+    && python -m pip uninstall -y laplace-engine atlas \
+    && rm -rf /opt/laplace/src /opt/laplace/atlas/src /opt/laplace/profiles /opt/laplace/docs /opt/laplace/tests \
+       /opt/laplace/scripts /opt/laplace/deploy/writing /opt/laplace/build /opt/laplace/atlas/build \
+       /usr/local/lib/python3.12/site-packages/laplace /usr/local/lib/python3.12/site-packages/atlas
+# The base image may predate cm-super (the scalable T1/EC fonts the clean Dockerfile now installs); the refresh carries
+# the same package and the same input audit, so a refreshed and a clean image typeset the same document alike.
+RUN apt-get update && apt-get install -y --no-install-recommends cm-super \
+    && rm -rf /var/lib/apt/lists/* \
+    && for input in cm-super-minimal-t1.map sfrm1000.pfb; do \
+         kpsewhich "$input" >/dev/null || { echo "missing TeX distribution input: $input" >&2; exit 1; }; \
+       done
+COPY pyproject.toml ./
+COPY atlas/pyproject.toml ./atlas/
+# APP: the application source and its install, identical in every named target
+COPY setup.py ./
+COPY MANIFEST.in ./
+COPY atlas/README.md ./atlas/
+COPY README.md ./
+COPY src ./src
+COPY profiles ./profiles
+COPY docs ./docs
+COPY tests ./tests
+COPY scripts ./scripts
+# OPERATIONAL-TOOLS: generated from OPERATIONAL_INPUTS
+COPY ["tools/writing_verbs/gen_routes.py", "/opt/laplace/tools/writing_verbs/gen_routes.py"]
+COPY ["tools/writing_verbs/reanchor_http_routes.py", "/opt/laplace/tools/writing_verbs/reanchor_http_routes.py"]
+COPY ["tools/writing_verbs/http_routes.csv", "/opt/laplace/tools/writing_verbs/http_routes.csv"]
+# END OPERATIONAL-TOOLS
+COPY deploy/writing ./deploy/writing
+COPY docs/writing-reviewer-guide.md ./REVIEWER_GUIDE.md
+COPY docs/writing-pytest.ini ./pytest.ini
+RUN python -m pip install --no-cache-dir --no-deps --no-build-isolation ./atlas ".[research]" \
+    && rm -rf /opt/laplace/build /opt/laplace/atlas/build /opt/laplace/src/laplace_engine.egg-info /opt/laplace/src/atlas.egg-info \
+    && python -m pip check
+COPY deploy/writing/writing-entrypoint.sh /usr/local/bin/laplace-writing-entrypoint
+COPY deploy/writing/smoke.py /opt/laplace/container-smoke.py
+RUN chmod 0755 /usr/local/bin/laplace-writing-entrypoint \
+    && mkdir -p /var/lib/laplace/session-workspaces \
+    && chown laplace:laplace /var/lib/laplace/session-workspaces
+
+USER laplace
+WORKDIR /workspace
+LABEL org.laplace.capability.provider="codex-and-claude-explicit-logins-required"

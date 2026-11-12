@@ -1,0 +1,457 @@
+{
+  "schema": "anf.D2-finite-protocol/2",
+  "status": "PREREGISTERED_BEFORE_EXECUTION",
+  "work_id": "WORK-5adb016071394a80b18c92238781e6df",
+  "parent": "WS-f989d076ce2a4ce0aab628e6712f800b",
+  "question": "What do seeded R3 peaks versus late periodic/statistical diagnostics show, under the exact selected deterministic maps?",
+  "source_pins": [
+    {
+      "repository": "laplace",
+      "path": "synthetics papers/adaptive-normal-form/scripts/R1_check.py",
+      "sha256": "c88aec643ea71c3d2c145ed7419a15720853d1e0b5d032e22cffb7b48e15f2c3",
+      "total_lines": 154,
+      "receipt": "READ-bce8c564e8d24ab19948a440e6fb6666"
+    },
+    {
+      "repository": "laplace",
+      "path": "synthetics papers/adaptive-normal-form/scripts/R3_check.py",
+      "sha256": "8e627de8279eac48a8238acc67a7439aafb93c7fe7fe49e996c56b0bac420910",
+      "total_lines": 171,
+      "receipt": "READ-0b2eb9fbdb264938bd338ba61d81ff8e"
+    },
+    {
+      "repository": "laplace",
+      "path": "synthetics papers/adaptive-normal-form/scripts/figs/fig2c_r3_flip.py",
+      "sha256": "89e7756c8fd94a8df32de89a528ff8d8bf6c912bbc580d9efa241917aa394462",
+      "total_lines": 85,
+      "receipt": "READ-8969e9e1a1e244f69c4fa680230dee24"
+    },
+    {
+      "repository": "laplace",
+      "path": "synthetics papers/adaptive-normal-form/manuscript/tex/sections/05_phases.tex",
+      "sha256": "8338ae5032eacc16548e5d09f111f2adb1d81626e14ade2f60930f88abbc16fc",
+      "total_lines": 174,
+      "receipt": "READ-99833f727488498c83438f97a067cd8f"
+    },
+    {
+      "repository": "laplace",
+      "path": "synthetics papers/adaptive-normal-form/workflow/state/results/R3_phase_boundary_and_classification.md",
+      "sha256": "3461f47853bd50f91a8fd8bbd396c9d2f2f9dcdf049a456acb09602018c0fe08",
+      "total_lines": 63,
+      "receipt": "READ-35bf3bf7b4164196a91f55f84a560f2a"
+    },
+    {
+      "repository": "laplace",
+      "path": "synthetics papers/adaptive-normal-form/workflow/state/derivations/R3_derivation.md",
+      "sha256": "8579673768d1aae593f38a2f25c65519c486652900deacd20666de81b0456c9c",
+      "total_lines": 48,
+      "receipt": "READ-fd2326d8602b4b2c8b243a49e972e27e"
+    },
+    {
+      "repository": "laplace",
+      "path": "synthetics papers/adaptive-normal-form/inputs/model.md",
+      "sha256": "5ba0a497268cedb9e0978f12036d7341b74dd07fa73abe40fc09593f7cad0874",
+      "total_lines": 84,
+      "receipt": "READ-97362630d3504c889c82abf6d8420f7c"
+    },
+    {
+      "repository": "laplace",
+      "path": "synthetics papers/the-phases-of-hierarchy/manuscript/tex_v4/sections/E_simulations.tex",
+      "sha256": "c72c9944827cededbeef7c1ba499d1e37389bdd7706f0c375e95b9ffa3983e0f",
+      "total_lines": 21,
+      "receipt": "READ-0718f1044798485daee8fde2247569a0"
+    }
+  ],
+  "snippets": [
+    {
+      "path": "synthetics papers/adaptive-normal-form/scripts/R1_check.py",
+      "sha256": "c88aec643ea71c3d2c145ed7419a15720853d1e0b5d032e22cffb7b48e15f2c3",
+      "start_marker": "def O_mean(",
+      "end_marker_exclusive": "def chi_N(",
+      "offset": 888,
+      "limit": 412,
+      "text": "def O_mean(theta, N, beta):\n    \"\"\"Deterministic order parameter (N->inf Gaussian limit of majority vote).\"\"\"\n    arg = sqrt(N / 2.0) * sinh(beta * theta)\n    return erf(arg)\n\ndef g_func(theta, N, beta):\n    \"\"\"Derivative of O_mean w.r.t. theta.\"\"\"\n    arg = sqrt(N / 2.0) * sinh(beta * theta)\n    darg_dtheta = sqrt(N / 2.0) * beta * cosh(beta * theta)\n    return (2.0 / sqrt(pi)) * exp(-arg**2) * darg_dtheta\n\n",
+      "read_action": {
+        "operation": "repository",
+        "payload": {
+          "action": "read",
+          "repository": "laplace",
+          "path": "synthetics papers/adaptive-normal-form/scripts/R1_check.py",
+          "expected_sha256": "sha256:c88aec643ea71c3d2c145ed7419a15720853d1e0b5d032e22cffb7b48e15f2c3",
+          "offset": 888,
+          "limit": 412
+        }
+      }
+    },
+    {
+      "path": "synthetics papers/adaptive-normal-form/scripts/R3_check.py",
+      "sha256": "8e627de8279eac48a8238acc67a7439aafb93c7fe7fe49e996c56b0bac420910",
+      "start_marker": "def simulate_loop(",
+      "end_marker_exclusive": "def flip_amplitude(",
+      "offset": 1076,
+      "limit": 593,
+      "text": "def simulate_loop(N, beta, alpha, r, steps=2000, e0_val=1e-4):\n    \"\"\"\n    Iterates the full deterministic closed loop.\n    Returns the last few values of the mismatch e_k.\n    \"\"\"\n    theta = 0.0\n    m     = e0_val\n    \n    e_history = []\n    \n    for _ in range(steps):\n        # Current mismatch\n        e = m - O_mean(theta, N, beta)\n        e_history.append(e)\n        \n        # Calculate next states\n        g0 = g_func(theta, N, beta)\n        m_new = r * m + (1 - r) * O_mean(theta, N, beta)\n        theta = theta + alpha * g0 * e\n        m = m_new\n\n    return e_history[-10:], theta\n\n",
+      "read_action": {
+        "operation": "repository",
+        "payload": {
+          "action": "read",
+          "repository": "laplace",
+          "path": "synthetics papers/adaptive-normal-form/scripts/R3_check.py",
+          "expected_sha256": "sha256:8e627de8279eac48a8238acc67a7439aafb93c7fe7fe49e996c56b0bac420910",
+          "offset": 1076,
+          "limit": 593
+        }
+      }
+    },
+    {
+      "path": "synthetics papers/adaptive-normal-form/scripts/R3_check.py",
+      "sha256": "8e627de8279eac48a8238acc67a7439aafb93c7fe7fe49e996c56b0bac420910",
+      "start_marker": "def flip_amplitude(",
+      "end_marker_exclusive": "def sweep_bifurcation(",
+      "offset": 1669,
+      "limit": 1691,
+      "text": "def flip_amplitude(N, beta, alpha, r, steps=20000, seed=1e-4):\n    \"\"\"Two-cycle amplitude of the flip bifurcation at system size N.\n\n    The order parameter for the flip is the peak +/- excursion of the mismatch e_k\n    away from the fixed point, measured on the fast (m, e) timescale at the onset\n    value of the marginal mode theta=0.\n\n    Why this, and not the long-time full-loop envelope: the closed loop has a\n    *line* of fixed points (e=0 for any theta), so its Jacobian carries a marginal\n    eigenvalue +1 along theta. At N_c the second eigenvalue crosses -1 - the flip -\n    and a two-cycle is born. But the resulting oscillation drives a slow secular\n    drift of the marginal mode theta; as theta leaves zero, g(theta) falls, the\n    flip gain K = alpha g(theta)^2 relaxes back toward 1, and the two-cycle\n    re-stabilises and decays. So the long-time full-loop amplitude is always ~0\n    (the only attractor is the fixed-point line) and a short-horizon envelope sweep\n    catches that decay mid-flight as a spurious opening-then-closing bubble.\n\n    The faithful object is the flip of the fast subsystem at theta=0: seed just off\n    the fixed point and record the peak excursion before the slow drift quenches it.\n    Below N_c this stays at the seed; above N_c it grows as sqrt(N - N_c), the\n    supercritical normal-form law (verified: peak / sqrt(N - N_c) ~ const at onset).\n    \"\"\"\n    theta = 0.0\n    m = seed\n    peak = 0.0\n    for _ in range(steps):\n        e = m - O_mean(theta, N, beta)\n        peak = max(peak, abs(e))\n        O = O_mean(theta, N, beta)\n        theta = theta + alpha * g_func(theta, N, beta) * e\n        m = r * m + (1 - r) * O\n    return peak\n\n\n",
+      "read_action": {
+        "operation": "repository",
+        "payload": {
+          "action": "read",
+          "repository": "laplace",
+          "path": "synthetics papers/adaptive-normal-form/scripts/R3_check.py",
+          "expected_sha256": "sha256:8e627de8279eac48a8238acc67a7439aafb93c7fe7fe49e996c56b0bac420910",
+          "offset": 1669,
+          "limit": 1691
+        }
+      }
+    },
+    {
+      "path": "synthetics papers/adaptive-normal-form/scripts/R3_check.py",
+      "sha256": "8e627de8279eac48a8238acc67a7439aafb93c7fe7fe49e996c56b0bac420910",
+      "start_marker": "def sweep_bifurcation(",
+      "end_marker_exclusive": "if __name__",
+      "offset": 3360,
+      "limit": 899,
+      "text": "def sweep_bifurcation(beta, alpha, r, N_c, span=200, step=2, seed=1e-4):\n    \"\"\"Sweep N across N_c and return the flip two-cycle branches (Ns, lower, upper).\n\n    The flip is supercritical and symmetric (e_k -> -e_k under a half-period), so\n    the two-cycle is the pair of branches +/- A(N) about the fixed point e=0, where\n    A(N) is flip_amplitude. Below N_c the branches coincide at zero (stable fixed\n    point); above N_c they fork open as A(N) ~ sqrt(N - N_c). See flip_amplitude for\n    why the peak-excursion order parameter is the faithful one and the long-time\n    envelope is not. The seed sets the (flat) sub-critical baseline only.\n    \"\"\"\n    Ns = list(range(int(N_c - span), int(N_c + span) + 1, step))\n    upper, lower = [], []\n    for N in Ns:\n        A = flip_amplitude(N, beta, alpha, r, seed=seed)\n        upper.append(A)\n        lower.append(-A)\n    return Ns, lower, upper\n\n\n",
+      "read_action": {
+        "operation": "repository",
+        "payload": {
+          "action": "read",
+          "repository": "laplace",
+          "path": "synthetics papers/adaptive-normal-form/scripts/R3_check.py",
+          "expected_sha256": "sha256:8e627de8279eac48a8238acc67a7439aafb93c7fe7fe49e996c56b0bac420910",
+          "offset": 3360,
+          "limit": 899
+        }
+      }
+    }
+  ],
+  "old_figure": {
+    "path": "synthetics papers/adaptive-normal-form/scripts/figs/fig2c_r3_flip.png",
+    "sha256": "3e3624429a104fb078a57bd10621fdb903cd271e5823711c22c03ddc053e10d1",
+    "view_receipt": "READ-d52e3bad3a1842c881d5f8c1ba020fdf",
+    "inspection": "Standalone PNG media viewed. Visible asymptotic mismatch axis, stable two-cycle arrow, mirrored shaded branches and Nc marker. Not compiled composite/page/layout review. No asset edited."
+  },
+  "D1_reuse": {
+    "run_id": "run-e46bf2a3172ea87e",
+    "raw_sha256": "5281094d3d9f3d8862d01fc5779200211beee81c66aee4d477be90929dcc680f",
+    "native_result": "anf-d1-v2-jacobian-orbits-20261111",
+    "revision": "sha256:23413fb0b8cfc9c2e087596b9baf75eef9c2329d0c1460e3bc2974e03ed55ffc",
+    "scope": "Reuse stored orbit states/Jacobians/multipliers. No D1 producer/orbit-root/Jacobian-check rerun.",
+    "proofs": [
+      {
+        "id": "ART-20d6e142c3a84e5686f2924695c679af",
+        "path": "writing_projects/adaptive-normal-form-aek9/D1/v2/01-matching-proof.md",
+        "sha256": "60b794c925a7ab8a9a108f76dabd0e160a179777e9e9c758cb4c1f0de9e51709"
+      },
+      {
+        "id": "ART-aa322491a10847198777341aa12a03f8",
+        "path": "writing_projects/adaptive-normal-form-aek9/D1/v2/02-ph-erf-cycle-proof.md",
+        "sha256": "ce8d315b73a36366438269dc15038bbeb5321e02c95eefd9e9ac8efa251495d9"
+      },
+      {
+        "id": "ART-c29df13f924c4196957c23aa0bcadb30",
+        "path": "writing_projects/adaptive-normal-form-aek9/D1/v2/03-size-gain-proof.md",
+        "sha256": "577bfd5970f91ce0085092e7eb80609d572529a677656e68db4c03311473ae0f"
+      },
+      {
+        "id": "ART-26016ed766da416886d10de42aa077de",
+        "path": "writing_projects/adaptive-normal-form-aek9/D1/v2/04-anf-orbit-proof.md",
+        "sha256": "2bc9d3d9089aba9382cc3ac48e2a3b28f87e27bfe685977eb6449a1f5a70333b"
+      }
+    ],
+    "anf": {
+      "state": [
+        -0.16024794040085039,
+        0.025471791723687645
+      ],
+      "jacobian": [
+        [
+          0.3,
+          7.788666683257231
+        ],
+        [
+          0.11126666690367473,
+          0.05364554601029492
+        ]
+      ],
+      "two_step_multipliers": [
+        {
+          "real": 1.2451443678913934,
+          "imag": 0,
+          "modulus": 1.2451443678913934
+        },
+        {
+          "real": 0.5809714396548122,
+          "imag": 0,
+          "modulus": 0.5809714396548122
+        }
+      ],
+      "orbit_residuals": [
+        2.7755575615628914e-17,
+        2.7755575615628914e-17
+      ],
+      "parameters": {
+        "N": 900,
+        "r": 0.3,
+        "alpha": 0.01,
+        "beta": 0.5,
+        "theta_bracket": [
+          0.02,
+          0.03
+        ]
+      }
+    },
+    "ph": {
+      "parameters": {
+        "b": 1.2,
+        "s": 0.4,
+        "r_definition": "exp(-1)",
+        "alpha": 0.35,
+        "beta": 0.6,
+        "size_ratios": [
+          1.001,
+          1.01,
+          1.1
+        ]
+      },
+      "r": 0.36787944117144233,
+      "D": 1.015153137095996,
+      "Kc": 1.9701461059572865,
+      "Nc": 138.25414373768885,
+      "cases": [
+        {
+          "N": 138.39239788142652,
+          "ratio": 1.001,
+          "state": [
+            -0.0014127609152952394,
+            0.007642872013624193
+          ],
+          "z": 0.007758685501053792,
+          "jacobian": [
+            [
+              0.36787944117144233,
+              0.25284822353142306
+            ],
+            [
+              0.7240519792246415,
+              -0.8641626620787757
+            ]
+          ],
+          "two_step_multipliers": [
+            {
+              "real": 0.2519001138452962,
+              "imag": 0,
+              "modulus": 0.2519001138452962
+            },
+            {
+              "real": 0.9963627893051157,
+              "imag": 0,
+              "modulus": 0.9963627893051157
+            }
+          ]
+        },
+        {
+          "N": 139.63668517506574,
+          "ratio": 1.01,
+          "state": [
+            -0.004441625271737,
+            0.024028675423307885
+          ],
+          "z": 0.02439278523623246,
+          "jacobian": [
+            [
+              0.36787944117144233,
+              0.25284822353142306
+            ],
+            [
+              0.7175788668330929,
+              -0.8474968220921404
+            ]
+          ],
+          "two_step_multipliers": [
+            {
+              "real": 0.2523040030228275,
+              "imag": 0,
+              "modulus": 0.2523040030228275
+            },
+            {
+              "real": 0.9641592271149405,
+              "imag": 0,
+              "modulus": 0.9641592271149405
+            }
+          ]
+        },
+        {
+          "N": 152.07955811145774,
+          "ratio": 1.1,
+          "state": [
+            -0.013287577650079705,
+            0.07188424754051852
+          ],
+          "z": 0.07297351939854252,
+          "jacobian": [
+            [
+              0.36787944117144233,
+              0.25284822353142306
+            ],
+            [
+              0.6570408119062714,
+              -0.6916340044111444
+            ]
+          ],
+          "two_step_multipliers": [
+            {
+              "real": 0.25657680381561476,
+              "imag": 0,
+              "modulus": 0.25657680381561476
+            },
+            {
+              "real": 0.689379279635082,
+              "imag": 0,
+              "modulus": 0.689379279635082
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "models": {
+    "ANF": {
+      "r": 0.3,
+      "alpha": 0.01,
+      "beta": 0.5,
+      "state_order": [
+        "m",
+        "theta"
+      ],
+      "update": "m_next=r*m+(1-r)*f(theta); theta_next=theta+alpha*fprime(theta)*(m-f(theta)) using OLD mismatch.",
+      "f": "Original pinned O_mean/g_func definitions.",
+      "gain": "K_curve=alpha*fprime(theta)^2, r-K_curve is the curve's local transverse multiplier, not automatically the exact off-curve multiplier."
+    },
+    "PH": {
+      "b": 1.2,
+      "s": 0.4,
+      "r": "exp(-1)",
+      "alpha": 0.35,
+      "beta": 0.6,
+      "state_order": [
+        "x",
+        "theta"
+      ],
+      "update": "x_next=r*x+(1-r)*s*theta; e=x_next-b*theta; theta_next=theta+alpha*erf(beta*sqrt(N/2)*e).",
+      "gain": "alpha*Rprime(e), same units as PH K; mismatch uses NEW plant and OLD theta.",
+      "approximation_use": "R=erf is an EXACT selected deterministic proxy definition here, not validation of finite agents or nested blocks. If later used as Gaussian block approximation, AC-a6b4869a848d480d9d93ef2d157ed932 requires iid/nondegenerate large span and small intermediate mean at EACH block plus accumulated error/derivative control. D2 does not invoke those approximation claims."
+    }
+  },
+  "cases": [
+    {
+      "id": "anf_900_D1_plus_unstable_eigenvector",
+      "model": "ANF",
+      "N": 900,
+      "seed": "D1_plus_unstable_eigenvector",
+      "horizon": 5000,
+      "base_horizon": 5000
+    }
+  ],
+  "budget": {
+    "cases": 1,
+    "base_updates": 5000,
+    "total_updates": 5000,
+    "total_update_ceiling": 5000,
+    "aggregate_unit_ceiling": 180000,
+    "prior_actual_updates": 170000,
+    "aggregate_after_this_run": 175000,
+    "extensions": "NONE. Only the declared pure-unstable eigendirection case is corrected/repeated. No adaptive scientific search."
+  },
+  "seed_definitions": {
+    "source_plus": [
+      0.0001,
+      0
+    ],
+    "source_minus": [
+      -0.0001,
+      0
+    ],
+    "theta_only": [
+      0,
+      0.0001
+    ],
+    "state_order": "ANF m,theta; PH x,theta",
+    "D1_rounded_saddle": "Stored positive-theta D1 state, finite precision, NOT exact orbit initialisation.",
+    "D1_plus_unstable_eigenvector": "D1 rounded saddle +1e-7 times Euclidean unit right eigenvector of stored D1 one-step Jacobian with real eigenvalue>1.",
+    "D1_plus_stable_eigenvector": "D1 rounded saddle +1e-7 times Euclidean unit right eigenvector with |lambda|<1. This is NOT an exact nonlinear stable manifold, and roundoff/nonlinear contamination can escape.",
+    "eigenvector_orientation": "Choose positive theta component, selected dimensionless numerical coordinates.",
+    "source_generic": [
+      0.1,
+      0.15
+    ],
+    "D1_cycle_plus_x": "Stored D1 positive-theta PH cycle state plus (1e-4,0)."
+  },
+  "measurements": {
+    "units": "All original numerical coordinates are treated as dimensionless in this chosen code normalisation. Time k is an update index, not physical seconds.",
+    "sampling": "Compute/store full state,e,K at every integer k from0 throughH. NPZ retains undecimated arrays. CSV retains k0..127, last256, adjacent k/k+1 at anchors every200, all checkpoint boundaries +/-2, all window/global extrema +/-3. No trajectory clipping or deletion.",
+    "checkpoints": [
+      5000,
+      20000
+    ],
+    "windows": "At every applicable H use early0..199, middle H/2..H/2+199, and final1000/final200 with explicit inclusive index bounds. All statistics use undecimated samples.",
+    "peak": "source_peak=max abs(e_k), k=0..H-1 as original routine, includes seed; also retain max including final H separately.",
+    "tail_amplitude": "Half(range(e)) and parity/phase-locked alternating component, not mean absolute one-step increment.",
+    "fixed_curve_defect": "ANF e=m-f(theta), abs(e) is vertical mismatch at the same theta, not a coordinate-invariant minimum geometric distance.",
+    "period_two": "Componentwise state[k+2]-state[k] and infinity norm in chosen coordinates. Small residual alone does NOT distinguish a fixed point from a two-cycle.",
+    "orbit_distance": "Minimum infinity-distance to the TWO stored D1 cycle states, in chosen dimensionless coordinates. Only N900 ANF and PH cases have a stored reference.",
+    "directed_cycle": "Retain reused D1 directed residuals as prior evidence. New trajectory antiphase state[k+1]+state[k] and phase-point errors are diagnostics, not a new exact orbit solve.",
+    "perturbation": "Record error-to-D1 phase point at k0,1,2,4,8,16,32,64,128,256,512 and first distance>1e-3. Do not infer a nonlinear stable manifold from the linear eigendirection.",
+    "convergence": "Report finite tail residual/amplitude/drift, late |r-K_curve| and horizon comparisons. No oracle requires ANF quenching or PH convergence."
+  },
+  "numeric_policy": {
+    "nonfinite": "Catch and retain case ID, parameters, stop index, last finite state and exception. No clipping. Other declared cases may proceed; actual update counts and incomplete cases remain explicit.",
+    "precision": "Float64, no certified intervals. Small e division diagnostic omitted below1e-14 only, state/e data themselves never clipped.",
+    "oracles": "Protocol counts/updates/source pins/array lengths only. Scientific outcomes, maxima, late amplitude and escape are measured, not hardcoded pass targets."
+  },
+  "D4a_note_next_use": {
+    "tie_reuse": "D4a block_slope helper is NOT reused. Its even-span expected-zero mean derivative does not establish binary closure for literal-zero ties/correlated blocks (AC-4ca84c235d7d47f680f7c63e2cc86935). No such binary architecture claim enters D2.",
+    "scope": "D4a exact/proxy/controller-power distinctions retained without editing its reviewed files."
+  },
+  "amendment": {
+    "status": "SAVED_BEFORE_CORRECTED_EXECUTION",
+    "kind": "CODE_SEED_CONSTRUCTION_CORRECTION",
+    "old_protocol": {
+      "id": "ART-a040abbcf5e346aa89963535228936d5",
+      "sha256": "fad267b935529433741ca167e299e4371c924c4c86a7db76489787cfdb94e1dd"
+    },
+    "old_code": {
+      "id": "ART-9a771c37ae6d4969984436389f8e3123",
+      "sha256": "9152d85a63eed6b68d07e5e82005ba19310da85d2781c805cc4265b732bde46a"
+    },
+    "old_run": "run-567ebd09db726432",
+    "old_raw_sha256": "8bbf1f3113f63bc7943172da73134a2ed61df6f9857a9a52ff4cf27caa665d6d",
+    "discovery": "Substring 'stable_eigenvector' is contained in 'unstable_eigenvector'. Two independent if statements added BOTH vectors in v1's nominal unstable case.",
+    "actual_v1_initial_state": [
+      -0.160247940027807,
+      0.025471815654524433
+    ],
+    "intended": "Stored D1 state plus1e-7 times unstable unit eigenvector ONLY. Use mutually exclusive elif.",
+    "evidence_disposition": "v1 raw/code/data unchanged. Its mixed-direction trajectory is an unintended retained control, not a valid pure-unstable direction claim. Other24 original cases remain valid at their declared scope.",
+    "new_oracle": "Read back corrected initial-state displacement against the already declared unstable vector. No convergence/escape outcome oracle altered."
+  }
+}

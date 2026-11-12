@@ -1,0 +1,20 @@
+\begin{tikzpicture}[font=\sffamily\fontsize{9.5}{12}\selectfont,x=1cm,y=1cm]
+\node[anchor=west,font=\sffamily\bfseries\fontsize{13}{15}\selectfont] at (0,.7) {Source context supports an extracted assertion};
+\node[draw=black!35,fill=gray!4,rounded corners,anchor=north west,align=left,text width=16cm,inner sep=8pt] (source) at (0,0) {\textbf{Source unit: Wyoming - Climate}\\[5pt]
+\textcolor{blue!70!black}{The southeastern corner of the state is the most vulnerable part of the state to tornado activity.}\\[4pt]
+Moving away from that point and westwards, the incidence of tornadoes drops dramatically with the west part of the state showing little vulnerability. Tornadoes, where they occur, tend to be small and brief, unlike some of those that occur farther east.};
+\node[draw=blue!70!black,rounded corners,anchor=north west,align=left,text width=7.35cm,inner sep=8pt] (assertion) at (0,-3.8) {\textbf{Extracted five-field assertion}\\[5pt]
+\textbf{Subject:} southeastern corner of the state\\[3pt]
+\textbf{Object:} tornado vulnerability\\[3pt]
+\textbf{Mechanism:} Most vulnerable to tornadoes; incidence drops dramatically moving west\\[3pt]
+\textbf{Conditions:} Where they occur\\[3pt]
+\textbf{Consequences:} Tornadoes tend to be small and brief, unlike some farther east\\[3pt]
+};
+\node[draw=blue!70!black,rounded corners,anchor=north west,align=left,text width=7.35cm,inner sep=8pt] (quote) at (8.75,-3.8) {\textbf{Located witness}\\[5pt]
+\lq\lq The southeastern corner of the state is the most vulnerable part of the state to tornado activity.\rq\rq\\[5pt]
+Witness support: southeastern vulnerability. Full assertion support: the three-sentence source.};
+\node[draw=black!35,fill=gray!4,rounded corners,anchor=north west,align=left,text width=7.35cm,inner sep=8pt] (context) at ([yshift=-.45cm]quote.south west) {\textbf{Additional support from context}\\[5pt]
+The second and third source sentences supply those additional claims. The source section identifies the state as Wyoming.};
+\draw[->,thick] (source.south -| assertion.north) -- node[right,font=\sffamily\fontsize{9}{11}\selectfont] {extraction} (assertion.north);
+\draw[->,thick] (source.south -| quote.north) -- node[right,font=\sffamily\fontsize{9}{11}\selectfont] {span location} (quote.north);
+\end{tikzpicture}

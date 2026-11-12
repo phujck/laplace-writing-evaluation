@@ -1,0 +1,569 @@
+{
+  "figure_specs": [
+    {
+      "id": "hierarchy-controller-timing",
+      "kind": "diagram",
+      "title": "Two placements of collective response",
+      "question": "Which report does each controller consume?",
+      "caption": "Lagged gradient matching updates theta from the old mismatch m-F(theta). The post-observation controller first advances x, then applies the collective response to x_next-b theta. Dashed equivalence is not asserted. These are different maps.",
+      "nodes": [
+        {
+          "id": "lag",
+          "label": "LAGGED: (m_k, theta_k)"
+        },
+        {
+          "id": "lagplant",
+          "label": "m_next = r m_k + (1-r) M(theta_k)"
+        },
+        {
+          "id": "lagcontrol",
+          "label": "theta_next = theta_k + alpha F'(theta_k) [m_k-F(theta_k)]"
+        },
+        {
+          "id": "post",
+          "label": "POST-OBSERVATION: (x_k, theta_k)"
+        },
+        {
+          "id": "postplant",
+          "label": "x_next = r x_k + (1-r) s theta_k"
+        },
+        {
+          "id": "postcontrol",
+          "label": "theta_next = theta_k + epsilon R(x_next-b theta_k)"
+        }
+      ],
+      "edges": [
+        {
+          "source": "lag",
+          "target": "lagplant",
+          "rel": "advance plant"
+        },
+        {
+          "source": "lag",
+          "target": "lagcontrol",
+          "rel": "old report"
+        },
+        {
+          "source": "post",
+          "target": "postplant",
+          "rel": "advance plant"
+        },
+        {
+          "source": "postplant",
+          "target": "postcontrol",
+          "rel": "new report"
+        }
+      ],
+      "render": {
+        "outputs": [
+          "figures/generated/hierarchy-controller-timing.svg",
+          "figures/generated/hierarchy-controller-timing.pdf",
+          "figures/generated/hierarchy-controller-timing.png"
+        ],
+        "renderer": "graphviz-dot",
+        "input_digest": "96f8b324530f485b94353915daefd04a86c90b113134e7f315706d110829952e",
+        "drawing_input_digest": "96f8b324530f485b94353915daefd04a86c90b113134e7f315706d110829952e",
+        "drawing_inputs": {
+          "spec": {
+            "id": "hierarchy-controller-timing",
+            "kind": "diagram",
+            "nodes": [
+              {
+                "id": "lag",
+                "label": "LAGGED: (m_k, theta_k)"
+              },
+              {
+                "id": "lagplant",
+                "label": "m_next = r m_k + (1-r) M(theta_k)"
+              },
+              {
+                "id": "lagcontrol",
+                "label": "theta_next = theta_k + alpha F'(theta_k) [m_k-F(theta_k)]"
+              },
+              {
+                "id": "post",
+                "label": "POST-OBSERVATION: (x_k, theta_k)"
+              },
+              {
+                "id": "postplant",
+                "label": "x_next = r x_k + (1-r) s theta_k"
+              },
+              {
+                "id": "postcontrol",
+                "label": "theta_next = theta_k + epsilon R(x_next-b theta_k)"
+              }
+            ],
+            "edges": [
+              {
+                "source": "lag",
+                "target": "lagplant",
+                "rel": "advance plant",
+                "label": null
+              },
+              {
+                "source": "lag",
+                "target": "lagcontrol",
+                "rel": "old report",
+                "label": null
+              },
+              {
+                "source": "post",
+                "target": "postplant",
+                "rel": "advance plant",
+                "label": null
+              },
+              {
+                "source": "postplant",
+                "target": "postcontrol",
+                "rel": "new report",
+                "label": null
+              }
+            ]
+          }
+        },
+        "research_bindings": [],
+        "presentation_metadata": {
+          "title": "Two placements of collective response",
+          "question": "Which report does each controller consume?",
+          "caption": "Lagged gradient matching updates theta from the old mismatch m-F(theta). The post-observation controller first advances x, then applies the collective response to x_next-b theta. Dashed equivalence is not asserted. These are different maps.",
+          "source_data": null,
+          "source": null
+        },
+        "style_version": "a52b7af5b0793b1803d7220d6682ba6564c38bb38650f7366410d709347f3364",
+        "style_profile": "profiles/visual_style.json",
+        "visual_review": "pending",
+        "output_digests": {
+          "figures/generated/hierarchy-controller-timing.svg": "0a695737e12ac1d0b2c35b4185da1d558a9ef80f5255456d1624f7bd5b60891b",
+          "figures/generated/hierarchy-controller-timing.pdf": "c0b89f5e6b457270c9622c71a631a913ba676d3a16871ab204fb6c96b586a4b8",
+          "figures/generated/hierarchy-controller-timing.png": "4b65d9aaf7221eb86ed59d6758f57f9fca0ddd36dcf01254e886d2ece28f3689"
+        }
+      }
+    },
+    {
+      "id": "persistent-terminal-effort",
+      "kind": "plot",
+      "title": "Terminal constraints price the same top displacement differently",
+      "question": "Does prescribing the lower terminal state change the benefit of extra time?",
+      "caption": "Retained numerical optima at H=2,3,4 for a=1,c=1/2,g=w=1,L=2,x0=0. Top-only requires x2(H)=1. Full-apex also requires x1(H)=0. H=1 is unreachable for both and is not plotted as zero. E0=1 in illustrative squared-input units. Lines connect the three declared samples only, not additional runs or uncertainty estimates.",
+      "source_data": "reconciliation/2026-11-11/terminal-effort-plot.csv",
+      "x": "H",
+      "series": [
+        "top_only",
+        "full_apex"
+      ],
+      "x_label": "Terminal horizon H (updates)",
+      "y_label": "Minimum effort J/E0",
+      "result_ids": [
+        "anf-d4b-v1-actuation-20261111"
+      ],
+      "render": {
+        "outputs": [
+          "figures/generated/persistent-terminal-effort.svg",
+          "figures/generated/persistent-terminal-effort.pdf",
+          "figures/generated/persistent-terminal-effort.png"
+        ],
+        "renderer": "matplotlib",
+        "input_digest": "ebc1813ae98cd11309e442c156adfe8f295df2449e0792c9573cb92d2ebf29bf",
+        "drawing_input_digest": "ebc1813ae98cd11309e442c156adfe8f295df2449e0792c9573cb92d2ebf29bf",
+        "drawing_inputs": {
+          "spec": {
+            "id": "persistent-terminal-effort",
+            "kind": "plot",
+            "x": "H",
+            "series": [
+              "top_only",
+              "full_apex"
+            ],
+            "x_label": "Terminal horizon H (updates)",
+            "y_label": "Minimum effort J/E0"
+          },
+          "data": "83ddcee57c8a47fd84b08f57a7bc1fe8efb363e609356404fa24205717cafc6e"
+        },
+        "research_bindings": [
+          {
+            "id": "anf-d4b-v1-actuation-20261111",
+            "revision": "sha256:aa962b5aafa7764c39bcf532c2ae6a599bdf333476d53d048878395890a07fce",
+            "currentness": "CURRENT"
+          }
+        ],
+        "presentation_metadata": {
+          "title": "Terminal constraints price the same top displacement differently",
+          "question": "Does prescribing the lower terminal state change the benefit of extra time?",
+          "caption": "Retained numerical optima at H=2,3,4 for a=1,c=1/2,g=w=1,L=2,x0=0. Top-only requires x2(H)=1. Full-apex also requires x1(H)=0. H=1 is unreachable for both and is not plotted as zero. E0=1 in illustrative squared-input units. Lines connect the three declared samples only, not additional runs or uncertainty estimates.",
+          "source_data": "reconciliation/2026-11-11/terminal-effort-plot.csv",
+          "source": null
+        },
+        "style_version": "a52b7af5b0793b1803d7220d6682ba6564c38bb38650f7366410d709347f3364",
+        "style_profile": "profiles/visual_style.json",
+        "visual_review": "pending",
+        "output_digests": {
+          "figures/generated/persistent-terminal-effort.svg": "3d76e59d4e288c3328d4ec3c66a226bcf426a5bc4df8357f16509cfcc98c6a33",
+          "figures/generated/persistent-terminal-effort.pdf": "ec27a1878e8d7ff8ff8795067d0a903007112773f4bcd478dd4e76c67aa00d67",
+          "figures/generated/persistent-terminal-effort.png": "fc30f0d8d7dcf3f9a7d0d6ac8fe63995d745d9c5737a2140623e6affb8e8628d"
+        }
+      }
+    },
+    {
+      "id": "hierarchy-controller-timing-paper",
+      "kind": "diagram",
+      "title": "Which report enters the controller?",
+      "question": "Which report does each controller consume?",
+      "caption": "The lagged plant and gradient update consume the old state. The post-observation controller first advances the plant, then consumes its new report. The two maps retain different controller laws.",
+      "nodes": [
+        {
+          "id": "lag",
+          "label": "Old report m_k, broadcast theta_k"
+        },
+        {
+          "id": "lagplant",
+          "label": "Advance report m_next"
+        },
+        {
+          "id": "lagcontrol",
+          "label": "Gradient update from OLD report"
+        },
+        {
+          "id": "post",
+          "label": "Old plant x_k, broadcast theta_k"
+        },
+        {
+          "id": "postplant",
+          "label": "Advance plant x_next"
+        },
+        {
+          "id": "postcontrol",
+          "label": "Response update from NEW report"
+        }
+      ],
+      "edges": [
+        {
+          "source": "lag",
+          "target": "lagplant",
+          "rel": "relaxation"
+        },
+        {
+          "source": "lag",
+          "target": "lagcontrol",
+          "rel": "old mismatch"
+        },
+        {
+          "source": "post",
+          "target": "postplant",
+          "rel": "relaxation"
+        },
+        {
+          "source": "postplant",
+          "target": "postcontrol",
+          "rel": "new mismatch"
+        }
+      ],
+      "render": {
+        "outputs": [
+          "figures/generated/hierarchy-controller-timing-paper.svg",
+          "figures/generated/hierarchy-controller-timing-paper.pdf",
+          "figures/generated/hierarchy-controller-timing-paper.png"
+        ],
+        "renderer": "graphviz-dot",
+        "input_digest": "a66d0c1b36af4f0bd69a6071ff96f4a1b1a1419a32e58389c9fa67708e5dbd74",
+        "drawing_input_digest": "a66d0c1b36af4f0bd69a6071ff96f4a1b1a1419a32e58389c9fa67708e5dbd74",
+        "drawing_inputs": {
+          "spec": {
+            "id": "hierarchy-controller-timing-paper",
+            "kind": "diagram",
+            "nodes": [
+              {
+                "id": "lag",
+                "label": "Old report m_k, broadcast theta_k"
+              },
+              {
+                "id": "lagplant",
+                "label": "Advance report m_next"
+              },
+              {
+                "id": "lagcontrol",
+                "label": "Gradient update from OLD report"
+              },
+              {
+                "id": "post",
+                "label": "Old plant x_k, broadcast theta_k"
+              },
+              {
+                "id": "postplant",
+                "label": "Advance plant x_next"
+              },
+              {
+                "id": "postcontrol",
+                "label": "Response update from NEW report"
+              }
+            ],
+            "edges": [
+              {
+                "source": "lag",
+                "target": "lagplant",
+                "rel": "relaxation",
+                "label": null
+              },
+              {
+                "source": "lag",
+                "target": "lagcontrol",
+                "rel": "old mismatch",
+                "label": null
+              },
+              {
+                "source": "post",
+                "target": "postplant",
+                "rel": "relaxation",
+                "label": null
+              },
+              {
+                "source": "postplant",
+                "target": "postcontrol",
+                "rel": "new mismatch",
+                "label": null
+              }
+            ]
+          }
+        },
+        "research_bindings": [],
+        "presentation_metadata": {
+          "title": "Which report enters the controller?",
+          "question": "Which report does each controller consume?",
+          "caption": "The lagged plant and gradient update consume the old state. The post-observation controller first advances the plant, then consumes its new report. The two maps retain different controller laws.",
+          "source_data": null,
+          "source": null
+        },
+        "style_version": "a52b7af5b0793b1803d7220d6682ba6564c38bb38650f7366410d709347f3364",
+        "style_profile": "profiles/visual_style.json",
+        "visual_review": "pending",
+        "output_digests": {
+          "figures/generated/hierarchy-controller-timing-paper.svg": "ab222cbbef89cf7fc4c614c8073bc3c0e7e737747d9f35a7d89ce41d440284b1",
+          "figures/generated/hierarchy-controller-timing-paper.pdf": "46ea1d35f539dd77b7dda61ead36b47d3c718681b5f0e29468c5b287adf9fabf",
+          "figures/generated/hierarchy-controller-timing-paper.png": "a6cc95e5bf15f549b910b17acc3cb96178512cb49f18c0455904d376b6a82f03"
+        }
+      }
+    },
+    {
+      "id": "persistent-terminal-effort-paper",
+      "kind": "plot",
+      "title": "Terminal task determines effort",
+      "question": "Does prescribing the lower terminal state change the benefit of extra time?",
+      "caption": "Retained optima for L=2,a=1,c=1/2,g=w=1,z0=0,delta=1 at H=2,3,4. Top only requires z2(H)=1. Full apex also requires z1(H)=0. Lines only join declared samples. H=1 is unreachable, not zero-cost. E0=1 in illustrative squared-input units.",
+      "source_data": "reconciliation/2026-11-11/terminal-effort-paper.csv",
+      "x": "H",
+      "series": [
+        "Top only",
+        "Full apex"
+      ],
+      "x_label": "Terminal horizon H (updates)",
+      "y_label": "Minimum effort $J/E_0$",
+      "result_ids": [
+        "anf-d4b-v1-actuation-20261111"
+      ],
+      "render": {
+        "outputs": [
+          "figures/generated/persistent-terminal-effort-paper.svg",
+          "figures/generated/persistent-terminal-effort-paper.pdf",
+          "figures/generated/persistent-terminal-effort-paper.png"
+        ],
+        "renderer": "matplotlib",
+        "input_digest": "23393ffe08d7fa08608c3493810f5e4a1ae2cc41daff84c1f8871183e7f14eb1",
+        "drawing_input_digest": "23393ffe08d7fa08608c3493810f5e4a1ae2cc41daff84c1f8871183e7f14eb1",
+        "drawing_inputs": {
+          "spec": {
+            "id": "persistent-terminal-effort-paper",
+            "kind": "plot",
+            "x": "H",
+            "series": [
+              "Top only",
+              "Full apex"
+            ],
+            "x_label": "Terminal horizon H (updates)",
+            "y_label": "Minimum effort $J/E_0$"
+          },
+          "data": "da52986ec6890cad4c91baa65eef5f297d3c7659b9f3af0bd183760e29cf4cd7"
+        },
+        "research_bindings": [
+          {
+            "id": "anf-d4b-v1-actuation-20261111",
+            "revision": "sha256:aa962b5aafa7764c39bcf532c2ae6a599bdf333476d53d048878395890a07fce",
+            "currentness": "CURRENT"
+          }
+        ],
+        "presentation_metadata": {
+          "title": "Terminal task determines effort",
+          "question": "Does prescribing the lower terminal state change the benefit of extra time?",
+          "caption": "Retained optima for L=2,a=1,c=1/2,g=w=1,z0=0,delta=1 at H=2,3,4. Top only requires z2(H)=1. Full apex also requires z1(H)=0. Lines only join declared samples. H=1 is unreachable, not zero-cost. E0=1 in illustrative squared-input units.",
+          "source_data": "reconciliation/2026-11-11/terminal-effort-paper.csv",
+          "source": null
+        },
+        "style_version": "a52b7af5b0793b1803d7220d6682ba6564c38bb38650f7366410d709347f3364",
+        "style_profile": "profiles/visual_style.json",
+        "visual_review": "pending",
+        "output_digests": {
+          "figures/generated/persistent-terminal-effort-paper.svg": "4efee6fa7d43198973794214c06fa27c41a5e422714ec125a96a129dd2caa6c6",
+          "figures/generated/persistent-terminal-effort-paper.pdf": "95ab3181311dbc3e1aceb926bbed6a056765dad5a0ee1354cf4626ab7b71cd2b",
+          "figures/generated/persistent-terminal-effort-paper.png": "029f26cc7f2387a4d37200b3074dbce75bc1fa8c891a39f261f5e34474659338"
+        }
+      }
+    },
+    {
+      "id": "exact-majority-tree-paper",
+      "kind": "diagram",
+      "title": "The same leaves generate different response slopes",
+      "question": "How does nested majority compare with one flat vote?",
+      "caption": "Nine conditionally iid binary leaves with mean tanh(beta u). The flat nine-input majority has exact origin slope 315 beta/128. Two nested three-input majorities have slope 9 beta/4. This is relative attenuation, not a slope below the single-leaf beta.",
+      "nodes": [
+        {
+          "id": "leaves",
+          "label": "9 iid binary leaves"
+        },
+        {
+          "id": "flat",
+          "label": "One 9-input vote"
+        },
+        {
+          "id": "locals",
+          "label": "Three local 3-input votes"
+        },
+        {
+          "id": "top",
+          "label": "One top 3-input vote"
+        },
+        {
+          "id": "fg",
+          "label": "Flat slope: 315 beta / 128"
+        },
+        {
+          "id": "tg",
+          "label": "Nested slope: 9 beta / 4"
+        }
+      ],
+      "edges": [
+        {
+          "source": "leaves",
+          "target": "flat",
+          "rel": "flat"
+        },
+        {
+          "source": "flat",
+          "target": "fg",
+          "rel": "differentiate mean"
+        },
+        {
+          "source": "leaves",
+          "target": "locals",
+          "rel": "nested"
+        },
+        {
+          "source": "locals",
+          "target": "top",
+          "rel": "binary verdicts"
+        },
+        {
+          "source": "top",
+          "target": "tg",
+          "rel": "chain rule"
+        }
+      ],
+      "result_ids": [
+        "anf-d4a-v1-feasible-trees-20261111"
+      ],
+      "render": {
+        "outputs": [
+          "figures/generated/exact-majority-tree-paper.svg",
+          "figures/generated/exact-majority-tree-paper.pdf",
+          "figures/generated/exact-majority-tree-paper.png"
+        ],
+        "renderer": "graphviz-dot",
+        "input_digest": "44b93579eaa3f9a3a2814bb25745e43c9f563b68a1972ccbc7427400f92b8497",
+        "drawing_input_digest": "44b93579eaa3f9a3a2814bb25745e43c9f563b68a1972ccbc7427400f92b8497",
+        "drawing_inputs": {
+          "spec": {
+            "id": "exact-majority-tree-paper",
+            "kind": "diagram",
+            "nodes": [
+              {
+                "id": "leaves",
+                "label": "9 iid binary leaves"
+              },
+              {
+                "id": "flat",
+                "label": "One 9-input vote"
+              },
+              {
+                "id": "locals",
+                "label": "Three local 3-input votes"
+              },
+              {
+                "id": "top",
+                "label": "One top 3-input vote"
+              },
+              {
+                "id": "fg",
+                "label": "Flat slope: 315 beta / 128"
+              },
+              {
+                "id": "tg",
+                "label": "Nested slope: 9 beta / 4"
+              }
+            ],
+            "edges": [
+              {
+                "source": "leaves",
+                "target": "flat",
+                "rel": "flat",
+                "label": null
+              },
+              {
+                "source": "flat",
+                "target": "fg",
+                "rel": "differentiate mean",
+                "label": null
+              },
+              {
+                "source": "leaves",
+                "target": "locals",
+                "rel": "nested",
+                "label": null
+              },
+              {
+                "source": "locals",
+                "target": "top",
+                "rel": "binary verdicts",
+                "label": null
+              },
+              {
+                "source": "top",
+                "target": "tg",
+                "rel": "chain rule",
+                "label": null
+              }
+            ]
+          }
+        },
+        "research_bindings": [
+          {
+            "id": "anf-d4a-v1-feasible-trees-20261111",
+            "revision": "sha256:0d88843769877fc9218497294ededad6fb1f12dfac3f7fc481ccbb8241a1013d",
+            "currentness": "CURRENT"
+          }
+        ],
+        "presentation_metadata": {
+          "title": "The same leaves generate different response slopes",
+          "question": "How does nested majority compare with one flat vote?",
+          "caption": "Nine conditionally iid binary leaves with mean tanh(beta u). The flat nine-input majority has exact origin slope 315 beta/128. Two nested three-input majorities have slope 9 beta/4. This is relative attenuation, not a slope below the single-leaf beta.",
+          "source_data": null,
+          "source": null
+        },
+        "style_version": "a52b7af5b0793b1803d7220d6682ba6564c38bb38650f7366410d709347f3364",
+        "style_profile": "profiles/visual_style.json",
+        "visual_review": "pending",
+        "output_digests": {
+          "figures/generated/exact-majority-tree-paper.svg": "58727b3ebe1e180976dc0353b11e65b5e590d8511c4246d78858c7a0f729356e",
+          "figures/generated/exact-majority-tree-paper.pdf": "a7dc383cd6fac9c5a9f97377112a0e0bf9337ea532e564e410ea2d714c24af82",
+          "figures/generated/exact-majority-tree-paper.png": "f410946d5551077ad6feb3d5ef8f24ecff05947a38bc785b4c84fdfc61723ac6"
+        }
+      }
+    }
+  ]
+}

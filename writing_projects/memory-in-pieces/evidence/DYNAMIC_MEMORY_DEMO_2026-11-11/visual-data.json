@@ -1,0 +1,408 @@
+{
+  "schema_version": "dynamic-memory.measured-visual-data/1",
+  "run_id": "run-d2f6d3cff17f0fbe",
+  "raw_output_sha256": "10f22f152572ec0141995aaceedaf82cf48dfe0e530814837883bb0ab09db35b",
+  "result_id": "result-61e7f91f157fdc79f4c7",
+  "result_revision": "sha256:58e1f15e071243b3d5cb63b41e91a1164bb2ff6a78cabeff36b2e85202276f6a",
+  "rows": [
+    {
+      "step": 0,
+      "operation": "initial",
+      "numerator": 4,
+      "denominator": 5,
+      "value": "4/5",
+      "B1_count_given_A0": 1,
+      "source_delta": {
+        "initial_versions": [
+          "d00-r1",
+          "d01-r1",
+          "d10-r1",
+          "d11-r1"
+        ]
+      },
+      "witnesses": [
+        [
+          "d00",
+          "r1",
+          "8c6e68cec764125b1b8c39fc8da242af3db24b5a460f58808ccc5f296672e993",
+          0,
+          45,
+          [
+            0,
+            0
+          ],
+          4
+        ],
+        [
+          "d01",
+          "r1",
+          "3e4eb18af330445b0f82068a602fd9c9578866c2f15bd76d1541918d600aa999",
+          0,
+          45,
+          [
+            0,
+            1
+          ],
+          1
+        ],
+        [
+          "d10",
+          "r1",
+          "6a930cbadb5788b2cba6bee921372f593a84a2c3582a3d34a3f4df1d76517058",
+          0,
+          45,
+          [
+            1,
+            0
+          ],
+          1
+        ],
+        [
+          "d11",
+          "r1",
+          "96bcadcf4cbf07212ba4663f56c6ae2f0ff7a2c360ef5f4ffcda5639af04a3e5",
+          0,
+          45,
+          [
+            1,
+            1
+          ],
+          4
+        ]
+      ],
+      "prefixes_touched": 12,
+      "queries_verified": 16
+    },
+    {
+      "step": 1,
+      "operation": "change",
+      "numerator": 3,
+      "denominator": 4,
+      "value": "3/4",
+      "B1_count_given_A0": 1,
+      "source_delta": {
+        "old": {
+          "id": "d00",
+          "revision": "r1",
+          "path": "docs/d00-r1.txt",
+          "sha256": "8c6e68cec764125b1b8c39fc8da242af3db24b5a460f58808ccc5f296672e993",
+          "text": "Group 00 contains 4 records with A=0 and B=0.\n",
+          "weight": 4,
+          "key": [
+            0,
+            0
+          ],
+          "witness": [
+            0,
+            45
+          ],
+          "count_span": [
+            18,
+            19
+          ]
+        },
+        "new": {
+          "id": "d00",
+          "revision": "r2",
+          "path": "docs/d00-r2.txt",
+          "sha256": "29948f2842a41afbd3e456621210ef6961c3c494ae4cbf6623e6f1dcf4fbf9f1",
+          "text": "Group 00 contains 3 records with A=0 and B=0.\n",
+          "weight": 3,
+          "key": [
+            0,
+            0
+          ],
+          "witness": [
+            0,
+            45
+          ],
+          "count_span": [
+            18,
+            19
+          ]
+        },
+        "noop": false
+      },
+      "witnesses": [
+        [
+          "d00",
+          "r2",
+          "29948f2842a41afbd3e456621210ef6961c3c494ae4cbf6623e6f1dcf4fbf9f1",
+          0,
+          45,
+          [
+            0,
+            0
+          ],
+          3
+        ],
+        [
+          "d01",
+          "r1",
+          "3e4eb18af330445b0f82068a602fd9c9578866c2f15bd76d1541918d600aa999",
+          0,
+          45,
+          [
+            0,
+            1
+          ],
+          1
+        ],
+        [
+          "d10",
+          "r1",
+          "6a930cbadb5788b2cba6bee921372f593a84a2c3582a3d34a3f4df1d76517058",
+          0,
+          45,
+          [
+            1,
+            0
+          ],
+          1
+        ],
+        [
+          "d11",
+          "r1",
+          "96bcadcf4cbf07212ba4663f56c6ae2f0ff7a2c360ef5f4ffcda5639af04a3e5",
+          0,
+          45,
+          [
+            1,
+            1
+          ],
+          4
+        ]
+      ],
+      "prefixes_touched": 3,
+      "queries_verified": 16
+    },
+    {
+      "step": 2,
+      "operation": "add",
+      "numerator": 3,
+      "denominator": 5,
+      "value": "3/5",
+      "B1_count_given_A0": 2,
+      "source_delta": {
+        "old": null,
+        "new": {
+          "id": "d02",
+          "revision": "r1",
+          "path": "docs/d02-r1.txt",
+          "sha256": "803cf93ca3e1124b27d06cbc03b84c619248e1cba454519f377ed0cd3a532420",
+          "text": "Group 02 contains 1 records with A=0 and B=1.\n",
+          "weight": 1,
+          "key": [
+            0,
+            1
+          ],
+          "witness": [
+            0,
+            45
+          ],
+          "count_span": [
+            18,
+            19
+          ]
+        },
+        "noop": false
+      },
+      "witnesses": [
+        [
+          "d00",
+          "r2",
+          "29948f2842a41afbd3e456621210ef6961c3c494ae4cbf6623e6f1dcf4fbf9f1",
+          0,
+          45,
+          [
+            0,
+            0
+          ],
+          3
+        ],
+        [
+          "d01",
+          "r1",
+          "3e4eb18af330445b0f82068a602fd9c9578866c2f15bd76d1541918d600aa999",
+          0,
+          45,
+          [
+            0,
+            1
+          ],
+          1
+        ],
+        [
+          "d02",
+          "r1",
+          "803cf93ca3e1124b27d06cbc03b84c619248e1cba454519f377ed0cd3a532420",
+          0,
+          45,
+          [
+            0,
+            1
+          ],
+          1
+        ],
+        [
+          "d10",
+          "r1",
+          "6a930cbadb5788b2cba6bee921372f593a84a2c3582a3d34a3f4df1d76517058",
+          0,
+          45,
+          [
+            1,
+            0
+          ],
+          1
+        ],
+        [
+          "d11",
+          "r1",
+          "96bcadcf4cbf07212ba4663f56c6ae2f0ff7a2c360ef5f4ffcda5639af04a3e5",
+          0,
+          45,
+          [
+            1,
+            1
+          ],
+          4
+        ]
+      ],
+      "prefixes_touched": 3,
+      "queries_verified": 16
+    },
+    {
+      "step": 3,
+      "operation": "remove",
+      "numerator": 3,
+      "denominator": 4,
+      "value": "3/4",
+      "B1_count_given_A0": 1,
+      "source_delta": {
+        "old": {
+          "id": "d01",
+          "revision": "r1",
+          "path": "docs/d01-r1.txt",
+          "sha256": "3e4eb18af330445b0f82068a602fd9c9578866c2f15bd76d1541918d600aa999",
+          "text": "Group 01 contains 1 records with A=0 and B=1.\n",
+          "weight": 1,
+          "key": [
+            0,
+            1
+          ],
+          "witness": [
+            0,
+            45
+          ],
+          "count_span": [
+            18,
+            19
+          ]
+        },
+        "new": null,
+        "noop": false
+      },
+      "witnesses": [
+        [
+          "d00",
+          "r2",
+          "29948f2842a41afbd3e456621210ef6961c3c494ae4cbf6623e6f1dcf4fbf9f1",
+          0,
+          45,
+          [
+            0,
+            0
+          ],
+          3
+        ],
+        [
+          "d02",
+          "r1",
+          "803cf93ca3e1124b27d06cbc03b84c619248e1cba454519f377ed0cd3a532420",
+          0,
+          45,
+          [
+            0,
+            1
+          ],
+          1
+        ],
+        [
+          "d10",
+          "r1",
+          "6a930cbadb5788b2cba6bee921372f593a84a2c3582a3d34a3f4df1d76517058",
+          0,
+          45,
+          [
+            1,
+            0
+          ],
+          1
+        ],
+        [
+          "d11",
+          "r1",
+          "96bcadcf4cbf07212ba4663f56c6ae2f0ff7a2c360ef5f4ffcda5639af04a3e5",
+          0,
+          45,
+          [
+            1,
+            1
+          ],
+          4
+        ]
+      ],
+      "prefixes_touched": 3,
+      "queries_verified": 16
+    }
+  ],
+  "edge_cases": [
+    {
+      "operation": "idempotent-replay",
+      "value": "3/4",
+      "active_quotient_states": [
+        1,
+        2,
+        1
+      ]
+    },
+    {
+      "operation": "merge-continuations",
+      "value": "3/4",
+      "active_quotient_states": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "operation": "split-continuations",
+      "value": "3/4",
+      "active_quotient_states": [
+        1,
+        2,
+        1
+      ]
+    },
+    {
+      "operation": "remove-witness-00",
+      "value": "0",
+      "active_quotient_states": [
+        1,
+        2,
+        1
+      ]
+    },
+    {
+      "operation": "zero-conditioning-support",
+      "value": "UNDEFINED",
+      "active_quotient_states": [
+        1,
+        1,
+        1
+      ]
+    }
+  ],
+  "scope": "Actual checked controlled source-edit outputs only. Not new reader/benchmark performance or an asymptotic timing plot."
+}

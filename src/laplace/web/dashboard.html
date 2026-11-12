@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>dashboard · the eigen engine</title>
+<!-- THE DASHBOARD (surface 1, W-DASH) — the instrument's ENTRY, joined to the one engine.
+     The resting DOM is the composed BRIEF of the whole (delta-and-ask): /dashboard/brief,
+     rendered verbatim. The project cards are the summonable inventory, materialised behind one
+     open by the pane module. hymn.css is the sole colour source; the focus/geometry runtime is
+     engine.mjs; the surface logic is dashboard-panes.mjs; all network rides store.fetchJSON. -->
+<link rel="stylesheet" href="/shared/hymn.css">
+<script defer src="/shared/shell.js"></script>
+<style>
+*{box-sizing:border-box}
+html,body{margin:0;min-height:100%;background:var(--bg);color:var(--ink);
+  font:13px/1.5 -apple-system,"Segoe UI",Roboto,sans-serif}
+body{overflow-x:hidden}
+/* layout-only: the shared component atoms (hy-card / hy-chip / hy-door) draw their colour from
+   hymn.css; the surface only holds them to a clean box in the grid (no per-surface palette fork). */
+.hy-card,.hy-chip,.hy-door{min-width:0}
+</style>
+</head>
+<body>
+<main id="dash">
+  <!-- the engine root: the brief is the resting altitude; the rail + focus are built on pin -->
+  <div id="eng-root">
+    <div class="eng-brief"><p class="dash-prose" data-role="brief-prose">resolving the whole…</p></div>
+  </div>
+</main>
+<script type="module">
+import store from "/shared/store.mjs";                  // THE ONE fetch gateway — no raw network here
+import { renderDashboard } from "/shared/dashboard-panes.mjs";
+// BOOT: the composed brief rides the model's gateway; the panes own materialise + focus + descent.
+store.fetchJSON("/dashboard/brief")
+  .then((brief) => renderDashboard(store, brief))
+  .catch(() => renderDashboard(store, null));
+</script>
+</body>
+</html>

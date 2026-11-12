@@ -1,0 +1,19 @@
+\section{Primary methods and the present construction}
+\label{sec:yba-background}
+
+The preceding derivations use standard statistical machinery for a particular model-revision problem. Jaynes' maximum-entropy construction gives an exponential distribution when a finite set of alternatives is assigned moment constraints, with the partition function normalising the result \cite{jaynes1957information}. In Section~\ref{sec:self-consistent-loss-geometry}, the corresponding premise is stated directly as a relative-entropy objective with a reference measure. The new work is not the exponential form. It is the specification of executed candidate actions, their common horizon and their coupling to an evaluator that is itself part of the state.
+
+The reference measure matters twice. It determines how many alternatives a score represents, and it supplies the inherited weights in exact contraction. A regulariser cannot be declared uniquely necessary merely because its chosen finite family closes. We have proved the conditional-KL identity for the stated objective. An axiomatic characterisation of all permissible inference rules is a separate claim and is not needed for the calculations here.
+
+Multitask learning supplies the natural setting for shared representations. In Caruana's construction, several task outputs train a common hidden layer, so training information for one task can improve another through learned features \cite{caruana1997multitask}. Our two-target register does not reproduce that generalisation mechanism. It isolates the cost of imposing distinct demands on one state and adds a priced alternative partition. The connection is useful because it separates shared representation as a source of transfer from the decision to preserve or alter a particular sharing arrangement.
+
+The geometry of an update also requires an explicit convention. On a smooth model manifold with positive metric tensor \(g(M)\), steepest descent of a scalar evaluator has coordinate form
+\begin{equation}
+ \dot M=-g(M)^{-1}\nabla_M\mathcal L(M,\lambda).
+ \label{eq:yba-natural-flow}
+\end{equation}
+Transforming coordinates consistently transports the metric and vector field. Resetting the metric to the identity after a nonlinear coordinate change instead defines a different motion. This distinction underlies the receiving-map tests: transporting a motion and discarding state are different operations.
+
+The quantum extension identifies where the classical analogy genuinely stops. Quantum relative entropy is monotone under a quantum channel, and equality is characterised by recovery with the appropriate reference and support conventions \cite{PETZ200347a4ef,Junge20189e4744}. Appendix~\ref{app:quantum} applies that result to constrained elimination. An equilibrium marginal generator always reproduces the marginal of its Gibbs state. It need not give the constrained variational value at every prescribed marginal. Feasible recovery, rather than formal similarity to a classical sum, is the equality condition.
+
+These connections place the contribution at the level of a calculable regulator architecture. The framework combines finite action accounting, endogenous evaluator state, a partition purchase and explicit receiving tests. It does not derive a universal biological loss from maximum entropy, or infer dynamical closure from a statistical boundary. The formal choices are visible enough to be altered and compared.

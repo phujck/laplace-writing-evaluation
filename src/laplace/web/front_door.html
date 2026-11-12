@@ -1,0 +1,1080 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>the front door</title>
+<style>
+/* THE SCALE, and it is the whole of this change.
+   Measured on his live home page before it: 31 distinct type styles and 13 distinct
+   spacing values, with font sizes at 9.5 10 10.5 11 11.5 12 12.5 13 14 15 16 20 40 and
+   spacing at 1 2 3 4 5 6 7 8 9 10 11 12 14 16 18 20 22 24 30. Sizes half a pixel apart do
+   no work — 11 against 11.5 is invisible, so a heading weighed exactly what a byline
+   weighed and the page read as one grey wall. The dominant voice was 11.5px dim, 63 uses.
+   Type is now five steps: 10 12 14 16 22 (and 34 for the one big number). Space is a 4px
+   base: 2 4 8 12 16 24 32. Weight, colour and space carry the hierarchy that thirteen
+   near-identical sizes were failing to carry. Nothing was added; values were snapped. */
+
+/* the front door — one page over the rows. No external asset of any kind:
+   no CDN, no webfont, no framework. Every fact on this page arrives as a
+   server-rendered fragment carrying its own row-source byline; nothing here
+   computes a number. */
+:root{
+  color-scheme:dark;   /* UA-owned surfaces — scrollbars, inputs, ::selection —
+                          flip to light without this; the authored colours never do */
+  --ground:#14161B; --card:#1C1F26; --ink:#E8E6E1; --dim:#9CA1AB;
+  --gold:#D9A441; --ok:#5CB878; --bad:#D97862; --warn:#C9A648;
+  --line:rgba(232,230,225,.12); --line2:rgba(232,230,225,.06);
+  --mono:ui-monospace,SFMono-Regular,"SF Mono",Menlo,Consolas,"Liberation Mono",monospace;
+  --sans:system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+}
+*{box-sizing:border-box}
+[hidden]{display:none !important}
+html,body{margin:0;padding:0;background:var(--ground);color:var(--ink)}
+body{font:14px/1.5 var(--sans);-webkit-font-smoothing:antialiased}
+a{color:var(--gold);text-decoration:none}
+a:hover{text-decoration:underline}
+code,pre,.mono{font-family:var(--mono)}
+:focus-visible{outline:2px solid var(--gold);outline-offset:2px;border-radius:3px}
+h1{font-size:16px;letter-spacing:.14em;text-transform:lowercase;margin:0;color:var(--gold);font-weight:600}
+h3{font-size:14px;margin:0 0 8px;color:var(--dim);font-weight:600;letter-spacing:.06em}
+
+/* ---------------------------------------------------------------- shell */
+header{position:sticky;top:0;z-index:5;background:var(--ground);
+  border-bottom:1px solid var(--line);padding:8px 16px 0}
+.head{display:flex;gap:16px;align-items:baseline;flex-wrap:wrap}
+.stripwrap{flex:1 1 420px;min-width:0}
+/* FROZEN GEOMETRY: equal-width cells, so a count changing width can never move a
+   tab. Measured before: "the brief" went 411px->546px between two renders and the
+   whole bar re-flowed from 2 rows to 3. A tab you can find without looking is worth
+   more than anything a tab could say. Long content clips inside its cell. */
+nav{display:block;margin-top:8px}
+/* the band is a row: a small fixed-width label, then the band's own equal-width cells.
+   The equal-width guarantee the FROZEN GEOMETRY note protects lives HERE now — inside
+   the band — so a changing count still cannot move a tab. */
+.navband{display:flex;align-items:stretch;gap:8px;margin-bottom:4px}
+.navbandhead{flex:0 0 128px;align-self:center;font-size:10px;letter-spacing:.11em;
+  text-transform:uppercase;color:var(--dim);text-align:right;padding-right:2px}
+.navbandhead.warn{color:var(--gold)}
+.navcells{flex:1 1 auto;display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(148px,1fr));gap:2px;min-width:0}
+@media(max-width:720px){.navband{flex-direction:column;gap:2px}
+  .navbandhead{flex:none;text-align:left;padding:2px 0 0}}
+nav a{padding:8px 8px;border:1px solid transparent;border-bottom:none;color:var(--dim);
+  border-radius:4px 4px 0 0;font-size:14px;white-space:nowrap;overflow:hidden;
+  text-overflow:ellipsis;min-width:0}
+nav a[aria-current="page"]{color:var(--ink);background:var(--card);border-color:var(--line);
+  box-shadow:inset 0 -3px 0 var(--gold)}
+nav a .k{color:var(--gold);font-family:var(--mono);font-size:12px;margin-right:8px;opacity:.7}
+/* the count IS the reason to go — subordinate to the noun, never competing with it */
+nav a .navchip{margin-left:8px;font-family:var(--mono);font-size:10px;opacity:.62;
+  letter-spacing:.01em}
+nav a .navchip.warn{color:var(--gold);opacity:.95}
+nav a[aria-current="page"] .navchip{opacity:.85}
+/* a door known to be broken is shown HATCHED rather than hidden: he should learn it is
+   out from the header, not by walking into it. */
+nav a.cracked{opacity:.55;background-image:repeating-linear-gradient(135deg,
+  transparent 0 5px, rgba(220,90,70,.20) 5px 10px);cursor:help}
+/* a finished room recedes but stays reachable — it is not broken, and not hidden */
+nav a.dormant{opacity:.62}
+nav a.dormant .navchip{opacity:.5}
+.pagehead{font-size:16px;font-weight:600;color:var(--ink);margin:0 0 8px;
+  letter-spacing:.02em}
+/* ---- a row as a graph NODE (replacing the <pre> JSON terminus) ---- */
+.node{max-width:82ch}
+.nodehead{display:flex;align-items:baseline;gap:9px;flex-wrap:wrap;margin-bottom:8px}
+.nodeface{font-size:16px;font-weight:600;color:var(--ink);line-height:1.35}
+.nodesay{color:var(--dim);font-size:14px;line-height:1.55;margin:0 0 8px;max-width:78ch}
+.nodesay .lbl,.attrib .lbl{color:var(--dim);font-size:10px;letter-spacing:.08em;
+  text-transform:uppercase;margin-right:8px}
+.band{margin:12px 0;padding-top:8px;border-top:1px solid var(--line2)}
+.bandhead{font-size:10px;letter-spacing:.1em;text-transform:uppercase;
+  color:var(--dim);margin-bottom:4px}
+.bandhead .n{margin-left:8px;font-family:var(--mono);opacity:.7}
+/* SIX STATES, THREE GRAMMARS. struck+dashed = checked and absent · dotted = not
+   checkable from here · no rule = never claimed to be a link. A dead edge keeps the
+   same size, weight and position as a live one: hiding it would be the unknown
+   collapsing into the cheapest known value, which is the defect this view exists to
+   end. It is visibly not clickable without being visually diminished. */
+.e{display:grid;grid-template-columns:11ch 1fr auto;gap:9px;align-items:baseline;
+  padding:4px 0 4px 8px;border-left:2px solid transparent;font-size:12px}
+.e-verb{color:var(--dim);font-size:10px;letter-spacing:.05em}
+.e-body{min-width:0;overflow-wrap:anywhere}
+.e-gloss{color:var(--dim)}
+.e-tag{font-size:10px;letter-spacing:.09em;color:var(--dim);text-transform:uppercase;
+  white-space:nowrap}
+.e-row,.e-file{border-left-color:var(--gold)}
+.e-file .t{font-family:var(--mono);font-size:12px;color:var(--gold)}
+.e-dead{border-left:2px dashed var(--bad);cursor:default}
+.e-dead .t{text-decoration:line-through;color:var(--dim);font-family:var(--mono)}
+.e-foreign{border-left:2px dotted var(--warn);cursor:default}
+.e-foreign .t{font-family:var(--mono);color:var(--dim)}
+.e-outside{border-left:2px dotted var(--dim);cursor:default}
+.e-outside .t{font-family:var(--mono);color:var(--dim)}
+.e-prose{border-left:none;padding-left:12px}
+.e-prose .t{color:var(--ink)}
+.e-in .e-verb::before{content:"\2190 "}
+.attrib{font-size:12px;color:var(--ink);margin:4px 0;max-width:78ch;line-height:1.5}
+.honest{margin-top:12px;padding-top:8px;border-top:1px solid var(--line2);
+  color:var(--dim);font-size:12px;font-family:var(--mono)}
+.node .more summary{cursor:pointer;color:var(--dim);font-size:12px}
+.node .morebody{margin-top:8px;color:var(--dim);font-size:12px;line-height:1.55}
+.offmap{margin:8px 0 0 2px;line-height:1.7}
+.offmap a{color:var(--gold)}
+main{padding:16px;max-width:1600px}
+.cols{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:16px}
+@media (max-width:900px){.cols{grid-template-columns:minmax(0,1fr)}}
+.col{background:var(--card);border:1px solid var(--line);border-radius:6px;padding:12px;min-width:0}
+#panel{background:var(--card);border:1px solid var(--line);border-radius:6px;padding:16px;min-height:60vh}
+#panel .cols{background:none;border:0;padding:0}
+
+/* ------------------------------------------------------- apex / bylines */
+.strip{display:flex;flex-wrap:wrap;gap:8px}
+.stat{display:inline-flex;align-items:baseline;gap:6px;padding:8px 8px;background:var(--card);
+  border:1px solid var(--line);border-radius:4px;color:var(--dim);font-size:12px}
+.stat b{font-family:var(--mono);font-size:16px;color:var(--ink);font-weight:600}
+.stat.warn{border-color:var(--warn)}
+.stat.warn b{color:var(--warn)}
+a.stat:hover{border-color:var(--gold);text-decoration:none}
+.worst{margin:12px 0;padding-left:24px}
+.worst li{margin:4px 0}
+.nextact{margin:12px 0;padding:8px 8px;border-left:3px solid var(--gold);background:rgba(217,164,65,.07)}
+.nextact code{color:var(--gold)}
+/* 45-90 characters is readable; these were measured at 185-209. The law says the
+   provenance stays on the surface — it does not say it has to be a horizon. */
+.byline,.note{max-width:78ch}
+.byline{margin-top:16px;padding-top:8px;border-top:1px solid var(--line2);
+  color:var(--dim);font-family:var(--mono);font-size:12px;word-break:break-word}
+.byline.red{color:var(--bad);border-top-color:var(--bad)}
+.parsed{font-family:var(--mono);font-size:12px;margin-bottom:8px}
+.small{font-size:12px}
+
+/* -------------------------------------------------------------- states */
+.ok{color:var(--ok)} .bad{color:var(--bad)} .warn{color:var(--warn)}
+.dim{color:var(--dim)} .red{color:var(--bad)} .pend{color:var(--gold)}
+p.red{padding:8px 12px;border:1px solid var(--bad);border-radius:4px;
+  background:rgba(217,120,98,.08);font-family:var(--mono);font-size:12px;white-space:pre-wrap}
+.chip{display:inline-block;padding:2px 8px;margin-right:4px;border:1px solid var(--line);
+  border-radius:10px;font-family:var(--mono);font-size:12px;color:var(--dim);white-space:nowrap}
+.chip.ok{color:var(--ok);border-color:rgba(92,184,120,.5);background:rgba(92,184,120,.1)}
+.chip.bad{color:var(--bad);border-color:rgba(217,120,98,.5);background:rgba(217,120,98,.1)}
+.chip.warn{color:var(--warn);border-color:rgba(201,166,72,.5);background:rgba(201,166,72,.1)}
+.chip.pend{color:var(--gold);border-color:rgba(217,164,65,.5);background:rgba(217,164,65,.08)}
+.chip.dim{opacity:.7}
+
+/* -------------------------------------------------------------- tables */
+/* max-height makes .tablewrap the scroll container it already claimed to be: without
+   it scrollHeight === clientHeight, the sticky th never sticks (measured -379px after a
+   532px scroll) and the page scrolls under the 122px header instead, eating ~25 cells. */
+.tablewrap{overflow:auto;max-height:calc(100vh - 210px);
+  border:1px solid var(--line);border-radius:4px}
+table{border-collapse:collapse;width:100%;font-size:12px}
+th{position:sticky;top:0;background:#20242C;color:var(--dim);text-align:left;
+  font-weight:600;padding:8px 8px;border-bottom:1px solid var(--line);white-space:nowrap}
+/* WRAP, NEVER CLIP. td{max-width:34ch;nowrap;ellipsis} was hiding 94% of a 1,116-char
+   cell and 49% of the cells in the column headed "evidence_cmd (run to verify)". A
+   half-copied command is not a proof, and the clip also defeated the overflow-x escape
+   hatch: nothing overflowed because it had already been thrown away. */
+td{padding:4px 8px;border-bottom:1px solid var(--line2);vertical-align:top;
+  max-width:60ch;overflow-wrap:anywhere;white-space:normal}
+td.num{white-space:nowrap}
+td.num{text-align:right;font-family:var(--mono)}
+tr.red td{color:var(--bad)}
+.rowline:hover td{background:rgba(232,230,225,.05)}
+.rowline.cur td{background:rgba(217,164,65,.14);box-shadow:inset 3px 0 0 var(--gold)}
+
+/* ------------------------------------------------------- campaign grid */
+.grid td.stagename{white-space:normal;max-width:44ch;font-family:var(--sans)}
+.grid .cell{width:34px;text-align:center;font-family:var(--mono);font-size:14px}
+.grid .cell.ok{color:var(--ok);background:rgba(92,184,120,.16)}
+.grid .cell.bad{color:var(--bad);background:rgba(217,120,98,.18)}
+.grid .cell.unjudged{color:var(--dim);background:repeating-linear-gradient(
+  45deg,transparent,transparent 4px,rgba(232,230,225,.05) 4px,rgba(232,230,225,.05) 8px)}
+
+/* ------------------------------------------------ explore filter/facets */
+#filter{width:100%;padding:8px 8px;background:#101218;color:var(--ink);
+  border:1px solid var(--line);border-radius:4px;font-family:var(--mono);font-size:14px;margin:8px 0}
+#filter::placeholder{color:var(--dim)}
+.facetrow{display:flex;flex-wrap:wrap;gap:4px;align-items:center;margin:4px 0}
+.facetrow>.dim{font-family:var(--mono);font-size:12px;min-width:11ch}
+.facet{padding:2px 8px;background:transparent;color:var(--ink);border:1px solid var(--line);
+  border-radius:10px;font-family:var(--mono);font-size:12px;cursor:pointer}
+.facet b{color:var(--gold);font-weight:600}
+.facet:hover{border-color:var(--gold)}
+
+/* ------------------------------------------------------ acts / waterfall */
+.acts{list-style:none;margin:0;padding:0;max-height:66vh;overflow:auto}
+.acts li{padding:4px 8px;border-bottom:1px solid var(--line2)}
+.steps{margin:8px 0}
+.step{display:grid;grid-template-columns:minmax(0,26ch) 1fr 8ch;gap:8px;align-items:center;
+  padding:2px 0;font-size:12px}
+.stepname{overflow:hidden;text-overflow:ellipsis;white-space:nowrap;font-family:var(--mono)}
+.bar{display:block;height:9px;background:var(--gold);border-radius:2px;min-width:2px}
+.bar.open{background:repeating-linear-gradient(90deg,var(--warn),var(--warn) 5px,
+  transparent 5px,transparent 10px)}
+.step .dim{text-align:right;font-family:var(--mono)}
+
+/* -------------------------------------------------------------- record */
+.record{background:#101218;border:1px solid var(--line);border-radius:4px;padding:12px;
+  overflow-x:auto;font-size:12px;line-height:1.45;white-space:pre;margin:0}
+.expand{display:inline-block;margin:8px 8px 0 0;padding:4px 8px;border:1px solid var(--gold);
+  border-radius:4px;font-family:var(--mono);font-size:12px}
+
+/* --------------------------------------------------------------- chats */
+.chats{list-style:none;margin:0;padding:0}
+.chats li{padding:4px 8px;border-bottom:1px solid var(--line2)}
+.chathead{padding:8px 0;border-bottom:1px solid var(--line);margin-bottom:8px;font-size:12px}
+.chatpane{max-height:64vh;overflow:auto;padding-right:8px}
+.msg{margin:8px 0;padding:8px 8px;border:1px solid var(--line);border-radius:5px;background:#101218}
+.msg.user{border-left:3px solid var(--gold)}
+.msg.assistant{border-left:3px solid var(--dim)}
+.msg pre{margin:0;white-space:pre-wrap;word-break:break-word;font-size:12px;
+  font-family:var(--sans)}
+.role{color:var(--dim);font-family:var(--mono);font-size:10px;letter-spacing:.1em;
+  text-transform:uppercase;margin-bottom:4px}
+.tools{margin-top:8px;color:var(--dim);font-family:var(--mono);font-size:12px}
+
+/* ---------------------------------------------------------- live tail */
+.tailhead{display:flex;justify-content:space-between;align-items:baseline;gap:8px}
+.tailwrap{position:relative}
+.tail{max-height:62vh;overflow:auto;border:1px solid var(--line);border-radius:4px;
+  background:#101218;padding:4px}
+.tailrow{padding:4px 8px;border-bottom:1px solid var(--line2);font-family:var(--mono);
+  font-size:12px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.tailrow.cur{background:rgba(217,164,65,.14);box-shadow:inset 3px 0 0 var(--gold)}
+.tailrow.fresh{animation:flash 1.6s ease-out 1}
+.note{padding:4px 8px;color:var(--dim);font-family:var(--mono);font-size:12px;
+  border-bottom:1px dashed var(--line2)}
+@keyframes flash{from{background:rgba(217,164,65,.28)}to{background:transparent}}
+.pill{position:absolute;top:8px;left:50%;transform:translateX(-50%);z-index:2;
+  padding:4px 16px;border-radius:14px;border:1px solid var(--gold);background:#22252E;
+  color:var(--gold);font-family:var(--mono);font-size:12px;cursor:pointer}
+.follow{font-family:var(--mono);font-size:12px}
+
+/* --------------------------------------------------- slide-over / keys */
+.over{position:fixed;inset:0 0 0 auto;width:min(860px,94vw);z-index:20;background:var(--card);
+  border-left:1px solid var(--gold);box-shadow:-18px 0 44px rgba(0,0,0,.55);
+  display:flex;flex-direction:column;animation:slide .16s ease-out}
+@keyframes slide{from{transform:translateX(24px);opacity:.4}to{transform:none;opacity:1}}
+.overhead{display:flex;justify-content:space-between;align-items:center;gap:12px;
+  padding:8px 16px;border-bottom:1px solid var(--line)}
+.overbody{padding:16px;overflow:auto;flex:1}
+.x{background:transparent;border:1px solid var(--line);color:var(--dim);border-radius:4px;
+  padding:4px 8px;cursor:pointer;font-family:var(--mono)}
+.keys{position:fixed;inset:0;z-index:30;background:rgba(10,11,14,.86);display:grid;
+  place-items:center;padding:16px}
+.keysbox{background:var(--card);border:1px solid var(--gold);border-radius:8px;padding:24px 24px;
+  max-width:520px;width:100%}
+.keys dl{display:grid;grid-template-columns:8ch 1fr;gap:6px 14px;margin:12px 0 0}
+.keys dt{font-family:var(--mono);color:var(--gold)}
+.keys dd{margin:0;color:var(--dim)}
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation:none !important;transition:none !important;
+    scroll-behavior:auto !important}
+  .tailrow.fresh{box-shadow:inset 3px 0 0 var(--gold)}
+}
+/* ---- the board (his second redline: attention-first, non-linear) ----
+   stable zones, pre-attentive state, one large anchor per zone; captions are
+   read only after attention lands. Zone order never changes between visits. */
+.board{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:14px;margin:16px 0}
+/* A CARD NEEDS A FILL. .zone and #panel were both var(--card) — measured 1.00:1 against
+   each other — so the only thing making a card a card was a 1.38:1 border, and three of
+   the four read as edgeless. align-items:start stops them stretching to the height of
+   the fullest one, which is where the 33% average air came from. */
+.zone{background:#20242C;border:1px solid var(--line);border-radius:8px;
+  padding:16px 16px;min-height:120px}
+.board{align-items:start}
+.zone.hot{border-color:var(--warn)}
+.z-needs.hot{box-shadow:inset 3px 0 0 var(--warn)}
+/* ONE anchor size and ONE anchor box: .bignum was 44px and .glyphbig 38px, which put
+   the sibling labels on different baselines by 6px for no reason anyone could name. */
+.bignum{font-size:34px;font-weight:700;line-height:48px;font-variant-numeric:tabular-nums}
+.bignum.warn{color:var(--warn)} .bignum.ok{color:var(--ok)}
+.glyphbig{font-size:34px;line-height:48px}
+.glyphbig.ok{color:var(--ok)} .glyphbig.warn{color:var(--warn)}
+.zlabel{font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--dim);margin:4px 0 8px}
+.anchors{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:8px}
+.anchors li b{font-size:16px}
+.anchors li.hot b{color:var(--warn)}
+.anchors .age{font-family:var(--mono);font-size:12px;color:var(--bad);margin-left:8px}
+.clears{font-size:12px;color:var(--dim);margin-top:4px;line-height:1.45}
+.clears .whose{color:var(--gold);opacity:.85;white-space:nowrap}
+/* THE ENGINE'S OWN DEBTS — degraded organs and stopped feeds. Visible, because nothing
+   should rot unseen; DEMOTED and outside .bignum, because the zone that asks for his
+   hand must only ever contain what his hand can finish. Before this they sat in the
+   count with a body line reading "a seat clears this, not you", so the badge said
+   1 NEEDS YOU over a card he could not discharge (his steer, 2026-08-25). */
+.owed{margin-top:16px;padding-top:12px;border-top:1px dashed var(--line)}
+.owedlbl{margin:0 0 4px;color:var(--dim);opacity:.85}
+.anchors.quiet{margin-top:8px;gap:7px;opacity:.72}
+.anchors.quiet li b{font-size:14px;color:var(--dim)}
+.anchors.quiet .cap{font-size:12px}
+/* THE WORK PRIORITY STACK — a full-width band under the board, not a fifth card in it:
+   it answers a different question (what to do next) from the zones above (what is true
+   now), and squeezing it into the grid made both unreadable. */
+.z-stack{margin-top:12px}
+.stacklab{font-size:12px;letter-spacing:.09em;text-transform:uppercase;color:var(--dim);
+  margin:12px 0 8px}
+.seatcols{display:flex;gap:8px;flex-wrap:wrap}
+.seatcol{background:rgba(232,230,225,.04);border:1px solid var(--line);border-radius:7px;
+  padding:8px 12px;min-width:120px;display:flex;flex-direction:column;gap:1px}
+.seatcol b{font-size:14px}
+.seatcol .n{font:600 22px var(--mono);color:var(--gold);line-height:1.1}
+.seatcol .d{font-size:12px;color:var(--dim)}
+/* the composed sections: one rule, one rhythm, so the page reads as one thing */
+.homesec{margin-top:32px;padding-top:16px;border-top:1px solid var(--line)}
+.homehead{font-size:12px;letter-spacing:.13em;text-transform:uppercase;color:var(--dim);
+  margin:0 0 12px;font-weight:600}
+.homehead a{color:inherit;text-decoration:none}
+.homehead a:hover{color:var(--gold)}
+.seatcol{text-decoration:none;color:inherit;transition:border-color .12s,background .12s}
+.seatcol:hover{border-color:var(--gold);background:rgba(217,164,65,.07);text-decoration:none}
+.z-stack .anchors li a{color:inherit;text-decoration:none}
+.z-stack .anchors li a:hover b{color:var(--gold)}
+.cap{font-size:12px;color:var(--dim);margin-top:2px;max-width:38ch}
+.dstats{display:flex;gap:14px;flex-wrap:wrap;margin-top:8px}
+.dstat{display:flex;flex-direction:column;color:var(--ink)}
+.dstat b{font-size:22px;font-variant-numeric:tabular-nums}
+.dstat i{font-style:normal;font-size:12px;color:var(--dim)}
+.dstat.bad b{color:var(--bad)} .dstat.okst b{color:var(--ok)}
+.agebar{display:flex;height:8px;border-radius:4px;overflow:hidden;margin:8px 0 4px;background:var(--line2)}
+.seg.s-fresh{background:var(--ok)} .seg.s-mid{background:var(--warn)} .seg.s-dead{background:var(--bad)}
+.anchorbig{display:block;font-size:16px;font-weight:600;line-height:1.35;margin:2px 0 4px;text-wrap:balance}
+/* ---- the why-card (his campaign redline: the WHY one gesture away) ---- */
+.stagename details>summary{cursor:pointer;list-style:none}
+.stagename details>summary::-webkit-details-marker{display:none}
+.stagename details>summary::after{content:" ▸";color:var(--dim);font-size:12px}
+.stagename details[open]>summary::after{content:" ▾"}
+.whycard{margin:8px 0 4px;padding:8px 12px;border-left:2px solid var(--gold);background:var(--line2);border-radius:0 6px 6px 0;display:flex;flex-direction:column;gap:6px}
+.whyrow{font-size:12px;line-height:1.5;max-width:64ch}
+.whylabel{display:inline-block;font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:var(--gold);margin-right:8px}
+/* ---- the ask-door buttons (M2): the act sits ON the anchor ---- */
+.actbtns{margin-left:8px;display:inline-flex;gap:6px;vertical-align:middle}
+.act.arming{background:var(--gold);color:#14161B;border-color:var(--gold);font-weight:700}
+.act{min-height:32px;font:600 12px/1 var(--sans);letter-spacing:.05em;text-transform:uppercase;
+  padding:4px 8px;border-radius:4px;border:1px solid var(--line);background:var(--card);
+  color:var(--ink);cursor:pointer}
+.act.ok{border-color:var(--ok);color:var(--ok)}
+.act.bad{border-color:var(--bad);color:var(--bad)}
+.act:hover{background:var(--line2)} .act:disabled{opacity:.4;cursor:wait}
+.note.okst{color:var(--ok)}
+/* ---- the talk composer (M2) ---- */
+.compose{display:flex;flex-wrap:wrap;gap:8px;align-items:flex-start;margin:4px 0 16px}
+.compose textarea{flex:1 1 340px;background:var(--card);border:1px solid var(--line);
+  border-radius:6px;color:var(--ink);font:14px/1.5 var(--sans);padding:8px 8px;resize:vertical}
+.talkpane{display:flex;flex-direction:column;gap:10px;margin-bottom:16px}
+.talkitem .msg{margin:2px 0}
+/* ---- the walk strip (the eyes-and-fingers gate as a door) ---- */
+/* peers share a top edge; the label and the cap take whole rows. Measured before:
+   four stages at three left edges (x=158/48/636), row-mates 19px apart from
+   align-items:center, the cap laid out as a fifth stage, and an inherited 600 that
+   made every <b> synthesise weight 900. */
+.walkstrip{margin:16px 0;padding:12px 16px;border:1px dashed var(--gold);border-radius:8px;
+  display:flex;flex-wrap:wrap;gap:12px;align-items:flex-start}
+.walkstrip .zlabel{flex-basis:100%}
+.walkstrip .cap{flex-basis:100%;order:99;max-width:78ch;color:var(--dim)}
+/* face-first walk items: plain-language name and gloss lead; ids and gate mechanics
+   live behind the fold, summonable with his attention and invisible otherwise. */
+.walkitem{display:block;border:1px solid var(--line);border-radius:6px;
+  padding:8px 12px;margin:0;flex:1 1 420px;min-width:0}
+/* the faces lead the card, so they are set explicitly — <b> against the item's
+   inherited 600 resolved to a synthesised 900 at 14px, smaller and heavier than
+   anything else on the page claiming to lead */
+.walkitem b{font-size:16px;font-weight:600}
+.wgloss{color:var(--dim);font-size:12px;font-weight:400;margin:4px 0 8px;
+  max-width:78ch;line-height:1.5}
+/* a correction is a different KIND of sentence and wears a different register — the
+   retraction notice measured pixel-identical to the descriptive gloss above it */
+.wnotice{color:var(--ink);font-size:12px;font-weight:400;margin:8px 0;
+  border-left:2px solid var(--warn);background:rgba(201,166,72,.06);
+  padding:4px 8px;max-width:78ch;line-height:1.5}
+/* opposite verdicts do not touch: accept and redline measured at 0px apart */
+.act + .act{margin-left:8px}
+.mech{margin-top:8px}
+.mech summary{cursor:pointer;color:var(--dim);font-size:12px;letter-spacing:.04em;
+  display:inline-block;padding:4px 8px;min-height:24px;border:1px solid var(--line2);
+  border-radius:4px}
+.mech summary:hover{border-color:var(--line);color:var(--ink)}
+.mechbody{font-family:var(--mono);font-size:12px;color:var(--dim);margin-top:4px;
+  border-left:2px solid var(--line);padding-left:8px;max-width:78ch;line-height:1.6}
+.mechbody a{color:var(--gold)}
+</style>
+</head>
+<body>
+<header>
+  <div class="head">
+    <h1>the front door</h1>
+    <div class="stripwrap" id="strip"><span class="dim">loading the account strip…</span></div>
+  </div>
+  <!-- THE NAV IS A RENDER OF /front/places. It used to be eight hand-typed anchors, and
+       it had already drifted: the TABS const beside it listed six, and the router's
+       "Served here:" sentence listed a third set that hand-apologised for /seats. All
+       three were maps of an application maintained by hand, and none of them mentioned
+       /front/walk — a door the server was serving the whole time. Nothing is typed here
+       now; a place cannot appear in the nav without a census row, and cannot have a
+       census row without being served. -->
+  <nav id="nav" aria-label="altitudes"><span class="dim small">reading the places…</span></nav>
+</header>
+
+<main><section id="panel" aria-live="polite"></section></main>
+
+<aside class="over" id="over" hidden aria-label="descend">
+  <div class="overhead">
+    <span class="dim mono small" id="overtitle"></span>
+    <button class="x" id="overclose" type="button">esc · close</button>
+  </div>
+  <div class="overbody" id="overbody"></div>
+</aside>
+
+<div class="keys" id="keys" hidden>
+  <div class="keysbox">
+    <h3>keys</h3>
+    <dl id="keylist">
+      <dt>/</dt><dd>focus the filter box (opens explore if none)</dd>
+      <dt>j / k</dt><dd>move the row cursor down / up</dd>
+      <dt>Enter</dt><dd>descend into the row under the cursor</dd>
+      <dt>Esc</dt><dd>back (closes the slide-over via history)</dd>
+      <dt>f</dt><dd>follow the live tail (jump back to the top)</dd>
+      <dt>?</dt><dd>this overlay</dd>
+    </dl>
+    <p class="dim small">Every panel is a server-rendered fragment; this page fabricates
+      no number. Read each byline for the row-source and its freshness.</p>
+  </div>
+</div>
+
+<script>
+"use strict";
+const $ = (s, r = document) => r.querySelector(s);
+const el = (t, c) => { const e = document.createElement(t); if (c) e.className = c; return e; };
+const TAIL_SOURCES = ["journal", "campaign", "work_orders", "seats"];
+/* PLACES — the one map, fetched at boot from /front/places and invalidated by the
+   declared row + Atlas streams. `digitOrder` is part of the keymap; `byId` answers the router.
+   Nothing about the shape of this application is typed into this file any more. */
+let PLACES = { places: [], digest: null };
+const placeById = id => PLACES.places.find(p => p.id === id);
+const digitOrder = () => PLACES.places.filter(p => /^[0-9]$/.test(p.key))
+                                      .sort((a, b) => a.key.localeCompare(b.key));
+const placeKeyOrder = () => digitOrder().concat(
+  PLACES.places.filter(p => !/^[0-9]$/.test(p.key))
+               .sort((a, b) => a.key.localeCompare(b.key)));
+
+function chipText(c) {                            // {n, unit} tokens only — never prose
+  return (c.n === null || c.n === undefined) ? "· " + c.unit : c.n + " " + c.unit;
+}
+
+function renderNav() {
+  const nav = document.getElementById("nav");
+  nav.textContent = "";
+  if (!PLACES.places.length) {                    // a refused census is LOUD, never a gap
+    const w = el("span", "red small");
+    w.textContent = "the places census refused — navigation is unknown, not empty";
+    nav.appendChild(w);
+    return;
+  }
+  /* GROUPED BY BAND, WITH EVERY ROUTE KEPT. His steer, three times and escalating:
+     "collapsing them down to fewer THAT ARE ABLE TO MUCH MORE" — and codex's ruling on
+     the geometry, which I asked for because no PV/RUL row governs it: the FROZEN
+     GEOMETRY comment freezes equal-width cells against COUNT REFLOW; it does not freeze
+     route count or tab taxonomy. So: group, never delete. Eleven flat equal-weight tabs
+     become four bands; every route stays reachable and every deep link still resolves.
+     Deleting a place row would delete a route — the places map IS the router.
+     The equal-width guarantee survives inside each band, so a changing count still
+     cannot move a tab. */
+  const BANDS = PLACES.bands && PLACES.bands.length
+    ? PLACES.bands : ["attention", "campaign", "history", "machine"];
+  const BAND_FACE = {
+    attention: "what needs you",
+    campaign:  "what we are building",
+    history:   "what happened",
+    machine:   "the machinery",
+  };
+  const grouped = new Map();
+  for (const p of PLACES.places) {
+    const b = p.band || "other";
+    if (!grouped.has(b)) grouped.set(b, []);
+    grouped.get(b).push(p);
+  }
+  const order = BANDS.filter(b => grouped.has(b))
+    .concat([...grouped.keys()].filter(b => !BANDS.includes(b)));
+
+  for (const band of order) {
+    const row = el("div", "navband");
+    const head = el("span", "navbandhead");
+    head.textContent = BAND_FACE[band] || band;
+    /* the band carries the WARN of anything inside it, so folding cannot hide an alarm */
+    const hot = grouped.get(band).some(p => p.cracked
+      || (p.chips || []).some(c => c.warn) || p.stale);
+    if (hot) head.classList.add("warn");
+    row.appendChild(head);
+    const cells = el("div", "navcells");
+    row.appendChild(cells);
+    nav.appendChild(row);
+    grouped.set(band, { places: grouped.get(band), cells });
+  }
+
+  for (const p of PLACES.places) {
+    const a = el("a");
+    a.setAttribute("href", p.href);
+    a.setAttribute("data-place", p.id);
+    /* DORMANT IS NOT PENDING. A finished room advertising "0 cards await you" reads as
+       work waiting; it is the same live-shaped label on a closed thing that the seats
+       ledger and the liveness alarm wore. It stays reachable — he ruled those cards and
+       may want to read them — but it recedes, and its tooltip says what would wake it. */
+    if (p.standing === "dormant") { a.classList.add("dormant");
+      a.title = p.noun + " — nothing awaits you here. " + (p.dormant_why || ""); }
+    if (p.cracked) { a.classList.add("cracked"); a.title = "this door is not answering: "
+      + (p.error || "census refused") + " — it is shown so you do not walk into it blind"; }
+    else { a.title = p.why + (p.affords && p.affords.length
+      ? "\n\nhere you can: " + p.affords.join(" · ") : ""); }
+    const k = el("span", "k"); k.textContent = p.key; a.appendChild(k);
+    a.appendChild(document.createTextNode(p.noun));
+    // THE LABEL IS THE EXPLANATION: the count is why he would go, and it is read on the
+    // two-hundredth visit as readily as the first, because it is state and not an effect.
+    for (const c of (p.chips || [])) {
+      if (c.n === 0 && !c.warn) continue;         // a zero that means "nothing owed" is noise
+      const s = el("span", "navchip" + (c.warn ? " warn" : ""));
+      s.textContent = chipText(c);
+      a.appendChild(s);
+    }
+    if (p.stale) { const s = el("span", "navchip warn"); s.textContent = "stale"; a.appendChild(s); }
+    const g = grouped.get(p.band || "other");
+    (g && g.cells ? g.cells : nav).appendChild(a);
+  }
+  const keys = el("a", "dim small"); keys.setAttribute("href", "#");
+  keys.id = "keyhint"; keys.title = "keymap"; keys.textContent = "? keys";
+  nav.appendChild(keys);
+  keys.addEventListener("click", ev => { ev.preventDefault();
+    const kk = $("#keys"); if (kk) kk.hidden = !kk.hidden; });
+}
+
+function renderPlaceKeys() {
+  const dl = document.getElementById("keylist");
+  for (const n of Array.from(dl.querySelectorAll("[data-place-key]"))) n.remove();
+  for (const p of placeKeyOrder()) {
+    const dt = el("dt"), dd = el("dd");
+    dt.setAttribute("data-place-key", p.id); dd.setAttribute("data-place-key", p.id);
+    dt.textContent = p.key; dd.textContent = p.noun + " — " + p.why;
+    dl.append(dt, dd);
+  }
+}
+
+let placesLoading = false, placesAgain = false, placesRefresh = 0, placesDebounce = 0;
+async function loadPlaces() {
+  if (placesLoading) { placesAgain = true; return; }
+  placesLoading = true;
+  try {
+    const r = await fetch("/front/places", { headers: { Accept: "application/json" } });
+    if (!r.ok) throw new Error("HTTP " + r.status);
+    PLACES = await r.json();
+  } catch (e) {
+    PLACES = { places: [], digest: null, error: String(e) };
+  }
+  renderNav();
+  renderPlaceKeys();
+  const r0 = parts()[0] || "apex";
+  markNav(r0);
+  /* A DEEP LOAD RACES THE CENSUS: the router paints #panel before /front/places
+     answers, so frag() resolved an empty name and the page stayed unlabelled — the
+     exact "you land on an unlabelled wall" defect the heading was added to cure, but
+     only on the first load, which is the one that matters most. Name it now. */
+  const panel0 = $("#panel");
+  if (panel0 && !panel0.querySelector(".pagehead") && r0 !== "apex") {
+    const noun = placeNoun(r0 === "chat" ? "chats" : r0);
+    if (noun) {
+      const h = document.createElement("h2"); h.className = "pagehead";
+      h.textContent = noun; panel0.prepend(h);
+    }
+  }
+  placesLoading = false;
+  clearTimeout(placesRefresh);
+  const retry = PLACES.places.map(p => p.refresh_after_ms).filter(Boolean)
+                      .sort((a, b) => a - b)[0];
+  if (retry) placesRefresh = setTimeout(loadPlaces, retry);
+  if (placesAgain) { placesAgain = false; loadPlaces(); }
+}
+
+function placesMoved() {
+  clearTimeout(placesDebounce);
+  placesDebounce = setTimeout(loadPlaces, 100); // coalesce one append across several sources
+}
+
+function startPlacesWatch() {
+  const names = ["work_orders", "promises", "campaign", "atlas_inventory", "journal"];
+  const s = new EventSource("/front/stream?sources=" + names.join(",") + ",atlas");
+  for (const n of names) s.addEventListener("rows:" + n, placesMoved);
+  s.addEventListener("source:changed", placesMoved); // includes malformed completed rows
+  s.addEventListener("atlas:changed", placesMoved);
+  s.addEventListener("rolled", placesMoved);
+}
+
+let es = null, ces = null, tes = null, buffered = 0, follow = true, debounce = 0;
+
+function loud(node, text) {                       // client-composed text: never innerHTML
+  node.textContent = ""; const p = el("p", "red"); p.textContent = text; node.appendChild(p);
+}
+async function frag(url, node, placeId) {         // fragments are server-escaped HTML
+  node.innerHTML = '<span class="dim">loading…</span>';
+  try {
+    const r = await fetch(url, { headers: { Accept: "text/html" } });
+    const t = await r.text();
+    if (!r.ok) { loud(node, "HTTP " + r.status + " from " + url + "\n" + t.slice(0, 400)); return false; }
+    node.innerHTML = t;
+    /* the page names itself: #panel carried no heading at all, so pressing 5 landed
+       on an unlabelled wall. The name comes from the places census, never typed here. */
+    const head = placeId ? placeNoun(placeId) : "";
+    if (head) {
+      const h = document.createElement("h2"); h.className = "pagehead";
+      h.textContent = head; node.prepend(h);
+    }
+    return true;
+  } catch (e) { loud(node, "FETCH FAILED " + url + "\n" + e); return false; }
+}
+function placeNoun(id) { const p = placeById(id); return p ? p.noun : ""; }
+function parts() { return location.hash.replace(/^#/, "").split("/").map(decodeURIComponent); }
+/* WHERE AM I — answered from the places table. `chat/<sid>` and `explore/<source>` are
+   descents INTO a place, so they light their parent: a reader three levels down still
+   sees which country they are standing in. */
+function markNav(r) {
+  const want = r === "chat" ? "chats" : r;
+  for (const a of document.querySelectorAll("#nav a[data-place]")) {
+    if (a.getAttribute("data-place") === want) a.setAttribute("aria-current", "page");
+    else a.removeAttribute("aria-current");
+  }
+}
+
+/* ----------------------------------------------------------------- apex */
+/* the seen-watermark (his attention law, second face): "your last look" is the
+   PREVIOUS page open, held client-side only — the server stays stateless and the
+   engine holds no store about his eyes. Stable for this whole visit. */
+const SEEN_PREV = (() => {
+  let prev = null;
+  try {
+    prev = localStorage.getItem("eigen-seen");
+    localStorage.setItem("eigen-seen", String(Date.now() / 1000));
+  } catch (e) { /* private mode: the delta simply doesn't render */ }
+  return prev;
+})();
+
+async function loadApex() {
+  const box = el("div");
+  await frag("/front/apex" + (SEEN_PREV ? "?seen=" + SEEN_PREV : ""), box);
+  const host = $("#strip"), s = box.querySelector(".strip");
+  host.textContent = "";
+  if (s) { host.appendChild(s.cloneNode(true)); s.remove(); }
+  else { const w = el("span", "red"); w.textContent = "apex fragment unavailable"; host.appendChild(w); }
+  if ((parts()[0] || "apex") === "apex") {
+    const p = $("#panel"); p.textContent = "";
+    while (box.firstChild) p.appendChild(box.firstChild);
+    composeHome();
+  }
+}
+
+/* ONE PAGE, NOT SIX PRETENDING TO BE ONE.
+   #apex, #campaign, #run, #organ and #explore were never separate places: every one of
+   them fetched a fragment into THIS SAME #panel and threw away what was already there.
+   The nav was a row of buttons that hid five sixths of the engine at all times, and
+   grouping those buttons into bands only changed the labels on the hiding.
+   The default view now COMPOSES them: the brief leads, and what ran, what we are building
+   and the machinery follow as sections he scrolls. Their nav entries become jumps WITHIN
+   this page instead of destinations that replace it. Nothing is deleted — every route
+   still resolves and a cold deep link still builds its standalone view.
+   Sections load AFTER the brief has painted, in series, so his first read never waits on
+   the slowest pane. */
+const HOME_SECTIONS = [
+  { id: "run",      noun: "what ran",             url: "/front/acts" },
+  { id: "campaign", noun: "what we are building", url: "/front/grid" },
+  { id: "organ",    noun: "the machinery",        url: "/front/organ" },
+];
+let composed = false;
+async function composeHome() {
+  if (composed) return;
+  composed = true;
+  const p = $("#panel");
+  for (const sec of HOME_SECTIONS) {
+    const wrap = el("section", "homesec");
+    wrap.id = "sec-" + sec.id;
+    const h = el("h2", "homehead");
+    const a = el("a");                   // this file's el() takes (tag, class) only
+    a.textContent = sec.noun;
+    a.setAttribute("href", "#" + sec.id);
+    h.appendChild(a);
+    wrap.appendChild(h);
+    const body = el("div");
+    wrap.appendChild(body);
+    p.appendChild(wrap);
+    await frag(sec.url, body, sec.id);
+  }
+}
+
+/* -------------------------------------------------- the walk-verdict door */
+/* His accept IS the campaign gate flipping; a redline demands his words. */
+document.addEventListener("click", async ev => {
+  const btn = ev.target.closest("[data-verdict]");
+  if (!btn) return;
+  const wrap = btn.closest("[data-walk]");
+  if (!wrap) return;
+  const stage = wrap.getAttribute("data-walk"), verdict = btn.getAttribute("data-verdict");
+  let text = "";
+  if (verdict === "redline") {
+    text = (window.prompt("Your redline for " + stage.toUpperCase() +
+                          " — what failed your eye?") || "").trim();
+    if (!text) return;   // a redline without words cures nothing
+  }
+  /* TWO GESTURES FOR AN IRREVERSIBLE ACT. An accept IS the campaign gate flipping, and
+     it was the easiest thing on the page to fire by accident: a 134x21px target (under
+     the 24x24 minimum), 8px from REDLINE, a tab stop so Enter fires it, and the two
+     walk items rendered identically apart from two characters at 14px — while REDLINE,
+     which is reversible, got a confirming prompt and ACCEPT did not.
+     This ARMS rather than confirms: no dialog, no simulation, and the seat still never
+     fires his verdict — it just costs a second, deliberate gesture. The law is intact
+     because software still performs nothing; only his second click posts. */
+  /* "accept", not "accepted": the server's contract is
+     `verdict not in ("accept", "redline")` and the buttons emit data-verdict="accept".
+     I first wrote "accepted" and proved the guard against a fixture I had authored with
+     my own spelling, so the test passed while the real button on his page still fired on
+     one click. Testing your own assumption is not testing. */
+  if (verdict === "accept" && btn.dataset.armed !== "1") {
+    const was = btn.textContent;
+    btn.dataset.armed = "1";
+    btn.classList.add("arming");
+    const face = ((btn.closest(".walkitem") || {}).querySelector
+      ? (btn.closest(".walkitem").querySelector("b") || {}).textContent : "") || stage;
+    btn.textContent = "confirm — approve " + face;
+    const disarm = () => {
+      if (btn.dataset.armed !== "1") return;
+      delete btn.dataset.armed;
+      btn.classList.remove("arming");
+      btn.textContent = was;
+    };
+    btn._disarm = setTimeout(disarm, 5000);   // arming decays; it never sticks silently
+    return;
+  }
+  if (btn._disarm) clearTimeout(btn._disarm);
+  for (const b of wrap.querySelectorAll("button")) b.disabled = true;
+  let msg, ok = false;
+  try {
+    const r = await fetch("/front/walked", {
+      method: "POST",
+      headers: { "Content-Type": "application/json", "X-Front-Door": "1" },
+      body: JSON.stringify({ stage, verdict, text }),
+    });
+    const d = await r.json();
+    ok = r.ok;
+    msg = ok ? ("banked " + d.banked) : ("refused: " + (d.error || r.status));
+  } catch (e) { msg = "the walk door did not answer: " + e; }
+  const note = el("span", ok ? "note okst" : "note red");
+  note.textContent = msg;
+  wrap.replaceWith(note);
+  if (ok) setTimeout(loadApex, 400);
+});
+
+/* ------------------------------------------------------ the ask-door (M2) */
+/* His click banks his decision row; the X-Front-Door header is the same-origin
+   proof (a cross-site form cannot send it without a preflight this server never
+   grants). The result renders as a loud one-line notice, then the brief refreshes
+   from rows — the page fabricates nothing. */
+document.addEventListener("click", async ev => {
+  const btn = ev.target.closest("[data-decide]");
+  if (!btn) return;
+  const wrap = btn.closest("[data-ask]");
+  if (!wrap) return;
+  const ask = wrap.getAttribute("data-ask"), decision = btn.getAttribute("data-decide");
+  for (const b of wrap.querySelectorAll("button")) b.disabled = true;
+  let msg, ok = false;
+  try {
+    const r = await fetch("/front/decide", {
+      method: "POST",
+      headers: { "Content-Type": "application/json", "X-Front-Door": "1" },
+      body: JSON.stringify({ ask, decision }),
+    });
+    const d = await r.json();
+    ok = r.ok;
+    msg = ok ? ("banked " + d.banked + " — " + d.decision + " " + d.target)
+             : ("refused: " + (d.error || r.status));
+  } catch (e) { msg = "the decide door did not answer: " + e; }
+  const note = el("div", ok ? "note okst" : "note red");
+  note.textContent = msg;
+  wrap.replaceWith(note);
+  if (ok) setTimeout(loadApex, 400);   // the brief re-reads its rows
+});
+
+/* -------------------------------------------------------------- explore */
+function exploreTab(panel, src, q) {
+  panel.textContent = "";
+  const head = el("div", "facetrow"), lab = el("span", "dim");
+  lab.textContent = "source: " + src; head.appendChild(lab);
+  const inp = el("input"); inp.id = "filter"; inp.value = q || "";
+  inp.setAttribute("aria-label", "filter rows");
+  inp.placeholder = 'filter — word · key:value · -key:value · key:>N · pre* · "quoted phrase"';
+  const facets = el("div"); facets.id = "facets";
+  const rows = el("div"); rows.id = "rows";
+  panel.append(head, inp, facets, rows);
+  const run = () => {
+    const v = inp.value;
+    history.replaceState(null, "", "#explore/" + encodeURIComponent(src) +
+      (v ? "/" + encodeURIComponent(v) : ""));
+    const qs = "source=" + encodeURIComponent(src) + "&q=" + encodeURIComponent(v);
+    frag("/front/rows?" + qs + "&limit=200", rows);
+    frag("/front/facets?" + qs, facets);
+  };
+  inp.addEventListener("input", () => { clearTimeout(debounce); debounce = setTimeout(run, 250); });
+  facets.addEventListener("click", ev => {      // bound to the fragment holder, not #panel
+    const b = ev.target.closest(".facet"); if (!b) return;
+    inp.value = (inp.value.trim() + " " + b.dataset.term).trim(); run(); inp.focus();
+  });
+  run();
+}
+
+/* ------------------------------------------------------------- run/tail */
+function runTab(panel) {
+  panel.textContent = "";
+  const grid = el("div", "cols");
+  const left = el("div", "col"), lh = el("h3"); lh.textContent = "acts (journal waterfall)";
+  const acts = el("div"); acts.id = "actsbox"; left.append(lh, acts);
+  const right = el("div", "col"), rh = el("div", "tailhead");
+  const t = el("h3"); t.textContent = "live tail — " + TAIL_SOURCES.join(", ");
+  const fol = el("span", "follow dim"); fol.id = "folstate";
+  rh.append(t, fol);
+  const wrap = el("div", "tailwrap");
+  const pill = el("button", "pill"); pill.id = "pill"; pill.type = "button"; pill.hidden = true;
+  const tail = el("div", "tail"); tail.id = "tail"; tail.tabIndex = 0;
+  pill.addEventListener("click", rewind);
+  tail.addEventListener("scroll", () => { if (tail.scrollTop <= 4) clearPill(); });
+  wrap.append(pill, tail); right.append(rh, wrap);
+  grid.append(left, right); panel.appendChild(grid);
+  setFollow(true);
+  frag("/front/acts?limit=60", acts);
+  startTail();
+}
+function setFollow(v) {
+  follow = v; const f = $("#folstate");
+  if (f) f.textContent = "follow: " + (v ? "on (f)" : "paused (f)");
+}
+function clearPill() { buffered = 0; const p = $("#pill"); if (p) p.hidden = true; }
+function rewind() { const t = $("#tail"); if (t) t.scrollTop = 0; clearPill(); setFollow(true); }
+function note(text) {
+  const t = $("#tail"); if (!t) return;
+  const d = el("div", "note"); d.textContent = text;
+  t.insertBefore(d, t.firstChild);
+}
+function startTail() {
+  stopTail();
+  es = new EventSource("/front/stream?sources=" + TAIL_SOURCES.join(","));
+  for (const n of TAIL_SOURCES) es.addEventListener("rows:" + n, onTailRow);
+  es.addEventListener("hello", e => note("stream open · cursor " + e.data));
+  es.addEventListener("rolled", e => note("ROLLED: " + e.data + " truncated — re-reading from 0"));
+  es.onerror = () => note("stream interrupted — retrying; Last-Event-ID resumes the cursor");
+}
+function onTailRow(e) {
+  const t = $("#tail"); if (!t) return;
+  const d = el("div"); d.innerHTML = e.data;
+  const node = d.firstElementChild; if (!node) return;
+  const atTop = t.scrollTop <= 4;
+  t.insertBefore(node, t.firstChild);
+  while (t.children.length > 400) t.removeChild(t.lastChild);
+  if (follow && atTop) { t.scrollTop = 0; return; }
+  buffered++;
+  const p = $("#pill");
+  if (p) { p.textContent = buffered + (buffered === 1 ? " new row — f" : " new rows — f"); p.hidden = false; }
+}
+function stopTail() { if (es) { es.close(); es = null; } }
+
+/* --------------------------------------------------------------- chats */
+/* The talk path (M2): the composer banks his words BEFORE they travel; that exact
+   row is the saga root for Atlas fan-out. The serve derives delivery truth from Atlas. */
+function chatsTab(panel) {
+  panel.textContent = "";
+  const compose = el("div", "compose");
+  const box = el("textarea"); box.id = "talkbox"; box.rows = 3;
+  box.placeholder = "say something to Eigen — one banked turn routes to the standing readers";
+  const send = el("button", "act ok"); send.type = "button"; send.textContent = "bank + send";
+  const status = el("div", "cap dim");
+  compose.append(box, send, status);
+  const talkpane = el("div"); const chatlist = el("div");
+  panel.append(compose, talkpane, chatlist);
+  frag("/front/talkpane", talkpane);
+  frag("/front/chats", chatlist);
+  // a seat's reply lands live: any new talk-store row re-renders the thread
+  tes = new EventSource("/front/stream?sources=talk,atlas");
+  tes.addEventListener("rows:talk", () => frag("/front/talkpane", talkpane));
+  tes.addEventListener("atlas:changed", () => frag("/front/talkpane", talkpane));
+  send.addEventListener("click", async () => {
+    const text = box.value.trim();
+    if (!text) { status.textContent = "an empty message banks nothing"; return; }
+    send.disabled = true; status.textContent = "banking…";
+    try {
+      const r = await fetch("/front/talk", {
+        method: "POST",
+        headers: { "Content-Type": "application/json", "X-Front-Door": "1" },
+        body: JSON.stringify({ text }),
+      });
+      const d = await r.json();
+      if (r.ok) {
+        box.value = "";
+        status.textContent = "banked " + d.banked + " — " + d.routed_count + "/" +
+          d.intended_count + (d.routing_complete ? " readers routed" : " routed; repair pending");
+        frag("/front/talkpane", talkpane);
+      } else { status.textContent = "refused: " + (d.error || r.status); }
+    } catch (e) { status.textContent = "the talk door did not answer: " + e; }
+    send.disabled = false;
+  });
+}
+function chatTab(panel, sid) {
+  panel.textContent = "";
+  const box = el("div"); panel.appendChild(box);
+  frag("/front/chat?sid=" + encodeURIComponent(sid), box).then(ok => {
+    const pane = box.querySelector(".chatpane");
+    if (pane) pane.scrollTop = pane.scrollHeight;
+    if (ok && pane) startChat(sid);
+  });
+}
+function startChat(sid) {
+  stopChat();
+  ces = new EventSource("/front/stream?chat=" + encodeURIComponent(sid));
+  ces.addEventListener("chat", e => {
+    const pane = $(".chatpane"); if (!pane) return;
+    const stick = pane.scrollHeight - pane.scrollTop - pane.clientHeight < 48;
+    const d = el("div"); d.innerHTML = e.data;
+    while (d.firstChild) pane.appendChild(d.firstChild);
+    if (stick) pane.scrollTop = pane.scrollHeight;
+  });
+}
+function stopChat() { if (ces) { ces.close(); ces = null; }
+                      if (tes) { tes.close(); tes = null; } }
+
+/* ------------------------------------------------------------ slide-over */
+function openOver(p) {
+  const o = $("#over"), b = $("#overbody");
+  o.hidden = false;
+  $("#overtitle").textContent = p.join(" / ");
+  if (p[0] === "record") {
+    const key = p[2] || "";
+    const arg = key.startsWith("id:")
+      ? "id=" + encodeURIComponent(key.slice(3)) : "off=" + encodeURIComponent(key);
+    frag("/front/record?source=" + encodeURIComponent(p[1] || "") + "&" + arg, b);
+  } else {
+    frag("/front/trace?act=" + encodeURIComponent(p[1] || ""), b);
+  }
+}
+function closeOver() { $("#over").hidden = true; }
+
+/* -------------------------------------------------------------- router */
+function router() {
+  const p = parts(), r = p[0] || "apex";
+  if (r === "record" || r === "trace") { openOver(p); return; }
+  closeOver(); stopTail(); stopChat();
+  const panel = $("#panel");
+  markNav(r);
+  if (r === "apex") { panel.textContent = ""; composed = false; loadApex(); }
+  /* THESE ARE SECTIONS OF THE HOME PAGE, NOT DESTINATIONS. If home is already composed,
+     the nav entry JUMPS to the section instead of replacing the page with it. A standalone
+     view is built only for a cold deep-link straight into one of them. */
+  else if (["run", "campaign", "organ"].includes(r) && composed && $("#sec-" + r)) {
+    $("#sec-" + r).scrollIntoView({ behavior: "smooth", block: "start" });
+  }
+  else if (r === "campaign") frag("/front/grid", panel, "campaign");
+  else if (r === "run") runTab(panel);
+  else if (r === "chats") chatsTab(panel);
+  else if (r === "chat") chatTab(panel, p[1] || "");
+  else if (r === "organ") frag("/front/organ", panel, "organ");
+  else if (r === "explore") exploreTab(panel, p[1] || "journal", p[2] || "");
+  else offMap(panel, r);
+}
+
+/* OFF THE MAP. This used to be a hand-typed sentence listing the routes — a third map,
+   which drifted like the other two and had to hand-apologise for /seats. Now it is
+   rendered from the census, so it cannot name a room that does not exist or omit one
+   that does, and it offers the nearest places as LINKS rather than as prose he has to
+   retype. Being lost is a place too, and it should explain itself like any other. */
+function offMap(panel, r) {
+  panel.textContent = "";
+  const h = el("p", "red");
+  h.textContent = 'there is no place called "' + r + '".';
+  panel.appendChild(h);
+  if (!PLACES.places.length) {
+    const p = el("p", "dim");
+    p.textContent = "and the places census refused, so I cannot tell you what there is.";
+    panel.appendChild(p); return;
+  }
+  const near = PLACES.places
+    .map(p => ({ p, d: editDistance(r, p.id) }))
+    .sort((a, b) => a.d - b.d).slice(0, 3);
+  const lead = el("p", "dim");
+  lead.textContent = "did you mean:";
+  panel.appendChild(lead);
+  const ul = el("div", "offmap");
+  for (const { p } of near) {
+    const a = el("a"); a.setAttribute("href", p.href);
+    a.textContent = p.noun;
+    const why = el("span", "dim small"); why.textContent = " — " + p.why;
+    const line = el("div"); line.appendChild(a); line.appendChild(why);
+    ul.appendChild(line);
+  }
+  panel.appendChild(ul);
+  const all = el("p", "dim small");
+  all.textContent = "every place is in the bar above, each with what is currently in it.";
+  panel.appendChild(all);
+}
+
+function editDistance(a, b) {
+  const m = [];
+  for (let i = 0; i <= b.length; i++) m[i] = [i];
+  for (let j = 0; j <= a.length; j++) m[0][j] = j;
+  for (let i = 1; i <= b.length; i++)
+    for (let j = 1; j <= a.length; j++)
+      m[i][j] = b[i - 1] === a[j - 1] ? m[i - 1][j - 1]
+        : Math.min(m[i - 1][j - 1] + 1, m[i][j - 1] + 1, m[i - 1][j] + 1);
+  return m[b.length][a.length];
+}
+
+/* ------------------------------------------------------------ keyboard */
+function cursors() {
+  return Array.from(document.querySelectorAll("#panel [data-row], #overbody [data-row]"));
+}
+function moveCur(d) {
+  const l = cursors(); if (!l.length) return;
+  let i = l.findIndex(x => x.classList.contains("cur"));
+  i = i < 0 ? (d > 0 ? 0 : l.length - 1) : Math.min(l.length - 1, Math.max(0, i + d));
+  l.forEach(x => x.classList.remove("cur"));
+  l[i].classList.add("cur"); l[i].scrollIntoView({ block: "nearest" });
+}
+function descend() {
+  const c = $("[data-row].cur"); if (!c) return;
+  const at = c.getAttribute("data-row").lastIndexOf("@"); if (at < 0) return;
+  location.hash = "#record/" + encodeURIComponent(c.getAttribute("data-row").slice(0, at)) +
+    "/" + encodeURIComponent(c.getAttribute("data-row").slice(at + 1));
+}
+document.addEventListener("keydown", ev => {
+  const t = ev.target, typing = t && (t.tagName === "INPUT" || t.tagName === "TEXTAREA");
+  if (ev.key === "Escape") {
+    if (typing) { t.blur(); return; }
+    if (!$("#keys").hidden) { $("#keys").hidden = true; return; }
+    if (!$("#over").hidden) history.back();
+    return;
+  }
+  if (typing || ev.metaKey || ev.ctrlKey || ev.altKey) return;
+  if (ev.key === "/") { ev.preventDefault(); const f = $("#filter");
+    if (f) f.focus(); else location.hash = "#explore/journal"; return; }
+  if (ev.key === "?") { $("#keys").hidden = !$("#keys").hidden; return; }
+  if (ev.key === "j" || ev.key === "k") { ev.preventDefault(); moveCur(ev.key === "j" ? 1 : -1); return; }
+  if (ev.key === "Enter") { descend(); return; }
+  if (ev.key === "f") { if (follow) setFollow(false); else rewind(); return; }
+  const p = placeKeyOrder().find(x => x.key.toLowerCase() === ev.key.toLowerCase());
+  if (p) {                                           // the keymap IS the places table
+    if (p.kind === "page") location.href = p.href; else location.hash = p.href;
+  }
+});
+$("#overclose").addEventListener("click", () => history.back());
+/* #keyhint is rendered by renderNav() now, so it cannot be bound here — binding it at
+   boot threw before the census arrived and took the whole shell down with it. */
+$("#keys").addEventListener("click", ev => { if (ev.target === $("#keys")) $("#keys").hidden = true; });
+window.addEventListener("hashchange", router);
+if (!location.hash) history.replaceState(null, "", "#apex");   // replaceState: no re-entry
+router();
+loadPlaces();                       // the nav paints as soon as the census answers
+startPlacesWatch();                 // declared invalidation: rows/token move -> re-read
+if (parts()[0] !== "apex") loadApex();                          // header strip on every tab
+setInterval(loadApex, 60000);
+</script>
+</body>
+</html>

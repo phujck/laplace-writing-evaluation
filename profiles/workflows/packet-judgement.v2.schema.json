@@ -1,0 +1,650 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "laplace.packet-judgement/2",
+  "title": "laplace.packet-judgement/2",
+  "description": "Independent review of exact retained packet return and result artifacts, with a real Git target or non-Git source context. Version 1 remains immutable. Accepted requires independent successful observation, no deficiencies and a current COMPLETE builder/result; session provenance never authorizes paths.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "packet",
+    "round",
+    "max_rounds",
+    "accepted",
+    "judged",
+    "scripted_check",
+    "checked",
+    "accepted_subsets",
+    "deficiencies",
+    "own_observations"
+  ],
+  "properties": {
+    "schema_version": {
+      "description": "This schema's $id; the version check-return resolves the validating schema by.",
+      "const": "laplace.packet-judgement/2"
+    },
+    "packet": {
+      "description": "The label of the packet being judged, verbatim from the plan.",
+      "type": "string",
+      "minLength": 1
+    },
+    "round": {
+      "description": "Which judgement round this is, 1-based; it is part of the verdict file name and of the banked row id.",
+      "type": "integer",
+      "minimum": 1
+    },
+    "max_rounds": {
+      "description": "The plan's max_judge_rounds: after this round the orchestrator rules instead of the judge.",
+      "type": "integer",
+      "minimum": 1
+    },
+    "accepted": {
+      "description": "The verdict. True is only legal with at least one own_observations entry whose exit_code is 0 and with no deficiencies.",
+      "type": "boolean"
+    },
+    "judged": {
+      "description": "Exact worker return and output identity actually reviewed. The Git alternative retains its candidate; artifact review needs no Git checkout.",
+      "oneOf": [
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "kind",
+            "return_artifact",
+            "output",
+            "review_context",
+            "candidate"
+          ],
+          "properties": {
+            "kind": {
+              "const": "git",
+              "description": "An actual Git candidate plus exact worker return/output pins."
+            },
+            "return_artifact": {
+              "$ref": "#/$defs/artifact_pin"
+            },
+            "output": {
+              "$ref": "#/$defs/artifact_pin"
+            },
+            "review_context": {
+              "$ref": "#/$defs/review_context"
+            },
+            "candidate": {
+              "description": "The commit the judge checked out, which must equal the return's source.candidate.",
+              "type": "string",
+              "pattern": "^[0-9a-f]{7,40}$"
+            }
+          }
+        },
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "kind",
+            "return_artifact",
+            "output",
+            "review_context"
+          ],
+          "properties": {
+            "kind": {
+              "const": "artifacts",
+              "description": "Exact artifact target with no invented Git identity."
+            },
+            "return_artifact": {
+              "$ref": "#/$defs/artifact_pin"
+            },
+            "output": {
+              "$ref": "#/$defs/artifact_pin"
+            },
+            "review_context": {
+              "$ref": "#/$defs/review_context"
+            }
+          }
+        }
+      ]
+    },
+    "scripted_check": {
+      "description": "A real command check or receipt-bound declared-owner read. Existing executable command obligations cannot be satisfied by a generic read.",
+      "oneOf": [
+        {
+          "$ref": "#/$defs/command_check"
+        },
+        {
+          "$ref": "#/$defs/owner_read_check"
+        }
+      ]
+    },
+    "checked": {
+      "description": "The sample the judge actually read or ran, item by item: the plan's judge_sample is a floor on this list's length, not a suggestion.",
+      "type": "array",
+      "minItems": 0,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "item",
+          "how"
+        ],
+        "properties": {
+          "item": {
+            "description": "The claim or file:line that was checked.",
+            "type": "string",
+            "minLength": 1
+          },
+          "how": {
+            "description": "The command run or the lines read that checked it.",
+            "type": "string",
+            "minLength": 1
+          }
+        }
+      }
+    },
+    "accepted_subsets": {
+      "description": "The parts of the work that stand, each with the finding that establishes it; a rejection is still a record of what was accepted.",
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "id",
+          "status",
+          "finding"
+        ],
+        "properties": {
+          "id": {
+            "description": "A stable id for this subset, so round two can be read against round one.",
+            "type": "string",
+            "minLength": 1
+          },
+          "status": {
+            "description": "ACCEPTED when the judge's own observation establishes it; CONTESTED when it does not.",
+            "enum": [
+              "ACCEPTED",
+              "CONTESTED"
+            ]
+          },
+          "finding": {
+            "description": "What the judge observed, with the file:line or command that observed it.",
+            "type": "string",
+            "minLength": 1
+          }
+        }
+      }
+    },
+    "deficiencies": {
+      "description": "What blocks acceptance. Non-empty requires accepted false; each entry says what done looks like, so the continuation has a target instead of a complaint.",
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "id",
+          "item",
+          "problem",
+          "evidence",
+          "done_looks_like"
+        ],
+        "properties": {
+          "id": {
+            "description": "A stable id, carried into the continuation and into round two.",
+            "type": "string",
+            "minLength": 1
+          },
+          "item": {
+            "description": "The file:line, command or claim the deficiency is about.",
+            "type": "string",
+            "minLength": 1
+          },
+          "problem": {
+            "description": "What is wrong, stated as a defect and not as a preference.",
+            "type": "string",
+            "minLength": 1
+          },
+          "evidence": {
+            "description": "The judge's own observation that shows it.",
+            "type": "string",
+            "minLength": 1
+          },
+          "done_looks_like": {
+            "description": "The checkable state that would close this deficiency.",
+            "type": "string",
+            "minLength": 1
+          }
+        }
+      }
+    },
+    "own_observations": {
+      "description": "Commands actually run or successful declared-owner reads performed in the independent review context. Accepted needs a successful independent observation; context alone is not evidence.",
+      "type": "array",
+      "minItems": 0,
+      "items": {
+        "oneOf": [
+          {
+            "$ref": "#/$defs/command_observation"
+          },
+          {
+            "$ref": "#/$defs/owner_read_observation"
+          }
+        ]
+      }
+    }
+  },
+  "allOf": [
+    {
+      "if": {
+        "properties": {
+          "accepted": {
+            "const": true
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "deficiencies": {
+            "maxItems": 0
+          },
+          "scripted_check": {
+            "properties": {
+              "state": {
+                "const": "PASSED"
+              }
+            }
+          },
+          "checked": {
+            "minItems": 1
+          },
+          "own_observations": {
+            "minItems": 1
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "accepted": {
+            "const": false
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "deficiencies": {
+            "minItems": 1
+          }
+        }
+      }
+    }
+  ],
+  "$defs": {
+    "artifact_pin": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "path",
+        "sha256"
+      ],
+      "properties": {
+        "path": {
+          "description": "An existing source, output, patch or evidence path whose bytes are retained; absolute or relative to the declared root.",
+          "type": "string",
+          "minLength": 1
+        },
+        "sha256": {
+          "description": "Exact current retained bytes; never an invented hash or a claim that resumed work replays safely.",
+          "type": "string",
+          "pattern": "^(sha256:)?[0-9a-f]{64}$"
+        }
+      }
+    },
+    "review_context": {
+      "description": "Independent review context: an actual checkout, or a distinct read-only review session. The consumer verifies ownership/independence; these paths do not grant authority.",
+      "oneOf": [
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "kind",
+            "path"
+          ],
+          "properties": {
+            "kind": {
+              "const": "independent-checkout",
+              "description": "Review in a separately declared checkout."
+            },
+            "path": {
+              "type": "string",
+              "minLength": 1,
+              "description": "Actual review checkout path."
+            }
+          }
+        },
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "kind",
+            "session_id",
+            "read_only"
+          ],
+          "properties": {
+            "kind": {
+              "const": "independent-session",
+              "description": "Review through existing owners in a distinct session without a whole checkout copy."
+            },
+            "session_id": {
+              "type": "string",
+              "minLength": 1,
+              "description": "Actual consumer-visible independent review session identity."
+            },
+            "read_only": {
+              "const": true,
+              "description": "Reviewed source/results stay unchanged; the judge may write only its declared findings/return."
+            }
+          }
+        }
+      ]
+    },
+    "command_check": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "command",
+        "exit_code",
+        "output_tail",
+        "state",
+        "kind"
+      ],
+      "properties": {
+        "command": {
+          "description": "The declared exact check command, even when interruption prevented its execution.",
+          "type": "string",
+          "minLength": 1
+        },
+        "exit_code": {
+          "description": "Observed exit status, or null when no exit status was observed. COMPLETE requires PASSED and zero.",
+          "type": [
+            "integer",
+            "null"
+          ]
+        },
+        "output_tail": {
+          "description": "The check's final output, verbatim, enough of it to read the verdict.",
+          "type": "string",
+          "minLength": 1
+        },
+        "state": {
+          "description": "Whether this exact check passed, failed, was interrupted, or was not run.",
+          "enum": [
+            "PASSED",
+            "FAILED",
+            "INTERRUPTED",
+            "NOT_RUN"
+          ]
+        },
+        "kind": {
+          "description": "An actually executed or declared command check.",
+          "const": "command"
+        }
+      },
+      "allOf": [
+        {
+          "if": {
+            "properties": {
+              "state": {
+                "const": "PASSED"
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "exit_code": {
+                "const": 0
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "state": {
+                "const": "FAILED"
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "exit_code": {
+                "type": "integer",
+                "not": {
+                  "const": 0
+                }
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "state": {
+                "const": "NOT_RUN"
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "exit_code": {
+                "type": "null"
+              }
+            }
+          }
+        }
+      ]
+    },
+    "owner_read_check": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "kind",
+        "state",
+        "operation",
+        "payload",
+        "receipt_id",
+        "output_sha256",
+        "ok",
+        "output_tail"
+      ],
+      "properties": {
+        "kind": {
+          "description": "A declared-owner read; no OS command exit is fabricated.",
+          "const": "owner-read"
+        },
+        "state": {
+          "description": "Observed execution state of the declared read check.",
+          "enum": [
+            "PASSED",
+            "FAILED",
+            "INTERRUPTED",
+            "NOT_RUN"
+          ]
+        },
+        "operation": {
+          "description": "The canonical read operation actually invoked, or declared when NOT_RUN.",
+          "type": "string",
+          "minLength": 1
+        },
+        "payload": {
+          "description": "Exact canonical request payload from the existing read receipt.",
+          "type": "object"
+        },
+        "receipt_id": {
+          "description": "Existing READ receipt ID from the actual worker/reviewer turn, null when no successful read receipt exists.",
+          "type": [
+            "string",
+            "null"
+          ],
+          "pattern": "^READ-[0-9a-f]{32}$"
+        },
+        "output_sha256": {
+          "description": "Existing receipt digest of consulted owner result before attaching receipt metadata.",
+          "type": [
+            "string",
+            "null"
+          ],
+          "pattern": "^(sha256:)?[0-9a-f]{64}$"
+        },
+        "ok": {
+          "description": "Observed read success, null if not run; validated against the actual receipt/context.",
+          "type": [
+            "boolean",
+            "null"
+          ]
+        },
+        "output_tail": {
+          "description": "Observed result or exact reason this read check did not run.",
+          "type": "string",
+          "minLength": 1
+        }
+      },
+      "allOf": [
+        {
+          "if": {
+            "properties": {
+              "state": {
+                "const": "PASSED"
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "receipt_id": {
+                "type": "string"
+              },
+              "output_sha256": {
+                "type": "string"
+              },
+              "ok": {
+                "const": true
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "state": {
+                "const": "NOT_RUN"
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "receipt_id": {
+                "type": "null"
+              },
+              "output_sha256": {
+                "type": "null"
+              },
+              "ok": {
+                "type": "null"
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "state": {
+                "const": "FAILED"
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "ok": {
+                "const": false
+              }
+            }
+          }
+        }
+      ]
+    },
+    "command_observation": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "kind",
+        "command",
+        "exit_code",
+        "output_tail"
+      ],
+      "properties": {
+        "kind": {
+          "description": "Actual independent command execution.",
+          "const": "command"
+        },
+        "command": {
+          "description": "The exact command run by this independent context.",
+          "type": "string",
+          "minLength": 1
+        },
+        "exit_code": {
+          "description": "Its observed exit status.",
+          "type": "integer"
+        },
+        "output_tail": {
+          "description": "Observed output, not a prediction.",
+          "type": "string",
+          "minLength": 1
+        }
+      }
+    },
+    "owner_read_observation": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "kind",
+        "operation",
+        "payload",
+        "receipt_id",
+        "output_sha256",
+        "ok",
+        "output_tail"
+      ],
+      "properties": {
+        "kind": {
+          "description": "A declared-owner read; no OS command exit is fabricated.",
+          "const": "owner-read"
+        },
+        "operation": {
+          "description": "The canonical read operation actually invoked, or declared when NOT_RUN.",
+          "type": "string",
+          "minLength": 1
+        },
+        "payload": {
+          "description": "Exact canonical request payload from the existing read receipt.",
+          "type": "object"
+        },
+        "receipt_id": {
+          "description": "Existing READ receipt ID from the actual worker/reviewer turn, null when no successful read receipt exists.",
+          "type": "string",
+          "pattern": "^READ-[0-9a-f]{32}$"
+        },
+        "output_sha256": {
+          "description": "Existing receipt digest of consulted owner result before attaching receipt metadata.",
+          "type": "string",
+          "pattern": "^(sha256:)?[0-9a-f]{64}$"
+        },
+        "ok": {
+          "description": "Successful owner read bound to the independent judge actual turn/session record.",
+          "const": true
+        },
+        "output_tail": {
+          "description": "Observed result or exact reason this read check did not run.",
+          "type": "string",
+          "minLength": 1
+        }
+      }
+    }
+  }
+}

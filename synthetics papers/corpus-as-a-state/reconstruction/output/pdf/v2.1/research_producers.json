@@ -1,0 +1,60 @@
+{
+  "producers": [
+    {
+      "id": "memory-recovery-forensics-20261111",
+      "scope": "project",
+      "executable": "evidence/MEMORY_RECOVERY_2026-11-11/forensic_audit.py",
+      "modes": [
+        "full"
+      ],
+      "allowed_args": {},
+      "dependencies": [
+        "evidence/MEMORY_RECOVERY_2026-11-11/forensic_input.json"
+      ],
+      "timeout_seconds": 60,
+      "project": "memory-in-pieces"
+    },
+    {
+      "id": "mip-case-diagnostic-20261111",
+      "scope": "project",
+      "executable": "evidence/MIP_RAPTOR_AUDIT_2026-11-11/case_audit_checked.py",
+      "modes": [
+        "smoke"
+      ],
+      "allowed_args": {},
+      "dependencies": [
+        "evidence/MIP_RAPTOR_AUDIT_2026-11-11/case-audit-input.json"
+      ],
+      "timeout_seconds": 30,
+      "project": "memory-in-pieces"
+    },
+    {
+      "id": "dynamic-memory-incremental-demo-20261111",
+      "scope": "project",
+      "executable": "evidence/DYNAMIC_MEMORY_DEMO_2026-11-11/incremental_demo_checked.py",
+      "modes": [
+        "smoke"
+      ],
+      "allowed_args": {},
+      "dependencies": [
+        "evidence/DYNAMIC_MEMORY_DEMO_2026-11-11/input.json",
+        "evidence/DYNAMIC_MEMORY_DEMO_2026-11-11/protocol.json",
+        "evidence/DYNAMIC_MEMORY_DEMO_2026-11-11/protocol-addendum.json",
+        "evidence/DYNAMIC_MEMORY_DEMO_2026-11-11/rejection-input.json",
+        "evidence/DYNAMIC_MEMORY_DEMO_2026-11-11/docs/d00-r1.txt",
+        "evidence/DYNAMIC_MEMORY_DEMO_2026-11-11/docs/d00-r2.txt",
+        "evidence/DYNAMIC_MEMORY_DEMO_2026-11-11/docs/d01-r1.txt",
+        "evidence/DYNAMIC_MEMORY_DEMO_2026-11-11/docs/d10-r1.txt",
+        "evidence/DYNAMIC_MEMORY_DEMO_2026-11-11/docs/d10-r2.txt",
+        "evidence/DYNAMIC_MEMORY_DEMO_2026-11-11/docs/d10-r3.txt",
+        "evidence/DYNAMIC_MEMORY_DEMO_2026-11-11/docs/d11-r1.txt",
+        "evidence/DYNAMIC_MEMORY_DEMO_2026-11-11/docs/d02-r1.txt",
+        "evidence/DYNAMIC_MEMORY_DEMO_2026-11-11/docs/d10-overflow.txt",
+        "evidence/DYNAMIC_MEMORY_DEMO_2026-11-11/docs/d02-duplicate-group.txt",
+        "evidence/DYNAMIC_MEMORY_DEMO_2026-11-11/oracle-correction.json"
+      ],
+      "timeout_seconds": 60,
+      "project": "memory-in-pieces"
+    }
+  ]
+}

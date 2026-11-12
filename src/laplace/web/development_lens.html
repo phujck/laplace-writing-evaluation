@@ -1,0 +1,513 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="color-scheme" content="dark">
+  <title>Aisthesis · Eigen</title>
+  <link rel="stylesheet" href="/shared/hymn.css">
+  <style>
+    *{box-sizing:border-box}
+    html{background:var(--bg);scroll-behavior:smooth}
+    body{min-width:0;min-height:100vh;margin:0;background:var(--bg);color:var(--ink);font:16px/1.55 var(--serif)}
+    button,a{font:inherit}
+    button{color:inherit}
+    a{color:var(--keystone)}
+    button:focus-visible,a:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
+    .instrument{width:min(1460px,100%);min-height:100vh;margin:0 auto;padding:18px clamp(16px,3vw,46px) 34px}
+    .mast{display:flex;align-items:center;justify-content:space-between;gap:16px;padding-bottom:13px;border-bottom:1px solid var(--edge2)}
+    .identity{display:flex;align-items:baseline;gap:11px;min-width:0}
+    .identity a{font:750 13px/1 var(--display);letter-spacing:.12em;text-decoration:none;text-transform:uppercase;color:var(--accent)}
+    .identity span{overflow:hidden;color:var(--dim);font:11px/1.3 var(--mono);text-overflow:ellipsis;white-space:nowrap}
+    .freshness{display:inline-flex;align-items:center;gap:8px;min-height:32px;padding:5px 10px;border:1px solid var(--edge2);border-radius:999px;color:var(--ink2);font:10.5px/1.2 var(--mono);white-space:nowrap}
+    .freshness::before{width:7px;height:7px;border-radius:50%;background:var(--warn);content:""}
+    body[data-freshness="CURRENT"] .freshness{color:var(--ok)}
+    body[data-freshness="CURRENT"] .freshness::before{background:var(--ok)}
+    body[data-freshness="STALE"] .freshness,body[data-freshness="REFUSED"] .freshness{color:var(--bad);border-color:var(--bad)}
+    body[data-freshness="STALE"] .freshness::before,body[data-freshness="REFUSED"] .freshness::before{background:var(--bad)}
+    .opening{display:grid;grid-template-columns:minmax(0,1.2fr) minmax(360px,.8fr);gap:clamp(28px,6vw,90px);align-items:end;padding:clamp(28px,6vw,82px) 0 26px}
+    .eyebrow{margin:0 0 11px;color:var(--accent);font:700 11px/1.2 var(--display);letter-spacing:.15em;text-transform:uppercase}
+    h1{max-width:850px;margin:0;font:500 clamp(2.8rem,6.2vw,6.6rem)/.91 var(--serif);letter-spacing:-.055em}
+    .lede{max-width:65ch;margin:18px 0 0;color:var(--ink2)}
+    .questions{display:grid;grid-template-columns:1fr 1fr;margin:0;border-top:1px solid var(--edge2)}
+    .question{min-width:0;padding:12px 16px 14px 0;border-bottom:1px solid var(--edge)}
+    .question:nth-child(even){padding-left:16px;border-left:1px solid var(--edge)}
+    .question dt{margin-bottom:5px;color:var(--dim);font:10px/1.2 var(--mono);letter-spacing:.08em;text-transform:uppercase}
+    .question dd{margin:0;color:var(--ink);font:13px/1.45 var(--display)}
+    .stale-banner{display:none;align-items:center;justify-content:space-between;gap:16px;margin:0 0 18px;padding:10px 13px;border:1px solid var(--bad);color:var(--ink);background:var(--panel)}
+    body[data-freshness="STALE"] .stale-banner,body[data-freshness="REFUSED"] .stale-banner{display:flex}
+    .stale-banner button{border:0;border-bottom:1px solid currentColor;padding:2px 0;background:none;color:var(--accent);cursor:pointer;font-family:var(--display)}
+    .lens-score{position:relative;display:grid;grid-template-columns:repeat(7,minmax(0,1fr));gap:0;margin:0 0 22px;border-top:1px solid var(--edge2);border-bottom:1px solid var(--edge2)}
+    .lens-score::before{position:absolute;top:28px;left:7%;right:7%;height:1px;background:var(--edge2);content:""}
+    .lens-tab{position:relative;min-width:0;min-height:64px;padding:10px 7px 9px;border:0;background:var(--bg);color:var(--dim);cursor:pointer;text-align:center}
+    .lens-tab::before{display:block;width:8px;height:8px;margin:14px auto 7px;border:2px solid var(--edge2);border-radius:50%;background:var(--bg);content:""}
+    .lens-tab span{display:block;overflow:hidden;font:10.5px/1.25 var(--display);letter-spacing:.02em;text-overflow:ellipsis}
+    .lens-tab:hover{color:var(--ink)}
+    .lens-tab[aria-selected="true"]{color:var(--accent)}
+    .lens-tab[aria-selected="true"]::before{border-color:var(--accent);background:var(--accent)}
+    .score{display:grid;grid-template-columns:minmax(0,1fr) minmax(250px,320px);gap:clamp(22px,4vw,62px);align-items:start}
+    .stage{min-width:0}
+    .stage-head{display:flex;align-items:flex-start;justify-content:space-between;gap:18px;margin-bottom:24px;padding-bottom:16px;border-bottom:1px solid var(--edge2)}
+    .stage-index{color:var(--dim);font:11px/1.2 var(--mono);letter-spacing:.08em;text-transform:uppercase}
+    .stage h2{margin:5px 0 0;font:500 clamp(2rem,4vw,4.2rem)/.95 var(--serif);letter-spacing:-.035em}
+    .camera-state{flex:none;padding:4px 8px;border:1px solid var(--edge2);color:var(--ink2);font:10px/1.2 var(--mono);text-transform:uppercase}
+    .causal-spine{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));margin:0 0 25px;border-top:1px solid var(--edge)}
+    .cause{position:relative;min-width:0;padding:10px 18px 10px 0}
+    .cause:not(:last-child)::after{position:absolute;right:7px;top:21px;color:var(--dim);content:"→"}
+    .cause small{display:block;color:var(--dim);font:9.5px/1.2 var(--mono);letter-spacing:.06em;text-transform:uppercase}
+    .cause strong{display:block;overflow:hidden;margin-top:5px;color:var(--ink);font:12px/1.35 var(--display);text-overflow:ellipsis;white-space:nowrap}
+    .camera-content{min-height:360px}
+    .quiet{max-width:68ch;color:var(--ink2)}
+    .programme-list{display:grid;gap:0;border-top:1px solid var(--edge2)}
+    .causal-weave{position:relative;min-width:0;isolation:isolate}
+    .causal-weave__header{display:flex;align-items:flex-end;justify-content:space-between;gap:24px;margin-bottom:16px;padding-bottom:15px;border-bottom:1px solid var(--edge2)}
+    .causal-weave__eyebrow{display:block;color:var(--dim);font:9px/1.2 var(--mono);letter-spacing:.12em;text-transform:uppercase}
+    .causal-weave__title{max-width:24ch;margin:5px 0 0;font:500 clamp(1.35rem,2.5vw,2.4rem)/1.05 var(--serif);letter-spacing:-.02em}
+    .causal-weave__status{display:inline-flex;align-items:center;gap:7px;color:var(--warn);font:11px/1.3 var(--display);text-transform:capitalize}
+    .causal-weave__status::before{width:9px;height:9px;border:1px solid currentColor;border-radius:50%;content:""}
+    .causal-weave__status[data-state="CURRENT"]{color:var(--ok)}
+    .causal-weave__status[data-state="REFUSED"]{color:var(--bad)}
+    .causal-weave__toolbar{display:flex;flex-wrap:wrap;gap:7px;margin-bottom:15px}
+    .causal-weave__grade,.causal-weave__back{min-width:60px;min-height:44px;padding:7px 12px;border:1px solid var(--edge2);background:var(--bg);color:var(--ink2);cursor:pointer;font:11px/1.2 var(--display)}
+    .causal-weave__grade[aria-pressed="true"]{border-color:var(--accent);background:var(--panel);color:var(--accent)}
+    .causal-weave__back{margin-left:auto;border-color:transparent;border-bottom-color:var(--edge2);color:var(--keystone)}
+    .causal-weave__field{position:relative;max-width:100%;overflow:hidden;border-top:1px solid var(--edge2);border-bottom:1px solid var(--edge2);background:radial-gradient(circle at 50% 18%,color-mix(in srgb,var(--accent) 8%,transparent),transparent 34%),linear-gradient(180deg,var(--panel),var(--bg))}
+    .causal-weave__field::before{position:absolute;inset:0;background:linear-gradient(90deg,transparent 49.8%,var(--edge) 50%,transparent 50.2%),repeating-linear-gradient(0deg,transparent 0,transparent 70px,color-mix(in srgb,var(--edge) 55%,transparent) 71px);opacity:.5;pointer-events:none;content:""}
+    .causal-weave__threads{position:absolute;inset:0;pointer-events:none}
+    .causal-weave__thread{fill:none;stroke:var(--edge2);stroke-width:1.35;vector-effect:non-scaling-stroke}
+    .causal-weave__thread[data-state="CURRENT"],.causal-weave__thread[data-state="COMPLETE"],.causal-weave__thread[data-state="BOUND"]{stroke:var(--teal);stroke-width:2}
+    .causal-weave__thread[data-state="UNKNOWN"],.causal-weave__thread[data-state="UNRESOLVED"]{stroke:var(--warn);stroke-dasharray:6 5}
+    .causal-weave__thread[data-state="REFUSED"]{stroke:var(--bad);stroke-dasharray:2 5;stroke-width:2.4}
+    .causal-weave__thread-label{fill:var(--dim);font:9px var(--display);paint-order:stroke;stroke:var(--bg);stroke-width:5px;stroke-linejoin:round}
+    .causal-weave__object{position:absolute;z-index:3;display:flex;flex-direction:column;align-items:flex-start;justify-content:center;gap:4px;min-width:44px;min-height:44px;padding:10px 12px;overflow:hidden;border:1px solid var(--edge2);border-left:3px solid var(--teal);background:color-mix(in srgb,var(--panel) 94%,transparent);color:var(--ink);cursor:pointer;text-align:left;box-shadow:0 8px 22px color-mix(in srgb,var(--bg) 70%,transparent);transition:transform 180ms ease,opacity 180ms ease,border-color 180ms ease,background 180ms ease}
+    .causal-weave__object:hover{z-index:5;transform:translateY(-3px);border-color:var(--gold-light);background:var(--panel2)}
+    .causal-weave__object[aria-pressed="true"]{z-index:6;border-color:var(--accent);border-left-width:5px;background:var(--panel2);box-shadow:0 16px 44px var(--bg)}
+    .causal-weave__object[data-family="authority"]{border-left-color:var(--accent)}
+    .causal-weave__object[data-family="residual"]{border-left-color:var(--warn)}
+    .causal-weave__object[data-family="continuity"]{border-left-color:var(--keystone)}
+    .causal-weave__object[data-compressed="true"]{border-style:dashed;border-left-width:1px;border-radius:999px;background:color-mix(in srgb,var(--bg) 86%,transparent)}
+    .causal-weave__object[data-state="REFUSED"]{border-color:var(--bad)}
+    .causal-weave__object-family{color:var(--dim);font:8px/1.1 var(--mono);letter-spacing:.11em;text-transform:uppercase}
+    .causal-weave__object-label{max-width:100%;overflow:hidden;font:650 clamp(10px,1vw,13px)/1.2 var(--display);text-overflow:ellipsis;white-space:nowrap}
+    .causal-weave__object-summary{max-width:100%;overflow:hidden;color:var(--ink2);font:9px/1.25 var(--display);text-overflow:ellipsis;white-space:nowrap}
+    .causal-weave__edge-hit{position:absolute;z-index:2;width:104px;min-height:44px;padding:0;border:0;background:transparent;color:transparent;cursor:pointer}
+    .causal-weave__edge-hit:focus-visible{outline:2px solid var(--accent);outline-offset:2px;color:var(--ink);background:var(--bg);font:9px/1.2 var(--display)}
+    .causal-weave__context{min-height:150px;margin-top:-1px;padding:22px clamp(16px,4vw,42px);border-top:1px solid var(--accent);background:linear-gradient(100deg,var(--panel),var(--bg))}
+    .causal-weave__context-kicker{color:var(--accent);font:9px/1.2 var(--mono);letter-spacing:.1em;text-transform:uppercase}
+    .causal-weave__context-title{max-width:25ch;margin:7px 0 8px;font:500 clamp(1.5rem,3.3vw,3.2rem)/1 var(--serif);letter-spacing:-.03em}
+    .causal-weave__context-copy{max-width:66ch;margin:0;color:var(--ink2)}
+    .causal-weave__descend{min-height:44px;margin-top:14px;padding:6px 0;border:0;border-bottom:1px solid var(--keystone);background:none;color:var(--keystone);cursor:pointer}
+    .causal-weave__audit{max-width:70ch;margin-top:16px;padding:12px;border-left:2px solid var(--accent);background:var(--bg)}
+    .causal-weave__audit code{display:block;overflow-wrap:anywhere;margin-top:7px;color:var(--dim);font:10px/1.4 var(--mono)}
+    .causal-weave--refused{padding:24px;border:1px solid var(--bad);color:var(--bad)}
+    .work-node{display:grid;grid-template-columns:110px minmax(0,1fr) auto;gap:16px;align-items:center;width:100%;min-height:66px;padding:12px 2px;border:0;border-bottom:1px solid var(--edge);background:none;color:var(--ink);cursor:pointer;text-align:left}
+    .work-node:hover{background:var(--panel)}
+    .work-node[aria-pressed="true"]{box-shadow:inset 3px 0 0 var(--accent);background:var(--panel)}
+    .work-state{color:var(--ok);font:10px/1.2 var(--mono);letter-spacing:.05em;text-transform:uppercase}
+    .work-label{min-width:0;font:650 15px/1.3 var(--display)}
+    .work-handle{overflow:hidden;color:var(--dim);font:10px/1.2 var(--mono);text-overflow:ellipsis;white-space:nowrap}
+    .empty{display:flex;min-height:260px;align-items:center;justify-content:center;border-top:1px solid var(--edge2);border-bottom:1px solid var(--edge);color:var(--ink2);text-align:center}
+    .empty strong{display:block;margin-bottom:8px;color:var(--ink);font:500 1.5rem/1.15 var(--serif)}
+    .evidence-title{margin:0 0 18px;font:500 clamp(1.7rem,3.3vw,3.4rem)/1 var(--serif)}
+    .fact-line{display:grid;grid-template-columns:130px minmax(0,1fr);gap:16px;padding:10px 0;border-top:1px solid var(--edge)}
+    .fact-line small{color:var(--dim);font:10px/1.2 var(--mono);text-transform:uppercase}
+    .fact-line code,.fact-line span{overflow-wrap:anywhere;color:var(--ink);font:11px/1.5 var(--mono)}
+    .edge-list{display:flex;flex-wrap:wrap;gap:8px;margin-top:18px}
+    .edge-door{min-height:32px;padding:5px 9px;border:1px solid var(--edge2);background:var(--panel);color:var(--keystone);cursor:pointer;font:10.5px/1.3 var(--mono)}
+    .edge-door[aria-pressed="true"]{border-color:var(--accent);color:var(--accent)}
+    .continuity-shell{min-width:0}
+    .continuity-intro{max-width:70ch;margin:0 0 18px;color:var(--ink2)}
+    .continuity-loom{position:relative;min-width:0;isolation:isolate}
+    .continuity-loom__header{display:flex;align-items:flex-end;justify-content:space-between;gap:20px;margin-bottom:14px;padding-bottom:12px;border-bottom:1px solid var(--edge2)}
+    .continuity-loom__currentness{color:var(--ink2);font:11px/1.35 var(--display)}
+    .continuity-loom__currentness::before{display:inline-block;width:9px;height:9px;margin-right:8px;border:1px solid currentColor;border-radius:50%;content:""}
+    .continuity-loom__currentness[data-state="CURRENT"]{color:var(--ok)}
+    .continuity-loom__currentness[data-state="UNKNOWN"],.continuity-loom__currentness[data-state="LAST-TRUSTED"],.continuity-loom__currentness[data-state="STALE"]{color:var(--warn)}
+    .continuity-loom__currentness[data-state="REFUSED"]{color:var(--bad)}
+    .continuity-loom__back{min-height:44px;padding:4px 0;border:0;border-bottom:1px solid var(--edge2);background:none;color:var(--keystone);cursor:pointer;font:12px/1.35 var(--display)}
+    .continuity-loom__grades{display:flex;flex-wrap:wrap;gap:6px;margin:0 0 14px}
+    .continuity-loom__grade,.continuity-loom__exposition-grade{min-width:52px;min-height:44px;padding:5px 10px;border:1px solid var(--edge2);background:var(--bg);color:var(--ink2);cursor:pointer;font:11px/1.2 var(--display)}
+    .continuity-loom__grade[aria-pressed="true"],.continuity-loom__exposition-grade[aria-pressed="true"]{border-color:var(--accent);background:var(--panel);color:var(--accent)}
+    .continuity-loom__field{position:relative;min-height:360px;overflow:hidden;border-top:1px solid var(--edge2);border-bottom:1px solid var(--edge2);background:linear-gradient(180deg,var(--panel),var(--bg))}
+    .continuity-loom__field::before{position:absolute;inset:0;background:repeating-linear-gradient(90deg,transparent 0,transparent calc(25% - 1px),var(--edge) 25%);opacity:.44;pointer-events:none;content:""}
+    .continuity-loom__weft{position:absolute;inset:0;width:100%;height:100%;overflow:visible;pointer-events:none}
+    .continuity-loom__edge-path{fill:none;stroke:var(--edge2);stroke-width:1.5;vector-effect:non-scaling-stroke}
+    .continuity-loom__edge-path[data-state="COMPLETE"]{stroke:var(--teal);stroke-width:2}
+    .continuity-loom__edge-path[data-state="BUDGET"],.continuity-loom__edge-path[data-state="TRUNCATED"],.continuity-loom__edge-path[data-state="UNKNOWN"]{stroke:var(--warn);stroke-dasharray:6 5}
+    .continuity-loom__edge-path[data-state="REFUSED"]{stroke:var(--bad);stroke-dasharray:2 5;stroke-width:2.5}
+    .continuity-loom__object{position:absolute;z-index:3;display:flex;flex-direction:column;align-items:flex-start;justify-content:center;gap:4px;min-width:84px;min-height:44px;padding:9px 11px;border:1px solid var(--edge2);border-left-width:3px;background:var(--panel);color:var(--ink);cursor:pointer;overflow:hidden;text-align:left;font:650 12px/1.25 var(--display);transition:left 160ms ease,top 160ms ease,width 160ms ease,height 160ms ease,opacity 160ms ease,background-color 160ms ease}
+    .continuity-loom__object:hover{border-color:var(--gold-light);background:var(--panel2)}
+    .continuity-loom__object[aria-pressed="true"]{z-index:4;border-color:var(--accent);background:var(--panel2);box-shadow:0 12px 30px var(--bg);color:var(--gold-light)}
+    .continuity-loom__object[data-kind="author-turn"]{border-left-color:var(--keystone)}
+    .continuity-loom__object[data-kind="authority"]{border-left-color:var(--accent);border-style:double}
+    .continuity-loom__object[data-state="UNKNOWN"],.continuity-loom__object[data-state="UNRESOLVED"]{border-style:dashed;color:var(--ink2)}
+    .continuity-loom__object[data-state="REFUSED"]{border-color:var(--bad);background:var(--bg)}
+    .continuity-loom__object[data-compressed="true"]{align-items:center;border-radius:999px;border-left-width:1px;padding-inline:12px;color:var(--ink2);font-weight:500}
+    .continuity-loom__object-state,.continuity-loom__compression{color:var(--dim);font:9px/1.15 var(--mono);letter-spacing:.04em;text-transform:uppercase}
+    .continuity-loom__object-label{max-width:100%;overflow:hidden;text-overflow:ellipsis}
+    .continuity-loom__edge{position:absolute;z-index:2;min-width:44px;min-height:44px;padding:5px 8px;border:1px solid var(--edge2);border-radius:12px;background:var(--bg);color:var(--ink2);cursor:pointer;font:10px/1.2 var(--display);transition:border-color 160ms ease,color 160ms ease,background-color 160ms ease}
+    .continuity-loom__edge:hover,.continuity-loom__edge[aria-pressed="true"]{border-color:var(--accent);background:var(--panel2);color:var(--accent)}
+    .continuity-loom__edge[data-state="REFUSED"]{border-color:var(--bad);border-style:dashed;color:var(--bad)}
+    .continuity-loom__context{position:relative;z-index:5;margin:-1px 0 0;padding:18px clamp(14px,3vw,28px);border-top:1px solid var(--accent);border-bottom:1px solid var(--edge2);background:var(--panel)}
+    .continuity-loom__context h3{max-width:34ch;margin:0 0 8px;font:500 clamp(1.4rem,2.7vw,2.5rem)/1.05 var(--serif);letter-spacing:-.02em}
+    .continuity-loom__context p{max-width:68ch;margin:6px 0;color:var(--ink2)}
+    .continuity-loom__exposition{display:flex;flex-wrap:wrap;gap:6px;margin-top:14px;padding-top:12px;border-top:1px solid var(--edge)}
+    .continuity-loom__exposition-copy{flex-basis:100%;max-width:68ch;color:var(--ink2);font-size:15.5px}
+    .continuity-loom__exposition-copy[data-state="UNKNOWN"],.continuity-loom__exposition-copy[data-state="REFUSED"]{padding-left:12px;border-left:2px dashed var(--warn)}
+    .continuity-loom__descend{display:inline-flex;align-items:center;min-height:44px;margin-top:12px;color:var(--keystone);font:12px/1.35 var(--display)}
+    .continuity-loom__omissions{display:flex;flex-wrap:wrap;gap:8px;margin-top:14px}
+    .continuity-loom__omission{min-height:44px;padding:5px 10px;border:1px dashed var(--edge2);background:none;color:var(--ink2);cursor:pointer;font:11px/1.3 var(--display)}
+    .continuity-loom__omission::before{margin-right:7px;color:var(--warn);content:"⋯"}
+    .continuity-loom__receipt{display:block;overflow-wrap:anywhere;margin-top:8px;color:var(--dim);font:10px/1.45 var(--mono)}
+    .continuity-loom__evidence-count{display:block;color:var(--dim);font:10px/1.25 var(--display)}
+    .continuity-loom__audit-well{max-width:68ch;margin-top:14px;padding:12px;border-left:2px solid var(--accent);background:var(--bg)}
+    .continuity-loom__audit-title{display:block;color:var(--ink);font:12px/1.35 var(--display)}
+    .continuity-loom__announcement{position:absolute;width:1px;height:1px;overflow:hidden;clip-path:inset(50%)}
+    .continuity-return{display:inline-block;margin-top:16px;color:var(--keystone);font:12px/1.35 var(--display)}
+    body[data-freshness="UNKNOWN"] .continuity-loom__field,body[data-freshness="STALE"] .continuity-loom__field{filter:saturate(.45)}
+    body[data-freshness="REFUSED"] .continuity-loom__field{filter:grayscale(1);opacity:.72}
+    .instrument[data-lens="continuity"][data-audit="false"] .score,.instrument[data-lens="programme"] .score{grid-template-columns:1fr}
+    .residual-list{border-top:1px solid var(--edge2)}
+    .residual-row{display:grid;grid-template-columns:190px minmax(0,1fr);gap:18px;padding:16px 0;border-bottom:1px solid var(--edge)}
+    .residual-row strong{font:650 13px/1.3 var(--display)}
+    .residual-row p{margin:0;color:var(--ink2);font-size:14px}
+    .crutch{padding:11px 0;border-top:1px solid var(--edge)}
+    .crutch code{color:var(--accent);font:10px/1.3 var(--mono)}
+    .crutch p{margin:5px 0 0;color:var(--ink2);font-size:13px}
+    .grounds{position:sticky;top:18px;min-width:0;padding-left:20px;border-left:1px solid var(--edge2)}
+    .grounds h3{margin:0 0 15px;color:var(--dim);font:700 10px/1.2 var(--display);letter-spacing:.12em;text-transform:uppercase}
+    .ground{padding:10px 0;border-top:1px solid var(--edge)}
+    .ground small{display:block;margin-bottom:5px;color:var(--dim);font:9.5px/1.2 var(--mono);text-transform:uppercase}
+    .ground code,.ground span{display:block;overflow:hidden;color:var(--ink2);font:10.5px/1.45 var(--mono);text-overflow:ellipsis;white-space:nowrap}
+    .ground .loud{color:var(--ink);white-space:normal}
+    .shown-handle{color:var(--accent)!important}
+    .invalidation{margin-top:20px;padding-top:12px;border-top:1px solid var(--edge2);color:var(--dim);font:10px/1.5 var(--mono)}
+    .return-door{display:inline-block;margin-top:14px;color:var(--keystone);font:11px/1.3 var(--mono)}
+    [hidden]{display:none!important}
+    @media(max-width:980px){
+      .opening{grid-template-columns:1fr;gap:28px}.score{grid-template-columns:1fr}.grounds{position:static;padding:18px 0 0;border-left:0;border-top:1px solid var(--edge2)}
+      .lens-score{grid-template-columns:repeat(4,minmax(0,1fr))}.lens-score::before{display:none}.causal-spine{grid-template-columns:1fr 1fr}
+    }
+    @media(max-width:560px){
+      .instrument{padding:14px 14px 26px}.identity span{display:none}.freshness{max-width:48vw;overflow:hidden;text-overflow:ellipsis}
+      .opening{padding:34px 0 20px}.questions{grid-template-columns:1fr}.question:nth-child(even){padding-left:0;border-left:0}
+      .lens-score{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));overflow:visible}.lens-tab{min-height:54px;padding-block:5px}.lens-tab::before{margin-top:8px}
+      .stage-head{align-items:flex-start;flex-direction:column}.causal-spine{grid-template-columns:1fr}.cause{padding-right:0}.cause:not(:last-child)::after{display:none}
+      .work-node{grid-template-columns:80px minmax(0,1fr)}.work-handle{grid-column:2}.residual-row,.fact-line{grid-template-columns:1fr;gap:6px}
+      .continuity-loom__header,.causal-weave__header{align-items:flex-start;flex-direction:column;gap:8px}.continuity-loom__field{min-height:520px}.continuity-loom__object{font-size:11px}.continuity-loom__edge{font-size:10px}.continuity-loom__context{padding-inline:12px}
+      .causal-weave__back{margin-left:0}.causal-weave__object-label{font-size:10px}.causal-weave__thread-label{font-size:8px}
+    }
+    @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.lens-score{scroll-behavior:auto}.continuity-loom__object,.continuity-loom__edge,.causal-weave__object{transition:none!important}}
+  </style>
+</head>
+<body data-freshness="DERIVING" data-l1="own">
+  <main class="instrument" id="development-lens" data-ready="false">
+    <header class="mast">
+      <div class="identity"><a href="/front">Eigen</a><span>Aisthesis · one canonical graph, seven ways of seeing</span></div>
+      <div class="freshness" id="freshness" role="status" aria-live="polite">deriving exact coordinate</div>
+    </header>
+
+    <section class="opening" aria-labelledby="page-title">
+      <div>
+        <p class="eyebrow">Aisthesis · read only</p>
+        <h1 id="page-title">Follow the work without carrying the machinery.</h1>
+        <p class="lede">One source-bearing development graph, composed as a causal score. Every lens keeps the same object, exact frontier, omissions and shown state.</p>
+      </div>
+      <dl class="questions" aria-label="Four questions answered by this view">
+        <div class="question"><dt>What exists</dt><dd id="q-exists">Deriving the canonical map.</dd></div>
+        <div class="question"><dt>What matters now</dt><dd id="q-matters">Priority is unknown until proved.</dd></div>
+        <div class="question"><dt>What is blocked</dt><dd id="q-blocked">Residuals are not yet read.</dd></div>
+        <div class="question"><dt>Inspect next</dt><dd id="q-next">Exact descent follows selection.</dd></div>
+      </dl>
+    </section>
+
+    <div class="stale-banner" role="alert"><span id="stale-reason">The frontier moved. This is last-trusted evidence.</span><button id="rederive" type="button">Rederive</button></div>
+
+    <nav class="lens-score" id="lens-score" aria-label="Seven lenses" role="tablist">
+      <button class="lens-tab" type="button" role="tab" data-lens="programme"><span>Programme</span></button>
+      <button class="lens-tab" type="button" role="tab" data-lens="critical-path"><span>Critical path</span></button>
+      <button class="lens-tab" type="button" role="tab" data-lens="live-custody"><span>Live custody</span></button>
+      <button class="lens-tab" type="button" role="tab" data-lens="evidence-descent"><span>Evidence descent</span></button>
+      <button class="lens-tab" type="button" role="tab" data-lens="continuity"><span>Continuity</span></button>
+      <button class="lens-tab" type="button" role="tab" data-lens="residual-crutch"><span>Residual / crutch</span></button>
+      <button class="lens-tab" type="button" role="tab" data-lens="lens-self"><span>Lens self</span></button>
+    </nav>
+
+    <section class="score" aria-live="polite">
+      <article class="stage" id="camera-stage" role="tabpanel">
+        <header class="stage-head">
+          <div><div class="stage-index" id="stage-index">lens 1 of 7</div><h2 id="stage-title">Programme</h2></div>
+          <span class="camera-state" id="camera-state">DERIVING</span>
+        </header>
+        <div class="causal-spine" aria-label="Causal coordinate">
+          <div class="cause"><small>source</small><strong id="cause-source">deriving</strong></div>
+          <div class="cause"><small>focus</small><strong id="cause-focus">none</strong></div>
+          <div class="cause"><small>evidence</small><strong id="cause-edge">none selected</strong></div>
+          <div class="cause"><small>consequence</small><strong id="cause-state">unknown</strong></div>
+        </div>
+        <div class="camera-content" id="camera-content"><div class="empty"><div><strong>Deriving one graph</strong>No empty-state claim is made while the source is unresolved.</div></div></div>
+      </article>
+
+      <aside class="grounds" aria-label="Exact shown state">
+        <h3>Grounds</h3>
+        <div class="ground"><small>shown state</small><code class="shown-handle" id="shown-handle">deriving</code></div>
+        <div class="ground"><small>model</small><code id="model-handle">deriving</code></div>
+        <div class="ground"><small>cursor · Git</small><span id="coordinate">deriving</span></div>
+        <div class="ground"><small>visible · omitted</small><span id="set-digests">deriving</span></div>
+        <div class="ground"><small>acknowledgement</small><span class="loud" id="acknowledgement">not claimed</span></div>
+        <div class="ground"><small>residual</small><span class="loud" id="residual-ground">three classes deriving</span></div>
+        <div class="invalidation"><b>CR-AIS-STREAM-500MS</b><br>The canonical stream invalidates this view; it never becomes a second source or acknowledgement.</div>
+      </aside>
+    </section>
+  </main>
+
+  <script type="module">
+    import store from '/shared/store.mjs';
+    import { renderContinuityLoom } from '/shared/continuity_loom.mjs';
+    import { renderCausalAtlasWeave } from '/front/development/causal_atlas_weave.mjs';
+
+    const LENSES = [
+      ['programme','Programme'],['critical-path','Critical path'],['live-custody','Live custody'],
+      ['evidence-descent','Evidence descent'],['continuity','Continuity'],
+      ['residual-crutch','Residual / crutch'],['lens-self','Lens self'],
+    ];
+    const root = document.getElementById('development-lens');
+    const byId = (id) => document.getElementById(id);
+    const short = (value,n=12) => String(value || '—').replace(/^(sha256:|message:)/,'').slice(0,n);
+    const text = (tag,className,value) => { const node=document.createElement(tag); if(className)node.className=className; node.textContent=value; return node; };
+    let payload = null;
+    let loading = false;
+    let loadQueued = false;
+    let continuityView = null;
+    let continuityHost = null;
+    let weaveView = null;
+    let weaveHost = null;
+
+    function viewportGrade(){ return innerWidth <= 560 ? 'compact' : innerWidth <= 980 ? 'balanced' : 'expansive'; }
+    function lens(){ const value=store.field('lens'); return LENSES.some(([id])=>id===value) ? value : 'programme'; }
+    function continuityGrade(){ const value=store.field('grade'); return ['far','mid','near','audit'].includes(value) ? value : 'mid'; }
+    function expositionValue(){ const value=store.field('exposition'); return /^E[0-7]$/.test(value || '') ? value : 'E0'; }
+    function setContinuitySelection(patch={}){
+      store.set({lens:'continuity',focus:store.field('focus'),edge:store.field('edge'),grade:continuityGrade(),exposition:expositionValue(),...patch});
+    }
+    function setProgrammeSelection(patch={}){
+      store.set({lens:'programme',focus:store.field('focus'),edge:store.field('edge'),grade:continuityGrade(),exposition:null,...patch});
+    }
+    function setFreshness(state,label){ document.body.dataset.freshness=state; byId('freshness').textContent=label; }
+    function activeObject(data){ return data.selected || (data.programme_field || [])[0] || null; }
+
+    function renderQuestions(q={}){
+      byId('q-exists').textContent=q.exists || 'The source made no existence claim.';
+      byId('q-matters').textContent=q.matters_now || 'Canonical priority is unknown.';
+      byId('q-blocked').textContent=q.blocked || 'No residual claim was supplied.';
+      byId('q-next').textContent=q.inspect_next || 'No exact next descent is available.';
+    }
+
+    function setTabs(active){
+      for(const tab of document.querySelectorAll('.lens-tab')){
+        const on=tab.dataset.lens===active; tab.setAttribute('aria-selected',String(on)); tab.tabIndex=on?0:-1;
+      }
+      const index=LENSES.findIndex(([id])=>id===active);
+      byId('stage-index').textContent=`lens ${index+1} of ${LENSES.length}`;
+      byId('stage-title').textContent=LENSES[index][1];
+    }
+
+    function empty(title,body){ const outer=text('div','empty',''); const inner=document.createElement('div'); inner.append(text('strong','',title),document.createTextNode(body)); outer.append(inner); return outer; }
+    function fact(label,value){ const row=text('div','fact-line',''); row.append(text('small','',label),text('code','',String(value ?? '—'))); return row; }
+
+    function renderProgramme(camera){
+      const wrap=text('div','programme-weave',''); const weave=camera.weave || payload?.causal_atlas_weave;
+      if(weave?.schema_version!=='laplace.aisthesis-causal-atlas-weave/1')return empty('Causal field refused','The producer did not supply the exact Causal Atlas Weave contract.');
+      weaveHost=text('div','',''); wrap.append(weaveHost);
+      weaveView=renderCausalAtlasWeave(weaveHost,weave,{
+        focusHandle:payload?.shown_state?.focus_handle || store.field('focus'),
+        selectedEdgeId:payload?.shown_state?.selected_edge_id || store.field('edge'),
+        grade:payload?.shown_state?.representation_grade || continuityGrade(),
+        onObject:({handle})=>setProgrammeSelection({focus:handle,edge:null,grade:continuityGrade()==='far'?'mid':continuityGrade()}),
+        onGroup:({group})=>setProgrammeSelection({focus:group?.continuation?.focus_handle || group?.boundary_member || null,edge:null,grade:group?.continuation?.grade || 'near'}),
+        onEdge:({edgeId})=>setProgrammeSelection({edge:edgeId}),
+        onGrade:({grade})=>setProgrammeSelection({grade}),
+        onBack:()=>history.back(),
+        onDescend:({reference})=>{if(reference)location.assign(reference);},
+      });
+      return wrap;
+    }
+
+    function renderCritical(camera){
+      if(camera.state!=='CURRENT')return empty('Priority remains UNKNOWN',camera.reason || 'No canonical ordering receipt is present. Open work is not silently ranked.');
+      return renderProgramme(camera);
+    }
+
+    function renderCustody(camera){
+      const wrap=document.createElement('div');
+      wrap.append(text('p','quiet',camera.reason || 'Canonical binding generations and effective lease authority agree with this model coordinate.'));
+      for(const seat of camera.logical_seats || [])wrap.append(fact('logical seat label',seat));
+      const exact=camera.state==='CURRENT';
+      wrap.append(fact('bindings',exact?(camera.bindings || []).length:'UNKNOWN'),fact('leases',exact?(camera.leases || []).length:'UNKNOWN'));
+      if(camera.binding_generation)wrap.append(fact('sensorium generation',camera.binding_generation));
+      if(camera.effective_authority_handle)wrap.append(fact('effective authority',camera.effective_authority_handle));
+      return wrap;
+    }
+
+    function renderEvidence(camera){
+      const row=camera.selected_object; if(!row)return empty('No exact object selected','Choose a programme object; fuzzy and absent handles refuse.');
+      const wrap=document.createElement('div'); wrap.append(text('h3','evidence-title',row.label));
+      wrap.append(fact('node',row.node_handle),fact('state',`${row.state} · ${row.publication_state}`),fact('candidate',`${row.candidate.status || '—'} · ${row.candidate.relation_to_head || '—'}`),fact('verdict',row.verdict ? `${row.verdict.decision} · ${row.verdict.evidence_status}` : 'not present'));
+      const edges=text('div','edge-list','');
+      for(const edge of (payload.edges || []).filter((item)=>item.source_handle===row.node_handle)){
+        const button=text('button','edge-door',`${edge.role} · ${short(edge.target_reference,10)}`); button.type='button'; button.dataset.edge=edge.edge_id;
+        button.setAttribute('aria-pressed',String(store.field('edge')===edge.edge_id)); button.title=`${edge.kind}: ${edge.target_reference}`;
+        button.addEventListener('click',()=>store.set({lens:'evidence-descent',edge:edge.edge_id})); edges.append(button);
+      }
+      wrap.append(edges);
+      if(row.reconstruct){ const door=text('button','edge-door','copy reconstruction entry'); door.type='button'; door.addEventListener('click',async()=>{try{await navigator.clipboard.writeText(row.reconstruct);door.textContent='copied';}catch{door.textContent='copy refused';}}); edges.append(door); }
+      return wrap;
+    }
+
+    function continuityLoom(camera){ return camera.loom || camera.continuity_loom || camera; }
+
+    function continuityOptions(camera){
+      const shown=payload?.shown_state || {};
+      const loom=continuityLoom(camera);
+      const grade=['far','mid','near','audit'].includes(shown.representation_grade)?shown.representation_grade:continuityGrade();
+      const exposition=/^E[0-7]$/.test(shown.exposition || '')?shown.exposition:expositionValue();
+      return {
+        focusHandle:shown.focus_handle || store.field('focus'),
+        selectedEdgeId:shown.selected_edge_id || store.field('edge'),
+        grade,
+        expositionGrade:Number(exposition.slice(1)),
+        onObject:({handle})=>setContinuitySelection({focus:handle,grade:grade==='far'?'mid':grade,exposition:null}),
+        onGroup:({group})=>{const continuation=group?.continuation || {};setContinuitySelection({focus:continuation.focus_handle || null,edge:null,grade:continuation.grade || 'near',exposition:null});},
+        onEdge:({edgeId})=>setContinuitySelection({edge:edgeId}),
+        onGrade:({grade:next})=>{const selected=(loom.edges || []).find((item)=>item.edge_id===store.field('edge'));setContinuitySelection({grade:next,edge:selected?.kind==='cut-edge'?null:store.field('edge')});},
+        onExposition:({grade:next})=>setContinuitySelection({exposition:`E${next}`}),
+        onDescend:({reference})=>{if(reference)location.assign(reference);},
+        onBack:()=>history.back(),
+      };
+    }
+
+    function renderContinuity(camera){
+      const wrap=text('div','continuity-shell','');
+      wrap.append(text('p','continuity-intro',camera.reason || 'Follow the exact author turn through delivery, reconstruction, acknowledgement, reply and current authority.'));
+      const loom=continuityLoom(camera);
+      if(loom.schema_version!=='laplace.aisthesis-continuity-loom/1'){
+        wrap.append(empty('Continuity bridge is severed','No causal field is drawn without the pure conversation and authority projection.'));
+      }else{
+        continuityHost=text('div','','');
+        wrap.append(continuityHost);
+        continuityView=renderContinuityLoom(continuityHost,loom,continuityOptions(camera));
+      }
+      const door=text('a','continuity-return','Descend into the canonical conversation →');
+      door.href=camera.projection_boundary || loom.projection_boundary || '/front/serve';
+      wrap.append(door);
+      return wrap;
+    }
+
+    function renderResidual(camera){
+      const wrap=text('div','residual-list',''); for(const item of camera.classes || []){
+        const row=text('div','residual-row',''); const detail=item.class==='UNRESOLVED' ? `${(item.items||[]).length} named crutches; every one carries an owner and strict retirement predicate.` : (item.continuation || item.proof_boundary || item.state || 'conserved');
+        row.append(text('strong','',item.class),text('p','',detail)); wrap.append(row);
+      } return wrap;
+    }
+
+    function renderSelf(camera){
+      const wrap=document.createElement('div'); wrap.append(text('p','quiet','This lens is subordinate evidence. It cannot accept itself or publish.'));
+      wrap.append(fact('state',camera.state),fact('model',camera.model_handle),fact('source contract',camera.source_contract),fact('self acceptance',camera.self_acceptance_available));
+      for(const item of camera.owned_crutches || []){ const row=text('div','crutch',''); row.append(text('code','',item.crutch_id),text('p','',`${item.owner} · retire when: ${item.retirement_trigger?.predicate || 'exact predicate absent'}`)); wrap.append(row); }
+      return wrap;
+    }
+
+    function renderCamera(data){
+      const id=lens(); const camera=data.active_camera || {}; setTabs(id); byId('camera-state').textContent=camera.state || data.status;
+      const content=byId('camera-content'); content.replaceChildren();
+      if(continuityView){continuityView.destroy();continuityView=null;continuityHost=null;}
+      if(weaveView){weaveView.destroy();weaveView=null;weaveHost=null;}
+      const renderer={programme:renderProgramme,'critical-path':renderCritical,'live-custody':renderCustody,'evidence-descent':renderEvidence,continuity:renderContinuity,'residual-crutch':renderResidual,'lens-self':renderSelf}[id];
+      content.append(renderer(camera));
+    }
+
+    function renderGrounds(data){
+      const shown=data.shown_state || {}; byId('shown-handle').textContent=shown.shown_handle || '—'; byId('shown-handle').title=shown.shown_handle || '';
+      byId('model-handle').textContent=data.model_handle || '—'; byId('model-handle').title=data.model_handle || '';
+      byId('coordinate').textContent=`${shown.observed_cursor ?? '—'} · ${short(shown.git_head,12)}`;
+      byId('set-digests').textContent=`${short(shown.visible_set_digest,10)} · ${short(shown.omitted_set_digest,10)}`;
+      byId('acknowledgement').textContent=shown.acknowledgement?.state || 'NOT-IN-THIS-SLICE';
+      byId('residual-ground').textContent=`${data.residual?.classes?.length ?? 0} explicit classes · zero is never implied`;
+      const active=lens(); const loom=active==='continuity'?continuityLoom(data.active_camera || {}):null; const weave=active==='programme'?(data.active_camera?.weave || data.causal_atlas_weave):null;
+      const focus=activeObject(data); const loomFocus=(loom?.objects || []).find((item)=>item.object_handle===shown.focus_handle);
+      const weaveFocus=(weave?.objects || []).find((item)=>item.object_handle===shown.focus_handle);
+      byId('cause-source').textContent=active==='continuity'?'conversation + authority':active==='programme'?'programme + continuity + authority + residuals':short(shown.source_handle,12);
+      byId('cause-focus').textContent=active==='continuity'?(loomFocus?.label || 'whole continuity'):active==='programme'?(weaveFocus?.label || 'whole causal field'):focus?short(focus.node_handle,12):'none';
+      const loomEdge=(loom?.edges || []).find((item)=>item.edge_id===shown.selected_edge_id);
+      const weaveEdge=(weave?.edges || []).find((item)=>item.edge_id===shown.selected_edge_id);
+      byId('cause-edge').textContent=active==='continuity'?(loomEdge?.label || loomEdge?.relation || 'none selected'):active==='programme'?(weaveEdge?.relation || 'none selected'):data.selected_edge?`${data.selected_edge.role} · ${short(data.selected_edge.edge_id,8)}`:'none selected';
+      byId('cause-state').textContent=data.active_camera?.state || data.status;
+      root.dataset.lens=active; root.dataset.audit=String(!['continuity','programme'].includes(active) || shown.representation_grade==='audit');
+      document.querySelector('.grounds').hidden=['continuity','programme'].includes(active);
+    }
+
+    function render(data){
+      payload=data; renderQuestions(data.questions); renderCamera(data); renderGrounds(data);
+      const state=data.shown_state?.freshness?.state || data.status; setFreshness(state,`${state} · cursor ${data.shown_state?.observed_cursor ?? '—'}`);
+      root.dataset.ready='true';
+    }
+
+    function requestCoordinate(){ return `${location.search}\n${viewportGrade()}`; }
+
+    async function load(){
+      if(loading){loadQueued=true;return;}
+      loading=true; loadQueued=false;
+      const coordinate=requestCoordinate();
+      root.dataset.ready='false'; setFreshness('DERIVING','deriving exact coordinate');
+      try{
+        const active=lens();
+        const graphical=['continuity','programme'].includes(active);
+        const data=await store.fetchJSON('/front/development',{params:{format:'json',lens:active,focus:graphical?store.field('focus'):store.field('node'),edge:store.field('edge'),grade:graphical?continuityGrade():null,exposition:active==='continuity'?expositionValue():null,viewport:viewportGrade()}});
+        if(loadQueued || requestCoordinate()!==coordinate)return;
+        render(data);
+      }catch(error){
+        if(loadQueued || requestCoordinate()!==coordinate)return;
+        root.dataset.ready='true'; setFreshness('REFUSED','REFUSED · projection unavailable'); byId('stale-reason').textContent=`The canonical projection refused: ${error}`;
+      }finally{
+        const retry=loadQueued || requestCoordinate()!==coordinate;
+        loading=false; loadQueued=false;
+        if(retry)load();
+      }
+    }
+
+    async function checkCurrentness(){
+      if(!payload?.shown_state)return; const shown=payload.shown_state;
+      try{
+        const face=await store.fetchJSON('/front/development',{inject:[],params:{format:'currentness',cursor:shown.observed_cursor,head_event_id:shown.head_event_id,head_record_digest:shown.head_record_digest,source_handle:shown.source_handle,git_head:shown.git_head,shown_handle:shown.shown_handle,model_handle:shown.model_handle,lens:shown.lens_id,focus:shown.focus_handle,edge:shown.selected_edge_id,visible_handles:JSON.stringify(shown.ordered_visible_handles || []),visible_set_digest:shown.visible_set_digest,omitted_set_digest:shown.omitted_set_digest,grade:shown.representation_grade,exposition:shown.exposition,viewport:shown.viewport,layout_receipt_handle:shown.layout_receipt_handle,audit_subject:shown.selected_audit_subject,binding_generation:shown.authority?.binding_generation,effective_authority_handle:shown.authority?.effective_authority_handle}});
+        if(face.state!=='CURRENT'){
+          setFreshness(face.state,`${face.state} · last trusted cursor ${shown.observed_cursor ?? '—'}`);
+          const moved=Object.keys(face.moved || {}); byId('stale-reason').textContent=moved.length?`The canonical ${moved.join(', ')} moved. This remains last-trusted evidence; rederive before relying on it.`:(face.reason || 'Currentness refused.');
+        }else{
+          setFreshness('CURRENT',`CURRENT · cursor ${shown.observed_cursor ?? '—'}`);
+        }
+      }catch(error){setFreshness('REFUSED','REFUSED · currentness unavailable');byId('stale-reason').textContent=`Currentness could not be checked: ${error}`;}
+    }
+
+    function invalidate(state,reason){
+      setFreshness(state,`${state} · rederive required`);
+      byId('stale-reason').textContent=reason;
+    }
+
+    for(const tab of document.querySelectorAll('.lens-tab')){
+      tab.addEventListener('click',()=>{const id=tab.dataset.lens;const graphical=['continuity','programme'].includes(id);const destinationEdges=id==='continuity'?(payload?.cameras?.continuity?.edges || []):id==='programme'?(payload?.cameras?.programme?.weave?.edges || []):(payload?.edges || []);const edge=destinationEdges.some((item)=>item.edge_id===store.field('edge'))?store.field('edge'):null;store.set({lens:id,focus:graphical?store.field('focus'):null,edge,grade:graphical?continuityGrade():null,exposition:id==='continuity'?expositionValue():null});});
+      tab.addEventListener('keydown',(event)=>{if(!['ArrowLeft','ArrowRight','Home','End'].includes(event.key))return;event.preventDefault();const here=LENSES.findIndex(([id])=>id===tab.dataset.lens);const next=event.key==='Home'?0:event.key==='End'?LENSES.length-1:(here+(event.key==='ArrowRight'?1:-1)+LENSES.length)%LENSES.length;document.querySelector(`[data-lens="${LENSES[next][0]}"]`).focus();});
+    }
+    store.subscribe(()=>load()); byId('rederive').addEventListener('click',load); window.addEventListener('development:check-currentness',checkCurrentness);
+    let resizeTimer; addEventListener('resize',()=>{clearTimeout(resizeTimer);resizeTimer=setTimeout(load,120)});
+    try{
+      const stream=new EventSource('/front/stream?sources=atlas');
+      stream.addEventListener('atlas:changed',()=>{invalidate('UNKNOWN','Atlas changed. The shown field is last-trusted until exact currentness is rederived.');checkCurrentness();});
+      stream.addEventListener('atlas:unavailable',()=>invalidate('REFUSED','Atlas became unavailable. No prior CURRENT state remains green.'));
+      stream.addEventListener('skipped',()=>invalidate('UNKNOWN','The stream skipped an event range. Exact rederivation is required before relying on this field.'));
+      stream.addEventListener('rolled',()=>{invalidate('UNKNOWN','The stream rolled or reconnected across a possible gap. Exact rederivation is required.');checkCurrentness();});
+      stream.addEventListener('error',()=>invalidate('UNKNOWN','The currentness stream errored or reconnected. Exact rederivation is required.'));
+    }catch(_error){ invalidate('REFUSED','The currentness stream could not be established. Exact rederivation is required.'); }
+    load();
+  </script>
+</body>
+</html>

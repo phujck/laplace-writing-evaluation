@@ -1,0 +1,41 @@
+% Reconciled hierarchy manuscript candidate.
+% Source basis and incorporation custody are recorded separately in this project.
+% Original ANF sections and Phases variants remain preserved, not required reading.
+\documentclass[aps,prx,reprint,superscriptaddress,floatfix]{revtex4-2}
+\usepackage{amsmath,amssymb,mathtools,bm,graphicx,booktabs,array,microtype}
+\usepackage[colorlinks=true,linkcolor=blue,citecolor=blue,urlcolor=blue]{hyperref}
+\newcommand{\erf}{\operatorname{erf}}
+\newcommand{\diag}{\operatorname{diag}}
+\newcommand{\ran}{\operatorname{range}}
+\newcommand{\E}{\mathbb E}
+\begin{document}
+\title{Hierarchy in sampled collective feedback}
+\author{Gerard McCaul}
+\date{\today}
+\begin{abstract}
+A collective can become better at detecting a small bias while becoming harder to control. Majority aggregation sharpens a population's mean response, but the dynamical consequence depends on where that response enters the feedback loop. We construct two sampled controllers and retain their full state. A functionally matched gradient controller has a fixed curve with transverse gain proportional to the square of the response slope. A post-observation response controller has an isolated equilibrium and a gain containing one response derivative. For the specified error-function models, the first admits a nonzero saddle cycle, whereas the second has a locally attracting symmetric cycle above its own threshold. Exact nested-majority trees then make hierarchy a calculable architectural choice. They can reduce gain at fixed size, but the admitted factorisations and finite block slopes matter. In the class of level-homogeneous odd-majority product trees, a positive lower-bound exponent prevents arbitrary-size gain suppression at fixed controller strength. A separate finite-horizon actuation problem supplies the other constraint: a terminal top displacement may be unreachable or costly, and requiring the lower levels to finish at rest can increase the minimum effort. The resulting feasible set is an intersection over specified architectures, controllers and intervention tasks, rather than a universal depth window. The derivations and retained finite examples distinguish local stability, finite transients and terminal effort without identifying any of them with a global dynamical phase.
+\end{abstract}
+\maketitle
+
+\input{sections/01_introduction}
+\input{sections/02_model}
+\input{sections/05_phases}
+\input{sections/06_hierarchy}
+\input{sections/07_window}
+\input{sections/10_conclusion}
+\appendix
+\input{sections/03_return_map}
+\input{sections/04_susceptibility}
+\input{sections/08_universality}
+\input{sections/09_discussion}
+\begin{thebibliography}{2}
+\bibitem{Simon1962236d85}
+H. A. Simon, The Architecture of Complexity,
+Proceedings of the American Philosophical Society \textbf{106}, 467--482 (1962).
+\bibitem{Perdomo2020a5b2ff}
+J. C. Perdomo, T. Zrnic, C. Mendler-D\"unner, and M. Hardt,
+Performative Prediction, in Proceedings of the 37th International Conference
+on Machine Learning, Proceedings of Machine Learning Research
+\textbf{119}, 7599--7609 (2020).
+\end{thebibliography}
+\end{document}

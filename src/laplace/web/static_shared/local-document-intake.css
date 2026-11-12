@@ -1,0 +1,6 @@
+.local-document-intake{width:min(46rem,calc(100vw - 2rem));max-height:calc(100dvh - 2rem);overflow:auto;box-sizing:border-box;padding:1.25rem}
+.local-document-intake h2{margin-top:0}.local-document-intake fieldset{min-width:0;border:1px solid var(--line,#ccc);border-radius:.4rem;padding:1rem;margin:1rem 0}
+.local-document-intake label{display:block;margin:.6rem 0}.local-document-intake input,.local-document-intake select{box-sizing:border-box;display:block;max-width:100%;margin-top:.25rem}
+.local-document-intake input[type=file]{width:100%;white-space:normal}.local-document-intake p,.local-document-intake pre{overflow-wrap:anywhere}.local-document-intake pre{white-space:pre-wrap}
+.local-document-intake .local-document-actions{display:flex;gap:.5rem;flex-wrap:wrap;margin:1rem 0}.local-document-intake progress{width:100%}
+@media(max-width:600px){.local-document-intake{padding:.85rem;width:calc(100vw - 1rem);max-height:calc(100dvh - 1rem)}.local-document-intake fieldset{padding:.65rem}.local-document-intake .local-document-actions button{min-height:2.6rem}}

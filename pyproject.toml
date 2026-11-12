@@ -1,0 +1,125 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "laplace-engine"
+version = "0.1.0"
+description = "The Laplace Engine - a cross-LLM, self-refining canon for manuscript and talk generation through local kernel commands."
+readme = "README.md"
+requires-python = ">=3.10"
+authors = [{name = "Gerard McCaul"}]
+dependencies = [
+    "pydantic>=2.0.0",
+    "PyYAML>=6.0.0",
+    "dulwich>=0.22",        # pure-Python git: versioning with no subprocess / fsmonitor deadlock
+    "filelock>=3.12",       # cross-process canon write lock (multi-agent safety)
+    "psutil>=5.9",          # server-lifecycle: reap orphaned servers, exit when the client dies
+    "jsonschema>=4.26,<5",  # Draft 2020-12 validation for declared public tool selectors
+    "numpy>=1.24.0",
+]
+
+[project.optional-dependencies]
+figures = ["matplotlib>=3.7.0", "numpy>=1.24.0"]   # for figure/numerics backing scripts
+benchmarks = ["tiktoken>=0.12,<0.13"]  # explicit shared-runtime evidence-budget tokenizer
+# FastEmbed publishes separate CPU and GPU distributions which install the same
+# `fastembed` import surface. They must not coexist. Operators therefore select
+# exactly one embedding profile; the engine fails closed when neither is present.
+embed = ["fastembed>=0.8", "numpy>=1.24.0"]
+analysis = ["scikit-learn>=1.4", "scipy>=1.11", "numpy>=1.24.0", "mpmath>=1.3"]  # numerical/scientific Writing runtime plus basis-projection checks
+research = ["matplotlib>=3.7.0", "numpy>=1.24.0", "scikit-learn>=1.4", "scipy>=1.11", "mpmath>=1.3"] # complete CPU Writing research/figure runtime
+docs = ["markdown>=3.5"]                          # markdown -> HTML for the document builds (the Story PDF, 2026-07-28); installed by the session-start hook
+# THE ONE GPU EXTRA - every device dependency of every organ, embed AND fold AND distill.
+# The fold's cupy was never declared here, which is how a machine whose GPU took the
+# production fold on 2026-08-20 woke on 2026-08-21 unable to run its own organs while
+# standup reported every declared dep present (WO-20260821-environment-persistence-failure).
+# No "harmless CPU fallback" language survives his ruling: an undialed CPU landing is
+# recorded (device_policy.py) and refused under LAPLACE_REQUIRE_GPU.
+#
+# RECONCILED TO THE MEASURED LAYOUT 2026-09-15. From 2026-08-27 this list named
+# `fastembed-gpu>=0.8` and `cupy-cuda13x[ctk]>=14`. Neither was ever installed here, so
+# scripts/runtime_gpu_proof.py died at its own name gate in 0.37s for nineteen days without
+# once reaching the device - while the device worked the whole time. Measured on this box
+# (NVIDIA RTX A2000 Laptop GPU, cuda_runtime 12090): fastembed 0.8.0 importing over
+# onnxruntime-gpu 1.29.0 gives FastEmbedBackend.gpu True at dim 384, and cupy-cuda12x 14.2.0
+# runs a real float64 GEMM matching NumPy. A declaration that forbids the only layout that
+# works is not a safeguard; it is a lie that hides the device.
+#
+# THE HAZARD THIS LIST STILL GUARDS, unchanged and real: `onnxruntime` (the CPU wheel) and
+# `onnxruntime-gpu` install the SAME import namespace, and the CPU wheel overwrites the GPU
+# wheel's shared files in place - libonnxruntime.so, onnxruntime_pybind11_state.so - leaving
+# the 229MB CUDA provider library stranded and the EP silently dead (2026-08-21, and the
+# reason tests/test_embed_gpu_provider.py exists). Plain `onnxruntime` must never appear in
+# this extra and must never be installed beside it.
+#
+# THE RESOLVER SEAM, named rather than hidden: plain `fastembed` declares `onnxruntime` as a
+# hard dependency (fastembed-gpu is the same module against onnxruntime-gpu). This box carries
+# fastembed with NO plain onnxruntime - a hand-held state no resolver reproduces. A fresh
+# `uv sync` / pip resolve of this extra WILL drag the CPU wheel in and kill the EP. Reaching
+# this layout from empty is `--no-deps` on fastembed, or `fastembed-gpu` in its place; either
+# is an operator act. Both directions are guarded by scripts/runtime_gpu_proof.py and
+# tests/test_provider_runtime_config.py, which is where the protection now lives.
+gpu = [
+    "fastembed>=0.8",
+    "onnxruntime-gpu[cuda,cudnn]>=1.29; python_version >= '3.11'",
+    "cupy-cuda12x[ctk]>=14",
+]
+review = ["pytest>=8.0,<10"]  # Portable evaluator tests; no browser automation or monorepo fixture closure.
+dev = ["pytest>=7.0.0", "pytest-xdist>=3.5", "ruff>=0.6", "playwright>=1.40"]   # playwright: the chair-walk / scroll-law page walks and the wake's holdout checks. Undeclared until 2026-08-04, which is why a fresh container scored those checks FAIL-by-absence rather than running them (PR #85 spotted it; its verdict files were superseded, this line was not).
+
+[tool.uv]
+conflicts = [
+    [
+        { extra = "embed" },
+        { extra = "gpu" },
+    ],
+]
+
+[project.scripts]
+laplace-wake = "laplace.engine.wake:main"   # the local wake command; see laplace/engine/wake.py
+laplace-review = "laplace.desktop.offline_launcher:main"   # the standalone offline launch (no Claude present; see laplace/desktop/offline_launcher.py)
+laplace-writing = "laplace.desktop.writing_app:main"       # standalone GTK research/writing application
+laplace-writing-server = "laplace.web.writing_server:main" # foreground checkout-bound browser server
+laplace-atlas-watch = "laplace.representation.atlas_watcher:main" # cheap persistent projector; state remains in Atlas
+
+[tool.setuptools.packages.find]
+where = ["src"]
+# src/atlas is the atlas distribution's source (atlas/pyproject.toml reads ../src); this wheel ships laplace only
+include = ["laplace*"]
+
+[tool.setuptools.package-data]
+laplace = ["system/description.json", "web/*.html", "web/static_shared/**/*", "pipeline/*.json", "pipeline/packet_profiles/*.schema.json", "pipeline/canon/**/*", "pipeline/writing_organ/*.json", "engine/AUTONOMY_BACKLOG.md", "agents/*.yaml"]
+
+[tool.pytest.ini_options]
+# Both suites run in one process (the atlas seal design, §4): a subprocess shim would cost a
+# process per run and hide individual failures behind one assertion. `atlas` is NOT installed -
+# it is a sealed in-repo distribution with its own pyproject (atlas/pyproject.toml) whose source is
+# src/atlas beside src/laplace - so the one `src` tree on the path serves both packages.
+# The exception, and the reason it is not the shim this objects to: the two checks that ask what
+# importing atlas pulls in cannot read a process the laplace suite has already imported laplace
+# and fastembed into. They spawn one short interpreter each, keeping a test id and an assertion
+# per case - see `atlas/tests/conftest.py`.
+testpaths = ["tests", "atlas/tests"]
+# Keep same-basename modules distinct, independent of collection order. Existing bare
+# helper imports still need both test trees; test_blueprint helpers belong to Atlas.
+# Preload the real atlas package before importlib creates atlas.tests namespaces.
+# Use pytest's locked, numbered temporary directories outside the source checkout.
+# A forced basetemp bypasses its retention policy; repository-local scratch also
+# leaks ancestor instructions into the isolated provider-workspace tests.
+addopts = "--import-mode=importlib -p atlas"
+tmp_path_retention_count = 1
+tmp_path_retention_policy = "failed"
+pythonpath = ["src", "atlas/tests", "tests"]
+python_files = ["test_*.py"]
+markers = [
+    "unit: marks tests as unit tests",
+    "xdist_group: pins tests sharing a store to one xdist worker (rows: tests/xdist_isolation_audit.json)",
+]
+
+[tool.ruff]
+target-version = "py310"
+line-length = 100
+
+[tool.ruff.lint]
+select = ["E", "F", "W", "I", "B"]
+ignore = ["E501", "B008"]

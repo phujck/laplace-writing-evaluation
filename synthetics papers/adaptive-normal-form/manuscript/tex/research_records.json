@@ -1,0 +1,535 @@
+{
+  "history": [
+    {
+      "archived_at": 1794393625.2104394,
+      "id": "anf-reconciliation-algebra-20261111-v2",
+      "record": {
+        "id": "anf-reconciliation-algebra-20261111-v2",
+        "kind": "result",
+        "limitations": [
+          "Independent scientific review pending.",
+          "Equations reconstructed, historical scripts and outputs not rerun or overwritten.",
+          "v1 run failed because the depth-ratio assertion expected 2 rather than 4. v1 retained unchanged, v2 corrects the test oracle.",
+          "No global-attractor, empirical, transformer or thermodynamic validation."
+        ],
+        "measures": [
+          {
+            "key": "cycle_residual",
+            "label": "Full-loop symmetric-cycle residual",
+            "unit": "dimensionless"
+          },
+          {
+            "key": "depth_ratio",
+            "label": "Critical-size depth ratio in test case",
+            "unit": "dimensionless"
+          },
+          {
+            "key": "odd_verdict_variance",
+            "label": "Odd-N majority verdict variance at zero",
+            "unit": "dimensionless"
+          }
+        ],
+        "provenance": {
+          "dependencies": [
+            {
+              "bytes": 4589,
+              "path": "reconciliation/2026-11-11/algebra_checks_v2.py",
+              "sha256": "164adad18d1de0c7ca217ace23d8388c0c1b05b4d646a7ad635eac662a7f1a59",
+              "status": "PRESENT"
+            },
+            {
+              "bytes": 4297,
+              "path": "research_runs/run-da409034fde5674c.result.json",
+              "scope": "manuscript",
+              "sha256": "5204d445a256d1aee1023da0bfcf1b0e4ef1bc9c9566d5ae35e1a3a12d98bc0e",
+              "status": "PRESENT"
+            }
+          ],
+          "recorded_at": 1794393082.0554593,
+          "scope": "project",
+          "snapshot_schema": "laplace.research-dependencies/3"
+        },
+        "question": "Which gain, depth, noise and full-loop claims survive direct rederivation?",
+        "result": "research_runs/run-da409034fde5674c.result.json",
+        "result_scope": "manuscript",
+        "revision": "sha256:6bbc1dfda807daf8c81a41a66309674207469fda38903b8c0cf5d721d0f583e0",
+        "run_id": "run-da409034fde5674c",
+        "scope": "project",
+        "source": "reconciliation/2026-11-11/algebra_checks_v2.py",
+        "source_scope": "project",
+        "summary": "Author-origin finite checks confirm constant-gain and negative-exponent counterexamples, a saddle full-loop period-two orbit at N=900, missing critical-size exponent, odd/even susceptibility corrections and O(1) single-verdict noise. These are bounded checks, not independent acceptance or a universal theorem.",
+        "title": "Bounded algebra counterexamples for manuscript reconciliation"
+      },
+      "replaced_by": "sha256:a6f7098572ebab57ad9f8a221c952a9a081e10fca2fce4cf49b404c02cf39813",
+      "revision": "sha256:6bbc1dfda807daf8c81a41a66309674207469fda38903b8c0cf5d721d0f583e0"
+    }
+  ],
+  "history_dropped": 0,
+  "records": [
+    {
+      "id": "anf-reconciliation-algebra-20261111-v2",
+      "kind": "result",
+      "limitations": [
+        "Independent scientific review pending.",
+        "Equations reconstructed, historical scripts and outputs not rerun or overwritten.",
+        "v1 run failed because the depth-ratio assertion expected 2 rather than 4. v1 retained unchanged, v2 corrects the test oracle.",
+        "No global-attractor, empirical, transformer or thermodynamic validation.",
+        "Values remain in the inspected pinned raw JSON. Initial owner extraction returned null for nested measure keys, so this renewal removes those unusable declarations without changing code, output or scientific interpretation."
+      ],
+      "measures": [],
+      "provenance": {
+        "dependencies": [
+          {
+            "bytes": 4589,
+            "path": "reconciliation/2026-11-11/algebra_checks_v2.py",
+            "sha256": "164adad18d1de0c7ca217ace23d8388c0c1b05b4d646a7ad635eac662a7f1a59",
+            "status": "PRESENT"
+          },
+          {
+            "bytes": 4297,
+            "path": "research_runs/run-da409034fde5674c.result.json",
+            "scope": "manuscript",
+            "sha256": "5204d445a256d1aee1023da0bfcf1b0e4ef1bc9c9566d5ae35e1a3a12d98bc0e",
+            "status": "PRESENT"
+          }
+        ],
+        "recorded_at": 1794393625.21033,
+        "scope": "project",
+        "snapshot_schema": "laplace.research-dependencies/3"
+      },
+      "question": "Which gain, depth, noise and full-loop claims survive direct rederivation?",
+      "result": "research_runs/run-da409034fde5674c.result.json",
+      "result_scope": "manuscript",
+      "revision": "sha256:a6f7098572ebab57ad9f8a221c952a9a081e10fca2fce4cf49b404c02cf39813",
+      "run_id": "run-da409034fde5674c",
+      "scope": "project",
+      "source": "reconciliation/2026-11-11/algebra_checks_v2.py",
+      "source_scope": "project",
+      "summary": "Author-origin finite checks confirm constant-gain and negative-exponent counterexamples, a saddle full-loop period-two orbit at N=900, missing critical-size exponent, odd/even susceptibility corrections and O(1) single-verdict noise. These are bounded checks, not independent acceptance or a universal theorem.",
+      "title": "Bounded algebra counterexamples for manuscript reconciliation"
+    },
+    {
+      "data": [
+        "D1/v2/source-inputs.json"
+      ],
+      "data_scope": "project",
+      "id": "anf-d1-v2-jacobian-orbits-20261111",
+      "kind": "result",
+      "limitations": [
+        "Exactly four deterministic orbit cases. Not trajectories, population benchmarks, external-paper validation or global basins.",
+        "R functions are specified Gaussian proxies, not exact finite-binomial simulation.",
+        "Author elementary proofs and numerical consistency are separate from independent-science acceptance.",
+        "Original v1/v2 algebra history and all manuscripts/scripts/assessment artifacts preserved."
+      ],
+      "measures": [
+        {
+          "key": "anf_max_map_residual",
+          "label": "ANF maximum directed orbit residual",
+          "unit": "dimensionless"
+        },
+        {
+          "key": "ph_max_map_residual",
+          "label": "PH maximum directed orbit residual",
+          "unit": "dimensionless"
+        },
+        {
+          "key": "max_jacobian_fd_error",
+          "label": "Maximum analytic/centred-difference Jacobian error",
+          "unit": "dimensionless"
+        },
+        {
+          "key": "ph_max_local_modulus",
+          "label": "Largest PH local one-/two-step eigenvalue modulus",
+          "unit": "dimensionless"
+        }
+      ],
+      "provenance": {
+        "dependencies": [
+          {
+            "bytes": 9124,
+            "path": "D1/v2/jacobian_orbit_check.py",
+            "sha256": "afb71de47c28909c1a545a62c26f2bdd38dacf85ea3100c7e5b4609d29adbeee",
+            "status": "PRESENT"
+          },
+          {
+            "bytes": 23948,
+            "path": "research_runs/run-e46bf2a3172ea87e.result.json",
+            "scope": "manuscript",
+            "sha256": "5281094d3d9f3d8862d01fc5779200211beee81c66aee4d477be90929dcc680f",
+            "status": "PRESENT"
+          },
+          {
+            "bytes": 9870,
+            "path": "D1/v2/source-inputs.json",
+            "sha256": "3ae1cfd976172d13521121be5b1338649d117bc503a36a1dcb624ec927e39682",
+            "status": "PRESENT"
+          }
+        ],
+        "recorded_at": 1794407609.890297,
+        "scope": "project",
+        "snapshot_schema": "laplace.research-dependencies/3"
+      },
+      "question": "Do actual source-timed ANF and PH maps corroborate their distinct saddle and attracting-cycle local predictions?",
+      "result": "research_runs/run-e46bf2a3172ea87e.result.json",
+      "result_scope": "manuscript",
+      "revision": "sha256:23413fb0b8cfc9c2e087596b9baf75eef9c2329d0c1460e3bc2974e03ed55ffc",
+      "run_id": "run-e46bf2a3172ea87e",
+      "scope": "project",
+      "source": "D1/v2/jacobian_orbit_check.py",
+      "source_scope": "project",
+      "summary": "Author-run finite checks at ANF N900 and PH N/Nc=1.001,1.01,1.1. Both directed residuals, both analytic and finite-difference Jacobians and direct NumPy matrix-product eigenvalues inspected. ANF two-step multipliers 1.2451443678913934/.5809714396548122, saddle. PH tested two-step multipliers all inside unit disk. All declared local oracle checks pass. No global or independent acceptance.",
+      "title": "D1 v2 four-case Jacobian and exact-proxy orbit consistency"
+    },
+    {
+      "data": [
+        "D4a/v1/source-inputs.json"
+      ],
+      "data_scope": "project",
+      "id": "anf-d4a-v1-feasible-trees-20261111",
+      "kind": "result",
+      "limitations": [
+        "Exact rational gain comparisons concern homogeneous-by-level iid odd binary-majority product trees and local gain criteria only, not nonlinear/stochastic/global attractors.",
+        "Gaussian comparisons use floating pi and are separate named proxies, not exact small-block responses or interval certificates.",
+        "eta1/8 and1/4,nu1 and2 are illustrative dimensionless controls, not empirical controller estimates.",
+        "Conditional terminal-shift cost inequalities only. Actuator variants, persistence, full-state steering are queued D4b, not executed.",
+        "Author computation and elementary author proofs are not fresh independent-science acceptance or formal verification."
+      ],
+      "measures": [
+        {
+          "key": "architecture_count",
+          "label": "Enumerated ordered level sequences",
+          "unit": "count"
+        },
+        {
+          "key": "mismatch_count",
+          "label": "Nonempty proxy window but empty exact feasible set",
+          "unit": "count"
+        },
+        {
+          "key": "mismatch_count_after_depth_cap",
+          "label": "Such comparisons remaining after simple depth-cap test",
+          "unit": "count"
+        }
+      ],
+      "provenance": {
+        "dependencies": [
+          {
+            "bytes": 11233,
+            "path": "D4a/v1/feasible_tree_check.py",
+            "sha256": "d504ade762bc61151042c7e113a9e7721ba04ba1db6492a0e4d4489e7f1cea1a",
+            "status": "PRESENT"
+          },
+          {
+            "bytes": 446177,
+            "path": "research_runs/run-d2d4e9492ceb571c.result.json",
+            "scope": "manuscript",
+            "sha256": "2416bfdb70b2df3c4fab2e416f190c8a9fe0d1948d9508c66898ebdbad49dbc2",
+            "status": "PRESENT"
+          },
+          {
+            "bytes": 10086,
+            "path": "D4a/v1/source-inputs.json",
+            "sha256": "78e1f518d28d229e842a8352110d249df62ec0fd7307922695ce3be017b036cc",
+            "status": "PRESENT"
+          }
+        ],
+        "recorded_at": 1794409932.50024,
+        "scope": "project",
+        "snapshot_schema": "laplace.research-dependencies/3"
+      },
+      "question": "Does reciprocal-exponent gain attenuation translate into an actually admissible stable product tree under named models?",
+      "result": "research_runs/run-d2d4e9492ceb571c.result.json",
+      "result_scope": "manuscript",
+      "revision": "sha256:0d88843769877fc9218497294ededad6fb1f12dfac3f7fc481ccbb8241a1013d",
+      "run_id": "run-d2d4e9492ceb571c",
+      "scope": "project",
+      "source": "D4a/v1/feasible_tree_check.py",
+      "source_scope": "project",
+      "summary": "255 ordered-composition trees for N=3^k,k=1..8, exact Fraction block slopes and four illustrative eta/nu gain comparisons. Ten nonempty Gaussian-budget-window/empty exact-set comparisons, four still nonempty after simple product depth cap. At eta1/8,nu1 N243 exactly one stable level sequence at L5, N729 none despite Gaussian capped L6. Reciprocal controls yield16/4/2 for p=.5/1/2; strict-equality and starting-scale controls inspected. Structural algebra oracles pass, no advantage oracle imposed.",
+      "title": "D4a exact product-tree slopes and strict feasible sets"
+    },
+    {
+      "artifacts": [
+        {
+          "caption": "Includes preserved mixed-direction case, as documented in amendment.",
+          "label": "Full undecimated float64 state/e/K arrays",
+          "path": "research_runs/run-567ebd09db726432.result.full-traces.npz",
+          "scope": "manuscript"
+        },
+        {
+          "caption": "Includes preserved mixed-direction case, as documented in amendment.",
+          "label": "Fixed-rule adjacent-pair CSV samples and extrema",
+          "path": "research_runs/run-567ebd09db726432.result.plot-samples.csv",
+          "scope": "manuscript"
+        }
+      ],
+      "data": [
+        "D2/v1/protocol-source-inputs.json"
+      ],
+      "data_scope": "project",
+      "id": "anf-d2-v1-full-loop-20261111",
+      "kind": "result",
+      "limitations": [
+        "Finite deterministic float64 observations, not global asymptotic, stochastic, physical-population or formal verification.",
+        "D1 orbit/derivative checks reused, not rerun; new eigenvectors only define perturbation seeds.",
+        "Original v1 mixed-seed semantic deviation and its output preserved; v2 corrects only that one case.",
+        "Full NPZ arrays are retained/pinned. Raw JSON and complete sampled CSV actually read via app; binary NPZ not independently decoded in readback.",
+        "Fresh independent-science-d2 pending. No original figures, Source/TeX/Main or reader-plan changes."
+      ],
+      "measures": [
+        {
+          "key": "case_count",
+          "label": "Executed trajectories including retained deviations",
+          "unit": "count"
+        },
+        {
+          "key": "successful_update_count",
+          "label": "Successful finite state updates",
+          "unit": "count"
+        }
+      ],
+      "provenance": {
+        "dependencies": [
+          {
+            "bytes": 11154,
+            "path": "D2/v1/full_loop_probe.py",
+            "sha256": "9152d85a63eed6b68d07e5e82005ba19310da85d2781c805cc4265b732bde46a",
+            "status": "PRESENT"
+          },
+          {
+            "bytes": 157224,
+            "path": "research_runs/run-567ebd09db726432.result.json",
+            "scope": "manuscript",
+            "sha256": "8bbf1f3113f63bc7943172da73134a2ed61df6f9857a9a52ff4cf27caa665d6d",
+            "status": "PRESENT"
+          },
+          {
+            "bytes": 25068,
+            "path": "D2/v1/protocol-source-inputs.json",
+            "sha256": "fad267b935529433741ca167e299e4371c924c4c86a7db76489787cfdb94e1dd",
+            "status": "PRESENT"
+          },
+          {
+            "bytes": 2247198,
+            "path": "research_runs/run-567ebd09db726432.result.full-traces.npz",
+            "scope": "manuscript",
+            "sha256": "9eb7be38cbc0e435189e0284b51cd4ce0270342f70b358662184d31eb63e1ab0",
+            "status": "PRESENT"
+          },
+          {
+            "bytes": 1425779,
+            "path": "research_runs/run-567ebd09db726432.result.plot-samples.csv",
+            "scope": "manuscript",
+            "sha256": "aafe9c7783ab476d074dc9f2c82fb2bec68364507b8aa83e8dbd5fcf92ede449",
+            "status": "PRESENT"
+          }
+        ],
+        "recorded_at": 1794412987.5185766,
+        "scope": "project",
+        "snapshot_schema": "laplace.research-dependencies/3"
+      },
+      "question": "Which finite peaks, late oscillations, drift and orbit/perturbation diagnostics are supported under the declared deterministic maps?",
+      "result": "research_runs/run-567ebd09db726432.result.json",
+      "result_scope": "manuscript",
+      "revision": "sha256:96aab3bac3a44203dc905f28db23e0e5ff5c97b43a21e6086733a7dc7d76f617",
+      "run_id": "run-567ebd09db726432",
+      "scope": "project",
+      "source": "D2/v1/full_loop_probe.py",
+      "source_scope": "project",
+      "summary": "25 completed trajectories/170000 updates, no nonfinite cases.24 intended cases plus one mislabeled mixed-direction case retained: substring matching added stable AND unstable vectors in the nominal unstable seed. Do not use that case as pure-unstable evidence. N817 remains horizon-sensitive at20000, N850/N900 show finite transient-to-small-mismatch observations, PH controls approach retained D1 local cycles. Full traces and sampled CSV retained.",
+      "title": "D2 finite trajectories with retained mixed-seed protocol deviation"
+    },
+    {
+      "artifacts": [
+        {
+          "caption": "Corrected pure-unstable control only.",
+          "label": "Full undecimated float64 state/e/K arrays",
+          "path": "research_runs/run-f25940ecc0511fa3.result.full-traces.npz",
+          "scope": "manuscript"
+        },
+        {
+          "caption": "Corrected pure-unstable control only.",
+          "label": "Fixed-rule adjacent-pair CSV samples and extrema",
+          "path": "research_runs/run-f25940ecc0511fa3.result.plot-samples.csv",
+          "scope": "manuscript"
+        }
+      ],
+      "data": [
+        "D2/v2/protocol-amendment.json"
+      ],
+      "data_scope": "project",
+      "id": "anf-d2-v2-seed-correction-20261111",
+      "kind": "result",
+      "limitations": [
+        "Finite deterministic float64 observations, not global asymptotic, stochastic, physical-population or formal verification.",
+        "D1 orbit/derivative checks reused, not rerun; new eigenvectors only define perturbation seeds.",
+        "Original v1 mixed-seed semantic deviation and its output preserved; v2 corrects only that one case.",
+        "Full NPZ arrays are retained/pinned. Raw JSON and complete sampled CSV actually read via app; binary NPZ not independently decoded in readback.",
+        "Fresh independent-science-d2 pending. No original figures, Source/TeX/Main or reader-plan changes."
+      ],
+      "measures": [
+        {
+          "key": "case_count",
+          "label": "Executed trajectories including retained deviations",
+          "unit": "count"
+        },
+        {
+          "key": "successful_update_count",
+          "label": "Successful finite state updates",
+          "unit": "count"
+        }
+      ],
+      "provenance": {
+        "dependencies": [
+          {
+            "bytes": 11152,
+            "path": "D2/v2/full_loop_probe.py",
+            "sha256": "5d56b416c4e2d1de201c7f3d87961c2fb0240723e44c79193b8448449df3c1c9",
+            "status": "PRESENT"
+          },
+          {
+            "bytes": 14083,
+            "path": "research_runs/run-f25940ecc0511fa3.result.json",
+            "scope": "manuscript",
+            "sha256": "27e76ee4ac5c52d2280b3e21e0f7559f9558362910c0846608cf527ca4e4d8d0",
+            "status": "PRESENT"
+          },
+          {
+            "bytes": 21871,
+            "path": "D2/v2/protocol-amendment.json",
+            "sha256": "3b45975de07e783c7dcd4be992950b4be06602c1d13505c4a40bb5f4b084c491",
+            "status": "PRESENT"
+          },
+          {
+            "bytes": 12735,
+            "path": "research_runs/run-f25940ecc0511fa3.result.full-traces.npz",
+            "scope": "manuscript",
+            "sha256": "e19b9eee33413b393247debe14ea564a095ac705dfebdc8ef4ff58f398655928",
+            "status": "PRESENT"
+          },
+          {
+            "bytes": 63406,
+            "path": "research_runs/run-f25940ecc0511fa3.result.plot-samples.csv",
+            "scope": "manuscript",
+            "sha256": "d5d01f22f081a688ed43f3062888c14f83041c988fbda7abcfa35d96df6ff2e5",
+            "status": "PRESENT"
+          }
+        ],
+        "recorded_at": 1794412988.4689767,
+        "scope": "project",
+        "snapshot_schema": "laplace.research-dependencies/3"
+      },
+      "question": "Which finite peaks, late oscillations, drift and orbit/perturbation diagnostics are supported under the declared deterministic maps?",
+      "result": "research_runs/run-f25940ecc0511fa3.result.json",
+      "result_scope": "manuscript",
+      "revision": "sha256:c2a2de15dfb73f88f978b8f01fa593ae721dbfb27a2c78b2651399d0071a9ab0",
+      "run_id": "run-f25940ecc0511fa3",
+      "scope": "project",
+      "source": "D2/v2/full_loop_probe.py",
+      "source_scope": "project",
+      "summary": "One5000-update correction with mutually exclusive eigendirection seed. Initial state readback exactly matches stored D1 saddle +1e-7 unstable unit vector. Total D2 execution175000<=180000. Corrected control separates from saddle and ends at small mismatch; no global-basin proof.",
+      "title": "D2 corrected pure-unstable eigendirection control"
+    },
+    {
+      "artifacts": [
+        {
+          "caption": "No sampling/decimation. Blank effort for unreachable exact constraints, not zero.",
+          "label": "Complete108-task summary",
+          "path": "research_runs/run-68cbc97a85ad2f23.result.tasks.csv",
+          "scope": "manuscript"
+        }
+      ],
+      "data": [
+        "D4b/v1/protocol-source-inputs.json",
+        "D4b/v1/actuation-proof.md"
+      ],
+      "data_scope": "project",
+      "id": "anf-d4b-v1-actuation-20261111",
+      "kind": "result",
+      "limitations": [
+        "Finite author-run consistency, not independent science or proof-assistant verification.",
+        "Unreachable is retained with null constrained effort/+infinity. Unchecked pseudoinverse quadratic and least-squares controls are not feasible zero-cost solutions.",
+        "Conditional statements require the declared task, initial state, horizon, targets and positive input metric. No maintenance/global dynamical basin/physical energy/thermodynamic conclusion.",
+        "Static gain attenuation and actuation transmission are different quantities, coupling requires an additional justified model assumption.",
+        "No new evaluation/run or original R5 sweep imported/executed during resume. No Source/TeX/Main/figure render or prior reviewed evidence changes."
+      ],
+      "measures": [
+        {
+          "key": "case_count",
+          "label": "Declared completed small-matrix cases",
+          "unit": "count"
+        },
+        {
+          "key": "task_count",
+          "label": "Terminal tasks",
+          "unit": "count"
+        },
+        {
+          "key": "reachable_count",
+          "label": "Reachable tasks",
+          "unit": "count"
+        },
+        {
+          "key": "unreachable_count",
+          "label": "Expected unreachable tasks",
+          "unit": "count"
+        },
+        {
+          "key": "failed_check_count",
+          "label": "Reported consistency failures",
+          "unit": "count"
+        }
+      ],
+      "provenance": {
+        "dependencies": [
+          {
+            "bytes": 11892,
+            "path": "D4b/v1/actuation_check.py",
+            "sha256": "b08b47872e4d6627d13a646d021538570881bc63eaecc329c6eee0a6d3b2296b",
+            "status": "PRESENT"
+          },
+          {
+            "bytes": 331460,
+            "path": "research_runs/run-68cbc97a85ad2f23.result.json",
+            "scope": "manuscript",
+            "sha256": "ea77869fdf1d9a0a3289d3815328a7cc5633c9a47b4132847e871c51b958248d",
+            "status": "PRESENT"
+          },
+          {
+            "bytes": 32269,
+            "path": "D4b/v1/protocol-source-inputs.json",
+            "sha256": "94030e92d93dd8b52c9c9599673eabb5d540ed4dfca5d1f4efec5c85cd582eb6",
+            "status": "PRESENT"
+          },
+          {
+            "bytes": 12864,
+            "path": "D4b/v1/actuation-proof.md",
+            "sha256": "225d2638ac06b1ddd662b42c0ea17c68205db547720ea52f261a5dd6a3103d55",
+            "status": "PRESENT"
+          },
+          {
+            "bytes": 7332,
+            "path": "research_runs/run-68cbc97a85ad2f23.result.tasks.csv",
+            "scope": "manuscript",
+            "sha256": "d339f8e11a905640d09c3d517b73ef4ee1e00ce6ffb855b773ddf7d9578ad218",
+            "status": "PRESENT"
+          }
+        ],
+        "recorded_at": 1794421751.3467364,
+        "scope": "project",
+        "snapshot_schema": "laplace.research-dependencies/3"
+      },
+      "question": "How do persistence, horizon, terminal constraints and input metric change reachability and minimum effort?",
+      "result": "research_runs/run-68cbc97a85ad2f23.result.json",
+      "result_scope": "manuscript",
+      "revision": "sha256:aa962b5aafa7764c39bcf532c2ae6a599bdf333476d53d048878395890a07fce",
+      "run_id": "run-68cbc97a85ad2f23",
+      "scope": "project",
+      "source": "D4b/v1/actuation_check.py",
+      "source_scope": "project",
+      "summary": "Retained run only, no resume rerun.31 declared small-matrix cases/108 tasks:78 reachable,30 expected unreachable,636 reported consistency checks with zero failed checks/exceptions. Shift pure-apex full and output tasks coincide, persistence permits different costs/horizon benefit, full-state benefit need not be strict, metrics/coordinate scaling remain explicit. Exact rational author references and numerical SVD/Gramian/control simulation are in raw data.",
+      "title": "D4b finite chain reachability and weighted terminal-effort checks"
+    }
+  ],
+  "schema_version": "laplace.research-records/1"
+}

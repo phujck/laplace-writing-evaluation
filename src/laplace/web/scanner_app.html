@@ -1,0 +1,686 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>map · the eigen engine</title>
+<!-- THE ONE PALETTE (L5): hymn.css is the sole palette; it wins over the inline :root
+     below, which is a byte-identical, drift-proof fallback for when /shared/ is absent. -->
+<link rel="stylesheet" href="/shared/hymn.css">
+<script defer src="/shared/shell.js"></script><!-- the one shell; 404s harmlessly if /shared is absent -->
+<style>
+  :root{
+    /* THE ONE PALETTE (hymn.css), byte-identical so /map renders sane when /shared/ is
+       absent; hymn.css re-declares these and wins when it loads. */
+    --bg:#0a0e1a; --panel:#111827; --panel2:#18202f; --edge:#1f2734; --edge2:#2d3547;
+    --ink:#e8e6e3; --ink2:#9ca3af; --dim:#6b7280;
+    --accent:#c9a96e; --teal:#a89a7a; --warn:#b8894a; --bad:#c0392b; --ok:#8aa86a; --keystone:#7eb8da;
+    --mono:"JetBrains Mono",ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;
+    /* the brain-map's own token names, re-sourced ONTO the one palette so no private
+       colour survives and the wrong-background drift dies — /map now wears hymn's --bg. */
+    --bg0:var(--bg); --bg1:var(--panel); --muted:var(--ink2); --panel-bd:var(--edge2);
+    --author:var(--accent); --eigen:var(--keystone); --gold:var(--warn); --grow:var(--ok);
+    --font:ui-sans-serif,-apple-system,"Segoe UI",Roboto,Inter,system-ui,sans-serif;
+  }
+  *{box-sizing:border-box}
+  html,body{margin:0;height:100%;overflow:hidden;background:var(--bg0);color:var(--ink);font-family:var(--font)}
+
+  /* ---- top bar: brand + lens tabs ---------------------------------------- */
+  /* the map's own chrome + stage ride BELOW the one shell nav (shell.js is a fixed
+     strip that reserves body padding-top — but this page lays out fixed/absolute
+     against the viewport, so body padding never moves it). --hy-shell-real is the
+     shell's real height (it publishes it on load); the 0px fallback keeps /map sane
+     when /shared is absent and no shell exists. */
+  #bar{position:fixed;top:var(--hy-shell-real,0px);left:0;right:0;z-index:30;display:flex;gap:12px;align-items:center;
+       padding:11px 16px;background:linear-gradient(180deg,rgba(7,9,18,.96),rgba(7,9,18,.55) 70%,rgba(7,9,18,0))}
+  .brand{font-weight:650;letter-spacing:.2px;font-size:15px;white-space:nowrap;display:flex;align-items:center;gap:9px}
+  .brand .dot{width:9px;height:9px;border-radius:50%;background:var(--accent);box-shadow:0 0 12px var(--accent);animation:bpulse 3.4s ease-in-out infinite}
+  @keyframes bpulse{0%,100%{opacity:.55;transform:scale(.85)}50%{opacity:1;transform:scale(1.15)}}
+  .brand small{color:var(--muted);font-weight:400}
+  #tabs{display:flex;gap:4px;background:var(--panel);border:1px solid var(--panel-bd);border-radius:11px;padding:4px;backdrop-filter:blur(9px)}
+  #tabs button{border:0;background:transparent;color:var(--muted);padding:7px 14px;font-size:13px;cursor:pointer;font-family:var(--font);border-radius:8px;display:flex;align-items:center;gap:7px;transition:.15s}
+  #tabs button .ic{width:8px;height:8px;border-radius:2px;opacity:.85}
+  #tabs button.on{background:rgba(125,211,252,.16);color:var(--ink)}
+  #tabs button:hover:not(.on){color:#cdd6f5}
+  /* W1.1: the sibling-surface nav (#surfnav) is retired — the ONE shell nav
+     (shell.js) is the single roster on every surface; this page no longer carries
+     its own cross-surface link strip. */
+  #live{margin-left:auto;display:flex;align-items:center;gap:8px;font-size:12px;color:var(--muted);
+        background:var(--panel);border:1px solid var(--panel-bd);border-radius:10px;padding:7px 12px;cursor:pointer;user-select:none;backdrop-filter:blur(9px)}
+  #live .ld{width:9px;height:9px;border-radius:50%;background:#445;transition:.2s}
+  #live.on .ld{background:var(--grow);box-shadow:0 0 11px var(--grow);animation:lpulse 1.8s ease-in-out infinite}
+  @keyframes lpulse{0%,100%{opacity:.5}50%{opacity:1}}
+
+  /* ---- stage: holds overview grid OR a focused lens --------------------- */
+  #stage{position:fixed;inset:0;top:var(--hy-shell-real,0px)}
+  canvas{display:block}
+
+  #grid{position:absolute;inset:58px 14px 14px 14px;display:grid;gap:14px;
+        grid-template-columns:1fr 1fr;grid-template-rows:1fr 1fr}
+  .card{position:relative;background:var(--panel);border:1px solid var(--panel-bd);border-radius:15px;overflow:hidden;
+        cursor:pointer;backdrop-filter:blur(7px);transition:border-color .18s, transform .18s}
+  .card:hover{border-color:rgba(125,211,252,.5);transform:translateY(-2px)}
+  .card .chead{position:absolute;top:0;left:0;right:0;z-index:2;display:flex;align-items:center;gap:9px;padding:11px 14px;
+               background:linear-gradient(180deg,rgba(10,14,30,.85),rgba(10,14,30,0))}
+  .card .chead .ic{width:10px;height:10px;border-radius:3px}
+  .card .chead b{font-size:13.5px;font-weight:620}
+  .card .chead .sub{font-size:11px;color:var(--muted);margin-left:auto;font-family:var(--mono)}
+  .card .expand{position:absolute;bottom:10px;right:13px;z-index:2;font-size:11px;color:var(--muted);opacity:0;transition:.18s}
+  .card:hover .expand{opacity:.9}
+  .card canvas{position:absolute;inset:0;width:100%;height:100%}
+  .card .dom{position:absolute;inset:34px 0 0 0;z-index:1}
+
+  /* ---- the loading state: the reconstruction network is BUILT server-side on the
+     first read (the full graph rebuild is ~seconds on a cold box), so the grid must
+     SAY it is building rather than sit blank. Shown over the grid at boot; cleared on
+     the first data that lands. If the load resolves EMPTY (no self tree on this box),
+     it states the absence honestly instead of spinning forever. --------------------- */
+  #building{position:absolute;inset:58px 14px 14px 14px;z-index:5;display:flex;flex-direction:column;
+            align-items:center;justify-content:center;gap:12px;text-align:center;pointer-events:none;
+            background:radial-gradient(120% 90% at 50% 42%,rgba(13,19,38,.72),rgba(6,8,18,.72));border-radius:15px}
+  #building.hide{display:none}
+  #building .spin{width:34px;height:34px;border-radius:50%;border:2.5px solid rgba(125,211,252,.18);
+                  border-top-color:var(--accent);animation:bspin .9s linear infinite}
+  #building.absent .spin{display:none}
+  @keyframes bspin{to{transform:rotate(1turn)}}
+  #building .bmsg{font-size:13px;color:var(--ink2);max-width:360px;line-height:1.5}
+  #building .bsub{font-size:11px;color:var(--muted);font-family:var(--mono)}
+
+  /* ---- focused lens ----------------------------------------------------- */
+  #focus{position:absolute;inset:0;display:none}
+  #focus.show{display:block}
+  #focusCanvas{position:absolute;inset:0;width:100%;height:100%;cursor:grab}
+  #focusCanvas.grabbing{cursor:grabbing}
+  #focusDom{position:absolute;inset:0;z-index:5;pointer-events:none}
+  #focusDom > *{pointer-events:auto}
+
+  /* ---- shared panels ---------------------------------------------------- */
+  .panel{position:absolute;z-index:8;background:var(--panel);border:1px solid var(--panel-bd);border-radius:14px;
+         backdrop-filter:blur(11px);box-shadow:0 14px 44px rgba(0,0,0,.42)}
+  .hint{color:var(--muted);font-size:11px;line-height:1.5}
+
+  /* rings / routing fire bar */
+  #ringbar{left:50%;transform:translateX(-50%);top:70px;display:none;gap:8px;align-items:center;padding:8px 9px 8px 13px;width:min(560px,calc(100vw - 28px))}
+  #ringbar.show{display:flex}
+  #ringbar input{flex:1;background:transparent;border:0;outline:0;color:var(--ink);font-size:14px;font-family:var(--font)}
+  #ringbar input::placeholder{color:var(--muted)}
+  #ringbar button{border:0;border-radius:8px;padding:8px 15px;font-weight:600;font-size:13px;cursor:pointer;color:#04121f;background:linear-gradient(180deg,#d9b3ff,#b07cf5)}
+  #ringbar .pull{display:flex;align-items:center;gap:6px;font-size:11px;color:var(--muted)}
+  #ringbar .pull input[type=range]{width:74px}
+  #ringinfo{right:14px;top:70px;width:316px;max-height:calc(100vh - 92px);overflow:auto;padding:13px 15px;display:none}
+  #ringinfo.show{display:block}
+  #ringinfo h4{margin:0 0 4px;font-size:13px}
+  #ringinfo .sub{font-size:11px;color:var(--muted);font-family:var(--mono);margin-bottom:9px;word-break:break-word}
+  #ringinfo .res{font-size:12px;line-height:1.45;color:#cdd6f5;white-space:pre-wrap;word-break:break-word;max-height:200px;overflow:auto;
+                 background:rgba(6,10,22,.5);border:1px solid var(--panel-bd);border-radius:8px;padding:9px;font-family:var(--mono)}
+  .tagrow{display:flex;flex-wrap:wrap;gap:4px;margin-top:8px}
+  .tag{font-size:10.5px;padding:2px 7px;border-radius:20px;background:rgba(125,211,252,.12);color:var(--accent);border:1px solid rgba(125,211,252,.2)}
+  .tag.pull{background:rgba(94,230,168,.12);color:var(--grow);border-color:rgba(94,230,168,.25)}
+  .tag.neg{background:rgba(245,200,120,.1);color:var(--gold);border-color:rgba(245,200,120,.22)}
+  .tag.soul{background:rgba(245,200,120,.14);color:var(--gold);border-color:rgba(245,200,120,.3)}
+
+  /* becoming HUD */
+  #stat{left:14px;top:70px;width:268px;padding:14px 16px;display:none}
+  #stat.show{display:block}
+  #stat .big{display:flex;align-items:baseline;gap:8px}
+  #stat .big .n{font-size:34px;font-weight:700;font-variant-numeric:tabular-nums;letter-spacing:-.5px}
+  #stat .big .d{font-size:14px;font-weight:600;color:var(--grow)}
+  #stat .lbl{font-size:11px;letter-spacing:.6px;text-transform:uppercase;color:var(--muted);margin-bottom:2px}
+  #stat .row{display:flex;gap:18px;margin-top:11px}
+  #stat .row .k{font-size:11px;color:var(--muted)}
+  #stat .row .v{font-size:18px;font-weight:640;font-variant-numeric:tabular-nums}
+  #stat canvas{margin-top:12px;width:100%;height:46px;display:block}
+  #births{left:14px;bottom:14px;width:268px;max-height:40vh;overflow:auto;padding:11px 13px;display:none}
+  #births.show{display:block}
+  #births h4{margin:0 0 7px;font-size:11px;letter-spacing:.6px;text-transform:uppercase;color:var(--muted)}
+  .bcard{font-size:12px;padding:6px 8px;margin-bottom:5px;border-radius:8px;background:rgba(94,230,168,.08);border:1px solid rgba(94,230,168,.18);
+         display:flex;gap:8px;align-items:center;animation:bin .5s ease}
+  .bcard.soul{background:rgba(245,200,120,.08);border-color:rgba(245,200,120,.2)}
+  @keyframes bin{from{opacity:0;transform:translateX(-12px)}to{opacity:1;transform:none}}
+  .bcard .bg{font-family:var(--mono);font-size:10px;color:var(--muted)}
+
+  /* node inspector (structure / hierarchy) */
+  #insp{right:14px;bottom:14px;width:330px;max-height:calc(100vh - 100px);overflow:auto;padding:13px 15px;display:none}
+  #insp.show{display:block}
+  #insp .x{position:absolute;top:9px;right:12px;color:var(--muted);cursor:pointer}
+  #insp .k{font-size:10.5px;letter-spacing:.5px;text-transform:uppercase;color:var(--muted)}
+  #insp .lab{font-size:15px;font-weight:650;margin:3px 0;word-break:break-word}
+  #insp .sub{font-size:11px;color:var(--muted);font-family:var(--mono);margin-bottom:8px;word-break:break-word}
+  #insp .ess{font-size:12.5px;line-height:1.45;color:#cdd6f5}
+  #insp .sealed{color:var(--gold);font-size:12.5px}
+
+  #legend{right:14px;top:70px;padding:10px 13px;font-size:11.5px;color:var(--muted);display:none}
+  #legend.show{display:block}
+  #legend .lr{display:flex;align-items:center;gap:7px;margin:3px 0}
+  #legend .sw{width:11px;height:11px;border-radius:3px}
+
+  #toast{position:fixed;left:50%;bottom:14px;transform:translateX(-50%);z-index:40;font-size:12px;color:var(--muted);
+         background:var(--panel);border:1px solid var(--panel-bd);border-radius:20px;padding:6px 14px;backdrop-filter:blur(9px);
+         opacity:0;transition:opacity .3s;pointer-events:none;white-space:nowrap}
+  #toast.show{opacity:1}
+  ::-webkit-scrollbar{width:9px}::-webkit-scrollbar-thumb{background:rgba(125,140,200,.25);border-radius:9px}
+</style>
+</head>
+<body>
+<div id="bar">
+  <div class="brand"><span class="dot"></span>brain&nbsp;scanner <small>· the eigen engine</small></div>
+  <div id="tabs"></div>
+  <!-- W1.1: cross-surface nav removed — the ONE shell nav (shell.js) carries the
+       full roster on every surface. -->
+  <div id="live" class="on" title="watch the brain build itself — toggle live growth"><span class="ld"></span><span id="livetxt">live</span></div>
+</div>
+
+<div id="stage">
+  <div id="grid"></div>
+  <div id="building">
+    <div class="spin"></div>
+    <div class="bmsg" id="buildmsg">building the reconstruction network…</div>
+    <div class="bsub" id="buildsub">reading the graded conceptric</div>
+  </div>
+  <div id="focus">
+    <canvas id="focusCanvas"></canvas>
+    <div id="focusDom">
+      <!-- rings -->
+      <div class="panel" id="ringbar">
+        <input id="ringgoal" placeholder="fire a prompt — watch it descend the grades and the concepts return…  (Enter)" autocomplete="off" spellcheck="false">
+        <label class="pull" title="enrichment: recall ⟷ ideation">pull<input id="ringpull" type="range" min="0" max="100" value="55"></label>
+        <button id="ringfire">fire ▸</button>
+      </div>
+      <div class="panel" id="ringinfo"></div>
+      <!-- becoming -->
+      <div class="panel" id="stat"></div>
+      <div class="panel" id="births"><h4>born</h4><div id="birthlist"></div></div>
+      <!-- structure / hierarchy -->
+      <div class="panel" id="insp"><span class="x" id="inspx">✕</span><div class="k" id="ik"></div><div class="lab" id="il"></div><div class="sub" id="is"></div><div class="ess" id="ie"></div></div>
+      <div class="panel" id="legend"></div>
+    </div>
+  </div>
+</div>
+<div id="toast"></div>
+
+<script>
+"use strict";
+const $=s=>document.querySelector(s), $$=s=>[...document.querySelectorAll(s)];
+const TAU=Math.PI*2, clamp=(v,a,b)=>Math.max(a,Math.min(b,v));
+const esc=s=>(s||"").replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+let DPR=Math.max(1,window.devicePixelRatio||1);
+const STORE_HEX={canon:"#5b8cf0",self:"#e0883c",corpus:"#2ee0c2"};
+const GRADE_HEX=["#5ee6a8","#7dd3fc","#5b8cf0","#9b8cf0","#c084fc","#e07cc8","#f59e9e","#f5c878","#fff1c2"];
+const gradeColor=g=>GRADE_HEX[clamp(g|0,0,GRADE_HEX.length-1)];
+const storeColor=s=>STORE_HEX[s]||"#9fb4e0";
+// structure-lens layout constants: CELL is the repulsion grid's cell width (the seed
+// radius is derived from it, see Structure.onData), SETTLE_BUDGET_MS caps the pre-relax
+// that runs on the boot thread.
+const CELL=110, SETTLE_BUDGET_MS=700;
+function toast(m){const t=$("#toast");t.textContent=m;t.classList.add("show");clearTimeout(toast._t);toast._t=setTimeout(()=>t.classList.remove("show"),2600);}
+
+// ===== shared brain state ================================================
+const S={
+  graph:{nodes:[],edges:[],byId:new Map()},
+  grades:{nodes:[],byId:new Map(),stats:{},byGrade:new Map(),maxGrade:0},
+  pulseSig:null, history:[], births:[], lastFire:null,
+  view:"overview", live:true,
+};
+
+async function getJSON(u){const r=await fetch(u);if(!r.ok)throw new Error(r.status);return r.json();}
+
+async function loadGraph(refresh){
+  // the INITIAL read rides the server's warm cache (refresh omitted) — forcing a rebuild
+  // on every page load walled the boot behind a ~11s graph rebuild, which is what left the
+  // grid blank. Growth-triggered reloads (pollPulse) DO refresh, so a real change rebuilds.
+  const d=await getJSON("/graph?source=all"+(refresh?"&refresh=1":""));
+  const byId=new Map();
+  const nodes=(d.nodes||[]).map(n=>{const o=Object.assign({},n);byId.set(o.id,o);return o;});
+  const edges=(d.edges||[]).filter(e=>byId.has(e.src)&&byId.has(e.dst));
+  // birth diff (only after first load)
+  if(S.graph.nodes.length){
+    const old=S.graph.byId;
+    const born=nodes.filter(n=>!old.has(n.id));
+    if(born.length) registerBirths(born);
+  }
+  S.graph={nodes,edges,byId};
+  Structure.onData();
+}
+async function loadGrades(refresh){
+  const d=await getJSON("/grades"+(refresh?"?refresh=1":""));
+  const byId=new Map(), byGrade=new Map();
+  for(const n of (d.nodes||[])){byId.set(n.id,n);(byGrade.get(n.grade)||byGrade.set(n.grade,[]).get(n.grade)).push(n);}
+  S.grades={nodes:d.nodes||[],byId,stats:d.stats||{},byGrade,maxGrade:(d.stats&&d.stats.max_grade)||Math.max(0,...byGrade.keys())};
+  Hierarchy.onData(); Rings.onData(); Becoming.onData();
+}
+
+// ===== growth: poll /pulse, refetch on change, animate births ============
+function registerBirths(born){
+  const now=performance.now();
+  for(const n of born){ n._born=now; }
+  const soul=born.filter(n=>n.group==="soul"||n.kind==="soul").length;
+  S.births.unshift({t:Date.now(),n:born.length,soul,sample:born.slice(0,3).map(b=>b.label||b.id)});
+  S.births=S.births.slice(0,40);
+  Becoming.onBirths(born);
+  toast(`⊕ ${born.length} born${soul?` · ${soul} sealed`:""}`);
+}
+async function pollPulse(){
+  if(S.live){
+    try{ const p=await getJSON("/pulse"); const sig=p.files+":"+p.latest;
+      if(S.pulseSig!==null && sig!==S.pulseSig){ await loadGraph(true); await loadGrades(true); }
+      S.pulseSig=sig;
+    }catch(e){}
+  }
+  setTimeout(pollPulse, 2600);
+}
+
+// ===== focus canvas plumbing (one big canvas, the active lens draws) ======
+const fc=$("#focusCanvas"), fx=fc.getContext("2d");
+let RAF=null, activeLens=null;
+function sizeCanvas(c){DPR=Math.max(1,window.devicePixelRatio||1);const r=c.getBoundingClientRect();c.width=r.width*DPR;c.height=r.height*DPR;return r;}
+function bg(ctx,w,h){const g=ctx.createRadialGradient(w/2,h*0.42,80,w/2,h/2,Math.max(w,h)*0.8);g.addColorStop(0,"#0d1326");g.addColorStop(1,"#060812");ctx.fillStyle=g;ctx.fillRect(0,0,w,h);}
+function focusLoop(){
+  if(!activeLens){RAF=null;return;}
+  DPR=Math.max(1,window.devicePixelRatio||1);
+  const r=fc.getBoundingClientRect();
+  const bw=Math.round(r.width*DPR), bh=Math.round(r.height*DPR);   // self-correct: buffer always = CSS size × DPR
+  if(fc.width!==bw||fc.height!==bh){fc.width=bw;fc.height=bh;}
+  fx.setTransform(DPR,0,0,DPR,0,0); bg(fx,r.width,r.height);
+  try{ activeLens.draw(fx,r.width,r.height,performance.now()); }catch(e){ console.error("lens draw",e); }
+  RAF=requestAnimationFrame(focusLoop);
+}
+
+// ===== LENS: STRUCTURE (the connectome) ==================================
+const Structure={
+  id:"structure", title:"structure", sub:"the wiring", color:STORE_HEX.canon,
+  N:[], E:[], alpha:0, view:{x:0,y:0,k:1}, hover:null, pinned:null, drag:null, dragView:null, settled:false,
+  onData(){
+    const r=fc.getBoundingClientRect(); const W=r.width||innerWidth, H=r.height||innerHeight;
+    const src=S.graph.nodes;
+    // Seed radius scales with the node count. step() indexes repulsion through a fixed
+    // CELL-wide grid and reads only a node's 9 neighbouring cells, so its cost per node is
+    // the occupancy of those cells. A radius fixed at 0.42*min(W,H) packed the 14,422-node
+    // /graph?source=all tree into ~37 occupied cells, and 160 iterations took 29.2s;
+    // seeding the disc at about one node per cell takes 5.9s (both measured by replaying
+    // this step() over the served payload). fit() normalises the world scale on enter, so
+    // the wider seed is not visible. Math.max keeps small graphs at the original radius.
+    const R=Math.max(Math.min(W,H)*0.42, CELL*0.75*Math.sqrt(src.length/Math.PI));
+    const cx=W/2, cy=H/2;
+    this.N=src.map((n,i)=>{const a=i*2.399963,rr=R*Math.sqrt((i+1)/(src.length+1));
+      return {id:n.id,label:n.label||n.id,store:n.store,group:n.group,kind:n.kind,meta:n.meta,weight:n.weight||0.4,
+              sealed:(n.group==="soul"||n.kind==="soul"),x:cx+rr*Math.cos(a),y:cy+rr*Math.sin(a),vx:0,vy:0,deg:0,r:0};});
+    const idx=new Map(this.N.map(n=>[n.id,n]));
+    this.E=S.graph.edges.filter(e=>idx.has(e.src)&&idx.has(e.dst)).map(e=>({s:idx.get(e.src),t:idx.get(e.dst)}));
+    for(const e of this.E){e.s.deg++;e.t.deg++;}
+    for(const n of this.N) n.r=3.2+(n.weight)*7+Math.min(6,Math.sqrt(n.deg)*1.3);
+    this._idx=idx; this.settled=false; this.alpha=1; this.settle(160);
+  },
+  // The pre-relax runs on the boot thread, so it is capped by wall clock as well as by
+  // iteration count: whichever runs out first ends it. At the node count /graph?source=all
+  // now returns, a fixed 160 iterations ran for tens of seconds and held every pending
+  // fetch's promise behind them — /map never reached network idle and the scroll-law walk
+  // recorded it as unreachable. draw() keeps calling step() while alpha is above 0.004, so
+  // the layout still relaxes; only the part that blocks the boot is bounded.
+  settle(iter){const deadline=performance.now()+SETTLE_BUDGET_MS;
+    for(let k=0;k<iter;k++){this.step(); if(performance.now()>deadline)break;} this.settled=true;},
+  step(){
+    const N=this.N; if(!N.length)return; const REP=2600,SPR=0.02,GRAV=0.024;
+    const r=fc.getBoundingClientRect(); const cx=(r.width||innerWidth)/2, cy=(r.height||innerHeight)/2;
+    const cell=CELL, grid=new Map();
+    for(const a of N){const k=((a.x/cell)|0)+","+((a.y/cell)|0);(grid.get(k)||grid.set(k,[]).get(k)).push(a);}
+    for(const a of N){let fxx=0,fyy=0;const gx=(a.x/cell)|0,gy=(a.y/cell)|0;
+      for(let ix=gx-1;ix<=gx+1;ix++)for(let iy=gy-1;iy<=gy+1;iy++){const b=grid.get(ix+","+iy);if(!b)continue;
+        for(const o of b){if(o===a)continue;let dx=a.x-o.x,dy=a.y-o.y,d2=dx*dx+dy*dy+.01;if(d2>cell*cell*4)continue;
+          const f=(REP+(a.r+o.r)*(a.r+o.r)*0.5)/d2,d=Math.sqrt(d2);fxx+=dx/d*f;fyy+=dy/d*f;}}
+      fxx+=(cx-a.x)*GRAV;fyy+=(cy-a.y)*GRAV;a.vx=(a.vx+fxx*this.alpha)*0.86;a.vy=(a.vy+fyy*this.alpha)*0.86;}
+    for(const e of this.E){let dx=e.t.x-e.s.x,dy=e.t.y-e.s.y,d=Math.hypot(dx,dy)||1;const f=(d-58)*SPR*this.alpha;dx=dx/d*f;dy=dy/d*f;e.s.vx+=dx;e.s.vy+=dy;e.t.vx-=dx;e.t.vy-=dy;}
+    for(const a of N){if(a===this.drag)continue;a.x+=clamp(a.vx,-14,14);a.y+=clamp(a.vy,-14,14);}
+    this.alpha*=0.99;
+  },
+  fit(){const r=fc.getBoundingClientRect();let a=1e9,b=1e9,c=-1e9,d=-1e9;for(const n of this.N){a=Math.min(a,n.x);b=Math.min(b,n.y);c=Math.max(c,n.x);d=Math.max(d,n.y);}
+    const w=c-a||1,h=d-b||1,pad=90;const k=clamp(Math.min((r.width-pad*2)/w,(r.height-pad*2)/h),0.12,2);this.view={k,x:r.width/2-(a+c)/2*k,y:r.height/2-(b+d)/2*k};},
+  W2S(x,y){return [x*this.view.k+this.view.x,y*this.view.k+this.view.y];},
+  S2W(x,y){return [(x-this.view.x)/this.view.k,(y-this.view.y)/this.view.k];},
+  enter(){this.bindInput(); if(!this.view.k||this.view.k===1)this.fit(); showPanels(["legend"]); buildLegend([["canon",STORE_HEX.canon],["self",STORE_HEX.self],["corpus",STORE_HEX.corpus],["soul · sealed",STORE_HEX.self,"🔒"]]);},
+  exit(){this.unbindInput();},
+  draw(ctx,W,H){
+    if(this.alpha>0.004||this.drag)this.step();
+    for(const e of this.E){const [sx,sy]=this.W2S(e.s.x,e.s.y),[tx,ty]=this.W2S(e.t.x,e.t.y);
+      const lit=this.hover&&(e.s===this.hover||e.t===this.hover)||this.pinned&&(e.s===this.pinned||e.t===this.pinned);
+      ctx.strokeStyle=lit?"rgba(125,211,252,.5)":"rgba(130,150,200,.10)";ctx.lineWidth=lit?1.6:0.6;ctx.beginPath();ctx.moveTo(sx,sy);ctx.lineTo(tx,ty);ctx.stroke();}
+    for(const n of this.N){const [x,y]=this.W2S(n.x,n.y);if(x<-40||x>W+40||y<-40||y>H+40)continue;
+      const R=Math.max(1.6,n.r*this.view.k),isH=this.hover===n||this.pinned===n;
+      if(n.sealed){ctx.shadowColor="#f5c878";ctx.shadowBlur=isH?15:6;ctx.fillStyle="#1a1608";ctx.beginPath();ctx.arc(x,y,R,0,TAU);ctx.fill();ctx.shadowBlur=0;ctx.strokeStyle="#f5c878";ctx.lineWidth=1.3;ctx.beginPath();ctx.arc(x,y,R,0,TAU);ctx.stroke();}
+      else{const c=storeColor(n.store);ctx.shadowColor=c;ctx.shadowBlur=(isH?18:6);ctx.fillStyle=c;ctx.beginPath();ctx.arc(x,y,R,0,TAU);ctx.fill();ctx.shadowBlur=0;}
+      if(isH){ctx.lineWidth=2;ctx.strokeStyle="#eaf2ff";ctx.beginPath();ctx.arc(x,y,R+3,0,TAU);ctx.stroke();
+        ctx.fillStyle="#eaf2ff";ctx.font="12px var(--font)";ctx.fillText(n.label,x+R+6,y+4);}}
+  },
+  mini(ctx,w,h){const r=fc.getBoundingClientRect()||{width:innerWidth,height:innerHeight};
+    // map settled world coords into the mini box
+    let a=1e9,b=1e9,c=-1e9,d=-1e9;for(const n of this.N){a=Math.min(a,n.x);b=Math.min(b,n.y);c=Math.max(c,n.x);d=Math.max(d,n.y);}
+    const k=Math.min(w/((c-a)||1),h/((d-b)||1))*0.86,ox=w/2-(a+c)/2*k,oy=h/2-(b+d)/2*k;
+    ctx.strokeStyle="rgba(130,150,200,.10)";ctx.lineWidth=0.5;for(const e of this.E.slice(0,1400)){ctx.beginPath();ctx.moveTo(e.s.x*k+ox,e.s.y*k+oy);ctx.lineTo(e.t.x*k+ox,e.t.y*k+oy);ctx.stroke();}
+    for(const n of this.N){ctx.fillStyle=n.sealed?"#f5c878":storeColor(n.store);ctx.beginPath();ctx.arc(n.x*k+ox,n.y*k+oy,Math.max(.8,n.r*k*0.7),0,TAU);ctx.fill();}},
+  pick(sx,sy){const [wx,wy]=this.S2W(sx,sy);let best=null,bd=1e9;for(const n of this.N){const d=Math.hypot(n.x-wx,n.y-wy);if(d<Math.max(7,n.r+5)/this.view.k&&d<bd){bd=d;best=n;}}return best;},
+  bindInput(){
+    this._wheel=e=>{e.preventDefault();const [wx,wy]=this.S2W(e.clientX,e.clientY),f=Math.exp(-e.deltaY*0.0014);this.view.k=clamp(this.view.k*f,0.06,6);this.view.x=e.clientX-wx*this.view.k;this.view.y=e.clientY-wy*this.view.k;};
+    this._down=e=>{const a=this.pick(e.clientX,e.clientY);if(a){this.drag=a;a._moved=false;this.alpha=Math.max(this.alpha,0.3);}else{this.dragView={x:e.clientX,y:e.clientY,vx:this.view.x,vy:this.view.y};fc.classList.add("grabbing");}};
+    this._move=e=>{if(this.drag){const [wx,wy]=this.S2W(e.clientX,e.clientY);this.drag.x=wx;this.drag.y=wy;this.drag.vx=this.drag.vy=0;this.drag._moved=true;}else if(this.dragView){this.view.x=this.dragView.vx+(e.clientX-this.dragView.x);this.view.y=this.dragView.vy+(e.clientY-this.dragView.y);}else this.hover=this.pick(e.clientX,e.clientY);};
+    this._up=e=>{if(this.drag){if(!this.drag._moved){this.pinned=this.drag;inspect(this.drag);}this.drag=null;}if(this.dragView){this.dragView=null;fc.classList.remove("grabbing");}};
+    fc.addEventListener("wheel",this._wheel,{passive:false});fc.addEventListener("mousedown",this._down);addEventListener("mousemove",this._move);addEventListener("mouseup",this._up);
+  },
+  unbindInput(){fc.removeEventListener("wheel",this._wheel);fc.removeEventListener("mousedown",this._down);removeEventListener("mousemove",this._move);removeEventListener("mouseup",this._up);this.drag=this.dragView=null;},
+};
+
+// ===== LENS: RINGS (fire a prompt → down the grades → enriched return) ====
+const Rings={
+  id:"rings", title:"rings", sub:"routing · the return", color:"#c084fc",
+  layout:new Map(), anim:null, hover:null,
+  onData(){},
+  ringR(g,W,H){const mg=Math.max(1,S.grades.maxGrade);const Rmax=Math.min(W,H)*0.42,Rmin=Math.min(W,H)*0.10;return Rmin+(Rmax-Rmin)*(g/mg);},
+  // build a stable angular layout for the nodes a fire touched, grouped by grade
+  buildLayout(fire,W,H){
+    const byG=new Map();
+    for(const d of fire.down){(byG.get(d.grade)||byG.set(d.grade,[]).get(d.grade)).push(d);}
+    const cx=W/2, cy=H/2, L=new Map(), ang=new Map();
+    // the real tree: parent -> gathered children (from the returns). A node's angle is the
+    // circular MEAN of its children's, so the descent fans out as a tidy radial tree (not a zigzag).
+    const kids=new Map();
+    for(const r of fire.returns){ if(r.gathered&&r.gathered.length) kids.set(r.node,r.gathered); }
+    for(const g of [...byG.keys()].sort((a,b)=>a-b)){       // grade 0 (leaves) first, so parents can average placed children
+      const arr=byG.get(g), n=arr.length;
+      arr.forEach((d,i)=>{
+        const ch=(kids.get(d.id)||[]).map(c=>ang.get(c)).filter(a=>a!=null);
+        const a=ch.length
+          ? Math.atan2(ch.reduce((s,x)=>s+Math.sin(x),0)/ch.length, ch.reduce((s,x)=>s+Math.cos(x),0)/ch.length)
+          : -Math.PI/2 + TAU*i/Math.max(1,n);
+        ang.set(d.id,a);
+        const R=this.ringR(g,W,H);
+        L.set(d.id,{id:d.id,grade:g,sealed:d.sealed,x:cx+R*Math.cos(a),y:cy+R*Math.sin(a),ang:a,R});
+      });
+    }
+    this.layout=L; this.cx=cx; this.cy=cy;
+  },
+  async fire(goal){
+    goal=(goal||"").trim(); if(!goal)return;
+    const pull=(+$("#ringpull").value||0)/100;
+    toast("firing through the ring…");
+    let r; try{ r=await getJSON(`/ring?goal=${encodeURIComponent(goal)}&pull=${pull}`); }catch(e){ toast("ring fire failed"); return; }
+    if(r.error){ toast("ring: "+r.error); return; }
+    S.lastFire=r;
+    const rect=fc.getBoundingClientRect(); this.buildLayout(r,rect.width,rect.height);
+    this.anim={start:performance.now(),dur:Math.max(2600,Math.min(7000,r.down.length*70+r.returns.length*60)),fire:r};
+    renderRingInfo(r);
+  },
+  enter(){showPanels(["ringbar","ringinfo"]); if(S.lastFire&&!this.anim){const rect=fc.getBoundingClientRect();this.buildLayout(S.lastFire,rect.width,rect.height);renderRingInfo(S.lastFire);} setTimeout(()=>$("#ringgoal")&&$("#ringgoal").focus(),60);},
+  exit(){},
+  drawShells(ctx,W,H){
+    const cx=W/2,cy=H/2,mg=Math.max(1,S.grades.maxGrade);
+    for(let g=0;g<=mg;g++){const R=this.ringR(g,W,H);
+      ctx.beginPath();ctx.arc(cx,cy,R,0,TAU);ctx.strokeStyle="rgba(130,150,200,.12)";ctx.lineWidth=1;ctx.stroke();
+      ctx.fillStyle="rgba(160,176,220,.4)";ctx.font="10px var(--mono)";ctx.fillText("g"+g,cx+R-12,cy-3);}
+    // counts per grade from the full hierarchy, faint
+    ctx.fillStyle="rgba(160,176,220,.22)";ctx.font="9px var(--mono)";
+    for(const [g,arr] of S.grades.byGrade){const R=this.ringR(g,W,H);ctx.fillText(arr.length,cx-R+4,cy-3);}
+  },
+  draw(ctx,W,H,now){
+    this.drawShells(ctx,W,H);
+    const cx=W/2,cy=H/2;
+    if(!this.anim && !S.lastFire){ ctx.fillStyle="rgba(180,194,230,.5)";ctx.font="13px var(--font)";ctx.textAlign="center";
+      ctx.fillText("fire a prompt — watch it descend the grades to the substrate, then the concepts return enriched",cx,cy);ctx.textAlign="left";return; }
+    const A=this.anim, fire=A?A.fire:S.lastFire, L=this.layout;
+    let p=1, phase="done";
+    if(A){const e=clamp((now-A.start)/A.dur,0,1);p=e; phase=e<0.5?"down":"up"; if(e>=1)this.anim=null;}
+    const downN=fire.down.length, retN=fire.returns.length;
+    const downShown = A?Math.floor(clamp(p/0.5,0,1)*downN):downN;   // DOWN: outer(apex)→inner(substrate)
+    const upShown = A?(phase==="up"?Math.floor(clamp((p-0.5)/0.5,0,1)*retN):0):retN;  // UP: inner→outer, enriched
+    const downIdx=new Map(fire.down.map((d,i)=>[d.id,i]));
+    // descent TREE edges (parent → gathered child), revealed as the descent reaches both ends
+    for(const r of fire.returns){const pn=L.get(r.node);if(!pn)continue;const pi=downIdx.get(r.node);
+      for(const c of (r.gathered||[])){const cn=L.get(c);if(!cn)continue;const ci=downIdx.get(c);
+        if(A&&(pi>=downShown||ci>=downShown))continue;
+        ctx.strokeStyle="rgba(125,211,252,.3)";ctx.lineWidth=1.2;ctx.beginPath();ctx.moveTo(pn.x,pn.y);ctx.lineTo(cn.x,cn.y);ctx.stroke();}}
+    // enrichment: coupled neighbours pulled up (green), during the return phase
+    for(let i=0;i<upShown;i++){const ret=fire.returns[i];if(!ret.enriched)continue;const node=L.get(ret.node);if(!node)continue;
+      for(const pid of (ret.pulled||[])){const pn=L.get(pid);if(!pn)continue;
+        ctx.strokeStyle="rgba(94,230,168,.5)";ctx.lineWidth=1.4;ctx.beginPath();ctx.moveTo(node.x,node.y);ctx.lineTo(pn.x,pn.y);ctx.stroke();}}
+    // nodes
+    for(const [id,n] of L){
+      const downIdx=fire.down.findIndex(d=>d.id===id);
+      const lit = downIdx>=0 && downIdx<downShown;
+      const ret = upShown? fire.returns.slice(0,upShown).find(r=>r.node===id):null;
+      const R=4+(S.grades.byId.get(id)?2:0);
+      if(!lit && !ret){continue;}
+      if(n.sealed){ctx.shadowColor="#f5c878";ctx.shadowBlur=12;ctx.fillStyle="#1a1608";ctx.beginPath();ctx.arc(n.x,n.y,R,0,TAU);ctx.fill();ctx.shadowBlur=0;ctx.strokeStyle="#f5c878";ctx.lineWidth=1.3;ctx.beginPath();ctx.arc(n.x,n.y,R,0,TAU);ctx.stroke();}
+      else{const c=ret?(ret.enriched?"#5ee6a8":"#7dd3fc"):gradeColor(n.grade);ctx.shadowColor=c;ctx.shadowBlur=ret?16:9;ctx.fillStyle=c;ctx.beginPath();ctx.arc(n.x,n.y,R+(ret?1.5:0),0,TAU);ctx.fill();ctx.shadowBlur=0;}
+    }
+    // the playhead pulse
+    if(A){const cx2=W/2,cy2=H/2;
+      if(phase==="down"){const i=clamp(downShown-1,0,downN-1),a=L.get(fire.down[i]&&fire.down[i].id);if(a){ctx.fillStyle="#7dd3fc";ctx.globalAlpha=.9;ctx.beginPath();ctx.arc(a.x,a.y,4,0,TAU);ctx.fill();ctx.globalAlpha=1;}}
+    }
+    // center label
+    ctx.textAlign="center";ctx.fillStyle="rgba(200,214,245,.85)";ctx.font="11px var(--mono)";
+    ctx.fillText(phase==="down"?"▼ descending":phase==="up"?"▲ returning enriched":"◌ "+fire.visited+"/"+fire.total+" visited",cx,cy+3);ctx.textAlign="left";
+  },
+  mini(ctx,w,h){const cx=w/2,cy=h/2,mg=Math.max(1,S.grades.maxGrade);const Rmax=Math.min(w,h)*0.42,Rmin=Math.min(w,h)*0.12;
+    for(let g=0;g<=mg;g++){const R=Rmin+(Rmax-Rmin)*(g/mg);ctx.beginPath();ctx.arc(cx,cy,R,0,TAU);ctx.strokeStyle=`rgba(${g*16+90},${150},${230},.16)`;ctx.lineWidth=1;ctx.stroke();}
+    if(S.lastFire){const f=S.lastFire;ctx.fillStyle="rgba(125,211,252,.8)";ctx.font="10px var(--mono)";ctx.textAlign="center";ctx.fillText(f.visited+"/"+f.total+" · g"+f.max_grade,cx,cy+3);ctx.textAlign="left";}
+    else{ctx.fillStyle="rgba(180,194,230,.45)";ctx.font="11px var(--font)";ctx.textAlign="center";ctx.fillText("fire to see the ring flow",cx,cy+3);ctx.textAlign="left";}},
+};
+
+// ===== LENS: BECOMING (the live build) ===================================
+const Becoming={
+  id:"becoming", title:"becoming", sub:"the live build", color:"#5ee6a8",
+  onData(){this.snapshot();},
+  snapshot(){const n=S.graph.nodes.length;const now=Date.now();
+    if(!S.history.length||S.history[S.history.length-1].n!==n){S.history.push({t:now,n});S.history=S.history.slice(-120);} this.renderStat();},
+  onBirths(born){this.snapshot();this.renderBirths();},
+  counts(){const sealed=S.graph.nodes.filter(n=>n.group==="soul"||n.kind==="soul").length;
+    return {nodes:S.graph.nodes.length,edges:S.graph.edges.length,grades:(S.grades.maxGrade||0)+1,sealed};},
+  renderStat(){const c=this.counts();const base=S.history.length?S.history[0].n:c.nodes;const d=c.nodes-base;
+    const el=$("#stat");if(!el)return;el.innerHTML=
+      `<div class="lbl">conceptric · nodes</div><div class="big"><span class="n">${c.nodes}</span>${d>0?`<span class="d">+${d}</span>`:""}</div>`
+     +`<div class="row"><div><div class="k">edges</div><div class="v">${c.edges}</div></div><div><div class="k">grades</div><div class="v">${c.grades}</div></div><div><div class="k">🔒 sealed</div><div class="v" style="color:var(--gold)">${c.sealed}</div></div></div>`
+     +`<canvas id="spark"></canvas>`;
+    this.spark();},
+  spark(){const cv=$("#spark");if(!cv)return;const r=cv.getBoundingClientRect();cv.width=r.width*DPR;cv.height=r.height*DPR;const x=cv.getContext("2d");x.setTransform(DPR,0,0,DPR,0,0);
+    const H=r.height,W=r.width,h=S.history;if(h.length<2){x.fillStyle="rgba(160,176,220,.4)";x.font="10px var(--mono)";x.fillText("watching…",4,H/2);return;}
+    const ns=h.map(p=>p.n),mn=Math.min(...ns),mx=Math.max(...ns),rng=(mx-mn)||1;
+    x.beginPath();h.forEach((p,i)=>{const px=i/(h.length-1)*W,py=H-6-((p.n-mn)/rng)*(H-12);i?x.lineTo(px,py):x.moveTo(px,py);});
+    x.strokeStyle="#5ee6a8";x.lineWidth=1.6;x.stroke();x.lineTo(W,H);x.lineTo(0,H);x.closePath();x.fillStyle="rgba(94,230,168,.10)";x.fill();},
+  renderBirths(){const el=$("#birthlist");if(!el)return;el.innerHTML=S.births.map(b=>{
+    const t=new Date(b.t).toLocaleTimeString([],{hour:"2-digit",minute:"2-digit",second:"2-digit"});
+    return `<div class="bcard${b.soul?" soul":""}"><span>⊕ <b>${b.n}</b> ${b.soul?`· 🔒${b.soul}`:""}</span><span class="bg">${esc((b.sample||[])[0]||"")} · ${t}</span></div>`;}).join("")||'<div class="hint">no growth yet — when the run writes a node, it is born here.</div>';},
+  enter(){showPanels(["stat","births"]);this.renderStat();this.renderBirths();},
+  exit(){},
+  draw(ctx,W,H,now){
+    // a calm field of the conceptric; newborns flare green and drift in
+    const nodes=S.graph.nodes; const cx=W/2,cy=H/2,R=Math.min(W,H)*0.4;
+    for(let i=0;i<nodes.length;i++){const n=nodes[i];const a=i*2.399963,rr=R*Math.sqrt((i+1)/(nodes.length+1));
+      const x=cx+rr*Math.cos(a+now*0.00002),y=cy+rr*Math.sin(a+now*0.00002);
+      let R0=1.3, c=n.group==="soul"?"#f5c878":"rgba(120,150,210,.5)";
+      if(n._born){const age=(now-n._born)/2600;if(age<1){c=n.group==="soul"?"#f5c878":"#5ee6a8";R0=1.3+(1-age)*5;ctx.shadowColor=c;ctx.shadowBlur=(1-age)*18;}}
+      ctx.fillStyle=c;ctx.beginPath();ctx.arc(x,y,R0,0,TAU);ctx.fill();ctx.shadowBlur=0;}
+    ctx.fillStyle="rgba(180,194,230,.4)";ctx.font="12px var(--font)";ctx.textAlign="center";
+    ctx.fillText(S.live?"live — watching the substrate grow":"paused (toggle live)",cx,H-22);ctx.textAlign="left";
+  },
+  mini(ctx,w,h){const c=this.counts();ctx.fillStyle="#eaf2ff";ctx.font="700 30px var(--font)";ctx.fillText(c.nodes,12,h*0.5);
+    ctx.fillStyle="var(--muted)";ctx.font="11px var(--mono)";ctx.fillStyle="rgba(160,176,220,.85)";ctx.fillText("nodes",14,h*0.5+16);
+    // sparkline
+    const hh=S.history;if(hh.length>1){const ns=hh.map(p=>p.n),mn=Math.min(...ns),mx=Math.max(...ns),rng=(mx-mn)||1;
+      ctx.beginPath();hh.forEach((p,i)=>{const px=w*0.5+i/(hh.length-1)*(w*0.45),py=h-10-((p.n-mn)/rng)*(h*0.5);i?ctx.lineTo(px,py):ctx.moveTo(px,py);});ctx.strokeStyle="#5ee6a8";ctx.lineWidth=1.6;ctx.stroke();}
+    ctx.fillStyle="rgba(245,200,120,.9)";ctx.font="11px var(--mono)";ctx.fillText("🔒 "+c.sealed+" sealed",w-92,18);},
+};
+
+// ===== LENS: HIERARCHY (the grades as shells) ============================
+const Hierarchy={
+  id:"hierarchy", title:"hierarchy", sub:"the grades", color:"#c084fc", hoverG:null,
+  onData(){},
+  enter(){showPanels(["legend"]);buildLegend([...S.grades.byGrade.keys()].sort((a,b)=>a-b).map(g=>["grade "+g+" · "+S.grades.byGrade.get(g).length,gradeColor(g)]));},
+  exit(){},
+  ringR(g,W,H){const mg=Math.max(1,S.grades.maxGrade);return Math.min(W,H)*0.10+(Math.min(W,H)*0.40)*(g/mg);},
+  draw(ctx,W,H,now){
+    const cx=W/2,cy=H/2,mg=Math.max(1,S.grades.maxGrade);
+    for(let g=0;g<=mg;g++){const R=this.ringR(g,W,H);ctx.beginPath();ctx.arc(cx,cy,R,0,TAU);ctx.strokeStyle="rgba(130,150,200,.12)";ctx.lineWidth=1;ctx.stroke();}
+    // place each node on its grade ring; size by members; soul sealed
+    for(const [g,arr] of S.grades.byGrade){const R=this.ringR(g,W,H),n=arr.length;
+      arr.forEach((nd,i)=>{const ang=-Math.PI/2+TAU*i/n + now*0.00003*(g%2?1:-1);
+        const x=cx+R*Math.cos(ang),y=cy+R*Math.sin(ang);
+        const r=clamp(1.2+Math.sqrt(nd.members||0)*0.6,1.2,7);
+        if(nd.sealed){ctx.fillStyle="#f5c878";}else{ctx.fillStyle=gradeColor(g);}
+        ctx.globalAlpha=(this.hoverG==null||this.hoverG===g)?0.92:0.16;ctx.beginPath();ctx.arc(x,y,r,0,TAU);ctx.fill();ctx.globalAlpha=1;});}
+    ctx.textAlign="center";ctx.font="10px var(--mono)";
+    for(let g=0;g<=mg;g++){const R=this.ringR(g,W,H);ctx.fillStyle="rgba(180,194,230,.55)";ctx.fillText("g"+g+" · "+(S.grades.byGrade.get(g)||[]).length,cx,cy-R-5);}   // label atop each shell — no center overlap
+    ctx.fillStyle="rgba(200,214,245,.6)";ctx.font="11px var(--mono)";ctx.fillText("the graded conceptric · "+S.grades.nodes.length+" nodes",cx,cy);ctx.textAlign="left";
+  },
+  mini(ctx,w,h){const mg=S.grades.maxGrade,bars=[...S.grades.byGrade.entries()].sort((a,b)=>a[0]-b[0]);
+    if(!bars.length){ctx.fillStyle="rgba(180,194,230,.45)";ctx.font="11px var(--font)";ctx.fillText("loading grades…",12,h/2);return;}
+    const mx=Math.max(...bars.map(b=>b[1].length)),bw=w/(mg+1);
+    bars.forEach(([g,arr])=>{const bh=(arr.length/mx)*(h-26);ctx.fillStyle=gradeColor(g);ctx.fillRect(g*bw+3,h-12-bh,bw-6,bh);
+      ctx.fillStyle="rgba(160,176,220,.7)";ctx.font="9px var(--mono)";ctx.fillText("g"+g,g*bw+5,h-3);});},
+};
+
+// ===== LENS: WORLD (a SIDE VIEW of the soul-pour corpus — nodes down the grades) =====
+const World={
+  id:"world", title:"world", sub:"the corpus · down the grades", color:"#f5c878",
+  N:[],E:[],hover:null,_W:0,_H:0,grades:[],
+  onData(){if(S.view==="world"){const r=fc.getBoundingClientRect();this.layout(r.width,r.height);}},
+  layout(W,H){
+    const src=S.graph.nodes.filter(n=>n.store==="world");
+    const byG=new Map();
+    for(const n of src){const g=n.grade||0;(byG.get(g)||byG.set(g,[]).get(g)).push(n);}
+    const grades=[...byG.keys()].sort((a,b)=>b-a);            // high grade on top, leaves at the bottom
+    const top=74,bot=H-56,rows=Math.max(1,grades.length-1),pos=new Map();
+    this.N=[];
+    grades.forEach((g,gi)=>{const arr=byG.get(g),n=arr.length,
+      y=grades.length>1?top+(bot-top)*gi/rows:(top+bot)/2;
+      arr.forEach((nd,i)=>{const x=W*(i+1)/(n+1),o=Object.assign({},nd,{x,y});pos.set(nd.id,o);this.N.push(o);});});
+    this.E=S.graph.edges.filter(e=>pos.has(e.src)&&pos.has(e.dst)).map(e=>({s:pos.get(e.src),t:pos.get(e.dst),rel:e.rel}));
+    this.grades=grades;this.gy=g=>{const gi=grades.indexOf(g);return grades.length>1?top+(bot-top)*gi/rows:(top+bot)/2;};
+    this._W=W;this._H=H;
+  },
+  enter(){showPanels(["legend"]);const r=fc.getBoundingClientRect();this.layout(r.width,r.height);
+    buildLegend([["person / circle","#f5c878","🔒"],["grade-1 slice",gradeColor(1)],["cross-world fusion",STORE_HEX.corpus]]);
+    this._mv=e=>{const r=fc.getBoundingClientRect();let b=null,bd=1e9;for(const n of this.N){const d=Math.hypot(n.x-(e.clientX-r.left),n.y-(e.clientY-r.top));if(d<15&&d<bd){bd=d;b=n;}}this.hover=b;};
+    this._cl=()=>{if(this.hover)inspect(this.hover);};
+    fc.addEventListener("mousemove",this._mv);fc.addEventListener("click",this._cl);},
+  exit(){fc.removeEventListener("mousemove",this._mv);fc.removeEventListener("click",this._cl);this.hover=null;},
+  draw(ctx,W,H){
+    if(W!==this._W||H!==this._H)this.layout(W,H);
+    if(!this.N.length){ctx.fillStyle="rgba(180,194,230,.5)";ctx.font="13px var(--font)";ctx.textAlign="center";
+      ctx.fillText("no corpus nodes yet — pour a tranche and the world appears here",W/2,H/2);ctx.textAlign="left";return;}
+    ctx.textAlign="left";ctx.font="10px var(--mono)";
+    for(const g of this.grades){const y=this.gy(g);ctx.strokeStyle="rgba(130,150,200,.10)";ctx.lineWidth=1;
+      ctx.beginPath();ctx.moveTo(22,y);ctx.lineTo(W-22,y);ctx.stroke();
+      ctx.fillStyle="rgba(160,176,220,.5)";ctx.fillText("grade "+g,24,y-8);}
+    for(const e of this.E){const lit=this.hover&&(e.s===this.hover||e.t===this.hover);
+      ctx.strokeStyle=lit?"rgba(125,211,252,.6)":"rgba(130,150,200,.16)";ctx.lineWidth=lit?1.7:0.8;
+      ctx.beginPath();ctx.moveTo(e.s.x,e.s.y);ctx.lineTo(e.t.x,e.t.y);ctx.stroke();}
+    for(const n of this.N){const isH=this.hover===n,R=Math.max(3,4.5+(n.grade||0)*1.3);
+      const c=n.kind==="slice"?gradeColor(1):n.kind==="xworld"?STORE_HEX.corpus:"#f5c878";
+      if(n.kind==="slice"){ctx.shadowColor=c;ctx.shadowBlur=isH?14:5;ctx.fillStyle=c;ctx.beginPath();ctx.arc(n.x,n.y,R,0,TAU);ctx.fill();ctx.shadowBlur=0;}
+      else{ctx.shadowColor=c;ctx.shadowBlur=isH?16:7;ctx.fillStyle="#1a1608";ctx.beginPath();ctx.arc(n.x,n.y,R,0,TAU);ctx.fill();ctx.shadowBlur=0;ctx.strokeStyle=c;ctx.lineWidth=1.5;ctx.beginPath();ctx.arc(n.x,n.y,R,0,TAU);ctx.stroke();}
+      if(n.kind!=="slice"){ctx.fillStyle=isH?"#eaf2ff":"rgba(220,228,245,.82)";ctx.font=(isH?"600 ":"")+"11px var(--font)";ctx.textAlign="center";ctx.fillText(n.label,n.x,n.y-R-5);ctx.textAlign="left";}}
+    ctx.fillStyle="rgba(200,214,245,.6)";ctx.font="11px var(--mono)";ctx.textAlign="center";
+    ctx.fillText("the world you poured · "+this.N.length+" nodes · apex → slices, fusions on top",W/2,H-16);ctx.textAlign="left";},
+  mini(ctx,w,h){const src=S.graph.nodes.filter(n=>n.store==="world");
+    ctx.fillStyle="#f5c878";ctx.font="700 28px var(--font)";ctx.fillText(src.length||0,12,h*0.55);
+    ctx.fillStyle="rgba(160,176,220,.85)";ctx.font="11px var(--mono)";ctx.fillText("corpus nodes",14,h*0.55+16);
+    const byG=new Map();for(const n of src){const g=n.grade||0;byG.set(g,(byG.get(g)||0)+1);}
+    [...byG.keys()].sort((a,b)=>b-a).forEach((g,i)=>{ctx.fillStyle=g===1?gradeColor(1):"#f5c878";ctx.fillRect(w-58,12+i*9,Math.min(44,(byG.get(g))*3),5);});},
+};
+
+const LENSES=[Structure,Rings,Becoming,Hierarchy,World];
+const byLens=Object.fromEntries(LENSES.map(l=>[l.id,l]));
+
+// ===== inspector / panels ================================================
+function showPanels(ids){for(const p of ["ringbar","ringinfo","stat","births","insp","legend"]){const el=$("#"+p);if(el)el.classList.toggle("show", ids.includes(p) && p!=="insp");}}
+function inspect(n){const m=n.meta||{};$("#ik").textContent=(n.kind||"node")+" · "+(n.store||"")+(n.group?(" / "+n.group):"");$("#il").textContent=n.label||n.id;$("#is").textContent=(m.path||m.ref||n.id);
+  $("#ie").innerHTML=n.sealed?'<span class="sealed">🔒 sealed soul fragment — refs only, never content.</span>':esc(m.essence||m.claim||m.title||"—");$("#insp").classList.add("show");}
+$("#inspx").onclick=()=>{$("#insp").classList.remove("show");Structure.pinned=null;};
+function buildLegend(rows){const el=$("#legend");el.innerHTML=rows.map(([t,c,ic])=>`<div class="lr"><span class="sw" style="background:${c}"></span>${ic?ic+" ":""}${esc(t)}</div>`).join("");el.classList.add("show");}
+
+function renderRingInfo(r){const el=$("#ringinfo");if(!el)return;const top=r.top||{};
+  const enr=r.returns.filter(x=>x.enriched).length;
+  el.innerHTML=`<h4>${esc(r.goal)}</h4><div class="sub">${r.visited}/${r.total} visited · max grade ${r.max_grade} · ${enr} enriched return(s)</div>`
+   +(top.result?`<div class="res">${esc(top.result)}</div>`:"")
+   +(top.gathered&&top.gathered.length?`<div class="tagrow">${top.gathered.slice(0,8).map(g=>`<span class="tag">${esc((g||"").split("/").pop())}</span>`).join("")}</div>`:"")
+   +(top.pulled&&top.pulled.length?`<div class="tagrow">${top.pulled.slice(0,8).map(g=>`<span class="tag pull">+${esc((g||"").split("/").pop())}</span>`).join("")}</div>`:"")
+   +`<div class="hint" style="margin-top:9px">cyan = descent · green = coupled neighbours pulled up (enrichment) · gold = sealed</div>`;
+  el.classList.add("show");}
+
+// ===== overview grid =====================================================
+function buildGrid(){const grid=$("#grid");grid.innerHTML="";
+  for(const l of LENSES){const card=document.createElement("div");card.className="card";card.dataset.lens=l.id;
+    card.innerHTML=`<div class="chead"><span class="ic" style="background:${l.color}"></span><b>${l.title}</b><span class="sub">${l.sub}</span></div><canvas></canvas><div class="expand">open ⤢</div>`;
+    card.onclick=()=>focusLens(l.id);grid.appendChild(card);}
+}
+let gridRAF=null;
+function gridLoop(){
+  if(S.view!=="overview"){gridRAF=null;return;}
+  for(const card of $$("#grid .card")){const l=byLens[card.dataset.lens],cv=card.querySelector("canvas");
+    const r=cv.getBoundingClientRect();if(!r.width){continue;}
+    if(cv.width!==r.width*DPR||cv.height!==r.height*DPR){cv.width=r.width*DPR;cv.height=r.height*DPR;}
+    const x=cv.getContext("2d");x.setTransform(DPR,0,0,DPR,0,0);bg(x,r.width,r.height);
+    try{l.mini(x,r.width,r.height);}catch(e){}}
+  gridRAF=requestAnimationFrame(gridLoop);
+}
+
+// ===== view routing ======================================================
+function setTabs(){const t=$("#tabs");t.innerHTML="";
+  const mk=(id,label,color)=>{const b=document.createElement("button");b.dataset.v=id;b.innerHTML=(color?`<span class="ic" style="background:${color}"></span>`:"")+label;b.onclick=()=>id==="overview"?showOverview():focusLens(id);return b;};
+  t.appendChild(mk("overview","▦ overview"));for(const l of LENSES)t.appendChild(mk(l.id,l.title,l.color));syncTabs();}
+function syncTabs(){for(const b of $$("#tabs button"))b.classList.toggle("on",b.dataset.v===S.view);}
+function showOverview(){
+  if(activeLens){activeLens.exit&&activeLens.exit();activeLens=null;}
+  if(RAF){cancelAnimationFrame(RAF);RAF=null;}
+  S.view="overview";$("#focus").classList.remove("show");$("#grid").style.display="grid";showPanels([]);syncTabs();
+  if(!gridRAF)gridLoop();
+}
+function focusLens(id){
+  const l=byLens[id];if(!l)return;
+  if(activeLens){activeLens.exit&&activeLens.exit();}
+  S.view=id;$("#grid").style.display="none";$("#focus").classList.add("show");syncTabs();
+  sizeCanvas(fc);activeLens=l;l.enter&&l.enter();
+  if(!RAF)focusLoop();
+}
+
+// ===== boot ==============================================================
+$("#live").onclick=()=>{S.live=!S.live;$("#live").classList.toggle("on",S.live);$("#livetxt").textContent=S.live?"live":"paused";toast(S.live?"live growth on":"growth paused");};
+$("#ringfire").onclick=()=>Rings.fire($("#ringgoal").value);
+$("#ringgoal").addEventListener("keydown",e=>{if(e.key==="Enter")Rings.fire($("#ringgoal").value);});
+addEventListener("resize",()=>{if(activeLens){sizeCanvas(fc);if(activeLens===Structure)Structure.fit();}});
+addEventListener("keydown",e=>{if(e.key==="Escape"&&S.view!=="overview")showOverview();});
+
+// the loading/absence state over the grid — one control point.
+function setBuilding(state,msg,sub){
+  const el=$("#building");if(!el)return;
+  if(state==="hide"){el.classList.add("hide");return;}
+  el.classList.remove("hide");el.classList.toggle("absent",state==="absent");
+  if(msg!=null){const m=$("#buildmsg");if(m)m.textContent=msg;}
+  if(sub!=null){const s=$("#buildsub");if(s)s.textContent=sub;}
+}
+
+async function boot(){
+  setTabs(); buildGrid();
+  // START THE GRID RENDER LOOP IMMEDIATELY — the cards paint their frames and the loading
+  // state shows WHILE the network is read, instead of a blank grid gated behind the whole
+  // data load (the boot used to await the graph before it ever drew a frame).
+  showOverview();
+  // resilient initial load (the session-start hook may open Chrome before the server is fully up)
+  let ok=false;
+  // gentle backoff: a cold self-tree build holds the graph lock ~16s, and a tight retry
+  // keeps the network so busy the page never settles idle (the scroll-law walk read that
+  // as unreachable). The loading state carries the wait; the retry can breathe.
+  for(let i=0;i<30;i++){try{await loadGraph(false);ok=true;break;}catch(e){await new Promise(r=>setTimeout(r,1800));}}
+  // clear the loading state the moment the network lands (the grid is drawable now); if the
+  // read failed or came back EMPTY (no self tree on this box) SAY so honestly instead of
+  // leaving the grid spinning on nothing. Grades load after this behind their own inline
+  // "loading grades…" note — never behind the full-grid veil.
+  if(!ok){ setBuilding("absent","the reconstruction network could not be read","the scanner is up but /graph did not answer — retry the surface"); }
+  else if(!S.graph.nodes.length){ setBuilding("absent","no reconstruction network on this box","the self tree is empty here — nothing has been grown into it yet"); }
+  else { setBuilding("hide"); }
+  try{await loadGrades(false);}catch(e){}
+  try{const p=await getJSON("/pulse");S.pulseSig=p.files+":"+p.latest;}catch(e){}
+  Becoming.snapshot();
+  pollPulse();
+}
+boot();
+</script>
+</body>
+</html>

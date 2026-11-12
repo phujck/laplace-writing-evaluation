@@ -1,0 +1,169 @@
+{
+  "schema_version": "slg.scientific-figure-protocol/1",
+  "date": "2026-11-11",
+  "work_id": "WORK-d0f4dc2e4c204b48a071fe723821b7c2",
+  "question": "How do exact action pricing and the executed partial rolling action change the promotion-price/tracking trade-off on matched synthetic streams, and how should the papers display retained register/OR constructions?",
+  "finite_budget": {
+    "streams": 12,
+    "seeds": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11
+    ],
+    "steps": 700,
+    "prices": [
+      0.001,
+      0.005,
+      0.02,
+      0.06,
+      0.12,
+      0.4
+    ],
+    "policies": 3,
+    "trajectories": 216,
+    "maximum_policy_decisions": 150984,
+    "timeout_seconds": 180,
+    "no_optimisation": true
+  },
+  "data": {
+    "generator": "Pinned original generate_regime_data",
+    "x": "N(0,1)",
+    "noise_sigma": 0.25,
+    "truth_initial": 1,
+    "shifts": [
+      [
+        140,
+        1.75
+      ],
+      [
+        310,
+        0.6
+      ],
+      [
+        470,
+        1.45
+      ],
+      [
+        600,
+        1.05
+      ]
+    ],
+    "evaluation_start": 50,
+    "paired_streams": true
+  },
+  "policies": {
+    "Legacy v0": "Exact source semantics: full rolling candidate gain minus .10 min(error²,sigma²), apply .22 towards clipped instantaneous y/x or rolling fit at small |x|.",
+    "Rolling control": "Same actual partial rolling action as v1, but legacy full-fit gain and positive proxy local-gain pricing. Separates action-target change from combined actual-action/no-update repricing.",
+    "Priced v1": "Accepted actual partial ridge rolling candidate and G0=0, scores direct common-window MSE improvement, applies chosen state. Strict >, no epsilon."
+  },
+  "accounting": {
+    "window": 28,
+    "minimum_fit_points": 8,
+    "ridge": 0.000001,
+    "partial_step": 0.22,
+    "beta": 2.5,
+    "C0": 0,
+    "C1": "predeclared price c for each promoted action",
+    "horizon": "Current observed trailing window for all candidate/realised fit accounting. Pre-action next observation risk evaluated separately.",
+    "cost_scope": "Dimensionless declared per-promoted-action price, not measured joules or complete compute/maintenance cost."
+  },
+  "diagnostics": {
+    "primary": "Mean squared one-step prediction error using theta BEFORE current observation can update it, t=50..699.",
+    "noise_oracle": "Same-sample error using hidden true slope, evaluation only.",
+    "never_update": "Fixed theta=1 common baseline.",
+    "promotion_rate": "Promotions among evaluated t=50..699.",
+    "off_transition_promotion_rate": "Promotions per evaluated time OUTSIDE every [shift,shift+65) interval. Not labelled a false-positive probability.",
+    "recovery": "For each true shift, first5 consecutive pre-action estimates within20% of jump magnitude during the following65 steps. Otherwise failure and right-censored latency65. Ground truth only in evaluation.",
+    "realised_fit": "Actual selected-state window improvement, score/candidate/actual gain mismatch maxima and sums, promotion cost sums.",
+    "aggregation": "Per-stream rows retained. Mean and across-stream SE, paired differences versus Legacy v0. No chosen optimum or statistical-significance claim."
+  },
+  "representative_traces": {
+    "seed": 0,
+    "priced_costs": [
+      0.005,
+      0.06,
+      0.4
+    ],
+    "control_cost": 0.06,
+    "legacy_cost": 0.06,
+    "plot": "True slope and priced v1 traces, no fitted 'calibrated' label."
+  },
+  "controls": {
+    "legacy_reference": "Compare manual legacy trajectory/choices against exact original AST function for seed0 at all6 prices, tolerance1e-12.",
+    "v1_reference": "Compare against accepted unmodified v1 AST for seed0 at prices .005,.06,.4, tolerance1e-12.",
+    "ledger": "Priced v1 actual candidate/gain/application mismatch <=1e-12 on all paths. Retain branch counts, no requirement that new scientific policy outperforms."
+  },
+  "register": {
+    "gamma": 1,
+    "eta": 0.8,
+    "split_cost": 0.25,
+    "theta_range": [
+      0,
+      3.141592653589793
+    ],
+    "points": 181,
+    "common_ledger": "Fixed A/4, arbitration min(A/4,eta/2), split min(arbitration,C_part), A=2(1-cos theta)(.5+gamma).",
+    "scope": "Static analytic family, no dynamic/clinical claim."
+  },
+  "or": {
+    "external_frozen_blocks": [
+      [
+        -0.4,
+        0.2,
+        0.9,
+        -0.1
+      ],
+      [
+        0.1,
+        0.1,
+        0.1,
+        0.1
+      ],
+      [
+        0.7,
+        -0.5,
+        0.7,
+        -0.5
+      ],
+      [
+        -0.2,
+        -0.2,
+        0.2,
+        0.2
+      ]
+    ],
+    "prices_start": 0.001,
+    "prices_stop": 2,
+    "points": 81,
+    "law": "Independent Bernoulli at fixed margins. Exact h=sum softplus, q=1-exp(-h), c_eff=sum margins-log(expm1 h).",
+    "fit": "Arithmetic mean c_eff minimises squared intercept/log-odds error.",
+    "panels": "Mean/max TV versus naive sum-margin and mean-intercept approximation, exact hazard control, conditional event multiplicity slope with bounds1..4.",
+    "scope": "Not adaptive path coarse-graining and not transfer of old1.78 slope."
+  },
+  "outputs": "Unique per-run directory with per-stream metrics, paired summaries, representative traces/plot table, register/OR tables and declared manifest hashes. No original writes.",
+  "visual_style": {
+    "width_inches": 7,
+    "height_inches": 3.8,
+    "font_size": 10,
+    "line_width": 1.7,
+    "grid": true,
+    "palette": [
+      "#0072B2",
+      "#E69F00",
+      "#009E73",
+      "#666666",
+      "#CC79A7"
+    ],
+    "units": "Explicit dimensionless price, radians, squared observation units, fractions and latent slope. Means labelled, individual stream data linked."
+  },
+  "acceptance": "Inspect complete supervised output/exit and all produced tables, register interpreted result and result-backed visual specs, render/inspect actual media and author captions with portable links. Independent Sol review remains required."
+}

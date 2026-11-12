@@ -1,0 +1,57 @@
+\section{An evaluator inside a larger controller}
+\label{sec:partition-covariance-reuse}
+
+The register/controller pair is already an embedded system. The register receives authority from \(\lambda\), while the evaluator receives a parent drive \(h\). Moving the model/world boundary inside a learner should therefore begin by naming these exchanges, not by attaching a subsystem index to the global equations.
+
+Let the full system state be \(Z\), let \(s=\pi_S(Z)\) be the retained local state of a subsystem \(S\), and let \(b_t\) denote its observed boundary variables. The parent state is \(p_t\). We specify a local action set \(\mathcal U_S(s_t,b_t)\), a transition
+\(s_{t+1}=T^S_u(s_t,b_t)\), and a parent signal
+\(\widehat{\Delta V}_{S\leftarrow P}(u)\).
+The last quantity is the parent's communicated estimate of the consequence of a local action over a declared horizon. It can be a value estimate or an error-derived signal, but it must be converted to the cost units used by the local selector.
+
+With reference masses \(\mu^S_u>0\), local costs \(C^S_u\), scale \(\tau_S>0\) and conversion factor \(\beta_S\), the same variational construction gives
+\begin{equation}
+ P^S_u=\frac{\mu^S_u}{Z_S}
+ \exp\!\left[
+ \frac{\beta_S\widehat{\Delta V}_{S\leftarrow P}(u)-C^S_u}
+      {\tau_S}\right].
+ \label{eq:yba-pcr-local-update-ensemble}
+\end{equation}
+Here \(Z_S\) is the finite sum of the displayed numerator. The form recurs because we have imposed the same local objective, not because every possible subsystem must possess such a selector. This conditional reuse of the construction is what we mean by \emph{partition covariance}.
+
+The boundary description must also support the intended dynamics. A conditional independence between inside and outside variables in one distribution is not, by itself, a proof that the retained local state evolves autonomously. An omitted parent variable may change the next action even when the current \(s\) is identical. In that case one can condition the local kernel on the boundary, retain additional memory, or measure an approximation defect. Section~\ref{subsec:receiving-dynamics} gives the precise receiving-map test.
+
+\subsection{Reuse as a cost comparison}
+
+Why reuse a controller motif? Suppose \(n\) subsystems require related operations. Building separate motifs has total cost \(nC_{\mathrm{build}}\) over a chosen horizon. Reusing one motif has cost
+\begin{equation}
+ C_{\mathrm{reuse}}=
+ C_{\mathrm{build}}+\sum_{s=1}^n C_{\mathrm{route},s}
+             +C_{\mathrm{interference}}+C_{\mathrm{coordination}} .
+ \label{eq:reuse-ledger}
+\end{equation}
+Reuse is preferable on this ledger when it costs less than the separated implementation at the same task quality. The terms can include latency or approximation penalties if these have been put in common units. No efficiency conclusion follows merely from observing similar equations at different scales.
+
+Sharing representations across tasks is a standard way to transfer information. Caruana's multitask construction trains several outputs through a shared hidden representation, allowing features learned for one task to assist another \cite{caruana1997multitask}. Our register isolates a different question within that setting: what should happen when the current sharing arrangement makes the demands expensive? It admits allocation and architecture as separately priced operations. The quadratic example does not model all the benefits of shared feature learning. Its purpose is to make the capacity purchase calculable.
+
+For several evaluators on one register \(Q\), a possible extension of the ledger is
+\begin{align}
+ \mathcal L_Q(Q,\boldsymbol\alpha)
+ &=\sum_s\alpha_s\mathcal L_s(Q)+C_Q
+                         +\Omega(Q,\boldsymbol\alpha),\nonumber\\
+ &\alpha_s\geq0,\qquad\sum_s\alpha_s\leq A_{\max}.
+ \label{eq:yba-pcr-shared-loss}
+\end{align}
+The choice of \(\Omega\), the budget \(A_{\max}\), and the controller of \(\boldsymbol\alpha\) are model specifications. Neither task overlap nor nonparallel gradients uniquely determines an extra scalar penalty. In the opening example they were specified explicitly, making it possible to compare a weight change with a partition change.
+
+An attention-like controller has a precise role here: it changes which evaluator can move the shared state, under an authority or routing budget. That is a mechanism within this model, not a reduction of all attention to one scalar gain. Increasing one task's authority can redistribute error without increasing capacity. A split can change which errors must compete at all. These interventions should not be treated as interchangeable explanations of improved task performance.
+
+\subsection{Finite represented self-state}
+
+The same machinery can represent its own operation if an actual self-state is available to it. Let \(r_t=\psi(s_t)\) be a finite encoded description of local state, and let \(\widehat T_\xi(r,u)\) predict a subsequent encoded state. One possible model update uses an observed discrepancy between
+\(\widehat T_\xi(r_t,u_t)\) and \(r_{t+1}\), with parameters \(\xi\) carried into the next decision. A controller that also predicts its own update can include a finite code for \(\xi\) and its update rule in \(r\).
+
+This construction makes self-modelling possible without an infinite tower of meta-models. The represented code is finite, its resolution is declared, and its prediction can be tested against the next observed state. Merely writing the model as an argument of its evaluator does not provide that implementation. Nor does the possibility of finite reentry force a learner to purchase it. Its value must repay the coding, routing and interference costs on the horizon at issue.
+
+The register illustrates two distinct failures. An authority controller can settle at a poor allocation while the partition is adequate. Alternatively, the available shared partition can remain expensive even under its best allocation. Changing weights addresses the first problem. Purchasing capacity can address the second. Translating that distinction into a biological or clinical hypothesis would require measurements of the relevant states, actions and costs. No particular syndrome is identified by the finite calculation.
+
+At this point the construction has a model, an evaluator and a possible parent. It has not yet earned a claim about predictive performance. We next examine what the retained finite tracking experiment actually shows when the scoring and execution rules are made explicit.

@@ -1,0 +1,1 @@
+"""Representation domain, Laplace side: the Atlas bridges and watchers, embedding and GPU policy, custody, and Writing's body and representation seams over core.bodies and the separate atlas package (subsystem domain.representation)."""

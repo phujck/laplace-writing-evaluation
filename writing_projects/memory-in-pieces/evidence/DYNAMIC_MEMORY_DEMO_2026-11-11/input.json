@@ -1,0 +1,347 @@
+{
+  "schema_version": "dynamic-memory.controlled-documents/1",
+  "factor_order": [
+    "A",
+    "B"
+  ],
+  "cardinalities": [
+    2,
+    2
+  ],
+  "versions": {
+    "d00-r1": {
+      "id": "d00",
+      "revision": "r1",
+      "path": "docs/d00-r1.txt",
+      "sha256": "8c6e68cec764125b1b8c39fc8da242af3db24b5a460f58808ccc5f296672e993",
+      "artifact_id": "ART-0d11873bf0a149f6a8e1ce89eaf29f34"
+    },
+    "d00-r2": {
+      "id": "d00",
+      "revision": "r2",
+      "path": "docs/d00-r2.txt",
+      "sha256": "29948f2842a41afbd3e456621210ef6961c3c494ae4cbf6623e6f1dcf4fbf9f1",
+      "artifact_id": "ART-9b7a914bb6e8475196e883f83e9a0709"
+    },
+    "d01-r1": {
+      "id": "d01",
+      "revision": "r1",
+      "path": "docs/d01-r1.txt",
+      "sha256": "3e4eb18af330445b0f82068a602fd9c9578866c2f15bd76d1541918d600aa999",
+      "artifact_id": "ART-31b696c093304c0095a546f507c65385"
+    },
+    "d10-r1": {
+      "id": "d10",
+      "revision": "r1",
+      "path": "docs/d10-r1.txt",
+      "sha256": "6a930cbadb5788b2cba6bee921372f593a84a2c3582a3d34a3f4df1d76517058",
+      "artifact_id": "ART-f3719b9044fc4d0d819de56ed5306bf7"
+    },
+    "d10-r2": {
+      "id": "d10",
+      "revision": "r2",
+      "path": "docs/d10-r2.txt",
+      "sha256": "3c24c5ed464ef40d5219d43b04668e05d39c8bd5ad33bb4fb3011c9008b7b805",
+      "artifact_id": "ART-5405be893b014bf8a9639c22061e4fbd"
+    },
+    "d10-r3": {
+      "id": "d10",
+      "revision": "r3",
+      "path": "docs/d10-r3.txt",
+      "sha256": "03d0c032fac627d2bbfd01def65789aa63dc52685ba547575d30fcc65e91e487",
+      "artifact_id": "ART-f22c13e9b7464ab6aa862adce38a4fe1"
+    },
+    "d11-r1": {
+      "id": "d11",
+      "revision": "r1",
+      "path": "docs/d11-r1.txt",
+      "sha256": "96bcadcf4cbf07212ba4663f56c6ae2f0ff7a2c360ef5f4ffcda5639af04a3e5",
+      "artifact_id": "ART-12084aafd27a4823aff45272895539dd"
+    },
+    "d02-r1": {
+      "id": "d02",
+      "revision": "r1",
+      "path": "docs/d02-r1.txt",
+      "sha256": "803cf93ca3e1124b27d06cbc03b84c619248e1cba454519f377ed0cd3a532420",
+      "artifact_id": "ART-e8a95c0601f04c0ebe6300c000351c82"
+    }
+  },
+  "initial": [
+    "d00-r1",
+    "d01-r1",
+    "d10-r1",
+    "d11-r1"
+  ],
+  "queries": [
+    {
+      "id": "A-any__B-any",
+      "factors": [
+        [
+          1,
+          1
+        ],
+        [
+          1,
+          1
+        ]
+      ]
+    },
+    {
+      "id": "A-any__B-zero",
+      "factors": [
+        [
+          1,
+          1
+        ],
+        [
+          1,
+          0
+        ]
+      ]
+    },
+    {
+      "id": "A-any__B-one",
+      "factors": [
+        [
+          1,
+          1
+        ],
+        [
+          0,
+          1
+        ]
+      ]
+    },
+    {
+      "id": "A-any__B-empty",
+      "factors": [
+        [
+          1,
+          1
+        ],
+        [
+          0,
+          0
+        ]
+      ]
+    },
+    {
+      "id": "A-zero__B-any",
+      "factors": [
+        [
+          1,
+          0
+        ],
+        [
+          1,
+          1
+        ]
+      ]
+    },
+    {
+      "id": "A-zero__B-zero",
+      "factors": [
+        [
+          1,
+          0
+        ],
+        [
+          1,
+          0
+        ]
+      ]
+    },
+    {
+      "id": "A-zero__B-one",
+      "factors": [
+        [
+          1,
+          0
+        ],
+        [
+          0,
+          1
+        ]
+      ]
+    },
+    {
+      "id": "A-zero__B-empty",
+      "factors": [
+        [
+          1,
+          0
+        ],
+        [
+          0,
+          0
+        ]
+      ]
+    },
+    {
+      "id": "A-one__B-any",
+      "factors": [
+        [
+          0,
+          1
+        ],
+        [
+          1,
+          1
+        ]
+      ]
+    },
+    {
+      "id": "A-one__B-zero",
+      "factors": [
+        [
+          0,
+          1
+        ],
+        [
+          1,
+          0
+        ]
+      ]
+    },
+    {
+      "id": "A-one__B-one",
+      "factors": [
+        [
+          0,
+          1
+        ],
+        [
+          0,
+          1
+        ]
+      ]
+    },
+    {
+      "id": "A-one__B-empty",
+      "factors": [
+        [
+          0,
+          1
+        ],
+        [
+          0,
+          0
+        ]
+      ]
+    },
+    {
+      "id": "A-empty__B-any",
+      "factors": [
+        [
+          0,
+          0
+        ],
+        [
+          1,
+          1
+        ]
+      ]
+    },
+    {
+      "id": "A-empty__B-zero",
+      "factors": [
+        [
+          0,
+          0
+        ],
+        [
+          1,
+          0
+        ]
+      ]
+    },
+    {
+      "id": "A-empty__B-one",
+      "factors": [
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          1
+        ]
+      ]
+    },
+    {
+      "id": "A-empty__B-empty",
+      "factors": [
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ]
+      ]
+    }
+  ],
+  "events": [
+    {
+      "label": "change",
+      "op": "set",
+      "version": "d00-r2",
+      "expected_conditional": "3/4"
+    },
+    {
+      "label": "add",
+      "op": "set",
+      "version": "d02-r1",
+      "expected_conditional": "3/5"
+    },
+    {
+      "label": "remove",
+      "op": "remove",
+      "id": "d01",
+      "expected_conditional": "3/4"
+    },
+    {
+      "label": "idempotent-replay",
+      "op": "set",
+      "version": "d00-r2",
+      "expected_conditional": "3/4"
+    },
+    {
+      "label": "merge-continuations",
+      "op": "set",
+      "version": "d10-r2",
+      "expected_conditional": "3/4"
+    },
+    {
+      "label": "split-continuations",
+      "op": "set",
+      "version": "d10-r3",
+      "expected_conditional": "3/4"
+    },
+    {
+      "label": "remove-witness-00",
+      "op": "remove",
+      "id": "d00",
+      "expected_conditional": "0"
+    },
+    {
+      "label": "zero-conditioning-support",
+      "op": "remove",
+      "id": "d02",
+      "expected_conditional": "UNDEFINED"
+    }
+  ],
+  "initial_expected_conditional": "4/5",
+  "source_policy": "Each logical document/group ID denotes a distinct weighted record batch. Multiple sources claiming same group cannot multiply its count: group ID must match unique document ID; mismatch rejected. Different groups sharing a tuple (d01,d02) count separately. Revision replay is idempotent.",
+  "bounds": {
+    "documents": 5,
+    "queries": 16,
+    "changes": 8,
+    "cpu_seconds": 60,
+    "owner_timeout_seconds": 60,
+    "address_space_bytes": 134217728,
+    "observed_peak_RSS_ceiling_bytes": 134217728,
+    "network_model_package_calls": 0
+  }
+}

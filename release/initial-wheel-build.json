@@ -1,0 +1,7 @@
+{
+  "scope": "Initial packaging-mechanics evidence only; not a distributable release wheel. Corrected candidate requires fresh wheel.",
+  "command": "scripts/laplace-python -m pip wheel --no-deps --no-build-isolation CANDIDATE -w /tmp/laplace-evaluation-wheels",
+  "status": "SUPERSEDED_AFTER_PRIVATE_NONRUNTIME_RESOURCE_EXCLUSION",
+  "wheel": "laplace_engine-0.1.0-py3-none-any.whl",
+  "sha256": "c651c54236ecb3cf1983758ea5a0b772ce382896909bd40d81a76c88676de41a"
+}

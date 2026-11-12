@@ -1,0 +1,1588 @@
+{
+  "schema_version": "mip.visual-accepted-data/1",
+  "project": "memory-in-pieces",
+  "turn_id": "WT-62840450a3dd4839a97dc328f53f878b",
+  "origin": "Source-pinned presentation of accepted existing endpoints. No new extraction/scoring/benchmark/judging or scientific replication.",
+  "accepted_manifest": {
+    "id": "ART-04728f9c4194496b8e4810dba70d5a1f",
+    "sha256": "04e5f40d5f2bc2ca63bd90cc8f0f8c1ad142989e94ff231925b3bd32376f1ee4"
+  },
+  "accepted_inventory": {
+    "id": "ART-2d966fa0fc294d22a16286ab64ff8029",
+    "sha256": "6e81b7e5dd75396ccc86bc366297414b6b8ea44dd408984cf43dc68e835805b9"
+  },
+  "source_pins": [
+    {
+      "path": "evidence/BENCH_RECOVERY_2026-11-09/stage3/I/results.json",
+      "sha256": "ff7ee2843512a1f7a846dab0998a406367d3e58b468fe5b0a6bc75d371207f14",
+      "bytes": 70065
+    },
+    {
+      "path": "evidence/BENCH_RECOVERY_2026-11-09/stage3/I/JUDGE_round2.md",
+      "sha256": "a568ae98ee606b7dececc5639dbfdb10bc19bfc20b5cfbdfbb4a2bc492e16468",
+      "bytes": 8757
+    },
+    {
+      "path": "evidence/BENCH_RECOVERY_2026-11-09/stage3/J/results.json",
+      "sha256": "96611151600eddad0a134ea4d7d99d0b8a10d0877b6b839f917ab314c28e758b",
+      "bytes": 14694
+    },
+    {
+      "path": "evidence/BENCH_RECOVERY_2026-11-09/stage3/X/out/frames_witness_report.json",
+      "sha256": "73edaaca8bad91b07a40ffec6a1f61f3e5bae2c4ecba19b276c2331196e3654f",
+      "bytes": 1021
+    },
+    {
+      "path": "evidence/BENCH_RECOVERY_2026-11-09/stage3/X/out/frames_field_vectors_receipt.json",
+      "sha256": "424cfea58b8399d1b60d03e141615506af6aa59c213bda81d611a84eae88697a",
+      "bytes": 468
+    },
+    {
+      "path": "evidence/BENCH_RECOVERY_2026-11-09/stage3/K/results/A_final48.json",
+      "sha256": "7e2bdf1fb4c27275367cd703646c56ad9549e36875fecf74e40dcdd9c5634002",
+      "bytes": 185017
+    },
+    {
+      "path": "evidence/BENCH_RECOVERY_2026-11-09/stage3/X/out/frames_statements.jsonl",
+      "sha256": "abc198f3c5bc0911f46f60c94b8c6bb5f06731f741f1f4e25a85f79c579112cc",
+      "bytes": 40398193
+    },
+    {
+      "path": "evidence/BENCH_RECOVERY_2026-11-09/stage3/X/out/frames_requests.jsonl",
+      "sha256": "fcb772a0fc6631faa78aed621ee92d2a12e7bdd86cf8c047e59e9ab2c0482f5b",
+      "bytes": 33930642
+    }
+  ],
+  "news": {
+    "cohort": "172 previously examined MultiHop-RAG questions, fit88/check84; answer-rule development used all172.",
+    "denominator": 172,
+    "reader": "claude-sonnet-5-5 low",
+    "endpoint": "Sealed normalised exact match",
+    "methods": [
+      {
+        "name": "Facet-conditioned retrieval",
+        "raw_arm": "ours_g@2000+rules",
+        "value": 152
+      },
+      {
+        "name": "RAG (MMR)",
+        "raw_arm": "rag_g@2000+rules",
+        "value": 152
+      },
+      {
+        "name": "RAPTOR (summary + window)",
+        "raw_arm": "raptor_g@2000+rules",
+        "value": 148
+      }
+    ],
+    "paired_vs_rag": {
+      "wins": 6,
+      "losses": 6,
+      "net": 0,
+      "one_sided_p": 0.6128
+    },
+    "paired_vs_raptor": {
+      "wins": 9,
+      "losses": 5,
+      "net": 4,
+      "one_sided_p": 0.212
+    },
+    "settings": {
+      "pieces": "two-sentence windows, stride one sentence (G/scripts/g_common.windows); embedded with '<title> | <outlet> | <YYYY-MM-DD>' label (G/vectors/news_s2_ctx.f16.npy)",
+      "score": "cosine + 0.5 x BM25(label+window)/max for every arm; ours: per compiled facet inside its exact outlet/date support, round-robin; RAG: whole corpus, pool 200, MMR 0.7; RAPTOR: the 1,747 summary nodes plus the labelled windows, no MMR (raptor_g, G's frozen RAPTOR arm)",
+      "delivery": "one block per article, spans merged in article order, extended to whole sentences (g_common.delivered_pack; RAPTOR summaries as their own blocks, delivered_pack_mixed); 2,000 cl100k tokens",
+      "reader": "claude-sonnet-5-5 low, i_lib.RULES_INSTRUCTION + ANSWER_SCHEMA, identical for every arm",
+      "not_frozen": [
+        "statement-field term (gamma 0.3: +5 facts fit, +1 check; b1_sweep)",
+        "query-time diffusion (rel / lang / both: within +-2 facts; EM 149-152 under table2)",
+        "statements shown to the reader (-21 facts, EM +1)",
+        "4,000 tokens (+29 facts, EM +1)",
+        "model delivery (+3 EM for ours and RAG, +1,995 calls per 172 questions)",
+        "witness readout for stage 7 (results/readout_sweep.json; see 'readout')",
+        "agreement rule (results/agree_rule.json; see step_d.agree_rule)"
+      ],
+      "caveat": "the rules instruction's three rules were written from failures read on all 172 questions, so its check-half gain is not a held-out test; the untouched draw is"
+    },
+    "result": {
+      "artifacts": [
+        {
+          "label": "Source-pinned interpretation of banked completed records",
+          "path": "evidence/MIP_CANDIDATE_2026-11-11/adopted-banked-results.json",
+          "scope": "project"
+        }
+      ],
+      "id": "mip-news-recovery-20261110",
+      "kind": "result",
+      "limitations": [
+        "No new benchmark or independent scientific verification",
+        "F incomplete judging not included as final accuracy",
+        "FRAMES RAPTOR incomplete",
+        "No measured full nine-stage integration or causal X-to-J effect",
+        "Original failed forensic run preserved; this artifact is not its successful result"
+      ],
+      "measures": [
+        {
+          "key": "news_n",
+          "label": "news_n",
+          "unit": "count"
+        },
+        {
+          "key": "news_ours",
+          "label": "news_ours",
+          "unit": "count"
+        },
+        {
+          "key": "news_rag",
+          "label": "news_rag",
+          "unit": "count"
+        },
+        {
+          "key": "news_raptor",
+          "label": "news_raptor",
+          "unit": "count"
+        },
+        {
+          "key": "news_table_ours",
+          "label": "news_table_ours",
+          "unit": "count"
+        },
+        {
+          "key": "news_table_rag",
+          "label": "news_table_rag",
+          "unit": "count"
+        },
+        {
+          "key": "news_table_raptor",
+          "label": "news_table_raptor",
+          "unit": "count"
+        }
+      ],
+      "provenance": {
+        "dependencies": [
+          {
+            "bytes": 19126,
+            "path": "evidence/MIP_CANDIDATE_2026-11-11/adopted-banked-results.json",
+            "sha256": "7b51f767487d32dfc2e17d83d7f130200583a0bffe4c8fb699d8bbaf5a7e002f",
+            "status": "PRESENT"
+          }
+        ],
+        "recorded_at": 1794395063.141427,
+        "scope": "project",
+        "snapshot_schema": "laplace.research-dependencies/3"
+      },
+      "question": "What reaches the reader under matched2k delivery and answer rules?",
+      "result": "evidence/MIP_CANDIDATE_2026-11-11/adopted-banked-results.json",
+      "revision": "sha256:c1c94981d11fb953597bc29bfc3fafa851ab16092affd919bf194c033acf176d",
+      "scope": "project",
+      "summary": "On172 previously examined MultiHop-RAG questions, ours152, RAG152, equal-treatment RAPTOR148. Requirement-table153/145/147 is a separate development interaction, not the freeze.",
+      "title": "Matched news delivery follow-up",
+      "measurements": [
+        {
+          "key": "news_n",
+          "label": "news_n",
+          "unit": "count",
+          "value": 172
+        },
+        {
+          "key": "news_ours",
+          "label": "news_ours",
+          "unit": "count",
+          "value": 152
+        },
+        {
+          "key": "news_rag",
+          "label": "news_rag",
+          "unit": "count",
+          "value": 152
+        },
+        {
+          "key": "news_raptor",
+          "label": "news_raptor",
+          "unit": "count",
+          "value": 148
+        },
+        {
+          "key": "news_table_ours",
+          "label": "news_table_ours",
+          "unit": "count",
+          "value": 153
+        },
+        {
+          "key": "news_table_rag",
+          "label": "news_table_rag",
+          "unit": "count",
+          "value": 145
+        },
+        {
+          "key": "news_table_raptor",
+          "label": "news_table_raptor",
+          "unit": "count",
+          "value": 147
+        }
+      ],
+      "currentness": "CURRENT",
+      "currentness_reason": "all explicitly declared dependencies match their recorded identities",
+      "current_dependencies": [
+        {
+          "path": "evidence/MIP_CANDIDATE_2026-11-11/adopted-banked-results.json",
+          "status": "PRESENT",
+          "bytes": 19126,
+          "sha256": "7b51f767487d32dfc2e17d83d7f130200583a0bffe4c8fb699d8bbaf5a7e002f"
+        }
+      ],
+      "dependency_coverage": {
+        "snapshot_schema": "laplace.research-dependencies/3",
+        "newly_untracked": [],
+        "changed_pins": [],
+        "removed_pins": [],
+        "retired_derived_presentation_pins": [],
+        "historical_verification": "PINNED_DEPENDENCIES_ONLY"
+      },
+      "evidence_files": [
+        {
+          "role": "Recorded output",
+          "path": "evidence/MIP_CANDIDATE_2026-11-11/adopted-banked-results.json",
+          "scope": "project",
+          "identity": "sha256:d05f34765a9e0927fa2dbdd1017d7f5cdc31efce3b23863c7bd26d581a3572a2",
+          "availability": "PRESENT"
+        }
+      ],
+      "usage": [
+        {
+          "concept": {
+            "id": "mip:news-followup",
+            "label": "Completed reused-draw news follow-up: matched rules2k ours152,RAG152,RAPTOR148 of172; paired6–6 and9–5. Requirement-table153/145/147 is a separate development interaction. No fresh held-out confirmation or selector superiority.",
+            "kind": "result",
+            "status": null,
+            "summary": "Completed reused-draw news follow-up: matched rules2k ours152,RAG152,RAPTOR148 of172; paired6–6 and9–5. Requirement-table153/145/147 is a separate development interaction. No fresh held-out confirmation or selector superiority."
+          },
+          "binding_revision": "sha256:c1c94981d11fb953597bc29bfc3fafa851ab16092affd919bf194c033acf176d",
+          "manuscript_locations": [
+            {
+              "id": "delivery-under-a-fixed-reader",
+              "title": "Delivery under a fixed reader",
+              "kind": "section",
+              "number": "7",
+              "order": 6,
+              "parent_id": null,
+              "source_files": [
+                "synthetics papers/corpus-as-a-state/reconstruction/output/pdf/v2.1/skein.tex"
+              ]
+            },
+            {
+              "id": "development-follow-up-record",
+              "title": "Development follow-up record",
+              "kind": "section",
+              "number": "21",
+              "order": 20,
+              "parent_id": null,
+              "source_files": [
+                "synthetics papers/corpus-as-a-state/reconstruction/output/pdf/v2.1/extension_appendices.tex"
+              ]
+            }
+          ]
+        }
+      ],
+      "linked_figures": [],
+      "linked_visuals": [],
+      "renewal_history": []
+    }
+  },
+  "frames": {
+    "cohort": "190 previously examined FRAMES questions, fit95/check95",
+    "denominator": 190,
+    "reader": "claude-sonnet-5-5 low",
+    "judge": "Banked majority answer judgments: Sonnet A/B plus C on disagreement, historical rubric.",
+    "methods": [
+      {
+        "name": "Linked-passage retrieval (activation off)",
+        "raw_arm": "ours_noact|steps+p2",
+        "containment_proxy": 123,
+        "judged_correct": 127
+      },
+      {
+        "name": "RAG (MMR)",
+        "raw_arm": "rag_8k|steps+p2",
+        "containment_proxy": 117,
+        "judged_correct": 126
+      }
+    ],
+    "paired": {
+      "containment": {
+        "wins": 10,
+        "losses": 4,
+        "one_sided_p": 0.0898
+      },
+      "judged": {
+        "wins": 7,
+        "losses": 6,
+        "one_sided_p": 0.5
+      }
+    },
+    "settings": {
+      "arm": "ours_noact",
+      "budget": "8k initial + up to 4k genuinely new spans on one triggered pass 2",
+      "ours": {
+        "containment": 123,
+        "judged": 127
+      },
+      "rag": {
+        "containment": 117,
+        "judged": 126
+      },
+      "n": 190,
+      "settings": "FRAMES pass-1 RAG uses a 200-candidate pool and MMR with relevance coefficient 0.7, ranked from s + 0.4 h/max(h), where s = cosine + 0.2 normalised BM25 and h is D's dense seed. Pass 2 ranks each missing-need phrase by s(phrase)+0.5 s(question), using RAG's own MMR 0.7. Both arms receive the same 8k initial allowance, steps instruction and up to 4k new spans on one triggered second pass. These are the local implemented comparator settings, not a claim of complete literature-system reproduction.",
+      "paired_judged": {
+        "ours": 127,
+        "rag": 126,
+        "n": 190,
+        "wins": 7,
+        "losses": 6
+      },
+      "paired_containment": {
+        "wins": 10,
+        "losses": 4,
+        "p_one_sided": 0.0898
+      },
+      "settings_source_pins": [
+        {
+          "path": "evidence/BENCH_RECOVERY_2026-11-09/stage3/J/scripts/j_world.py",
+          "sha256": "04da4259b846028fca9000435b3fadfb133f67dba705e9777df0d09130522c49",
+          "read_id": "READ-29bd8a5546a94eefa6ee86cf9cb04002"
+        },
+        {
+          "path": "evidence/BENCH_RECOVERY_2026-11-09/stage3/D/scripts/d_frames.py",
+          "sha256": "c9c7adbcb7c99746da3b6145a74fc1ce9c74304dc21447bbb0589346b9fd493c",
+          "read_id": "READ-e40ac8ef0d4e49e294141c9ddd03a4c8"
+        },
+        {
+          "path": "evidence/BENCH_RECOVERY_2026-11-09/stage3/D/scripts/d_lib.py",
+          "sha256": "2c905181aaad78a2185a081e726fb50411b33f55ec520d5d43ff53231a375b88",
+          "read_id": "READ-eb276ed3268044da8c5cefc15ff65bb2"
+        },
+        {
+          "path": "evidence/BENCH_RECOVERY_2026-11-09/stage3/G/scripts/g_common.py",
+          "sha256": "a2588db0897cd45c5a9a92beb713f1ada8526c26adf518207a6fe23d6a004528",
+          "read_id": "READ-be83143f3d414015ac99dec65af5d45a"
+        }
+      ]
+    },
+    "containment_definition": {
+      "definition": "the implemented normalised first-clause/token-F1>=0.5 proxy with a3x length guard, not a semantic entailment certificate.",
+      "source": "J/scripts/j_lib.py and banked outcome files",
+      "qualification": "Implemented normalised first-clause/token-F1 >=0.5 proxy with3x length guard. Not exact string containment, semantic entailment, judged correctness or all-gold-page coverage.",
+      "source_pin": {
+        "path": "evidence/BENCH_RECOVERY_2026-11-09/stage3/J/scripts/j_lib.py",
+        "sha256": "5329591bec3995ab291979b584b12bc535f7b68e794da2aeec3853c626a708d9"
+      }
+    },
+    "excluded": "Activated-route page counts are not included. No completed FRAMES RAPTOR result.",
+    "result": {
+      "artifacts": [
+        {
+          "label": "Source-pinned interpretation of banked completed records",
+          "path": "evidence/MIP_CANDIDATE_2026-11-11/adopted-banked-results.json",
+          "scope": "project"
+        }
+      ],
+      "id": "mip-frames-recovery-20261110",
+      "kind": "result",
+      "limitations": [
+        "No new benchmark or independent scientific verification",
+        "F incomplete judging not included as final accuracy",
+        "FRAMES RAPTOR incomplete",
+        "No measured full nine-stage integration or causal X-to-J effect",
+        "Original failed forensic run preserved; this artifact is not its successful result"
+      ],
+      "measures": [
+        {
+          "key": "frames_n",
+          "label": "frames_n",
+          "unit": "count"
+        },
+        {
+          "key": "frames_ours_cont",
+          "label": "frames_ours_cont",
+          "unit": "count"
+        },
+        {
+          "key": "frames_rag_cont",
+          "label": "frames_rag_cont",
+          "unit": "count"
+        },
+        {
+          "key": "frames_ours_judged",
+          "label": "frames_ours_judged",
+          "unit": "count"
+        },
+        {
+          "key": "frames_rag_judged",
+          "label": "frames_rag_judged",
+          "unit": "count"
+        }
+      ],
+      "provenance": {
+        "dependencies": [
+          {
+            "bytes": 19126,
+            "path": "evidence/MIP_CANDIDATE_2026-11-11/adopted-banked-results.json",
+            "sha256": "7b51f767487d32dfc2e17d83d7f130200583a0bffe4c8fb699d8bbaf5a7e002f",
+            "status": "PRESENT"
+          }
+        ],
+        "recorded_at": 1794395063.6440098,
+        "scope": "project",
+        "snapshot_schema": "laplace.research-dependencies/3"
+      },
+      "question": "Does one missing-needs retrieval pass recover supported answers?",
+      "result": "evidence/MIP_CANDIDATE_2026-11-11/adopted-banked-results.json",
+      "revision": "sha256:ba031df03c139da9cd2c4a9d4a70e5fef0fa88f940f4a764e8dfb1a7c12386b0",
+      "scope": "project",
+      "summary": "On190 reused FRAMES questions, recommended noact123/117 containment proxy and127/126 judged, paired7–6,p=.5,8k+triggered4k. MMR.7, separate seed.4.",
+      "title": "FRAMES no-activation delivery follow-up",
+      "measurements": [
+        {
+          "key": "frames_n",
+          "label": "frames_n",
+          "unit": "count",
+          "value": 190
+        },
+        {
+          "key": "frames_ours_cont",
+          "label": "frames_ours_cont",
+          "unit": "count",
+          "value": 123
+        },
+        {
+          "key": "frames_rag_cont",
+          "label": "frames_rag_cont",
+          "unit": "count",
+          "value": 117
+        },
+        {
+          "key": "frames_ours_judged",
+          "label": "frames_ours_judged",
+          "unit": "count",
+          "value": 127
+        },
+        {
+          "key": "frames_rag_judged",
+          "label": "frames_rag_judged",
+          "unit": "count",
+          "value": 126
+        }
+      ],
+      "currentness": "CURRENT",
+      "currentness_reason": "all explicitly declared dependencies match their recorded identities",
+      "current_dependencies": [
+        {
+          "path": "evidence/MIP_CANDIDATE_2026-11-11/adopted-banked-results.json",
+          "status": "PRESENT",
+          "bytes": 19126,
+          "sha256": "7b51f767487d32dfc2e17d83d7f130200583a0bffe4c8fb699d8bbaf5a7e002f"
+        }
+      ],
+      "dependency_coverage": {
+        "snapshot_schema": "laplace.research-dependencies/3",
+        "newly_untracked": [],
+        "changed_pins": [],
+        "removed_pins": [],
+        "retired_derived_presentation_pins": [],
+        "historical_verification": "PINNED_DEPENDENCIES_ONLY"
+      },
+      "evidence_files": [
+        {
+          "role": "Recorded output",
+          "path": "evidence/MIP_CANDIDATE_2026-11-11/adopted-banked-results.json",
+          "scope": "project",
+          "identity": "sha256:d05f34765a9e0927fa2dbdd1017d7f5cdc31efce3b23863c7bd26d581a3572a2",
+          "availability": "PRESENT"
+        }
+      ],
+      "usage": [
+        {
+          "concept": {
+            "id": "mip:frames-followup",
+            "label": "Completed reused-draw FRAMES recommendation: noact123 versus117 containment proxy and127 versus126 judged of190; judged7–6,p=.5. Large delivered-context recovery, not equivalence or established selector superiority.",
+            "kind": "result",
+            "status": null,
+            "summary": "Completed reused-draw FRAMES recommendation: noact123 versus117 containment proxy and127 versus126 judged of190; judged7–6,p=.5. Large delivered-context recovery, not equivalence or established selector superiority."
+          },
+          "binding_revision": "sha256:ba031df03c139da9cd2c4a9d4a70e5fef0fa88f940f4a764e8dfb1a7c12386b0",
+          "manuscript_locations": [
+            {
+              "id": "delivery-under-a-fixed-reader",
+              "title": "Delivery under a fixed reader",
+              "kind": "section",
+              "number": "7",
+              "order": 6,
+              "parent_id": null,
+              "source_files": [
+                "synthetics papers/corpus-as-a-state/reconstruction/output/pdf/v2.1/skein.tex"
+              ]
+            },
+            {
+              "id": "development-follow-up-record",
+              "title": "Development follow-up record",
+              "kind": "section",
+              "number": "21",
+              "order": 20,
+              "parent_id": null,
+              "source_files": [
+                "synthetics papers/corpus-as-a-state/reconstruction/output/pdf/v2.1/extension_appendices.tex"
+              ]
+            }
+          ]
+        }
+      ],
+      "linked_figures": [],
+      "linked_visuals": [],
+      "renewal_history": []
+    }
+  },
+  "longmem": {
+    "cohort": "Completed shared-index 48-question LongMem cohort",
+    "reader": "claude-sonnet-5-5 low, banked rules reading",
+    "raw_table": {
+      "final48|dense_keys@4000": {
+        "n": 48,
+        "answered": 48,
+        "judged": 48,
+        "correct": 44,
+        "complete": 43,
+        "n_req": 44,
+        "tokens": 3475
+      },
+      "final48|dense_keys@8000": {
+        "n": 48,
+        "answered": 48,
+        "judged": 48,
+        "correct": 45,
+        "complete": 43,
+        "n_req": 44,
+        "tokens": 6926
+      },
+      "final48|hybrid_keys@4000": {
+        "n": 48,
+        "answered": 48,
+        "judged": 48,
+        "correct": 40,
+        "complete": 35,
+        "n_req": 44,
+        "tokens": 3664
+      },
+      "final48|hybrid_keys@8000": {
+        "n": 48,
+        "answered": 48,
+        "judged": 48,
+        "correct": 44,
+        "complete": 39,
+        "n_req": 44,
+        "tokens": 7332
+      },
+      "final48|ours_keys@4000": {
+        "n": 48,
+        "answered": 48,
+        "judged": 48,
+        "correct": 44,
+        "complete": 43,
+        "n_req": 44,
+        "tokens": 3475
+      },
+      "final48|ours_keys@8000": {
+        "n": 48,
+        "answered": 48,
+        "judged": 48,
+        "correct": 45,
+        "complete": 43,
+        "n_req": 44,
+        "tokens": 6926
+      }
+    },
+    "coverage_reconciliation": {
+      "standing": "RECORDED_INTERPRETATION_OF_EXISTING_ROWS_NOT_DATA_REPAIR_OR_NEW_JUDGING",
+      "annotated_abstentions": [
+        "e5ba910e_abs",
+        "982b5123_abs"
+      ],
+      "explanation": "Each has one required turn and complete=true in every A arm/budget. Four other abstentions have no required turn. K k_cov skips empty annotations but does not exclude _abs. L lm_core.gold excludes _abs, hence42+2=44.",
+      "answer_correctness": {
+        "denominator": 48,
+        "includes_abstentions": 6,
+        "ours": {
+          "at4k": 44,
+          "at8k": 45
+        },
+        "dense": {
+          "at4k": 44,
+          "at8k": 45
+        },
+        "hybrid": {
+          "at4k": 40,
+          "at8k": 44
+        }
+      },
+      "historical_annotated_turn_coverage": {
+        "denominator": 44,
+        "ours": {
+          "at4k": 43,
+          "at8k": 43
+        },
+        "dense": {
+          "at4k": 43,
+          "at8k": 43
+        },
+        "hybrid": {
+          "at4k": 35,
+          "at8k": 39
+        },
+        "preserve_original_records": true
+      },
+      "comparable_positive_evidence_coverage": {
+        "denominator": 42,
+        "ours": {
+          "at4k": 41,
+          "at8k": 41
+        },
+        "dense": {
+          "at4k": 41,
+          "at8k": 41
+        },
+        "hybrid": {
+          "at4k": 33,
+          "at8k": 37
+        }
+      },
+      "method": "Reviewer native row tallies independently checked by continuing parent in-tool against pinned existing A_final48 rows. No producer, scorer, reader or judge execution.",
+      "parent_tally": {
+        "ours_keys@4000": {
+          "n": 48,
+          "answered": 48,
+          "correct": 44,
+          "historical_annotated": 44,
+          "historical_complete": 43,
+          "positive": 42,
+          "positive_complete": 41,
+          "annotated_abstentions": [
+            {
+              "qid": "e5ba910e_abs",
+              "complete": true,
+              "required": 1
+            },
+            {
+              "qid": "982b5123_abs",
+              "complete": true,
+              "required": 1
+            }
+          ]
+        },
+        "dense_keys@4000": {
+          "n": 48,
+          "answered": 48,
+          "correct": 44,
+          "historical_annotated": 44,
+          "historical_complete": 43,
+          "positive": 42,
+          "positive_complete": 41,
+          "annotated_abstentions": [
+            {
+              "qid": "e5ba910e_abs",
+              "complete": true,
+              "required": 1
+            },
+            {
+              "qid": "982b5123_abs",
+              "complete": true,
+              "required": 1
+            }
+          ]
+        },
+        "hybrid_keys@4000": {
+          "n": 48,
+          "answered": 48,
+          "correct": 40,
+          "historical_annotated": 44,
+          "historical_complete": 35,
+          "positive": 42,
+          "positive_complete": 33,
+          "annotated_abstentions": [
+            {
+              "qid": "e5ba910e_abs",
+              "complete": true,
+              "required": 1
+            },
+            {
+              "qid": "982b5123_abs",
+              "complete": true,
+              "required": 1
+            }
+          ]
+        },
+        "ours_keys@8000": {
+          "n": 48,
+          "answered": 48,
+          "correct": 45,
+          "historical_annotated": 44,
+          "historical_complete": 43,
+          "positive": 42,
+          "positive_complete": 41,
+          "annotated_abstentions": [
+            {
+              "qid": "e5ba910e_abs",
+              "complete": true,
+              "required": 1
+            },
+            {
+              "qid": "982b5123_abs",
+              "complete": true,
+              "required": 1
+            }
+          ]
+        },
+        "dense_keys@8000": {
+          "n": 48,
+          "answered": 48,
+          "correct": 45,
+          "historical_annotated": 44,
+          "historical_complete": 43,
+          "positive": 42,
+          "positive_complete": 41,
+          "annotated_abstentions": [
+            {
+              "qid": "e5ba910e_abs",
+              "complete": true,
+              "required": 1
+            },
+            {
+              "qid": "982b5123_abs",
+              "complete": true,
+              "required": 1
+            }
+          ]
+        },
+        "hybrid_keys@8000": {
+          "n": 48,
+          "answered": 48,
+          "correct": 44,
+          "historical_annotated": 44,
+          "historical_complete": 39,
+          "positive": 42,
+          "positive_complete": 37,
+          "annotated_abstentions": [
+            {
+              "qid": "e5ba910e_abs",
+              "complete": true,
+              "required": 1
+            },
+            {
+              "qid": "982b5123_abs",
+              "complete": true,
+              "required": 1
+            }
+          ]
+        }
+      },
+      "source_reads": [
+        {
+          "payload": {
+            "action": "read",
+            "repository": "laplace",
+            "path": "evidence/BENCH_RECOVERY_2026-11-09/stage3/K/scripts/k_cov.py",
+            "limit": 40000,
+            "expected_sha256": "ee3b04003ac2490778a4064fe8619b925a5f1a442f0b5a460d83208c21817e3b"
+          },
+          "source": {
+            "path": "/home/phujck/VScodeProjects/laplace/evidence/BENCH_RECOVERY_2026-11-09/stage3/K/scripts/k_cov.py",
+            "bytes": 2386,
+            "sha256": "ee3b04003ac2490778a4064fe8619b925a5f1a442f0b5a460d83208c21817e3b"
+          },
+          "offset": 0,
+          "read_id": "READ-53de7af8433c494899f5caf5d596cf07"
+        },
+        {
+          "payload": {
+            "action": "read",
+            "repository": "laplace",
+            "path": "evidence/BENCH_RECOVERY_2026-11-09/stage3/L/scripts/lm_core.py",
+            "limit": 40000,
+            "expected_sha256": "10af085758296086cccf4a1dcb6883e6b34073836d1762df8dabb67700ba9bf2"
+          },
+          "source": {
+            "path": "/home/phujck/VScodeProjects/laplace/evidence/BENCH_RECOVERY_2026-11-09/stage3/L/scripts/lm_core.py",
+            "bytes": 12583,
+            "sha256": "10af085758296086cccf4a1dcb6883e6b34073836d1762df8dabb67700ba9bf2"
+          },
+          "offset": 0,
+          "read_id": "READ-bdb5e60a9c3f4eae8cc9eeb14f56808a"
+        },
+        {
+          "payload": {
+            "action": "read",
+            "repository": "laplace",
+            "path": "evidence/BENCH_RECOVERY_2026-11-09/stage3/K/results/A_final48.json",
+            "limit": 40000,
+            "expected_sha256": "7e2bdf1fb4c27275367cd703646c56ad9549e36875fecf74e40dcdd9c5634002"
+          },
+          "source": {
+            "path": "/home/phujck/VScodeProjects/laplace/evidence/BENCH_RECOVERY_2026-11-09/stage3/K/results/A_final48.json",
+            "bytes": 185017,
+            "sha256": "7e2bdf1fb4c27275367cd703646c56ad9549e36875fecf74e40dcdd9c5634002"
+          },
+          "offset": 0,
+          "read_id": "READ-92f1d5a7964448a796c5293e7189e534"
+        },
+        {
+          "payload": {
+            "action": "read",
+            "repository": "laplace",
+            "path": "evidence/BENCH_RECOVERY_2026-11-09/stage3/K/results/A_final48.json",
+            "offset": 40000,
+            "limit": 40000,
+            "expected_sha256": "sha256:7e2bdf1fb4c27275367cd703646c56ad9549e36875fecf74e40dcdd9c5634002"
+          },
+          "source": {
+            "path": "/home/phujck/VScodeProjects/laplace/evidence/BENCH_RECOVERY_2026-11-09/stage3/K/results/A_final48.json",
+            "bytes": 185017,
+            "sha256": "7e2bdf1fb4c27275367cd703646c56ad9549e36875fecf74e40dcdd9c5634002"
+          },
+          "offset": 40000,
+          "read_id": "READ-c45e1f715abb4e698236b2fa6287f4f4"
+        },
+        {
+          "payload": {
+            "action": "read",
+            "repository": "laplace",
+            "path": "evidence/BENCH_RECOVERY_2026-11-09/stage3/K/results/A_final48.json",
+            "offset": 80000,
+            "limit": 40000,
+            "expected_sha256": "sha256:7e2bdf1fb4c27275367cd703646c56ad9549e36875fecf74e40dcdd9c5634002"
+          },
+          "source": {
+            "path": "/home/phujck/VScodeProjects/laplace/evidence/BENCH_RECOVERY_2026-11-09/stage3/K/results/A_final48.json",
+            "bytes": 185017,
+            "sha256": "7e2bdf1fb4c27275367cd703646c56ad9549e36875fecf74e40dcdd9c5634002"
+          },
+          "offset": 80000,
+          "read_id": "READ-5fd5ce073a52479c90b01b1bbbde1f10"
+        },
+        {
+          "payload": {
+            "action": "read",
+            "repository": "laplace",
+            "path": "evidence/BENCH_RECOVERY_2026-11-09/stage3/K/results/A_final48.json",
+            "offset": 120000,
+            "limit": 40000,
+            "expected_sha256": "sha256:7e2bdf1fb4c27275367cd703646c56ad9549e36875fecf74e40dcdd9c5634002"
+          },
+          "source": {
+            "path": "/home/phujck/VScodeProjects/laplace/evidence/BENCH_RECOVERY_2026-11-09/stage3/K/results/A_final48.json",
+            "bytes": 185017,
+            "sha256": "7e2bdf1fb4c27275367cd703646c56ad9549e36875fecf74e40dcdd9c5634002"
+          },
+          "offset": 120000,
+          "read_id": "READ-f43d176a51ab41df8f43d7d4c6085607"
+        },
+        {
+          "payload": {
+            "action": "read",
+            "repository": "laplace",
+            "path": "evidence/BENCH_RECOVERY_2026-11-09/stage3/K/results/A_final48.json",
+            "offset": 160000,
+            "limit": 40000,
+            "expected_sha256": "sha256:7e2bdf1fb4c27275367cd703646c56ad9549e36875fecf74e40dcdd9c5634002"
+          },
+          "source": {
+            "path": "/home/phujck/VScodeProjects/laplace/evidence/BENCH_RECOVERY_2026-11-09/stage3/K/results/A_final48.json",
+            "bytes": 185017,
+            "sha256": "7e2bdf1fb4c27275367cd703646c56ad9549e36875fecf74e40dcdd9c5634002"
+          },
+          "offset": 160000,
+          "read_id": "READ-8583627749d245c9bf344c637a77882f"
+        }
+      ]
+    },
+    "result": {
+      "artifacts": [
+        {
+          "label": "Source-pinned interpretation of banked completed records",
+          "path": "evidence/MIP_CANDIDATE_2026-11-11/adopted-banked-results.json",
+          "scope": "project"
+        }
+      ],
+      "id": "mip-longmem-recovery-20261110",
+      "kind": "result",
+      "limitations": [
+        "No new benchmark or independent scientific verification",
+        "F incomplete judging not included as final accuracy",
+        "FRAMES RAPTOR incomplete",
+        "No measured full nine-stage integration or causal X-to-J effect",
+        "Original failed forensic run preserved; this artifact is not its successful result"
+      ],
+      "measures": [
+        {
+          "key": "longmem_n",
+          "label": "longmem_n",
+          "unit": "count"
+        },
+        {
+          "key": "longmem_ours4",
+          "label": "longmem_ours4",
+          "unit": "count"
+        },
+        {
+          "key": "longmem_ours8",
+          "label": "longmem_ours8",
+          "unit": "count"
+        },
+        {
+          "key": "longmem_dense4",
+          "label": "longmem_dense4",
+          "unit": "count"
+        },
+        {
+          "key": "longmem_dense8",
+          "label": "longmem_dense8",
+          "unit": "count"
+        },
+        {
+          "key": "longmem_hybrid4",
+          "label": "longmem_hybrid4",
+          "unit": "count"
+        },
+        {
+          "key": "longmem_hybrid8",
+          "label": "longmem_hybrid8",
+          "unit": "count"
+        },
+        {
+          "key": "longmem_positive_n",
+          "label": "longmem_positive_n",
+          "unit": "count"
+        },
+        {
+          "key": "longmem_ours_cov4",
+          "label": "longmem_ours_cov4",
+          "unit": "count"
+        },
+        {
+          "key": "longmem_ours_cov8",
+          "label": "longmem_ours_cov8",
+          "unit": "count"
+        },
+        {
+          "key": "longmem_hybrid_cov4",
+          "label": "longmem_hybrid_cov4",
+          "unit": "count"
+        },
+        {
+          "key": "longmem_hybrid_cov8",
+          "label": "longmem_hybrid_cov8",
+          "unit": "count"
+        }
+      ],
+      "provenance": {
+        "dependencies": [
+          {
+            "bytes": 19126,
+            "path": "evidence/MIP_CANDIDATE_2026-11-11/adopted-banked-results.json",
+            "sha256": "7b51f767487d32dfc2e17d83d7f130200583a0bffe4c8fb699d8bbaf5a7e002f",
+            "status": "PRESENT"
+          }
+        ],
+        "recorded_at": 1794395064.2514315,
+        "scope": "project",
+        "snapshot_schema": "laplace.research-dependencies/3"
+      },
+      "question": "How do answer correctness and complete positive-evidence coverage differ?",
+      "result": "evidence/MIP_CANDIDATE_2026-11-11/adopted-banked-results.json",
+      "revision": "sha256:96f8f6b0f392bb437d71f400845e920b4a8b12aff6c0080b081a2c543c952c4d",
+      "scope": "project",
+      "summary": "All48 answer outcomes include6abstentions. Ours=dense44/48@4k and45/48@8k, hybrid40/48 and44/48. Positive42 coverage is41/42 for ours/dense both budgets, hybrid33/42,37/42. Historical annotated44 endpoint remains separate.",
+      "title": "Completed shared-index LongMem baseline",
+      "measurements": [
+        {
+          "key": "longmem_n",
+          "label": "longmem_n",
+          "unit": "count",
+          "value": 48
+        },
+        {
+          "key": "longmem_ours4",
+          "label": "longmem_ours4",
+          "unit": "count",
+          "value": 44
+        },
+        {
+          "key": "longmem_ours8",
+          "label": "longmem_ours8",
+          "unit": "count",
+          "value": 45
+        },
+        {
+          "key": "longmem_dense4",
+          "label": "longmem_dense4",
+          "unit": "count",
+          "value": 44
+        },
+        {
+          "key": "longmem_dense8",
+          "label": "longmem_dense8",
+          "unit": "count",
+          "value": 45
+        },
+        {
+          "key": "longmem_hybrid4",
+          "label": "longmem_hybrid4",
+          "unit": "count",
+          "value": 40
+        },
+        {
+          "key": "longmem_hybrid8",
+          "label": "longmem_hybrid8",
+          "unit": "count",
+          "value": 44
+        },
+        {
+          "key": "longmem_positive_n",
+          "label": "longmem_positive_n",
+          "unit": "count",
+          "value": 42
+        },
+        {
+          "key": "longmem_ours_cov4",
+          "label": "longmem_ours_cov4",
+          "unit": "count",
+          "value": 41
+        },
+        {
+          "key": "longmem_ours_cov8",
+          "label": "longmem_ours_cov8",
+          "unit": "count",
+          "value": 41
+        },
+        {
+          "key": "longmem_hybrid_cov4",
+          "label": "longmem_hybrid_cov4",
+          "unit": "count",
+          "value": 33
+        },
+        {
+          "key": "longmem_hybrid_cov8",
+          "label": "longmem_hybrid_cov8",
+          "unit": "count",
+          "value": 37
+        }
+      ],
+      "currentness": "CURRENT",
+      "currentness_reason": "all explicitly declared dependencies match their recorded identities",
+      "current_dependencies": [
+        {
+          "path": "evidence/MIP_CANDIDATE_2026-11-11/adopted-banked-results.json",
+          "status": "PRESENT",
+          "bytes": 19126,
+          "sha256": "7b51f767487d32dfc2e17d83d7f130200583a0bffe4c8fb699d8bbaf5a7e002f"
+        }
+      ],
+      "dependency_coverage": {
+        "snapshot_schema": "laplace.research-dependencies/3",
+        "newly_untracked": [],
+        "changed_pins": [],
+        "removed_pins": [],
+        "retired_derived_presentation_pins": [],
+        "historical_verification": "PINNED_DEPENDENCIES_ONLY"
+      },
+      "evidence_files": [
+        {
+          "role": "Recorded output",
+          "path": "evidence/MIP_CANDIDATE_2026-11-11/adopted-banked-results.json",
+          "scope": "project",
+          "identity": "sha256:d05f34765a9e0927fa2dbdd1017d7f5cdc31efce3b23863c7bd26d581a3572a2",
+          "availability": "PRESENT"
+        }
+      ],
+      "usage": [
+        {
+          "concept": {
+            "id": "mip:longmem-followup",
+            "label": "Completed LongMem shared-index baseline: ours=dense44/48@4k,45/48@8k, hybrid40/48,44/48. Positive complete evidence41/42 for ours/dense at both budgets, hybrid33/42,37/42. Original44 annotation endpoint preserved and F judging incomplete.",
+            "kind": "result",
+            "status": null,
+            "summary": "Completed LongMem shared-index baseline: ours=dense44/48@4k,45/48@8k, hybrid40/48,44/48. Positive complete evidence41/42 for ours/dense at both budgets, hybrid33/42,37/42. Original44 annotation endpoint preserved and F judging incomplete."
+          },
+          "binding_revision": "sha256:96f8f6b0f392bb437d71f400845e920b4a8b12aff6c0080b081a2c543c952c4d",
+          "manuscript_locations": [
+            {
+              "id": "delivery-under-a-fixed-reader",
+              "title": "Delivery under a fixed reader",
+              "kind": "section",
+              "number": "7",
+              "order": 6,
+              "parent_id": null,
+              "source_files": [
+                "synthetics papers/corpus-as-a-state/reconstruction/output/pdf/v2.1/skein.tex"
+              ]
+            },
+            {
+              "id": "development-follow-up-record",
+              "title": "Development follow-up record",
+              "kind": "section",
+              "number": "21",
+              "order": 20,
+              "parent_id": null,
+              "source_files": [
+                "synthetics papers/corpus-as-a-state/reconstruction/output/pdf/v2.1/extension_appendices.tex"
+              ]
+            }
+          ]
+        }
+      ],
+      "linked_figures": [],
+      "linked_visuals": [],
+      "renewal_history": []
+    },
+    "excluded": "Later incomplete judging and zero-answer quota arms remain in accepted inventory, not in completed performance table."
+  },
+  "wyoming": {
+    "document_id": "f2ff4562619e84b4f0809c8428bb05703b0cfce8be3427765fce809c458765c8",
+    "title": "Wyoming",
+    "section": "Climate",
+    "requested_unit": {
+      "unit_id": "frames:f2ff4562619e84b4:s004:x5",
+      "text": "The southeastern corner of the state is the most vulnerable part of the state to tornado activity. Moving away from that point and westwards, the incidence of tornadoes drops dramatically with the west part of the state showing little vulnerability. Tornadoes, where they occur, tend to be small and brief, unlike some of those that occur farther east."
+    },
+    "returned_record": {
+      "unit_id": "frames:f2ff4562619e84b4:s005:x5",
+      "subject": "southeastern corner of the state",
+      "object": "tornado vulnerability",
+      "mechanism": "Most vulnerable to tornadoes; incidence drops dramatically moving west",
+      "conditions": "Where they occur",
+      "consequences": "Tornadoes tend to be small and brief, unlike some farther east",
+      "support_quotes": [
+        "The southeastern corner of the state is the most vulnerable part of the state to tornado activity."
+      ]
+    },
+    "quote": "The southeastern corner of the state is the most vulnerable part of the state to tornado activity.",
+    "request_index": 503,
+    "request_position": 26,
+    "request_sha256": "f876a495bd4652fd310a851aa6a24cebe1f3bf65affd6cb8524674b849134669",
+    "returned_id_status": "Recorded s005:x5 typo assigned by POSITION26 to requested s004:x5. Original identities retained, not repaired.",
+    "source_scope_context": {
+      "scope_id": "frames:f2ff4562619e84b4:s004",
+      "units": [
+        {
+          "unit_id": "frames:f2ff4562619e84b4:s004:x0",
+          "text": "Wyoming: Climate\nWyoming's climate is generally semi-arid and continental (Köppen climate classification BSk) and is drier and windier in comparison to most of the United States with greater temperature extremes. Much of this is due to the topography of the state. Summers in Wyoming are warm with July high temperatures averaging between 80 and 90 °F (27 and 32 °C) in most of the state."
+        },
+        {
+          "unit_id": "frames:f2ff4562619e84b4:s004:x1",
+          "text": "With increasing elevation, however, this average drops rapidly with locations above 9,000 feet (2,700 m) averaging around 70 °F (21 °C). Summer nights throughout the state are characterized by a rapid cooldown with even the hottest locations averaging in the 50–60 °F (10–16 °C) range at night. In most of the state, most of the precipitation tends to fall in the late spring and early summer."
+        },
+        {
+          "unit_id": "frames:f2ff4562619e84b4:s004:x2",
+          "text": "Winters are cold but are variable with periods of sometimes extreme cold interspersed between generally mild periods, with Chinook winds providing unusually warm temperatures in some locations.\nWyoming is a dry state with much of the land receiving less than 10 inches (250 mm) of rainfall per year. Precipitation depends on elevation with lower areas in the Big Horn Basin averaging 5–8 inches (130–200 mm), making the area nearly a true desert."
+        },
+        {
+          "unit_id": "frames:f2ff4562619e84b4:s004:x3",
+          "text": "The lower areas in the North and on the eastern plains typically average around 10–12 inches (250–300 mm), making the climate there semi-arid. Some mountain areas do receive a good amount of precipitation, 20 inches (510 mm) or more, much of it as snow, sometimes 200 inches (510 cm) or more annually."
+        },
+        {
+          "unit_id": "frames:f2ff4562619e84b4:s004:x4",
+          "text": "The state's highest recorded temperature is 114 °F (46 °C) at Basin on July 12, 1900, and the lowest recorded temperature is −66 °F (−54 °C) at Riverside on February 9, 1933.\nThe number of thunderstorm days varies across the state with the southeastern plains of the state having the most days of thunderstorm activity. Thunderstorm activity in the state is highest during the late spring and early summer."
+        },
+        {
+          "unit_id": "frames:f2ff4562619e84b4:s004:x5",
+          "text": "The southeastern corner of the state is the most vulnerable part of the state to tornado activity. Moving away from that point and westwards, the incidence of tornadoes drops dramatically with the west part of the state showing little vulnerability. Tornadoes, where they occur, tend to be small and brief, unlike some of those that occur farther east."
+        }
+      ]
+    },
+    "cache_pin": {
+      "path": "evidence/BENCH_RECOVERY_2026-11-09/stage3/X/cache/frames/f876a495bd4652fd310a851aa6a24cebe1f3bf65affd6cb8524674b849134669.json",
+      "sha256": "a051f1b5fe159aba9824e4ab149791f9fd9cf238c919a807aec80ab5d47ae0c9"
+    },
+    "interpretation": "First source sentence supports southeastern vulnerability. Remaining two source sentences state the westward decline and small/brief tornado claim. The narrow quote alone does not support those additional fields. Location is not field entailment.",
+    "accepted_subset": {
+      "pages": 619,
+      "requests": 1499,
+      "pages_retrieved": 1610,
+      "selection_rule": "Best first-passage rank over the three sealed consumed-W3 arms, then context frequency, then key, within1,500 requests. 337 pages rank0,223 rank1,59 rank2. Not a complete FRAMES corpus or gold-selected set."
+    },
+    "source_request_reads": [
+      {
+        "offset": 12066240,
+        "source": {
+          "path": "/home/phujck/VScodeProjects/laplace/evidence/BENCH_RECOVERY_2026-11-09/stage3/X/out/frames_requests.jsonl",
+          "bytes": 33930642,
+          "sha256": "fcb772a0fc6631faa78aed621ee92d2a12e7bdd86cf8c047e59e9ab2c0482f5b"
+        },
+        "read": {
+          "id": "READ-79c1f3d52dd74a0688e2621f2ebd7b8b",
+          "turn_id": "WT-62840450a3dd4839a97dc328f53f878b",
+          "session_id": "WS-3d22536a14a4424c8b193ffd26a51a34",
+          "project": "memory-in-pieces",
+          "operation": "repository",
+          "payload": {
+            "action": "read",
+            "repository": "laplace",
+            "path": "evidence/BENCH_RECOVERY_2026-11-09/stage3/X/out/frames_requests.jsonl",
+            "offset": 12066240,
+            "limit": 40000,
+            "expected_sha256": "fcb772a0fc6631faa78aed621ee92d2a12e7bdd86cf8c047e59e9ab2c0482f5b",
+            "project": "memory-in-pieces"
+          },
+          "output_sha256": "ce013d11029fbd6b0efcdf3205a98289b00b347e6ebddba9ef7b4a1be44779fe"
+        }
+      },
+      {
+        "offset": 12106240,
+        "source": {
+          "path": "/home/phujck/VScodeProjects/laplace/evidence/BENCH_RECOVERY_2026-11-09/stage3/X/out/frames_requests.jsonl",
+          "bytes": 33930642,
+          "sha256": "fcb772a0fc6631faa78aed621ee92d2a12e7bdd86cf8c047e59e9ab2c0482f5b"
+        },
+        "read": {
+          "id": "READ-c4b4d13f3a53452abe1d78709507b344",
+          "turn_id": "WT-62840450a3dd4839a97dc328f53f878b",
+          "session_id": "WS-3d22536a14a4424c8b193ffd26a51a34",
+          "project": "memory-in-pieces",
+          "operation": "repository",
+          "payload": {
+            "action": "read",
+            "repository": "laplace",
+            "path": "evidence/BENCH_RECOVERY_2026-11-09/stage3/X/out/frames_requests.jsonl",
+            "offset": 12106240,
+            "limit": 40000,
+            "expected_sha256": "fcb772a0fc6631faa78aed621ee92d2a12e7bdd86cf8c047e59e9ab2c0482f5b",
+            "project": "memory-in-pieces"
+          },
+          "output_sha256": "926ef133e792c23179635f296ca72e5c26cd36a1334851852443dc3cdbb8505f"
+        }
+      }
+    ],
+    "request_scopes": [
+      {
+        "scope_id": "frames:f2ff4562619e84b4:s000",
+        "units": [
+          {
+            "unit_id": "frames:f2ff4562619e84b4:s000:x0",
+            "text": "Wyoming\nWyoming (  wy-OH-ming) is a landlocked state in the Mountain West subregion of the Western United States. It borders Montana to the north and northwest, South Dakota and Nebraska to the east, Idaho to the west, Utah to the southwest, and Colorado to the south."
+          },
+          {
+            "unit_id": "frames:f2ff4562619e84b4:s000:x1",
+            "text": "With an estimated population of 587,618 as of 2024, Wyoming is the least populous state despite being the tenth-largest by area, and it has the second-lowest population density. The state capital and most populous city is Cheyenne.\nWyoming's western half consists mostly of the ranges and rangelands of the Rocky Mountains; its eastern half consists of high-elevation prairie, and is referred to as the High Plains."
+          },
+          {
+            "unit_id": "frames:f2ff4562619e84b4:s000:x2",
+            "text": "Wyoming's climate is semi-arid in some parts and continental in others, making it drier and windier overall than other states, with greater temperature extremes. The federal government owns just under half of Wyoming's land; the state ranks sixth in the amount of land—and fifth in the proportion of its land—that is owned by the federal government."
+          },
+          {
+            "unit_id": "frames:f2ff4562619e84b4:s000:x3",
+            "text": "Its federal lands include two national parks (Grand Teton and Yellowstone), two national recreation areas, two national monuments, and several national forests, as well as historic sites, fish hatcheries, and wildlife refuges.\nIndigenous peoples have inhabited the region for thousands of years. Part of the land that became Wyoming came under American sovereignty via the Louisiana Purchase, part via the Oregon Treaty, and, lastly, via the Mexican Cession."
+          },
+          {
+            "unit_id": "frames:f2ff4562619e84b4:s000:x4",
+            "text": "With the opening of the Oregon Trail, the Mormon Trail, and the California Trail, vast numbers of pioneers traveled through parts of the state that had once been traversed mainly by fur trappers, and this spurred the establishment of forts, such as Fort Laramie, that today serve as population centers."
+          },
+          {
+            "unit_id": "frames:f2ff4562619e84b4:s000:x5",
+            "text": "The Transcontinental Railroad supplanted the wagon trails in 1867 with a route through southern Wyoming, bringing new settlers and the establishment of founding towns, including the state capital of Cheyenne. On July 10, 1890, Wyoming became the union's 44th state."
+          },
+          {
+            "unit_id": "frames:f2ff4562619e84b4:s000:x6",
+            "text": "Women's suffrage in Wyoming dates to 1869 when it granted women the right to vote as a territory, and in 1890 it became the first state allowing its woman citizens to vote. It also became the first state to allow women to hold elected office and the first to elect a female governor, Nellie Tayloe Ross. In honor of this part of its history, its official nickname is \"The Equality State\" and its official state motto is \"Equal Rights\"."
+          },
+          {
+            "unit_id": "frames:f2ff4562619e84b4:s000:x7",
+            "text": "Farming and ranching, and the attendant range wars, feature prominently in the state's history. Wyoming's economy is largely based on tourism and the extraction of minerals such as coal, natural gas, oil, and trona. Its agricultural commodities include barley, hay, livestock, sugar beets, wheat, and wool."
+          }
+        ]
+      },
+      {
+        "scope_id": "frames:f2ff4562619e84b4:s001",
+        "units": [
+          {
+            "unit_id": "frames:f2ff4562619e84b4:s001:x0",
+            "text": "Wyoming: Etymology\nThe name Wyoming originally denoted a valley in Pennsylvania. It was made famous by Thomas Campbell's poem \"Gertrude of Wyoming\" (1808), which dramatizes the Wyoming Massacre of 1778. As a name for the region that would become the state of Wyoming, it was put forward by Representative James Mitchell Ashley of Ohio in 1865."
+          },
+          {
+            "unit_id": "frames:f2ff4562619e84b4:s001:x1",
+            "text": "Ashley argued that the name was both \"beautiful\" and semantically fitting for a region on the edge of the Great Plains, since it means \"at the big plains\" in the Munsee Delaware language. When in 1868 a bill was introduced to organize this region as a territory, Congress considered the name Lincoln, but ultimately accepted Ashley's suggestion."
+          }
+        ]
+      },
+      {
+        "scope_id": "frames:f2ff4562619e84b4:s002",
+        "units": [
+          {
+            "unit_id": "frames:f2ff4562619e84b4:s002:x0",
+            "text": "Wyoming: History\nSeveral Native American groups originally inhabited the region today known as Wyoming. The Crow, Arapaho, Lakota, and Shoshone were but a few of the original inhabitants European explorers encountered when they first visited the region. What is now southwestern Wyoming was claimed by the Spanish Empire, which extended through the Southwest and Mexico. With Mexican independence in 1821, it was considered part of Alta California."
+          },
+          {
+            "unit_id": "frames:f2ff4562619e84b4:s002:x1",
+            "text": "U.S. expansion brought settlers who fought for control. Mexico ceded these territories after its defeat in 1848 in the Mexican–American War.\nFrom the late 18th century, French-Canadian trappers from Québec and Montréal regularly entered the area for trade with the tribes. French toponyms such as Téton and La Ramie are marks of that history.\nAmerican John Colter first recorded a description in English of the region in 1807."
+          },
+          {
+            "unit_id": "frames:f2ff4562619e84b4:s002:x2",
+            "text": "He was a member of the Lewis and Clark Expedition, which was guided by French Canadian Toussaint Charbonneau and his young Shoshone wife, Sacagawea. At the time, Colter's reports of the Yellowstone area were considered fictional. On a return from Astoria, Robert Stuart and a party of five men discovered South Pass in 1812.\nThe Oregon Trail later followed that route as emigrants moved to the west coast."
+          },
+          {
+            "unit_id": "frames:f2ff4562619e84b4:s002:x3",
+            "text": "In 1850, mountain man Jim Bridger first documented what is now known as Bridger Pass. Bridger also explored Yellowstone, and filed reports on the region that, like Colter's, were largely regarded at the time as tall tales. The Union Pacific Railroad constructed track through Bridger Pass in 1868. It was used as the route for construction of Interstate 80 through the mountains 90 years later."
+          },
+          {
+            "unit_id": "frames:f2ff4562619e84b4:s002:x4",
+            "text": "After the Union Pacific Railroad reached Cheyenne in 1867, population growth was stimulated. The federal government established the Wyoming Territory on July 25, 1868. Lacking significant deposits of gold and silver, unlike mineral-rich Colorado, Wyoming did not have such a population boom. But South Pass City had a short-lived boom after the Carissa Mine began producing gold in 1867."
+          },
+          {
+            "unit_id": "frames:f2ff4562619e84b4:s002:x5",
+            "text": "Copper was mined in some areas between the Sierra Madre Mountains and the Snowy Range near Grand Encampment.\nOnce government-sponsored expeditions to the Yellowstone country began, Colter's and Bridger's descriptions of the region's landscape were confirmed. In 1872, Yellowstone National Park was created as the world's first, to protect this area. Nearly all of the park lies within the northwestern corner of Wyoming."
+          },
+          {
+            "unit_id": "frames:f2ff4562619e84b4:s002:x6",
+            "text": "On December 10, 1869, territorial Governor John Allen Campbell extended the right to vote to women, making Wyoming the first territory to do so, and upon statehood became the first state to grant women's suffrage. Women first served on juries in Wyoming (Laramie in 1870). Wyoming was also a pioneer in welcoming women into electoral politics."
+          },
+          {
+            "unit_id": "frames:f2ff4562619e84b4:s002:x7",
+            "text": "It had the first female court bailiff (Mary Atkinson, Laramie, in 1870), and the first female justice of the peace in the country (Esther Hobart Morris, South Pass City, in 1870). In 1924, Wyoming was the first state to elect a female governor, Nellie Tayloe Ross, who took office in January 1925."
+          },
+          {
+            "unit_id": "frames:f2ff4562619e84b4:s002:x8",
+            "text": "Due to its civil-rights history, one of Wyoming's state nicknames is \"The Equality State\", and the official state motto is \"Equal Rights\".\nWyoming's constitution also included a pioneering article on water rights. Bills for Wyoming Territory's admission to the union were introduced in both the U.S. Senate and U.S. House of Representatives in December 1889."
+          },
+          {
+            "unit_id": "frames:f2ff4562619e84b4:s002:x9",
+            "text": "On March 27, 1890, the House passed the bill and President Benjamin Harrison signed Wyoming's statehood bill; Wyoming became the 44th state in the union on July 10, 1890.\nWyoming was the location of the Johnson County War of 1892, which erupted between competing groups of cattle ranchers. The passage of the Homestead Act led to an influx of small ranchers."
+          },
+          {
+            "unit_id": "frames:f2ff4562619e84b4:s002:x10",
+            "text": "A range war broke out when either or both of the groups chose violent conflict over commercial competition in the use of the public land."
+          }
+        ]
+      },
+      {
+        "scope_id": "frames:f2ff4562619e84b4:s004",
+        "units": [
+          {
+            "unit_id": "frames:f2ff4562619e84b4:s004:x0",
+            "text": "Wyoming: Climate\nWyoming's climate is generally semi-arid and continental (Köppen climate classification BSk) and is drier and windier in comparison to most of the United States with greater temperature extremes. Much of this is due to the topography of the state. Summers in Wyoming are warm with July high temperatures averaging between 80 and 90 °F (27 and 32 °C) in most of the state."
+          },
+          {
+            "unit_id": "frames:f2ff4562619e84b4:s004:x1",
+            "text": "With increasing elevation, however, this average drops rapidly with locations above 9,000 feet (2,700 m) averaging around 70 °F (21 °C). Summer nights throughout the state are characterized by a rapid cooldown with even the hottest locations averaging in the 50–60 °F (10–16 °C) range at night. In most of the state, most of the precipitation tends to fall in the late spring and early summer."
+          },
+          {
+            "unit_id": "frames:f2ff4562619e84b4:s004:x2",
+            "text": "Winters are cold but are variable with periods of sometimes extreme cold interspersed between generally mild periods, with Chinook winds providing unusually warm temperatures in some locations.\nWyoming is a dry state with much of the land receiving less than 10 inches (250 mm) of rainfall per year. Precipitation depends on elevation with lower areas in the Big Horn Basin averaging 5–8 inches (130–200 mm), making the area nearly a true desert."
+          },
+          {
+            "unit_id": "frames:f2ff4562619e84b4:s004:x3",
+            "text": "The lower areas in the North and on the eastern plains typically average around 10–12 inches (250–300 mm), making the climate there semi-arid. Some mountain areas do receive a good amount of precipitation, 20 inches (510 mm) or more, much of it as snow, sometimes 200 inches (510 cm) or more annually."
+          },
+          {
+            "unit_id": "frames:f2ff4562619e84b4:s004:x4",
+            "text": "The state's highest recorded temperature is 114 °F (46 °C) at Basin on July 12, 1900, and the lowest recorded temperature is −66 °F (−54 °C) at Riverside on February 9, 1933.\nThe number of thunderstorm days varies across the state with the southeastern plains of the state having the most days of thunderstorm activity. Thunderstorm activity in the state is highest during the late spring and early summer."
+          },
+          {
+            "unit_id": "frames:f2ff4562619e84b4:s004:x5",
+            "text": "The southeastern corner of the state is the most vulnerable part of the state to tornado activity. Moving away from that point and westwards, the incidence of tornadoes drops dramatically with the west part of the state showing little vulnerability. Tornadoes, where they occur, tend to be small and brief, unlike some of those that occur farther east."
+          }
+        ]
+      },
+      {
+        "scope_id": "frames:f2ff4562619e84b4:s005",
+        "units": [
+          {
+            "unit_id": "frames:f2ff4562619e84b4:s005:x0",
+            "text": "Wyoming: Location and size\nAs specified in the designating legislation for the Territory of Wyoming, Wyoming's borders are lines of latitude 41°N and 45°N, and longitude 104°3'W and 111°3'W (27 and 34 west of the Washington Meridian) – a geographical quadrangle. Wyoming is one of only three states (the others being Colorado and Utah) to have borders defined by only \"straight\" lines."
+          },
+          {
+            "unit_id": "frames:f2ff4562619e84b4:s005:x1",
+            "text": "Due to surveying inaccuracies during the 19th century, Wyoming's legal border deviates from the true latitude and longitude lines by up to one-half mile (0.80 km) in some spots, especially in the mountainous region along the 45th parallel. Wyoming is bordered on the north by Montana, on the east by South Dakota and Nebraska, on the south by Colorado, on the southwest by Utah, and on the west by Idaho."
+          },
+          {
+            "unit_id": "frames:f2ff4562619e84b4:s005:x2",
+            "text": "It is the tenth largest state in the United States in total area, containing 97,814 square miles (253,340 km2) and is made up of 23 counties. From the north border to the south border, it is 276 miles (444 km); and from the east to the west border is 365 miles (587 km) at its south end and 342 miles (550 km) at the north end."
+          }
+        ]
+      },
+      {
+        "scope_id": "frames:f2ff4562619e84b4:s007",
+        "units": [
+          {
+            "unit_id": "frames:f2ff4562619e84b4:s007:x0",
+            "text": "Wyoming: Mountain ranges\nThe Great Plains meet the Rocky Mountains in Wyoming. The state is a great plateau broken by many mountain ranges. Surface elevations range from the summit of Gannett Peak in the Wind River Mountain Range, at 13,804 feet (4,207 m), to the Belle Fourche River valley in the state's northeast corner, at 3,125 feet (952 m)."
+          },
+          {
+            "unit_id": "frames:f2ff4562619e84b4:s007:x1",
+            "text": "In the northwest are the Absaroka, Owl Creek, Gros Ventre, Wind River, and the Teton ranges. In the north central are the Big Horn Mountains; in the northeast, the Black Hills; and in the southern region the Laramie, Snowy, and Sierra Madre ranges.\nThe Snowy Range in the south-central part of the state is an extension of the Colorado Rockies both in geology and in appearance."
+          },
+          {
+            "unit_id": "frames:f2ff4562619e84b4:s007:x2",
+            "text": "The Wind River Range in the west central part of the state is remote and includes more than 40 mountain peaks in excess of 13,000 ft (4,000 m) tall in addition to Gannett Peak, the highest peak in the state. The Bighorn Mountains in the north-central portion are somewhat isolated from the bulk of the Rocky Mountains."
+          },
+          {
+            "unit_id": "frames:f2ff4562619e84b4:s007:x3",
+            "text": "The Teton Range in the northwest extends for 50 miles (80 km), part of which is included in Grand Teton National Park. The park includes the Grand Teton, the second-highest peak in the state.\nThe Continental Divide spans north–south across the central portion of the state. Rivers east of the divide drain into the Missouri River Basin and eventually the Gulf of Mexico."
+          },
+          {
+            "unit_id": "frames:f2ff4562619e84b4:s007:x4",
+            "text": "They are the North Platte, Wind, Bighorn, and Yellowstone rivers. The Snake River in northwest Wyoming eventually drains into the Columbia River and the Pacific Ocean, as does the Green River through the Colorado River Basin.\nThe Continental Divide forks in the south-central part of the state in an area known as the Great Divide Basin where water that precipitates onto or flows into it cannot reach an ocean—it all sinks into the soil and eventually evaporates."
+          },
+          {
+            "unit_id": "frames:f2ff4562619e84b4:s007:x5",
+            "text": "Several rivers begin in or flow through the state, including the Yellowstone River, Bighorn River, Green River, and the Snake River."
+          }
+        ]
+      },
+      {
+        "scope_id": "frames:f2ff4562619e84b4:s008",
+        "units": [
+          {
+            "unit_id": "frames:f2ff4562619e84b4:s008:x0",
+            "text": "Wyoming: Basins\nMuch of Wyoming is covered with large basins containing different eco-regions, from shrublands to smaller patches of desert. Regions of the state classified as basins contain everything from large geologic formations to sand dunes and vast unpopulated spaces. Basin landscapes are typically at lower elevations and include rolling hills, valleys, mesas, terraces and other rugged terrain, but also include natural springs as well as rivers and artificial reservoirs."
+          },
+          {
+            "unit_id": "frames:f2ff4562619e84b4:s008:x1",
+            "text": "They have common plant species such as various subspecies of sagebrush, juniper and grasses such as wheatgrass, but basins are known for their diversity of plant and animal species."
+          }
+        ]
+      },
+      {
+        "scope_id": "frames:f2ff4562619e84b4:s009",
+        "units": [
+          {
+            "unit_id": "frames:f2ff4562619e84b4:s009:x0",
+            "text": "Wyoming: Islands\nWyoming has 32 named islands; the majority are in Jackson Lake and Yellowstone Lake, within Yellowstone National Park in the northwest portion of the state. The Green River in the southwest also contains a number of islands."
+          }
+        ]
+      },
+      {
+        "scope_id": "frames:f2ff4562619e84b4:s011",
+        "units": [
+          {
+            "unit_id": "frames:f2ff4562619e84b4:s011:x0",
+            "text": "Wyoming: Counties\nThe state of Wyoming has 23 counties.\n\nWyoming license plates have a number on the left that indicates the county where the vehicle is registered, ranked by an earlier census. Specifically, the numbers are representative of the property values of the counties in 1930. The county license plate numbers are:"
+          }
+        ]
+      },
+      {
+        "scope_id": "frames:f2ff4562619e84b4:s012",
+        "units": [
+          {
+            "unit_id": "frames:f2ff4562619e84b4:s012:x0",
+            "text": "Wyoming: Cities and towns\nThe State of Wyoming has 99 incorporated municipalities.\n\nIn 2020, 51.1% of Wyomingites lived in one of the 12 most populous Wyoming municipalities."
+          }
+        ]
+      },
+      {
+        "scope_id": "frames:f2ff4562619e84b4:s013",
+        "units": [
+          {
+            "unit_id": "frames:f2ff4562619e84b4:s013:x0",
+            "text": "Wyoming: Metropolitan areas\nThe United States Census Bureau has defined two metropolitan statistical areas (MSA) and eight micropolitan statistical areas (MiSA) for the state. In 2020, 31.3% of Wyomingites lived in either of the metropolitan statistical areas, and 80.4% lived in either a metropolitan or a micropolitan area."
+          }
+        ]
+      },
+      {
+        "scope_id": "frames:f2ff4562619e84b4:s015",
+        "units": [
+          {
+            "unit_id": "frames:f2ff4562619e84b4:s015:x0",
+            "text": "Wyoming: Population\nThe 2020 United States census counted 576,851 people living in Wyoming. The center of population of Wyoming is in Natrona County. Sparsely populated, Wyoming is the least populous state of the United States. Wyoming has the second-lowest population density in the country (behind Alaska) and is the sparsest-populated of the 48 contiguous states."
+          },
+          {
+            "unit_id": "frames:f2ff4562619e84b4:s015:x1",
+            "text": "It is one of only two states with a population smaller than that of the nation's capital; the only other state with this distinction is Vermont.\nAccording to HUD's 2022 Annual Homeless Assessment Report, there were an estimated 648 homeless people in Wyoming."
+          },
+          {
+            "unit_id": "frames:f2ff4562619e84b4:s015:x2",
+            "text": "According to the 2020 census, the population's racial composition was 84.7% white (81.4% non-Hispanic white), 2.4% American Indian and Alaska Native, 0.9% Black or African American, 0.9% Asian American, and 0.1% Native Hawaiian or Pacific Islander, 3.5% from some other race, and 7.5% from two or more races."
+          },
+          {
+            "unit_id": "frames:f2ff4562619e84b4:s015:x3",
+            "text": "As of 2011, 24.9% of Wyoming's population younger than age 1 were minorities. According to data from the American Community Survey, as of 2018, Wyoming was the only U.S. state where African Americans earn a higher median income than white workers."
+          },
+          {
+            "unit_id": "frames:f2ff4562619e84b4:s015:x4",
+            "text": "As of 2015, Wyoming had an estimated population of 586,107, which was an increase of 1,954, or 0.29%, from the prior year and an increase of 22,481, or 3.99%, since the 2010 census."
+          },
+          {
+            "unit_id": "frames:f2ff4562619e84b4:s015:x5",
+            "text": "This includes a natural increase since the last census of 12,165 (33,704 births minus 21,539 deaths) and an increase from net migration of 4,035 into the state. Immigration resulted in a net increase of 2,264 and migration within the country produced a net increase of 1,771. In 2004, the foreign-born population was 11,000 (2.2%)."
+          },
+          {
+            "unit_id": "frames:f2ff4562619e84b4:s015:x6",
+            "text": "In 2005, total births in Wyoming were 7,231 (birth rate of 14.04 per thousand).\nWyoming experienced its first population decline since 1990, with a decrease of just over 1,000 people (0.2 percent) from July 2015 to July 2016. This decline was attributed to the downturn in the state's mineral extraction industry, particularly the oil and gas sector, which led to the loss of thousands of jobs."
+          },
+          {
+            "unit_id": "frames:f2ff4562619e84b4:s015:x7",
+            "text": "However, state economist Jim Robinson noted signs of economic stabilization. Job losses in the oil and gas industry appeared to have leveled off, and there was a slight increase in drilling activity in recent months. While the state's economy showed little growth, it was considered to have reached a more stable condition as of late 2016."
+          },
+          {
+            "unit_id": "frames:f2ff4562619e84b4:s015:x8",
+            "text": "According to the 2000 census, the largest ancestry groups in Wyoming were: German (25.9%), English (15.9%), Irish (13.3%), and American Indian (4.7%). An additional 6.4% responded with \"American\" as their ancestry.\nIn 2018, the top countries of origin for Wyoming's immigrants were Mexico, China, Germany, England and Canada.\n\nBirth data"
+          },
+          {
+            "unit_id": "frames:f2ff4562619e84b4:s015:x9",
+            "text": "Note: Births in table do not add up, because Hispanics are counted both by their ethnicity and by their race, giving a higher overall number.\n\nSince 2016, data for births of White Hispanic origin are not collected, but included in one Hispanic group; persons of Hispanic origin may be of any race."
+          }
+        ]
+      },
+      {
+        "scope_id": "frames:f2ff4562619e84b4:s016",
+        "units": [
+          {
+            "unit_id": "frames:f2ff4562619e84b4:s016:x0",
+            "text": "Wyoming: Languages\nIn 2010, 93.39% (474,343) of Wyomingites over age 5 spoke English as their primary language; 4.47% (22,722) spoke Spanish, 0.35% (1,771) spoke German, and 0.28% (1,434) spoke French."
+          },
+          {
+            "unit_id": "frames:f2ff4562619e84b4:s016:x1",
+            "text": "Other common non-English languages included Algonquian (0.18%), Russian (0.10%), Tagalog, and Greek (both 0.09%).\nIn 2007, the American Community Survey reported 6.2% (30,419) of Wyoming's population over five spoke a language other than English at home."
+          },
+          {
+            "unit_id": "frames:f2ff4562619e84b4:s016:x2",
+            "text": "Of those, 68.1% were able to speak English very well, 16.0% spoke English well, 10.9% did not speak English well, and 5.0% did not speak English at all."
+          }
+        ]
+      }
+    ]
+  },
+  "limits": [
+    "Observed matched comparisons are descriptive reused-development results, not untouched confirmation or equivalence tests.",
+    "No full nine-stage run or causal X-to-FRAMES-readout claim.",
+    "No evidence validity or figure-aware completion inferred from render currentness or null inputs."
+  ],
+  "current_source": {
+    "root": "synthetics papers/corpus-as-a-state/reconstruction/output/pdf/v2.1/skein.tex",
+    "source_revision": "5920474efdec2d60fdcc93c6411e7a6219b19a395df91f8997b7b3b95ac5e8e2",
+    "files": [
+      {
+        "path": "synthetics papers/corpus-as-a-state/reconstruction/output/pdf/v2.1/skein.tex",
+        "sha256": "5a5f31da72e7ebef4162058dc4b2395266d4de390d46e5ebdaafdba6e0fa16eb"
+      },
+      {
+        "path": "synthetics papers/corpus-as-a-state/reconstruction/output/pdf/v2.1/evaluation-results.tex",
+        "sha256": "5e1c218ba70193d33443be4dffea9e13737fcad138ae7b221c7726df9d5d4547"
+      },
+      {
+        "path": "synthetics papers/corpus-as-a-state/reconstruction/output/pdf/v2.1/extension_appendices.tex",
+        "sha256": "c4a7ccf23b82dfac0ea29564520290d0ae41df70bfa7d722b68a0916c0ec104c"
+      }
+    ],
+    "read": {
+      "id": "READ-af7b499e50af42449660189f0baa2f1b",
+      "turn_id": "WT-62840450a3dd4839a97dc328f53f878b",
+      "session_id": "WS-3d22536a14a4424c8b193ffd26a51a34",
+      "project": "memory-in-pieces",
+      "operation": "source",
+      "payload": {
+        "files": [
+          "synthetics papers/corpus-as-a-state/reconstruction/output/pdf/v2.1/skein.tex",
+          "synthetics papers/corpus-as-a-state/reconstruction/output/pdf/v2.1/evaluation-results.tex",
+          "synthetics papers/corpus-as-a-state/reconstruction/output/pdf/v2.1/extension_appendices.tex"
+        ],
+        "project": "memory-in-pieces"
+      },
+      "output_sha256": "4d18480ca8901f13dfff1d106fc8fb49635b4a957b4bce2708daacd27e2a3d1e"
+    }
+  }
+}

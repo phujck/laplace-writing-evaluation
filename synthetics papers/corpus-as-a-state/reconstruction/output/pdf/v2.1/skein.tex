@@ -1,0 +1,497 @@
+\documentclass[reprint,aps,prx,superscriptaddress,nofootinbib,longbibliography]{revtex4-2}
+\usepackage{eigen-revtex}
+\providecommand{\Tr}{\operatorname{Tr}}
+\providecommand{\diag}{\operatorname{diag}}
+\newcommand{\Ran}{\operatorname{ran}}
+\hypersetup{pdftitle={Dynamic Memory},pdfauthor={G. McCaul}}
+\begin{document}
+\raggedbottom
+\title{Dynamic Memory}
+\author{G.\ McCaul}
+\affiliation{The Laplace Engine}
+\begin{abstract}
+Memory should make an earlier observation available to a new enquiry, including when its source has changed.
+We construct a revisable representation retaining located source contributions beside a joint empirical law.
+Prefixes with the same conditional future share a calculation without losing the source identities needed to revise it.
+Forward propagation of selected mass and backwards propagation of query tests give the same exact conditional answer.
+A worked source correction, addition and retraction exposes the retained dependencies.
+On a width-two parity family of 262,144 distinct states, a warm batch of 1024 Boolean queries takes 59.8 microseconds against 1490.7 for packed direct scanning on the tested GPU.
+Separate language-delivery studies identify where source conditions and adequate passages help a fixed reader, and where missing observations or temporal composition still prevent recall.
+The resulting memory retains a calculation that can be shared, checked against its sources and revised.
+\end{abstract}
+\maketitle
+
+\section{Memory as a revisable description}
+\label{sec:intro}
+A memory makes an earlier observation available to a present enquiry.
+In a document collection, this means more than preserving the words.
+A question may ask which reports concern the same event, how their accounts differ, or what follows when one of them is corrected.
+The information needed for recall lies partly in those relations.
+We develop Dynamic Memory as a representation that retains them with the source observations on which they depend.
+
+Consider a question comparing two news reports published on different dates.
+Finding a paragraph about the right subject is only the beginning.
+We need to know which report it belongs to, which date qualifies the statement and what that report actually says.
+If the earlier account is corrected, a remembered answer may no longer follow.
+The correction must replace its previous contribution rather than masquerade as a second event.
+A useful memory needs a route from an answer back to the observations that determine it.
+
+Retrieval-augmented generation supplies a language model with external passages before it answers.
+MultiHop-RAG makes the need for several supporting sources explicit~\cite{multihoprag}.
+Maximal marginal relevance, or MMR, balances relevance against redundancy in the selected passages~\cite{mmr}.
+RAPTOR builds a hierarchy of recursively clustered summaries, offering access at several scales~\cite{raptor}.
+These constructions organise access to evidence.
+Our question is what calculation a retained representation supports, and what must remain available when its evidence changes.
+
+We begin with an admitted finite joint law of observations.
+Each contribution keeps its source revision and a located supporting span.
+Observations that have the same conditional future share the remaining calculation, while their source contributions remain distinct.
+Sharing equivalent futures is an established way of reducing a predictive description.
+Crutchfield and Young reconstruct probabilistic machines by merging equivalent subtrees of observed symbol sequences~\cite{Crutchfield198940eaeb}.
+Here equivalence means equality of the remaining empirical distribution at a fixed cut in a finite field order.
+The fields need not be successive times, and the corpus need not sample a stationary process.
+We therefore use a finite conditional-state quotient, not an inferred stationary \(\epsilon\)-machine or a claim of minimal predictive entropy.
+
+Source-aware calculation also has a precise precedent.
+Provenance semirings annotate input tuples and propagate expressions describing how query outputs depend on them~\cite{Green20074d5218}.
+Addition records alternative contributions and multiplication records joint use.
+A list of contributing sources alone can lose these distinctions.
+Our finite construction retains the source-to-tuple incidence beside aggregate prefix counts, then shares equal normalised suffix laws using ordered decision structure~\cite{bryant1986}.
+Under fixed field order and admitted positive integer contributions, this combination gives exact conditional answers and an explicit path-copy revision algorithm.
+It is not a replacement for general relational provenance or a solution to admitting arbitrary language claims.
+
+There is a separate question about the memory required to realise a stochastic model.
+Gu et al.\ encode predictive states as nonorthogonal quantum states and show that quantum models can require less memory than optimal classical models~\cite{Gu2012e2bbbd}.
+Our primary calculation is classical.
+The operator representation below asks how its selected probabilities embed in a positive channel, not whether a quantum device improves its memory cost.
+No quantum memory advantage is measured here.
+
+The construction has two immediate consequences.
+A query can be evaluated as propagation through the retained conditional states, in either direction.
+A source edit can revise the counts and dependencies that made the answer possible.
+We test these consequences with exact finite records and structured query timings.
+The language studies test a further interface: whether explicitly conditioned source selection delivers the passages a reader needs.
+They do not execute the finite update engine as an end-to-end language system.
+An optional extension to a separately specified evolving law is developed in the supporting information.
+
+Figure~\ref{fig:dm-pipeline} sets out these interfaces.
+We first establish what a source observation contains, then calculate a recollection and revise its dependencies.
+The tests ask where the retained structure saves work and where an answer still fails between available evidence and its use.
+A compact representation is useful only after we know what it must preserve.
+\begin{figure*}[t]
+\includegraphics[width=\textwidth]{figures/generated/dm-source-recall-pipeline.pdf}
+\caption{From observations to recall.
+The upper route is the exact finite construction: admit located observations, retain their joint law, evaluate field tests and revise affected dependencies.
+The lower route is the implemented text-delivery study: compile explicit source conditions, rank original passages and supply bounded context to a fixed reader.
+Their common interface is identified source support.
+Neither the continuous-law extension nor the finite incremental engine is asserted to produce the text answers.}
+\label{fig:dm-pipeline}
+\end{figure*}
+
+\section{What a source contributes}
+\label{sec:object}
+The first difficulty is deciding what an observation is evidence for.
+A stored extraction from the \emph{Climate} section of the ingested Wikipedia article \emph{Wyoming} describes southeastern tornado vulnerability, a westward decline and tornadoes that tend to be small and brief.
+Its located quotation contains only the first claim.
+Figure~\ref{fig:dm-wyoming} reproduces the complete three-sentence source unit and the extracted assertion.
+It distinguishes the origin of some words from support for the whole assertion.
+\begin{figure*}[t]
+\includegraphics[width=.94\textwidth]{figures/generated/mip_wyoming_witness.pdf}
+\caption{A witness must cover the claim it supports.
+In the retained Wikipedia plaintext, \emph{Wyoming}, \emph{Climate}, the source unit occupies section-relative characters 1939--2291.
+The blue sentence, characters 1939--2037, supports southeastern vulnerability.
+The following sentence supplies westward decline, and the last supplies the small, brief character.
+The left-hand fields are the stored extraction, not additional source statements.
+The example concerns this ingested snapshot, not validation of every extracted field in the corpus.}
+\label{fig:dm-wyoming}
+\end{figure*}
+
+For an enquiry about duration, the narrow quotation is insufficient.
+The stored implementation nevertheless retains the full five-field \emph{proposal}, its three-sentence input unit and the narrower located quotation.
+It does not automatically expand the quotation, split the assertion or reject the additional fields after deciding what they entail.
+The consequence field remains unsupported by that quotation alone.
+Reading the full unit supplies the small-and-brief statement, but this contextual judgement is ours, not an executed entailment gate.
+
+We call a retained source location a \emph{witness}.
+The Wyoming record illustrates implemented proposal-and-witness storage, not an admitted weighted row of the calculation below.
+Its Subject, Object, Mechanism, Conditions and Consequences are language fields, not the binary \(A,B\) schema used in the controlled example.
+No empirical multiplicity for the Wyoming assertion is assigned here.
+A source-supported admitted law is an \emph{input condition} of the theory.
+If only the narrow span is available, only southeastern vulnerability can be justified from it.
+The other proposed claims need broader located support before being used as admitted observations.
+Supporting Information~\ref{app:dm-updates} contrasts this condition with the implemented literal parser, where the complete assertion, weight and incidence can all be checked exactly.
+
+Write an admitted observation from source revision \(s\) as a tuple
+\(x_s=(x_{s0},\ldots,x_{s,D-1})\) of \(D\) categorical fields, with positive integer multiplicity \(w_s\).
+Its joint count, total weight \(W>0\) and empirical probability are
+\begin{equation}
+ \begin{gathered}
+ n(x)=\sum_s w_s\mathbf1[x_s=x],\\
+ W=\sum_xn(x),\qquad p(x)=n(x)/W .
+ \end{gathered}
+ \label{eq:joint-counts}
+\end{equation}
+The indicator \(\mathbf1[\cdot]\) is one when its condition holds.
+Source incidence records which revisions contribute to each tuple.
+Distinct batches may contribute to the same tuple.
+Repeated reports of one event require an event-identity rule before their weights are added.
+Multiplicity is not a confidence score.
+
+Why retain a joint law rather than a separate distribution for each field?
+Take equally weighted records \((A,B,C)=000,011,101,110\).
+Every field is unbiased and every pair independent.
+Nevertheless, among records with \(A=B=0\), the field \(C\) is certainly zero.
+The relation survives in the joint records but disappears from their separate marginals.
+Tests on fields of one observation must act on the same source incidence.
+Combining evidence from several documents will later require an explicit assembly operation, not multiplication of unrelated observations.
+
+A field test is a function \(f_g(x_g)\) between zero and one at ordered position \(g\).
+An indicator selects a category, while \(f_g=1\) leaves that field unrestricted.
+Their product selects joint evidence.
+An unknown value remains an explicit category and does not satisfy a known-value constraint.
+The field order is a computational choice.
+We now ask how many enquiries can share the work of applying these tests.
+
+\section{Calculating a recollection}
+\label{sec:grading}
+A small source collection lets us see every step.
+Let \(A=0\) select a population and \(B=0\) denote a recorded event.
+Two source assertions are
+\begin{quote}\small
+Group 00 contains 4 records with A=0 and B=0.\\
+Group 01 contains 1 records with A=0 and B=1.
+\end{quote}
+The remaining groups contribute one record at \((A,B)=(1,0)\) and four at \((1,1)\).
+All four initial counts are therefore \((4,1,1,4)\).
+The selected population contains five records, four reporting the event, giving a recalled fraction \(4/5\).
+The literal grammar makes the observation step exact in this controlled example.
+
+Read the fields from left to right.
+A \emph{prefix} contains the fields already read, a \emph{suffix} those still to come, and a \emph{cut} separates them.
+Two supported prefixes share a continuation state when their normalised suffix laws agree.
+Table~\ref{tab:dm-states} instantiates the construction for the three-field parity records.
+Prefixes \(00\) and \(11\) share the future \(C=0\), while \(01\) and \(10\) share \(C=1\).
+Their source records remain individually located.
+At cut \(g\), let \(t_g(a,x)\) be the probability of reading category \(x\) from state \(a\), and \(\delta_g(a,x)\) its successor.
+\begin{table*}[t]
+\caption{Continuation states for equally weighted \(000,011,101,110\), in order \(A,B,C\).
+States belong to their labelled cuts, so \(e_1\) and \(e_2\) are distinct.
+The terminal has no remaining field and backwards message one.}
+\label{tab:dm-states}
+\begin{ruledtabular}
+\begin{tabular}{clll}
+Cut & State: represented prefixes & Remaining law & Next category \(\to\) successor (probability)\\
+\hline
+0 & root: empty & four tuples, each \(1/4\) & \(A=0\to e_1\;(1/2),\quad A=1\to o_1\;(1/2)\)\\
+1 & \(e_1:\;0\) & \(BC=00,11\), each \(1/2\) & \(B=0\to e_2\;(1/2),\quad B=1\to o_2\;(1/2)\)\\
+1 & \(o_1:\;1\) & \(BC=01,10\), each \(1/2\) & \(B=0\to o_2\;(1/2),\quad B=1\to e_2\;(1/2)\)\\
+2 & \(e_2:\;00,11\) & \(C=0\) & \(C=0\to\mathrm{terminal}\;(1)\)\\
+2 & \(o_2:\;01,10\) & \(C=1\) & \(C=1\to\mathrm{terminal}\;(1)\)\\
+3 & terminal & empty suffix & stop\\
+\end{tabular}
+\end{ruledtabular}
+\end{table*}
+
+Correct source 00 from four records to three.
+The total weight is now nine and \(P(A=0)=4/9\).
+For the joint event \(A=0,B=0\), use factor vectors \(f_A=(1,0)\), \(f_B=(1,0)\), in category order \((0,1)\).
+For the conditioning event use \(h_A=(1,0)\), \(h_B=(1,1)\).
+A backwards message is the probability of passing the \emph{remaining} tests conditional on the current state.
+Write \(Z(f)\) for the selected empirical probability mass, before normalising by a conditioning event.
+Starting from terminal message one, the event message at \(A=0\) is
+\((3/4)\times1+(1/4)\times0=3/4\).
+Thus
+\begin{equation}
+ \begin{gathered}
+ Z(f)=\frac49\,\frac34=\frac13,\qquad Z(h)=\frac49,\\
+ P(B=0\mid A=0)=\frac{Z(f)}{Z(h)}=\frac34 .
+ \end{gathered}
+ \label{eq:worked}
+\end{equation}
+The conditioning query leaves \(B\) unrestricted.
+Zero conditioning mass makes the answer undefined, not zero.
+
+The same arithmetic has a linear form.
+Let \(S_g\) count continuation states at cut \(g\), and call \(\max_g S_g\) the \emph{continuation width}.
+The matrix carrying selected mass to the next cut has \(S_{g+1}\) rows and \(S_g\) columns:
+\begin{equation}
+ M_g^f[b,a]=\sum_{x:\,\delta_g(a,x)=b}t_g(a,x)f_g(x).
+ \label{eq:querymatrix}
+\end{equation}
+Starting with unit mass \(v_0=1\) at the single root,
+\begin{equation}
+ \begin{aligned}
+ Z(f)&=\mathbf1^{\mathsf T}M_{D-1}^f\cdots M_0^fv_0\\
+     &=\sum_xp(x)\prod_{g=0}^{D-1}f_g(x_g).
+ \end{aligned}
+ \label{eq:querymass}
+\end{equation}
+The terminal all-ones vector sums surviving mass.
+Each path contributes its conditional probabilities, whose product telescopes to \(p(x)\).
+This proves the equality and identifies the calculation performed by propagation.
+
+Alternatively, move the test backwards through the transposed matrices.
+With terminal message \(m_D=1\),
+\begin{equation}
+ m_g(a)=\sum_x t_g(a,x)f_g(x)
+              m_{g+1}\!\left(\delta_g(a,x)\right).
+ \label{eq:adjoint}
+\end{equation}
+This is adjoint evaluation.
+Evaluating the matrix product is often called a contraction.
+Equal suffix laws reuse a message.
+A suffix of unrestricted tests has message one without further work, while a zero branch contributes nothing.
+Conditional recall is a ratio of two such calculations under the same law.
+
+The matrix description already answers the classical query.
+An operator description adds a different capability: we can ask whether the same selection remains a valid positive operation when this memory is correlated with an auxiliary system.
+Represent classical masses \(v(a)\) by the diagonal matrix \(\rho=\diag(v)\).
+More generally a \emph{density matrix} is a positive semidefinite matrix, normalised to unit trace for a complete preparation.
+Its trace, the sum of its diagonal entries, is total mass.
+Off-diagonal entries are called \emph{coherences}.
+For each supported pair \((a,x)\), define
+\begin{equation}
+ K_{g,a,x}=\sqrt{t_g(a,x)f_g(x)}
+                |\delta_g(a,x)\rangle\langle a| .
+ \label{eq:kraus}
+\end{equation}
+The ket labels an output state at cut \(g+1\), the bra an input state at cut \(g\).
+The sum \(\Phi_g^f(\rho)=\sum_{a,x}K_{g,a,x}\rho K_{g,a,x}^{\dagger}\) is a \emph{Kraus representation}: each operator describes a labelled branch, and summing the branches forgets that label.
+It reproduces \(M_g^f\) on diagonal populations and discards coherences.
+Its completeness sum is diagonal with entries \(\sum_xt_g(a,x)f_g(x)\leq1\).
+Consequently the output trace is surviving mass and cannot exceed the input trace.
+Positivity even when an arbitrary auxiliary system is retained is \emph{complete positivity}.
+For example, the corrected \(A=0\) state with \(f_B=(1,0)\) sends mass \(3/4\) to the terminal and rejects \(1/4\).
+The channel packages this selection as a valid instrument branch.
+It does not improve the classical answer or preserve quantum coherence.
+Supporting Information~\ref{app:dm-channel} explains the separate square-root amplitude construction.
+The field index orders a query calculation, not physical time.
+
+\section{Revising the retained computation}
+\label{sec:query}
+After the correction, add a distinct batch of one record at \((0,1)\).
+The selected counts become \((3,2)\), giving \(3/5\).
+Retracting the \emph{old} batch 01 leaves \((3,1)\), giving \(3/4\).
+Figure~\ref{fig:updates} follows these operations.
+The correction changes the path through \((0,0)\).
+Addition and retraction change the path through \((0,1)\).
+The \(A=1\) conditional future remains unchanged, although its probability at the root changes.
+\begin{figure*}[t]
+\includegraphics[width=.94\textwidth]{figures/generated/dynamic-memory-witnessed-update.pdf}
+\caption{Witnessed source-update calculation, showing the two initial \(A=0\) assertions.
+The unchanged \(A=1\) groups have weights one and four.
+The bottom path denotes the \((0,0)\) \emph{correction} only.
+Addition of batch 02 and retraction of old batch 01 instead use root \(\to A=0\to(0,1)\).
+Root mass times suffix message gives the joint event, which is divided by the conditioning mass.
+Each operation revises the supported calculation.}
+\label{fig:updates}
+\end{figure*}
+
+Five stored objects make the update precise.
+Source incidence maps an active revision to its tuple contributions and witnesses.
+An unmerged prefix occurrence is keyed by its field values, not by a source identity, and holds the aggregate count and child occurrences.
+Its canonical signature is the ordered list of reduced next-symbol probabilities paired with successor-signature identities.
+Identical signatures share one immutable continuation state, a procedure called hash-consing.
+A query binding associates a raw prefix and query suffix with that state.
+The message cache stores a value for a canonical state and those remaining factors.
+A binding can become obsolete without making its old cached value false.
+
+For the correction, retract source 00's weight four and add its replacement weight three.
+Copy the raw root, \(A=0\) prefix and \((0,0)\) leaf, then rebuild signatures upwards.
+The \(A=0\) probabilities change from \((4/5,1/5)\) to \((3/4,1/4)\), so affected bindings must point to the new state.
+Messages for the unchanged \(A=1\) signature remain reusable.
+
+Addition of batch 02 makes the distinction between incidence and a prefix explicit.
+Sources \texttt{d01-r1} and \texttt{d02-r1} each contribute weight one to the \emph{same} tuple \((0,1)\), with separate assertion witnesses \([0,45)\).
+The raw leaf keyed by \((0,1)\) has aggregate count two, not two source-labelled copies.
+Its parent \(A=0\) has count five and law \((3/5,2/5)\).
+Removing old \texttt{d01-r1} deletes only that incidence entry.
+The surviving \texttt{d02-r1} keeps the leaf present with count one.
+The parent becomes count four with law \((3/4,1/4)\), so its binding changes.
+The old \((3/5,2/5)\) state remains immutable, and both old and new leaves share the terminal's unchanged empty-suffix law.
+Supporting Information~\ref{app:dm-updates} gives the actual records and incidence transition.
+
+Raw occurrences are essential when shared futures diverge: counts \((3,1)\) and \((12,4)\) share law \((3/4,1/4)\), but replacing the latter by \((8,4)\) splits them.
+Changing their shared state in place would revise the wrong sources.
+
+The work follows the retained dependencies.
+Let \(N\) count distinct tuples, \(c_g\) categories at position \(g\), and \(Q\) queries.
+If \(A_g\leq Q\) queries remain active after the shortcuts, dense contraction uses
+\begin{equation}
+ O\!\left(\sum_g A_gS_gc_g\right)
+ \label{eq:querycost}
+\end{equation}
+arithmetic slots, or the visited edges in sparse evaluation.
+Direct scanning uses \(O(QND)\) factor work, with packed-word improvements for Boolean tests.
+Emitting \(k\) witnesses requires at least \(O(k)\) work.
+A single changed tuple touches at most \(D+1\) raw prefix nodes, but source parsing, child-slot copying, rational arithmetic and the affected message cone must also be charged.
+A small initial quotient does not guarantee a small update for every change.
+
+Parity explains why continuation size can be more useful than tuple count.
+For \(D\) binary fields with even total parity, the \(2^{D-1}\) distinct tuples need only the running parity of the prefix.
+Reading one switches parity and reading zero preserves it.
+The final field is fixed by the accumulated parity, as in Table~\ref{tab:dm-states}.
+This is inherited shared-state structure, not a new parity-complexity result.
+The knowledge-compilation perspective is useful because representation size, supported queries and transformations are separate questions~\cite{darwiche2002}.
+The tests measure a regime in which the shared conditional calculation is economical.
+
+A different question arises if observations also carry a specified evolution law.
+Omitted coordinates may then influence future retained observables even when current retained values agree.
+Two preparations can have the same group masses but put different weight on states near an inter-group boundary.
+Their later group masses can then differ.
+Eliminating that internal imbalance leaves a delayed influence on the retained quantities.
+Supporting Information~\ref{app:dm-memory} derives this memory kernel for a finite reversible Markov law, following Mori's projection construction~\cite{mori}.
+The saved four-state example there specifies the rates and retained directions and shows what returning omitted information changes.
+This optional extension predicts a declared dynamics.
+It is neither the source-edit algorithm nor a stage in the language evaluations.
+
+\section{Tests of retained evidence}
+\label{section:delivery-under-a-fixed-reader}
+The tests address exact conditional calculation, revision of admitted source contributions and delivery of text evidence.
+The incremental demonstration is a standard-library CPU implementation.
+The structured timing study uses the GPU query implementation, whose source snapshots are rebuilt rather than incrementally revised.
+The language studies use separately implemented source-conditioned retrieval.
+All text comparisons concern questions already examined during development, including development of the reading instructions.
+Within each reported comparison we fix the reader, evidence allowance and endpoint.
+
+\subsection{Exact enquiries}
+The edit fixture has nine states and sixteen fixed Boolean product queries.
+Forward propagation and backwards messages agree with fresh reconstruction from the active source files and independent direct rational row counts in all 144 query-state checks.
+The sequence includes replay, continuation merge and split, and removal of conditioning support.
+Supporting Information~\ref{app:dm-updates} gives the assertions, operations and verification costs.
+These checks establish the finite implementation outcome, not an incremental scaling advantage.
+
+Figure~\ref{fig:locality} asks whether repeated conditional futures save work when every tuple is distinct.
+For even parity, \(D=13,\ldots,19\) gives \(N=4096,\ldots,262144\).
+Queries fix selected coordinates and sum over the rest.
+The validated integer implementation avoids fractional messages for these Boolean queries (Supporting Information~\ref{app:dm-integer}).
+At the largest size, the median over nontrivial tested regimes is \(59.8\,\mu\mathrm{s}\) per warm batch of 1024 queries, against \(1490.7\,\mu\mathrm{s}\) for packed direct scanning.
+For one query the values are \(37.4\) and \(45.8\,\mu\mathrm{s}\).
+Construction and first compilation are outside these intervals.
+The advantage requires reusable conditional structure and enough queries to amortise preparation.
+A repeated 64-world support instead favours weighted direct evaluation.
+High-entropy unique support reaches width 25,945 and is refused by the continuation kernel's capacity 128.
+Supporting Information~\ref{app:dm-timings} gives construction, crossover accounting and these adverse regimes.
+\begin{figure*}[t]
+\includegraphics[width=.82\textwidth,viewport=0 246 320 458,clip]{../../../extension/figures/query_locality_completed_v1.pdf}
+\caption{Warm full-API latency on the even-parity family.
+Only the latency panels are shown: (a) one query, (b) 1024 queries.
+Points are medians of per-regime median timings, and shading spans the minimum to maximum across fixed-coordinate counts and locations.
+Each regime has two warmups and eleven synchronised samples.
+Direct methods scan packed rows or weighted unique rows, which have equal support size here.
+The blue \lq\lq exact recursive\rq\rq\ curve is exact continuation evaluation by backwards integer messages, with width two.
+These are observations on the recorded 4 GB GPU, not hardware-independent latencies.
+The complete diagnostic figure and protocol appear in Supporting Information~\ref{app:dm-timings}.}
+\label{fig:locality}
+\end{figure*}
+
+\subsection{From a question to delivered passages}
+For text, an enquiry first becomes explicit requirements and admissible sources.
+A deterministic finite grammar recognises outlet names and dates in the news question.
+A \emph{facet} is a question-side clause with its recognised bindings.
+Here source means the article's outlet, while document identity names a particular article.
+Publication dates select exact days.
+Event dates or dates of unresolved role use a declared seven-day window, and a named month without a day selects that month.
+Unbound axes remain unrestricted.
+The compiler reads the question and stored metadata vocabulary, not the answer.
+Requirements are supplied identically to all arms in the requirement-table condition.
+
+One actual question asks whether Inter Miami's postseason prospects changed between a Sporting News ticket-price report published on 4 October 2023 and its playoff-exclusion report on 7 October.
+The first support set includes both the named ticket report and a separate match report from that outlet on 4 October.
+The second includes the 7 October article.
+Exact metadata support is therefore not yet exact semantic support.
+Within each set, labelled two-sentence windows are scored by cosine similarity plus \(0.5\) times normalised BM25, a keyword relevance score.
+The facet-conditioned route takes the next window from each ranked facet in turn, removes duplicates and merges admitted spans in article order.
+Its retained 1989-token context discusses rising ticket prices, says Messi did not arrive for the earlier match, and explicitly states later playoff elimination.
+The first two observations do not themselves state the earlier postseason assessment.
+Supporting Information~\ref{app:dm-text} reproduces this trace and the requirement-table operation.
+The example locates missing support rather than inferring an answer from an article title.
+
+The comparison uses 609 articles and 172 MultiHop-RAG questions~\cite{multihoprag}.
+All methods receive title/outlet/date-labelled two-sentence windows and 2000 evidence tokens.
+The diversity-ranked route applies MMR with relevance coefficient \(0.7\) to 200 candidates.
+The local recursive-summary route searches 1747 stored summary nodes plus the labelled windows, without MMR.
+It adapts collapsed-tree retrieval by changing leaves and delivery, rather than freshly reproducing public RAPTOR.
+The facet-conditioned route may also deliver an explicitly derived support table when it fits within one quarter of the allowance.
+This table is not an original passage.
+No statement-field score or query-time diffusion is used here.
+
+\begin{table}[t]
+\caption{News answers under common requirement-table reading.
+Normalised exact match, Claude Sonnet 5.5 at low effort, 2000 \texttt{cl100k\_base} evidence tokens.
+Every method receives the same question requirements and answer schema.}
+\label{tab:news}
+\begin{ruledtabular}
+\begin{tabular}{lr}
+Evidence assembly & Exact matches /172\\
+\hline
+Facet-conditioned &153\\
+Diversity-ranked &145\\
+Local recursive-summary &147\\
+\end{tabular}
+\end{ruledtabular}
+\end{table}
+The instruction asks the reader to identify supporting passage IDs and state what they say for each requirement before answering.
+It gives 153 exact matches for facet-conditioned retrieval, against 145 and 147 for the controls (Table~\ref{tab:news}).
+Paired discordances are nine wins to one loss and seven to one.
+The contexts cover 234, 211 and 205 annotated needed facts respectively.
+Coverage means that a located occurrence of a reference fact lies wholly within delivered original spans of its article.
+It is not a count of generated statements or a substitute for correctness.
+
+The instruction matters at this interpretive point.
+With common answer-form rules but no requirement table, the same configurations give 152, 152 and 148 exact matches.
+The facet-conditioned route therefore ties diversity ranking under that condition.
+The advantage in Table~\ref{tab:news} belongs to a particular assembly-and-reader configuration.
+The additional delivered facts show what reaches the reader, but their counts alone do not causally explain the answer difference.
+Supporting Information~\ref{app:dm-extra-text} displays this alternate reading in the matched-news figure.
+
+FRAMES tests a related delivery problem~\cite{frames}.
+The source-conditioned route starts from fifty ranked pieces, adds evidence from one recovered title-link hop and delivers merged sections within 8000 tokens.
+If the reader identifies a missing need, one further retrieval supplies up to 4000 tokens of new spans.
+The diversity control has the same allowance.
+On 190 questions, the completed comparison gives 127 versus 126 judged correct answers, with seven paired wins and six losses.
+A separate lexical containment proxy gives 123 versus 117.
+Some ingested Wikipedia pages lack the table rows needed for an answer.
+Another retrieval can recover an omitted passage, but not an observation absent from the source bank.
+The supporting information specifies the cohort, title matching, judging rubric and exact lexical rule and displays both endpoints.
+This comparison measures a configuration-specific delivery outcome, not a general language-memory advantage.
+
+The completed LongMemEval-S comparison~\cite{longmem} exposes a different missing operation.
+The two stored arm names \texttt{ours\_keys} and \texttt{dense\_keys} execute the \emph{same} dense score call on the shared index, followed by the same ordering and whole-turn packer.
+We call them the shared-dense arms here, rather than implying that one performed a compressed conditional reconstruction.
+Both give 44 correct answers at 4000 tokens and 45 at 8000, out of 48 including six abstentions.
+Both deliver all annotated turns on 41 of 42 positive-evidence cases.
+The remaining miss asks for elapsed months since two charity events on consecutive days.
+Required primary turns rank 73--134, beyond packing frontiers at ranks 27 and 54.
+A paraphrase of one event is present, but the decisive pair is not delivered together.
+Supporting Information~\ref{app:dm-extra-text} gives the LongMem figure and hybrid comparison.
+The case motivates temporal witness composition before packing, rather than assuming a longer undirected context will suffice.
+
+\section{What a dynamic memory makes possible}
+\label{sec:outlook}
+Dynamic Memory retains a source-supported calculation.
+Joint observations determine conditional transitions, query tests propagate through them, and source incidence identifies what must change after a revision.
+Sharing equal futures saves repeated work without making their contributing sources interchangeable.
+The worked example demonstrates this advantage where every contribution and answer can be inspected.
+
+Scaling depends on retained structure.
+Small continuation width can make many enquiries inexpensive even when all tuples differ.
+Construction, witness output and large affected dependency cones remain costs.
+The GPU study measures the query benefit in one structured regime, while the CPU demonstration establishes a separate finite update route.
+For text, the results show why source conditions, delivered context and reader operation must be considered together.
+
+The next improvements follow from specific missing observations.
+Table-aware ingestion should retain row labels and column headers with their values, then test whether the needed relation reaches the same reader.
+Temporal retrieval should construct event-pair candidates before ordinary packing and test whether the required dates are jointly delivered.
+Larger controlled source changes should measure affected count and message cones alongside parsing, retained history and verification.
+These tests ask what a representation makes possible, rather than merely whether a longer context changes a score.
+
+An answer need not be permanent to be a successful recollection.
+It must be possible to recover why it followed, and what changed when it stopped following.
+That is the practical purpose of retaining the calculation with its evidence.
+\clearpage
+\appendix
+\input{reconstruction_appendices.tex}
+\clearpage
+\bibliography{reconstruction_refs}
+\end{document}

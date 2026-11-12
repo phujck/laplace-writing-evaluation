@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>assets · the eigen engine</title>
+<!-- THE ASSET SURFACE (surface 7, W-ASSETS) — the LAST surface, joined to the one engine.
+     The resting DOM is the composed BRIEF (GET /assets/brief, rendered verbatim): what this
+     project carries by kind (never a hardcoded figure), which are landed + which demonstrate,
+     and at most one ask. The roster is the summonable inventory, materialised behind one open
+     by the pane module; opening an asset REALLOCATES to the close-examination cockpit with a
+     named return door. hymn.css is the sole colour source; the focus/geometry runtime is
+     engine.mjs; the surface logic is assets-panes.mjs; all network rides store.fetchJSON. -->
+<link rel="stylesheet" href="/shared/hymn.css">
+<style>
+/* LAYOUT ONLY (visual §6.2) — behaviour + component colours live in static_shared/assets-panes.mjs
+   + engine.mjs + hymn.css. No colour literals here (the one-palette clause binds this <style>). */
+*{box-sizing:border-box}
+/* SCROLL LAW (P10 as amended, W-FINISH): the page never scrolls — the assets body is a bounded
+   flex column below the shell bar, and the surface scrolls inside its own pane (#assets), the
+   conceptric/guide pattern. The engine reallocation happens INSIDE this bounded pane; a heavy
+   corpus (a long roster) stays page-level bounded regardless of how many cards land. */
+html,body{margin:0;height:100%;font:13px/1.5 -apple-system,"Segoe UI",Roboto,sans-serif;
+  background:var(--bg);color:var(--ink)}
+body{overflow:hidden;display:flex;flex-direction:column}
+#assets{flex:1;min-height:0;overflow-y:auto;overflow-x:hidden;
+  width:100%;max-width:1280px;margin:0 auto;padding:16px 18px 80px}
+.as-top{display:flex;align-items:baseline;gap:12px;flex-wrap:wrap;margin-bottom:10px}
+.as-top h1{font-size:17px;font-weight:600;letter-spacing:.3px;margin:0}
+.as-top h1 b{color:var(--keystone)}
+.as-sub{color:var(--ink2);font-size:12px}
+@media (max-width:640px){ #assets{padding:12px 12px 60px} }
+</style>
+</head>
+<body>
+<main id="assets">
+  <header class="as-top">
+    <h1>your <b>assets</b></h1>
+    <span class="as-sub">every derivation and every figure an addressable object — open one to examine it whole, assess the step, bank the edit, regen manifest-only</span>
+  </header>
+  <!-- the engine root: the brief is the resting altitude; the rail + focus are built on pin -->
+  <div id="eng-root">
+    <div class="eng-brief"><div class="asb-prose" data-role="brief-prose">resolving your assets…</div></div>
+  </div>
+</main>
+<script defer src="/shared/shell.js"></script>
+<script type="module">
+// the ONLY inline script: bootstrap the asset instrument (all network rides store.fetchJSON
+// inside the pane module — no raw fetch escapes the model on this surface).
+import { initAssets } from "/shared/assets-panes.mjs";
+initAssets();
+</script>
+</body>
+</html>

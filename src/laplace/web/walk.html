@@ -1,0 +1,867 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>the walk</title>
+<!-- the ?corpus= query, echoed by walk.py. The AUTHORITY is /artefact/context, which
+     names the corpus it resolved when this is empty. -->
+<meta name="walk:corpus" content="__WALK_CORPUS__">
+<link rel="stylesheet" href="/shared/tokens.css">
+<style>
+/* ── the walk's own CSS. It imports no shell chrome: only the shared design tokens above
+      (M5 C3; the walk's colour names below are aliases of them) and, at runtime, the
+      vendored KaTeX css added by walk.mjs. ─── */
+@font-face { font-family: "Lora"; src: url("/shared/fonts/lora-var.woff2") format("woff2");
+             font-weight: 400 700; font-style: normal; font-display: swap; }
+@font-face { font-family: "Outfit"; src: url("/shared/fonts/outfit-var.woff2") format("woff2");
+             font-weight: 300 700; font-style: normal; font-display: swap; }
+
+:root {
+  /* the walk's names, aliased to the shared tokens (--ink and --bg ARE the tokens) */
+  --ink-dim:  var(--ink2);
+  --ink-faint:var(--dim);
+  --bg-rail:  var(--panel2);
+  --bg-paper: var(--panel);
+  --line:     var(--edge);
+  --line-soft:var(--edge2);
+  --live:     var(--accent);
+  --walked:   #2f7f63;   /* walk-only marks: no token names these */
+  --partial:  #2a4a53;
+  --span:     #d8a657;
+  --warn:     var(--bad);    /* the walk's "warn" is its refusal/unknown colour: the bad token */
+  --parked:   var(--held);   /* a standing, unbanked edit — held, not yet banked: the held token,
+                                NOT the overridden --warn above (held tone stays distinct from refusal) */
+
+  --spine-w: 244px;   /* the spine at rest */
+  --rail-w:  52px;    /* the right rail at rest: a slim strip; the band widens it */
+  --bar-h:   40px;
+  --pad:     20px;
+
+  /* THE READING DIAL (G2). The column's width is stated in em, so it is a FIXED pixel
+     width for a given text size: reallocating the rail changes the MARGINS around the
+     column, never the column, so the text never reflows mid-read. Past the margins the
+     pane pans. --doc-size moves only through his zoom dial. */
+  --doc-size: 16.5px;
+  --measure:  33em;
+}
+
+* { box-sizing: border-box; }
+html, body {
+  margin: 0; padding: 0; height: 100%;
+  overflow: hidden;                 /* the scroll law: the PAGE never scrolls, panes do */
+  background: var(--bg); color: var(--ink);
+  font-family: "Outfit", system-ui, sans-serif; font-size: 14px;
+}
+button { font: inherit; color: inherit; background: none; border: 0; cursor: pointer; }
+:focus-visible { outline: 2px solid var(--live); outline-offset: 1px; }
+
+#walk {
+  display: grid; height: 100vh; width: 100%;
+  grid-template-rows: var(--bar-h) minmax(0, 1fr);
+  grid-template-columns: var(--spine-w) minmax(0, 1fr) var(--rail-w);
+  grid-template-areas: "bar bar bar" "spine paper rail";
+}
+#walk[data-spine="collapsed"] { --spine-w: 0px; }
+
+/* ── the bar ─────────────────────────────────────────────────────────────────────── */
+#bar {
+  grid-area: bar; display: flex; align-items: center; gap: 14px;
+  padding: 0 12px; min-width: 0; overflow: hidden;
+  border-bottom: 1px solid var(--line); background: var(--bg-rail);
+}
+#badge { color: var(--ink-dim); white-space: nowrap; overflow: hidden;
+         text-overflow: ellipsis; min-width: 0; flex: 1 1 auto; }
+#badge b { color: var(--ink); font-weight: 500; }
+.bar-group { display: flex; align-items: center; gap: 4px; flex: 0 0 auto; }
+.bar-group button {
+  padding: 3px 8px; border: 1px solid var(--line); border-radius: 3px;
+  color: var(--ink-dim); line-height: 1.3;
+}
+.bar-group button:hover { color: var(--ink); border-color: var(--ink-faint); }
+.bar-group button[disabled] { color: var(--ink-faint); cursor: default; }
+/* the named return door: a plain anchor, styled like the acts beside it */
+.bar-group a { padding: 3px 8px; border: 1px solid var(--line); border-radius: 3px;
+               color: var(--ink-dim); text-decoration: none; line-height: 1.3; }
+.bar-group a:hover { color: var(--ink); border-color: var(--ink-faint); }
+#zoom-level { min-width: 46px; text-align: center; color: var(--ink-dim);
+              font-variant-numeric: tabular-nums; }
+#door[hidden] { display: none; }
+#door { color: var(--live); border-color: var(--walked); padding: 3px 8px;
+        border: 1px solid var(--walked); border-radius: 3px; flex: 0 0 auto;
+        max-width: 34ch; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+#geo-door[data-open="1"] { color: var(--span); border-color: var(--span); }
+
+/* ── the spine ───────────────────────────────────────────────────────────────────── */
+#spine {
+  grid-area: spine; min-width: 0; overflow-x: hidden; overflow-y: auto;
+  border-right: 1px solid var(--line); background: var(--bg-rail);
+}
+#walk[data-spine="collapsed"] #spine { display: none; }
+#spine-head { padding: 10px var(--pad) 6px; color: var(--ink-faint);
+              font-size: 11px; letter-spacing: .08em; text-transform: uppercase; }
+.sec { display: flex; align-items: stretch; min-width: 0; }
+.sec-tint { flex: 0 0 3px; background: transparent; }
+.sec[data-cover="partial"] .sec-tint { background: var(--partial); }
+.sec[data-cover="walked"]  .sec-tint { background: var(--walked); }
+.sec-row {
+  flex: 1 1 auto; min-width: 0; display: flex; gap: 6px; align-items: baseline;
+  padding: 5px 10px 5px 9px; text-align: left; color: var(--ink-dim);
+  border-left: 2px solid transparent;
+}
+.sec-row:hover { color: var(--ink); }
+.sec[data-current="1"] .sec-row { color: var(--ink); border-left-color: var(--live);
+                                  background: var(--bg); }
+.sec[data-span="1"] .sec-row { background: var(--gold-10); }
+.sec[data-span="head"] .sec-row { box-shadow: inset 0 2px 0 var(--span); }
+.sec[data-span="tail"] .sec-row { box-shadow: inset 0 -2px 0 var(--span); }
+.sec[data-span="only"] .sec-row { box-shadow: inset 0 2px 0 var(--span),
+                                              inset 0 -2px 0 var(--span); }
+.sec[data-span="1"] .sec-bracket,
+.sec[data-span="head"] .sec-bracket,
+.sec[data-span="tail"] .sec-bracket,
+.sec[data-span="only"] .sec-bracket { background: var(--span); }
+.sec-bracket { flex: 0 0 3px; background: transparent; }
+.sec-title { flex: 1 1 auto; min-width: 0; overflow: hidden; text-overflow: ellipsis;
+             white-space: nowrap; }
+.sec-blocks { flex: 0 0 auto; color: var(--ink-faint); font-size: 11px;
+              font-variant-numeric: tabular-nums; }
+.sec-count { flex: 0 0 auto; color: var(--ink-faint); font-size: 11px; }
+.sec[data-depth="1"] .sec-row { padding-left: 24px; font-size: 13px; }
+.sec[data-depth="2"] .sec-row { padding-left: 38px; font-size: 13px; }
+#spine-note { padding: 8px var(--pad) 16px; color: var(--ink-faint); line-height: 1.5; }
+
+/* ── the paper: THE CONTENT-FAITHFUL BLOCK CANVAS ────────────────────────────────── */
+/* This is the working surface. The typeset pdf is the GEOMETRY FACE, one door away. */
+#paper {
+  grid-area: paper; min-width: 0; position: relative;
+  overflow-y: auto; overflow-x: auto;   /* G2: past the margins the PANE pans, anchored */
+  background: var(--bg-paper);
+  scrollbar-width: thin;
+}
+#walk[data-geo="1"] #paper { display: none; }
+#doc-note { width: fit-content; min-width: 100%; padding: 40px var(--pad);
+            color: var(--ink-dim); line-height: 1.6;
+            font-family: "Lora", Georgia, serif; max-width: 62ch; }
+#doc-note[hidden] { display: none; }
+#doc {
+  width: fit-content; min-width: 100%; padding: 26px 0 60vh;
+  font-size: var(--doc-size);
+}
+.sec-block { margin: 0 auto; width: var(--measure); max-width: none; }
+.doc-head {
+  margin: 34px 0 4px; padding: 0 4px; scroll-margin-top: 0;
+  font-family: "Outfit", system-ui, sans-serif; font-size: 1.06em; font-weight: 500;
+  color: var(--ink); letter-spacing: .01em;
+}
+.doc-head:first-child { margin-top: 0; }
+.doc-head .n { color: var(--ink-faint); font-size: .82em; margin-right: .6em;
+               font-variant-numeric: tabular-nums; }
+.doc-head .file { display: block; color: var(--ink-faint); font-size: .68em;
+                  font-family: ui-monospace, monospace; margin-top: 3px;
+                  word-break: break-all; }
+.doc-head[data-lit="1"] { background: var(--mint-80-a13); }
+
+/* one block: the addressable unit. Its provenance rides every gesture made inside it. */
+.blk {
+  position: relative; margin: 0; padding: 5px 4px 5px 10px;
+  border-left: 2px solid transparent; outline: none;
+}
+.blk:hover { border-left-color: var(--line); }
+.blk[data-focus="1"] { border-left-color: var(--ink-faint); }
+.blk:focus-visible { border-left-color: var(--live); background: var(--bg); }
+.blk[data-mark="armed"] { border-left-color: var(--live); background: var(--bg); }
+.blk[data-mark="banked"] { border-left-color: var(--span); }
+.blk[data-lit="1"] { background: var(--mint-80-a13); }
+.blk[data-kind="para"], .blk[data-kind="caption"] {
+  font-family: "Lora", Georgia, serif; line-height: 1.62; color: var(--grey-90);
+}
+.blk[data-kind="para"] + .blk[data-kind="para"] { margin-top: .55em; }
+.blk[data-kind="equation"] { padding: 10px 4px 10px 10px; overflow-x: auto; }
+.blk[data-kind="head"] { font-family: "Outfit", system-ui, sans-serif;
+                         font-size: .96em; font-weight: 500; color: var(--ink);
+                         margin-top: 18px; }
+.blk[data-kind="caption"] { font-size: .88em; color: var(--ink-dim); }
+
+/* the marks that persist: the retrieval cue. The exact range where the browser gives
+   the Highlight API; the block's own rule always (so the cue never depends on it). */
+::highlight(walk-armed) { background: var(--mint-80-a30); }
+::highlight(walk-mark)  { background: var(--orange-70-a20); }
+
+/* citations, cross-refs, and the honest marks for what did not resolve */
+.cite { padding: 0 1px; color: var(--live); border: 0; font: inherit;
+        font-family: "Outfit", system-ui, sans-serif; font-size: .86em;
+        vertical-align: .08em; }
+.cite:hover { text-decoration: underline; }
+.cite[data-unknown="1"] { color: var(--warn); }
+.ref { color: var(--live); font-family: "Outfit", system-ui, sans-serif;
+       font-size: .9em; }
+.ref[data-unknown="1"] { color: var(--warn); }
+/* click-and-type: a paragraph with an exact splice IS an editor. The caret is the
+   affordance (text cursor over prose, pointer over islands); islands are atomic. */
+.blk-body[contenteditable="true"] { cursor: text; caret-color: var(--live); outline: none; }
+.mathq[contenteditable="false"], .cite-wrap[contenteditable="false"],
+.ref[contenteditable="false"], .unknown[contenteditable="false"] { cursor: pointer; }
+.blk[data-editing="1"] { border-left-color: var(--live); }
+/* the parking model (2026-08-11): a parked block wears the amber edge until Ctrl-S banks
+   it or Esc reverts it — the visual honesty that retired the blur/block-change banks */
+.blk[data-parked="1"] { border-left-color: var(--parked); }
+/* the edit card: the free-floating point at the caret. Summoned by his caret (invited),
+   it names the source lines, takes the altitude, and says the banking state in place. */
+#edit-card { position: absolute; z-index: 8; max-width: 360px; padding: 6px 9px;
+             background: var(--bg-rail); border: 1px solid var(--line); border-radius: 4px;
+             box-shadow: 0 2px 10px var(--shade-45);
+             font-family: "Outfit", system-ui, sans-serif; font-size: 11px; }
+#edit-card[hidden] { display: none; }
+.ec-src { color: var(--ink-dim); font-family: ui-monospace, monospace; font-size: 10px;
+          word-break: break-all; }
+.ec-scopes { display: flex; flex-wrap: wrap; align-items: baseline; gap: 3px;
+             margin: 5px 0 4px; }
+.ec-lead { color: var(--ink-faint); }
+.ec-chip { padding: 1px 5px; border: 1px solid var(--line); border-radius: 3px;
+           color: var(--ink-dim); font-size: 10px; line-height: 1.4; }
+.ec-chip:hover { color: var(--ink); border-color: var(--ink-faint); }
+.ec-chip[aria-pressed="true"] { background: var(--live); border-color: var(--live);
+                                color: var(--bg); }
+.ec-status { color: var(--ink-dim); line-height: 1.45; overflow-wrap: anywhere; }
+.ec-status[data-tone="refused"] { color: var(--warn); }
+.ec-status[data-tone="banked"] { color: var(--live); }
+.ec-note { width: 100%; min-height: 26px; max-height: 20vh; resize: none; margin: 4px 0;
+           background: var(--bg); color: var(--ink); border: 1px solid var(--line);
+           border-radius: 3px; padding: 4px 6px; font: inherit; line-height: 1.4; }
+.ec-note:focus-visible { outline: 2px solid var(--live); outline-offset: 0; }
+.ec-asks { display: flex; flex-wrap: wrap; gap: 3px; margin: 2px 0 4px; }
+.ec-asks[hidden] { display: none; }
+.ec-ask { padding: 1px 6px; border: 1px dashed var(--span); border-radius: 3px;
+          color: var(--span); font-size: 10px; line-height: 1.4; }
+.ec-ask:hover { border-style: solid; }
+.ec-where-btn { align-self: flex-start; padding: 1px 6px; border: 1px solid var(--line);
+                border-radius: 3px; color: var(--ink-dim); font-size: 10px;
+                line-height: 1.4; margin-bottom: 4px; }
+.ec-where-btn:hover { color: var(--ink); border-color: var(--ink-faint); }
+.ec-where { display: flex; flex-direction: column; gap: 3px; margin-bottom: 4px;
+            max-height: 30vh; overflow-y: auto; }
+.ec-where[hidden] { display: none; }
+.ec-w-row { display: flex; flex-wrap: wrap; align-items: baseline; gap: 4px;
+            line-height: 1.5; }
+.ec-w-door { padding: 0 5px; border: 1px solid var(--line); border-radius: 3px;
+             color: var(--live); font-size: 10px; line-height: 1.5; }
+.ec-w-door:hover { border-color: var(--walked); }
+.ec-w-cite { color: var(--ink-dim); font-size: 10px; }
+#edit-card { display: flex; flex-direction: column; }
+.unknown { color: var(--warn); border-bottom: 1px dashed var(--warn);
+           font-family: ui-monospace, monospace; font-size: .82em; }
+.katex-error { color: var(--warn) !important; }
+.mathq { display: inline-block; }
+.mathq[data-block="1"] { display: block; text-align: center; margin: .2em 0; }
+
+/* kind:"list" — itemize / enumerate / description rendered as content, items tokenized
+   through the same piece pipeline the prose uses, nested one level. */
+.blk[data-kind="list"] { font-family: "Lora", Georgia, serif; line-height: 1.62;
+                         color: var(--grey-90); }
+ul.lst, ol.lst { margin: .2em 0; padding-left: 1.5em; }
+ul.lst li, ol.lst li { margin: .25em 0; }
+ul.lst ul.lst, ol.lst ol.lst, ul.lst ol.lst, ol.lst ul.lst { margin: .2em 0; }
+.lst-term { font-weight: 600; color: var(--ink); }
+
+/* kind:"raw" — the honest fallback. Shown as source, still addressable. */
+.raw-badge { display: block; color: var(--ink-faint);
+             font-family: "Outfit", system-ui, sans-serif; font-size: .72em;
+             letter-spacing: .06em; text-transform: uppercase; margin-bottom: 4px; }
+pre.raw { margin: 0; padding: 6px 8px; background: var(--bg); border: 1px solid var(--line);
+          border-radius: 3px; color: var(--ink-dim);
+          font-family: ui-monospace, monospace; font-size: .78em; line-height: 1.5;
+          white-space: pre-wrap; overflow-wrap: anywhere; }
+
+/* figures: the served route, drawn through the vendored pdf.js (or an <img> when the
+   route serves a raster). The caption sits under it. */
+.fig { margin: 4px 0; text-align: center; }
+.fig canvas, .fig img { max-width: 100%; height: auto; display: block; margin: 0 auto;
+                        background: var(--paper); }
+.fig-note { color: var(--ink-faint); font-family: "Outfit", system-ui, sans-serif;
+            font-size: .76em; line-height: 1.5; text-align: left; }
+.cap { margin-top: 6px; font-size: .86em; color: var(--ink-dim);
+       font-family: "Lora", Georgia, serif; line-height: 1.5; text-align: left; }
+
+/* the block-level source flip: `s` swaps the block IN PLACE for its own tex. */
+.flip { display: flex; flex-direction: column; gap: 5px; }
+.flip-head { display: flex; flex-wrap: wrap; align-items: baseline; gap: 8px;
+             color: var(--ink-faint); font-family: "Outfit", system-ui, sans-serif;
+             font-size: .74em; }
+.flip-head .path { color: var(--ink-dim); font-family: ui-monospace, monospace;
+                   word-break: break-all; }
+.flip textarea {
+  width: 100%; min-height: 6em; resize: vertical;
+  background: var(--bg); color: var(--ink); border: 1px solid var(--live);
+  border-radius: 3px; padding: 7px 8px; line-height: 1.5;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; font-size: .8em;
+}
+.flip-acts { display: flex; flex-wrap: wrap; gap: 4px; align-items: baseline; }
+.flip-acts button { padding: 2px 8px; border: 1px solid var(--line); border-radius: 3px;
+                    color: var(--ink-dim);
+                    font-family: "Outfit", system-ui, sans-serif; font-size: .74em; }
+.flip-acts button:hover { color: var(--ink); border-color: var(--ink-faint); }
+.flip-note { color: var(--ink-faint); font-family: "Outfit", system-ui, sans-serif;
+             font-size: .74em; line-height: 1.5; overflow-wrap: anywhere; }
+.flip-note[data-tone="refused"] { color: var(--warn); }
+.flip-note[data-tone="banked"] { color: var(--live); }
+
+/* ── the geometry face: the named review pdf, behind one head door ───────────────── */
+#geometry { grid-area: paper; min-width: 0; display: none; flex-direction: column;
+            background: var(--bg-paper); }
+#walk[data-geo="1"] #geometry { display: flex; }
+#geo-bar { flex: 0 0 auto; display: flex; align-items: baseline; gap: 12px;
+           padding: 7px 12px; border-bottom: 1px solid var(--line);
+           background: var(--bg-rail); min-width: 0; }
+#geo-label { color: var(--ink-dim); font-size: 12px; min-width: 0; flex: 1 1 auto;
+             overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+#geo-back { flex: 0 0 auto; padding: 2px 8px; border: 1px solid var(--span);
+            border-radius: 3px; color: var(--span); font-size: 12px; }
+#geo-scroll { flex: 1 1 auto; min-height: 0; position: relative;
+              overflow-y: auto; overflow-x: auto; scrollbar-width: thin; }
+#geo-note { padding: 18px var(--pad); color: var(--ink-dim); line-height: 1.6;
+            font-family: "Lora", Georgia, serif; max-width: 62ch; }
+#geo-note[hidden] { display: none; }
+#geo-pages { width: fit-content; min-width: 100%; padding: 16px 0 40vh; }
+.pg { position: relative; margin: 0 auto 14px; background: var(--paper);
+      box-shadow: 0 1px 0 var(--black), 0 0 0 1px var(--line); }
+.pg canvas { display: block; width: 100%; height: 100%; }
+
+/* ── the right rail: a slim strip at rest, the band and the composer when armed ─── */
+#rail {
+  grid-area: rail; min-width: 0; overflow: hidden;
+  border-left: 1px solid var(--line); background: var(--bg-rail);
+  display: flex; flex-direction: column;
+}
+#rail-strip { flex: 1 1 auto; display: flex; flex-direction: column;
+              align-items: center; gap: 10px; padding: 10px 4px; cursor: pointer; }
+#rail-strip:hover { background: var(--bg); }
+#rail-open { color: var(--ink-dim); font-size: 15px; line-height: 1; }
+#rail-full { flex: 1 1 auto; min-height: 0; overflow: hidden;
+             display: flex; flex-direction: column; }
+#walk[data-rail="strip"] #rail-full { display: none; }
+#walk:not([data-rail="strip"]) #rail-strip { display: none; }
+#rail-label { writing-mode: vertical-rl; color: var(--ink-faint);
+              font-size: 11px; letter-spacing: .1em; text-transform: uppercase; }
+#rail-count { color: var(--ink-dim); font-variant-numeric: tabular-nums; }
+#rail-parked { color: var(--parked); font-variant-numeric: tabular-nums;
+               font-size: 11px; }
+#rail-parked[hidden] { display: none; }
+
+/* ── the composer (docked, never floating over the paper) ───────────────────────── */
+/* G6: it takes its lines within bounded maxima; it claims nothing when disarmed.
+   RAW TEX NEVER APPEARS HERE. The composer holds the PASSAGE, in his own reading
+   register, editable — the rewrite is the primary gesture. Source shows only in
+   place at the block, invited by `s`. */
+#composer[hidden] { display: none; }
+#composer {
+  flex: 0 0 auto; display: flex; flex-direction: column; gap: 7px;
+  padding: 9px 10px 10px; border-bottom: 1px solid var(--line);
+  max-height: 74%; overflow-y: auto;
+}
+#comp-where { color: var(--ink); font-size: 12px; overflow-wrap: anywhere; }
+#comp-where b { font-weight: 500; }
+#comp-where .grade { color: var(--ink-faint); }
+#comp-where .path { color: var(--ink-faint); font-family: ui-monospace, monospace;
+                    font-size: 11px; word-break: break-all; }
+.comp-lbl { color: var(--ink-faint); font-size: 11px; letter-spacing: .05em; }
+.comp-lbl[hidden] { display: none; }
+#comp-quote[hidden] { display: none; }
+#comp-quote {
+  width: 100%; min-height: 56px; max-height: 34vh; resize: none;
+  background: var(--bg); color: var(--ink); border: 1px solid var(--span);
+  border-left-width: 2px; border-radius: 3px; padding: 6px 8px;
+  font-family: "Lora", Georgia, serif; font-size: 13px; line-height: 1.5;
+}
+#comp-quote:focus-visible { outline: 2px solid var(--live); outline-offset: 0; }
+/* the passage, once he has typed in it: the border says REWRITE at the field itself, in
+   the frame of the keystroke — a bare digit typed here is that gesture, never silent. */
+#comp-quote[data-edited="1"] { border-color: var(--live); }
+#comp-body[hidden] { display: none; }
+#comp-body {
+  width: 100%; min-height: 60px; max-height: 26vh; resize: none;
+  background: var(--bg); color: var(--ink); border: 1px solid var(--line);
+  border-radius: 3px; padding: 7px 8px; font: inherit; line-height: 1.45;
+}
+#comp-body:focus-visible { outline: 2px solid var(--live); outline-offset: 0; }
+#comp-scopes[hidden] { display: none; }
+#comp-scopes { display: flex; flex-wrap: wrap; gap: 4px; }
+#comp-rulings[hidden] { display: none; }
+#comp-rulings { display: flex; flex-wrap: wrap; gap: 4px; }
+.chip {
+  display: inline-flex; align-items: baseline; gap: 5px; padding: 2px 7px;
+  border: 1px solid var(--line); border-radius: 3px; color: var(--ink-dim);
+  font-size: 12px; line-height: 1.4;
+}
+.chip:hover { color: var(--ink); border-color: var(--ink-faint); }
+.chip .k { color: var(--ink-faint); font-family: ui-monospace, monospace; font-size: 11px; }
+.chip[aria-pressed="true"] { background: var(--live); border-color: var(--live);
+                             color: var(--bg); }
+.chip[aria-pressed="true"] .k { color: var(--bg); }
+.chip[data-suggested="1"] { border-color: var(--span); }
+#comp-suggest[hidden] { display: none; }
+#comp-suggest {
+  align-self: flex-start; padding: 2px 7px; font-size: 12px; color: var(--span);
+  border: 1px dashed var(--span); border-radius: 3px; line-height: 1.4;
+}
+#comp-shape { color: var(--ink); font-size: 12px; line-height: 1.45;
+              overflow-wrap: anywhere; }
+#comp-shape b { font-weight: 500; color: var(--live); }
+#comp-shape[hidden] { display: none; }
+#comp-route { color: var(--ink-dim); font-size: 12px; line-height: 1.45;
+              overflow-wrap: anywhere; }
+#comp-route .dest { color: var(--ink); }
+#comp-hint { color: var(--ink-faint); font-size: 11px; line-height: 1.45; }
+#comp-echo { font-size: 12px; line-height: 1.45; color: var(--live);
+             word-break: break-word; }
+#comp-echo[data-tone="refused"] { color: var(--warn); }
+#comp-echo[hidden] { display: none; }
+#comp-actor[hidden] { display: none; }
+#comp-actor { display: flex; flex-direction: column; gap: 5px;
+              border: 1px solid var(--span); border-radius: 3px; padding: 7px 8px; }
+#comp-actor p { margin: 0; color: var(--ink-dim); font-size: 12px; line-height: 1.45; }
+#comp-actor .row { display: flex; gap: 5px; }
+#comp-actor input {
+  flex: 1 1 auto; min-width: 0; background: var(--bg); color: var(--ink);
+  border: 1px solid var(--line); border-radius: 3px; padding: 4px 6px; font: inherit;
+}
+#comp-actor button { padding: 3px 9px; border: 1px solid var(--line); border-radius: 3px;
+                     color: var(--ink-dim); }
+#comp-actor button:hover { color: var(--ink); border-color: var(--ink-faint); }
+
+/* ── the linkages pane: the rail's view of the paper (current section, coarse) ──── */
+#linkages { flex: 0 0 auto; max-height: 44%; display: flex; flex-direction: column;
+            border-bottom: 1px solid var(--line); }
+#lk-head { flex: 0 0 auto; padding: 9px var(--pad) 5px; color: var(--ink-faint);
+           font-size: 11px; letter-spacing: .08em; text-transform: uppercase; }
+#lk-body { flex: 1 1 auto; min-height: 0; overflow-y: auto; padding: 0 10px 8px var(--pad);
+           display: flex; flex-direction: column; gap: 5px; }
+.lk-sec { color: var(--ink); font-size: 12px; }
+.lk-row { display: flex; flex-wrap: wrap; align-items: baseline; gap: 4px;
+          color: var(--ink-dim); font-size: 11px; line-height: 1.5; }
+.lk-lead { color: var(--ink-faint); }
+.lk-chip { color: var(--ink-dim); font-size: 10px; padding: 0 5px;
+           border: 1px solid var(--line-soft); border-radius: 3px; }
+.lk-door { padding: 0 5px; border: 1px solid var(--line); border-radius: 3px;
+           color: var(--live); font-size: 10px; line-height: 1.5; }
+.lk-door:hover { border-color: var(--walked); }
+
+/* ── the session band: THIS WALK'S DEPOSITS, and nothing else ───────────────────── */
+/* One unified list, every scope and the unscoped together, comments and rewrites
+   alike. It never renders the historical ledger: what is listed here is what THIS
+   walk banked, so the count and the list can only ever mean one thing. */
+#band { flex: 1 1 0; min-height: 0; display: flex; flex-direction: column; }
+#band-head { flex: 0 0 auto; display: flex; align-items: baseline; gap: 8px;
+             padding: 9px 10px 5px var(--pad); color: var(--ink-faint);
+             font-size: 11px; letter-spacing: .08em; text-transform: uppercase; }
+#band-collapse { margin-left: auto; padding: 0 6px; color: var(--ink-dim);
+                 font-size: 12px; letter-spacing: 0; line-height: 1.4; }
+#band-collapse:hover { color: var(--ink); }
+#ledger-x { float: right; padding: 1px 7px; color: var(--ink-dim); font-size: 13px;
+            border: 1px solid var(--line); border-radius: 3px; }
+#ledger-x:hover { color: var(--ink); border-color: var(--ink-faint); }
+#band-count { color: var(--ink-dim); font-variant-numeric: tabular-nums;
+              letter-spacing: 0; }
+#band-parked[hidden] { display: none; }
+#band-parked { flex: 0 0 auto; padding: 0 var(--pad) 6px; color: var(--parked);
+               font-size: 12px; line-height: 1.4; max-height: 38%; overflow-y: auto; }
+#band-parked .pk-head { padding-bottom: 4px; }
+#band-parked .pk-row { border-top: 1px solid var(--line-soft); padding: 5px 0;
+                       display: flex; flex-direction: column; gap: 2px; }
+#band-parked .pk-jump { align-self: flex-start; padding: 0; border: 0;
+                        background: none; color: var(--parked); font: inherit;
+                        font-size: 11px; cursor: pointer; text-decoration: underline; }
+#band-parked .pk-diff { font-size: 11px; line-height: 1.45; word-break: break-word; }
+#band-parked .pk-minus { color: var(--warn); display: block; }
+#band-parked .pk-plus { color: var(--live); display: block; }
+#band-parked .pk-doors { display: flex; gap: 6px; }
+#band-parked .pk-btn { padding: 1px 8px; border: 1px solid var(--line);
+                       border-radius: 3px; background: none; color: var(--ink-dim);
+                       font: inherit; font-size: 11px; cursor: pointer; }
+#band-parked .pk-btn:hover { color: var(--ink); border-color: var(--ink-faint); }
+#band-parked .pk-lost { color: var(--warn); font-size: 11px; }
+
+/* ── the live redline (r): the session's delta kept visible until the next pass ──── */
+/* his ruling 2026-08-11c: added text is a DIFFERENT COLOUR (green ink, not a wash),
+   deleted text is STRUCK THROUGH beside it (red ink, clear line). */
+#walk[data-redline="1"] .rl-ins { color: var(--live);
+                                  background: var(--mint-80-a10);
+                                  box-shadow: inset 0 -1px 0 var(--live); }
+.rl-del { color: var(--warn); text-decoration: line-through;
+          text-decoration-color: var(--warn); text-decoration-thickness: 2px;
+          opacity: 1; padding: 0 2px; user-select: none; }
+.rl-badge { display: inline-block; color: var(--parked); font-size: 11px;
+            padding: 0 5px; border: 1px dashed var(--line); border-radius: 3px;
+            margin: 0 0 4px; user-select: none; }
+#walk:not([data-redline="1"]) .rl-del,
+#walk:not([data-redline="1"]) .rl-badge { display: none; }
+#band-mix[hidden] { display: none; }
+#band-mix { flex: 0 0 auto; padding: 0 var(--pad) 6px; color: var(--ink-dim);
+            font-size: 11px; font-variant-numeric: tabular-nums;
+            white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+#band-span[hidden] { display: none; }
+#band-span { flex: 0 0 auto; margin: 0 10px 6px; padding: 5px 8px;
+             border: 1px solid var(--span); border-radius: 3px;
+             color: var(--span); font-size: 12px; text-align: left; line-height: 1.4; }
+#band-list { flex: 1 1 auto; min-height: 0; overflow-y: auto; }
+#band-note { flex: 0 0 auto; padding: 7px 10px 10px; color: var(--ink-faint);
+             font-size: 11px; line-height: 1.5; border-top: 1px solid var(--line-soft); }
+/* a row the band REFUSED is said, and the saying outlives the next render */
+#band-note[data-tone="refused"] { color: var(--warn); }
+.dep { display: flex; flex-direction: column; gap: 4px; padding: 7px 10px;
+       border-bottom: 1px solid var(--line-soft); }
+.dep[data-fresh="1"] { background: var(--bg); }
+.dep[data-state="declined"] { opacity: .62; }
+.dep[data-kind="rewrite"], .dep[data-kind="compound"] { border-left: 2px solid var(--live); }
+.dep[data-orphan="1"] { border-left: 2px solid var(--span); }
+.dep-top { display: flex; flex-wrap: wrap; align-items: baseline; gap: 6px; }
+.dep-kind { padding: 1px 6px; border: 1px solid var(--live); border-radius: 3px;
+            color: var(--live); font-size: 11px; }
+.dep-scope { padding: 1px 6px; border: 1px solid var(--line); border-radius: 3px;
+             color: var(--ink-dim); font-size: 11px; }
+.dep-scope[data-unscoped="1"] { border-style: dashed; color: var(--ink-faint); }
+/* THE RULING (WRITING-CONSOLIDATION-W1). Three values, three weights, and `cut` is the only
+   one that gets the warning colour: it is the one that says the passage should not be in the
+   paper. `keep` is deliberately quiet — a passage he has ruled finished should not shout. */
+.dep-ruling { padding: 1px 6px; border: 1px solid var(--line); border-radius: 3px;
+              color: var(--ink); font-size: 11px; letter-spacing: 0.02em; }
+.dep-ruling[data-ruling="cut"] { border-color: var(--span); color: var(--span); }
+.dep-ruling[data-ruling="rework"] { border-color: var(--live); color: var(--live); }
+.dep-ruling[data-ruling="keep"] { color: var(--ink-dim); }
+.dep-where { color: var(--ink-faint); font-size: 11px; min-width: 0;
+             overflow: hidden; text-overflow: ellipsis; white-space: nowrap;
+             flex: 1 1 auto; }
+.dep-state { font-size: 11px; color: var(--ink-faint); }
+.dep-state[data-state="addressed"] { color: var(--live); }
+.dep-text { color: var(--ink-dim); font-size: 12px; line-height: 1.45;
+            max-height: 4.4em; overflow: hidden; }
+.dep-was { color: var(--ink-faint); font-size: 11px; line-height: 1.4;
+           max-height: 3.2em; overflow: hidden; }
+.dep-orphan { color: var(--span); font-size: 11px; }
+.dep-id { color: var(--ink-faint); font-size: 10px;
+          font-family: ui-monospace, monospace; word-break: break-all; }
+/* THE SCOPE-LATER DOOR on an unscoped row: always rendered (nothing hides behind hover),
+   focusable as a whole so 1-6 reach it, and the chips are the composer's own six. */
+.dep-scopes { display: flex; flex-wrap: wrap; align-items: center; gap: 4px; }
+.dep-scopes-lead { color: var(--ink-faint); font-size: 11px; }
+.dep[data-scope-door="1"] { border-left: 2px dashed var(--line); }
+/* A CHOSEN altitude reads as SETTLED — its door is not standing open beside the rows that
+   still need one. It is offered on FOCUS (keyboard-reachable, never hover-only), because
+   changing his own mind is allowed and a settled row must still be reachable. */
+.dep-scopes[data-settled="1"] { display: none; }
+.dep:focus .dep-scopes[data-settled="1"],
+.dep:focus-within .dep-scopes[data-settled="1"] { display: flex; }
+.dep-acts { display: flex; flex-wrap: wrap; gap: 4px; }
+.dep-acts button { padding: 1px 7px; border: 1px solid var(--line); border-radius: 3px;
+                   color: var(--ink-dim); font-size: 11px; }
+.dep-acts button:hover { color: var(--ink); border-color: var(--ink-faint); }
+
+/* ── the historical board: the project's whole ledger, ONE DOOR AWAY and LABELLED ── */
+/* It is deliberately not the session band. The band answers "what did I deposit in this
+   walk"; this answers "what does the project's ledger hold, from every session before
+   this one". Rendering the second inside the first is the echo defect this door exists
+   to keep impossible. */
+#ledger[hidden] { display: none; }
+#ledger {
+  position: fixed; inset: 0; z-index: 21; display: grid; place-items: center;
+  background: var(--bg-a88);
+}
+#ledger > div {
+  width: min(760px, 94vw); max-height: 84vh; display: flex; flex-direction: column;
+  border: 1px solid var(--line); background: var(--bg-rail);
+}
+#ledger-head { flex: 0 0 auto; padding: 14px 20px 8px; border-bottom: 1px solid var(--line); }
+#ledger-head h2 { margin: 0 0 5px; font-size: 13px; font-weight: 500; color: var(--ink);
+                  letter-spacing: .06em; text-transform: uppercase; }
+#ledger-head p { margin: 0; color: var(--ink-dim); font-size: 12px; line-height: 1.5; }
+#ledger-list { flex: 1 1 auto; min-height: 0; overflow-y: auto; padding: 4px 0; }
+#ledger-foot { flex: 0 0 auto; display: flex; justify-content: flex-end; gap: 6px;
+               padding: 8px 12px; border-top: 1px solid var(--line); }
+#ledger-foot button { padding: 3px 9px; border: 1px solid var(--line); border-radius: 3px;
+                      color: var(--ink-dim); }
+#ledger-foot button:hover { color: var(--ink); border-color: var(--ink-faint); }
+.led { display: flex; flex-direction: column; gap: 3px; padding: 7px 20px;
+       border-bottom: 1px solid var(--line-soft); }
+.led-top { display: flex; flex-wrap: wrap; align-items: baseline; gap: 7px; }
+.led-cls { padding: 1px 6px; border: 1px solid var(--line); border-radius: 3px;
+           color: var(--ink-dim); font-size: 11px; }
+.led-cls[data-cls="hard"] { border-color: var(--warn); color: var(--warn); }
+.led-kind { color: var(--ink); font-size: 12px; overflow-wrap: anywhere; }
+.led-where { color: var(--ink-faint); font-size: 11px; min-width: 0; flex: 1 1 auto;
+             overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.led-text { color: var(--ink-dim); font-size: 12px; line-height: 1.45;
+            max-height: 4.4em; overflow: hidden; }
+.led-id { color: var(--ink-faint); font-size: 10px; font-family: ui-monospace, monospace;
+          word-break: break-all; }
+
+/* ── the key map (a plain list; Esc closes) ─────────────────────────────────────── */
+#keymap[hidden] { display: none; }
+#keymap {
+  position: fixed; inset: 0; z-index: 20; display: grid; place-items: center;
+  background: var(--bg-a88);
+}
+#keymap > div {
+  width: min(560px, 92vw); max-height: 80vh; overflow-y: auto;
+  border: 1px solid var(--line); background: var(--bg-rail); padding: 18px 22px;
+}
+#keymap h2 { margin: 0 0 12px; font-size: 13px; font-weight: 500; color: var(--ink-dim);
+             letter-spacing: .08em; text-transform: uppercase; }
+#keymap dl { margin: 0; display: grid; grid-template-columns: 92px minmax(0, 1fr);
+             gap: 6px 14px; }
+#keymap dt { color: var(--live); font-family: ui-monospace, monospace; }
+#keymap dd { margin: 0; color: var(--ink-dim); }
+/* the spine door is secondary while the shell holds a cross-view return (api.setReturnMode) */
+#walk[data-return-mode="cross-view"] #spine-toggle { opacity: .55; }
+#walk[data-return-mode="cross-view"] #spine-toggle:hover,
+#walk[data-return-mode="cross-view"] #spine-toggle:focus-visible { opacity: 1; }
+</style>
+</head>
+<body>
+<div id="walk" data-spine="open" data-rail="strip">
+  <header id="bar">
+    <div id="badge">resolving the artefact…</div>
+    <button id="door" hidden type="button"></button>
+    <div class="bar-group">
+      <!-- no title= anywhere in this surface: a tooltip is hover-only, and every key
+           these doors carry is stated once, in the key map (?). -->
+      <button id="zoom-out" type="button" data-control="editor-frame:zoom-out" aria-label="smaller text">&minus;</button>
+      <span id="zoom-level">—</span>
+      <button id="zoom-in" type="button" data-control="editor-frame:zoom-in" aria-label="larger text">+</button>
+      <button id="zoom-fit" type="button" aria-label="fit the column to the pane">fit</button>
+    </div>
+    <div class="bar-group">
+      <button id="ledger-door" type="button"
+              aria-label="open the project's ledger history — every row banked before this walk"
+              >ledger history</button>
+      <button id="geo-door" type="button"
+              aria-label="open the typeset pdf, the geometry face">geometry face</button>
+      <button id="spine-toggle" type="button"
+              aria-label="collapse the spine, or open it again">spine</button>
+      <!-- THE NAMED RETURN DOOR. A plain anchor, not a shell import: the clean room
+           governs what this surface IMPORTS, never what it links to. It goes back to the
+           artefact surface — the read and edit acts — carrying the corpus in view. Its
+           href is set by walk.mjs, never written here: one source for a surface link. -->
+      <a id="back-door"
+         aria-label="back to the artefact surface — read, annotate and edit"
+         >artefact surface</a>
+      <button id="keys" type="button" aria-label="the key map">?</button>
+    </div>
+  </header>
+
+  <nav id="spine" aria-label="the spine">
+    <div id="spine-head">the spine</div>
+    <div id="spine-list"></div>
+    <div id="spine-note"></div>
+  </nav>
+
+  <main id="paper" tabindex="-1">
+    <div id="doc-note">building the content-faithful projection…</div>
+    <div id="doc"></div>
+  </main>
+
+  <section id="geometry" aria-label="the geometry face">
+    <div id="geo-bar">
+      <div id="geo-label"></div>
+      <button id="geo-back" type="button">back to the text (Esc)</button>
+    </div>
+    <div id="geo-scroll" tabindex="-1">
+      <div id="geo-note" hidden></div>
+      <div id="geo-pages"></div>
+    </div>
+  </section>
+
+  <aside id="rail" aria-label="the session band">
+    <button id="rail-strip" type="button"
+            aria-label="open the session band — this walk's deposits">
+      <span id="rail-open">&lsaquo;</span>
+      <span id="rail-count">0</span>
+      <span id="rail-parked" hidden></span>
+      <span id="rail-label">session</span>
+    </button>
+
+    <div id="rail-full">
+      <section id="composer" hidden aria-label="the composer">
+        <div id="comp-where"></div>
+        <div class="comp-lbl" id="comp-quote-lbl">the passage — edit it and Enter banks a rewrite</div>
+        <textarea id="comp-quote" rows="3" aria-label="the passage, editable"></textarea>
+        <div class="comp-lbl" id="comp-body-lbl">the note</div>
+        <textarea id="comp-body" rows="3" aria-label="the note"></textarea>
+        <div id="comp-scopes" role="group" aria-label="scope"></div>
+        <!-- THE RULING (WRITING-CONSOLIDATION-W1): keep | cut | rework on the passage, at
+             paragraph, section or chapter altitude. 7/8/9, beside the six altitudes on 1-6;
+             the same boundary holds (a bare digit in a field types, Alt+digit works anywhere). -->
+        <div id="comp-rulings" role="group" aria-label="ruling: keep, cut or rework"></div>
+        <button id="comp-suggest" hidden type="button"></button>
+        <!-- COMPOSER CHROME, KEYBOARD-REACHABLE. These two lines carry no text to type
+             into, so a bare 1-6 on them sets the scope (the felt boundary: in a field a
+             digit types, on chrome it scopes). They are Tab stops for exactly that. -->
+        <div id="comp-shape" tabindex="0"
+             aria-label="what Enter will bank — press 1 to 6 here to set the scope"></div>
+        <div id="comp-route" tabindex="0"
+             aria-label="where it banks — press 1 to 6 here to set the scope"></div>
+        <div id="comp-hint"></div>
+        <div id="comp-actor" hidden>
+          <p id="comp-actor-note"></p>
+          <div class="row">
+            <input id="comp-actor-input" type="text" autocomplete="off"
+                   aria-label="who is depositing">
+            <button id="comp-actor-ok" type="button">name it</button>
+          </div>
+        </div>
+        <div id="comp-echo" hidden aria-live="polite"></div>
+      </section>
+
+      <!-- THE LINKAGES PANE — the rail's view of the paper (his pick, 2026-08-10): the
+           current section's beats, nodes and cross-links, updated at section boundaries
+           only. The band below stays the ledger of this walk's own deposits. -->
+      <section id="linkages" aria-label="the current section's linkages">
+        <div id="lk-head">linkages</div>
+        <div id="lk-body"></div>
+      </section>
+
+      <section id="band" aria-label="the deposits">
+        <div id="band-head">this walk <span id="band-count"></span>
+          <button id="band-collapse" type="button"
+                  aria-label="collapse the session band to the strip">&#10005;</button>
+        </div>
+        <!-- THE SCOPE-MIX LINE: the altitude spread of this walk, glanceable, never
+             interactive, bounded to one line (it clips, it does not wrap). -->
+        <div id="band-parked" hidden></div>
+        <div id="band-mix" hidden></div>
+        <button id="band-span" hidden type="button"></button>
+        <div id="band-list"></div>
+        <div id="band-note"></div>
+      </section>
+    </div>
+  </aside>
+</div>
+
+<div id="ledger" hidden role="dialog" aria-modal="true"
+     aria-label="the project's ledger history">
+  <div>
+    <div id="ledger-head">
+      <button id="ledger-x" type="button" aria-label="close the ledger history">&#10005;</button>
+      <h2>the project's ledger history</h2>
+      <p id="ledger-note"></p>
+    </div>
+    <div id="ledger-list"></div>
+    <div id="ledger-foot">
+      <button id="ledger-close" type="button">close (Esc)</button>
+    </div>
+  </div>
+</div>
+
+<div id="keymap" hidden role="dialog" aria-modal="true" aria-label="the key map">
+  <div>
+    <h2>keys</h2>
+    <dl>
+      <dt>type</dt><dd>click into a paragraph &mdash; or a plain-text section title &mdash;
+                       and type; the caret is the edit door. A floating card at the caret
+                       names the source lines, takes the altitude (click a chip;
+                       Alt+1&ndash;6 too; sentence unless set), and says the state.
+                       NOTHING banks until your hand says: edits PARK per paragraph
+                       (amber edge; the count on the rail; drafts survive a reload).
+                       Ctrl-S banks ALL standing paragraphs; Shift-Enter banks this one;
+                       Enter splits at the caret (banked at once); Backspace at a
+                       paragraph's start / Delete at its end joins (same door); a
+                       selection across paragraphs + typing, Ctrl-X, or paste rewrites
+                       across them as one row; a multi-paragraph paste makes real
+                       paragraphs. Esc reverts the paragraph under the caret; the band
+                       lists every park with its delta and its own bank/revert doors.
+                       Ctrl-Z is native inside the edit in flight; u revokes banked
+                       rows. The receipt lands on the card and in the session band</dd>
+      <dt>r</dt><dd>the live redline, toggled: this walk's insertions marked on the
+                    face, each deletion struck through beside its replacement, parked
+                    deltas included &mdash; what stands changed before the next pass.
+                    A change that cannot be shown inline wears a loud badge on its
+                    paragraph; the clean face is one r away</dd>
+      <dt>note</dt><dd>the card's note field: a note alone banks a comment on the
+                       paragraph (your selection when one stands, the whole paragraph
+                       otherwise); a note beside a typed edit banks ONE compound row
+                       &mdash; replacement + rationale. The card's dashed asks bank typed
+                       requests: refs found for a passage, a figure tagged for remake
+                       (click a figure to open its card). "where this sits · links" shows
+                       the paragraph's spine position, its refs out, and what references
+                       it &mdash; each a jump door</dd>
+      <dt>click</dt><dd>on a formula, a citation number, a cross-ref, or a macro mark: its
+                        source opens in place, the exact span selected. For a citation the
+                        note names what the key resolves to</dd>
+      <dt>select</dt><dd>selecting text in a block arms the composer with that passage,
+                         editable, and the block's source span riding it</dd>
+      <dt>Enter</dt><dd>in the composer: bank. The passage edited banks a rewrite; a note
+                        alone banks a comment; both bank a compound row.
+                        Shift-Enter starts a new line</dd>
+      <dt>Alt+1&hairsp;&ndash;&hairsp;6</dt>
+        <dd>set the scope from ANYWHERE &mdash; the paper, the passage, the note, a
+            flipped block's source, the band: 1 sentence &middot; 2 structure &middot;
+            3 voice &middot; 4 artefact &middot; 5 meta &middot; 6 delivery. It never
+            depends on where the caret is</dd>
+      <dt>7&hairsp;&middot;&hairsp;8&hairsp;&middot;&hairsp;9</dt>
+        <dd>RULE the passage: 7 keep &middot; 8 cut &middot; 9 rework. The ruling rides the
+            deposit at paragraph, section or chapter altitude &mdash; the grain your gesture
+            addressed, unless you name one &mdash; and the door compares that passage's own
+            identity before it banks: if it moved while you were reading, the deposit is
+            REFUSED with the current identity rather than banked against text you never saw.
+            Press the same digit again to clear it; a comment with no ruling leaves the
+            passage's fate open, which is what a comment has always done. A session reading
+            this project is told the ruling in words</dd>
+      <dt>1&hairsp;&ndash;&hairsp;6</dt>
+        <dd>a bare digit sets the scope only where there is nothing to type into: a scope
+            chip, the shape line or the routing line in the composer (Tab to one), or a
+            row in the session band. <b>Inside any text field a bare digit TYPES</b> &mdash;
+            and in the passage that IS the rewrite gesture, so the passage's own label and
+            the shape line say so in the same frame</dd>
+      <dt>where each<br>scope lives</dt>
+        <dd>the six altitudes each have a gesture that naturally reaches them, and the
+            frozen rule set leans that way &mdash; marked as a suggestion, never
+            pre-selected:
+            <br><b>sentence</b> &mdash; edit the passage in the composer: the rewrite is
+            the sentence-altitude gesture, and the rewrite door banks it there by default.
+            <br><b>structure</b> &mdash; span the spine (click a row, shift-click another)
+            and deposit on the span: the spine is the structural surface.
+            <br><b>voice</b> &mdash; a note on a selection with the passage left alone;
+            register words (sounds, reads, tone, stiff, wordy&hellip;) lean it here.
+            <br><b>artefact</b> &mdash; 0, the whole-paper composer: a verdict on the paper
+            with no source span.
+            <br><b>meta</b> &mdash; a span deposit carrying apparatus words (claim,
+            evidence, ordering of the argument&hellip;), beside the structure a span
+            otherwise is.
+            <br><b>delivery</b> &mdash; a whole-paper deposit carrying handover words
+            (name, file, pdf, version, deliver, hand&hellip;).
+            <br>None of them needs a new key: Alt+1&ndash;6 sets any of the six from
+            anywhere, and the band re-scopes afterwards</dd>
+      <dt>0</dt><dd>open the whole-paper composer (anchor grade artefact)</dd>
+      <dt>Enter</dt><dd>outside the composer: with a span on the spine, open the span
+                        composer; with a selection, arm on it; with neither, arm on the
+                        block at the reading mark</dd>
+      <dt>s</dt><dd>flip the focused block in place to its own tex, editable. Esc cancels,
+                    Ctrl-S writes it back through the rewrite door and re-renders that
+                    block alone</dd>
+      <dt>u</dt><dd>outside the composer: revoke the last deposit</dd>
+      <dt>n</dt><dd>jump to the next section</dd>
+      <dt>p</dt><dd>jump to the previous section</dd>
+      <dt>o</dt><dd>collapse the spine, or open it again</dd>
+      <dt>b</dt><dd>widen the rail to the session band, or narrow it to the strip. The
+                    mouse has the same doors: the strip itself opens the band, the
+                    band's &#10005; collapses it, and a click back into the paper puts
+                    it away. The band opens by itself only in the frame of a bank
+                    &mdash; the echo &mdash; never on its own schedule</dd>
+      <dt>g</dt><dd>open the geometry face &mdash; the typeset pdf &mdash; and close it again</dd>
+      <dt>l</dt><dd>open the project's ledger history &mdash; every row banked before this
+                    walk, which is why it is a door and not the session band</dd>
+      <dt>click</dt><dd>on a spine row: jump there, and start a span at it</dd>
+      <dt>shift-click</dt><dd>on a spine row: extend the span to it</dd>
+      <dt>+ / &minus;</dt><dd>the reading size (the pdf's scale on the geometry face)</dd>
+      <dt>f</dt><dd>fit the column to the pane</dd>
+      <dt>?</dt><dd>show this list</dd>
+      <dt>Esc</dt><dd>close this list, else close the ledger history, else cancel the source
+                      flip, else close the geometry face, else disarm the composer, else
+                      take the return door, else clear the span</dd>
+    </dl>
+  </div>
+</div>
+
+<script type="module" src="/shared/walk.mjs"></script>
+<script type="module" src="/shared/writing-panel.mjs"></script>
+</body>
+</html>

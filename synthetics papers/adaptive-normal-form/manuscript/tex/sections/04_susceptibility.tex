@@ -1,0 +1,98 @@
+\section{Full-loop local stability}
+\label{hrec:app:local}
+Differentiating Eq.~\eqref{hrec:eq:lagged} at zero mismatch removes the \(F''e\) term and gives Eq.~\eqref{hrec:eq:lagged-jacobian}. Subtracting \(b\delta\theta_{k+1}\) from \(\delta m_{k+1}\) gives Eq.~\eqref{hrec:eq:linear-mismatch} directly, without eliminating either state. If \(F'\ne0\) throughout a neighbourhood, a fixed point satisfies \(m=M(\theta)\) from the plant and \(m=F(\theta)\) from the controller. Hence the entire graph is fixed precisely when \(M=F\) there. Zeros of \(F'\) can supply additional stationary points and must be treated separately.
+
+For \(b>s>0\), the lagged trace and determinant are
+\[
+ t=1+r-\alpha b^2,\qquad
+ \delta=r-\alpha r b^2-\alpha(1-r)bs.
+\]
+The Schur expressions are
+\begin{align*}
+ 1-t+\delta&=\alpha(1-r)b(b-s)>0,\\
+ 1+t+\delta&=2(1+r)-\alpha[(1+r)b^2+(1-r)bs],\\
+ 1-\delta&=1-r+\alpha[rb^2+(1-r)bs]>0.
+\end{align*}
+Thus strict local linear stability is equivalent to
+\[
+ 0<\alpha<
+ \frac{2(1+r)}{(1+r)b^2+(1-r)bs}.
+\]
+At \(b=s\), the first Schur expression vanishes and an eigenvalue is one. This fact alone gives no nonlinear family.
+
+For the post-observation map, the trace and determinant are
+\(t=1+r-K\Delta\), \(\delta=r(1-Kb)\). The three expressions become
+\begin{align*}
+ 1-t+\delta&=K(1-r)(b-s),\\
+ 1+t+\delta&=2(1+r)-K[(1+r)b-(1-r)s],\\
+ 1-\delta&=1-r+rKb.
+\end{align*}
+They prove Eq.~\eqref{hrec:eq:post-boundary}. At the upper boundary the companion multiplier is
+\[
+ \lambda_{\rm other}
+ =r\,\frac{(1+r)b+(1-r)s}{(1+r)b-(1-r)s}.
+\]
+The denominator minus \(r\) times its numerator is
+\((1-r)(1+r)(b-s)>0\), proving \(\lambda_{\rm other}<1\).
+It is zero at \(r=0\).
+
+For completeness, the matched loop has a nonlinear local attraction theorem. Let \(f\in C^2(U)\), with \(U\) an open interval, and suppose
+\(|r-\alpha f'(\theta_*)^2|<1\).
+Choose \(q\) strictly between this modulus and one. Continuity of the secant coefficient in Eq.~\eqref{hrec:eq:secant} supplies \(\rho,\epsilon>0\) such that \(I=[\theta_*-\rho,\theta_*+\rho]\subset U\), all required update segments remain in \(U\), and \(|A(\theta,e)|\le q\) for \(\theta\in I,|e|\le\epsilon\). Let \(M_f>0\) bound \(|f'|\) on \(I\). Initial conditions satisfying
+\[
+ \begin{gathered}
+ |\theta_0-\theta_*|\le\rho/2,\\
+ |e_0|<\min\{\epsilon,\rho(1-q)/(2\alpha M_f)\}.
+ \end{gathered}
+\]
+remain in the tube. Indeed \(|e_k|\le q^k|e_0|\), while the sum of the broadcast increments is bounded by
+\(\alpha M_f|e_0|/(1-q)<\rho/2\).
+Induction keeps the whole trajectory in the rectangle. The increments are summable, so \(\theta_k\to\theta_\infty\in I\) and
+\[
+ |\theta_\infty-\theta_k|
+ \le\frac{\alpha M_f|e_0|q^k}{1-q},\qquad
+ m_k\to f(\theta_\infty).
+\]
+The required uniform secant bound is stronger than checking a finite list of instantaneous linear gains along a large excursion.
+
+\section{The two symmetric cycles}
+\label{hrec:app:cycles}
+For the matched odd response, impose the orbit
+\((m,\theta)\mapsto(-m,-\theta)\).
+The plant equation gives the first identity in Eq.~\eqref{hrec:eq:matched-cycle}, and the controller gives the second. For the erf/sinh response, if
+\(\alpha f'(0)^2>1+r\), the function
+\(h(\theta)=\alpha f'(\theta)f(\theta)-(1+r)\theta\)
+is positive for small positive \(\theta\) and negative eventually, since \(f'f\to0\). Continuity supplies a positive root, without asserting global uniqueness.
+
+At a symmetric pair \(f'\) is even, while \(f''\) and \(e\) are odd, so both exact one-step Jacobians in Eq.~\eqref{hrec:eq:full-jacobian} coincide. Their characteristic polynomial at one is
+\(\det(I-J)=-\alpha(1-r)f''e\).
+If this is negative, the monic polynomial must cross zero at a real argument greater than one. To inspect the sign for the stated proxy, put \(v=\sqrt{N/2}\sinh(\beta\theta)\). Then
+\[
+ \begin{aligned}
+ f''&=\frac{2e^{-v^2}}{\sqrt\pi}\,[v''-2v(v')^2],\\
+ v''-2v(v')^2&=\beta^2v[1-N\cosh^2(\beta\theta)].
+ \end{aligned}
+\]
+At \(N=900,\theta>0\), this is negative. The retained root is
+\(\theta=0.025471791723687645\), \(m=-0.16024794040085039\).
+Both directed map residuals are about \(2.78\,10^{-17}\). Direct multiplication of the two Jacobians gives the two-step multipliers quoted in the main text. Their decimal values are floating evaluations, not certified interval bounds.
+
+For the post-observation orbit, the plant equation gives
+\(X=-(1-r)s\Theta/(1+r)\), so the signed newly observed mismatch at the positive-\(\Theta\) state is \(-D\Theta\). Oddness reduces the control equation to
+\(2\Theta=\varepsilon R_N(D\Theta)\), which is Eq.~\eqref{hrec:eq:post-cycle}.
+Writing \(R_N(z)=\erf(\kappa z)\), \(\kappa=\beta\sqrt{N/2}>0\), gives \(R_N'>0\), \(R_N''<0\) for \(z>0\). Therefore
+\[
+ \begin{gathered}
+ R_N(z)=\int_0^zR_N'(t)\,dt>zR_N'(z),\\
+ \frac{d}{dz}\frac{R_N(z)}z<0.
+ \end{gathered}
+\]
+The ratio decreases continuously from \(R_N'(0)\) to zero. This proves existence and uniqueness within the symmetric ansatz when \(K>K_c\), and nonexistence of a nonzero symmetric solution for \(K\le K_c\). At the orbit put \(k=\varepsilon R_N'(z)\). The inequality above gives \(0<k<K_c\). Both one-step Jacobians are \(J_{\rm post}(k)\), so the derivative of the second iterate is \(J_{\rm post}(k)^2\), whose eigenvalues lie strictly inside the unit disk. This proves local attraction even at \(r=0\), when one multiplier is zero.
+
+The expansion \(R_N(z)=Gz-q_3z^3+O(z^5)\), with \(G=R_N'(0)\), \(q_3=G\kappa^2/3>0\), yields
+\[
+ \Theta^2=\frac{K-K_c}{\varepsilon q_3D^2}
+           +O((K-K_c)^2)
+\]
+for a smooth crossing with nonzero limiting \(\varepsilon q_3\). The square-root opening follows from this response-specific cycle equation and attraction proof, not merely from a multiplier reaching \(-1\).
+

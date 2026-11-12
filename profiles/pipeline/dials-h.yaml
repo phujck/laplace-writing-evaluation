@@ -1,0 +1,31 @@
+# managed by /dials — reduced from dials-h.yaml.base.json + dials-h.yaml.friction.jsonl
+# dial documentation lives in dials.py _DEFAULTS; edit through the surface, not by hand.
+version: 1
+loop:
+  max_rounds: 2
+  harnessed:
+    max_passes: 1
+routing:
+  defer_kinds:
+  - eq-unused
+  - eq-uninterpreted
+  - citation-uncited
+  - citation-first-use
+  - citation-cluster
+  - unlinked-reliance
+  - crosslink-vague
+machine_adjudication:
+  enabled: true
+  may_dismiss:
+  - eq-unused
+  - eq-uninterpreted
+  - citation-uncited
+  - citation-first-use
+  - citation-cluster
+  - unlinked-reliance
+  - crosslink-vague
+  calibration_threshold: 5
+regen_grain:
+  mode: auto
+  paragraph_max_fraction: 0.4
+  structural_kinds: []

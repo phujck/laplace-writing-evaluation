@@ -1,0 +1,42 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage[a4paper,textwidth=163mm,top=22mm,bottom=24mm]{geometry}
+\usepackage{amsmath,amssymb,graphicx,hyperref}
+\usepackage{microtype,xcolor}
+\usepackage[font=small,labelfont=bf]{caption}
+\usepackage[section]{placeins}
+\hypersetup{colorlinks=true,linkcolor=blue!45!black,urlcolor=blue!45!black,citecolor=blue!45!black}
+\setlength{\emergencystretch}{2em}
+\setlength{\parskip}{0.25em}
+\renewcommand{\topfraction}{0.9}
+\renewcommand{\textfraction}{0.08}
+\renewcommand{\floatpagefraction}{0.75}
+\title{Eigen: Choosing What a Computation Must Retain}
+\hypersetup{pdftitle={Eigen: Choosing What a Computation Must Retain}}
+\author{}
+\date{}
+\begin{document}
+\begin{center}
+{\Large\bfseries Eigen: Choosing What a Computation Must Retain\par}
+\vspace{0.5em}
+{\small Private manuscript candidate - independent review pending\par}
+\end{center}
+\vspace{0.4em}
+\interfootnotelinepenalty=10000
+\input{chapters/chapter-01}
+\input{chapters/the-price-of-a-shared-description}
+\input{chapters/what-a-useful-summary-must-remember}
+\input{chapters/loss-dynamics-and-the-choice-of-scale}
+\input{chapters/quantum-prototypes-changing-the-calculation}
+\input{chapters/memory-as-a-retained-and-reconstructable-object}
+\input{chapters/the-backend-objects-authority-and-revision}
+\input{chapters/research-that-can-inspect-its-own-results}
+\input{chapters/from-a-working-core-to-an-extensible-sdk}
+\input{chapters/the-collection-and-the-next-tests}
+\begingroup
+\small
+\bibliographystyle{plain}
+\bibliography{refs}
+\endgroup
+\end{document}

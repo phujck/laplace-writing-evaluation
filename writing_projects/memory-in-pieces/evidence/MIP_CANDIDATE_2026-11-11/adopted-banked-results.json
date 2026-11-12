@@ -1,0 +1,597 @@
+{
+  "schema_version": "mip-adopted-banked-result-values/1",
+  "origin": "Interpretation of existing pinned completed records. No execution, extraction, reader or judge run is created.",
+  "reader": "claude-sonnet-5-5 low",
+  "draw_status": "Previously examined development/follow-up questions, not untouched confirmation",
+  "news_n": 172,
+  "news_ours": 152,
+  "news_rag": 152,
+  "news_raptor": 148,
+  "news_table_ours": 153,
+  "news_table_rag": 145,
+  "news_table_raptor": 147,
+  "news_before": {
+    "ours": 133,
+    "rag": 125,
+    "raptor": 118,
+    "source": "stage3/S/results.json news.table"
+  },
+  "news_settings": {
+    "pieces": "two-sentence windows, stride one sentence (G/scripts/g_common.windows); embedded with '<title> | <outlet> | <YYYY-MM-DD>' label (G/vectors/news_s2_ctx.f16.npy)",
+    "score": "cosine + 0.5 x BM25(label+window)/max for every arm; ours: per compiled facet inside its exact outlet/date support, round-robin; RAG: whole corpus, pool 200, MMR 0.7; RAPTOR: the 1,747 summary nodes plus the labelled windows, no MMR (raptor_g, G's frozen RAPTOR arm)",
+    "delivery": "one block per article, spans merged in article order, extended to whole sentences (g_common.delivered_pack; RAPTOR summaries as their own blocks, delivered_pack_mixed); 2,000 cl100k tokens",
+    "reader": "claude-sonnet-5-5 low, i_lib.RULES_INSTRUCTION + ANSWER_SCHEMA, identical for every arm",
+    "not_frozen": [
+      "statement-field term (gamma 0.3: +5 facts fit, +1 check; b1_sweep)",
+      "query-time diffusion (rel / lang / both: within +-2 facts; EM 149-152 under table2)",
+      "statements shown to the reader (-21 facts, EM +1)",
+      "4,000 tokens (+29 facts, EM +1)",
+      "model delivery (+3 EM for ours and RAG, +1,995 calls per 172 questions)",
+      "witness readout for stage 7 (results/readout_sweep.json; see 'readout')",
+      "agreement rule (results/agree_rule.json; see step_d.agree_rule)"
+    ],
+    "caveat": "the rules instruction's three rules were written from failures read on all 172 questions, so its check-half gain is not a held-out test; the untouched draw is"
+  },
+  "news_row": {
+    "row": "A + answer-form rules (RECOMMENDED FREEZE)",
+    "ours_stages": "stages 1 (labelled two-sentence windows), 5 (exact outlet/date support per compiled facet), 6 seed only (cosine + 0.5 keyword; no statement fields, no diffusion), 7 round-robin over facets, 8 deterministic delivery",
+    "reading": "rules instruction, single pass",
+    "ours": {
+      "arm": "ours_g@2000+rules",
+      "em": 152,
+      "fit": 76,
+      "check": 76,
+      "em_or_containment": 153,
+      "facts": 234
+    },
+    "rag": {
+      "arm": "rag_g@2000+rules",
+      "em": 152,
+      "fit": 77,
+      "check": 75,
+      "em_or_containment": 154,
+      "facts": 211
+    },
+    "raptor_equal_settings": {
+      "arm": "raptor_g@2000+rules",
+      "em": 148,
+      "fit": 75,
+      "check": 73,
+      "em_or_containment": 152,
+      "facts": 205
+    },
+    "raptor_as_banked": {
+      "arm": "raptor@2000+rules",
+      "em": 142,
+      "fit": 72,
+      "check": 70,
+      "em_or_containment": 143,
+      "facts": 63
+    },
+    "ours_vs_rag": {
+      "wins": 6,
+      "losses": 6,
+      "net": 0,
+      "one_sided_p": 0.6128
+    },
+    "ours_vs_raptor_equal": {
+      "wins": 9,
+      "losses": 5,
+      "net": 4,
+      "one_sided_p": 0.212
+    },
+    "ours_vs_raptor_banked": {
+      "wins": 14,
+      "losses": 4,
+      "net": 10,
+      "one_sided_p": 0.0154
+    }
+  },
+  "news_table_row": {
+    "row": "A, single-pass requirement table (I's table2; NOT R's stage-9 protocol)",
+    "ours_stages": "stages 1 (labelled two-sentence windows), 5 (exact outlet/date support per compiled facet), 6 seed only (cosine + 0.5 keyword; no statement fields, no diffusion), 7 round-robin over facets, 8 deterministic delivery",
+    "reading": "table2: one row per compiled requirement, then the answer, one pass",
+    "ours": {
+      "arm": "ours_g@2000+table2",
+      "em": 153,
+      "fit": 78,
+      "check": 75,
+      "em_or_containment": 154,
+      "facts": 234
+    },
+    "rag": {
+      "arm": "rag_g@2000+table2",
+      "em": 145,
+      "fit": 75,
+      "check": 70,
+      "em_or_containment": 146,
+      "facts": 211
+    },
+    "raptor_equal_settings": {
+      "arm": "raptor_g@2000+table2",
+      "em": 147,
+      "fit": 77,
+      "check": 70,
+      "em_or_containment": 148,
+      "facts": 205
+    },
+    "raptor_as_banked": {
+      "arm": "raptor@2000+table2",
+      "em": 132,
+      "fit": 65,
+      "check": 67,
+      "em_or_containment": 133,
+      "facts": 63
+    },
+    "ours_vs_rag": {
+      "wins": 9,
+      "losses": 1,
+      "net": 8,
+      "one_sided_p": 0.0107
+    },
+    "ours_vs_raptor_equal": {
+      "wins": 7,
+      "losses": 1,
+      "net": 6,
+      "one_sided_p": 0.0352
+    },
+    "ours_vs_raptor_banked": {
+      "wins": 25,
+      "losses": 4,
+      "net": 21,
+      "one_sided_p": 0.0001
+    }
+  },
+  "frames_n": 190,
+  "frames_ours_cont": 123,
+  "frames_rag_cont": 117,
+  "frames_ours_judged": 127,
+  "frames_rag_judged": 126,
+  "frames_before": {
+    "containment": {
+      "ours": 25,
+      "ours_noact": 51,
+      "rag": 52
+    },
+    "judged": {
+      "ours": 27,
+      "ours_noact": 62,
+      "rag": 58
+    },
+    "source": "stage3/S/RETURN.md"
+  },
+  "frames_paired": {
+    "containment": {
+      "wins": 10,
+      "losses": 4,
+      "one_sided_p": 0.0898
+    },
+    "judged": {
+      "wins": 7,
+      "losses": 6,
+      "one_sided_p": 0.5
+    }
+  },
+  "frames_settings": "FRAMES pass-1 RAG uses a 200-candidate pool and MMR with relevance coefficient 0.7, ranked from s + 0.4 h/max(h), where s = cosine + 0.2 normalised BM25 and h is D's dense seed. Pass 2 ranks each missing-need phrase by s(phrase)+0.5 s(question), using RAG's own MMR 0.7. Both arms receive the same 8k initial allowance, steps instruction and up to 4k new spans on one triggered second pass. These are the local implemented comparator settings, not a claim of complete literature-system reproduction.",
+  "longmem_n": 48,
+  "longmem_ours4": 44,
+  "longmem_ours8": 45,
+  "longmem_dense4": 44,
+  "longmem_dense8": 45,
+  "longmem_hybrid4": 40,
+  "longmem_hybrid8": 44,
+  "longmem_positive_n": 42,
+  "longmem_ours_cov4": 41,
+  "longmem_ours_cov8": 41,
+  "longmem_dense_cov4": 41,
+  "longmem_dense_cov8": 41,
+  "longmem_hybrid_cov4": 33,
+  "longmem_hybrid_cov8": 37,
+  "longmem_original_table": {
+    "final48|dense_keys@4000": {
+      "n": 48,
+      "answered": 48,
+      "judged": 48,
+      "correct": 44,
+      "complete": 43,
+      "n_req": 44,
+      "tokens": 3475
+    },
+    "final48|dense_keys@8000": {
+      "n": 48,
+      "answered": 48,
+      "judged": 48,
+      "correct": 45,
+      "complete": 43,
+      "n_req": 44,
+      "tokens": 6926
+    },
+    "final48|hybrid_keys@4000": {
+      "n": 48,
+      "answered": 48,
+      "judged": 48,
+      "correct": 40,
+      "complete": 35,
+      "n_req": 44,
+      "tokens": 3664
+    },
+    "final48|hybrid_keys@8000": {
+      "n": 48,
+      "answered": 48,
+      "judged": 48,
+      "correct": 44,
+      "complete": 39,
+      "n_req": 44,
+      "tokens": 7332
+    },
+    "final48|ours_keys@4000": {
+      "n": 48,
+      "answered": 48,
+      "judged": 48,
+      "correct": 44,
+      "complete": 43,
+      "n_req": 44,
+      "tokens": 3475
+    },
+    "final48|ours_keys@8000": {
+      "n": 48,
+      "answered": 48,
+      "judged": 48,
+      "correct": 45,
+      "complete": 43,
+      "n_req": 44,
+      "tokens": 6926
+    }
+  },
+  "longmem_reconciliation": {
+    "standing": "RECORDED_INTERPRETATION_OF_EXISTING_ROWS_NOT_DATA_REPAIR_OR_NEW_JUDGING",
+    "annotated_abstentions": [
+      "e5ba910e_abs",
+      "982b5123_abs"
+    ],
+    "explanation": "Each has one required turn and complete=true in every A arm/budget. Four other abstentions have no required turn. K k_cov skips empty annotations but does not exclude _abs. L lm_core.gold excludes _abs, hence42+2=44.",
+    "answer_correctness": {
+      "denominator": 48,
+      "includes_abstentions": 6,
+      "ours": {
+        "at4k": 44,
+        "at8k": 45
+      },
+      "dense": {
+        "at4k": 44,
+        "at8k": 45
+      },
+      "hybrid": {
+        "at4k": 40,
+        "at8k": 44
+      }
+    },
+    "historical_annotated_turn_coverage": {
+      "denominator": 44,
+      "ours": {
+        "at4k": 43,
+        "at8k": 43
+      },
+      "dense": {
+        "at4k": 43,
+        "at8k": 43
+      },
+      "hybrid": {
+        "at4k": 35,
+        "at8k": 39
+      },
+      "preserve_original_records": true
+    },
+    "comparable_positive_evidence_coverage": {
+      "denominator": 42,
+      "ours": {
+        "at4k": 41,
+        "at8k": 41
+      },
+      "dense": {
+        "at4k": 41,
+        "at8k": 41
+      },
+      "hybrid": {
+        "at4k": 33,
+        "at8k": 37
+      }
+    },
+    "method": "Reviewer native row tallies independently checked by continuing parent in-tool against pinned existing A_final48 rows. No producer, scorer, reader or judge execution.",
+    "parent_tally": {
+      "ours_keys@4000": {
+        "n": 48,
+        "answered": 48,
+        "correct": 44,
+        "historical_annotated": 44,
+        "historical_complete": 43,
+        "positive": 42,
+        "positive_complete": 41,
+        "annotated_abstentions": [
+          {
+            "qid": "e5ba910e_abs",
+            "complete": true,
+            "required": 1
+          },
+          {
+            "qid": "982b5123_abs",
+            "complete": true,
+            "required": 1
+          }
+        ]
+      },
+      "dense_keys@4000": {
+        "n": 48,
+        "answered": 48,
+        "correct": 44,
+        "historical_annotated": 44,
+        "historical_complete": 43,
+        "positive": 42,
+        "positive_complete": 41,
+        "annotated_abstentions": [
+          {
+            "qid": "e5ba910e_abs",
+            "complete": true,
+            "required": 1
+          },
+          {
+            "qid": "982b5123_abs",
+            "complete": true,
+            "required": 1
+          }
+        ]
+      },
+      "hybrid_keys@4000": {
+        "n": 48,
+        "answered": 48,
+        "correct": 40,
+        "historical_annotated": 44,
+        "historical_complete": 35,
+        "positive": 42,
+        "positive_complete": 33,
+        "annotated_abstentions": [
+          {
+            "qid": "e5ba910e_abs",
+            "complete": true,
+            "required": 1
+          },
+          {
+            "qid": "982b5123_abs",
+            "complete": true,
+            "required": 1
+          }
+        ]
+      },
+      "ours_keys@8000": {
+        "n": 48,
+        "answered": 48,
+        "correct": 45,
+        "historical_annotated": 44,
+        "historical_complete": 43,
+        "positive": 42,
+        "positive_complete": 41,
+        "annotated_abstentions": [
+          {
+            "qid": "e5ba910e_abs",
+            "complete": true,
+            "required": 1
+          },
+          {
+            "qid": "982b5123_abs",
+            "complete": true,
+            "required": 1
+          }
+        ]
+      },
+      "dense_keys@8000": {
+        "n": 48,
+        "answered": 48,
+        "correct": 45,
+        "historical_annotated": 44,
+        "historical_complete": 43,
+        "positive": 42,
+        "positive_complete": 41,
+        "annotated_abstentions": [
+          {
+            "qid": "e5ba910e_abs",
+            "complete": true,
+            "required": 1
+          },
+          {
+            "qid": "982b5123_abs",
+            "complete": true,
+            "required": 1
+          }
+        ]
+      },
+      "hybrid_keys@8000": {
+        "n": 48,
+        "answered": 48,
+        "correct": 44,
+        "historical_annotated": 44,
+        "historical_complete": 39,
+        "positive": 42,
+        "positive_complete": 37,
+        "annotated_abstentions": [
+          {
+            "qid": "e5ba910e_abs",
+            "complete": true,
+            "required": 1
+          },
+          {
+            "qid": "982b5123_abs",
+            "complete": true,
+            "required": 1
+          }
+        ]
+      }
+    },
+    "source_reads": [
+      {
+        "payload": {
+          "action": "read",
+          "repository": "laplace",
+          "path": "evidence/BENCH_RECOVERY_2026-11-09/stage3/K/scripts/k_cov.py",
+          "limit": 40000,
+          "expected_sha256": "ee3b04003ac2490778a4064fe8619b925a5f1a442f0b5a460d83208c21817e3b"
+        },
+        "source": {
+          "path": "/home/phujck/VScodeProjects/laplace/evidence/BENCH_RECOVERY_2026-11-09/stage3/K/scripts/k_cov.py",
+          "bytes": 2386,
+          "sha256": "ee3b04003ac2490778a4064fe8619b925a5f1a442f0b5a460d83208c21817e3b"
+        },
+        "offset": 0,
+        "read_id": "READ-53de7af8433c494899f5caf5d596cf07"
+      },
+      {
+        "payload": {
+          "action": "read",
+          "repository": "laplace",
+          "path": "evidence/BENCH_RECOVERY_2026-11-09/stage3/L/scripts/lm_core.py",
+          "limit": 40000,
+          "expected_sha256": "10af085758296086cccf4a1dcb6883e6b34073836d1762df8dabb67700ba9bf2"
+        },
+        "source": {
+          "path": "/home/phujck/VScodeProjects/laplace/evidence/BENCH_RECOVERY_2026-11-09/stage3/L/scripts/lm_core.py",
+          "bytes": 12583,
+          "sha256": "10af085758296086cccf4a1dcb6883e6b34073836d1762df8dabb67700ba9bf2"
+        },
+        "offset": 0,
+        "read_id": "READ-bdb5e60a9c3f4eae8cc9eeb14f56808a"
+      },
+      {
+        "payload": {
+          "action": "read",
+          "repository": "laplace",
+          "path": "evidence/BENCH_RECOVERY_2026-11-09/stage3/K/results/A_final48.json",
+          "limit": 40000,
+          "expected_sha256": "7e2bdf1fb4c27275367cd703646c56ad9549e36875fecf74e40dcdd9c5634002"
+        },
+        "source": {
+          "path": "/home/phujck/VScodeProjects/laplace/evidence/BENCH_RECOVERY_2026-11-09/stage3/K/results/A_final48.json",
+          "bytes": 185017,
+          "sha256": "7e2bdf1fb4c27275367cd703646c56ad9549e36875fecf74e40dcdd9c5634002"
+        },
+        "offset": 0,
+        "read_id": "READ-92f1d5a7964448a796c5293e7189e534"
+      },
+      {
+        "payload": {
+          "action": "read",
+          "repository": "laplace",
+          "path": "evidence/BENCH_RECOVERY_2026-11-09/stage3/K/results/A_final48.json",
+          "offset": 40000,
+          "limit": 40000,
+          "expected_sha256": "sha256:7e2bdf1fb4c27275367cd703646c56ad9549e36875fecf74e40dcdd9c5634002"
+        },
+        "source": {
+          "path": "/home/phujck/VScodeProjects/laplace/evidence/BENCH_RECOVERY_2026-11-09/stage3/K/results/A_final48.json",
+          "bytes": 185017,
+          "sha256": "7e2bdf1fb4c27275367cd703646c56ad9549e36875fecf74e40dcdd9c5634002"
+        },
+        "offset": 40000,
+        "read_id": "READ-c45e1f715abb4e698236b2fa6287f4f4"
+      },
+      {
+        "payload": {
+          "action": "read",
+          "repository": "laplace",
+          "path": "evidence/BENCH_RECOVERY_2026-11-09/stage3/K/results/A_final48.json",
+          "offset": 80000,
+          "limit": 40000,
+          "expected_sha256": "sha256:7e2bdf1fb4c27275367cd703646c56ad9549e36875fecf74e40dcdd9c5634002"
+        },
+        "source": {
+          "path": "/home/phujck/VScodeProjects/laplace/evidence/BENCH_RECOVERY_2026-11-09/stage3/K/results/A_final48.json",
+          "bytes": 185017,
+          "sha256": "7e2bdf1fb4c27275367cd703646c56ad9549e36875fecf74e40dcdd9c5634002"
+        },
+        "offset": 80000,
+        "read_id": "READ-5fd5ce073a52479c90b01b1bbbde1f10"
+      },
+      {
+        "payload": {
+          "action": "read",
+          "repository": "laplace",
+          "path": "evidence/BENCH_RECOVERY_2026-11-09/stage3/K/results/A_final48.json",
+          "offset": 120000,
+          "limit": 40000,
+          "expected_sha256": "sha256:7e2bdf1fb4c27275367cd703646c56ad9549e36875fecf74e40dcdd9c5634002"
+        },
+        "source": {
+          "path": "/home/phujck/VScodeProjects/laplace/evidence/BENCH_RECOVERY_2026-11-09/stage3/K/results/A_final48.json",
+          "bytes": 185017,
+          "sha256": "7e2bdf1fb4c27275367cd703646c56ad9549e36875fecf74e40dcdd9c5634002"
+        },
+        "offset": 120000,
+        "read_id": "READ-f43d176a51ab41df8f43d7d4c6085607"
+      },
+      {
+        "payload": {
+          "action": "read",
+          "repository": "laplace",
+          "path": "evidence/BENCH_RECOVERY_2026-11-09/stage3/K/results/A_final48.json",
+          "offset": 160000,
+          "limit": 40000,
+          "expected_sha256": "sha256:7e2bdf1fb4c27275367cd703646c56ad9549e36875fecf74e40dcdd9c5634002"
+        },
+        "source": {
+          "path": "/home/phujck/VScodeProjects/laplace/evidence/BENCH_RECOVERY_2026-11-09/stage3/K/results/A_final48.json",
+          "bytes": 185017,
+          "sha256": "7e2bdf1fb4c27275367cd703646c56ad9549e36875fecf74e40dcdd9c5634002"
+        },
+        "offset": 160000,
+        "read_id": "READ-8583627749d245c9bf344c637a77882f"
+      }
+    ]
+  },
+  "sources": [
+    {
+      "path": "evidence/BENCH_RECOVERY_2026-11-09/stage3/I/results.json",
+      "sha256": "ff7ee2843512a1f7a846dab0998a406367d3e58b468fe5b0a6bc75d371207f14",
+      "read_id": "READ-a04457a8b5184c8d96377c1b869c9509"
+    },
+    {
+      "path": "evidence/BENCH_RECOVERY_2026-11-09/stage3/I/results.json",
+      "sha256": "ff7ee2843512a1f7a846dab0998a406367d3e58b468fe5b0a6bc75d371207f14",
+      "read_id": "READ-f405f4e10051487991cae42504e08a3c"
+    },
+    {
+      "path": "evidence/BENCH_RECOVERY_2026-11-09/stage3/J/results.json",
+      "sha256": "96611151600eddad0a134ea4d7d99d0b8a10d0877b6b839f917ab314c28e758b",
+      "read_id": "READ-f35a40a5a3ac493e902a7f5e6e8d15cc"
+    },
+    {
+      "path": "evidence/BENCH_RECOVERY_2026-11-09/stage3/K/results/A_final48.json",
+      "sha256": "7e2bdf1fb4c27275367cd703646c56ad9549e36875fecf74e40dcdd9c5634002",
+      "read_id": "READ-610e4be7df6942d5b65fd3793cfda2a9"
+    },
+    {
+      "path": "evidence/BENCH_RECOVERY_2026-11-09/stage3/K/results/A_final48.json",
+      "sha256": "7e2bdf1fb4c27275367cd703646c56ad9549e36875fecf74e40dcdd9c5634002",
+      "read_id": "READ-d27b951ace944e239f2aa2c2de80b2b2"
+    },
+    {
+      "path": "evidence/BENCH_RECOVERY_2026-11-09/stage3/K/results/A_final48.json",
+      "sha256": "7e2bdf1fb4c27275367cd703646c56ad9549e36875fecf74e40dcdd9c5634002",
+      "read_id": "READ-a36c6b66672d47e99102648159633c41"
+    },
+    {
+      "path": "evidence/BENCH_RECOVERY_2026-11-09/stage3/K/results/A_final48.json",
+      "sha256": "7e2bdf1fb4c27275367cd703646c56ad9549e36875fecf74e40dcdd9c5634002",
+      "read_id": "READ-c828feb5c13245c99240466d9e7661aa"
+    },
+    {
+      "path": "evidence/BENCH_RECOVERY_2026-11-09/stage3/K/results/A_final48.json",
+      "sha256": "7e2bdf1fb4c27275367cd703646c56ad9549e36875fecf74e40dcdd9c5634002",
+      "read_id": "READ-58a8534ff60a4efcb6accb5ae3afc2e3"
+    }
+  ],
+  "limitations": [
+    "No new benchmark or independent scientific verification",
+    "F incomplete judging not included as final accuracy",
+    "FRAMES RAPTOR incomplete",
+    "No measured full nine-stage integration or causal X-to-J effect",
+    "Original failed forensic run preserved; this artifact is not its successful result"
+  ]
+}

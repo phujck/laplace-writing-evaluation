@@ -1,0 +1,31 @@
+{
+  "schema_version": "laplace.visual-style/1",
+  "name": "Eigen scientific",
+  "version": 2,
+  "basis": "canon/skills/figure_standard and pipeline/figure_layout",
+  "design_guidance": {
+    "authority": "Direct author preference, 15 October 2026",
+    "numerical_results": "Prefer a meaningful visual presentation of numerical results: comparisons, trends, convergence, distributions or trade-offs. Choose the view that explains the result. An isolated number in prose should earn its place; a decorative chart adds no value.",
+    "publication_style": "Use consistent APS-style physics-paper presentation adapted to the actual manuscript column width. Match the document's typography and mathematical notation, use restrained accessible colour, and inspect labels at final printed size.",
+    "axis_labels": "Prefer the equation symbols used in the manuscript on axes and within quantitative figures, with units where required. Keep labels concise. Define every symbol and explain its meaning in the caption.",
+    "captions": "Explain the comparison, conditions and scientific point in the caption. The figure should show the result; the caption should make it understandable without a forest of explanatory text inside the plot.",
+    "evidence": "Link figures and included results to their source data, producer, configuration, run and appropriate verification. Distinguish conceptual illustrations, mathematical calculations and measured results. Preserve exact values and uncertainty; never invent or silently alter data for presentation.",
+    "inspection": "Inspect both the standalone figure and its placement in the rendered manuscript. Revise notation, caption, spacing and legibility together. Prefer vector manuscript assets and retain editable producers."
+  },
+  "font_family": "serif",
+  "diagram_font": "DejaVu Serif",
+  "font_size": 9,
+  "width_inches": 6.4,
+  "height_inches": 3.9,
+  "line_width": 1.5,
+  "marker_size": 4,
+  "tick_direction": "in",
+  "grid": false,
+  "palette": ["#0072B2", "#D55E00", "#009E73", "#CC79A7", "#E69F00", "#56B4E9"],
+  "ink": "#243039",
+  "background": "#ffffff",
+  "diagram_fill": "#f1f5f3",
+  "diagram_border": "#477363",
+  "preview_dpi": 170,
+  "embedded_title": false
+}

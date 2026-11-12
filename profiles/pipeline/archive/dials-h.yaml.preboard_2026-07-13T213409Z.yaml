@@ -1,0 +1,42 @@
+# H-run dials: the calibration pass wants two rounds, not four (his call,
+# 2026-07-10). Overlay on the code defaults - everything else inherits v1.
+version: 1
+loop:
+  max_rounds: 2
+routing:
+  # the known noise-heavy apparatus classes: REPORTED every round (they hold
+  # technical_support unclean, correctly blocking lock) but DEFERRED from
+  # dispatch until his adjudication exists (G) - a builder told to "fix" an
+  # eq-unused named result would add spurious \eqrefs, the noise made flesh.
+  defer_kinds:
+    - eq-unused
+    - eq-uninterpreted
+    - citation-uncited
+    - citation-first-use
+    - citation-cluster
+    - unlinked-reliance
+    - crosslink-vague
+# BITE B1 — machine adjudication: the machine confirms/dismisses the deferred
+# classes BEFORE the route each round; a confirmed finding rides through class-
+# grain deferral, a dismissed one is dropped, the undecidable residue escalates
+# to a referee. The may_dismiss set == the deferred classes above (the machine
+# is empowered to rule on exactly the classes the loop otherwise just holds).
+machine_adjudication:
+  enabled: true
+  may_dismiss:
+    - eq-unused
+    - eq-uninterpreted
+    - citation-uncited
+    - citation-first-use
+    - citation-cluster
+    - unlinked-reliance
+    - crosslink-vague
+  calibration_threshold: 5
+# BITE B3 — regen GRAIN: sparse faults regen the offending `% <SEC>-pN`
+# paragraph(s) through sliced briefs; dense or structural faults regen the
+# section (today's path). auto = the route's density heuristic decides;
+# section = kill-switch (byte-identical to pre-B3 section grain).
+regen_grain:
+  mode: auto
+  paragraph_max_fraction: 0.4
+  structural_kinds: []

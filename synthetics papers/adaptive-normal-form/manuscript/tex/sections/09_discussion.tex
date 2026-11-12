@@ -1,0 +1,17 @@
+\section{Numerical method and reproducibility}
+\label{hrec:app:method}
+All numerical examples in this paper reuse retained calculations. No new trajectory search, population grid or actuator sweep was run for this manuscript. The deterministic maps, exact algebraic proofs and floating measurements are distinct forms of evidence.
+
+For the matched nonlinear trajectories, \(f_N\) and \(f_N'\) in Eq.~\eqref{hrec:eq:proxies} were evaluated in float64 with \(r=0.3,\alpha=0.01,\beta=0.5\). The source-seeded controls used \((m_0,\theta_0)=(10^{-4},0)\). Peak statistics include \(k=0\) and exclude \(k=H\). Tail half-ranges use the final 200 stored updates. The \(N=900,H=5000\) history is a prefix of the retained 20000-update history. The small late mismatch at \(850\) and \(900\) and the unresolved horizon sensitivity at \(817\) are finite observations, not a convergence oracle.
+
+The post-observation comparison used \(b=1.2,s=0.4,r=e^{-1},\varepsilon=0.35,\beta=0.6\), initial \((x_0,\theta_0)=(0.1,0.15)\), and proxy size ratios \(N/N_c^{\rm post}=1.001,1.01,1.1\). The numerically evaluated analytic orbit mismatch magnitudes are \(0.0077586855,0.0243927852,0.0729735194\). At ratio \(1.001\), a retained 20000-update extension resolves the slow approach more clearly than 5000 updates. The generic-seed peak is \(0.1052848224\) at its initial sample for all three controls, so it is not the cycle amplitude. The diagnostic \(x_{k+1}-b\theta_k\) is the negative of a positive-target-error convention, with identical absolute peaks and half-ranges.
+
+For orbit stability, the retained calculation evaluates both one-step Jacobians and uses a direct matrix-product eigensolver for the second iterate. Centred finite differences at steps \(10^{-4},10^{-5},10^{-6}\) check the derivatives. Rounded initialisation at the matched \(900\) saddle and perturbations along its linear eigendirections have different residence times. One original nominal unstable-direction control accidentally contained both eigendirections. It is retained as a mixed-direction control and excluded from pure-direction evidence. A separately retained corrected control supplies the pure-unstable comparison. A linear stable eigendirection is not an exact nonlinear stable manifold.
+
+Tree enumeration uses exact rational block slopes for every ordered composition of \(k=1,\ldots,8\), with the four predeclared controls \(\nu\in\{1,2\}\), \(\eta\in\{1/8,1/4\}\). The gain comparisons are strict. Gaussian comparators are separate floating calculations, not substituted exact trees. The illustrated independent shift budget \(H=8,c^2=1/2,E_{\max}/E_0=128\) admits depths one through eight, but does not make the exact gain test succeed at \(729\).
+
+The terminal-effort calculation contains 31 small-matrix cases and 108 tasks, of which 78 are reachable and 30 are expected to be unreachable. It compares chronological controls, forward terminal residuals and exact rational references where specified. The plotted persistent-chain values are a direct selection of the retained complete task table, not new evaluations at interpolated horizons. Its positive diagonal-weight numerical checks do not certify an arbitrary ill-conditioned solver for all positive-definite metrics. The general weighted formula is established by the derivation above.
+
+Complete input identities and retained historical controls accompany the project's source-custody record. The definitions, proofs and numerical interpretations above are self-contained.
+
+

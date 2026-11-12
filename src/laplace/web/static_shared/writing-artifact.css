@@ -1,0 +1,12 @@
+.evidence-artifact{box-sizing:border-box;width:min(1120px,94vw);max-height:92vh;max-height:92dvh;min-height:0;overflow:hidden;color:var(--ink);background:var(--panel);border:1px solid var(--sky-50);border-radius:8px;padding:1.2rem}.evidence-artifact::backdrop{background:var(--shade-60)}.evidence-artifact nav,.artifact-node-index{display:flex;gap:.5rem;flex-wrap:wrap}.evidence-artifact pre,.evidence-artifact code{white-space:pre-wrap;overflow-wrap:anywhere}.evidence-artifact img{max-width:100%;background:var(--paper)}.evidence-artifact .artifact-node-index{max-height:9rem;overflow:auto;margin:1rem 0}.evidence-artifact .argument-viewport{height:440px;max-height:55vh;min-height:240px;position:relative;overflow:hidden;background:var(--bg);touch-action:none}.evidence-artifact .argument-local-context{position:absolute;z-index:3;overflow:auto;background:var(--panel);border:1px solid var(--sky-50);padding:.8rem;box-sizing:border-box}.evidence-artifact .argument-toolbar,.evidence-artifact .argument-path{display:flex;gap:.4rem;flex-wrap:wrap;margin:.6rem 0}.evidence-artifact .artifact-record,.evidence-artifact .artifact-current{border-top:1px solid var(--sky-50);margin-top:1rem;padding-top:1rem}.evidence-artifact .artifact-identity-notice{border-left:3px solid var(--orange-70-b);padding-left:.8rem}.evidence-artifact .error{color:var(--bad)}.evidence-artifact [hidden]{display:none!important}
+
+/* The shell retains navigation; all long evidence/JSON/support stays in one scroll region. */
+.evidence-artifact[open]{display:flex;flex-direction:column}
+.evidence-artifact>h2{flex:0 0 auto;max-height:20vh;max-height:20dvh;overflow:auto;overflow-wrap:anywhere;margin:.2rem 0 .5rem}
+.evidence-artifact>.artifact-status,.evidence-artifact>.error{flex:0 0 auto;max-height:16vh;max-height:16dvh;overflow:auto;overflow-wrap:anywhere;margin:.35rem 0}
+.evidence-artifact>nav{flex:0 0 auto;margin:.3rem 0 .6rem;align-items:center}
+.evidence-artifact>nav a{overflow-wrap:anywhere;min-width:0}
+.evidence-artifact .artifact-reading-region{flex:1 1 auto;min-height:0;min-width:0;overflow:auto;overscroll-behavior:contain}
+.evidence-artifact .artifact-reading-region:focus-visible{outline:2px solid var(--sky-70-c);outline-offset:-2px}
+.evidence-artifact .artifact-body{min-width:0}
+.evidence-artifact .artifact-raw{margin:0}

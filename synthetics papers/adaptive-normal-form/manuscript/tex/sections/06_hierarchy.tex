@@ -1,0 +1,90 @@
+\section{What a specified hierarchy buys}
+\label{hrec:sec:hierarchy}
+Return to the detector array. Instead of voting once across all leaves, let each block form a binary majority and pass its verdict upward. Specify a level-homogeneous product tree
+\(\mathcal T=(n_1,\ldots,n_L)\), with every span an odd integer at least three and
+\(\prod_{\ell=1}^L n_\ell=N\). Conditional on a fixed broadcast, disjoint subtrees have independent binary outputs with the same distribution at each level. If \(B_n(v)\) is the mean majority verdict for iid inputs of mean \(v\), the successive means satisfy
+\begin{equation}
+ v_0(u)=\tanh(\beta u),\qquad
+ v_\ell(u)=B_{n_\ell}(v_{\ell-1}(u)).
+ \label{hrec:eq:tree}
+\end{equation}
+This conditional binary closure is what licenses composition. Its exact origin slope is
+\begin{equation}
+ \begin{aligned}
+ G_{\mathcal T}&=\beta\prod_{\ell=1}^L a(n_\ell),\\
+ a(n)&=n\binom{n-1}{(n-1)/2}2^{-(n-1)}.
+ \end{aligned}
+ \label{hrec:eq:tree-slope}
+\end{equation}
+It is a static derivative. Adding actual intermediate controllers or delays would require their states in a new dynamical model.
+
+The distinction between amplification and attenuation is now concrete. A three-input majority has \(B_3(v)=(3v-v^3)/2\). Two such levels have slope \(9\beta/4\), smaller than the flat nine-input slope \(315\beta/128\), but larger than the individual slope \(\beta\). The hierarchy amplifies a leaf bias while attenuating the response \emph{relative to the flat architecture}. Relative attenuation need not bound the absolute gain as the population grows.
+
+\begin{figure}[t]
+ \centering
+ \fbox{\begin{minipage}{0.91\columnwidth}
+ \centering
+ Nine iid binary leaves\\[5pt]
+ \begin{tabular}{cc}
+ Flat vote & Nested votes\\
+ \(B_9\) & \(B_3\circ B_3\)\\[3pt]
+ \(G/\beta=315/128\) & \(G/\beta=(3/2)^2=9/4\)
+ \end{tabular}
+ \end{minipage}}
+ \caption{Hierarchy changes a response, not just a depth label. The two trees use the same nine iid leaves. Every internal block in the nested construction emits a binary verdict. The displayed exact derivatives are evaluated at zero broadcast. Smaller nested gain is relative to flat majority, not attenuation below the single-leaf sensitivity.}
+ \label{hrec:fig:trees}
+\end{figure}
+
+Depth is also constrained by the leaves. In this class, \(L\le\lfloor\log_3N\rfloor\), and a depth is admitted only when the size factors into its allowed spans. For the explicit family \(N=3^k\), \(n_\ell=3^{j_\ell}\), the admissible level sequences are ordered compositions \(j_1+\cdots+j_L=k\) with positive \(j_\ell\). There are \(2^{k-1}\) sequences in total and \(\binom{k-1}{L-1}\) at depth \(L\). These are not all unbalanced trees on \(N\) leaves.
+
+A retained exact-rational enumeration covers all 255 such sequences for \(k=1,\ldots,8\). To state its gain test without identifying the controllers, write
+\begin{equation}
+ \frac{K_{\mathcal T}}{K_c}
+   =\eta\left(\frac{G_{\mathcal T}}{\beta}\right)^\nu,
+ \qquad \eta>0.
+ \label{hrec:eq:normalised-gain}
+\end{equation}
+The exponent \(\nu=1\) describes one response derivative, while \(\nu=2\) describes the matched gradient placement. The prefactor \(\eta\) contains the chosen controller and its own threshold. At the illustrative control \(\eta=1/8,\nu=1\), a slope \(G_{\mathcal T}/\beta<8\) is required. At \(N=243\), the flat slope is \(12.4505920090\), but the all-three depth-five slope is \(243/32=7.59375\). Exactly one of the 16 admitted level sequences meets the strict gain test. At \(N=729\), even the smallest attained slope, \(729/64=11.390625\), exceeds eight. None of its 32 sequences qualifies. A hierarchy can rescue a finite case without providing unlimited rescue.
+
+There is an analytic obstruction for this entire odd-product class, not merely for those enumerated sizes. The exact block slopes satisfy
+\begin{equation}
+ a(n)\ge\sqrt{\frac{n+1}{2}}>\sqrt{\frac n2},
+ \qquad n\ge3\ \text{odd}.
+ \label{hrec:eq:block-bound}
+\end{equation}
+Using \(L\le\log_3N\) gives
+\begin{equation}
+ G_{\mathcal T}>\beta\sqrt N\,2^{-L/2}
+ \ge\beta N^\gamma,\qquad
+ \gamma=\frac{1-\log_3 2}{2}>0.
+ \label{hrec:eq:tree-bound}
+\end{equation}
+At fixed positive controller strength, selecting more levels in this class cannot keep the local gain bounded for arbitrarily large \(N\). Appendix~\ref{hrec:app:depth} proves the block inequality by a recurrence. Fair-tie binary trees, arbitrary unbalanced trees and correlated leaves are not members of this theorem's class.
+
+A convenient abstract depth law remains useful when it is actually available. Suppose, on a specified starting domain and admitted size set,
+\begin{equation}
+ \begin{gathered}
+ K(N,L)=K_{\rm ref}(N/N_{\rm ref})^p d^{L-1},\\
+ K_{\rm ref}>0,\qquad p>0,\qquad 0<d<1.
+ \end{gathered}
+ \label{hrec:eq:depth-law}
+\end{equation}
+Here \(p\) is the total \emph{gain} exponent and \(d\) the per-level gain attenuation. Solving \(K=K_c\) gives
+\begin{equation}
+ N_c(L)=N_{\rm ref}
+ \left(\frac{K_c}{K_{\rm ref}}\right)^{1/p}
+ d^{-(L-1)/p}.
+ \label{hrec:eq:critical-size}
+\end{equation}
+The reciprocal \(p\) cannot be dropped. If a level attenuates the response slope by \(q\), a controller containing \(\nu\) such derivatives has \(d=q^\nu\). A fixed Gaussian-block approximation suggests a response factor \((2/\pi)^{(L-1)/2}\) relative to flat majority, but applying it repeatedly to small blocks without error control is not the exact tree law. In particular, the Gaussian depth-six proxy can predict a subcritical \(N=729\) while the exact depth-six all-three tree still fails the test.
+
+For integer \(L\), strict stability in Eq.~\eqref{hrec:eq:depth-law} requires
+\begin{equation}
+ L_{\min}=\max\left\{1,\,
+ 2+\left\lfloor
+ \frac{\log[K_{\rm ref}(N/N_{\rm ref})^p/K_c]}{\log(1/d)}
+ \right\rfloor\right\}.
+ \label{hrec:eq:integer-floor}
+\end{equation}
+This includes the equality case: gain exactly at threshold requires another level. It is only a candidate depth until intersected with the architecture's admitted factorisations. If the gain exponent is zero, the finite prefactor decides which side of the boundary the system occupies. If it is negative, the gain can eventually fall below the boundary while still exceeding it at smaller admitted sizes. Neither sign by itself establishes criticality or all-size stability.
+

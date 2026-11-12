@@ -1,0 +1,287 @@
+{
+ "packet": "X",
+ "model": "claude-sonnet-5-5",
+ "effort": "low",
+ "client": "stage3/C/claude_client.py (patch(mc))",
+ "instruction": "relational/extract.py:182-196 unchanged",
+ "corpora": {
+  "news": {
+   "units": {
+    "docs": 609,
+    "units": 17568,
+    "units_per_doc": {
+     "median": 21,
+     "max": 194,
+     "over_40": 86
+    },
+    "unit_tokens": {
+     "median": 83.0,
+     "max": 100,
+     "mean": 79.9
+    },
+    "doc_tokens": {
+     "median": 1703,
+     "max": 16144
+    }
+   },
+   "calls": {
+    "attempts": 659,
+    "ended": 659,
+    "status": {
+     "ok": 659
+    },
+    "input_tokens": 1336,
+    "cache_creation_input_tokens": 3376949,
+    "cache_read_input_tokens": 480582,
+    "output_tokens": 2911062,
+    "cost_usd_reported_by_cli": 42.67,
+    "latency_s_median": 22.7
+   },
+   "witness": {
+    "request_status": {
+     "ids in order": 659
+    },
+    "counts": {
+     "units": 17568,
+     "statements": 17568,
+     "quotes": 22029,
+     "quotes kept": 21940,
+     "quotes kept exact (no normalisation needed)": 21921,
+     "statements with no surviving witness": 62,
+     "statements with 0 quotes returned": 0,
+     "quotes dropped": 89,
+     "dropped: not a span": 28,
+     "dropped: span after casefold": 13,
+     "dropped: span elsewhere in the document": 48
+    },
+    "rates": {
+     "units_with_statement": 1.0,
+     "quotes_kept": 0.996,
+     "quotes_dropped": 0.004,
+     "statements_flagged_no_witness": 0.0035,
+     "quotes_per_statement": 1.254,
+     "witnesses_per_statement": 1.249
+    },
+    "field_filled": {
+     "subject": 0.9921,
+     "object": 0.9998,
+     "mechanism": 0.9994,
+     "conditions": 0.6781,
+     "consequences": 0.7585
+    }
+   },
+   "field_vectors": {
+    "corpus": "news",
+    "device": "cpu",
+    "pieces": 17568,
+    "fields": [
+     "subject",
+     "object",
+     "mechanism",
+     "conditions",
+     "consequences"
+    ],
+    "shape": [
+     17568,
+     5,
+     384
+    ],
+    "texts_encoded": 77790,
+    "providers": [
+     "CPUExecutionProvider"
+    ],
+    "seconds": 299.7,
+    "filled_per_field": {
+     "subject": 17430,
+     "object": 17565,
+     "mechanism": 17558,
+     "conditions": 11912,
+     "consequences": 13325
+    },
+    "row_order": "out/news_statements.jsonl line order"
+   },
+   "tuples": {
+    "pieces": 17568,
+    "pieces_with_statement": 17568,
+    "registry": {
+     "size": 7499,
+     "floor": 2,
+     "keys_before_floor": 19168,
+     "mentions_total": 82451,
+     "mean_aliases_per_entity": 1.12735,
+     "entities_with_alias": 938
+    },
+    "polarity": {
+     "<unknown>": 8061,
+     "assert": 3050,
+     "negate": 2646,
+     "open": 2872,
+     "supersede": 390,
+     "update": 549
+    },
+    "e_subj_from": {
+     "subject": 13480,
+     "spread": 3485,
+     "None": 603
+    },
+    "e_obj_from": {
+     "entity": 14985,
+     "quantity in object": 247,
+     "quantity in mechanism": 368,
+     "None": 1890,
+     "quantity in consequences": 78
+    },
+    "m_code_unknown_with_mechanism": 3416,
+    "mechanism_field_empty": 10,
+    "hub_cut_pieces": 175.68,
+    "hubs_any_mention": [
+     [
+      "ai",
+      508
+     ],
+     [
+      "amazon",
+      415
+     ],
+     [
+      "google",
+      396
+     ],
+     [
+      "us",
+      354
+     ],
+     [
+      "apple",
+      285
+     ],
+     [
+      "meta",
+      200
+     ],
+     [
+      "openai",
+      198
+     ],
+     [
+      "bankman-fried",
+      184
+     ]
+    ],
+    "hubs_as_e_subj": [],
+    "incidence": {
+     "entity": [
+      17568,
+      7499,
+      53125
+     ],
+     "source": [
+      17568,
+      49
+     ],
+     "day": [
+      17568,
+      61
+     ],
+     "document": [
+      17568,
+      609
+     ],
+     "pieces_with_no_entity": 991,
+     "entities_per_piece_mean": 3.024
+    },
+    "axes_pieces_with_statement": {
+     "t_coarse": {
+      "known": 17568,
+      "unknown": 0,
+      "rare": 0,
+      "known_fraction": 1.0,
+      "registry_fraction": 1.0
+     },
+     "t_fine": {
+      "known": 17568,
+      "unknown": 0,
+      "rare": 0,
+      "known_fraction": 1.0,
+      "registry_fraction": 1.0
+     },
+     "source": {
+      "known": 17568,
+      "unknown": 0,
+      "rare": 0,
+      "known_fraction": 1.0,
+      "registry_fraction": 1.0
+     },
+     "e_subj": {
+      "known": 16965,
+      "unknown": 603,
+      "rare": 1840,
+      "known_fraction": 0.965676,
+      "registry_fraction": 0.86094
+     },
+     "m_code": {
+      "known": 14142,
+      "unknown": 3426,
+      "rare": 0,
+      "known_fraction": 0.804986,
+      "registry_fraction": 0.804986
+     },
+     "polarity": {
+      "known": 9507,
+      "unknown": 8061,
+      "rare": 0,
+      "known_fraction": 0.541154,
+      "registry_fraction": 0.541154
+     },
+     "e_obj": {
+      "known": 15678,
+      "unknown": 1890,
+      "rare": 1267,
+      "known_fraction": 0.892418,
+      "registry_fraction": 0.820298
+     }
+    }
+   },
+   "reading_check": {
+    "questions": 10,
+    "facts": 25,
+    "facts_with_a_statement_on_their_piece": 25,
+    "facts_overlapped_by_a_witness": 11,
+    "facts_located_exact": 25
+   }
+  },
+  "frames": {
+   "units": {
+    "pages": 619,
+    "sections": 13655,
+    "units": 67299,
+    "unit_tokens": {
+     "median": 79,
+     "max": 104
+    }
+   },
+   "calls": {},
+   "witness": null,
+   "field_vectors": null,
+   "page_selection": {
+    "rule": "Which pages are extracted, with no gold. NOT the plan's w3 page set: plan_frames_v1 case_sets.w3 is\nframes_corpus.draw_pages (frames_corpus.py:414-433), the pages the questions' own Wikipedia links name, i.e. the\ngold evidence pages. Instead: the pages the three sealed W3 arms (rag, relational, relational_noact) retrieved for\nthe 190 consumed questions (contexts.json of trial w3-v3). In each (question, arm) context a page's rank is the\norder of its first passage; pages are taken by best rank over all contexts, then by the number of contexts that\nhold them, then key, until FRAMES_BUDGET requests. The fetched pages store plain text only (no hyperlinks), so\n'their linked pages' cannot be added from the corpus.",
+    "contexts_file": "/home/phujck/VScodeProjects/laplace/synthetics papers/relational-frontend/derived/harness/trials/frames/w3/w3-v3/contexts.json",
+    "arms": [
+     "rag",
+     "relational",
+     "relational_noact"
+    ],
+    "questions": 190,
+    "pages_retrieved": 1610,
+    "pages_chosen": 619,
+    "requests": 1499,
+    "best_rank_of_last_page": 2,
+    "chosen_by_best_rank": {
+     "0": 337,
+     "1": 223,
+     "2": 59
+    }
+   }
+  }
+ }
+}

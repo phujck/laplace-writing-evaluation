@@ -1,0 +1,1537 @@
+{
+  "qualification": "Actual pure owner reads of retained public early002 fixture; no new save/preparation/turn/run.",
+  "joined_research_run": {
+    "qualification": "Selected values from B ART-c3a51b6639b24f028e11bf86072878a8: pure CURRENT owner reads of the RETAINED PUBLIC post-test settled Stop cut under accepted component A19e/eb80 code. No model, provider, action or live grant; codex/public-model/low are controlled fixture labels. river is the whole /samples/2/sample/calls/1/response value. run_view_selected joins JSON-pointer reads of /samples/2/sample/calls/2/response/{work,stop_request,actions/stop-run}; its schema_version is the owner run-view schema, and revision/state are the river run_identity run_revision/recorded_state of the same cut. It omits attempts and other run fields, so it is not a whole run response. Stop replies in tests are controlled compositions in the owner stop_composition shape, not runtime-emitted.",
+    "source": {"artifact_id": "ART-c3a51b6639b24f028e11bf86072878a8", "sha256": "sha256:99495ab8abb9a7896d9e23ba4997e8090f44332924dd3368635773c404015de7", "river_pointer": "/samples/2/sample/calls/1/response", "river_value_sha256": "sha256:5400a2364530b87ec9ec1fdc76b3672e1d5fe9adfb548c9f19995e101b7d1b76", "run_view_pointers": ["/samples/2/sample/calls/2/response/work", "/samples/2/sample/calls/2/response/stop_request", "/samples/2/sample/calls/2/response/actions/stop-run"]},
+    "river": {"schema_version": "laplace.workflow-operation/1", "view": "river", "scope": {"kind": "project", "namespace": "book"}, "caller_scope": {"kind": "project", "door": "sdk", "namespace": "book", "says": "Confined to this project. Work elsewhere is neither listed, counted nor named; its own owner admits other readers separately."}, "scope_id": "sha256:0882f98be41b02ca9c03a53b3c65f6934b45a45c0dc81d472ed20b08ae1c908a", "reference": {"schema_version": "laplace.reference/1", "owner": "pipeline.workflow", "kind": "workflow-definition", "identity": {"id": "WDEF-ec260f5c5dfb4969bc5cec3090e4914d"}, "version": {"definition_revision": "sha256:aae08f40e597c50ca6acfc64a62d58a03b650d4f632d3af73ea3fafd39a1377a"}}, "read_only": true, "request_token": null, "work_id": "WORK-wdef-7cbd80c5a4435f8e83531008180ce1bf", "run_read": {"http": {"method": "GET", "url": "/work/workflow-definitions?definition_id=WDEF-ec260f5c5dfb4969bc5cec3090e4914d&version=sha256%3Aaae08f40e597c50ca6acfc64a62d58a03b650d4f632d3af73ea3fafd39a1377a&facet=app-run&work_id=WORK-wdef-7cbd80c5a4435f8e83531008180ce1bf&project_lens=book"}, "request": {"definition_id": "WDEF-ec260f5c5dfb4969bc5cec3090e4914d", "version": "sha256:aae08f40e597c50ca6acfc64a62d58a03b650d4f632d3af73ea3fafd39a1377a", "facet": "app-run", "work_id": "WORK-wdef-7cbd80c5a4435f8e83531008180ce1bf", "project_lens": "book"}, "native": {"operation": "project", "payload": {"view": "workflow-definitions", "request": {"definition_id": "WDEF-ec260f5c5dfb4969bc5cec3090e4914d", "version": "sha256:aae08f40e597c50ca6acfc64a62d58a03b650d4f632d3af73ea3fafd39a1377a", "facet": "app-run", "work_id": "WORK-wdef-7cbd80c5a4435f8e83531008180ce1bf", "project_lens": "book"}}}}, "observed_at": "2026-10-30T05:36:08.621395+00:00", "observation": {"state": "PARTIAL", "qualification": "Recorded WD projection; inspect actual child host through its conversation."}, "prepared_dependencies": null, "actions": [{"name": "start", "title": "Prepare start message", "permitted": false, "reason": "This exact run already has an original launch; recover it."}, {"name": "recover", "title": "Check and recover this run", "permitted": true, "reason": ""}, {"name": "stop-before-next", "title": "Stop before next step", "permitted": true, "reason": ""}, {"name": "resume", "title": "Resume pending step", "permitted": false, "reason": "This action is not available at the observed phase; inspect the retained run."}, {"name": "replan", "title": "Use a revised saved plan", "permitted": true, "reason": ""}, {"name": "readdress", "title": "Change future recipient", "permitted": true, "reason": ""}, {"name": "disposition", "title": "Record scientific disposition", "permitted": false, "reason": "Inspect an actual recorded scientific concern; its owner supplies the exact subject and concern basis."}, {"name": "accept-boundary", "title": "Accept human Apply boundary", "permitted": false, "reason": "This action is not available at the observed phase; inspect the retained run."}, {"name": "stop-run", "title": "Stop this run and its owned children", "permitted": true, "reason": ""}, {"name": "synthesis", "title": "Publish original-parent synthesis", "permitted": false, "reason": "This action is not available at the observed phase; inspect the retained run."}, {"name": "bind_writer", "title": "Approve proposal writer", "permitted": true, "reason": "Explicit human approval; no delivery starts."}, {"name": "bind_reviewer", "title": "Approve independent reviewer", "permitted": true, "reason": "Explicit human approval; no delivery starts."}], "row_projection": {"kind": "COMPACT_IDENTITY_AND_HANDLES", "detail_read": {"http": {"method": "GET", "url": "/work/workflow-definitions?definition_id=WDEF-ec260f5c5dfb4969bc5cec3090e4914d&version=sha256%3Aaae08f40e597c50ca6acfc64a62d58a03b650d4f632d3af73ea3fafd39a1377a&facet=app-run&work_id=WORK-wdef-7cbd80c5a4435f8e83531008180ce1bf&project_lens=book"}, "request": {"definition_id": "WDEF-ec260f5c5dfb4969bc5cec3090e4914d", "version": "sha256:aae08f40e597c50ca6acfc64a62d58a03b650d4f632d3af73ea3fafd39a1377a", "facet": "app-run", "work_id": "WORK-wdef-7cbd80c5a4435f8e83531008180ce1bf", "project_lens": "book"}, "native": {"operation": "project", "payload": {"view": "workflow-definitions", "request": {"definition_id": "WDEF-ec260f5c5dfb4969bc5cec3090e4914d", "version": "sha256:aae08f40e597c50ca6acfc64a62d58a03b650d4f632d3af73ea3fafd39a1377a", "facet": "app-run", "work_id": "WORK-wdef-7cbd80c5a4435f8e83531008180ce1bf", "project_lens": "book"}}}}, "meaning": "Rows keep identity, recorded state, compact settings and issued read handles. Full settings, conversation and exact action payloads are in the issued run detail read; nothing was hydrated."}, "deadline": null, "parent": {"prepared_by": {"project": "book", "session_id": "WS-afcfe10334f5480cb44fead915957575", "turn_id": "WT-8bbe82e795ba40cea7b3b174b3a58c97"}, "launched_by": {"kind": "native", "session_id": "WS-afcfe10334f5480cb44fead915957575", "turn_id": "WT-8bbe82e795ba40cea7b3b174b3a58c97", "role": "author", "dispatch_id": null, "parent_turn_id": null}}, "stop": {"schema_version": "laplace.workflow-stop-composition/1", "future_admission_gate": {"available": true, "permitted": true, "reason": "", "title": "Stop before next step", "native": {"operation": "work_delivery", "payload": {"action": "workflow-stop-before-next", "work_id": "WORK-wdef-7cbd80c5a4435f8e83531008180ce1bf", "expected_run_revision": "sha256:e70d41b6df0a3306fd4c21f4136d4e16180cd9e179c95f885929fd50712c8dc8", "request_id": "workflow-7f61c4dbde0d40b8aa9f57708fb90533"}}, "required_inputs": ["request_id"]}, "stop_run": {"available": true, "permitted": true, "reason": "", "title": "Stop this run and its owned children", "native": {"operation": "work_delivery", "payload": {"action": "workflow-stop-run", "work_id": "WORK-wdef-7cbd80c5a4435f8e83531008180ce1bf", "expected_run_revision": "sha256:e70d41b6df0a3306fd4c21f4136d4e16180cd9e179c95f885929fd50712c8dc8", "request_id": "workflow-e16f4b4e80ef46cf9710d33fa07f7f3a", "children": []}}, "required_inputs": ["request_id"], "coverage": {"owned_children": [], "complete": true, "meaning": "Exact current owned children of this run. The owner refuses a changed set, gates future admission first and controls each child through its own turn or producer owner."}}, "coverage": "COMPLETE", "owned_children": [], "owned_children_total": 0, "child_control": "Each owned child is stopped only through its own existing turn/producer owner; no PID, thread or parent-only stop.", "compose": "Gate future admission first, then control each owned child; report every child result exactly."}, "loop": {"observed": true, "run_state": "PARTIAL", "iteration": 1, "admissions_used": 1, "started_at": null, "policy": {"profile": "laplace.research-review/1", "scheduler": "legacy-v1"}, "decision": null, "exit": null, "synthesis_inputs": {"total": 2, "items": [{"kind": "input-packet", "id": "ART-90e13514d71f463d9ac53415052b5250", "sha256": "3686d7734ada7c1e53b5ba16e7f97d6fe9be600c28ea1ca47c024b360e455449"}, {"kind": "attempt-result", "id": "WD-a577e18a1aa08fbaf8c63cbc", "sha256": null}], "omitted": 0, "input_packet": "INCLUDED"}, "qualification": "Recorded run state only; no body read, attention or liveness is inferred."}, "run_identity": {"work_id": "WORK-wdef-7cbd80c5a4435f8e83531008180ce1bf", "definition_id": "WDEF-ec260f5c5dfb4969bc5cec3090e4914d", "version": "sha256:aae08f40e597c50ca6acfc64a62d58a03b650d4f632d3af73ea3fafd39a1377a", "plan_reference": {"identity": {"id": "WDEF-ec260f5c5dfb4969bc5cec3090e4914d"}, "kind": "workflow-definition", "owner": "pipeline.workflow", "schema_version": "laplace.reference/1", "version": {"definition_revision": "sha256:aae08f40e597c50ca6acfc64a62d58a03b650d4f632d3af73ea3fafd39a1377a"}}, "plan_generation": "sha256:d9d75aa5d3269273ab9999d39868e741110d2e9bdaadd760e8806da02c452856", "run_revision": "sha256:e70d41b6df0a3306fd4c21f4136d4e16180cd9e179c95f885929fd50712c8dc8", "recorded_state": "PARTIAL"}, "synthesis": {"required": false, "bridge": null, "bridge_problem": null, "due": null, "pending_children": null, "inputs_total": null, "published": null}, "current_observation": {"items": {"WD-a577e18a1aa08fbaf8c63cbc": {"observed": "FINISHED"}}, "observed_at": "2026-10-30T05:36:08.630903+00:00", "meaning": "Current child host observation, outside the recorded cut. Recorded row state and current liveness are different facts; NO_ADMITTED_TURN is not proof that nothing ran."}, "items": [{"state": "RESULT", "effect": "proposal-writer", "event_id": "WD-a577e18a1aa08fbaf8c63cbc", "session_id": "WS-75d5b0e688da4e56a16ab2a8ccc45333", "turn_id": "WT-02b2267fd5cb4a989154a659e3e682d2", "iteration": 1, "recipient_ack": "TERMINAL", "known_refusal": false, "refusal_stage": null, "result": {"status": "interrupted"}, "settings": {"prepared": {"provider": "codex", "model": "public-model", "effort": "low"}, "admitted": {"provider": "codex", "model": "public-model", "effort": "low"}, "sent": null}, "reads": {"reply": {"identity": {"project": "book", "session_id": "WS-75d5b0e688da4e56a16ab2a8ccc45333", "turn_id": "WT-02b2267fd5cb4a989154a659e3e682d2", "part": "reply"}, "http": {"method": "GET", "url": "/authoring/session-turn?project=book&session_id=WS-75d5b0e688da4e56a16ab2a8ccc45333&part=reply&offset=0&limit=4000&id=WT-02b2267fd5cb4a989154a659e3e682d2&view=message"}}, "proposal": {"http": {"method": "GET", "url": "/authoring/proposal-preview?project=book&view=preview&id=WT-02b2267fd5cb4a989154a659e3e682d2&proposal_version=sha256%3A44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a"}}, "conversation": {"project": "book", "session_id": "WS-75d5b0e688da4e56a16ab2a8ccc45333", "turn_id": "WT-02b2267fd5cb4a989154a659e3e682d2", "project_url": "/project?workspace=writing&corpus=book&session=WS-75d5b0e688da4e56a16ab2a8ccc45333&conversation=open"}}}], "total": 1, "offset": 0, "returned": 1, "cut": "sha256:23f6a517794df6f735ae2f332d1c537ae47ab97925cd21a023bbc250fc453d25", "next_read": null, "coverage": "RECORDED_MATCHES_ONLY", "body_inspection": "NOT_REQUESTED", "meaning": "Prepared, admitted, observed-live and returned are separate. No message/tool body fanout or inferred usage/price; follow exact issued reads."},
+    "run_view_selected": {"schema_version": "laplace.research-workflow-run/1", "work": {"id": "WORK-wdef-7cbd80c5a4435f8e83531008180ce1bf", "project": "book", "title": "Workflow: Draft, independent review, human Apply", "revision": "sha256:79936c8515f39ae58f19b5de3d41e29efb468595357bb161e77af25edd28f075", "read": {"operation": "project", "payload": {"namespace": "book", "view": "detail", "id": "WORK-wdef-7cbd80c5a4435f8e83531008180ce1bf"}, "http": {"method": "GET", "url": "/work/state?project=book&view=detail&id=WORK-wdef-7cbd80c5a4435f8e83531008180ce1bf"}}}, "revision": "sha256:e70d41b6df0a3306fd4c21f4136d4e16180cd9e179c95f885929fd50712c8dc8", "state": "PARTIAL", "stop_request": {"request_id": "workflow-e06cf5a98de24c8c98d00bfef5875d91", "children": ["WD-a577e18a1aa08fbaf8c63cbc"], "requested_at": "2026-10-30T04:28:16.993798+00:00", "actor": {"kind": "human", "turn_id": null, "session_id": null}}, "actions": {"stop-run": {"available": true, "permitted": true, "reason": "", "title": "Stop this run and its owned children", "required_inputs": ["request_id"], "native": {"operation": "work_delivery", "payload": {"action": "workflow-stop-run", "work_id": "WORK-wdef-7cbd80c5a4435f8e83531008180ce1bf", "expected_run_revision": "sha256:e70d41b6df0a3306fd4c21f4136d4e16180cd9e179c95f885929fd50712c8dc8", "request_id": "workflow-c0ffc06307914b90bc886b5e6b982770", "children": []}}, "http": {"method": "POST", "url": "/work/delivery", "payload": {"project": "book", "action": "workflow-stop-run", "work_id": "WORK-wdef-7cbd80c5a4435f8e83531008180ce1bf", "expected_run_revision": "sha256:e70d41b6df0a3306fd4c21f4136d4e16180cd9e179c95f885929fd50712c8dc8", "request_id": "workflow-c0ffc06307914b90bc886b5e6b982770", "children": []}}, "read": {"native": {"operation": "work_delivery", "payload": {"action": "workflow-status", "work_id": "WORK-wdef-7cbd80c5a4435f8e83531008180ce1bf"}}, "http": {"method": "GET", "url": "/work/delivery?project=book&request=%7B%22action%22%3A%22workflow-status%22%2C%22work_id%22%3A%22WORK-wdef-7cbd80c5a4435f8e83531008180ce1bf%22%7D"}}, "request_read": {"native": {"operation": "work_delivery", "payload": {"action": "workflow-request", "work_id": "WORK-wdef-7cbd80c5a4435f8e83531008180ce1bf", "request_id": "workflow-c0ffc06307914b90bc886b5e6b982770"}}, "http": {"method": "GET", "url": "/work/delivery?project=book&request=%7B%22action%22%3A%22workflow-request%22%2C%22work_id%22%3A%22WORK-wdef-7cbd80c5a4435f8e83531008180ce1bf%22%2C%22request_id%22%3A%22workflow-c0ffc06307914b90bc886b5e6b982770%22%7D"}, "intent_projection": {"excluded_fields": ["project", "expected_run_revision"], "algorithm": "sha256-canonical-json-utf8"}}, "coverage": {"owned_children": [], "complete": true, "meaning": "Exact current owned children of this run. The owner refuses a changed set, gates future admission first and controls each child through its own turn or producer owner."}}}}
+  },
+  "source_head": "fe80eda59cd48f564f7264c09047357fb4ac3da4",
+  "preview_offer": {
+    "read": {
+      "http": {
+        "method": "POST",
+        "url": "/work/workflow-definitions",
+        "payload": {
+          "facet": "execution-preview"
+        }
+      },
+      "native": {
+        "operation": "project",
+        "payload": {
+          "view": "workflow-definitions",
+          "request": {
+            "facet": "execution-preview"
+          }
+        }
+      },
+      "sdk": {
+        "method": "workflow_request",
+        "payload": {
+          "facet": "execution-preview"
+        }
+      },
+      "request": {
+        "facet": "execution-preview"
+      },
+      "read_only": true
+    },
+    "request_contract": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "version": {
+          "type": "string"
+        },
+        "scope": {
+          "type": "object"
+        },
+        "project_lens": {
+          "type": "string",
+          "minLength": 1
+        },
+        "limit": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 20
+        },
+        "offset": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "as_of": {
+          "type": "string"
+        },
+        "definition_id": {
+          "type": "string"
+        },
+        "definition": {
+          "type": "object"
+        },
+        "request_token": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 120
+        },
+        "reference": {
+          "type": "object"
+        },
+        "step_ids": {
+          "type": "array",
+          "maxItems": 64,
+          "uniqueItems": true,
+          "items": {
+            "type": "string"
+          }
+        },
+        "facet": {
+          "const": "execution-preview"
+        }
+      },
+      "required": [
+        "facet"
+      ],
+      "anyOf": [
+        {
+          "required": [
+            "definition"
+          ]
+        },
+        {
+          "required": [
+            "reference"
+          ]
+        },
+        {
+          "required": [
+            "definition_id"
+          ]
+        }
+      ],
+      "allOf": [
+        {
+          "if": {
+            "required": [
+              "definition"
+            ]
+          },
+          "then": {
+            "not": {
+              "anyOf": [
+                {
+                  "required": [
+                    "reference"
+                  ]
+                },
+                {
+                  "required": [
+                    "definition_id"
+                  ]
+                },
+                {
+                  "required": [
+                    "version"
+                  ]
+                }
+              ]
+            }
+          }
+        }
+      ]
+    },
+    "required_inputs": [
+      "definition",
+      "scope",
+      "step_ids"
+    ],
+    "meaning": "Pure draft capability preview; no save, preparation, permission or run effect."
+  },
+  "preview_request": {
+    "facet": "execution-preview",
+    "definition": {
+      "schema_version": "laplace.workflow-definition/1",
+      "title": "Public finite operation",
+      "description": "No inference.",
+      "settings": {},
+      "steps": [
+        {
+          "id": "write",
+          "title": "Write",
+          "assignment": {
+            "role": "builder",
+            "instructions": "Produce a public report.",
+            "settings": {}
+          }
+        },
+        {
+          "id": "review",
+          "title": "Review",
+          "assignment": {
+            "role": "adversary",
+            "instructions": "Judge the exact report independently.",
+            "settings": {}
+          }
+        }
+      ],
+      "edges": [
+        {
+          "id": "write-review",
+          "from": "write",
+          "to": "review",
+          "kind": "control"
+        }
+      ]
+    },
+    "scope": {
+      "kind": "project",
+      "namespace": "book"
+    },
+    "step_ids": [
+      "write",
+      "review"
+    ]
+  },
+  "preview": {
+    "schema_version": "laplace.workflow-operation/1",
+    "view": "execution-preview",
+    "scope": {
+      "kind": "project",
+      "namespace": "book"
+    },
+    "caller_scope": {
+      "kind": "owned-workspace",
+      "door": "sdk",
+      "says": "The local owned workspace: every namespace this root holds is readable here."
+    },
+    "scope_id": "sha256:8897e9ae80ed27bc7299502a3cef430e1fe9cb08ec9430f49277bcff96ffae39",
+    "reference": null,
+    "read_only": true,
+    "request_token": null,
+    "profile": "laplace.app-dispatch/1",
+    "support": "SUPPORTED_CONFIGURATION",
+    "required_admission": [
+      "Project-owned saved version",
+      "Current admitted original author",
+      "Exact supported child slice/fan-out",
+      "Separate explicit Start"
+    ],
+    "execution_permitted": false,
+    "meaning": "Pure capability preview. Saving does not mean runnable; actual Prepare revalidates all input/settings/authority/resource guards.",
+    "nesting": "Organisation and explicit settings/context inheritance only; no spawned subworkflow or multiplied allowance.",
+    "mandatory_context": "Project/system/role context remains mandatory; delivered data never grants read/tool/source permission.",
+    "basis": "sha256:f5ca29de92b9cec5f16dcb3e20a87c3738008d37240781fae9cccde4b318e221",
+    "roles": [
+      {
+        "step_id": "write",
+        "title": "Write",
+        "role": "builder",
+        "execution_location": "admitted-child",
+        "context": [],
+        "handoff": {},
+        "delivery": {
+          "composition": "explicit-only",
+          "origins": [
+            {
+              "kind": "local-instructions",
+              "step_id": "write",
+              "sha256": "sha256:4d748586201d9ff9118f55d82c37cb00e36aff23e003e1d913e61c3029ba76f3",
+              "characters": 24
+            }
+          ],
+          "sha256": "sha256:4d748586201d9ff9118f55d82c37cb00e36aff23e003e1d913e61c3029ba76f3",
+          "characters": 24,
+          "utf8_bytes": 24,
+          "permission_effect": "none",
+          "mandatory_context": "Actual project/system/role context remains present; this is not blind or sealed."
+        },
+        "instruction_read": {
+          "step_id": "write",
+          "characters": 24
+        },
+        "parent_id": null,
+        "context_read": {
+          "http": {
+            "method": "POST",
+            "url": "/work/workflow-definitions",
+            "payload": {
+              "facet": "context",
+              "scope": {
+                "kind": "project",
+                "namespace": "book"
+              },
+              "step_ids": [
+                "write",
+                "review"
+              ],
+              "step_id": "write",
+              "as_of": "sha256:f5ca29de92b9cec5f16dcb3e20a87c3738008d37240781fae9cccde4b318e221"
+            }
+          },
+          "native": {
+            "operation": "project",
+            "payload": {
+              "view": "workflow-definitions",
+              "request": {
+                "facet": "context",
+                "scope": {
+                  "kind": "project",
+                  "namespace": "book"
+                },
+                "step_ids": [
+                  "write",
+                  "review"
+                ],
+                "step_id": "write",
+                "as_of": "sha256:f5ca29de92b9cec5f16dcb3e20a87c3738008d37240781fae9cccde4b318e221"
+              }
+            }
+          },
+          "sdk": {
+            "method": "workflow_request",
+            "payload": {
+              "facet": "context",
+              "scope": {
+                "kind": "project",
+                "namespace": "book"
+              },
+              "step_ids": [
+                "write",
+                "review"
+              ],
+              "step_id": "write",
+              "as_of": "sha256:f5ca29de92b9cec5f16dcb3e20a87c3738008d37240781fae9cccde4b318e221"
+            }
+          },
+          "request": {
+            "facet": "context",
+            "scope": {
+              "kind": "project",
+              "namespace": "book"
+            },
+            "step_ids": [
+              "write",
+              "review"
+            ],
+            "step_id": "write",
+            "as_of": "sha256:f5ca29de92b9cec5f16dcb3e20a87c3738008d37240781fae9cccde4b318e221"
+          },
+          "read_only": true,
+          "required_inputs": [
+            "definition"
+          ],
+          "definition_digest": "sha256:b5fb4e64a0cecc6ca79cd01c97cac0e4f683e620e5f5988c8545dc0671cb298e"
+        }
+      },
+      {
+        "step_id": "review",
+        "title": "Review",
+        "role": "adversary",
+        "execution_location": "admitted-child",
+        "context": [],
+        "handoff": {},
+        "delivery": {
+          "composition": "explicit-only",
+          "origins": [
+            {
+              "kind": "local-instructions",
+              "step_id": "review",
+              "sha256": "sha256:032a8b575a654eebeb94f79ddff241ebf0a08aef23a8e48ff6d94ac8072eda52",
+              "characters": 37
+            }
+          ],
+          "sha256": "sha256:032a8b575a654eebeb94f79ddff241ebf0a08aef23a8e48ff6d94ac8072eda52",
+          "characters": 37,
+          "utf8_bytes": 37,
+          "permission_effect": "none",
+          "mandatory_context": "Actual project/system/role context remains present; this is not blind or sealed."
+        },
+        "instruction_read": {
+          "step_id": "review",
+          "characters": 37
+        },
+        "parent_id": null,
+        "context_read": {
+          "http": {
+            "method": "POST",
+            "url": "/work/workflow-definitions",
+            "payload": {
+              "facet": "context",
+              "scope": {
+                "kind": "project",
+                "namespace": "book"
+              },
+              "step_ids": [
+                "write",
+                "review"
+              ],
+              "step_id": "review",
+              "as_of": "sha256:f5ca29de92b9cec5f16dcb3e20a87c3738008d37240781fae9cccde4b318e221"
+            }
+          },
+          "native": {
+            "operation": "project",
+            "payload": {
+              "view": "workflow-definitions",
+              "request": {
+                "facet": "context",
+                "scope": {
+                  "kind": "project",
+                  "namespace": "book"
+                },
+                "step_ids": [
+                  "write",
+                  "review"
+                ],
+                "step_id": "review",
+                "as_of": "sha256:f5ca29de92b9cec5f16dcb3e20a87c3738008d37240781fae9cccde4b318e221"
+              }
+            }
+          },
+          "sdk": {
+            "method": "workflow_request",
+            "payload": {
+              "facet": "context",
+              "scope": {
+                "kind": "project",
+                "namespace": "book"
+              },
+              "step_ids": [
+                "write",
+                "review"
+              ],
+              "step_id": "review",
+              "as_of": "sha256:f5ca29de92b9cec5f16dcb3e20a87c3738008d37240781fae9cccde4b318e221"
+            }
+          },
+          "request": {
+            "facet": "context",
+            "scope": {
+              "kind": "project",
+              "namespace": "book"
+            },
+            "step_ids": [
+              "write",
+              "review"
+            ],
+            "step_id": "review",
+            "as_of": "sha256:f5ca29de92b9cec5f16dcb3e20a87c3738008d37240781fae9cccde4b318e221"
+          },
+          "read_only": true,
+          "required_inputs": [
+            "definition"
+          ],
+          "definition_digest": "sha256:b5fb4e64a0cecc6ca79cd01c97cac0e4f683e620e5f5988c8545dc0671cb298e"
+        }
+      }
+    ],
+    "issues": [],
+    "role_coverage": {
+      "known": 2,
+      "offset": 0,
+      "returned": 2
+    },
+    "issue_coverage": {
+      "known": 0,
+      "offset": 0,
+      "returned": 0
+    },
+    "next_read": null,
+    "definition_digest": "sha256:b5fb4e64a0cecc6ca79cd01c97cac0e4f683e620e5f5988c8545dc0671cb298e",
+    "selected_step_ids": [
+      "write",
+      "review"
+    ],
+    "declarations": {
+      "context": {
+        "type": "array",
+        "maxItems": 24,
+        "uniqueItems": true,
+        "items": {
+          "oneOf": [
+            {
+              "type": "object",
+              "additionalProperties": false,
+              "required": [
+                "kind",
+                "step_id"
+              ],
+              "properties": {
+                "kind": {
+                  "enum": [
+                    "ancestor-instructions",
+                    "upstream-return"
+                  ]
+                },
+                "step_id": {
+                  "type": "string"
+                }
+              }
+            },
+            {
+              "type": "object",
+              "additionalProperties": false,
+              "required": [
+                "kind"
+              ],
+              "properties": {
+                "kind": {
+                  "enum": [
+                    "selected-evidence",
+                    "previous-review-findings",
+                    "parent-message"
+                  ]
+                }
+              }
+            }
+          ]
+        }
+      },
+      "handoff": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "purpose": {
+            "type": "string",
+            "maxLength": 2000
+          },
+          "expected_output": {
+            "type": "string",
+            "maxLength": 4000
+          },
+          "downstream": {
+            "type": "array",
+            "maxItems": 64,
+            "uniqueItems": true,
+            "items": {
+              "type": "string"
+            }
+          }
+        }
+      },
+      "run_policy": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "profile",
+          "max_iterations",
+          "runtime_seconds",
+          "advance",
+          "apply"
+        ],
+        "properties": {
+          "profile": {
+            "const": "laplace.research-review/1"
+          },
+          "max_iterations": {
+            "type": "integer",
+            "minimum": 1,
+            "maximum": 3
+          },
+          "runtime_seconds": {
+            "type": "integer",
+            "minimum": 1,
+            "maximum": 3600
+          },
+          "advance": {
+            "enum": [
+              "automatic-review",
+              "manual"
+            ]
+          },
+          "apply": {
+            "const": "human"
+          }
+        }
+      }
+    },
+    "context_read": {
+      "read": {
+        "http": {
+          "method": "POST",
+          "url": "/work/workflow-definitions",
+          "payload": {
+            "facet": "context",
+            "scope": {
+              "kind": "project",
+              "namespace": "book"
+            },
+            "step_ids": [
+              "write",
+              "review"
+            ]
+          }
+        },
+        "native": {
+          "operation": "project",
+          "payload": {
+            "view": "workflow-definitions",
+            "request": {
+              "facet": "context",
+              "scope": {
+                "kind": "project",
+                "namespace": "book"
+              },
+              "step_ids": [
+                "write",
+                "review"
+              ]
+            }
+          }
+        },
+        "sdk": {
+          "method": "workflow_request",
+          "payload": {
+            "facet": "context",
+            "scope": {
+              "kind": "project",
+              "namespace": "book"
+            },
+            "step_ids": [
+              "write",
+              "review"
+            ]
+          }
+        },
+        "request": {
+          "facet": "context",
+          "scope": {
+            "kind": "project",
+            "namespace": "book"
+          },
+          "step_ids": [
+            "write",
+            "review"
+          ]
+        },
+        "read_only": true,
+        "required_inputs": [
+          "definition"
+        ],
+        "definition_digest": "sha256:b5fb4e64a0cecc6ca79cd01c97cac0e4f683e620e5f5988c8545dc0671cb298e"
+      },
+      "required_inputs": [
+        "step_id"
+      ]
+    }
+  },
+  "creation_choices": {
+    "schema_version": "laplace.workflow-operation/1",
+    "view": "creation-choices",
+    "scope_id": "sha256:8897e9ae80ed27bc7299502a3cef430e1fe9cb08ec9430f49277bcff96ffae39",
+    "caller_scope": {
+      "kind": "owned-workspace",
+      "door": "sdk",
+      "says": "The local owned workspace: every namespace this root holds is readable here."
+    },
+    "items": [
+      {
+        "scope": {
+          "kind": "owned-workspace"
+        },
+        "title": "Reusable workspace design",
+        "create": {
+          "available": true,
+          "permitted": true,
+          "reason": "",
+          "http": {
+            "method": "POST",
+            "url": "/work/workflow-definitions/save"
+          },
+          "payload": {
+            "expected_revision": null,
+            "scope": {
+              "kind": "owned-workspace"
+            }
+          },
+          "withdrawal": {
+            "prepare_read": {
+              "http": {
+                "method": "POST",
+                "url": "/work/workflow-definitions",
+                "payload": {
+                  "facet": "withdrawal-preview",
+                  "operation": "save"
+                }
+              },
+              "native": {
+                "operation": "project",
+                "payload": {
+                  "view": "workflow-definitions",
+                  "request": {
+                    "facet": "withdrawal-preview",
+                    "operation": "save"
+                  }
+                }
+              },
+              "sdk": {
+                "method": "workflow_request",
+                "payload": {
+                  "facet": "withdrawal-preview",
+                  "operation": "save"
+                }
+              },
+              "request": {
+                "facet": "withdrawal-preview",
+                "operation": "save"
+              },
+              "read_only": true
+            },
+            "required_inputs": [
+              "original_request"
+            ],
+            "request_contract": {
+              "type": "object",
+              "additionalProperties": false,
+              "properties": {
+                "original_request": {
+                  "type": "object"
+                },
+                "operation": {
+                  "enum": [
+                    "save",
+                    "prepare"
+                  ]
+                },
+                "request_token": {
+                  "type": "string",
+                  "minLength": 1,
+                  "maxLength": 120
+                },
+                "project_lens": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "facet": {
+                  "const": "withdrawal-preview"
+                }
+              },
+              "required": [
+                "facet",
+                "operation",
+                "original_request"
+              ]
+            },
+            "meaning": "Owner computes the exact original intent; do not guess cross-language JSON number canonicalisation. Reading starts or withdraws nothing."
+          }
+        },
+        "library_read": {
+          "http": {
+            "method": "GET",
+            "url": "/work/workflow-definitions"
+          },
+          "request": {},
+          "native": {
+            "operation": "project",
+            "payload": {
+              "view": "workflow-definitions",
+              "request": {}
+            }
+          }
+        }
+      },
+      {
+        "scope": {
+          "kind": "project",
+          "namespace": "book"
+        },
+        "name": "book",
+        "title": "book",
+        "create": {
+          "available": true,
+          "permitted": true,
+          "reason": "",
+          "http": {
+            "method": "POST",
+            "url": "/work/workflow-definitions/save"
+          },
+          "payload": {
+            "expected_revision": null,
+            "scope": {
+              "kind": "project",
+              "namespace": "book"
+            }
+          },
+          "withdrawal": {
+            "prepare_read": {
+              "http": {
+                "method": "POST",
+                "url": "/work/workflow-definitions",
+                "payload": {
+                  "facet": "withdrawal-preview",
+                  "operation": "save"
+                }
+              },
+              "native": {
+                "operation": "project",
+                "payload": {
+                  "view": "workflow-definitions",
+                  "request": {
+                    "facet": "withdrawal-preview",
+                    "operation": "save"
+                  }
+                }
+              },
+              "sdk": {
+                "method": "workflow_request",
+                "payload": {
+                  "facet": "withdrawal-preview",
+                  "operation": "save"
+                }
+              },
+              "request": {
+                "facet": "withdrawal-preview",
+                "operation": "save"
+              },
+              "read_only": true
+            },
+            "required_inputs": [
+              "original_request"
+            ],
+            "request_contract": {
+              "type": "object",
+              "additionalProperties": false,
+              "properties": {
+                "original_request": {
+                  "type": "object"
+                },
+                "operation": {
+                  "enum": [
+                    "save",
+                    "prepare"
+                  ]
+                },
+                "request_token": {
+                  "type": "string",
+                  "minLength": 1,
+                  "maxLength": 120
+                },
+                "project_lens": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "facet": {
+                  "const": "withdrawal-preview"
+                }
+              },
+              "required": [
+                "facet",
+                "operation",
+                "original_request"
+              ]
+            },
+            "meaning": "Owner computes the exact original intent; do not guess cross-language JSON number canonicalisation. Reading starts or withdraws nothing."
+          }
+        },
+        "library_read": {
+          "http": {
+            "method": "GET",
+            "url": "/work/workflow-definitions?project_lens=book"
+          },
+          "request": {
+            "project_lens": "book"
+          },
+          "native": {
+            "operation": "project",
+            "payload": {
+              "view": "workflow-definitions",
+              "request": {
+                "project_lens": "book"
+              }
+            }
+          }
+        },
+        "meaning": "Project-owned definition. Saving starts nothing; current author admission is separately required for execution."
+      }
+    ],
+    "total": 2,
+    "offset": 0,
+    "cut": "sha256:140af4e7ed2bd921b9b4e06e4c393e5a82f4c4abee1944f328fce7938892911b",
+    "read_only": true,
+    "request_token": null,
+    "next_read": null
+  },
+  "context": {
+    "schema_version": "laplace.workflow-operation/1",
+    "view": "context",
+    "scope": {
+      "kind": "project",
+      "namespace": "book"
+    },
+    "caller_scope": {
+      "kind": "owned-workspace",
+      "door": "sdk",
+      "says": "The local owned workspace: every namespace this root holds is readable here."
+    },
+    "scope_id": "sha256:8897e9ae80ed27bc7299502a3cef430e1fe9cb08ec9430f49277bcff96ffae39",
+    "reference": null,
+    "read_only": true,
+    "request_token": null,
+    "basis": "sha256:f5ca29de92b9cec5f16dcb3e20a87c3738008d37240781fae9cccde4b318e221",
+    "step_id": "write",
+    "content": "Produce a public report.",
+    "offset": 0,
+    "returned": 24,
+    "total_characters": 24,
+    "at_end": true,
+    "next_read": null,
+    "delivery": {
+      "composition": "explicit-only",
+      "origins": [
+        {
+          "kind": "local-instructions",
+          "step_id": "write",
+          "sha256": "sha256:4d748586201d9ff9118f55d82c37cb00e36aff23e003e1d913e61c3029ba76f3",
+          "characters": 24
+        }
+      ],
+      "sha256": "sha256:4d748586201d9ff9118f55d82c37cb00e36aff23e003e1d913e61c3029ba76f3",
+      "characters": 24,
+      "utf8_bytes": 24,
+      "permission_effect": "none",
+      "mandatory_context": "Actual project/system/role context remains present; this is not blind or sealed."
+    },
+    "qualification": "Declared instruction composition only. Actual evidence/proposal/parent message is resolved at admission, never inferred by this read."
+  },
+  "withdrawn_request": {
+    "schema_version": "laplace.workflow-request-decision/1",
+    "status": "NOT_ADMITTED",
+    "effect": "NOT_ADMITTED",
+    "terminal": true,
+    "request_id": "public-save-original",
+    "operation": "save",
+    "intent_digest": "sha256:288f5053c0f0dee478d1d716e90cab252b3e29f59be4226aff0cacd076397bca",
+    "scope": {
+      "kind": "owned-workspace"
+    },
+    "scope_id": "sha256:9139efe5021ed1270215790c1da96cee1e769133927413167562c464ffcbdba9",
+    "reason": "WITHDRAWN",
+    "read": {
+      "http": {
+        "method": "GET",
+        "url": "/work/workflow-definitions?facet=request&request_id=public-save-original"
+      },
+      "request": {
+        "facet": "request",
+        "request_id": "public-save-original"
+      },
+      "native": {
+        "operation": "project",
+        "payload": {
+          "view": "workflow-definitions",
+          "request": {
+            "facet": "request",
+            "request_id": "public-save-original"
+          }
+        }
+      }
+    },
+    "meaning": "The exact request was withdrawn before admission. No recorded effect was undone."
+  },
+  "withdrawal_preview_request": {
+    "facet": "withdrawal-preview",
+    "operation": "save",
+    "original_request": {
+      "request_id": "public-decimal-withdrawal-preview",
+      "expected_revision": null,
+      "definition": {
+        "schema_version": "laplace.workflow-definition/1",
+        "title": "Public finite operation",
+        "description": "No inference.",
+        "settings": {},
+        "steps": [
+          {
+            "id": "write",
+            "title": "Write",
+            "assignment": {
+              "role": "builder",
+              "instructions": "Produce a public report.",
+              "settings": {}
+            }
+          },
+          {
+            "id": "review",
+            "title": "Review",
+            "assignment": {
+              "role": "adversary",
+              "instructions": "Judge the exact report independently.",
+              "settings": {}
+            }
+          }
+        ],
+        "edges": [
+          {
+            "id": "write-review",
+            "from": "write",
+            "to": "review",
+            "kind": "control"
+          }
+        ],
+        "layout": {
+          "write": {
+            "x": 1e-05,
+            "y": 1.25
+          }
+        }
+      }
+    },
+    "request_token": "public-decimal-preview"
+  },
+  "withdrawal_prepared": {
+    "schema_version": "laplace.workflow-operation/1",
+    "view": "withdrawal-preview",
+    "scope": {
+      "kind": "owned-workspace"
+    },
+    "scope_id": "sha256:8897e9ae80ed27bc7299502a3cef430e1fe9cb08ec9430f49277bcff96ffae39",
+    "request_token": "public-decimal-preview",
+    "request_id": "public-decimal-withdrawal-preview",
+    "operation": "save",
+    "intent_digest": "sha256:2c2054752dbfd354331abf387cc5bbdc73d0f8d362d07b3fe3ed8fec50024a3f",
+    "withdraw": {
+      "http": {
+        "method": "POST",
+        "url": "/work/workflow-definitions/withdraw",
+        "payload": {
+          "action": "withdraw",
+          "operation": "save",
+          "request_id": "public-decimal-withdrawal-preview",
+          "intent_digest": "sha256:2c2054752dbfd354331abf387cc5bbdc73d0f8d362d07b3fe3ed8fec50024a3f"
+        }
+      },
+      "native": {
+        "operation": "workflow_definition_change",
+        "payload": {
+          "action": "withdraw",
+          "operation": "save",
+          "request_id": "public-decimal-withdrawal-preview",
+          "intent_digest": "sha256:2c2054752dbfd354331abf387cc5bbdc73d0f8d362d07b3fe3ed8fec50024a3f"
+        }
+      },
+      "sdk": {
+        "method": "workflow_withdraw",
+        "payload": {
+          "action": "withdraw",
+          "operation": "save",
+          "request_id": "public-decimal-withdrawal-preview",
+          "intent_digest": "sha256:2c2054752dbfd354331abf387cc5bbdc73d0f8d362d07b3fe3ed8fec50024a3f"
+        }
+      },
+      "request_contract": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "action",
+          "operation",
+          "request_id",
+          "intent_digest",
+          "original_request"
+        ],
+        "properties": {
+          "action": {
+            "const": "withdraw"
+          },
+          "operation": {
+            "enum": [
+              "save",
+              "prepare"
+            ]
+          },
+          "request_id": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 120
+          },
+          "intent_digest": {
+            "type": "string",
+            "pattern": "^sha256:[a-f0-9]{64}$"
+          },
+          "original_request": {
+            "type": "object"
+          }
+        }
+      },
+      "required_inputs": [
+        "original_request"
+      ],
+      "original_request_digest": "sha256:2c2054752dbfd354331abf387cc5bbdc73d0f8d362d07b3fe3ed8fec50024a3f",
+      "permitted": true,
+      "meaning": "Use the exact original definition-owner request without adapter action/project. Receipt wins under the same admission lock; UNKNOWN is never cancellation."
+    },
+    "read_only": true,
+    "effect": "none",
+    "meaning": "Pure exact-original request preparation. No admission or withdrawal. Use the same retained original_request with this owner-issued digest."
+  },
+  "role_context": {
+    "schema_version": "laplace.workflow-operation/1",
+    "view": "context",
+    "scope": {
+      "kind": "project",
+      "namespace": "book"
+    },
+    "caller_scope": {
+      "kind": "owned-workspace",
+      "door": "sdk",
+      "says": "The local owned workspace: every namespace this root holds is readable here."
+    },
+    "scope_id": "sha256:8897e9ae80ed27bc7299502a3cef430e1fe9cb08ec9430f49277bcff96ffae39",
+    "reference": null,
+    "read_only": true,
+    "request_token": null,
+    "basis": "sha256:f5ca29de92b9cec5f16dcb3e20a87c3738008d37240781fae9cccde4b318e221",
+    "step_id": "write",
+    "content": "Produce a public report.",
+    "offset": 0,
+    "returned": 24,
+    "total_characters": 24,
+    "at_end": true,
+    "next_read": null,
+    "delivery": {
+      "composition": "explicit-only",
+      "origins": [
+        {
+          "kind": "local-instructions",
+          "step_id": "write",
+          "sha256": "sha256:4d748586201d9ff9118f55d82c37cb00e36aff23e003e1d913e61c3029ba76f3",
+          "characters": 24
+        }
+      ],
+      "sha256": "sha256:4d748586201d9ff9118f55d82c37cb00e36aff23e003e1d913e61c3029ba76f3",
+      "characters": 24,
+      "utf8_bytes": 24,
+      "permission_effect": "none",
+      "mandatory_context": "Actual project/system/role context remains present; this is not blind or sealed."
+    },
+    "qualification": "Declared instruction composition only. Actual evidence/proposal/parent message is resolved at admission, never inferred by this read."
+  },
+  "read_contract": {
+    "oneOf": [
+      {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "version": {
+            "type": "string"
+          },
+          "scope": {
+            "type": "object"
+          },
+          "project_lens": {
+            "type": "string",
+            "minLength": 1
+          },
+          "limit": {
+            "type": "integer",
+            "minimum": 1,
+            "maximum": 20
+          },
+          "offset": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "as_of": {
+            "type": "string"
+          },
+          "definition_id": {
+            "type": "string"
+          },
+          "definition": {
+            "type": "object"
+          },
+          "request_token": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 120
+          },
+          "reference": {
+            "type": "object"
+          },
+          "step_ids": {
+            "type": "array",
+            "maxItems": 64,
+            "uniqueItems": true,
+            "items": {
+              "type": "string"
+            }
+          },
+          "facet": {
+            "const": "execution-preview"
+          }
+        },
+        "required": [
+          "facet"
+        ],
+        "anyOf": [
+          {
+            "required": [
+              "definition"
+            ]
+          },
+          {
+            "required": [
+              "reference"
+            ]
+          },
+          {
+            "required": [
+              "definition_id"
+            ]
+          }
+        ],
+        "allOf": [
+          {
+            "if": {
+              "required": [
+                "definition"
+              ]
+            },
+            "then": {
+              "not": {
+                "anyOf": [
+                  {
+                    "required": [
+                      "reference"
+                    ]
+                  },
+                  {
+                    "required": [
+                      "definition_id"
+                    ]
+                  },
+                  {
+                    "required": [
+                      "version"
+                    ]
+                  }
+                ]
+              }
+            }
+          }
+        ]
+      },
+      {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "version": {
+            "type": "string"
+          },
+          "scope": {
+            "type": "object"
+          },
+          "project_lens": {
+            "type": "string",
+            "minLength": 1
+          },
+          "limit": {
+            "type": "integer",
+            "minimum": 1,
+            "maximum": 20
+          },
+          "offset": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "as_of": {
+            "type": "string"
+          },
+          "definition_id": {
+            "type": "string"
+          },
+          "definition": {
+            "type": "object"
+          },
+          "request_token": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 120
+          },
+          "reference": {
+            "type": "object"
+          },
+          "step_ids": {
+            "type": "array",
+            "maxItems": 64,
+            "uniqueItems": true,
+            "items": {
+              "type": "string"
+            }
+          },
+          "step_id": {
+            "type": "string"
+          },
+          "facet": {
+            "const": "context"
+          }
+        },
+        "required": [
+          "facet",
+          "step_id"
+        ],
+        "anyOf": [
+          {
+            "required": [
+              "definition"
+            ]
+          },
+          {
+            "required": [
+              "reference"
+            ]
+          },
+          {
+            "required": [
+              "definition_id"
+            ]
+          }
+        ],
+        "allOf": [
+          {
+            "if": {
+              "required": [
+                "definition"
+              ]
+            },
+            "then": {
+              "not": {
+                "anyOf": [
+                  {
+                    "required": [
+                      "reference"
+                    ]
+                  },
+                  {
+                    "required": [
+                      "definition_id"
+                    ]
+                  },
+                  {
+                    "required": [
+                      "version"
+                    ]
+                  }
+                ]
+              }
+            }
+          }
+        ]
+      },
+      {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "version": {
+            "type": "string"
+          },
+          "project_lens": {
+            "type": "string",
+            "minLength": 1
+          },
+          "limit": {
+            "type": "integer",
+            "minimum": 1,
+            "maximum": 20
+          },
+          "offset": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "as_of": {
+            "type": "string"
+          },
+          "definition_id": {
+            "type": "string"
+          },
+          "versions": {
+            "enum": [
+              "selected",
+              "all"
+            ]
+          },
+          "request_token": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 120
+          },
+          "reference": {
+            "type": "object"
+          },
+          "facet": {
+            "const": "uses"
+          }
+        },
+        "required": [
+          "facet"
+        ],
+        "anyOf": [
+          {
+            "required": [
+              "reference"
+            ]
+          },
+          {
+            "required": [
+              "definition_id"
+            ]
+          }
+        ]
+      },
+      {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "version": {
+            "type": "string"
+          },
+          "project_lens": {
+            "type": "string",
+            "minLength": 1
+          },
+          "limit": {
+            "type": "integer",
+            "minimum": 1,
+            "maximum": 20
+          },
+          "offset": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "as_of": {
+            "type": "string"
+          },
+          "definition_id": {
+            "type": "string"
+          },
+          "request_token": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 120
+          },
+          "reference": {
+            "type": "object"
+          },
+          "work_id": {
+            "type": "string"
+          },
+          "facet": {
+            "const": "river"
+          }
+        },
+        "required": [
+          "facet",
+          "work_id"
+        ],
+        "anyOf": [
+          {
+            "required": [
+              "reference"
+            ]
+          },
+          {
+            "required": [
+              "definition_id"
+            ]
+          }
+        ]
+      },
+      {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "as_of": {
+            "type": "string"
+          },
+          "request_token": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 120
+          },
+          "project_lens": {
+            "type": "string",
+            "minLength": 1
+          },
+          "limit": {
+            "type": "integer",
+            "minimum": 1,
+            "maximum": 20
+          },
+          "offset": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "facet": {
+            "const": "creation-choices"
+          }
+        },
+        "required": [
+          "facet"
+        ]
+      },
+      {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "original_request": {
+            "type": "object"
+          },
+          "operation": {
+            "enum": [
+              "save",
+              "prepare"
+            ]
+          },
+          "request_token": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 120
+          },
+          "project_lens": {
+            "type": "string",
+            "minLength": 1
+          },
+          "facet": {
+            "const": "withdrawal-preview"
+          }
+        },
+        "required": [
+          "facet",
+          "operation",
+          "original_request"
+        ]
+      }
+    ]
+  },
+  "withdraw_contract": {
+    "type": "object",
+    "additionalProperties": false,
+    "required": [
+      "action",
+      "operation",
+      "request_id",
+      "intent_digest",
+      "original_request"
+    ],
+    "properties": {
+      "action": {
+        "const": "withdraw"
+      },
+      "operation": {
+        "enum": [
+          "save",
+          "prepare"
+        ]
+      },
+      "request_id": {
+        "type": "string",
+        "minLength": 1,
+        "maxLength": 120
+      },
+      "intent_digest": {
+        "type": "string",
+        "pattern": "^sha256:[a-f0-9]{64}$"
+      },
+      "original_request": {
+        "type": "object"
+      }
+    }
+  }
+}

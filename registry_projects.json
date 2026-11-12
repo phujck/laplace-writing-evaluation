@@ -1,0 +1,88 @@
+{
+  "projects": [
+    {
+      "name": "eigen-technical-due-diligence-briefing",
+      "kind": "conceptric",
+      "project_dir": "writing_projects/eigen-technical-due-diligence-briefing",
+      "tex_root": "writing_projects/eigen-technical-due-diligence-briefing/manuscript/working-draft",
+      "manifest": {
+        "display_name": "Eigen: Choosing What a Computation Must Retain",
+        "document": {
+          "root": "writing_projects/eigen-technical-due-diligence-briefing/manuscript/working-draft/Eigen-A-Theory-of-Efficient-Representation-and-Its-Working-Prototypes.tex",
+          "manuscript_dir": "writing_projects/eigen-technical-due-diligence-briefing/manuscript/working-draft",
+          "edition": "evaluation",
+          "read_only": false,
+          "state_dir": "writing_projects/eigen-technical-due-diligence-briefing"
+        },
+        "writing": {
+          "kind": "imported",
+          "purpose": "Standalone scientific manuscript supplied with this evaluation repository.",
+          "audience": "General technical reader"
+        }
+      }
+    },
+    {
+      "name": "memory-in-pieces",
+      "kind": "conceptric",
+      "project_dir": "writing_projects/memory-in-pieces",
+      "tex_root": "synthetics papers/corpus-as-a-state/reconstruction/output/pdf/v2.1",
+      "manifest": {
+        "display_name": "Dynamic Memory",
+        "document": {
+          "root": "synthetics papers/corpus-as-a-state/reconstruction/output/pdf/v2.1/skein.tex",
+          "manuscript_dir": "synthetics papers/corpus-as-a-state/reconstruction/output/pdf/v2.1",
+          "edition": "evaluation",
+          "read_only": false,
+          "state_dir": "writing_projects/memory-in-pieces"
+        },
+        "writing": {
+          "kind": "imported",
+          "purpose": "Standalone scientific manuscript supplied with this evaluation repository.",
+          "audience": "General technical reader"
+        }
+      }
+    },
+    {
+      "name": "self-consistent-loss-geometries-coupled-evaluators",
+      "kind": "conceptric",
+      "project_dir": "writing_projects/self-consistent-loss-geometries-coupled-evaluators",
+      "tex_root": "synthetics papers/self-consistent-loss-geometries-coupled-evaluators/manuscript/imported",
+      "manifest": {
+        "display_name": "Self-Consistent Loss Geometries and the Laws of Learning",
+        "document": {
+          "root": "synthetics papers/self-consistent-loss-geometries-coupled-evaluators/manuscript/imported/main.tex",
+          "manuscript_dir": "synthetics papers/self-consistent-loss-geometries-coupled-evaluators/manuscript/imported",
+          "edition": "evaluation",
+          "read_only": false,
+          "state_dir": "writing_projects/self-consistent-loss-geometries-coupled-evaluators"
+        },
+        "writing": {
+          "kind": "imported",
+          "purpose": "Standalone scientific manuscript supplied with this evaluation repository.",
+          "audience": "General technical reader"
+        }
+      }
+    },
+    {
+      "name": "adaptive-normal-form-aek9",
+      "kind": "conceptric",
+      "project_dir": "writing_projects/adaptive-normal-form-aek9",
+      "tex_root": "synthetics papers/adaptive-normal-form/manuscript/tex",
+      "manifest": {
+        "display_name": "Adaptive Normal Form",
+        "document": {
+          "root": "synthetics papers/adaptive-normal-form/manuscript/tex/main.tex",
+          "manuscript_dir": "synthetics papers/adaptive-normal-form/manuscript/tex",
+          "edition": "evaluation",
+          "read_only": false,
+          "state_dir": "writing_projects/adaptive-normal-form-aek9"
+        },
+        "writing": {
+          "kind": "imported",
+          "purpose": "Standalone scientific manuscript supplied with this evaluation repository.",
+          "audience": "General technical reader"
+        }
+      }
+    }
+  ]
+}

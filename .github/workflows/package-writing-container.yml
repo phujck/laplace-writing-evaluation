@@ -1,0 +1,147 @@
+name: Package Writing container for repository download
+on:
+  workflow_dispatch:
+    inputs:
+      release_tag:
+        description: New repository release tag (existing releases are preserved)
+        required: true
+        type: string
+      image:
+        description: Accepted qualified registry image pinned as registry/repository@sha256:digest
+        required: true
+        type: string
+      local_tag:
+        description: Verified package tag in the form laplace-writing:release-name
+        required: true
+        type: string
+      verify_existing_draft:
+        description: Verify an existing draft without replacing its assets
+        required: false
+        default: false
+        type: boolean
+permissions:
+  contents: write
+  packages: read
+jobs:
+  package:
+    runs-on: ubuntu-latest
+    timeout-minutes: 35
+    env:
+      GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      RELEASE_TAG: ${{ inputs.release_tag }}
+      IMAGE: ${{ inputs.image }}
+      LOCAL_TAG: ${{ inputs.local_tag }}
+    steps:
+      - uses: actions/checkout@v4
+      - name: Validate explicit image and tags; preserve existing releases
+        run: |
+          [[ "$RELEASE_TAG" =~ ^[a-zA-Z0-9_][a-zA-Z0-9_.-]{0,100}$ ]]
+          [[ "$IMAGE" =~ ^[^[:space:]@]+/[^[:space:]@]+@sha256:[0-9a-f]{64}$ ]] || {
+            echo 'image must be a qualified registry/repository@sha256:digest reference.' >&2
+            exit 1
+          }
+          registry=${IMAGE%%/*}
+          [[ "$registry" == *.* || "$registry" == *:* || "$registry" == localhost ]] || {
+            echo 'image must include its registry hostname; Docker validates the repository on pull.' >&2
+            exit 1
+          }
+          # Same local tag constraint as writing_container_package.verified_package.
+          [[ "$LOCAL_TAG" =~ ^laplace-writing:[a-zA-Z0-9_][a-zA-Z0-9_.-]{0,127}$ ]]
+          if [ "${{ inputs.verify_existing_draft }}" = true ]; then
+            test "$(gh release view "$RELEASE_TAG" --json isDraft --jq .isDraft)" = true
+          elif gh release view "$RELEASE_TAG" >/dev/null 2>&1; then
+            echo 'This release already exists; choose a new tag.' >&2
+            exit 1
+          fi
+      - uses: docker/login-action@v3
+        if: ${{ !inputs.verify_existing_draft }}
+        with:
+          registry: ghcr.io
+          username: ${{ github.actor }}
+          password: ${{ secrets.GITHUB_TOKEN }}
+      - name: Pull the accepted runtime and package its exact image
+        if: ${{ !inputs.verify_existing_draft }}
+        run: |
+          docker pull "$IMAGE"
+          python scripts/writing_container_package.py pack --output "$RUNNER_TEMP/package" --image "$IMAGE" --tag "$LOCAL_TAG"
+      - name: Create a draft repository release and upload the full package
+        if: ${{ !inputs.verify_existing_draft }}
+        run: |
+          python - <<'PYNOTES'
+          import os,pathlib
+          text=pathlib.Path('docs/writing-container-download.md').read_text()
+          for name in ['writing-account-setup.md','writing-registry.md']:
+              text=text.replace('('+name+')','(https://github.com/'+os.environ['GITHUB_REPOSITORY']+'/blob/'+os.environ['GITHUB_SHA']+'/docs/'+name+')')
+          (pathlib.Path(os.environ['RUNNER_TEMP'])/'package-notes.md').write_text(text)
+          PYNOTES
+          gh release create "$RELEASE_TAG" --target "$GITHUB_SHA" --draft --title 'Laplace Writing — complete container package' --notes-file "$RUNNER_TEMP/package-notes.md"
+          gh release upload "$RELEASE_TAG" "$RUNNER_TEMP/package/"*
+      - name: Download the actual release assets and load without registry credentials
+        run: |
+          mkdir "$RUNNER_TEMP/downloaded"
+          gh release download "$RELEASE_TAG" --dir "$RUNNER_TEMP/downloaded"
+          docker logout ghcr.io
+          if image_id=$(docker image inspect --format '{{.Id}}' "$LOCAL_TAG" 2>/dev/null); then docker image rm --force "$image_id"; fi
+          python - "$RUNNER_TEMP/downloaded" <<'PY'
+          import hashlib,json,os,pathlib,sys,zipfile
+          root=pathlib.Path(sys.argv[1]);m=json.loads((root/'container-package.json').read_text());p=root/m['workspace']['name']
+          assert m['image']==os.environ['IMAGE']
+          assert m['local_tag']==os.environ['LOCAL_TAG']
+          assert hashlib.sha256(p.read_bytes()).hexdigest()==m['workspace']['sha256']
+          with zipfile.ZipFile(p) as z:z.extractall(root/'workspace')
+          PY
+      - name: Load the downloaded image and verify the pristine workspace
+        run: |
+          python "$RUNNER_TEMP/downloaded/workspace/scripts/writing_container_package.py" load --package "$RUNNER_TEMP/downloaded" --force
+          docker run --rm -e LAPLACE_STATE=/tmp/laplace-state -v "$RUNNER_TEMP/downloaded/workspace:/workspace:ro" "$LOCAL_TAG" python /workspace/scripts/verify_writing_evaluation.py --root /workspace
+      - name: Start the downloaded workspace with its user-facing launcher
+        env:
+          LAPLACE_PORT: "18771"
+          COMPOSE_PROJECT_NAME: writing-package-check
+        run: |
+          export LAPLACE_WORKSPACE="$RUNNER_TEMP/downloaded/workspace"
+          export LAPLACE_IMAGE="$LOCAL_TAG"
+          sudo chown -R 1000:1000 "$LAPLACE_WORKSPACE"
+          compose="$LAPLACE_WORKSPACE/deploy/writing/compose.registry.yaml"
+          python "$LAPLACE_WORKSPACE/scripts/writing_container_package.py" start --package "$RUNNER_TEMP/downloaded" > "$RUNNER_TEMP/package-server.log" 2>&1 &
+          launcher=$!
+          trap 'cat "$RUNNER_TEMP/package-server.log"; docker compose -f "$compose" down --volumes; wait "$launcher" || true' EXIT
+          ready=false
+          for i in $(seq 1 120); do
+            if curl --fail --silent http://127.0.0.1:18771/authoring/health > "$RUNNER_TEMP/package-health.json"; then ready=true; break; fi
+            kill -0 "$launcher"
+            sleep 2
+          done
+          test "$ready" = true
+          docker compose -f "$compose" exec -T writing python /opt/laplace/container-smoke.py
+          code=0
+          docker compose -f "$compose" exec -T writing python /workspace/scripts/verify_writing_evaluation.py --root /workspace > "$RUNNER_TEMP/post-use-verification.json" || code=$?
+          test "$code" -le 1
+          python - "$RUNNER_TEMP" <<'PYVERIFY'
+          import json,pathlib,sys,zipfile
+          root=pathlib.Path(sys.argv[1]);download=root/'downloaded';workspace=download/'workspace'
+          report=json.loads((root/'post-use-verification.json').read_text())
+          ledgers={'contract/talk.jsonl','contract/journal.jsonl'}
+          assert all(f.get('path') in ledgers and f.get('reason')=='export bytes changed' for f in report['failures']),report['failures']
+          m=json.loads((download/'container-package.json').read_text());changes={}
+          with zipfile.ZipFile(download/m['workspace']['name']) as archive:
+              for name in ledgers:
+                  original=archive.read(name);current=(workspace/name).read_bytes()
+                  assert current.startswith(original),name+' changed existing history'
+                  added=current[len(original):].splitlines()
+                  records=[json.loads(line) for line in added if line.strip()]
+                  if name=='contract/talk.jsonl':
+                      assert all(x.get('record')=='writing-tool-read' and x.get('operation') in {'help','repository'} for x in records),records
+                  else:
+                      assert all(
+                          (x.get('record')=='bank' and x.get('store')=='contract/talk.jsonl' and x.get('phase') in {'begin','done'})
+                          or (x.get('record')=='act' and x.get('act')=='ambient-bank' and x.get('manifest')==['bank'])
+                          or (x.get('record')=='act_end' and x.get('status')=='ambient-complete')
+                          for x in records),records
+                  changes[name]={'appended_rows':len(records),'record_kinds':sorted({x.get('record','unknown') for x in records})}
+          print(json.dumps({'post_use_history':'original bytes preserved; only appended read receipts allowed','changes':changes},indent=2))
+          PYVERIFY
+      - name: Publish only the verified package
+        run: |
+          gh release edit "$RELEASE_TAG" --draft=false --latest
+          printf 'Verified repository download: https://github.com/%s/releases/tag/%s\n' "$GITHUB_REPOSITORY" "$RELEASE_TAG" >> "$GITHUB_STEP_SUMMARY"

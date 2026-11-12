@@ -1,0 +1,288 @@
+# Gerard McCaul — manuscript house-style profile, v1 (corpus-DERIVED)
+#
+# A versioned PROFILE (paralleling profiles/voice/gerard-technical-v1.md and
+# profiles/typography/prx-revtex4-2.json), author-owned, frozen-per-run, revised
+# only through the author-gated VOICE_FATES.consolidation path — never an
+# automatic edit.
+#
+# DERIVATION. Every `evidence` block below is a MECHANICAL ripgrep count over the
+# 9 authored .tex exemplars at voice_corpus/exemplars/ (8 papers; superoscillations
+# contributes main.tex + supplement.tex). Counts were RE-VERIFIED this pass and
+# supersede the design agent's figures where they disagreed — the corrections are
+# recorded per-rule under `evidence.note`. The load-bearing structural claims
+# (no cleveref, no \citet, numeric bracketed \cite, hand-abbreviated cross-refs,
+# ~10:1 Fig. abbreviation) all held; several magnitudes were undercounts and two
+# punctuation/orthography claims were materially wrong (see F33, F34).
+#
+# This profile is DERIVED presentation-conformance. It composes with, and does not
+# duplicate:
+#   * tex_template.check_template — owns DC1 (documentclass + required packages)
+#   * tex_template.lint_typography — owns overfull/undefined/no-titles-on-figures
+# House-style adds the cross-ref / citation / equation-punct / dash / orthography
+# layer neither currently covers.
+
+schema: house-style/0.1
+profile: gerard-manuscript-v1
+version: "1.0 (2026-07-09)"
+source: >-
+  Derived by mechanical count over the 9 authored .tex exemplars at
+  voice_corpus/exemplars/ (Phase I1 of the final-convergence build). Evidence
+  re-verified against the design spec; corrections recorded per rule.
+frozen_with: [projection, narrative, voice, judge, typography, renderer]
+
+# ---------------------------------------------------------------------------
+# The corpus-derived rules. status ∈ {enforced, advisory, fork, source-fork}.
+#   enforced  — a house convention with strong, near-uniform corpus support;
+#               a deviation is a real finding (fails the sweep's `pass`).
+#   advisory  — a preference the corpus leans on but not uniformly; flag-for-
+#               review, never blocks.
+#   fork      — a genuine split (or a stated preference over corpus practice);
+#               RECORDED, report-only, NEVER auto-resolved.
+#   source-fork — a non-rendering source inconsistency (feeds the extractor, not
+#               the reader).
+# route_kind wires into schema.KIND_TO_WORK in Phase F (NOT here).
+# ---------------------------------------------------------------------------
+rules:
+  - id: xref.equation
+    dimension: cross_reference
+    status: enforced
+    rendered: "Eq. (x) / Eqs. (x, y)"          # nonbreaking space, parenthesised number(s)
+    detect: '(?i)\b(equation|equations)~?\\(?:ref|eqref)\{|(?i)\b(equation|equations)\s+\('
+    prefer: 'Eq.~\eqref{...}  |  Eq.~(\ref{...})  |  Eqs.~(\ref{a}, \ref{b})'
+    route_kind: xref-style
+    rule_notes: >-
+      Plural numbers grouped in one paren set with an Oxford comma
+      ("Eqs. (3.5.15), (3.5.19), and (3.5.28)"). The DOMINANT source form is
+      Eq.~\eqref{} (139), NOT Eq.~(\ref{}) (22) as the design implied; both render
+      identically to "Eq. (x)".
+    evidence: {eqref: 220, Eq_tilde_eqref: 139, Eq_tilde_paren: 22, cleveref: 0, files: 8,
+               note: "design said eqref=140, Eq.~(=13, Eq.~\\eqref=21(influence only); actual is higher and Eq.~\\eqref is corpus-wide + dominant"}
+
+  - id: xref.section
+    dimension: cross_reference
+    status: enforced
+    rendered: "Sec. X"
+    detect: '(?i)\bsections?~?\\ref\{'
+    prefer: 'Sec.~\ref{sec:...}'
+    route_kind: xref-style
+    evidence: {sec_abbrev: 28, section_spelled: 4, files: 5,
+               note: "design said 64/9files; actual 28/5files but abbreviation still dominant 7:1. Not every paper references sections by name."}
+
+  - id: xref.figure
+    dimension: cross_reference
+    status: advisory                 # abbreviate in body; spell 'Figure' only at sentence start
+    rendered: "Fig. X / Figs. X"
+    detect: '(?i)\bfigures?~?\\ref\{'
+    prefer: 'Fig.~\ref{fig:...}'
+    sentence_start: "Figure"
+    route_kind: xref-style
+    evidence: {fig_abbrev: 95, figure_spelled: 7, ratio: "13.6:1", files: 9,
+               note: "design said 64 vs 6 (10:1); actual 95 vs 7 (~13.6:1). Abbreviation is the single most uniform cross-ref rule — all 9 files."}
+
+  - id: xref.appendix
+    dimension: cross_reference
+    status: enforced
+    rendered: "App. X"
+    detect: '(?i)\bappendix~?\\ref\{|(?i)\bappendices~?\\ref\{'
+    prefer: 'App.~\ref{app:...}'
+    route_kind: xref-style
+    evidence: {app_ref: 7, files: 1,
+               note: "App.~\\ref{app:} is an itqde-local convention (only paper that references appendices this way); thin evidence, enforced when appendices are cross-referenced."}
+
+  - id: xref.work_as_noun
+    dimension: cross_reference
+    status: enforced
+    rendered: "Ref. [n]"
+    prefer: 'Ref.~\cite{...}'
+    route_kind: xref-style
+    evidence: {ref_cite: 6, files: 4}
+
+  - id: xref.no_cleveref
+    dimension: cross_reference
+    status: enforced
+    detect: '\\(?:cref|Cref|autoref)\b'
+    prefer: 'hand-written Eq./Fig./Sec./App. + \ref/\eqref'
+    route_kind: xref-style
+    evidence: {cleveref: 0, files: 0, note: "ZERO cleveref/autoref anywhere — the strongest structural signal; confirmed exactly."}
+
+  - id: xref.nbsp
+    dimension: cross_reference
+    status: advisory                 # nbsp-MAJORITY, not uniform — flag-for-review, never blocks
+    rendered: "~ before \\ref / \\eqref and a parenthesised eq number after an abbreviation"
+    detect: '\b(?:Eq|Eqs|Fig|Figs|Sec|App|Ref|Table|Tab)\.(?!~)\s?(?:\(|\\(?:ref|eqref))'
+    prefer: 'Eq.~(  /  Fig.~\ref  (corpus nbsp-majority; Eq.( and Eq. ( are minority forms)'
+    route_kind: xref-style
+    rule_notes: >-
+      Covers the divergence between his STATED "Eq.(x)" (no space) and the corpus
+      nbsp-majority "Eq.~(x)". DEMOTED to advisory because the corpus is NOT uniform:
+      \cite is DELIBERATELY EXCLUDED (see design_correction).
+    evidence:
+      Eq_before_ref: {nbsp: 161, no_space: 31, space: 26}
+      Fig_before_ref: {nbsp: 52, space: 30, none: 3}
+      Sec_before_ref: {nbsp: 15, space: 8}
+      eqref_prev_char: {nbsp: 165, space: 19}    # ~\eqref is the STRONG signal (~90%)
+      ref_prev_char: {nbsp: 96, space: 64}
+    design_correction: >-
+      The design claimed "~ before EVERY \cite/\ref/\eqref (pervasive), enforced".
+      MECHANICALLY FALSE for \cite: the char before \cite{ is a plain SPACE 435 times
+      vs ~ only 76 (85% space). CR7-for-cite is NOT corpus-derived, so the checker
+      does NOT flag ' \cite'. nbsp before \eqref IS strong (165:19); before \ref and
+      the paren form it is only a 60-75% majority — hence advisory, not enforced.
+
+  - id: cite.style
+    dimension: citation
+    status: enforced
+    form: numeric-bracketed          # REVTeX numeric \cite
+    ban: [citet]
+    citep_only_under: [svjour, sn-jnl]   # author-year permitted only in non-REVTeX venue classes
+    pre_punct: true                  # the \cite PRECEDES terminal punctuation
+    multi_key: "comma-separated in one \\cite{a,b}"
+    detect: '\\citet\b'
+    route_kind: citation-style
+    evidence: {cite: 523, citet: 0, citep: 15, files: 9,
+               note: "design said cite=244, citep=12; actual cite=523, citep=15 (5 non-REVTeX files). \\citet = 0 exactly — author-year is never used."}
+
+  - id: cite.pre_punct
+    dimension: citation
+    status: enforced
+    rendered: "...connectivity \\cite{...}.   (cite before the period, not after)"
+    detect: '\.\s+\\cite\{ (excluding abbreviation dots Ref./Eq./Fig./Sec./App.)'
+    route_kind: citation-style
+    evidence: {genuine_corpus_counterexamples: 0,
+               note: "corpus places the cite before terminal punctuation; the 2 apparent '. \\cite' hits are Ref./Refs. abbreviation dots, excluded by lookbehind, not sentence ends"}
+
+  - id: eq.terminal_punct
+    dimension: equation
+    status: advisory                 # grammar-driven, not a fixed char — advisory grade
+    rule: grammar-driven
+    rendered: "comma before a 'where'/continuation clause; period at a sentence end; nothing running straight through"
+    route_kind: equation-punct
+    evidence: {note: "wave-op Eqs. 98/102/106/111/114 exhibit all three; mechanised conservatively (continuation-word heuristic) to avoid false positives."}
+
+  - id: eq.numbering
+    dimension: equation
+    status: advisory
+    rendered: "equation numbered by default; align for multi-line; \\notag/\\nonumber suppress continuation-line numbers; equation* rare"
+    route_kind: equation-punct
+    evidence: {}
+
+  - id: eq.label_prefixes
+    dimension: equation
+    status: source-fork              # NON-rendering — feeds Phase A extractor, not the reader
+    rendered: "(none — source only)"
+    detect: '\\label\{(?:Eq[A-Z]|eq:)'
+    rule_notes: >-
+      Label prefixes are INCONSISTENT across the corpus (\label{EqCamelCase} in
+      wave-op vs \label{eq:lower} in itqde/low-rank). Feeds the parent plan's
+      Phase A ("teach the extractor the semantic prefixes; do not re-label 90
+      equations"). Never a rendered finding.
+    evidence: {note: "EqCamelCase and eq:lower both present; a source fork, not a house-style deviation"}
+
+  - id: emph.italic
+    dimension: emphasis
+    status: advisory
+    rendered: "\\emph / \\textit for minted terms + key phrases; \\textbf rare"
+    detect: '\\textbf\{'
+    evidence: {emph: 97, textit: 50, textbf: 2, files: 9,
+               note: "design lumped emphasis at 173 for emph+textit+textbf+text; split here. \\textbf is genuinely rare (2)."}
+
+  - id: compound.hyphen
+    dimension: orthography
+    status: advisory
+    rendered: "hyphenated compound modifiers (non-linear, self-adjoint, real-time)"
+    examples: [non-linear, self-adjoint, real-time]
+    evidence: {approx: 110, note: "design-sourced (~110); advisory, not independently re-counted — low stakes."}
+
+  - id: sectioning.family
+    dimension: structure
+    status: fork                     # by venue — two families, do not pick one
+    rendered: >-
+      REVTeX: numbered, descriptive headings (Introduction -> derivation/method ->
+      Numerical/Simulation Results -> Discussion -> Outlook -> appendices).
+      Nature-family: unnumbered \section* IMRaD (Introduction/Results/Discussion/
+      Acknowledgement/Data Availability).
+    evidence: {note: "venue-driven; recorded, report-only"}
+
+  - id: abstract.form
+    dimension: structure
+    status: advisory
+    rendered: "single dense paragraph (~150-230 words), present tense, first-person plural, \\textit on key terms, forward-looking close; no structured abstract in the REVTeX family"
+    evidence: {}
+
+  - id: documentclass
+    dimension: format
+    status: enforced                 # OWNED by tex_template.check_template — recorded here for completeness
+    rendered: "revtex4-2 [aps, prx|pra|prl, twocolumn/reprint, superscriptaddress, amsmath, amssymb] + eigen-revtex; svjour/sn-jnl are venue exceptions"
+    owned_by: tex_template.check_template
+    evidence: {revtex4_2: "5 of 7 REVTeX papers", venue_exceptions: [svjour_epjST, sn-jnl], files: 7}
+
+# ---------------------------------------------------------------------------
+# The FORKS — recorded with provenance, NEVER auto-resolved (his ratification).
+# The checker EMITS these as findings but never carries an auto-edit; the whole
+# check_house_style sweep is a pure reporter (returns findings, writes nothing).
+# ---------------------------------------------------------------------------
+forks:
+  - id: F33.orthography
+    axis: british_vs_american
+    status: fork                     # report-only; scope=global; no auto-edit
+    route_kind: orthography-fork
+    corpus:
+      both_present: true
+      mixed_within_file: true
+      per_file_clean_pairs:          # BR vs AM, minimal-pair spellings, this pass
+        optical: {british: 22, american: 25}
+        polaron: {british: 10, american: 18}
+        influence: {british: 41, american: 7}
+        itqde: {british: 20, american: 18}
+        single_atom_hhg: {british: 13, american: 18}
+        low_rank: {british: 12, american: 11}
+        superosc_supplement: {british: 1, american: 3}
+        superosc_main: {british: 18, american: 19}
+        wave_operator: {british: 4, american: 6}
+      smoking_gun: >-
+        polaron-imposters uses BOTH "behaviour" (x5) and "behavior"/"Behavior"
+        (x3) — the SAME word spelled both ways within ONE file. itqde: "initialis*"
+        (2) AND "randomiz*" (3). This is the corpus-mixed-within-file proof.
+    note: >-
+      British-only enforcement is NOT corpus-derived — his own papers fail it
+      constantly. RECALIBRATION: latex_forge/build_and_lint.py and
+      voice_linter/lint_voice.py DEMOTED from hard-enforce (label [Americanism],
+      auto-fix rewrite) to advisory report-only fork; spelling is never
+      auto-corrected.
+    design_correction: >-
+      The design's per-file lean was INVERTED for two papers: it said
+      "polaron ~ pure British; influence ~ majority American". Actual:
+      polaron is American-leaning/mixed (behaviour x5 AND behavior x3);
+      influence is heavily British (41 vs 7). The load-bearing claim
+      (mixed corpus, mixed within files) holds and is strengthened.
+
+  - id: F34.punctuation_surface
+    axis: stated_preference_vs_corpus
+    status: fork                     # his RATIFIED STATED preference; report-only in this checker
+    route_kind: dash-surface
+    corpus_uses:
+      semicolon: {count: 69, files: 8, note: "design said 40; actual 69 (includes some math semicolons; masked out in the checker)"}
+      spaced_en_dash: {count: 27, files: 6, note: "design said 63 with 'wave-op 38 alone'; actual 27 total, wave-op has ZERO. Design overcounted and misattributed."}
+      em_dash: {count: 2, files: 1, note: "design said 40 across 7 files; actual only 2 literal '---' in the whole corpus. Em-dashes are essentially ABSENT — the design's premise here is wrong."}
+    stated_preference: ban           # schema.VOICE_FAILURE_PATTERNS['surface-invariant'] (author-owned)
+    stated_preference_owner: "schema.VOICE_FAILURE_PATTERNS['surface-invariant'] — kept ENFORCED as his ratified going-forward preference at the weld voice floor"
+    note: >-
+      His stated preference (spaced single hyphen ' - '; no semicolons, no em/en
+      dashes) is a going-forward editorial OVERRIDE of historical corpus practice,
+      NOT a corpus derivation. Recorded BOTH: the corpus USES semicolons (69) and
+      spaced en-dashes (27) — so the exemplars would fail his stated rule — while
+      em-dashes were already essentially absent (2), so banning those barely
+      conflicts with the corpus. The weld voice floor stays enforced; the general
+      linters demote it to advisory so his own .tex no longer hard-fails.
+
+# ---------------------------------------------------------------------------
+# The finding-kinds manifest (mirrored in house_style.FINDING_KINDS). Their
+# owning-stage routes are WIRED in Phase F (schema.KIND_TO_WORK); recorded here
+# for the reader, NOT wired by this profile.
+# ---------------------------------------------------------------------------
+finding_kinds:
+  xref-style:       {route: prose,           enforces: [xref.equation, xref.section, xref.appendix, xref.work_as_noun, xref.no_cleveref, xref.nbsp], advisory: [xref.figure]}
+  citation-style:   {route: prose,           enforces: [cite.style, cite.pre_punct]}
+  equation-punct:   {route: "prose/render",  advisory: [eq.terminal_punct, eq.numbering]}
+  dash-surface:     {route: render,          fork: F34.punctuation_surface}
+  orthography-fork: {route: report-only,     fork: F33.orthography}

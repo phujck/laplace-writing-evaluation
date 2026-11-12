@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>lineage · the eigen engine</title>
+<!-- THE LINEAGE SURFACE (W-lineage): per-project views of the conceptric and its
+     descendants, joined to the one instrument (engine.mjs). The resting DOM is a COMPOSED
+     BRIEF of the paper's lineage health — nothing is materialised until a picker (or a cold
+     deep-link, ?node= / ?object= / ?view=whole) summons a view. Opening a node / object /
+     the whole graph REALLOCATES (the view claims the centre, its identity becomes a rail, a
+     named return door leads back to the brief). Colour + type ride hymn.css (the one
+     palette, the .lin-* component rules); the focus/geometry runtime is engine.mjs; the
+     surface logic is lineage-panes.mjs; all network rides store.fetchJSON. -->
+<link rel="stylesheet" href="/shared/hymn.css">
+<script defer src="/shared/shell.js"></script>
+<style>
+/* LAYOUT ONLY — behaviour + component colour live in lineage-panes.mjs + hymn.css.
+   No colour literals here (the one-palette clause binds this <style>). */
+*{box-sizing:border-box}
+html,body{margin:0;min-height:100%;font:13px/1.55 -apple-system,"Segoe UI",Roboto,sans-serif;
+  background:var(--bg);color:var(--ink)}
+body{overflow-x:hidden}
+#lin{max-width:1180px;margin:0 auto;padding:16px 20px 120px}
+@media(min-width:1400px){.lin-ctx{max-width:1000px;margin-inline:auto}}
+.lin-ctx{display:flex;align-items:baseline;gap:9px;flex-wrap:wrap;margin:0 0 14px;
+  padding-bottom:11px;border-bottom:1px solid var(--edge)}
+.lin-ctx .lin-surface{font-family:var(--display);font-size:15px;font-weight:700;color:var(--ink)}
+.lin-ctx .lin-surface b{color:var(--accent)}
+.lin-ctx .lin-purpose{color:var(--ink2);font-size:12.5px}
+</style>
+</head>
+<body>
+<!-- The engine root: the composed brief is the resting altitude; the rail + focus (a view)
+     are built on pin and removed on close (exact restore). All behaviour rides
+     lineage-panes.mjs; all network rides store.fetchJSON (the one gateway). -->
+<main id="lin">
+  <div class="lin-ctx">
+    <span class="lin-surface">the <b>lineage</b> of this paper</span>
+    <span class="lin-purpose">— the conceptric and its descendants: how each concept links across the map into the manuscript</span>
+  </div>
+  <div id="eng-root">
+    <div class="eng-brief"><div class="lin-brief-loading">resolving the paper's lineage…</div></div>
+  </div>
+</main>
+<script type="module">
+import { initLineage } from "/shared/lineage-panes.mjs";
+initLineage();
+</script>
+</body>
+</html>

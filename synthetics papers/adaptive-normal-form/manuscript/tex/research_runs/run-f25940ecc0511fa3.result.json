@@ -1,0 +1,451 @@
+{
+  "schema": "anf.D2-finite-results/1",
+  "work_id": "WORK-5adb016071394a80b18c92238781e6df",
+  "protocol_sha256": "3b45975de07e783c7dcd4be992950b4be06602c1d13505c4a40bb5f4b084c491",
+  "runtime": {
+    "python": "3.14.7 (main, Aug 14 2026, 15:35:28) [Clang 22.1.3 ]",
+    "numpy": "2.5.1"
+  },
+  "D1_reuse": {
+    "run_id": "run-e46bf2a3172ea87e",
+    "raw_sha256": "5281094d3d9f3d8862d01fc5779200211beee81c66aee4d477be90929dcc680f",
+    "native_result": "anf-d1-v2-jacobian-orbits-20261111",
+    "revision": "sha256:23413fb0b8cfc9c2e087596b9baf75eef9c2329d0c1460e3bc2974e03ed55ffc",
+    "scope": "Reuse stored orbit states/Jacobians/multipliers. No D1 producer/orbit-root/Jacobian-check rerun.",
+    "proofs": [
+      {
+        "id": "ART-20d6e142c3a84e5686f2924695c679af",
+        "path": "writing_projects/adaptive-normal-form-aek9/D1/v2/01-matching-proof.md",
+        "sha256": "60b794c925a7ab8a9a108f76dabd0e160a179777e9e9c758cb4c1f0de9e51709"
+      },
+      {
+        "id": "ART-aa322491a10847198777341aa12a03f8",
+        "path": "writing_projects/adaptive-normal-form-aek9/D1/v2/02-ph-erf-cycle-proof.md",
+        "sha256": "ce8d315b73a36366438269dc15038bbeb5321e02c95eefd9e9ac8efa251495d9"
+      },
+      {
+        "id": "ART-c29df13f924c4196957c23aa0bcadb30",
+        "path": "writing_projects/adaptive-normal-form-aek9/D1/v2/03-size-gain-proof.md",
+        "sha256": "577bfd5970f91ce0085092e7eb80609d572529a677656e68db4c03311473ae0f"
+      },
+      {
+        "id": "ART-26016ed766da416886d10de42aa077de",
+        "path": "writing_projects/adaptive-normal-form-aek9/D1/v2/04-anf-orbit-proof.md",
+        "sha256": "2bc9d3d9089aba9382cc3ac48e2a3b28f87e27bfe685977eb6449a1f5a70333b"
+      }
+    ],
+    "anf": {
+      "state": [
+        -0.16024794040085039,
+        0.025471791723687645
+      ],
+      "jacobian": [
+        [
+          0.3,
+          7.788666683257231
+        ],
+        [
+          0.11126666690367473,
+          0.05364554601029492
+        ]
+      ],
+      "two_step_multipliers": [
+        {
+          "real": 1.2451443678913934,
+          "imag": 0,
+          "modulus": 1.2451443678913934
+        },
+        {
+          "real": 0.5809714396548122,
+          "imag": 0,
+          "modulus": 0.5809714396548122
+        }
+      ],
+      "orbit_residuals": [
+        2.7755575615628914e-17,
+        2.7755575615628914e-17
+      ],
+      "parameters": {
+        "N": 900,
+        "r": 0.3,
+        "alpha": 0.01,
+        "beta": 0.5,
+        "theta_bracket": [
+          0.02,
+          0.03
+        ]
+      }
+    },
+    "ph": {
+      "parameters": {
+        "b": 1.2,
+        "s": 0.4,
+        "r_definition": "exp(-1)",
+        "alpha": 0.35,
+        "beta": 0.6,
+        "size_ratios": [
+          1.001,
+          1.01,
+          1.1
+        ]
+      },
+      "r": 0.36787944117144233,
+      "D": 1.015153137095996,
+      "Kc": 1.9701461059572865,
+      "Nc": 138.25414373768885,
+      "cases": [
+        {
+          "N": 138.39239788142652,
+          "ratio": 1.001,
+          "state": [
+            -0.0014127609152952394,
+            0.007642872013624193
+          ],
+          "z": 0.007758685501053792,
+          "jacobian": [
+            [
+              0.36787944117144233,
+              0.25284822353142306
+            ],
+            [
+              0.7240519792246415,
+              -0.8641626620787757
+            ]
+          ],
+          "two_step_multipliers": [
+            {
+              "real": 0.2519001138452962,
+              "imag": 0,
+              "modulus": 0.2519001138452962
+            },
+            {
+              "real": 0.9963627893051157,
+              "imag": 0,
+              "modulus": 0.9963627893051157
+            }
+          ]
+        },
+        {
+          "N": 139.63668517506574,
+          "ratio": 1.01,
+          "state": [
+            -0.004441625271737,
+            0.024028675423307885
+          ],
+          "z": 0.02439278523623246,
+          "jacobian": [
+            [
+              0.36787944117144233,
+              0.25284822353142306
+            ],
+            [
+              0.7175788668330929,
+              -0.8474968220921404
+            ]
+          ],
+          "two_step_multipliers": [
+            {
+              "real": 0.2523040030228275,
+              "imag": 0,
+              "modulus": 0.2523040030228275
+            },
+            {
+              "real": 0.9641592271149405,
+              "imag": 0,
+              "modulus": 0.9641592271149405
+            }
+          ]
+        },
+        {
+          "N": 152.07955811145774,
+          "ratio": 1.1,
+          "state": [
+            -0.013287577650079705,
+            0.07188424754051852
+          ],
+          "z": 0.07297351939854252,
+          "jacobian": [
+            [
+              0.36787944117144233,
+              0.25284822353142306
+            ],
+            [
+              0.6570408119062714,
+              -0.6916340044111444
+            ]
+          ],
+          "two_step_multipliers": [
+            {
+              "real": 0.25657680381561476,
+              "imag": 0,
+              "modulus": 0.25657680381561476
+            },
+            {
+              "real": 0.689379279635082,
+              "imag": 0,
+              "modulus": 0.689379279635082
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "seed_eigenvectors_from_stored_D1_J": {
+    "unstable": {
+      "eigenvalue": 1.115860371144792,
+      "unit_vector": [
+        0.9945584913643194,
+        0.10417968734417082
+      ]
+    },
+    "stable": {
+      "eigenvalue": -0.7622148251344973,
+      "unit_vector": [
+        -0.9908280575864883,
+        0.13512868052114918
+      ]
+    }
+  },
+  "cases": [
+    {
+      "case": {
+        "id": "anf_900_D1_plus_unstable_eigenvector",
+        "model": "ANF",
+        "N": 900,
+        "seed": "D1_plus_unstable_eigenvector",
+        "horizon": 5000,
+        "base_horizon": 5000
+      },
+      "initial_state": [
+        -0.16024784094500125,
+        0.02547180214165638
+      ],
+      "completed_updates": 5000,
+      "failure": null,
+      "checkpoints": [
+        {
+          "H": 5000,
+          "source_peak_excludes_final": 0.4599774254755894,
+          "peak_index": 114,
+          "max_abs_e_including_final": 0.4599774254755894,
+          "early": {
+            "start": 0,
+            "end": 199,
+            "available": true,
+            "count": 200,
+            "max_abs_e": 0.4599774254755894,
+            "mean_e": -0.00341940646803496,
+            "rms_e": 0.37777096428416435,
+            "half_range_e": 0.45891433269753634,
+            "alternating_component": 0.32759407461099666,
+            "theta_start": 0.02547180214165638,
+            "theta_end": 0.027328349630929994,
+            "theta_range": 0.0634570449606443,
+            "K_min": 1.035641554148706,
+            "K_max": 1.4322932729944295,
+            "lag2_max": 0.03644479762552055,
+            "lag2_component_max": [
+              0.03644479762552055,
+              0.0038050229615472497
+            ],
+            "nearest_D1_orbit_max": 0.19012346142245545,
+            "abs_r_minus_K_max": 1.1322932729944295
+          },
+          "middle": {
+            "start": 2500,
+            "end": 2699,
+            "available": true,
+            "count": 200,
+            "max_abs_e": 9.43689570931383e-16,
+            "mean_e": 0.0,
+            "rms_e": 9.43689570931383e-16,
+            "half_range_e": 9.43689570931383e-16,
+            "alternating_component": 9.43689570931383e-16,
+            "theta_start": 0.02738996215850714,
+            "theta_end": 0.027389962158507034,
+            "theta_range": 1.0408340855860843e-16,
+            "K_min": 1.210129342397876,
+            "K_max": 1.2101293423978776,
+            "lag2_max": 0.0,
+            "lag2_component_max": [
+              0.0,
+              0.0
+            ],
+            "nearest_D1_orbit_max": 0.15857853359599305,
+            "abs_r_minus_K_max": 0.9101293423978776
+          },
+          "tail1000": {
+            "start": 4001,
+            "end": 5000,
+            "available": true,
+            "count": 1000,
+            "max_abs_e": 9.43689570931383e-16,
+            "mean_e": 0.0,
+            "rms_e": 9.43689570931383e-16,
+            "half_range_e": 9.43689570931383e-16,
+            "alternating_component": 9.43689570931383e-16,
+            "theta_start": 0.027389962158507034,
+            "theta_end": 0.02738996215850714,
+            "theta_range": 1.0408340855860843e-16,
+            "K_min": 1.210129342397876,
+            "K_max": 1.2101293423978776,
+            "lag2_max": 0.0,
+            "lag2_component_max": [
+              0.0,
+              0.0
+            ],
+            "nearest_D1_orbit_max": 0.15857853359599305,
+            "abs_r_minus_K_max": 0.9101293423978776
+          },
+          "tail200": {
+            "start": 4801,
+            "end": 5000,
+            "available": true,
+            "count": 200,
+            "max_abs_e": 9.43689570931383e-16,
+            "mean_e": 0.0,
+            "rms_e": 9.43689570931383e-16,
+            "half_range_e": 9.43689570931383e-16,
+            "alternating_component": 9.43689570931383e-16,
+            "theta_start": 0.027389962158507034,
+            "theta_end": 0.02738996215850714,
+            "theta_range": 1.0408340855860843e-16,
+            "K_min": 1.210129342397876,
+            "K_max": 1.2101293423978776,
+            "lag2_max": 0.0,
+            "lag2_component_max": [
+              0.0,
+              0.0
+            ],
+            "nearest_D1_orbit_max": 0.15857853359599305,
+            "abs_r_minus_K_max": 0.9101293423978776
+          }
+        }
+      ],
+      "final_state": [
+        0.3188264739968428,
+        0.02738996215850714
+      ],
+      "final_e": -9.43689570931383e-16,
+      "final_K": 1.210129342397876,
+      "final_abs_r_minus_K": 0.910129342397876,
+      "reference_D1_state": [
+        -0.16024794040085039,
+        0.025471791723687645
+      ],
+      "perturbation_diagnostics": [
+        {
+          "k": 0,
+          "phase_point_error": 9.945584913961802e-08,
+          "nearest_orbit_error": 9.945584913961802e-08,
+          "e": -0.4578512747495571,
+          "theta": 0.02547180214165638
+        },
+        {
+          "k": 1,
+          "phase_point_error": 1.1097883831356903e-07,
+          "nearest_orbit_error": 1.1097883831356903e-07,
+          "e": 0.4578512399194833,
+          "theta": -0.025471780098688144
+        },
+        {
+          "k": 2,
+          "phase_point_error": 1.2383690078943133e-07,
+          "nearest_orbit_error": 1.2383690078943133e-07,
+          "e": -0.4578512787849515,
+          "theta": 0.025471804695561217
+        },
+        {
+          "k": 4,
+          "phase_point_error": 1.5419482829459596e-07,
+          "nearest_orbit_error": 1.5419482829459596e-07,
+          "e": -0.45785128380960316,
+          "theta": 0.025471807875541635
+        },
+        {
+          "k": 8,
+          "phase_point_error": 2.390612958702576e-07,
+          "nearest_orbit_error": 2.390612958702576e-07,
+          "e": -0.457851297856143,
+          "theta": 0.025471816765267715
+        },
+        {
+          "k": 16,
+          "phase_point_error": 5.746299381326203e-07,
+          "nearest_orbit_error": 5.746299381326203e-07,
+          "e": -0.45785135339681354,
+          "theta": 0.025471851915903492
+        },
+        {
+          "k": 32,
+          "phase_point_error": 3.3200688727974548e-06,
+          "nearest_orbit_error": 3.3200688727974548e-06,
+          "e": -0.4578518077720585,
+          "theta": 0.025472139496901972
+        },
+        {
+          "k": 64,
+          "phase_point_error": 0.00011084304666592049,
+          "nearest_orbit_error": 0.00011084304666592049,
+          "e": -0.4578695635841976,
+          "theta": 0.025483399210319117
+        },
+        {
+          "k": 128,
+          "phase_point_error": 0.12754484762096807,
+          "nearest_orbit_error": 0.12754484762096807,
+          "e": -0.43253314136521726,
+          "theta": 0.03494196434804612
+        },
+        {
+          "k": 256,
+          "phase_point_error": 0.47907258740375763,
+          "nearest_orbit_error": 0.15857670660205686,
+          "e": -4.985356130693397e-06,
+          "theta": 0.02739024926725198
+        },
+        {
+          "k": 512,
+          "phase_point_error": 0.47907441439769316,
+          "nearest_orbit_error": 0.1585785335959924,
+          "e": -9.43689570931383e-16,
+          "theta": 0.02738996215850714
+        }
+      ],
+      "first_nearest_D1_distance_gt_1e_3": 85,
+      "last_antiphase_residual": 0.6376529479936862,
+      "csv_rows": 444,
+      "units": "dimensionless selected numerical coordinates",
+      "period2_warning": "lag2 residual small also at a fixed point; inspect nonzero tail amplitude/phase distance."
+    }
+  ],
+  "case_count": 1,
+  "successful_update_count": 5000,
+  "failure_count": 0,
+  "protocol_completed": true,
+  "data_files": [
+    {
+      "path": "research_runs/run-f25940ecc0511fa3.result.full-traces.npz",
+      "scope": "manuscript",
+      "bytes": 12735,
+      "sha256": "e19b9eee33413b393247debe14ea564a095ac705dfebdc8ef4ff58f398655928",
+      "role": "Full undecimated float64 state/e/K arrays"
+    },
+    {
+      "path": "research_runs/run-f25940ecc0511fa3.result.plot-samples.csv",
+      "scope": "manuscript",
+      "bytes": 63406,
+      "sha256": "d5d01f22f081a688ed43f3062888c14f83041c988fbda7abcfa35d96df6ff2e5",
+      "role": "Fixed-rule adjacent-pair CSV samples and extrema"
+    }
+  ],
+  "plot_sample_rows": 444,
+  "scientific_status": "AUTHOR_FINITE_TRAJECTORIES_AND_LOCAL_PROOF_PENDING_INDEPENDENT_SCIENCE",
+  "limitations": [
+    "No convergence/global self-quenching oracle or open-ended search.",
+    "Rounded D1 saddle/linear stable-direction seeds are not exact nonlinear invariant-manifold initialisations.",
+    "D1 orbit/root/Jacobian checks reused, not rerun. D2 eigenvector calculation only selects perturbation seeds.",
+    "Full binary arrays retained; CSV decimation must not be mistaken for every step.",
+    "Exact erf/sinh and erf proxies, not finite-agent/physical-block validation or interval-certified numerics."
+  ]
+}

@@ -1,0 +1,496 @@
+{
+  "schema_version": "laplace.writing-stage-profiles/1",
+  "stages": {
+    "scientific_integration": {
+      "title": "Integrate the manuscript",
+      "purpose": "Read the whole argument and apply the corrections that make its claims, evidence and explanation cohere.",
+      "voice": true,
+      "read": [
+        {
+          "operation": "project",
+          "payload": {}
+        },
+        {
+          "operation": "structure",
+          "payload": {}
+        }
+      ],
+      "guidance": [
+        "Read the current manuscript in order before restructuring it. Follow the exact sources and dependencies needed to judge each inference; do not substitute a summary or prior session confidence for that reading.",
+        "State the thesis and identify which constructions actually support it. Look for identities and consequences across sections, duplicated material, missing chapters and inconsistent notation or forward references.",
+        "Use scientific ambition to organise the construction. Preserve assumptions, counterexamples and precise open questions at their proper scope. Cite the actual proposition or method used.",
+        "Apply coherent corrections through existing source owners. Preserve evidence, labels and attribution. Update affected concept and section links through their owners."
+      ],
+      "apply": [
+        "apply_revision",
+        "concept_change",
+        "logical_plan_change",
+        "literature_import",
+        "literature_bind"
+      ],
+      "verify": [
+        "build",
+        "build_status",
+        "document",
+        "author_changes"
+      ],
+      "completion": [
+        "Corrections are applied, not merely proposed.",
+        "Read the changed explanation and inspect the resulting pages, figures, citations and references.",
+        "Record actual remaining scientific and editorial gaps. Root/author judgement is distinct from successful computation."
+      ]
+    },
+    "voice_integration": {
+      "title": "Integrate the author’s voice",
+      "purpose": "Apply a sustained voice pass grounded in the selected author profile and original prose while preserving the argument.",
+      "voice": true,
+      "read": [
+        {
+          "operation": "writing_style",
+          "payload": {
+            "view": "provenance"
+          }
+        },
+        {
+          "operation": "project_guidance",
+          "payload": {}
+        },
+        {
+          "operation": "structure",
+          "payload": {}
+        }
+      ],
+      "guidance": [
+        "Read the complete scoped manuscript and relevant original calibration passages before revising. Discover recorded source handles through writing_style provenance, then use writing_style_calibration or repository reads for bounded passages. A style summary is not evidence that an original was read.",
+        "Let concrete questions motivate each change of representation. Return to examples with new consequences and vary cadence with the thought. Use the selected project’s genre and audience.",
+        "Keep necessary scientific qualifications where they affect an inference. Remove repetitive defensive framing and move verification history to linked supporting notes when it does not change the argument.",
+        "Preserve mathematical content, assumptions, citations, labels, figure meaning and numerical values. Report scientific errors separately with evidence instead of silently changing them as style.",
+        "Apply the pass throughout the intended scope. Do not insert private biography, copy original prose, manufacture humour, or stop at an opening rewrite or suggestions list."
+      ],
+      "apply": [
+        "apply_revision",
+        "writing_style_change",
+        "writing_style_profile_change"
+      ],
+      "verify": [
+        "build",
+        "build_status",
+        "author_changes",
+        "writing_stage"
+      ],
+      "completion": [
+        "Applied revisions identify the current source and selected profile revision.",
+        "Read the actual changed prose for continuity and voice, then inspect rendered pages for regressions.",
+        "Record the original passages actually read, any inaccessible sources, and substantive qualifications preserved. Do not invent an automated voice score."
+      ]
+    },
+    "presentation": {
+      "title": "Design and inspect the publication",
+      "purpose": "Make the book’s typography, cover, figures and metadata communicate its argument.",
+      "read": [
+        {
+          "operation": "project",
+          "payload": {}
+        },
+        {
+          "operation": "document",
+          "payload": {}
+        },
+        {
+          "operation": "visuals",
+          "payload": {}
+        }
+      ],
+      "guidance": [
+        "Use the author’s exact title, byline order and affiliation. Read the active document and visual style before changing it.",
+        "Give cover art a clear conceptual purpose and distinguish it from scientific data. Use scalable artwork where appropriate. Preserve the meaning and evidence provenance of scientific figures.",
+        "Use existing style and source owners. Keep stable source paths and references unless an explicit supported rename is needed.",
+        "Inspect the actual cover, contents, chapter openings, mathematical pages and figure pages at readable scale. Source compilation alone does not establish layout quality."
+      ],
+      "apply": [
+        "style",
+        "apply_revision",
+        "visual_create",
+        "visual_render",
+        "visual_place"
+      ],
+      "verify": [
+        "build",
+        "build_status",
+        "export_pdf",
+        "writing_stage"
+      ],
+      "completion": [
+        "The delivered PDF matches the selected source and correct title/byline metadata.",
+        "Check actual links, captions, references, legibility and clipping in the app reader and exported artifact.",
+        "Refresh source/companion packages and verify extraction and links while preserving scientific run identities."
+      ]
+    },
+    "build_acceptance": {
+      "title": "Verify the built manuscript",
+      "purpose": "Verify the current build, its source identity and the pages it produced.",
+      "acceptance_profile": "build",
+      "read": [
+        {
+          "operation": "document",
+          "payload": {}
+        },
+        {
+          "operation": "build_status",
+          "payload": {}
+        }
+      ],
+      "guidance": [
+        "Use the selected-source build owner. Distinguish the latest attempt from the last successful PDF.",
+        "Inspect the compiler result and changed pages. Verify labels, citations, figure placement and source package links without rerunning unrelated scientific calculations."
+      ],
+      "apply": [
+        "build",
+        "export_pdf"
+      ],
+      "verify": [
+        "build_status",
+        "read_artifact"
+      ],
+      "completion": [
+        "Record the terminal build receipt, current source/PDF hashes, page inspection and unresolved warnings.",
+        "Do not describe compilation as scientific verification."
+      ]
+    },
+    "engine_acceptance": {
+      "title": "Measure engine behaviour",
+      "purpose": "Measure live service correctness, latency and storage growth at realistic project scale.",
+      "acceptance_profile": "engine",
+      "read": [
+        {
+          "operation": "project",
+          "payload": {}
+        },
+        {
+          "operation": "help",
+          "payload": {}
+        }
+      ],
+      "guidance": [
+        "Record served source identity, PID, frontend bundle and active work before attributing behaviour to a change.",
+        "Measure cold/warm and active/idle paths separately. Distinguish server time, response bytes, browser rendering and durable bytes.",
+        "Use a fixture or authorised edit for mutation measurements. Keep unrelated source and sessions live. Retain readable history once, without copying it into every response."
+      ],
+      "apply": [],
+      "verify": [
+        "author_history",
+        "conversation_history"
+      ],
+      "completion": [
+        "Deposit the actual commands, measurements, environment and failure observations. Historical reference samples are not current evidence or universal budgets.",
+        "Engineering host probes require host access. Report that capability as unavailable when absent, rather than inventing a writing tool or results."
+      ]
+    },
+    "ui_acceptance": {
+      "title": "Use and verify the interface",
+      "purpose": "Exercise real user interactions in the delivered browser/native application.",
+      "acceptance_profile": "ui",
+      "read": [
+        {
+          "operation": "project",
+          "payload": {}
+        },
+        {
+          "operation": "pipeline",
+          "payload": {}
+        }
+      ],
+      "guidance": [
+        "Work through actual editing, navigation, evidence, history and session controls, including failure, empty, resumed and accepted states.",
+        "Use visual inspection and real actions. Keep focus and scroll position coherent and preserve unsaved drafts. Verify outcomes in the owning source/state.",
+        "Measure click-to-useful-content separately from backend time and automation snapshot overhead. Closed history and evidence detail should remain lazy but inspectable."
+      ],
+      "apply": [],
+      "verify": [
+        "document",
+        "author_history",
+        "research"
+      ],
+      "completion": [
+        "Record exercised controls and actual outcomes, with screenshots where visual judgement matters.",
+        "If browser/native control is unavailable, return that explicit gap. Owner tests and HTTP success cannot substitute for interface acceptance."
+      ]
+    },
+    "provider_context": {
+      "title": "Verify session context and tools",
+      "purpose": "Test native providers on real project work and attribute context, storage and tool friction accurately.",
+      "acceptance_profile": "provider_context",
+      "read": [
+        {
+          "operation": "help",
+          "payload": {}
+        },
+        {
+          "operation": "writing_style",
+          "payload": {
+            "view": "summary"
+          }
+        }
+      ],
+      "guidance": [
+        "Use small normal-project rehearsals with each requested provider. Test tool discovery, reads, guarded writes, resume, and interpretation of failures.",
+        "Measure injected orientation, changed context and explicitly requested history separately when observable. Cached cumulative input is not new prompt content.",
+        "Record every failed attempt, including payload mistakes and owner defects. Check the stored tool events against the session’s self-report.",
+        "Preserve one accessible history record and return stable handles. Repeated turns should carry changed context instead of prior full state. Do not claim full O(diff) storage without measuring it."
+      ],
+      "apply": [],
+      "verify": [
+        "conversation_history",
+        "author_history"
+      ],
+      "completion": [
+        "Report provider/model and advertised/effective window, context/token measurements and observed friction.",
+        "A passing rehearsal proves only the paths and provider actually exercised."
+      ]
+    }
+  },
+  "programme": {
+    "schema_version": "laplace.writing-programme/1",
+    "title": "Develop a connected research manuscript",
+    "purpose": "Carry interpreted results through explicit documentary support, reader planning, draft, independent judgement, original-parent synthesis and delivered export.",
+    "phases": [
+      {
+        "id": "results",
+        "title": "Recover and interpret results",
+        "work_kind": "writing-results",
+        "depends_on": [],
+        "read": [
+          {
+            "operation": "research",
+            "payload": {}
+          },
+          {
+            "operation": "logical_plan",
+            "payload": {}
+          }
+        ],
+        "apply": [
+          "research",
+          "structure_change"
+        ],
+        "verify": [
+          "research",
+          "logical_plan"
+        ],
+        "guidance": "Read the exact claims and prerequisites, producer/run/result/proof records and limitations. Interpret what each current result supports. Definitions and author postulates need no invented experiment.",
+        "completion": "Current scoped interpretation with exact claim/result identities, assumptions and negative findings. Execution/provenance is not scientific acceptance.",
+        "consumer": "literature"
+      },
+      {
+        "id": "literature",
+        "title": "Search, read and bind support",
+        "work_kind": "writing-literature-support",
+        "depends_on": [
+          "results"
+        ],
+        "read": [
+          {
+            "operation": "literature_scope",
+            "payload": {}
+          },
+          {
+            "operation": "references_attached",
+            "payload": {}
+          }
+        ],
+        "apply": [
+          "literature_discover",
+          "literature_lookup",
+          "literature_import",
+          "reference_fetch",
+          "reference_text",
+          "literature_bind"
+        ],
+        "verify": [
+          "literature_scope"
+        ],
+        "guidance": "Reuse readable local sources first. Record explicit search or scoped no-new-search rationale, read actual passages through reference_text, bind receipts/locators to precise claims. Metadata and BibTeX pins are not passage support. Create targeted literature-acquisition Work where needed.",
+        "completion": "Passage-qualified support handoff, with remaining citation/build obligations explicit. This ordinary support Work is not final literature-acquisition completion. Keep acquisition open until literature_scope.ready_for_completion after actual citations/build.",
+        "consumer": "improvement"
+      },
+      {
+        "id": "improvement",
+        "title": "Improve the argument and reader plan",
+        "work_kind": "writing-improvement",
+        "depends_on": [
+          "literature"
+        ],
+        "read": [
+          {
+            "operation": "logical_plan",
+            "payload": {}
+          },
+          {
+            "operation": "structure",
+            "payload": {}
+          },
+          {
+            "operation": "literature_scope",
+            "payload": {}
+          }
+        ],
+        "apply": [
+          "argument",
+          "logical_plan_change",
+          "structure_change"
+        ],
+        "verify": [
+          "structure",
+          "literature_scope"
+        ],
+        "guidance": "Consume interpreted results and current qualified support. Develop the connected explanation and authored reader entry/exit states, transitions and paragraph plan. Inspect diagnostics, stale/unobserved inputs and remaining pages. Reader-plan citation pins and support passage receipts are separate.",
+        "completion": "Current argument/reader-plan basis and explicit authored diagnostics. These are not reader comprehension, independent review or scientific acceptance.",
+        "consumer": "draft"
+      },
+      {
+        "id": "draft",
+        "title": "Develop the connected draft",
+        "work_kind": "writing-draft",
+        "depends_on": [
+          "improvement"
+        ],
+        "read": [
+          {
+            "operation": "structure",
+            "payload": {}
+          },
+          {
+            "operation": "source",
+            "payload": {}
+          },
+          {
+            "operation": "literature_scope",
+            "payload": {}
+          }
+        ],
+        "apply": [
+          "propose_revision",
+          "apply_revision"
+        ],
+        "verify": [
+          "author_changes",
+          "build_status"
+        ],
+        "guidance": "Read neighbouring prose, exact plan/source/evidence inputs and author feedback. Produce source-addressed reviewable edits. Gerard's commission permits existing guarded authorized proposal/source application. Preserve direct author Save authority without repeated human Apply/Save/build gates. An unapplied proposal is not saved source. After an authorized source change, use the returned scoped re-preparation task action before completion if the consumed cut changed. This is a guarded owner action available under the commission, not a new human permission gate. Prior cuts stay in history.",
+        "completion": "Exact draft/proposal/application identities and consumed inputs. Any actual application uses current source guards and authorized owners, never a permission bypass.",
+        "consumer": "judgement"
+      },
+      {
+        "id": "judgement",
+        "title": "Obtain independent reader-sensitive judgement",
+        "work_kind": "writing-judgement",
+        "depends_on": [
+          "draft"
+        ],
+        "read": [
+          {
+            "operation": "structure",
+            "payload": {}
+          },
+          {
+            "operation": "source",
+            "payload": {}
+          },
+          {
+            "operation": "literature_scope",
+            "payload": {}
+          }
+        ],
+        "apply": [
+          "work_delivery",
+          "dispatch_plan"
+        ],
+        "verify": [
+          "work_review",
+          "dispatch_returns"
+        ],
+        "guidance": "After production settles, a fresh independent app-owned judge reads exact draft/plan/support bytes. Diagnose missing premises, definitions, examples, transitions and what the intended reader can infer. Retain actual reading coverage, assumptions and ACCEPT/HOLD/REJECT. Do not judge your own production.",
+        "completion": "Exact independent disposition and consequential reader findings, not an automated score or scientific acceptance. Failed/incomplete coverage cannot qualify done.",
+        "consumer": "synthesis",
+        "review_obligations": [
+          {
+            "id": "reader-sensitive",
+            "scope": "source",
+            "label": "Independent reader-sensitive judgement of exact draft, plan and evidence with actual reading coverage.",
+            "required": true,
+            "independent": true
+          }
+        ]
+      },
+      {
+        "id": "synthesis",
+        "title": "Synthesize in the original parent",
+        "work_kind": "writing-synthesis",
+        "depends_on": [
+          "judgement"
+        ],
+        "read": [
+          {
+            "operation": "project",
+            "payload": {}
+          },
+          {
+            "operation": "dispatch_status",
+            "payload": {}
+          },
+          {
+            "operation": "dispatch_returns",
+            "payload": {}
+          }
+        ],
+        "apply": [
+          "store_artifact",
+          "task_status"
+        ],
+        "verify": [
+          "project"
+        ],
+        "guidance": "Resume the original parent. Read exact prepared inputs and every available worker/judge return, including rejected outcomes. Publish parent synthesis through the current return contract where dispatch applies. Retain BLOCKED and exact recovery when evidence is rejected/incomplete. Never replay children or add a synthesis child. Record work_review phase synthesis on the exact judgement Work, consuming its current handoff and accepted independent review IDs, from the original parent's synthesis stage turn.",
+        "completion": "Parent-consumed exact returns, scoped decisions and follow-up Work with current guards. No replacement paid parent or serial child DAG.",
+        "consumer": "export"
+      },
+      {
+        "id": "export",
+        "title": "Build, inspect and deliver the export",
+        "work_kind": "writing-export",
+        "depends_on": [
+          "synthesis"
+        ],
+        "read": [
+          {
+            "operation": "document",
+            "payload": {}
+          },
+          {
+            "operation": "build_status",
+            "payload": {}
+          },
+          {
+            "operation": "literature_scope",
+            "payload": {}
+          }
+        ],
+        "apply": [
+          "build",
+          "export_pdf",
+          "task_status"
+        ],
+        "verify": [
+          "build_status",
+          "document",
+          "read_artifact"
+        ],
+        "guidance": "Consume actual current saved/applied source. Use existing authorized build/export owners, inspect real pages, citations and bibliography, then retain the separate export delivery receipt. Complete acquisition only when its current literature_scope.ready_for_completion is true. No extra human-click approval gate.",
+        "completion": "Current source/build/output identities, actual page inspection and separate export receipt. A successful build is not delivery or scientific acceptance. The ordinary export Work must retain both actual selected-source export PDF and owner receipt as evidence; the terminal owner validates the recorded export and current build.",
+        "consumer": "reader"
+      }
+    ],
+    "execution": "Ordinary sequential stage Work in one original parent session. Preparation/read starts no model. One active job in this lane, no serial child DAG or new scheduler. Prepare an explicit all-seven identity contract via ordinary closure obligations. Each ordinary stage binds its owner-derived scoped cut; changed input qualification requires explicit guarded re-preparation, never silent renewal.",
+    "literature_boundary": "The support handoff is usable before final acquisition citation/build completion. Improvement depends on the ordinary support Work, never on an acquisition Work that needs the later draft/build."
+  }
+}

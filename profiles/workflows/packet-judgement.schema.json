@@ -1,0 +1,84 @@
+{
+ "$schema": "https://json-schema.org/draft/2020-12/schema",
+ "$id": "laplace.packet-judgement/1",
+ "title": "laplace.packet-judgement/1",
+ "description": "The ONE shape an independent judge returns, for every provider. It merges the shape Codex root settled on (evidence/WRITING_CONSOLIDATION_2026-10-03/resume-codex-20261003/canonical_action-judge.json and delivery_gate-judge2.json: schema_version, round, max_rounds, candidate/parent/base/tree, accepted_subsets with id/status/finding, contested subsets with their minimum correction, independent_evidence) with the closure-loop rule that a deficiency says what done looks like. The judge's own commands are the acceptance evidence: the carrier already refuses an acceptance with no successful command of the judge's own (src/laplace/pipeline/workflow.py:811-813, ADVERSARY-HAS-NO-INDEPENDENT-COMMAND-OBSERVATION), and check-return applies that same rule to this file.",
+ "type": "object",
+ "additionalProperties": false,
+ "required": ["schema_version", "packet", "round", "max_rounds", "accepted", "judged",
+              "scripted_check", "checked", "accepted_subsets", "deficiencies", "own_observations"],
+ "properties": {
+  "schema_version": {"description": "This schema's $id; the version check-return resolves the validating schema by.", "const": "laplace.packet-judgement/1"},
+  "packet": {"description": "The label of the packet being judged, verbatim from the plan.", "type": "string", "minLength": 1},
+  "round": {"description": "Which judgement round this is, 1-based; it is part of the verdict file name and of the banked row id.", "type": "integer", "minimum": 1},
+  "max_rounds": {"description": "The plan's max_judge_rounds: after this round the orchestrator rules instead of the judge.", "type": "integer", "minimum": 1},
+  "accepted": {"description": "The verdict. True is only legal with at least one own_observations entry whose exit_code is 0 and with no deficiencies.", "type": "boolean"},
+  "judged": {
+   "description": "Exactly what was judged, so the judgement is about a commit and not about a transcript.",
+   "type": "object", "additionalProperties": false, "required": ["candidate", "review_checkout"],
+   "properties": {
+    "candidate": {"description": "The commit the judge checked out, which must equal the return's source.candidate.", "type": "string", "pattern": "^[0-9a-f]{7,40}$"},
+    "review_checkout": {"description": "Absolute path of the judge's OWN checkout; judging the builder's worktree is judging the builder's state.", "type": "string", "minLength": 1}
+   }
+  },
+  "scripted_check": {
+   "description": "The packet's scripted check re-run by the judge in its own checkout, with its exit code.",
+   "type": "object", "additionalProperties": false, "required": ["command", "exit_code", "output_tail"],
+   "properties": {
+    "command": {"description": "The exact command line the judge ran.", "type": "string", "minLength": 1},
+    "exit_code": {"description": "The process exit status as the judge observed it.", "type": "integer"},
+    "output_tail": {"description": "The check's final output, verbatim.", "type": "string", "minLength": 1}
+   }
+  },
+  "checked": {
+   "description": "The sample the judge actually read or ran, item by item: the plan's judge_sample is a floor on this list's length, not a suggestion.",
+   "type": "array", "minItems": 1,
+   "items": {
+    "type": "object", "additionalProperties": false, "required": ["item", "how"],
+    "properties": {
+     "item": {"description": "The claim or file:line that was checked.", "type": "string", "minLength": 1},
+     "how": {"description": "The command run or the lines read that checked it.", "type": "string", "minLength": 1}
+    }
+   }
+  },
+  "accepted_subsets": {
+   "description": "The parts of the work that stand, each with the finding that establishes it; a rejection is still a record of what was accepted.",
+   "type": "array",
+   "items": {
+    "type": "object", "additionalProperties": false, "required": ["id", "status", "finding"],
+    "properties": {
+     "id": {"description": "A stable id for this subset, so round two can be read against round one.", "type": "string", "minLength": 1},
+     "status": {"description": "ACCEPTED when the judge's own observation establishes it; CONTESTED when it does not.", "enum": ["ACCEPTED", "CONTESTED"]},
+     "finding": {"description": "What the judge observed, with the file:line or command that observed it.", "type": "string", "minLength": 1}
+    }
+   }
+  },
+  "deficiencies": {
+   "description": "What blocks acceptance. Non-empty requires accepted false; each entry says what done looks like, so the continuation has a target instead of a complaint.",
+   "type": "array",
+   "items": {
+    "type": "object", "additionalProperties": false,
+    "required": ["id", "item", "problem", "evidence", "done_looks_like"],
+    "properties": {
+     "id": {"description": "A stable id, carried into the continuation and into round two.", "type": "string", "minLength": 1},
+     "item": {"description": "The file:line, command or claim the deficiency is about.", "type": "string", "minLength": 1},
+     "problem": {"description": "What is wrong, stated as a defect and not as a preference.", "type": "string", "minLength": 1},
+     "evidence": {"description": "The judge's own observation that shows it.", "type": "string", "minLength": 1},
+     "done_looks_like": {"description": "The checkable state that would close this deficiency.", "type": "string", "minLength": 1}
+    }
+   }
+  },
+  "own_observations": {
+   "description": "Commands the judge ran itself, with exit codes: the independence evidence. An acceptance needs at least one with exit_code 0.",
+   "type": "array", "minItems": 1,
+   "items": {
+    "type": "object", "additionalProperties": false, "required": ["command", "exit_code", "output_tail"],
+    "properties": {
+     "command": {"description": "The exact command run in the judge's own checkout.", "type": "string", "minLength": 1},
+     "exit_code": {"description": "Its exit status.", "type": "integer"},
+     "output_tail": {"description": "Its final output, verbatim.", "type": "string", "minLength": 1}
+    }
+   }
+  }
+ }
+}

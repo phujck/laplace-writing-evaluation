@@ -1,0 +1,209 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>guide · the eigen engine</title>
+<!-- THE ONE PALETTE (visual §6.1): hymn.css is the sole color/type source. The private
+     :root below is a byte-identical fallback that hymn wins over when it loads; no color
+     literal forks it. The shared shell injects the bar, the L1 context header, and the "?"
+     guide panel this surface is the home of. All behaviour + component color live in
+     static_shared/guide-panes.mjs; this <style> is layout-only. -->
+<link rel="stylesheet" href="/shared/hymn.css">
+<style>
+:root{
+  --bg:#0a0e1a; --panel:#111827; --panel2:#18202f; --edge:#1f2734; --edge2:#2d3547;
+  --ink:#e8e6e3; --ink2:#9ca3af; --dim:#6b7280;
+  --accent:#c9a96e; --teal:#a89a7a; --warn:#b8894a; --bad:#c0392b; --ok:#8aa86a; --keystone:#7eb8da;
+  --mono:"JetBrains Mono",ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;
+}
+*{box-sizing:border-box}
+/* SCROLL LAW (P10 as amended): the page never scrolls — the guide body is its own bounded
+   pane below the shell bar (the conceptric pattern). Anchor jumps scroll the pane. */
+html,body{margin:0;height:100%}
+body{background:var(--bg);color:var(--ink);overflow:hidden;display:flex;flex-direction:column;
+  font:13.5px/1.6 -apple-system,"Segoe UI",Roboto,sans-serif}
+a{color:var(--accent);text-decoration:none}
+.mono{font-family:var(--mono)}
+.dim{color:var(--dim)}
+.err{color:var(--bad)}
+
+/* the guide's column is aligned to the instrument gutter (finding 7): its body started ~100px
+   further right than analytics/altitude; widening the column to the shared instrument measure
+   lands its left edge on the same gutter (the prose blocks stay bounded by their own ch caps). */
+#gd{flex:1;min-height:0;overflow-y:auto;width:100%;max-width:1180px;margin:0 auto;padding:20px 22px 90px}
+h1{font-size:19px;font-weight:600;letter-spacing:.3px;margin:0 0 3px}
+h1 b{color:var(--keystone)}
+.gd-lead{color:var(--ink2);font-size:13px;margin-bottom:8px;max-width:70ch}
+
+/* the jump strip — anchors to the four parts, sticky under the shell's context header */
+#gd-jump{display:flex;flex-wrap:wrap;gap:6px;margin:14px 0 24px;padding-bottom:14px;
+  border-bottom:1px solid var(--edge2)}
+#gd-jump a{font-size:11.5px;font-family:var(--mono);color:var(--ink2);
+  border:1px solid var(--edge2);border-radius:999px;padding:3px 11px;background:var(--panel)}
+#gd-jump a:hover{border-color:var(--accent);color:var(--ink)}
+
+/* section chrome */
+.gd-sec{margin:34px 0 10px;scroll-margin-top:120px}
+.gd-sec h2{font-size:15px;font-weight:600;margin:0 0 4px;letter-spacing:.2px}
+.gd-sec h2 b{color:var(--keystone)}
+.gd-sec .gd-sub{color:var(--ink2);font-size:12px;margin-bottom:14px;max-width:72ch}
+
+/* the one-thing panel */
+.gd-onething{border:1px solid var(--edge2);border-left:3px solid var(--keystone);
+  border-radius:9px;background:var(--panel);padding:14px 16px;margin:10px 0 22px;
+  font-size:13.5px;line-height:1.65;max-width:78ch}
+
+/* the pipeline diagram — plain HTML boxes, no external assets */
+.gd-pipe{display:flex;flex-wrap:wrap;align-items:stretch;gap:0;margin:6px 0 8px}
+.gd-stage{flex:1 1 128px;min-width:128px;border:1px solid var(--edge2);border-radius:9px;
+  background:var(--panel);padding:11px 12px;position:relative;margin:0 14px 14px 0}
+.gd-stage:hover{border-color:var(--accent);background:var(--panel2)}
+.gd-stage .st-t{font-weight:640;font-size:12.5px;color:var(--ink);margin-bottom:5px}
+.gd-stage .st-w{font-size:11.5px;color:var(--ink2);line-height:1.5}
+.gd-stage .st-cost{margin-top:7px;font-family:var(--mono);font-size:9.5px;color:var(--dim);
+  text-transform:uppercase;letter-spacing:.05em}
+.gd-stage .st-cost.heavy{color:var(--warn)}
+/* the arrow between stages (a CSS chevron, no asset) */
+.gd-stage::after{content:"→";position:absolute;right:-13px;top:50%;transform:translateY(-50%);
+  color:var(--edge2);font-size:15px;font-weight:700;z-index:1}
+.gd-stage:last-child::after{content:""}
+@media (max-width:560px){ .gd-stage::after{content:"↓";right:50%;top:auto;bottom:-13px;transform:translateX(50%)} }
+
+/* the glossary */
+.gd-gloss{display:grid;grid-template-columns:1fr;gap:9px;margin-top:8px}
+.gd-term{border:1px solid var(--edge2);border-radius:8px;background:var(--panel);padding:10px 13px}
+/* THE TWO-ACCENT LAW (§1.6 / waveF_two_accent): teal is RESERVED for the runnable-fix /
+   offer / stale-remedy family — never plain decoration. A glossary term name is a
+   definitional label, not a capability-state signal, so it takes the PRIMARY blue accent
+   (a documented decorative accent), never teal. */
+.gd-term .tm{font-weight:640;color:var(--accent);font-size:12.5px;font-family:var(--mono)}
+.gd-term .df{color:var(--ink2);font-size:12.5px;line-height:1.55;margin-top:3px}
+@media (min-width:720px){ .gd-gloss{grid-template-columns:1fr 1fr} }
+
+/* the surface cards (the census, from the yamls) */
+.gd-surf{border:1px solid var(--edge2);border-radius:10px;background:var(--panel);
+  padding:13px 15px;margin:12px 0}
+.gd-surf.notrostered{border-style:dashed}
+.gd-surf-h{display:flex;align-items:baseline;gap:9px;flex-wrap:wrap;margin-bottom:4px}
+.gd-surf-h .snm{font-size:14px;font-weight:640;color:var(--ink)}
+.gd-surf-h .spath{font-family:var(--mono);font-size:11px;color:var(--accent)}
+.gd-surf-h .stag{font-family:var(--mono);font-size:9.5px;color:var(--dim);
+  border:1px solid var(--edge2);border-radius:999px;padding:1px 7px}
+.gd-surf-h .stag.more{color:var(--ink2)}
+.gd-surf-h .stag.engine{color:var(--warn);border-color:rgba(224,175,104,.4)}
+.gd-purpose{color:var(--ink2);font-size:12.5px;line-height:1.5;margin-bottom:9px;max-width:76ch}
+.gd-reads{font-size:11px;color:var(--dim);margin:2px 0 9px}
+.gd-reads .rd{font-family:var(--mono);color:var(--ink2);
+  border:1px solid var(--edge);border-radius:5px;padding:0 5px;margin-right:5px;
+  display:inline-block;margin-bottom:4px;white-space:nowrap}
+.gd-verbs{display:flex;flex-direction:column;gap:7px;margin-top:4px}
+.gd-verb{border:1px solid var(--edge);border-radius:8px;background:var(--panel2);padding:8px 11px}
+.gd-verb-top{display:flex;align-items:baseline;gap:8px;flex-wrap:wrap}
+.gd-verb-nm{font-family:var(--mono);font-weight:700;font-size:11.5px;color:var(--ink)}
+.gd-verb-route{font-family:var(--mono);font-size:10px;color:var(--dim)}
+.gd-verb-state{font-size:9px;font-weight:700;text-transform:uppercase;letter-spacing:.06em;
+  padding:1px 6px;border-radius:4px;background:var(--ok);color:var(--bg)}
+.gd-verb-does{margin-top:5px;font-size:12px;line-height:1.5;color:var(--ink2)}
+/* the "what will this do" line carries a PSU chip when the does names one */
+.gd-psu{font-family:var(--mono);font-size:9.5px;font-weight:700;text-transform:uppercase;
+  letter-spacing:.05em;padding:1px 7px;border-radius:999px;border:1px solid var(--edge2);margin-left:4px}
+.gd-psu.local{color:var(--ok);border-color:rgba(158,206,106,.4)}
+.gd-psu.heavy{color:var(--warn);border-color:rgba(224,175,104,.4)}
+.gd-verb-does.pending{color:var(--dim);font-style:italic}
+.gd-noverbs{font-size:11.5px;color:var(--dim);font-style:italic}
+.gd-undeclared{font-size:11.5px;color:var(--warn)}
+
+/* the session story */
+.gd-story{display:flex;flex-direction:column;gap:10px;margin-top:8px}
+.gd-beat{border:1px solid var(--edge2);border-radius:9px;background:var(--panel);padding:11px 14px}
+.gd-beat .bt{font-weight:640;color:var(--ink);font-size:12.5px;margin-bottom:4px}
+.gd-beat .bb{color:var(--ink2);font-size:12.5px;line-height:1.55}
+
+/* the promises ledger */
+.gd-prom-counts{display:flex;flex-wrap:wrap;gap:8px;margin:6px 0 14px;font-size:11.5px}
+.gd-prom-counts .pc{border:1px solid var(--edge2);border-radius:999px;padding:2px 10px;
+  background:var(--panel);color:var(--ink2)}
+.gd-prom-counts .pc b{font-family:var(--mono);color:var(--ink)}
+.gd-prom{border:1px solid var(--edge2);border-radius:9px;background:var(--panel);
+  padding:11px 14px;margin:9px 0}
+.gd-prom.his{border-left:3px solid var(--keystone)}
+.gd-prom.eigen{border-left:3px solid var(--accent)}
+.gd-prom-h{display:flex;align-items:baseline;gap:9px;flex-wrap:wrap;margin-bottom:4px}
+.gd-prom-h .pid{font-family:var(--mono);font-size:10.5px;color:var(--dim)}
+.gd-prom-h .pdir{font-size:9px;font-weight:700;text-transform:uppercase;letter-spacing:.06em;
+  padding:1px 7px;border-radius:4px}
+.gd-prom-h .pdir.his{background:var(--keystone);color:var(--bg)}
+.gd-prom-h .pdir.eigen{background:var(--accent);color:var(--bg)}
+.gd-prom-h .pdate{font-family:var(--mono);font-size:10px;color:var(--dim);margin-left:auto}
+.gd-prom-ask{font-size:12.5px;line-height:1.55;color:var(--ink)}
+.gd-prom-owner{font-size:11px;color:var(--dim);margin-top:5px}
+.gd-prom-owner b{color:var(--ink2);font-weight:600}
+
+.gd-skel{height:16px;border-radius:6px;margin:8px 0;
+  background:linear-gradient(90deg,var(--panel2) 25%,var(--edge2) 37%,var(--panel2) 63%);
+  background-size:400% 100%;animation:gd-shimmer 1.6s ease infinite}
+@keyframes gd-shimmer{0%{background-position:100% 50%}100%{background-position:0 50%}}
+@media (max-width:600px){ #gd{padding:14px 12px 60px} }
+</style>
+</head>
+<body>
+<main id="gd">
+  <h1>the eigen engine · <b>the guide</b></h1>
+  <div class="gd-lead">what the engine is and what every surface does, at a structural level —
+    written for someone who has never seen this project. Each verb answers one question before
+    you click it: <b>what will this do?</b> (what it writes, what it costs, its power/compute class).</div>
+
+  <nav id="gd-jump">
+    <a href="#guide-engine">what the engine is</a>
+    <a href="#guide-surfaces">what each surface does</a>
+    <a href="#guide-story">how work happens</a>
+    <a href="#guide-promises">the promises ledger</a>
+  </nav>
+
+  <section class="gd-sec" id="guide-engine">
+    <h2>a · what the <b>engine</b> is</h2>
+    <div class="gd-sub">one graded concept graph and one operation over it — read it once and the
+      rest of the interface follows.</div>
+    <div id="gd-onething"><div class="gd-skel" style="width:90%"></div><div class="gd-skel" style="width:80%"></div></div>
+    <h2 style="font-size:13px;margin-top:20px">the pipeline — corpus to a released object</h2>
+    <div class="gd-sub">a project moves left to right; the heavy language-model legs are marked, and
+      those are the ones the engine banks as work orders rather than run on the spot.</div>
+    <div id="gd-pipe"><div class="gd-skel" style="width:100%;height:60px"></div></div>
+    <h2 style="font-size:13px;margin-top:24px">the words you need</h2>
+    <div id="gd-gloss"><div class="gd-skel" style="width:100%;height:40px"></div></div>
+  </section>
+
+  <section class="gd-sec" id="guide-surfaces">
+    <h2>b · what each <b>surface</b> does</h2>
+    <div class="gd-sub">one section per served surface, rendered from the machine-checked contract
+      files so it can't drift from what the code actually enforces. Each surface names what it reads
+      and, for every verb, what firing it will do — what it writes, its cost, its power/compute class.</div>
+    <div id="gd-surfaces"><div class="gd-skel" style="width:100%;height:80px"></div></div>
+  </section>
+
+  <section class="gd-sec" id="guide-story">
+    <h2>c · how <b>work</b> actually happens</h2>
+    <div class="gd-sub">the engine has no memory between sessions; it reconstructs itself from what
+      it wrote down last time. Here is the shape of a session.</div>
+    <div id="gd-story"><div class="gd-skel" style="width:100%;height:50px"></div></div>
+  </section>
+
+  <section class="gd-sec" id="guide-promises">
+    <h2>d · the <b>promises</b> ledger</h2>
+    <div class="gd-sub">what is owed, tracked by name, in both directions — the engine's promises to
+      the author and his to the engine. Only the OPEN rows are shown; every one of them, none hidden.</div>
+    <div id="gd-prom-counts"></div>
+    <div id="gd-promises"><div class="gd-skel" style="width:100%;height:60px"></div></div>
+  </section>
+</main>
+
+<script defer src="/shared/shell.js"></script>
+<script type="module">
+// the ONLY inline script: bootstrap the guide renderer (all network rides store.fetchJSON,
+// the one gateway, inside the module).
+import { initGuide } from "/shared/guide-panes.mjs";
+initGuide();
+</script>
+</body>
+</html>

@@ -1,0 +1,78 @@
+{
+  "schema_version": "mip.visual-drawing-code/1",
+  "renderer": "Native visual_render tikz-pdf. No custom experiment producer or benchmark run required.",
+  "data_pin": {
+    "id": "ART-a7444207758f4661859c3c9a1e6547b0",
+    "sha256": "d4082c8bbe5ec277386a1e3f5cf266b111739fe6b0559fce82320163819bf282"
+  },
+  "reader_spec_pin": {
+    "id": "ART-890c0fd20e9b49d7a3b8e3d586a80b09",
+    "sha256": "ad3dba85816d849234a6f114a895e2d30945a9eced8c5b0fe6bbd023c6f23c14"
+  },
+  "witness_pin": {
+    "id": "ART-59561bf302c444c7a53c1f44a17d8be7",
+    "sha256": "46deff7fd032354e59c40dfd7d2c03d79be49a393929101d73f4206e470811dc"
+  },
+  "specs": [
+    {
+      "id": "mip_news_matched",
+      "title": "Matched news evidence delivery",
+      "question": "Compare three retrieval routes after common evidence delivery and reading, not reward exploratory instruction selection.",
+      "caption": "Matched news retrieval on 172 previously examined MultiHop-RAG questions. Counts are sealed normalised exact matches, not evidence coverage. All arms use labelled two-sentence windows, cosine plus 0.5 normalised BM25, deterministic article-ordered delivery within 2000 cl100k tokens, and the same Claude Sonnet 5.5 low-effort reader with answer-form rules. Facet-conditioned retrieval ranks within exact outlet/date supports and merges facets round-robin. RAG uses a 200-candidate pool with MMR relevance coefficient 0.7. RAPTOR searches 1747 summary nodes plus the same labelled windows without MMR. The rules were developed after examining failures on all 172 questions. These descriptive reused-draw counts show a tie between facet-conditioned retrieval and RAG, with RAPTOR four answers lower, not established superiority or equivalence.",
+      "kind": "tikz",
+      "tikz": "\\begin{tikzpicture}[font=\\sffamily\\fontsize{10}{12}\\selectfont,x=1cm,y=1cm]\n\\node[anchor=west,font=\\sffamily\\bfseries\\fontsize{13}{15}\\selectfont] at (-5.1,4.1) {News: matched retrieval and reading};\n\\node[anchor=west] at (-5.1,3.55) {172 examined questions \\quad 2000-token allowance \\quad common answer rules};\n\\draw[gray!20] (0.0000,0) -- (0.0000,3.15);\n\\node[anchor=north] at (0.0000,-0.08) {0};\n\\draw[gray!20] (3.0523,0) -- (3.0523,3.15);\n\\node[anchor=north] at (3.0523,-0.08) {50};\n\\draw[gray!20] (6.1047,0) -- (6.1047,3.15);\n\\node[anchor=north] at (6.1047,-0.08) {100};\n\\draw[gray!20] (9.1570,0) -- (9.1570,3.15);\n\\node[anchor=north] at (9.1570,-0.08) {150};\n\\draw[gray!20] (10.5000,0) -- (10.5000,3.15);\n\\node[anchor=north] at (10.5000,-0.08) {172};\n\\node[anchor=east,align=right,text width=4.8cm] at (-0.25,2.7) {Facet-conditioned retrieval};\n\\fill[blue!70!black] (0,2.46) rectangle (9.2791,2.9400000000000004);\n\\node[anchor=west] at (9.4191,2.7) {152/172};\n\\node[anchor=east,align=right,text width=4.8cm] at (-0.25,1.6500000000000001) {RAG (MMR)};\n\\fill[green!50!black] (0,1.4100000000000001) rectangle (9.2791,1.8900000000000001);\n\\node[anchor=west] at (9.4191,1.6500000000000001) {152/172};\n\\node[anchor=east,align=right,text width=4.8cm] at (-0.25,0.6000000000000001) {RAPTOR (summary + window)};\n\\fill[violet!65!black] (0,0.3600000000000001) rectangle (9.0349,0.8400000000000001);\n\\node[anchor=west] at (9.174900000000001,0.6000000000000001) {148/172};\n\\draw (0,0) -- (10.5,0);\n\\node[anchor=north] at (5.25,-0.65) {Normalised exact matches (questions)};\n\\node[anchor=west,align=left,text width=15.7cm,font=\\sffamily\\fontsize{9}{11}\\selectfont] at (-5.1,-1.5) {Claude Sonnet 5.5, low effort. Reused development questions, not a fresh held-out test.};\n\\end{tikzpicture}",
+      "result_ids": [
+        "mip-news-recovery-20261110"
+      ],
+      "style": {
+        "preview_dpi": 180,
+        "font_size": 10
+      }
+    },
+    {
+      "id": "mip_frames_noactivation",
+      "title": "FRAMES: distinguish the endpoint",
+      "question": "Show that answer-form matching and rubric correctness answer different questions under the same recommended no-activation route.",
+      "caption": "FRAMES outcomes on the same 190 previously examined questions, with activation switched off for linked-passage retrieval. Both arms receive 8000 initial tokens, the same steps instruction and at most one triggered retrieval of 4000 genuinely new tokens for reader-declared missing needs. Linked-passage retrieval uses a 50-piece head and a one-hop link witness with merged-section delivery. RAG uses MMR relevance coefficient 0.7 over a 200-candidate pool. Its separate 0.4 coefficient weights the dense seed, not MMR. Pass-2 missing-need ranking combines the phrase score with 0.5 times the question score. The containment proxy is normalised substring/first-clause matching or token-F1 at least 0.5, subject to a three-times-reference length guard, with exact matches also counted. Judged correctness uses the banked majority rubric, not that proxy. The judged discordances are seven linked-passage-only successes and six RAG-only successes. The observed one-answer difference is modest, not evidence of general superiority. Page presence alone need not deliver an answer-bearing passage, particularly where the plaintext corpus omits tables.",
+      "kind": "tikz",
+      "tikz": "\\begin{tikzpicture}[font=\\sffamily\\fontsize{10}{12}\\selectfont,x=1cm,y=1cm]\n\\node[anchor=west,font=\\sffamily\\bfseries\\fontsize{13}{15}\\selectfont] at (-6.0,5.15) {FRAMES: two distinct answer endpoints};\n\\node[anchor=west] at (-6.0,4.6) {190 examined questions \\quad 8000 tokens + one triggered pass of up to 4000 new tokens};\n\\node[anchor=west,font=\\sffamily\\bfseries] at (-6.0,3.92) {Containment proxy};\n\\node[anchor=west,font=\\sffamily\\bfseries] at (-6.0,1.67) {Judged correctness};\n\\draw[gray!20] (0.0000,-0.4) -- (0.0000,3.65);\n\\node[anchor=north] at (0.0000,-0.48) {0};\n\\draw[gray!20] (2.6316,-0.4) -- (2.6316,3.65);\n\\node[anchor=north] at (2.6316,-0.48) {50};\n\\draw[gray!20] (5.2632,-0.4) -- (5.2632,3.65);\n\\node[anchor=north] at (5.2632,-0.48) {100};\n\\draw[gray!20] (7.8947,-0.4) -- (7.8947,3.65);\n\\node[anchor=north] at (7.8947,-0.48) {150};\n\\draw[gray!20] (10.0000,-0.4) -- (10.0000,3.65);\n\\node[anchor=north] at (10.0000,-0.48) {190};\n\\node[anchor=east,align=right,text width=5.6cm,font=\\sffamily\\fontsize{9.5}{11}\\selectfont] at (-.25,3.13) {Linked-passage retrieval\\\\(activation off)};\n\\fill[blue!70!black] (0,2.9099999999999997) rectangle (6.473684210526316,3.35);\n\\node[anchor=west] at (6.593684210526316,3.13) {123/190};\n\\node[anchor=east,align=right,text width=5.6cm,font=\\sffamily\\fontsize{9.5}{11}\\selectfont] at (-.25,2.31) {RAG (MMR)};\n\\fill[green!50!black] (0,2.09) rectangle (6.157894736842105,2.5300000000000002);\n\\node[anchor=west] at (6.277894736842105,2.31) {117/190};\n\\node[anchor=east,align=right,text width=5.6cm,font=\\sffamily\\fontsize{9.5}{11}\\selectfont] at (-.25,0.8799999999999999) {Linked-passage retrieval\\\\(activation off)};\n\\fill[blue!70!black] (0,0.6599999999999999) rectangle (6.684210526315789,1.0999999999999999);\n\\node[anchor=west] at (6.8042105263157895,0.8799999999999999) {127/190};\n\\node[anchor=east,align=right,text width=5.6cm,font=\\sffamily\\fontsize{9.5}{11}\\selectfont] at (-.25,0.05999999999999994) {RAG (MMR)};\n\\fill[green!50!black] (0,-0.16000000000000006) rectangle (6.63157894736842,0.2799999999999999);\n\\node[anchor=west] at (6.7515789473684205,0.05999999999999994) {126/190};\n\\draw (0,-.4) -- (10,-.4);\n\\node[anchor=north] at (5,-1.1) {Questions meeting the named endpoint};\n\\node[anchor=west,align=left,text width=16.3cm,font=\\sffamily\\fontsize{9}{11}\\selectfont] at (-6.0,-2) {Judged discordances: 7 linked-passage-only successes, 6 RAG-only successes.\\\\Same Sonnet 5.5 low-effort reader. The containment proxy is not semantic entailment.};\n\\end{tikzpicture}",
+      "result_ids": [
+        "mip-frames-recovery-20261110"
+      ],
+      "style": {
+        "preview_dpi": 180,
+        "font_size": 10
+      }
+    },
+    {
+      "id": "mip_wyoming_witness",
+      "title": "A located quote is narrower than its assertion",
+      "question": "Expose a concrete provenance/entailment boundary rather than present a generic source arrow.",
+      "caption": "Source location and claim support in the Wyoming climate example. The stored witness is the first sentence of a three-sentence source unit. It supports the southeastern-vulnerability statement. The westward decline and small, brief tornado statements require the following source context, reproduced here. The five-field record is a model-produced assertion, not an entailment certificate. Its returned unit identifier contains a recorded typo and was assigned by position to the requested source unit. The original request, response and processed span identities remain in the supporting record. A located quote establishes provenance for that span, not support for every field.",
+      "kind": "tikz",
+      "tikz": "\\begin{tikzpicture}[font=\\sffamily\\fontsize{9.5}{12}\\selectfont,x=1cm,y=1cm]\n\\node[anchor=west,font=\\sffamily\\bfseries\\fontsize{13}{15}\\selectfont] at (0,.7) {A located quote is narrower than its assertion};\n\\node[draw=black!35,fill=gray!4,rounded corners,anchor=north west,align=left,text width=16cm,inner sep=8pt] (source) at (0,0) {\\textbf{Source unit: Wyoming - Climate}\\\\[5pt]\n\\textcolor{blue!70!black}{The southeastern corner of the state is the most vulnerable part of the state to tornado activity.}\\\\[4pt]\nMoving away from that point and westwards, the incidence of tornadoes drops dramatically with the west part of the state showing little vulnerability. Tornadoes, where they occur, tend to be small and brief, unlike some of those that occur farther east.};\n\\node[draw=blue!70!black,rounded corners,anchor=north west,align=left,text width=7.35cm,inner sep=8pt] (assertion) at (0,-3.45) {\\textbf{Extracted five-field assertion}\\\\[5pt]\n\\textbf{Subject:} southeastern corner of the state\\\\[3pt]\n\\textbf{Object:} tornado vulnerability\\\\[3pt]\n\\textbf{Mechanism:} Most vulnerable to tornadoes; incidence drops dramatically moving west\\\\[3pt]\n\\textbf{Conditions:} Where they occur\\\\[3pt]\n\\textbf{Consequences:} Tornadoes tend to be small and brief, unlike some farther east\\\\[3pt]\n};\n\\node[draw=blue!70!black,rounded corners,anchor=north west,align=left,text width=7.35cm,inner sep=8pt] (quote) at (8.75,-3.45) {\\textbf{Located witness}\\\\[5pt]\n\\lq\\lq The southeastern corner of the state is the most vulnerable part of the state to tornado activity.\\rq\\rq\\\\[5pt]\nThis span supports southeastern vulnerability. It does not state the westward decline or the small, brief character of tornadoes.};\n\\node[draw=black!35,fill=gray!4,rounded corners,anchor=north west,align=left,text width=7.35cm,inner sep=8pt] (context) at (8.75,-6.65) {\\textbf{Additional support from context}\\\\[5pt]\nThe second and third source sentences supply those additional claims. The source section identifies the state as Wyoming.};\n\\draw[->,thick] (4.0,-2.55) -- node[right,font=\\sffamily\\fontsize{9}{11}\\selectfont] {extraction} (assertion.north);\n\\draw[->,thick] (12.7,-2.55) -- node[right,font=\\sffamily\\fontsize{9}{11}\\selectfont] {span location} (quote.north);\n\\node[anchor=north west,align=left,text width=16.2cm,font=\\sffamily\\fontsize{9}{11}\\selectfont] at (0,-9.45) {\\textbf{Provenance is not field entailment.} The returned unit label contained a typo. Its recorded position assignment and original identities are retained in the paper's supporting source example.};\n\\end{tikzpicture}",
+      "result_ids": [
+        "mip-wyoming-source-context"
+      ],
+      "style": {
+        "preview_dpi": 180,
+        "font_size": 10
+      }
+    },
+    {
+      "id": "mip_longmem_completed",
+      "title": "LongMem: correctness is not evidence coverage",
+      "question": "Make48/42 denominators and4k/8k budgets legible without turning incomplete later judging into an accuracy bar.",
+      "caption": "Completed LongMem readout on a shared improved index at 4000- and 8000-token allowances, using Claude Sonnet 5.5 at low effort and the same rules instruction. Correctness includes all 48 questions, including six abstention questions. Complete positive-evidence coverage counts questions for which every annotated required turn is delivered, restricted to the 42 positive-evidence questions. This is turn-ID coverage, not semantic entailment or answer correctness. Relational and dense retrieval coincide on both endpoints in this shared-index setting. Hybrid retrieval improves from 40 to 44 correct answers and from 33 to 37 positive questions with all required turns as the allowance increases. The distinct historical 44-annotation endpoint includes two annotated abstentions and is retained separately in the audit, not relabelled as positive coverage.",
+      "kind": "tikz",
+      "tikz": "\\begin{tikzpicture}[font=\\sffamily\\fontsize{10}{12}\\selectfont]\n\\node[anchor=north west,align=left] at (0,0) {\\begin{minipage}{16.8cm}\n{\\sffamily\\bfseries\\fontsize{13}{15}\\selectfont LongMem: correctness is not evidence coverage}\\\\[6pt]\n48 completed questions \\quad shared improved index \\quad Sonnet 5.5, low effort\\\\[12pt]\n\\renewcommand{\\arraystretch}{1.6}\n\\begin{tabular}{lrrrr}\n & \\multicolumn{2}{c}{Answer correctness} & \\multicolumn{2}{c}{Complete positive evidence}\\\\\nMethod & 4000 tokens & 8000 tokens & 4000 tokens & 8000 tokens\\\\ \\hline\nRelational retrieval & 44/48 & 45/48 & 41/42 & 41/42 \\\\\nDense retrieval & 44/48 & 45/48 & 41/42 & 41/42 \\\\\nHybrid retrieval & 40/48 & 44/48 & 33/42 & 37/42 \\\\\n\\hline\n\\end{tabular}\\\\[12pt]\n\\textbf{Correctness:} all 48 questions, including six abstention questions.\\\\[4pt]\n\\textbf{Positive evidence:} all annotated required turns delivered for each of 42\\\\\npositive-evidence questions. Turn presence is not an entailment certificate.\\\\[6pt]\nToken values are context allowances. The 44-annotation endpoint is distinct\\\\\nand is not used as the denominator of either displayed outcome.\n\\end{minipage}};\n\\end{tikzpicture}",
+      "result_ids": [
+        "mip-longmem-recovery-20261110"
+      ],
+      "style": {
+        "preview_dpi": 180,
+        "font_size": 10
+      }
+    }
+  ]
+}

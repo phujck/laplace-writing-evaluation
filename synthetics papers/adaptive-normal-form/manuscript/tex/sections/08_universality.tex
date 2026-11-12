@@ -1,0 +1,56 @@
+\section{Exact trees and strict depth}
+\label{hrec:app:depth}
+Conditional independence of disjoint binary subtrees proves Eq.~\eqref{hrec:eq:tree} inductively. Differentiating each composition at zero gives Eq.~\eqref{hrec:eq:tree-slope}. For odd \(n\),
+\[
+ \frac{a(n+2)}{a(n)}=\frac{n+2}{n+1}.
+\]
+Starting with \(a(1)=1\), the square of this ratio exceeds
+\((n+3)/(n+1)\) by \(1/(n+1)^2\). Induction gives
+\(a(n)\ge\sqrt{(n+1)/2}\), and hence Eq.~\eqref{hrec:eq:tree-bound}.
+Also \(a(n)=\E|S_n|<\sqrt{\E S_n^2}=\sqrt n\) for odd \(n\ge3\), while \(a(n)>1\). A fixed-span tree therefore has response exponent \(\log_n a(n)\) strictly between zero and one half. In particular, all-three trees have \(G=\beta(3/2)^L=\beta N^{\log_3(3/2)}\), which still grows with size.
+
+For Eq.~\eqref{hrec:eq:depth-law}, let
+\(Q=K_{\rm ref}(N/N_{\rm ref})^p/K_c\).
+Taking logarithms in \(Qd^{L-1}<1\) yields
+\(L>1+\log Q/\log(1/d)\).
+The smallest integer satisfying this strict inequality is Eq.~\eqref{hrec:eq:integer-floor}, with the physical lower bound one. This calculation neither invents factorisations nor extends the gain law outside its starting domain.
+
+At a fixed depth, solving the same gain equality for size gives Eq.~\eqref{hrec:eq:critical-size}. For a zero exponent, the gain is fixed by its prefactor. For a negative exponent, the stable set is eventually reached only within the assumed continuing size law and domain. A susceptibility exponent without the controller's derivative power does not determine any of these gain statements.
+
+\section{Finite-horizon control}
+\label{hrec:app:control}
+Expanding \((aI+cS)^j\) proves Eq.~\eqref{hrec:eq:impulse}, with \(0^0=1\) in the polynomial convention. When \(gc\ne0\), the triangular power columns prove the rank claim. If \(H<L\), a full defect is reachable exactly when its components above index \(H\) vanish. At \(H=0\), only zero defect is reachable, at zero effort. If \(g=0\), no nonzero defect is reachable. If \(c=0,g\ne0,H\ge1\), only the base coordinate can be controlled, except that base and top coincide for \(L=1\).
+
+For a reachable defect, put \(F_c=\mathcal M R_H^{-1/2}\) and \(y=R_H^{1/2}\bm v\). The minimum Euclidean-norm solution of \(F_cy=b_q\) is \(F_c^+b_q\). Every other feasible solution differs by an element of \(\ker F_c\), perpendicular to the minimum solution, so Pythagoras increases its squared norm. Using \(F_c^+=F_c^\top(F_cF_c^\top)^+\) proves Eq.~\eqref{hrec:eq:min-effort}. Positive definiteness of \(R_H\) gives uniqueness. An unreachable defect belongs to a different least-squares problem, not this constrained optimum.
+
+For uniform \(w\), define \(W_H=\sum_{j=0}^{H-1}A^jBB^\top(A^\top)^j\). A nonzero reachable top defect costs
+\[
+ \begin{aligned}
+ J_{\rm top}&=\frac{w d_y^2}{e_L^\top W_He_L},\\
+ J_{\rm full}&=wq^\top W_H^+q.
+ \end{aligned}
+\]
+for a reachable full target. The scalar task relaxes the full one when they prescribe the same top component, so \(J_{\rm top}\le J_{\rm full}\). Equality holds precisely when the unique scalar optimum also reaches the full target.
+
+For the zero-initial-state shift,
+\[
+ W_H=g^2\diag(1,c^2,\ldots,
+ c^{2(\min(H,L)-1)},0,\ldots,0).
+\]
+This proves the top/pure-apex coincidence and saturation in Eq.~\eqref{hrec:eq:shift-cost}. A general full target at \(H\ge L\) instead costs
+\((w/g^2)\sum_{i=1}^Lq_i^2c^{-2(i-1)}\).
+After the input stops, a shift state disappears within at most \(L\) further updates. A terminal pulse is therefore not a maintenance policy.
+
+For the persistent chain,
+\[
+ e_L^\top W_He_L
+ =g^2c^{2(L-1)}
+ \sum_{j=L-1}^{H-1}\binom j{L-1}^2 a^{2(j-L+1)}.
+\]
+Every added term is positive for \(a\ne0\) once \(H\ge L\), proving strict decrease of top-only effort for a fixed nonzero target and zero initial state. Full-state monotonicity before full rank follows by prepending a zero to an old chronological control: with zero initial state it reaches the same target one update later at the same uniform cost. After full rank, \(W_{H+1}=W_H+v_Hv_H^\top\) proves Eq.~\eqref{hrec:eq:horizon}. For the stated equality example,
+\[
+ W_2=\begin{pmatrix}2&1/2\\1/2&1/4\end{pmatrix},
+ \qquad W_2^{-1}v_2=(-1,6)^\top.
+\]
+Its inner product with \((6,1)^\top\) is zero, and both costs are exactly 20. Nonzero initial state changes the required defect with \(H\), and nonuniform time weights change the comparison. Neither is covered by the fixed-target uniform-metric theorem.
+

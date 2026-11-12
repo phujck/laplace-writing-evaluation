@@ -1,0 +1,51 @@
+{
+  "producers": [
+    {
+      "id": "slg-finite-analytic-20261111-v2",
+      "scope": "project",
+      "executable": "research/slg-analytic-20261111-v2/finite_checks.py",
+      "modes": [
+        "smoke"
+      ],
+      "allowed_args": {},
+      "dependencies": [
+        "research/slg-analytic-20261111-v2/parameters.json",
+        "research/slg-analytic-20261111-v2/original_numerical_demonstrations_v0.py"
+      ],
+      "timeout_seconds": 60,
+      "project": "self-consistent-loss-geometries"
+    },
+    {
+      "id": "slg-policy-coverage-20261111-v3",
+      "executable": "research/slg-policy-coverage-20261111-v3/coverage_checks.py",
+      "scope": "project",
+      "modes": [
+        "smoke"
+      ],
+      "allowed_args": {},
+      "dependencies": [
+        "research/slg-policy-coverage-20261111-v3/parameters.json",
+        "research/slg-analytic-20261111-v2/finite_checks.py",
+        "research/slg-analytic-20261111-v2/parameters.json"
+      ],
+      "timeout_seconds": 30,
+      "project": "self-consistent-loss-geometries"
+    },
+    {
+      "id": "slg-scientific-figures-20261111",
+      "executable": "research/slg-scientific-figures-20261111/scientific_tables.py",
+      "scope": "project",
+      "modes": [
+        "full"
+      ],
+      "allowed_args": {},
+      "dependencies": [
+        "research/slg-scientific-figures-20261111/original_numerical_demonstrations.py",
+        "research/slg-analytic-20261111-v2/finite_checks.py",
+        "evidence/SLG_VISUAL_PRODUCTION_2026-11-11/finite-figure-protocol.json"
+      ],
+      "timeout_seconds": 180,
+      "project": "self-consistent-loss-geometries"
+    }
+  ]
+}

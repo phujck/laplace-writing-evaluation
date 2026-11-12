@@ -1,0 +1,29 @@
+// Meaning-only consumers of the actual owner facets/codes. No task writes,
+// backend recomputation, synthetic completion or authority inference.
+import {test} from 'node:test';
+import assert from 'node:assert/strict';
+import {readFile} from 'node:fs/promises';
+import {completedTaskChip,standingChip,taskStateChips,taskStatusName,taskStatusMeaning} from '../src/laplace/web/static_shared/workspace-work-navigator.mjs';
+const source=await readFile(new URL('../src/laplace/web/static_shared/workspace-work.mjs',import.meta.url),'utf8');
+const code=source.slice(source.indexOf('export function workStandingLabel'),source.indexOf('export function workCountSummary')).replaceAll('export function','function');
+const {label,tone}=new Function('completedTaskChip','parentContinuationLabel','parentContinuation',code+';return {label:workStandingLabel,tone:workStandingTone};')(completedTaskChip,()=>'',()=>({}));
+test('completed stale/unknown proof remains completed before effective blocked, while unmet unfinished work stays separate',()=>{
+ const base={status:'blocked',recorded_status:'done',lifecycle:{status:'done',completed:true,closed:true},readiness:{status:'CLOSED'},current_acceptance:{status:'REVIEW_REQUIRED',review_required:true,kind:'EVIDENCE_CHANGED'}},before=structuredClone(base);
+ assert.equal(label(base),'Completed — evidence needs rechecking');assert.equal(tone(base),'attention');assert.equal(standingChip({...base,standing:{group:'attention',facts:[]}}).label,label(base));
+ const unknown={...base,current_acceptance:{status:'UNKNOWN',review_required:true}};assert.equal(label(unknown),'Completed — evidence unavailable');assert.ok(!label(unknown).includes('failed'));
+ const current={...base,current_acceptance:{status:'CURRENT',review_required:false}};assert.equal(tone(current),'historical');assert.match(label(current),/^Completed/);
+ const unfinished={...base,recorded_status:'open',lifecycle:{status:'open',completed:false,closed:false},readiness:{status:'BLOCKED'}};assert.equal(completedTaskChip(unfinished),null);assert.equal(tone(unfinished),'neutral');assert.ok(!label(unfinished).startsWith('Completed'));assert.deepEqual(base,before);
+});
+test('compact navigation only uses exact owner done facts, not the blocked status or review flag alone',()=>{
+ const row={status:'blocked',standing:{group:'attention',facts:[{code:'observed-running',text:'Observed running'},{code:'done-review-required',text:'Done; acceptance review required'}]}};assert.equal(standingChip(row).label,'Completed — evidence needs rechecking');
+ assert.equal(standingChip({standing:{group:'attention',facts:[{code:'done-unknown',text:'Done; acceptance unknown'}]}}).label,'Completed — evidence unavailable');
+ assert.equal(completedTaskChip({status:'done'}),null,'legacy status alone does not invent authoritative lifecycle');assert.equal(completedTaskChip({current_acceptance:{review_required:true}}),null);
+});
+test('status action labels preserve enum values and explain close/reopen/progress without pretending execution or review passed',()=>{
+ assert.equal(taskStatusName('done'),'Mark done');assert.match(taskStatusMeaning('done'),/required reviews/);assert.match(taskStatusMeaning('open'),/Reopens.*history/);assert.match(taskStatusMeaning('withdrawn'),/without claiming its goal was completed/);assert.match(taskStatusMeaning('in-progress'),/does not start execution/);assert.equal(taskStatusName('unoffered'),'unoffered');
+});
+
+test('observed running remains beside historical completion and prerequisite waits are neutral',()=>{const row={lifecycle:{completed:true,closed:true},current_acceptance:{status:'CURRENT'},standing:{group:'settled',facts:[{code:'observed-running',text:'Running (in-app)'},{code:'done-current',text:'Done; acceptance current'}]}};assert.deepEqual(taskStateChips(row).map(x=>x.label),['Completed — evidence current at this check','Running (in-app)']);assert.equal(standingChip({standing:{group:'blocked',facts:[{code:'blocked-prerequisite',text:'Waiting on 1 prerequisite'}]}}).tone,'neutral');});
+
+test('actual open-but-ready owner detail and its compact projection lead with the same Ready standing',()=>{const selected={status:'ready',recorded_status:'open',lifecycle:{status:'open',completed:false,closed:false},readiness:{status:'READY',blocked_by:[],reason:'task is not complete',satisfies_prerequisites:false},standing:{group:'ready',facts:[{code:'ready',text:'Ready'}]},current_acceptance:{status:'NOT_REQUIRED',currentness:'NOT_REQUIRED',reason:'task is not complete',kind:null,blocked_by:[],review_required:false}},before=structuredClone(selected),list={status:selected.status,standing:selected.standing};assert.equal(taskStateChips(selected)[0].label,taskStateChips(list)[0].label);assert.equal(taskStateChips(selected)[0].label,'Ready');assert.equal(taskStateChips(selected)[0].tone,'ok');assert.match(taskStateChips(selected)[0].title,/Recorded status: open/);assert.equal(completedTaskChip(selected),null);assert.deepEqual(selected,before);const unqualified={...selected,standing:{group:'ready',facts:[]}};assert.equal(taskStateChips(unqualified)[0].label,'Open','an unmatched detail does not infer a ready fact');});
+test('qualified Waiting and Awaiting review use one human standing across compact and selected projections',()=>{for(const [group,code,text,label]of [['blocked','blocked-prerequisite','Waiting on 1 prerequisite','Waiting'],['awaiting','review-required','Required review is pending','Awaiting review']]){const selected={recorded_status:'open',status:'blocked',lifecycle:{status:'open',completed:false,closed:false},readiness:{status:'BLOCKED'},standing:{group,facts:[{code,text}]}};const compact={standing:selected.standing};assert.equal(taskStateChips(selected)[0].label,label);assert.equal(taskStateChips(compact)[0].label,label);assert.match(taskStateChips(selected)[0].title,/Recorded status: open/);assert.ok(!taskStateChips(selected)[0].label.includes(' · Waiting'));}});

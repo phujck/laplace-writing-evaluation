@@ -1,0 +1,326 @@
+{
+  "schema_version": "mip.visual-reader-specifications/1",
+  "written_before_drawing": true,
+  "scope": "Four finite visuals, no manuscript Source mutation. Not a typed section/paragraph reader scaffold.",
+  "data_pin": {
+    "id": "ART-a7444207758f4661859c3c9a1e6547b0",
+    "sha256": "d4082c8bbe5ec277386a1e3f5cf266b111739fe6b0559fce82320163819bf282"
+  },
+  "witness_pin": {
+    "id": "ART-59561bf302c444c7a53c1f44a17d8be7",
+    "sha256": "46deff7fd032354e59c40dfd7d2c03d79be49a393929101d73f4206e470811dc"
+  },
+  "visuals": [
+    {
+      "id": "mip_news_matched",
+      "title": "Matched news evidence delivery",
+      "reader_purpose": "Compare three retrieval routes after common evidence delivery and reading, not reward exploratory instruction selection.",
+      "entry": "Reader knows retrieval supplies context to a fixed answer model, but does not yet know the observed matched outcome.",
+      "exit": "Reader identifies152/152/148 exact matches on172 examined questions and understands the common controls and reused development draw.",
+      "variables": {
+        "x": "Exact matches, count 0–172",
+        "y": "Three categorical retrieval routes",
+        "unit": "questions",
+        "denominator": 172
+      },
+      "cohort": "172 previously examined MultiHop-RAG questions, fit88/check84; answer-rule development used all172.",
+      "methods": [
+        {
+          "name": "Facet-conditioned retrieval",
+          "raw_arm": "ours_g@2000+rules",
+          "value": 152
+        },
+        {
+          "name": "RAG (MMR)",
+          "raw_arm": "rag_g@2000+rules",
+          "value": 152
+        },
+        {
+          "name": "RAPTOR (summary + window)",
+          "raw_arm": "raptor_g@2000+rules",
+          "value": 148
+        }
+      ],
+      "controls": {
+        "pieces": "two-sentence windows, stride one sentence (G/scripts/g_common.windows); embedded with '<title> | <outlet> | <YYYY-MM-DD>' label (G/vectors/news_s2_ctx.f16.npy)",
+        "score": "cosine + 0.5 x BM25(label+window)/max for every arm; ours: per compiled facet inside its exact outlet/date support, round-robin; RAG: whole corpus, pool 200, MMR 0.7; RAPTOR: the 1,747 summary nodes plus the labelled windows, no MMR (raptor_g, G's frozen RAPTOR arm)",
+        "delivery": "one block per article, spans merged in article order, extended to whole sentences (g_common.delivered_pack; RAPTOR summaries as their own blocks, delivered_pack_mixed); 2,000 cl100k tokens",
+        "reader": "claude-sonnet-5-5 low, i_lib.RULES_INSTRUCTION + ANSWER_SCHEMA, identical for every arm",
+        "not_frozen": [
+          "statement-field term (gamma 0.3: +5 facts fit, +1 check; b1_sweep)",
+          "query-time diffusion (rel / lang / both: within +-2 facts; EM 149-152 under table2)",
+          "statements shown to the reader (-21 facts, EM +1)",
+          "4,000 tokens (+29 facts, EM +1)",
+          "model delivery (+3 EM for ours and RAG, +1,995 calls per 172 questions)",
+          "witness readout for stage 7 (results/readout_sweep.json; see 'readout')",
+          "agreement rule (results/agree_rule.json; see step_d.agree_rule)"
+        ],
+        "caveat": "the rules instruction's three rules were written from failures read on all 172 questions, so its check-half gain is not a held-out test; the untouched draw is"
+      },
+      "endpoint": "Sealed normalised exact match",
+      "caption": "Matched news retrieval on 172 previously examined MultiHop-RAG questions. Counts are sealed normalised exact matches, not evidence coverage. All arms use labelled two-sentence windows, cosine plus 0.5 normalised BM25, deterministic article-ordered delivery within 2000 cl100k tokens, and the same Claude Sonnet 5.5 low-effort reader with answer-form rules. Facet-conditioned retrieval ranks within exact outlet/date supports and merges facets round-robin. RAG uses a 200-candidate pool with MMR relevance coefficient 0.7. RAPTOR searches 1747 summary nodes plus the same labelled windows without MMR. The rules were developed after examining failures on all 172 questions. These descriptive reused-draw counts show a tie between facet-conditioned retrieval and RAG, with RAPTOR four answers lower, not established superiority or equivalence.",
+      "placement": {
+        "main": "Delivery under a fixed reader, immediately after matched news method definition",
+        "appendix": "Full local route definitions and development exposure in this paper's own experimental appendix"
+      },
+      "data": "accepted-data.json#/news",
+      "result": {
+        "id": "mip-news-recovery-20261110",
+        "revision": "sha256:c1c94981d11fb953597bc29bfc3fafa851ab16092affd919bf194c033acf176d"
+      },
+      "source_pins": [
+        {
+          "path": "evidence/BENCH_RECOVERY_2026-11-09/stage3/I/results.json",
+          "sha256": "ff7ee2843512a1f7a846dab0998a406367d3e58b468fe5b0a6bc75d371207f14",
+          "bytes": 70065
+        },
+        {
+          "path": "evidence/BENCH_RECOVERY_2026-11-09/stage3/I/JUDGE_round2.md",
+          "sha256": "a568ae98ee606b7dececc5639dbfdb10bc19bfc20b5cfbdfbb4a2bc492e16468",
+          "bytes": 8757
+        }
+      ]
+    },
+    {
+      "id": "mip_frames_noactivation",
+      "title": "FRAMES: distinguish the endpoint",
+      "reader_purpose": "Show that answer-form matching and rubric correctness answer different questions under the same recommended no-activation route.",
+      "entry": "Reader understands missing-needs retrieval and fixed allowances, but may confuse page presence, containment and correctness.",
+      "exit": "Reader can read123/117 proxy and127/126 judged counts separately, and interpret seven–six judged discordances without importing activation page statistics.",
+      "variables": {
+        "x": "Questions meeting endpoint, count 0–190",
+        "y": "Endpoint groups and categorical methods",
+        "units": "questions",
+        "denominator": 190
+      },
+      "cohort": "190 previously examined FRAMES questions, fit95/check95",
+      "methods": [
+        {
+          "name": "Linked-passage retrieval (activation off)",
+          "raw_arm": "ours_noact|steps+p2",
+          "containment_proxy": 123,
+          "judged_correct": 127
+        },
+        {
+          "name": "RAG (MMR)",
+          "raw_arm": "rag_8k|steps+p2",
+          "containment_proxy": 117,
+          "judged_correct": 126
+        }
+      ],
+      "controls": {
+        "arm": "ours_noact",
+        "budget": "8k initial + up to 4k genuinely new spans on one triggered pass 2",
+        "ours": {
+          "containment": 123,
+          "judged": 127
+        },
+        "rag": {
+          "containment": 117,
+          "judged": 126
+        },
+        "n": 190,
+        "settings": "FRAMES pass-1 RAG uses a 200-candidate pool and MMR with relevance coefficient 0.7, ranked from s + 0.4 h/max(h), where s = cosine + 0.2 normalised BM25 and h is D's dense seed. Pass 2 ranks each missing-need phrase by s(phrase)+0.5 s(question), using RAG's own MMR 0.7. Both arms receive the same 8k initial allowance, steps instruction and up to 4k new spans on one triggered second pass. These are the local implemented comparator settings, not a claim of complete literature-system reproduction.",
+        "paired_judged": {
+          "ours": 127,
+          "rag": 126,
+          "n": 190,
+          "wins": 7,
+          "losses": 6
+        },
+        "paired_containment": {
+          "wins": 10,
+          "losses": 4,
+          "p_one_sided": 0.0898
+        },
+        "settings_source_pins": [
+          {
+            "path": "evidence/BENCH_RECOVERY_2026-11-09/stage3/J/scripts/j_world.py",
+            "sha256": "04da4259b846028fca9000435b3fadfb133f67dba705e9777df0d09130522c49",
+            "read_id": "READ-29bd8a5546a94eefa6ee86cf9cb04002"
+          },
+          {
+            "path": "evidence/BENCH_RECOVERY_2026-11-09/stage3/D/scripts/d_frames.py",
+            "sha256": "c9c7adbcb7c99746da3b6145a74fc1ce9c74304dc21447bbb0589346b9fd493c",
+            "read_id": "READ-e40ac8ef0d4e49e294141c9ddd03a4c8"
+          },
+          {
+            "path": "evidence/BENCH_RECOVERY_2026-11-09/stage3/D/scripts/d_lib.py",
+            "sha256": "2c905181aaad78a2185a081e726fb50411b33f55ec520d5d43ff53231a375b88",
+            "read_id": "READ-eb276ed3268044da8c5cefc15ff65bb2"
+          },
+          {
+            "path": "evidence/BENCH_RECOVERY_2026-11-09/stage3/G/scripts/g_common.py",
+            "sha256": "a2588db0897cd45c5a9a92beb713f1ada8526c26adf518207a6fe23d6a004528",
+            "read_id": "READ-be83143f3d414015ac99dec65af5d45a"
+          }
+        ]
+      },
+      "endpoint": {
+        "definition": "the implemented normalised first-clause/token-F1>=0.5 proxy with a3x length guard, not a semantic entailment certificate.",
+        "source": "J/scripts/j_lib.py and banked outcome files",
+        "qualification": "Implemented normalised first-clause/token-F1 >=0.5 proxy with3x length guard. Not exact string containment, semantic entailment, judged correctness or all-gold-page coverage.",
+        "source_pin": {
+          "path": "evidence/BENCH_RECOVERY_2026-11-09/stage3/J/scripts/j_lib.py",
+          "sha256": "5329591bec3995ab291979b584b12bc535f7b68e794da2aeec3853c626a708d9"
+        }
+      },
+      "caption": "FRAMES outcomes on the same 190 previously examined questions, with activation switched off for linked-passage retrieval. Both arms receive 8000 initial tokens, the same steps instruction and at most one triggered retrieval of 4000 genuinely new tokens for reader-declared missing needs. Linked-passage retrieval uses a 50-piece head and a one-hop link witness with merged-section delivery. RAG uses MMR relevance coefficient 0.7 over a 200-candidate pool. Its separate 0.4 coefficient weights the dense seed, not MMR. Pass-2 missing-need ranking combines the phrase score with 0.5 times the question score. The containment proxy is normalised substring/first-clause matching or token-F1 at least 0.5, subject to a three-times-reference length guard, with exact matches also counted. Judged correctness uses the banked majority rubric, not that proxy. The judged discordances are seven linked-passage-only successes and six RAG-only successes. The observed one-answer difference is modest, not evidence of general superiority. Page presence alone need not deliver an answer-bearing passage, particularly where the plaintext corpus omits tables.",
+      "placement": {
+        "main": "After the no-activation route and missing-needs pass are introduced",
+        "appendix": "Full proxy/rubric definition, local ranker coefficients and table omission limitations"
+      },
+      "data": "accepted-data.json#/frames",
+      "result": {
+        "id": "mip-frames-recovery-20261110",
+        "revision": "sha256:ba031df03c139da9cd2c4a9d4a70e5fef0fa88f940f4a764e8dfb1a7c12386b0"
+      },
+      "source_pins": [
+        {
+          "path": "evidence/BENCH_RECOVERY_2026-11-09/stage3/J/results.json",
+          "sha256": "96611151600eddad0a134ea4d7d99d0b8a10d0877b6b839f917ab314c28e758b",
+          "bytes": 14694
+        }
+      ]
+    },
+    {
+      "id": "mip_wyoming_witness",
+      "title": "A located quote is narrower than its assertion",
+      "reader_purpose": "Expose a concrete provenance/entailment boundary rather than present a generic source arrow.",
+      "entry": "Reader knows an extracted record carries a quote, but may think quote location proves every assertion field.",
+      "exit": "Reader can distinguish the first-sentence witness from the extra two sentences required for the westward-decline and small/brief claims, with original misalignment disclosed.",
+      "variables": {
+        "axes": "None, source-linked schematic",
+        "objects": "Exact source unit, actual five-field assertion and narrower located witness",
+        "units": "Words and stored section-relative character offsets, no numerical performance scale"
+      },
+      "cohort": "One documented source unit in619 selected FRAMES pages; not a random semantic validation sample",
+      "caption": "Source location and claim support in the Wyoming climate example. The stored witness is the first sentence of a three-sentence source unit. It supports the southeastern-vulnerability statement. The westward decline and small, brief tornado statements require the following source context, reproduced here. The five-field record is a model-produced assertion, not an entailment certificate. Its returned unit identifier contains a recorded typo and was assigned by position to the requested source unit. The original request, response and processed span identities remain in the supporting record. A located quote establishes provenance for that span, not support for every field.",
+      "placement": {
+        "main": "At the source-bytes to attributed-evidence transition",
+        "appendix": "This paper's source example with unit/window, original returned typo and position assignment"
+      },
+      "data": "wyoming-witness-context.json",
+      "source_pins": [
+        {
+          "path": "evidence/BENCH_RECOVERY_2026-11-09/stage3/X/out/frames_requests.jsonl",
+          "sha256": "fcb772a0fc6631faa78aed621ee92d2a12e7bdd86cf8c047e59e9ab2c0482f5b",
+          "reads": [
+            {
+              "offset": 12066240,
+              "source": {
+                "path": "/home/phujck/VScodeProjects/laplace/evidence/BENCH_RECOVERY_2026-11-09/stage3/X/out/frames_requests.jsonl",
+                "bytes": 33930642,
+                "sha256": "fcb772a0fc6631faa78aed621ee92d2a12e7bdd86cf8c047e59e9ab2c0482f5b"
+              },
+              "read": {
+                "id": "READ-79c1f3d52dd74a0688e2621f2ebd7b8b",
+                "turn_id": "WT-62840450a3dd4839a97dc328f53f878b",
+                "session_id": "WS-3d22536a14a4424c8b193ffd26a51a34",
+                "project": "memory-in-pieces",
+                "operation": "repository",
+                "payload": {
+                  "action": "read",
+                  "repository": "laplace",
+                  "path": "evidence/BENCH_RECOVERY_2026-11-09/stage3/X/out/frames_requests.jsonl",
+                  "offset": 12066240,
+                  "limit": 40000,
+                  "expected_sha256": "fcb772a0fc6631faa78aed621ee92d2a12e7bdd86cf8c047e59e9ab2c0482f5b",
+                  "project": "memory-in-pieces"
+                },
+                "output_sha256": "ce013d11029fbd6b0efcdf3205a98289b00b347e6ebddba9ef7b4a1be44779fe"
+              }
+            },
+            {
+              "offset": 12106240,
+              "source": {
+                "path": "/home/phujck/VScodeProjects/laplace/evidence/BENCH_RECOVERY_2026-11-09/stage3/X/out/frames_requests.jsonl",
+                "bytes": 33930642,
+                "sha256": "fcb772a0fc6631faa78aed621ee92d2a12e7bdd86cf8c047e59e9ab2c0482f5b"
+              },
+              "read": {
+                "id": "READ-c4b4d13f3a53452abe1d78709507b344",
+                "turn_id": "WT-62840450a3dd4839a97dc328f53f878b",
+                "session_id": "WS-3d22536a14a4424c8b193ffd26a51a34",
+                "project": "memory-in-pieces",
+                "operation": "repository",
+                "payload": {
+                  "action": "read",
+                  "repository": "laplace",
+                  "path": "evidence/BENCH_RECOVERY_2026-11-09/stage3/X/out/frames_requests.jsonl",
+                  "offset": 12106240,
+                  "limit": 40000,
+                  "expected_sha256": "fcb772a0fc6631faa78aed621ee92d2a12e7bdd86cf8c047e59e9ab2c0482f5b",
+                  "project": "memory-in-pieces"
+                },
+                "output_sha256": "926ef133e792c23179635f296ca72e5c26cd36a1334851852443dc3cdbb8505f"
+              }
+            }
+          ]
+        },
+        {
+          "path": "evidence/BENCH_RECOVERY_2026-11-09/stage3/X/out/frames_statements.jsonl",
+          "sha256": "abc198f3c5bc0911f46f60c94b8c6bb5f06731f741f1f4e25a85f79c579112cc",
+          "read": {
+            "id": "READ-a62c129254f94a0d977b42f796abe71e",
+            "turn_id": "WT-62840450a3dd4839a97dc328f53f878b",
+            "session_id": "WS-3d22536a14a4424c8b193ffd26a51a34",
+            "project": "memory-in-pieces",
+            "operation": "repository",
+            "payload": {
+              "action": "read",
+              "repository": "laplace",
+              "path": "evidence/BENCH_RECOVERY_2026-11-09/stage3/X/out/frames_statements.jsonl",
+              "offset": 14402919,
+              "limit": 40000,
+              "expected_sha256": "abc198f3c5bc0911f46f60c94b8c6bb5f06731f741f1f4e25a85f79c579112cc",
+              "project": "memory-in-pieces"
+            },
+            "output_sha256": "4ddbe1effde399bbb7dad3b62645e6d50366edeac9ce5109329bf668d3b35121"
+          },
+          "offset": 14402919,
+          "limit": 40000
+        },
+        {
+          "path": "evidence/BENCH_RECOVERY_2026-11-09/stage3/X/cache/frames/f876a495bd4652fd310a851aa6a24cebe1f3bf65affd6cb8524674b849134669.json",
+          "sha256": "a051f1b5fe159aba9824e4ab149791f9fd9cf238c919a807aec80ab5d47ae0c9"
+        }
+      ],
+      "necessary_inference": "Subject state resolves to Wyoming through the source section. Context sentences, not the quote alone, support the other fields."
+    },
+    {
+      "id": "mip_longmem_completed",
+      "title": "LongMem: correctness is not evidence coverage",
+      "reader_purpose": "Make48/42 denominators and4k/8k budgets legible without turning incomplete later judging into an accuracy bar.",
+      "entry": "Reader knows evidence allowance affects delivered turns, but may mistake complete-turn coverage for correctness or compare unequal denominators.",
+      "exit": "Reader can compare completed48-question correctness and42-positive coverage independently and understands relational/dense parity in the shared-index baseline.",
+      "variables": {
+        "rows": "Relational, dense and hybrid retrieval",
+        "columns": "Answer correctness out of48 and all-required-turn coverage out of42, each at4k and8k",
+        "units": "Question counts, with denominators printed in each cell",
+        "budget": "cl100k evidence token allowance"
+      },
+      "cohort": "Completed shared-index 48-question LongMem cohort",
+      "methods": "Shared improved index and dated turn keys, completed rules reading, no ledger, same Sonnet low reader.",
+      "endpoint": "48 includes6abstentions;42 excludes all6; historical44 includes2annotated abstentions and is not plotted.",
+      "caption": "Completed LongMem readout on a shared improved index at 4000- and 8000-token allowances, using Claude Sonnet 5.5 at low effort and the same rules instruction. Correctness includes all 48 questions, including six abstention questions. Complete positive-evidence coverage counts questions for which every annotated required turn is delivered, restricted to the 42 positive-evidence questions. This is turn-ID coverage, not semantic entailment or answer correctness. Relational and dense retrieval coincide on both endpoints in this shared-index setting. Hybrid retrieval improves from 40 to 44 correct answers and from 33 to 37 positive questions with all required turns as the allowance increases. The distinct historical 44-annotation endpoint includes two annotated abstentions and is retained separately in the audit, not relabelled as positive coverage.",
+      "placement": {
+        "main": "Beside the completed LongMem shared-index discussion",
+        "appendix": "Exact48/44/42 reconciliation with original44 counts and partial later work retained as audit"
+      },
+      "data": "accepted-data.json#/longmem/coverage_reconciliation",
+      "result": {
+        "id": "mip-longmem-recovery-20261110",
+        "revision": "sha256:96f8f6b0f392bb437d71f400845e920b4a8b12aff6c0080b081a2c543c952c4d"
+      },
+      "source_pins": [
+        {
+          "path": "evidence/BENCH_RECOVERY_2026-11-09/stage3/K/results/A_final48.json",
+          "sha256": "7e2bdf1fb4c27275367cd703646c56ad9549e36875fecf74e40dcdd9c5634002",
+          "bytes": 185017
+        }
+      ]
+    }
+  ],
+  "canonical_input_limit": "Actual canonical visual inputs must be inspected. Null/empty input currentness does not qualify figure-aware completion. These specifications do not repair the owner."
+}

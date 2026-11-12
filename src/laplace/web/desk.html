@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>desk · the eigen engine</title>
+<!-- THE DESK, JOINED TO THE ONE INSTRUMENT (W-DESK): the desk rides engine.mjs like the
+     growth cockpit. The resting DOM is a COMPOSED BRIEF — what needs him now + one-line
+     class counts — nothing is materialised until a chip (or a deep-link, B.5) summons it.
+     Opening a row's referent REALLOCATES (the cockpit claims the centre, context becomes a
+     rail, a named return door leads back to the brief). Colour + type ride hymn.css (the one
+     palette); the focus/geometry runtime is engine.mjs; the surface logic is desk-panes.mjs.
+     The four-zone cockpit (.dk-cockpit/.dk-zone/.dk-ref-*/.dk-act) still lives in hymn.css so
+     /desk and /artefact's tray share ONE cockpit idiom (conception §6). -->
+<link rel="stylesheet" href="/shared/hymn.css">
+<script defer src="/shared/shell.js"></script>
+<style>
+/* LAYOUT ONLY — behaviour + component colour live in static_shared/desk-panes.mjs + hymn.css.
+   No colour literals here (the one-palette clause binds this <style>). */
+*{box-sizing:border-box}
+html,body{margin:0;min-height:100%;font:13px/1.5 -apple-system,"Segoe UI",Roboto,sans-serif;
+  background:var(--bg);color:var(--ink)}
+body{overflow-x:hidden}
+#desk{max-width:1280px;margin:0 auto;padding:16px 18px 100px}
+.dk-ctx{display:flex;align-items:baseline;gap:9px;flex-wrap:wrap;margin:0 0 4px;padding-bottom:11px;
+  border-bottom:1px solid var(--edge)}
+/* at wide viewports the surface header shares the centred resting-brief column (finding 1):
+   the shared .eng-brief rule centres the brief body over a 1000px measure, so the "your desk"
+   header + its divider align to the same column rather than sitting left of the centred body. */
+@media (min-width:1400px){ #desk > .dk-ctx{max-width:1000px;margin-inline:auto} }
+.dk-ctx .dk-surface{font-family:var(--mono);font-size:12px;font-weight:700;color:var(--ink)}
+.dk-ctx .dk-surface b{color:var(--keystone)}
+.dk-ctx .dk-purpose{color:var(--ink2);font-size:12.5px}
+</style>
+</head>
+<body>
+<!-- The engine root: the composed brief is the resting altitude; the rail + focus (the
+     four-zone cockpit) are built on pin. All behaviour rides static_shared/desk-panes.mjs;
+     all network rides store.fetchJSON (the one gateway) — no raw fetch escapes the model. -->
+<main id="desk">
+  <div class="dk-ctx">
+    <span class="dk-surface">your <b>desk</b></span>
+    <span class="dk-purpose">— what needs you now; every decision opens to its cockpit in place</span>
+  </div>
+  <div id="eng-root">
+    <div class="eng-brief"><div class="dkb-prose">resolving your desk…</div></div>
+  </div>
+</main>
+<script type="module">
+import { initDesk } from "/shared/desk-panes.mjs";
+initDesk();
+</script>
+</body>
+</html>

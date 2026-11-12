@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>storyboard · the eigen engine</title>
+<!-- THE STORYBOARD IN THE ENGINE (W-SB, 2026-07-22): his ruling — the storyboard is "the
+     place where I can most easily see the thing that's going to be projected". The surface
+     joins the one instrument. The resting DOM is the composed BRIEF (delta-and-ask) plus
+     one-line counts — no section card, no weighting card, no conveyor exists until a focus
+     summons it, and closing returns to the brief. Colour + type ride hymn.css (the one
+     palette); the focus/geometry runtime is engine.mjs; the surface logic is
+     storyboard-panes.mjs. Every network rides store.fetchJSON (no raw fetch escapes the model). -->
+<link rel="stylesheet" href="/shared/hymn.css">
+<script defer src="/shared/shell.js"></script>
+<script defer src="/shared/inspector.js"></script>
+<style>
+*{box-sizing:border-box}
+html,body{margin:0;min-height:100%;background:var(--bg);color:var(--ink);
+  font:13px/1.5 -apple-system,"Segoe UI",Roboto,sans-serif}
+body{overflow-x:hidden;padding-top:var(--hy-shell-h)}
+</style>
+</head>
+<body>
+<main id="storyboard-page">
+  <div class="sb-ctx">
+    <span class="sb-surface">storyboard</span>
+    <span class="sb-purpose">— what is planned, what moved since you last looked, and the one thing that needs you</span>
+  </div>
+  <!-- the engine root: the brief is the resting altitude; the rail + focus are built on pin -->
+  <div id="eng-root">
+    <div class="eng-brief"><div class="sb-brief-prose">resolving the plan…</div></div>
+  </div>
+  <div id="sb-status" aria-live="polite"></div>
+</main>
+<datalist id="sb-bib-keys"></datalist>
+<script type="module">
+import { initStoryboard } from "/shared/storyboard-panes.mjs";
+initStoryboard();
+</script>
+</body>
+</html>

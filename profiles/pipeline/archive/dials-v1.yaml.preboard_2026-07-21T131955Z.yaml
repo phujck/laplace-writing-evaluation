@@ -1,0 +1,102 @@
+# THE DIALS — the pipeline's one outward-facing calibration surface (dials-v1).
+#
+# Edit THIS file to recalibrate a convergence run; never a constant in a script
+# (Gerard, 2026-07-09). The code (src/laplace/pipeline/dials.py `_DEFAULTS`) owns
+# the fallback defaults; this versioned profile overlays them. `load_dials`
+# raises loudly on any key not in the defaults schema — a typo must not silently
+# no-op. This file carries EXACTLY today's defaults, so a fresh checkout runs the
+# designed pipeline and `load_dials()` == `dials.defaults()`.
+#
+# Parallel to profiles/voice/ and profiles/house_style/: a new calibration is a
+# new versioned file (dials-v2.yaml), revised only through the author gate.
+
+version: dials-v1
+
+# --- model tier + effort per role ------------------------------------------
+# Sealed readers are LEAST capable by design (worse-is-better: a context-starved
+# reader that still recovers the argument is the sharp test). Builders, the
+# welder, the referee and the voice-washer run at the top tier; judges, vision
+# and the fixer at the middle; utilities at the floor.
+roles:
+  builder:       {model: opus,   effort: high}
+  welder:        {model: opus,   effort: high}
+  judge:         {model: sonnet, effort: medium}
+  sealed_reader: {model: haiku,  effort: low}     # worse-is-better, deliberate
+  referee:       {model: opus,   effort: high}
+  vision:        {model: sonnet, effort: medium}
+  voice_washer:  {model: opus,   effort: high}
+  fixer:         {model: sonnet, effort: medium}
+  utility:       {model: haiku,  effort: low}
+  # AUDIT §A3 (F1): the STAGED build leg's dedicated roles, at the tiers its
+  # in-script literals ALREADY ran — so bringing that leg under dials is plain
+  # with zero behaviour change by default (retunable here). The weld itself maps
+  # to `welder` (opus/high) above, the one real change: honouring the dial that
+  # always claimed that seat where the staged literal had pinned it to sonnet.
+  planner:        {model: sonnet, effort: medium}   # staged narrative planners
+  realiser:       {model: sonnet, effort: medium}   # staged prose realisers
+  staged_utility: {model: haiku,  effort: low}      # read-manifest / compile / validate / post-weld
+
+# --- the loop ---------------------------------------------------------------
+loop:
+  max_rounds: 4
+  weld: auto                       # auto|always|never — when the converge leg welds
+  weld_global_dirty_threshold: 4   # dirty sections at/above this -> scoped seam pass
+                                   # escalates to a GLOBAL reweld (no longer local)
+  lock:
+    # readers that must return a verdict at candidate-lock. R3 (apparatus) runs
+    # every round and is not lock-gated; R8 is the human terminal bar. R9
+    # (caption-blind, the hold-out review surface) rides the rasteriser dispatch
+    # branch of the harnessed lock stage — figure crops + captions, vision-driven.
+    # R10 (restart, the whole-artefact judgement grade) rides its own dispatch
+    # branch — a two-phase blind-then-compare read of the finished PDF text.
+    readers: [R1, R2, R4, R5, R6, R7, R9, R10]
+    voice_wash: true
+  verify_votes: 1
+
+# --- PDF drift report (local fix vs global artefact) ------------------------
+drift:
+  page_change_warn: 3        # more than this many changed pages -> "unexpected"
+  page_count_change: loud    # a page-count delta is ALWAYS loud
+
+# --- fingerprinted suppression ---------------------------------------------
+suppression:
+  key: [node, kind, fingerprint]        # the suppression identity
+  stale_on_fingerprint_mismatch: true   # node content changed -> judgeable again
+
+# --- fan-out width / batch bound (audit §A4, F2) ---------------------------
+# The pipeline's ONE fan-out dial. Every workflow fan-out
+# (project-staged / project-fixedpoint parallel(items.map(...))) reads its cap
+# from here via pipeline/fanout.py — never an uncapped one-agent-per-item
+# dispatch in a script. The batched discipline is lifted from wf_fold_*.mjs.
+fanout:
+  max_width: 0            # 0 = UNCAPPED (today's exact behaviour: one batch =
+                          # the whole list). A real cap is opt-in — raising this
+                          # is the only behaviour change; the default is inert.
+  batch_max_chars: 140000 # char budget for a size-bounded pack() batch
+
+# --- the stage-store kill-switch (design 2026-07-15 §4) --------------------
+# The retrieval wire (pipeline/stage_retrieval.build_form_channel) injects FORM
+# exemplars from a gate-passed corpus store into a stage's compiled dispatch. A
+# store is readable IFF its per-store `enabled` is true AND its
+# corpus_stores/<store>/gate_verdict.json passed its holdout gate (§5). EVERY flag
+# ships FALSE, so the wiring lands behaviour-inert: a narrative compile at these
+# defaults is byte-identical to pre-wire, and a store enters a prompt only on a
+# deliberate flip.
+#
+# The dial cannot override the gate (§4 law): a store flag set true whose gate
+# verdict is absent or FAILED REFUSES loudly (stage_retrieval raises) — the dial
+# is a permission, never the gate's proof. Flip a flag ONLY once its holdout gate
+# passes (the default is the gate's evidence, never a pre-commitment).
+stores:
+  paragraph_plan:       {enabled: true}
+  section_architecture: {enabled: false}
+  spine_chain:          {enabled: false}
+  derivation_walk:      {enabled: false}
+  figure_caption:       {enabled: false}
+
+# --- per-judge/per-reader prompt overrides ---------------------------------
+# A file <overrides_dir>/<name>.<ext> (ext in md/txt/j2/jinja), where <name> is
+# the panel label / reader id / role, REPLACES that judge's built-in template
+# wholesale when present. The directory is optional.
+prompts:
+  overrides_dir: profiles/pipeline/prompts

@@ -1,0 +1,59 @@
+{
+  "args": {},
+  "cancel_path": "/home/phujck/VScodeProjects/laplace/synthetics papers/adaptive-normal-form/manuscript/tex/research_runs/run-f25940ecc0511fa3.cancel",
+  "cwd": "/home/phujck/VScodeProjects/laplace/writing_projects/adaptive-normal-form-aek9",
+  "deadline_at": 1794412858.3911114,
+  "execution_deadline_monotonic": 110634.777240781,
+  "id": "run-f25940ecc0511fa3",
+  "launch_token": "19ba88dd707e4698b9becf571756be9b",
+  "mode": "smoke",
+  "pid": 387350,
+  "producer_argv": [
+    "/home/phujck/.local/share/laplace/runtime/python/current/bin/python3.14",
+    "/home/phujck/VScodeProjects/laplace/writing_projects/adaptive-normal-form-aek9/D2/v2/full_loop_probe.py",
+    "--mode",
+    "smoke",
+    "--args-json",
+    "{}",
+    "--result",
+    "/home/phujck/VScodeProjects/laplace/synthetics papers/adaptive-normal-form/manuscript/tex/research_runs/run-f25940ecc0511fa3.result.json"
+  ],
+  "producer_base": "/home/phujck/VScodeProjects/laplace/writing_projects/adaptive-normal-form-aek9",
+  "producer_id": "anf-d2-v2-seed-correction-20261111",
+  "producer_path": "D2/v2/full_loop_probe.py",
+  "project": "adaptive-normal-form-aek9",
+  "provenance": {
+    "dependencies": [
+      {
+        "bytes": 21871,
+        "path": "D2/v2/protocol-amendment.json",
+        "sha256": "3b45975de07e783c7dcd4be992950b4be06602c1d13505c4a40bb5f4b084c491",
+        "status": "PRESENT"
+      }
+    ],
+    "producer": {
+      "bytes": 11152,
+      "path": "D2/v2/full_loop_probe.py",
+      "scope": "project",
+      "sha256": "5d56b416c4e2d1de201c7f3d87961c2fb0240723e44c79193b8448449df3c1c9",
+      "status": "PRESENT"
+    },
+    "producer_config": "89dcf2c89d980def9b20ab4654821357654198b43f885c980b4a97006c68881b"
+  },
+  "request_id": "anf-d2-v2-seed-correction-20261111-01",
+  "request_intent": "sha256:ee2ecbfc06bb30d1c794c45a927a9438b00b20a947d6137055ebee7f8050355e",
+  "result_absolute": "/home/phujck/VScodeProjects/laplace/synthetics papers/adaptive-normal-form/manuscript/tex/research_runs/run-f25940ecc0511fa3.result.json",
+  "result_path": "research_runs/run-f25940ecc0511fa3.result.json",
+  "started_at": 1794412838.3911111,
+  "state": "RUNNING",
+  "stderr_path": "/home/phujck/VScodeProjects/laplace/synthetics papers/adaptive-normal-form/manuscript/tex/research_runs/run-f25940ecc0511fa3.stderr.log",
+  "stdout_path": "/home/phujck/VScodeProjects/laplace/synthetics papers/adaptive-normal-form/manuscript/tex/research_runs/run-f25940ecc0511fa3.stdout.log",
+  "supervision": {
+    "cleanup_limit_seconds": 6.0,
+    "roles": {},
+    "schema_version": "laplace.research-supervision/1"
+  },
+  "supervision_index_path": "/home/phujck/VScodeProjects/laplace/synthetics papers/adaptive-normal-form/manuscript/tex/research_runs/index.json",
+  "supervisor_start_token": "sha256:8177d2d86b344b4cef6e4fc1252f9ecfe59309adb862e0e322ee7d3de4f31ea2",
+  "timeout_seconds": 20
+}

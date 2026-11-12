@@ -1,0 +1,209 @@
+{
+  "schema": "anf.D1-source-input/2",
+  "date": "2026-11-11",
+  "work": "WORK-d49261dbb3a3493da04b8433e7f99f3b",
+  "parent": "WS-f989d076ce2a4ce0aab628e6712f800b",
+  "review": {
+    "id": "PHASE-57122f057388768ced8bc66d",
+    "revision": "sha256:62784d1a5affb32eaa99c43e89a5cef8829564f4ca7b0be4f123133d378f9774",
+    "scope": "ACCEPT NEXT D1 ONLY"
+  },
+  "source_pins": [
+    {
+      "repository": "laplace",
+      "path": "synthetics papers/adaptive-normal-form/scripts/R1_check.py",
+      "sha256": "c88aec643ea71c3d2c145ed7419a15720853d1e0b5d032e22cffb7b48e15f2c3",
+      "full_file_lines": 154
+    },
+    {
+      "repository": "laplace",
+      "path": "synthetics papers/adaptive-normal-form/scripts/R3_check.py",
+      "sha256": "8e627de8279eac48a8238acc67a7439aafb93c7fe7fe49e996c56b0bac420910",
+      "full_file_lines": 171
+    },
+    {
+      "repository": "laplace",
+      "path": "synthetics papers/adaptive-normal-form/workflow/state/derivations/R1_derivation.md",
+      "sha256": "f8c148fb45d6e3695bb56ee135cb7952f28e868564764d99eca35e405b7c6b9e",
+      "full_file_lines": 114
+    },
+    {
+      "repository": "laplace",
+      "path": "synthetics papers/the-phases-of-hierarchy/manuscript/tex_v4/sections/02_normal_form.tex",
+      "sha256": "2226c17979b0b7a52af6b9896f710de755c2a8f22ee91bc443103c9f68a5141a",
+      "full_file_lines": 54
+    },
+    {
+      "repository": "laplace",
+      "path": "synthetics papers/the-phases-of-hierarchy/manuscript/tex_v4/sections/A_majority_compression.tex",
+      "sha256": "c6c496b5b1f3b00553f0633804e4433a1639e83fb08365a0cb8ef8a712ae1b98",
+      "full_file_lines": 66
+    },
+    {
+      "repository": "laplace",
+      "path": "synthetics papers/the-phases-of-hierarchy/manuscript/tex_v4/sections/B_scalar_phase_boundary.tex",
+      "sha256": "b5c6486d3fa24057ed6c70fb396295230d2af0d8dd4b4ddba8faf58d903fe1b5",
+      "full_file_lines": 91
+    }
+  ],
+  "snippets": [
+    {
+      "source_path": "synthetics papers/adaptive-normal-form/scripts/R1_check.py",
+      "source_sha256": "c88aec643ea71c3d2c145ed7419a15720853d1e0b5d032e22cffb7b48e15f2c3",
+      "selector": {
+        "start_marker": "def O_mean(",
+        "end_marker_exclusive": "def chi_N("
+      },
+      "offset": 888,
+      "limit": 412,
+      "text": "def O_mean(theta, N, beta):\n    \"\"\"Deterministic order parameter (N->inf Gaussian limit of majority vote).\"\"\"\n    arg = sqrt(N / 2.0) * sinh(beta * theta)\n    return erf(arg)\n\ndef g_func(theta, N, beta):\n    \"\"\"Derivative of O_mean w.r.t. theta.\"\"\"\n    arg = sqrt(N / 2.0) * sinh(beta * theta)\n    darg_dtheta = sqrt(N / 2.0) * beta * cosh(beta * theta)\n    return (2.0 / sqrt(pi)) * exp(-arg**2) * darg_dtheta\n\n",
+      "read_action": {
+        "operation": "repository",
+        "payload": {
+          "action": "read",
+          "repository": "laplace",
+          "path": "synthetics papers/adaptive-normal-form/scripts/R1_check.py",
+          "expected_sha256": "sha256:c88aec643ea71c3d2c145ed7419a15720853d1e0b5d032e22cffb7b48e15f2c3",
+          "offset": 888,
+          "limit": 412
+        }
+      }
+    },
+    {
+      "source_path": "synthetics papers/adaptive-normal-form/scripts/R3_check.py",
+      "source_sha256": "8e627de8279eac48a8238acc67a7439aafb93c7fe7fe49e996c56b0bac420910",
+      "selector": {
+        "start_marker": "def O_mean(",
+        "end_marker_exclusive": "def simulate_loop("
+      },
+      "offset": 791,
+      "limit": 285,
+      "text": "def O_mean(theta, N, beta):\n    arg = sqrt(N / 2.0) * sinh(beta * theta)\n    return erf(arg)\n\ndef g_func(theta, N, beta):\n    arg = sqrt(N / 2.0) * sinh(beta * theta)\n    darg_dtheta = sqrt(N / 2.0) * beta * cosh(beta * theta)\n    return (2.0 / sqrt(pi)) * exp(-arg**2) * darg_dtheta\n\n",
+      "read_action": {
+        "operation": "repository",
+        "payload": {
+          "action": "read",
+          "repository": "laplace",
+          "path": "synthetics papers/adaptive-normal-form/scripts/R3_check.py",
+          "expected_sha256": "sha256:8e627de8279eac48a8238acc67a7439aafb93c7fe7fe49e996c56b0bac420910",
+          "offset": 791,
+          "limit": 285
+        }
+      }
+    },
+    {
+      "source_path": "synthetics papers/adaptive-normal-form/scripts/R3_check.py",
+      "source_sha256": "8e627de8279eac48a8238acc67a7439aafb93c7fe7fe49e996c56b0bac420910",
+      "selector": {
+        "start_marker": "def simulate_loop(",
+        "end_marker_exclusive": "def flip_amplitude("
+      },
+      "offset": 1076,
+      "limit": 593,
+      "text": "def simulate_loop(N, beta, alpha, r, steps=2000, e0_val=1e-4):\n    \"\"\"\n    Iterates the full deterministic closed loop.\n    Returns the last few values of the mismatch e_k.\n    \"\"\"\n    theta = 0.0\n    m     = e0_val\n    \n    e_history = []\n    \n    for _ in range(steps):\n        # Current mismatch\n        e = m - O_mean(theta, N, beta)\n        e_history.append(e)\n        \n        # Calculate next states\n        g0 = g_func(theta, N, beta)\n        m_new = r * m + (1 - r) * O_mean(theta, N, beta)\n        theta = theta + alpha * g0 * e\n        m = m_new\n\n    return e_history[-10:], theta\n\n",
+      "read_action": {
+        "operation": "repository",
+        "payload": {
+          "action": "read",
+          "repository": "laplace",
+          "path": "synthetics papers/adaptive-normal-form/scripts/R3_check.py",
+          "expected_sha256": "sha256:8e627de8279eac48a8238acc67a7439aafb93c7fe7fe49e996c56b0bac420910",
+          "offset": 1076,
+          "limit": 593
+        }
+      }
+    },
+    {
+      "source_path": "synthetics papers/adaptive-normal-form/scripts/R3_check.py",
+      "source_sha256": "8e627de8279eac48a8238acc67a7439aafb93c7fe7fe49e996c56b0bac420910",
+      "selector": {
+        "start_marker": "def flip_amplitude(",
+        "end_marker_exclusive": "def sweep_bifurcation("
+      },
+      "offset": 1669,
+      "limit": 1691,
+      "text": "def flip_amplitude(N, beta, alpha, r, steps=20000, seed=1e-4):\n    \"\"\"Two-cycle amplitude of the flip bifurcation at system size N.\n\n    The order parameter for the flip is the peak +/- excursion of the mismatch e_k\n    away from the fixed point, measured on the fast (m, e) timescale at the onset\n    value of the marginal mode theta=0.\n\n    Why this, and not the long-time full-loop envelope: the closed loop has a\n    *line* of fixed points (e=0 for any theta), so its Jacobian carries a marginal\n    eigenvalue +1 along theta. At N_c the second eigenvalue crosses -1 - the flip -\n    and a two-cycle is born. But the resulting oscillation drives a slow secular\n    drift of the marginal mode theta; as theta leaves zero, g(theta) falls, the\n    flip gain K = alpha g(theta)^2 relaxes back toward 1, and the two-cycle\n    re-stabilises and decays. So the long-time full-loop amplitude is always ~0\n    (the only attractor is the fixed-point line) and a short-horizon envelope sweep\n    catches that decay mid-flight as a spurious opening-then-closing bubble.\n\n    The faithful object is the flip of the fast subsystem at theta=0: seed just off\n    the fixed point and record the peak excursion before the slow drift quenches it.\n    Below N_c this stays at the seed; above N_c it grows as sqrt(N - N_c), the\n    supercritical normal-form law (verified: peak / sqrt(N - N_c) ~ const at onset).\n    \"\"\"\n    theta = 0.0\n    m = seed\n    peak = 0.0\n    for _ in range(steps):\n        e = m - O_mean(theta, N, beta)\n        peak = max(peak, abs(e))\n        O = O_mean(theta, N, beta)\n        theta = theta + alpha * g_func(theta, N, beta) * e\n        m = r * m + (1 - r) * O\n    return peak\n\n\n",
+      "read_action": {
+        "operation": "repository",
+        "payload": {
+          "action": "read",
+          "repository": "laplace",
+          "path": "synthetics papers/adaptive-normal-form/scripts/R3_check.py",
+          "expected_sha256": "sha256:8e627de8279eac48a8238acc67a7439aafb93c7fe7fe49e996c56b0bac420910",
+          "offset": 1669,
+          "limit": 1691
+        }
+      }
+    }
+  ],
+  "ph_definition": {
+    "source": "synthetics papers/the-phases-of-hierarchy/manuscript/tex_v4/sections/B_scalar_phase_boundary.tex",
+    "label": "app:scalar_boundary",
+    "map": [
+      "x_next=r*x+(1-r)*s*theta",
+      "u=x_next-b*theta",
+      "theta_next=theta+alpha*R(u)"
+    ],
+    "proxy": "R(u)=erf(beta*sqrt(N/2)*u)",
+    "proxy_source": "synthetics papers/the-phases-of-hierarchy/manuscript/tex_v4/sections/A_majority_compression.tex",
+    "proxy_source_label": "app:majority",
+    "note": "Exact chosen Gaussian-proxy response, not exact finite-binomial majority. N ratios need not be integers in proxy checks."
+  },
+  "mapping": {
+    "state_order_anf": [
+      "m",
+      "theta"
+    ],
+    "state_order_ph": [
+      "x",
+      "theta"
+    ],
+    "ph_cycle_variable": "z = positive magnitude of mismatch = D*Theta; equation z=alpha*D*erf(a*z)/2",
+    "runtime_source_policy": "Producer uses faithful functions copied below and a local pinned input. It does not import, execute or write original scripts."
+  },
+  "parameters": {
+    "anf": {
+      "N": 900,
+      "r": 0.3,
+      "alpha": 0.01,
+      "beta": 0.5,
+      "theta_bracket": [
+        0.02,
+        0.03
+      ]
+    },
+    "ph": {
+      "b": 1.2,
+      "s": 0.4,
+      "r_definition": "exp(-1)",
+      "alpha": 0.35,
+      "beta": 0.6,
+      "size_ratios": [
+        1.001,
+        1.01,
+        1.1
+      ]
+    },
+    "difference_steps": [
+      0.0001,
+      0.00001,
+      0.000001
+    ]
+  },
+  "oracles": {
+    "residual_max": 1e-10,
+    "anf_two_step_real_intervals": [
+      [
+        1.2,
+        1.3
+      ],
+      [
+        0.5,
+        0.7
+      ]
+    ],
+    "ph_max_local_modulus_upper": 1,
+    "finite_difference_max_abs_error": 0.001,
+    "note": "Explicit test expectations, not measured values or hardcoded results."
+  }
+}

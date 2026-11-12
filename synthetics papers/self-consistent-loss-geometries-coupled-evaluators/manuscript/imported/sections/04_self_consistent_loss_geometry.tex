@@ -1,0 +1,144 @@
+\section{A selector for the action actually performed}
+\label{sec:self-consistent-loss-geometry}
+
+The static minimum tells an observer which register option is cheapest. A learner needs a decision protocol. Let \(z\in\mathcal Z\) be its complete retained state at one decision. This includes the model \(M\), evaluator parameters \(\lambda\), controller memory and partition label whenever these affect the next transition. Observations available at that decision are \(D\). A finite set \(\mathcal U(z)\) contains executable actions, each with a specified transition \(T_u(z,D)\).
+
+For example, a register-motion action changes \(q\) while holding \(\alpha\) fixed. An arbitration action changes \(\alpha\) while holding \(q\) fixed. A split action changes the partition label and creates the two declared register states. A promotion action changes a persistent model parameter rather than leaving the observation as a transient residual. These transitions may have different effects and horizons. To compare them, freeze one evaluator and one scoring horizon during the decision and define
+\begin{equation}
+ G_u(z,D)=J_D(z)-J_D(T_u(z,D)),\qquad C_u(z,D)\geq0 .
+ \label{eq:actual-gain}
+\end{equation}
+Here \(J_D\) is the declared score on the candidate state, not necessarily a forecast of future reward. A transient intervention deserves a positive gain only if its effect is represented in \(T_u\) and evaluated by \(J_D\). Staying, \(T_0(z,D)=z\), has \(G_0=0\). An unchanged state can still carry a declared maintenance cost.
+
+\subsection{Finite statistical selection}
+
+Give each available action a positive finite reference mass \(\mu_u\), choose a statistical cost scale \(\tau>0\), and put
+\(K_u=C_u-\beta G_u\). The multiplier \(\beta\) converts gain units to cost units. We minimise over probability distributions on the finite action set:
+\begin{equation}
+ \Phi(P)=\sum_uP_uK_u+
+       \tau\sum_uP_u\log\frac{P_u}{\mu_u}.
+ \label{eq:selector-objective}
+\end{equation}
+All logarithms are natural. This is an explicit relative-entropy regularisation premise. The reference masses specify how alternatives are counted before their gains and costs are applied. Changing their ratios changes the selected distribution. A useful special cost arises when declared capacity labels multiply under composition and nondecreasing costs add. Then the cost is proportional to log capacity. Appendix~\ref{app:rank} proves this statement and explains why probability-order ranks need not multiply under independence. The selector itself does not require that special cost.
+
+The unique minimiser is
+\begin{equation}
+ P_u^*=\frac{\mu_u e^{(\beta G_u-C_u)/\tau}}{Z},
+ \qquad Z=\sum_{v\in\mathcal U(z)}\mu_v
+                      e^{(\beta G_v-C_v)/\tau}.
+ \label{eq:yba-update-ensemble}
+\end{equation}
+Positivity and finiteness give \(0<Z<\infty\). Substitution writes the objective as
+\(\tau D(P\Vert P^*)-\tau\log Z\), proving the result directly. For unnormalised \(\mu\), the expression in Eq.~\eqref{eq:selector-objective} differs from relative entropy to normalised \(\mu\) by a constant. The minimiser is unchanged.
+
+This is the familiar exponential-family construction of maximum-entropy inference \cite{jaynes1957information}, now applied to a declared set of model-revision actions. Its role is to express a variational comparison. One may sample from \(P^*\), or one may use its scores to define a deterministic policy. The latter is what our tracking example does. It does not constitute a test that a physical learner samples a Gibbs ensemble.
+
+For two actions, define \(\sigma(x)=(1+e^{-x})^{-1}\). Their odds give
+\begin{align}
+ P_1^*&=\sigma\!\left(\log\frac{\mu_1}{\mu_0}+
+                                     \frac{\Delta s}{\tau}\right),\nonumber\\
+ \Delta s&=\beta(G_1-G_0)-(C_1-C_0).
+ \label{eq:two-action}
+\end{align}
+With equal reference masses, the higher-score policy updates precisely when
+\(\beta(G_1-G_0)>C_1-C_0\). We assign equality to staying. For more actions, both the reference convention and a complete tie rule must be specified. A deterministic maximiser is not identical to a finite-temperature distribution.
+
+\subsection{Why a partial action needs its own price}
+
+A scalar tracking problem makes the action identity consequential. Let \(D_t\) be the trailing observations available after observation \(t\), and define the observed-window score
+\begin{equation}
+ J_t(\vartheta)=\frac1{n_t}\sum_{i\in D_t}
+                         (y_i-\vartheta x_i)^2 .
+ \label{eq:window-score}
+\end{equation}
+The current carried model is \(\vartheta\). A rolling ridge target is
+\begin{align}
+ \vartheta_{\mathrm w}&=
+ \frac{\sum_{i\in D_t}x_iy_i}{\sum_{i\in D_t}x_i^2+10^{-6}},
+ \qquad \rho=0.22,\nonumber\\
+ \vartheta^{(0)}&=\vartheta,\qquad
+ \vartheta^{(1)}=\vartheta+\rho(\vartheta_{\mathrm w}-\vartheta).
+ \label{eq:actions}
+\end{align}
+For fewer than eight observations, set \(\vartheta_{\mathrm w}=\vartheta\). The actual-step-priced policy uses
+\(G_u=J_t(\vartheta)-J_t(\vartheta^{(u)})\),
+\(C_0=0\), \(C_1=c\) and \(\beta=2.5\). If it buys action 1, the next decision starts from \(\vartheta^{(1)}\). Otherwise it carries \(\vartheta\) unchanged. Prediction at observation \(t\) uses the state from before that observation is incorporated.
+
+Write \(v=\vartheta_{\mathrm w}-\vartheta\),
+\(A_t=n_t^{-1}\sum x_i^2\) and
+\(B_t=n_t^{-1}\sum x_iy_i\). Expanding the quadratic gives
+\begin{equation}
+ G_1=2\rho v(B_t-A_t\vartheta)-\rho^2v^2A_t .
+ \label{eq:partial-gain}
+\end{equation}
+For an exact unregularised least-squares target with \(A_t>0\),
+\begin{equation}
+ G_{\mathrm{partial}}=(2\rho-\rho^2)G_{\mathrm{full}}
+                     =0.3916G_{\mathrm{full}} .
+ \label{eq:partial-factor}
+\end{equation}
+The ridge target requires Eq.~\eqref{eq:partial-gain} or direct evaluation, not an exact substitution of this least-squares simplification.
+
+Take eight observations \(x_i=1,y_i=0.8\), starting at \(\vartheta=1\). The executed candidate is approximately \(0.955999978\), with gain \(0.0156640069\). Its price-adjusted gain at \(\beta=2.5\) is \(0.0391600172\). At \(c=0.06\) the actual-step policy stays, whereas crediting it with the full-fit improvement, approximately \(0.04\), would authorise a move. At \(c=0.02\) it updates. A subsequent nine-observation call starting from that updated state yields approximately \(0.921679963\). The intervention changes the state on which the next price is calculated. Scoring, executing and carrying are one protocol.
+
+These gains measure fit to observations already available. They are not held-out prediction gains and do not measure future viability. That distinction will matter in Section~\ref{sec:numerical-demonstrations}, where the policy is evaluated on predictions rather than on the score it uses to authorise itself.
+
+\subsection{Putting the evaluator on the register}
+
+The selector still needs a source of its gains, costs and authority weights. Return to the opening register with \(d>0\). Let
+\(e=(a-b)/d\), \(\bar q=(a+b)/2\), and restrict the reused register to the segment
+\begin{align}
+ q&=\bar q+\frac d2 m e,\qquad m\in[-1,1],\nonumber\\
+ \alpha&=\frac{1+\lambda}{2},\qquad\lambda\in[-1,1].
+ \label{eq:register-coordinate}
+\end{align}
+The task losses become
+\(\ell_1=d^2(m-1)^2/8\) and
+\(\ell_2=d^2(m+1)^2/8\).
+Holding the evaluator coordinate \(\lambda\) fixed,
+\begin{equation}
+ \partial_m[\alpha\ell_1+(1-\alpha)\ell_2]
+                  =\frac{d^2}{4}(m-\lambda).
+ \label{eq:register-gradient}
+\end{equation}
+The conflict and fairness terms depend on \(\alpha\), not on \(m\), so they do not change this partial gradient. A gradient step with normalised gain \(a_m\) therefore gives the first component of the following controller.
+
+We introduce the evaluator step as an \emph{author-chosen model law}:
+\begin{align}
+ m^+&=(1-a_m)m+a_m\lambda,\nonumber\\
+ \lambda^+&=(1-a_\lambda)\lambda+
+                      a_\lambda\tanh(km+h).
+ \label{eq:regulator}
+\end{align}
+Both right-hand sides use the old state. This simultaneous protocol has model domain and evaluator domain \([-1,1]\). The finite parent drive \(h\) is frozen during the convergence analysis. The damping parameters satisfy \(0<a_m,a_\lambda\leq1\), and \(0\leq k<1\).
+
+The square is invariant, because each new coordinate is a convex combination of values in its interval. For any \(k<\nu<1\), use
+\(\|(\delta m,\delta\lambda)\|_\nu
+ =\max(|\delta m|,|\delta\lambda|/\nu)\).
+The Lipschitz constant of the joint map is bounded by
+\begin{equation}
+ r=\max\!\left(1-a_m+a_m\nu,\,
+             1-a_\lambda+a_\lambda k/\nu\right)<1 .
+ \label{eq:contraction-factor}
+\end{equation}
+It follows that there is one fixed point in the square and every initial state converges to it geometrically. The fixed point satisfies
+\(m^*=\lambda^*=\tanh(km^*+h)\).
+The proof is in Appendix~\ref{app:controller}.
+
+We call the loss family together with this state space, metric and update protocol a \emph{self-consistent loss geometry}. Its stationary evaluator acts on the stationary model, and the stationary model supplies the evaluator's input. This is more informative than an unqualified equation saying that model and loss determine each other. The maps have domains, an update order and a contraction condition.
+
+The controller is not obtained by globally minimising the static reduced allocation objective. In particular, its evaluator postulate need not select the optimal \(\alpha\) of Eq.~\eqref{eq:num-toy-reduced-loss}. Its convergence theorem concerns the declared reuse mode with frozen \(h\). Switching between reuse and split modes, adapting the parent drive or adding controller memory changes the joint map and requires a corresponding analysis.
+
+There is a further distinction at the level of derivatives. The model step holds \(\lambda\) fixed and uses \(\partial_m J(m,\lambda)\). If we instead substitute a state-dependent evaluator \(\lambda=B(m)\) and differentiate \(J(m,B(m))\), the derivative contains the additional term
+\(B'(m)\partial_\lambda J\).
+These are different update protocols. Treating one as the other quietly changes the model.
+
+Finally, stationarity does not establish alignment with an external improvement field. If a specified projected field is \(g_{\mathrm{ext}}\), a local diagnostic in a common metric is
+\begin{equation}
+ D_{\mathrm{align}}(m,\lambda)
+       =\|-\operatorname{grad}_m J(m,\lambda)-g_{\mathrm{ext}}(m)\|.
+ \label{eq:alignment-defect}
+\end{equation}
+The fixed-point residual instead measures
+\(\|(m,\lambda)-T(m,\lambda)\|\).
+A zero residual says that the declared controller has settled. A small alignment defect says that its model motion follows a separately specified target field. A general target field need not even admit a scalar potential. We therefore keep existence, attraction and alignment as separate questions. The tracking comparison below supplies an especially direct reason to do so.

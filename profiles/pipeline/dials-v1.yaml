@@ -1,0 +1,83 @@
+# managed by /dials — reduced from dials-v1.yaml.base.json + dials-v1.yaml.friction.jsonl
+# dial documentation lives in dials.py _DEFAULTS; edit through the surface, not by hand.
+version: dials-v1
+roles:
+  builder:
+    model: opus
+    effort: high
+  welder:
+    model: opus
+    effort: high
+  judge:
+    model: sonnet
+    effort: medium
+  sealed_reader:
+    model: haiku
+    effort: low
+  referee:
+    model: opus
+    effort: high
+  vision:
+    model: sonnet
+    effort: medium
+  voice_washer:
+    model: opus
+    effort: high
+  fixer:
+    model: sonnet
+    effort: medium
+  utility:
+    model: haiku
+    effort: low
+  planner:
+    model: sonnet
+    effort: medium
+  realiser:
+    model: sonnet
+    effort: medium
+  staged_utility:
+    model: haiku
+    effort: low
+loop:
+  max_rounds: 4
+  weld: auto
+  weld_global_dirty_threshold: 4
+  lock:
+    readers:
+    - R1
+    - R2
+    - R4
+    - R5
+    - R6
+    - R7
+    - R9
+    - R10
+    voice_wash: true
+  verify_votes: 1
+drift:
+  page_change_warn: 3
+  page_count_change: loud
+suppression:
+  key:
+  - node
+  - kind
+  - fingerprint
+  stale_on_fingerprint_mismatch: true
+fanout:
+  max_width: 0
+  batch_max_chars: 140000
+stores:
+  paragraph_plan:
+    enabled: true
+  section_architecture:
+    enabled: false
+  spine_chain:
+    enabled: false
+  derivation_walk:
+    enabled: false
+  figure_caption:
+    enabled: false
+prompts:
+  overrides_dir: profiles/pipeline/prompts
+selection:
+  draft_psi: draft-psi-v2

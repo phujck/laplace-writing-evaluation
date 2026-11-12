@@ -1,0 +1,18 @@
+{
+  "schema_version": "dynamic-memory.oracle-correction/1",
+  "original": {
+    "code": "ART-7f97ff31ec1e4b9e9ac03bdbfe2817cf",
+    "code_sha256": "ee5eb349900e8c1e22875a3ef288c1a14a9b478c0bec6320a6ca2190b243c311",
+    "run": "run-ffd067439f493b83",
+    "output_sha256": "0be63e38d37c54b7d794493971f8ccc68b098f737e2611e51297d1412db0252c",
+    "state": "COMPLETE_exit0 but oracle active-source catalogue inherited Engine.docs"
+  },
+  "finding": "First run checks arithmetic/laws for its engine-selected corpus, but cannot independently detect a wrong active source set. Therefore not the full commissioned independent-source-catalogue evidence. Raw bytes/run retained unchanged.",
+  "correction": "Fresh authoritative source catalogue follows immutable input event protocol separately, asserts exact active IDs/revisions/hash/path match incremental source incidence, reparses oracle versions from actual files, then checks all laws/query/witnesses. Initial before/after live state metrics now actual0->2 rather than sum of initial insertions.",
+  "checked_code": {
+    "id": "ART-d229cf306e184251a4ed50fe616cd694",
+    "sha256": "81e6d6b3989160c01f3a6ef8cacb1a79cd602d9362fc3f19593b09a3873a759a"
+  },
+  "prospective_before_checked_run": true,
+  "scope": "Same tiny fixture, no new queries/doc IDs/admitted edits/models. CPU60s/128MiB address-space bound and observed RSS assertion unchanged. No extra benchmark or larger replica."
+}

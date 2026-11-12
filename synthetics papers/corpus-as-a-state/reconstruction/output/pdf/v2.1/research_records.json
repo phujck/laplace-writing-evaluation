@@ -1,0 +1,555 @@
+{
+  "history": [
+    {
+      "archived_at": 1794429544.080602,
+      "id": "result-61e7f91f157fdc79f4c7",
+      "record": {
+        "artifacts": [
+          {
+            "path": "evidence/DYNAMIC_MEMORY_DEMO_2026-11-11/derivation-and-implementation.md",
+            "scope": "project"
+          },
+          {
+            "path": "evidence/DYNAMIC_MEMORY_DEMO_2026-11-11/oracle-correction.json",
+            "scope": "project"
+          }
+        ],
+        "data": [
+          "evidence/DYNAMIC_MEMORY_DEMO_2026-11-11/input.json",
+          "evidence/DYNAMIC_MEMORY_DEMO_2026-11-11/protocol.json",
+          "evidence/DYNAMIC_MEMORY_DEMO_2026-11-11/protocol-addendum.json",
+          "evidence/DYNAMIC_MEMORY_DEMO_2026-11-11/rejection-input.json"
+        ],
+        "data_scope": "project",
+        "id": "result-61e7f91f157fdc79f4c7",
+        "kind": "result",
+        "limitations": "AUTHOR_ORIGIN, FORMAL_NOT_CHECKED, independent science/reader review pending. New stdlib fixture only, not a modification/run of original GPU fullbuild implementation. Fixed binary order/5logical docs, no larger replicas/scaling-performance/reader/benchmark claim. First run retained with inherited source-catalogue oracle gap, corrected separately. RLIMIT_CPU60s/RLIMIT_AS128MiB and observed peakRSS43,732,992bytes, not strict native RSS enforcement. Continuous fixture not run. Source and old figures untouched.",
+        "provenance": {
+          "dependencies": [
+            {
+              "bytes": 21833,
+              "path": "evidence/DYNAMIC_MEMORY_DEMO_2026-11-11/incremental_demo_checked.py",
+              "sha256": "81e6d6b3989160c01f3a6ef8cacb1a79cd602d9362fc3f19593b09a3873a759a",
+              "status": "PRESENT"
+            },
+            {
+              "bytes": 77021,
+              "path": "research_runs/run-d2f6d3cff17f0fbe.result.json",
+              "scope": "manuscript",
+              "sha256": "10f22f152572ec0141995aaceedaf82cf48dfe0e530814837883bb0ab09db35b",
+              "status": "PRESENT"
+            },
+            {
+              "bytes": 6410,
+              "path": "evidence/DYNAMIC_MEMORY_DEMO_2026-11-11/input.json",
+              "sha256": "21278d3ff0212c30ba197b3cc008f3506eff24f93b44694119a0cf6d88657b8d",
+              "status": "PRESENT"
+            },
+            {
+              "bytes": 4374,
+              "path": "evidence/DYNAMIC_MEMORY_DEMO_2026-11-11/protocol.json",
+              "sha256": "006f10e17ab2abd1226ffe9bfac1c507f07c30a6a260861dc50fe969b4494b26",
+              "status": "PRESENT"
+            },
+            {
+              "bytes": 1574,
+              "path": "evidence/DYNAMIC_MEMORY_DEMO_2026-11-11/protocol-addendum.json",
+              "sha256": "1667f22b8c5b0fb940dadd43a547034c79315d7d00e5e5a734e78c34a3e446d7",
+              "status": "PRESENT"
+            },
+            {
+              "bytes": 510,
+              "path": "evidence/DYNAMIC_MEMORY_DEMO_2026-11-11/rejection-input.json",
+              "sha256": "c42a914adcc036c1905a54984785b2d8afd43c586e4e3754482daea00ca04dd9",
+              "status": "PRESENT"
+            },
+            {
+              "bytes": 8801,
+              "path": "evidence/DYNAMIC_MEMORY_DEMO_2026-11-11/derivation-and-implementation.md",
+              "scope": "project",
+              "sha256": "a30b342cd72da75aa73e921be934475eeb8a5744263bd6694dc9368662d07079",
+              "status": "PRESENT"
+            },
+            {
+              "bytes": 1432,
+              "path": "evidence/DYNAMIC_MEMORY_DEMO_2026-11-11/oracle-correction.json",
+              "scope": "project",
+              "sha256": "e06e1cd7e8d93d0815290da983bfc9f00b53d2fc2c7fbd92b6e0f75fa9d05fb2",
+              "status": "PRESENT"
+            }
+          ],
+          "recorded_at": 1794429513.030658,
+          "scope": "project",
+          "snapshot_schema": "laplace.research-dependencies/3"
+        },
+        "question": "Can source-document count/witness deltas update a conditional continuation representation exactly without full rebuild inside each update?",
+        "record_request": {
+          "intent_digest": "sha256:53e85f69373fe8738194491d31df90eff2bf6a3e6dba22d13f6eae7e9a357f8e",
+          "request_id": "record-5cda8003b4b147938be4cab003a4ec7d"
+        },
+        "result": "research_runs/run-d2f6d3cff17f0fbe.result.json",
+        "result_scope": "manuscript",
+        "revision": "sha256:b3c707c72cf8a50e09e67736133c177150bdce5051c2d1e8c2ce60c08cc8a452",
+        "run_id": "run-d2f6d3cff17f0fbe",
+        "scope": "project",
+        "source": "evidence/DYNAMIC_MEMORY_DEMO_2026-11-11/incremental_demo_checked.py",
+        "source_scope": "project",
+        "summary": "Controlled5group/2factor fixture.9states x16declared queries agree exactly across protocol-driven fresh corpus rebuild, independent direct integer/Fraction row enumeration, incremental adjoint and forward channel. Main edit sequence4/5\u21923/4\u21923/5\u21923/4, replay unchanged, merge/split checked, zero support UNDEFINED. Atomic int64-total overflow and duplicate group mismatch refused unchanged.3prefix path updates, no hidden full rebuild in change(). Positive-channel and supported-gauge finite fixtures checked.",
+        "title": "Witnessed source edits with exact conditional recall"
+      },
+      "replaced_by": "sha256:58e1f15e071243b3d5cb63b41e91a1164bb2ff6a78cabeff36b2e85202276f6a",
+      "revision": "sha256:b3c707c72cf8a50e09e67736133c177150bdce5051c2d1e8c2ce60c08cc8a452"
+    }
+  ],
+  "history_dropped": 0,
+  "records": [
+    {
+      "artifacts": [
+        {
+          "label": "Source-pinned interpretation of banked completed records",
+          "path": "evidence/MIP_CANDIDATE_2026-11-11/adopted-banked-results.json",
+          "scope": "project"
+        }
+      ],
+      "id": "mip-news-recovery-20261110",
+      "kind": "result",
+      "limitations": [
+        "No new benchmark or independent scientific verification",
+        "F incomplete judging not included as final accuracy",
+        "FRAMES RAPTOR incomplete",
+        "No measured full nine-stage integration or causal X-to-J effect",
+        "Original failed forensic run preserved; this artifact is not its successful result"
+      ],
+      "measures": [
+        {
+          "key": "news_n",
+          "label": "news_n",
+          "unit": "count"
+        },
+        {
+          "key": "news_ours",
+          "label": "news_ours",
+          "unit": "count"
+        },
+        {
+          "key": "news_rag",
+          "label": "news_rag",
+          "unit": "count"
+        },
+        {
+          "key": "news_raptor",
+          "label": "news_raptor",
+          "unit": "count"
+        },
+        {
+          "key": "news_table_ours",
+          "label": "news_table_ours",
+          "unit": "count"
+        },
+        {
+          "key": "news_table_rag",
+          "label": "news_table_rag",
+          "unit": "count"
+        },
+        {
+          "key": "news_table_raptor",
+          "label": "news_table_raptor",
+          "unit": "count"
+        }
+      ],
+      "provenance": {
+        "dependencies": [
+          {
+            "bytes": 19126,
+            "path": "evidence/MIP_CANDIDATE_2026-11-11/adopted-banked-results.json",
+            "sha256": "7b51f767487d32dfc2e17d83d7f130200583a0bffe4c8fb699d8bbaf5a7e002f",
+            "status": "PRESENT"
+          }
+        ],
+        "recorded_at": 1794395063.141427,
+        "scope": "project",
+        "snapshot_schema": "laplace.research-dependencies/3"
+      },
+      "question": "What reaches the reader under matched2k delivery and answer rules?",
+      "result": "evidence/MIP_CANDIDATE_2026-11-11/adopted-banked-results.json",
+      "revision": "sha256:c1c94981d11fb953597bc29bfc3fafa851ab16092affd919bf194c033acf176d",
+      "scope": "project",
+      "summary": "On172 previously examined MultiHop-RAG questions, ours152, RAG152, equal-treatment RAPTOR148. Requirement-table153/145/147 is a separate development interaction, not the freeze.",
+      "title": "Matched news delivery follow-up"
+    },
+    {
+      "artifacts": [
+        {
+          "label": "Source-pinned interpretation of banked completed records",
+          "path": "evidence/MIP_CANDIDATE_2026-11-11/adopted-banked-results.json",
+          "scope": "project"
+        }
+      ],
+      "id": "mip-frames-recovery-20261110",
+      "kind": "result",
+      "limitations": [
+        "No new benchmark or independent scientific verification",
+        "F incomplete judging not included as final accuracy",
+        "FRAMES RAPTOR incomplete",
+        "No measured full nine-stage integration or causal X-to-J effect",
+        "Original failed forensic run preserved; this artifact is not its successful result"
+      ],
+      "measures": [
+        {
+          "key": "frames_n",
+          "label": "frames_n",
+          "unit": "count"
+        },
+        {
+          "key": "frames_ours_cont",
+          "label": "frames_ours_cont",
+          "unit": "count"
+        },
+        {
+          "key": "frames_rag_cont",
+          "label": "frames_rag_cont",
+          "unit": "count"
+        },
+        {
+          "key": "frames_ours_judged",
+          "label": "frames_ours_judged",
+          "unit": "count"
+        },
+        {
+          "key": "frames_rag_judged",
+          "label": "frames_rag_judged",
+          "unit": "count"
+        }
+      ],
+      "provenance": {
+        "dependencies": [
+          {
+            "bytes": 19126,
+            "path": "evidence/MIP_CANDIDATE_2026-11-11/adopted-banked-results.json",
+            "sha256": "7b51f767487d32dfc2e17d83d7f130200583a0bffe4c8fb699d8bbaf5a7e002f",
+            "status": "PRESENT"
+          }
+        ],
+        "recorded_at": 1794395063.6440098,
+        "scope": "project",
+        "snapshot_schema": "laplace.research-dependencies/3"
+      },
+      "question": "Does one missing-needs retrieval pass recover supported answers?",
+      "result": "evidence/MIP_CANDIDATE_2026-11-11/adopted-banked-results.json",
+      "revision": "sha256:ba031df03c139da9cd2c4a9d4a70e5fef0fa88f940f4a764e8dfb1a7c12386b0",
+      "scope": "project",
+      "summary": "On190 reused FRAMES questions, recommended noact123/117 containment proxy and127/126 judged, paired7\u20136,p=.5,8k+triggered4k. MMR.7, separate seed.4.",
+      "title": "FRAMES no-activation delivery follow-up"
+    },
+    {
+      "artifacts": [
+        {
+          "label": "Source-pinned interpretation of banked completed records",
+          "path": "evidence/MIP_CANDIDATE_2026-11-11/adopted-banked-results.json",
+          "scope": "project"
+        }
+      ],
+      "id": "mip-longmem-recovery-20261110",
+      "kind": "result",
+      "limitations": [
+        "No new benchmark or independent scientific verification",
+        "F incomplete judging not included as final accuracy",
+        "FRAMES RAPTOR incomplete",
+        "No measured full nine-stage integration or causal X-to-J effect",
+        "Original failed forensic run preserved; this artifact is not its successful result"
+      ],
+      "measures": [
+        {
+          "key": "longmem_n",
+          "label": "longmem_n",
+          "unit": "count"
+        },
+        {
+          "key": "longmem_ours4",
+          "label": "longmem_ours4",
+          "unit": "count"
+        },
+        {
+          "key": "longmem_ours8",
+          "label": "longmem_ours8",
+          "unit": "count"
+        },
+        {
+          "key": "longmem_dense4",
+          "label": "longmem_dense4",
+          "unit": "count"
+        },
+        {
+          "key": "longmem_dense8",
+          "label": "longmem_dense8",
+          "unit": "count"
+        },
+        {
+          "key": "longmem_hybrid4",
+          "label": "longmem_hybrid4",
+          "unit": "count"
+        },
+        {
+          "key": "longmem_hybrid8",
+          "label": "longmem_hybrid8",
+          "unit": "count"
+        },
+        {
+          "key": "longmem_positive_n",
+          "label": "longmem_positive_n",
+          "unit": "count"
+        },
+        {
+          "key": "longmem_ours_cov4",
+          "label": "longmem_ours_cov4",
+          "unit": "count"
+        },
+        {
+          "key": "longmem_ours_cov8",
+          "label": "longmem_ours_cov8",
+          "unit": "count"
+        },
+        {
+          "key": "longmem_hybrid_cov4",
+          "label": "longmem_hybrid_cov4",
+          "unit": "count"
+        },
+        {
+          "key": "longmem_hybrid_cov8",
+          "label": "longmem_hybrid_cov8",
+          "unit": "count"
+        }
+      ],
+      "provenance": {
+        "dependencies": [
+          {
+            "bytes": 19126,
+            "path": "evidence/MIP_CANDIDATE_2026-11-11/adopted-banked-results.json",
+            "sha256": "7b51f767487d32dfc2e17d83d7f130200583a0bffe4c8fb699d8bbaf5a7e002f",
+            "status": "PRESENT"
+          }
+        ],
+        "recorded_at": 1794395064.2514315,
+        "scope": "project",
+        "snapshot_schema": "laplace.research-dependencies/3"
+      },
+      "question": "How do answer correctness and complete positive-evidence coverage differ?",
+      "result": "evidence/MIP_CANDIDATE_2026-11-11/adopted-banked-results.json",
+      "revision": "sha256:96f8f6b0f392bb437d71f400845e920b4a8b12aff6c0080b081a2c543c952c4d",
+      "scope": "project",
+      "summary": "All48 answer outcomes include6abstentions. Ours=dense44/48@4k and45/48@8k, hybrid40/48 and44/48. Positive42 coverage is41/42 for ours/dense both budgets, hybrid33/42,37/42. Historical annotated44 endpoint remains separate.",
+      "title": "Completed shared-index LongMem baseline"
+    },
+    {
+      "artifacts": [
+        {
+          "label": "Exact existing unit, cached assertion and located processed witness",
+          "path": "evidence/MIP_VISUALS_2026-11-11/wyoming-witness-context.json",
+          "scope": "project"
+        }
+      ],
+      "config": "evidence/MIP_VISUALS_2026-11-11/reader-purpose-specifications.json",
+      "data": [
+        "evidence/MIP_VISUALS_2026-11-11/accepted-data.json"
+      ],
+      "id": "mip-wyoming-source-context",
+      "kind": "result",
+      "limitations": [
+        "Documentary interpretation of an accepted existing source/request/response/processed record, not new extraction, scoring, full-corpus field-entailment verification or independent scientific acceptance.",
+        "Character offsets are inherited stored section offsets. No successful forensic rerun is asserted."
+      ],
+      "provenance": {
+        "dependencies": [
+          {
+            "bytes": 20270,
+            "path": "evidence/MIP_VISUALS_2026-11-11/reader-purpose-specifications.json",
+            "sha256": "ad3dba85816d849234a6f114a895e2d30945a9eced8c5b0fe6bbd023c6f23c14",
+            "status": "PRESENT"
+          },
+          {
+            "bytes": 6564,
+            "path": "evidence/MIP_VISUALS_2026-11-11/wyoming-witness-context.json",
+            "sha256": "46deff7fd032354e59c40dfd7d2c03d79be49a393929101d73f4206e470811dc",
+            "status": "PRESENT"
+          },
+          {
+            "bytes": 74867,
+            "path": "evidence/MIP_VISUALS_2026-11-11/accepted-data.json",
+            "sha256": "d4082c8bbe5ec277386a1e3f5cf266b111739fe6b0559fce82320163819bf282",
+            "status": "PRESENT"
+          }
+        ],
+        "recorded_at": 1794423744.6007965,
+        "scope": "project",
+        "snapshot_schema": "laplace.research-dependencies/3"
+      },
+      "question": "Which extracted fields are supported by the located quote, and which require surrounding source context?",
+      "result": "evidence/MIP_VISUALS_2026-11-11/wyoming-witness-context.json",
+      "revision": "sha256:d7d715e4ca5f527a29ac15a2c015ccd9796f7535eeab7c62be7c4bb1d239f32d",
+      "scope": "project",
+      "summary": "Existing source unit1939\u20132291 in the Wyoming Climate section contains three sentences. The stored witness1939\u20132037 contains only the southeastern-vulnerability sentence. Westward decline and small/brief tornado claims require subsequent context. The cached returned ID typo is retained with the existing position26 assignment, not silently repaired.",
+      "title": "Wyoming: source span and assertion scope"
+    },
+    {
+      "artifacts": [
+        {
+          "path": "evidence/DYNAMIC_MEMORY_DEMO_2026-11-11/derivation-and-implementation.md",
+          "scope": "project"
+        },
+        {
+          "path": "evidence/DYNAMIC_MEMORY_DEMO_2026-11-11/oracle-correction.json",
+          "scope": "project"
+        }
+      ],
+      "data": [
+        "evidence/DYNAMIC_MEMORY_DEMO_2026-11-11/input.json",
+        "evidence/DYNAMIC_MEMORY_DEMO_2026-11-11/protocol.json",
+        "evidence/DYNAMIC_MEMORY_DEMO_2026-11-11/protocol-addendum.json",
+        "evidence/DYNAMIC_MEMORY_DEMO_2026-11-11/rejection-input.json",
+        "evidence/DYNAMIC_MEMORY_DEMO_2026-11-11/docs/d00-r1.txt",
+        "evidence/DYNAMIC_MEMORY_DEMO_2026-11-11/docs/d00-r2.txt",
+        "evidence/DYNAMIC_MEMORY_DEMO_2026-11-11/docs/d01-r1.txt",
+        "evidence/DYNAMIC_MEMORY_DEMO_2026-11-11/docs/d10-r1.txt",
+        "evidence/DYNAMIC_MEMORY_DEMO_2026-11-11/docs/d10-r2.txt",
+        "evidence/DYNAMIC_MEMORY_DEMO_2026-11-11/docs/d10-r3.txt",
+        "evidence/DYNAMIC_MEMORY_DEMO_2026-11-11/docs/d11-r1.txt",
+        "evidence/DYNAMIC_MEMORY_DEMO_2026-11-11/docs/d02-r1.txt",
+        "evidence/DYNAMIC_MEMORY_DEMO_2026-11-11/docs/d10-overflow.txt",
+        "evidence/DYNAMIC_MEMORY_DEMO_2026-11-11/docs/d02-duplicate-group.txt",
+        "evidence/DYNAMIC_MEMORY_DEMO_2026-11-11/oracle-correction.json"
+      ],
+      "data_scope": "project",
+      "id": "result-61e7f91f157fdc79f4c7",
+      "kind": "result",
+      "limitations": "AUTHOR_ORIGIN, FORMAL_NOT_CHECKED, independent science/reader review pending. New stdlib fixture only, not a modification/run of original GPU fullbuild implementation. Fixed binary order/5logical docs, no larger replicas/scaling-performance/reader/benchmark claim. First run retained with inherited source-catalogue oracle gap, corrected separately. RLIMIT_CPU60s/RLIMIT_AS128MiB and observed peakRSS43,732,992bytes, not strict native RSS enforcement. Continuous fixture not run. Source and old figures untouched.",
+      "provenance": {
+        "dependencies": [
+          {
+            "bytes": 21833,
+            "path": "evidence/DYNAMIC_MEMORY_DEMO_2026-11-11/incremental_demo_checked.py",
+            "sha256": "81e6d6b3989160c01f3a6ef8cacb1a79cd602d9362fc3f19593b09a3873a759a",
+            "status": "PRESENT"
+          },
+          {
+            "bytes": 77021,
+            "path": "research_runs/run-d2f6d3cff17f0fbe.result.json",
+            "scope": "manuscript",
+            "sha256": "10f22f152572ec0141995aaceedaf82cf48dfe0e530814837883bb0ab09db35b",
+            "status": "PRESENT"
+          },
+          {
+            "bytes": 6410,
+            "path": "evidence/DYNAMIC_MEMORY_DEMO_2026-11-11/input.json",
+            "sha256": "21278d3ff0212c30ba197b3cc008f3506eff24f93b44694119a0cf6d88657b8d",
+            "status": "PRESENT"
+          },
+          {
+            "bytes": 4374,
+            "path": "evidence/DYNAMIC_MEMORY_DEMO_2026-11-11/protocol.json",
+            "sha256": "006f10e17ab2abd1226ffe9bfac1c507f07c30a6a260861dc50fe969b4494b26",
+            "status": "PRESENT"
+          },
+          {
+            "bytes": 1574,
+            "path": "evidence/DYNAMIC_MEMORY_DEMO_2026-11-11/protocol-addendum.json",
+            "sha256": "1667f22b8c5b0fb940dadd43a547034c79315d7d00e5e5a734e78c34a3e446d7",
+            "status": "PRESENT"
+          },
+          {
+            "bytes": 510,
+            "path": "evidence/DYNAMIC_MEMORY_DEMO_2026-11-11/rejection-input.json",
+            "sha256": "c42a914adcc036c1905a54984785b2d8afd43c586e4e3754482daea00ca04dd9",
+            "status": "PRESENT"
+          },
+          {
+            "bytes": 46,
+            "path": "evidence/DYNAMIC_MEMORY_DEMO_2026-11-11/docs/d00-r1.txt",
+            "sha256": "8c6e68cec764125b1b8c39fc8da242af3db24b5a460f58808ccc5f296672e993",
+            "status": "PRESENT"
+          },
+          {
+            "bytes": 46,
+            "path": "evidence/DYNAMIC_MEMORY_DEMO_2026-11-11/docs/d00-r2.txt",
+            "sha256": "29948f2842a41afbd3e456621210ef6961c3c494ae4cbf6623e6f1dcf4fbf9f1",
+            "status": "PRESENT"
+          },
+          {
+            "bytes": 46,
+            "path": "evidence/DYNAMIC_MEMORY_DEMO_2026-11-11/docs/d01-r1.txt",
+            "sha256": "3e4eb18af330445b0f82068a602fd9c9578866c2f15bd76d1541918d600aa999",
+            "status": "PRESENT"
+          },
+          {
+            "bytes": 46,
+            "path": "evidence/DYNAMIC_MEMORY_DEMO_2026-11-11/docs/d10-r1.txt",
+            "sha256": "6a930cbadb5788b2cba6bee921372f593a84a2c3582a3d34a3f4df1d76517058",
+            "status": "PRESENT"
+          },
+          {
+            "bytes": 47,
+            "path": "evidence/DYNAMIC_MEMORY_DEMO_2026-11-11/docs/d10-r2.txt",
+            "sha256": "3c24c5ed464ef40d5219d43b04668e05d39c8bd5ad33bb4fb3011c9008b7b805",
+            "status": "PRESENT"
+          },
+          {
+            "bytes": 46,
+            "path": "evidence/DYNAMIC_MEMORY_DEMO_2026-11-11/docs/d10-r3.txt",
+            "sha256": "03d0c032fac627d2bbfd01def65789aa63dc52685ba547575d30fcc65e91e487",
+            "status": "PRESENT"
+          },
+          {
+            "bytes": 46,
+            "path": "evidence/DYNAMIC_MEMORY_DEMO_2026-11-11/docs/d11-r1.txt",
+            "sha256": "96bcadcf4cbf07212ba4663f56c6ae2f0ff7a2c360ef5f4ffcda5639af04a3e5",
+            "status": "PRESENT"
+          },
+          {
+            "bytes": 46,
+            "path": "evidence/DYNAMIC_MEMORY_DEMO_2026-11-11/docs/d02-r1.txt",
+            "sha256": "803cf93ca3e1124b27d06cbc03b84c619248e1cba454519f377ed0cd3a532420",
+            "status": "PRESENT"
+          },
+          {
+            "bytes": 64,
+            "path": "evidence/DYNAMIC_MEMORY_DEMO_2026-11-11/docs/d10-overflow.txt",
+            "sha256": "3cc183c99b314e238cc4d830ab75721d923f47a8a82f37865d650adcbf385307",
+            "status": "PRESENT"
+          },
+          {
+            "bytes": 46,
+            "path": "evidence/DYNAMIC_MEMORY_DEMO_2026-11-11/docs/d02-duplicate-group.txt",
+            "sha256": "b7c47faa35031f63a8dad9354d2764f9cc98197463752191dde4e1f32676a77d",
+            "status": "PRESENT"
+          },
+          {
+            "bytes": 1432,
+            "path": "evidence/DYNAMIC_MEMORY_DEMO_2026-11-11/oracle-correction.json",
+            "sha256": "e06e1cd7e8d93d0815290da983bfc9f00b53d2fc2c7fbd92b6e0f75fa9d05fb2",
+            "status": "PRESENT"
+          },
+          {
+            "bytes": 8801,
+            "path": "evidence/DYNAMIC_MEMORY_DEMO_2026-11-11/derivation-and-implementation.md",
+            "scope": "project",
+            "sha256": "a30b342cd72da75aa73e921be934475eeb8a5744263bd6694dc9368662d07079",
+            "status": "PRESENT"
+          }
+        ],
+        "recorded_at": 1794429544.0804121,
+        "scope": "project",
+        "snapshot_schema": "laplace.research-dependencies/3"
+      },
+      "question": "Can source-document count/witness deltas update a conditional continuation representation exactly without full rebuild inside each update?",
+      "result": "research_runs/run-d2f6d3cff17f0fbe.result.json",
+      "result_scope": "manuscript",
+      "revision": "sha256:58e1f15e071243b3d5cb63b41e91a1164bb2ff6a78cabeff36b2e85202276f6a",
+      "run_id": "run-d2f6d3cff17f0fbe",
+      "scope": "project",
+      "source": "evidence/DYNAMIC_MEMORY_DEMO_2026-11-11/incremental_demo_checked.py",
+      "source_scope": "project",
+      "summary": "Controlled5group/2factor fixture.9states x16declared queries agree exactly across protocol-driven fresh corpus rebuild, independent direct integer/Fraction row enumeration, incremental adjoint and forward channel. Main edit sequence4/5\u21923/4\u21923/5\u21923/4, replay unchanged, merge/split checked, zero support UNDEFINED. Atomic int64-total overflow and duplicate group mismatch refused unchanged.3prefix path updates, no hidden full rebuild in change(). Positive-channel and supported-gauge finite fixtures checked.",
+      "title": "Witnessed source edits with exact conditional recall"
+    }
+  ],
+  "schema_version": "laplace.research-records/1"
+}

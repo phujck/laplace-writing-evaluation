@@ -1,0 +1,189 @@
+{
+  "schema": "anf.reconciliation-algebra/1",
+  "author_origin": true,
+  "independent_review": "PENDING",
+  "measures": {
+    "cycle_residual": 6.938893903907228e-18,
+    "depth_ratio": 4.0,
+    "odd_verdict_variance": 1.0
+  },
+  "checks": {
+    "constant_gain": [
+      {
+        "C": 0.5,
+        "psi": 0,
+        "multiplier": -0.2,
+        "stable": true
+      },
+      {
+        "C": 1.3,
+        "psi": 0,
+        "multiplier": -1.0,
+        "stable": false
+      },
+      {
+        "C": 2.0,
+        "psi": 0,
+        "multiplier": -1.7,
+        "stable": false
+      }
+    ],
+    "negative_exponent": [
+      {
+        "N": 1,
+        "K": 2.0,
+        "multiplier": -1.7,
+        "stable": false
+      },
+      {
+        "N": 2,
+        "K": 1.0,
+        "multiplier": -0.7,
+        "stable": true
+      },
+      {
+        "N": 10,
+        "K": 0.2,
+        "multiplier": 0.09999999999999998,
+        "stable": true
+      }
+    ],
+    "matched_linear": {
+      "q": 1.0,
+      "alpha": 2.0,
+      "r": 0.3,
+      "eigenvalues": [
+        [
+          1.0,
+          0.0
+        ],
+        [
+          -1.7000000000000002,
+          -0.0
+        ]
+      ],
+      "mismatch_multiplier": -1.7
+    },
+    "anf_symmetric_cycle": {
+      "N": 900,
+      "theta": 0.025471791723687576,
+      "m": -0.16024794040084997,
+      "one_step_to_negative_residual": 6.938893903907228e-18,
+      "one_step_eigenvalues": [
+        [
+          1.1158603711447914,
+          0.0
+        ],
+        [
+          -0.7622148251344987,
+          -0.0
+        ]
+      ],
+      "two_step_multipliers": [
+        [
+          1.2451443678913916,
+          0.0
+        ],
+        [
+          0.5809714396548143,
+          0.0
+        ]
+      ],
+      "interpretation": "Existence of a full-loop period-two orbit, not a stable attractor claim."
+    },
+    "depth_exponent": {
+      "C": 0.1,
+      "Kc": 1.3,
+      "psi": 0.5,
+      "lambda": 1.4142135623730951,
+      "L": 3,
+      "Nc_flat": 169.0,
+      "Nc_correct": 676.0000000000002,
+      "Nc_incorrect": 338.00000000000006
+    },
+    "parity": [
+      {
+        "N": 2,
+        "exact_derivative_beta1": 1.0,
+        "N_times_relative_correction": -0.2275461490944839
+      },
+      {
+        "N": 3,
+        "exact_derivative_beta1": 1.5,
+        "N_times_relative_correction": 0.25620564551220415
+      },
+      {
+        "N": 100,
+        "exact_derivative_beta1": 7.958923738717876,
+        "N_times_relative_correction": -0.24968360448950344
+      },
+      {
+        "N": 101,
+        "exact_derivative_beta1": 8.038512976105055,
+        "N_times_relative_correction": 0.25030556717600794
+      },
+      {
+        "N": 500,
+        "exact_derivative_beta1": 17.832322776674527,
+        "N_times_relative_correction": -0.24993734383277344
+      },
+      {
+        "N": 501,
+        "exact_derivative_beta1": 17.867987422227873,
+        "N_times_relative_correction": 0.25006221954181984
+      }
+    ],
+    "control": {
+      "nilpotent_L2_H2_Wtop": 0.25,
+      "nilpotent_L2_H3_Wtop": 0.25,
+      "nilpotent_Eunit": 4.0,
+      "persistent_A_I_plus_cS_L2_H3_Wtop": 1.25,
+      "persistent_Eunit_H3": 0.8
+    },
+    "phases_jury": {
+      "r": 0.36787944117144233,
+      "b": 1.2,
+      "s": 0.4,
+      "Kc": 1.9701461059572865,
+      "at_boundary_eigenvalues": [
+        [
+          0.5018520570113494,
+          0.0
+        ],
+        [
+          -1.0,
+          -0.0
+        ]
+      ],
+      "Nc_CLT": 138.25414373768885
+    },
+    "cubic_sign": {
+      "a": -1.1,
+      "d_positive": 1.0,
+      "cycle_sq_positive_d": 0.1,
+      "d_negative": -1.0,
+      "cycle_sq_negative_d": -0.1
+    },
+    "single_verdict_noise": {
+      "at_e0_mean": 0.0,
+      "at_e0_variance_any_odd_N": 1.0,
+      "mean_abs_delta_theta_over_2": 0.175,
+      "meaning": "A realised majority verdict has O(1), not O(N^-1/2), variance at zero."
+    },
+    "weighted_dictator": {
+      "weights": [
+        0.75,
+        0.25
+      ],
+      "response_mean": "m",
+      "exact_derivative": 1.0,
+      "invalid_claim_upper_bound": 0.7978845608028654
+    }
+  },
+  "limitations": [
+    "Small deterministic algebra checks only",
+    "No historical outputs overwritten or rerun",
+    "No full nonlinear global-attractor theorem",
+    "No empirical domain or transformer validation"
+  ]
+}

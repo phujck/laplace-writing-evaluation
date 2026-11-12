@@ -1,0 +1,1169 @@
+{
+ "schema_version": "laplace.system-description/1",
+ "summary": "Everything this repository owns, as subsystems with a kind (core, domain, adapter), the domains each may use, their contracts, explanations and evaluators; the retained boundaries with exact consumers; the shipped distributions; and the capabilities described end to end. Read it through laplace.system; check it with python -m laplace.system check.",
+ "subsystems": [
+  {
+   "id": "core.identity",
+   "kind": "core",
+   "summary": "Qualified identity, revision, owner-mutation receipt, schema-version and lock mechanics, the public body-reference contract with its codec, retention, bounded reads and budget, and the public repository perimeter, shared by every owner; and this system description itself.",
+   "modules": [
+    "laplace",
+    "laplace.system",
+    "laplace.system.*",
+    "laplace.core",
+    "laplace.core.identity",
+    "laplace.core.source_pin",
+    "laplace.core.receipts",
+    "laplace.core.scoped",
+    "laplace.core.json_record",
+    "laplace.core.bodies",
+    "laplace.core.perimeter",
+    "laplace.core.admission",
+    "laplace.core.grammar",
+    "laplace.core.identity_doors"
+   ],
+   "files": [
+    "src/laplace/system/*",
+    "src/laplace/README.md"
+   ],
+   "uses": [
+    "core.runtime"
+   ],
+   "contracts": [
+    "src/laplace/system/description.json"
+   ],
+   "explanation": [
+    "docs/writing-code-overview.md",
+    "src/laplace/core/__init__.py"
+   ],
+   "evaluators": []
+  },
+  {
+   "id": "core.runtime",
+   "kind": "core",
+   "summary": "Where and how the system runs: one resolver per qualified root (source tree, package resources, serving checkout, state home), the declared runtime selection the launcher loads before Laplace is importable, bounded process work (manifest one-liners, the default-off watchdog) and path-scoped versioning.",
+   "modules": [
+    "laplace.core.checkout",
+    "laplace.core.runtime",
+    "laplace.core.process",
+    "laplace.core.versioning",
+    "laplace.core.observe"
+   ],
+   "files": [
+    "scripts/laplace-python",
+    "scripts/laplace_python.py"
+   ],
+   "uses": [],
+   "contracts": [
+    "runtime_profiles.toml"
+   ],
+   "explanation": [
+    "src/laplace/core/checkout.py",
+    "docs/writing-source-map.md"
+   ],
+   "evaluators": []
+  },
+  {
+   "id": "core.records",
+   "kind": "core",
+   "summary": "Durable records with no store's own vocabulary: the intent-then-execute journal and bank_row (stamp law, closed edge vocabulary), JSONL row reading, captured incremental log reading with exact selected rows and cut tokens, and the one row-graph walker over a scope its domain supplies.",
+   "modules": [
+    "laplace.core.records",
+    "laplace.core.records.*"
+   ],
+   "files": [],
+   "uses": [
+    "core.identity",
+    "core.runtime"
+   ],
+   "contracts": [
+    "src/laplace/pipeline/canon/wiki/operations/journal_bank_row.md"
+   ],
+   "explanation": [
+    "src/laplace/core/records/__init__.py",
+    "docs/writing-source-map.md"
+   ],
+   "evaluators": [
+    "tests/test_selected_definition_custody.py"
+   ]
+  },
+  {
+   "id": "domain.authoring",
+   "kind": "domain",
+   "summary": "Writing sessions and turns: the conversation journal (records fold, index and bank), admission, context, execution, steering, the live registry, dispatched children and parent continuation, provider processes and operating knowledge. Optional Source commissions use the existing Writing journal/index and native private incoming carrier for admitted-call/app/session accounting and bounded stop/drain.",
+   "modules": [
+    "laplace.writing",
+    "laplace.writing.*"
+   ],
+   "files": [
+    "profiles/workflows/*",
+    "profiles/writing/*",
+    "src/laplace/writing/README.md"
+   ],
+   "uses": [
+    "core.identity",
+    "core.records",
+    "domain.engine",
+    "domain.manuscript",
+    "domain.pipeline",
+    "domain.projects",
+    "domain.representation",
+    "domain.research",
+    "domain.work"
+   ],
+   "contracts": [
+    "profiles/workflows/packet-return.v2.schema.json",
+    "profiles/workflows/packet-judgement.v2.schema.json",
+    "src/laplace/writing/source_execution.py",
+    "src/laplace/writing/workflow_dispatch.py",
+    "src/laplace/writing/workflow_progression.py",
+    "src/laplace/writing/session_settings.py"
+   ],
+   "explanation": [
+    "docs/writing-work-review-lifecycle.md",
+    "docs/writing-research-workbench.md",
+    "docs/pilot-session-settings.md"
+   ],
+   "evaluators": [
+    "tests/test_source_native_allowance.py"
+   ]
+  },
+  {
+   "id": "domain.manuscript",
+   "kind": "domain",
+   "summary": "Manuscript source, proposals and their application, reconciliation, documents, templates, style, structure, reader plan and builds.",
+   "modules": [
+    "laplace.manuscript",
+    "laplace.manuscript.*"
+   ],
+   "files": [
+    "profiles/typography/**",
+    "profiles/visual_style.json",
+    "profiles/house_style/**"
+   ],
+   "uses": [
+    "domain.authoring",
+    "domain.engine",
+    "domain.pipeline",
+    "domain.projects",
+    "domain.representation",
+    "domain.research",
+    "domain.work"
+   ],
+   "contracts": [],
+   "explanation": [
+    "docs/writing-engine-walkthrough.md"
+   ],
+   "evaluators": []
+  },
+  {
+   "id": "domain.projects",
+   "kind": "domain",
+   "summary": "Projects and their homes: the manuscript-project library, configured source repositories, storage, artifacts, portability of exported locations and project lifecycle.",
+   "modules": [
+    "laplace.projects",
+    "laplace.projects.*"
+   ],
+   "files": [
+    "profiles/writing_sources.json"
+   ],
+   "uses": [
+    "domain.authoring",
+    "domain.engine",
+    "domain.manuscript",
+    "domain.pipeline",
+    "domain.research",
+    "domain.work",
+    "core.records"
+   ],
+   "contracts": [
+    "src/laplace/projects/project_handover.py",
+    "src/laplace/projects/project_data.py",
+    "src/laplace/projects/project_handover_lineage.py"
+   ],
+   "explanation": [
+    "docs/writing-agent-start.md",
+    "docs/writing-research-workbench.md"
+   ],
+   "evaluators": [
+    "tests/test_research_object_facets.py",
+    "tests/test_work_handover_snapshot.py",
+    "tests/test_selected_definition_custody.py",
+    "tests/test_selected_definition_consumer.py",
+    "tests/test_workflow_history_continuation.py"
+   ]
+  },
+  {
+   "id": "domain.work",
+   "kind": "domain",
+   "summary": "Work: durable tasks, recursive navigation, review obligations and synthesis, delivery to recipients, development-source grants, activity and author history.",
+   "modules": [
+    "laplace.work",
+    "laplace.work.*"
+   ],
+   "files": [],
+   "uses": [
+    "domain.authoring",
+    "domain.engine",
+    "domain.manuscript",
+    "domain.pipeline",
+    "domain.projects",
+    "domain.representation",
+    "domain.research"
+   ],
+   "contracts": [
+    "src/laplace/work/object_facets.py",
+    "src/laplace/work/owner_discovery.py",
+    "src/laplace/work/object_geometry.py",
+    "src/laplace/work/backlog.py",
+    "src/laplace/work/source_inventory.py",
+    "src/laplace/work/source_kernel.py",
+    "src/laplace/work/review_evidence.py",
+    "src/laplace/work/project_work_evidence.py"
+   ],
+   "explanation": [
+    "docs/writing-work-review-lifecycle.md",
+    "docs/writing-research-workbench.md",
+    "docs/writing-source-inventory.md",
+    "docs/source-kernel-bridge.md",
+    "docs/writing-review-evidence.md",
+    "docs/writing-evidence-navigation.md"
+   ],
+   "evaluators": [
+    "tests/test_research_object_facets.py",
+    "tests/test_object_geometry.py",
+    "tests/test_work_backlog.py",
+    "tests/test_source_owner_inventory.py",
+    "tests/test_source_inventory_doors.py",
+    "tests/test_source_kernel_bridge.py",
+    "tests/test_source_publication_inputs.py",
+    "tests/test_review_evidence.py",
+    "tests/test_work_provenance.py",
+    "tests/test_backlog_display_order.py"
+   ]
+  },
+  {
+   "id": "domain.research",
+   "kind": "domain",
+   "summary": "Research: inputs, records, producers, runs and their supervision, literature and references, figures, formal checks, concepts and corpus statistics, SuperARC.",
+   "modules": [
+    "laplace.research",
+    "laplace.research.*"
+   ],
+   "files": [],
+   "uses": [
+    "domain.engine",
+    "domain.manuscript",
+    "domain.pipeline",
+    "domain.projects",
+    "domain.representation",
+    "domain.work"
+   ],
+   "contracts": [
+    "src/laplace/research/object_context.py",
+    "src/laplace/research/research_records.py"
+   ],
+   "explanation": [
+    "docs/writing-campaigns.md",
+    "docs/writing-research-workbench.md"
+   ],
+   "evaluators": [
+    "tests/test_research_object_facets.py"
+   ]
+  },
+  {
+   "id": "domain.representation",
+   "kind": "domain",
+   "summary": "Representation and reconstruction: the Atlas library (records, segmentation, projections, reconstruction, benchmarks), its two reviewed Writing boundaries, seats, attention, embeddings and device policy. Writing body custody (content-addressed public bodies in the Atlas BlobStore) belongs here.",
+   "modules": [
+    "atlas",
+    "atlas.*",
+    "laplace.representation",
+    "laplace.representation.*"
+   ],
+   "files": [
+    "src/atlas/**"
+   ],
+   "uses": [
+    "domain.authoring",
+    "domain.engine",
+    "domain.pipeline",
+    "domain.work"
+   ],
+   "contracts": [
+    "src/laplace/representation/source_publication.py"
+   ],
+   "explanation": [
+    "atlas/README.md",
+    "docs/source-kernel-bridge.md"
+   ],
+   "evaluators": [
+    "tests/test_source_publication.py",
+    "tests/test_source_publication_self_description.py"
+   ]
+  },
+  {
+   "id": "domain.pipeline",
+   "kind": "domain",
+   "summary": "The manuscript production pipeline and canon: registry, authoring state, workflow and dispatch schemas, canon loader and wiki, the writing organ, verification and calibration dials.",
+   "modules": [
+    "laplace.pipeline",
+    "laplace.pipeline.*"
+   ],
+   "files": [
+    "src/laplace/pipeline/canon/**",
+    "src/laplace/pipeline/writing_organ/*",
+    "src/laplace/pipeline/census_verdicts.json",
+    "profiles/pipeline/**",
+    "profiles/acceptance/**",
+    "profiles/selection/**"
+   ],
+   "uses": [
+    "domain.authoring",
+    "domain.engine",
+    "domain.manuscript",
+    "domain.representation",
+    "domain.research",
+    "domain.work",
+    "core.records",
+    "domain.projects"
+   ],
+   "contracts": [
+    "src/laplace/pipeline/workflow_definitions.py",
+    "src/laplace/pipeline/workflow_definition_history.py",
+    "src/laplace/pipeline/workflow_operations.py"
+   ],
+   "explanation": [],
+   "evaluators": [
+    "tests/test_selected_definition_custody.py",
+    "tests/test_selected_definition_consumer.py",
+    "tests/test_workflow_history_continuation.py",
+    "tests/test_workflow_history_doors.py",
+    "tests/test_workflow_operations.py",
+    "tests/test_workflow_operation_doors.py"
+   ]
+  },
+  {
+   "id": "domain.engine",
+   "kind": "domain",
+   "summary": "The Laplace engine itself: wake and close, memory and soul organs, the self-corpus and its obligation ledger and row graph (engine_ledger, qualifying core.records), seats, lenses, judgement, telemetry and assessment, descent and the Aisthesis front read models. The selected Source-kernel input adapter consumes explicit retained Work publications; historical engine obligation reads remain separate from canonical Work.",
+   "modules": [
+    "laplace.engine",
+    "laplace.engine.*"
+   ],
+   "files": [
+    "profiles/*.md",
+    "profiles/*.pdf",
+    "profiles/*.tex",
+    "profiles/*.yaml",
+    "profiles/*.json",
+    "profiles/*.jsonl",
+    "profiles/voice/**",
+    "src/laplace/engine/AUTONOMY_BACKLOG.md"
+   ],
+   "uses": [
+    "domain.manuscript",
+    "domain.pipeline",
+    "domain.representation",
+    "domain.research",
+    "domain.work"
+   ],
+   "contracts": [],
+   "explanation": [
+    "docs/source-kernel-bridge.md"
+   ],
+   "evaluators": [
+    "tests/test_source_kernel_bridge.py"
+   ]
+  },
+  {
+   "id": "adapter.sdk",
+   "kind": "adapter",
+   "summary": "The installed Python entry (laplace.sdk): a local caller starts at the declared system entry and follows owner-returned handles to the Work affecting a subsystem, with its root's own authority; it composes laplace.system and work.owner_discovery and adds no rule.",
+   "modules": [
+    "laplace.sdk"
+   ],
+   "files": [],
+   "uses": [],
+   "contracts": [
+    "src/laplace/sdk.py"
+   ],
+   "explanation": [
+    "docs/owner-discovery.md",
+    "docs/writing-research-workbench.md",
+    "docs/writing-review-evidence.md",
+    "docs/writing-evidence-navigation.md"
+   ],
+   "evaluators": [
+    "tests/test_review_evidence_doors.py",
+    "tests/test_work_provenance_doors.py",
+    "tests/test_workflow_history_doors.py",
+    "tests/test_workflow_operation_doors.py"
+   ]
+  },
+  {
+   "id": "adapter.native",
+   "kind": "adapter",
+   "summary": "The agent door: native tool admission, the operation table, delivery, declarations, schemas, verbs and help, and the generators of those declarations.",
+   "modules": [
+    "laplace.native",
+    "laplace.native.*"
+   ],
+   "files": [
+    "tools/writing_verbs/**",
+    "tools/migrate_declarations.py",
+    "tools/declaration_table.py",
+    "tools/help_*.py",
+    "tools/handler_resolvers.py",
+    "tools/door_citations.py",
+    "tools/measure_help.py"
+   ],
+   "uses": [],
+   "contracts": [
+    "src/laplace/native/help_guides.py"
+   ],
+   "explanation": [
+    "docs/writing-start-here.md",
+    "docs/writing-tasks.md",
+    "docs/writing-glossary.md",
+    "docs/writing-reference.md"
+   ],
+   "evaluators": [
+    "tests/test_first_use_guidance.py",
+    "tests/test_workflow_history_doors.py",
+    "tests/test_workflow_operation_doors.py"
+   ]
+  },
+  {
+   "id": "adapter.http",
+   "kind": "adapter",
+   "summary": "The web door: the scanner server, route entries and facades, the authoring and research HTTP doors, served pages and their declared preconditions.",
+   "modules": [
+    "laplace.web",
+    "laplace.web.*"
+   ],
+   "files": [
+    "src/laplace/web/*.html",
+    "src/laplace/web/static_shared/**"
+   ],
+   "uses": [],
+   "contracts": [],
+   "explanation": [
+    "docs/writing-browser-server.md"
+   ],
+   "evaluators": [
+    "tests/writing_owner_review_evidence.test.mjs",
+    "tests/workspace_review_evidence.test.mjs",
+    "tests/task_trail.test.mjs",
+    "tests/human_workspace_shell.test.mjs",
+    "tests/research_geometry.test.mjs",
+    "tests/test_workflow_history_doors.py",
+    "tests/workflow_history_frontend.test.mjs",
+    "tests/workflow_operation_frontend.test.mjs",
+    "tests/test_workflow_operation_doors.py"
+   ]
+  },
+  {
+   "id": "adapter.desktop",
+   "kind": "adapter",
+   "summary": "The human desktop and browser door: the managed service, the native window, launchers and the browser workspace assets.",
+   "modules": [
+    "laplace.desktop",
+    "laplace.desktop.*"
+   ],
+   "files": [
+    "src/laplace/desktop/deploy/*"
+   ],
+   "uses": [],
+   "contracts": [],
+   "explanation": [
+    "src/laplace/web/static_shared/README.md"
+   ],
+   "evaluators": []
+  },
+  {
+   "id": "adapter.cli",
+   "kind": "adapter",
+   "summary": "The command-line door: repository scripts and developer tools.",
+   "modules": [],
+   "files": [
+    "scripts/**",
+    "tools/**"
+   ],
+   "uses": [],
+   "contracts": [],
+   "explanation": [],
+   "evaluators": []
+  },
+  {
+   "id": "adapter.distribution",
+   "kind": "adapter",
+   "summary": "What is shipped and run: package and lock declarations, test configuration, runtime profiles and the container recipes.",
+   "modules": [],
+   "files": [
+    "pyproject.toml",
+    "atlas/pyproject.toml",
+    "uv.lock",
+    "pytest.ini",
+    "runtime_profiles.toml",
+    "deploy/**"
+   ],
+   "uses": [],
+   "contracts": [],
+   "explanation": [
+    "docs/writing-release-selection.md"
+   ],
+   "evaluators": []
+  },
+  {
+   "id": "adapter.explanation",
+   "kind": "adapter",
+   "summary": "The human explanation door: the documentation set, linked from each subsystem and capability it explains.",
+   "modules": [],
+   "files": [
+    "docs/**"
+   ],
+   "uses": [],
+   "contracts": [],
+   "explanation": [],
+   "evaluators": []
+  }
+ ],
+ "retained": [
+  {
+   "id": "owners-read-door-declarations",
+   "owner": "adapter.native",
+   "reason": "Five owner reads put the native door's own spelling of a next call, or its declared prose, inside the result they return, so they read it from the door's tables: the source read's write recipe (pipeline.authoring.inspect -> writing_declarations.source_write_guidance), a Work action's declared effects and summary (project_work_views._declared), author-update and control read handles (provider_updates._read_handle -> writing_verbs.native_example), a restructure action's native request (reader_restructure.action -> writing_verbs.from_owner_call), and the operating brief's catalogue, homes and help (writing_operating.build and tool_contract). The other nine owners of this group now hold and admit their own contracts (core.admission, writing_schemas reading owner contracts, review_http, the injected interface view).",
+   "retire_when": "The door that delivers each result composes the spelling of the next call when it renders the owner result, or the spelled fact (recipe, declared effects) moves to the owner that declares it; each converted owner is removed here.",
+   "edges": [
+    [
+     "laplace.pipeline.authoring",
+     "laplace.native.declarations"
+    ],
+    [
+     "laplace.work.project_work_views",
+     "laplace.native.declarations"
+    ],
+    [
+     "laplace.writing.provider_updates",
+     "laplace.native.verbs"
+    ],
+    [
+     "laplace.manuscript.reader_restructure",
+     "laplace.native.verbs"
+    ],
+    [
+     "laplace.writing.operating",
+     "laplace.native.declarations"
+    ]
+   ]
+  },
+  {
+   "id": "owners-calling-the-native-door",
+   "owner": "adapter.native",
+   "reason": "The provider session hosts the native door as its only tool. The operating brief describes the gateway (writing_operating.build, session_policy, session_workspace and tool_contract read writing_tools.specification, READS and WRITES), and WritingTurn's in-process transports serve its calls (writing_provider calls writing_tools.call, tool_failure, bank_failure and specification). Project lifecycle and the project library no longer call the door: they bank through writing.records.",
+   "retire_when": "turn_admission.start_turn receives the tool door from each turn starter (authoring_http, writing_tools, dispatch_execution, work_delivery) and WritingTurn calls only that door; the brief takes the door's contract from the same object. Not exercised in this source commission, because provider sessions are outside its validation.",
+   "edges": [
+    [
+     "laplace.writing.operating",
+     "laplace.native.tools"
+    ],
+    [
+     "laplace.writing.provider",
+     "laplace.native.tools"
+    ]
+   ]
+  }
+ ],
+ "distributions": [
+  {
+   "name": "laplace-engine",
+   "declaration": "pyproject.toml",
+   "packages": [
+    "laplace"
+   ]
+  },
+  {
+   "name": "atlas",
+   "declaration": "atlas/pyproject.toml",
+   "packages": [
+    "atlas"
+   ]
+  }
+ ],
+ "capabilities": [
+  {
+   "id": "work.dispatch-return-admission",
+   "owner": "domain.work",
+   "summary": "A dispatched packet's typed return is admitted against its declared contract: every input, source and continuation pin must name bytes an owner admits, and the return's standing (COMPLETE, INVALID-RETURN, ...) is what the Work parent and judge consume.",
+   "operation": {
+    "native": "dispatch_status",
+    "views": [
+     "return-contract",
+     "return-schema"
+    ],
+    "consumers_see": "dispatch_status child rows: state and return_errors"
+   },
+   "design": "The return contract promises inputs as \"absolute or repository-relative\" and workers read repository evidence through repository.read; a pin the repository owner admits must therefore be admitted by the validator through the same owner (one admission, writing_sources.qualified_file), never by a second path rule.",
+   "contract": [
+    "profiles/workflows/packet-return.v2.schema.json",
+    "profiles/workflows/packet-judgement.v2.schema.json"
+   ],
+   "code": [
+    "src/laplace/work/project_work.py:_dispatch_pin_path",
+    "src/laplace/work/project_work.py:_dispatch_return_errors",
+    "src/laplace/pipeline/workflow.py:packet_return_problems",
+    "src/laplace/projects/writing_sources.py:qualified_file",
+    "src/laplace/projects/writing_sources.py:target_for_path"
+   ],
+   "help": [
+    "src/laplace/writing/dispatch_returns.py:profile",
+    "src/laplace/writing/dispatch_parent.py:parent_return_contract"
+   ],
+   "explanation": [
+    "docs/workflows.md#Qualified repository pins"
+   ],
+   "evaluator": [
+    "tests/test_qualified_repository_pins.py::test_a_repository_qualified_input_pin_is_admitted_through_the_repository_owner",
+    "tests/test_qualified_repository_pins.py::test_the_contracts_repository_relative_input_is_admitted_and_its_coarse_view_agrees",
+    "tests/test_qualified_repository_pins.py::test_a_pin_in_another_configured_repository_is_read_at_that_repositorys_coordinate",
+    "tests/test_qualified_repository_pins.py::test_a_qualified_pin_the_owner_would_not_admit_is_refused_by_name",
+    "tests/test_qualified_repository_pins.py::test_unaffected_neighbours_keep_their_meaning",
+    "tests/test_qualified_repository_pins.py::test_a_landed_return_is_revalidated_in_place_without_rewrite_or_replay",
+    "tests/test_qualified_repository_pins.py::test_the_return_contract_view_states_the_qualified_pin",
+    "tests/test_writing_dispatch_return_validity.py::test_genuine_project_artifact_completion_stands_then_output_drift_is_observed"
+   ],
+   "consumers": [
+    "src/laplace/work/project_work.py:dispatch_view",
+    "src/laplace/writing/dispatch_parent.py:return_errors",
+    "src/laplace/writing/dispatch_parent.py:required_inputs",
+    "scripts/distil.py:resolve_pin"
+   ],
+   "observables": {
+    "admission": "An input, source or continuation pin is admitted when its bytes are reachable through the project, the manuscript source, or the repository owner (explicit {repository, path} or the one configured repository owning the path) and match the pinned sha256.",
+    "effects": "None on the store: validation reads; the child row standing and return_errors are projections recomputed on each dispatch_status read.",
+    "refusals": "Unknown or unavailable repository; a path escaping its repository, including through a symlink; changed or missing bytes; a repository-qualified output; a caller whose resolver has no repository scope.",
+    "obligations": "A COMPLETE worker return lets its judge and the parent synthesis consume it; an INVALID-RETURN keeps the judge blocked on DEPENDENCY-INCOMPLETE and the parent return BLOCKED."
+   },
+   "views": {
+    "coarse": "dispatch_status child state (COMPLETE / INVALID-RETURN / BLOCKED) and the parent return contract summary",
+    "fine": "per-pin return_errors (inputs/N, source/artifacts/N, output) from _dispatch_return_errors and packet_return_problems"
+   },
+   "unaffected": [
+    "project-artifact and manuscript pins (same resolution, same errors)",
+    "packet outputs (always project artifacts)",
+    "wave lanes in scripts/distil.py (their resolvers declare no repository scope and refuse a qualified pin by name)"
+   ],
+   "recovery": "A return refused only because its repository pins were outside the old admission is revalidated in place on the next dispatch_status read: the return file is not rewritten, no reading is replayed and no journal row is banked; the judge and parent then consume it through their existing owners.",
+   "acceptance": "Independent review of this change is a separate obligation; this description and its evaluators do not award it."
+  },
+  {
+   "id": "core.scoped-progress",
+   "owner": "core.identity",
+   "summary": "An operation needs only its authority and the current basis its effect consumes; a changed consulted observation becomes a typed local review obligation on the result, a result carries its grade, and aggregation counts only consumed children.",
+   "operation": {
+    "native": "apply_revision",
+    "views": [
+     "proposal review_obligations",
+     "application result_grade"
+    ],
+    "consumers_see": "proposal rows: basis_currentness, review_obligations, semantic_currentness; application rows: review_obligations, result_grade; the review panel (static_shared/walk-review.mjs) states that the edit can be applied and what stays to review"
+   },
+   "design": "Roles authority/target/consumed refuse when they move; consulted observations (derived PDF/build views) become local obligations. Owners supply the role of each input (writing.reads.read_role) and their own refusals; Work containment by a programme is navigation, not consumption.",
+   "contract": [
+    "src/laplace/core/scoped.py"
+   ],
+   "code": [
+    "src/laplace/core/scoped.py:judge",
+    "src/laplace/core/scoped.py:obligation",
+    "src/laplace/core/scoped.py:aggregate",
+    "src/laplace/writing/reads.py:read_role",
+    "src/laplace/manuscript/proposal_currentness.py:_proposal_validation_basis",
+    "src/laplace/work/project_work.py:_work_basis",
+    "src/laplace/manuscript/build_targets.py:staged_asset_plan"
+   ],
+   "help": [
+    "src/laplace/writing/operating.py:RULES"
+   ],
+   "explanation": [
+    "docs/scoped-progress.md"
+   ],
+   "evaluator": [
+    "tests/test_scoped_progress.py::test_an_absent_derived_pdf_does_not_block_the_source_repair_and_becomes_a_local_obligation",
+    "tests/test_scoped_progress.py::test_changed_consumed_evidence_beside_an_absent_pdf_still_refuses",
+    "tests/test_scoped_progress.py::test_the_wrong_current_source_still_refuses_with_the_derived_witness_absent",
+    "tests/test_scoped_progress.py::test_a_programme_goal_change_keeps_child_scope_but_a_consumed_ancestor_change_restales_it",
+    "tests/test_scoped_progress.py::test_aggregation_carries_consumed_children_only_and_keeps_an_independent_failure_local",
+    "tests/test_candidate_asset_closure.py::test_canonical_build_and_candidate_preview_close_the_same_owned_figure_under_the_unchanged_sandbox"
+   ],
+   "consumers": [
+    "src/laplace/manuscript/source_application.py:_application_row",
+    "src/laplace/manuscript/manuscript_proposals.py:preview",
+    "src/laplace/manuscript/reconciliation.py:validate_candidate",
+    "src/laplace/manuscript/document_templates.py:validate_candidate",
+    "src/laplace/manuscript/reader_restructure.py:preview",
+    "src/laplace/manuscript/reader_logical_restructure.py:prepare",
+    "src/laplace/work/project_work_review.py:intent_digest"
+   ],
+   "observables": {
+    "admission": "Authority, the selected edition, source pins, read receipts, context and consumed reads must be current; consulted document/derived reads may have moved.",
+    "effects": "The source effect only; its application row records review_obligations and result_grade.",
+    "refusals": "Wrong project or authority, a changed current source, changed consumed evidence or context, an unknown basis.",
+    "obligations": "Each moved consulted observation as one typed local obligation (stable id; merged once on continuation)."
+   },
+   "views": {
+    "coarse": "proposal basis_currentness and semantic_currentness; application result_grade",
+    "fine": "review_obligations rows (kind, reason, subject, basis) and the read role of each consulted read"
+   },
+   "unaffected": [
+    "Work under non-programme parents (legacy scope and review intent hashes)",
+    "candidate stages without parent-named graphics (byte-identical staging)"
+   ],
+   "recovery": "A refused proposal is re-requested against the current basis; a pending obligation is answered by reviewing its subject, never by repeating the effect.",
+   "acceptance": "Independent review of this change is a separate obligation; this description and its evaluators do not award it."
+  },
+  {
+   "id": "work.owner-discovery",
+   "owner": "domain.work",
+   "summary": "A caller given only the system entry, a task or affected subsystem and its actual scope finds the responsible owner, the bound Work affecting it with qualified standing, activity, next actions and evidence handles, then summarises upward and follows lateral relations; owner bindings live in the Work ledger, separately revisioned, and grant nothing.",
+   "operation": {
+    "sdk": "laplace.sdk.request",
+    "native": "project",
+    "views": [
+     "discovery"
+    ],
+    "http": "GET /work/discovery; POST /work/binding (human door)",
+    "consumers_see": "one result shape laplace.owner-discovery/1 (facet describe | discover | inspect | resolve) whose next, up and lateral handles spell the SDK request, the native project read and the HTTP URL; the System owners app view paints it; geometry facets neighbourhood | semantic-scope | timeline return laplace.object-neighbourhood/1 with per-owner cuts, typed one-hop edges, parent-local coordinates and explicit frontiers."
+   },
+   "design": "Ownership comes from the declarations (laplace.system, core) and Work facts from the Work owner (domain.work); the outer SDK and the doors compose them. A binding is a project-work-binding row in the same ledger, outside the Work records, so no specification, scope, standing, read cut or review basis moves. The caller's scope comes from the host (owned workspace or the native session's project), never from a payload.",
+   "contract": [
+    "src/laplace/work/owner_discovery.py:contract",
+    "src/laplace/work/owner_discovery.py:binding_contract",
+    "src/laplace/core/identity.py:reference",
+    "src/laplace/work/object_facets.py:change_contract",
+    "src/laplace/projects/project_handover.py:object_contract",
+    "src/laplace/work/object_geometry.py:COORDINATE"
+   ],
+   "code": [
+    "src/laplace/work/owner_discovery.py:request",
+    "src/laplace/work/owner_discovery.py:bind",
+    "src/laplace/system/__init__.py:entry",
+    "src/laplace/system/__init__.py:choices",
+    "src/laplace/sdk.py:request",
+    "src/laplace/work/object_facets.py:request",
+    "src/laplace/work/object_facets.py:capture_inputs",
+    "src/laplace/research/object_context.py:change",
+    "src/laplace/projects/project_handover.py:object_request",
+    "src/laplace/work/object_geometry.py:request",
+    "src/laplace/work/project_work.py:read_snapshot",
+    "src/laplace/research/object_context.py:geometry_observation"
+   ],
+   "help": [
+    "src/laplace/work/project_work_views.py:contract",
+    "src/laplace/sdk.py"
+   ],
+   "explanation": [
+    "docs/owner-discovery.md#Start at the system",
+    "docs/writing-research-workbench.md"
+   ],
+   "evaluator": [
+    "tests/test_owner_discovery.py::test_a_fresh_caller_reaches_the_same_canonical_work_from_the_system_entry_alone",
+    "tests/test_owner_discovery.py::test_binding_is_guarded_idempotent_and_moves_no_work_revision_or_read_cut",
+    "tests/test_owner_discovery.py::test_a_project_confined_caller_sees_no_foreign_title_id_or_count",
+    "tests/test_research_object_facets.py",
+    "tests/test_object_geometry.py"
+   ],
+   "consumers": [
+    "src/laplace/web/project_work_surface.py:handle",
+    "src/laplace/work/project_work_views.py:read",
+    "src/laplace/sdk.py:describe",
+    "src/laplace/web/static_shared/workspace-owners.mjs"
+   ],
+   "observables": {
+    "admission": "Reads: the host supplies the scope (the SDK and the local HTTP door read their owned workspace; the native Work read its session's project); the request contract is validated before any read. Bindings: an existing Work, a declared subsystem or capability or existing Work target, and both guards (expected_work_revision, expected_binding_revision) compared inside the ledger's writer lock.",
+    "effects": "Reads write nothing. A binding appends one project-work-binding row through project_work._append with its owner receipt; a replay of the current binding appends nothing.",
+    "refusals": "One admission (admit_reference) for resolve, inspect and binding targets: MALFORMED_REFERENCE (shape or exact identity keys), UNSUPPORTED_TARGET, WRONG_OWNER, UNKNOWN_TARGET, NOT_IN_SCOPE (identical for absent and out-of-scope Work), STALE_VERSION (a requested Work revision that is not current; never substituted) and UNSUPPORTED_VERSION; also UNKNOWN_SUBSYSTEM, DUPLICATE_RELATION, CHANGED_INPUT for a moved page cut, and the Work owner's CHANGED_INPUT for a stale specification or binding guard.",
+    "obligations": "None created: discovery is navigation metadata. Bindings do not recertify completion, renew evidence or transfer authority; unbound Work stays explicitly uncovered."
+   },
+   "views": {
+    "coarse": "describe: the system purpose, task choices and each subsystem's in-scope bound-Work count; discover: the subsystem's bound Work with standing and an upward summary",
+    "fine": "inspect: one Work's purpose, standing, blockers, qualified activity, next actions, evidence handles, binding revision, parent and lateral references, with legacy handles; local maps and actual recorded timelines retain separate owner cuts and bounded explicit expansion."
+   },
+   "unaffected": [
+    "every Work specification, scope, standing, completion and review revision and every existing /work/state read cut",
+    "legacy project-qualified handles, tokens, sessions and grants"
+   ],
+   "recovery": "A binding is undone by binding again with the current revision; reads keep working with no bindings (everything reads as unbound). Disabling the view and routes leaves the ledger rows inert and every original record intact.",
+   "acceptance": "Independent review of this change is a separate obligation; this description and its evaluators do not award it."
+  },
+  {
+   "id": "work.source-contracts",
+   "owner": "domain.work",
+   "summary": "An operation's owner declares its contract as segments of the facts its code runs and its explicit consumers as typed implements/consumes/projects/evaluates/explains/contains relations; one generic resolver judges each consumer against the segment bases it was accepted on, so a changed segment makes only its consumers locally pending review.",
+   "operation": {
+    "sdk": "laplace.sdk.source_contract (owner_discovery.request facet inspect, kind source-contract)",
+    "native": "project {\"view\": \"discovery\", \"request\": {\"facet\": \"inspect\", \"reference\": <source-contract reference>, \"select\"?, \"budget\"?}}",
+    "views": [],
+    "http": "GET /work/discovery?facet=inspect&reference=<json>&select=&budget=",
+    "consumers_see": "laplace.source-contract/1: the coarse contract or one selected step/segment with each consumer's canonical standing from the Work handoff/review rows (CURRENT, PENDING_REVIEW, UNREVIEWED, HELD, REJECTED), and a retained version's exact bodies by version or neutral reference"
+   },
+   "design": "Declarations live with their operations (project_work_review.source_contract, development_source.source_contract, representation.source_publication.source_contract); the resolver uses core.scoped consumed observations and obligations, core.identity digests and core.bodies retention, and holds no operation, field or path of its own. Imports, paths and file hashes are structural evidence only.",
+   "contract": [
+    "src/laplace/work/source_contracts.py:validate",
+    "src/laplace/work/source_contracts.py:binding_schema",
+    "src/laplace/work/source_contracts.py:reference",
+    "src/laplace/work/project_work_review.py:source_contract",
+    "src/laplace/work/development_source.py:source_contract",
+    "src/laplace/work/owner_discovery.py:contract",
+    "src/laplace/representation/source_publication.py:source_contract"
+   ],
+   "code": [
+    "src/laplace/work/source_contracts.py:normalize",
+    "src/laplace/work/source_contracts.py:read",
+    "src/laplace/work/source_contracts.py:publish",
+    "src/laplace/work/source_contracts.py:canonical_standing",
+    "src/laplace/work/project_work_review.py:decision",
+    "src/laplace/work/project_work_review.py:obligations",
+    "src/laplace/work/owner_discovery.py:request",
+    "src/laplace/sdk.py:source_contract"
+   ],
+   "help": [
+    "src/laplace/sdk.py"
+   ],
+   "explanation": [
+    "docs/scoped-progress.md#Source contracts"
+   ],
+   "evaluator": [
+    "tests/test_source_contracts.py::test_the_changed_segments_make_only_their_consumers_pending_and_an_unrelated_operation_stays_current",
+    "tests/test_source_contracts.py::test_the_coarse_contract_descends_to_one_step_or_segment_under_a_budget_and_is_retained_as_bodies",
+    "tests/test_source_contracts.py::test_an_omitted_child_logical_target_keeps_the_base_request_identity_replay_and_recovery",
+    "tests/test_source_contracts.py::test_only_an_independent_review_of_the_handed_version_is_canonical_acceptance",
+    "tests/test_source_contracts.py::test_a_changed_declaration_makes_reviewed_consumers_of_changed_segments_pending_and_a_new_review_repairs_one",
+    "tests/test_source_contracts.py::test_a_source_only_independent_review_satisfies_the_real_work_and_every_door_agrees",
+    "tests/test_source_contracts.py::test_one_normalized_read_refuses_wrong_identity_and_version_and_never_substitutes_current"
+   ],
+   "consumers": [
+    "src/laplace/sdk.py:source_contract",
+    "src/laplace/work/owner_discovery.py:request",
+    "src/laplace/work/project_work_review.py:facet",
+    "src/laplace/writing/schemas.py"
+   ],
+   "observables": {
+    "admission": "A declaration is validated (schema, known relation kinds, relations naming declared segments) before any judgement; an unknown operation or selection is refused by name.",
+    "effects": "Reads write nothing. A Work handoff covering a source_contract-bound obligation retains the selected segment bodies through the Writing body store and embeds identity, version, bases and body references in that handoff phase row; the review of it copies the handed consumer and bases.",
+    "refusals": "Unknown relation or segment, unknown operation, unknown step/segment selection, a read over its byte budget (BudgetExceeded). At handoff: UNSUPPORTED_OPERATION, UNKNOWN_CONSUMER, SEGMENT_NOT_CONSUMED (nothing written). At review: a handoff without the bound contract or a binding changed since the handoff. At read: UNKNOWN_VERSION (never answered with the current declaration), MALFORMED_REFERENCE.",
+    "obligations": "SOURCE_CONTRACT_SEGMENT_CHANGED, one per consumer and changed consumed segment, local to that consumer; answered by a new independent acceptance, never by the change."
+   },
+   "views": {
+    "coarse": "purpose, each segment basis with its next selection, relation counts and steps",
+    "fine": "one step (primitive, guard, effect, closures) or one segment (facts, basis, consumers)"
+   },
+   "unaffected": [
+    "every Work ledger row and revision",
+    "the follow-up request of a caller that omits child.logical_target"
+   ],
+   "recovery": "Reads only; a pending consumer recovers by an independent re-acceptance at the current bases.",
+   "acceptance": "Independent review of this change is a separate obligation; this description does not certify any consumer."
+  },
+  {
+   "id": "representation.source-publication",
+   "owner": "domain.representation",
+   "summary": "One selected Source contribution to the active publication, with exact request recovery and retained typed facts; a source declaration of this operation is distinct from its publication.",
+   "operation": {
+    "sdk": "laplace.sdk.source_publication; source_contract domain.representation:source_publication",
+    "native": "Read only: project discovery source-kernel; native/project callers cannot publish.",
+    "views": [
+     "declaration",
+     "publications",
+     "prepare",
+     "counterpart",
+     "recover"
+    ],
+    "http": "GET /work/discovery?facet=source-kernel; publication effects remain trusted SDK/operator only.",
+    "consumers_see": "Current declaration, exact handed meaning, consumer review standing and active counterpart/recovery remain distinct."
+   },
+   "design": "The existing owner declares nine semantic segments. The generic Source registry, Work handoff/body custody, source_kernel input adapter, Keeper and active current-publication-object descent are reused; no second publisher/store/authority.",
+   "contract": [
+    "src/laplace/representation/source_publication.py:contract",
+    "src/laplace/representation/source_publication.py:source_contract",
+    "src/laplace/work/source_kernel.py:contract"
+   ],
+   "code": [
+    "src/laplace/representation/source_publication.py:request",
+    "src/laplace/representation/source_publication.py:prepare",
+    "src/laplace/representation/source_publication.py:commit",
+    "src/laplace/representation/source_publication.py:recover",
+    "src/laplace/representation/source_publication.py:read_object",
+    "src/laplace/representation/source_publication.py:full_publication_receipt",
+    "src/laplace/work/source_kernel.py:read",
+    "src/laplace/engine/source_kernel_input.py",
+    "src/laplace/engine/descent.py"
+   ],
+   "help": [
+    "src/laplace/sdk.py"
+   ],
+   "explanation": [
+    "docs/source-kernel-bridge.md",
+    "docs/writing-source-inventory.md"
+   ],
+   "evaluator": [
+    "tests/test_source_publication_self_description.py"
+   ],
+   "consumers": [
+    "src/laplace/engine/source_kernel_input.py",
+    "src/laplace/engine/keeper.py",
+    "src/laplace/engine/descent.py",
+    "src/laplace/web/static_shared/workspace-source-inspector.mjs"
+   ],
+   "observables": {
+    "admission": "Actual owned-workspace SDK/HTTP/publication-cli operator, expected parent and retained input packet; source grants never transfer this authority.",
+    "effects": "Selected commit stages only selected leaves/ancestors/index/cache and original receipt; ordinary publication separately reconsumes its selected packet.",
+    "refusals": "Unknown/mismatched contract, raw source, Work custody, scope, request intent, current artifact or foreign timing; bounded reads refuse instead of clipping.",
+    "obligations": "Canonical consumed-segment review standing remains local; no automatic acceptance from registration or publication."
+   },
+   "views": {
+    "coarse": "Purpose, authority, recovery, nine segment bases and named constituent steps.",
+    "fine": "One current constituent on its observation, or one exact retained segment with9/1 coverage and issued previous/next/up reads."
+   },
+   "unaffected": [
+    "unselected kernel facts and retained basis",
+    "Source grants and native publication refusal",
+    "old Work obligations and retained handoffs",
+    "authored checkpoint/metric/reader qualification"
+   ],
+   "recovery": "Original request/custody and active publication typed reads; no re-admission of current source to read already-published exact facts.",
+   "acceptance": "Source controls/read observations do not constitute actual host publication or whole-kernel ingestion."
+  },
+  {
+   "id": "work.review-evidence",
+   "owner": "domain.work",
+   "summary": "Read one Work's review obligation counts, explicitly enumerate a bounded list and inspect selected evidence routes at the same consumed observation. Counts, metadata expansion and body reading remain separate.",
+   "operation": {
+    "native": "project {view:review-evidence,id,request}",
+    "http": "GET /work/state?project=...&view=review-evidence&id=...&request=...",
+    "sdk": "work_read(owner_handle.payload)",
+    "consumers_see": "laplace.work-review-evidence/1; aggregate, enumerate and support demands with owner-issued continuation/restart and exact inspection reads"
+   },
+   "design": "The Work owner decides satisfaction/currentness from one fact path. Actual host Scope precedes lookup. The observation binds only consumed facts and is not an atomic filesystem snapshot or a durable query store. Local SDK authority does not widen a native session.",
+   "contract": [
+    "src/laplace/work/review_evidence.py:contract",
+    "src/laplace/work/project_work_views.py:contract"
+   ],
+   "code": [
+    "src/laplace/work/review_evidence.py",
+    "src/laplace/work/project_work_views.py:read",
+    "src/laplace/sdk.py:work_read"
+   ],
+   "help": [
+    "src/laplace/native/declarations.py",
+    "docs/writing-review-evidence.md"
+   ],
+   "explanation": [
+    "docs/writing-review-evidence.md",
+    "docs/writing-workspace.md"
+   ],
+   "evaluator": [
+    "tests/test_review_evidence.py",
+    "tests/test_review_evidence_doors.py",
+    "tests/writing_owner_review_evidence.test.mjs",
+    "tests/workspace_review_evidence.test.mjs"
+   ],
+   "consumers": [
+    "src/laplace/web/project_work_surface.py:handle",
+    "src/laplace/writing/operations.py",
+    "src/laplace/web/static_shared/workspace-review-evidence.mjs"
+   ],
+   "observables": {
+    "admission": "Closed demand/selector and exact Work; real host-created Scope checked before lookup. Enumeration/support reobserve actual consumed inputs and refuse a changed observation.",
+    "effects": "Pure reads only; no review, acceptance, execution, body-read or publication authority.",
+    "refusals": "Changed consumed input, mismatched enumeration/selected IDs, malformed demand, caller outside actual Scope and whole-response budget.",
+    "obligations": "Review-obligation count unit, distinct from follow-up and phase units; unmanaged Work and zero required obligations remain explicit."
+   },
+   "views": {
+    "coarse": "aggregate owner counts without unrequested rich support",
+    "fine": "bounded obligation identities then selected inspection routes; bodies require separate deliberate reads"
+   },
+   "unaffected": [
+    "Legacy rich Work views and unguarded phase reads",
+    "All mutation/admission and retained Source/publication semantics"
+   ],
+   "recovery": "Explicit fresh aggregate restart after input change; phase_revision guards current retained rows and cannot reconstruct prior generations.",
+   "acceptance": "Independent owner/shared/consumer checks and actual UI are separate receipts, not granted by this declaration."
+  },
+  {
+   "id": "work.provenance",
+   "owner": "domain.work",
+   "summary": "Read the actual recorded path from a selected Task to its conversations, replies, artifacts, reviews and delivery evidence, separately from supporting availability and direct completion standing.",
+   "operation": {
+    "native": "project {view:provenance,id,request}",
+    "http": "GET /work/state?project=...&view=provenance&id=...&request=...",
+    "sdk": "work_read(owner_handle.payload)",
+    "consumers_see": "laplace.work-provenance/1; demand-separated aggregate, relationships, evidence and admitted evidence choices, with owner-issued pages/restart and explicit body reads"
+   },
+   "design": "Existing Work and recorded identity owners compose selected metadata. Actual Scope precedes lookup. Explicit associations do not invent native Work bindings; unavailable exact bodies are not replaced with summaries. Retained support is an existing pinned Artifact, not a new ledger or recursive path scan.",
+   "contract": [
+    "src/laplace/work/project_work_evidence.py:contract",
+    "src/laplace/work/project_work_evidence.py:support_contract",
+    "src/laplace/work/project_work_views.py:contract"
+   ],
+   "code": [
+    "src/laplace/work/project_work_evidence.py",
+    "src/laplace/work/project_work_views.py:read",
+    "src/laplace/projects/artifacts.py:evidence_descriptor",
+    "src/laplace/manuscript/manuscript_source.py:declared_evidence_choices",
+    "src/laplace/sdk.py:work_read",
+    "src/laplace/research/research_runs.py:evidence_candidates",
+    "src/laplace/research/research_runs.py:_run_job_path"
+   ],
+   "help": [
+    "src/laplace/native/declarations.py",
+    "docs/writing-evidence-navigation.md"
+   ],
+   "explanation": [
+    "docs/writing-evidence-navigation.md",
+    "docs/writing-tasks.md"
+   ],
+   "evaluator": [
+    "tests/test_work_provenance.py",
+    "tests/test_work_provenance_doors.py",
+    "tests/task_trail.test.mjs"
+   ],
+   "consumers": [
+    "src/laplace/web/project_work_surface.py:handle",
+    "src/laplace/writing/operations.py",
+    "src/laplace/web/static_shared/workspace-task-trail.mjs"
+   ],
+   "observables": {
+    "admission": "Selected namespace and closed demand are checked under actual SDK/native/HTTP Scope; payload fields cannot widen it.",
+    "coverage": "Relationship discovery does not hydrate reply/artifact custody bodies. Declared Writing and indexed Run choices are metadata-only NOT_CHECKED observations, not selected byte proof. Existing artifact coordinate resolution may observe the selected Source. Explicit evidence separately hashes bytes and distinguishes direct completion from supporting availability, including NOT_DECLARED legacy support.",
+    "currentness": "Issued pagination reobserves selected facts. Historical Done/current-review and supporting availability remain separate; no automatic renewal or assumed live/release identity.",
+    "refusals": "Malformed demand or envelope, foreign actual Scope, changed observation, mismatched owner item or consumed pin, invalid Run metadata family and whole-response budget refuse rather than widening the read.",
+    "obligations": "Completion retains its actual prerequisite and required-review conditions. Explicit required retained support verifies through its owner; legacy NOT_DECLARED and unavailable historical raw do not silently renew or erase a completion.",
+    "effects": "Read requests are passive. Optional completion_support is admitted only by the existing guarded task disposition; required retained items must verify through their owners."
+   },
+   "views": {
+    "coarse": "Selected Task aggregate counts and coverage with owner-issued demand reads; no unrequested custody-body expansion.",
+    "fine": "Bounded relationship, evidence-availability or admitted-choice pages followed by explicit typed conversation, file, review, Source, Run and delivery reads."
+   }
+  },
+  {
+   "id": "work.continuity",
+   "owner": "domain.work",
+   "summary": "Reconstruct one selected Work's goal, original standing, production, prepared completion readiness, review and delivery standing and one owner-issued next action, and reach the authored current programme from Eigen records.",
+   "operation": {
+    "native": "project {view:continuity,id,request}",
+    "http": "GET /work/state?project=...&view=continuity&id=...&request=...",
+    "sdk": "work_read(owner_handle.payload); work_continuity(namespace, work_id); programme(); work_action(project, issued_action)",
+    "consumers_see": "laplace.work-continuity/1 with basis token, bounded intent/event pages and owner-issued reads/actions; Work detail carries the owner continuity_read handle"
+   },
+   "design": "Work owns goal, lifecycle, review and completion; Source owns production and account authority; Writing owns requests, turns and processes. Actual Scope precedes lookup. The session-memory procedure/eigen-programme record selects canonical Work by a typed coordinate only; the canonical-work descent and wake delegate to the same owner. An issued action is an offered option revalidated at its effect owner; no generic executor, native origin or publication grant.",
+   "contract": [
+    "src/laplace/work/project_work_continuity.py:contract",
+    "src/laplace/work/project_work_views.py:contract",
+    "src/laplace/engine/session_memory.py:validate_programme"
+   ],
+   "code": [
+    "src/laplace/work/project_work_continuity.py",
+    "src/laplace/work/project_work_views.py:read",
+    "src/laplace/engine/session_memory.py:programme",
+    "src/laplace/engine/descent.py:work_continuity",
+    "src/laplace/engine/wake.py:programme_glow",
+    "src/laplace/sdk.py:work_continuity",
+    "src/laplace/sdk.py:programme",
+    "src/laplace/sdk.py:work_action"
+   ],
+   "help": [
+    "src/laplace/native/declarations.py"
+   ],
+   "explanation": [
+    "docs/writing-tasks.md"
+   ],
+   "evaluator": [
+    "tests/test_eigen_continuity_owner.py",
+    "tests/test_eigen_continuity_delivery.py",
+    "tests/test_eigen_continuity_doors.py",
+    "tests/test_eigen_continuity_reconstruction.py"
+   ],
+   "consumers": [
+    "src/laplace/web/project_work_surface.py:handle",
+    "src/laplace/writing/operations.py",
+    "src/laplace/engine/wake.py:programme_glow"
+   ],
+   "observables": {
+    "admission": "Closed continuity request and exact namespace/Work under the actual SDK/native/HTTP/engine Scope; a bare Work id is never promoted into a kernel or legacy row.",
+    "effects": "Reads are pure. Arm (genuine active Source producer), proof arrival and Continue stay with their Source/Work delivery owners; the SDK facade carries only issued continue/proof.",
+    "refusals": "Foreign Scope, unknown Work or intent, malformed coordinate or request, changed basis (as_of or expected_basis) and closed/held readiness.",
+    "obligations": "No review, acceptance, completion or publication follows from a read, a proof arrival or a Continue."
+   },
+   "views": {
+    "coarse": "programme pointer state and compact wake observation",
+    "fine": "continuity summary, completion intent readiness and preflight parts, then each owner's exact reads"
+   },
+   "acceptance": "Source-derived declaration; independent fixed-runtime functional checks and review remain separate receipts."
+  },
+  {
+   "id": "pipeline.workflow-history",
+   "owner": "domain.pipeline",
+   "summary": "Read complete retained workflow prefixes through bounded metadata and exact saved-body pages, then deliberately hand over complete selected lineage to a fresh ordinary recipient under existing local custody and resource bounds.",
+   "operation": {
+    "sdk": "laplace.sdk.workflow_request; laplace.sdk.research_handover",
+    "native": "project",
+    "views": [
+     "workflow-definitions request:history-page|lineage|lineage-page|saved-version"
+    ],
+    "http": "GET /work/workflow-definitions; POST /work/object-handover",
+    "consumers_see": "Owner-issued exact reference/cut/scope reads; separate body coverage and original-wire staged progress, never implicit authoring adoption or execution."
+   },
+   "design": "Existing captured row/chain selection and Writing body custody remain authoritative. The new source capability label is a declaration, not a published kernel node. Actual adapter Scope precedes selection; a project lens never promotes authority. Old v1 rich/preview/export/restore defaults stay unchanged.",
+   "contract": [
+    "src/laplace/pipeline/workflow_definition_history.py:request_contract",
+    "src/laplace/projects/project_handover.py:object_contract",
+    "src/laplace/projects/project_handover_lineage.py:contract_properties"
+   ],
+   "code": [
+    "src/laplace/pipeline/workflow_definition_history.py:read",
+    "src/laplace/pipeline/workflow_definition_records.py:select",
+    "src/laplace/projects/project_handover_lineage.py:request",
+    "src/laplace/projects/project_handover_lineage.py:inspect"
+   ],
+   "help": [
+    "src/laplace/native/declared.py",
+    "src/laplace/web/writing_declared_http.py"
+   ],
+   "explanation": [
+    "docs/workflow-definition-owner.md#bounded-complete-history",
+    "docs/project-data-handover.md#opt-in-complete-workflow-lineage",
+    "docs/writing-workflow-editor.md"
+   ],
+   "evaluator": [
+    "tests/test_workflow_history_continuation.py",
+    "tests/test_workflow_history_doors.py",
+    "tests/workflow_history_frontend.test.mjs"
+   ],
+   "consumers": [
+    "src/laplace/sdk.py:workflow_request",
+    "src/laplace/web/workflow_definitions_surface.py:handle",
+    "src/laplace/web/static_shared/workspace-workflow-history.mjs",
+    "src/laplace/web/static_shared/workspace-workflow-editor.mjs"
+   ],
+   "observables": {
+    "admission": "Actual root/caller Scope and closed requested reference/version/prefix/capture budgets. New native history variants share the existing effective Work delivery line; native project readers cannot export or inspect destination custody.",
+    "effects": "Metadata/saved reads are pure except normal tool-read audit. Explicit human/SDK Export or issued checkpoint-bound Continue advances only verified staged cells; complete validated payload publishes fresh with no-replace. No automatic Add, permission, save, retry or start.",
+    "refusals": "Changed/missing/malformed/gapped/duplicate prefix, wrong Scope/version/cut/body pin, resource/output/staged bound, busy/foreign/corrupt/UNKNOWN custody, occupied destination or mismatched original checkpoint. NONE/UNKNOWN grants no replacement.",
+    "obligations": "No Work completion/review acceptance or execution authority is created by a reading/transfer. Keep original effect wire and actual receipt; only verified quiescent PARTIAL offers Continue. Original raw row order and each selected chain terminal must verify before publication."
+   },
+   "views": {
+    "coarse": "Newest-first history metadata: known/returned/covered/end-at-cut, 1-based chronological ordinals, no body fanout. Current head is an explicit separate read.",
+    "fine": "Exact saved-version or raw UTF8 BODY_PAGE with retained byte pin/ordered codepoint offsets; complete body only after all explicit parts verify. Lineage oldest-first and stage/checkpoint/inventory/header resources remain separately inspected."
+   },
+   "unaffected": [
+    "Legacy v1 last32/1MB/default export/restore semantics",
+    "ID-keyed authoring drafts, original guards/pending requests and actual run/setting authority",
+    "Frozen human-workspace release/source104/image1c/private3f and all prior actual evidence"
+   ],
+   "recovery": "Use PREPARED.inspect or later issued Inspect with exact original wire; only exact verified quiescent checkpoint admits explicit Continue. Deterministic stage identity includes actual source-root scope, selection/cut/destination/budgets; no sibling search/query store or automatic replacement.",
+   "acceptance": "Independent owner/shared/consumer judgement and actual normal/narrow/recipient walkthrough remain separate; declaration or test counts alone award nothing."
+  }
+ ],
+ "retained_facades": []
+}

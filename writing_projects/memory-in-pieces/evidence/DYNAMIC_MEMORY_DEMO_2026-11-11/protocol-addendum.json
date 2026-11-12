@@ -1,0 +1,23 @@
+{
+  "schema_version": "dynamic-memory.prospective-addendum/1",
+  "protocol": {
+    "id": "ART-6395aa1a0c464204a247aa9f5c09a47d",
+    "sha256": "006f10e17ab2abd1226ffe9bfac1c507f07c30a6a260861dc50fe969b4494b26"
+  },
+  "code": {
+    "id": "ART-7f97ff31ec1e4b9e9ac03bdbfe2817cf",
+    "sha256": "ee5eb349900e8c1e22875a3ef288c1a14a9b478c0bec6320a6ca2190b243c311"
+  },
+  "rejected_inputs": {
+    "id": "ART-8b74b7a79fe24e1a9dfc1e86b1bd6ba2",
+    "sha256": "c42a914adcc036c1905a54984785b2d8afd43c586e4e3754482daea00ca04dd9"
+  },
+  "clarifications": [
+    "8admitted event attempts including one idempotent replay plus2rejected edits =10total attempted changes; maximum5logical document IDs, immutable revision files retained.",
+    "Overflow test requests MAXweight on d10 with another active positive group so total bound refuses before mutation. Duplicate-group test mismatches logical ID and group and refuses before mutation.",
+    "Source documents are actual app-owned immutable text revisions. Active logical corpus switches contents between exact versions; inputs are never overwritten during the run.",
+    "RLIMIT_AS is virtual address-space hard bound, not strict RSS guard. Producer also asserts observed peakRSS<=128MiB; owner timeout and RLIMIT_CPU60s. Supervisor/renderer memory separate.",
+    "Query timing currently includes exact forward/adjoint query validation; oracle_and_query_validation_ns includes full oracle reparse/rebuild. Algorithm_update_ns excludes it. No timings from this tiny fixture prove asymptotic speedup."
+  ],
+  "frozen_before_run": true
+}

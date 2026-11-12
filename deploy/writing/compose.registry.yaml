@@ -1,0 +1,21 @@
+services:
+  writing:
+    image: ${LAPLACE_IMAGE:?Load the container package and set LAPLACE_IMAGE to its verified local tag or an immutable registry image}
+    platform: linux/amd64
+    init: true
+    ports:
+      - "127.0.0.1:${LAPLACE_PORT:-8771}:8771"
+    volumes:
+      - type: bind
+        source: ${LAPLACE_WORKSPACE:?Set LAPLACE_WORKSPACE to the cloned workspace directory}
+        target: /workspace
+      - session-workspaces:/var/lib/laplace/session-workspaces
+      - codex-auth:/home/laplace/.codex
+      - claude-auth:/home/laplace/.claude
+    environment:
+      LAPLACE_SESSION_WORKSPACES: /var/lib/laplace/session-workspaces
+    restart: "no"
+volumes:
+  session-workspaces:
+  codex-auth:
+  claude-auth:

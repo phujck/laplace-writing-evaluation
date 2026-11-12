@@ -1,0 +1,216 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>read · judge · the eigen engine</title>
+<!-- THE ONE PALETTE (visual §6.1 · L5): hymn.css is the sole color/type source; this
+     surface declares NO color literal — every band/chip/door/rail rides a hymn var/class. -->
+<link rel="stylesheet" href="/shared/hymn.css">
+<style>
+/* Layout only (visual §6.2, ≤4KB, no color literals): three columns at working
+   width — source | paper | margin. Source and margin fold in place. Component
+   atoms live in artefact-panes.mjs COMPONENT_CSS (the §6.2 relocation). */
+*{box-sizing:border-box}
+html,body{margin:0;min-height:100%;font:13px/1.5 -apple-system,"Segoe UI",Roboto,sans-serif}
+/* folds are edge rails */
+#art{margin:0 auto;padding:14px 18px 10px}
+.art-head{display:flex;flex-wrap:wrap;gap:12px;align-items:baseline;margin-bottom:4px}
+.art-head-name{display:flex;align-items:baseline;gap:9px;min-width:0}
+#art-rev{font:650 14px/1.4 -apple-system,"Segoe UI",Roboto,sans-serif;color:var(--ink);
+  letter-spacing:-.01em;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;max-width:52vw}
+#art-reader-info{color:var(--dim)}
+.art-head-doors{display:flex;gap:8px;align-items:center;margin-left:auto}
+/* the walk door */
+.art-head-door{margin-left:auto;font:11px var(--mono);color:var(--dim);
+  text-decoration:none;border:1px solid var(--edge2);border-radius:3px;padding:2px 8px}
+.art-head-door:hover,.art-head-door:focus-visible{color:var(--ink)}
+.art-hint{font:10.5px var(--mono);color:var(--dim);margin:0 0 10px}
+.art-hint b{color:var(--ink2)}
+.art-hint.done{opacity:0;transition:opacity .9s ease .5s;pointer-events:none}
+.art-main{display:grid;grid-template-columns:minmax(0,1fr) clamp(300px,24vw,430px) auto;gap:14px;align-items:start}
+.art-main.margin-folded{grid-template-columns:minmax(0,1fr) auto}
+.art-main.margin-folded .art-margin{display:none}
+/* edge rail */
+.art-edge-rail{writing-mode:vertical-rl;flex:none;align-self:stretch;display:flex;
+  align-items:center;justify-content:center;padding:14px 5px;min-height:130px;
+  font:600 10.5px var(--mono);letter-spacing:.09em;text-transform:uppercase;
+  color:var(--dim);background:var(--panel);border:1px solid var(--edge2);border-radius:8px;
+  cursor:pointer}
+.art-edge-rail:hover{color:var(--ink2);border-color:var(--accent)}
+#art-edit-toggle{margin-right:10px}
+.art-reader-col{min-width:0;position:relative}
+.art-split{display:flex;min-width:0}
+.art-pdf-pane{flex:1;min-width:0;position:relative}
+#art-reader{overflow:auto;max-height:calc(100vh - var(--hy-shell-real,86px) - 96px);
+  background:var(--panel2);border:1px solid var(--edge);border-radius:10px;padding:6px;
+  display:flex;flex-direction:column;align-items:center;gap:8px}
+.art-page{position:relative;max-width:100%;border:1px solid var(--edge2);border-radius:2px;
+  box-shadow:0 3px 18px -6px color-mix(in srgb,black 65%,transparent)}
+.art-page canvas.pgcv{display:block;max-width:100%}
+.pgtext{position:absolute;inset:0;overflow:hidden;line-height:1;z-index:2}
+.pgtext span{position:absolute;color:transparent;white-space:pre}
+.art-msg{padding:16px;color:var(--dim);font:11px var(--mono)}
+/* margin panel; styling in artefact-panes */
+.art-anchor{display:none}
+.art-anchor.on{display:block}
+/* judgment first */
+.art-margin{min-width:0;display:flex;flex-direction:column;gap:14px}
+.art-mg-h{font-family:var(--mono);font-size:10px;text-transform:uppercase;letter-spacing:.12em;
+  color:var(--dim);font-weight:700;display:flex;align-items:center;gap:8px}
+.art-rail-col{min-width:0}
+.art-tray{border:1px solid var(--edge2);border-radius:12px;background:var(--panel);padding:11px 13px}
+.art-tray-bar{display:flex;align-items:center;gap:8px;flex-wrap:wrap;cursor:pointer}
+.art-tray-bar:hover .art-tray-title{color:var(--ink)}
+.art-tray-title{font-weight:700;color:var(--ink2);font-size:12px}
+.art-tray-sum{color:var(--dim);font:10.5px var(--mono)}
+.art-tray-body{display:none;padding-top:6px}
+.art-tray.open .art-tray-body{display:block}
+@media (max-width:1000px){ .art-main{grid-template-columns:1fr}
+  .art-split{flex-direction:column}
+  .art-edge-rail{writing-mode:horizontal-tb;min-height:0;align-self:auto;padding:6px 12px}
+  #art-edit-toggle{margin-right:0;margin-bottom:8px}
+  .art-anchor{position:static;width:auto;right:auto;margin-top:10px} }
+@media (max-width:375px){ #art{padding:10px 10px 8px} #art-reader{max-height:none} }
+</style>
+</head>
+<body>
+<!-- THE EDITOR (Overleaf-class): source | paper | margin. The split is the resting
+     posture; reading is the fold of the source pane, remembered per session. The anchor
+     overlay answers a paragraph click in place; judgment stands open in the margin. -->
+<main id="art">
+  <!-- the altitude thread: the return breadcrumb when arrived from the cockpit tension
+       decision (filled by artefact-panes.mjs when ?via=cockpit-tension). -->
+  <div class="art-thread" id="art-thread" hidden></div>
+  <header class="art-head">
+    <div class="art-head-name">
+      <span id="art-rev"></span><span id="art-reader-info"></span>
+    </div>
+    <!-- THE WALK DOOR (his call 2026-08-10: integration, not orphanhood). The redline
+         walk is its own clean-room surface — it imports nothing from here and nothing
+         here imports it. A door is a LINK, not an import: a plain anchor carrying the
+         corpus in view, beside the read and edit acts this head already names.
+         Its href is set below from the model, never written here — one source for a
+         surface link, which is the rule that keeps the nav from having two. -->
+    <a class="art-head-door" id="art-walk-door">walk</a>
+  </header>
+
+  <div class="art-hint" id="art-hint">
+    hover a paragraph for its <b>¶ anchor</b> · click it for its <b>nodes + beat</b>, and to annotate
+  </div>
+
+  <div class="art-main" id="art-main" data-mode="edit">
+    <div class="art-reader-col">
+      <!-- the source split: CM6 LEFT ⇄ the SAME pdf pane RIGHT, a draggable divider
+           between. Present only while the source is open ([data-mode="edit"]). -->
+      <div class="art-split" id="art-split">
+        <button type="button" class="art-edge-rail" id="art-edit-toggle"
+          title="fold or open the tex source beside the paper — the synctex-coupled pane; save + recompile is the live loop">fold the source</button>
+        <div class="art-source-pane" id="art-source-pane">
+          <div class="art-source-bar" id="art-source-bar">
+            <code id="art-edit-file"></code>
+            <a class="art-head-door" id="art-walk-prose"
+               aria-label="edit this file's prose in the redline walk">prose &rarr; the walk</a>
+            <span id="art-follow-status"></span>
+            <!-- the source-pane object affordance: when the cursor lands on a \label{...}
+                 line, this offers "where this came from" into the provenance pane -->
+            <span id="art-label-prov"></span>
+            <!-- the his-hand toggle: highlights the passages the author edited himself
+                 (his saves vs the machine baseline, off the version rail's attribution) -->
+            <span id="art-hishand"></span>
+            <div class="art-edit-doors">
+              <button type="button" class="hy-door is-primary" id="art-edit-save"
+                title="POST /projection/tex (bank=editor) → POST /projection/recompile — the live loop">save + recompile</button>
+              <button type="button" class="hy-door" id="art-edit-recompile"
+                title="POST /projection/recompile without re-saving — retry a compile">recompile</button>
+              <span id="art-edit-msg"></span>
+            </div>
+          </div>
+          <div id="art-cm"></div>
+          <div id="art-compile-log"></div>
+        </div>
+        <div class="art-divider" id="art-divider" title="drag to resize"></div>
+        <div class="art-pdf-pane" id="art-pdf-pane">
+          <div id="art-reader" class="hy-render"><div class="art-msg">resolving the current artefact…</div></div>
+          <!-- THE MINIMAP mount (his 2026-07-23 pick): the whole-document density chart + live
+               viewport window, drawn by artefact-panes.mjs (renderMinimap). A static mount is
+               cleaner than injection; it rides the pdf pane's right edge beside #art-reader. -->
+          <div id="art-minimap" class="art-minimap" aria-hidden="true"></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- THE MARGIN — judgment standing open over the history -->
+    <aside class="art-margin">
+      <!-- the inspection area: an opened finding reallocates the margin (the tray/rail/prov
+           recede); the PAPER is never crushed (his ruling). Exact restore on close. -->
+      <div class="art-inspect" id="art-inspect"></div>
+      <!-- the COMMENT THREAD — a line of the paper takes a comment here: it materialises in
+           the margin (never crushes the paper), anchored to the synctex source line, with a
+           marker at the line. Collapsed section context in folds; comments from server truth. -->
+      <div class="art-anchor" id="art-anchor"></div>
+      <!-- THE PROVENANCE PANE — materialised in the margin when the reader opens an
+           equation/figure (its object affordance), a source \label line, or a ?object=
+           deep link: the served glance + the chain worded as stations, the feedback
+           verbs at the object, a named return door back to the tray. Empty at rest. -->
+      <div class="art-prov" id="art-prov"></div>
+      <!-- THE FINDINGS LENS (his 2026-07-23 pick): the tray is no longer primary navigation —
+           the minimap is where judgment's location is read. This survives as a filterable lens,
+           collapsed by default (its fold remembered per session); nothing it could do is lost. -->
+      <section class="art-tray" id="art-tray-sec">
+        <div class="art-tray-bar" id="art-tray-bar" title="the findings lens — filter &amp; list; the minimap beside the paper is where their location is read">
+          <span class="art-tray-ind">▸</span>
+          <span class="art-tray-title">findings — filter &amp; list</span>
+          <span class="art-tray-sum" id="art-tray-sum">reading the review board…</span>
+        </div>
+        <div class="art-tray-body" id="art-tray-body"></div>
+      </section>
+      <section class="art-rail-col">
+        <div id="art-rail">
+          <div class="art-rail-head" id="art-rail-strip"></div>
+          <div id="art-diffbar"></div>
+          <div class="hy-rail-body" id="art-rail-body"></div>
+          <div id="art-diffpane"></div>
+        </div>
+      </section>
+    </aside>
+    <button type="button" class="art-edge-rail" id="art-margin-toggle"
+      title="fold or open the margin — judgment and the version history">fold the margin</button>
+  </div>
+</main>
+<script defer src="/shared/shell.js"></script>
+<script type="module">
+// the ONLY inline script: bootstrap the shared pane module (all network rides store.fetchJSON
+// inside it — no raw fetch escapes the model on this surface).
+import { initArtefact } from "/shared/artefact-panes.mjs";
+import store from "/shared/store.mjs";
+initArtefact();
+// THE WALK DOOR'S CORPUS, and nothing else. No walk code is imported here — the walk is a
+// clean room and this is a link, not a dependency. The href carries the corpus in view so
+// the door lands on the same paper; with none in the model it stays bare, and /walk
+// resolves the corpus itself through /artefact/context (the one authority).
+const walkDoor = document.getElementById("art-walk-door");
+const paintWalkDoor = () => {
+  const c = store.field("corpus");
+  walkDoor.href = c ? "/walk?corpus=" + encodeURIComponent(c) : "/walk";
+  walkDoor.setAttribute("aria-label",
+    "open the redline walk" + (c ? " on " + c : "") + " — the content-faithful read");
+};
+paintWalkDoor();
+store.subscribe(paintWalkDoor);
+// THE PROSE ROUTE (clause 7): prose editing belongs to the walk's canvas — this door
+// carries the OPEN FILE so the walk lands on its first block (?file= deep link). Still a
+// link, not a dependency; the href is computed at click so it always names the file in
+// the editor now.
+const proseDoor = document.getElementById("art-walk-prose");
+if (proseDoor) {
+  proseDoor.addEventListener("click", () => {
+    const c = store.field("corpus");
+    const f = (document.getElementById("art-edit-file") || {}).textContent || "";
+    proseDoor.href = "/walk" + (c ? "?corpus=" + encodeURIComponent(c) : "?")
+      + (f ? "&file=" + encodeURIComponent(f.trim()) : "");
+  });
+}
+</script>
+</body>
+</html>

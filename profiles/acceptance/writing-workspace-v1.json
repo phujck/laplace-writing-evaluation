@@ -1,0 +1,84 @@
+{
+  "schema_version": "laplace.writing-workspace-acceptance-profile/1",
+  "name": "writing-workspace-v1",
+  "purpose": "Measure whether an engine release, document build, and visible workspace remain usable under real project scale without treating callback tests or historical green receipts as current acceptance.",
+  "law": [
+    "Report cold and warm observations separately, including active-writer versus idle state.",
+    "Keep latency, payload bytes, browser render/interaction, provider context, and durable storage growth as separate measurements.",
+    "A passing owner/unit test is not a button acceptance; a successful HTTP response is not a rendered-page acceptance.",
+    "Measurements describe the tested project and host. They are reference observations, not universal performance budgets.",
+    "Never mutate a production manuscript merely to measure a read path; use an authorised real edit or a disposable fixture for mutation timing."
+  ],
+  "profiles": {
+    "engine": {
+      "measure": [
+        "service source identity, PID, active jobs and frontend bundle",
+        "HTTP TTFB, total time and response bytes for project shell, manuscript, Research, Figures, Formal targets, session list, session summary and exact detail",
+        "pre/post mutation owner-snapshot time and number of files hashed",
+        "Apply dependency replay count and elapsed time",
+        "journal and content-addressed-body bytes added by one no-op, one repeated body and one substantive change"
+      ],
+      "reference_observations_2026_09_30": {
+        "work_summary": {"seconds": [0.069, 0.074], "bytes": 24866},
+        "session_list": {"seconds_max": 0.001, "bytes": 3373},
+        "manuscript_document": {"seconds": [0.131, 0.148], "bytes": 1273655},
+        "research_full_active_writer": {"seconds": [0.733, 1.114], "bytes": 785094},
+        "figures_full_active_writer": {"seconds": [0.249, 0.287], "bytes": 339551},
+        "formal_targets_before": {"seconds": [3.51, 6.8], "bytes": 392085},
+        "formal_targets_after_direct": {"seconds": [0.33, 0.43], "targets": 89},
+        "mutation_snapshot_before": {"seconds": [0.92, 1.22], "files": 347},
+        "mutation_snapshot_after": {"seconds": [0.03, 0.06], "files": [26, 142]},
+        "c3_apply_guard_after": {"seconds": 0.705, "reads": 20},
+        "c2_session_full_bytes": 13722326,
+        "c2_session_summary_bytes": [68232, 84202]
+      }
+    },
+    "build": {
+      "measure": [
+        "owner-reported build state, elapsed time and active-job identity",
+        "selected root and dependency receipt currentness",
+        "exit status, compiler log and produced PDF SHA-256/bytes/pages",
+        "visible page and figure inspection for the changed range",
+        "whether a failed build leaves the prior current PDF distinguishable from the failed attempt"
+      ],
+      "acceptance": [
+        "The selected source builds through its owner and returns a terminal receipt.",
+        "The delivered PDF is current against the recorded dependency set.",
+        "The changed pages are visually inspected; source compilation alone is insufficient."
+      ]
+    },
+    "ui": {
+      "measure": [
+        "cold project open and first useful content",
+        "warm click-to-visible-result for Manuscript, Research result, Figures, Formal target, History and saved conversation",
+        "network request fan-out per subview and whether closed disclosures trigger unrelated reads",
+        "DOM/accessibility node growth for long conversations and result catalogues",
+        "focus, scroll, Back/Escape, accepted-proposal terminal state and guarded Undo after reload"
+      ],
+      "acceptance": [
+        "Exercise actual controls in the delivered browser/native host, including empty, error, disabled and reconnected states.",
+        "Record browser latency separately from backend TTFB and accessibility-tree capture overhead.",
+        "Keep exact saved history reachable through lazy detail rather than rendering or deleting it eagerly."
+      ]
+    },
+    "provider_context": {
+      "measure": [
+        "provider/model, advertised and effective context windows",
+        "last-turn input/cache/output tokens and cumulative input/cache/output tokens",
+        "initial operating brief, dynamic tool declarations, changed guidance, current context and explicit history retrieval as separate components when observable"
+      ],
+      "reference_observations_2026_09_30": {
+        "luna_fixture": {"context_tokens": 93485, "last_input_tokens": 93329, "last_cached_tokens": 91904, "cumulative_input_tokens": 1403782, "cumulative_cached_tokens": 1267968},
+        "haiku_fixture": {"context_tokens": 57644, "last_input_tokens": 10, "cache_creation_tokens": 2070, "cache_read_tokens": 55564}
+      },
+      "interpretation": "Cached tokens are not new prompt bytes. Do not attribute the full cumulative input count to historical recursion without component evidence."
+    }
+  },
+  "evidence": [
+    "evidence/WRITING_INTEGRATION_2026-09-29/performance-live-critical-path-20260930.md",
+    "evidence/WRITING_INTEGRATION_2026-09-29/runtime-checkpoint-20260930.md",
+    "evidence/WRITING_INTEGRATION_2026-09-29/history-telemetry-acceptance.md",
+    "evidence/WRITING_INTEGRATION_2026-09-29/live-provider-rehearsals-20260930.json",
+    "docs/synthetics-interface-acceptance-2026-09-29.md"
+  ]
+}

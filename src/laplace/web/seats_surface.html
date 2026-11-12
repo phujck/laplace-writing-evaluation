@@ -1,0 +1,502 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>The Seats</title>
+<style>
+  :root { color-scheme: dark;
+    --ground: #14161B; --surface: #1C1F26; --surface-2: #232730; --line: #333845;
+    --ink: #E8E6E1; --ink-dim: #9CA1AB; --brass: #D9A441;
+    --run: #5CB878; --run-dim: rgba(92,184,120,.14);
+    --wait: #D9A441; --wait-dim: rgba(217,164,65,.13);
+    --red: #E06C60; --red-dim: rgba(224,108,96,.16);
+    --closed: #6B7280; --code-bg: #101216;
+  }
+  * { box-sizing: border-box; }
+  body { background: var(--ground); color: var(--ink);
+         font: 15px/1.55 system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+         margin: 0; padding: 52px 18px 64px; }
+  /* the link colour is the most-learned colour in an interface; it was gold on the
+     front door and blue on the atlas, and absent here. One accent, everywhere. */
+  a { color: var(--brass); text-decoration: none; }
+  a:hover { text-decoration: underline; }
+  .chrome { position: fixed; left: 0; right: 0; top: 0; z-index: 9;
+            background: rgba(20,22,27,.94); backdrop-filter: blur(6px);
+            border-bottom: 1px solid var(--line);
+            padding: 10px max(18px, calc((100% - 860px)/2)); }
+  .chrome a { font-weight: 600; }
+  main { max-width: 860px; margin: 0 auto; display: flex; flex-direction: column; gap: 24px; }
+  /* ONE HOUSE REGISTER. This page ran its own design system: Georgia headlines on a
+     dark ground (a light-background face; its low stroke contrast blooms here), a named
+     but never-loaded "IBM Plex Sans" so it silently renders as system-ui HERE and as a
+     different product on any machine that has Plex, nine type sizes all fractional
+     (1.02rem is not a scale, it is a nudge), and NO link colour at all because the page
+     had no links. The audit measured two grounds differing by one unit in the blue
+     channel — proof of two people typing a colour from memory rather than one token. */
+  h1 { font: 600 19px system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+       letter-spacing: .1em; text-transform: lowercase; color: var(--brass);
+       margin: 0 0 4px; }
+  /* section titles were 11.52px against 15px body — SMALLER than the content they
+     title, so the page read as one grey texture broken by faint whispers */
+  h2 { font: 600 15px system-ui, sans-serif; letter-spacing: .02em;
+       color: var(--ink); margin: 0; }
+  h3 { font: 600 15px system-ui, sans-serif; color: var(--ink); margin: 0; }
+  .sechead { display: flex; align-items: baseline; gap: 10px; flex-wrap: wrap;
+             margin: 0 0 8px; }
+  .stamp { font: .74rem ui-monospace, monospace; color: var(--ink-dim); }
+  .note { border-left: 3px solid var(--brass); background: var(--surface);
+          padding: 8px 12px; font-size: .84rem; color: var(--ink-dim); border-radius: 0 6px 6px 0; }
+  .note b { color: var(--ink); font-weight: 600; }
+  .card { background: var(--surface); border: 1px solid var(--line); border-radius: 8px;
+          padding: 12px 14px; margin-bottom: 10px; }
+  .card.bad { border-color: var(--red); }
+  .row { display: flex; align-items: baseline; justify-content: space-between; gap: 10px; flex-wrap: wrap; }
+  .name { font: 600 15px system-ui, sans-serif; }
+  .pill { font: .66rem ui-monospace, monospace; letter-spacing: .08em;
+          padding: 2px 9px; border-radius: 99px; white-space: nowrap; }
+  .pill.run  { color: var(--run);  background: var(--run-dim); }
+  .pill.hung { color: var(--red);  background: var(--red-dim); }
+  .pill.off  { color: var(--closed); background: var(--surface-2); }
+  .pill.ask  { color: var(--wait); background: var(--wait-dim); }
+  pre { background: var(--code-bg); border: 1px solid var(--line); border-radius: 6px;
+        padding: 7px 10px; margin: 6px 0 0; overflow-x: auto;
+        font: .78rem ui-monospace, monospace; }
+  .dim { color: var(--ink-dim); font-size: .84rem; }
+  .warn { color: var(--red); font-size: .84rem; }
+  .num { font-variant-numeric: tabular-nums; }
+  .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 8px; }
+  .stat { background: var(--surface); border: 1px solid var(--line); border-radius: 8px;
+          padding: 10px 12px; }
+  .stat b { font-size: 1.3rem; }
+  .stat b.warnnum { color: var(--wait); }
+  /* THE SUMMONABLE REGISTER, made one affordance instead of five inventions. Every
+     internal handle this page holds — store paths, row ids, resume commands, the
+     founding narratives — lives behind one of these and nowhere in the default read.
+     The marker is a triangle, not a word, so the fold never competes with the face. */
+  details.fold { margin-top: 8px; }
+  details.fold > summary { cursor: pointer; list-style: none;
+        font: .74rem ui-monospace, monospace; color: var(--ink-dim); }
+  details.fold > summary::-webkit-details-marker { display: none; }
+  details.fold > summary::before { content: "\25B8\00a0"; }
+  details.fold[open] > summary::before { content: "\25BE\00a0"; }
+  details.fold > summary:hover { color: var(--brass); }
+  .foldbody { margin-top: 6px; padding: 8px 10px; background: var(--surface-2);
+        border-radius: 6px; font-size: .84rem; color: var(--ink-dim);
+        white-space: pre-wrap; overflow-wrap: anywhere; }
+  .kv { display: flex; gap: 8px; align-items: baseline; margin-bottom: 4px; }
+  .kv b { flex: 0 0 8.5em; font: .72rem ui-monospace, monospace; color: var(--ink-dim); }
+  .kv span { flex: 1 1 auto; font-size: .82rem; color: var(--ink);
+             overflow-wrap: anywhere; }
+  .srcslot details.fold { margin-top: 0; }
+  /* the two registers that both answer to the word "seat" — visually separated so the
+     reader can see that they are two panes, not one list with a gap in it */
+  .reg { border-left: 2px solid var(--line); padding-left: 12px; margin-top: 14px; }
+  .acts { margin-top: 9px; display: flex; align-items: center; gap: 8px; }
+  .act { min-height: 32px; font: 600 11px/1 system-ui, sans-serif; letter-spacing: .05em;
+         text-transform: uppercase; background: none; border: 1px solid var(--line);
+         color: var(--ink); border-radius: 5px; padding: 0 13px; cursor: pointer; }
+  .act:hover { border-color: var(--brass); }
+  .act.ok:hover { color: var(--run); border-color: var(--run); }
+  .act.bad:hover { color: var(--red); border-color: var(--red); }
+  .act[disabled] { opacity: .5; cursor: default; }
+  #err { color: var(--red); }
+</style>
+</head>
+<body>
+<div class="chrome"><a href="/front">← the front door</a></div>
+<main>
+  <header>
+    <h1>The Seats</h1>
+    <div class="stamp" id="stamp">fetching…</div>
+  </header>
+  <div class="note">Every panel here is a render of typed rows. Each names the store it reads
+    behind the word <b>source</b>; session ids come from the CLI's own session records, never
+    from a registry. The page refreshes every 20 seconds.</div>
+
+  <section id="asks-sec">
+    <div class="sechead"><h2>Permission asks — waiting on you</h2><div class="srcslot" id="asks-src"></div></div>
+    <div id="asks"></div>
+  </section>
+
+  <section>
+    <div class="sechead"><h2>Sessions</h2><div class="srcslot" id="sess-src"></div></div>
+    <div id="sessions"></div>
+  </section>
+
+  <section>
+    <div class="sechead"><h2>Seats</h2></div>
+    <div class="note">Two registers wear the word <b>seat</b>, and they are not meant to agree.
+      The <b>fabric</b> is a message bus: an address on it is any process that has ever registered
+      to send or receive fabric mail. The <b>charter roll</b> is the seats the author founded by
+      hand. The nav chip on the front door counts the fabric; this page used to show only the
+      roll — which is how one label came to carry two numbers and two alarm states.</div>
+
+    <div class="reg">
+      <div class="sechead"><h3>The seat fabric — the message bus</h3><div class="srcslot" id="fab-src"></div></div>
+      <div id="fabric"></div>
+    </div>
+
+    <div class="reg">
+      <div class="sechead"><h3>The charter roll — seats founded by hand</h3><div class="srcslot" id="seats-src"></div></div>
+      <div id="seats"></div>
+    </div>
+  </section>
+
+  <section>
+    <div class="sechead"><h2>The account</h2><div class="srcslot" id="acct-src"></div></div>
+    <div class="grid" id="account"></div>
+  </section>
+
+  <section>
+    <div class="sechead"><h2>Campaign</h2><div class="srcslot" id="camp-src"></div></div>
+    <div id="campaign"></div>
+  </section>
+
+  <div id="err"></div>
+</main>
+<script>
+function el(tag, cls, text) {
+  const e = document.createElement(tag);
+  if (cls) e.className = cls;
+  if (text !== undefined) e.textContent = text;
+  return e;
+}
+/* THE ONE SUMMONING AFFORDANCE. Everything internal goes through this: the reader who
+   wants the handle gets it in one click, and the reader who does not never reads it. */
+function fold(summary, body) {
+  const d = el("details", "fold");
+  d.append(el("summary", null, summary));
+  d.append(typeof body === "string" ? el("div", "foldbody", body) : body);
+  return d;
+}
+function kv(k, v) {
+  const d = el("div", "kv");
+  d.append(el("b", null, k), el("span", null, v === null || v === undefined || v === ""
+                                             ? "not recorded" : String(v)));
+  return d;
+}
+function srcInto(id, text) {
+  const slot = document.getElementById(id);
+  if (slot) slot.replaceChildren(fold("source", text || "not named"));
+}
+function agoS(s) {
+  if (s === null || s === undefined) return "at an unknown time";
+  if (s < 90) return Math.round(s) + "s ago";
+  if (s < 5400) return Math.round(s / 60) + "m ago";
+  return (s / 3600).toFixed(1) + "h ago";
+}
+function durS(s) {
+  if (s === null || s === undefined) return "an unknown stretch";
+  if (s < 90) return Math.round(s) + " seconds";
+  if (s < 5400) return Math.round(s / 60) + " minutes";
+  return (s / 3600).toFixed(1) + " hours";
+}
+function dayOf(iso) {
+  const t = Date.parse(iso || "");
+  return isNaN(t) ? "an unrecorded date"
+                  : new Date(t).toLocaleDateString("en-GB",
+                      { day: "numeric", month: "short", year: "numeric" });
+}
+function clockOf(iso) {
+  const t = Date.parse(iso || "");
+  return isNaN(t) ? "an unrecorded time"
+                  : new Date(t).toLocaleTimeString("en-GB", { hour12: false });
+}
+
+/* AUTHORED VOCABULARY, not derivation. These cards used to render the seat's own
+   ~1,100-character founding narrative machine-truncated to 220 characters — every one
+   of the three cut mid-clause, so the page's only description of each seat ended in the
+   middle of a sentence about something else. Derivation is right for facts and wrong
+   for language: the role sentence is written here, the founding note is served whole in
+   a fold, and a seat with no entry says so rather than borrowing another seat's words. */
+const SEAT_FACES = {
+  ego:       ["the ego seat",
+              "builds and dispatches — every row the day banks passes through this hand"],
+  superego:  ["the superego seat",
+              "judges what the ego builds, and writes nothing itself: its verdicts travel by message and bank through the ego"],
+  interface: ["the interface seat",
+              "owns the serving surface, this page among them — reads every store, writes none"],
+};
+
+/* Campaign status words, authored once. The old render coloured everything that was not
+   DONE or UNRUN amber, which put seventeen absorbed-and-superseded stages on screen in
+   the same alarm colour as the stage actually waiting to be run. */
+const CAMP_STATUS = {
+  "DONE":              ["run", "done"],
+  "OPEN":              ["ask", "open"],
+  "ABSORBED":          ["off", "absorbed"],
+  "UNRUN":             ["off", "never run"],
+  "TIMEOUT":           ["hung", "timed out"],
+  "BLOCKED-ON-AUTHOR": ["ask", "waiting on you"],
+};
+
+function stageCard(st) {
+  /* FACE FIRST. This card led with `st.id` — ATLAS-S1 in the name slot with the human
+     title "the substrate, from scratch knowing what we know" dimmed and clipped beneath
+     it. Seven cards, the conjugate-handle law exactly inverted. /front/apex already
+     renders the title as the face and keeps the id in title=; this now matches it. */
+  const c = el("div", "card");
+  const r = el("div", "row");
+  const nm = el("span", "name",
+                (st.riding_ordinal ? st.riding_ordinal + " · " : "") + (st.title || st.id));
+  nm.title = st.id;
+  const [cls, word] = CAMP_STATUS[st.status] || ["off", st.status || "no status"];
+  r.append(nm, el("span", "pill " + cls, word));
+  c.append(r);
+  const f = st.freshness;
+  c.append(el("div", "dim", f ? ("verdict banked " + agoS(f.age_s)
+                                 + (f.note ? " — " + f.note : ""))
+                              : "no verdict banked for this stage"));
+  const body = el("div", "foldbody");
+  body.append(kv("id", st.id), kv("gate", st.gate_expect), kv("ground", st.ground),
+              kv("source", st.source),
+              kv("depends on", (st.depends_on || []).join(", ")));
+  c.append(fold("the row behind this card", body));
+  return c;
+}
+
+async function refresh() {
+  let d;
+  try {
+    const r = await fetch("/seats/data");
+    d = await r.json();
+  } catch (e) {
+    document.getElementById("err").textContent = "fetch failed: " + e;
+    return;
+  }
+  document.getElementById("err").textContent = "";
+  const stamp = document.getElementById("stamp");
+  stamp.textContent = "as of " + clockOf(d.rendered_at) + " · refreshes every 20 seconds";
+  stamp.title = d.rendered_at;
+  srcInto("asks-src", d.row_sources.asks);
+  srcInto("sess-src", d.row_sources.sessions);
+  srcInto("seats-src", d.row_sources.seats);
+  srcInto("acct-src", d.row_sources.account);
+  srcInto("camp-src", d.row_sources.campaign);
+
+  const asks = document.getElementById("asks");
+  asks.replaceChildren();
+  if (!d.pending_asks.length) {
+    asks.append(el("div", "dim", "none pending — no seat is blocked on you"));
+  }
+  for (const a of d.pending_asks) {
+    /* FACE FIRST, and the act on the card. This said "NEEDS YOU", led with the ask's
+       internal id, and offered nothing to do — while the front door could act on the
+       same row. Two defects in one card: the surface spoke its own language, and the
+       one page announcing that something waited on you was the one page where you
+       could not answer it. The ask's own words lead; the id is summonable in title=;
+       and the buttons POST to /front/decide — the SAME door the front door uses, one
+       act with one producer, never a second implementation. */
+    const c = el("div", "card");
+    const r = el("div", "row");
+    const name = el("span", "name", (a.text || a.id).slice(0, 120));
+    name.title = a.id;
+    r.append(name, el("span", "pill ask", "NEEDS YOU"));
+    c.append(r);
+    if (a.by) c.append(el("div", "dim", "asked by " + a.by));
+    const acts = el("div", "acts");
+    const echo = el("span", "dim");
+    for (const [verb, label] of [["approve", "approve"], ["refuse", "refuse"]]) {
+      const b = el("button", "act " + (verb === "approve" ? "ok" : "bad"), label);
+      b.type = "button";
+      b.addEventListener("click", async () => {
+        for (const x of acts.querySelectorAll("button")) x.disabled = true;
+        echo.textContent = "banking…";
+        try {
+          const res = await fetch("/front/decide", {
+            method: "POST",
+            headers: { "Content-Type": "application/json", "X-Front-Door": "1" },
+            body: JSON.stringify({ ask: a.id, decision: verb }),
+          });
+          const j = await res.json();
+          echo.textContent = res.ok ? ("recorded — " + (j.banked || verb))
+                                    : ("refused: " + (j.error || res.status));
+          if (res.ok) setTimeout(refresh, 500);
+        } catch (e) { echo.textContent = "the door did not answer: " + e; }
+      });
+      acts.append(b);
+    }
+    acts.append(echo);
+    c.append(acts);
+    asks.append(c);
+  }
+
+  const sess = document.getElementById("sessions");
+  sess.replaceChildren();
+  for (const s of d.sessions) {
+    /* The card body used to be the raw `claude --resume <uuid>` shell line, four of them
+       stacked down the page in code blocks, so the loudest thing in the panel was a
+       string the reader almost never needs. It moved into a fold; what is left is what
+       the session IS and whether it is alive. */
+    const c = el("div", "card");
+    const r = el("div", "row");
+    const state = s.hung ? ["pill hung", "◌ quiet " + agoS(s.transcript_age_s)]
+      : s.socket_alive ? ["pill run", "● live · wrote " + agoS(s.transcript_age_s)]
+      : ["pill off", "○ gone"];
+    const nm = el("span", "name", s.name || ("process " + s.pid));
+    nm.title = "sessionId " + (s.session_id || "unknown") + " · pid " + s.pid;
+    r.append(nm, el("span", state[0], state[1]));
+    c.append(r);
+    c.append(el("div", "dim", s.cwd ? ("working in " + s.cwd.split("/").filter(Boolean).pop())
+                                    : "no working directory recorded"));
+    if (s.hung) {
+      c.append(el("div", "dim",
+        "nothing written to its log for " + durS(s.transcript_age_s)
+        + " — it is either watching quietly or stopped at a prompt, and from outside "
+        + "those two look identical"));
+    }
+    if (!s.transcript_known) {
+      c.append(el("div", "dim", "no transcript on disk — its id is known, its log is not"));
+    }
+    if (s.resume) {
+      const p = el("pre"); p.textContent = s.resume;
+      c.append(fold("reattach to this session", p));
+    }
+    sess.append(c);
+  }
+
+  /* THE FABRIC REGISTER — the one the nav chip counts. Until this panel existed, the
+     chip read "6 seats · 81 in flight" in amber and the page it opened read "3 seats ·
+     none pending" in calm grey, with no way for a reader to learn that those are two
+     stores. Both counts are on the page now, each under its own store's name. */
+  const fab = document.getElementById("fabric");
+  fab.replaceChildren();
+  const fb = d.fabric || {};
+  srcInto("fab-src", (fb.source || "not named")
+                     + (fb.store_root ? "  @ " + fb.store_root : ""));
+  if (fb.state === "counting") {
+    const c = el("div", "card");
+    const r = el("div", "row");
+    r.append(el("span", "name", "the fabric is being counted"),
+             el("span", "pill off", "counting"));
+    c.append(r, el("div", "dim",
+      "replaying the fabric event log takes about 1.4 seconds, so it runs off this "
+      + "request rather than holding the page. The numbers appear on the next refresh."));
+    fab.append(c);
+  } else if (fb.state !== "measured") {
+    const c = el("div", "card bad");
+    const r = el("div", "row");
+    r.append(el("span", "name", "the fabric register could not be read"),
+             el("span", "pill hung", "unreadable"));
+    c.append(r, el("div", "warn", fb.error || "no reason given"));
+    fab.append(c);
+  } else {
+    const g = el("div", "grid");
+    const s1 = el("div", "stat");
+    s1.append(el("b", "num", String(fb.seat_count)), el("div", "dim", "addresses on the fabric"));
+    const s2 = el("div", "stat");
+    s2.append(el("b", "num" + (fb.in_flight ? " warnnum" : ""), String(fb.in_flight)),
+              el("div", "dim", "messages in flight"));
+    g.append(s1, s2);
+    fab.append(g);
+    const by = fb.by_status || {};
+    fab.append(el("div", "dim",
+      "In flight means queued — nobody has pulled it — or pulled and never acknowledged: "
+      + (by.queued || 0) + " queued, " + (by.pulled || 0) + " held unacknowledged. "
+      + (by.delivered || 0) + " more were acknowledged and " + (by.refused || 0)
+      + " refused; those are done and are not counted here."));
+    const addrs = el("div", "foldbody");
+    for (const a of (fb.seats || [])) {
+      addrs.append(kv(a.id, (a.role || "no role") + " · " + (a.status || "no status")));
+    }
+    fab.append(fold("the " + (fb.seats || []).length + " addresses", addrs));
+    /* A divergence here is the original defect coming back: the chip and this panel
+       reading the same store and reporting different numbers. It is rendered, not
+       swallowed — and it is only computed when neither side is mid-recount. */
+    if (fb.chip_agrees === false) {
+      const ch = fb.nav_chip || {};
+      fab.append(el("div", "warn",
+        "The front door's nav chip reports " + ch.seats + " seats and " + ch.in_flight
+        + " in flight from this same store. This panel and that chip disagree, so one "
+        + "of them is counting the wrong thing."));
+    }
+  }
+
+  const seats = document.getElementById("seats");
+  seats.replaceChildren();
+  if (d.seats.error) {
+    const c = el("div", "card bad");
+    c.append(el("div", "name", "the charter roll could not be read"),
+             el("div", "warn", d.seats.error));
+    seats.append(c);
+  }
+  for (const s of (d.seats.current || [])) {
+    const c = el("div", "card");
+    const live = s.relay_state === "live";
+    const face = SEAT_FACES[s.seat]
+      || ["the " + s.seat + " seat",
+          "no authored description for this seat yet — its founding note below is all "
+          + "this page knows about it"];
+    const r = el("div", "row");
+    const nm = el("span", "name", face[0]);
+    nm.title = s.seat + (s.title ? " · " + s.title : "");
+    r.append(nm, el("span", "pill " + (live ? "run" : "off"),
+                    live ? "● relay live" : "○ relay closed"));
+    c.append(r, el("div", "dim", face[1]),
+             el("div", "dim", "founded " + dayOf(s.founded)));
+    if (s.session_ref) {
+      c.append(fold("its founding note — what this seat was founded to do, whole",
+                    s.session_ref));
+    } else {
+      c.append(el("div", "dim", "no founding note recorded"));
+    }
+    seats.append(c);
+  }
+
+  const acct = document.getElementById("account");
+  acct.replaceChildren();
+  const a = d.account || {};
+  if (a.error) {
+    const c = el("div", "card bad");
+    c.append(el("div", "name", "the account could not be read"), el("div", "warn", a.error));
+    acct.append(c);
+  } else {
+    const stats = [
+      ["promises open", a.promises_open], ["promises deferred", a.promises_deferred],
+      ["work orders open", a.work_orders_open], ["threads in the red", a.thread_reds],
+      ["defects on the ledger", a.defects],
+    ];
+    for (const [k, v] of stats) {
+      const s = el("div", "stat");
+      /* an unreadable number is "unknown", never 0 and never blank: a count that was
+         never taken and a count that came back zero are opposite facts. */
+      s.append(el("b", "num", v === null || v === undefined ? "unknown" : String(v)),
+               el("div", "dim", k));
+      acct.append(s);
+    }
+  }
+
+  const camp = document.getElementById("campaign");
+  camp.replaceChildren();
+  const cm = d.campaign || {};
+  if (cm.error) {
+    const c = el("div", "card bad");
+    c.append(el("div", "name", "the campaign could not be read"), el("div", "warn", cm.error));
+    camp.append(c);
+  } else {
+    const stages = cm.stages || [];
+    if (cm.next_act) {
+      const hit = stages.find((s) => s.id === cm.next_act);
+      const n = el("div", "note");
+      const b = el("b", null, hit && hit.title ? hit.title : cm.next_act);
+      b.title = cm.next_act;
+      n.append(document.createTextNode("The engine's next act: "), b);
+      camp.append(n);
+    }
+    const live = stages.filter((s) => s.status !== "ABSORBED");
+    const absorbed = stages.filter((s) => s.status === "ABSORBED");
+    for (const st of live) camp.append(stageCard(st));
+    if (absorbed.length) {
+      const box = el("div");
+      for (const st of absorbed) box.append(stageCard(st));
+      camp.append(fold(absorbed.length + " earlier stages absorbed into this campaign — "
+                       + "superseded, kept so nothing vanishes", box));
+    }
+  }
+}
+refresh();
+setInterval(refresh, 20000);
+</script>
+</body>
+</html>

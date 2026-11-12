@@ -1,0 +1,46 @@
+{
+  "schema_version": "laplace.workflow/1",
+  "name": "build-review-synthesize",
+  "provenance": [
+    ".claude/workflows/weld-cwave3.js: serialized builder then independent adversary",
+    ".claude/workflows/project-harnessed.js: exact evidence, no silence-as-success",
+    "2026-09-19 author request: reusable Codex dispatch, adversarial judgement and synthesis"
+  ],
+  "stages": [
+    {
+      "id": "build",
+      "role": "builder",
+      "depends_on": [],
+      "worker": "derive",
+      "authored_policy": {
+        "source": "Role/evidence pattern from the recorded workflow sources; provider, model and effort are selected for this run."
+      },
+      "instruction": "Perform the requested work and write its useful outputs into the project. Name the produced evidence and verify the behavior that matters. Return what actually happened and what remains."
+    },
+    {
+      "id": "adversary",
+      "role": "adversary",
+      "depends_on": [
+        "build"
+      ],
+      "worker": "derive",
+      "authored_policy": {
+        "source": "Role/evidence pattern from the recorded workflow sources; provider, model and effort are selected for this run."
+      },
+      "instruction": "Independently reconstruct the resulting work. Challenge its strongest claim with a concrete boundary or counterexample using your own command. Preserve the builder result and deposit your own findings in the project. Accept only supported results and name unresolved objections."
+    },
+    {
+      "id": "synthesis",
+      "role": "synthesis",
+      "depends_on": [
+        "build",
+        "adversary"
+      ],
+      "worker": "derive",
+      "authored_policy": {
+        "source": "Role/evidence pattern from the recorded workflow sources; provider, model and effort are selected for this run."
+      },
+      "instruction": "Consume the exact builder and adversary returns. Deposit a concise synthesis naming supported results, disagreements, and the next action. Preserve unresolved objections and distinguish produced evidence from accepted conclusions."
+    }
+  ]
+}

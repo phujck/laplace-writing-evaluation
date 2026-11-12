@@ -1,0 +1,286 @@
+{
+  "schema": "anf.D4a-input/1",
+  "work_id": "WORK-256f04c7cee94becbcf12f38b97afb69",
+  "original_parent": "WS-f989d076ce2a4ce0aab628e6712f800b",
+  "source_pins": [
+    {
+      "repository": "laplace",
+      "path": "synthetics papers/adaptive-normal-form/workflow/state/results/R4_hierarchical_postponement.md",
+      "sha256": "3931f93cc39dcb60146552e615fc2123ab32ae1029e51678436a53e1fd7cbe9b",
+      "total_lines": 54,
+      "read_receipt": "READ-66ff1a6e39384d16957e53110a504c44"
+    },
+    {
+      "repository": "laplace",
+      "path": "synthetics papers/adaptive-normal-form/workflow/state/derivations/R4_derivation.md",
+      "sha256": "baf75792b6347707678904b0fdf890d36dac21dbc61db9726907301e08cb0c18",
+      "total_lines": 33,
+      "read_receipt": "READ-d5ddc88ad7494e94807dd7f3a2e13e4c"
+    },
+    {
+      "repository": "laplace",
+      "path": "synthetics papers/adaptive-normal-form/scripts/R4_check.py",
+      "sha256": "8766214dc5f7cc626417dc56749b3d109b942e0472bea8842ed8c86cb79e1d7f",
+      "total_lines": 115,
+      "read_receipt": "READ-447d12d27509444ba91f8e8ec456d082"
+    },
+    {
+      "repository": "laplace",
+      "path": "synthetics papers/adaptive-normal-form/workflow/state/results/R5_inertial_window.md",
+      "sha256": "e4c8c3b6f2ac37b2781bad493e41357f3fe82d8b3eccf707c3bb25e4fe6f93ee",
+      "total_lines": 59,
+      "read_receipt": "READ-a0414b8769304d42bf8877092bb76302"
+    },
+    {
+      "repository": "laplace",
+      "path": "synthetics papers/adaptive-normal-form/workflow/state/derivations/R5_derivation.md",
+      "sha256": "3d011ee8e78ec8c51a2631c1d8a8ea0a5f645a1c6b3403166b12e4915b2de179",
+      "total_lines": 54,
+      "read_receipt": "READ-40de4527f1e84a21a23ab536f7a2e263"
+    },
+    {
+      "repository": "laplace",
+      "path": "synthetics papers/adaptive-normal-form/scripts/R5_check.py",
+      "sha256": "8e74a837901bbf9149e857980ffa9b05c070e78e795b159fb8c62110dfd6a445",
+      "total_lines": 189,
+      "read_receipt": "READ-7bf8c7d4298c4892b2617488e369d5f5"
+    },
+    {
+      "repository": "laplace",
+      "path": "synthetics papers/the-phases-of-hierarchy/manuscript/tex_v4/sections/C_hierarchical_redescription.tex",
+      "sha256": "5728939928f428200e951c41f9796778b1f2549cd72819756dfb476cc2a21f91",
+      "total_lines": 41,
+      "read_receipt": "READ-f8770afc7cd74b37ac112603e67402de"
+    },
+    {
+      "repository": "laplace",
+      "path": "synthetics papers/the-phases-of-hierarchy/manuscript/tex_v4/sections/D_cost_functions_inertia.tex",
+      "sha256": "3860f3b7bde9bdb6574a7185f07eca8fa0fa9300ebd3aac65a2629081e009200",
+      "total_lines": 78,
+      "read_receipt": "READ-85c2141f763749c1a2a09619474a4a09"
+    },
+    {
+      "repository": "laplace",
+      "path": "synthetics papers/the-phases-of-hierarchy/manuscript/tex_v4/sections/E_simulations.tex",
+      "sha256": "c72c9944827cededbeef7c1ba499d1e37389bdd7706f0c375e95b9ffa3983e0f",
+      "total_lines": 21,
+      "read_receipt": "READ-cbe16acf9934450c81a3ff34a58c338e"
+    },
+    {
+      "repository": "laplace",
+      "path": "synthetics papers/the-phases-of-hierarchy/manuscript/tex/sections/09_hierarchy.tex",
+      "sha256": "4638b7bf4d7a3ecbf605d3d3ad1d965cab79ca342fb19fa345f77fe7f14f287f",
+      "total_lines": 129,
+      "read_receipt": "READ-e2294a4f88424a68b9fcd39459d06b9f"
+    }
+  ],
+  "source_excerpts": [
+    {
+      "path": "synthetics papers/adaptive-normal-form/scripts/R4_check.py",
+      "sha256": "8766214dc5f7cc626417dc56749b3d109b942e0472bea8842ed8c86cb79e1d7f",
+      "start_marker": "    # derivation assumption: 1.",
+      "end_marker_exclusive": "    e_history = []",
+      "offset": 698,
+      "limit": 284,
+      "text": "    # derivation assumption: 1. Express L-level loop gain by scaling O_mean\n    # Since K = alpha * g * chi, and both g and chi are derivatives of O_mean,\n    # O_mean scales by lambda_0^[-(L-1)/2] to scale K by lambda_0^[-(L-1)].\n    scale_factor = lambda_0 ** (-(L - 1) / 2.0)\n    \n",
+      "read": {
+        "operation": "repository",
+        "payload": {
+          "action": "read",
+          "repository": "laplace",
+          "path": "synthetics papers/adaptive-normal-form/scripts/R4_check.py",
+          "expected_sha256": "sha256:8766214dc5f7cc626417dc56749b3d109b942e0472bea8842ed8c86cb79e1d7f",
+          "offset": 698,
+          "limit": 284
+        }
+      }
+    },
+    {
+      "path": "synthetics papers/adaptive-normal-form/scripts/R5_check.py",
+      "sha256": "8e74a837901bbf9149e857980ffa9b05c070e78e795b159fb8c62110dfd6a445",
+      "start_marker": "def cascade_A(",
+      "end_marker_exclusive": "def top_reachability(",
+      "offset": 1908,
+      "limit": 193,
+      "text": "def cascade_A(L):\n    \"\"\"Reconfiguration cascade: c on the first subdiagonal, input at the base.\"\"\"\n    A = np.zeros((L, L))\n    for i in range(1, L):\n        A[i, i - 1] = C_ATT\n    return A\n\n",
+      "read": {
+        "operation": "repository",
+        "payload": {
+          "action": "read",
+          "repository": "laplace",
+          "path": "synthetics papers/adaptive-normal-form/scripts/R5_check.py",
+          "expected_sha256": "sha256:8e74a837901bbf9149e857980ffa9b05c070e78e795b159fb8c62110dfd6a445",
+          "offset": 1908,
+          "limit": 193
+        }
+      }
+    }
+  ],
+  "retained_D1": {
+    "path": "D1/v2/03-size-gain-proof.md",
+    "sha256": "577bfd5970f91ce0085092e7eb80609d572529a677656e68db4c03311473ae0f",
+    "artifact_id": "ART-c29df13f924c4196957c23aa0bcadb30",
+    "section": "G1 exact majority mean derivative and G2/G3 controller powers",
+    "review": "PHASE-098ec8b566c82726f632dd9f",
+    "review_sha256": "f13911d14d94da1c2a52dd75e7ca0849ab8f918c97c653949a90747413d380ae"
+  },
+  "assessment_review": {
+    "id": "PHASE-57122f057388768ced8bc66d",
+    "sha256": "62784d1a5affb32eaa99c43e89a5cef8829564f4ca7b0be4f123133d378f9774",
+    "findings": [
+      "M07-DEPTH-FEASIBILITY",
+      "M08-R5-CONDITIONAL-LAW"
+    ]
+  },
+  "architecture": {
+    "N": "3^k",
+    "k_min": 1,
+    "k_max": 8,
+    "spans": "3^a_i for every ordered composition (a_1,...,a_L) of k with a_i positive integers",
+    "closure": "Disjoint iid binary subtree outputs, odd exact majority at each homogeneous level, symmetric zero-bias operating point, leaf mean tanh(beta u). Conditional independence is required, no propagation delay.",
+    "slope": "G=beta product_i [n_i binom(n_i-1,(n_i-1)/2)/2^(n_i-1)]",
+    "beta": 1,
+    "odd_tree_depth_cap": "L<=k",
+    "general_product_cap": "If spans>=2 then L<=floor(log_2 N), factorisation further restricts feasibility."
+  },
+  "controls": [
+    {
+      "id": "one_derivative_eta_1_8",
+      "nu": 1,
+      "eta": "1/8"
+    },
+    {
+      "id": "one_derivative_eta_1_4",
+      "nu": 1,
+      "eta": "1/4"
+    },
+    {
+      "id": "squared_derivative_eta_1_8",
+      "nu": 2,
+      "eta": "1/8"
+    },
+    {
+      "id": "squared_derivative_eta_1_4",
+      "nu": 2,
+      "eta": "1/4"
+    }
+  ],
+  "control_meaning": "ILLUSTRATIVE DIMENSIONLESS controls, K/Kc=eta*(G/beta)^nu. eta includes controller/beta/threshold normalisation, is not an estimated physical parameter. nu=1 resembles PH response placement and nu=2 matched-gradient placement. Do not assert the same alpha/units/model for both.",
+  "abstract_comparator": {
+    "id": "PH_gaussian_static",
+    "gain_slope": "sqrt(N)*(2/pi)^(L/2)",
+    "gain_attenuation_per_level": "sqrt(2/pi)",
+    "purpose": "Named Gaussian proxy, not the exact small-block map. Evaluate L=1..8 and separately intersect L<=k. No fictitious unary level is admitted to the exact architecture."
+  },
+  "resource_example": {
+    "H": 8,
+    "c_squared": "1/2",
+    "Emax_over_E0": "128",
+    "meaning": "Conditional terminal shift pulse-placement budget only. Cost ratio=2^(L-1), E0=w*Delta^2/B0^2. This is a separate task, not derived from majority or an actuator sweep.",
+    "gain_cost_coupling": "NONE imposed: Gaussian d=sqrt(2/pi) differs from c_squared=1/2."
+  },
+  "reciprocal_controls": [
+    {
+      "p": "1/2",
+      "Kref": "1/4",
+      "Kc": "1",
+      "Nref": "1",
+      "L": 3,
+      "d": "1/2"
+    },
+    {
+      "p": "1",
+      "Kref": "1/4",
+      "Kc": "1",
+      "Nref": "1",
+      "L": 3,
+      "d": "1/2"
+    },
+    {
+      "p": "2",
+      "Kref": "1/4",
+      "Kc": "1",
+      "Nref": "1",
+      "L": 3,
+      "d": "1/2"
+    }
+  ],
+  "boundary_controls": {
+    "d": "1/2",
+    "Kc": "1",
+    "flat_gain_ratios": [
+      "1/2",
+      "1",
+      "2",
+      "4"
+    ],
+    "note": "Strict equality excluded. Integer formulas checked against exact Fraction inequalities."
+  },
+  "starting_scale_controls": [
+    {
+      "p": -1,
+      "Kref": "2",
+      "Nref": "1",
+      "N_start": "1",
+      "N_values": [
+        "1",
+        "2",
+        "3"
+      ]
+    },
+    {
+      "p": 0,
+      "Kref": "1/2",
+      "Nref": "1",
+      "N_start": "1",
+      "N_values": [
+        "1",
+        "2"
+      ]
+    },
+    {
+      "p": 0,
+      "Kref": "1",
+      "Nref": "1",
+      "N_start": "1",
+      "N_values": [
+        "1",
+        "2"
+      ]
+    },
+    {
+      "p": 0,
+      "Kref": "2",
+      "Nref": "1",
+      "N_start": "1",
+      "N_values": [
+        "1",
+        "2"
+      ]
+    },
+    {
+      "p": "1/2",
+      "Kref": "1/4",
+      "Nref": "1",
+      "N_start": "25",
+      "N_values": [
+        "25",
+        "36"
+      ]
+    }
+  ],
+  "oracles": {
+    "ordered_compositions_count": "2^(k-1), total255",
+    "exact_flat_slope": "single-span slope matches n=N",
+    "exact_ternary_chain": "(3/2)^k",
+    "unary_and_binary_fair_tie_slopes": "a(1)=a(2)=1",
+    "reciprocal_control_ratios": [
+      "16",
+      "4",
+      "2"
+    ],
+    "gain_advantage": "NO required advantage, mismatch or stable-set count oracle. Report computed feasible and empty sets honestly.",
+    "floating_proxy_boundary_tolerance": 1e-12
+  },
+  "execution_limits": "Standard-library deterministic binomial/Fraction arithmetic and scalar Gaussian comparison only. No old scripts run, no populations, matrices, Monte Carlo, services, installs or outside inference. Actual actuator variant sweep deferred D4b."
+}

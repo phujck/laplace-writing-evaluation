@@ -1,0 +1,65 @@
+{
+ "profile_id": "prx-revtex4-2",
+ "version": "1.0 (2026-07-09)",
+ "source": "derived from the author's published preamble (profiles/typography/sources/free_snacks.tex) + canon://aesthetics/typography_and_layout + canon://aesthetics/tikz_guidelines",
+ "documentclass": "revtex4-2",
+ "documentclass_options": ["reprint", "aps", "prx", "showpacs", "bibfootnote", "preprintnumbers", "superscriptaddress", "amsmath", "amssymb"],
+ "house_layer": "eigen-revtex",
+ "_house_layer_note": "the emitted preamble carries \\usepackage{eigen-revtex} (templates/eigen-revtex/); every package in `packages` that the layer provides (tex_template.LAYER_PROVIDES) is trimmed at emit so the emitter and the check_template gate agree. Packages remain listed here as the profile's full intended stack.",
+ "packages": [
+  "amsmath", "amsfonts", "amsthm", "bm",
+  "braket",
+  ["subfig", "caption=false"],
+  "graphicx",
+  "xcolor",
+  "physics",
+  "mathtools",
+  ["hyperref", "colorlinks=true"],
+  "orcidlink",
+  "booktabs"
+ ],
+ "macros": [],
+ "spelling": "British",
+ "headings": {
+  "section": "\\section with \\label{sec:<id>}",
+  "subsection_unnumbered": "\\subsection* for sub-movements inside a section",
+  "closing_section": "Outlook (the author's convention; never 'Conclusion')"
+ },
+ "equations": {
+  "display": "equation environment, numbered, \\label{eq:<semantic>}",
+  "multiline": "align",
+  "references": "Eq.\\eqref{...}; ranges as Eqs.(\\ref{a},\\ref{b})",
+  "notation_packages": "braket (\\Braket, \\ket, \\bra) and physics",
+  "punctuation": "equations punctuate as clauses of the sentence"
+ },
+ "labels": {
+  "convention": "semantic ids: eq:/fig:/tab:/sec:/app:",
+  "no_provisional_numbers": true
+ },
+ "figures": {
+  "single_width": "\\linewidth",
+  "double_width": "\\textwidth",
+  "placement": "tb",
+  "environment": "figure (figure* for double-column)",
+  "captions": "caption is the figure's only prose surface (the no-titles law); panel labels \\textbf{(a)}, \\textbf{Top:}; epistemic type declared where panels mix evidence classes",
+  "assets": "vector-first (pdf); generated TikZ diagrams disfavoured for data figures",
+  "grid_convention": "any time-grid panel shows scaled Gauss-Hermite nodes, never uniform ticks"
+ },
+ "tables": {
+  "environment": "table* with ruledtabular for wide comparisons",
+  "accents": "booktabs rules, \\renewcommand{\\arraystretch}{1.15} for breathing room",
+  "caption_position": "above",
+  "units": "stated in column heads, never repeated per cell"
+ },
+ "bibliography": {
+  "system": "bibtex via \\bibliography{<file>}",
+  "file": "literature",
+  "footnotes": "bibfootnote class option carries asides as citations"
+ },
+ "colour_policy": "colorlinks; Nature-style muted colours in any TikZ (blue!80!black class, never raw primaries)",
+ "source_organisation": {
+  "driver": "main.tex assembled by tex_backend (never hand-edited)",
+  "fragments": "one .tex per section, % PLAN/% NODES markers preserved",
+  "figures": "figures_tex/<fid>.tex generated from figure specs"
+ }
+}

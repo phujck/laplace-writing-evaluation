@@ -1,0 +1,149 @@
+{
+  "schema_version": "mip.wyoming-source-witness/1",
+  "accepted_inventory": {
+    "id": "ART-2d966fa0fc294d22a16286ab64ff8029",
+    "sha256": "6e81b7e5dd75396ccc86bc366297414b6b8ea44dd408984cf43dc68e835805b9"
+  },
+  "document": {
+    "title": "Wyoming",
+    "section": "Climate",
+    "id": "f2ff4562619e84b4f0809c8428bb05703b0cfce8be3427765fce809c458765c8"
+  },
+  "requested_unit": {
+    "unit_id": "frames:f2ff4562619e84b4:s004:x5",
+    "text": "The southeastern corner of the state is the most vulnerable part of the state to tornado activity. Moving away from that point and westwards, the incidence of tornadoes drops dramatically with the west part of the state showing little vulnerability. Tornadoes, where they occur, tend to be small and brief, unlike some of those that occur farther east."
+  },
+  "returned_record": {
+    "unit_id": "frames:f2ff4562619e84b4:s005:x5",
+    "subject": "southeastern corner of the state",
+    "object": "tornado vulnerability",
+    "mechanism": "Most vulnerable to tornadoes; incidence drops dramatically moving west",
+    "conditions": "Where they occur",
+    "consequences": "Tornadoes tend to be small and brief, unlike some farther east",
+    "support_quotes": [
+      "The southeastern corner of the state is the most vulnerable part of the state to tornado activity."
+    ]
+  },
+  "processed_record": {
+    "unit_id": "frames:f2ff4562619e84b4:s004:x5",
+    "doc": "frames:f2ff4562619e84b4:s004",
+    "start": 1939,
+    "end": 2291,
+    "statement": {
+      "subject": "southeastern corner of the state",
+      "object": "tornado vulnerability",
+      "mechanism": "Most vulnerable to tornadoes; incidence drops dramatically moving west",
+      "conditions": "Where they occur",
+      "consequences": "Tornadoes tend to be small and brief, unlike some farther east"
+    },
+    "witnesses": [
+      {
+        "start": 1939,
+        "end": 2037,
+        "text": "The southeastern corner of the state is the most vulnerable part of the state to tornado activity."
+      }
+    ],
+    "quotes_dropped": [],
+    "no_witness": false
+  },
+  "source_char_windows": {
+    "unit": [
+      1939,
+      2291
+    ],
+    "witness": [
+      1939,
+      2037
+    ],
+    "units": "Stored section-relative character offsets, preserved from existing processed record"
+  },
+  "request_index": 503,
+  "position": 26,
+  "request_sha256": "f876a495bd4652fd310a851aa6a24cebe1f3bf65affd6cb8524674b849134669",
+  "assignment": "Recorded s005:x5 typo assigned by POSITION26 to requested s004:x5. Original identities retained, not repaired.",
+  "interpretation": "First source sentence supports southeastern vulnerability. Remaining two source sentences state the westward decline and small/brief tornado claim. The narrow quote alone does not support those additional fields. Location is not field entailment.",
+  "original_cache": {
+    "path": "evidence/BENCH_RECOVERY_2026-11-09/stage3/X/cache/frames/f876a495bd4652fd310a851aa6a24cebe1f3bf65affd6cb8524674b849134669.json",
+    "sha256": "a051f1b5fe159aba9824e4ab149791f9fd9cf238c919a807aec80ab5d47ae0c9"
+  },
+  "request_source": {
+    "path": "evidence/BENCH_RECOVERY_2026-11-09/stage3/X/out/frames_requests.jsonl",
+    "sha256": "fcb772a0fc6631faa78aed621ee92d2a12e7bdd86cf8c047e59e9ab2c0482f5b",
+    "reads": [
+      {
+        "offset": 12066240,
+        "source": {
+          "path": "/home/phujck/VScodeProjects/laplace/evidence/BENCH_RECOVERY_2026-11-09/stage3/X/out/frames_requests.jsonl",
+          "bytes": 33930642,
+          "sha256": "fcb772a0fc6631faa78aed621ee92d2a12e7bdd86cf8c047e59e9ab2c0482f5b"
+        },
+        "read": {
+          "id": "READ-79c1f3d52dd74a0688e2621f2ebd7b8b",
+          "turn_id": "WT-62840450a3dd4839a97dc328f53f878b",
+          "session_id": "WS-3d22536a14a4424c8b193ffd26a51a34",
+          "project": "memory-in-pieces",
+          "operation": "repository",
+          "payload": {
+            "action": "read",
+            "repository": "laplace",
+            "path": "evidence/BENCH_RECOVERY_2026-11-09/stage3/X/out/frames_requests.jsonl",
+            "offset": 12066240,
+            "limit": 40000,
+            "expected_sha256": "fcb772a0fc6631faa78aed621ee92d2a12e7bdd86cf8c047e59e9ab2c0482f5b",
+            "project": "memory-in-pieces"
+          },
+          "output_sha256": "ce013d11029fbd6b0efcdf3205a98289b00b347e6ebddba9ef7b4a1be44779fe"
+        }
+      },
+      {
+        "offset": 12106240,
+        "source": {
+          "path": "/home/phujck/VScodeProjects/laplace/evidence/BENCH_RECOVERY_2026-11-09/stage3/X/out/frames_requests.jsonl",
+          "bytes": 33930642,
+          "sha256": "fcb772a0fc6631faa78aed621ee92d2a12e7bdd86cf8c047e59e9ab2c0482f5b"
+        },
+        "read": {
+          "id": "READ-c4b4d13f3a53452abe1d78709507b344",
+          "turn_id": "WT-62840450a3dd4839a97dc328f53f878b",
+          "session_id": "WS-3d22536a14a4424c8b193ffd26a51a34",
+          "project": "memory-in-pieces",
+          "operation": "repository",
+          "payload": {
+            "action": "read",
+            "repository": "laplace",
+            "path": "evidence/BENCH_RECOVERY_2026-11-09/stage3/X/out/frames_requests.jsonl",
+            "offset": 12106240,
+            "limit": 40000,
+            "expected_sha256": "fcb772a0fc6631faa78aed621ee92d2a12e7bdd86cf8c047e59e9ab2c0482f5b",
+            "project": "memory-in-pieces"
+          },
+          "output_sha256": "926ef133e792c23179635f296ca72e5c26cd36a1334851852443dc3cdbb8505f"
+        }
+      }
+    ]
+  },
+  "processed_source": {
+    "path": "evidence/BENCH_RECOVERY_2026-11-09/stage3/X/out/frames_statements.jsonl",
+    "sha256": "abc198f3c5bc0911f46f60c94b8c6bb5f06731f741f1f4e25a85f79c579112cc",
+    "read": {
+      "id": "READ-a62c129254f94a0d977b42f796abe71e",
+      "turn_id": "WT-62840450a3dd4839a97dc328f53f878b",
+      "session_id": "WS-3d22536a14a4424c8b193ffd26a51a34",
+      "project": "memory-in-pieces",
+      "operation": "repository",
+      "payload": {
+        "action": "read",
+        "repository": "laplace",
+        "path": "evidence/BENCH_RECOVERY_2026-11-09/stage3/X/out/frames_statements.jsonl",
+        "offset": 14402919,
+        "limit": 40000,
+        "expected_sha256": "abc198f3c5bc0911f46f60c94b8c6bb5f06731f741f1f4e25a85f79c579112cc",
+        "project": "memory-in-pieces"
+      },
+      "output_sha256": "4ddbe1effde399bbb7dad3b62645e6d50366edeac9ce5109329bf668d3b35121"
+    },
+    "offset": 14402919,
+    "limit": 40000
+  },
+  "scope": "Documentary example from accepted 619-page subset, not full-corpus semantic verification or a new extraction."
+}

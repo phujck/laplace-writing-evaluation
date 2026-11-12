@@ -1,0 +1,84 @@
+\section{The finite-gain stability boundary}
+\label{hrec:sec:stability}
+For the matched lagged loop, the fixed curve is transversely linearly stable when
+\begin{equation}
+ |r-K_{\rm lag}|<1,\qquad K_{\rm lag}=\alpha f'(\theta)^2.
+ \label{hrec:eq:transverse}
+\end{equation}
+At a nonzero-slope point this is \(0<K_{\rm lag}<1+r\). It is stability towards a curve, not asymptotic attraction to an isolated prescribed point. If \(\theta\) is externally frozen, the physical report update has only multiplier \(r\). The multiplier \(r-K_{\rm lag}\) belongs to the coupled loop.
+
+The exact nonlinear mismatch makes the remaining state dependence explicit:
+\begin{align}
+ e_{k+1}&=r e_k-\{f(\theta_k+\alpha f'(\theta_k)e_k)-f(\theta_k)\}\nonumber\\
+ &=A(\theta_k,e_k)e_k,\nonumber\\
+ A(\theta,e)&=r-\alpha f'(\theta)\int_0^1
+       f'(\theta+t\alpha f'(\theta)e)\,dt.
+ \label{hrec:eq:secant}
+\end{align}
+This is a two-variable identity. It is not an autonomous cubic map for \(e\). At a strict stable point, continuity supplies a small rectangle on which \(|A|\le q<1\). If the initial mismatch is small enough that its accumulated broadcast drift remains inside that rectangle, \(|e_k|\le q^k|e_0|\) and \(\theta_k\) converges to some \(\theta_\infty\). Appendix~\ref{hrec:app:local} gives the explicit trapping condition. The result proves local attraction to the fixed curve. At equality in Eq.~\eqref{hrec:eq:transverse}, or for an arbitrary large excursion, this argument makes no assertion.
+
+For the post-observation map, trace and determinant of Eq.~\eqref{hrec:eq:post-jacobian} give the three real two-dimensional Schur conditions. On \(b>s>0\), \(0\le r<1\), their nontrivial upper boundary is
+\begin{equation}
+ 0<K<K_c,\qquad
+ K_c=\frac{2(1+r)}{(1+r)b-(1-r)s}.
+ \label{hrec:eq:post-boundary}
+\end{equation}
+At \(K=K_c\) one multiplier reaches \(-1\). The other lies in \([0,1)\), including zero when \(r=0\). This is not the matched fixed curve's simultaneous neutral and transverse boundary. The full conditions and the positive-slope off-matching lagged case appear in Appendix~\ref{hrec:app:local}.
+
+These gains also give two different size laws. At the origin of the smooth responses in Eq.~\eqref{hrec:eq:proxies},
+\begin{align}
+ K_{\rm lag}(N)&=\frac{2\alpha\beta^2N}{\pi},
+ &N_c^{\rm lag}&=\frac{\pi(1+r)}{2\alpha\beta^2},\nonumber\\
+ K_{\rm post}(N)&=\varepsilon\beta\sqrt{\frac{2N}{\pi}},
+ &N_c^{\rm post}&=\frac{\pi K_c^2}{2\varepsilon^2\beta^2}.
+ \label{hrec:eq:size-laws}
+\end{align}
+The susceptibility exponent is \(1/2\) in both origin responses, but the \emph{gain} exponents are one and one half. For the lagged controls \(r=0.3,\alpha=0.01,\beta=0.5\), the origin transverse boundary is \(N_c^{\rm lag}=816.8140899\). The linear coefficient changes sign earlier at \(N_0=\pi r/(2\alpha\beta^2)=188.4955592\), where a small mismatch is cancelled to first order in one step. This is not a stability boundary. For \(b=1.2,s=0.4,r=e^{-1},\varepsilon=0.35,\beta=0.6\), the post-observation model instead has \(K_c=1.970146106\) and \(N_c^{\rm post}=138.2541437\).
+
+What happens beyond a local boundary needs a nonlinear argument. For the matched erf/sinh map, a symmetric two-cycle with positive \(\theta\) satisfies
+\begin{equation}
+ \begin{aligned}
+ m&=-\frac{1-r}{1+r}f(\theta),\\
+ \alpha f'(\theta)f(\theta)&=(1+r)\theta.
+ \end{aligned}
+ \label{hrec:eq:matched-cycle}
+\end{equation}
+The full off-curve Jacobian is
+\begin{equation}
+ J(m,\theta)=
+ \begin{pmatrix}
+ r&(1-r)f'(\theta)\\
+ \alpha f'(\theta)&1+\alpha f''(\theta)e-\alpha f'(\theta)^2
+ \end{pmatrix}.
+ \label{hrec:eq:full-jacobian}
+\end{equation}
+The \(f''e\) term matters. At a positive orbit state with \(f''<0\), \(e<0\) and
+\(\det(I-J)=-\alpha(1-r)f''e<0\), so a real multiplier of \(J\) exceeds one. The retained \(N=900\) orbit has numerically evaluated two-step multipliers \(1.2451443679\) and \(0.5809714397\). It is a saddle, not an attracting phase branch.
+
+The post-observation erf response supplies a positive contrast. Define \(D=b-(1-r)s/(1+r)\), so \(K_c=2/D\). Its symmetric orbit has broadcast amplitude \(\Theta>0\), plant amplitude \(X=-(1-r)s\Theta/(1+r)\), and mismatch magnitude \(z=D\Theta\). The orbit equation is
+\begin{equation}
+ \varepsilon\,\frac{R_N(z)}{z}=K_c.
+ \label{hrec:eq:post-cycle}
+\end{equation}
+For an exact erf response, \(R_N(z)/z\) decreases strictly from \(R_N'(0)\) to zero. A unique positive symmetric solution therefore exists precisely when \(K>K_c\). Strict concavity gives \(0<\varepsilon R_N'(z)<K_c\). Both orbit Jacobians then satisfy the same strict Schur conditions as the equilibrium, proving local attraction of the two-cycle. Appendix~\ref{hrec:app:cycles} derives this result, including \(r=0\). It does not extend the conclusion to an arbitrary odd response or identify a global basin.
+
+\begin{table}[t]
+ \centering
+ \caption{Finite trajectories of the matched erf/sinh loop. The initial state is \((m_0,\theta_0)=(10^{-4},0)\), with \(r=0.3,\alpha=0.01,\beta=0.5\). Peak means \(\max_{0\le k<H}|e_k|\), including the initial mismatch. Tail means half the range of \(e\) in the final 200 stored updates. Rounded values describe finite float64 observations, not exact asymptotic amplitudes.}
+ \label{hrec:tab:transients}
+ \begin{tabular}{rrrr}
+ \toprule
+ \(N\)&\(H\)&Peak&Tail\\
+ \midrule
+ 800&5000&\(10^{-4}\)&roundoff scale\\
+ 817&5000&\(4.3872\,10^{-4}\)&not classified\\
+ 817&20000&\(1.93594\,10^{-2}\)&\(1.93601\,10^{-2}\)\\
+ 820&5000&\(9.37363\,10^{-2}\)&\(7.249\,10^{-5}\)\\
+ 850&5000&\(0.297630\)&roundoff scale\\
+ 900&20000&\(0.459980\)&roundoff scale\\
+ \bottomrule
+ \end{tabular}
+\end{table}
+
+Finite trajectories answer a different question from these orbit calculations. Table~\ref{hrec:tab:transients} separates the largest seeded excursion from a late-window amplitude. At \(N=900\), the peak occurs at update 123 and is followed by a small-mismatch tail. At \(N=817\), extending the horizon from 5000 to 20000 changes the peak by more than an order of magnitude, with the peak still at the final included sample. That case remains horizon-sensitive. Mirroring a nonnegative peak about zero would draw two apparent branches, but would not calculate a periodic orbit. Conversely, floating-point escape from the numerically initialised saddle does not remove the exact orbit of Eq.~\eqref{hrec:eq:matched-cycle}. The local theorem, orbit classification and finite observations retain their different jobs.
+

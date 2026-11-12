@@ -1,0 +1,91 @@
+{
+ "$schema": "https://json-schema.org/draft/2020-12/schema",
+ "$id": "laplace.packet-return/1",
+ "title": "laplace.packet-return/1",
+ "description": "The ONE shape a dispatched build packet returns, for every provider. It merges the shape Codex root settled on in its 2026-10-03/04 rollout (evidence/WRITING_CONSOLIDATION_2026-10-03/resume-codex-20261003/canonical_action-build.json: schema_version, status, goal, inputs with sha256, source branch/commits/candidate/candidate_parent/candidate_tree, validation, repository_effects) with the closure-loop fields the Atlas programme requires (no 'not done' return: a residual is a DEMONSTRATED impossibility carrying the clause it contradicts, the failing command and the smallest change). The worker WRITES this file at the return_path its brief names in section 0; the harness envelope carries only {return_path, summary}, so the exact return is a file on disk with a sha256, not a model's paraphrase in a transcript.",
+ "type": "object",
+ "additionalProperties": false,
+ "required": ["schema_version", "packet", "role", "status", "goal", "inputs", "source",
+              "output", "files_written", "summary", "most_important", "scripted_check", "residuals"],
+ "properties": {
+  "schema_version": {"description": "This schema's $id; the version check-return resolves the validating schema by.", "const": "laplace.packet-return/1"},
+  "packet": {"description": "The packet label from the plan's agents list, verbatim.", "type": "string", "minLength": 1},
+  "role": {"description": "Which turn of the packet this return is: the first build, a continuation after a rejection, or the wave's synthesis.", "enum": ["build", "continue", "synthesis"]},
+  "status": {"description": "COMPLETE when the brief is met; DEMONSTRATED-IMPOSSIBILITY only when at least one residual carries its failing command and the clause it contradicts.", "enum": ["COMPLETE", "DEMONSTRATED-IMPOSSIBILITY"]},
+  "goal": {"description": "The packet's goal in the plan's own words, so a judge compares the return against what was asked and not against what was done.", "type": "string", "minLength": 1},
+  "inputs": {
+   "description": "Every file the packet was given, each pinned by content so a judge reads the same bytes the builder read.",
+   "type": "array", "minItems": 1,
+   "items": {
+    "type": "object", "additionalProperties": false, "required": ["path", "sha256"],
+    "properties": {
+     "path": {"description": "Absolute or repository-relative path of the input.", "type": "string", "minLength": 1},
+     "sha256": {"description": "sha256 of the input's bytes as read, bare hex or sha256:-prefixed.", "type": "string", "pattern": "^(sha256:)?[0-9a-f]{64}$"}
+    }
+   }
+  },
+  "source": {
+   "description": "Where the code is, so the judge checks out the exact candidate instead of reading the live tree.",
+   "type": "object", "additionalProperties": false,
+   "required": ["branch", "base_commit", "candidate", "candidate_parent", "candidate_tree", "worktree"],
+   "properties": {
+    "branch": {"description": "The lane branch the work is committed on; never master and never pushed.", "type": "string", "minLength": 1},
+    "base_commit": {"description": "The commit the lane branched from.", "type": "string", "pattern": "^[0-9a-f]{7,40}$"},
+    "candidate": {"description": "The commit a judge must check out: the final commit of this return.", "type": "string", "pattern": "^[0-9a-f]{7,40}$"},
+    "candidate_parent": {"description": "The candidate's parent, so the judge can diff the lane's last step.", "type": "string", "pattern": "^[0-9a-f]{7,40}$"},
+    "candidate_tree": {"description": "The candidate's tree object id: the content identity of the whole checkout, independent of commit metadata.", "type": "string", "pattern": "^[0-9a-f]{7,40}$"},
+    "worktree": {"description": "Absolute path of the worktree left in place for the judge, or the word removed with where the branch lives.", "type": "string", "minLength": 1}
+   }
+  },
+  "output": {"description": "Absolute path of the report this return accompanies, the one the plan's output field names.", "type": "string", "minLength": 1},
+  "files_written": {
+   "description": "Every path this packet created or changed, repository-relative; the judge's diff must contain no more than these.",
+   "type": "array", "items": {"type": "string", "minLength": 1}
+  },
+  "summary": {"description": "What was established, in plain technical English; the only field the harness envelope repeats.", "type": "string", "minLength": 1},
+  "most_important": {
+   "description": "The findings a reader must not miss, ordered; each one a claim, not a topic.",
+   "type": "array", "minItems": 1, "items": {"type": "string", "minLength": 1}
+  },
+  "scripted_check": {
+   "description": "The packet's own scripted check as actually run, with its exit code: the acceptance evidence the builder owes before returning.",
+   "type": "object", "additionalProperties": false, "required": ["command", "exit_code", "output_tail"],
+   "properties": {
+    "command": {"description": "The exact command line run, as the plan's check field spells it with <TREE> resolved.", "type": "string", "minLength": 1},
+    "exit_code": {"description": "The process exit status; a non-zero check must be explained by a residual.", "type": "integer"},
+    "output_tail": {"description": "The check's final output, verbatim, enough of it to read the verdict.", "type": "string", "minLength": 1}
+   }
+  },
+  "profile": {
+   "description": "Optional: a measurement of the organ this packet built, when the packet's brief names a profile entry (distil.py profile).",
+   "type": "object", "additionalProperties": true,
+   "properties": {
+    "command": {"description": "The profiling command run.", "type": "string"},
+    "verdict": {"description": "Inherent work or overhead, in the profiler's own words.", "type": "string"},
+    "overhead_share": {"description": "Fraction of wall time that was overhead rather than the work itself.", "type": "number"}
+   }
+  },
+  "residuals": {
+   "description": "DEMONSTRATED impossibilities only, never a list of what was skipped: empty when status is COMPLETE and non-empty exactly when it is DEMONSTRATED-IMPOSSIBILITY.",
+   "type": "array",
+   "items": {
+    "type": "object", "additionalProperties": false, "required": ["clause", "failing_command", "smallest_change"],
+    "properties": {
+     "clause": {"description": "The sentence of the brief or the line of the tree that the demonstration contradicts.", "type": "string", "minLength": 1},
+     "failing_command": {"description": "The command whose observed output is the demonstration, with its result.", "type": "string", "minLength": 1},
+     "smallest_change": {"description": "The smallest change that would close it, and whose decision it is.", "type": "string", "minLength": 1}
+    }
+   }
+  }
+ },
+ "allOf": [
+  {
+   "if": {"properties": {"status": {"const": "COMPLETE"}}, "required": ["status"]},
+   "then": {"properties": {"residuals": {"maxItems": 0}}}
+  },
+  {
+   "if": {"properties": {"status": {"const": "DEMONSTRATED-IMPOSSIBILITY"}}, "required": ["status"]},
+   "then": {"properties": {"residuals": {"minItems": 1}}}
+  }
+ ]
+}

@@ -1,0 +1,653 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>analytics · the eigen engine</title>
+<!-- THE ONE PALETTE (visual §6.1): hymn.css is the sole color/type source. The private
+     :root below is a byte-identical fallback (L5-lawful, CENSUS_2026-07-16) that hymn wins
+     over when it loads; no color literal forks it. The shared shell injects the L1 context
+     header, the D15 arrival echo, and the D16 ✎ rule mouth this surface attaches per panel. -->
+<link rel="stylesheet" href="/shared/hymn.css">
+<style>
+:root{
+  --bg:#0a0e1a; --panel:#111827; --panel2:#18202f; --edge:#1f2734; --edge2:#2d3547;
+  --ink:#e8e6e3; --ink2:#9ca3af; --dim:#6b7280;
+  --accent:#c9a96e; --teal:#a89a7a; --warn:#b8894a; --bad:#c0392b; --ok:#8aa86a; --keystone:#7eb8da;
+  --mono:"JetBrains Mono",ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;
+}
+*{box-sizing:border-box}
+html,body{margin:0;min-height:100%}
+body{background:var(--bg);color:var(--ink);
+  font:13px/1.5 -apple-system,"Segoe UI",Roboto,sans-serif}
+a{color:var(--accent);text-decoration:none}
+.mono{font-family:var(--mono)}
+.dim{color:var(--dim)}
+.ink2{color:var(--ink2)}
+.err{color:var(--bad)}
+
+#an{max-width:1180px;margin:0 auto;padding:18px 20px 80px}
+h1{font-size:17px;font-weight:600;letter-spacing:.3px;margin:0 0 2px}
+h1 b{color:var(--keystone)}
+.sub{color:var(--ink2);font-size:12px;margin-bottom:14px}
+
+/* ─── the census strip: banked-vs-absent, never narrated ─── */
+#lt-census{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 16px;padding:10px 12px;
+  border:1px solid var(--edge2);border-radius:8px;background:var(--panel)}
+.cx{display:inline-flex;align-items:baseline;gap:5px;font-size:11.5px}
+.cx b{font-family:var(--mono);font-weight:700;color:var(--ink)}
+.cx .lbl{color:var(--ink2)}
+.cx.absent b{color:var(--warn)}
+.cx.absent .lbl{color:var(--warn)}
+
+/* ─── section chrome ─── */
+.lt-sec{margin:22px 0 10px;font-weight:600;font-size:13px;letter-spacing:.2px}
+.lt-sec b{color:var(--keystone)}
+.lt-sec .h{color:var(--ink2);font-weight:400;font-size:11.5px;margin-left:8px}
+
+/* ─── round cards (the board): the derivative visible ─── */
+/* the round cards share a row at equal height (finding 5): align-items:stretch pins every
+   card to its row's tallest sibling, so a light round (few chips) never reads as stunted. */
+#lt-board{display:flex;flex-wrap:wrap;gap:12px;align-items:stretch}
+.rc{flex:1 1 320px;min-width:280px;border:1px solid var(--edge2);border-radius:10px;
+  background:var(--panel);padding:13px 14px;cursor:pointer;position:relative}
+.rc:hover{border-color:var(--accent);background:var(--panel2)}
+.rc.active{border-color:var(--accent);box-shadow:inset 3px 0 0 var(--accent)}
+.rc-top{display:flex;align-items:baseline;gap:8px;margin-bottom:8px}
+.rc-rn{font-weight:700;font-size:14px}
+.rc-rn b{color:var(--accent)}
+.rc-date{font-size:11px;color:var(--dim);font-family:var(--mono)}
+.rc-corpus{font-size:11px;color:var(--ink2);margin-left:auto;font-family:var(--mono)}
+.rc-count{display:flex;align-items:baseline;gap:10px;margin-bottom:8px}
+.rc-total{font-family:var(--mono);font-size:22px;font-weight:700;color:var(--ink)}
+.rc-total .u{font-size:11px;color:var(--ink2);font-weight:400;margin-left:3px}
+.rc-delta{font-family:var(--mono);font-size:13px;font-weight:700}
+.rc-delta.down{color:var(--ok)}
+.rc-delta.up{color:var(--bad)}
+.rc-delta.flat{color:var(--dim)}
+.rc-delta small{font-weight:400;color:var(--dim);font-size:10px;margin-left:3px}
+.rc-chips{display:flex;flex-wrap:wrap;gap:5px;margin-bottom:9px}
+.rc-foot{display:flex;flex-wrap:wrap;gap:6px;align-items:center;font-size:11px;color:var(--ink2)}
+.rc-foot .sep{color:var(--edge2)}
+.gate-badge{display:inline-flex;align-items:center;gap:4px;padding:1px 8px;border-radius:999px;
+  font-size:10.5px;font-weight:600;border:1px solid var(--edge2)}
+.gate-badge.fail{color:var(--bad);border-color:rgba(247,118,142,.4);background:rgba(247,118,142,.1)}
+.gate-badge.ok{color:var(--ok);border-color:rgba(158,206,106,.4);background:rgba(158,206,106,.1)}
+
+/* class chip: a door into the class's banked source */
+.chip{display:inline-flex;align-items:center;gap:5px;padding:1px 8px;border-radius:999px;
+  font-size:10.5px;border:1px solid var(--edge2);background:var(--panel2);color:var(--ink2)}
+.chip .n{font-family:var(--mono);font-weight:700;color:var(--ink)}
+.chip.cit{border-color:rgba(224,175,104,.35);color:var(--warn)}
+.chip.his{border-color:rgba(187,154,247,.4);color:var(--keystone)}
+.chip .dn{font-family:var(--mono)}
+.chip .dn.down{color:var(--ok)} .chip .dn.up{color:var(--bad)} .chip .dn.flat{color:var(--dim)}
+
+/* ─── the door primitive: every number opens onto its primary record ─── */
+.door{font-family:var(--mono);font-size:10.5px;color:var(--accent);cursor:pointer;
+  border-bottom:1px dashed rgba(122,162,247,.4)}
+.door:hover{color:var(--teal);border-bottom-color:var(--teal)}
+.door.absent{color:var(--warn);border-bottom-color:rgba(224,175,104,.5);cursor:help}
+.door.absent::after{content:" · absent"}
+
+/* ─── the drill panel ─── */
+#lt-drill{display:none;margin-top:16px;border-top:1px solid var(--edge2);padding-top:8px}
+#lt-drill.show{display:block}
+.pan{border:1px solid var(--edge2);border-radius:9px;background:var(--panel);
+  padding:12px 14px;margin:12px 0;position:relative}
+.pan-h{font-weight:600;font-size:12.5px;margin-bottom:8px;display:flex;align-items:center;gap:8px}
+.pan-h .k{color:var(--keystone)}
+.pan-h .doorline{margin-left:auto}
+.pan-note{color:var(--ink2);font-size:11.5px;margin:6px 0}
+.pan-warn{color:var(--warn);font-size:11.5px;margin:6px 0}
+
+table.lt{border-collapse:collapse;width:100%;font-size:12px}
+table.lt th,table.lt td{text-align:left;padding:5px 9px;border-bottom:1px solid var(--edge2)}
+table.lt th{color:var(--ink2);font-weight:600;font-size:10.5px;text-transform:uppercase;letter-spacing:.4px}
+table.lt td.num{font-family:var(--mono);text-align:right}
+.d-down{color:var(--ok)} .d-up{color:var(--bad)} .d-flat{color:var(--dim)}
+
+/* exemplar / quote rows */
+.quote{border-left:2px solid var(--edge2);padding:5px 0 5px 10px;margin:8px 0;
+  font-size:12px;color:var(--ink);font-style:italic}
+.quote .who{font-style:normal;font-size:10.5px;color:var(--ink2);font-family:var(--mono);
+  display:block;margin-bottom:3px}
+.quote .rule{font-style:normal;font-size:10.5px;color:var(--keystone);margin-top:4px}
+
+/* before / ruled-target / after side by side */
+.ba{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:8px 0}
+.ba .col{border:1px solid var(--edge2);border-radius:7px;padding:8px 10px;background:var(--panel2)}
+.ba .col h4{margin:0 0 5px;font-size:10.5px;text-transform:uppercase;letter-spacing:.4px;color:var(--ink2)}
+.ba .col.before h4{color:var(--dim)}
+.ba .col.after h4{color:var(--ok)}
+.ba .col.target h4{color:var(--keystone)}
+.ba .col p{margin:0;font-size:11.5px;line-height:1.45}
+@media (max-width:640px){ .ba{grid-template-columns:1fr} }
+
+/* lens sidecar block */
+.sc{border:1px solid var(--edge2);border-radius:7px;padding:7px 10px;margin:6px 0;background:var(--panel2)}
+.sc-h{display:flex;gap:8px;align-items:baseline;font-size:11.5px;margin-bottom:4px}
+.sc-h .sec{font-family:var(--mono);font-weight:700;color:var(--ink)}
+.sc-ex{display:flex;flex-wrap:wrap;gap:6px}
+.ex{font-family:var(--mono);font-size:10.5px;color:var(--ink2);border:1px solid var(--edge2);
+  border-radius:4px;padding:0 6px}
+.ex .cos{color:var(--teal)}
+
+/* basin rows */
+.basin{display:flex;gap:8px;align-items:baseline;padding:5px 0;border-bottom:1px solid var(--edge2);font-size:11.5px}
+.basin .esc{font-size:10px;padding:0 6px;border-radius:999px;border:1px solid var(--edge2)}
+.basin .esc.no{color:var(--bad);border-color:rgba(247,118,142,.4)}
+.basin .esc.yes{color:var(--ok);border-color:rgba(158,206,106,.4)}
+.basin .esc.part{color:var(--warn);border-color:rgba(224,175,104,.4)}
+.basin .why{color:var(--ink2)}
+
+/* his residue framed */
+.his{border:1px solid rgba(187,154,247,.35);border-radius:8px;background:rgba(187,154,247,.06);
+  padding:9px 11px;margin:7px 0}
+.his .nm{color:var(--keystone);font-weight:600;font-size:12px}
+.his .contest{margin-top:4px;font-size:11px;color:var(--ink2)}
+.his .contest .ct{color:var(--warn);font-family:var(--mono)}
+.his .uncontested{font-size:10.5px;color:var(--dim);margin-top:3px}
+
+/* gate grid */
+.gg{display:flex;flex-wrap:wrap;gap:6px;margin:6px 0}
+.gc{display:inline-flex;align-items:center;gap:5px;font-size:10.5px;padding:2px 8px;border-radius:6px;
+  border:1px solid var(--edge2);background:var(--panel2)}
+.gc .dot{width:8px;height:8px;border-radius:2px;background:var(--edge2)}
+.gc .dot.ok{background:var(--ok)} .gc .dot.bad{background:var(--bad)}
+.gc .sv{font-family:var(--mono);color:var(--ink2)}
+
+/* ─── kept: the cross-project rollup (secondary) ─── */
+#an-rollup{margin-top:34px;border-top:1px solid var(--edge2);padding-top:16px}
+#an-roster{overflow-x:auto}
+table{border-collapse:collapse;width:100%;font-size:12.5px}
+th,td{text-align:left;padding:7px 10px;border-bottom:1px solid var(--edge2);vertical-align:middle}
+th{color:var(--ink2);font-weight:600;font-size:11.5px;text-transform:uppercase;letter-spacing:.4px}
+tbody tr.an-row.has-rounds{cursor:pointer}
+tbody tr.an-row.has-rounds:hover{background:var(--panel2)}
+tbody tr.an-row.active{background:var(--panel2);box-shadow:inset 3px 0 0 var(--accent)}
+.st{padding:1px 8px;border:1px solid var(--edge2);border-radius:999px;font-size:11px;background:var(--panel)}
+.st.never{color:var(--dim)}
+.gate-sum{display:inline-flex;gap:3px;align-items:center}
+.dot{width:9px;height:9px;border-radius:2px;display:inline-block;background:var(--edge2)}
+.dot.ok{background:var(--ok)}
+.dot.bad{background:var(--bad)}
+.never-run{color:var(--warn)}
+.cost-absent{color:var(--dim);font-style:italic}
+.econ-only{color:var(--warn)}
+.rounds-split{display:inline-flex;align-items:baseline;gap:6px}
+.rounds-split .rs-claim{font-family:var(--mono)}
+.rounds-split.contra .rs-claim{color:var(--warn)}
+.rounds-split .rs-truth{font-size:11px;color:var(--dim)}
+.rounds-split .rs-flag{color:var(--warn);font-size:11px}
+.rounds-split .rs-econ{color:var(--warn)}
+#an-panel{margin-top:20px;display:none}
+#an-panel.show{display:block}
+.pan-title{font-weight:600;margin-bottom:10px}
+.pan-title b{color:var(--keystone)}
+.an-rail-open{font-size:11.5px;font-weight:500;margin-left:10px;cursor:pointer}
+.an-strip th.an-rail-cell{cursor:pointer}
+.an-strip th.an-rail-cell:hover{color:var(--accent);background:var(--panel2)}
+.strip-wrap{overflow-x:auto}
+.an-strip{border-collapse:collapse;font-size:12px;min-width:min-content}
+.an-strip th,.an-strip td{border:1px solid var(--edge2);padding:5px 8px;text-align:center}
+.an-strip th.dim-name{text-align:right;color:var(--ink2);white-space:nowrap;font-weight:500}
+.an-cell{font-family:var(--mono);font-weight:600}
+.an-cell.clean{color:var(--ok)}
+.an-cell.fail{color:var(--bad)}
+.an-cell.flip{outline:2px solid var(--warn);outline-offset:-2px}
+.an-cell.na{color:var(--dim)}
+.delta-line{margin-top:14px;font-size:12.5px}
+.delta-line .d{font-family:var(--mono);margin-right:14px}
+.delta-line .d .n{color:var(--ink)}
+.delta-line .d .down{color:var(--ok)}
+.delta-line .d .up{color:var(--bad)}
+.delta-line .d .flat{color:var(--dim)}
+.note{color:var(--ink2);font-size:12px;margin-top:8px}
+@media (max-width:600px){ #an{padding:14px 12px 60px} th,td{padding:6px 7px} }
+
+/* ─── the boot skeleton (ACT5/job5) — shown from first paint, replaced once the shared
+   shell has built its bar AND the first fetch lands. Not a claim of data ("loading…" as
+   plain text implied a page rendering ahead of its own chrome); a shimmer placeholder
+   reads as intentional regardless of which arrives first, the bar or the data. ─── */
+.an-skel{display:flex;flex-direction:column;gap:7px}
+.an-skel-row{display:flex;gap:8px;flex-wrap:wrap}
+.an-skel-bar{height:13px;border-radius:5px;flex:none;
+  background:linear-gradient(90deg,var(--panel2) 25%,var(--edge2) 37%,var(--panel2) 63%);
+  background-size:400% 100%;animation:an-shimmer 1.6s ease infinite}
+@keyframes an-shimmer{0%{background-position:100% 50%}100%{background-position:0 50%}}
+</style>
+</head>
+<body>
+<div id="an">
+  <h1>the eigen engine · <b>analytics</b> — the loop's interrogation surface</h1>
+  <div class="sub">the autonomous loop on paper_falqon, read close: rounds as cards with the
+    finding derivative visible, each number a door to its banked primary record.
+    banked-or-absent, never narrated.</div>
+  <div class="hy-stale-strip" id="an-stale"></div>
+
+  <div id="lt-census" title="every count the surface shows rolls up here">
+    <div class="an-skel"><div class="an-skel-row">
+      <span class="an-skel-bar" style="width:96px"></span><span class="an-skel-bar" style="width:132px"></span>
+      <span class="an-skel-bar" style="width:88px"></span><span class="an-skel-bar" style="width:112px"></span>
+    </div></div>
+  </div>
+  <div class="lt-sec"><b>rounds</b><span class="h">click a card to drill: sidecars → exemplar rows → source spans, rulings, the residue</span></div>
+  <div id="lt-board">
+    <div class="an-skel">
+      <div class="an-skel-row"><span class="an-skel-bar" style="width:60%;height:60px"></span></div>
+      <div class="an-skel-row"><span class="an-skel-bar" style="width:60%;height:60px"></span></div>
+    </div>
+  </div>
+  <div id="lt-drill"></div>
+
+  <div id="an-rollup">
+    <div class="lt-sec"><b>cross-project rollup</b><span class="h">every figure read from a banked round record or named absent; a project that never ran says so</span></div>
+    <div id="an-roster">
+      <div class="an-skel">
+        <div class="an-skel-row"><span class="an-skel-bar" style="width:100%"></span></div>
+        <div class="an-skel-row"><span class="an-skel-bar" style="width:100%"></span></div>
+        <div class="an-skel-row"><span class="an-skel-bar" style="width:100%"></span></div>
+      </div>
+    </div>
+    <div id="an-panel"></div>
+  </div>
+</div>
+
+<script defer src="/shared/shell.js"></script>
+<script>
+"use strict";
+function esc(s){return String(s==null?"":s).replace(/[&<>"]/g,c=>(
+  {"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));}
+function num(n){return n==null?"—":String(n);}
+// the composed-word mapping (finding 2): a raw state enum fallback (UNDER_CONVERGENCE)
+// reads as plain words (under convergence) — the same low() the dashboard applies, so the
+// STATE cell never leaks a screaming token when the truth-layer position is itself an enum.
+function low(s){return String(s==null?"":s).toLowerCase().replace(/_/g," ");}
+
+// ── the door primitive: render a primary-record path as an inspectable door. A present
+//    record links into the shared version rail (the chair can go read it); an absent one
+//    says so plainly (the honesty law). Every door carries the path the chair acts on. ──
+function door(d, textOverride){
+  if(!d || (!d.path && !d.exists)){
+    const lbl = (d && d.label) || "no primary record on disk";
+    return `<span class="door absent" title="${esc(lbl)} — this figure is claimed, not banked">${esc(textOverride||"absent")}</span>`;
+  }
+  const cls = d.exists ? "door" : "door absent";
+  const t = textOverride || d.path;
+  const tip = d.exists ? `open primary record: ${esc(d.path)}`
+                       : `${esc(d.path)} — named but not on disk`;
+  return `<span class="${cls}" data-path="${esc(d.path||"")}" title="${esc(tip)}">${esc(t)}</span>`;
+}
+
+// ── the ✎ rule mouth: attach the shared D16 rulable to a panel so the chair can rule it
+//    in place (echo to desk). Falls back to a no-op when the shell is absent. ──
+function ruleMouth(el, node){
+  const R = window.HymnShell && window.HymnShell.hyRule;
+  if(R && el) R.attach(el, {surface:"analytics", node:node, selection:node});
+}
+
+// ═══════════════════════════ the census strip ═══════════════════════════
+function renderCensus(c){
+  if(!c){document.getElementById("lt-census").innerHTML=`<span class="err">census absent</span>`;return;}
+  const cell=(lbl,val,absent)=>`<span class="cx${absent?' absent':''}"><b>${esc(val)}</b><span class="lbl">${esc(lbl)}</span></span>`;
+  const parts=[
+    cell("rounds banked", c.rounds),
+    cell("mech findings banked", c.mech_findings_banked),
+    cell("reader banked", `${c.reader_banked}/${c.reader_claimed}`),
+    cell("reader claimed-but-absent", c.reader_absent, c.reader_absent>0),
+    cell("semantic records present", `${c.semantic_records_present}/${c.semantic_records_present+c.semantic_records_absent}`, c.semantic_records_absent>0),
+    cell("rulings banked", c.rulings_banked),
+    cell("genuinely-his parked", c.genuinely_his_parked, c.genuinely_his_parked>0),
+  ];
+  document.getElementById("lt-census").innerHTML=parts.join("");
+}
+
+// ═══════════════════════════ the board ═══════════════════════════
+function deltaSpan(d){
+  if(d==null) return `<span class="rc-delta flat">Δ —<small>baseline</small></span>`;
+  const cls=d<0?"down":d>0?"up":"flat";
+  const txt=d<0?String(d):d>0?("+"+d):"0";
+  return `<span class="rc-delta ${cls}">Δ ${esc(txt)}<small>vs prev round</small></span>`;
+}
+function classChip(cls,n){
+  const isCit=/^citation/.test(cls);
+  return `<span class="chip${isCit?' cit':''}" title="${esc(cls)}: ${n} finding(s)"><span class="n">${n}</span> ${esc(cls)}</span>`;
+}
+function renderBoard(b){
+  renderCensus(b.census);
+  const rounds=b.rounds||[];
+  if(!rounds.length){document.getElementById("lt-board").innerHTML=`<div class="note">no banked rounds in the trajectory record.</div>`;return;}
+  const html=rounds.map(c=>{
+    const chips=(c.top_classes||[]).map(kv=>classChip(kv[0],kv[1])).join("");
+    const extra=c.n_classes>((c.top_classes||[]).length)?`<span class="chip">+${c.n_classes-c.top_classes.length} more</span>`:"";
+    const gate=c.hard_failing===true
+      ? `<span class="gate-badge fail" title="${esc(c.hard_fail_reason||'a hard gate fails')}">hard gate ✗</span>`
+      : c.hard_failing===false ? `<span class="gate-badge ok">hard gate ✓</span>`
+      : `<span class="gate-badge" title="gate status not banked">gate —</span>`;
+    const sem=c.semantic_present?`semantic ✓`:`<span title="no semantic md banked for this round">semantic absent</span>`;
+    const conf=c.rulings_by_confidence?Object.entries(c.rulings_by_confidence).map(([k,v])=>`${v} ${k}`).join(" · "):"";
+    return `<div class="rc" data-round="${c.round}" tabindex="0"
+        title="drill round ${c.round} — ${num(c.mech_total)} findings">
+      <div class="rc-top"><span class="rc-rn">round <b>${c.round}</b></span>
+        <span class="rc-date">${esc(c.date||"")}</span>
+        <span class="rc-corpus">${esc(c.corpus||"")}</span></div>
+      <div class="rc-count"><span class="rc-total">${num(c.mech_total)}<span class="u">mech findings</span></span>${deltaSpan(c.mech_delta)}</div>
+      <div class="rc-chips">${chips}${extra}</div>
+      <div class="rc-foot">${gate}<span class="sep">·</span>
+        <span title="${esc(conf)}">${num(c.rulings_count)} rulings</span><span class="sep">·</span>
+        <span>${num(c.his_parked)} his-parked</span><span class="sep">·</span>
+        <span>${sem}</span><span class="sep">·</span>
+        <span title="wall-clock, approx">${num(c.wall_clock_min)}m</span></div>
+    </div>`;
+  }).join("");
+  document.getElementById("lt-board").innerHTML=html;
+  document.querySelectorAll(".rc").forEach(el=>{
+    const open=()=>drill(parseInt(el.dataset.round,10), el);
+    el.addEventListener("click",open);
+    el.addEventListener("keydown",e=>{if(e.key==="Enter"||e.key===" "){e.preventDefault();open();}});
+  });
+}
+
+// ═══════════════════════════ the drill ═══════════════════════════
+function panel(title, node, inner){
+  return `<div class="pan" data-node="${esc(node)}">
+    <div class="pan-h"><span class="k">${esc(title)}</span></div>${inner}</div>`;
+}
+
+function findingsPanel(d){
+  const f=d.findings||{};
+  const rows=(f.classes||[]).map(c=>{
+    const dcls=c.delta==null?"d-flat":c.delta<0?"d-down":c.delta>0?"d-up":"d-flat";
+    const dtxt=c.delta==null?"—":c.delta<0?String(c.delta):c.delta>0?("+"+c.delta):"0";
+    return `<tr><td>${esc(c.cls)}</td><td class="num">${num(c.count)}</td>
+      <td class="num">${num(c.prev)}</td><td class="num ${dcls}">${esc(dtxt)}</td></tr>`;
+  }).join("");
+  const deltaTop=f.mech_delta==null?`<span class="d-flat">baseline (no prior round)</span>`
+    :`<span class="${f.mech_delta<0?'d-down':f.mech_delta>0?'d-up':'d-flat'}">Δ ${esc(f.mech_delta<0?f.mech_delta:('+'+f.mech_delta))} vs prev round</span>`;
+  return panel("mechanical findings — by class, the derivative", `loop:r${d.round}:findings`,
+    `<div class="pan-note"><b class="mono">${num(f.mech_total)}</b> banked · ${deltaTop} ·
+       source ${door(f.banked_source_door,"banked source")}</div>
+     ${f.note?`<div class="pan-note">${esc(f.note)}</div>`:""}
+     <table class="lt"><thead><tr><th>class</th><th>this</th><th>prev</th><th>Δ</th></tr></thead>
+       <tbody>${rows||`<tr><td colspan="4" class="dim">no class breakdown banked</td></tr>`}</tbody></table>`);
+}
+
+function readerPanel(d){
+  const r=d.reader||{};
+  const gap=(r.claimed!=null&&r.banked_verbatim!=null&&r.claimed!==r.banked_verbatim)
+    ? `<div class="pan-warn">claimed ${r.claimed}, banked verbatim ${r.banked_verbatim} —
+        ${r.claimed-r.banked_verbatim} reader finding(s) claimed with NO primary record on disk
+        (not reproducible; ${door(r.door,'reader ledger')} banks what is recoverable)</div>`
+    : `<div class="pan-note">claimed ${num(r.claimed)}, banked verbatim ${num(r.banked_verbatim)} —
+        every claimed finding carries a primary span · ${door(r.door,'reader ledger')}</div>`;
+  const quotes=(r.findings||[]).map(fx=>
+    `<div class="quote"><span class="who">${esc(fx.reader||'?')} · ${esc(fx.where||'')} · ${esc(fx.kind||'')}</span>
+      “${esc(fx.quote||'')}”
+      ${fx.ruling_ref?`<div class="rule">→ ruling ${esc(fx.ruling_ref)}</div>`:""}</div>`).join("");
+  return panel("reader exemplars — verbatim, banked", `loop:r${d.round}:reader`,
+    gap+(quotes||`<div class="pan-note dim">no verbatim reader records banked for this round</div>`));
+}
+
+function lensPanel(d){
+  const l=d.lens||{};
+  const run=l.run||{};
+  const cars=(l.sidecars||[]).map(sc=>{
+    const ex=(sc.exemplars||[]).map(e=>`<span class="ex">${esc(e.row_id||'?')} <span class="cos">${e.cos!=null?e.cos.toFixed(3):'—'}</span></span>`).join("");
+    return `<div class="sc"><div class="sc-h"><span class="sec">${esc(sc.section)}</span>
+       <span class="dim">${esc(sc.store)} · k=${num(sc.k)} · ${num(sc.n_exemplars)} exemplars</span>
+       <span style="margin-left:auto">${door(sc.door)}</span></div>
+       <div class="sc-ex">${ex||'<span class="dim">no exemplar rows</span>'}</div></div>`;
+  }).join("");
+  const runLine=run.store
+    ? `lens <b class="mono">${esc(run.store)}</b> fired on ${num(run.fired_sections)} section(s),
+       ${num(run.sidecars_banked)} sidecars banked, k=${num(run.k)}, gate ${esc(run.gate||'—')} ·
+       ${door(l.run_door,'lens-run record')}`
+    : `no generation-lens record banked for this round`;
+  return panel("lens on/off — retrieval sidecars → the exemplar rows served", `loop:r${d.round}:lens`,
+    `<div class="pan-note">${runLine}</div>
+     <div class="pan-note dim">${l.sidecars_on_disk} sidecar(s) on disk under ${esc(l.sidecar_dir||'')}
+       (other stores stayed OFF — inert, no sidecar)</div>
+     ${cars||'<div class="pan-note dim">no retrieval sidecars on disk</div>'}`);
+}
+
+function semanticPanel(d){
+  const s=d.semantic||{};
+  if(!s.present){
+    return panel("before / after — the prose the loop moved", `loop:r${d.round}:semantic`,
+      `<div class="pan-warn">no semantic md banked for this round — the round's prose delta is
+        not on record (${esc((s.door&&s.door.label)||'absent')}). the numerical spine still
+        carries the revision loci; the readable before/after is absent.</div>`);
+  }
+  const loci=(s.loci||[]).map(lo=>{
+    const afterCol=lo.after
+      ? `<div class="col after"><h4>after (applied)</h4><p>${esc(lo.after)}</p></div>`
+      : `<div class="col target"><h4>ruled target</h4><p>${esc(lo.ruled_target||'—')}</p></div>`;
+    return `<div style="margin:10px 0"><div class="pan-note"><b>${esc(lo.locus)}</b> — ${esc(lo.label)}</div>
+      <div class="ba"><div class="col before"><h4>before (shipped)</h4><p>${esc(lo.before||'—')}</p></div>
+        ${afterCol}</div></div>`;
+  }).join("");
+  const fs=(s.findings||[]).map(fx=>`<div class="quote"><span class="who">${esc(fx.tag)} · ${esc(fx.label)}</span>“${esc(fx.quote||'')}”</div>`).join("");
+  return panel("before / after — the prose the loop moved", `loop:r${d.round}:semantic`,
+    `<div class="pan-note">${door(s.door,'semantic record')}</div>${loci}
+     ${fs?`<div class="pan-note" style="margin-top:10px">verbatim findings:</div>${fs}`:""}`);
+}
+
+function basinsPanel(d){
+  const bs=d.recurring_basins||[];
+  if(!bs.length) return "";
+  const rows=bs.map(b=>{
+    const e=String(b.escapable_by_loop);
+    const cls=e==="true"?"yes":e==="false"?"no":"part";
+    const lab=e==="true"?"loop can drain":e==="false"?"loop CANNOT drain":"organ, not prose";
+    return `<div class="basin"><b>${esc(b.basin)}</b>
+      <span class="esc ${cls}" title="escapable_by_loop=${esc(e)}">${lab}</span>
+      <span class="dim mono">${esc(b.share||'')}</span>
+      <span class="why">${esc(b.why||'')}</span></div>`;
+  }).join("");
+  return panel("recurring basins — a cycling intent = a missing organ", `loop:r${d.round}:basins`, rows);
+}
+
+function gatePanel(d){
+  const g=d.gate||{};
+  const grid=(obj)=>Object.entries(obj||{}).map(([k,v])=>{
+    const ok=v===true||(typeof v==="number"&&v>=1);
+    const dot=v===true?"ok":v===false?"bad":"";
+    return `<span class="gc"><span class="dot ${dot}"></span>${esc(k)}<span class="sv">${typeof v==="boolean"?(v?'✓':'✗'):esc(String(v))}</span></span>`;
+  }).join("");
+  const fail=g.hard_failing?`<div class="pan-warn">hard gate FAILS: ${esc(g.hard_fail_reason||'a non-compensable hard dim is false')}</div>`:"";
+  return panel("gate scores — hard / soft / panel", `loop:r${d.round}:gate`,
+    `<div class="pan-note">open findings: <b class="mono">${num(g.open_findings)}</b> ·
+       net axis ${g.net_axis?esc(JSON.stringify(g.net_axis.net)):'—'}</div>${fail}
+     <div class="pan-note dim">hard</div><div class="gg">${grid(g.hard)}</div>
+     <div class="pan-note dim">soft</div><div class="gg">${grid(g.soft)}</div>
+     <div class="pan-note dim">panel</div><div class="gg">${grid(g.panel)}</div>`);
+}
+
+function rulingsPanel(d){
+  const r=d.rulings||{};
+  const conf=r.by_confidence?Object.entries(r.by_confidence).map(([k,v])=>`${v} ${k}`).join(" · "):"—";
+  const his=(r.his_residue||[]).map(h=>{
+    const ct=(h.contests||[]).length
+      ? `<div class="contest">contested: ${h.contests.map(c=>`<span class="ct">${esc(c.id)}</span> (${esc(c.date||'')})`).join(", ")}</div>`
+      : `<div class="uncontested">uncontested — his veto is retrospective via a contest record (none banked)</div>`;
+    return `<div class="his"><span class="nm">${esc(h.name)}</span>${ct}</div>`;
+  }).join("");
+  return panel("rulings — joined with contest doors", `loop:r${d.round}:rulings`,
+    `<div class="pan-note"><b class="mono">${num(r.count)}</b> banked (${esc(conf)}) ·
+       ${door(r.draft_door,'rulings draft')} · provenance: ${esc(r.provenance||'—')}</div>
+     <div class="pan-note dim">GENUINELY-HIS residue — framed, not blocking the loop:</div>
+     ${his||'<div class="pan-note dim">no GENUINELY-HIS residue named this round</div>'}`);
+}
+
+function costPanel(d){
+  const c=d.cost||{};
+  const mp=d.mint_proof;
+  const hop=d.held_out_prediction;
+  return panel("cost · mint proof · held-out prediction", `loop:r${d.round}:cost`,
+    `<div class="pan-note">tokens: ${esc(c.tokens||'—')} · wall-clock ≈ ${num(c.wall_clock_min)}m</div>
+     ${mp?`<div class="pan-note">mint proof: <b>${esc(mp.verdict||'')}</b> — ${esc((mp.detail||'').slice(0,240))}</div>`:""}
+     ${hop?`<div class="pan-note">held-out prediction tracking: ${esc(hop)}</div>`:""}`);
+}
+
+async function drill(rnd, el){
+  document.querySelectorAll(".rc.active").forEach(x=>x.classList.remove("active"));
+  if(el) el.classList.add("active");
+  const box=document.getElementById("lt-drill");
+  box.className="show";
+  box.innerHTML=`<div class="pan-note">loading round ${rnd}…</div>`;
+  try{
+    const res=await fetch("/analytics/loop/round?n="+encodeURIComponent(rnd));
+    const d=await res.json();
+    if(d.error){box.innerHTML=`<div class="pan err">${esc(d.error)}</div>`;return;}
+    box.innerHTML=
+      `<div class="lt-sec"><b>round ${d.round}</b><span class="h">${esc(d.corpus||'')} · ${esc(d.date||'')} · ${esc((d.artefact||'').slice(0,120))}</span></div>`+
+      findingsPanel(d)+readerPanel(d)+lensPanel(d)+semanticPanel(d)+
+      basinsPanel(d)+gatePanel(d)+rulingsPanel(d)+costPanel(d);
+    // ✎ rule mouth on every panel + door clicks into the version rail
+    box.querySelectorAll(".pan[data-node]").forEach(p=>ruleMouth(p,p.dataset.node));
+    box.querySelectorAll(".door[data-path]").forEach(dv=>dv.addEventListener("click",()=>{
+      const c=d.corpus||"paper_falqon";
+      if(window.HymnShell&&HymnShell.openRail) HymnShell.openRail({corpus:c});
+    }));
+    box.scrollIntoView({behavior:"smooth",block:"nearest"});
+  }catch(e){ box.innerHTML=`<div class="pan err">failed to load round ${esc(rnd)}: ${esc(e)}</div>`; }
+}
+
+// ═══════════════════════════ kept: the cross-project rollup ═══════════════════════════
+function gateSummary(hard){
+  const dims=Object.keys(hard||{});
+  if(!dims.length) return '<span class="dim">—</span>';
+  const ok=dims.filter(d=>hard[d]===true).length;
+  const dots=dims.map(d=>`<span class="dot ${hard[d]===true?'ok':'bad'}" title="${esc(d)}"></span>`).join("");
+  return `<span class="gate-sum">${dots}</span> <span class="dim">${ok}/${dims.length} clean</span>`;
+}
+function costCell(cost){
+  if(!cost||cost.status!=="captured") return `<span class="cost-absent">never captured (N=0)</span>`;
+  const m=cost.econ_only_rounds||0;
+  const tip=' title="cost banked in economics.json for rounds with no mech/detect record"';
+  const tot=`<span class="mono">${esc(cost.total)}</span> `;
+  if(cost.captured_rounds===0) return tot+`<span class="econ-only"${tip}>(${m} econ-only rnd, no round records)</span>`;
+  if(m===0) return tot+`<span class="dim">(${cost.captured_rounds} rnd)</span>`;
+  return tot+`<span class="dim">(${cost.captured_rounds} rnd + <span class="econ-only"${tip}>${m} econ-only</span>)</span>`;
+}
+function roundsCell(p){
+  // ROUNDS VOCABULARY (ruled R2): every rounds count NAMES its mechanic in plain words.
+  // This cell is the HARNESSED count — the SAME number the dashboard/cockpit show ("N
+  // harnessed rounds"). ``claimed`` (registry glob/state) and ``ledger`` (the P7
+  // assembler's round records on disk) are TWO READ-MODELS OF THE ONE harnessed mechanic;
+  // when they disagree it is a registry-vs-disk data divergence (flagged ⚠), NOT a second
+  // mechanic. The BANKED mechanic is a distinct number, shown only in the loop-board
+  // census ("N rounds banked", from loop_trajectory) — never conflated with this word.
+  const s=p.rounds_split;
+  if(!s) return `${p.rounds_n} harnessed`;
+  if(!s.contradiction){
+    const econ=s.econ_only>0?` <span class="rs-econ" title="cost banked with no round record">(+${s.econ_only} econ-only)</span>`:"";
+    return `<span class="rounds-split"><span class="rs-claim">${esc(s.claimed)} harnessed</span>${econ}</span>`;
+  }
+  const econ=s.econ_only>0?` incl. ${s.econ_only} econ-only`:"";
+  return `<span class="rounds-split contra" title="one harnessed mechanic, two read-models: the registry counts ${esc(s.claimed)}; the P7 assembler has ${esc(s.ledger)} round record(s) on disk${esc(econ)} — a registry-vs-disk divergence, not a second mechanic">
+    <span class="rs-claim">${esc(s.claimed)} harnessed</span>
+    <span class="rs-truth">· ${esc(s.ledger)} on disk${esc(econ)}</span>
+    <span class="rs-flag" title="the registry count disagrees with the round records on disk">⚠</span></span>`;
+}
+function renderRoster(data){
+  const rows=(data.projects||[]);
+  const body=rows.map(p=>{
+    const has=p.rounds_n>0;
+    // ACT 1 — the state cell reads the ONE truth-layer position (p.position), the SAME words
+    // the dashboard card + the L1 pill render; a NEVER_RUN-stated project the truth layer knows
+    // is pre-release (a minted release) shows "pre-release", never the bare "never run" the
+    // dashboard already contradicts. A genuine scaffold (no position) keeps the honest state.
+    const pos=(p.position||"").trim();
+    // finding 2 — a genuine scaffold falls back to its state, but ALWAYS through low() so a
+    // raw enum (UNDER_CONVERGENCE) composes to plain words; the truth-layer position (already
+    // composed server-side) wins when present.
+    const st=pos||low(p.state)||"?";
+    const neverRun=!pos && p.state==='NEVER_RUN';
+    // rounds: real count, else "no harnessed rounds" for a pre-release project, else "never run".
+    const rn=has?roundsCell(p):(pos?`<span class="dim">no harnessed rounds</span>`:`<span class="never-run">never run</span>`);
+    const gate=has?gateSummary(p.hard):`<span class="dim">—</span>`;
+    const cost=has?costCell(p.cost):`<span class="dim">—</span>`;
+    return `<tr class="an-row ${has?'has-rounds':''}" data-project="${esc(p.name)}">
+      <td class="mono">${esc(p.name)}</td>
+      <td><span class="st ${neverRun?'never':''}" title="${esc(st)}">${esc(st)}</span></td>
+      <td>${rn}</td><td>${gate}</td><td>${cost}</td></tr>`;
+  }).join("");
+  document.getElementById("an-roster").innerHTML=
+    `<table><thead><tr><th>project</th><th>state</th><th>rounds</th>
+      <th>latest hard gate</th><th>cost total</th></tr></thead><tbody>${body}</tbody></table>`;
+  document.querySelectorAll("tr.an-row.has-rounds").forEach(tr=>{
+    tr.addEventListener("click",()=>openProject(tr.dataset.project,tr));
+  });
+}
+function transitionStrip(led){
+  const rounds=led.rounds||[];
+  if(!rounds.length) return `<div class="note">no round records.</div>`;
+  const hardDims=[];
+  rounds.forEach(r=>Object.keys((r.gates&&r.gates.hard)||{}).forEach(d=>{if(!hardDims.includes(d))hardDims.push(d);}));
+  const head=`<tr><th class="dim-name">hard dim \\ round</th>${
+    rounds.map(r=>r.econ_only
+      ? `<th class="econ-only an-rail-cell" data-round="r${esc(r.round)}" title="econ-only — cost banked in economics.json; click to open this round in the version rail">r${esc(r.round)}*</th>`
+      : `<th class="an-rail-cell" data-round="r${esc(r.round)}" title="open round ${esc(r.round)} in the version rail">r${esc(r.round)}</th>`).join("")}</tr>`;
+  const rowsHtml=hardDims.map(d=>{
+    const cells=rounds.map(r=>{
+      const t=(r.gates&&r.gates.hard&&r.gates.hard[d]);
+      if(!t) return `<td class="an-cell na">·</td>`;
+      const cls=t.value===true?"clean":"fail";
+      const flip=t.changed?" flip":"";
+      return `<td class="an-cell ${cls}${flip}" title="${esc(d)} r${esc(r.round)}${t.changed?' (flipped)':''}">${t.value===true?"✓":"✗"}</td>`;
+    }).join("");
+    return `<tr><th class="dim-name">${esc(d)}</th>${cells}</tr>`;
+  }).join("");
+  const strip=`<div class="strip-wrap"><table class="an-strip"><thead>${head}</thead><tbody>${rowsHtml}</tbody></table></div>`;
+  const deltas=rounds.map(r=>{
+    if(r.econ_only) return `<span class="d econ-only" title="cost banked in economics.json for rounds with no mech/detect record">r${esc(r.round)}: econ-only (cost banked)</span>`;
+    const opn=r.open_findings==null?"—":r.open_findings;
+    const d=r.findings_delta;
+    let dcls="flat",dtxt="0";
+    if(d==null){dcls="flat";dtxt="—";}
+    else if(d<0){dcls="down";dtxt=(d);}
+    else if(d>0){dcls="up";dtxt=("+"+d);}
+    return `<span class="d">r${esc(r.round)}: <span class="n">${esc(opn)}</span> open <span class="${dcls}">(Δ ${esc(dtxt)})</span></span>`;
+  }).join("");
+  return strip+`<div class="delta-line">${deltas}</div>`;
+}
+async function openProject(name,tr){
+  document.querySelectorAll("tr.an-row.active").forEach(x=>x.classList.remove("active"));
+  if(tr) tr.classList.add("active");
+  const panel=document.getElementById("an-panel");
+  panel.className="show";
+  panel.innerHTML=`<div class="pan-title">round series · <b>${esc(name)}</b></div><div class="note">loading…</div>`;
+  try{
+    const res=await fetch("/analytics/data?project="+encodeURIComponent(name));
+    const led=await res.json();
+    if(led.error){panel.innerHTML=`<div class="pan-title">round series · <b>${esc(name)}</b></div><div class="err">${esc(led.error)}</div>`;return;}
+    panel.innerHTML=`<div class="pan-title">round series · <b>${esc(name)}</b>
+      <span class="dim">(${esc(led.layout||'—')})</span>
+      <a class="an-rail-open" data-project="${esc(name)}" title="the full snapshot/round/release history">version history ↗</a></div>${transitionStrip(led)}`;
+    const openRail=(focus)=>{if(window.HymnShell&&HymnShell.openRail) HymnShell.openRail(focus?{corpus:name,focus:focus}:{corpus:name});};
+    const relink=panel.querySelector(".an-rail-open");
+    if(relink) relink.addEventListener("click",()=>openRail());
+    panel.querySelectorAll(".an-rail-cell").forEach(th=>{th.style.cursor="pointer";th.addEventListener("click",()=>openRail(th.dataset.round));});
+  }catch(e){ panel.innerHTML=`<div class="err">failed to load ${esc(name)}: ${esc(e)}</div>`; }
+}
+
+// ═══════════════════════════ boot ═══════════════════════════
+(async function(){
+  try{ const res=await fetch("/analytics/loop"); renderBoard(await res.json()); }
+  catch(e){ document.getElementById("lt-board").innerHTML=`<div class="err">failed to load the loop board: ${esc(e)}</div>`;
+    document.getElementById("lt-census").innerHTML=`<span class="err">census unavailable</span>`; }
+  try{ const res=await fetch("/analytics/data"); renderRoster(await res.json()); }
+  catch(e){ document.getElementById("an-roster").innerHTML=`<div class="err">failed to load rollup: ${esc(e)}</div>`; }
+  try{
+    if(window.HymnShell&&HymnShell.fetchStale){
+      const c=HymnShell.corpus?HymnShell.corpus():"";
+      const payload=await HymnShell.fetchStale(c);
+      HymnShell.renderStale(document.getElementById("an-stale"),payload);
+    }
+  }catch(e){ /* best-effort */ }
+})();
+</script>
+</body>
+</html>

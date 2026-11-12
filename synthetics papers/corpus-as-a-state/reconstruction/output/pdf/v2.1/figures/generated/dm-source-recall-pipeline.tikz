@@ -1,0 +1,13 @@
+\begin{tikzpicture}[font=\rmfamily\fontsize{9}{11}\selectfont,box/.style={draw,rounded corners=2pt,align=center,text width=4.3cm,minimum height=1.85cm,inner sep=5pt},>=stealth]
+\node[box] (src) at (0,0) {\textbf{Located observation}\\Source revision and original span\\with admitted field values};
+\node[box] (law) at (5.8,0) {\textbf{Retained joint law}\\Source contributions, prefix counts\\and shared conditional futures};
+\node[box] (ans) at (11.6,0) {\textbf{Calculated recall}\\Apply field tests, propagate mass\\and normalise on positive support};
+\draw[->,thick] (src)--node[above,font=\fontsize{8}{10}\selectfont]{admit}(law);
+\draw[->,thick] (law)--node[above,font=\fontsize{8}{10}\selectfont]{query}(ans);
+\draw[->,thick] (src.south) .. controls (0,-1.65) and (5.8,-1.65) .. node[below,font=\fontsize{8}{10}\selectfont]{correction: revise affected counts and messages}(law.south);
+\node[box] (need) at (0,-3.4) {\textbf{Text question}\\Compile explicit outlet/date needs\\from the question's words};
+\node[box] (pack) at (5.8,-3.4) {\textbf{Evidence assembly}\\Rank original windows in supports\\then merge and pack located spans};
+\node[box] (read) at (11.6,-3.4) {\textbf{Reader response}\\Answer from delivered passages\\score support and answer separately};
+\draw[->,thick] (need)--node[above,font=\fontsize{8}{10}\selectfont]{support}(pack);
+\draw[->,thick] (pack)--node[above,font=\fontsize{8}{10}\selectfont]{context}(read);
+\end{tikzpicture}

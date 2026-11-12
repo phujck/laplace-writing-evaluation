@@ -1,0 +1,41 @@
+{
+  "schema_version": "dynamic-memory.demo-protocol/1",
+  "work": "WORK-a3654ba5f96c4297a14340bb8e51f1f4",
+  "turn": "WT-a804b13025314480a975fe65ed71fffb",
+  "status": "PROSPECTIVE_FROZEN_BEFORE_RUN",
+  "plan": {
+    "id": "ART-b97a525325954f5f8ee6607327d9b13a",
+    "sha256": "e496ea73bf8833e27ef6a9015aca847acee70bc2d335f356a6edd8af937c03f5"
+  },
+  "input": {
+    "id": "ART-ec03f6f4fba547e39b9e9f8f676dc6a4",
+    "path": "evidence/DYNAMIC_MEMORY_DEMO_2026-11-11/input.json",
+    "sha256": "21278d3ff0212c30ba197b3cc008f3506eff24f93b44694119a0cf6d88657b8d"
+  },
+  "scope": "New standard-library CPU controlled mathematical/unit experiment; no original Main algorithm modified/imported/executed, no model/network/benchmark scoring or larger replicas.",
+  "source_updates": "Replace active logical source content by an immutable actual document revision file; add/remove active documents. Never mutate declared input bytes. Input/output record exact revision text, hashes and witness offsets. Count updates parse changed content, not oracle target fractions.",
+  "algorithm": "Mutable source->witness incidence and tuple histogram; immutable path-copied prefix nodes with canonical rational transition/signature hash-consing and ACTIVE occurrence refcounts. Archival canonical state/cache entries retained and charged. Invalidate only messages at affected prefix dependency ancestors, recompute through explicit graph dependencies, reuse immutable canonical messages. No global rebuild/parse inside incremental update. Copy child-pointer slots at each ancestor charged; fixed2factors/cardinality2. Worst-case quotient/message changes can spread globally in general.",
+  "queries": "16 declared Boolean product factors, every state. Recover P(B0|A0) by numerator(A0,B0)/denominator(A0,any), positive denominator only; zero UNDEFINED.",
+  "independent_oracles": [
+    "Fresh parser from ALL active document contents, fresh aggregate and complete conditional suffix-law reconstruction independent of incremental Node/Pool/cache implementation.",
+    "Separate direct integer/Fraction row enumeration parsed via another grammar path; compare all16 exact numerator/count/probability outcomes."
+  ],
+  "assertions": [
+    "Full source/tuple/witness multisets and byte offsets; referencecount vs independently traversed raw prefix occurrences; no removed witness leakage.",
+    "Exact unmerged-prefix normalised suffix laws and equivalence classes, not arbitrary node IDs; old root immutability.",
+    "Exact forward positive-channel product, backward conditional message and both oracles at every state/query.",
+    "Positive transition sums1; filters0..1 column sums<=1; zero-support and idempotence; explicit merge/split stages.",
+    "Checked int64-compatible sums and atomic overflow refusal, nonnegative counts; duplicate group mismatch rejection before commit.",
+    "Initial raw amplitude completeness [[1,.8],[.8,1]] counterexample, environment Gram identity, supported-gauge completeness/I and singular support projector; float64 tol1e-12, not formal proof."
+  ],
+  "metrics": "Input I/O/hash/parse, incidence edges, tuple entries, raw prefixes/nodes copied/removed, pointer slots, hash-cons probes/new/reused states, active refcount changes, affected-prefix/message invalidations/recomputations/cache hits/edge visits. Separate update/query vs oracle/validation/output costs. deep retained algorithm bytes, tracemalloc transient peak and process ru_maxrss.",
+  "resources": {
+    "stdlib_only": true,
+    "CPU_limit": "Producer sets RLIMIT_CPU60s; native timeout60s. Report actual setting.",
+    "memory": "Producer requests RLIMIT_AS128MiB (address space, NOT strict RSS). Assert observed ru_maxrss<=128MiB; measure deep retained/transient independently. Owner supervisor/render overhead separate/unmeasured, no hard owner RSS guard claim.",
+    "continuous_fixture": "QUEUED_NOT_RUN; analytical eliminated-mode law remains separate, no optional dependency expansion."
+  },
+  "expected": "Input fractions are prospective targets until actual run checks pass; do not draw measured diagram before success.",
+  "formal": "AUTHOR_ORIGIN; FORMAL_NOT_CHECKED; independent mathematics and reader judgement pending",
+  "presentation": "One measured source->witness/count->conditional recall schematic; create/read actual media after successful run, no manuscript placement."
+}

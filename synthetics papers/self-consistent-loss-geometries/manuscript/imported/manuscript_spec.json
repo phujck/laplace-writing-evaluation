@@ -1,0 +1,673 @@
+{
+  "figure_specs": [
+    {
+      "id": "slg-priced-policy-tracking-20261111",
+      "kind": "plot",
+      "title": "What the priced partial policy actually tracks",
+      "question": "What trajectories underlie the prediction and recovery summaries for one declared stream?",
+      "caption": "Representative stream seed 0, chosen before execution, from the same 12-stream experiment. The true latent slope changes at observations 140, 310, 470 and 600 and is used for evaluation only. Each other curve is priced v1 at the displayed predeclared price c: it applies 0.22 of a 28-observation ridge rolling-fit step only when 2.5 times the ACTUAL window improvement exceeds c, with zero no-update gain. Curves show estimates available BEFORE the current observation can update the model. Higher prices can preserve a biased estimate after a real shift. Read this trace with the matched-policy risk and recovery panels, rather than selecting a calibrated price from one stream. Exact inputs, candidate/action accounting, data and protocol links are in the accompanying evidence manifest.",
+      "source_data": "research/slg-scientific-figures-20261111/outputs/run-7f8022a64802820f.result/priced_policy_tracking.csv",
+      "x": "Time",
+      "series": [
+        "True slope",
+        "v1 price 0.005",
+        "v1 price 0.06",
+        "v1 price 0.4"
+      ],
+      "x_label": "Observation index (discrete steps)",
+      "y_label": "Slope / pre-action estimate",
+      "result_ids": [
+        "result-e3d5544bddeca7fec4d7"
+      ],
+      "style": {
+        "font_size": 10,
+        "width_inches": 7,
+        "height_inches": 4.5,
+        "line_width": 1.7,
+        "marker_size": 1,
+        "grid": false,
+        "preview_dpi": 150,
+        "palette": [
+          "#0072B2",
+          "#E69F00",
+          "#009E73",
+          "#666666",
+          "#CC79A7"
+        ]
+      },
+      "render": {
+        "outputs": [
+          "figures/generated/slg-priced-policy-tracking-20261111.svg",
+          "figures/generated/slg-priced-policy-tracking-20261111.pdf",
+          "figures/generated/slg-priced-policy-tracking-20261111.png"
+        ],
+        "renderer": "matplotlib",
+        "input_digest": "4b727d1e2d257537f2ef5f6ae02c60205a9dbcd72addace7acb9253582ca3b72",
+        "drawing_input_digest": "4b727d1e2d257537f2ef5f6ae02c60205a9dbcd72addace7acb9253582ca3b72",
+        "drawing_inputs": {
+          "spec": {
+            "id": "slg-priced-policy-tracking-20261111",
+            "kind": "plot",
+            "x": "Time",
+            "series": [
+              "True slope",
+              "v1 price 0.005",
+              "v1 price 0.06",
+              "v1 price 0.4"
+            ],
+            "x_label": "Observation index (discrete steps)",
+            "y_label": "Slope / pre-action estimate"
+          },
+          "data": "20fde7d621d27746172840d71d6450193d90cec01dcbbac9a2cf3a1eb4158f47"
+        },
+        "research_bindings": [
+          {
+            "id": "result-e3d5544bddeca7fec4d7",
+            "revision": "sha256:72f7576a5a8d4234de467c96bf9c3f53cbcd9512f7b2f91a766ae0a8fb415b56",
+            "currentness": "CURRENT"
+          }
+        ],
+        "presentation_metadata": {
+          "title": "What the priced partial policy actually tracks",
+          "question": "What trajectories underlie the prediction and recovery summaries for one declared stream?",
+          "caption": "Representative stream seed 0, chosen before execution, from the same 12-stream experiment. The true latent slope changes at observations 140, 310, 470 and 600 and is used for evaluation only. Each other curve is priced v1 at the displayed predeclared price c: it applies 0.22 of a 28-observation ridge rolling-fit step only when 2.5 times the ACTUAL window improvement exceeds c, with zero no-update gain. Curves show estimates available BEFORE the current observation can update the model. Higher prices can preserve a biased estimate after a real shift. Read this trace with the matched-policy risk and recovery panels, rather than selecting a calibrated price from one stream. Exact inputs, candidate/action accounting, data and protocol links are in the accompanying evidence manifest.",
+          "source_data": "research/slg-scientific-figures-20261111/outputs/run-7f8022a64802820f.result/priced_policy_tracking.csv",
+          "source": null
+        },
+        "style_version": "8fbbf4d197344ea283f91ba2513e3d91084b69d4de13a039a2f86efc14bb5d2a",
+        "style_profile": "profiles/visual_style.json",
+        "visual_review": "pending",
+        "output_digests": {
+          "figures/generated/slg-priced-policy-tracking-20261111.svg": "aff7042cf103ca0d2dd1cf8186648c3d5394fc857ea0051a73604d9f95df0f8b",
+          "figures/generated/slg-priced-policy-tracking-20261111.pdf": "a39a222b231904ac52a00387062bb571d5bc5322202f15323ebf65aee2e5c7d8",
+          "figures/generated/slg-priced-policy-tracking-20261111.png": "d70af030639f1216a8714605645a1d25d6adfcfc11bbfbc48eb51c097a5e6066"
+        }
+      }
+    },
+    {
+      "id": "slg-or-hazard-defect-20261111",
+      "kind": "plot",
+      "title": "Exact event closure, approximate threshold",
+      "question": "What changes when the receiver retains exact cumulative hazard rather than one common intercept?",
+      "caption": "Event total variation, |q-q_hat|, over four predeclared independent four-event blocks at 81 prices. Fine events have probabilities sigmoid(m_i-c). Exact hazard uses h=sum softplus(m_i-c), q=1-exp(-h) and agrees with OR to numerical precision. Naive mean TV averages the error of sigmoid(sum m_i-c). Mean intercept TV averages, and Max intercept TV maximises, the error after fitting one arithmetic-mean effective intercept across blocks at each price. That intercept minimises squared log-odds error, not TV. Retaining the hazard closes this event exactly, while replacing block information with one intercept loses accuracy. Frozen margin schedules are retained for repricing. This is not adaptive learner path coarse-graining. Exact blocks, data and method are linked in the accompanying evidence manifest.",
+      "source_data": "research/slg-scientific-figures-20261111/outputs/run-7f8022a64802820f.result/or_hazard_projection.csv",
+      "x": "Price",
+      "series": [
+        "Naive mean TV",
+        "Mean intercept TV",
+        "Max intercept TV",
+        "Exact hazard TV"
+      ],
+      "x_label": "Threshold price c (dimensionless)",
+      "y_label": "Event total variation",
+      "result_ids": [
+        "slg-or-hazard-projection-20261111"
+      ],
+      "style": {
+        "font_size": 10,
+        "width_inches": 7,
+        "height_inches": 4.5,
+        "line_width": 1.7,
+        "marker_size": 1,
+        "grid": false,
+        "preview_dpi": 150,
+        "palette": [
+          "#0072B2",
+          "#E69F00",
+          "#009E73",
+          "#666666",
+          "#CC79A7"
+        ]
+      },
+      "render": {
+        "outputs": [
+          "figures/generated/slg-or-hazard-defect-20261111.svg",
+          "figures/generated/slg-or-hazard-defect-20261111.pdf",
+          "figures/generated/slg-or-hazard-defect-20261111.png"
+        ],
+        "renderer": "matplotlib",
+        "input_digest": "5680d3fa77893521a6f7d75aa1d79c603b3a6936be06f25e083962cb15d833dc",
+        "drawing_input_digest": "5680d3fa77893521a6f7d75aa1d79c603b3a6936be06f25e083962cb15d833dc",
+        "drawing_inputs": {
+          "spec": {
+            "id": "slg-or-hazard-defect-20261111",
+            "kind": "plot",
+            "x": "Price",
+            "series": [
+              "Naive mean TV",
+              "Mean intercept TV",
+              "Max intercept TV",
+              "Exact hazard TV"
+            ],
+            "x_label": "Threshold price c (dimensionless)",
+            "y_label": "Event total variation"
+          },
+          "data": "b1821dd80de0369065a2891354bde68658217241712fe4dad728ae41dc6b0f05"
+        },
+        "research_bindings": [
+          {
+            "id": "slg-or-hazard-projection-20261111",
+            "revision": "sha256:240930490d8a2bf4c27901e15d31adb1695b48324befebb23cc0b45daff10b91",
+            "currentness": "CURRENT"
+          }
+        ],
+        "presentation_metadata": {
+          "title": "Exact event closure, approximate threshold",
+          "question": "What changes when the receiver retains exact cumulative hazard rather than one common intercept?",
+          "caption": "Event total variation, |q-q_hat|, over four predeclared independent four-event blocks at 81 prices. Fine events have probabilities sigmoid(m_i-c). Exact hazard uses h=sum softplus(m_i-c), q=1-exp(-h) and agrees with OR to numerical precision. Naive mean TV averages the error of sigmoid(sum m_i-c). Mean intercept TV averages, and Max intercept TV maximises, the error after fitting one arithmetic-mean effective intercept across blocks at each price. That intercept minimises squared log-odds error, not TV. Retaining the hazard closes this event exactly, while replacing block information with one intercept loses accuracy. Frozen margin schedules are retained for repricing. This is not adaptive learner path coarse-graining. Exact blocks, data and method are linked in the accompanying evidence manifest.",
+          "source_data": "research/slg-scientific-figures-20261111/outputs/run-7f8022a64802820f.result/or_hazard_projection.csv",
+          "source": null
+        },
+        "style_version": "8fbbf4d197344ea283f91ba2513e3d91084b69d4de13a039a2f86efc14bb5d2a",
+        "style_profile": "profiles/visual_style.json",
+        "visual_review": "pending",
+        "output_digests": {
+          "figures/generated/slg-or-hazard-defect-20261111.svg": "26454261f04824940118974b00b9d663639826513f076548ce684fc9d644752a",
+          "figures/generated/slg-or-hazard-defect-20261111.pdf": "295124443814569562a09392a61fec0507cb81a672ab3ca91de4fc70fa4fae09",
+          "figures/generated/slg-or-hazard-defect-20261111.png": "b32d5872734a241ca81b92a2490acf836f27f89dc45371c3381e3fb0c3c5b047"
+        }
+      }
+    },
+    {
+      "id": "slg-or-event-multiplicity-20261111",
+      "kind": "plot",
+      "title": "Threshold response counts fine events",
+      "question": "What does the effective-threshold derivative measure under this declared event map?",
+      "caption": "For the same four frozen independent four-event blocks at 81 prices, the derivative dc_eff/dc equals E[N | N>=1], where N counts fine events. The blue curve averages this conditional count across blocks, orange and green give its minimum and maximum. Grey and purple are the exact bounds 1 and 4. The slope measures event multiplicity rather than RG instability. Retain each margin schedule, not only one hazard value at a reference price, when asking how repricing changes the event. Exact blocks, data and method are linked in the accompanying evidence manifest.",
+      "source_data": "research/slg-scientific-figures-20261111/outputs/run-7f8022a64802820f.result/or_hazard_projection.csv",
+      "x": "Price",
+      "series": [
+        "Mean conditional count",
+        "Min conditional count",
+        "Max conditional count",
+        "Single event bound",
+        "Block size bound"
+      ],
+      "x_label": "Threshold price c (dimensionless)",
+      "y_label": "Conditional fine-event count",
+      "result_ids": [
+        "slg-or-hazard-projection-20261111"
+      ],
+      "style": {
+        "font_size": 10,
+        "width_inches": 7,
+        "height_inches": 4.5,
+        "line_width": 1.7,
+        "marker_size": 1,
+        "grid": false,
+        "preview_dpi": 150,
+        "palette": [
+          "#0072B2",
+          "#E69F00",
+          "#009E73",
+          "#666666",
+          "#CC79A7"
+        ]
+      },
+      "render": {
+        "outputs": [
+          "figures/generated/slg-or-event-multiplicity-20261111.svg",
+          "figures/generated/slg-or-event-multiplicity-20261111.pdf",
+          "figures/generated/slg-or-event-multiplicity-20261111.png"
+        ],
+        "renderer": "matplotlib",
+        "input_digest": "76063565068e2cc5206895dcc694172ad99c48f9bff63d25bc65ad22a873ae2b",
+        "drawing_input_digest": "76063565068e2cc5206895dcc694172ad99c48f9bff63d25bc65ad22a873ae2b",
+        "drawing_inputs": {
+          "spec": {
+            "id": "slg-or-event-multiplicity-20261111",
+            "kind": "plot",
+            "x": "Price",
+            "series": [
+              "Mean conditional count",
+              "Min conditional count",
+              "Max conditional count",
+              "Single event bound",
+              "Block size bound"
+            ],
+            "x_label": "Threshold price c (dimensionless)",
+            "y_label": "Conditional fine-event count"
+          },
+          "data": "b1821dd80de0369065a2891354bde68658217241712fe4dad728ae41dc6b0f05"
+        },
+        "research_bindings": [
+          {
+            "id": "slg-or-hazard-projection-20261111",
+            "revision": "sha256:240930490d8a2bf4c27901e15d31adb1695b48324befebb23cc0b45daff10b91",
+            "currentness": "CURRENT"
+          }
+        ],
+        "presentation_metadata": {
+          "title": "Threshold response counts fine events",
+          "question": "What does the effective-threshold derivative measure under this declared event map?",
+          "caption": "For the same four frozen independent four-event blocks at 81 prices, the derivative dc_eff/dc equals E[N | N>=1], where N counts fine events. The blue curve averages this conditional count across blocks, orange and green give its minimum and maximum. Grey and purple are the exact bounds 1 and 4. The slope measures event multiplicity rather than RG instability. Retain each margin schedule, not only one hazard value at a reference price, when asking how repricing changes the event. Exact blocks, data and method are linked in the accompanying evidence manifest.",
+          "source_data": "research/slg-scientific-figures-20261111/outputs/run-7f8022a64802820f.result/or_hazard_projection.csv",
+          "source": null
+        },
+        "style_version": "8fbbf4d197344ea283f91ba2513e3d91084b69d4de13a039a2f86efc14bb5d2a",
+        "style_profile": "profiles/visual_style.json",
+        "visual_review": "pending",
+        "output_digests": {
+          "figures/generated/slg-or-event-multiplicity-20261111.svg": "b814116b0209af3adb2f0e70cc6426ac525fce1b329b2c09e7e2ecee26289107",
+          "figures/generated/slg-or-event-multiplicity-20261111.pdf": "1ef6c7aa134e0fc8aedb5eeecfa52b8b6c5f41fcd09922326bdedc7e99aee851",
+          "figures/generated/slg-or-event-multiplicity-20261111.png": "f8bb4a074b0e2b050fd8de5b5b9ffcffec2b3127a1702a6773db05473675269b"
+        }
+      }
+    },
+    {
+      "id": "slg-promotion-risk-20261111",
+      "kind": "plot",
+      "title": "Prediction risk at matched update prices",
+      "question": "How do the three declared policies compare on one-step prediction before updating?",
+      "caption": "One-step prediction mean squared error, in squared synthetic observation units, over steps 50-699 of 12 matched 700-step streams at six predeclared prices. Legacy v0 prices a full rolling fit but applies a 0.22 partial noisy-observation step. Rolling control applies a 0.22 partial rolling-fit step with legacy pricing. Priced v1 prices that actual partial rolling step and gives staying zero model gain. Noise oracle predicts with the privileged true slope for evaluation only. Never update keeps slope 1. Priced v1 has higher mean prediction error than legacy v0 at every matched price tested. Exact accounting does not guarantee better prediction: compare this panel with update frequency and recovery before choosing a policy. Lines show finite stream means without uncertainty bands, not a selected optimum. Per-stream values, paired differences and descriptive standard errors are in the accompanying evidence manifest.",
+      "source_data": "research/slg-scientific-figures-20261111/outputs/run-7f8022a64802820f.result/prediction_risk_curve.csv",
+      "x": "Log10 price",
+      "series": [
+        "Legacy v0",
+        "Rolling control",
+        "Priced v1",
+        "Noise oracle",
+        "Never update"
+      ],
+      "x_label": "log10(c), promotion price c dimensionless",
+      "y_label": "Pre-action prediction MSE",
+      "result_ids": [
+        "result-e3d5544bddeca7fec4d7"
+      ],
+      "style": {
+        "font_size": 10,
+        "width_inches": 7,
+        "height_inches": 4.5,
+        "line_width": 1.7,
+        "marker_size": 3,
+        "grid": false,
+        "preview_dpi": 150,
+        "palette": [
+          "#0072B2",
+          "#E69F00",
+          "#009E73",
+          "#666666",
+          "#CC79A7"
+        ]
+      },
+      "render": {
+        "outputs": [
+          "figures/generated/slg-promotion-risk-20261111.svg",
+          "figures/generated/slg-promotion-risk-20261111.pdf",
+          "figures/generated/slg-promotion-risk-20261111.png"
+        ],
+        "renderer": "matplotlib",
+        "input_digest": "df744756e86499116ef596af670063b52750934b15383bf384b8d7db556b31d7",
+        "drawing_input_digest": "df744756e86499116ef596af670063b52750934b15383bf384b8d7db556b31d7",
+        "drawing_inputs": {
+          "spec": {
+            "id": "slg-promotion-risk-20261111",
+            "kind": "plot",
+            "x": "Log10 price",
+            "series": [
+              "Legacy v0",
+              "Rolling control",
+              "Priced v1",
+              "Noise oracle",
+              "Never update"
+            ],
+            "x_label": "log10(c), promotion price c dimensionless",
+            "y_label": "Pre-action prediction MSE"
+          },
+          "data": "40af949ea01bc8472e267023462f2d97244cd3b4f682eab7e2c3f54e082b06d1"
+        },
+        "research_bindings": [
+          {
+            "id": "result-e3d5544bddeca7fec4d7",
+            "revision": "sha256:72f7576a5a8d4234de467c96bf9c3f53cbcd9512f7b2f91a766ae0a8fb415b56",
+            "currentness": "CURRENT"
+          }
+        ],
+        "presentation_metadata": {
+          "title": "Prediction risk at matched update prices",
+          "question": "How do the three declared policies compare on one-step prediction before updating?",
+          "caption": "One-step prediction mean squared error, in squared synthetic observation units, over steps 50-699 of 12 matched 700-step streams at six predeclared prices. Legacy v0 prices a full rolling fit but applies a 0.22 partial noisy-observation step. Rolling control applies a 0.22 partial rolling-fit step with legacy pricing. Priced v1 prices that actual partial rolling step and gives staying zero model gain. Noise oracle predicts with the privileged true slope for evaluation only. Never update keeps slope 1. Priced v1 has higher mean prediction error than legacy v0 at every matched price tested. Exact accounting does not guarantee better prediction: compare this panel with update frequency and recovery before choosing a policy. Lines show finite stream means without uncertainty bands, not a selected optimum. Per-stream values, paired differences and descriptive standard errors are in the accompanying evidence manifest.",
+          "source_data": "research/slg-scientific-figures-20261111/outputs/run-7f8022a64802820f.result/prediction_risk_curve.csv",
+          "source": null
+        },
+        "style_version": "11d98d58608b7fc4a72fa31e0aba23b73df657017407306b478155287edafdcd",
+        "style_profile": "profiles/visual_style.json",
+        "visual_review": "pending",
+        "output_digests": {
+          "figures/generated/slg-promotion-risk-20261111.svg": "63aede466b6a5f331220a8f69ac84e6c6e63f4708ad906d7bb74d3eee1723212",
+          "figures/generated/slg-promotion-risk-20261111.pdf": "c0a9d2792a8cd2b3043850b6862bef0ee0c21d9722db7e02c1cc1a706864eacf",
+          "figures/generated/slg-promotion-risk-20261111.png": "8b8c75a8eebdbcf632bbcfddc93a3ebd3e2cbc2f1efff9d60e4badc94e01fd20"
+        }
+      }
+    },
+    {
+      "id": "slg-promotion-frequency-20261111",
+      "kind": "plot",
+      "title": "How price changes update frequency",
+      "question": "How often does each policy purchase a structural update at the declared price?",
+      "caption": "Promotion fraction over steps 50-699, averaged across 12 matched 700-step streams. Legacy v0 prices a full rolling fit but applies a 0.22 partial noisy-observation step. Rolling control applies a 0.22 partial rolling-fit step with legacy pricing. Priced v1 prices that actual partial rolling step and gives staying zero model gain. Every chosen update pays the dimensionless price c in this toy ledger, not a measured energy or complete computational cost. Higher prices usually buy fewer updates, but priced v1 does not always update less than the controls. Read the risk and recovery panels before interpreting sparsity as adequate adaptation. Lines show finite stream means without uncertainty bands. Costs, per-stream counts and descriptive standard errors are in the accompanying evidence manifest.",
+      "source_data": "research/slg-scientific-figures-20261111/outputs/run-7f8022a64802820f.result/promotion_rate_curve.csv",
+      "x": "Log10 price",
+      "series": [
+        "Legacy v0",
+        "Rolling control",
+        "Priced v1"
+      ],
+      "x_label": "log10(c), promotion price c dimensionless",
+      "y_label": "Promotion fraction",
+      "result_ids": [
+        "result-e3d5544bddeca7fec4d7"
+      ],
+      "style": {
+        "font_size": 10,
+        "width_inches": 7,
+        "height_inches": 4.5,
+        "line_width": 1.7,
+        "marker_size": 3,
+        "grid": false,
+        "preview_dpi": 150,
+        "palette": [
+          "#0072B2",
+          "#E69F00",
+          "#009E73",
+          "#666666",
+          "#CC79A7"
+        ]
+      },
+      "render": {
+        "outputs": [
+          "figures/generated/slg-promotion-frequency-20261111.svg",
+          "figures/generated/slg-promotion-frequency-20261111.pdf",
+          "figures/generated/slg-promotion-frequency-20261111.png"
+        ],
+        "renderer": "matplotlib",
+        "input_digest": "501dc765b66c02a7bc01ba673028a3d5e6fa0a23fe86de1878da89cf55f7f44f",
+        "drawing_input_digest": "501dc765b66c02a7bc01ba673028a3d5e6fa0a23fe86de1878da89cf55f7f44f",
+        "drawing_inputs": {
+          "spec": {
+            "id": "slg-promotion-frequency-20261111",
+            "kind": "plot",
+            "x": "Log10 price",
+            "series": [
+              "Legacy v0",
+              "Rolling control",
+              "Priced v1"
+            ],
+            "x_label": "log10(c), promotion price c dimensionless",
+            "y_label": "Promotion fraction"
+          },
+          "data": "c50039032f76e108d5590aca12f334ce0ef1815ee7a2d2daed44f121610069e6"
+        },
+        "research_bindings": [
+          {
+            "id": "result-e3d5544bddeca7fec4d7",
+            "revision": "sha256:72f7576a5a8d4234de467c96bf9c3f53cbcd9512f7b2f91a766ae0a8fb415b56",
+            "currentness": "CURRENT"
+          }
+        ],
+        "presentation_metadata": {
+          "title": "How price changes update frequency",
+          "question": "How often does each policy purchase a structural update at the declared price?",
+          "caption": "Promotion fraction over steps 50-699, averaged across 12 matched 700-step streams. Legacy v0 prices a full rolling fit but applies a 0.22 partial noisy-observation step. Rolling control applies a 0.22 partial rolling-fit step with legacy pricing. Priced v1 prices that actual partial rolling step and gives staying zero model gain. Every chosen update pays the dimensionless price c in this toy ledger, not a measured energy or complete computational cost. Higher prices usually buy fewer updates, but priced v1 does not always update less than the controls. Read the risk and recovery panels before interpreting sparsity as adequate adaptation. Lines show finite stream means without uncertainty bands. Costs, per-stream counts and descriptive standard errors are in the accompanying evidence manifest.",
+          "source_data": "research/slg-scientific-figures-20261111/outputs/run-7f8022a64802820f.result/promotion_rate_curve.csv",
+          "source": null
+        },
+        "style_version": "11d98d58608b7fc4a72fa31e0aba23b73df657017407306b478155287edafdcd",
+        "style_profile": "profiles/visual_style.json",
+        "visual_review": "pending",
+        "output_digests": {
+          "figures/generated/slg-promotion-frequency-20261111.svg": "8434438645130c6f556727482e4a043d78b6af1626244863c22a22d75b2177bb",
+          "figures/generated/slg-promotion-frequency-20261111.pdf": "da4d8494459abc46b3577db52ffa888a164b0026d63b4c8ad9e15879e4d71207",
+          "figures/generated/slg-promotion-frequency-20261111.png": "11233e804193ff085713afb3405c15e875848629d9c5900c416f6e70aab769a2"
+        }
+      }
+    },
+    {
+      "id": "slg-off-transition-promotions-20261111",
+      "kind": "plot",
+      "title": "Updates outside post-shift windows",
+      "question": "How often are updates purchased away from the declared structural-shift evaluation windows?",
+      "caption": "Promotion fraction outside all 65-step post-shift windows, averaged over 12 matched 700-step streams. The denominator is evaluated observations 50-699 excluding each interval [shift,shift+65). Legacy v0 prices a full rolling fit but applies a 0.22 partial noisy-observation step. Rolling control applies a 0.22 partial rolling-fit step with legacy pricing. Priced v1 prices that actual partial rolling step and gives staying zero model gain. This operational off-transition rate is not a false-positive probability: useful noisy-data updates can also occur between shifts. Compare with prediction risk and recovery to judge what suppressed updates cost. Lines show finite stream means without uncertainty bands. Exact counts, data and methods are in the accompanying evidence manifest.",
+      "source_data": "research/slg-scientific-figures-20261111/outputs/run-7f8022a64802820f.result/off_transition_curve.csv",
+      "x": "Log10 price",
+      "series": [
+        "Legacy v0",
+        "Rolling control",
+        "Priced v1"
+      ],
+      "x_label": "log10(c), promotion price c dimensionless",
+      "y_label": "Off-transition promotion fraction",
+      "result_ids": [
+        "result-e3d5544bddeca7fec4d7"
+      ],
+      "style": {
+        "font_size": 10,
+        "width_inches": 7,
+        "height_inches": 4.5,
+        "line_width": 1.7,
+        "marker_size": 3,
+        "grid": false,
+        "preview_dpi": 150,
+        "palette": [
+          "#0072B2",
+          "#E69F00",
+          "#009E73",
+          "#666666",
+          "#CC79A7"
+        ]
+      },
+      "render": {
+        "outputs": [
+          "figures/generated/slg-off-transition-promotions-20261111.svg",
+          "figures/generated/slg-off-transition-promotions-20261111.pdf",
+          "figures/generated/slg-off-transition-promotions-20261111.png"
+        ],
+        "renderer": "matplotlib",
+        "input_digest": "507a61d4acd0cf6bfb498dd8353f1b53058a82be8451ee116f2fc36ecbc0afd1",
+        "drawing_input_digest": "507a61d4acd0cf6bfb498dd8353f1b53058a82be8451ee116f2fc36ecbc0afd1",
+        "drawing_inputs": {
+          "spec": {
+            "id": "slg-off-transition-promotions-20261111",
+            "kind": "plot",
+            "x": "Log10 price",
+            "series": [
+              "Legacy v0",
+              "Rolling control",
+              "Priced v1"
+            ],
+            "x_label": "log10(c), promotion price c dimensionless",
+            "y_label": "Off-transition promotion fraction"
+          },
+          "data": "5655fc8cb35cb346f866a5bdfc2f3595892f886ec16a2cc46112a002ba8ee459"
+        },
+        "research_bindings": [
+          {
+            "id": "result-e3d5544bddeca7fec4d7",
+            "revision": "sha256:72f7576a5a8d4234de467c96bf9c3f53cbcd9512f7b2f91a766ae0a8fb415b56",
+            "currentness": "CURRENT"
+          }
+        ],
+        "presentation_metadata": {
+          "title": "Updates outside post-shift windows",
+          "question": "How often are updates purchased away from the declared structural-shift evaluation windows?",
+          "caption": "Promotion fraction outside all 65-step post-shift windows, averaged over 12 matched 700-step streams. The denominator is evaluated observations 50-699 excluding each interval [shift,shift+65). Legacy v0 prices a full rolling fit but applies a 0.22 partial noisy-observation step. Rolling control applies a 0.22 partial rolling-fit step with legacy pricing. Priced v1 prices that actual partial rolling step and gives staying zero model gain. This operational off-transition rate is not a false-positive probability: useful noisy-data updates can also occur between shifts. Compare with prediction risk and recovery to judge what suppressed updates cost. Lines show finite stream means without uncertainty bands. Exact counts, data and methods are in the accompanying evidence manifest.",
+          "source_data": "research/slg-scientific-figures-20261111/outputs/run-7f8022a64802820f.result/off_transition_curve.csv",
+          "source": null
+        },
+        "style_version": "11d98d58608b7fc4a72fa31e0aba23b73df657017407306b478155287edafdcd",
+        "style_profile": "profiles/visual_style.json",
+        "visual_review": "pending",
+        "output_digests": {
+          "figures/generated/slg-off-transition-promotions-20261111.svg": "52fe31c65abdf254447ea750ed0fa8a42bfa76337a58f384a7902b649afb5a06",
+          "figures/generated/slg-off-transition-promotions-20261111.pdf": "65da472448fbe9152a0d487ffaa5320e1dc9c1c7a9312ebc811b8630851d89d2",
+          "figures/generated/slg-off-transition-promotions-20261111.png": "831adf680298e5cbb88f91df88fa699d11f600dbe0219a50f2490976689df3b3"
+        }
+      }
+    },
+    {
+      "id": "slg-register-common-ledger-20261111",
+      "kind": "plot",
+      "title": "When does splitting the register pay?",
+      "question": "At what target separation does the declared split option cost less than shared arbitration?",
+      "caption": "Static common-ledger costs over 181 target separations, with gamma=1, eta=0.8 and A=2(1-cos theta)(0.5+gamma). Fixed balanced costs A/4, arbitration costs min(A/4,0.4), and split enabled costs min(A/4,0.4,0.25). All three option curves coincide below theta=0.8411 radians, where the green curve is drawn on top. Above this boundary the split-enabled curve stays at the declared split price 0.25, exactly coinciding with the grey reference behind it. Arbitration remains equal to fixed balance until theta=1.0853 radians, then caps at 0.4. For another split price, compare that price with the optimised arbitration curve to decide where purchasing a separate register pays. These are static option boundaries. Exact equations, data and method links accompany the figure.",
+      "source_data": "research/slg-scientific-figures-20261111/outputs/run-7f8022a64802820f.result/common_ledger_register.csv",
+      "x": "Target separation",
+      "series": [
+        "Split price",
+        "Fixed balanced",
+        "Arbitration",
+        "Split enabled"
+      ],
+      "x_label": "Target separation (radians)",
+      "y_label": "Common objective (dimensionless)",
+      "result_ids": [
+        "slg-common-ledger-register-20261111"
+      ],
+      "style": {
+        "font_size": 10,
+        "width_inches": 7,
+        "height_inches": 4.5,
+        "line_width": 1.7,
+        "marker_size": 1,
+        "grid": false,
+        "preview_dpi": 150,
+        "palette": [
+          "#666666",
+          "#0072B2",
+          "#E69F00",
+          "#009E73"
+        ]
+      },
+      "render": {
+        "outputs": [
+          "figures/generated/slg-register-common-ledger-20261111.svg",
+          "figures/generated/slg-register-common-ledger-20261111.pdf",
+          "figures/generated/slg-register-common-ledger-20261111.png"
+        ],
+        "renderer": "matplotlib",
+        "input_digest": "d4c9bd792a2416bdc321c469df379b1d2b39d34c4c9d31aa6a48cefc151c52d5",
+        "drawing_input_digest": "d4c9bd792a2416bdc321c469df379b1d2b39d34c4c9d31aa6a48cefc151c52d5",
+        "drawing_inputs": {
+          "spec": {
+            "id": "slg-register-common-ledger-20261111",
+            "kind": "plot",
+            "x": "Target separation",
+            "series": [
+              "Split price",
+              "Fixed balanced",
+              "Arbitration",
+              "Split enabled"
+            ],
+            "x_label": "Target separation (radians)",
+            "y_label": "Common objective (dimensionless)"
+          },
+          "data": "588636de35ae4bd7a9d6440e0404ad658aa42fb155569708d0a22911028b240d"
+        },
+        "research_bindings": [
+          {
+            "id": "slg-common-ledger-register-20261111",
+            "revision": "sha256:88425eb7c3240bd7cf98c059bb61883750c7a56d76ec2ee945bff97dc67fd65a",
+            "currentness": "CURRENT"
+          }
+        ],
+        "presentation_metadata": {
+          "title": "When does splitting the register pay?",
+          "question": "At what target separation does the declared split option cost less than shared arbitration?",
+          "caption": "Static common-ledger costs over 181 target separations, with gamma=1, eta=0.8 and A=2(1-cos theta)(0.5+gamma). Fixed balanced costs A/4, arbitration costs min(A/4,0.4), and split enabled costs min(A/4,0.4,0.25). All three option curves coincide below theta=0.8411 radians, where the green curve is drawn on top. Above this boundary the split-enabled curve stays at the declared split price 0.25, exactly coinciding with the grey reference behind it. Arbitration remains equal to fixed balance until theta=1.0853 radians, then caps at 0.4. For another split price, compare that price with the optimised arbitration curve to decide where purchasing a separate register pays. These are static option boundaries. Exact equations, data and method links accompany the figure.",
+          "source_data": "research/slg-scientific-figures-20261111/outputs/run-7f8022a64802820f.result/common_ledger_register.csv",
+          "source": null
+        },
+        "style_version": "58b6c708511da105b6a84734e36bb92d573c9db57d79bc8ab59af0b139724f94",
+        "style_profile": "profiles/visual_style.json",
+        "visual_review": "pending",
+        "output_digests": {
+          "figures/generated/slg-register-common-ledger-20261111.svg": "35a58ec39c51ec5fcff472f276efca705b6fbbdf3c0079c919ac6156d9867dba",
+          "figures/generated/slg-register-common-ledger-20261111.pdf": "dd9922cd9f64503440f1321cba9e9f855f8326cbd135bdf1c9a890cb684127fe",
+          "figures/generated/slg-register-common-ledger-20261111.png": "b6d13a93d32db69c06c8bd715ba2901877dc97119a50f9c78465528170443e65"
+        }
+      }
+    },
+    {
+      "id": "slg-promotion-recovery-20261111",
+      "kind": "plot",
+      "title": "Recovery under the declared latent-state criterion",
+      "question": "Does the pre-action estimate recover the new latent slope within the fixed horizon?",
+      "caption": "Fraction of shifts without a qualifying in-band run for the three policies in the shared comparison key. Means use 12 matched 700-step streams with four shifts each: 48 dependent shift evaluations per policy and price. A qualifying run is five consecutive PRE-ACTION estimates within 20 percent of the jump magnitude, wholly within the 65 steps beginning at the shift. Already-in-band estimates count without a new promotion, so this measures target occupancy, not detected change or update-triggered success. Delay records the run START, not its confirmation four steps later. No qualifying run gives failure and delay 65, retained in the capped-delay mean. Latent truth is used only for evaluation. At c=0.06 failure fractions are 0.1875, 0.2708 and 0.625 for Legacy v0, Rolling control and Priced v1. Occupancy need not vary monotonically with price. Read with prediction risk and update frequency before treating sparse updates as adequate adaptation. Lines show stream means without uncertainty bands. Shared policy definitions, per-stream values and exact data/method links accompany the comparison.",
+      "source_data": "research/slg-scientific-figures-20261111/outputs/run-7f8022a64802820f.result/recovery_failure_curve.csv",
+      "x": "Log10 price",
+      "series": [
+        "Legacy v0",
+        "Rolling control",
+        "Priced v1"
+      ],
+      "x_label": "log10(c), promotion price c dimensionless",
+      "y_label": "Fraction of shifts unrecovered",
+      "result_ids": [
+        "result-e3d5544bddeca7fec4d7"
+      ],
+      "style": {
+        "font_size": 10,
+        "width_inches": 7,
+        "height_inches": 4.5,
+        "line_width": 1.7,
+        "marker_size": 3,
+        "grid": false,
+        "preview_dpi": 150,
+        "palette": [
+          "#0072B2",
+          "#E69F00",
+          "#009E73",
+          "#666666",
+          "#CC79A7"
+        ]
+      },
+      "render": {
+        "outputs": [
+          "figures/generated/slg-promotion-recovery-20261111.svg",
+          "figures/generated/slg-promotion-recovery-20261111.pdf",
+          "figures/generated/slg-promotion-recovery-20261111.png"
+        ],
+        "renderer": "matplotlib",
+        "input_digest": "df9c909d9f0748555e904875600fabefeb9e5fa8b4370e440f90bd0096264e37",
+        "drawing_input_digest": "df9c909d9f0748555e904875600fabefeb9e5fa8b4370e440f90bd0096264e37",
+        "drawing_inputs": {
+          "spec": {
+            "id": "slg-promotion-recovery-20261111",
+            "kind": "plot",
+            "x": "Log10 price",
+            "series": [
+              "Legacy v0",
+              "Rolling control",
+              "Priced v1"
+            ],
+            "x_label": "log10(c), promotion price c dimensionless",
+            "y_label": "Fraction of shifts unrecovered"
+          },
+          "data": "415357835b1c3a3ed574053bb195d9314f2983ea92de7cfb6825d07405200f19"
+        },
+        "research_bindings": [
+          {
+            "id": "result-e3d5544bddeca7fec4d7",
+            "revision": "sha256:72f7576a5a8d4234de467c96bf9c3f53cbcd9512f7b2f91a766ae0a8fb415b56",
+            "currentness": "CURRENT"
+          }
+        ],
+        "presentation_metadata": {
+          "title": "Recovery under the declared latent-state criterion",
+          "question": "Does the pre-action estimate recover the new latent slope within the fixed horizon?",
+          "caption": "Fraction of shifts without a qualifying in-band run for the three policies in the shared comparison key. Means use 12 matched 700-step streams with four shifts each: 48 dependent shift evaluations per policy and price. A qualifying run is five consecutive PRE-ACTION estimates within 20 percent of the jump magnitude, wholly within the 65 steps beginning at the shift. Already-in-band estimates count without a new promotion, so this measures target occupancy, not detected change or update-triggered success. Delay records the run START, not its confirmation four steps later. No qualifying run gives failure and delay 65, retained in the capped-delay mean. Latent truth is used only for evaluation. At c=0.06 failure fractions are 0.1875, 0.2708 and 0.625 for Legacy v0, Rolling control and Priced v1. Occupancy need not vary monotonically with price. Read with prediction risk and update frequency before treating sparse updates as adequate adaptation. Lines show stream means without uncertainty bands. Shared policy definitions, per-stream values and exact data/method links accompany the comparison.",
+          "source_data": "research/slg-scientific-figures-20261111/outputs/run-7f8022a64802820f.result/recovery_failure_curve.csv",
+          "source": null
+        },
+        "style_version": "11d98d58608b7fc4a72fa31e0aba23b73df657017407306b478155287edafdcd",
+        "style_profile": "profiles/visual_style.json",
+        "visual_review": "pending",
+        "output_digests": {
+          "figures/generated/slg-promotion-recovery-20261111.svg": "bbc1804b236a3d5fcf3471955387c1cc923b6dcaca16e98dfad47ab078d38ef5",
+          "figures/generated/slg-promotion-recovery-20261111.pdf": "c25b0db1cb44e01156d852672799318746c742eadece4f7b04e023f9f6b9284a",
+          "figures/generated/slg-promotion-recovery-20261111.png": "1803c3ab7e3da9ae2bc6dfe8fa856e367a35aa37fcd21abb4fb6f94e1ada81f2"
+        }
+      }
+    }
+  ]
+}

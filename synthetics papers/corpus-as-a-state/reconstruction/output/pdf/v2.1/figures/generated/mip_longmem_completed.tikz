@@ -1,0 +1,19 @@
+\begin{tikzpicture}[font=\sffamily\fontsize{10}{12}\selectfont]
+\node[anchor=north west,align=left] at (0,0) {\begin{minipage}{16.8cm}
+{\sffamily\bfseries\fontsize{13}{15}\selectfont LongMem outcomes at two evidence allowances}\\[6pt]
+48 completed questions \quad shared improved index \quad Sonnet 5.5, low effort\\[12pt]
+\renewcommand{\arraystretch}{1.6}
+\begin{tabular}{lrrrr}
+ & \multicolumn{2}{c}{Answer correctness} & \multicolumn{2}{c}{Complete turn coverage}\\
+Method & 4000 tokens & 8000 tokens & 4000 tokens & 8000 tokens\\ \hline
+Relational retrieval & 44/48 & 45/48 & 41/42 & 41/42 \\
+Dense retrieval & 44/48 & 45/48 & 41/42 & 41/42 \\
+Hybrid retrieval & 40/48 & 44/48 & 33/42 & 37/42 \\
+\hline
+\end{tabular}\\[12pt]
+\textbf{Correctness:} all 48 questions, including six abstention questions.\\[4pt]
+\textbf{Turn coverage:} number of 42 positive-evidence questions for which\\
+all annotated required turn IDs are delivered.\\[6pt]
+Token values are evidence-context allowances.
+\end{minipage}};
+\end{tikzpicture}
