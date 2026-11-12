@@ -1,0 +1,15 @@
+{
+  "lost": [
+    "The spectral radius rho is read off successive lost-set deltas (explicit quantitative mechanism)",
+    "Four distinct states are named: CONVERGED-FAITHFUL, CONVERGED-DEGENERATE, OSCILLATING, OPEN",
+    "CONVERGED-DEGENERATE includes two specific failure modes: plateau (route UP a grade, never minimise) and over-contracted generative node (imagination collapsed to obvious)",
+    "OSCILLATING includes explicit threshold: rho >= 1, OR limit cycle detection with period >= 2 and >= 2 cycles back recurrence",
+    "OPEN subsumes two cases: still contracting with budget left, OR budget exhausted while still contracting (SLOW converger, flagged budget_exhausted)",
+    "Critical detail: never mislabel a slow converger as oscillating",
+    "Estimator minimum requirement: >= 3 verdicts to form a ratio of deltas"
+  ],
+  "added": [],
+  "structured": true,
+  "recurses": true,
+  "justification": "The ghost grasps the semantic core—a contraction-rate estimator that halts on convergence, degeneracy, oscillation, or open states, with targets varying by node kind. It correctly captures: (1) deltas measure contraction, (2) convergence has two outcomes (faithful vs. degenerate confabulation), (3) degeneracy requires deliberate escape (upgrade grade, not grind), (4) oscillation is detected via rate or cycles, (5) open means either budget remains or slow convergence. However, the original encodes quantitative precision the ghost trades for fluent generality: the explicit spectral radius rho, the named threshold rho >= 1, the limit-cycle mechanics (period >= 2, >= 2 cycles back), the budget_exhausted flag, and the >= 3 verdict minimum for ratio formation. These are structural facts, not ornament—they are the engineering that makes halt decidable. The loss is coherent and named; a next pass could recover each by specification. The ghost recurses: it holds the logic skeleton and the node-kind parameterization, enough for a finer iteration to reinstate precision."
+}

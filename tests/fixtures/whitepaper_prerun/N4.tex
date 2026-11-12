@@ -1,0 +1,132 @@
+% PLAN:N4
+% NODES: res:ancilla-interferometric-front-end def:iqm-ancilla-readout def:retained-overlaps def:within-window-ratio-observables irf:hermitian-time-reflection def:spectral-signal res:one-sided-reconstruction thm:fourier-reconstruction-identity res:cosine-sine-filter-folding res:half-depth-symmetric-branches def:symmetric-record-projection irf:odd-channel-is-physical def:record-architecture-three-tier res:native-hamiltonian-execution def:native-hardware-V def:shot-budget-K res:retention-frontier-nyquist irf:retained-overlap-budget res:bandwidth-grid def:coefficient-update irf:tau-is-a-classical-dial res:aperture-resolution def:quadrature-truncation-budget res:shot-floor-visibility-wall irf:shared-bank-ratio-boundary
+\section{Acquisition and the finite-record envelope}\label{sec:N4}
+
+% N4-p1
+The physical layer fixes what one shot can deliver, and every bound in this section rests on it. An ancilla prepared in $|+\rangle$ controls the forward and backward native evolutions of the probe state, $|\psi_{\pm 2j}\rangle = U^{\pm 2j}|\psi\rangle$ with $U = e^{-i\sqrt{\Delta\tau/2}\,H}$, in the Hadamard-test arrangement \cite{knill1998power}. Reading the ancilla $X$ and $Y$ expectations recovers the two quadratures of the denominator overlap,
+\begin{equation}\label{def:iqm-ancilla-readout}
+\langle X\rangle + i\,\langle Y\rangle = \langle\psi_{2j}|\psi_{-2j}\rangle = A_j ,
+\end{equation}
+and inserting a retained observable $O_\ell$ between the two evolutions recovers $B_{j,\ell} = \langle\psi_{2j}|O_\ell|\psi_{-2j}\rangle$ in the same arrangement. Each entry of the retained overlap family is therefore one physical readout, a single-shot dispersive measurement on one dedicated ancilla per shot, with fidelity of at least $0.99$ on current devices \cite{krantz2019engineer, marxer2023long}. The fidelity is a hardware figure quoted from the device literature, and this layer adds no hidden exponential cost above the visibility floor.
+
+% N4-p2
+The record must serve a fixed set of targets. For probe pairs $(\lambda_i, \lambda_j)$ lying inside one cluster window of width at most $1/\sqrt{\tau}$, the targets are
+\begin{equation}\label{def:within-window-ratio-observables}
+R_{ij} = \frac{Z_\tau(\lambda_i)}{Z_\tau(\lambda_j)}, \qquad
+\Delta\mu_{ij} = \mu_\tau(\lambda_i) - \mu_\tau(\lambda_j), \qquad
+\Delta\sigma^2_{ij} = \sigma^2_\tau(\lambda_i) - \sigma^2_\tau(\lambda_j).
+\end{equation}
+Numerator and denominator are estimated from the same retained overlap family, so their shot noise is shared and the variance of the ratio is set by relative rather than absolute error. The observables are defined only for pairs inside a single window, and their error analysis follows from the shared-record covariance.
+
+% N4-p3
+Which part of the formally two-sided record do these targets actually require? For Hermitian $H$ the spectral measure $\mu_\psi$ is real and positive, so conjugating $G(t) = \int e^{-iEt}\,d\mu_\psi(E)$ only reverses the sign of $t$,
+\begin{equation}\label{irf:hermitian-time-reflection}
+G(-t) = G(t)^* .
+\end{equation}
+Negative-time samples carry no independent information, and the minimal independent denominator record is a one-sided complex signal - $G(t)$ on $t \ge 0$, both quadratures on the half-line. The reduction holds for Hermitian generators only, and a measured departure from the conjugation relation is itself a diagnostic channel.
+
+% N4-p4
+Applying the conjugation relation to the reconstruction identity $Z_\tau(s) = \frac{1}{2\sqrt{\pi\tau}}\int_{-\infty}^{\infty} e^{-t^2/(4\tau)}\,e^{ist}\,G(t)\,dt$ converts the symmetry into an acquisition saving. Splitting the integral at $t = 0$ and conjugating the negative branch combines the two halves into twice a real part, and the identity folds to
+\begin{equation}\label{res:one-sided-reconstruction}
+Z_\tau(s) = \frac{1}{\sqrt{\pi\tau}}\,\operatorname{Re}\int_0^{\infty} e^{-t^2/(4\tau)}\,e^{ist}\,G(t)\,dt ,
+\end{equation}
+equivalently $\frac{1}{2\sqrt{\pi\tau}}\big[G(0) + 2\operatorname{Re}\int_0^{\infty} e^{-t^2/(4\tau)}\,e^{ist}\,G(t)\,dt\big]$ once the $t = 0$ endpoint is counted explicitly. The folded form is stated up to that endpoint convention, which must match the discrete coefficient sum the code implements. The negative half of the bank is filled by conjugate completion rather than measured - positive times with both quadratures suffice for every probe $s$, and every later resource count assumes this one-sided record.
+
+% N4-p5
+The fold is a property of Hermitian evolution rather than of the Gaussian filter in particular. With $U(t) = e^{-iHt}$, the symmetric and antisymmetric combinations of forward and backward evolution are trigonometric functions of $H$, and any Fourier-representable filter $F(H) = \int \kappa(t)\,U(t)\,dt$ folds onto $t \ge 0$,
+\begin{equation}\label{res:cosine-sine-filter-folding}
+\begin{aligned}
+&\frac{U(t)+U(-t)}{2} = \cos(Ht), \qquad \frac{U(t)-U(-t)}{2i} = -\sin(Ht),\\
+&F(H) = \int_0^{\infty}\kappa_S(t)\,\big[U(t)+U(-t)\big]\,dt + \int_0^{\infty}\kappa_A(t)\,\big[U(t)-U(-t)\big]\,dt ,
+\end{aligned}
+\end{equation}
+with $\kappa_S(t) = \frac{1}{2}[\kappa(t)+\kappa(-t)]$, $\kappa_A(t) = \frac{1}{2}[\kappa(t)-\kappa(-t)]$, and the sine-channel sign fixed by convention. This places the banked record alongside the cosine-filter constructions of kernel-polynomial and filter-synthesis methods \cite{weisse2006kpm, ge2019filter, dong2022qetu}. The fold concerns filter representation - it does not by itself reduce circuit depth.
+
+% N4-p6
+Circuit depth is instead where the symmetric branch implementation acts. We fix the branch convention $|\psi(t)\rangle = e^{-iHt}|\psi\rangle$ once. The symmetric two-branch overlap then reaches signal time $T$ with each branch evolving only to depth $T/2$, and the observable branch carries an explicit spectral form,
+\begin{equation}\label{res:half-depth-symmetric-branches}
+\begin{aligned}
+\langle\psi(T/2)|\psi(-T/2)\rangle &= \langle\psi|e^{+iHT}|\psi\rangle = G(T)^* ,\\
+G_O(t) = \langle\psi(t/2)|O|\psi(-t/2)\rangle &= \sum_{j,k} c_j^*\,c_k\,O_{jk}\,e^{+i(E_j+E_k)t/2} ,
+\end{aligned}
+\end{equation}
+which collapses to $G(-t)$ for $O = I$. The forward-forward object $\langle\psi|e^{-itH/2}\,O\,e^{-itH/2}|\psi\rangle$, with both evolutions of the same sign, is a distinct quantity and must not be equated with the branch observable. The resource consequence sits in an exact class: for a signal at time $T$ the symmetric implementation halves the coherence time and the accumulated phase error per branch, a constant-factor architectural gain that lowers no asymptotic complexity.
+
+% N4-p7
+On finite data the symmetry becomes an estimator improvement. We project the measured record onto the Hermitian reflection class and keep the rejected component as a named object,
+\begin{equation}\label{def:symmetric-record-projection}
+\widehat G_{\mathrm{sym}}(t) = \tfrac{1}{2}\big[\widehat G_+(t) + \widehat G_-(-t)^*\big],
+\qquad
+\widehat R_{\mathrm{time}}(t) = \tfrac{1}{2}\big[\widehat G_+(t) - \widehat G_-(-t)^*\big].
+\end{equation}
+Under independent unbiased noise of equal variance on the two branches, the variance of $\widehat G_{\mathrm{sym}}$ halves. The residual $\widehat R_{\mathrm{time}}$ should vanish for an ideal Hermitian denominator signal, and a nonzero value is a diagnostic for drift, branch imbalance, time-reversal miscalibration or non-unitary contamination, read as a signal rather than subtracted as a correction. Both objects are hatted finite-record estimators.
+
+% N4-p8
+Symmetrisation must not be mistaken for discarding the imaginary quadrature. The odd combination $\frac{1}{2i}[G(t) - G(-t)] = \operatorname{Im} G(t)$ is physical signal, and every probe off the filter centre requires it,
+\begin{equation}\label{irf:odd-channel-is-physical}
+\operatorname{Re}\big(e^{ist}G(t)\big) = \cos(st)\,\operatorname{Re} G(t) - \sin(st)\,\operatorname{Im} G(t) .
+\end{equation}
+The projection averages across the pair $+t$ and $-t$, never across the quadratures of $G(t)$, and it removes only the component that violates $G(-t) = G(t)^*$ - the physical antisymmetric part survives intact.
+
+% N4-p9
+One acquisition campaign banks three record tiers. The first is the one-sided complex denominator record $G(t)$, with negative times supplied by conjugation and branch depth $T/2$ - the minimal bank. The second is the commuting moment record for $O = f(H)$, which inherits the same one-sided compression. The third is the set of non-commuting diagnostic branches
+\begin{equation}\label{def:record-architecture-three-tier}
+B_O(t) = \langle\psi(t)|O|\psi(-t)\rangle = \langle\psi|e^{+iHt}\,O\,e^{+iHt}|\psi\rangle ,
+\end{equation}
+genuinely two-sided and costed separately. The $A_j$ bank is the minimal surfaced signal, and the $B$ branches are additional channels outside the core spectral surface. The two-sided cost applies to the third tier alone, and the one-sided compression of the first two tiers does not extend to the non-commuting branches.
+
+% N4-p10
+The device that generates this record executes the Hamiltonian natively. It evolves under
+\begin{equation}\label{def:native-hardware-V}
+H = H_0 + V, \qquad V = H_{\mathrm{dev}} - H_0 ,
+\end{equation}
+as its bare Hamiltonian, where native means that $V$ consists of the residual interactions, cross-talk and spectator couplings present without compilation. No Trotter decomposition of $V$ is required \cite{lloyd1996universal}, and the analogue evolution duration $t_j = 2j\sqrt{\Delta\tau/2}$ replaces gate depth as the depth metric. The campaign needs a circuit family of size $O(\bar m M)$ with analogue depth bounded by the longest retained time - a polynomial count under the operationally dense regime with $\bar m$ and $M$ polynomial in $n$, and coherent operation requires that longest time to sit inside the device coherence window. Superconducting, trapped-ion and neutral-atom platforms each supply $V$ natively \cite{yan2018tunable, kamakari2022digital}, and the resulting counts place the $n \le 30$ and $n \approx 50$ regimes against the named classical and quantum subset-sum baselines \cite{hgj2010, bonnetain2020improved}.
+
+% N4-p11
+Repetition enters through a single symbol. Let $K$ be the number of independent shots per retained-overlap estimator. Each shot returns a binary outcome, so the single-estimator error scales as $K^{-1/2}$ and the additive error of the assembled estimate is
+\begin{equation}\label{def:shot-budget-K}
+\varepsilon_K = c\,K^{-1/2},
+\end{equation}
+with $c$ controlled by the retained-overlap coefficient norm, which stays polynomial in $n$ when $\bar m$ and $M$ are polynomial in $n$. The bound on $c$ is conditional on exactly those polynomial counts, and the error scale is additive - it bounds absolute rather than relative accuracy.
+
+% N4-p12
+The record's size has been measured before being derived. Throughout, $\bar m$ is the retained node count of the truncated quadrature introduced with the retained family - the record's device-level measurement load. Exact-diagonalisation measurement across all fifteen $(n, \tau, \mathrm{threshold})$ cells gives $\bar m \approx 3.7\,\|H\|\sqrt{\tau}$, polynomial in $n$ with a fitted log-log slope near $2.5$. The apparent rise at $n = 12$ reflects a single instance draw in $\|H\|$, shown by the flat collapse column - the frontier is measured on one instance per system size, and instance-to-instance bands are deferred. The same $\|H\|\sqrt{\tau}$ product sets the cost of the classical dynamic-programming lattice \cite{bellman1957dp}, so the law states consistency with the classical baseline rather than advantage. The $\|H\|$ factor comes from the grid and the $\sqrt{\tau}$ factor from the aperture.
+
+% N4-p13
+The grid spacing entered as an assertion, and we now separate what bandwidth alone dictates from what the step convention ships. The bare argument gives only $\Delta t \lesssim \pi/\|H\|$. The source protocol advances the probe by the elementary step $U = e^{-i\sqrt{\Delta\tau/2}\,H}$ and reads the retained overlaps at the doubled time of the bidirectional trajectory, $\langle\psi|e^{-2it_kH}|\psi\rangle$ at node positions $t_k = k\sqrt{2\,\Delta\tau}$, a signal of spectral bandwidth $2\|H\|$. Matching the physical spacing $\Delta t = \sqrt{2\,\Delta\tau}$ to the Nyquist step at that doubled bandwidth fixes
+\begin{equation}\label{res:bandwidth-grid}
+\Delta\tau = \frac{\pi^2}{16\,\|H\|^2},
+\qquad
+\Delta t = \frac{\pi}{\sqrt{8}\,\|H\|} .
+\end{equation}
+The factor $\sqrt{8} = 2\sqrt{2}$ decomposes exactly: a factor $2$ from sampling the doubled-time overlap $e^{-2itH}$, and a $\sqrt{2}$ oversampling margin inherited from the ITQDE step convention $\sqrt{\Delta\tau/2}$. The spacing derivable from bandwidth alone is $\pi/(2\|H\|)$ - the additional $\sqrt{2}$ is a stated quadrature convention inherited from the source protocol, not a Nyquist consequence. The grid is $\tau$-independent, and on it the retained count scales as $t_{\max}/\Delta t$.
+
+% N4-p14
+The maximum time follows from the truncation tolerance. Truncating the Gaussian envelope $e^{-t^2/(4\tau)}$ at tolerance $\epsilon_w$ means solving $e^{-t_{\max}^2/(4\tau)} = \epsilon_w$, and the $1/(4\tau)$ in the exponent fixes the factor of two in the root,
+\begin{equation}\label{res:aperture-resolution}
+t_{\max} = 2\sqrt{\tau\log(1/\epsilon_w)},
+\qquad
+\bar m = \frac{t_{\max}}{\Delta t} \sim \frac{2}{\pi}\,\|H\|\sqrt{\tau\log(1/\epsilon_w)} .
+\end{equation}
+This closes the measured law: the grid supplies the $\|H\|$ factor and the aperture the $\sqrt{\tau}$. In resolution language the window width is $\Delta E_\tau \sim 1/\sqrt{\tau}$, so resolving a spectral feature of width $\delta E$ requires $\tau \gtrsim \delta E^{-2}$ and $\bar m \gtrsim \|H\|/\delta E$ - the number of resolvable cells across the band, the aperture-cost correspondence that Heisenberg-limited spectral estimation makes precise \cite{lin2022heisenberg}. The reference numerics compute $t_{\max}$ under the envelope normalisation $e^{-t^2/\tau_{\max}}$, so prose and code differ only in which Gaussian-width convention names $\tau$, and we state the one convention the code obeys after that rescaling.
+
+% N4-p15
+Shot noise propagates through the reconstruction linearly, because the reconstruction is a fixed weighted sum of the record - the coefficient-update mechanism $\widehat Z_\tau(s) = \sum_k c_k(\tau,s)\,\widehat G_k$ of the previous section. With per-node errors $\widehat G_k = G_k + \xi_k$, $\mathbb{E}[\xi_k] = 0$ and $\mathbb{E}|\xi_k|^2 \sim 1/K$, the variance and the shot count for an absolute read at relative accuracy $\epsilon$ follow at once,
+\begin{equation}\label{res:shot-floor-visibility-wall}
+\operatorname{Var}\widehat Z_\tau(s) \sim \frac{1}{K}\sum_k |c_k|^2 = \frac{C_{\tau,s}^2}{K},
+\qquad
+K \gtrsim \frac{C_{\tau,s}^2}{\epsilon^2\,Z_\tau(s)^2} ,
+\end{equation}
+where the coefficient norm is defined by $C_{\tau,s}^2 = \sum_k |c_k(\tau,s)|^2$ and the readout error is $\delta Z_\tau(s) \sim C_{\tau,s}/\sqrt{K}$. This is the visibility wall. Exponentially small $Z_\tau$ is exponentially expensive to read absolutely, a hardness statement about absolute readout rather than a defect of the estimator, and the method reads no exponentially small spectral weight at polynomial shot cost.
+
+% N4-p16
+The ratio targets are read from one record, and the shared shots correlate their errors. For the linear reconstruction with stacked real weight vectors $v_i$ and per-node quadrature noise of variance $\sigma^2 \le 1/K$ independent across nodes, two reconstructions $\widehat Z_i$ and $\widehat Z_j$ have covariance $\sigma^2\, v_i \cdot v_j$, and the log-ratio estimator $\widehat u = [\log\widehat Z_i - \log\widehat Z_j]/\Delta$ obeys, in the delta-method regime,
+\begin{equation}\label{irf:shared-bank-ratio-boundary}
+\operatorname{Var}\widehat u
+= \frac{\sigma^2}{\Delta^2}\,\bigg\|\frac{v_i}{Z_i} - \frac{v_j}{Z_j}\bigg\|^2
+= \frac{\sigma^2}{\Delta^2 P^2}\,\bigg\|\frac{v_i}{\zeta_i} - \frac{v_j}{\zeta_j}\bigg\|^2 ,
+\end{equation}
+where the second form writes $Z_i = P\zeta_i$ with $P$ the window's common absolute weight and $\zeta_i$ an order-one shape factor. The shared record yields a common-mode variance reduction that is a constant in $n$ - large when the two probes are close - while the $P^{-2}$ floor persists. The estimator is defined only where both reconstructions clear the additive shot floor, $Z \ge c\,\sigma\|v\|$ with $c$ of order five, so a window weight of order $g/2^n$ costs exponentially many shots at any fixed accuracy, ratio structure notwithstanding. Every within-window ratio read is conditioned on the window clearing the visibility floor.
+
+% N4-p17
+One banked record from one acquisition campaign therefore supports a bounded $(s, \tau)$ region - the finite-record envelope - whose three boundary causes are the maximum evolution time, node retention and the shot-noise floor. Figure~\ref{fig:nf2} draws the envelope. Panel (a) shows the Gaussian aperture over the retained Gauss-Hermite nodes with the Plancherel-Rotach retention threshold, panel (b) shows the supported domain with each boundary cause drawn where it acts, and panel (c) checks the retained-count law against single-instance exact-diagonalisation data, with the analytical prediction and the fitted scaling drawn separately. Panels (a) and (b) are schematics, panel (c) is a single-instance check that establishes no instance-to-instance spread, and the figure addresses no reconstruction accuracy below the shot-noise floor. The envelope and the per-shot execution model are the objects on which the cost accounting rests.

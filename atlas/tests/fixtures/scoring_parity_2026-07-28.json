@@ -1,0 +1,4450 @@
+{
+ "record": "bench-scoring-parity-fixture/1",
+ "generated_by": "scripts/gen_bench_scoring_parity_fixture.py",
+ "v1_scorer": "scripts/reconstruction_bench.py (the 2026-07-28 run)",
+ "seed": 20260728,
+ "case_count": 288,
+ "covers": "normalize, atom_positions, score (both the window=None path and the sliding proximity path), any-of atom groups, and the digit-comma / dash-family / emphasis / JSON-escape / casefold / whitespace edges of the normalizer",
+ "does_not_cover": "row-level replay of the 2026-07-28 run: rows.json banks verdicts but not the arm contexts, so the scorer's inputs for that run no longer exist anywhere. The atlas-side test asserts that absence rather than asserting the replay.",
+ "normalize_cases": [
+  {
+   "raw": "12,335",
+   "v1_normalized": "12335"
+  },
+  {
+   "raw": "12335",
+   "v1_normalized": "12335"
+  },
+  {
+   "raw": "1,937",
+   "v1_normalized": "1937"
+  },
+  {
+   "raw": "0.835",
+   "v1_normalized": "0.835"
+  },
+  {
+   "raw": "83.5%",
+   "v1_normalized": "83.5%"
+  },
+  {
+   "raw": "11.1x",
+   "v1_normalized": "11.1x"
+  },
+  {
+   "raw": "19.3x",
+   "v1_normalized": "19.3x"
+  },
+  {
+   "raw": "7/18",
+   "v1_normalized": "7/18"
+  },
+  {
+   "raw": "14/18",
+   "v1_normalized": "14/18"
+  },
+  {
+   "raw": "a‐b",
+   "v1_normalized": "a-b"
+  },
+  {
+   "raw": "a‑b",
+   "v1_normalized": "a-b"
+  },
+  {
+   "raw": "a‒b",
+   "v1_normalized": "a-b"
+  },
+  {
+   "raw": "a–b",
+   "v1_normalized": "a-b"
+  },
+  {
+   "raw": "a—b",
+   "v1_normalized": "a-b"
+  },
+  {
+   "raw": "a―b",
+   "v1_normalized": "a-b"
+  },
+  {
+   "raw": "a−b",
+   "v1_normalized": "a-b"
+  },
+  {
+   "raw": "a-b",
+   "v1_normalized": "a-b"
+  },
+  {
+   "raw": "**bold**",
+   "v1_normalized": "bold"
+  },
+  {
+   "raw": "`code`",
+   "v1_normalized": "code"
+  },
+  {
+   "raw": "MiXeD CaSe",
+   "v1_normalized": "mixed case"
+  },
+  {
+   "raw": "line\\nbreak",
+   "v1_normalized": "line break"
+  },
+  {
+   "raw": "tab\\tsep",
+   "v1_normalized": "tab sep"
+  },
+  {
+   "raw": "quote\\\"inside",
+   "v1_normalized": "quote\"inside"
+  },
+  {
+   "raw": "  spaced   out  ",
+   "v1_normalized": " spaced out "
+  },
+  {
+   "raw": "1,234,567",
+   "v1_normalized": "1234567"
+  },
+  {
+   "raw": "£2.5M",
+   "v1_normalized": "£2.5m"
+  },
+  {
+   "raw": "0.0001s",
+   "v1_normalized": "0.0001s"
+  },
+  {
+   "raw": "  A\tB\nC  ",
+   "v1_normalized": " a b c "
+  },
+  {
+   "raw": "Digits 1,234 and 12,345 and 1,23",
+   "v1_normalized": "digits 1234 and 12345 and 1,23"
+  },
+  {
+   "raw": "**a** `b` c",
+   "v1_normalized": "a b c"
+  },
+  {
+   "raw": "MIXED\\nCASE",
+   "v1_normalized": "mixed case"
+  }
+ ],
+ "score_cases": [
+  {
+   "case_id": "R0000",
+   "context": "register arm anchor span packet descent corpus \n fold seal beam span a‐b verdict seal wake    span fold beam anchor descent corpus wake span \n descent beam corpus handoff seal seal corpus \t handoff handoff corpus fold descent packet verdict  \n   residual ledger residual register span span arm \t packet residual anchor anchor verdict",
+   "atoms": [
+    "descent",
+    "a‐b"
+   ],
+   "window": null,
+   "v1_normalized_len": 317,
+   "v1_correct": true,
+   "v1_first_hit_offset": 67
+  },
+  {
+   "case_id": "R0001",
+   "context": "seal seal fold ledger anchor seal descent verdict packet    ledger verdict seal residual packet arm seal   ",
+   "atoms": [
+    [
+     "verdict",
+     "£2.5M",
+     "  spaced   out  "
+    ],
+    [
+     "a–b",
+     "quote\\\"inside",
+     "seal"
+    ]
+   ],
+   "window": 50,
+   "v1_normalized_len": 102,
+   "v1_correct": true,
+   "v1_first_hit_offset": 42
+  },
+  {
+   "case_id": "R0002",
+   "context": "seal arm packet atlas ledger beam verdict  \n   corpus handoff seal arm arm atlas atlas \t span verdict ledger handoff   spaced   out   verdict 12,335 register anchor  \n   anchor handoff arm register residual atlas beam    ledger ledger descent packet fold seal anchor    residual span span beam verdict corpus verdict atlas \n",
+   "atoms": [
+    "corpus",
+    [
+     "atlas",
+     "12,335",
+     "11.1x"
+    ],
+    "  spaced   out  "
+   ],
+   "window": 300,
+   "v1_normalized_len": 298,
+   "v1_correct": true,
+   "v1_first_hit_offset": 109
+  },
+  {
+   "case_id": "R0003",
+   "context": "BEAM LEDGER ATLAS CORPUS VERDICT FOLD SEAL HANDOFF \t PACKET BEAM SEAL PACKET WAKE ARM VERDICT    CORPUS WAKE PACKET HANDOFF HANDOFF WAKE ARM    ANCHOR LEDGER REGISTER RESIDUAL FOLD WAKE ARM REGISTER \t WAKE VERDICT DESCENT DESCENT CORPUS SPAN BEAM    SPAN DESCENT ATLAS BEAM RESIDUAL BEAM",
+   "atoms": [
+    "corpus",
+    "ledger"
+   ],
+   "window": 20,
+   "v1_normalized_len": 274,
+   "v1_correct": true,
+   "v1_first_hit_offset": 18
+  },
+  {
+   "case_id": "R0004",
+   "context": "verdict packet beam packet fold register atlas packet line\\nbreak \t fold register descent register ledger anchor 14/18 atlas  \n   seal wake handoff atlas ledger fold beam \n beam span anchor residual anchor beam arm    arm beam arm handoff beam span arm  \n   register arm register descent",
+   "atoms": [
+    "atlas",
+    "line\\nbreak",
+    "MiXeD CaSe",
+    [
+     "14/18",
+     "quote\\\"inside",
+     "`code`"
+    ]
+   ],
+   "window": 50,
+   "v1_normalized_len": 269,
+   "v1_correct": false,
+   "v1_first_hit_offset": null
+  },
+  {
+   "case_id": "R0005",
+   "context": "SPAN SPAN A—B ATLAS CORPUS DESCENT PACKET ARM",
+   "atoms": [
+    "line\\nbreak",
+    "a—b",
+    [
+     "arm",
+     "**bold**"
+    ],
+    "residual"
+   ],
+   "window": 20,
+   "v1_normalized_len": 45,
+   "v1_correct": false,
+   "v1_first_hit_offset": null
+  },
+  {
+   "case_id": "R0006",
+   "context": "verdict corpus span descent packet residual verdict arm    atlas atlas corpus handoff register wake wake \t corpus anchor verdict ledger wake anchor span  \n   packet anchor packet anchor corpus arm anchor    corpus corpus ledger packet seal handoff beam    residual ledger ledger verdict descent wake beam  \n   register ledger wake fold atlas packet packet \n verdict fold ledger seal anchor anchor",
+   "atoms": [
+    "19.3x",
+    "residual",
+    [
+     "residual",
+     "seal"
+    ]
+   ],
+   "window": null,
+   "v1_normalized_len": 373,
+   "v1_correct": false,
+   "v1_first_hit_offset": null
+  },
+  {
+   "case_id": "R0007",
+   "context": "HANDOFF VERDICT CORPUS HANDOFF SPAN CORPUS FOLD \t ANCHOR DESCENT WAKE WAKE PACKET SPAN ATLAS    VERDICT",
+   "atoms": [
+    "12,335",
+    "verdict"
+   ],
+   "window": 20,
+   "v1_normalized_len": 98,
+   "v1_correct": false,
+   "v1_first_hit_offset": null
+  },
+  {
+   "case_id": "R0008",
+   "context": "ANCHOR LEDGER FOLD ANCHOR SEAL RESIDUAL FOLD RESIDUAL \t BEAM CORPUS LEDGER FOLD ATLAS CORPUS REGISTER  \n   SPAN MIXED CASE ARM REGISTER REGISTER LEDGER SPAN ARM \t FOLD VERDICT SEAL ARM ATLAS RESIDUAL LEDGER  \n   SEAL ANCHOR WAKE DESCENT LEDGER ATLAS ATLAS  \n   HANDOFF PACKET",
+   "atoms": [
+    "seal",
+    [
+     "a−b",
+     "tab\\tsep",
+     "fold"
+    ],
+    [
+     "ledger",
+     "MiXeD CaSe"
+    ]
+   ],
+   "window": null,
+   "v1_normalized_len": 256,
+   "v1_correct": true,
+   "v1_first_hit_offset": 26
+  },
+  {
+   "case_id": "R0009",
+   "context": "residual descent ledger fold beam 1,937 wake wake 0.835    atlas fold span anchor ledger span corpus \n packet anchor arm verdict",
+   "atoms": [
+    "1,937",
+    "0.835"
+   ],
+   "window": null,
+   "v1_normalized_len": 122,
+   "v1_correct": true,
+   "v1_first_hit_offset": 49
+  },
+  {
+   "case_id": "R0010",
+   "context": "anchor residual atlas span descent handoff residual    atlas atlas descent residual corpus ledger packet corpus \t anchor fold arm register anchor beam fold \n arm residual handoff beam fold verdict handoff  \n   corpus corpus packet register fold corpus ledger \n residual seal span handoff corpus register fold \t register handoff corpus seal seal",
+   "atoms": [
+    "atlas",
+    [
+     "1,937",
+     "£2.5M",
+     "a—b"
+    ]
+   ],
+   "window": null,
+   "v1_normalized_len": 328,
+   "v1_correct": false,
+   "v1_first_hit_offset": null
+  },
+  {
+   "case_id": "R0011",
+   "context": "anchor descent seal seal register descent span MiXeD CaSe span  \n   ledger seal corpus seal verdict descent residual  \n   atlas atlas residual corpus a-b",
+   "atoms": [
+    "register",
+    "atlas",
+    "MiXeD CaSe",
+    "a-b"
+   ],
+   "window": 50,
+   "v1_normalized_len": 143,
+   "v1_correct": false,
+   "v1_first_hit_offset": null
+  },
+  {
+   "case_id": "R0012",
+   "context": "span handoff span arm beam descent arm anchor \n arm packet corpus anchor descent register beam \n handoff atlas corpus span wake atlas residual  \n   packet wake packet residual ledger register residual    atlas span arm descent corpus descent residual    wake residual span descent handoff arm residual \t atlas packet seal residual span",
+   "atoms": [
+    [
+     "anchor",
+     "0.0001s"
+    ]
+   ],
+   "window": 50,
+   "v1_normalized_len": 318,
+   "v1_correct": true,
+   "v1_first_hit_offset": 39
+  },
+  {
+   "case_id": "R0013",
+   "context": "RESIDUAL WAKE REGISTER SEAL 1,234,567 SPAN SEAL FOLD  \n   ATLAS SPAN CORPUS LEDGER",
+   "atoms": [
+    "1,937",
+    "1,234,567"
+   ],
+   "window": null,
+   "v1_normalized_len": 75,
+   "v1_correct": false,
+   "v1_first_hit_offset": null
+  },
+  {
+   "case_id": "R0014",
+   "context": "corpus seal packet ledger seal wake arm \n packet corpus anchor fold seal corpus verdict  \n   seal corpus anchor",
+   "atoms": [
+    "tab\\tsep",
+    "12335"
+   ],
+   "window": 900,
+   "v1_normalized_len": 104,
+   "v1_correct": false,
+   "v1_first_hit_offset": null
+  },
+  {
+   "case_id": "R0015",
+   "context": "verdict span atlas corpus `code` atlas atlas residual  \n   beam register",
+   "atoms": [
+    "`code`"
+   ],
+   "window": null,
+   "v1_normalized_len": 65,
+   "v1_correct": true,
+   "v1_first_hit_offset": 26
+  },
+  {
+   "case_id": "R0016",
+   "context": "ATLAS LEDGER PACKET FOLD RESIDUAL PACKET ANCHOR \t WAKE REGISTER FOLD PACKET SEAL BEAM VERDICT \n PACKET FOLD REGISTER SEAL ANCHOR ARM HANDOFF  \n   11.1X",
+   "atoms": [
+    "11.1x",
+    "line\\nbreak"
+   ],
+   "window": 300,
+   "v1_normalized_len": 142,
+   "v1_correct": false,
+   "v1_first_hit_offset": null
+  },
+  {
+   "case_id": "R0017",
+   "context": "descent fold beam span seal seal packet residual \n packet residual wake wake wake corpus span \n arm verdict handoff verdict ledger verdict fold  \n   span atlas packet ledger atlas wake",
+   "atoms": [
+    "packet"
+   ],
+   "window": null,
+   "v1_normalized_len": 175,
+   "v1_correct": true,
+   "v1_first_hit_offset": 33
+  },
+  {
+   "case_id": "R0018",
+   "context": "REGISTER ATLAS LEDGER 1,234,567 HANDOFF BEAM HANDOFF BEAM \t ARM VERDICT HANDOFF BEAM SPAN ANCHOR REGISTER \t ATLAS ARM REGISTER BEAM LEDGER CORPUS BEAM \n SEAL VERDICT WAKE SPAN ATLAS HANDOFF HANDOFF \n VERDICT CORPUS REGISTER RESIDUAL FOLD LEDGER PACKET    ARM VERDICT ANCHOR SEAL SPAN CORPUS LEDGER    SPAN WAKE",
+   "atoms": [
+    "1,234,567"
+   ],
+   "window": null,
+   "v1_normalized_len": 294,
+   "v1_correct": true,
+   "v1_first_hit_offset": 22
+  },
+  {
+   "case_id": "R0019",
+   "context": "residual arm ledger verdict **bold** span fold arm \n seal verdict wake span seal   spaced   out   handoff arm \n handoff handoff verdict fold descent residual atlas fold    arm descent corpus fold register",
+   "atoms": [
+    "fold",
+    [
+     "**bold**",
+     "83.5%"
+    ],
+    "  spaced   out  ",
+    "83.5%"
+   ],
+   "window": null,
+   "v1_normalized_len": 187,
+   "v1_correct": false,
+   "v1_first_hit_offset": null
+  },
+  {
+   "case_id": "R0020",
+   "context": "descent 0.835 atlas arm handoff register span descent corpus handoff    ledger fold span descent ledger span atlas \t packet ledger verdict span arm verdict span  \n   descent ledger anchor register register beam fold    beam beam atlas fold atlas fold packet  \n   residual",
+   "atoms": [
+    [
+     "0.835",
+     "descent",
+     "7/18"
+    ],
+    "span",
+    "arm"
+   ],
+   "window": null,
+   "v1_normalized_len": 253,
+   "v1_correct": true,
+   "v1_first_hit_offset": 41
+  },
+  {
+   "case_id": "R0021",
+   "context": "FOLD ARM SEAL SEAL CORPUS ATLAS 12335 LEDGER DESCENT CORPUS    ANCHOR DESCENT ATLAS ATLAS REGISTER PACKET SPAN \n SPAN BEAM BEAM SPAN FOLD FOLD VERDICT \t VERDICT WAKE PACKET ARM ARM DESCENT FOLD \t BEAM SEAL SEAL SPAN FOLD WAKE RESIDUAL \n RESIDUAL RESIDUAL SEAL BEAM BEAM PACKET FOLD \t WAKE ATLAS LEDGER ANCHOR RESIDUAL",
+   "atoms": [
+    [
+     "12335",
+     "a−b"
+    ],
+    "arm",
+    [
+     "wake",
+     "seal"
+    ]
+   ],
+   "window": 120,
+   "v1_normalized_len": 304,
+   "v1_correct": true,
+   "v1_first_hit_offset": 32
+  },
+  {
+   "case_id": "R0022",
+   "context": "PACKET REGISTER 14/18 DESCENT FOLD 12,335 SPAN ARM REGISTER DESCENT \t FOLD REGISTER ATLAS REGISTER PACKET HANDOFF RESIDUAL    HANDOFF HANDOFF FOLD REGISTER CORPUS FOLD FOLD    BEAM BEAM PACKET FOLD BEAM SEAL WAKE \t PACKET ATLAS PACKET ATLAS PACKET",
+   "atoms": [
+    "14/18",
+    "descent",
+    "12,335"
+   ],
+   "window": null,
+   "v1_normalized_len": 236,
+   "v1_correct": true,
+   "v1_first_hit_offset": 35
+  },
+  {
+   "case_id": "R0023",
+   "context": "residual packet packet a−b span ledger descent span    wake beam 83.5% ledger arm beam descent descent  \n   packet residual corpus atlas register fold arm fold    ledger seal",
+   "atoms": [
+    [
+     "83.5%",
+     "MiXeD CaSe",
+     "1,937"
+    ],
+    [
+     "a–b",
+     "residual"
+    ],
+    "a−b"
+   ],
+   "window": 20,
+   "v1_normalized_len": 163,
+   "v1_correct": false,
+   "v1_first_hit_offset": null
+  },
+  {
+   "case_id": "R0024",
+   "context": "corpus handoff quote\\\"inside atlas 14/18 register packet ledger span    register descent beam corpus descent span register  \n   fold corpus residual beam",
+   "atoms": [
+    [
+     "corpus",
+     "quote\\\"inside",
+     "quote\\\"inside"
+    ],
+    "14/18"
+   ],
+   "window": 300,
+   "v1_normalized_len": 144,
+   "v1_correct": true,
+   "v1_first_hit_offset": 34
+  },
+  {
+   "case_id": "R0025",
+   "context": "residual span a―b span ledger descent wake beam \n atlas corpus span fold",
+   "atoms": [
+    "a―b"
+   ],
+   "window": 120,
+   "v1_normalized_len": 70,
+   "v1_correct": true,
+   "v1_first_hit_offset": 14
+  },
+  {
+   "case_id": "R0026",
+   "context": "register handoff descent packet seal register corpus arm packet  \n   register descent a‐b atlas arm packet span atlas    anchor verdict beam ledger residual handoff residual \n ledger residual wake span seal verdict residual  \n   packet residual anchor",
+   "atoms": [
+    "packet",
+    "a‐b",
+    [
+     "register",
+     "a—b",
+     "arm"
+    ]
+   ],
+   "window": 120,
+   "v1_normalized_len": 236,
+   "v1_correct": true,
+   "v1_first_hit_offset": 81
+  },
+  {
+   "case_id": "R0027",
+   "context": "PACKET DESCENT SPAN SPAN REGISTER DESCENT ANCHOR PACKET    FOLD SEAL DESCENT SPAN DESCENT VERDICT FOLD \n VERDICT BEAM ATLAS VERDICT WAKE SEAL WAKE  \n   DESCENT ATLAS PACKET HANDOFF VERDICT RESIDUAL REGISTER  \n   REGISTER SPAN SPAN LEDGER ARM ARM RESIDUAL \n SEAL SEAL BEAM SPAN VERDICT WAKE CORPUS  \n   PACKET PACKET WAKE FOLD ARM ARM SEAL \t VERDICT",
+   "atoms": [
+    "line\\nbreak",
+    [
+     "span",
+     "handoff"
+    ],
+    [
+     "83.5%",
+     "83.5%",
+     "83.5%"
+    ]
+   ],
+   "window": null,
+   "v1_normalized_len": 324,
+   "v1_correct": false,
+   "v1_first_hit_offset": null
+  },
+  {
+   "case_id": "R0028",
+   "context": "anchor register anchor packet wake anchor register \n arm seal register arm atlas verdict register 12335",
+   "atoms": [
+    "12335",
+    "register"
+   ],
+   "window": 50,
+   "v1_normalized_len": 101,
+   "v1_correct": true,
+   "v1_first_hit_offset": 96
+  },
+  {
+   "case_id": "R0029",
+   "context": "atlas atlas quote\\\"inside beam verdict arm arm residual packet \n span span register fold ledger arm fold  \n   handoff packet anchor beam span verdict packet \n ledger handoff corpus atlas atlas corpus seal    beam ledger residual seal seal handoff span \n packet",
+   "atoms": [
+    [
+     "83.5%",
+     "quote\\\"inside"
+    ],
+    [
+     "residual",
+     "verdict"
+    ]
+   ],
+   "window": null,
+   "v1_normalized_len": 245,
+   "v1_correct": true,
+   "v1_first_hit_offset": 30
+  },
+  {
+   "case_id": "R0030",
+   "context": "descent beam fold ledger corpus atlas ledger span \n atlas fold atlas descent fold seal ledger \n verdict atlas beam descent beam handoff register \t ledger residual span register descent atlas corpus  \n   arm seal seal beam wake atlas residual    residual corpus arm fold residual fold fold  \n   span seal fold seal anchor residual seal \t residual corpus anchor corpus residual register ledger  \n   fold residual verdict",
+   "atoms": [
+    [
+     "beam",
+     "a—b"
+    ]
+   ],
+   "window": null,
+   "v1_normalized_len": 392,
+   "v1_correct": true,
+   "v1_first_hit_offset": 8
+  },
+  {
+   "case_id": "R0031",
+   "context": "atlas atlas atlas anchor arm atlas wake \t register ledger arm a‒b register packet arm handoff \n register verdict ledger span register tab\\tsep arm beam    verdict atlas arm beam handoff wake verdict \t residual register wake arm wake corpus span residual  \n   anchor packet packet handoff anchor descent seal \t packet seal fold span wake handoff fold  \n   atlas arm seal verdict corpus register ledger  \n   atlas",
+   "atoms": [
+    [
+     "a—b",
+     "corpus"
+    ],
+    [
+     "7/18",
+     "tab\\tsep",
+     "14/18"
+    ],
+    "a‒b"
+   ],
+   "window": 120,
+   "v1_normalized_len": 384,
+   "v1_correct": true,
+   "v1_first_hit_offset": 130
+  },
+  {
+   "case_id": "R0032",
+   "context": "SEAL RESIDUAL SEAL DESCENT ARM BEAM BEAM ARM \t ARM DESCENT FOLD SEAL LEDGER REGISTER LEDGER PACKET    LEDGER BEAM HANDOFF FOLD SPAN ANCHOR RESIDUAL    SEAL RESIDUAL VERDICT SEAL VERDICT ARM REGISTER \t SEAL CORPUS PACKET CORPUS BEAM FOLD WAKE \t VERDICT LEDGER CORPUS DESCENT ATLAS REGISTER LEDGER    WAKE LEDGER SPAN ATLAS LEDGER BEAM WAKE \t BEAM",
+   "atoms": [
+    [
+     "fold",
+     "1,234,567",
+     "handoff"
+    ],
+    "beam"
+   ],
+   "window": 50,
+   "v1_normalized_len": 328,
+   "v1_correct": true,
+   "v1_first_hit_offset": 57
+  },
+  {
+   "case_id": "R0033",
+   "context": "WAKE LEDGER SPAN RESIDUAL **BOLD** DESCENT WAKE SPAN HANDOFF  \n   DESCENT ATLAS ARM SPAN WAKE 0.835 WAKE REGISTER    WAKE SEAL VERDICT FOLD VERDICT HANDOFF ARM  \n  ",
+   "atoms": [
+    "ledger",
+    "0.835",
+    [
+     "wake",
+     "**bold**"
+    ],
+    "83.5%"
+   ],
+   "window": 120,
+   "v1_normalized_len": 148,
+   "v1_correct": false,
+   "v1_first_hit_offset": null
+  },
+  {
+   "case_id": "R0034",
+   "context": "FOLD WAKE A−B REGISTER ANCHOR ARM BEAM REGISTER    REGISTER ATLAS ANCHOR CORPUS 1,234,567 SPAN PACKET ARM \t SEAL RESIDUAL LEDGER 0.835 WAKE RESIDUAL PACKET RESIDUAL RESIDUAL    BEAM CORPUS VERDICT RESIDUAL SPAN FOLD ATLAS \n CORPUS BEAM LEDGER ARM SEAL DESCENT SPAN \n VERDICT WAKE",
+   "atoms": [
+    [
+     "1,234,567",
+     "12335",
+     "83.5%"
+    ],
+    [
+     "wake",
+     "0.835"
+    ],
+    [
+     "a−b",
+     "12335"
+    ],
+    [
+     "quote\\\"inside",
+     "residual"
+    ]
+   ],
+   "window": 20,
+   "v1_normalized_len": 265,
+   "v1_correct": false,
+   "v1_first_hit_offset": null
+  },
+  {
+   "case_id": "R0035",
+   "context": "beam `code` wake descent   spaced   out   atlas corpus verdict descent  \n   seal span beam descent seal handoff register \t packet wake span fold ledger packet beam \n seal beam arm verdict ledger handoff residual \n fold atlas handoff anchor atlas wake span \t fold corpus residual arm atlas seal fold \t arm register beam descent wake wake packet \t residual descent seal residual",
+   "atoms": [
+    "  spaced   out  ",
+    "`code`"
+   ],
+   "window": 50,
+   "v1_normalized_len": 351,
+   "v1_correct": true,
+   "v1_first_hit_offset": 22
+  },
+  {
+   "case_id": "R0036",
+   "context": "WAKE ATLAS VERDICT RESIDUAL ANCHOR REGISTER BEAM PACKET ATLAS \n VERDICT ARM ANCHOR ANCHOR FOLD PACKET SEAL \t LEDGER ARM WAKE PACKET",
+   "atoms": [
+    "register",
+    "anchor",
+    "verdict"
+   ],
+   "window": 50,
+   "v1_normalized_len": 127,
+   "v1_correct": true,
+   "v1_first_hit_offset": 35
+  },
+  {
+   "case_id": "R0037",
+   "context": "register descent verdict register residual seal verdict residual \n atlas register residual arm arm span descent  \n   corpus wake register verdict descent residual register    corpus descent descent fold packet residual packet  \n   verdict packet verdict verdict beam ledger atlas \n anchor ledger ledger seal seal span arm  \n   arm arm fold wake corpus descent arm \n descent ledger register ledger packet",
+   "atoms": [
+    "0.835",
+    [
+     "atlas",
+     "a―b",
+     "residual"
+    ]
+   ],
+   "window": null,
+   "v1_normalized_len": 379,
+   "v1_correct": false,
+   "v1_first_hit_offset": null
+  },
+  {
+   "case_id": "R0038",
+   "context": "atlas seal wake atlas ledger 0.0001s seal beam \n packet anchor beam packet verdict register beam \t wake register ledger",
+   "atoms": [
+    "a―b",
+    "MiXeD CaSe",
+    [
+     "line\\nbreak",
+     "0.0001s",
+     "a−b"
+    ]
+   ],
+   "window": null,
+   "v1_normalized_len": 115,
+   "v1_correct": false,
+   "v1_first_hit_offset": null
+  },
+  {
+   "case_id": "R0039",
+   "context": "anchor arm ledger register handoff span £2.5M corpus  \n   beam wake **bold** corpus anchor ledger verdict beam \t verdict arm verdict corpus anchor atlas",
+   "atoms": [
+    "£2.5M",
+    "**bold**"
+   ],
+   "window": 120,
+   "v1_normalized_len": 141,
+   "v1_correct": true,
+   "v1_first_hit_offset": 63
+  },
+  {
+   "case_id": "R0040",
+   "context": "descent residual handoff 0.835 packet beam **bold** beam span packet \t atlas span verdict descent span span seal  \n   seal register fold verdict descent atlas seal \n packet fold corpus wake descent wake ledger \n span seal packet verdict anchor seal descent \t arm ledger anchor packet corpus verdict arm \t seal wake atlas ledger wake beam register \t corpus atlas arm fold wake residual fold \n atlas verdict anchor ledger",
+   "atoms": [
+    "**bold**",
+    "0.835",
+    [
+     "ledger",
+     "span",
+     "seal"
+    ]
+   ],
+   "window": 900,
+   "v1_normalized_len": 396,
+   "v1_correct": true,
+   "v1_first_hit_offset": 53
+  },
+  {
+   "case_id": "R0041",
+   "context": "ARM FOLD SPAN VERDICT CORPUS HANDOFF QUOTE\\\"INSIDE REGISTER  \n   PACKET VERDICT CORPUS ATLAS HANDOFF ATLAS QUOTE\\\"INSIDE PACKET RESIDUAL    WAKE ARM CORPUS VERDICT WAKE SEAL RESIDUAL  \n   RESIDUAL SPAN",
+   "atoms": [
+    [
+     "quote\\\"inside",
+     "a–b"
+    ],
+    "quote\\\"inside",
+    "residual"
+   ],
+   "window": 900,
+   "v1_normalized_len": 186,
+   "v1_correct": true,
+   "v1_first_hit_offset": 121
+  },
+  {
+   "case_id": "R0042",
+   "context": "anchor beam seal anchor seal residual packet corpus \t handoff atlas register seal ledger handoff arm    atlas fold corpus corpus corpus beam seal \t corpus packet corpus handoff ledger anchor packet    ledger arm verdict ledger ledger arm handoff \n seal handoff anchor corpus beam register seal    arm descent wake seal beam seal anchor  \n   arm descent seal arm beam seal atlas  \n   fold anchor beam",
+   "atoms": [
+    "seal",
+    [
+     "atlas",
+     "a−b",
+     "fold"
+    ],
+    "register",
+    "wake"
+   ],
+   "window": 300,
+   "v1_normalized_len": 374,
+   "v1_correct": true,
+   "v1_first_hit_offset": 294
+  },
+  {
+   "case_id": "R0043",
+   "context": "residual anchor 19.3x fold corpus handoff line\\nbreak verdict atlas \t beam anchor handoff beam wake arm seal \n anchor fold fold packet fold verdict fold \n ledger verdict arm handoff seal seal residual  \n   residual",
+   "atoms": [
+    "19.3x",
+    "line\\nbreak",
+    [
+     "12335",
+     "a-b"
+    ],
+    "register"
+   ],
+   "window": 900,
+   "v1_normalized_len": 202,
+   "v1_correct": false,
+   "v1_first_hit_offset": null
+  },
+  {
+   "case_id": "R0044",
+   "context": "packet span wake verdict ledger handoff residual  \n   anchor wake arm fold fold corpus corpus \n seal corpus",
+   "atoms": [
+    "1,234,567"
+   ],
+   "window": null,
+   "v1_normalized_len": 100,
+   "v1_correct": false,
+   "v1_first_hit_offset": null
+  },
+  {
+   "case_id": "R0045",
+   "context": "SPAN 7/18 LEDGER RESIDUAL ARM SPAN ATLAS PACKET  \n   DESCENT LEDGER HANDOFF CORPUS CORPUS SPAN PACKET \n DESCENT VERDICT BEAM RESIDUAL ATLAS RESIDUAL CORPUS \t WAKE DESCENT CORPUS DESCENT WAKE SEAL DESCENT \n FOLD PACKET FOLD WAKE RESIDUAL SPAN LEDGER \t REGISTER REGISTER FOLD ANCHOR ATLAS REGISTER PACKET    PACKET BEAM ARM ATLAS SPAN LEDGER FOLD \n BEAM SPAN SEAL",
+   "atoms": [
+    "7/18"
+   ],
+   "window": 20,
+   "v1_normalized_len": 343,
+   "v1_correct": true,
+   "v1_first_hit_offset": 5
+  },
+  {
+   "case_id": "R0046",
+   "context": "RESIDUAL BEAM HANDOFF SPAN REGISTER ATLAS REGISTER \n ARM ARM SEAL ATLAS ATLAS WAKE SEAL \n ANCHOR LEDGER ARM SPAN LEDGER HANDOFF REGISTER",
+   "atoms": [
+    "handoff"
+   ],
+   "window": 300,
+   "v1_normalized_len": 132,
+   "v1_correct": true,
+   "v1_first_hit_offset": 14
+  },
+  {
+   "case_id": "R0047",
+   "context": "HANDOFF WAKE LEDGER A‐B SEAL PACKET DESCENT BEAM VERDICT \t SEAL WAKE HANDOFF WAKE ANCHOR SEAL ANCHOR    CORPUS VERDICT SPAN LEDGER ANCHOR REGISTER DESCENT  \n   WAKE CORPUS RESIDUAL ARM PACKET LEDGER VERDICT \n ATLAS FOLD BEAM",
+   "atoms": [
+    "packet",
+    [
+     "a—b",
+     "a‐b",
+     "a‑b"
+    ]
+   ],
+   "window": 300,
+   "v1_normalized_len": 212,
+   "v1_correct": true,
+   "v1_first_hit_offset": 29
+  },
+  {
+   "case_id": "R0048",
+   "context": "atlas verdict corpus wake   spaced   out   seal wake packet \n packet span atlas beam wake register arm    arm descent beam register atlas atlas atlas \t corpus fold wake verdict descent anchor anchor \n span anchor span seal handoff corpus arm  \n   verdict packet register atlas wake register anchor \n beam ledger beam",
+   "atoms": [
+    "a–b",
+    [
+     "12335",
+     "wake"
+    ],
+    "  spaced   out  "
+   ],
+   "window": null,
+   "v1_normalized_len": 294,
+   "v1_correct": false,
+   "v1_first_hit_offset": null
+  },
+  {
+   "case_id": "R0049",
+   "context": "beam seal verdict a-b seal packet descent anchor \n descent beam corpus descent corpus descent atlas \t register beam descent span handoff register descent  \n   beam wake residual wake arm seal wake \t atlas seal register ledger packet corpus fold \n fold packet handoff corpus residual register corpus \t arm residual descent verdict arm corpus anchor    wake handoff arm arm anchor packet verdict \n",
+   "atoms": [
+    "a-b"
+   ],
+   "window": null,
+   "v1_normalized_len": 376,
+   "v1_correct": true,
+   "v1_first_hit_offset": 18
+  },
+  {
+   "case_id": "R0050",
+   "context": "packet corpus beam atlas verdict span span \n handoff beam arm handoff corpus span span seal    arm verdict residual corpus beam register packet \n ledger seal atlas descent verdict verdict verdict    span span corpus anchor fold packet verdict \n anchor register seal beam packet arm beam  \n   ledger register verdict fold wake span handoff \n beam wake",
+   "atoms": [
+    [
+     "a‑b",
+     "corpus",
+     "ledger"
+    ]
+   ],
+   "window": null,
+   "v1_normalized_len": 331,
+   "v1_correct": true,
+   "v1_first_hit_offset": 7
+  },
+  {
+   "case_id": "R0051",
+   "context": "arm verdict corpus span anchor anchor fold    handoff a—b beam anchor wake span span handoff  \n   span seal seal arm anchor ledger span \n residual atlas corpus seal anchor residual beam \n packet seal register corpus beam corpus fold    anchor register register span arm anchor verdict \n descent ledger",
+   "atoms": [
+    "a—b"
+   ],
+   "window": null,
+   "v1_normalized_len": 284,
+   "v1_correct": true,
+   "v1_first_hit_offset": 51
+  },
+  {
+   "case_id": "R0052",
+   "context": "REGISTER SEAL DESCENT DESCENT BEAM ARM HANDOFF    SPAN ARM DESCENT RESIDUAL ATLAS 0.835 TAB\\TSEP LINE\\NBREAK",
+   "atoms": [
+    [
+     "0.835",
+     "14/18"
+    ],
+    [
+     "tab\\tsep",
+     "packet"
+    ],
+    "line\\nbreak"
+   ],
+   "window": 20,
+   "v1_normalized_len": 105,
+   "v1_correct": false,
+   "v1_first_hit_offset": null
+  },
+  {
+   "case_id": "R0053",
+   "context": "residual packet descent fold quote\\\"inside handoff seal packet \n span handoff arm arm register fold seal \n register packet descent register anchor handoff descent \t fold span verdict atlas atlas arm packet  \n   anchor fold corpus residual ledger ledger residual  \n   descent ledger beam wake verdict seal span \n anchor arm residual residual span",
+   "atoms": [
+    "fold",
+    "quote\\\"inside"
+   ],
+   "window": 20,
+   "v1_normalized_len": 326,
+   "v1_correct": true,
+   "v1_first_hit_offset": 29
+  },
+  {
+   "case_id": "R0054",
+   "context": "RESIDUAL REGISTER 1,234,567 PACKET REGISTER LEDGER BEAM SPAN  \n   SEAL DESCENT SEAL LEDGER RESIDUAL BEAM DESCENT \n RESIDUAL REGISTER ANCHOR REGISTER BEAM ARM DESCENT    HANDOFF SEAL VERDICT WAKE WAKE VERDICT WAKE   ",
+   "atoms": [
+    "1,234,567"
+   ],
+   "window": 120,
+   "v1_normalized_len": 201,
+   "v1_correct": true,
+   "v1_first_hit_offset": 18
+  },
+  {
+   "case_id": "R0055",
+   "context": "seal 12,335 beam   spaced   out   residual beam anchor descent verdict 83.5%    handoff register verdict atlas",
+   "atoms": [
+    [
+     "83.5%",
+     "residual"
+    ],
+    "handoff",
+    [
+     "  spaced   out  ",
+     "a‒b"
+    ],
+    "12,335"
+   ],
+   "window": 300,
+   "v1_normalized_len": 100,
+   "v1_correct": true,
+   "v1_first_hit_offset": 70
+  },
+  {
+   "case_id": "R0056",
+   "context": "atlas fold verdict fold arm handoff packet verdict    register wake fold seal fold verdict packet \n verdict handoff register fold packet handoff packet \t handoff wake fold seal seal descent seal    atlas register handoff beam ledger packet handoff \n seal fold packet ledger register ledger span \n handoff verdict span residual ledger packet fold \t arm ledger register packet register span corpus  \n   register fold residual",
+   "atoms": [
+    "7/18",
+    "arm"
+   ],
+   "window": 20,
+   "v1_normalized_len": 402,
+   "v1_correct": false,
+   "v1_first_hit_offset": null
+  },
+  {
+   "case_id": "R0057",
+   "context": "residual atlas descent handoff register beam ledger    beam descent arm seal atlas ledger arm \n anchor handoff residual fold atlas fold descent \n span span handoff anchor descent fold packet \t beam handoff ledger descent fold span beam  \n   arm",
+   "atoms": [
+    "a–b"
+   ],
+   "window": null,
+   "v1_normalized_len": 230,
+   "v1_correct": false,
+   "v1_first_hit_offset": null
+  },
+  {
+   "case_id": "R0058",
+   "context": "anchor atlas fold arm fold fold wake  \n   ledger descent 14/18 7/18",
+   "atoms": [
+    [
+     "register",
+     "14/18",
+     "verdict"
+    ],
+    "7/18",
+    "a‒b"
+   ],
+   "window": null,
+   "v1_normalized_len": 62,
+   "v1_correct": false,
+   "v1_first_hit_offset": null
+  },
+  {
+   "case_id": "R0059",
+   "context": "ANCHOR LEDGER WAKE HANDOFF RESIDUAL REGISTER DESCENT ATLAS \t CORPUS ANCHOR LEDGER ANCHOR BEAM ANCHOR",
+   "atoms": [
+    "handoff"
+   ],
+   "window": 300,
+   "v1_normalized_len": 98,
+   "v1_correct": true,
+   "v1_first_hit_offset": 19
+  },
+  {
+   "case_id": "R0060",
+   "context": "RESIDUAL VERDICT FOLD SPAN ATLAS SEAL 1,937 SEAL \t SEAL LEDGER HANDOFF WAKE LEDGER ANCHOR RESIDUAL \n HANDOFF FOLD SEAL PACKET ANCHOR PACKET BEAM \t REGISTER ARM FOLD CORPUS",
+   "atoms": [
+    "MiXeD CaSe",
+    "1,937"
+   ],
+   "window": 900,
+   "v1_normalized_len": 164,
+   "v1_correct": false,
+   "v1_first_hit_offset": null
+  },
+  {
+   "case_id": "R0061",
+   "context": "handoff span residual fold span corpus wake \n wake beam corpus beam wake residual atlas \t verdict anchor residual residual residual residual corpus \t fold descent descent beam arm arm span  \n   descent arm arm wake span register atlas \n handoff verdict seal register register fold register \n span packet",
+   "atoms": [
+    "packet"
+   ],
+   "window": null,
+   "v1_normalized_len": 288,
+   "v1_correct": true,
+   "v1_first_hit_offset": 282
+  },
+  {
+   "case_id": "R0062",
+   "context": "ledger ledger a–b handoff handoff register span anchor    verdict wake fold verdict handoff span corpus  \n   span seal anchor corpus verdict span fold \n register seal beam beam anchor arm handoff \t fold",
+   "atoms": [
+    "a–b"
+   ],
+   "window": 900,
+   "v1_normalized_len": 190,
+   "v1_correct": true,
+   "v1_first_hit_offset": 14
+  },
+  {
+   "case_id": "R0063",
+   "context": "register ledger seal corpus residual fold corpus \t span",
+   "atoms": [
+    "1,234,567"
+   ],
+   "window": 20,
+   "v1_normalized_len": 53,
+   "v1_correct": false,
+   "v1_first_hit_offset": null
+  },
+  {
+   "case_id": "R0064",
+   "context": "atlas beam ledger seal ledger a—b span seal 11.1x  \n   corpus handoff atlas anchor anchor register span a-b fold  \n   atlas packet descent seal register descent span \t beam verdict residual anchor wake ledger ledger    seal ledger arm arm anchor seal anchor    packet beam arm atlas verdict verdict corpus    ledger seal wake register beam handoff register    handoff packet",
+   "atoms": [
+    "11.1x",
+    "a-b",
+    [
+     "a‐b",
+     "anchor"
+    ],
+    "a—b"
+   ],
+   "window": 50,
+   "v1_normalized_len": 350,
+   "v1_correct": true,
+   "v1_first_hit_offset": 44
+  },
+  {
+   "case_id": "R0065",
+   "context": "arm anchor arm span descent seal wake    verdict handoff residual span packet atlas a–b seal MiXeD CaSe",
+   "atoms": [
+    "0.0001s",
+    "seal",
+    [
+     "a–b",
+     "7/18",
+     "11.1x"
+    ],
+    "MiXeD CaSe"
+   ],
+   "window": 120,
+   "v1_normalized_len": 100,
+   "v1_correct": false,
+   "v1_first_hit_offset": null
+  },
+  {
+   "case_id": "R0066",
+   "context": "ANCHOR HANDOFF WAKE ARM ATLAS REGISTER SEAL ARM    VERDICT ARM LEDGER PACKET ANCHOR PACKET LEDGER BEAM    LEDGER VERDICT PACKET ARM DESCENT 11.1X FOLD ANCHOR  \n   BEAM ANCHOR ATLAS BEAM REGISTER RESIDUAL BEAM \t PACKET ARM SEAL WAKE BEAM FOLD BEAM \t ATLAS BEAM RESIDUAL SEAL SPAN DESCENT FOLD  \n   WAKE",
+   "atoms": [
+    "11.1x",
+    "seal",
+    [
+     "packet",
+     "`code`",
+     "a‐b"
+    ]
+   ],
+   "window": 20,
+   "v1_normalized_len": 281,
+   "v1_correct": false,
+   "v1_first_hit_offset": null
+  },
+  {
+   "case_id": "R0067",
+   "context": "fold wake wake wake ledger corpus `code` handoff \n fold register handoff ledger packet",
+   "atoms": [
+    [
+     "MiXeD CaSe",
+     "`code`",
+     "arm"
+    ]
+   ],
+   "window": 900,
+   "v1_normalized_len": 82,
+   "v1_correct": true,
+   "v1_first_hit_offset": 34
+  },
+  {
+   "case_id": "R0068",
+   "context": "handoff beam residual corpus register anchor beam \n packet arm arm fold arm arm packet    corpus residual wake packet atlas wake verdict \t seal",
+   "atoms": [
+    [
+     "12335",
+     "residual"
+    ],
+    "a‑b"
+   ],
+   "window": null,
+   "v1_normalized_len": 136,
+   "v1_correct": false,
+   "v1_first_hit_offset": null
+  },
+  {
+   "case_id": "R0069",
+   "context": "packet fold verdict fold span handoff verdict wake \t arm packet fold handoff atlas anchor anchor \n register wake seal corpus packet fold seal \t beam register corpus beam span descent ledger    arm",
+   "atoms": [
+    "fold",
+    "7/18"
+   ],
+   "window": 900,
+   "v1_normalized_len": 187,
+   "v1_correct": false,
+   "v1_first_hit_offset": null
+  },
+  {
+   "case_id": "R0070",
+   "context": "DESCENT WAKE VERDICT VERDICT FOLD LEDGER CORPUS **BOLD**    SPAN FOLD SPAN CORPUS ANCHOR ARM",
+   "atoms": [
+    "**bold**",
+    [
+     "a—b",
+     "verdict",
+     "a–b"
+    ]
+   ],
+   "window": 50,
+   "v1_normalized_len": 85,
+   "v1_correct": true,
+   "v1_first_hit_offset": 48
+  },
+  {
+   "case_id": "R0071",
+   "context": "beam wake fold verdict wake beam atlas 7/18 corpus",
+   "atoms": [
+    "atlas",
+    "7/18",
+    "corpus"
+   ],
+   "window": 20,
+   "v1_normalized_len": 50,
+   "v1_correct": true,
+   "v1_first_hit_offset": 44
+  },
+  {
+   "case_id": "R0072",
+   "context": "BEAM ATLAS SPAN ATLAS SPAN CORPUS PACKET DESCENT \n FOLD SPAN REGISTER LEDGER SPAN DESCENT SPAN    LEDGER SEAL",
+   "atoms": [
+    "descent",
+    "verdict"
+   ],
+   "window": 50,
+   "v1_normalized_len": 104,
+   "v1_correct": false,
+   "v1_first_hit_offset": null
+  },
+  {
+   "case_id": "R0073",
+   "context": "FOLD ATLAS VERDICT LEDGER TAB\\TSEP REGISTER BEAM RESIDUAL \n ARM HANDOFF RESIDUAL WAKE REGISTER DESCENT PACKET  \n   HANDOFF VERDICT HANDOFF A—B CORPUS HANDOFF ARM DESCENT \t LEDGER LEDGER",
+   "atoms": [
+    [
+     "**bold**",
+     "a−b",
+     "a‑b"
+    ],
+    [
+     "a—b",
+     "atlas"
+    ],
+    [
+     "tab\\tsep",
+     "anchor"
+    ]
+   ],
+   "window": null,
+   "v1_normalized_len": 176,
+   "v1_correct": false,
+   "v1_first_hit_offset": null
+  },
+  {
+   "case_id": "R0074",
+   "context": "ledger verdict fold register quote\\\"inside ledger atlas wake \n corpus handoff a‒b seal arm handoff fold arm    anchor ledger arm residual fold fold verdict  \n   ledger corpus packet seal register register anchor    fold",
+   "atoms": [
+    "quote\\\"inside",
+    [
+     "14/18",
+     "a‒b"
+    ]
+   ],
+   "window": null,
+   "v1_normalized_len": 205,
+   "v1_correct": true,
+   "v1_first_hit_offset": 75
+  },
+  {
+   "case_id": "R0075",
+   "context": "atlas packet wake `code` descent seal fold corpus \n ledger handoff beam ledger beam seal arm \n",
+   "atoms": [
+    "`code`",
+    "a―b"
+   ],
+   "window": 120,
+   "v1_normalized_len": 89,
+   "v1_correct": false,
+   "v1_first_hit_offset": null
+  },
+  {
+   "case_id": "R0076",
+   "context": "span fold seal verdict a—b fold arm packet    corpus anchor 12335 register seal beam arm span atlas    span beam anchor span beam register handoff    atlas arm atlas descent corpus handoff anchor  \n  ",
+   "atoms": [
+    "12335",
+    "a—b",
+    "arm"
+   ],
+   "window": null,
+   "v1_normalized_len": 187,
+   "v1_correct": true,
+   "v1_first_hit_offset": 57
+  },
+  {
+   "case_id": "R0077",
+   "context": "CORPUS ATLAS VERDICT REGISTER VERDICT ANCHOR PACKET    DESCENT ARM SPAN HANDOFF PACKET REGISTER 19.3X LEDGER  \n   FOLD ATLAS RESIDUAL SPAN BEAM SEAL SPAN \n CORPUS PACKET HANDOFF CORPUS FOLD SPAN ATLAS    PACKET ARM WAKE CORPUS PACKET SPAN HANDOFF  \n   LEDGER LEDGER ATLAS BEAM WAKE REGISTER HANDOFF \n PACKET WAKE HANDOFF SEAL VERDICT DESCENT ANCHOR  \n   LEDGER SEAL PACKET REGISTER DESCENT ANCHOR WAKE \n LEDGER BEAM",
+   "atoms": [
+    "19.3x"
+   ],
+   "window": null,
+   "v1_normalized_len": 388,
+   "v1_correct": true,
+   "v1_first_hit_offset": 93
+  },
+  {
+   "case_id": "R0078",
+   "context": "packet wake arm verdict seal beam beam `code` verdict seal \t ledger handoff handoff handoff wake residual atlas    register residual anchor descent fold residual arm \t beam handoff arm handoff seal packet fold \t seal packet anchor verdict descent handoff beam    handoff descent residual wake register",
+   "atoms": [
+    [
+     "a−b",
+     "line\\nbreak",
+     "`code`"
+    ],
+    "wake",
+    "beam"
+   ],
+   "window": null,
+   "v1_normalized_len": 287,
+   "v1_correct": true,
+   "v1_first_hit_offset": 39
+  },
+  {
+   "case_id": "R0079",
+   "context": "arm a–b anchor verdict residual anchor anchor wake    beam arm verdict register span packet arm  \n   corpus residual residual residual corpus packet verdict \n packet atlas ledger ledger wake descent seal \n fold register handoff beam arm ledger corpus \n residual residual beam beam verdict register atlas \n handoff span ledger residual residual ledger anchor    ledger residual descent handoff",
+   "atoms": [
+    "a–b"
+   ],
+   "window": null,
+   "v1_normalized_len": 373,
+   "v1_correct": true,
+   "v1_first_hit_offset": 4
+  },
+  {
+   "case_id": "R0080",
+   "context": "CORPUS BEAM ATLAS FOLD RESIDUAL VERDICT FOLD \t REGISTER SEAL ATLAS 14/18 VERDICT ARM WAKE HANDOFF    RESIDUAL REGISTER ATLAS WAKE HANDOFF DESCENT DESCENT \t WAKE VERDICT ATLAS FOLD VERDICT ARM FOLD  \n   ARM ARM LEDGER FOLD ANCHOR BEAM ATLAS    CORPUS REGISTER BEAM PACKET ARM ANCHOR ANCHOR \t DESCENT VERDICT WAKE ATLAS WAKE PACKET LEDGER \n ARM VERDICT SPAN CORPUS CORPUS REGISTER SPAN   ",
+   "atoms": [
+    "14/18"
+   ],
+   "window": null,
+   "v1_normalized_len": 365,
+   "v1_correct": true,
+   "v1_first_hit_offset": 65
+  },
+  {
+   "case_id": "R0081",
+   "context": "residual fold descent a―b packet span atlas packet  \n   atlas handoff beam handoff corpus anchor handoff    arm register beam seal residual wake span \t anchor handoff arm",
+   "atoms": [
+    "`code`",
+    [
+     "span",
+     "a―b"
+    ]
+   ],
+   "window": 900,
+   "v1_normalized_len": 160,
+   "v1_correct": false,
+   "v1_first_hit_offset": null
+  },
+  {
+   "case_id": "R0082",
+   "context": "descent verdict verdict packet anchor residual residual \n descent arm span fold wake handoff   spaced   out   a–b",
+   "atoms": [
+    "  spaced   out  ",
+    [
+     "a–b",
+     "12,335"
+    ],
+    "handoff"
+   ],
+   "window": 20,
+   "v1_normalized_len": 105,
+   "v1_correct": true,
+   "v1_first_hit_offset": 102
+  },
+  {
+   "case_id": "R0083",
+   "context": "handoff anchor ledger handoff seal ledger verdict \n beam fold wake residual residual tab\\tsep packet register \t verdict ledger handoff residual span wake atlas corpus    atlas corpus wake verdict verdict register residual wake  \n   atlas fold wake arm register register descent \n descent wake fold wake handoff seal ledger \n descent handoff ledger beam register arm ledger \n wake arm",
+   "atoms": [
+    [
+     "fold",
+     "arm",
+     "residual"
+    ],
+    "verdict",
+    [
+     "14/18",
+     "wake",
+     "1,234,567"
+    ],
+    [
+     "tab\\tsep",
+     "ledger",
+     "tab\\tsep"
+    ]
+   ],
+   "window": 120,
+   "v1_normalized_len": 364,
+   "v1_correct": true,
+   "v1_first_hit_offset": 60
+  },
+  {
+   "case_id": "R0084",
+   "context": "ANCHOR VERDICT HANDOFF WAKE REGISTER DESCENT REGISTER \n VERDICT BEAM SEAL ANCHOR SPAN SEAL ARM \n ATLAS PACKET RESIDUAL ANCHOR HANDOFF SPAN BEAM    PACKET SEAL ATLAS ANCHOR ANCHOR WAKE HANDOFF \t WAKE ATLAS SPAN DESCENT DESCENT ARM FOLD  \n   SEAL BEAM ATLAS ANCHOR LEDGER REGISTER BEAM    RESIDUAL RESIDUAL PACKET SPAN PACKET VERDICT VERDICT \n ATLAS REGISTER HANDOFF HANDOFF REGISTER SPAN VERDICT \t RESIDUAL REGISTER PACKET RESIDUAL",
+   "atoms": [
+    "handoff"
+   ],
+   "window": 120,
+   "v1_normalized_len": 409,
+   "v1_correct": true,
+   "v1_first_hit_offset": 15
+  },
+  {
+   "case_id": "R0085",
+   "context": "arm a–b handoff corpus wake corpus beam atlas \n descent wake register verdict fold 0.835 handoff anchor ledger  \n   descent corpus handoff anchor arm beam span \t handoff span anchor arm atlas register arm  \n   corpus verdict packet residual fold wake fold    atlas descent wake seal descent anchor span  \n   ledger descent beam anchor span verdict handoff  \n   verdict descent ledger",
+   "atoms": [
+    "verdict",
+    "0.835",
+    "a–b"
+   ],
+   "window": null,
+   "v1_normalized_len": 356,
+   "v1_correct": true,
+   "v1_first_hit_offset": 81
+  },
+  {
+   "case_id": "R0086",
+   "context": "seal arm line\\nbreak seal wake beam anchor atlas seal \t arm descent residual anchor ledger residual seal packet    seal beam packet packet seal seal register \t residual verdict anchor span span atlas fold    seal handoff handoff fold verdict ledger seal  \n   ledger register register ledger span verdict span  \n   residual arm",
+   "atoms": [
+    [
+     "fold",
+     "line\\nbreak"
+    ],
+    "descent",
+    "beam"
+   ],
+   "window": null,
+   "v1_normalized_len": 305,
+   "v1_correct": true,
+   "v1_first_hit_offset": 57
+  },
+  {
+   "case_id": "R0087",
+   "context": "fold atlas handoff residual a‑b span residual atlas    span verdict span descent register packet handoff \t verdict register a−b seal anchor corpus beam verdict 0.835   ",
+   "atoms": [
+    "a‑b",
+    "0.835",
+    "a−b"
+   ],
+   "window": null,
+   "v1_normalized_len": 161,
+   "v1_correct": true,
+   "v1_first_hit_offset": 155
+  },
+  {
+   "case_id": "R0088",
+   "context": "ANCHOR RESIDUAL RESIDUAL ATLAS VERDICT DESCENT ARM \n CORPUS WAKE LEDGER ANCHOR LEDGER PACKET",
+   "atoms": [
+    "arm"
+   ],
+   "window": null,
+   "v1_normalized_len": 90,
+   "v1_correct": true,
+   "v1_first_hit_offset": 47
+  },
+  {
+   "case_id": "R0089",
+   "context": "fold descent arm   spaced   out   anchor residual descent ledger \t ledger residual verdict packet",
+   "atoms": [
+    "atlas",
+    "  spaced   out  "
+   ],
+   "window": 300,
+   "v1_normalized_len": 89,
+   "v1_correct": false,
+   "v1_first_hit_offset": null
+  },
+  {
+   "case_id": "R0090",
+   "context": "SEAL 0.0001S HANDOFF FOLD ARM RESIDUAL ATLAS ATLAS  \n   BEAM FOLD PACKET REGISTER WAKE SPAN SEAL \n SEAL REGISTER REGISTER CORPUS REGISTER ANCHOR HANDOFF    SEAL",
+   "atoms": [
+    [
+     "packet",
+     "7/18",
+     "beam"
+    ],
+    "0.0001s"
+   ],
+   "window": 20,
+   "v1_normalized_len": 150,
+   "v1_correct": false,
+   "v1_first_hit_offset": null
+  },
+  {
+   "case_id": "R0091",
+   "context": "fold   spaced   out   wake handoff descent descent arm anchor \n beam   spaced   out   corpus a‑b",
+   "atoms": [
+    "  spaced   out  ",
+    "  spaced   out  ",
+    [
+     "a‑b",
+     "11.1x",
+     "ledger"
+    ],
+    "12335"
+   ],
+   "window": 20,
+   "v1_normalized_len": 82,
+   "v1_correct": false,
+   "v1_first_hit_offset": null
+  },
+  {
+   "case_id": "R0092",
+   "context": "ANCHOR PACKET SEAL LEDGER BEAM CORPUS PACKET A-B \n VERDICT ARM",
+   "atoms": [
+    "verdict",
+    "a-b",
+    "arm",
+    "ledger"
+   ],
+   "window": null,
+   "v1_normalized_len": 60,
+   "v1_correct": true,
+   "v1_first_hit_offset": 57
+  },
+  {
+   "case_id": "R0093",
+   "context": "ledger anchor residual fold seal arm seal register wake \t ledger arm seal residual register residual beam handoff \t register atlas packet descent anchor corpus arm    span descent span seal atlas seal beam \n beam verdict handoff packet ledger fold packet \n",
+   "atoms": [
+    [
+     "a‒b",
+     "register",
+     "anchor"
+    ],
+    "fold",
+    "residual"
+   ],
+   "window": null,
+   "v1_normalized_len": 246,
+   "v1_correct": true,
+   "v1_first_hit_offset": 23
+  },
+  {
+   "case_id": "R0094",
+   "context": "arm arm packet 0.0001s residual beam atlas 19.3x arm    seal atlas seal ledger register ledger corpus  \n   anchor fold anchor atlas packet ledger wake  \n   verdict beam packet handoff seal verdict span  \n   beam wake arm span beam wake span \t handoff ledger wake packet verdict corpus span \t ledger corpus residual arm verdict corpus atlas \n residual register descent descent verdict register register  \n   anchor ledger corpus atlas",
+   "atoms": [
+    [
+     "0.0001s",
+     "corpus"
+    ],
+    "19.3x"
+   ],
+   "window": 50,
+   "v1_normalized_len": 404,
+   "v1_correct": true,
+   "v1_first_hit_offset": 43
+  },
+  {
+   "case_id": "R0095",
+   "context": "register packet span corpus tab\\tsep beam handoff span seal handoff \n beam beam atlas wake anchor verdict corpus  \n   packet anchor seal seal corpus arm register \n beam packet residual beam atlas handoff ledger \n",
+   "atoms": [
+    [
+     "83.5%",
+     "0.835",
+     "MiXeD CaSe"
+    ],
+    [
+     "tab\\tsep",
+     "14/18"
+    ],
+    "handoff",
+    "handoff"
+   ],
+   "window": null,
+   "v1_normalized_len": 201,
+   "v1_correct": false,
+   "v1_first_hit_offset": null
+  },
+  {
+   "case_id": "R0096",
+   "context": "packet residual verdict packet ledger atlas residual residual    register ledger handoff atlas seal residual packet    verdict register corpus atlas arm corpus wake  \n   anchor span packet wake atlas beam anchor \n arm span fold beam packet span register  \n   wake descent atlas residual anchor wake wake \n handoff corpus handoff span packet register anchor \n residual span register corpus fold packet anchor \t verdict",
+   "atoms": [
+    [
+     "19.3x",
+     "atlas"
+    ]
+   ],
+   "window": 120,
+   "v1_normalized_len": 393,
+   "v1_correct": true,
+   "v1_first_hit_offset": 38
+  },
+  {
+   "case_id": "R0097",
+   "context": "residual span arm anchor wake anchor wake \n descent handoff anchor a‑b fold seal anchor fold  \n   verdict verdict descent atlas anchor seal descent  \n   packet descent corpus descent arm anchor atlas \n fold fold fold descent arm atlas seal    span corpus wake arm verdict descent seal  \n   anchor register register residual descent register ledger  \n   descent",
+   "atoms": [
+    "a‑b"
+   ],
+   "window": null,
+   "v1_normalized_len": 333,
+   "v1_correct": true,
+   "v1_first_hit_offset": 65
+  },
+  {
+   "case_id": "R0098",
+   "context": "ledger handoff arm packet 19.3x register anchor handoff    residual verdict £2.5M handoff",
+   "atoms": [
+    [
+     "£2.5M",
+     "quote\\\"inside"
+    ],
+    "  spaced   out  ",
+    "19.3x"
+   ],
+   "window": 20,
+   "v1_normalized_len": 86,
+   "v1_correct": false,
+   "v1_first_hit_offset": null
+  },
+  {
+   "case_id": "R0099",
+   "context": "residual span a—b atlas ledger ledger residual beam  \n   descent span atlas ledger wake seal residual  \n   register beam span handoff arm register beam  \n   beam handoff",
+   "atoms": [
+    "a—b"
+   ],
+   "window": 50,
+   "v1_normalized_len": 154,
+   "v1_correct": true,
+   "v1_first_hit_offset": 14
+  },
+  {
+   "case_id": "R0100",
+   "context": "ledger a–b descent residual descent descent seal descent \t verdict handoff a‐b 12335",
+   "atoms": [
+    "a–b",
+    "a‐b",
+    "12335"
+   ],
+   "window": null,
+   "v1_normalized_len": 82,
+   "v1_correct": true,
+   "v1_first_hit_offset": 77
+  },
+  {
+   "case_id": "R0101",
+   "context": "residual beam register corpus corpus ledger verdict corpus \t seal span seal packet descent beam atlas",
+   "atoms": [
+    "packet",
+    [
+     "£2.5M",
+     "anchor"
+    ],
+    "corpus"
+   ],
+   "window": 900,
+   "v1_normalized_len": 99,
+   "v1_correct": false,
+   "v1_first_hit_offset": null
+  },
+  {
+   "case_id": "R0102",
+   "context": "PACKET ANCHOR FOLD ARM ATLAS A―B SPAN ATLAS 1,937 \t",
+   "atoms": [
+    "a―b",
+    "1,937"
+   ],
+   "window": 120,
+   "v1_normalized_len": 49,
+   "v1_correct": true,
+   "v1_first_hit_offset": 44
+  },
+  {
+   "case_id": "R0103",
+   "context": "atlas seal wake wake verdict arm ledger atlas    span wake packet span wake span beam arm  \n   fold beam arm corpus descent register descent \n ledger register arm a‒b beam descent packet atlas \t verdict register span span seal residual descent    seal atlas packet anchor ledger packet residual \n packet descent handoff arm register corpus ledger \t corpus",
+   "atoms": [
+    [
+     "verdict",
+     "a–b"
+    ],
+    "a‒b",
+    "span"
+   ],
+   "window": null,
+   "v1_normalized_len": 336,
+   "v1_correct": true,
+   "v1_first_hit_offset": 153
+  },
+  {
+   "case_id": "R0104",
+   "context": "FOLD VERDICT RESIDUAL ATLAS PACKET ARM 0.0001S SPAN HANDOFF    FOLD ANCHOR FOLD SEAL SEAL PACKET SEAL \t CORPUS ARM PACKET SEAL CORPUS RESIDUAL PACKET    SPAN DESCENT SPAN ANCHOR PACKET ARM ANCHOR    DESCENT RESIDUAL BEAM BEAM ATLAS REGISTER PACKET  \n   FOLD REGISTER VERDICT REGISTER ANCHOR SPAN PACKET \n SPAN CORPUS ATLAS BEAM DESCENT",
+   "atoms": [
+    "0.0001s",
+    "handoff"
+   ],
+   "window": 20,
+   "v1_normalized_len": 317,
+   "v1_correct": true,
+   "v1_first_hit_offset": 52
+  },
+  {
+   "case_id": "R0105",
+   "context": "arm ledger descent descent a—b anchor register span 1,937  \n   arm anchor atlas atlas descent corpus handoff    residual packet anchor beam handoff span handoff atlas    verdict packet ledger beam corpus verdict anchor \t verdict beam descent arm beam arm packet \n anchor",
+   "atoms": [
+    [
+     "register",
+     "atlas",
+     "1,937"
+    ],
+    "anchor",
+    "a—b"
+   ],
+   "window": 20,
+   "v1_normalized_len": 254,
+   "v1_correct": true,
+   "v1_first_hit_offset": 38
+  },
+  {
+   "case_id": "R0106",
+   "context": "register atlas register handoff fold 0.0001s descent beam  \n   verdict fold fold handoff register fold span \t verdict beam descent verdict fold residual beam  \n   residual descent wake",
+   "atoms": [
+    [
+     "a‒b",
+     "0.0001s",
+     "register"
+    ]
+   ],
+   "window": null,
+   "v1_normalized_len": 172,
+   "v1_correct": true,
+   "v1_first_hit_offset": 0
+  },
+  {
+   "case_id": "R0107",
+   "context": "ledger beam register wake anchor atlas verdict    arm handoff span residual verdict span 14/18 handoff beam \t atlas residual anchor handoff atlas residual beam  \n   handoff handoff atlas span beam handoff atlas \n ledger descent packet wake seal verdict beam \t verdict residual packet residual descent",
+   "atoms": [
+    [
+     "11.1x",
+     "handoff",
+     "11.1x"
+    ],
+    "14/18",
+    [
+     "14/18",
+     "83.5%",
+     "a–b"
+    ]
+   ],
+   "window": null,
+   "v1_normalized_len": 286,
+   "v1_correct": true,
+   "v1_first_hit_offset": 86
+  },
+  {
+   "case_id": "R0108",
+   "context": "HANDOFF BEAM ARM ARM 83.5% VERDICT 0.835 ANCHOR",
+   "atoms": [
+    [
+     "`code`",
+     "a―b",
+     "tab\\tsep"
+    ],
+    [
+     "£2.5M",
+     "0.835",
+     "14/18"
+    ],
+    [
+     "£2.5M",
+     "19.3x",
+     "83.5%"
+    ],
+    [
+     "anchor",
+     "a–b",
+     "1,234,567"
+    ]
+   ],
+   "window": 900,
+   "v1_normalized_len": 47,
+   "v1_correct": false,
+   "v1_first_hit_offset": null
+  },
+  {
+   "case_id": "R0109",
+   "context": "corpus ledger handoff fold corpus fold seal \n span wake packet residual ledger register fold register  \n   corpus fold span",
+   "atoms": [
+    "83.5%",
+    "ledger"
+   ],
+   "window": 300,
+   "v1_normalized_len": 116,
+   "v1_correct": false,
+   "v1_first_hit_offset": null
+  },
+  {
+   "case_id": "R0110",
+   "context": "descent wake a-b handoff beam arm fold span span \n ledger handoff 1,937 1,234,567",
+   "atoms": [
+    [
+     "14/18",
+     "1,234,567",
+     "a―b"
+    ],
+    [
+     "beam",
+     "beam",
+     "12335"
+    ],
+    "a-b",
+    "1,937"
+   ],
+   "window": null,
+   "v1_normalized_len": 76,
+   "v1_correct": true,
+   "v1_first_hit_offset": 64
+  },
+  {
+   "case_id": "R0111",
+   "context": "handoff seal register verdict handoff wake packet atlas    fold atlas handoff corpus anchor descent residual    anchor ledger verdict descent descent",
+   "atoms": [
+    "handoff",
+    "wake",
+    "verdict"
+   ],
+   "window": null,
+   "v1_normalized_len": 143,
+   "v1_correct": true,
+   "v1_first_hit_offset": 38
+  },
+  {
+   "case_id": "R0112",
+   "context": "wake seal residual descent 12,335 seal beam verdict  \n   handoff residual fold wake packet corpus packet \n ledger atlas ledger span arm seal arm  \n  ",
+   "atoms": [
+    "residual",
+    "12,335"
+   ],
+   "window": 20,
+   "v1_normalized_len": 137,
+   "v1_correct": true,
+   "v1_first_hit_offset": 27
+  },
+  {
+   "case_id": "R0113",
+   "context": "verdict beam corpus handoff span arm beam 83.5%    descent wake seal fold fold atlas seal \n anchor verdict corpus verdict descent descent register    descent anchor packet descent verdict descent beam \t fold corpus register verdict packet fold beam    handoff arm",
+   "atoms": [
+    "83.5%"
+   ],
+   "window": 20,
+   "v1_normalized_len": 250,
+   "v1_correct": true,
+   "v1_first_hit_offset": 42
+  },
+  {
+   "case_id": "R0114",
+   "context": "arm corpus ledger verdict descent beam beam 19.3x  \n   arm 12335 descent `code` register fold verdict packet handoff  \n   verdict beam wake span arm arm anchor \n seal residual arm span register descent ledger \t span wake register span fold atlas",
+   "atoms": [
+    [
+     "12335",
+     "£2.5M",
+     "a―b"
+    ],
+    "19.3x",
+    [
+     "0.835",
+     "`code`",
+     "12335"
+    ]
+   ],
+   "window": 300,
+   "v1_normalized_len": 229,
+   "v1_correct": true,
+   "v1_first_hit_offset": 54
+  },
+  {
+   "case_id": "R0115",
+   "context": "ARM ANCHOR BEAM HANDOFF VERDICT REGISTER DESCENT ANCHOR \n ARM ATLAS PACKET SEAL WAKE CORPUS SEAL \t FOLD BEAM CORPUS FOLD SPAN BEAM ANCHOR \n ATLAS WAKE LEDGER SEAL SEAL HANDOFF ATLAS    ARM ATLAS ARM REGISTER WAKE CORPUS REGISTER  \n   HANDOFF HANDOFF ARM BEAM DESCENT WAKE FOLD \n ANCHOR LEDGER LEDGER VERDICT WAKE SPAN ANCHOR  \n   BEAM SEAL BEAM",
+   "atoms": [
+    [
+     "anchor",
+     "**bold**",
+     "seal"
+    ]
+   ],
+   "window": 50,
+   "v1_normalized_len": 323,
+   "v1_correct": true,
+   "v1_first_hit_offset": 4
+  },
+  {
+   "case_id": "R0116",
+   "context": "fold descent seal atlas packet residual residual  \n   beam beam wake handoff a―b descent residual corpus \t span corpus ledger handoff `code` register fold descent beam \t corpus 14/18",
+   "atoms": [
+    [
+     "tab\\tsep",
+     "a―b",
+     "0.835"
+    ],
+    "fold",
+    "`code`",
+    [
+     "  spaced   out  ",
+     "14/18"
+    ]
+   ],
+   "window": null,
+   "v1_normalized_len": 171,
+   "v1_correct": true,
+   "v1_first_hit_offset": 166
+  },
+  {
+   "case_id": "R0117",
+   "context": "wake arm ledger register span wake handoff anchor  \n   packet packet register handoff arm ledger anchor \n wake residual verdict wake anchor descent corpus    seal fold seal beam fold arm descent  \n   verdict handoff",
+   "atoms": [
+    [
+     "register",
+     "fold",
+     "a-b"
+    ],
+    "`code`"
+   ],
+   "window": 20,
+   "v1_normalized_len": 200,
+   "v1_correct": false,
+   "v1_first_hit_offset": null
+  },
+  {
+   "case_id": "R0118",
+   "context": "FOLD REGISTER ARM FOLD ATLAS A−B SEAL CORPUS \n RESIDUAL VERDICT ANCHOR PACKET FOLD REGISTER",
+   "atoms": [
+    "a−b"
+   ],
+   "window": 50,
+   "v1_normalized_len": 89,
+   "v1_correct": true,
+   "v1_first_hit_offset": 29
+  },
+  {
+   "case_id": "R0119",
+   "context": "atlas 12,335 residual verdict corpus residual corpus handoff    residual residual span verdict beam atlas anchor  \n   verdict verdict ledger handoff descent verdict fold atlas    residual arm register packet ledger 14/18 corpus anchor \n arm span packet",
+   "atoms": [
+    "fold",
+    [
+     "12,335",
+     "  spaced   out  "
+    ],
+    "14/18",
+    "11.1x"
+   ],
+   "window": 50,
+   "v1_normalized_len": 238,
+   "v1_correct": false,
+   "v1_first_hit_offset": null
+  },
+  {
+   "case_id": "R0120",
+   "context": "descent wake atlas wake atlas verdict **bold** tab\\tsep `code`",
+   "atoms": [
+    "**bold**",
+    "tab\\tsep",
+    "11.1x",
+    "`code`"
+   ],
+   "window": null,
+   "v1_normalized_len": 55,
+   "v1_correct": false,
+   "v1_first_hit_offset": null
+  },
+  {
+   "case_id": "R0121",
+   "context": "span arm seal handoff arm handoff descent  \n   atlas arm descent handoff wake arm fold    residual atlas 7/18",
+   "atoms": [
+    "7/18"
+   ],
+   "window": 50,
+   "v1_normalized_len": 101,
+   "v1_correct": true,
+   "v1_first_hit_offset": 97
+  },
+  {
+   "case_id": "R0122",
+   "context": "anchor register descent corpus verdict fold arm \t atlas residual arm residual anchor fold corpus residual \n descent register residual verdict 83.5% descent arm packet    atlas corpus seal ledger register handoff ledger \n descent residual register arm residual corpus beam \n register span seal ledger corpus beam beam  \n   arm residual corpus descent beam packet beam  \n   seal span atlas arm verdict verdict ledger \n arm register",
+   "atoms": [
+    "83.5%",
+    "residual"
+   ],
+   "window": 120,
+   "v1_normalized_len": 406,
+   "v1_correct": true,
+   "v1_first_hit_offset": 138
+  },
+  {
+   "case_id": "R0123",
+   "context": "beam beam corpus span beam seal MiXeD CaSe corpus    residual corpus verdict arm packet corpus atlas anchor £2.5M \t handoff wake arm residual descent verdict packet \t verdict corpus wake span wake fold beam \n wake packet corpus wake handoff corpus span    handoff beam verdict fold ledger descent wake    beam corpus",
+   "atoms": [
+    [
+     "MiXeD CaSe",
+     "descent",
+     "handoff"
+    ],
+    "MiXeD CaSe",
+    "£2.5M",
+    "arm"
+   ],
+   "window": null,
+   "v1_normalized_len": 301,
+   "v1_correct": true,
+   "v1_first_hit_offset": 105
+  },
+  {
+   "case_id": "R0124",
+   "context": "handoff span ledger corpus arm handoff span wake  \n   fold atlas wake corpus corpus packet packet    arm packet arm verdict register beam register \n ledger anchor beam seal residual verdict",
+   "atoms": [
+    "arm",
+    [
+     "span",
+     "verdict",
+     "12,335"
+    ]
+   ],
+   "window": 50,
+   "v1_normalized_len": 179,
+   "v1_correct": true,
+   "v1_first_hit_offset": 27
+  },
+  {
+   "case_id": "R0125",
+   "context": "packet atlas register seal corpus ledger handoff descent  \n   corpus seal anchor verdict arm verdict packet  \n   arm residual span packet span wake register \n seal arm descent residual handoff handoff register \t ledger handoff residual wake handoff fold",
+   "atoms": [
+    "ledger"
+   ],
+   "window": null,
+   "v1_normalized_len": 239,
+   "v1_correct": true,
+   "v1_first_hit_offset": 34
+  },
+  {
+   "case_id": "R0126",
+   "context": "handoff residual residual atlas anchor wake descent \n seal atlas packet packet verdict verdict anchor verdict \n fold wake beam wake fold arm verdict    descent fold residual beam arm packet corpus    handoff residual fold",
+   "atoms": [
+    "verdict",
+    "**bold**",
+    "0.835"
+   ],
+   "window": 20,
+   "v1_normalized_len": 211,
+   "v1_correct": false,
+   "v1_first_hit_offset": null
+  },
+  {
+   "case_id": "R0127",
+   "context": "register beam beam handoff packet a—b beam 0.0001s verdict \t corpus handoff atlas handoff wake **bold** handoff ledger",
+   "atoms": [
+    [
+     "0.0001s",
+     "residual",
+     "tab\\tsep"
+    ],
+    "a—b",
+    [
+     "handoff",
+     "arm"
+    ],
+    "**bold**"
+   ],
+   "window": null,
+   "v1_normalized_len": 112,
+   "v1_correct": true,
+   "v1_first_hit_offset": 93
+  },
+  {
+   "case_id": "R0128",
+   "context": "register verdict atlas descent ledger arm beam  \n   handoff fold a-b handoff beam beam beam descent \n beam handoff handoff anchor corpus residual corpus \n arm span packet atlas anchor corpus arm \n packet 12335 residual 0.0001s atlas handoff atlas",
+   "atoms": [
+    "atlas",
+    "a-b",
+    [
+     "12335",
+     "handoff",
+     "MiXeD CaSe"
+    ],
+    [
+     "0.0001s",
+     "a―b",
+     "register"
+    ]
+   ],
+   "window": null,
+   "v1_normalized_len": 235,
+   "v1_correct": true,
+   "v1_first_hit_offset": 60
+  },
+  {
+   "case_id": "R0129",
+   "context": "REGISTER ATLAS VERDICT WAKE ARM SEAL REGISTER \t WAKE ANCHOR ATLAS A‑B ARM CORPUS FOLD HANDOFF    REGISTER RESIDUAL HANDOFF CORPUS VERDICT FOLD LEDGER A‐B CORPUS PACKET \n SEAL SEAL REGISTER DESCENT BEAM VERDICT FOLD \n ANCHOR SPAN ANCHOR FOLD PACKET SPAN REGISTER  \n   SEAL FOLD SPAN ANCHOR PACKET WAKE CORPUS \n WAKE",
+   "atoms": [
+    "a‑b",
+    "packet",
+    "a‐b",
+    "fold"
+   ],
+   "window": 300,
+   "v1_normalized_len": 298,
+   "v1_correct": true,
+   "v1_first_hit_offset": 156
+  },
+  {
+   "case_id": "R0130",
+   "context": "seal atlas anchor register anchor span wake atlas \n anchor span verdict packet seal packet fold \t packet span seal arm atlas beam atlas \n fold fold descent verdict wake anchor packet    corpus",
+   "atoms": [
+    [
+     "atlas",
+     "MiXeD CaSe"
+    ]
+   ],
+   "window": 120,
+   "v1_normalized_len": 183,
+   "v1_correct": true,
+   "v1_first_hit_offset": 5
+  },
+  {
+   "case_id": "R0131",
+   "context": "DESCENT LEDGER 83.5% ARM MIXED CASE ARM A‑B PACKET LEDGER DESCENT PACKET  \n   ANCHOR VERDICT PACKET CORPUS SPAN ATLAS LEDGER    BEAM CORPUS REGISTER ATLAS DESCENT REGISTER PACKET  \n   CORPUS RESIDUAL ATLAS REGISTER VERDICT ATLAS PACKET  \n   BEAM HANDOFF ATLAS BEAM FOLD ATLAS FOLD \t LEDGER DESCENT CORPUS LEDGER ARM HANDOFF DESCENT  \n   WAKE",
+   "atoms": [
+    "MiXeD CaSe",
+    "ledger",
+    [
+     "line\\nbreak",
+     "83.5%"
+    ],
+    [
+     "tab\\tsep",
+     "a‑b",
+     "11.1x"
+    ]
+   ],
+   "window": 50,
+   "v1_normalized_len": 316,
+   "v1_correct": true,
+   "v1_first_hit_offset": 40
+  },
+  {
+   "case_id": "R0132",
+   "context": "VERDICT SPAN CORPUS BEAM SEAL REGISTER ARM LEDGER  \n   SPAN VERDICT CORPUS VERDICT VERDICT VERDICT DESCENT  \n   DESCENT REGISTER",
+   "atoms": [
+    "span"
+   ],
+   "window": 900,
+   "v1_normalized_len": 118,
+   "v1_correct": true,
+   "v1_first_hit_offset": 8
+  },
+  {
+   "case_id": "R0133",
+   "context": "packet corpus residual residual register 7/18 register a‐b 7/18",
+   "atoms": [
+    "a‐b",
+    "7/18",
+    "corpus",
+    [
+     "7/18",
+     "tab\\tsep"
+    ]
+   ],
+   "window": null,
+   "v1_normalized_len": 63,
+   "v1_correct": true,
+   "v1_first_hit_offset": 55
+  },
+  {
+   "case_id": "R0134",
+   "context": "FOLD LEDGER LEDGER ANCHOR FOLD HANDOFF PACKET FOLD    REGISTER WAKE FOLD SEAL CORPUS LEDGER VERDICT \t ATLAS ANCHOR WAKE CORPUS LEDGER WAKE WAKE \n FOLD FOLD RESIDUAL WAKE FOLD ARM WAKE  \n   CORPUS RESIDUAL ATLAS ARM CORPUS SPAN SPAN    RESIDUAL VERDICT ATLAS HANDOFF SEAL PACKET DESCENT \n",
+   "atoms": [
+    "ledger",
+    "ledger"
+   ],
+   "window": null,
+   "v1_normalized_len": 271,
+   "v1_correct": true,
+   "v1_first_hit_offset": 5
+  },
+  {
+   "case_id": "R0135",
+   "context": "atlas beam corpus seal quote\\\"inside packet register descent  \n   packet atlas atlas ledger seal verdict descent    fold atlas fold anchor residual anchor arm \t arm fold arm fold",
+   "atoms": [
+    [
+     "quote\\\"inside",
+     "a−b",
+     "atlas"
+    ],
+    "14/18"
+   ],
+   "window": 900,
+   "v1_normalized_len": 167,
+   "v1_correct": false,
+   "v1_first_hit_offset": null
+  },
+  {
+   "case_id": "R0136",
+   "context": "ATLAS CORPUS BEAM REGISTER LEDGER WAKE ATLAS  \n   ATLAS SEAL BEAM ARM CORPUS BEAM HANDOFF \n LEDGER VERDICT ATLAS LEDGER WAKE 0.835 WAKE `CODE` SEAL  \n   RESIDUAL FOLD BEAM FOLD CORPUS LEDGER WAKE LEDGER    WAKE ATLAS CORPUS SEAL VERDICT VERDICT SEAL  \n  ",
+   "atoms": [
+    "`code`",
+    "0.835",
+    "beam"
+   ],
+   "window": null,
+   "v1_normalized_len": 233,
+   "v1_correct": true,
+   "v1_first_hit_offset": 129
+  },
+  {
+   "case_id": "R0137",
+   "context": "atlas ledger fold descent register wake beam arm    beam verdict fold register anchor quote\\\"inside span packet \t handoff corpus a−b verdict residual anchor anchor atlas    fold packet anchor seal corpus handoff packet  \n   seal atlas fold verdict beam descent corpus \t verdict packet arm verdict corpus arm handoff \n corpus span verdict packet register descent packet  \n   beam ledger atlas handoff ledger span",
+   "atoms": [
+    "quote\\\"inside",
+    [
+     "a−b",
+     "beam"
+    ],
+    [
+     "ledger",
+     "12,335"
+    ]
+   ],
+   "window": null,
+   "v1_normalized_len": 388,
+   "v1_correct": true,
+   "v1_first_hit_offset": 83
+  },
+  {
+   "case_id": "R0138",
+   "context": "seal span handoff fold wake register corpus wake residual \n anchor handoff a‑b seal anchor handoff wake arm    descent verdict packet register arm arm span span  \n   atlas fold handoff wake fold span descent \n anchor verdict seal verdict ledger register fold    ledger anchor packet residual descent handoff ledger  \n   packet anchor verdict wake ledger corpus wake \n",
+   "atoms": [
+    "handoff",
+    "span",
+    "a‑b",
+    [
+     "register",
+     "a―b"
+    ]
+   ],
+   "window": 120,
+   "v1_normalized_len": 346,
+   "v1_correct": true,
+   "v1_first_hit_offset": 73
+  },
+  {
+   "case_id": "R0139",
+   "context": "atlas descent corpus fold beam wake span  \n   residual ledger residual seal wake verdict ledger \t register verdict beam descent register anchor descent \t atlas seal beam residual",
+   "atoms": [
+    "a―b"
+   ],
+   "window": null,
+   "v1_normalized_len": 169,
+   "v1_correct": false,
+   "v1_first_hit_offset": null
+  },
+  {
+   "case_id": "R0140",
+   "context": "FOLD VERDICT ATLAS REGISTER 12,335 CORPUS ARM SPAN \t WAKE REGISTER DESCENT CORPUS LEDGER 12,335",
+   "atoms": [
+    "12,335",
+    "12,335",
+    [
+     "11.1x",
+     "beam",
+     "line\\nbreak"
+    ],
+    "a‐b"
+   ],
+   "window": 300,
+   "v1_normalized_len": 91,
+   "v1_correct": false,
+   "v1_first_hit_offset": null
+  },
+  {
+   "case_id": "R0141",
+   "context": "descent tab\\tsep handoff arm verdict descent verdict ledger \n span register arm packet residual residual packet \n verdict anchor beam anchor span seal verdict \n register residual fold wake beam span anchor  \n   verdict arm register wake register",
+   "atoms": [
+    "anchor",
+    "tab\\tsep",
+    "ledger"
+   ],
+   "window": null,
+   "v1_normalized_len": 233,
+   "v1_correct": true,
+   "v1_first_hit_offset": 117
+  },
+  {
+   "case_id": "R0142",
+   "context": "CORPUS A‒B CORPUS RESIDUAL SEAL CORPUS ATLAS A−B CORPUS \n VERDICT LEDGER BEAM VERDICT SPAN ANCHOR ATLAS \n HANDOFF ANCHOR ANCHOR CORPUS LEDGER RESIDUAL ATLAS \n REGISTER SEAL REGISTER RESIDUAL WAKE SPAN FOLD \t ANCHOR HANDOFF HANDOFF DESCENT SPAN HANDOFF VERDICT \n LEDGER FOLD SPAN HANDOFF VERDICT FOLD PACKET    ANCHOR PACKET WAKE HANDOFF ATLAS SPAN ANCHOR    PACKET VERDICT RESIDUAL ANCHOR REGISTER LEDGER SPAN  \n   ATLAS CORPUS DESCENT FOLD",
+   "atoms": [
+    "a‒b",
+    "a−b"
+   ],
+   "window": 120,
+   "v1_normalized_len": 419,
+   "v1_correct": true,
+   "v1_first_hit_offset": 7
+  },
+  {
+   "case_id": "R0143",
+   "context": "beam beam wake seal span seal span ledger arm    anchor corpus descent 14/18 anchor fold corpus anchor \n fold handoff residual verdict seal MiXeD CaSe beam packet \t arm wake fold anchor seal corpus",
+   "atoms": [
+    [
+     "**bold**",
+     "span",
+     "corpus"
+    ],
+    "14/18",
+    [
+     "beam",
+     "MiXeD CaSe",
+     "**bold**"
+    ],
+    "span"
+   ],
+   "window": null,
+   "v1_normalized_len": 190,
+   "v1_correct": true,
+   "v1_first_hit_offset": 68
+  },
+  {
+   "case_id": "R0144",
+   "context": "arm span span a‑b span verdict wake atlas \t wake handoff register residual ledger a‑b corpus residual  \n   verdict 1,937 anchor fold verdict verdict seal residual \n wake register packet arm span fold corpus \t register descent register verdict wake register packet beam  \n   handoff beam descent packet corpus ledger residual    corpus ledger verdict seal span packet descent  \n   residual arm fold beam handoff fold seal \t wake corpus",
+   "atoms": [
+    "wake",
+    "a‑b",
+    [
+     "a‑b",
+     "`code`"
+    ],
+    "1,937"
+   ],
+   "window": null,
+   "v1_normalized_len": 407,
+   "v1_correct": true,
+   "v1_first_hit_offset": 108
+  },
+  {
+   "case_id": "R0145",
+   "context": "beam fold residual corpus wake 12335 corpus beam    descent handoff descent atlas handoff span beam wake \t handoff fold beam fold handoff packet fold  \n   verdict packet seal residual seal seal descent \n residual arm fold anchor residual anchor atlas    atlas seal corpus ledger verdict wake fold  \n   wake",
+   "atoms": [
+    [
+     "12335",
+     "a−b",
+     "12,335"
+    ],
+    [
+     "MiXeD CaSe",
+     "a‐b"
+    ],
+    [
+     "  spaced   out  ",
+     "register",
+     "verdict"
+    ],
+    "atlas"
+   ],
+   "window": null,
+   "v1_normalized_len": 286,
+   "v1_correct": false,
+   "v1_first_hit_offset": null
+  },
+  {
+   "case_id": "R0146",
+   "context": "handoff wake anchor packet tab\\tsep ledger atlas fold    corpus residual beam seal residual handoff verdict beam  \n   span ledger anchor descent span corpus descent \t corpus anchor seal register arm atlas fold  \n   atlas wake residual wake beam packet wake  \n   anchor anchor handoff arm packet anchor packet \n arm fold descent residual seal packet register \n beam wake residual register residual",
+   "atoms": [
+    [
+     "a―b",
+     "handoff"
+    ],
+    "tab\\tsep",
+    "11.1x",
+    "beam"
+   ],
+   "window": 20,
+   "v1_normalized_len": 371,
+   "v1_correct": false,
+   "v1_first_hit_offset": null
+  },
+  {
+   "case_id": "R0147",
+   "context": "span verdict residual ledger ledger residual atlas descent \t handoff descent verdict register   spaced   out   ledger wake verdict  \n   register descent wake fold handoff residual handoff  \n   corpus seal anchor atlas atlas",
+   "atoms": [
+    "ledger",
+    "corpus",
+    [
+     "beam",
+     "  spaced   out  ",
+     "wake"
+    ],
+    "seal"
+   ],
+   "window": null,
+   "v1_normalized_len": 205,
+   "v1_correct": true,
+   "v1_first_hit_offset": 182
+  },
+  {
+   "case_id": "R0148",
+   "context": "corpus register anchor seal fold register fold \t seal corpus ledger a–b descent anchor corpus corpus \t fold beam fold verdict packet register seal 7/18  \n   verdict corpus 11.1x",
+   "atoms": [
+    "7/18",
+    "a–b",
+    "corpus",
+    [
+     "11.1x",
+     "a‒b"
+    ]
+   ],
+   "window": null,
+   "v1_normalized_len": 168,
+   "v1_correct": true,
+   "v1_first_hit_offset": 143
+  },
+  {
+   "case_id": "R0149",
+   "context": "VERDICT LEDGER ANCHOR SPAN WAKE VERDICT SPAN \n ATLAS BEAM PACKET HANDOFF REGISTER BEAM LEDGER ATLAS    SEAL   SPACED   OUT   LEDGER SPAN HANDOFF SEAL ATLAS ANCHOR BEAM \t LEDGER BEAM BEAM ATLAS HANDOFF LEDGER RESIDUAL \t DESCENT ANCHOR VERDICT ANCHOR VERDICT SPAN HANDOFF \t VERDICT HANDOFF WAKE FOLD CORPUS BEAM ATLAS    SEAL FOLD RESIDUAL SPAN ANCHOR RESIDUAL",
+   "atoms": [
+    "handoff",
+    "  spaced   out  ",
+    [
+     "handoff",
+     "packet",
+     "  spaced   out  "
+    ]
+   ],
+   "window": 20,
+   "v1_normalized_len": 338,
+   "v1_correct": false,
+   "v1_first_hit_offset": null
+  },
+  {
+   "case_id": "R0150",
+   "context": "VERDICT BEAM ATLAS FOLD RESIDUAL MIXED CASE LEDGER BEAM \t REGISTER HANDOFF ARM PACKET BEAM VERDICT DESCENT    PACKET 11.1X",
+   "atoms": [
+    "11.1x",
+    "a‒b",
+    "MiXeD CaSe",
+    "seal"
+   ],
+   "window": null,
+   "v1_normalized_len": 117,
+   "v1_correct": false,
+   "v1_first_hit_offset": null
+  },
+  {
+   "case_id": "R0151",
+   "context": "arm beam anchor ledger wake packet line\\nbreak fold seal \t ledger anchor anchor seal packet residual corpus £2.5M \t residual arm fold verdict seal anchor handoff ledger    corpus fold anchor seal register seal verdict \t ledger corpus span",
+   "atoms": [
+    "arm",
+    [
+     "packet",
+     "line\\nbreak"
+    ],
+    "£2.5M",
+    [
+     "arm",
+     "ledger"
+    ]
+   ],
+   "window": 300,
+   "v1_normalized_len": 228,
+   "v1_correct": true,
+   "v1_first_hit_offset": 105
+  },
+  {
+   "case_id": "R0152",
+   "context": "descent 7/18 corpus seal handoff wake ledger verdict    fold register beam corpus register seal arm \t verdict packet wake residual register packet fold \t beam register anchor residual atlas",
+   "atoms": [
+    "a—b",
+    "7/18"
+   ],
+   "window": null,
+   "v1_normalized_len": 182,
+   "v1_correct": false,
+   "v1_first_hit_offset": null
+  },
+  {
+   "case_id": "R0153",
+   "context": "anchor verdict anchor `code` register corpus span descent wake \t 83.5% £2.5M",
+   "atoms": [
+    "83.5%",
+    "verdict",
+    "£2.5M",
+    "`code`"
+   ],
+   "window": 50,
+   "v1_normalized_len": 72,
+   "v1_correct": false,
+   "v1_first_hit_offset": null
+  },
+  {
+   "case_id": "R0154",
+   "context": "residual ledger wake a–b seal atlas descent ledger beam   ",
+   "atoms": [
+    [
+     "MiXeD CaSe",
+     "a–b"
+    ],
+    [
+     "seal",
+     "span",
+     "ledger"
+    ]
+   ],
+   "window": null,
+   "v1_normalized_len": 56,
+   "v1_correct": true,
+   "v1_first_hit_offset": 21
+  },
+  {
+   "case_id": "R0155",
+   "context": "LEDGER FOLD ANCHOR PACKET DESCENT VERDICT DESCENT  \n   CORPUS PACKET SPAN SPAN PACKET LEDGER 12335 DESCENT  \n   FOLD SPAN CORPUS VERDICT DESCENT REGISTER SPAN \n RESIDUAL LEDGER HANDOFF PACKET DESCENT ANCHOR WAKE \t LEDGER REGISTER VERDICT DESCENT ANCHOR LEDGER PACKET \n RESIDUAL SEAL PACKET PACKET SEAL CORPUS DESCENT    PACKET RESIDUAL VERDICT SPAN FOLD RESIDUAL SPAN \n DESCENT RESIDUAL BEAM SEAL ATLAS FOLD FOLD \n",
+   "atoms": [
+    "anchor",
+    "12335"
+   ],
+   "window": null,
+   "v1_normalized_len": 392,
+   "v1_correct": true,
+   "v1_first_hit_offset": 88
+  },
+  {
+   "case_id": "R0156",
+   "context": "SPAN RESIDUAL SPAN VERDICT PACKET LEDGER FOLD DESCENT \n SEAL LINE\\NBREAK ANCHOR DESCENT 0.0001S REGISTER ATLAS REGISTER REGISTER  \n   ARM LEDGER VERDICT WAKE WAKE PACKET ANCHOR  \n   LEDGER FOLD ANCHOR CORPUS LEDGER RESIDUAL VERDICT  \n   DESCENT ARM DESCENT PACKET ANCHOR ANCHOR WAKE \n ANCHOR",
+   "atoms": [
+    "line\\nbreak",
+    [
+     "a‒b",
+     "a–b",
+     "packet"
+    ],
+    "0.0001s"
+   ],
+   "window": 20,
+   "v1_normalized_len": 272,
+   "v1_correct": false,
+   "v1_first_hit_offset": null
+  },
+  {
+   "case_id": "R0157",
+   "context": "handoff packet atlas seal handoff register corpus handoff  \n   anchor residual verdict fold   spaced   out   wake descent atlas  \n   atlas packet descent span register anchor handoff  \n   beam arm register descent beam residual arm    packet beam wake seal fold span handoff \t arm descent arm atlas atlas packet register    span corpus seal seal",
+   "atoms": [
+    "atlas",
+    "  spaced   out  "
+   ],
+   "window": 300,
+   "v1_normalized_len": 316,
+   "v1_correct": true,
+   "v1_first_hit_offset": 86
+  },
+  {
+   "case_id": "R0158",
+   "context": "descent anchor span beam ledger arm residual \t residual wake register seal arm seal packet fold    seal arm corpus anchor span MiXeD CaSe packet span \t ledger fold corpus corpus register arm verdict  \n   atlas handoff anchor anchor descent register span    seal residual seal corpus residual register handoff  \n   descent arm beam descent handoff anchor fold    register register descent corpus handoff verdict verdict \n span descent ledger",
+   "atoms": [
+    [
+     "MiXeD CaSe",
+     "0.835"
+    ],
+    [
+     "wake",
+     "fold"
+    ],
+    "a―b"
+   ],
+   "window": 50,
+   "v1_normalized_len": 415,
+   "v1_correct": false,
+   "v1_first_hit_offset": null
+  },
+  {
+   "case_id": "R0159",
+   "context": "residual seal packet wake fold atlas handoff descent  \n   corpus residual a‑b register descent anchor wake span \t seal atlas beam seal residual register arm  \n   descent beam packet register wake fold packet  \n   arm atlas register span beam atlas fold    residual residual corpus fold handoff handoff fold \n ledger ledger",
+   "atoms": [
+    [
+     "arm",
+     "1,937"
+    ],
+    "a‑b",
+    [
+     "12335",
+     "12,335"
+    ],
+    [
+     "11.1x",
+     "atlas"
+    ]
+   ],
+   "window": null,
+   "v1_normalized_len": 300,
+   "v1_correct": false,
+   "v1_first_hit_offset": null
+  },
+  {
+   "case_id": "R0160",
+   "context": "corpus beam register   spaced   out   residual seal fold atlas verdict \t descent atlas packet atlas fold residual span    register atlas anchor ledger anchor arm anchor \n span descent corpus ledger fold span anchor \t packet packet packet descent beam fold beam \t verdict verdict ledger handoff residual ledger arm  \n   descent corpus fold descent seal beam packet    corpus anchor register fold atlas ledger ledger \n register seal",
+   "atoms": [
+    "  spaced   out  ",
+    "atlas"
+   ],
+   "window": null,
+   "v1_normalized_len": 403,
+   "v1_correct": true,
+   "v1_first_hit_offset": 51
+  },
+  {
+   "case_id": "R0161",
+   "context": "beam ledger verdict verdict ledger wake register register \n span corpus atlas span beam register a–b seal packet  \n   handoff corpus fold packet residual atlas ledger  \n   register register fold packet beam ledger corpus \t descent verdict seal residual atlas",
+   "atoms": [
+    "register",
+    "quote\\\"inside",
+    [
+     "**bold**",
+     "descent",
+     "a–b"
+    ],
+    [
+     "atlas",
+     "a‑b",
+     "atlas"
+    ]
+   ],
+   "window": 900,
+   "v1_normalized_len": 244,
+   "v1_correct": false,
+   "v1_first_hit_offset": null
+  },
+  {
+   "case_id": "R0162",
+   "context": "SPAN PACKET FOLD BEAM DESCENT RESIDUAL ANCHOR WAKE  \n   SPAN HANDOFF FOLD CORPUS ARM REGISTER BEAM \t SEAL PACKET DESCENT ARM PACKET DESCENT LEDGER \n PACKET DESCENT VERDICT ANCHOR HANDOFF",
+   "atoms": [
+    "a-b",
+    "wake",
+    "14/18",
+    [
+     "fold",
+     "fold",
+     "a‒b"
+    ]
+   ],
+   "window": null,
+   "v1_normalized_len": 177,
+   "v1_correct": false,
+   "v1_first_hit_offset": null
+  },
+  {
+   "case_id": "R0163",
+   "context": "ANCHOR ANCHOR BEAM ARM ARM ANCHOR BEAM REGISTER  \n   VERDICT",
+   "atoms": [
+    [
+     "1,937",
+     "a―b",
+     "residual"
+    ],
+    "residual",
+    [
+     "arm",
+     "1,234,567",
+     "£2.5M"
+    ]
+   ],
+   "window": 50,
+   "v1_normalized_len": 55,
+   "v1_correct": false,
+   "v1_first_hit_offset": null
+  },
+  {
+   "case_id": "R0164",
+   "context": "fold seal corpus arm descent arm ledger \n packet register handoff packet residual register ledger \t verdict anchor wake handoff span packet wake  \n   seal",
+   "atoms": [
+    [
+     "arm",
+     "descent",
+     "packet"
+    ],
+    "handoff"
+   ],
+   "window": 300,
+   "v1_normalized_len": 145,
+   "v1_correct": true,
+   "v1_first_hit_offset": 56
+  },
+  {
+   "case_id": "R0165",
+   "context": "verdict 12335 residual fold residual atlas span verdict \n beam register anchor verdict corpus arm span \n atlas arm corpus seal register register wake  \n   packet arm",
+   "atoms": [
+    "12335"
+   ],
+   "window": 900,
+   "v1_normalized_len": 156,
+   "v1_correct": true,
+   "v1_first_hit_offset": 8
+  },
+  {
+   "case_id": "R0166",
+   "context": "anchor 7/18 wake packet residual beam atlas £2.5M anchor arm",
+   "atoms": [
+    "£2.5M",
+    "anchor",
+    "arm",
+    "7/18"
+   ],
+   "window": 20,
+   "v1_normalized_len": 60,
+   "v1_correct": false,
+   "v1_first_hit_offset": null
+  },
+  {
+   "case_id": "R0167",
+   "context": "CORPUS LEDGER ANCHOR RESIDUAL SPAN WAKE ANCHOR \n FOLD FOLD WAKE CORPUS DESCENT A―B REGISTER SPAN    PACKET ANCHOR DESCENT ATLAS CORPUS CORPUS WAKE BEAM VERDICT  \n   RESIDUAL SPAN VERDICT REGISTER WAKE ANCHOR WAKE  \n   SEAL WAKE ARM SPAN SEAL SEAL RESIDUAL  \n   CORPUS LEDGER HANDOFF CORPUS",
+   "atoms": [
+    "atlas",
+    [
+     "ledger",
+     "corpus",
+     "line\\nbreak"
+    ],
+    [
+     "11.1x",
+     "a―b",
+     "register"
+    ],
+    [
+     "span",
+     "tab\\tsep",
+     "descent"
+    ]
+   ],
+   "window": null,
+   "v1_normalized_len": 269,
+   "v1_correct": true,
+   "v1_first_hit_offset": 117
+  },
+  {
+   "case_id": "R0168",
+   "context": "span residual descent atlas seal residual handoff corpus   ",
+   "atoms": [
+    [
+     "a‐b",
+     "a‐b"
+    ],
+    "verdict",
+    [
+     "a―b",
+     "1,937",
+     "seal"
+    ]
+   ],
+   "window": 300,
+   "v1_normalized_len": 57,
+   "v1_correct": false,
+   "v1_first_hit_offset": null
+  },
+  {
+   "case_id": "R0169",
+   "context": "anchor arm verdict a–b corpus handoff span descent register \t span handoff handoff seal beam anchor seal \n verdict ledger residual register anchor seal anchor \n arm ledger descent descent",
+   "atoms": [
+    [
+     "  spaced   out  ",
+     "span",
+     "quote\\\"inside"
+    ],
+    "verdict",
+    [
+     "1,234,567",
+     "14/18"
+    ],
+    [
+     "a–b",
+     "residual",
+     "12,335"
+    ]
+   ],
+   "window": null,
+   "v1_normalized_len": 181,
+   "v1_correct": false,
+   "v1_first_hit_offset": null
+  },
+  {
+   "case_id": "R0170",
+   "context": "beam a―b fold line\\nbreak register ledger packet residual fold verdict \n seal seal ledger packet handoff packet register    corpus descent packet span atlas beam handoff    seal atlas ledger residual fold register register \t span atlas seal descent register wake descent \t descent residual register seal wake packet wake \t handoff register packet span beam corpus span  \n   atlas ledger verdict wake seal fold",
+   "atoms": [
+    "line\\nbreak",
+    [
+     "packet",
+     "register",
+     "atlas"
+    ],
+    "a―b"
+   ],
+   "window": null,
+   "v1_normalized_len": 389,
+   "v1_correct": true,
+   "v1_first_hit_offset": 25
+  },
+  {
+   "case_id": "R0171",
+   "context": "anchor fold descent descent atlas wake arm \t beam fold register packet arm corpus arm    register descent handoff handoff packet atlas ledger \n arm atlas span span register register descent \n anchor atlas atlas register atlas residual fold    packet beam beam packet residual verdict ledger  \n   packet beam residual packet packet wake",
+   "atoms": [
+    "wake"
+   ],
+   "window": null,
+   "v1_normalized_len": 318,
+   "v1_correct": true,
+   "v1_first_hit_offset": 34
+  },
+  {
+   "case_id": "R0172",
+   "context": "fold handoff residual atlas handoff descent arm   ",
+   "atoms": [
+    "7/18",
+    "packet"
+   ],
+   "window": 900,
+   "v1_normalized_len": 48,
+   "v1_correct": false,
+   "v1_first_hit_offset": null
+  },
+  {
+   "case_id": "R0173",
+   "context": "CORPUS WAKE REGISTER HANDOFF RESIDUAL DESCENT 1,234,567 BEAM \t ANCHOR REGISTER HANDOFF WAKE VERDICT PACKET LEDGER \t WAKE SPAN DESCENT FOLD SPAN VERDICT RESIDUAL 0.0001S \t ARM ATLAS BEAM SPAN A-B PACKET LEDGER REGISTER \t ANCHOR LEDGER BEAM SEAL PACKET SEAL ATLAS  \n   PACKET LEDGER RESIDUAL BEAM REGISTER VERDICT ATLAS \n ANCHOR CORPUS REGISTER RESIDUAL SEAL",
+   "atoms": [
+    "a-b",
+    [
+     "0.0001s",
+     "1,937",
+     "a—b"
+    ],
+    "1,234,567"
+   ],
+   "window": 300,
+   "v1_normalized_len": 339,
+   "v1_correct": true,
+   "v1_first_hit_offset": 183
+  },
+  {
+   "case_id": "R0174",
+   "context": "arm wake atlas beam seal arm span verdict packet \t beam register handoff ledger verdict seal",
+   "atoms": [
+    [
+     "12335",
+     "arm",
+     "`code`"
+    ],
+    "wake",
+    "beam"
+   ],
+   "window": 900,
+   "v1_normalized_len": 90,
+   "v1_correct": true,
+   "v1_first_hit_offset": 15
+  },
+  {
+   "case_id": "R0175",
+   "context": "fold span span packet ledger span a―b packet  \n   corpus arm ledger handoff fold anchor register \n verdict seal residual verdict ledger descent descent \n atlas handoff `code` arm handoff verdict verdict arm    packet span packet beam wake beam handoff \n ledger descent wake register fold anchor descent  \n   verdict fold handoff span packet residual seal \t descent wake register span verdict beam fold  \n   corpus verdict",
+   "atoms": [
+    "12335",
+    "a―b",
+    "`code`"
+   ],
+   "window": null,
+   "v1_normalized_len": 393,
+   "v1_correct": false,
+   "v1_first_hit_offset": null
+  },
+  {
+   "case_id": "R0176",
+   "context": "packet packet anchor handoff ledger atlas packet corpus descent descent \t anchor seal beam span corpus seal span    residual 12335",
+   "atoms": [
+    "atlas",
+    [
+     "descent",
+     "descent",
+     "12,335"
+    ],
+    "12335",
+    "handoff"
+   ],
+   "window": null,
+   "v1_normalized_len": 125,
+   "v1_correct": true,
+   "v1_first_hit_offset": 120
+  },
+  {
+   "case_id": "R0177",
+   "context": "packet beam corpus register seal atlas handoff \n quote\\\"inside",
+   "atoms": [
+    "quote\\\"inside"
+   ],
+   "window": null,
+   "v1_normalized_len": 59,
+   "v1_correct": true,
+   "v1_first_hit_offset": 47
+  },
+  {
+   "case_id": "R0178",
+   "context": "verdict seal atlas anchor fold verdict packet \n span descent register descent atlas",
+   "atoms": [
+    [
+     "83.5%",
+     "fold"
+    ],
+    "tab\\tsep"
+   ],
+   "window": null,
+   "v1_normalized_len": 81,
+   "v1_correct": false,
+   "v1_first_hit_offset": null
+  },
+  {
+   "case_id": "R0179",
+   "context": "SPAN FOLD ATLAS REGISTER REGISTER REGISTER",
+   "atoms": [
+    [
+     "line\\nbreak",
+     "a−b"
+    ],
+    "register"
+   ],
+   "window": null,
+   "v1_normalized_len": 42,
+   "v1_correct": false,
+   "v1_first_hit_offset": null
+  },
+  {
+   "case_id": "R0180",
+   "context": "seal MiXeD CaSe residual verdict seal span atlas fold  \n   corpus arm ledger ledger span descent seal  \n   wake arm verdict atlas arm atlas line\\nbreak",
+   "atoms": [
+    "atlas",
+    [
+     "£2.5M",
+     "line\\nbreak",
+     "83.5%"
+    ],
+    [
+     "atlas",
+     "quote\\\"inside",
+     "MiXeD CaSe"
+    ],
+    "corpus"
+   ],
+   "window": null,
+   "v1_normalized_len": 140,
+   "v1_correct": true,
+   "v1_first_hit_offset": 130
+  },
+  {
+   "case_id": "R0181",
+   "context": "REGISTER VERDICT ATLAS VERDICT SPAN ANCHOR FOLD **BOLD**    DESCENT BEAM FOLD £2.5M HANDOFF SEAL LEDGER ATLAS   ",
+   "atoms": [
+    "0.0001s",
+    "0.835",
+    [
+     "register",
+     "**bold**"
+    ],
+    "£2.5M"
+   ],
+   "window": null,
+   "v1_normalized_len": 103,
+   "v1_correct": false,
+   "v1_first_hit_offset": null
+  },
+  {
+   "case_id": "R0182",
+   "context": "WAKE FOLD A‑B FOLD FOLD SEAL SPAN HANDOFF CORPUS \t LEDGER SPAN SPAN ATLAS ANCHOR FOLD £2.5M ANCHOR  \n   SEAL SEAL LEDGER HANDOFF CORPUS SEAL BEAM    LEDGER BEAM ATLAS SPAN DESCENT LEDGER SPAN \n SPAN DESCENT WAKE WAKE ARM LEDGER BEAM    SEAL SPAN ANCHOR PACKET",
+   "atoms": [
+    "£2.5M",
+    "seal",
+    [
+     "a-b",
+     "a‑b",
+     "atlas"
+    ]
+   ],
+   "window": null,
+   "v1_normalized_len": 244,
+   "v1_correct": true,
+   "v1_first_hit_offset": 84
+  },
+  {
+   "case_id": "R0183",
+   "context": "residual seal a—b arm wake handoff atlas ledger \t anchor span wake beam descent residual atlas fold  \n   fold span fold",
+   "atoms": [
+    [
+     "a—b",
+     "tab\\tsep"
+    ],
+    "span"
+   ],
+   "window": null,
+   "v1_normalized_len": 112,
+   "v1_correct": true,
+   "v1_first_hit_offset": 55
+  },
+  {
+   "case_id": "R0184",
+   "context": "handoff beam residual wake residual verdict arm \n residual packet packet residual `code` atlas packet descent \n beam verdict verdict residual descent arm anchor    ledger anchor seal wake verdict atlas span  \n   arm ledger arm corpus wake descent arm  \n   verdict arm atlas span atlas wake wake    wake packet arm verdict residual fold",
+   "atoms": [
+    "a‐b",
+    "`code`"
+   ],
+   "window": null,
+   "v1_normalized_len": 313,
+   "v1_correct": false,
+   "v1_first_hit_offset": null
+  },
+  {
+   "case_id": "R0185",
+   "context": "SEAL SEAL DESCENT A‒B BEAM   SPACED   OUT   VERDICT ATLAS CORPUS    RESIDUAL PACKET WAKE SPAN SPAN SEAL WAKE \t REGISTER SPAN ARM CORPUS FOLD CORPUS SEAL    HANDOFF SEAL CORPUS",
+   "atoms": [
+    "a‒b",
+    [
+     "line\\nbreak",
+     "line\\nbreak",
+     "  spaced   out  "
+    ]
+   ],
+   "window": null,
+   "v1_normalized_len": 161,
+   "v1_correct": true,
+   "v1_first_hit_offset": 26
+  },
+  {
+   "case_id": "R0186",
+   "context": "RESIDUAL **BOLD** SPAN WAKE SEAL REGISTER A‐B FOLD WAKE \t ARM CORPUS ATLAS VERDICT DESCENT RESIDUAL LEDGER  \n   LEDGER BEAM DESCENT SPAN VERDICT SPAN FOLD DESCENT \n FOLD WAKE FOLD HANDOFF VERDICT BEAM HANDOFF    ARM SEAL DESCENT ATLAS VERDICT SEAL DESCENT  \n   HANDOFF DESCENT PACKET ARM ARM",
+   "atoms": [
+    [
+     "packet",
+     "a—b",
+     "a‐b"
+    ],
+    "descent",
+    "**bold**",
+    "beam"
+   ],
+   "window": null,
+   "v1_normalized_len": 270,
+   "v1_correct": true,
+   "v1_first_hit_offset": 108
+  },
+  {
+   "case_id": "R0187",
+   "context": "arm packet anchor ledger beam descent 12,335 atlas register    descent fold handoff beam residual verdict corpus    corpus descent residual wake atlas packet descent \t seal anchor fold descent ledger",
+   "atoms": [
+    [
+     "beam",
+     "83.5%"
+    ],
+    "a‒b",
+    "12,335",
+    "beam"
+   ],
+   "window": null,
+   "v1_normalized_len": 190,
+   "v1_correct": false,
+   "v1_first_hit_offset": null
+  },
+  {
+   "case_id": "R0188",
+   "context": "handoff descent atlas corpus beam arm beam \t corpus packet verdict descent seal span wake 12,335 descent  \n   corpus packet beam wake anchor anchor a‐b descent residual \t descent corpus arm descent arm descent corpus    verdict descent handoff residual register ledger residual \n ledger ledger packet handoff handoff ledger seal \n beam wake register packet arm fold descent    packet seal register arm seal arm arm \t wake",
+   "atoms": [
+    "a‐b",
+    "12,335",
+    "packet",
+    "beam"
+   ],
+   "window": 20,
+   "v1_normalized_len": 399,
+   "v1_correct": false,
+   "v1_first_hit_offset": null
+  },
+  {
+   "case_id": "R0189",
+   "context": "wake atlas verdict £2.5M verdict register seal ledger    ledger corpus anchor",
+   "atoms": [
+    [
+     "ledger",
+     "£2.5M"
+    ]
+   ],
+   "window": null,
+   "v1_normalized_len": 74,
+   "v1_correct": true,
+   "v1_first_hit_offset": 19
+  },
+  {
+   "case_id": "R0190",
+   "context": "residual arm fold verdict arm register wake    fold packet fold anchor a—b handoff seal span \t beam arm arm register arm span handoff \t fold arm seal arm arm fold arm \t handoff span span register descent descent residual \n beam seal corpus",
+   "atoms": [
+    "a—b"
+   ],
+   "window": 900,
+   "v1_normalized_len": 228,
+   "v1_correct": true,
+   "v1_first_hit_offset": 68
+  },
+  {
+   "case_id": "R0191",
+   "context": "wake register seal corpus packet descent atlas  \n   anchor atlas span atlas fold a‐b descent fold \t descent atlas wake tab\\tsep packet packet beam ledger anchor    descent packet fold packet descent span wake  \n   beam seal span fold span span wake verdict  \n   ledger register packet seal corpus atlas seal  \n   fold atlas seal fold arm beam fold \t seal arm anchor residual fold seal register \t",
+   "atoms": [
+    "packet",
+    "tab\\tsep",
+    [
+     "corpus",
+     "span"
+    ],
+    "a‐b"
+   ],
+   "window": 300,
+   "v1_normalized_len": 366,
+   "v1_correct": true,
+   "v1_first_hit_offset": 112
+  },
+  {
+   "case_id": "R0192",
+   "context": "ARM ARM RESIDUAL ANCHOR VERDICT LEDGER DESCENT ATLAS  \n   ARM PACKET HANDOFF REGISTER SEAL ATLAS",
+   "atoms": [
+    [
+     "12335",
+     "ledger"
+    ]
+   ],
+   "window": 300,
+   "v1_normalized_len": 91,
+   "v1_correct": true,
+   "v1_first_hit_offset": 32
+  },
+  {
+   "case_id": "R0193",
+   "context": "register beam span fold fold handoff span span \t descent wake atlas 14/18 seal packet arm fold    fold corpus residual verdict wake atlas packet    verdict wake wake atlas handoff register packet \n arm verdict arm handoff anchor fold beam    register handoff wake anchor ledger verdict ledger    beam residual span span descent atlas handoff  \n  ",
+   "atoms": [
+    "14/18",
+    "span"
+   ],
+   "window": null,
+   "v1_normalized_len": 326,
+   "v1_correct": true,
+   "v1_first_hit_offset": 66
+  },
+  {
+   "case_id": "R0194",
+   "context": "HANDOFF A‑B ANCHOR FOLD REGISTER QUOTE\\\"INSIDE REGISTER BEAM SEAL  \n   VERDICT FOLD ATLAS PACKET LEDGER ATLAS FOLD \n DESCENT RESIDUAL REGISTER LEDGER VERDICT WAKE HANDOFF  \n  ",
+   "atoms": [
+    "a‑b",
+    "£2.5M",
+    "quote\\\"inside"
+   ],
+   "window": null,
+   "v1_normalized_len": 163,
+   "v1_correct": false,
+   "v1_first_hit_offset": null
+  },
+  {
+   "case_id": "R0195",
+   "context": "corpus seal packet handoff wake handoff wake \n seal beam beam arm seal anchor ledger \t packet handoff fold",
+   "atoms": [
+    [
+     "19.3x",
+     "fold"
+    ]
+   ],
+   "window": 20,
+   "v1_normalized_len": 102,
+   "v1_correct": true,
+   "v1_first_hit_offset": 98
+  },
+  {
+   "case_id": "R0196",
+   "context": "corpus corpus fold arm residual verdict ledger  \n   descent ledger a-b packet verdict wake seal anchor    wake atlas span beam beam fold corpus    packet wake descent register atlas descent ledger \t verdict register verdict fold corpus wake handoff  \n   register verdict fold arm handoff atlas handoff    seal descent",
+   "atoms": [
+    "a-b"
+   ],
+   "window": null,
+   "v1_normalized_len": 296,
+   "v1_correct": true,
+   "v1_first_hit_offset": 62
+  },
+  {
+   "case_id": "R0197",
+   "context": "register verdict wake verdict register span fold arm  \n   corpus packet span span residual wake ledger \t ledger ledger wake wake packet residual atlas \t atlas atlas register fold residual seal atlas    seal span atlas ledger handoff beam arm  \n   descent span atlas fold span verdict beam  \n   wake",
+   "atoms": [
+    "wake"
+   ],
+   "window": 20,
+   "v1_normalized_len": 276,
+   "v1_correct": true,
+   "v1_first_hit_offset": 17
+  },
+  {
+   "case_id": "R0198",
+   "context": "corpus residual descent register a−b register residual anchor \t packet residual arm handoff span anchor seal verdict \t verdict span fold handoff residual descent wake \n wake anchor fold span descent arm span    register register atlas span handoff corpus verdict    residual descent ledger beam span packet handoff \n register descent residual span verdict corpus wake \t",
+   "atoms": [
+    "a−b",
+    "seal",
+    [
+     "a–b",
+     "a−b"
+    ]
+   ],
+   "window": null,
+   "v1_normalized_len": 354,
+   "v1_correct": true,
+   "v1_first_hit_offset": 102
+  },
+  {
+   "case_id": "R0199",
+   "context": "handoff atlas corpus handoff ledger wake 0.835 beam residual \t beam fold atlas arm arm fold beam \n atlas register packet seal arm ledger span  \n   atlas atlas ledger register arm span anchor \n descent register descent",
+   "atoms": [
+    "ledger",
+    "a—b",
+    [
+     "packet",
+     "0.835",
+     "line\\nbreak"
+    ]
+   ],
+   "window": 120,
+   "v1_normalized_len": 206,
+   "v1_correct": false,
+   "v1_first_hit_offset": null
+  },
+  {
+   "case_id": "R0200",
+   "context": "arm handoff residual ledger beam atlas fold corpus \n fold seal ledger wake fold wake beam \n arm wake atlas wake residual atlas wake \n handoff seal arm verdict corpus verdict arm    verdict anchor span atlas fold beam verdict    packet wake ledger span atlas",
+   "atoms": [
+    "residual",
+    [
+     "a-b",
+     "a―b",
+     "a―b"
+    ]
+   ],
+   "window": null,
+   "v1_normalized_len": 245,
+   "v1_correct": false,
+   "v1_first_hit_offset": null
+  },
+  {
+   "case_id": "R0201",
+   "context": "arm beam fold anchor atlas register fold  \n   register atlas ledger residual ledger wake handoff corpus handoff  \n   corpus a‒b atlas corpus 1,234,567 span anchor beam corpus    ledger packet verdict descent verdict seal arm    descent residual handoff arm span anchor ledger    fold span anchor descent atlas",
+   "atoms": [
+    "handoff",
+    [
+     "1,234,567",
+     "arm"
+    ],
+    "a‒b",
+    "atlas"
+   ],
+   "window": null,
+   "v1_normalized_len": 288,
+   "v1_correct": true,
+   "v1_first_hit_offset": 114
+  },
+  {
+   "case_id": "R0202",
+   "context": "CORPUS SEAL RESIDUAL 12335 BEAM REGISTER WAKE SEAL  \n   DESCENT DESCENT VERDICT ANCHOR",
+   "atoms": [
+    [
+     "12335",
+     "12335",
+     "descent"
+    ]
+   ],
+   "window": 50,
+   "v1_normalized_len": 81,
+   "v1_correct": true,
+   "v1_first_hit_offset": 21
+  },
+  {
+   "case_id": "R0203",
+   "context": "ANCHOR FOLD HANDOFF ATLAS ANCHOR ARM A―B ANCHOR",
+   "atoms": [
+    [
+     "0.0001s",
+     "span",
+     "a―b"
+    ],
+    "anchor"
+   ],
+   "window": null,
+   "v1_normalized_len": 47,
+   "v1_correct": true,
+   "v1_first_hit_offset": 37
+  },
+  {
+   "case_id": "R0204",
+   "context": "anchor anchor register packet span beam residual  \n   verdict span verdict handoff atlas fold beam register  \n   wake fold atlas beam arm packet descent seal    fold span register ledger span fold seal  \n   fold beam span atlas anchor fold atlas \n wake handoff fold verdict register register ledger \t span handoff handoff wake atlas seal register    wake fold residual beam",
+   "atoms": [
+    [
+     "0.835",
+     "a‐b",
+     "verdict"
+    ],
+    "1,937",
+    "packet",
+    "verdict"
+   ],
+   "window": 120,
+   "v1_normalized_len": 348,
+   "v1_correct": false,
+   "v1_first_hit_offset": null
+  },
+  {
+   "case_id": "R0205",
+   "context": "ledger packet handoff atlas verdict ledger span span \t beam handoff corpus anchor corpus verdict verdict \t handoff corpus corpus seal span atlas packet  \n   descent ledger verdict register ledger ledger descent    arm verdict wake verdict register residual corpus \t ledger corpus span anchor beam beam packet  \n   anchor arm register descent wake descent seal \t corpus fold ledger anchor ledger seal corpus \t anchor seal",
+   "atoms": [
+    [
+     "1,937",
+     "packet",
+     "atlas"
+    ],
+    [
+     "1,937",
+     "a–b",
+     "`code`"
+    ]
+   ],
+   "window": 120,
+   "v1_normalized_len": 397,
+   "v1_correct": false,
+   "v1_first_hit_offset": null
+  },
+  {
+   "case_id": "R0206",
+   "context": "HANDOFF DESCENT   SPACED   OUT   PACKET SPAN ANCHOR DESCENT ANCHOR  \n   ARM CORPUS SEAL DESCENT DESCENT SEAL VERDICT \n REGISTER ARM VERDICT ARM DESCENT ATLAS RESIDUAL WAKE \t REGISTER 83.5% HANDOFF ANCHOR VERDICT WAKE HANDOFF ANCHOR    ATLAS DESCENT REGISTER DESCENT ATLAS ANCHOR LEDGER    SEAL REGISTER RESIDUAL DESCENT LEDGER RESIDUAL PACKET \t RESIDUAL ATLAS RESIDUAL CORPUS BEAM CORPUS ARM  \n   BEAM ANCHOR VERDICT LEDGER",
+   "atoms": [
+    "atlas",
+    [
+     "line\\nbreak",
+     "83.5%",
+     "a—b"
+    ],
+    "  spaced   out  ",
+    [
+     "handoff",
+     "7/18"
+    ]
+   ],
+   "window": null,
+   "v1_normalized_len": 395,
+   "v1_correct": true,
+   "v1_first_hit_offset": 168
+  },
+  {
+   "case_id": "R0207",
+   "context": "atlas anchor residual   spaced   out   handoff atlas arm packet  \n   ledger descent fold atlas handoff beam packet    seal verdict handoff verdict ledger ledger arm    verdict",
+   "atoms": [
+    "  spaced   out  "
+   ],
+   "window": 50,
+   "v1_normalized_len": 158,
+   "v1_correct": true,
+   "v1_first_hit_offset": 21
+  },
+  {
+   "case_id": "R0208",
+   "context": "seal descent verdict beam beam corpus seal corpus   ",
+   "atoms": [
+    "beam"
+   ],
+   "window": null,
+   "v1_normalized_len": 50,
+   "v1_correct": true,
+   "v1_first_hit_offset": 21
+  },
+  {
+   "case_id": "R0209",
+   "context": "anchor wake a–b handoff corpus ledger register ledger  \n   arm packet span wake corpus atlas corpus span \n verdict atlas beam",
+   "atoms": [
+    "a–b",
+    "corpus",
+    "0.835"
+   ],
+   "window": 50,
+   "v1_normalized_len": 118,
+   "v1_correct": false,
+   "v1_first_hit_offset": null
+  },
+  {
+   "case_id": "R0210",
+   "context": "ANCHOR LEDGER REGISTER FOLD ATLAS ARM RESIDUAL A‐B CORPUS \t DESCENT ARM ATLAS ARM SEAL ARM REGISTER VERDICT \t LEDGER RESIDUAL ARM BEAM SEAL VERDICT BEAM \t HANDOFF HANDOFF SPAN ANCHOR REGISTER LEDGER VERDICT \n WAKE WAKE BEAM VERDICT RESIDUAL RESIDUAL DESCENT \n REGISTER DESCENT CORPUS CORPUS HANDOFF CORPUS RESIDUAL    WAKE PACKET",
+   "atoms": [
+    "register",
+    [
+     "seal",
+     "a‐b"
+    ],
+    [
+     "fold",
+     "12335"
+    ]
+   ],
+   "window": null,
+   "v1_normalized_len": 316,
+   "v1_correct": true,
+   "v1_first_hit_offset": 47
+  },
+  {
+   "case_id": "R0211",
+   "context": "ledger verdict corpus seal fold seal fold arm \n corpus atlas span packet a‑b corpus residual beam \t register corpus atlas beam handoff packet register 12335 \n verdict wake packet corpus 1,937",
+   "atoms": [
+    "a‑b",
+    [
+     "a-b",
+     "1,937"
+    ],
+    "12335",
+    "arm"
+   ],
+   "window": null,
+   "v1_normalized_len": 184,
+   "v1_correct": true,
+   "v1_first_hit_offset": 147
+  },
+  {
+   "case_id": "R0212",
+   "context": "handoff span corpus corpus corpus descent register packet \t",
+   "atoms": [
+    [
+     "a–b",
+     "span"
+    ]
+   ],
+   "window": 120,
+   "v1_normalized_len": 58,
+   "v1_correct": true,
+   "v1_first_hit_offset": 8
+  },
+  {
+   "case_id": "R0213",
+   "context": "verdict span fold residual fold tab\\tsep descent atlas    atlas wake span span fold register packet seal \n ledger descent descent descent handoff seal arm  \n   descent packet ledger seal register descent arm \t atlas 11.1x descent seal packet arm beam ledger **bold** \n descent verdict span wake descent packet beam    verdict atlas packet descent",
+   "atoms": [
+    "**bold**",
+    "tab\\tsep",
+    [
+     "fold",
+     "wake"
+    ],
+    "11.1x"
+   ],
+   "window": 50,
+   "v1_normalized_len": 324,
+   "v1_correct": false,
+   "v1_first_hit_offset": null
+  },
+  {
+   "case_id": "R0214",
+   "context": "fold atlas seal corpus anchor wake descent handoff seal    verdict atlas seal span handoff packet anchor atlas \t atlas corpus register beam anchor register atlas corpus  \n   descent span span handoff seal arm descent  \n  ",
+   "atoms": [
+    [
+     "atlas",
+     "span"
+    ],
+    "seal",
+    "atlas",
+    "corpus"
+   ],
+   "window": null,
+   "v1_normalized_len": 207,
+   "v1_correct": true,
+   "v1_first_hit_offset": 16
+  },
+  {
+   "case_id": "R0215",
+   "context": "verdict verdict packet residual arm fold fold residual span  \n   packet fold arm register atlas verdict handoff    corpus descent wake arm ledger verdict atlas \t",
+   "atoms": [
+    "packet",
+    "arm"
+   ],
+   "window": null,
+   "v1_normalized_len": 152,
+   "v1_correct": true,
+   "v1_first_hit_offset": 32
+  },
+  {
+   "case_id": "R0216",
+   "context": "residual 11.1x seal anchor residual seal register anchor \n beam atlas wake corpus residual arm corpus \t packet verdict verdict descent register register handoff  \n   beam handoff seal beam anchor beam arm  \n   seal corpus register wake residual fold verdict \n register register residual anchor beam atlas anchor    handoff ledger wake wake verdict ledger handoff    anchor handoff register span verdict",
+   "atoms": [
+    "11.1x"
+   ],
+   "window": 50,
+   "v1_normalized_len": 380,
+   "v1_correct": true,
+   "v1_first_hit_offset": 9
+  },
+  {
+   "case_id": "R0217",
+   "context": "register 83.5% beam handoff a‐b anchor a‐b packet span ledger \t register register verdict arm span seal",
+   "atoms": [
+    "a‐b",
+    [
+     "span",
+     "0.0001s",
+     "tab\\tsep"
+    ],
+    [
+     "a―b",
+     "register",
+     "a‐b"
+    ],
+    "83.5%"
+   ],
+   "window": null,
+   "v1_normalized_len": 101,
+   "v1_correct": true,
+   "v1_first_hit_offset": 50
+  },
+  {
+   "case_id": "R0218",
+   "context": "wake fold register verdict handoff corpus seal \t packet arm corpus corpus arm atlas packet \t atlas descent register arm descent handoff handoff    handoff seal packet anchor verdict",
+   "atoms": [
+    [
+     "a−b",
+     "19.3x",
+     "a–b"
+    ]
+   ],
+   "window": 900,
+   "v1_normalized_len": 174,
+   "v1_correct": false,
+   "v1_first_hit_offset": null
+  },
+  {
+   "case_id": "R0219",
+   "context": "LEDGER ANCHOR WAKE SEAL WAKE REGISTER LEDGER    WAKE 7/18 BEAM LEDGER ATLAS DESCENT DESCENT VERDICT  \n   DESCENT BEAM BEAM CORPUS ATLAS HANDOFF ATLAS  \n   VERDICT ATLAS RESIDUAL ATLAS REGISTER ATLAS ATLAS    DESCENT HANDOFF VERDICT HANDOFF WAKE CORPUS REGISTER \n CORPUS ATLAS FOLD LEDGER REGISTER PACKET BEAM \t DESCENT ATLAS ARM ANCHOR VERDICT",
+   "atoms": [
+    [
+     "0.835",
+     "7/18",
+     "register"
+    ]
+   ],
+   "window": null,
+   "v1_normalized_len": 323,
+   "v1_correct": true,
+   "v1_first_hit_offset": 29
+  },
+  {
+   "case_id": "T01-hit",
+   "context": "run the reconstruction benchmark ... correctness before cost",
+   "atoms": [
+    "run the reconstruction benchmark",
+    "correctness before cost"
+   ],
+   "window": null,
+   "v1_normalized_len": 60,
+   "v1_correct": true,
+   "v1_first_hit_offset": 37
+  },
+  {
+   "case_id": "T01-tight",
+   "context": "run the reconstruction benchmark correctness before cost",
+   "atoms": [
+    "run the reconstruction benchmark",
+    "correctness before cost"
+   ],
+   "window": null,
+   "v1_normalized_len": 56,
+   "v1_correct": true,
+   "v1_first_hit_offset": 33
+  },
+  {
+   "case_id": "T01-miss",
+   "context": "run the reconstruction benchmark",
+   "atoms": [
+    "run the reconstruction benchmark",
+    "correctness before cost"
+   ],
+   "window": null,
+   "v1_normalized_len": 32,
+   "v1_correct": false,
+   "v1_first_hit_offset": null
+  },
+  {
+   "case_id": "T01-far",
+   "context": "run the reconstruction benchmark filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler fillercorrectness before cost",
+   "atoms": [
+    "run the reconstruction benchmark",
+    "correctness before cost"
+   ],
+   "window": 100,
+   "v1_normalized_len": 2855,
+   "v1_correct": false,
+   "v1_first_hit_offset": null
+  },
+  {
+   "case_id": "T02-hit",
+   "context": "exchange rate, the noether test, and pricing remain his",
+   "atoms": [
+    "exchange rate, the noether test, and pricing remain his"
+   ],
+   "window": null,
+   "v1_normalized_len": 55,
+   "v1_correct": true,
+   "v1_first_hit_offset": 0
+  },
+  {
+   "case_id": "T02-tight",
+   "context": "exchange rate, the noether test, and pricing remain his",
+   "atoms": [
+    "exchange rate, the noether test, and pricing remain his"
+   ],
+   "window": null,
+   "v1_normalized_len": 55,
+   "v1_correct": true,
+   "v1_first_hit_offset": 0
+  },
+  {
+   "case_id": "T02-miss",
+   "context": "nothing here at all",
+   "atoms": [
+    "exchange rate, the noether test, and pricing remain his"
+   ],
+   "window": null,
+   "v1_normalized_len": 19,
+   "v1_correct": false,
+   "v1_first_hit_offset": null
+  },
+  {
+   "case_id": "T02-far",
+   "context": "exchange rate, the noether test, and pricing remain his",
+   "atoms": [
+    "exchange rate, the noether test, and pricing remain his"
+   ],
+   "window": 100,
+   "v1_normalized_len": 55,
+   "v1_correct": true,
+   "v1_first_hit_offset": 0
+  },
+  {
+   "case_id": "T03-hit",
+   "context": "scripts/demo.py ... stranger wake",
+   "atoms": [
+    "scripts/demo.py",
+    "stranger wake"
+   ],
+   "window": 200,
+   "v1_normalized_len": 33,
+   "v1_correct": true,
+   "v1_first_hit_offset": 20
+  },
+  {
+   "case_id": "T03-tight",
+   "context": "scripts/demo.py stranger wake",
+   "atoms": [
+    "scripts/demo.py",
+    "stranger wake"
+   ],
+   "window": 200,
+   "v1_normalized_len": 29,
+   "v1_correct": true,
+   "v1_first_hit_offset": 16
+  },
+  {
+   "case_id": "T03-miss",
+   "context": "scripts/demo.py",
+   "atoms": [
+    "scripts/demo.py",
+    "stranger wake"
+   ],
+   "window": 200,
+   "v1_normalized_len": 15,
+   "v1_correct": false,
+   "v1_first_hit_offset": null
+  },
+  {
+   "case_id": "T03-far",
+   "context": "scripts/demo.py filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler fillerstranger wake",
+   "atoms": [
+    "scripts/demo.py",
+    "stranger wake"
+   ],
+   "window": 200,
+   "v1_normalized_len": 2828,
+   "v1_correct": false,
+   "v1_first_hit_offset": null
+  },
+  {
+   "case_id": "T04-hit",
+   "context": "derive it, decide it, and record it",
+   "atoms": [
+    "derive it, decide it, and record it"
+   ],
+   "window": null,
+   "v1_normalized_len": 35,
+   "v1_correct": true,
+   "v1_first_hit_offset": 0
+  },
+  {
+   "case_id": "T04-tight",
+   "context": "derive it, decide it, and record it",
+   "atoms": [
+    "derive it, decide it, and record it"
+   ],
+   "window": null,
+   "v1_normalized_len": 35,
+   "v1_correct": true,
+   "v1_first_hit_offset": 0
+  },
+  {
+   "case_id": "T04-miss",
+   "context": "nothing here at all",
+   "atoms": [
+    "derive it, decide it, and record it"
+   ],
+   "window": null,
+   "v1_normalized_len": 19,
+   "v1_correct": false,
+   "v1_first_hit_offset": null
+  },
+  {
+   "case_id": "T04-far",
+   "context": "derive it, decide it, and record it",
+   "atoms": [
+    "derive it, decide it, and record it"
+   ],
+   "window": 100,
+   "v1_normalized_len": 35,
+   "v1_correct": true,
+   "v1_first_hit_offset": 0
+  },
+  {
+   "case_id": "T05-hit",
+   "context": "a claim of delivery names the run that observed it",
+   "atoms": [
+    "a claim of delivery names the run that observed it"
+   ],
+   "window": null,
+   "v1_normalized_len": 50,
+   "v1_correct": true,
+   "v1_first_hit_offset": 0
+  },
+  {
+   "case_id": "T05-tight",
+   "context": "a claim of delivery names the run that observed it",
+   "atoms": [
+    "a claim of delivery names the run that observed it"
+   ],
+   "window": null,
+   "v1_normalized_len": 50,
+   "v1_correct": true,
+   "v1_first_hit_offset": 0
+  },
+  {
+   "case_id": "T05-miss",
+   "context": "nothing here at all",
+   "atoms": [
+    "a claim of delivery names the run that observed it"
+   ],
+   "window": null,
+   "v1_normalized_len": 19,
+   "v1_correct": false,
+   "v1_first_hit_offset": null
+  },
+  {
+   "case_id": "T05-far",
+   "context": "a claim of delivery names the run that observed it",
+   "atoms": [
+    "a claim of delivery names the run that observed it"
+   ],
+   "window": 100,
+   "v1_normalized_len": 50,
+   "v1_correct": true,
+   "v1_first_hit_offset": 0
+  },
+  {
+   "case_id": "T06-hit",
+   "context": "it becomes a middle for a new larger loop of ideation and judgement",
+   "atoms": [
+    "it becomes a middle for a new larger loop of ideation and judgement"
+   ],
+   "window": null,
+   "v1_normalized_len": 67,
+   "v1_correct": true,
+   "v1_first_hit_offset": 0
+  },
+  {
+   "case_id": "T06-tight",
+   "context": "it becomes a middle for a new larger loop of ideation and judgement",
+   "atoms": [
+    "it becomes a middle for a new larger loop of ideation and judgement"
+   ],
+   "window": null,
+   "v1_normalized_len": 67,
+   "v1_correct": true,
+   "v1_first_hit_offset": 0
+  },
+  {
+   "case_id": "T06-miss",
+   "context": "nothing here at all",
+   "atoms": [
+    "it becomes a middle for a new larger loop of ideation and judgement"
+   ],
+   "window": null,
+   "v1_normalized_len": 19,
+   "v1_correct": false,
+   "v1_first_hit_offset": null
+  },
+  {
+   "case_id": "T06-far",
+   "context": "it becomes a middle for a new larger loop of ideation and judgement",
+   "atoms": [
+    "it becomes a middle for a new larger loop of ideation and judgement"
+   ],
+   "window": 100,
+   "v1_normalized_len": 67,
+   "v1_correct": true,
+   "v1_first_hit_offset": 0
+  },
+  {
+   "case_id": "T07-hit",
+   "context": "close_beats ... 9 ... pipeline_stages ... 3 ... surfacing ... 2",
+   "atoms": [
+    "close_beats",
+    "9",
+    "pipeline_stages",
+    "3",
+    "surfacing",
+    "2"
+   ],
+   "window": 300,
+   "v1_normalized_len": 63,
+   "v1_correct": true,
+   "v1_first_hit_offset": 62
+  },
+  {
+   "case_id": "T07-tight",
+   "context": "close_beats 9 pipeline_stages 3 surfacing 2",
+   "atoms": [
+    "close_beats",
+    "9",
+    "pipeline_stages",
+    "3",
+    "surfacing",
+    "2"
+   ],
+   "window": 300,
+   "v1_normalized_len": 43,
+   "v1_correct": true,
+   "v1_first_hit_offset": 42
+  },
+  {
+   "case_id": "T07-miss",
+   "context": "close_beats ... 9 ... pipeline_stages ... 3 ... surfacing",
+   "atoms": [
+    "close_beats",
+    "9",
+    "pipeline_stages",
+    "3",
+    "surfacing",
+    "2"
+   ],
+   "window": 300,
+   "v1_normalized_len": 57,
+   "v1_correct": false,
+   "v1_first_hit_offset": null
+  },
+  {
+   "case_id": "T07-far",
+   "context": "close_beats filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler9 filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler fillerpipeline_stages filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler3 filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler fillersurfacing filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler2",
+   "atoms": [
+    "close_beats",
+    "9",
+    "pipeline_stages",
+    "3",
+    "surfacing",
+    "2"
+   ],
+   "window": 300,
+   "v1_normalized_len": 14038,
+   "v1_correct": false,
+   "v1_first_hit_offset": null
+  },
+  {
+   "case_id": "T08-hit",
+   "context": "2/14 married ... loud registry failure",
+   "atoms": [
+    "2/14 married",
+    [
+     "loud registry failure",
+     "fails loud on registry import error"
+    ]
+   ],
+   "window": null,
+   "v1_normalized_len": 38,
+   "v1_correct": true,
+   "v1_first_hit_offset": 17
+  },
+  {
+   "case_id": "T08-tight",
+   "context": "2/14 married loud registry failure",
+   "atoms": [
+    "2/14 married",
+    [
+     "loud registry failure",
+     "fails loud on registry import error"
+    ]
+   ],
+   "window": null,
+   "v1_normalized_len": 34,
+   "v1_correct": true,
+   "v1_first_hit_offset": 13
+  },
+  {
+   "case_id": "T08-miss",
+   "context": "2/14 married",
+   "atoms": [
+    "2/14 married",
+    [
+     "loud registry failure",
+     "fails loud on registry import error"
+    ]
+   ],
+   "window": null,
+   "v1_normalized_len": 12,
+   "v1_correct": false,
+   "v1_first_hit_offset": null
+  },
+  {
+   "case_id": "T08-far",
+   "context": "2/14 married filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler fillerloud registry failure",
+   "atoms": [
+    "2/14 married",
+    [
+     "loud registry failure",
+     "fails loud on registry import error"
+    ]
+   ],
+   "window": 100,
+   "v1_normalized_len": 2833,
+   "v1_correct": false,
+   "v1_first_hit_offset": null
+  },
+  {
+   "case_id": "T10-hit",
+   "context": "12335 ... 4577",
+   "atoms": [
+    [
+     "12335",
+     "12299"
+    ],
+    [
+     "4577",
+     "exploded conv chats"
+    ]
+   ],
+   "window": null,
+   "v1_normalized_len": 14,
+   "v1_correct": true,
+   "v1_first_hit_offset": 10
+  },
+  {
+   "case_id": "T10-tight",
+   "context": "12335 4577",
+   "atoms": [
+    [
+     "12335",
+     "12299"
+    ],
+    [
+     "4577",
+     "exploded conv chats"
+    ]
+   ],
+   "window": null,
+   "v1_normalized_len": 10,
+   "v1_correct": true,
+   "v1_first_hit_offset": 6
+  },
+  {
+   "case_id": "T10-miss",
+   "context": "12335",
+   "atoms": [
+    [
+     "12335",
+     "12299"
+    ],
+    [
+     "4577",
+     "exploded conv chats"
+    ]
+   ],
+   "window": null,
+   "v1_normalized_len": 5,
+   "v1_correct": false,
+   "v1_first_hit_offset": null
+  },
+  {
+   "case_id": "T10-far",
+   "context": "12335 filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler4577",
+   "atoms": [
+    [
+     "12335",
+     "12299"
+    ],
+    [
+     "4577",
+     "exploded conv chats"
+    ]
+   ],
+   "window": 100,
+   "v1_normalized_len": 2809,
+   "v1_correct": false,
+   "v1_first_hit_offset": null
+  },
+  {
+   "case_id": "T11-hit",
+   "context": "record ... controls ... techspert ... graph ... engine ... interp ... eigen = master",
+   "atoms": [
+    "record",
+    "controls",
+    "techspert",
+    "graph",
+    "engine",
+    "interp",
+    [
+     "eigen = master",
+     "master.enc",
+     "the passphrase is the reader"
+    ]
+   ],
+   "window": 400,
+   "v1_normalized_len": 84,
+   "v1_correct": true,
+   "v1_first_hit_offset": 70
+  },
+  {
+   "case_id": "T11-tight",
+   "context": "record controls techspert graph engine interp eigen = master",
+   "atoms": [
+    "record",
+    "controls",
+    "techspert",
+    "graph",
+    "engine",
+    "interp",
+    [
+     "eigen = master",
+     "master.enc",
+     "the passphrase is the reader"
+    ]
+   ],
+   "window": 400,
+   "v1_normalized_len": 60,
+   "v1_correct": true,
+   "v1_first_hit_offset": 46
+  },
+  {
+   "case_id": "T11-miss",
+   "context": "record ... controls ... techspert ... graph ... engine ... interp",
+   "atoms": [
+    "record",
+    "controls",
+    "techspert",
+    "graph",
+    "engine",
+    "interp",
+    [
+     "eigen = master",
+     "master.enc",
+     "the passphrase is the reader"
+    ]
+   ],
+   "window": 400,
+   "v1_normalized_len": 65,
+   "v1_correct": false,
+   "v1_first_hit_offset": null
+  },
+  {
+   "case_id": "T11-far",
+   "context": "record filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler fillercontrols filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler fillertechspert filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler fillergraph filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler fillerengine filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler fillerinterp filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler fillereigen = master",
+   "atoms": [
+    "record",
+    "controls",
+    "techspert",
+    "graph",
+    "engine",
+    "interp",
+    [
+     "eigen = master",
+     "master.enc",
+     "the passphrase is the reader"
+    ]
+   ],
+   "window": 400,
+   "v1_normalized_len": 16854,
+   "v1_correct": false,
+   "v1_first_hit_offset": null
+  },
+  {
+   "case_id": "T12-hit",
+   "context": "f23 ... upward operator",
+   "atoms": [
+    "f23",
+    "upward operator"
+   ],
+   "window": 300,
+   "v1_normalized_len": 23,
+   "v1_correct": true,
+   "v1_first_hit_offset": 8
+  },
+  {
+   "case_id": "T12-tight",
+   "context": "f23 upward operator",
+   "atoms": [
+    "f23",
+    "upward operator"
+   ],
+   "window": 300,
+   "v1_normalized_len": 19,
+   "v1_correct": true,
+   "v1_first_hit_offset": 4
+  },
+  {
+   "case_id": "T12-miss",
+   "context": "f23",
+   "atoms": [
+    "f23",
+    "upward operator"
+   ],
+   "window": 300,
+   "v1_normalized_len": 3,
+   "v1_correct": false,
+   "v1_first_hit_offset": null
+  },
+  {
+   "case_id": "T12-far",
+   "context": "f23 filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler fillerupward operator",
+   "atoms": [
+    "f23",
+    "upward operator"
+   ],
+   "window": 300,
+   "v1_normalized_len": 2818,
+   "v1_correct": false,
+   "v1_first_hit_offset": null
+  },
+  {
+   "case_id": "T13-hit",
+   "context": "0.835 ... 0.8% of the corpus ... 0.950",
+   "atoms": [
+    [
+     "0.835",
+     "83.5%"
+    ],
+    "0.8% of the corpus",
+    [
+     "0.950",
+     "95%"
+    ]
+   ],
+   "window": null,
+   "v1_normalized_len": 38,
+   "v1_correct": true,
+   "v1_first_hit_offset": 33
+  },
+  {
+   "case_id": "T13-tight",
+   "context": "0.835 0.8% of the corpus 0.950",
+   "atoms": [
+    [
+     "0.835",
+     "83.5%"
+    ],
+    "0.8% of the corpus",
+    [
+     "0.950",
+     "95%"
+    ]
+   ],
+   "window": null,
+   "v1_normalized_len": 30,
+   "v1_correct": true,
+   "v1_first_hit_offset": 25
+  },
+  {
+   "case_id": "T13-miss",
+   "context": "0.835 ... 0.8% of the corpus",
+   "atoms": [
+    [
+     "0.835",
+     "83.5%"
+    ],
+    "0.8% of the corpus",
+    [
+     "0.950",
+     "95%"
+    ]
+   ],
+   "window": null,
+   "v1_normalized_len": 28,
+   "v1_correct": false,
+   "v1_first_hit_offset": null
+  },
+  {
+   "case_id": "T13-far",
+   "context": "0.835 filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler0.8% of the corpus filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler0.950",
+   "atoms": [
+    [
+     "0.835",
+     "83.5%"
+    ],
+    "0.8% of the corpus",
+    [
+     "0.950",
+     "95%"
+    ]
+   ],
+   "window": 100,
+   "v1_normalized_len": 5628,
+   "v1_correct": false,
+   "v1_first_hit_offset": null
+  },
+  {
+   "case_id": "T14-hit",
+   "context": "what it does not buy: latency ... 1.4 s/query against 15 ms",
+   "atoms": [
+    "what it does not buy: latency",
+    "1.4 s/query against 15 ms"
+   ],
+   "window": null,
+   "v1_normalized_len": 59,
+   "v1_correct": true,
+   "v1_first_hit_offset": 34
+  },
+  {
+   "case_id": "T14-tight",
+   "context": "what it does not buy: latency 1.4 s/query against 15 ms",
+   "atoms": [
+    "what it does not buy: latency",
+    "1.4 s/query against 15 ms"
+   ],
+   "window": null,
+   "v1_normalized_len": 55,
+   "v1_correct": true,
+   "v1_first_hit_offset": 30
+  },
+  {
+   "case_id": "T14-miss",
+   "context": "what it does not buy: latency",
+   "atoms": [
+    "what it does not buy: latency",
+    "1.4 s/query against 15 ms"
+   ],
+   "window": null,
+   "v1_normalized_len": 29,
+   "v1_correct": false,
+   "v1_first_hit_offset": null
+  },
+  {
+   "case_id": "T14-far",
+   "context": "what it does not buy: latency filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler1.4 s/query against 15 ms",
+   "atoms": [
+    "what it does not buy: latency",
+    "1.4 s/query against 15 ms"
+   ],
+   "window": 100,
+   "v1_normalized_len": 2854,
+   "v1_correct": false,
+   "v1_first_hit_offset": null
+  },
+  {
+   "case_id": "T15-hit",
+   "context": "39 trait nodes ... sardonic-humor-as-survival",
+   "atoms": [
+    "39 trait nodes",
+    "sardonic-humor-as-survival"
+   ],
+   "window": null,
+   "v1_normalized_len": 45,
+   "v1_correct": true,
+   "v1_first_hit_offset": 19
+  },
+  {
+   "case_id": "T15-tight",
+   "context": "39 trait nodes sardonic-humor-as-survival",
+   "atoms": [
+    "39 trait nodes",
+    "sardonic-humor-as-survival"
+   ],
+   "window": null,
+   "v1_normalized_len": 41,
+   "v1_correct": true,
+   "v1_first_hit_offset": 15
+  },
+  {
+   "case_id": "T15-miss",
+   "context": "39 trait nodes",
+   "atoms": [
+    "39 trait nodes",
+    "sardonic-humor-as-survival"
+   ],
+   "window": null,
+   "v1_normalized_len": 14,
+   "v1_correct": false,
+   "v1_first_hit_offset": null
+  },
+  {
+   "case_id": "T15-far",
+   "context": "39 trait nodes filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler fillersardonic-humor-as-survival",
+   "atoms": [
+    "39 trait nodes",
+    "sardonic-humor-as-survival"
+   ],
+   "window": 100,
+   "v1_normalized_len": 2840,
+   "v1_correct": false,
+   "v1_first_hit_offset": null
+  },
+  {
+   "case_id": "T16-hit",
+   "context": "177 rows banked ... zero pv- ids",
+   "atoms": [
+    "177 rows banked",
+    "zero pv- ids"
+   ],
+   "window": null,
+   "v1_normalized_len": 32,
+   "v1_correct": true,
+   "v1_first_hit_offset": 20
+  },
+  {
+   "case_id": "T16-tight",
+   "context": "177 rows banked zero pv- ids",
+   "atoms": [
+    "177 rows banked",
+    "zero pv- ids"
+   ],
+   "window": null,
+   "v1_normalized_len": 28,
+   "v1_correct": true,
+   "v1_first_hit_offset": 16
+  },
+  {
+   "case_id": "T16-miss",
+   "context": "177 rows banked",
+   "atoms": [
+    "177 rows banked",
+    "zero pv- ids"
+   ],
+   "window": null,
+   "v1_normalized_len": 15,
+   "v1_correct": false,
+   "v1_first_hit_offset": null
+  },
+  {
+   "case_id": "T16-far",
+   "context": "177 rows banked filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler fillerzero pv- ids",
+   "atoms": [
+    "177 rows banked",
+    "zero pv- ids"
+   ],
+   "window": 100,
+   "v1_normalized_len": 2827,
+   "v1_correct": false,
+   "v1_first_hit_offset": null
+  },
+  {
+   "case_id": "T17-hit",
+   "context": "1.000000 ... test_reembedding_a_leaf_reproduces_the_banked_vector",
+   "atoms": [
+    "1.000000",
+    [
+     "test_reembedding_a_leaf_reproduces_the_banked_vector",
+     "64-leaf sample"
+    ]
+   ],
+   "window": null,
+   "v1_normalized_len": 65,
+   "v1_correct": true,
+   "v1_first_hit_offset": 13
+  },
+  {
+   "case_id": "T17-tight",
+   "context": "1.000000 test_reembedding_a_leaf_reproduces_the_banked_vector",
+   "atoms": [
+    "1.000000",
+    [
+     "test_reembedding_a_leaf_reproduces_the_banked_vector",
+     "64-leaf sample"
+    ]
+   ],
+   "window": null,
+   "v1_normalized_len": 61,
+   "v1_correct": true,
+   "v1_first_hit_offset": 9
+  },
+  {
+   "case_id": "T17-miss",
+   "context": "1.000000",
+   "atoms": [
+    "1.000000",
+    [
+     "test_reembedding_a_leaf_reproduces_the_banked_vector",
+     "64-leaf sample"
+    ]
+   ],
+   "window": null,
+   "v1_normalized_len": 8,
+   "v1_correct": false,
+   "v1_first_hit_offset": null
+  },
+  {
+   "case_id": "T17-far",
+   "context": "1.000000 filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler fillertest_reembedding_a_leaf_reproduces_the_banked_vector",
+   "atoms": [
+    "1.000000",
+    [
+     "test_reembedding_a_leaf_reproduces_the_banked_vector",
+     "64-leaf sample"
+    ]
+   ],
+   "window": 100,
+   "v1_normalized_len": 2860,
+   "v1_correct": false,
+   "v1_first_hit_offset": null
+  },
+  {
+   "case_id": "T18-hit",
+   "context": "2026-07-13_the-authors-desk-rejection.md ... pv-20260713t115219z",
+   "atoms": [
+    "2026-07-13_the-authors-desk-rejection.md",
+    "pv-20260713t115219z"
+   ],
+   "window": null,
+   "v1_normalized_len": 64,
+   "v1_correct": true,
+   "v1_first_hit_offset": 45
+  },
+  {
+   "case_id": "T18-tight",
+   "context": "2026-07-13_the-authors-desk-rejection.md pv-20260713t115219z",
+   "atoms": [
+    "2026-07-13_the-authors-desk-rejection.md",
+    "pv-20260713t115219z"
+   ],
+   "window": null,
+   "v1_normalized_len": 60,
+   "v1_correct": true,
+   "v1_first_hit_offset": 41
+  },
+  {
+   "case_id": "T18-miss",
+   "context": "2026-07-13_the-authors-desk-rejection.md",
+   "atoms": [
+    "2026-07-13_the-authors-desk-rejection.md",
+    "pv-20260713t115219z"
+   ],
+   "window": null,
+   "v1_normalized_len": 40,
+   "v1_correct": false,
+   "v1_first_hit_offset": null
+  },
+  {
+   "case_id": "T18-far",
+   "context": "2026-07-13_the-authors-desk-rejection.md filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler filler fillerpv-20260713t115219z",
+   "atoms": [
+    "2026-07-13_the-authors-desk-rejection.md",
+    "pv-20260713t115219z"
+   ],
+   "window": 100,
+   "v1_normalized_len": 2859,
+   "v1_correct": false,
+   "v1_first_hit_offset": null
+  }
+ ]
+}

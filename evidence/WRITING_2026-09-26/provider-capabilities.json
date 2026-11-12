@@ -1,0 +1,18 @@
+{
+  "binary_version": "codex-cli 0.153.2",
+  "command": "codex app-server generate-json-schema --out <temporary-directory>",
+  "exit_code": 0,
+  "present": [
+    "item/agentMessage/delta",
+    "thread/read",
+    "thread/resume",
+    "thread/start",
+    "turn/completed",
+    "turn/interrupt",
+    "turn/start",
+    "turn/steer"
+  ],
+  "missing": [],
+  "scope": "schema capability only; no process connection or model turn exercised",
+  "official_documentation": "https://learn.chatgpt.com/docs/app-server"
+}

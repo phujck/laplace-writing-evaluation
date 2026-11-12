@@ -1,0 +1,330 @@
+{
+  "associations": [
+    {
+      "bib_path": "synthetics papers/adaptive-normal-form/manuscript/tex/references.bib",
+      "citekey": "Galam198669e87b",
+      "claim_id": null,
+      "evidence_status": "metadata-only",
+      "key": "doi:10.1016/0022-2496(86)90019-2",
+      "metadata": {
+        "creators": [
+          "Serge Galam"
+        ],
+        "doi": "10.1016/0022-2496(86)90019-2",
+        "fulltext_urls": [
+          "https://api.elsevier.com/content/article/PII:0022249686900192?httpAccept=text/plain"
+        ],
+        "issue": "4",
+        "item_type": "journalArticle",
+        "key": "doi:10.1016/0022-2496(86)90019-2",
+        "pages": "426-434",
+        "provenance": {
+          "description": "Publisher-deposited bibliographic metadata verified by DOI lookup.",
+          "provider": "crossref",
+          "url": "https://api.crossref.org/works/10.1016/0022-2496(86)90019-2"
+        },
+        "publication_title": "Journal of Mathematical Psychology",
+        "publisher": "Elsevier BV",
+        "title": "Majority rule, hierarchical structures, and democratic totalitarianism: A statistical approach",
+        "url": "https://doi.org/10.1016/0022-2496(86)90019-2",
+        "version": "86b666cdb8f0f6ac6282fbf9e1ee20d8069e80edae7c35623b798152694fc25e",
+        "volume": "30",
+        "year": "1986"
+      },
+      "note": "",
+      "reading_status": "unread",
+      "source": {
+        "identity": "5d8d82f72d79d0f1cec011a396a366a70a324a5e918609db7f2c3e8c25a5704d",
+        "provider": "crossref",
+        "revision": {
+          "modified": "",
+          "version": "86b666cdb8f0f6ac6282fbf9e1ee20d8069e80edae7c35623b798152694fc25e"
+        }
+      },
+      "state": "CURRENT"
+    },
+    {
+      "bib_path": "synthetics papers/adaptive-normal-form/manuscript/tex/references.bib",
+      "citekey": "Simon1962236d85",
+      "claim_id": null,
+      "evidence_status": "metadata-only",
+      "key": "local:a91eb93e18a730dbee7ba448",
+      "metadata": {
+        "creators": [
+          "Herbert A. Simon"
+        ],
+        "issue": "6",
+        "item_type": "journalArticle",
+        "key": "local:a91eb93e18a730dbee7ba448",
+        "pages": "467-482",
+        "provenance": {
+          "description": "Existing bibliography identifies the original primary paper, public author-paper copy for reading.",
+          "path": "/home/phujck/VScodeProjects/laplace/synthetics papers/adaptive-normal-form/manuscript/tex/references.bib",
+          "sha256": "sha256:b5a4f5edbb484d9400ba8706f64d71865d6c9e3ea2742e29d245a555e836ea9d",
+          "url": "https://www2.econ.iastate.edu/tesfatsi/ArchitectureOfComplexity.HSimon1962.pdf"
+        },
+        "publication_title": "Proceedings of the American Philosophical Society",
+        "title": "The Architecture of Complexity",
+        "version": "907b8d8ce6f1fa1c05e556e6147b795e8dca0603e28e18e2f2b485484d8abb4c",
+        "volume": "106",
+        "year": "1962"
+      },
+      "note": "",
+      "reading_observations": [
+        {
+          "id": "READ-c1456448118fc34f38fb46b2",
+          "length": 14000,
+          "locator": "characters 0\u201314000",
+          "observation": "passage returned by reference_text; not independent comprehension or entailment",
+          "offset": 0,
+          "page_end": 4,
+          "page_start": 1,
+          "reference_key": "local:a91eb93e18a730dbee7ba448",
+          "source_index": 0,
+          "source_path": "/home/phujck/VScodeProjects/laplace/synthetics papers/adaptive-normal-form/manuscript/tex/literature_sources/cad628f8f6773fb46efdf782838c68e23923e174210b332e77d21f273cb8c70d.pdf",
+          "source_sha256": "sha256:cad628f8f6773fb46efdf782838c68e23923e174210b332e77d21f273cb8c70d",
+          "text_sha256": "sha256:eb25dd9251104cfe36e5ed128cf5b108a3b3bdb232601dc3111a3e70a6413425",
+          "total_characters": 77210
+        }
+      ],
+      "reading_status": "unread",
+      "source": {
+        "identity": "267c49a400d7fb81978a89d30143ee88b6a06379a58a5240cee75e3fc5e76c5a",
+        "provider": "local",
+        "revision": {
+          "modified": "",
+          "version": "907b8d8ce6f1fa1c05e556e6147b795e8dca0603e28e18e2f2b485484d8abb4c"
+        }
+      },
+      "source_text": {
+        "bytes": 561727,
+        "media_type": "application/pdf",
+        "path": "/home/phujck/VScodeProjects/laplace/synthetics papers/adaptive-normal-form/manuscript/tex/literature_sources/cad628f8f6773fb46efdf782838c68e23923e174210b332e77d21f273cb8c70d.pdf",
+        "qualification": "ACQUIRED_UNREAD; publication identity and claim alignment still require source inspection",
+        "resolved_url": "https://faculty.sites.iastate.edu/tesfatsi/archive/tesfatsi/ArchitectureOfComplexity.HSimon1962.pdf",
+        "sha256": "sha256:cad628f8f6773fb46efdf782838c68e23923e174210b332e77d21f273cb8c70d",
+        "url": "https://www2.econ.iastate.edu/tesfatsi/ArchitectureOfComplexity.HSimon1962.pdf"
+      },
+      "state": "CURRENT"
+    },
+    {
+      "bib_path": "synthetics papers/adaptive-normal-form/manuscript/tex/references.bib",
+      "citekey": "Perdomo2020a5b2ff",
+      "claim_id": null,
+      "evidence_status": "metadata-only",
+      "key": "local:5c1bbb643fcd9e79051ee33c",
+      "metadata": {
+        "creators": [
+          "Juan C. Perdomo",
+          "Tijana Zrnic",
+          "Celestine Mendler-D\u00fcnner",
+          "Moritz Hardt"
+        ],
+        "item_type": "conferencePaper",
+        "key": "local:5c1bbb643fcd9e79051ee33c",
+        "pages": "7599-7609",
+        "provenance": {
+          "description": "Original PMLR publisher proceedings record for focused feedback context, not a whole shared bibliography file as source identity.",
+          "url": "https://proceedings.mlr.press/v119/perdomo20a.html"
+        },
+        "publication_title": "Proceedings of the 37th International Conference on Machine Learning",
+        "title": "Performative Prediction",
+        "url": "https://proceedings.mlr.press/v119/perdomo20a.html",
+        "version": "b46cfbe152f0eb549b01219dbfd7ac56e0f6a9bb458a508b7f8c23373753f8ff",
+        "volume": "119",
+        "year": "2020"
+      },
+      "note": "",
+      "reading_observations": [
+        {
+          "id": "READ-fe3323acb5271775460dc391",
+          "length": 15000,
+          "locator": "characters 0\u201315000",
+          "observation": "passage returned by reference_text; not independent comprehension or entailment",
+          "offset": 0,
+          "page_end": 4,
+          "page_start": 1,
+          "reference_key": "local:5c1bbb643fcd9e79051ee33c",
+          "source_index": 0,
+          "source_path": "/home/phujck/VScodeProjects/laplace/synthetics papers/adaptive-normal-form/manuscript/tex/literature_sources/66c3f74995d6ade7e11554b034d0e33f5a07b877da73b555a26a2cd77b120f9b.pdf",
+          "source_sha256": "sha256:66c3f74995d6ade7e11554b034d0e33f5a07b877da73b555a26a2cd77b120f9b",
+          "text_sha256": "sha256:616c03dacfdf8eb4305f18c1978d2ab6395984e06ca3c43dd748773705883ee2",
+          "total_characters": 47875
+        }
+      ],
+      "reading_status": "unread",
+      "source": {
+        "identity": "dc48cc9b9674a807d2b0140e35df7f5042cd4dbfbb4a67cb7e89a8648a2338ed",
+        "provider": "local",
+        "revision": {
+          "modified": "",
+          "version": "b46cfbe152f0eb549b01219dbfd7ac56e0f6a9bb458a508b7f8c23373753f8ff"
+        }
+      },
+      "source_text": {
+        "bytes": 1187109,
+        "media_type": "application/pdf",
+        "path": "/home/phujck/VScodeProjects/laplace/synthetics papers/adaptive-normal-form/manuscript/tex/literature_sources/66c3f74995d6ade7e11554b034d0e33f5a07b877da73b555a26a2cd77b120f9b.pdf",
+        "qualification": "ACQUIRED_UNREAD; publication identity and claim alignment still require source inspection",
+        "resolved_url": "https://proceedings.mlr.press/v119/perdomo20a/perdomo20a.pdf",
+        "sha256": "sha256:66c3f74995d6ade7e11554b034d0e33f5a07b877da73b555a26a2cd77b120f9b",
+        "url": "https://proceedings.mlr.press/v119/perdomo20a/perdomo20a.pdf"
+      },
+      "state": "CURRENT"
+    },
+    {
+      "bib_path": "synthetics papers/adaptive-normal-form/manuscript/tex/references.bib",
+      "binding_state": "BOUND",
+      "canonical_id": "ref:Simon1962236d85",
+      "canonical_records": [
+        "RW-20261111-231959-409414",
+        "RW-20261111-231959-443177"
+      ],
+      "citekey": "Simon1962236d85",
+      "claim_id": "reconcile:hierarchy-context",
+      "claim_revision": "sha256:3fcdb840fdd6c1459b5bd7f522795e9b50105f6b3598a3a4942d3c405820d828",
+      "evidence": {
+        "locator": "characters 0\u201314000"
+      },
+      "evidence_source_identity": "267c49a400d7fb81978a89d30143ee88b6a06379a58a5240cee75e3fc5e76c5a",
+      "evidence_status": "authored-passage",
+      "key": "local:a91eb93e18a730dbee7ba448",
+      "metadata": {
+        "creators": [
+          "Herbert A. Simon"
+        ],
+        "issue": "6",
+        "item_type": "journalArticle",
+        "key": "local:a91eb93e18a730dbee7ba448",
+        "pages": "467-482",
+        "provenance": {
+          "description": "Existing bibliography identifies the original primary paper, public author-paper copy for reading.",
+          "path": "/home/phujck/VScodeProjects/laplace/synthetics papers/adaptive-normal-form/manuscript/tex/references.bib",
+          "sha256": "sha256:b5a4f5edbb484d9400ba8706f64d71865d6c9e3ea2742e29d245a555e836ea9d",
+          "url": "https://www2.econ.iastate.edu/tesfatsi/ArchitectureOfComplexity.HSimon1962.pdf"
+        },
+        "publication_title": "Proceedings of the American Philosophical Society",
+        "title": "The Architecture of Complexity",
+        "version": "907b8d8ce6f1fa1c05e556e6147b795e8dca0603e28e18e2f2b485484d8abb4c",
+        "volume": "106",
+        "year": "1962"
+      },
+      "note": "",
+      "rationale": "Simon defines hierarchy as interrelated nested subsystems and distinguishes this broader notion from formal authority. This provides architectural context, not a proof of any feedback-gain or actuation-cost law.",
+      "reading_assertion": "passage observed; interpretation authored, not independently verified",
+      "reading_receipt": {
+        "id": "READ-c1456448118fc34f38fb46b2",
+        "length": 14000,
+        "locator": "characters 0\u201314000",
+        "observation": "passage returned by reference_text; not independent comprehension or entailment",
+        "offset": 0,
+        "page_end": 4,
+        "page_start": 1,
+        "reference_key": "local:a91eb93e18a730dbee7ba448",
+        "source_index": 0,
+        "source_path": "/home/phujck/VScodeProjects/laplace/synthetics papers/adaptive-normal-form/manuscript/tex/literature_sources/cad628f8f6773fb46efdf782838c68e23923e174210b332e77d21f273cb8c70d.pdf",
+        "source_sha256": "sha256:cad628f8f6773fb46efdf782838c68e23923e174210b332e77d21f273cb8c70d",
+        "text_sha256": "sha256:eb25dd9251104cfe36e5ed128cf5b108a3b3bdb232601dc3111a3e70a6413425",
+        "total_characters": 77210
+      },
+      "reading_status": "partial",
+      "relation": "background",
+      "source": {
+        "identity": "267c49a400d7fb81978a89d30143ee88b6a06379a58a5240cee75e3fc5e76c5a",
+        "provider": "local",
+        "revision": {
+          "modified": "",
+          "version": "907b8d8ce6f1fa1c05e556e6147b795e8dca0603e28e18e2f2b485484d8abb4c"
+        }
+      },
+      "source_text": {
+        "bytes": 561727,
+        "media_type": "application/pdf",
+        "path": "/home/phujck/VScodeProjects/laplace/synthetics papers/adaptive-normal-form/manuscript/tex/literature_sources/cad628f8f6773fb46efdf782838c68e23923e174210b332e77d21f273cb8c70d.pdf",
+        "qualification": "ACQUIRED_UNREAD; publication identity and claim alignment still require source inspection",
+        "resolved_url": "https://faculty.sites.iastate.edu/tesfatsi/archive/tesfatsi/ArchitectureOfComplexity.HSimon1962.pdf",
+        "sha256": "sha256:cad628f8f6773fb46efdf782838c68e23923e174210b332e77d21f273cb8c70d",
+        "url": "https://www2.econ.iastate.edu/tesfatsi/ArchitectureOfComplexity.HSimon1962.pdf"
+      },
+      "state": "CURRENT"
+    },
+    {
+      "bib_path": "synthetics papers/adaptive-normal-form/manuscript/tex/references.bib",
+      "binding_state": "BOUND",
+      "canonical_id": "ref:Perdomo2020a5b2ff",
+      "canonical_records": [
+        "RW-20261111-232012-347243",
+        "RW-20261111-232012-395129"
+      ],
+      "citekey": "Perdomo2020a5b2ff",
+      "claim_id": "reconcile:performative-context",
+      "claim_revision": "sha256:60209b16f401596da67e59fae9013fc47ae2a7f579400e087b6276fcdaed687b",
+      "evidence": {
+        "locator": "characters 0\u201315000"
+      },
+      "evidence_source_identity": "dc48cc9b9674a807d2b0140e35df7f5042cd4dbfbb4a67cb7e89a8648a2338ed",
+      "evidence_status": "authored-passage",
+      "key": "local:5c1bbb643fcd9e79051ee33c",
+      "metadata": {
+        "creators": [
+          "Juan C. Perdomo",
+          "Tijana Zrnic",
+          "Celestine Mendler-D\u00fcnner",
+          "Moritz Hardt"
+        ],
+        "item_type": "conferencePaper",
+        "key": "local:5c1bbb643fcd9e79051ee33c",
+        "pages": "7599-7609",
+        "provenance": {
+          "description": "Original PMLR publisher proceedings record for focused feedback context, not a whole shared bibliography file as source identity.",
+          "url": "https://proceedings.mlr.press/v119/perdomo20a.html"
+        },
+        "publication_title": "Proceedings of the 37th International Conference on Machine Learning",
+        "title": "Performative Prediction",
+        "url": "https://proceedings.mlr.press/v119/perdomo20a.html",
+        "version": "b46cfbe152f0eb549b01219dbfd7ac56e0f6a9bb458a508b7f8c23373753f8ff",
+        "volume": "119",
+        "year": "2020"
+      },
+      "note": "",
+      "rationale": "Perdomo et al. define performative prediction through a parameter-dependent outcome distribution and separate performative stability from risk optimality. This motivates explicit closed-loop modelling, not an identification of their retraining theorem with the sampled controllers studied here.",
+      "reading_assertion": "passage observed; interpretation authored, not independently verified",
+      "reading_receipt": {
+        "id": "READ-fe3323acb5271775460dc391",
+        "length": 15000,
+        "locator": "characters 0\u201315000",
+        "observation": "passage returned by reference_text; not independent comprehension or entailment",
+        "offset": 0,
+        "page_end": 4,
+        "page_start": 1,
+        "reference_key": "local:5c1bbb643fcd9e79051ee33c",
+        "source_index": 0,
+        "source_path": "/home/phujck/VScodeProjects/laplace/synthetics papers/adaptive-normal-form/manuscript/tex/literature_sources/66c3f74995d6ade7e11554b034d0e33f5a07b877da73b555a26a2cd77b120f9b.pdf",
+        "source_sha256": "sha256:66c3f74995d6ade7e11554b034d0e33f5a07b877da73b555a26a2cd77b120f9b",
+        "text_sha256": "sha256:616c03dacfdf8eb4305f18c1978d2ab6395984e06ca3c43dd748773705883ee2",
+        "total_characters": 47875
+      },
+      "reading_status": "partial",
+      "relation": "background",
+      "source": {
+        "identity": "dc48cc9b9674a807d2b0140e35df7f5042cd4dbfbb4a67cb7e89a8648a2338ed",
+        "provider": "local",
+        "revision": {
+          "modified": "",
+          "version": "b46cfbe152f0eb549b01219dbfd7ac56e0f6a9bb458a508b7f8c23373753f8ff"
+        }
+      },
+      "source_text": {
+        "bytes": 1187109,
+        "media_type": "application/pdf",
+        "path": "/home/phujck/VScodeProjects/laplace/synthetics papers/adaptive-normal-form/manuscript/tex/literature_sources/66c3f74995d6ade7e11554b034d0e33f5a07b877da73b555a26a2cd77b120f9b.pdf",
+        "qualification": "ACQUIRED_UNREAD; publication identity and claim alignment still require source inspection",
+        "resolved_url": "https://proceedings.mlr.press/v119/perdomo20a/perdomo20a.pdf",
+        "sha256": "sha256:66c3f74995d6ade7e11554b034d0e33f5a07b877da73b555a26a2cd77b120f9b",
+        "url": "https://proceedings.mlr.press/v119/perdomo20a/perdomo20a.pdf"
+      },
+      "state": "CURRENT"
+    }
+  ],
+  "schema_version": "laplace.references/1"
+}

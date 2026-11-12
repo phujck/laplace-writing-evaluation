@@ -1,0 +1,43 @@
+{
+  "id": "result-201adc1f43a2c98ae841",
+  "kind": "result",
+  "limitations": [
+    "Four deterministic isolated calls to the exact original inline policy block, not execution of the entire old main or historical stream/grid.",
+    "Tie price is constructed from the same previously observed candidate gain to make a true binary64 score equality. Rational-oracle values are compared numerically at1e-12, not asserted bit-identical to exact algebra.",
+    "No OR, quantum, v0, performance, calibration, biological or model-reader experiment. No generic correctness proof or independent verification.",
+    "The independent HOLD remains pending a new review on this same Work/obligation."
+  ],
+  "provenance": {
+    "dependencies": [
+      {
+        "bytes": 10569,
+        "path": "research/slg-policy-coverage-20261111-v3/coverage_checks.py",
+        "sha256": "6e28d95e704849058e84d87ae414db1e656dbbe73e5d5447af20431049411795",
+        "status": "PRESENT"
+      },
+      {
+        "bytes": 27287,
+        "path": "research_runs/run-756cd502012e0adb.result.json",
+        "scope": "manuscript",
+        "sha256": "e6d4078cf9ac756904838ca7cdaf67a3e3ceaefd80cbca020aa1930bf6a0d51a",
+        "status": "PRESENT"
+      }
+    ],
+    "recorded_at": 1794411493.5189376,
+    "scope": "project",
+    "snapshot_schema": "laplace.research-dependencies/3"
+  },
+  "record_request": {
+    "intent_digest": "sha256:ec98a7d1b49733563050df462b5c1491e40c34ab04132220300eb5d07e32fd43",
+    "request_id": "record-4f8e0d2ac8164d708d6485bd802d26a6"
+  },
+  "result": "research_runs/run-756cd502012e0adb.result.json",
+  "result_scope": "manuscript",
+  "revision": "sha256:2fc9cb0cd2256b66523a9cbb8c9440acd7e255a01e16627abd34c60e84445687",
+  "run_id": "run-756cd502012e0adb",
+  "scope": "project",
+  "source": "research/slg-policy-coverage-20261111-v3/coverage_checks.py",
+  "source_scope": "project",
+  "summary": "The unchanged pinned v2 v1 policy AST (lines85-98) and its original mse function were executed four times through the SAME compiled selection/application block. Observed2 promoted updates,2 stays including one positive-price exact binary score tie, and one subsequent decision carrying actual updated state. State chain1 -> .9559999780000028 -> .9216799632844488. Independent Fraction/scalar-polynomial oracles matched within1e-12, exact branch/carry/tie checks passed.61 assertions,0 failures, not61 independent cases. Original v2 analytic artifacts and all old runs remain unchanged.",
+  "title": "Four-call policy coverage: promoted, stay, exact tie and carried update"
+}

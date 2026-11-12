@@ -784,11 +784,69 @@ def export_projects(root: Path, destination: Path, projects, extra_sources=(), *
     return report
 
 
+def export_curated(root: Path, destination: Path, selection: Path, *, max_total_bytes=None):
+    """Replay an explicit curated distribution, preserving every selected byte.
+
+    Unlike a project-data export, this never crawls author history. The current
+    implementation/resource closure must be present, so a stale list cannot
+    silently omit a newly added source/resource file.
+    """
+    root, destination = Path(root).resolve(), Path(destination).resolve()
+    if destination.exists() or destination.is_relative_to(root) or root.is_relative_to(destination):
+        raise ValueError('curated export requires a new directory outside the source')
+    selection = Path(selection).resolve()
+    raw_selection = selection.read_bytes()
+    manifest = json.loads(raw_selection)
+    if manifest.get('schema') != 'laplace.curated-evaluation-selection/1':
+        raise ValueError('unknown curated selection schema')
+    rows = list(manifest.get('files', [])) + [dict(row, path=rel)
+            for rel, row in manifest.get('derived_files', {}).items()]
+    chosen = {}
+    for row in rows:
+        rel = row.get('path')
+        if not isinstance(rel, str) or inventory._excluded(Path(rel)):
+            raise ValueError('private or malformed selected path: ' + str(rel))
+        if rel in chosen: raise ValueError('duplicate selected path: ' + rel)
+        path = inventory._safe(root, rel)
+        if not path.is_file() or path.is_symlink(): raise ValueError('selected input unavailable: ' + rel)
+        current = inventory._file_record(root, path)
+        if current['sha256'].removeprefix('sha256:') != str(row.get('sha256', '')).removeprefix('sha256:') or current['bytes'] != row.get('bytes'):
+            raise ValueError('selected bytes changed: ' + rel)
+        chosen[rel] = current
+    closure = inventory.application_closure(root, tests=True)
+    missing = [row['path'] for row in closure['files'] if row['path'] not in chosen]
+    if missing: raise ValueError('curated selection omits application closure: ' + ', '.join(missing[:20]))
+    restricted = manifest.get('private_record_input_exclusions', [])
+    for paper in manifest.get('papers', []):
+        record_closure = inventory.retained_record_closure(root, paper['project'], restricted=restricted)
+        if record_closure['missing_required']:
+            raise ValueError('scientific declaration has unavailable input: ' + str(record_closure['missing_required'][0]))
+        omitted = [row['path'] for row in record_closure['files'] if row['path'] not in chosen]
+        if omitted: raise ValueError('curated selection omits scientific closure: ' + ', '.join(omitted[:20]))
+    output_refusal([*chosen.values(), {'path': 'release/selection-manifest.json', 'bytes': len(raw_selection)}], max_total_bytes)
+    # Complete all validation before creating the destination. No missing
+    # evidence, credentials, private state or history is fabricated.
+    destination.mkdir(parents=True)
+    for rel, row in sorted(chosen.items()):
+        source = inventory._safe(root, rel)
+        if digest(source.read_bytes()) != row['sha256']: raise ValueError('input changed during export: ' + rel)
+        target = destination / rel
+        target.parent.mkdir(parents=True, exist_ok=True)
+        shutil.copy2(source, target)
+    target = destination / 'release/selection-manifest.json'
+    target.parent.mkdir(parents=True, exist_ok=True)
+    target.write_bytes(raw_selection)
+    return {'status': 'EXACT_CURATED_REPLAY', 'files': len(chosen) + 1,
+            'selection_sha256': digest(raw_selection),
+            'scope': 'Selected bytes and complete declared application closure; not scientific or behavioural acceptance.'}
+
+
 def main(argv=None):
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--repo-root', required=True, type=Path)
     parser.add_argument('--destination', required=True, type=Path)
-    parser.add_argument('--project', action='append', required=True)
+    parser.add_argument('--project', action='append')
+    parser.add_argument('--curated-selection', type=Path, help='Replay exact selected distribution plus complete declared application/resource closure')
     parser.add_argument('--project-intent', action='append', metavar='PROJECT=INTENT',
                         help='Explicit selected-project closure intent (default: completed-manuscript)')
     parser.add_argument('--supplementary-sources', type=Path)
@@ -799,6 +857,13 @@ def main(argv=None):
     parser.add_argument('--work-inputs', choices=['current'], help='Select the current inputs of reviewed Work obligations outside the manuscript closure, through the pinned supplementary route at their exact repository paths')
     parser.add_argument('--portable-document', action='store_true', help='Stage a derived portable copy of each selected manuscript (appendix of qualified link targets, HTML list, PDF through the declared build chain when it can run)')
     args = parser.parse_args(argv)
+    if args.curated_selection:
+        if args.project or args.selection_policy or args.supplementary_sources or args.work_inputs or args.portable_document:
+            parser.error('Curated replay does not implicitly select additional project history or change records.')
+        result = export_curated(args.repo_root, args.destination, args.curated_selection, max_total_bytes=args.max_total_bytes)
+        print(json.dumps({'destination': str(args.destination), **result}))
+        return 0
+    if not args.project: parser.error('--project or --curated-selection is required')
     sources = json.loads(args.supplementary_sources.read_text(encoding="utf-8")) if args.supplementary_sources else []
     policy = args.selection_policy.read_bytes() if args.selection_policy else None
     result = export_projects(args.repo_root, args.destination, args.project, sources, intents=args.project_intent,

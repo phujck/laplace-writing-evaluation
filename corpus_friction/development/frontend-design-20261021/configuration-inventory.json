@@ -1,0 +1,178 @@
+{
+  "schema": "laplace.frontend-configuration-inventory/1",
+  "at": "2026-10-21T10:07:56.726038+00:00",
+  "scope": "Reached current setting families plus explicit missing general cascade. No claim of dynamic field-complete API census, GUI acceptance, or mutation of values.",
+  "families": [
+    {
+      "family": "Model defaults",
+      "scope": "application",
+      "fields_or_values": [
+        "role/tier declarations",
+        "provider catalogue"
+      ],
+      "owner": "projects/library.py app_settings + pipeline/schema.py",
+      "current_capability": "read-only global default/tier; explicit provider refresh available",
+      "meaning_or_limit": "Existing project/session overrides are not a global policy mutation"
+    },
+    {
+      "family": "Future conversation defaults",
+      "scope": "project",
+      "fields_or_values": [
+        "provider",
+        "model",
+        "effort"
+      ],
+      "owner": "work/project_work.py + workspace-project.mjs",
+      "current_capability": "existing /work/session-preferences saves future defaults",
+      "meaning_or_limit": "Open conversation unchanged; provider/model choice validated"
+    },
+    {
+      "family": "Current conversation preferences",
+      "scope": "session",
+      "fields_or_values": [
+        "provider",
+        "model",
+        "effort"
+      ],
+      "owner": "writing/turn_admission.py configure_session",
+      "current_capability": "next-turn change only while not active",
+      "meaning_or_limit": "Wait or supported stop; no injection into activeprovider"
+    },
+    {
+      "family": "Instruction delivery",
+      "scope": "admitted turn",
+      "fields_or_values": [
+        "kernel",
+        "frame",
+        "body identities/deltas"
+      ],
+      "owner": "writing/operating.py",
+      "current_capability": "owner constructs delivered instructions and permissions",
+      "meaning_or_limit": "Immutable/provider binding changes explicit; no frontend instruction store"
+    },
+    {
+      "family": "Project working guides",
+      "scope": "project",
+      "fields_or_values": [
+        "path",
+        "role instructions/handoff/background"
+      ],
+      "owner": "manuscript/project_protocol.py",
+      "current_capability": "max4projectMDguides; max24KB perguide; instruction/catalogue revisions distinct",
+      "meaning_or_limit": "Handoff/background edits do not automatically invalidate an instruction basis that never consumed them"
+    },
+    {
+      "family": "Structural/architecture preferences",
+      "scope": "workspace",
+      "fields_or_values": [
+        "architecture content",
+        "candidate guards",
+        "confirmation fields"
+      ],
+      "owner": "manuscript/profiles.py + pipeline/narrative.py",
+      "current_capability": "workspace-only; guarded candidate/apply/confirm",
+      "meaning_or_limit": "No current project override; expose prohibition instead of drawing an editable control"
+    },
+    {
+      "family": "Writing voice",
+      "scope": "workspace/project",
+      "fields_or_values": [
+        "profile",
+        "guidance",
+        "genre",
+        "provenance/calibration"
+      ],
+      "owner": "manuscript/writing_style.py + manuscript/profiles.py",
+      "current_capability": "shared profiles and project selection have distinct effects and guards",
+      "meaning_or_limit": "Editing shared profile is not changing project selection; calibration requires declared source/provenance"
+    },
+    {
+      "family": "Document source and publication",
+      "scope": "project/document",
+      "fields_or_values": [
+        "selected source",
+        "publication_editions",
+        "title/style/profile/targets"
+      ],
+      "owner": "manuscript/manuscript_source.py + projects/library.py + manuscript/build_targets.py + manuscript/document_style.py",
+      "current_capability": "existing source/edition/style/build owners; declaration/prepare/build separate",
+      "meaning_or_limit": "Do not equate project displaytitle with printedtitle, definition with preparedtarget, or compiledPDF with current source"
+    },
+    {
+      "family": "Reader/argument intent",
+      "scope": "section/paragraph",
+      "fields_or_values": [
+        "prior knowledge",
+        "questions",
+        "new understanding",
+        "next need",
+        "contract inputs"
+      ],
+      "owner": "manuscript/reader_plan.py + pipeline/authoring.py",
+      "current_capability": "guarded domain authoring/reader-basis owners",
+      "meaning_or_limit": "Display relation/currentness and sourceconsumption separately; does not create execution grants"
+    },
+    {
+      "family": "Runtime interpreter policy",
+      "scope": "operator/application",
+      "fields_or_values": [
+        "runtime_profiles.toml declaration/observed interpreter"
+      ],
+      "owner": "projects/library.py + core/runtime.py",
+      "current_capability": "read-only app observation; no runtime selection mutation owner in app",
+      "meaning_or_limit": "No UI toggle pretending to install/change runtime; actualdesktop/backendentry remains distinct"
+    },
+    {
+      "family": "Local presentation preferences",
+      "scope": "client visit",
+      "fields_or_values": [
+        "nav open",
+        "pane widths",
+        "composerheight",
+        "selected view/return",
+        "fold/zoom"
+      ],
+      "owner": "workspace-chrome/session/topology/interaction modules",
+      "current_capability": "localStorage/sessionStorage/ephemeral state by existing concern",
+      "meaning_or_limit": "No backendpermission/currentness/lifecycleauthority; drafts use originalbasis owner"
+    },
+    {
+      "family": "Workflow/step/role/object setting cascade",
+      "scope": "proposed legal assignment path",
+      "fields_or_values": [
+        "model choice",
+        "orderedinstructionsegments",
+        "budgets",
+        "advance policy"
+      ],
+      "owner": "existing workflow/dispatch/profiles/turn owners to extend afterRootapproval",
+      "current_capability": "General effective-setting result and running-version adoption not yet established",
+      "meaning_or_limit": "Per-key legal scopes, source/version, explicit conflict, ceiling and apply boundary required; no universal merger"
+    },
+    {
+      "family": "Autonomy and permissions",
+      "scope": "proposed run policy plus existing controls",
+      "fields_or_values": [
+        "advance-to-next-stage condition",
+        "source-effect application condition",
+        "chosen human/material-decision boundaries",
+        "allowed effects",
+        "owner-configured fanout/retries/time/cost/iteration ceilings"
+      ],
+      "owner": "existing turn/dispatch/childhost and source/grant owners",
+      "current_capability": "concrete role/tool/source admission exists; general nested advance editor missing",
+      "meaning_or_limit": "Separate advance and effect policy; unattended bounded review/revision allowed. No universal numeric or mandatory per-return human defaults; authority remains scoped and committed effects survive cancellation."
+    }
+  ],
+  "ownership_correction": {
+    "at": "2026-10-21T11:26:56.197502+00:00",
+    "status": "GENERAL_LOGICAL_OWNER_SCOPE_JOIN_NOT_IMPLEMENTED",
+    "basis": {
+      "path": "corpus_friction/development/frontend-design-20261021/ownership-custody-observation.json",
+      "sha256": "sha256:0d5e0def9cb0aca7a3b16700ab983068842f8f1295fb49618e00b65652af87c1",
+      "bytes": 4064
+    },
+    "design": "docs/writing-frontend-workflow-design.md",
+    "qualification": "Earlier present-in-source rows describe existing local owners, not a general owner/scope API or mandatory project parent. System/subsystem/contract policy, reference and workflow-definition edits need explicit owner admission; project preferences remain local and cannot authorise cross-scope effects."
+  }
+}

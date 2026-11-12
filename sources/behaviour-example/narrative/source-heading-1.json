@@ -1,0 +1,21 @@
+{
+  "section_id": "source-heading-1",
+  "paragraphs": [
+    {
+      "section_id": "source-heading-1",
+      "paragraph_id": "source-heading-1-p17351662711874295974439332650",
+      "function": "State the toy input and its elementary sum.",
+      "proposition": "The input sequence 1, 2, 3 has sum 6.",
+      "explanation": "Add the three stated values.",
+      "derivation_detail": "1 + 2 + 3 = 6.",
+      "qualification": "Authored public toy example, not an empirical or independently verified scientific finding.",
+      "from_previous": "The opening announces a locally authored example; this supplies its concrete input.",
+      "to_next": "No further inference or section is promised.",
+      "detail_level": "One plain sentence.",
+      "length_range": "One sentence.",
+      "input_nodes": [
+        "def:sequence"
+      ]
+    }
+  ]
+}

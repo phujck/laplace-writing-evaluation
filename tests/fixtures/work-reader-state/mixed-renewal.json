@@ -1,0 +1,153 @@
+{
+ "provenance": {
+  "path": "/tmp/laplace-programme-20261026/review-setup-producer/verification-004/samples/admitted-original-approval.json",
+  "sha256": "2c3c4e976cc308061a8d7d11864e09ec1aa97497ae852952e8313773fe325cac",
+  "qualification": "Existing public deterministic owner sample, no model. Only emitted selected event and matching current approval copied."
+ },
+ "event": {
+  "id": "WD-c85153e64cce4da418992528",
+  "state": "RESULT",
+  "work_id": "review-claim",
+  "handoff_id": "PHASE-1587bb7812a08bd573cfbf51",
+  "obligation_id": "assumptions",
+  "recipient": {
+   "id": "RB-5d56038ec543062fc3633077",
+   "revision": "sha256:5d56038ec543062fc3633077910e59ea77e050d24a5c50b378d36dcfb0844376",
+   "work_id": "review-claim",
+   "role": "review",
+   "provider": "claude",
+   "model": "haiku",
+   "effort": "low",
+   "label": "assumptions",
+   "state": "APPROVED",
+   "attachment": "app-owned review session",
+   "approved_by": "human",
+   "expires_at": "2026-11-02T00:56:08.485958+00:00",
+   "previous_revision": null,
+   "approval_generation": null,
+   "approval": null,
+   "kind": "app-owned"
+  },
+  "attempts": 1,
+  "max_attempts": 2,
+  "deadline_at": "2026-10-26T00:57:08.625229+00:00",
+  "content_pin": "sha256:e0d7ed1e2bf2d1141e415f0afecb7b0a359460d8d18c6d33a849129443d83278",
+  "work_scope_revision": "sha256:bd9bb513e7df78709bbf57dbbccf16e161fda7089607adce3d7a38001aad68e7",
+  "facts": {
+   "submitted": "2026-10-26T00:56:08.632Z",
+   "reserved": "2026-10-26T00:56:08.685Z",
+   "admitted": "2026-10-26T00:56:09.093Z",
+   "result": "2026-10-26T00:56:09.116Z"
+  },
+  "submitted_by": "author",
+  "continuation": null,
+  "reason": null,
+  "last_error": null,
+  "admitted": {
+   "session_id": "WS-4f8fe525a7d9406c8a89c74377f10e99",
+   "turn_id": "WT-1dfb1550846644a8acb4dbe2e216456f",
+   "request_id": "WD-c85153e64cce4da418992528",
+   "reused": null,
+   "recovered": false,
+   "recipient_ack": "TERMINAL"
+  },
+  "running": true,
+  "public_reply_read": {
+   "identity": {
+    "project": "p",
+    "session_id": "WS-4f8fe525a7d9406c8a89c74377f10e99",
+    "turn_id": "WT-1dfb1550846644a8acb4dbe2e216456f",
+    "part": "reply"
+   },
+   "http": {
+    "method": "GET",
+    "url": "/authoring/session-turn?project=p&session_id=WS-4f8fe525a7d9406c8a89c74377f10e99&part=reply&offset=0&limit=4000&id=WT-1dfb1550846644a8acb4dbe2e216456f&view=message"
+   },
+   "sdk": {
+    "method": "conversation_message",
+    "payload": {
+     "project": "p",
+     "session_id": "WS-4f8fe525a7d9406c8a89c74377f10e99",
+     "turn_id": "WT-1dfb1550846644a8acb4dbe2e216456f",
+     "part": "reply",
+     "offset": 0,
+     "limit": 4000
+    }
+   }
+  },
+  "turn_read": {
+   "http": {
+    "method": "GET",
+    "url": "/authoring/session-turn?project=p&id=WT-1dfb1550846644a8acb4dbe2e216456f&view=turn"
+   }
+  },
+  "exact_reply_read": {
+   "operation": "author_history",
+   "payload": {
+    "view": "record",
+    "id": "activity:journal:WR-0ca3c0da45bd4774ab5a60e5bf4b59ff"
+   },
+   "http": {
+    "method": "GET",
+    "url": "/authoring/history?project=p&view=record&id=activity%3Ajournal%3AWR-0ca3c0da45bd4774ab5a60e5bf4b59ff"
+   }
+  },
+  "result": {
+   "status": "completed",
+   "text": "wrote the return this packet declared",
+   "available": true
+  },
+  "acceptance": {
+   "status": "AWAITING_REVIEW",
+   "currentness": "UNKNOWN",
+   "currentness_reason": null,
+   "independence": null,
+   "satisfied": false,
+   "review_id": null,
+   "reviewer": null,
+   "by_this_delivery": false
+  },
+  "continuation_work_id": null,
+  "parent_return": {
+   "state": null,
+   "attempts": 0,
+   "deferrals": 0,
+   "continuation_turn": null,
+   "cost": null
+  }
+ },
+ "current": {
+  "id": "RB-5d56038ec543062fc3633077",
+  "revision": "sha256:4256fe3cc7c9c7be1c78a947015aab1f305a2d355b607bd796c1cdb5d895a1b6",
+  "work_id": "review-claim",
+  "role": "review",
+  "provider": "claude",
+  "model": "haiku",
+  "effort": "low",
+  "label": "assumptions",
+  "state": "APPROVED",
+  "attachment": "app-owned review session",
+  "approved_by": "human",
+  "expires_at": "2026-10-26T01:56:09.048550+00:00",
+  "previous_revision": "sha256:5d56038ec543062fc3633077910e59ea77e050d24a5c50b378d36dcfb0844376",
+  "approval_generation": 2,
+  "approval": {
+   "schema_version": "laplace.review-approval/1",
+   "action": "renew",
+   "request_id": "admitted-renew-public-1",
+   "intent_sha256": "sha256:73ec40937c891efb6de69d4966d8f2058f8af6ec3fa025f71701b73439d58ffa",
+   "intent": {
+    "project": "p",
+    "expected_binding_revision": "sha256:5d56038ec543062fc3633077910e59ea77e050d24a5c50b378d36dcfb0844376",
+    "expected_work_revision": "sha256:6badd06f3cd48208ff56677f72cdda571fef2d61c902b8cd6add6c3745c47877",
+    "lifetime_s": 3600,
+    "recipient_binding_id": "RB-5d56038ec543062fc3633077",
+    "request_id": "admitted-renew-public-1",
+    "work_id": "review-claim"
+   },
+   "lifetime_s": 3600,
+   "by": "author"
+  },
+  "kind": "app-owned"
+ }
+}

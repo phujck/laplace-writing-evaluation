@@ -1,0 +1,826 @@
+{
+ "basis": "bounded synthetic book from tests/test_manuscript_structure._section_fixture with one created paragraph; the four owner-generated projection:guard subject responses of section first (2026-10-14)",
+ "project": "book",
+ "section_id": "first",
+ "paragraph_id": "first-p36456703742131136201844960223",
+ "contract": {
+  "schema_version": "laplace.project-structure-guard/1",
+  "project": "book",
+  "section_id": "first",
+  "projection": "guard",
+  "subject": "contract",
+  "eligible_for_authoring": true,
+  "authority": {
+   "plan_path": "synthetics papers/book/manuscript/projection_plan.json",
+   "spine_revision": "sha256:4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+   "plan_revision": "sha256:0af1d3c0199e1340cade40e282ea772471ce4a85619ce027856c334f73119d9d",
+   "conceptric_revision": "sha256:ee6597c03f4d8c348ef5d7d83f7073ae18878e2b73c2f581000e960acc7a886f",
+   "research_revision": "sha256:4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+   "source_revision": "ec39e3cc81c7317c551fd654cd100571f43b76f57ee8d6103a21e0f192b568f5"
+  },
+  "selected_source": {
+   "status": "resolved",
+   "root": "synthetics papers/book/manuscript/Fixture-Book.tex",
+   "edition": "draft",
+   "revision": "ec39e3cc81c7317c551fd654cd100571f43b76f57ee8d6103a21e0f192b568f5",
+   "selection_identity": "sha256:f35f374570dbc183d4aec769c50fb55b0860b11e94183950c18db51bd357ed65",
+   "read_only": false
+  },
+  "section": {
+   "id": "first",
+   "title": "First",
+   "kind": "chapter",
+   "number": "1",
+   "parent_id": null,
+   "collection": "sections",
+   "job": "open",
+   "node_ids": [
+    "concept:first"
+   ],
+   "beat_ids": [],
+   "member_count": 1,
+   "source": {
+    "section_id": "first",
+    "source_files": [
+     "synthetics papers/book/manuscript/chapters/chapter-01.tex"
+    ],
+    "status": "MATCHED",
+    "precision": "FILE_ONLY",
+    "title_status": "MATCHED",
+    "plan_title": "First",
+    "source_titles": [
+     "First"
+    ],
+    "source_label": null,
+    "heading": {
+     "file": "synthetics papers/book/manuscript/chapters/chapter-01.tex",
+     "line": 1,
+     "line_end": 4,
+     "heading_line_end": 1,
+     "title": "First",
+     "kind": "chapter",
+     "label": null,
+     "heading_before": "\\chapter{First}",
+     "source_order": 1,
+     "source_orders": [
+      1
+     ]
+    },
+    "basis": {
+     "synthetics papers/book/manuscript/chapters/chapter-01.tex": {
+      "selection_identity": "sha256:f35f374570dbc183d4aec769c50fb55b0860b11e94183950c18db51bd357ed65",
+      "source_digest": "sha256:a3f9c9c474d5c0b6ae33ea349ddf6d0f11be41f3347f7a130309571f5aa47bce"
+     }
+    },
+    "mapping": "explicit-source-file",
+    "selected_root": "synthetics papers/book/manuscript/Fixture-Book.tex",
+    "source_reads": [
+     {
+      "operation": "source",
+      "payload": {
+       "files": [
+        "synthetics papers/book/manuscript/chapters/chapter-01.tex"
+       ]
+      },
+      "http": {
+       "method": "GET",
+       "route": "/projection/tex",
+       "query": {
+        "corpus": "book",
+        "file": "synthetics papers/book/manuscript/chapters/chapter-01.tex",
+        "view": "source"
+       }
+      }
+     }
+    ],
+    "clearing_read": {
+     "operation": "structure",
+     "payload": {
+      "view": "outline"
+     }
+    }
+   }
+  },
+  "paragraph_plan": {
+   "section_id": "first",
+   "status": "DECLARED",
+   "revision": "sha256:3fa4f9c45c2795a4937c85ac2ea1039c01f1db22d4f4e7c43586395fbd903ae1",
+   "identity_status": "STABLE",
+   "paragraphs": {
+    "items": [
+     {
+      "paragraph_id": "first-p36456703742131136201844960223",
+      "function": "",
+      "proposition": "A bounded synthetic paragraph.",
+      "identity_status": "STABLE",
+      "input_currentness": "CURRENT"
+     }
+    ],
+    "total": 1,
+    "offset": 0,
+    "limit": 4,
+    "next_read": null,
+    "scope": "Identity rows with clipped text (200 characters); a row's edit and remove calls are read with subject_reads.paragraph and its paragraph_id; create and reorder calls with subject_reads.create / subject_reads.reorder"
+   }
+  },
+  "subject_reads": {
+   "contract": {
+    "view": "detail",
+    "section_ids": [
+     "first"
+    ],
+    "subject": "contract",
+    "projection": "guard"
+   },
+   "paragraph": {
+    "view": "detail",
+    "section_ids": [
+     "first"
+    ],
+    "subject": "paragraph",
+    "paragraph_id": "<paragraph_id from the contract read rows>",
+    "projection": "guard"
+   },
+   "create": {
+    "view": "detail",
+    "section_ids": [
+     "first"
+    ],
+    "subject": "create",
+    "projection": "guard"
+   },
+   "reorder": {
+    "view": "detail",
+    "section_ids": [
+     "first"
+    ],
+    "subject": "reorder",
+    "projection": "guard"
+   },
+   "http": "GET read_handle.http.route with the payload fields as query parameters plus project"
+  },
+  "full_read": {
+   "operation": "structure",
+   "payload": {
+    "view": "detail",
+    "section_ids": [
+     "first"
+    ]
+   },
+   "http": {
+    "method": "GET",
+    "route": "/work/structure",
+    "query": {
+     "project": "book",
+     "view": "detail",
+     "section_ids": [
+      "first"
+     ]
+    }
+   }
+  },
+  "omitted": [
+   "members",
+   "nodes",
+   "beats",
+   "source_support",
+   "evidence",
+   "edges",
+   "gaps",
+   "outline",
+   "boundaries",
+   "ancestors",
+   "children",
+   "spine",
+   "scoped_history",
+   "direct_dependencies",
+   "reader_inputs",
+   "edit_action.fields",
+   "edit_action.values",
+   "review_action",
+   "structure_observation.reader_subjects",
+   "links",
+   "lineage",
+   "restructure_actions",
+   "pending_restructures"
+  ],
+  "structure_observation": {
+   "plan_revision": "sha256:0af1d3c0199e1340cade40e282ea772471ce4a85619ce027856c334f73119d9d",
+   "spine_revision": "sha256:4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+   "selection_identity": "sha256:f35f374570dbc183d4aec769c50fb55b0860b11e94183950c18db51bd357ed65",
+   "source_files": [
+    {
+     "file": "synthetics papers/book/manuscript/chapters/chapter-01.tex",
+     "source_digest": "sha256:a3f9c9c474d5c0b6ae33ea349ddf6d0f11be41f3347f7a130309571f5aa47bce"
+    }
+   ]
+  },
+  "reader_transition": {
+   "section_id": "first",
+   "status": "NOT_DECLARED",
+   "fields": {
+    "section_id": "first"
+   },
+   "revision": null,
+   "subject_revision": "sha256:74234e98afe7498fb5daf1f36ac2d78acc339464f950703b8c019892f982b90b",
+   "input_currentness": {
+    "status": "UNPINNED",
+    "changed_inputs": [],
+    "reason": "No completed scoped input observation is recorded.",
+    "reads": [
+     {
+      "operation": "structure",
+      "payload": {
+       "view": "detail",
+       "section_ids": [
+        "first"
+       ]
+      },
+      "http": {
+       "method": "GET",
+       "route": "/work/structure",
+       "query": {
+        "project": "book",
+        "view": "detail",
+        "section_ids": [
+         "first"
+        ]
+       }
+      }
+     }
+    ]
+   },
+   "review": {
+    "status": "NOT_REVIEWED",
+    "records": []
+   },
+   "diagnostics": [
+    {
+     "kind": "AUTHORED_FIELD_EMPTY",
+     "field": "function",
+     "reason": "The intended reader transition has not been authored."
+    },
+    {
+     "kind": "AUTHORED_FIELD_EMPTY",
+     "field": "question_answered",
+     "reason": "The intended reader transition has not been authored."
+    },
+    {
+     "kind": "AUTHORED_FIELD_EMPTY",
+     "field": "entry_state",
+     "reason": "The intended reader transition has not been authored."
+    },
+    {
+     "kind": "AUTHORED_FIELD_EMPTY",
+     "field": "exit_state",
+     "reason": "The intended reader transition has not been authored."
+    },
+    {
+     "kind": "INPUT_UNRESOLVED",
+     "subject": "concept:first",
+     "status": "UNRESOLVED",
+     "reason": "Supporting input is missing, ambiguous, or stale; observation is not validation.",
+     "read": {
+      "operation": "concept",
+      "payload": {
+       "node": "concept:first"
+      },
+      "http": {
+       "method": "GET",
+       "route": "/concepts/context",
+       "query": {
+        "corpus": "book",
+        "node": "concept:first"
+       }
+      }
+     }
+    }
+   ],
+   "edit_action": {
+    "operation": "structure_change",
+    "payload": {
+     "operation": "section_contract",
+     "section_id": "first",
+     "expected_plan_revision": "sha256:0af1d3c0199e1340cade40e282ea772471ce4a85619ce027856c334f73119d9d",
+     "expected_contract_revision": null,
+     "expected_reader_basis": {
+      "schema_version": "laplace.reader-basis/1",
+      "project": "book",
+      "path": "synthetics papers/book/manuscript/section_contracts.json",
+      "section_id": "first",
+      "subject_id": "first",
+      "subject_revision": "sha256:74234e98afe7498fb5daf1f36ac2d78acc339464f950703b8c019892f982b90b",
+      "inputs": {
+       "plan-section": "sha256:b25414354a6df71671dface4aec0fcf679323d9ef49aa089afa65faffb34f007",
+       "architecture": "sha256:8838870b3b9c1733e13e6977ef8aabf1eb35bf69539e977d1a59d5973f7d24a9",
+       "concept:concept:first": "sha256:97018db06cd4e0a7b2a9ef1899639f111165e6635c9ec031eab1166224d75a4a"
+      },
+      "unobserved_inputs": []
+     }
+    },
+    "http": {
+     "method": "POST",
+     "route": "/work/structure/change"
+    }
+   },
+   "choices_read": {
+    "operation": "structure",
+    "payload": {
+     "view": "detail",
+     "section_ids": [
+      "first"
+     ],
+     "edit_choices": true
+    },
+    "http": {
+     "method": "GET",
+     "route": "/work/structure",
+     "query": {
+      "project": "book",
+      "view": "detail",
+      "section_ids": [
+       "first"
+      ],
+      "edit_choices": true
+     }
+    }
+   },
+   "reader_basis": "edit_action.payload.expected_reader_basis",
+   "review_action_read": "full_read: reader_transition.review_action carries the same basis as a reader-review task",
+   "read_handle": {
+    "operation": "structure",
+    "payload": {
+     "view": "detail",
+     "section_ids": [
+      "first"
+     ],
+     "subject": "contract",
+     "projection": "guard"
+    },
+    "http": {
+     "method": "GET",
+     "route": "/work/structure",
+     "query": {
+      "project": "book",
+      "view": "detail",
+      "section_ids": [
+       "first"
+      ],
+      "subject": "contract",
+      "projection": "guard"
+     }
+    }
+   }
+  }
+ },
+ "paragraph": {
+  "schema_version": "laplace.project-structure-guard/1",
+  "project": "book",
+  "section_id": "first",
+  "projection": "guard",
+  "subject": "paragraph",
+  "eligible_for_authoring": true,
+  "authority": {
+   "plan_path": "synthetics papers/book/manuscript/projection_plan.json",
+   "spine_revision": "sha256:4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+   "plan_revision": "sha256:0af1d3c0199e1340cade40e282ea772471ce4a85619ce027856c334f73119d9d",
+   "conceptric_revision": "sha256:ee6597c03f4d8c348ef5d7d83f7073ae18878e2b73c2f581000e960acc7a886f",
+   "research_revision": "sha256:4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+   "source_revision": "ec39e3cc81c7317c551fd654cd100571f43b76f57ee8d6103a21e0f192b568f5"
+  },
+  "selected_source": {
+   "status": "resolved",
+   "root": "synthetics papers/book/manuscript/Fixture-Book.tex",
+   "edition": "draft",
+   "revision": "ec39e3cc81c7317c551fd654cd100571f43b76f57ee8d6103a21e0f192b568f5",
+   "selection_identity": "sha256:f35f374570dbc183d4aec769c50fb55b0860b11e94183950c18db51bd357ed65",
+   "read_only": false
+  },
+  "section": {
+   "id": "first",
+   "title": "First",
+   "kind": "chapter",
+   "number": "1",
+   "parent_id": null,
+   "collection": "sections",
+   "job": "open",
+   "member_count": 1
+  },
+  "paragraph_plan": {
+   "section_id": "first",
+   "status": "DECLARED",
+   "revision": "sha256:3fa4f9c45c2795a4937c85ac2ea1039c01f1db22d4f4e7c43586395fbd903ae1",
+   "identity_status": "STABLE"
+  },
+  "subject_reads": {
+   "contract": {
+    "view": "detail",
+    "section_ids": [
+     "first"
+    ],
+    "subject": "contract",
+    "projection": "guard"
+   },
+   "http": "GET read_handle.http.route with the payload fields as query parameters plus project"
+  },
+  "full_read": {
+   "operation": "structure",
+   "payload": {
+    "view": "detail",
+    "section_ids": [
+     "first"
+    ]
+   },
+   "http": {
+    "method": "GET",
+    "route": "/work/structure",
+    "query": {
+     "project": "book",
+     "view": "detail",
+     "section_ids": [
+      "first"
+     ]
+    }
+   }
+  },
+  "scope": "One exact owner-issued call with its guards; the section binding, authored contract and row list are on subject_reads.contract, everything else on full_read.",
+  "paragraph": {
+   "section_id": "first",
+   "paragraph_id": "first-p36456703742131136201844960223",
+   "proposition": "A bounded synthetic paragraph.",
+   "identity_status": "STABLE",
+   "subject_revision": "sha256:01b5dba85a87705b9ebc8741f997290ac9cf09ac7da8e3c1036a808e4116645f",
+   "input_currentness": {
+    "status": "CURRENT",
+    "unobserved_inputs": [],
+    "changed_inputs": [],
+    "reason": "Input observation is not a judgement of intelligibility or accepted review.",
+    "reads": [
+     {
+      "operation": "structure",
+      "payload": {
+       "view": "detail",
+       "section_ids": [
+        "first"
+       ],
+       "paragraph_id": "first-p36456703742131136201844960223"
+      },
+      "http": {
+       "method": "GET",
+       "route": "/work/structure",
+       "query": {
+        "project": "book",
+        "view": "detail",
+        "section_ids": [
+         "first"
+        ],
+        "paragraph_id": "first-p36456703742131136201844960223"
+       }
+      }
+     }
+    ]
+   },
+   "diagnostics": [
+    {
+     "kind": "AUTHORED_FIELD_EMPTY",
+     "field": "function",
+     "reason": "The intended reader transition has not been authored."
+    },
+    {
+     "kind": "INPUT_UNRESOLVED",
+     "subject": "concept:first",
+     "status": "UNRESOLVED",
+     "reason": "Supporting input is missing, ambiguous, or stale; observation is not validation.",
+     "read": {
+      "operation": "concept",
+      "payload": {
+       "node": "concept:first"
+      },
+      "http": {
+       "method": "GET",
+       "route": "/concepts/context",
+       "query": {
+        "corpus": "book",
+        "node": "concept:first"
+       }
+      }
+     }
+    }
+   ],
+   "review": {
+    "status": "NOT_REVIEWED",
+    "records": []
+   },
+   "source_occurrences": [],
+   "edit_action": {
+    "operation": "structure_change",
+    "payload": {
+     "operation": "paragraph_plan",
+     "section_id": "first",
+     "expected_plan_revision": "sha256:0af1d3c0199e1340cade40e282ea772471ce4a85619ce027856c334f73119d9d",
+     "expected_narrative_revision": "sha256:3fa4f9c45c2795a4937c85ac2ea1039c01f1db22d4f4e7c43586395fbd903ae1",
+     "expected_reader_basis": {
+      "schema_version": "laplace.reader-basis/1",
+      "project": "book",
+      "path": "synthetics papers/book/manuscript/narrative/first.json",
+      "section_id": "first",
+      "subject_id": "first-p36456703742131136201844960223",
+      "subject_revision": "sha256:01b5dba85a87705b9ebc8741f997290ac9cf09ac7da8e3c1036a808e4116645f",
+      "inputs": {
+       "plan-section": "sha256:b25414354a6df71671dface4aec0fcf679323d9ef49aa089afa65faffb34f007",
+       "architecture": "sha256:8838870b3b9c1733e13e6977ef8aabf1eb35bf69539e977d1a59d5973f7d24a9",
+       "reader-transition": "sha256:74234e98afe7498fb5daf1f36ac2d78acc339464f950703b8c019892f982b90b",
+       "reader-neighbors": "sha256:3d6f4be21e5fb46a339e73b26ef3729b418169c013433e962a54ba0130732d85",
+       "concept:concept:first": "sha256:97018db06cd4e0a7b2a9ef1899639f111165e6635c9ec031eab1166224d75a4a"
+      },
+      "unobserved_inputs": []
+     },
+     "action": "upsert",
+     "paragraph_id": "first-p36456703742131136201844960223"
+    },
+    "http": {
+     "method": "POST",
+     "route": "/work/structure/change"
+    }
+   },
+   "remove_action": {
+    "operation": "structure_change",
+    "payload": {
+     "operation": "paragraph_plan",
+     "section_id": "first",
+     "expected_plan_revision": "sha256:0af1d3c0199e1340cade40e282ea772471ce4a85619ce027856c334f73119d9d",
+     "expected_narrative_revision": "sha256:3fa4f9c45c2795a4937c85ac2ea1039c01f1db22d4f4e7c43586395fbd903ae1",
+     "expected_reader_basis": {
+      "schema_version": "laplace.reader-basis/1",
+      "project": "book",
+      "path": "synthetics papers/book/manuscript/narrative/first.json",
+      "section_id": "first",
+      "subject_id": "first-p36456703742131136201844960223",
+      "subject_revision": "sha256:01b5dba85a87705b9ebc8741f997290ac9cf09ac7da8e3c1036a808e4116645f",
+      "inputs": {
+       "plan-section": "sha256:b25414354a6df71671dface4aec0fcf679323d9ef49aa089afa65faffb34f007",
+       "architecture": "sha256:8838870b3b9c1733e13e6977ef8aabf1eb35bf69539e977d1a59d5973f7d24a9",
+       "reader-transition": "sha256:74234e98afe7498fb5daf1f36ac2d78acc339464f950703b8c019892f982b90b",
+       "reader-neighbors": "sha256:3d6f4be21e5fb46a339e73b26ef3729b418169c013433e962a54ba0130732d85",
+       "concept:concept:first": "sha256:97018db06cd4e0a7b2a9ef1899639f111165e6635c9ec031eab1166224d75a4a"
+      },
+      "unobserved_inputs": []
+     },
+     "action": "remove",
+     "paragraph_id": "first-p36456703742131136201844960223"
+    },
+    "http": {
+     "method": "POST",
+     "route": "/work/structure/change"
+    }
+   },
+   "reader_basis": "edit_action.payload.expected_reader_basis",
+   "read_handle": {
+    "operation": "structure",
+    "payload": {
+     "view": "detail",
+     "section_ids": [
+      "first"
+     ],
+     "subject": "paragraph",
+     "paragraph_id": "first-p36456703742131136201844960223",
+     "projection": "guard"
+    },
+    "http": {
+     "method": "GET",
+     "route": "/work/structure",
+     "query": {
+      "project": "book",
+      "view": "detail",
+      "section_ids": [
+       "first"
+      ],
+      "subject": "paragraph",
+      "paragraph_id": "first-p36456703742131136201844960223",
+      "projection": "guard"
+     }
+    }
+   }
+  }
+ },
+ "create": {
+  "schema_version": "laplace.project-structure-guard/1",
+  "project": "book",
+  "section_id": "first",
+  "projection": "guard",
+  "subject": "create",
+  "eligible_for_authoring": true,
+  "authority": {
+   "plan_path": "synthetics papers/book/manuscript/projection_plan.json",
+   "spine_revision": "sha256:4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+   "plan_revision": "sha256:0af1d3c0199e1340cade40e282ea772471ce4a85619ce027856c334f73119d9d",
+   "conceptric_revision": "sha256:ee6597c03f4d8c348ef5d7d83f7073ae18878e2b73c2f581000e960acc7a886f",
+   "research_revision": "sha256:4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+   "source_revision": "ec39e3cc81c7317c551fd654cd100571f43b76f57ee8d6103a21e0f192b568f5"
+  },
+  "selected_source": {
+   "status": "resolved",
+   "root": "synthetics papers/book/manuscript/Fixture-Book.tex",
+   "edition": "draft",
+   "revision": "ec39e3cc81c7317c551fd654cd100571f43b76f57ee8d6103a21e0f192b568f5",
+   "selection_identity": "sha256:f35f374570dbc183d4aec769c50fb55b0860b11e94183950c18db51bd357ed65",
+   "read_only": false
+  },
+  "section": {
+   "id": "first",
+   "title": "First",
+   "kind": "chapter",
+   "number": "1",
+   "parent_id": null,
+   "collection": "sections",
+   "job": "open",
+   "member_count": 1
+  },
+  "paragraph_plan": {
+   "section_id": "first",
+   "status": "DECLARED",
+   "revision": "sha256:3fa4f9c45c2795a4937c85ac2ea1039c01f1db22d4f4e7c43586395fbd903ae1",
+   "identity_status": "STABLE"
+  },
+  "subject_reads": {
+   "contract": {
+    "view": "detail",
+    "section_ids": [
+     "first"
+    ],
+    "subject": "contract",
+    "projection": "guard"
+   },
+   "http": "GET read_handle.http.route with the payload fields as query parameters plus project"
+  },
+  "full_read": {
+   "operation": "structure",
+   "payload": {
+    "view": "detail",
+    "section_ids": [
+     "first"
+    ]
+   },
+   "http": {
+    "method": "GET",
+    "route": "/work/structure",
+    "query": {
+     "project": "book",
+     "view": "detail",
+     "section_ids": [
+      "first"
+     ]
+    }
+   }
+  },
+  "scope": "One exact owner-issued call with its guards; the section binding, authored contract and row list are on subject_reads.contract, everything else on full_read.",
+  "create_action": {
+   "operation": "structure_change",
+   "payload": {
+    "operation": "paragraph_plan",
+    "section_id": "first",
+    "expected_plan_revision": "sha256:0af1d3c0199e1340cade40e282ea772471ce4a85619ce027856c334f73119d9d",
+    "expected_narrative_revision": "sha256:3fa4f9c45c2795a4937c85ac2ea1039c01f1db22d4f4e7c43586395fbd903ae1",
+    "expected_reader_basis": {
+     "schema_version": "laplace.reader-basis/1",
+     "project": "book",
+     "path": "synthetics papers/book/manuscript/narrative/first.json",
+     "section_id": "first",
+     "subject_id": "first-p37459837669742731202087307465",
+     "subject_revision": "sha256:74234e98afe7498fb5daf1f36ac2d78acc339464f950703b8c019892f982b90b",
+     "inputs": {
+      "plan-section": "sha256:b25414354a6df71671dface4aec0fcf679323d9ef49aa089afa65faffb34f007",
+      "architecture": "sha256:8838870b3b9c1733e13e6977ef8aabf1eb35bf69539e977d1a59d5973f7d24a9",
+      "reader-transition": "sha256:74234e98afe7498fb5daf1f36ac2d78acc339464f950703b8c019892f982b90b",
+      "reader-neighbors": "sha256:470f9763e82afe451a213bb4b8d1ed77b43c58f5975848b502de184b010d3d3d",
+      "concept:concept:first": "sha256:97018db06cd4e0a7b2a9ef1899639f111165e6635c9ec031eab1166224d75a4a"
+     },
+     "unobserved_inputs": []
+    },
+    "action": "upsert",
+    "paragraph_id": "first-p37459837669742731202087307465",
+    "create": true
+   },
+   "http": {
+    "method": "POST",
+    "route": "/work/structure/change"
+   },
+   "placement": {
+    "kind": "APPEND",
+    "after_paragraph_id": "first-p36456703742131136201844960223"
+   },
+   "reader_basis": "payload.expected_reader_basis"
+  }
+ },
+ "reorder": {
+  "schema_version": "laplace.project-structure-guard/1",
+  "project": "book",
+  "section_id": "first",
+  "projection": "guard",
+  "subject": "reorder",
+  "eligible_for_authoring": true,
+  "authority": {
+   "plan_path": "synthetics papers/book/manuscript/projection_plan.json",
+   "spine_revision": "sha256:4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+   "plan_revision": "sha256:0af1d3c0199e1340cade40e282ea772471ce4a85619ce027856c334f73119d9d",
+   "conceptric_revision": "sha256:ee6597c03f4d8c348ef5d7d83f7073ae18878e2b73c2f581000e960acc7a886f",
+   "research_revision": "sha256:4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+   "source_revision": "ec39e3cc81c7317c551fd654cd100571f43b76f57ee8d6103a21e0f192b568f5"
+  },
+  "selected_source": {
+   "status": "resolved",
+   "root": "synthetics papers/book/manuscript/Fixture-Book.tex",
+   "edition": "draft",
+   "revision": "ec39e3cc81c7317c551fd654cd100571f43b76f57ee8d6103a21e0f192b568f5",
+   "selection_identity": "sha256:f35f374570dbc183d4aec769c50fb55b0860b11e94183950c18db51bd357ed65",
+   "read_only": false
+  },
+  "section": {
+   "id": "first",
+   "title": "First",
+   "kind": "chapter",
+   "number": "1",
+   "parent_id": null,
+   "collection": "sections",
+   "job": "open",
+   "member_count": 1
+  },
+  "paragraph_plan": {
+   "section_id": "first",
+   "status": "DECLARED",
+   "revision": "sha256:3fa4f9c45c2795a4937c85ac2ea1039c01f1db22d4f4e7c43586395fbd903ae1",
+   "identity_status": "STABLE"
+  },
+  "subject_reads": {
+   "contract": {
+    "view": "detail",
+    "section_ids": [
+     "first"
+    ],
+    "subject": "contract",
+    "projection": "guard"
+   },
+   "http": "GET read_handle.http.route with the payload fields as query parameters plus project"
+  },
+  "full_read": {
+   "operation": "structure",
+   "payload": {
+    "view": "detail",
+    "section_ids": [
+     "first"
+    ]
+   },
+   "http": {
+    "method": "GET",
+    "route": "/work/structure",
+    "query": {
+     "project": "book",
+     "view": "detail",
+     "section_ids": [
+      "first"
+     ]
+    }
+   }
+  },
+  "scope": "One exact owner-issued call with its guards; the section binding, authored contract and row list are on subject_reads.contract, everything else on full_read.",
+  "reorder_action": {
+   "operation": "structure_change",
+   "payload": {
+    "operation": "paragraph_plan",
+    "section_id": "first",
+    "expected_plan_revision": "sha256:0af1d3c0199e1340cade40e282ea772471ce4a85619ce027856c334f73119d9d",
+    "expected_narrative_revision": "sha256:3fa4f9c45c2795a4937c85ac2ea1039c01f1db22d4f4e7c43586395fbd903ae1",
+    "expected_reader_basis": {
+     "schema_version": "laplace.reader-basis/1",
+     "project": "book",
+     "path": "synthetics papers/book/manuscript/narrative/first.json",
+     "section_id": "first",
+     "subject_id": "@order",
+     "subject_revision": "sha256:98e556928488708b4569bbc65d541a6219d5b679e217776551a8d6708b575571",
+     "inputs": {
+      "plan-section": "sha256:b25414354a6df71671dface4aec0fcf679323d9ef49aa089afa65faffb34f007",
+      "architecture": "sha256:8838870b3b9c1733e13e6977ef8aabf1eb35bf69539e977d1a59d5973f7d24a9",
+      "reader-transition": "sha256:74234e98afe7498fb5daf1f36ac2d78acc339464f950703b8c019892f982b90b",
+      "concept:concept:first": "sha256:97018db06cd4e0a7b2a9ef1899639f111165e6635c9ec031eab1166224d75a4a"
+     },
+     "unobserved_inputs": []
+    },
+    "action": "reorder",
+    "order": [
+     "first-p36456703742131136201844960223"
+    ]
+   },
+   "http": {
+    "method": "POST",
+    "route": "/work/structure/change"
+   },
+   "order_choices": [
+    {
+     "value": "first-p36456703742131136201844960223",
+     "label": "A bounded synthetic paragraph."
+    }
+   ],
+   "reader_basis": "payload.expected_reader_basis"
+  }
+ }
+}

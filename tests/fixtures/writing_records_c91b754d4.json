@@ -1,0 +1,342 @@
+{
+  "basis": {
+    "commit": "c91b754d4275c47624f0cd965956456375dbf7cc",
+    "owner_sha256": "e1b58151500766b5b1d91e4f48a3cebba680aebaad6b38a899f16a090f0adc52",
+    "scope": "Six synthetic fixed original envelopes from unchanged main owner; no live records. Resolved-summary/target enrichment explicitly compared separately."
+  },
+  "expected": [
+    {
+      "format": "text",
+      "item": {
+        "actor": {
+          "kind": "unknown",
+          "label": null
+        },
+        "at": "2026-10-09T00:00:00.000Z",
+        "category": "session",
+        "conversation": {
+          "session_id": "WS",
+          "turn_id": "WT"
+        },
+        "detail_available": true,
+        "id": "activity:journal:WT",
+        "owner": "journal",
+        "status": "recorded",
+        "summary": "Original request",
+        "targets": []
+      },
+      "limitations": [
+        "This is the exact stored public owner row. It is not a reconstructed conversation or hidden model reasoning."
+      ],
+      "measurements": [],
+      "project": "book",
+      "record": {
+        "id": "WT",
+        "project": "book",
+        "provider_settings": {
+          "effort": "high",
+          "model": "admitted",
+          "provider": "codex"
+        },
+        "record": "writing-turn",
+        "session_id": "WS",
+        "text": "Original request",
+        "ts": "2026-10-09T00:00:00.000Z"
+      },
+      "record_kind": "writing-turn",
+      "response_body_status": "stored-public-text",
+      "saved_text_available": true,
+      "schema_version": "laplace.activity-history/1",
+      "text": "Original request"
+    },
+    {
+      "format": "markdown",
+      "item": {
+        "actor": {
+          "kind": "agent",
+          "label": null,
+          "model": "admitted",
+          "provider": "codex",
+          "role": "work"
+        },
+        "at": "2026-10-09T00:00:00.000Z",
+        "category": "session",
+        "conversation": {
+          "session_id": "WS",
+          "turn_id": "WT"
+        },
+        "detail_available": true,
+        "id": "activity:journal:WR",
+        "owner": "journal",
+        "status": "completed",
+        "summary": "{'schema_version': 'laplace.writing-public-body-ref/1', 'content_handle': 'sha256:ddc02e1fcf9507715d9704387234b7ecd4cc7f3f90cd71b4ca6bc96489f0075d', 'store': 'contract/writing_bodies', 'bytes': 32002, 'encoding': 'application/json'}",
+        "targets": []
+      },
+      "limitations": [
+        "This is the exact stored public owner row. It is not a reconstructed conversation or hidden model reasoning."
+      ],
+      "measurements": [],
+      "project": "book",
+      "record": {
+        "id": "WR",
+        "record": "writing-reply",
+        "session_id": "WS",
+        "status": "completed",
+        "text": "Original public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\n",
+        "ts": "2026-10-09T00:00:00.000Z",
+        "turn_id": "WT"
+      },
+      "record_kind": "writing-reply",
+      "response_body_status": "stored-public-text",
+      "saved_text_available": true,
+      "schema_version": "laplace.activity-history/1",
+      "text": "Original public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\nOriginal public answer — 雪\n"
+    },
+    {
+      "format": "text",
+      "item": {
+        "actor": {
+          "kind": "agent",
+          "label": null,
+          "model": "admitted",
+          "provider": "codex",
+          "role": "work"
+        },
+        "at": "2026-10-09T00:00:00.000Z",
+        "category": "session",
+        "conversation": {
+          "session_id": "WS",
+          "turn_id": "WT"
+        },
+        "detail_available": true,
+        "event_kind": "tool-attempt",
+        "id": "activity:journal:ACTION",
+        "operation": "source",
+        "owner": "journal",
+        "status": "recorded",
+        "summary": "Read manuscript source",
+        "targets": []
+      },
+      "limitations": [
+        "This is the exact stored public owner row. It is not a reconstructed conversation or hidden model reasoning."
+      ],
+      "measurements": [
+        {
+          "basis": "exact stored journal line",
+          "kind": "storage_bytes",
+          "unit": "bytes",
+          "value": 554
+        },
+        {
+          "basis": "owner-recorded tool event field",
+          "kind": "response_bytes",
+          "unit": "bytes",
+          "value": 42
+        },
+        {
+          "basis": "owner-recorded tool event field",
+          "kind": "duration_seconds",
+          "unit": "seconds",
+          "value": 1.25
+        }
+      ],
+      "project": "book",
+      "record": {
+        "duration_seconds": 1.25,
+        "id": "ACTION",
+        "operation": "source",
+        "outcome": {
+          "output_sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+          "status": "SUCCEEDED"
+        },
+        "payload": {
+          "files": [
+            "main.tex"
+          ]
+        },
+        "project": "book",
+        "record": "writing-tool-action",
+        "response_bytes": 42,
+        "ts": "2026-10-09T00:00:00.000Z",
+        "turn_id": "WT"
+      },
+      "record_kind": "writing-tool-action",
+      "response_body_status": "summary-only",
+      "saved_text_available": false,
+      "schema_version": "laplace.activity-history/1",
+      "text": null
+    },
+    {
+      "format": "text",
+      "item": {
+        "actor": {
+          "kind": "agent",
+          "label": null,
+          "model": "admitted",
+          "provider": "codex",
+          "role": "work"
+        },
+        "at": "2026-10-09T00:00:00.000Z",
+        "category": "session",
+        "conversation": {
+          "session_id": "WS",
+          "turn_id": "WT"
+        },
+        "detail_available": true,
+        "event_kind": "tool-attempt",
+        "id": "activity:journal:READ",
+        "operation": "source",
+        "owner": "journal",
+        "status": "recorded",
+        "summary": "Read manuscript source",
+        "targets": [
+          {
+            "file": "main.tex",
+            "kind": "manuscript"
+          }
+        ]
+      },
+      "limitations": [
+        "This is the exact stored public owner row. It is not a reconstructed conversation or hidden model reasoning."
+      ],
+      "measurements": [
+        {
+          "basis": "exact stored journal line",
+          "kind": "storage_bytes",
+          "unit": "bytes",
+          "value": 260
+        }
+      ],
+      "project": "book",
+      "record": {
+        "id": "READ",
+        "operation": "source",
+        "output_sha256": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+        "payload": {
+          "files": [
+            "main.tex"
+          ]
+        },
+        "project": "book",
+        "record": "writing-tool-read",
+        "ts": "2026-10-09T00:00:00.000Z",
+        "turn_id": "WT"
+      },
+      "record_kind": "writing-tool-read",
+      "response_body_status": "summary-only",
+      "saved_text_available": false,
+      "schema_version": "laplace.activity-history/1",
+      "text": null
+    },
+    {
+      "format": "text",
+      "item": {
+        "actor": {
+          "kind": "agent",
+          "label": null,
+          "model": "admitted",
+          "provider": "codex",
+          "role": "work"
+        },
+        "at": "2026-10-09T00:00:00.000Z",
+        "category": "session",
+        "conversation": {
+          "session_id": "WS",
+          "turn_id": "WT"
+        },
+        "detail_available": true,
+        "event_kind": "tool-attempt",
+        "id": "activity:journal:TOOLFAIL",
+        "operation": "source",
+        "owner": "journal",
+        "status": "failed",
+        "summary": "Exact original error",
+        "targets": []
+      },
+      "limitations": [
+        "This is the exact stored public owner row. It is not a reconstructed conversation or hidden model reasoning."
+      ],
+      "measurements": [
+        {
+          "basis": "exact stored journal line",
+          "kind": "storage_bytes",
+          "unit": "bytes",
+          "value": 494
+        }
+      ],
+      "project": "book",
+      "record": {
+        "error": "Exact original error",
+        "id": "TOOLFAIL",
+        "operation": "source",
+        "payload": {
+          "files": [
+            "missing.tex"
+          ]
+        },
+        "project": "book",
+        "record": "writing-tool-failure",
+        "recovery": {
+          "operation": "source",
+          "payload": {
+            "files": [
+              "main.tex"
+            ]
+          }
+        },
+        "ts": "2026-10-09T00:00:00.000Z",
+        "turn_id": "WT"
+      },
+      "record_kind": "writing-tool-failure",
+      "response_body_status": "stored-public-text",
+      "saved_text_available": true,
+      "schema_version": "laplace.activity-history/1",
+      "text": "Exact original error"
+    },
+    {
+      "format": "text",
+      "item": {
+        "actor": {
+          "kind": "unknown",
+          "label": null
+        },
+        "at": "2026-10-09T00:00:00.000Z",
+        "category": "session",
+        "detail_available": true,
+        "id": "activity:journal:ART",
+        "owner": "journal",
+        "status": "recorded",
+        "summary": "Exact saved writing-artifact",
+        "targets": []
+      },
+      "limitations": [
+        "One exact stored public owner row, not reconstructed provider history."
+      ],
+      "measurements": [
+        {
+          "basis": "exact saved journal line",
+          "kind": "storage_bytes",
+          "unit": "bytes",
+          "value": 226
+        }
+      ],
+      "project": "book",
+      "record": {
+        "after": "Exact saved note",
+        "artifact_path": "notes.txt",
+        "before": null,
+        "id": "ART",
+        "path": "sources/book/notes.txt",
+        "project": "book",
+        "record": "writing-artifact",
+        "scope": "project",
+        "ts": "2026-10-09T00:00:00.000Z"
+      },
+      "record_kind": "writing-artifact",
+      "response_body_status": "summary-only",
+      "saved_text_available": false,
+      "schema_version": "laplace.activity-history/1",
+      "text": null
+    }
+  ]
+}

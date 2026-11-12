@@ -1,0 +1,218 @@
+{
+ "about": "Wave 13c id-sweep: what the editor frame of the seeded throwaway project reports about its own manuscript model (window.walk.blocks({text:false}), blocks({id}).text, objectKind, contextualInsertionPoint at the middle of each paragraph, sections) and the answer of the owner to GET /concepts/plan/context for the first paragraph (passage_context), captured by evidence/WRITING_TAKEOVER_2026-11-05/frontend/redesign/wave13c/id-sweep/gen/capture10.mjs, project name rewritten to book. The seeded chapter holds a heading and two paragraphs and no object or reference.",
+ "rows": [
+  {
+   "id": "chapters/chapter-01.tex#b1",
+   "kind": "head",
+   "section": "introduction",
+   "caption_of": null,
+   "file": "chapters/chapter-01.tex",
+   "repo_file": "synthetics papers/book/manuscript/chapters/chapter-01.tex",
+   "spec_ids": [],
+   "line_start": 1,
+   "line_end": 1
+  },
+  {
+   "id": "chapters/chapter-01.tex#b2",
+   "kind": "para",
+   "section": "introduction",
+   "caption_of": null,
+   "file": "chapters/chapter-01.tex",
+   "repo_file": "synthetics papers/book/manuscript/chapters/chapter-01.tex",
+   "spec_ids": [],
+   "line_start": 2,
+   "line_end": 2
+  },
+  {
+   "id": "chapters/chapter-01.tex#b3",
+   "kind": "para",
+   "section": "introduction",
+   "caption_of": null,
+   "file": "chapters/chapter-01.tex",
+   "repo_file": "synthetics papers/book/manuscript/chapters/chapter-01.tex",
+   "spec_ids": [],
+   "line_start": 4,
+   "line_end": 4
+  }
+ ],
+ "texts": {
+  "chapters/chapter-01.tex#b1": "Introduction",
+  "chapters/chapter-01.tex#b2": "Draft — this opening is ready for authoring.",
+  "chapters/chapter-01.tex#b3": "Compare watering observations and write a short, evidence-based account."
+ },
+ "object_kinds": {
+  "chapters/chapter-01.tex#b1": null,
+  "chapters/chapter-01.tex#b2": null,
+  "chapters/chapter-01.tex#b3": null
+ },
+ "points": {
+  "chapters/chapter-01.tex#b1": {
+   "blockId": "chapters/chapter-01.tex#b1",
+   "start": 12,
+   "end": 12
+  },
+  "chapters/chapter-01.tex#b2": {
+   "blockId": "chapters/chapter-01.tex#b2",
+   "start": 44,
+   "end": 44
+  },
+  "chapters/chapter-01.tex#b3": {
+   "blockId": "chapters/chapter-01.tex#b3",
+   "start": 42,
+   "end": 42
+  }
+ },
+ "sections": [
+  {
+   "id": "introduction",
+   "title": "Introduction",
+   "depth": 2,
+   "blocks": 3,
+   "cover": "unwalked",
+   "dwell": 1.9
+  }
+ ],
+ "passage_context": {
+  "identities": {
+   "concept-network:book": "rev:concept-network:book:8c06d329ae11d4680e191c3ce8c6658d0cac747a8da09310014aede9c749bde6",
+   "selected-edition:book": "rev:selected-edition:book:51260fc321abc6d19ab348cc7c3b871781c1699b07572d4bafa3fd9b9bc51291"
+  },
+  "passage_context": {
+   "accepted_proposal_as_of": "eyJ2IjoxLCJxdWVyeSI6InNoYTI1NjozNTYzNGQwNzgxNDllMjNlYjk1MGJiNGMyNWMzMzNlYjUyNzc2Zjk1MTZhOGEyMmU0YzlhNjEzZTJhMDU0YThiIiwidXBwZXIiOjM3LCJyZXZpc2lvbiI6InNoYTI1Njo0ZjUzY2RhMThjMmJhYTBjMDM1NGJiNWY5YTNlY2JlNWVkMTJhYjRkOGUxMWJhODczYzJmMTExNjEyMDJiOTQ1In0",
+   "accepted_proposal_coverage": {
+    "body_read_basis": "Selected field resolutions, including inline fields; custody opens counted separately by records diagnostics.",
+    "body_reads": 0,
+    "candidate_basis": "Accepted declaration metadata; source and semantic basis unchecked.",
+    "current_span": {
+     "basis": "Current source hash overlap narrows discovery only; exact hydrated text/edition still decide standing.",
+     "hashed_bytes_upper_bound": 0,
+     "incomplete_width_count": 0,
+     "incomplete_widths": [],
+     "unresolved_candidates": 0,
+     "widths_examined": 0,
+     "window_hashes": 0
+    },
+    "currentness_basis": "Current unique after-text and independently checked declared revisions/placement.",
+    "journal_status": "AVAILABLE",
+    "legacy_declaration_candidates": 0,
+    "malformed_journal_rows": 0,
+    "source_files_read": 1,
+    "status": "COMPLETE",
+    "unknown_scope_candidates": 0,
+    "whole_history_loaded": false
+   },
+   "accepted_proposal_next_read": null,
+   "accepted_proposal_pagination": {
+    "candidate_total": 0,
+    "examined": 0,
+    "limit": 40,
+    "next_offset": null,
+    "offset": 0,
+    "remaining_candidates": 0
+   },
+   "accepted_proposal_recovery": [],
+   "accepted_proposals": [],
+   "anchor": {
+    "file": "chapters/chapter-01.tex",
+    "line_end": 2,
+    "line_start": 2
+   },
+   "basis": {
+    "automatic_section_concepts": [],
+    "automatic_sections": [],
+    "develops": [],
+    "errors": [],
+    "evidence": [],
+    "limitations": [],
+    "status": "UNATTRIBUTED_LEGACY"
+   },
+   "document_provenance": [],
+   "limitations": [
+    "Section placement does not assert that every paragraph develops every section concept.",
+    "Historical origins absent from existing owners remain unknown."
+   ],
+   "obligations": [],
+   "paragraph_concepts": [],
+   "paragraph_marker": null,
+   "precision": "UNBOUND"
+  },
+  "project": "book",
+  "reader_order": {
+   "omitted_sections": 0,
+   "reason": "No L2 reader order is declared; logical planning remains available.",
+   "source_outline": [
+    {
+     "basis": {
+      "selection_identity": null,
+      "source_digest": "sha256:4ccb9f8abfda29a22b4de7a79cc19173da8459ff202e2ea7d049568c6dfb29ac"
+     },
+     "bound": false,
+     "display_title": "Introduction",
+     "file": "synthetics papers/book/manuscript/chapters/chapter-01.tex",
+     "heading_before": "\\section{Introduction}",
+     "heading_line_end": 1,
+     "id": "source-heading-1",
+     "include_line": 9,
+     "include_parent": "synthetics papers/book/manuscript/Garden-watering-study.tex",
+     "kind": "section",
+     "label": null,
+     "labels": [],
+     "level": 2,
+     "line": 1,
+     "line_end": 4,
+     "parent_file": null,
+     "parent_id": null,
+     "parent_line": null,
+     "shared_occurrences": 1,
+     "source_order": 1,
+     "source_read": {
+      "operation": "source",
+      "payload": {
+       "files": [
+        "synthetics papers/book/manuscript/chapters/chapter-01.tex"
+       ],
+       "line_end": 4,
+       "line_start": 1
+      }
+     },
+     "structure_read": {
+      "http": {
+       "method": "GET",
+       "query": {
+        "files": [
+         "synthetics papers/book/manuscript/chapters/chapter-01.tex"
+        ],
+        "line_end": 4,
+        "line_start": 1,
+        "project": null,
+        "view": "detail"
+       },
+       "route": "/work/structure"
+      },
+      "operation": "structure",
+      "payload": {
+       "files": [
+        "synthetics papers/book/manuscript/chapters/chapter-01.tex"
+       ],
+       "line_end": 4,
+       "line_start": 1,
+       "view": "detail"
+      }
+     },
+     "title": "Introduction"
+    }
+   ],
+   "status": "UNDECLARED"
+  },
+  "revision": "8c06d329ae11d4680e191c3ce8c6658d0cac747a8da09310014aede9c749bde6",
+  "schema_version": "laplace.logical-plan-context/1",
+  "source_currentness": {
+   "diagnostics": [],
+   "edition": "draft",
+   "read_only": false,
+   "root": "synthetics papers/book/manuscript/Garden-watering-study.tex",
+   "status": "resolved"
+  }
+ },
+ "passage_context_url": "/concepts/plan/context?project=book&file=chapters%2Fchapter-01.tex&line_start=2&line_end=2&quote=Draft+%E2%80%94+this+opening+is+ready+for+authoring."
+}

@@ -1,0 +1,1863 @@
+{
+  "placed": [
+    {
+      "asset_id": "figure:dd-backend-change",
+      "label": "fig:dd-backend-change",
+      "artefact": "figures/generated/dd-backend-change.pdf",
+      "generator": "manuscript_spec.json",
+      "spec_id": "dd-backend-change",
+      "promise": "What happens to a claim and its dependent text when the evidence or source changes?",
+      "matched": true,
+      "caption": "Conceptual account of the current Writing App owner mechanism. A source passage, interpreted result and canonical claim retain separate identities. A human or agent proposes a change against an inspected revision. The owning operation checks authority and the expected basis, records the accepted transition and exposes affected dependencies for review. Work and history retain the request, outcome and recovery route. A current source pin establishes which bytes were used, not whether a source entails a claim. Scientific support is an authored judgement supplemented by scoped numerical, formal and independent review evidence where available. The same owners serve browser and agent interfaces. This diagram describes an implemented workflow principle, not an automatic theorem-proving or fully self-improving SDK.",
+      "result_ids": [],
+      "placed_at": "working-draft/chapters/the-backend-objects-authority-and-revision.tex",
+      "research_binding": {
+        "status": "THEORY_ONLY",
+        "bindings": [],
+        "gaps": []
+      },
+      "render": {
+        "outputs": [
+          "figures/generated/dd-backend-change.pdf",
+          "figures/generated/dd-backend-change.png",
+          "figures/generated/dd-backend-change.svg",
+          "figures/generated/dd-backend-change.tikz"
+        ],
+        "renderer": "tikz-pdf",
+        "input_digest": "db2c818151e8829776266d6c21a2e15c55dade3e82e4b7128fe1ae90396ebced",
+        "drawing_input_digest": "db2c818151e8829776266d6c21a2e15c55dade3e82e4b7128fe1ae90396ebced",
+        "drawing_inputs": {
+          "spec": {
+            "id": "dd-backend-change",
+            "kind": "tikz"
+          },
+          "tikz": "380fab921cc2c2670392ff518b487854e778506a55f5122f6da68a2ff8d49866"
+        },
+        "research_bindings": [],
+        "presentation_metadata": {
+          "title": "A claim remains connected to the basis of its revision",
+          "question": "What happens to a claim and its dependent text when the evidence or source changes?",
+          "caption": "Conceptual account of the current Writing App owner mechanism. A source passage, interpreted result and canonical claim retain separate identities. A human or agent proposes a change against an inspected revision. The owning operation checks authority and the expected basis, records the accepted transition and exposes affected dependencies for review. Work and history retain the request, outcome and recovery route. A current source pin establishes which bytes were used, not whether a source entails a claim. Scientific support is an authored judgement supplemented by scoped numerical, formal and independent review evidence where available. The same owners serve browser and agent interfaces. This diagram describes an implemented workflow principle, not an automatic theorem-proving or fully self-improving SDK.",
+          "source_data": null,
+          "source": null
+        },
+        "style_version": "a52b7af5b0793b1803d7220d6682ba6564c38bb38650f7366410d709347f3364",
+        "style_profile": "profiles/visual_style.json",
+        "visual_review": "pending",
+        "output_digests": {
+          "figures/generated/dd-backend-change.pdf": "b12fd5d809059af0f6c57c9372c4d04febcf71acefc3b3b6f90c45e007966a08",
+          "figures/generated/dd-backend-change.png": "121daee0c8e6d8b4fd5fadaa92fc985b20d5efd3d2275510b1a24e15ceac5300",
+          "figures/generated/dd-backend-change.svg": "8adcd0308e40ee50640107d5a6d68a56bf5c48bb1dd5f77348fdf134136c677c",
+          "figures/generated/dd-backend-change.tikz": "380fab921cc2c2670392ff518b487854e778506a55f5122f6da68a2ff8d49866"
+        }
+      },
+      "visual_review": "pending",
+      "source_kind": "schematic",
+      "placed_at_scope": "manuscript",
+      "placed_repo_file": "writing_projects/eigen-technical-due-diligence-briefing/manuscript/working-draft/chapters/the-backend-objects-authority-and-revision.tex"
+    },
+    {
+      "asset_id": "figure:dd-operator-projection",
+      "label": "fig:dd-operator-projection",
+      "artefact": "figures/generated/dd-operator-projection.pdf",
+      "generator": "manuscript_spec.json",
+      "spec_id": "dd-operator-projection",
+      "promise": "Does a small scalar gradient mean that the operator variation is small?",
+      "matched": true,
+      "caption": "Archived classical calculations from the operatorial-loss prototype, seed 20240603 and 2000 samples per point. (a) Variance of the scalar gradient g decreases with qubit number n. (b) The recorded normalised operator-gradient fraction r_op remains near one half. Error bars in (b) are the archived sample standard deviations, not standard errors or confidence intervals. Local and global observable ensembles nearly coincide in this particular experiment. The result contrasts projected scalar feedback with retained operator content. It does not demonstrate that this operator can be measured or optimised at no additional cost.",
+      "result_ids": [
+        "dd-archived-operator-projection"
+      ],
+      "placed_at": "working-draft/chapters/quantum-prototypes-changing-the-calculation.tex",
+      "research_binding": {
+        "status": "CURRENT",
+        "bindings": [
+          {
+            "id": "dd-archived-operator-projection",
+            "revision": "sha256:8624db91c7dcf5d37e5c6bb6bd67a03ba52373cf58496e1c3903c414d92c1466",
+            "currentness": "CURRENT",
+            "reason": "all explicitly declared dependencies match their recorded identities",
+            "dependencies": [
+              {
+                "record_id": "dd-archived-operator-projection",
+                "dependencies": [
+                  {
+                    "path": "evidence-snapshots/quantum/check_projection.py",
+                    "status": "PRESENT",
+                    "bytes": 14618,
+                    "sha256": "04deb4bc5c08f18a3ecc43f98892134bb7b91fb33bf076710734181eb590b0b1"
+                  },
+                  {
+                    "path": "evidence-snapshots/quantum/operator_projection_result.json",
+                    "status": "PRESENT",
+                    "bytes": 6207,
+                    "sha256": "3023e8f5b138983e7d8400cf08bab033b01fa7351465f010fe1731b4fa350754"
+                  }
+                ],
+                "status": "CURRENT",
+                "reason": "all pinned dependencies match",
+                "coverage": {
+                  "snapshot_schema": "laplace.research-dependencies/3",
+                  "newly_untracked": [],
+                  "changed_pins": [],
+                  "removed_pins": [],
+                  "retired_derived_presentation_pins": [],
+                  "historical_verification": "PINNED_DEPENDENCIES_ONLY"
+                }
+              }
+            ]
+          }
+        ],
+        "gaps": []
+      },
+      "render": {
+        "outputs": [
+          "figures/generated/dd-operator-projection.pdf",
+          "figures/generated/dd-operator-projection.svg",
+          "figures/generated/dd-operator-projection.png"
+        ],
+        "renderer": "supervised-run-artifact",
+        "source_provenance": {
+          "run_id": "run-3af475ad8f2640ed",
+          "producer_id": "dd-publication-figures",
+          "result_path": "research_runs/run-3af475ad8f2640ed.result.json",
+          "result_sha256": "54f389799656bed23257038a57ff002440b0fee81d177b76575cfc6c3a8565b6",
+          "artifact_id": "dd-operator-projection-aps",
+          "source_digests": {
+            "pdf": "7d94866978362e2aedead4026d93306610d4035dd4d73666f672fa774f32f398",
+            "svg": "3f24a220bf5c7fbba14aac638b12c7fe352ebfc48bf1b37261ce5d092f6d374a",
+            "png": "b193b08471e540bf2dcda3cb121f329b2a8e4074fcb1398f0804108fd324020b"
+          },
+          "source_paths": {
+            "pdf": "manuscript/research_runs/run-3af475ad8f2640ed.result-aps/dd-operator-projection-aps.pdf",
+            "svg": "manuscript/research_runs/run-3af475ad8f2640ed.result-aps/dd-operator-projection-aps.svg",
+            "png": "manuscript/research_runs/run-3af475ad8f2640ed.result-aps/dd-operator-projection-aps.png"
+          },
+          "output_observation": "CURRENT_BYTES_NAMED_BY_SUPERVISED_RESULT",
+          "historical_output_verification": "NOT_ESTABLISHED"
+        },
+        "input_digest": "5135c68521c7e1f984e073d43f465b48860d2ff757afec9123842dc14239b0db",
+        "drawing_input_digest": "5135c68521c7e1f984e073d43f465b48860d2ff757afec9123842dc14239b0db",
+        "drawing_inputs": {
+          "spec": {
+            "id": "dd-operator-projection",
+            "kind": "artifact",
+            "run_id": "run-3af475ad8f2640ed",
+            "artifact_id": "dd-operator-projection-aps"
+          },
+          "supervised_run": {
+            "run_id": "run-3af475ad8f2640ed",
+            "producer_id": "dd-publication-figures",
+            "result_path": "research_runs/run-3af475ad8f2640ed.result.json",
+            "result_sha256": "54f389799656bed23257038a57ff002440b0fee81d177b76575cfc6c3a8565b6",
+            "artifact_id": "dd-operator-projection-aps",
+            "source_paths": {
+              "pdf": "manuscript/research_runs/run-3af475ad8f2640ed.result-aps/dd-operator-projection-aps.pdf",
+              "svg": "manuscript/research_runs/run-3af475ad8f2640ed.result-aps/dd-operator-projection-aps.svg",
+              "png": "manuscript/research_runs/run-3af475ad8f2640ed.result-aps/dd-operator-projection-aps.png"
+            },
+            "source_digests": {
+              "pdf": "7d94866978362e2aedead4026d93306610d4035dd4d73666f672fa774f32f398",
+              "svg": "3f24a220bf5c7fbba14aac638b12c7fe352ebfc48bf1b37261ce5d092f6d374a",
+              "png": "b193b08471e540bf2dcda3cb121f329b2a8e4074fcb1398f0804108fd324020b"
+            },
+            "output_observation": "CURRENT_BYTES_NAMED_BY_SUPERVISED_RESULT",
+            "historical_output_verification": "NOT_ESTABLISHED"
+          }
+        },
+        "research_bindings": [
+          {
+            "id": "dd-archived-operator-projection",
+            "revision": "sha256:8624db91c7dcf5d37e5c6bb6bd67a03ba52373cf58496e1c3903c414d92c1466",
+            "currentness": "CURRENT"
+          }
+        ],
+        "presentation_metadata": {
+          "title": "Scalar concentration and retained operator content",
+          "question": "Does a small scalar gradient mean that the operator variation is small?",
+          "caption": "Archived classical calculations from the operatorial-loss prototype, seed 20240603 and 2000 samples per point. (a) Variance of the scalar gradient g decreases with qubit number n. (b) The recorded normalised operator-gradient fraction r_op remains near one half. Error bars in (b) are the archived sample standard deviations, not standard errors or confidence intervals. Local and global observable ensembles nearly coincide in this particular experiment. The result contrasts projected scalar feedback with retained operator content. It does not demonstrate that this operator can be measured or optimised at no additional cost.",
+          "source_data": null,
+          "source": null
+        },
+        "style_version": "a52b7af5b0793b1803d7220d6682ba6564c38bb38650f7366410d709347f3364",
+        "style_profile": null,
+        "visual_review": "pending",
+        "output_digests": {
+          "figures/generated/dd-operator-projection.pdf": "7d94866978362e2aedead4026d93306610d4035dd4d73666f672fa774f32f398",
+          "figures/generated/dd-operator-projection.svg": "3f24a220bf5c7fbba14aac638b12c7fe352ebfc48bf1b37261ce5d092f6d374a",
+          "figures/generated/dd-operator-projection.png": "b193b08471e540bf2dcda3cb121f329b2a8e4074fcb1398f0804108fd324020b"
+        }
+      },
+      "visual_review": "pending",
+      "source_kind": "supervised-run-artifact",
+      "placed_at_scope": "manuscript",
+      "placed_repo_file": "writing_projects/eigen-technical-due-diligence-briefing/manuscript/working-draft/chapters/quantum-prototypes-changing-the-calculation.tex"
+    },
+    {
+      "asset_id": "figure:dd-gap-selection",
+      "label": "fig:dd-gap-selection",
+      "artefact": "figures/generated/dd-gap-selection.pdf",
+      "generator": "manuscript_spec.json",
+      "spec_id": "dd-gap-selection",
+      "promise": "Which omitted direction most improves the retained ground-state calculation?",
+      "matched": true,
+      "caption": "Archived reduced-space comparison from the residual-method prototype. lambda scales the declared coupling and E_P-E_0 is the retained-space ground-energy error, both in the model's dimensionless units. Each method adds one direction from the same candidate pool. Selecting by raw residual amplitude chooses a high-gap channel, while the producer's amplitude-over-gap rule selects a more useful low-gap channel. The resulting finite-model error is substantially lower. This is not a hardware test or proof that every gap-aware enlargement converges.",
+      "result_ids": [
+        "dd-archived-quantum-replot"
+      ],
+      "placed_at": "working-draft/chapters/quantum-prototypes-changing-the-calculation.tex",
+      "research_binding": {
+        "status": "CURRENT",
+        "bindings": [
+          {
+            "id": "dd-archived-quantum-replot",
+            "revision": "sha256:c29ff9e2ebde4447759eddae000b42b0f186dc1ee3d7e113a66d20a31b73840d",
+            "currentness": "CURRENT",
+            "reason": "all explicitly declared dependencies match their recorded identities",
+            "dependencies": [
+              {
+                "record_id": "dd-archived-quantum-replot",
+                "dependencies": [
+                  {
+                    "path": "calculations/replot_archived_quantum.py",
+                    "status": "PRESENT",
+                    "bytes": 4227,
+                    "sha256": "3820c52e8a7384dd8e6a04d4a5bdee71d28f1f48e410bc0a79a7d971b6b861da",
+                    "scope": "project"
+                  },
+                  {
+                    "path": "research_runs/run-74dbf47f74a14fdc.result.json",
+                    "status": "PRESENT",
+                    "bytes": 3230,
+                    "sha256": "b461eab881b7495fd328db092fc1acf6f1b45485a05b5963c9b201cfaed72c33"
+                  }
+                ],
+                "status": "CURRENT",
+                "reason": "all pinned dependencies match",
+                "coverage": {
+                  "snapshot_schema": "laplace.research-dependencies/3",
+                  "newly_untracked": [],
+                  "changed_pins": [],
+                  "removed_pins": [],
+                  "retired_derived_presentation_pins": [],
+                  "historical_verification": "PINNED_DEPENDENCIES_ONLY"
+                }
+              }
+            ]
+          }
+        ],
+        "gaps": []
+      },
+      "render": {
+        "outputs": [
+          "figures/generated/dd-gap-selection.pdf",
+          "figures/generated/dd-gap-selection.svg",
+          "figures/generated/dd-gap-selection.png"
+        ],
+        "renderer": "supervised-run-artifact",
+        "source_provenance": {
+          "run_id": "run-3af475ad8f2640ed",
+          "producer_id": "dd-publication-figures",
+          "result_path": "research_runs/run-3af475ad8f2640ed.result.json",
+          "result_sha256": "54f389799656bed23257038a57ff002440b0fee81d177b76575cfc6c3a8565b6",
+          "artifact_id": "dd-gap-selection-aps",
+          "source_digests": {
+            "pdf": "cfe4740c85b7faabc89cc20377466cd07fb6be34b4989987a17c382b8bd79352",
+            "svg": "01b59743c2be87d519895d217b9ade2cf5fadc73c2939a56a4accc4be81024d4",
+            "png": "be87e2f08f404cbbd75a3042edb197dab983c9076b7af2f4197bc1ea9098746d"
+          },
+          "source_paths": {
+            "pdf": "manuscript/research_runs/run-3af475ad8f2640ed.result-aps/dd-gap-selection-aps.pdf",
+            "svg": "manuscript/research_runs/run-3af475ad8f2640ed.result-aps/dd-gap-selection-aps.svg",
+            "png": "manuscript/research_runs/run-3af475ad8f2640ed.result-aps/dd-gap-selection-aps.png"
+          },
+          "output_observation": "CURRENT_BYTES_NAMED_BY_SUPERVISED_RESULT",
+          "historical_output_verification": "NOT_ESTABLISHED"
+        },
+        "input_digest": "535eea32a857537f1e568c2ddb9ae77ddaf141f22375f774d1c72538de4a7782",
+        "drawing_input_digest": "535eea32a857537f1e568c2ddb9ae77ddaf141f22375f774d1c72538de4a7782",
+        "drawing_inputs": {
+          "spec": {
+            "id": "dd-gap-selection",
+            "kind": "artifact",
+            "run_id": "run-3af475ad8f2640ed",
+            "artifact_id": "dd-gap-selection-aps"
+          },
+          "supervised_run": {
+            "run_id": "run-3af475ad8f2640ed",
+            "producer_id": "dd-publication-figures",
+            "result_path": "research_runs/run-3af475ad8f2640ed.result.json",
+            "result_sha256": "54f389799656bed23257038a57ff002440b0fee81d177b76575cfc6c3a8565b6",
+            "artifact_id": "dd-gap-selection-aps",
+            "source_paths": {
+              "pdf": "manuscript/research_runs/run-3af475ad8f2640ed.result-aps/dd-gap-selection-aps.pdf",
+              "svg": "manuscript/research_runs/run-3af475ad8f2640ed.result-aps/dd-gap-selection-aps.svg",
+              "png": "manuscript/research_runs/run-3af475ad8f2640ed.result-aps/dd-gap-selection-aps.png"
+            },
+            "source_digests": {
+              "pdf": "cfe4740c85b7faabc89cc20377466cd07fb6be34b4989987a17c382b8bd79352",
+              "svg": "01b59743c2be87d519895d217b9ade2cf5fadc73c2939a56a4accc4be81024d4",
+              "png": "be87e2f08f404cbbd75a3042edb197dab983c9076b7af2f4197bc1ea9098746d"
+            },
+            "output_observation": "CURRENT_BYTES_NAMED_BY_SUPERVISED_RESULT",
+            "historical_output_verification": "NOT_ESTABLISHED"
+          }
+        },
+        "research_bindings": [
+          {
+            "id": "dd-archived-quantum-replot",
+            "revision": "sha256:c29ff9e2ebde4447759eddae000b42b0f186dc1ee3d7e113a66d20a31b73840d",
+            "currentness": "CURRENT"
+          }
+        ],
+        "presentation_metadata": {
+          "title": "Residual amplitude versus gap-aware value",
+          "question": "Which omitted direction most improves the retained ground-state calculation?",
+          "caption": "Archived reduced-space comparison from the residual-method prototype. lambda scales the declared coupling and E_P-E_0 is the retained-space ground-energy error, both in the model's dimensionless units. Each method adds one direction from the same candidate pool. Selecting by raw residual amplitude chooses a high-gap channel, while the producer's amplitude-over-gap rule selects a more useful low-gap channel. The resulting finite-model error is substantially lower. This is not a hardware test or proof that every gap-aware enlargement converges.",
+          "source_data": null,
+          "source": null
+        },
+        "style_version": "a52b7af5b0793b1803d7220d6682ba6564c38bb38650f7366410d709347f3364",
+        "style_profile": null,
+        "visual_review": "pending",
+        "output_digests": {
+          "figures/generated/dd-gap-selection.pdf": "cfe4740c85b7faabc89cc20377466cd07fb6be34b4989987a17c382b8bd79352",
+          "figures/generated/dd-gap-selection.svg": "01b59743c2be87d519895d217b9ade2cf5fadc73c2939a56a4accc4be81024d4",
+          "figures/generated/dd-gap-selection.png": "be87e2f08f404cbbd75a3042edb197dab983c9076b7af2f4197bc1ea9098746d"
+        }
+      },
+      "visual_review": "pending",
+      "source_kind": "supervised-run-artifact",
+      "placed_at_scope": "manuscript",
+      "placed_repo_file": "writing_projects/eigen-technical-due-diligence-briefing/manuscript/working-draft/chapters/quantum-prototypes-changing-the-calculation.tex"
+    },
+    {
+      "asset_id": "figure:dd-memory-parity",
+      "label": "fig:dd-memory-parity",
+      "artefact": "figures/generated/dd-memory-parity.pdf",
+      "generator": "manuscript_spec.json",
+      "spec_id": "dd-memory-parity",
+      "promise": "Can a small continuation rule answer exact queries without scanning every unique world?",
+      "matched": true,
+      "caption": "Retaining a relation rather than its list of instances. (a) Mathematical three-bit even-parity example under a uniform source law. Every pair of bits is independent, but two bits jointly determine the third. A running parity state suffices to represent allowed continuations. (b) Archived measurements for the 19-bit law with 262144 unique worlds, queries fixing four prefix coordinates and batch size Q. t_API is warm full-API time per batch. Small dots are all eleven samples and lines connect medians, not fitted scaling laws. Build, query preparation and process-first compilation are excluded. The same campaign records refusal for high-width laws and direct-scan wins on a duplicate-heavy control.",
+      "result_ids": [
+        "dd-archived-memory-replot"
+      ],
+      "placed_at": "working-draft/chapters/memory-as-a-retained-and-reconstructable-object.tex",
+      "research_binding": {
+        "status": "CURRENT",
+        "bindings": [
+          {
+            "id": "dd-archived-memory-replot",
+            "revision": "sha256:fd83c4e63b068a5c816bebae9119f4cd662622fc40546cedb2a8caf7850e34d0",
+            "currentness": "CURRENT",
+            "reason": "all explicitly declared dependencies match their recorded identities",
+            "dependencies": [
+              {
+                "record_id": "dd-archived-memory-replot",
+                "dependencies": [
+                  {
+                    "path": "calculations/replot_archived_memory.py",
+                    "status": "PRESENT",
+                    "bytes": 4971,
+                    "sha256": "fb1d46b4945c2a771c353312f1e02806a20e8190d5f3f6bf3da35535d345715b",
+                    "scope": "project"
+                  },
+                  {
+                    "path": "research_runs/run-f1c083bdc9dd4477.result.json",
+                    "status": "PRESENT",
+                    "bytes": 2894,
+                    "sha256": "e570d29828841050d8d9978a894f33ca4a2f85f859776cc65ea15e559ccd1d44"
+                  }
+                ],
+                "status": "CURRENT",
+                "reason": "all pinned dependencies match",
+                "coverage": {
+                  "snapshot_schema": "laplace.research-dependencies/3",
+                  "newly_untracked": [],
+                  "changed_pins": [],
+                  "removed_pins": [],
+                  "retired_derived_presentation_pins": [],
+                  "historical_verification": "PINNED_DEPENDENCIES_ONLY"
+                }
+              }
+            ]
+          }
+        ],
+        "gaps": []
+      },
+      "render": {
+        "outputs": [
+          "figures/generated/dd-memory-parity.pdf",
+          "figures/generated/dd-memory-parity.svg",
+          "figures/generated/dd-memory-parity.png"
+        ],
+        "renderer": "supervised-run-artifact",
+        "source_provenance": {
+          "run_id": "run-3af475ad8f2640ed",
+          "producer_id": "dd-publication-figures",
+          "result_path": "research_runs/run-3af475ad8f2640ed.result.json",
+          "result_sha256": "54f389799656bed23257038a57ff002440b0fee81d177b76575cfc6c3a8565b6",
+          "artifact_id": "dd-memory-parity-aps",
+          "source_digests": {
+            "pdf": "2564fc60c7f42928e65468ef12f5df29c4eb4ddc04e070f9e412fdca38a139ef",
+            "svg": "dabdbc06281e9f26a0428099f47c16087ba1b7fa3521550b3dccd7da34951cc3",
+            "png": "d0131879686346bf60361445be01c264ce21be80150e7acfd1bbe81144472f7e"
+          },
+          "source_paths": {
+            "pdf": "manuscript/research_runs/run-3af475ad8f2640ed.result-aps/dd-memory-parity-aps.pdf",
+            "svg": "manuscript/research_runs/run-3af475ad8f2640ed.result-aps/dd-memory-parity-aps.svg",
+            "png": "manuscript/research_runs/run-3af475ad8f2640ed.result-aps/dd-memory-parity-aps.png"
+          },
+          "output_observation": "CURRENT_BYTES_NAMED_BY_SUPERVISED_RESULT",
+          "historical_output_verification": "NOT_ESTABLISHED"
+        },
+        "input_digest": "f67b549aa11e0bb9f01b25e51fe513d07833cd309524a0ea63fa6469b4b180a7",
+        "drawing_input_digest": "f67b549aa11e0bb9f01b25e51fe513d07833cd309524a0ea63fa6469b4b180a7",
+        "drawing_inputs": {
+          "spec": {
+            "id": "dd-memory-parity",
+            "kind": "artifact",
+            "run_id": "run-3af475ad8f2640ed",
+            "artifact_id": "dd-memory-parity-aps"
+          },
+          "supervised_run": {
+            "run_id": "run-3af475ad8f2640ed",
+            "producer_id": "dd-publication-figures",
+            "result_path": "research_runs/run-3af475ad8f2640ed.result.json",
+            "result_sha256": "54f389799656bed23257038a57ff002440b0fee81d177b76575cfc6c3a8565b6",
+            "artifact_id": "dd-memory-parity-aps",
+            "source_paths": {
+              "pdf": "manuscript/research_runs/run-3af475ad8f2640ed.result-aps/dd-memory-parity-aps.pdf",
+              "svg": "manuscript/research_runs/run-3af475ad8f2640ed.result-aps/dd-memory-parity-aps.svg",
+              "png": "manuscript/research_runs/run-3af475ad8f2640ed.result-aps/dd-memory-parity-aps.png"
+            },
+            "source_digests": {
+              "pdf": "2564fc60c7f42928e65468ef12f5df29c4eb4ddc04e070f9e412fdca38a139ef",
+              "svg": "dabdbc06281e9f26a0428099f47c16087ba1b7fa3521550b3dccd7da34951cc3",
+              "png": "d0131879686346bf60361445be01c264ce21be80150e7acfd1bbe81144472f7e"
+            },
+            "output_observation": "CURRENT_BYTES_NAMED_BY_SUPERVISED_RESULT",
+            "historical_output_verification": "NOT_ESTABLISHED"
+          }
+        },
+        "research_bindings": [
+          {
+            "id": "dd-archived-memory-replot",
+            "revision": "sha256:fd83c4e63b068a5c816bebae9119f4cd662622fc40546cedb2a8caf7850e34d0",
+            "currentness": "CURRENT"
+          }
+        ],
+        "presentation_metadata": {
+          "title": "A compact relation among distinct worlds",
+          "question": "Can a small continuation rule answer exact queries without scanning every unique world?",
+          "caption": "Retaining a relation rather than its list of instances. (a) Mathematical three-bit even-parity example under a uniform source law. Every pair of bits is independent, but two bits jointly determine the third. A running parity state suffices to represent allowed continuations. (b) Archived measurements for the 19-bit law with 262144 unique worlds, queries fixing four prefix coordinates and batch size Q. t_API is warm full-API time per batch. Small dots are all eleven samples and lines connect medians, not fitted scaling laws. Build, query preparation and process-first compilation are excluded. The same campaign records refusal for high-width laws and direct-scan wins on a duplicate-heavy control.",
+          "source_data": null,
+          "source": null
+        },
+        "style_version": "a52b7af5b0793b1803d7220d6682ba6564c38bb38650f7366410d709347f3364",
+        "style_profile": null,
+        "visual_review": "pending",
+        "output_digests": {
+          "figures/generated/dd-memory-parity.pdf": "2564fc60c7f42928e65468ef12f5df29c4eb4ddc04e070f9e412fdca38a139ef",
+          "figures/generated/dd-memory-parity.svg": "dabdbc06281e9f26a0428099f47c16087ba1b7fa3521550b3dccd7da34951cc3",
+          "figures/generated/dd-memory-parity.png": "d0131879686346bf60361445be01c264ce21be80150e7acfd1bbe81144472f7e"
+        }
+      },
+      "visual_review": "pending",
+      "source_kind": "supervised-run-artifact",
+      "placed_at_scope": "manuscript",
+      "placed_repo_file": "writing_projects/eigen-technical-due-diligence-briefing/manuscript/working-draft/chapters/memory-as-a-retained-and-reconstructable-object.tex"
+    },
+    {
+      "asset_id": "figure:dd-superarc-controls",
+      "label": "fig:dd-superarc-controls",
+      "artefact": "figures/generated/dd-superarc-controls.pdf",
+      "generator": "manuscript_spec.json",
+      "spec_id": "dd-superarc-controls",
+      "promise": "How much of the recorded score separation survives common answer-format treatment?",
+      "matched": true,
+      "caption": "Archived SuperARC campaign decomposition, N=100 twelve-term binary targets. (a) rho_k is the fraction in each correct-answer class. All three arms were recorded correct under the campaign's distinct correctness routes, but the bare arm is mostly in the penalised print-type class. (b) Delta phi compares loop and execute/fix arms. Removing commentary with the class assignments held fixed removes the positive separation. Horizontal intervals are the retained report's 95 percent paired-bootstrap bands at resample size100, seed20260804,100resamples. The re-binned point has no interval reported here. Scores concern formula text, while A2/A3 correctness used banked program execution. Prompt, search and format differences prevent these increments from isolating causal execution or recursion benefits. Replotted from archived report objects and the skeptic's explicitly transcribed control tables, not a new experiment.",
+      "result_ids": [
+        "dd-superarc-controls"
+      ],
+      "placed_at": "working-draft/chapters/research-that-can-inspect-its-own-results.tex",
+      "research_binding": {
+        "status": "CURRENT",
+        "bindings": [
+          {
+            "id": "dd-superarc-controls",
+            "revision": "sha256:e485fbe7b8667ddf7a0de69fa9749f350011282ca117165279c02428ff9c445f",
+            "currentness": "CURRENT",
+            "reason": "all explicitly declared dependencies match their recorded identities",
+            "dependencies": [
+              {
+                "record_id": "dd-superarc-controls",
+                "dependencies": [
+                  {
+                    "path": "calculations/superarc_figure.py",
+                    "status": "PRESENT",
+                    "bytes": 3506,
+                    "sha256": "938eca3353a04bc720fff670cb21f7177383fcab1cd4a3315b1b7dff1e214b1d",
+                    "scope": "project"
+                  },
+                  {
+                    "path": "research_runs/run-97ff1a89c89041e6.result.json",
+                    "status": "PRESENT",
+                    "bytes": 2715,
+                    "sha256": "2202cb913f518ab3aa4d41336cee62fc3061c72d2d69e7c520a8f4934b9fab4b"
+                  }
+                ],
+                "status": "CURRENT",
+                "reason": "all pinned dependencies match",
+                "coverage": {
+                  "snapshot_schema": "laplace.research-dependencies/3",
+                  "newly_untracked": [],
+                  "changed_pins": [],
+                  "removed_pins": [],
+                  "retired_derived_presentation_pins": [],
+                  "historical_verification": "PINNED_DEPENDENCIES_ONLY"
+                }
+              }
+            ]
+          }
+        ],
+        "gaps": []
+      },
+      "render": {
+        "outputs": [
+          "figures/generated/dd-superarc-controls.pdf",
+          "figures/generated/dd-superarc-controls.svg",
+          "figures/generated/dd-superarc-controls.png"
+        ],
+        "renderer": "supervised-run-artifact",
+        "source_provenance": {
+          "run_id": "run-97ff1a89c89041e6",
+          "producer_id": "dd-superarc-figure",
+          "result_path": "research_runs/run-97ff1a89c89041e6.result.json",
+          "result_sha256": "2202cb913f518ab3aa4d41336cee62fc3061c72d2d69e7c520a8f4934b9fab4b",
+          "artifact_id": "dd-superarc-controls",
+          "source_digests": {
+            "pdf": "578cb4ad7f62ef17ddfb461199b4deaa81be05562c9e0bed4b7a1cf3715beb02",
+            "svg": "120987caf33a06dcede214c84011acbd8a3aebb538fb6c838b14d878a607ad5b",
+            "png": "af8c83a84bab62b37f30d84f790fdbc42e739697382f72f8f9dd2c70bcade7db"
+          },
+          "source_paths": {
+            "pdf": "manuscript/research_runs/run-97ff1a89c89041e6.result-figures/dd-superarc-controls.pdf",
+            "svg": "manuscript/research_runs/run-97ff1a89c89041e6.result-figures/dd-superarc-controls.svg",
+            "png": "manuscript/research_runs/run-97ff1a89c89041e6.result-figures/dd-superarc-controls.png"
+          },
+          "output_observation": "CURRENT_BYTES_NAMED_BY_SUPERVISED_RESULT",
+          "historical_output_verification": "NOT_ESTABLISHED"
+        },
+        "input_digest": "7bad37acf3a352cb85bf5b50e78b5c53b6ebb9b9561194ce4e092dab7c2d9c3a",
+        "drawing_input_digest": "7bad37acf3a352cb85bf5b50e78b5c53b6ebb9b9561194ce4e092dab7c2d9c3a",
+        "drawing_inputs": {
+          "spec": {
+            "id": "dd-superarc-controls",
+            "kind": "artifact",
+            "run_id": "run-97ff1a89c89041e6",
+            "artifact_id": "dd-superarc-controls"
+          },
+          "supervised_run": {
+            "run_id": "run-97ff1a89c89041e6",
+            "producer_id": "dd-superarc-figure",
+            "result_path": "research_runs/run-97ff1a89c89041e6.result.json",
+            "result_sha256": "2202cb913f518ab3aa4d41336cee62fc3061c72d2d69e7c520a8f4934b9fab4b",
+            "artifact_id": "dd-superarc-controls",
+            "source_paths": {
+              "pdf": "manuscript/research_runs/run-97ff1a89c89041e6.result-figures/dd-superarc-controls.pdf",
+              "svg": "manuscript/research_runs/run-97ff1a89c89041e6.result-figures/dd-superarc-controls.svg",
+              "png": "manuscript/research_runs/run-97ff1a89c89041e6.result-figures/dd-superarc-controls.png"
+            },
+            "source_digests": {
+              "pdf": "578cb4ad7f62ef17ddfb461199b4deaa81be05562c9e0bed4b7a1cf3715beb02",
+              "svg": "120987caf33a06dcede214c84011acbd8a3aebb538fb6c838b14d878a607ad5b",
+              "png": "af8c83a84bab62b37f30d84f790fdbc42e739697382f72f8f9dd2c70bcade7db"
+            },
+            "output_observation": "CURRENT_BYTES_NAMED_BY_SUPERVISED_RESULT",
+            "historical_output_verification": "NOT_ESTABLISHED"
+          }
+        },
+        "research_bindings": [
+          {
+            "id": "dd-superarc-controls",
+            "revision": "sha256:e485fbe7b8667ddf7a0de69fa9749f350011282ca117165279c02428ff9c445f",
+            "currentness": "CURRENT"
+          }
+        ],
+        "presentation_metadata": {
+          "title": "What changed the SuperARC score?",
+          "question": "How much of the recorded score separation survives common answer-format treatment?",
+          "caption": "Archived SuperARC campaign decomposition, N=100 twelve-term binary targets. (a) rho_k is the fraction in each correct-answer class. All three arms were recorded correct under the campaign's distinct correctness routes, but the bare arm is mostly in the penalised print-type class. (b) Delta phi compares loop and execute/fix arms. Removing commentary with the class assignments held fixed removes the positive separation. Horizontal intervals are the retained report's 95 percent paired-bootstrap bands at resample size100, seed20260804,100resamples. The re-binned point has no interval reported here. Scores concern formula text, while A2/A3 correctness used banked program execution. Prompt, search and format differences prevent these increments from isolating causal execution or recursion benefits. Replotted from archived report objects and the skeptic's explicitly transcribed control tables, not a new experiment.",
+          "source_data": null,
+          "source": null
+        },
+        "style_version": "a52b7af5b0793b1803d7220d6682ba6564c38bb38650f7366410d709347f3364",
+        "style_profile": null,
+        "visual_review": "pending",
+        "output_digests": {
+          "figures/generated/dd-superarc-controls.pdf": "578cb4ad7f62ef17ddfb461199b4deaa81be05562c9e0bed4b7a1cf3715beb02",
+          "figures/generated/dd-superarc-controls.svg": "120987caf33a06dcede214c84011acbd8a3aebb538fb6c838b14d878a607ad5b",
+          "figures/generated/dd-superarc-controls.png": "af8c83a84bab62b37f30d84f790fdbc42e739697382f72f8f9dd2c70bcade7db"
+        }
+      },
+      "visual_review": "pending",
+      "source_kind": "supervised-run-artifact",
+      "placed_at_scope": "manuscript",
+      "placed_repo_file": "writing_projects/eigen-technical-due-diligence-briefing/manuscript/working-draft/chapters/research-that-can-inspect-its-own-results.tex"
+    },
+    {
+      "asset_id": "figure:dd-retention-memory",
+      "label": "fig:dd-retention-memory",
+      "artefact": "figures/generated/dd-retention-memory.pdf",
+      "generator": "manuscript_spec.json",
+      "spec_id": "dd-retention-memory",
+      "promise": "Why can two identical coarse descriptions predict different futures, and what should be retained?",
+      "matched": true,
+      "caption": "A mathematical illustration of task-relative retention. Four states exchange probability at the labelled symmetric rates. We ask only for the total probability in region A. Starting in state 1 or state 2 gives the same coarse answer, p_A=1, but different initial rates, -1 and -3. Retaining the imbalance z=(p_1-p_2)-(p_3-p_4) closes the prediction for y=p_A-p_B: y'=-4y+2z and z'=2y-12z. Eliminating z instead produces an exact memory term. This constructed example illustrates the projection and residual mechanisms developed in Foundations of Synthetics and Memory in Pieces. It is not an empirical performance result.",
+      "result_ids": [],
+      "placed_at": "working-draft/chapters/what-a-useful-summary-must-remember.tex",
+      "research_binding": {
+        "status": "THEORY_ONLY",
+        "bindings": [],
+        "gaps": []
+      },
+      "render": {
+        "outputs": [
+          "figures/generated/dd-retention-memory.pdf",
+          "figures/generated/dd-retention-memory.png",
+          "figures/generated/dd-retention-memory.svg",
+          "figures/generated/dd-retention-memory.tikz"
+        ],
+        "renderer": "tikz-pdf",
+        "input_digest": "fa6e4e93672e68c3be47ea1b2af58c7de698fa16fdc58c020050973930181890",
+        "drawing_input_digest": "fa6e4e93672e68c3be47ea1b2af58c7de698fa16fdc58c020050973930181890",
+        "drawing_inputs": {
+          "spec": {
+            "id": "dd-retention-memory",
+            "kind": "tikz"
+          },
+          "tikz": "31d67b75c224f396b173894f45a0ebba6380c725075d6fdbd673c72016d22809"
+        },
+        "research_bindings": [],
+        "presentation_metadata": {
+          "title": "What must a reduced description remember?",
+          "question": "Why can two identical coarse descriptions predict different futures, and what should be retained?",
+          "caption": "A mathematical illustration of task-relative retention. Four states exchange probability at the labelled symmetric rates. We ask only for the total probability in region A. Starting in state 1 or state 2 gives the same coarse answer, p_A=1, but different initial rates, -1 and -3. Retaining the imbalance z=(p_1-p_2)-(p_3-p_4) closes the prediction for y=p_A-p_B: y'=-4y+2z and z'=2y-12z. Eliminating z instead produces an exact memory term. This constructed example illustrates the projection and residual mechanisms developed in Foundations of Synthetics and Memory in Pieces. It is not an empirical performance result.",
+          "source_data": null,
+          "source": null
+        },
+        "style_version": "a52b7af5b0793b1803d7220d6682ba6564c38bb38650f7366410d709347f3364",
+        "style_profile": "profiles/visual_style.json",
+        "visual_review": "pending",
+        "output_digests": {
+          "figures/generated/dd-retention-memory.pdf": "bf78b1f01cd1f36f401f1927d54887b1e4074ee94028a0904aa9e918817adee4",
+          "figures/generated/dd-retention-memory.png": "a857f2aa47d50a09eeddcf743c7a245bda86e39a2dc23a9927feb4ee31c842af",
+          "figures/generated/dd-retention-memory.svg": "b8cdfccbdd2bf523056b62c4f0ab61c99ff7da6ff55c374ec06ed03319caa3f5",
+          "figures/generated/dd-retention-memory.tikz": "31d67b75c224f396b173894f45a0ebba6380c725075d6fdbd673c72016d22809"
+        }
+      },
+      "visual_review": "pending",
+      "source_kind": "schematic",
+      "placed_at_scope": "manuscript",
+      "placed_repo_file": "writing_projects/eigen-technical-due-diligence-briefing/manuscript/working-draft/chapters/what-a-useful-summary-must-remember.tex"
+    },
+    {
+      "asset_id": "figure:dd-shared-register-price",
+      "label": "fig:dd-shared-register-price",
+      "artefact": "figures/generated/dd-shared-register-price.pdf",
+      "generator": "manuscript_spec.json",
+      "spec_id": "dd-shared-register-price",
+      "promise": "When should two minimisers stop sharing a register?",
+      "matched": true,
+      "caption": "Mathematical illustration of the shared-register model. (a) Two tasks prefer a and b, while their equally weighted quadratic compromise is q*=(a+b)/2. (b) Optimised fixed-register loss L_B* and partition-enabled loss L_C* versus disagreement angle theta, with gamma=1, eta=0.8 and partition price C_part=0.25 in the source's dimensionless loss units. Separation becomes cheaper at theta=0.8411 rad, before the fixed-register optimum sacrifices a task at theta=1.0853 rad. The data are analytic model values from the retained illustration run, not measured performance.",
+      "result_ids": [
+        "dd-representation-illustrations"
+      ],
+      "placed_at": "working-draft/chapters/the-price-of-a-shared-description.tex",
+      "research_binding": {
+        "status": "CURRENT",
+        "bindings": [
+          {
+            "id": "dd-representation-illustrations",
+            "revision": "sha256:a87ca75c344b89be076f4a1d1f7a887de5bbd98f8ee02eaaaf30ebe6423ab7f5",
+            "currentness": "CURRENT",
+            "reason": "all explicitly declared dependencies match their recorded identities",
+            "dependencies": [
+              {
+                "record_id": "dd-representation-illustrations",
+                "dependencies": [
+                  {
+                    "path": "calculations/representation_illustrations.py",
+                    "status": "PRESENT",
+                    "bytes": 6525,
+                    "sha256": "6fbec2ba4f746abc5e5038455b450e0ef1ca546a64803a6827ac45b3cbcde670",
+                    "scope": "project"
+                  },
+                  {
+                    "path": "research_runs/run-3f035af6bb194de9.result.json",
+                    "status": "PRESENT",
+                    "bytes": 5860,
+                    "sha256": "ad73d7923242d3a129318ce749a7afb4db4ee0c2473392f0cb7af4268580042f"
+                  }
+                ],
+                "status": "CURRENT",
+                "reason": "all pinned dependencies match",
+                "coverage": {
+                  "snapshot_schema": "laplace.research-dependencies/3",
+                  "newly_untracked": [],
+                  "changed_pins": [],
+                  "removed_pins": [],
+                  "retired_derived_presentation_pins": [],
+                  "historical_verification": "PINNED_DEPENDENCIES_ONLY"
+                }
+              }
+            ]
+          }
+        ],
+        "gaps": []
+      },
+      "render": {
+        "outputs": [
+          "figures/generated/dd-shared-register-price.pdf",
+          "figures/generated/dd-shared-register-price.svg",
+          "figures/generated/dd-shared-register-price.png"
+        ],
+        "renderer": "supervised-run-artifact",
+        "source_provenance": {
+          "run_id": "run-3af475ad8f2640ed",
+          "producer_id": "dd-publication-figures",
+          "result_path": "research_runs/run-3af475ad8f2640ed.result.json",
+          "result_sha256": "54f389799656bed23257038a57ff002440b0fee81d177b76575cfc6c3a8565b6",
+          "artifact_id": "dd-shared-register-aps",
+          "source_digests": {
+            "pdf": "b14bbfbd74728a450d78b2165abc1783f75fb12512afc5751563f113db195ba2",
+            "svg": "43cafd9d918d5faae55ee622c98af59181d79bdaab0b578cff934ed58347b2a9",
+            "png": "72ce0447a8d810bf928285cdb3b90b6bb19aaad94bf0a7ae33c71b81c5f53e62"
+          },
+          "source_paths": {
+            "pdf": "manuscript/research_runs/run-3af475ad8f2640ed.result-aps/dd-shared-register-aps.pdf",
+            "svg": "manuscript/research_runs/run-3af475ad8f2640ed.result-aps/dd-shared-register-aps.svg",
+            "png": "manuscript/research_runs/run-3af475ad8f2640ed.result-aps/dd-shared-register-aps.png"
+          },
+          "output_observation": "CURRENT_BYTES_NAMED_BY_SUPERVISED_RESULT",
+          "historical_output_verification": "NOT_ESTABLISHED"
+        },
+        "input_digest": "54af4ce35003706271e620a958509454c070a6335b2740406e9056a092868e93",
+        "drawing_input_digest": "54af4ce35003706271e620a958509454c070a6335b2740406e9056a092868e93",
+        "drawing_inputs": {
+          "spec": {
+            "id": "dd-shared-register-price",
+            "kind": "artifact",
+            "run_id": "run-3af475ad8f2640ed",
+            "artifact_id": "dd-shared-register-aps"
+          },
+          "supervised_run": {
+            "run_id": "run-3af475ad8f2640ed",
+            "producer_id": "dd-publication-figures",
+            "result_path": "research_runs/run-3af475ad8f2640ed.result.json",
+            "result_sha256": "54f389799656bed23257038a57ff002440b0fee81d177b76575cfc6c3a8565b6",
+            "artifact_id": "dd-shared-register-aps",
+            "source_paths": {
+              "pdf": "manuscript/research_runs/run-3af475ad8f2640ed.result-aps/dd-shared-register-aps.pdf",
+              "svg": "manuscript/research_runs/run-3af475ad8f2640ed.result-aps/dd-shared-register-aps.svg",
+              "png": "manuscript/research_runs/run-3af475ad8f2640ed.result-aps/dd-shared-register-aps.png"
+            },
+            "source_digests": {
+              "pdf": "b14bbfbd74728a450d78b2165abc1783f75fb12512afc5751563f113db195ba2",
+              "svg": "43cafd9d918d5faae55ee622c98af59181d79bdaab0b578cff934ed58347b2a9",
+              "png": "72ce0447a8d810bf928285cdb3b90b6bb19aaad94bf0a7ae33c71b81c5f53e62"
+            },
+            "output_observation": "CURRENT_BYTES_NAMED_BY_SUPERVISED_RESULT",
+            "historical_output_verification": "NOT_ESTABLISHED"
+          }
+        },
+        "research_bindings": [
+          {
+            "id": "dd-representation-illustrations",
+            "revision": "sha256:a87ca75c344b89be076f4a1d1f7a887de5bbd98f8ee02eaaaf30ebe6423ab7f5",
+            "currentness": "CURRENT"
+          }
+        ],
+        "presentation_metadata": {
+          "title": "When is a shared register worth its cost?",
+          "question": "When should two minimisers stop sharing a register?",
+          "caption": "Mathematical illustration of the shared-register model. (a) Two tasks prefer a and b, while their equally weighted quadratic compromise is q*=(a+b)/2. (b) Optimised fixed-register loss L_B* and partition-enabled loss L_C* versus disagreement angle theta, with gamma=1, eta=0.8 and partition price C_part=0.25 in the source's dimensionless loss units. Separation becomes cheaper at theta=0.8411 rad, before the fixed-register optimum sacrifices a task at theta=1.0853 rad. The data are analytic model values from the retained illustration run, not measured performance.",
+          "source_data": null,
+          "source": null
+        },
+        "style_version": "a52b7af5b0793b1803d7220d6682ba6564c38bb38650f7366410d709347f3364",
+        "style_profile": null,
+        "visual_review": "pending",
+        "output_digests": {
+          "figures/generated/dd-shared-register-price.pdf": "b14bbfbd74728a450d78b2165abc1783f75fb12512afc5751563f113db195ba2",
+          "figures/generated/dd-shared-register-price.svg": "43cafd9d918d5faae55ee622c98af59181d79bdaab0b578cff934ed58347b2a9",
+          "figures/generated/dd-shared-register-price.png": "72ce0447a8d810bf928285cdb3b90b6bb19aaad94bf0a7ae33c71b81c5f53e62"
+        }
+      },
+      "visual_review": "pending",
+      "source_kind": "supervised-run-artifact",
+      "placed_at_scope": "manuscript",
+      "placed_repo_file": "writing_projects/eigen-technical-due-diligence-briefing/manuscript/working-draft/chapters/the-price-of-a-shared-description.tex"
+    },
+    {
+      "asset_id": "figure:dd-retention-trajectories",
+      "label": "fig:dd-retention-trajectories",
+      "artefact": "figures/generated/dd-retention-trajectories.pdf",
+      "generator": "manuscript_spec.json",
+      "spec_id": "dd-retention-trajectories",
+      "promise": "Why do two equal coarse states have different futures?",
+      "matched": true,
+      "caption": "Exact mathematical trajectories for the constructed four-state process. p_A(t) is probability in region A. Two initial microstates have p_A(0)=1 but different hidden imbalance z. The coarse model omitting z predicts one intermediate trajectory. Retaining z, or the exact memory kernel obtained by eliminating it, recovers both curves. Time is measured in units inverse to the base transition rate. No experimental data or fitted dynamics are used.",
+      "result_ids": [
+        "dd-representation-illustrations"
+      ],
+      "placed_at": "working-draft/chapters/what-a-useful-summary-must-remember.tex",
+      "research_binding": {
+        "status": "CURRENT",
+        "bindings": [
+          {
+            "id": "dd-representation-illustrations",
+            "revision": "sha256:a87ca75c344b89be076f4a1d1f7a887de5bbd98f8ee02eaaaf30ebe6423ab7f5",
+            "currentness": "CURRENT",
+            "reason": "all explicitly declared dependencies match their recorded identities",
+            "dependencies": [
+              {
+                "record_id": "dd-representation-illustrations",
+                "dependencies": [
+                  {
+                    "path": "calculations/representation_illustrations.py",
+                    "status": "PRESENT",
+                    "bytes": 6525,
+                    "sha256": "6fbec2ba4f746abc5e5038455b450e0ef1ca546a64803a6827ac45b3cbcde670",
+                    "scope": "project"
+                  },
+                  {
+                    "path": "research_runs/run-3f035af6bb194de9.result.json",
+                    "status": "PRESENT",
+                    "bytes": 5860,
+                    "sha256": "ad73d7923242d3a129318ce749a7afb4db4ee0c2473392f0cb7af4268580042f"
+                  }
+                ],
+                "status": "CURRENT",
+                "reason": "all pinned dependencies match",
+                "coverage": {
+                  "snapshot_schema": "laplace.research-dependencies/3",
+                  "newly_untracked": [],
+                  "changed_pins": [],
+                  "removed_pins": [],
+                  "retired_derived_presentation_pins": [],
+                  "historical_verification": "PINNED_DEPENDENCIES_ONLY"
+                }
+              }
+            ]
+          }
+        ],
+        "gaps": []
+      },
+      "render": {
+        "outputs": [
+          "figures/generated/dd-retention-trajectories.pdf",
+          "figures/generated/dd-retention-trajectories.svg",
+          "figures/generated/dd-retention-trajectories.png"
+        ],
+        "renderer": "supervised-run-artifact",
+        "source_provenance": {
+          "run_id": "run-3af475ad8f2640ed",
+          "producer_id": "dd-publication-figures",
+          "result_path": "research_runs/run-3af475ad8f2640ed.result.json",
+          "result_sha256": "54f389799656bed23257038a57ff002440b0fee81d177b76575cfc6c3a8565b6",
+          "artifact_id": "dd-retention-trajectories-aps",
+          "source_digests": {
+            "pdf": "e3fd1623520c41c62481a5ffcd23e9aa6c8887b084a08de3a3b3c5d0c10f70cd",
+            "svg": "a1190ca515697ed9e96754632a10382789bc2b10834e6e34cf235dc6bd7efa85",
+            "png": "6000ebc2fa1fdd7aef8762ef54f85be996f64d804467cd987223d128856a3493"
+          },
+          "source_paths": {
+            "pdf": "manuscript/research_runs/run-3af475ad8f2640ed.result-aps/dd-retention-trajectories-aps.pdf",
+            "svg": "manuscript/research_runs/run-3af475ad8f2640ed.result-aps/dd-retention-trajectories-aps.svg",
+            "png": "manuscript/research_runs/run-3af475ad8f2640ed.result-aps/dd-retention-trajectories-aps.png"
+          },
+          "output_observation": "CURRENT_BYTES_NAMED_BY_SUPERVISED_RESULT",
+          "historical_output_verification": "NOT_ESTABLISHED"
+        },
+        "input_digest": "63daf92d4ad6cbb17017e1ecc792266d8eea557adab071ac2eafd1069c561b1c",
+        "drawing_input_digest": "63daf92d4ad6cbb17017e1ecc792266d8eea557adab071ac2eafd1069c561b1c",
+        "drawing_inputs": {
+          "spec": {
+            "id": "dd-retention-trajectories",
+            "kind": "artifact",
+            "run_id": "run-3af475ad8f2640ed",
+            "artifact_id": "dd-retention-trajectories-aps"
+          },
+          "supervised_run": {
+            "run_id": "run-3af475ad8f2640ed",
+            "producer_id": "dd-publication-figures",
+            "result_path": "research_runs/run-3af475ad8f2640ed.result.json",
+            "result_sha256": "54f389799656bed23257038a57ff002440b0fee81d177b76575cfc6c3a8565b6",
+            "artifact_id": "dd-retention-trajectories-aps",
+            "source_paths": {
+              "pdf": "manuscript/research_runs/run-3af475ad8f2640ed.result-aps/dd-retention-trajectories-aps.pdf",
+              "svg": "manuscript/research_runs/run-3af475ad8f2640ed.result-aps/dd-retention-trajectories-aps.svg",
+              "png": "manuscript/research_runs/run-3af475ad8f2640ed.result-aps/dd-retention-trajectories-aps.png"
+            },
+            "source_digests": {
+              "pdf": "e3fd1623520c41c62481a5ffcd23e9aa6c8887b084a08de3a3b3c5d0c10f70cd",
+              "svg": "a1190ca515697ed9e96754632a10382789bc2b10834e6e34cf235dc6bd7efa85",
+              "png": "6000ebc2fa1fdd7aef8762ef54f85be996f64d804467cd987223d128856a3493"
+            },
+            "output_observation": "CURRENT_BYTES_NAMED_BY_SUPERVISED_RESULT",
+            "historical_output_verification": "NOT_ESTABLISHED"
+          }
+        },
+        "research_bindings": [
+          {
+            "id": "dd-representation-illustrations",
+            "revision": "sha256:a87ca75c344b89be076f4a1d1f7a887de5bbd98f8ee02eaaaf30ebe6423ab7f5",
+            "currentness": "CURRENT"
+          }
+        ],
+        "presentation_metadata": {
+          "title": "When a summary loses predictive state",
+          "question": "Why do two equal coarse states have different futures?",
+          "caption": "Exact mathematical trajectories for the constructed four-state process. p_A(t) is probability in region A. Two initial microstates have p_A(0)=1 but different hidden imbalance z. The coarse model omitting z predicts one intermediate trajectory. Retaining z, or the exact memory kernel obtained by eliminating it, recovers both curves. Time is measured in units inverse to the base transition rate. No experimental data or fitted dynamics are used.",
+          "source_data": null,
+          "source": null
+        },
+        "style_version": "a52b7af5b0793b1803d7220d6682ba6564c38bb38650f7366410d709347f3364",
+        "style_profile": null,
+        "visual_review": "pending",
+        "output_digests": {
+          "figures/generated/dd-retention-trajectories.pdf": "e3fd1623520c41c62481a5ffcd23e9aa6c8887b084a08de3a3b3c5d0c10f70cd",
+          "figures/generated/dd-retention-trajectories.svg": "a1190ca515697ed9e96754632a10382789bc2b10834e6e34cf235dc6bd7efa85",
+          "figures/generated/dd-retention-trajectories.png": "6000ebc2fa1fdd7aef8762ef54f85be996f64d804467cd987223d128856a3493"
+        }
+      },
+      "visual_review": "pending",
+      "source_kind": "supervised-run-artifact",
+      "placed_at_scope": "manuscript",
+      "placed_repo_file": "writing_projects/eigen-technical-due-diligence-briefing/manuscript/working-draft/chapters/what-a-useful-summary-must-remember.tex"
+    },
+    {
+      "asset_id": "figure:dd-global-local-feedback",
+      "label": "fig:dd-global-local-feedback",
+      "artefact": "figures/generated/dd-global-local-feedback.pdf",
+      "generator": "manuscript_spec.json",
+      "spec_id": "dd-global-local-feedback",
+      "promise": "How can local and global objectives share an optimum but give different feedback?",
+      "matched": true,
+      "caption": "Analytic gradient variances for the product-state example of Cerezo et al. C_G=1-product_j cos^2(theta_j/2) and C_L=1-(1/n)sum_j cos^2(theta_j/2) have the same zero-cost target. For independent uniform angles, Var(partial_j C_G)=(1/8)(3/8)^(n-1), whereas Var(partial_j C_L)=1/(8n^2). n is the number of qubits. These curves are exact values in that model, not hardware measurements or a general convergence guarantee.",
+      "result_ids": [
+        "dd-representation-illustrations"
+      ],
+      "placed_at": "working-draft/chapters/loss-dynamics-and-the-choice-of-scale.tex",
+      "research_binding": {
+        "status": "CURRENT",
+        "bindings": [
+          {
+            "id": "dd-representation-illustrations",
+            "revision": "sha256:a87ca75c344b89be076f4a1d1f7a887de5bbd98f8ee02eaaaf30ebe6423ab7f5",
+            "currentness": "CURRENT",
+            "reason": "all explicitly declared dependencies match their recorded identities",
+            "dependencies": [
+              {
+                "record_id": "dd-representation-illustrations",
+                "dependencies": [
+                  {
+                    "path": "calculations/representation_illustrations.py",
+                    "status": "PRESENT",
+                    "bytes": 6525,
+                    "sha256": "6fbec2ba4f746abc5e5038455b450e0ef1ca546a64803a6827ac45b3cbcde670",
+                    "scope": "project"
+                  },
+                  {
+                    "path": "research_runs/run-3f035af6bb194de9.result.json",
+                    "status": "PRESENT",
+                    "bytes": 5860,
+                    "sha256": "ad73d7923242d3a129318ce749a7afb4db4ee0c2473392f0cb7af4268580042f"
+                  }
+                ],
+                "status": "CURRENT",
+                "reason": "all pinned dependencies match",
+                "coverage": {
+                  "snapshot_schema": "laplace.research-dependencies/3",
+                  "newly_untracked": [],
+                  "changed_pins": [],
+                  "removed_pins": [],
+                  "retired_derived_presentation_pins": [],
+                  "historical_verification": "PINNED_DEPENDENCIES_ONLY"
+                }
+              }
+            ]
+          }
+        ],
+        "gaps": []
+      },
+      "render": {
+        "outputs": [
+          "figures/generated/dd-global-local-feedback.pdf",
+          "figures/generated/dd-global-local-feedback.svg",
+          "figures/generated/dd-global-local-feedback.png"
+        ],
+        "renderer": "supervised-run-artifact",
+        "source_provenance": {
+          "run_id": "run-3af475ad8f2640ed",
+          "producer_id": "dd-publication-figures",
+          "result_path": "research_runs/run-3af475ad8f2640ed.result.json",
+          "result_sha256": "54f389799656bed23257038a57ff002440b0fee81d177b76575cfc6c3a8565b6",
+          "artifact_id": "dd-global-local-aps",
+          "source_digests": {
+            "pdf": "43cfe04aca10d4b53dfdd3619c3cfd338ed70580279bd5718cb81c687fba19f8",
+            "svg": "8fc41a0bcd1f77aeb33aa84fb32c270304664c0d4eeed5263862420465d4b3c5",
+            "png": "3cf26a8dc42f2f7f502486f0336e1ac1221b31f8d9b790195b8b902b097366bc"
+          },
+          "source_paths": {
+            "pdf": "manuscript/research_runs/run-3af475ad8f2640ed.result-aps/dd-global-local-aps.pdf",
+            "svg": "manuscript/research_runs/run-3af475ad8f2640ed.result-aps/dd-global-local-aps.svg",
+            "png": "manuscript/research_runs/run-3af475ad8f2640ed.result-aps/dd-global-local-aps.png"
+          },
+          "output_observation": "CURRENT_BYTES_NAMED_BY_SUPERVISED_RESULT",
+          "historical_output_verification": "NOT_ESTABLISHED"
+        },
+        "input_digest": "b3949557598a27a6b98336fa28f03283a56a8c91be92946540bbe33579c2521e",
+        "drawing_input_digest": "b3949557598a27a6b98336fa28f03283a56a8c91be92946540bbe33579c2521e",
+        "drawing_inputs": {
+          "spec": {
+            "id": "dd-global-local-feedback",
+            "kind": "artifact",
+            "run_id": "run-3af475ad8f2640ed",
+            "artifact_id": "dd-global-local-aps"
+          },
+          "supervised_run": {
+            "run_id": "run-3af475ad8f2640ed",
+            "producer_id": "dd-publication-figures",
+            "result_path": "research_runs/run-3af475ad8f2640ed.result.json",
+            "result_sha256": "54f389799656bed23257038a57ff002440b0fee81d177b76575cfc6c3a8565b6",
+            "artifact_id": "dd-global-local-aps",
+            "source_paths": {
+              "pdf": "manuscript/research_runs/run-3af475ad8f2640ed.result-aps/dd-global-local-aps.pdf",
+              "svg": "manuscript/research_runs/run-3af475ad8f2640ed.result-aps/dd-global-local-aps.svg",
+              "png": "manuscript/research_runs/run-3af475ad8f2640ed.result-aps/dd-global-local-aps.png"
+            },
+            "source_digests": {
+              "pdf": "43cfe04aca10d4b53dfdd3619c3cfd338ed70580279bd5718cb81c687fba19f8",
+              "svg": "8fc41a0bcd1f77aeb33aa84fb32c270304664c0d4eeed5263862420465d4b3c5",
+              "png": "3cf26a8dc42f2f7f502486f0336e1ac1221b31f8d9b790195b8b902b097366bc"
+            },
+            "output_observation": "CURRENT_BYTES_NAMED_BY_SUPERVISED_RESULT",
+            "historical_output_verification": "NOT_ESTABLISHED"
+          }
+        },
+        "research_bindings": [
+          {
+            "id": "dd-representation-illustrations",
+            "revision": "sha256:a87ca75c344b89be076f4a1d1f7a887de5bbd98f8ee02eaaaf30ebe6423ab7f5",
+            "currentness": "CURRENT"
+          }
+        ],
+        "presentation_metadata": {
+          "title": "The same target, different gradient scaling",
+          "question": "How can local and global objectives share an optimum but give different feedback?",
+          "caption": "Analytic gradient variances for the product-state example of Cerezo et al. C_G=1-product_j cos^2(theta_j/2) and C_L=1-(1/n)sum_j cos^2(theta_j/2) have the same zero-cost target. For independent uniform angles, Var(partial_j C_G)=(1/8)(3/8)^(n-1), whereas Var(partial_j C_L)=1/(8n^2). n is the number of qubits. These curves are exact values in that model, not hardware measurements or a general convergence guarantee.",
+          "source_data": null,
+          "source": null
+        },
+        "style_version": "a52b7af5b0793b1803d7220d6682ba6564c38bb38650f7366410d709347f3364",
+        "style_profile": null,
+        "visual_review": "pending",
+        "output_digests": {
+          "figures/generated/dd-global-local-feedback.pdf": "43cfe04aca10d4b53dfdd3619c3cfd338ed70580279bd5718cb81c687fba19f8",
+          "figures/generated/dd-global-local-feedback.svg": "8fc41a0bcd1f77aeb33aa84fb32c270304664c0d4eeed5263862420465d4b3c5",
+          "figures/generated/dd-global-local-feedback.png": "3cf26a8dc42f2f7f502486f0336e1ac1221b31f8d9b790195b8b902b097366bc"
+        }
+      },
+      "visual_review": "pending",
+      "source_kind": "supervised-run-artifact",
+      "placed_at_scope": "manuscript",
+      "placed_repo_file": "writing_projects/eigen-technical-due-diligence-briefing/manuscript/working-draft/chapters/loss-dynamics-and-the-choice-of-scale.tex"
+    },
+    {
+      "asset_id": "figure:dd-memory-mechanism",
+      "label": "fig:dd-memory-mechanism",
+      "artefact": "figures/generated/dd-memory-mechanism.pdf",
+      "generator": "manuscript_spec.json",
+      "spec_id": "dd-memory-mechanism",
+      "promise": "What is retained, how is it queried, and where does refinement enter in the original and extended memory systems?",
+      "matched": true,
+      "caption": "Two routes from sources to a reconstructed answer. Corpus as a State retains geometric summaries and inherited approximation bounds. Memory in Pieces, developed through Skein and Parallax, retains task/law coordinates, reconstruction and discarded-feedback diagnostics. Source-card extraction is model-dependent, while retention, decoding and declared bounds are mechanical conditional on those choices. A failed capacity or residual check triggers refinement or source-level fallback. Final language-model composition is separate from the retained numerical object.",
+      "result_ids": [],
+      "placed_at": "working-draft/chapters/memory-as-a-retained-and-reconstructable-object.tex",
+      "research_binding": {
+        "status": "THEORY_ONLY",
+        "bindings": [],
+        "gaps": []
+      },
+      "render": {
+        "outputs": [
+          "figures/generated/dd-memory-mechanism.pdf",
+          "figures/generated/dd-memory-mechanism.png",
+          "figures/generated/dd-memory-mechanism.svg",
+          "figures/generated/dd-memory-mechanism.tikz"
+        ],
+        "renderer": "tikz-pdf",
+        "input_digest": "cbc31c4bf5e408715a666793f68d9141795079008463461d49917fff2f36bf0b",
+        "drawing_input_digest": "cbc31c4bf5e408715a666793f68d9141795079008463461d49917fff2f36bf0b",
+        "drawing_inputs": {
+          "spec": {
+            "id": "dd-memory-mechanism",
+            "kind": "tikz"
+          },
+          "tikz": "a14481a949e2a3a3d6a6bda7060e21dad41f09488ddfb6e457e84e39d2ec5a10"
+        },
+        "research_bindings": [],
+        "presentation_metadata": {
+          "title": "From source items to a reconstructable answer",
+          "question": "What is retained, how is it queried, and where does refinement enter in the original and extended memory systems?",
+          "caption": "Two routes from sources to a reconstructed answer. Corpus as a State retains geometric summaries and inherited approximation bounds. Memory in Pieces, developed through Skein and Parallax, retains task/law coordinates, reconstruction and discarded-feedback diagnostics. Source-card extraction is model-dependent, while retention, decoding and declared bounds are mechanical conditional on those choices. A failed capacity or residual check triggers refinement or source-level fallback. Final language-model composition is separate from the retained numerical object.",
+          "source_data": null,
+          "source": null
+        },
+        "style_version": "a52b7af5b0793b1803d7220d6682ba6564c38bb38650f7366410d709347f3364",
+        "style_profile": "profiles/visual_style.json",
+        "visual_review": "pending",
+        "output_digests": {
+          "figures/generated/dd-memory-mechanism.pdf": "bd630cfc411b7bfdeed077d2621643cdab443cc3d00b169e855f3f1f16b6bdfb",
+          "figures/generated/dd-memory-mechanism.png": "8a57c01650d7615669ee563c8413265083382e9a5f2e35d9a8ef6347d95b414d",
+          "figures/generated/dd-memory-mechanism.svg": "ea9211edcdab8535d79598e971b0836bc99fa6c7e4e09082c4b384d312684645",
+          "figures/generated/dd-memory-mechanism.tikz": "a14481a949e2a3a3d6a6bda7060e21dad41f09488ddfb6e457e84e39d2ec5a10"
+        }
+      },
+      "visual_review": "pending",
+      "source_kind": "schematic",
+      "placed_at_scope": "manuscript",
+      "placed_repo_file": "writing_projects/eigen-technical-due-diligence-briefing/manuscript/working-draft/chapters/memory-as-a-retained-and-reconstructable-object.tex"
+    },
+    {
+      "asset_id": "figure:dd-spectral-window",
+      "label": "fig:dd-spectral-window",
+      "artefact": "figures/generated/dd-spectral-window.pdf",
+      "generator": "manuscript_spec.json",
+      "spec_id": "dd-spectral-window",
+      "promise": "What does a Gaussian spectral filter retain, and what measurement resource does finer resolution demand?",
+      "matched": true,
+      "caption": "Mathematical schematic for a self-adjoint H, real probe energy E_star and tau > 0, not a measured spectrum. Vertical marks represent possible energies. The Gaussian window has width proportional to tau^(-1/2). Its Fourier representation uses real-time evolution with typical time scale proportional to sqrt(tau), in units with hbar=1. Narrower energy resolution therefore requires longer-time information. ITQDE supplies an overlap-based construction and Free Snacks asks when the supported bandwidth can be treated locally. State support, quadrature error, denominator conditioning and measurement noise remain separate costs.",
+      "result_ids": [],
+      "placed_at": "working-draft/chapters/quantum-prototypes-changing-the-calculation.tex",
+      "research_binding": {
+        "status": "THEORY_ONLY",
+        "bindings": [],
+        "gaps": []
+      },
+      "render": {
+        "outputs": [
+          "figures/generated/dd-spectral-window.pdf",
+          "figures/generated/dd-spectral-window.png",
+          "figures/generated/dd-spectral-window.svg",
+          "figures/generated/dd-spectral-window.tikz"
+        ],
+        "renderer": "tikz-pdf",
+        "input_digest": "b2b705314422089df2d781acac9375aa92b0dbd68f8baca3c7c1ab48c2f6bc08",
+        "drawing_input_digest": "b2b705314422089df2d781acac9375aa92b0dbd68f8baca3c7c1ab48c2f6bc08",
+        "drawing_inputs": {
+          "spec": {
+            "id": "dd-spectral-window",
+            "kind": "tikz"
+          },
+          "tikz": "48482a27f82b83183605636531a6ddb4a186cd2f85262375af9a0343a3c2afcc"
+        },
+        "research_bindings": [],
+        "presentation_metadata": {
+          "title": "Resolve the spectral window the task uses",
+          "question": "What does a Gaussian spectral filter retain, and what measurement resource does finer resolution demand?",
+          "caption": "Mathematical schematic for a self-adjoint H, real probe energy E_star and tau > 0, not a measured spectrum. Vertical marks represent possible energies. The Gaussian window has width proportional to tau^(-1/2). Its Fourier representation uses real-time evolution with typical time scale proportional to sqrt(tau), in units with hbar=1. Narrower energy resolution therefore requires longer-time information. ITQDE supplies an overlap-based construction and Free Snacks asks when the supported bandwidth can be treated locally. State support, quadrature error, denominator conditioning and measurement noise remain separate costs.",
+          "source_data": null,
+          "source": null
+        },
+        "style_version": "a52b7af5b0793b1803d7220d6682ba6564c38bb38650f7366410d709347f3364",
+        "style_profile": "profiles/visual_style.json",
+        "visual_review": "pending",
+        "output_digests": {
+          "figures/generated/dd-spectral-window.pdf": "2cd6ad2afc5a4110384173a4eb2c61af07967dc9a6315d453fdf8bf786770689",
+          "figures/generated/dd-spectral-window.png": "6b469b16aa768ca46286548305d7b2728a21164e2ee68821ea9b637e0ef5ffb6",
+          "figures/generated/dd-spectral-window.svg": "1a630995c0539ee4fcdda8e032c2cf43f8951ad1f778e85c0b6f028061ed69f2",
+          "figures/generated/dd-spectral-window.tikz": "48482a27f82b83183605636531a6ddb4a186cd2f85262375af9a0343a3c2afcc"
+        }
+      },
+      "visual_review": "pending",
+      "source_kind": "schematic",
+      "placed_at_scope": "manuscript",
+      "placed_repo_file": "writing_projects/eigen-technical-due-diligence-briefing/manuscript/working-draft/chapters/quantum-prototypes-changing-the-calculation.tex"
+    },
+    {
+      "asset_id": "figure:dd-register-phase-diagram",
+      "label": "fig:dd-register-phase-diagram",
+      "artefact": "figures/generated/dd-register-phase-diagram.pdf",
+      "generator": "manuscript_spec.json",
+      "spec_id": "dd-register-phase-diagram",
+      "promise": "At which disagreement and register price is it optimal to share, split or suppress one evaluator?",
+      "matched": true,
+      "caption": "Optimisation phase diagram for gamma=1 and eta=0.8. Below C_crit(theta), separate registers retain both tasks. Above it, balanced sharing is optimal at small disagreement, while a shared register suppresses one evaluator at large disagreement. Solid curves mark equal-cost choices. The dashed C_part=0.25 slice recovers the earlier crossing at theta=0.8411. The meeting point is theta=1.0853, C_part=0.4. Analytic finite-model regions, not measured thermodynamic phases.",
+      "result_ids": [
+        "dd-register-phase-diagram"
+      ],
+      "placed_at": "working-draft/chapters/the-price-of-a-shared-description.tex",
+      "research_binding": {
+        "status": "CURRENT",
+        "bindings": [
+          {
+            "id": "dd-register-phase-diagram",
+            "revision": "sha256:c5d24fe4a3106aa96cf5ea4ba153f1f90d89f43dc24ca670aefc377d6953fcf8",
+            "currentness": "CURRENT",
+            "reason": "all explicitly declared dependencies match their recorded identities",
+            "dependencies": [
+              {
+                "record_id": "dd-register-phase-diagram",
+                "dependencies": [
+                  {
+                    "path": "calculations/register_phase_diagram.py",
+                    "status": "PRESENT",
+                    "bytes": 4642,
+                    "sha256": "925882d9ede01dde4b6239efd14c2db1a4c23737647305a47a8fdc3841eae59c",
+                    "scope": "project"
+                  },
+                  {
+                    "path": "research_runs/run-939b6a8b76724d02.result.json",
+                    "status": "PRESENT",
+                    "bytes": 2068,
+                    "sha256": "a9edbcf2938e9379156b9cf7b2a2bb239f85160d0870f0565110708093572600"
+                  }
+                ],
+                "status": "CURRENT",
+                "reason": "all pinned dependencies match",
+                "coverage": {
+                  "snapshot_schema": "laplace.research-dependencies/3",
+                  "newly_untracked": [],
+                  "changed_pins": [],
+                  "removed_pins": [],
+                  "retired_derived_presentation_pins": [],
+                  "historical_verification": "PINNED_DEPENDENCIES_ONLY"
+                }
+              }
+            ]
+          }
+        ],
+        "gaps": []
+      },
+      "render": {
+        "outputs": [
+          "figures/generated/dd-register-phase-diagram.pdf",
+          "figures/generated/dd-register-phase-diagram.svg",
+          "figures/generated/dd-register-phase-diagram.png"
+        ],
+        "renderer": "supervised-run-artifact",
+        "source_provenance": {
+          "run_id": "run-939b6a8b76724d02",
+          "producer_id": "dd-register-phase-diagram",
+          "result_path": "research_runs/run-939b6a8b76724d02.result.json",
+          "result_sha256": "a9edbcf2938e9379156b9cf7b2a2bb239f85160d0870f0565110708093572600",
+          "artifact_id": "dd-register-phase-diagram",
+          "source_digests": {
+            "pdf": "db346420980c61e2c8685918b4fba2b0b22d144862fe4cf5180027bae1faeeb9",
+            "svg": "0b360981a42f18b25d5689ed1170e379401e83d041a29bcf7d10ab985219bb90",
+            "png": "ab4f8c79e29985422091f4405bcd34fb5bcae838e2d9f168b7c2642c322dc4ac"
+          },
+          "source_paths": {
+            "pdf": "manuscript/working-draft/figures/phase-run-939b6a8b76724d02.result/dd-register-phase-diagram.pdf",
+            "svg": "manuscript/working-draft/figures/phase-run-939b6a8b76724d02.result/dd-register-phase-diagram.svg",
+            "png": "manuscript/working-draft/figures/phase-run-939b6a8b76724d02.result/dd-register-phase-diagram.png"
+          },
+          "output_observation": "CURRENT_BYTES_NAMED_BY_SUPERVISED_RESULT",
+          "historical_output_verification": "NOT_ESTABLISHED"
+        },
+        "input_digest": "c7c4fe2ade48c4852a084b9862108b3fc123a38165ec59759f876bd840ce277c",
+        "drawing_input_digest": "c7c4fe2ade48c4852a084b9862108b3fc123a38165ec59759f876bd840ce277c",
+        "drawing_inputs": {
+          "spec": {
+            "id": "dd-register-phase-diagram",
+            "kind": "artifact",
+            "run_id": "run-939b6a8b76724d02",
+            "artifact_id": "dd-register-phase-diagram"
+          },
+          "supervised_run": {
+            "run_id": "run-939b6a8b76724d02",
+            "producer_id": "dd-register-phase-diagram",
+            "result_path": "research_runs/run-939b6a8b76724d02.result.json",
+            "result_sha256": "a9edbcf2938e9379156b9cf7b2a2bb239f85160d0870f0565110708093572600",
+            "artifact_id": "dd-register-phase-diagram",
+            "source_paths": {
+              "pdf": "manuscript/working-draft/figures/phase-run-939b6a8b76724d02.result/dd-register-phase-diagram.pdf",
+              "svg": "manuscript/working-draft/figures/phase-run-939b6a8b76724d02.result/dd-register-phase-diagram.svg",
+              "png": "manuscript/working-draft/figures/phase-run-939b6a8b76724d02.result/dd-register-phase-diagram.png"
+            },
+            "source_digests": {
+              "pdf": "db346420980c61e2c8685918b4fba2b0b22d144862fe4cf5180027bae1faeeb9",
+              "svg": "0b360981a42f18b25d5689ed1170e379401e83d041a29bcf7d10ab985219bb90",
+              "png": "ab4f8c79e29985422091f4405bcd34fb5bcae838e2d9f168b7c2642c322dc4ac"
+            },
+            "output_observation": "CURRENT_BYTES_NAMED_BY_SUPERVISED_RESULT",
+            "historical_output_verification": "NOT_ESTABLISHED"
+          }
+        },
+        "research_bindings": [
+          {
+            "id": "dd-register-phase-diagram",
+            "revision": "sha256:c5d24fe4a3106aa96cf5ea4ba153f1f90d89f43dc24ca670aefc377d6953fcf8",
+            "currentness": "CURRENT"
+          }
+        ],
+        "presentation_metadata": {
+          "title": "The phase boundary for sharing a register",
+          "question": "At which disagreement and register price is it optimal to share, split or suppress one evaluator?",
+          "caption": "Optimisation phase diagram for gamma=1 and eta=0.8. Below C_crit(theta), separate registers retain both tasks. Above it, balanced sharing is optimal at small disagreement, while a shared register suppresses one evaluator at large disagreement. Solid curves mark equal-cost choices. The dashed C_part=0.25 slice recovers the earlier crossing at theta=0.8411. The meeting point is theta=1.0853, C_part=0.4. Analytic finite-model regions, not measured thermodynamic phases.",
+          "source_data": null,
+          "source": null
+        },
+        "style_version": "a52b7af5b0793b1803d7220d6682ba6564c38bb38650f7366410d709347f3364",
+        "style_profile": null,
+        "visual_review": "pending",
+        "output_digests": {
+          "figures/generated/dd-register-phase-diagram.pdf": "db346420980c61e2c8685918b4fba2b0b22d144862fe4cf5180027bae1faeeb9",
+          "figures/generated/dd-register-phase-diagram.svg": "0b360981a42f18b25d5689ed1170e379401e83d041a29bcf7d10ab985219bb90",
+          "figures/generated/dd-register-phase-diagram.png": "ab4f8c79e29985422091f4405bcd34fb5bcae838e2d9f168b7c2642c322dc4ac"
+        }
+      },
+      "visual_review": "pending",
+      "source_kind": "supervised-run-artifact",
+      "placed_at_scope": "manuscript",
+      "placed_repo_file": "writing_projects/eigen-technical-due-diligence-briefing/manuscript/working-draft/chapters/the-price-of-a-shared-description.tex"
+    },
+    {
+      "asset_id": "figure:dd-conceptric-envelope",
+      "label": "fig:dd-conceptric-envelope",
+      "artefact": "figures/generated/dd-conceptric-envelope.pdf",
+      "generator": "manuscript_spec.json",
+      "spec_id": "dd-conceptric-envelope",
+      "promise": "What must a claim carry so another task can inspect and use it?",
+      "matched": true,
+      "caption": "The conceptric envelope, illustrated by the gap-aware trial-space claim. Detailed content and its linked evidence are exposed through a readable summary, exact identity, state and permitted operations. Reading projects observations from the interior to the containing task. Writing narrows an outer request through the action interface to a local change. A readable digest summarises meaning, while a revision digest identifies the consumed version.",
+      "result_ids": [],
+      "placed_at": "working-draft/chapters/the-backend-objects-authority-and-revision.tex",
+      "placed_at_scope": "manuscript",
+      "placed_repo_file": "writing_projects/eigen-technical-due-diligence-briefing/manuscript/working-draft/chapters/the-backend-objects-authority-and-revision.tex",
+      "research_binding": {
+        "status": "THEORY_ONLY",
+        "bindings": [],
+        "gaps": []
+      },
+      "render": {
+        "outputs": [
+          "figures/generated/dd-conceptric-envelope.pdf",
+          "figures/generated/dd-conceptric-envelope.png",
+          "figures/generated/dd-conceptric-envelope.svg",
+          "figures/generated/dd-conceptric-envelope.tikz"
+        ],
+        "renderer": "tikz-pdf",
+        "input_digest": "1eb0757c032d84433090dbd90310f7bcf0b4cae156b20554273e652ab9c47e90",
+        "drawing_input_digest": "1eb0757c032d84433090dbd90310f7bcf0b4cae156b20554273e652ab9c47e90",
+        "drawing_inputs": {
+          "spec": {
+            "id": "dd-conceptric-envelope",
+            "kind": "tikz"
+          },
+          "tikz": "7da7d9bc71e13c42efd7152875d397041b7c6804847d8bcb02fc502033be6f77"
+        },
+        "research_bindings": [],
+        "presentation_metadata": {
+          "title": "A research object with a readable exterior",
+          "question": "What must a claim carry so another task can inspect and use it?",
+          "caption": "The conceptric envelope, illustrated by the gap-aware trial-space claim. Detailed content and its linked evidence are exposed through a readable summary, exact identity, state and permitted operations. Reading projects observations from the interior to the containing task. Writing narrows an outer request through the action interface to a local change. A readable digest summarises meaning, while a revision digest identifies the consumed version.",
+          "source_data": null,
+          "source": null
+        },
+        "style_version": "a52b7af5b0793b1803d7220d6682ba6564c38bb38650f7366410d709347f3364",
+        "style_profile": "profiles/visual_style.json",
+        "visual_review": "pending",
+        "output_digests": {
+          "figures/generated/dd-conceptric-envelope.pdf": "c557be0648bb8a74309c5a2a1f5dc8f9f03cb9e3fd074dc5802ed4e678bd514d",
+          "figures/generated/dd-conceptric-envelope.png": "da7e396e89af9016b26aabdd53862d3409cf00e391eab5e4c26ad01b20b3152d",
+          "figures/generated/dd-conceptric-envelope.svg": "8c314857e05febc506d510491a3560c0fd14daa3592c4b076260c91b57e4ecb2",
+          "figures/generated/dd-conceptric-envelope.tikz": "7da7d9bc71e13c42efd7152875d397041b7c6804847d8bcb02fc502033be6f77"
+        }
+      },
+      "visual_review": "pending",
+      "source_kind": "schematic"
+    },
+    {
+      "asset_id": "figure:dd-nested-work-sdk",
+      "label": "fig:dd-nested-work-sdk",
+      "artefact": "figures/generated/dd-nested-work-sdk.pdf",
+      "generator": "manuscript_spec.json",
+      "spec_id": "dd-nested-work-sdk",
+      "promise": "How do nested objects and parent-child tasks control context and acceptance, and what should an SDK preserve?",
+      "matched": true,
+      "caption": "The same boundary pattern at different task altitudes. A parent sends a scoped question and relevant context to a worker. Source, calculation and claim remain distinct local objects, and an independent reviewer inspects the returned contribution. The parent consumes the findings before accepting its own result. A changed consumed input marks affected acceptance for attention. The dashed panel locates the SDK direction: reusable transition templates, configurable session topology and source modules governed through the same inspectable interfaces.",
+      "result_ids": [],
+      "placed_at": "working-draft/chapters/from-a-working-core-to-an-extensible-sdk.tex",
+      "placed_at_scope": "manuscript",
+      "placed_repo_file": "writing_projects/eigen-technical-due-diligence-briefing/manuscript/working-draft/chapters/from-a-working-core-to-an-extensible-sdk.tex",
+      "research_binding": {
+        "status": "THEORY_ONLY",
+        "bindings": [],
+        "gaps": []
+      },
+      "render": {
+        "outputs": [
+          "figures/generated/dd-nested-work-sdk.pdf",
+          "figures/generated/dd-nested-work-sdk.png",
+          "figures/generated/dd-nested-work-sdk.svg",
+          "figures/generated/dd-nested-work-sdk.tikz"
+        ],
+        "renderer": "tikz-pdf",
+        "input_digest": "e532adf739a43d816d672a6f9f9ff39c20a4e3c07a77e6d46235de3d10a81c49",
+        "drawing_input_digest": "e532adf739a43d816d672a6f9f9ff39c20a4e3c07a77e6d46235de3d10a81c49",
+        "drawing_inputs": {
+          "spec": {
+            "id": "dd-nested-work-sdk",
+            "kind": "tikz"
+          },
+          "tikz": "940cc2fc05329c1762421df04db2937e27d099b7a29577af74bbfb6b179e150f"
+        },
+        "research_bindings": [],
+        "presentation_metadata": {
+          "title": "The same boundary at several scales",
+          "question": "How do nested objects and parent-child tasks control context and acceptance, and what should an SDK preserve?",
+          "caption": "The same boundary pattern at different task altitudes. A parent sends a scoped question and relevant context to a worker. Source, calculation and claim remain distinct local objects, and an independent reviewer inspects the returned contribution. The parent consumes the findings before accepting its own result. A changed consumed input marks affected acceptance for attention. The dashed panel locates the SDK direction: reusable transition templates, configurable session topology and source modules governed through the same inspectable interfaces.",
+          "source_data": null,
+          "source": null
+        },
+        "style_version": "a52b7af5b0793b1803d7220d6682ba6564c38bb38650f7366410d709347f3364",
+        "style_profile": "profiles/visual_style.json",
+        "visual_review": "pending",
+        "output_digests": {
+          "figures/generated/dd-nested-work-sdk.pdf": "953a1ffa0171bcafd1d87f05c6c470e9e2474e83eca79699aacdcbe190feb5ca",
+          "figures/generated/dd-nested-work-sdk.png": "efaab1ac66b374fc6cd99563fad35891556f958e5350dc3832e4c4af26619647",
+          "figures/generated/dd-nested-work-sdk.svg": "07a1572ec570ecce823f5a0dd1b8e46010a5459fa278c989d55ebcc2cb8390a0",
+          "figures/generated/dd-nested-work-sdk.tikz": "940cc2fc05329c1762421df04db2937e27d099b7a29577af74bbfb6b179e150f"
+        }
+      },
+      "visual_review": "pending",
+      "source_kind": "schematic"
+    },
+    {
+      "asset_id": "figure:dd-ai-tool-harness",
+      "label": "fig:dd-ai-tool-harness",
+      "artefact": "figures/generated/dd-ai-tool-harness.pdf",
+      "generator": "manuscript_spec.json",
+      "spec_id": "dd-ai-tool-harness",
+      "promise": "How does an AI action acquire permission and leave a result that can be judged?",
+      "matched": true,
+      "caption": "A result-binding request through the current harness. The task supplies selected context, the model proposes an operation, and the gateway checks its role and project scope. The owning operation checks the current claim and result before recording the link. The returned outcome is available to the human and the parent task. Execution, scientific judgement and acceptance have distinct places in the same route.",
+      "result_ids": [],
+      "placed_at": "working-draft/chapters/the-backend-objects-authority-and-revision.tex",
+      "placed_at_scope": "manuscript",
+      "placed_repo_file": "writing_projects/eigen-technical-due-diligence-briefing/manuscript/working-draft/chapters/the-backend-objects-authority-and-revision.tex",
+      "research_binding": {
+        "status": "THEORY_ONLY",
+        "bindings": [],
+        "gaps": []
+      },
+      "render": {
+        "outputs": [
+          "figures/generated/dd-ai-tool-harness.pdf",
+          "figures/generated/dd-ai-tool-harness.png",
+          "figures/generated/dd-ai-tool-harness.svg",
+          "figures/generated/dd-ai-tool-harness.tikz"
+        ],
+        "renderer": "tikz-pdf",
+        "input_digest": "4959ad9a08fae417221819ace3646d61a5c248dd471a28d9c50f4c32d8a55d47",
+        "drawing_input_digest": "4959ad9a08fae417221819ace3646d61a5c248dd471a28d9c50f4c32d8a55d47",
+        "drawing_inputs": {
+          "spec": {
+            "id": "dd-ai-tool-harness",
+            "kind": "tikz"
+          },
+          "tikz": "4022bbd6315b337d7e6bd8a494d16a44bc2409e32de05d1de843344066231d10"
+        },
+        "research_bindings": [],
+        "presentation_metadata": {
+          "title": "From an AI request to an inspectable change",
+          "question": "How does an AI action acquire permission and leave a result that can be judged?",
+          "caption": "A result-binding request through the current harness. The task supplies selected context, the model proposes an operation, and the gateway checks its role and project scope. The owning operation checks the current claim and result before recording the link. The returned outcome is available to the human and the parent task. Execution, scientific judgement and acceptance have distinct places in the same route.",
+          "source_data": null,
+          "source": null
+        },
+        "style_version": "a52b7af5b0793b1803d7220d6682ba6564c38bb38650f7366410d709347f3364",
+        "style_profile": "profiles/visual_style.json",
+        "visual_review": "pending",
+        "output_digests": {
+          "figures/generated/dd-ai-tool-harness.pdf": "27de7270a4073688a3a60f944c24f1b6f7936e9193e7b1fec764c38e82abcf3a",
+          "figures/generated/dd-ai-tool-harness.png": "4368e2b32bae9625cff03b0d6dd9d9977e9e2cadc7e20709a7869768015bf234",
+          "figures/generated/dd-ai-tool-harness.svg": "bfc8da4c2c8bf5b0120f13a10ec566f3fe47e2ea100139b7c183e7138302a8ef",
+          "figures/generated/dd-ai-tool-harness.tikz": "4022bbd6315b337d7e6bd8a494d16a44bc2409e32de05d1de843344066231d10"
+        }
+      },
+      "visual_review": "pending",
+      "source_kind": "schematic"
+    },
+    {
+      "asset_id": "figure:dd-memory-reader-controls",
+      "label": "fig:dd-memory-reader-controls",
+      "artefact": "figures/generated/dd-memory-reader-controls.pdf",
+      "generator": "manuscript_spec.json",
+      "spec_id": "dd-memory-reader-controls",
+      "promise": "How does the current witness readout compare on the same LongMem reader test and temporal subset?",
+      "matched": true,
+      "caption": "Archived LongMem reader comparison at a 4,000-token evidence budget. The same reader answers 30 of 48 questions with the memory witness readout, 33 with dense retrieval and 34 with hybrid retrieval. On the nine temporal questions the counts are 4, 7 and 6. The weakness identifies the relation/time interface as a useful improvement target. Counts are from the frozen evaluation, not a new experiment.",
+      "result_ids": [
+        "dd-memory-reader-controls"
+      ],
+      "placed_at": "working-draft/chapters/memory-as-a-retained-and-reconstructable-object.tex",
+      "placed_at_scope": "manuscript",
+      "placed_repo_file": "writing_projects/eigen-technical-due-diligence-briefing/manuscript/working-draft/chapters/memory-as-a-retained-and-reconstructable-object.tex",
+      "research_binding": {
+        "status": "CURRENT",
+        "bindings": [
+          {
+            "id": "dd-memory-reader-controls",
+            "revision": "sha256:f2a6a3cbb18bc50a4239c99e5f7fafd0b2c71257f5e6cfade40cd32a2fba6f92",
+            "currentness": "CURRENT",
+            "reason": "all explicitly declared dependencies match their recorded identities",
+            "dependencies": [
+              {
+                "record_id": "dd-memory-reader-controls",
+                "dependencies": [
+                  {
+                    "path": "calculations/memory_reader_controls.py",
+                    "status": "PRESENT",
+                    "bytes": 2452,
+                    "sha256": "4b4d5e9481842599c9c66b92dd313778f3568ad109a169ef1ffb4b0e0a62aba0",
+                    "scope": "project"
+                  },
+                  {
+                    "path": "research_runs/run-7bd75062068b432b.result.json",
+                    "status": "PRESENT",
+                    "bytes": 2267,
+                    "sha256": "e215494456d6b0c27e6499ac9180ae5f3a5899664f82e3a88cfa91216c334cef"
+                  },
+                  {
+                    "path": "evidence-snapshots/memory/reader-relational-controls-20261015.json",
+                    "status": "PRESENT",
+                    "bytes": 769,
+                    "sha256": "3acb5f69700e96090f2011b79675956edb51041396ebd8702f2a46ceb761f3b6",
+                    "scope": "project"
+                  }
+                ],
+                "status": "CURRENT",
+                "reason": "all pinned dependencies match",
+                "coverage": {
+                  "snapshot_schema": "laplace.research-dependencies/3",
+                  "newly_untracked": [],
+                  "changed_pins": [],
+                  "removed_pins": [],
+                  "retired_derived_presentation_pins": [],
+                  "historical_verification": "PINNED_DEPENDENCIES_ONLY"
+                }
+              }
+            ]
+          }
+        ],
+        "gaps": []
+      },
+      "render": {
+        "outputs": [
+          "figures/generated/dd-memory-reader-controls.pdf",
+          "figures/generated/dd-memory-reader-controls.svg",
+          "figures/generated/dd-memory-reader-controls.png"
+        ],
+        "renderer": "supervised-run-artifact",
+        "source_provenance": {
+          "run_id": "run-7bd75062068b432b",
+          "producer_id": "dd-memory-reader-replot",
+          "result_path": "research_runs/run-7bd75062068b432b.result.json",
+          "result_sha256": "e215494456d6b0c27e6499ac9180ae5f3a5899664f82e3a88cfa91216c334cef",
+          "artifact_id": "dd-memory-reader-controls",
+          "source_digests": {
+            "pdf": "7a43c64f42a5d42ce9333e14711729eb2f6eea1ee7ff708ddd38d5c9028afa9d",
+            "svg": "fd0ff11d3ddba2564b05074ed65b176e87d2ca1828857f3f6b8366040e978233",
+            "png": "ea173eac6b552aa7827291bbfebbec96defefcc6adbcd3ad6cdb3e37301a488f"
+          },
+          "source_paths": {
+            "pdf": "manuscript/working-draft/figures/completion-run-7bd75062068b432b.result/dd-memory-reader-controls.pdf",
+            "svg": "manuscript/working-draft/figures/completion-run-7bd75062068b432b.result/dd-memory-reader-controls.svg",
+            "png": "manuscript/working-draft/figures/completion-run-7bd75062068b432b.result/dd-memory-reader-controls.png"
+          },
+          "output_observation": "CURRENT_BYTES_NAMED_BY_SUPERVISED_RESULT",
+          "historical_output_verification": "NOT_ESTABLISHED"
+        },
+        "input_digest": "2df750aa14b3e9562530bd65d43759f8ca38d1437c2c65c28292c69f70c472cf",
+        "drawing_input_digest": "2df750aa14b3e9562530bd65d43759f8ca38d1437c2c65c28292c69f70c472cf",
+        "drawing_inputs": {
+          "spec": {
+            "id": "dd-memory-reader-controls",
+            "kind": "artifact",
+            "run_id": "run-7bd75062068b432b",
+            "artifact_id": "dd-memory-reader-controls"
+          },
+          "supervised_run": {
+            "run_id": "run-7bd75062068b432b",
+            "producer_id": "dd-memory-reader-replot",
+            "result_path": "research_runs/run-7bd75062068b432b.result.json",
+            "result_sha256": "e215494456d6b0c27e6499ac9180ae5f3a5899664f82e3a88cfa91216c334cef",
+            "artifact_id": "dd-memory-reader-controls",
+            "source_paths": {
+              "pdf": "manuscript/working-draft/figures/completion-run-7bd75062068b432b.result/dd-memory-reader-controls.pdf",
+              "svg": "manuscript/working-draft/figures/completion-run-7bd75062068b432b.result/dd-memory-reader-controls.svg",
+              "png": "manuscript/working-draft/figures/completion-run-7bd75062068b432b.result/dd-memory-reader-controls.png"
+            },
+            "source_digests": {
+              "pdf": "7a43c64f42a5d42ce9333e14711729eb2f6eea1ee7ff708ddd38d5c9028afa9d",
+              "svg": "fd0ff11d3ddba2564b05074ed65b176e87d2ca1828857f3f6b8366040e978233",
+              "png": "ea173eac6b552aa7827291bbfebbec96defefcc6adbcd3ad6cdb3e37301a488f"
+            },
+            "output_observation": "CURRENT_BYTES_NAMED_BY_SUPERVISED_RESULT",
+            "historical_output_verification": "NOT_ESTABLISHED"
+          }
+        },
+        "research_bindings": [
+          {
+            "id": "dd-memory-reader-controls",
+            "revision": "sha256:f2a6a3cbb18bc50a4239c99e5f7fafd0b2c71257f5e6cfade40cd32a2fba6f92",
+            "currentness": "CURRENT"
+          }
+        ],
+        "presentation_metadata": {
+          "title": "Where the language-memory interface needs improvement",
+          "question": "How does the current witness readout compare on the same LongMem reader test and temporal subset?",
+          "caption": "Archived LongMem reader comparison at a 4,000-token evidence budget. The same reader answers 30 of 48 questions with the memory witness readout, 33 with dense retrieval and 34 with hybrid retrieval. On the nine temporal questions the counts are 4, 7 and 6. The weakness identifies the relation/time interface as a useful improvement target. Counts are from the frozen evaluation, not a new experiment.",
+          "source_data": null,
+          "source": null
+        },
+        "style_version": "a52b7af5b0793b1803d7220d6682ba6564c38bb38650f7366410d709347f3364",
+        "style_profile": null,
+        "visual_review": "pending",
+        "output_digests": {
+          "figures/generated/dd-memory-reader-controls.pdf": "7a43c64f42a5d42ce9333e14711729eb2f6eea1ee7ff708ddd38d5c9028afa9d",
+          "figures/generated/dd-memory-reader-controls.svg": "fd0ff11d3ddba2564b05074ed65b176e87d2ca1828857f3f6b8366040e978233",
+          "figures/generated/dd-memory-reader-controls.png": "ea173eac6b552aa7827291bbfebbec96defefcc6adbcd3ad6cdb3e37301a488f"
+        }
+      },
+      "visual_review": "pending",
+      "source_kind": "supervised-run-artifact"
+    },
+    {
+      "asset_id": "figure:dd-hierarchy-stability",
+      "label": "fig:dd-hierarchy-stability",
+      "artefact": "figures/generated/dd-hierarchy-stability.pdf",
+      "generator": "manuscript_spec.json",
+      "spec_id": "dd-hierarchy-stability",
+      "promise": "How does hierarchical aggregation change the stable population and update size?",
+      "matched": true,
+      "caption": "Hierarchy moves the stability boundary of the sampled feedback model. (a) At $h/\\tau_r=1$, each curve separates stable dynamics below it from instability above it. The orange and green bands show additional parameter ranges stabilised by a second and third aggregation layer. The $\\alpha=0.35$ slice crosses at $N_c^{(1)}=138.25$, $N_c^{(2)}=217.17$ and $N_c^{(3)}=341.13$. (b) At fixed $\\alpha=0.35$, increasing the update interval also raises the critical population. In both panels $\\beta=0.6$, $b=1.2$ and $s=0.4$. Curves use the iterated Gaussian expected-majority model of Phases of Hierarchy~\\cite{McCaul630942}, not exact small-block voting or ANF's different feedback rule. The plotted linear boundary was checked against 19,557 Jacobians, with no classification mismatch.",
+      "result_ids": [
+        "dd-hierarchy-stability"
+      ],
+      "placed_at": "working-draft/chapters/loss-dynamics-and-the-choice-of-scale.tex",
+      "research_binding": {
+        "status": "CURRENT",
+        "bindings": [
+          {
+            "id": "dd-hierarchy-stability",
+            "revision": "sha256:ff55f4724d54fda217ccb2b9802c65de17c8645eb81f06eaf9195da9382e5676",
+            "currentness": "CURRENT",
+            "reason": "all explicitly declared dependencies match their recorded identities",
+            "dependencies": [
+              {
+                "record_id": "dd-hierarchy-stability",
+                "dependencies": [
+                  {
+                    "path": "calculations/hierarchy_stability.py",
+                    "status": "PRESENT",
+                    "bytes": 5161,
+                    "sha256": "3bef369c37be7ec815b2a3226d1f417d4ed1d939089363589b68e94cd5844df9",
+                    "scope": "project"
+                  },
+                  {
+                    "path": "research_runs/run-d9f38e92caf64d82.result.json",
+                    "status": "PRESENT",
+                    "bytes": 2285,
+                    "sha256": "522f05ce90fc60fb7a8e01593532b108038bc50a2cb5a60c45763fa02e4a74d3"
+                  }
+                ],
+                "status": "CURRENT",
+                "reason": "all pinned dependencies match",
+                "coverage": {
+                  "snapshot_schema": "laplace.research-dependencies/3",
+                  "newly_untracked": [],
+                  "changed_pins": [],
+                  "removed_pins": [],
+                  "retired_derived_presentation_pins": [],
+                  "historical_verification": "PINNED_DEPENDENCIES_ONLY"
+                }
+              }
+            ]
+          }
+        ],
+        "gaps": []
+      },
+      "render": {
+        "outputs": [
+          "figures/generated/dd-hierarchy-stability.pdf",
+          "figures/generated/dd-hierarchy-stability.svg",
+          "figures/generated/dd-hierarchy-stability.png"
+        ],
+        "renderer": "supervised-run-artifact",
+        "source_provenance": {
+          "run_id": "run-d9f38e92caf64d82",
+          "producer_id": "dd-hierarchy-stability",
+          "result_path": "research_runs/run-d9f38e92caf64d82.result.json",
+          "result_sha256": "522f05ce90fc60fb7a8e01593532b108038bc50a2cb5a60c45763fa02e4a74d3",
+          "artifact_id": "dd-hierarchy-stability",
+          "source_digests": {
+            "pdf": "a2cd437d3974f5a7c3a8c71ea3a9626928adf14d19029770b41e60c62a7d143f",
+            "svg": "222080770537d3da5b18bcf457e4b09c2b933e5d5f95a24b2d161783d808ea95",
+            "png": "cd951648f38872d2e24601ee9bb370ff84a7d55214e816587084216cb8ea8c06"
+          },
+          "source_paths": {
+            "pdf": "manuscript/working-draft/figures/hierarchy-run-d9f38e92caf64d82.result/dd-hierarchy-stability.pdf",
+            "svg": "manuscript/working-draft/figures/hierarchy-run-d9f38e92caf64d82.result/dd-hierarchy-stability.svg",
+            "png": "manuscript/working-draft/figures/hierarchy-run-d9f38e92caf64d82.result/dd-hierarchy-stability.png"
+          },
+          "output_observation": "CURRENT_BYTES_NAMED_BY_SUPERVISED_RESULT",
+          "historical_output_verification": "NOT_ESTABLISHED"
+        },
+        "input_digest": "3db31e4f41d5b2573b99ed971d3a30152f0c9a3ab526e11050b1eeb4921d4185",
+        "drawing_input_digest": "3db31e4f41d5b2573b99ed971d3a30152f0c9a3ab526e11050b1eeb4921d4185",
+        "drawing_inputs": {
+          "spec": {
+            "id": "dd-hierarchy-stability",
+            "kind": "artifact",
+            "run_id": "run-d9f38e92caf64d82",
+            "artifact_id": "dd-hierarchy-stability"
+          },
+          "supervised_run": {
+            "run_id": "run-d9f38e92caf64d82",
+            "producer_id": "dd-hierarchy-stability",
+            "result_path": "research_runs/run-d9f38e92caf64d82.result.json",
+            "result_sha256": "522f05ce90fc60fb7a8e01593532b108038bc50a2cb5a60c45763fa02e4a74d3",
+            "artifact_id": "dd-hierarchy-stability",
+            "source_paths": {
+              "pdf": "manuscript/working-draft/figures/hierarchy-run-d9f38e92caf64d82.result/dd-hierarchy-stability.pdf",
+              "svg": "manuscript/working-draft/figures/hierarchy-run-d9f38e92caf64d82.result/dd-hierarchy-stability.svg",
+              "png": "manuscript/working-draft/figures/hierarchy-run-d9f38e92caf64d82.result/dd-hierarchy-stability.png"
+            },
+            "source_digests": {
+              "pdf": "a2cd437d3974f5a7c3a8c71ea3a9626928adf14d19029770b41e60c62a7d143f",
+              "svg": "222080770537d3da5b18bcf457e4b09c2b933e5d5f95a24b2d161783d808ea95",
+              "png": "cd951648f38872d2e24601ee9bb370ff84a7d55214e816587084216cb8ea8c06"
+            },
+            "output_observation": "CURRENT_BYTES_NAMED_BY_SUPERVISED_RESULT",
+            "historical_output_verification": "NOT_ESTABLISHED"
+          }
+        },
+        "research_bindings": [
+          {
+            "id": "dd-hierarchy-stability",
+            "revision": "sha256:ff55f4724d54fda217ccb2b9802c65de17c8645eb81f06eaf9195da9382e5676",
+            "currentness": "CURRENT"
+          }
+        ],
+        "presentation_metadata": {
+          "title": "Hierarchy moves the stability boundary",
+          "question": "How does hierarchical aggregation change the stable population and update size?",
+          "caption": "Hierarchy moves the stability boundary of the sampled feedback model. (a) At $h/\\tau_r=1$, each curve separates stable dynamics below it from instability above it. The orange and green bands show additional parameter ranges stabilised by a second and third aggregation layer. The $\\alpha=0.35$ slice crosses at $N_c^{(1)}=138.25$, $N_c^{(2)}=217.17$ and $N_c^{(3)}=341.13$. (b) At fixed $\\alpha=0.35$, increasing the update interval also raises the critical population. In both panels $\\beta=0.6$, $b=1.2$ and $s=0.4$. Curves use the iterated Gaussian expected-majority model of Phases of Hierarchy~\\cite{McCaul630942}, not exact small-block voting or ANF's different feedback rule. The plotted linear boundary was checked against 19,557 Jacobians, with no classification mismatch.",
+          "source_data": null,
+          "source": null
+        },
+        "style_version": "a52b7af5b0793b1803d7220d6682ba6564c38bb38650f7366410d709347f3364",
+        "style_profile": null,
+        "visual_review": "pending",
+        "output_digests": {
+          "figures/generated/dd-hierarchy-stability.pdf": "a2cd437d3974f5a7c3a8c71ea3a9626928adf14d19029770b41e60c62a7d143f",
+          "figures/generated/dd-hierarchy-stability.svg": "222080770537d3da5b18bcf457e4b09c2b933e5d5f95a24b2d161783d808ea95",
+          "figures/generated/dd-hierarchy-stability.png": "cd951648f38872d2e24601ee9bb370ff84a7d55214e816587084216cb8ea8c06"
+        }
+      },
+      "visual_review": "pending",
+      "source_kind": "supervised-run-artifact",
+      "placed_at_scope": "manuscript",
+      "placed_repo_file": "writing_projects/eigen-technical-due-diligence-briefing/manuscript/working-draft/chapters/loss-dynamics-and-the-choice-of-scale.tex"
+    },
+    {
+      "asset_id": "figure:dd-hmf-physical-ground-state-20261016",
+      "label": "fig:dd-hmf-physical-ground-state-20261016",
+      "artefact": "figures/generated/dd-hmf-physical-ground-state-20261016.pdf",
+      "generator": "manuscript_spec.json",
+      "spec_id": "dd-hmf-physical-ground-state-20261016",
+      "promise": "Can a change of representation yield an analytical ground-state prediction that agrees with an independent calculation of the same Hamiltonian?",
+      "matched": true,
+      "caption": "Analytic spectral prediction and independent finite-mode ground-state diagonalisation. The bath coupling is retained exactly, with controlled small tunnelling at a fixed spectral gap. The same prediction fixes the finite dual thermal coordinate. Source: the HMF project, scientific run run-73cc8b5029974c04 and presentation run run-665ae2e571d0481d; this DD intake preserves the exact source PDF bytes.",
+      "result_ids": [],
+      "placed_at": "working-draft/chapters/loss-dynamics-and-the-choice-of-scale.tex",
+      "research_binding": {
+        "status": "THEORY_ONLY",
+        "bindings": [],
+        "gaps": []
+      },
+      "render": {
+        "outputs": [
+          "figures/generated/dd-hmf-physical-ground-state-20261016.pdf"
+        ],
+        "renderer": "supervised-run-artifact",
+        "source_provenance": {
+          "run_id": "run-62e6074aba504443",
+          "producer_id": "dd-hmf-figure-intake-20261016",
+          "result_path": "research_runs/run-62e6074aba504443.result.json",
+          "result_sha256": "749722a9d09e98c75961242863886865f36ab18ef79d13bc642583bb41f4e08d",
+          "artifact_id": "hmf-physical-ground-prediction",
+          "source_digests": {
+            "pdf": "59c0464e50e58bf6886dd1a743bba3eadc23b453c5ddc415fd918662a10367f1"
+          },
+          "source_paths": {
+            "pdf": "manuscript/research_runs/run-62e6074aba504443.result/hmf-physical-ground-prediction.pdf"
+          },
+          "output_observation": "CURRENT_BYTES_NAMED_BY_SUPERVISED_RESULT",
+          "historical_output_verification": "NOT_ESTABLISHED"
+        },
+        "input_digest": "fb48c0b06ca630e2609b172ee54f6fd9911d422f1b8cd9b1b4dd66ab26566789",
+        "drawing_input_digest": "fb48c0b06ca630e2609b172ee54f6fd9911d422f1b8cd9b1b4dd66ab26566789",
+        "drawing_inputs": {
+          "spec": {
+            "id": "dd-hmf-physical-ground-state-20261016",
+            "kind": "artifact",
+            "run_id": "run-62e6074aba504443",
+            "artifact_id": "hmf-physical-ground-prediction"
+          },
+          "supervised_run": {
+            "run_id": "run-62e6074aba504443",
+            "producer_id": "dd-hmf-figure-intake-20261016",
+            "result_path": "research_runs/run-62e6074aba504443.result.json",
+            "result_sha256": "749722a9d09e98c75961242863886865f36ab18ef79d13bc642583bb41f4e08d",
+            "artifact_id": "hmf-physical-ground-prediction",
+            "source_paths": {
+              "pdf": "manuscript/research_runs/run-62e6074aba504443.result/hmf-physical-ground-prediction.pdf"
+            },
+            "source_digests": {
+              "pdf": "59c0464e50e58bf6886dd1a743bba3eadc23b453c5ddc415fd918662a10367f1"
+            },
+            "output_observation": "CURRENT_BYTES_NAMED_BY_SUPERVISED_RESULT",
+            "historical_output_verification": "NOT_ESTABLISHED"
+          }
+        },
+        "research_bindings": [],
+        "presentation_metadata": {
+          "title": "The bath spectrum predicts the cold spin and its dual coordinate",
+          "question": "Can a change of representation yield an analytical ground-state prediction that agrees with an independent calculation of the same Hamiltonian?",
+          "caption": "Analytic spectral prediction and independent finite-mode ground-state diagonalisation. The bath coupling is retained exactly, with controlled small tunnelling at a fixed spectral gap. The same prediction fixes the finite dual thermal coordinate. Source: the HMF project, scientific run run-73cc8b5029974c04 and presentation run run-665ae2e571d0481d; this DD intake preserves the exact source PDF bytes.",
+          "source_data": null,
+          "source": null
+        },
+        "style_version": "a52b7af5b0793b1803d7220d6682ba6564c38bb38650f7366410d709347f3364",
+        "style_profile": null,
+        "visual_review": "pending",
+        "output_digests": {
+          "figures/generated/dd-hmf-physical-ground-state-20261016.pdf": "59c0464e50e58bf6886dd1a743bba3eadc23b453c5ddc415fd918662a10367f1"
+        }
+      },
+      "visual_review": "pending",
+      "source_kind": "supervised-run-artifact",
+      "placed_at_scope": "manuscript",
+      "placed_repo_file": "writing_projects/eigen-technical-due-diligence-briefing/manuscript/working-draft/chapters/loss-dynamics-and-the-choice-of-scale.tex"
+    }
+  ]
+}

@@ -1,0 +1,200 @@
+{
+  "law": "unique_even_parity",
+  "d": 19,
+  "N": 262144,
+  "fixed_coordinates": 4,
+  "location": "prefix",
+  "axes": [
+    0,
+    1,
+    2,
+    3
+  ],
+  "Q": 256,
+  "support_count_histogram": {
+    "16384": 256
+  },
+  "support_fraction_min": 0.0625,
+  "support_fraction_max": 0.0625,
+  "validation": {
+    "raw_packed_direct": true,
+    "weighted_unique_direct": true,
+    "recursive_exact_integer": true
+  },
+  "methods": {
+    "raw_packed_direct": {
+      "status": "MEASURED",
+      "cold_api_s": 0.000425367004936561,
+      "kernel_ms_samples": [
+        0.39401599764823914,
+        0.3901120126247406,
+        0.38809600472450256,
+        0.3901439905166626,
+        0.3891200125217438,
+        0.38998401165008545,
+        0.38809600472450256,
+        0.3891200125217438,
+        0.3891200125217438,
+        0.3891200125217438,
+        0.3891200125217438
+      ],
+      "api_s_samples": [
+        0.0004175150243099779,
+        0.000402500998461619,
+        0.00040059798629954457,
+        0.0004024059744551778,
+        0.0004013699945062399,
+        0.00040240801172330976,
+        0.00040005097980611026,
+        0.0003999730106443167,
+        0.0004011350101791322,
+        0.00040083599742501974,
+        0.0004018960171379149
+      ],
+      "kernel_ms_median": 0.3891200125217438,
+      "kernel_ms_p95": 0.39401599764823914,
+      "api_s_median": 0.0004013699945062399,
+      "api_s_p95": 0.0004175150243099779,
+      "warmups": 2,
+      "samples": 11,
+      "prepare_s": 3.626200486905873e-05,
+      "retained_bytes": 1313792,
+      "work": {
+        "row_codes_read": 67108864,
+        "predicate_bitwise_and": 67108864,
+        "predicate_equalities": 67108864,
+        "reduction_additions": 67108608,
+        "partial_values_written": 65536,
+        "weight_values_read": 0,
+        "bytes_read": 269221888,
+        "bytes_written": 263168
+      }
+    },
+    "weighted_unique_direct": {
+      "status": "MEASURED",
+      "cold_api_s": 0.0005042239790782332,
+      "kernel_ms_samples": [
+        0.5007359981536865,
+        0.5007359981536865,
+        0.5015360116958618,
+        0.5007359981536865,
+        0.4997119903564453,
+        0.5007359981536865,
+        0.49990400671958923,
+        0.5006080269813538,
+        0.5007359981536865,
+        0.506879985332489,
+        0.5007359981536865
+      ],
+      "api_s_samples": [
+        0.0005188030190765858,
+        0.0005131809739395976,
+        0.000513700011651963,
+        0.000512578000780195,
+        0.0005119910056237131,
+        0.0005132480000611395,
+        0.0005125220050103962,
+        0.0005121570138726383,
+        0.00051369599532336,
+        0.0005188399809412658,
+        0.0005144699825905263
+      ],
+      "kernel_ms_median": 0.5007359981536865,
+      "kernel_ms_p95": 0.506879985332489,
+      "api_s_median": 0.0005132480000611395,
+      "api_s_p95": 0.0005188399809412658,
+      "warmups": 2,
+      "samples": 11,
+      "prepare_s": 7.995599298737943e-05,
+      "retained_bytes": 2362368,
+      "work": {
+        "row_codes_read": 67108864,
+        "predicate_bitwise_and": 67108864,
+        "predicate_equalities": 67108864,
+        "reduction_additions": 67108608,
+        "partial_values_written": 65536,
+        "weight_values_read": 67108864,
+        "bytes_read": 537657344,
+        "bytes_written": 263168
+      }
+    },
+    "recursive_exact_integer": {
+      "status": "MEASURED",
+      "cold_api_s": 7.28169979993254e-05,
+      "kernel_ms_samples": [
+        0.031647998839616776,
+        0.030719999223947525,
+        0.03171199932694435,
+        0.03686400130391121,
+        0.02969600073993206,
+        0.030719999223947525,
+        0.02969600073993206,
+        0.030719999223947525,
+        0.030527999624609947,
+        0.02969600073993206,
+        0.02969600073993206
+      ],
+      "api_s_samples": [
+        5.399802466854453e-05,
+        4.375801654532552e-05,
+        4.452498978935182e-05,
+        4.9619004130363464e-05,
+        4.19100106228143e-05,
+        4.3706997530534863e-05,
+        4.308100324124098e-05,
+        4.319497384130955e-05,
+        4.34179964940995e-05,
+        4.402600461617112e-05,
+        4.204001743346453e-05
+      ],
+      "kernel_ms_median": 0.030719999223947525,
+      "kernel_ms_p95": 0.03686400130391121,
+      "api_s_median": 4.3706997530534863e-05,
+      "api_s_p95": 5.399802466854453e-05,
+      "warmups": 2,
+      "samples": 11,
+      "prepare_s": 2.383498940616846e-05,
+      "retained_bytes": 6008,
+      "work": {
+        "message_dtype": "torch.int32",
+        "state_rows": 9472,
+        "padded_transition_slots_read": 19456,
+        "integer_multiplier_products": 19456,
+        "integer_reduction_additions": 9472,
+        "bytes_read": 198912,
+        "bytes_written": 2048
+      },
+      "validation": {
+        "status": "PASS",
+        "checked_states": 37,
+        "checked_supported_edges": 72,
+        "maximum_primitive_total": 262144,
+        "maximum_edge_multiplier": 1,
+        "root_primitive_total": 262144,
+        "root_scale": 1,
+        "message_dtype": "torch.int32",
+        "overflow_policy": "gcd reduction then checked multiply for branch denominator, lcm, multiplier and normalization product"
+      }
+    }
+  },
+  "stage_budget": {
+    "max_bytes": 3337511946,
+    "source": "dynamic_cuda_mem_get_info",
+    "resident_bytes": 9182832,
+    "free_bytes": 3435134976,
+    "reusable_pool_bytes": 288566272,
+    "total_device_bytes": 3953721344,
+    "headroom_bytes": 395372134
+  },
+  "external_live_bytes": 9182832,
+  "method_max_bytes": {
+    "raw": 3329379738,
+    "weighted_unique": 3330428314,
+    "exact": 3328333074
+  },
+  "cell_key": "unique_even_parity__d19__r4__prefix__q256",
+  "build_receipt": {
+    "path": "builds/unique_even_parity__d19.attempt-1.json",
+    "sha256": "83cb3497f687253de9092984c913424a4f3ca5032d3671cc35dba44c67dfd925"
+  }
+}

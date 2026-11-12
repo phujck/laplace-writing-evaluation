@@ -1,0 +1,326 @@
+{
+  "schema_version": "public.example-traceability-handoff/1",
+  "project": "behaviour-example",
+  "status": "REVIEW_READY_WITH_PROSE_APPLICATION_REFUSED",
+  "limits": "One local smoke only. No new benchmark/science, no independent review or acceptance, no intentional negative controls run in this project. Genuine tool refusals remain outcomes, not labelled successful controls.",
+  "session": {
+    "id": "WS-23cab0222b494423948273b51de9e07b",
+    "turn_id": "WT-2534ebbdcf044faea4b859e5409260f4",
+    "provider": "codex",
+    "model": "gpt-6.1-sol",
+    "effort": "high",
+    "standard_service_tier": "Not exposed or verified by admitted owner settings; legacy tier is deep, not relabelled as Standard.",
+    "turn_read": {
+      "http": {
+        "method": "GET",
+        "url": "/authoring/session-turn?project=behaviour-example&id=WT-2534ebbdcf044faea4b859e5409260f4&view=turn"
+      }
+    }
+  },
+  "exact_three_work_inputs": {
+    "sources/behaviour-example/S1.tex": "sha256:e7950526731d68e36af6c499c5aaa2317add16e4de603120e050308c8d655382",
+    "writing_projects/behaviour-example/examples/public_representation_illustrations.py": "sha256:79b053a50a35c26931f71f0c79822de7d44b2dfc9c93acba6db1a07c068536e7",
+    "writing_projects/behaviour-example/examples/public-illustration-inputs-v1.json": "sha256:61b593fdfa0672b09859c813e28a8dcb6dea12cce56c7607b334da7e6710a713"
+  },
+  "original_executable": {
+    "path": "writing_projects/behaviour-example/calculations/representation_illustrations.py",
+    "sha256": "sha256:6fbec2ba4f746abc5e5038455b450e0ef1ca546a64803a6827ac45b3cbcde670",
+    "unchanged_after_run": true
+  },
+  "prose": {
+    "proposal": {
+      "ok": true,
+      "status": "PROPOSED",
+      "edits": 1,
+      "proposal_version": "sha256:6a89139a5eabec71214a9d7cd45bd360b17bc7c67d294211e7193767f835d4df",
+      "proposal_content_sha256": "sha256:a2acc9d3db1ac95064c3b53e21d6299a7f763d9013c211e21b91b7ffdba37db6",
+      "proposal_record_id": "PROP-9f33b94d05e24ab0b2cf08b0bd7351f6",
+      "action_receipt": {
+        "id": "ACTION-a845babd405e475682fad9d73be6b1a2",
+        "status": "PROPOSED",
+        "views": [
+          "project"
+        ],
+        "identities": [],
+        "receipts": [],
+        "paths": [],
+        "revisions": {},
+        "links": [
+          {
+            "label": "Project",
+            "href": "/project?workspace=writing&corpus=behaviour-example"
+          }
+        ],
+        "output_sha256": "1e510d9e5453075e8ed4e945b8229defa35065250fad626587a9b495faf74871",
+        "refreshed_read_baselines": 0,
+        "context_refreshed": false,
+        "mutation_attribution": {
+          "exact": false,
+          "reason": "mutation owner returned no exact receipt"
+        }
+      }
+    },
+    "preview_read": {
+      "native_request": {
+        "verb": "read",
+        "concept": "proposal@paragraph",
+        "target": "behaviour-example::WT-2534ebbdcf044faea4b859e5409260f4",
+        "expected": [],
+        "payload": {
+          "id": "WT-2534ebbdcf044faea4b859e5409260f4",
+          "proposal_version": "sha256:6a89139a5eabec71214a9d7cd45bd360b17bc7c67d294211e7193767f835d4df",
+          "record_id": "PROP-9f33b94d05e24ab0b2cf08b0bd7351f6",
+          "view": "summary"
+        },
+        "by": ""
+      },
+      "http": {
+        "method": "GET",
+        "url": "/authoring/proposal-preview?project=behaviour-example&id=WT-2534ebbdcf044faea4b859e5409260f4&proposal_version=sha256%3A6a89139a5eabec71214a9d7cd45bd360b17bc7c67d294211e7193767f835d4df&record_id=PROP-9f33b94d05e24ab0b2cf08b0bd7351f6&view=summary"
+      }
+    },
+    "original": "The input sequence is 1, 2, 3.",
+    "proposed": "The input sequence 1, 2, 3 has a sum of 6.",
+    "line": 2,
+    "final_preview": {
+      "status": "conflict",
+      "basis_currentness": "UNKNOWN",
+      "reason": "A consumed receipt is not a read operation. Request a fresh proposal."
+    },
+    "application": {
+      "state": "REFUSED_NO_SOURCE_CHANGE",
+      "attempts": [
+        {
+          "failure": "TOOLFAIL-17fce2cf089e40f0a1052c40bcc91617",
+          "proposal": "PROP-5821af29de5d4b04b40ac4b833588824"
+        },
+        {
+          "failure": "TOOLFAIL-d3dc307976e8474d9eb220b63398804c",
+          "proposal": "PROP-c890566066f94122b88f753ace8e9f7f"
+        }
+      ],
+      "error": "A consumed receipt is not a read operation. Request a fresh proposal.",
+      "recovery": "Owner-directed fresh structure/source reads and NEW proposals were made, including the final retained candidate. No bypass, stale acceptance or repeated application is claimed."
+    },
+    "historical_human_edit": "activity:authoring:FB-20261112-113426-S1.tex (read, left intact)"
+  },
+  "reader_plan": {
+    "section_id": "source-heading-1",
+    "paragraph_id": "source-heading-1-p17351662711874295974439332650",
+    "heading_precision": "EXACT_HEADING",
+    "concept": "def:sequence",
+    "section_input_status": "CURRENT",
+    "paragraph_input_status": "CURRENT",
+    "review_status": "NOT_REVIEWED",
+    "repair_receipt": "RPUB-d0f327a68c9a449ea9ae788ddb1ba97c",
+    "acknowledged_inputs": [
+      "reader-transition"
+    ],
+    "architecture": "ABSENT; not acknowledged by the scoped repair. Exit state distinguishes intended proposal from unchanged source."
+  },
+  "run": {
+    "id": "run-5958977f72d23902",
+    "producer": "public-representation-illustrations-v1",
+    "request_id": "public-illustrations-smoke-once-v1",
+    "mode": "smoke",
+    "args": {},
+    "state": "COMPLETE",
+    "exit_code": 0,
+    "cleanup_status": "VERIFIED",
+    "dependencies": {
+      "dependencies": [
+        {
+          "bytes": 6525,
+          "path": "calculations/representation_illustrations.py",
+          "sha256": "6fbec2ba4f746abc5e5038455b450e0ef1ca546a64803a6827ac45b3cbcde670",
+          "status": "PRESENT"
+        },
+        {
+          "bytes": 3143,
+          "path": "examples/public-illustration-inputs-v1.json",
+          "sha256": "61b593fdfa0672b09859c813e28a8dcb6dea12cce56c7607b334da7e6710a713",
+          "status": "PRESENT"
+        }
+      ],
+      "producer": {
+        "bytes": 5309,
+        "path": "examples/public_representation_illustrations.py",
+        "scope": "project",
+        "sha256": "79b053a50a35c26931f71f0c79822de7d44b2dfc9c93acba6db1a07c068536e7",
+        "status": "PRESENT"
+      },
+      "producer_config": "3a91aa0ae5b0dc989d927f4c4b25dd3b8974219fc9cb132e3065d5598afccc11"
+    },
+    "original_executions": 1
+  },
+  "result": {
+    "id": "result-73d8f713f06d1bec3c03",
+    "revision": "sha256:3d36b9584c88662ce656eceda8219b9dede6a3c500777f7c7108b2e0a13965dd",
+    "currentness": "CURRENT",
+    "raw": {
+      "path": "sources/behaviour-example/research_runs/run-5958977f72d23902.result.raw.json",
+      "sha256": "8b0430adb6f85336ee7148d33fff3a6a651a625bac9fdd45ba48e9c366913f32",
+      "bytes": 5824,
+      "read": {
+        "project": "behaviour-example",
+        "path": "research_runs/run-5958977f72d23902.result.raw.json",
+        "scope": "manuscript",
+        "expected_sha256": "8b0430adb6f85336ee7148d33fff3a6a651a625bac9fdd45ba48e9c366913f32",
+        "owner": "writing-artifact",
+        "url": "/research/artifact?project=behaviour-example&scope=manuscript&path=research_runs%2Frun-5958977f72d23902.result.raw.json&expected_sha256=8b0430adb6f85336ee7148d33fff3a6a651a625bac9fdd45ba48e9c366913f32&owner=writing-artifact",
+        "http": {
+          "method": "GET",
+          "url": "/research/artifact?project=behaviour-example&scope=manuscript&path=research_runs%2Frun-5958977f72d23902.result.raw.json&expected_sha256=8b0430adb6f85336ee7148d33fff3a6a651a625bac9fdd45ba48e9c366913f32&owner=writing-artifact"
+        }
+      }
+    },
+    "derived": {
+      "path": "sources/behaviour-example/research_runs/run-5958977f72d23902.result.json",
+      "sha256": "6646bbb6a28bd85644e7f79dec09e446e1019fb8240666d07bec00feedb11dc4",
+      "read": {
+        "project": "behaviour-example",
+        "path": "research_runs/run-5958977f72d23902.result.json",
+        "scope": "manuscript",
+        "expected_sha256": "6646bbb6a28bd85644e7f79dec09e446e1019fb8240666d07bec00feedb11dc4",
+        "owner": "writing-artifact",
+        "url": "/research/artifact?project=behaviour-example&scope=manuscript&path=research_runs%2Frun-5958977f72d23902.result.json&expected_sha256=6646bbb6a28bd85644e7f79dec09e446e1019fb8240666d07bec00feedb11dc4&owner=writing-artifact",
+        "http": {
+          "method": "GET",
+          "url": "/research/artifact?project=behaviour-example&scope=manuscript&path=research_runs%2Frun-5958977f72d23902.result.json&expected_sha256=6646bbb6a28bd85644e7f79dec09e446e1019fb8240666d07bec00feedb11dc4&owner=writing-artifact"
+        }
+      }
+    },
+    "exact_comparisons": {
+      "checks": true,
+      "parameters": true,
+      "artifacts": true
+    },
+    "original_outputs": [
+      {
+        "path": "research_runs/run-5958977f72d23902.result.raw-illustrations/shared-register-price.pdf",
+        "status": "PRESENT",
+        "bytes": 26513,
+        "sha256": "557f86ee960da48dbd4376d067222255080a6607cd51742e721c522194dfd3b9",
+        "scope": "manuscript"
+      },
+      {
+        "path": "research_runs/run-5958977f72d23902.result.raw-illustrations/shared-register-price.svg",
+        "status": "PRESENT",
+        "bytes": 26871,
+        "sha256": "539c4b0e8c14ce8b915460ea14875ddc4a18e2e95accd7f83743cf82ec77934e",
+        "scope": "manuscript"
+      },
+      {
+        "path": "research_runs/run-5958977f72d23902.result.raw-illustrations/shared-register-price.png",
+        "status": "PRESENT",
+        "bytes": 116122,
+        "sha256": "fc0cd66d0c3d30be918b899bc6997540fe1ad622cb9dcaa0732de6280d548675",
+        "scope": "manuscript"
+      },
+      {
+        "path": "research_runs/run-5958977f72d23902.result.raw-illustrations/shared-register-price.csv",
+        "status": "PRESENT",
+        "bytes": 23151,
+        "sha256": "8c00092b4c8cbcd69b13269aff5673cbd78b81bffff164dc0a0a0f5388790225",
+        "scope": "manuscript"
+      },
+      {
+        "path": "research_runs/run-5958977f72d23902.result.raw-illustrations/retention-trajectories.pdf",
+        "status": "PRESENT",
+        "bytes": 14182,
+        "sha256": "8e71ef345c9dfca9c2c5b16695cb051e2508a608ba7fb04e52961957a31b3f10",
+        "scope": "manuscript"
+      },
+      {
+        "path": "research_runs/run-5958977f72d23902.result.raw-illustrations/retention-trajectories.svg",
+        "status": "PRESENT",
+        "bytes": 13613,
+        "sha256": "04afad78dfb498bda4596feabdfd1105a39c029314ce97aa87216f35df382717",
+        "scope": "manuscript"
+      },
+      {
+        "path": "research_runs/run-5958977f72d23902.result.raw-illustrations/retention-trajectories.png",
+        "status": "PRESENT",
+        "bytes": 79943,
+        "sha256": "3d6b8876f8d39205ef63691499ee2f709c99abd0e5c4112ae66b6cd6f3fa5243",
+        "scope": "manuscript"
+      },
+      {
+        "path": "research_runs/run-5958977f72d23902.result.raw-illustrations/retention-trajectories.csv",
+        "status": "PRESENT",
+        "bytes": 18996,
+        "sha256": "ac028d56453f1a64b52071ccfa818f9b5cd3a41a5d48ded297a724e21244c6d9",
+        "scope": "manuscript"
+      },
+      {
+        "path": "research_runs/run-5958977f72d23902.result.raw-illustrations/global-local-feedback.pdf",
+        "status": "PRESENT",
+        "bytes": 18799,
+        "sha256": "a403550facf3045ae9ca8275045df15e172718cd763676601c8ff6a597731e78",
+        "scope": "manuscript"
+      },
+      {
+        "path": "research_runs/run-5958977f72d23902.result.raw-illustrations/global-local-feedback.svg",
+        "status": "PRESENT",
+        "bytes": 15294,
+        "sha256": "11dad09f048ec05da34b7198decb7dfc266f585c13ba3f8ee4903096f44e43fd",
+        "scope": "manuscript"
+      },
+      {
+        "path": "research_runs/run-5958977f72d23902.result.raw-illustrations/global-local-feedback.png",
+        "status": "PRESENT",
+        "bytes": 63920,
+        "sha256": "cdafe1db211872af0b83066a1d4bf5e16972e091b07ec7984807638633658b89",
+        "scope": "manuscript"
+      },
+      {
+        "path": "research_runs/run-5958977f72d23902.result.raw-illustrations/global-local-feedback.csv",
+        "status": "PRESENT",
+        "bytes": 1317,
+        "sha256": "568fcf74588da568bd9f99f62ac5fc9ca3a013a345eb4b5a1e7827457d2452fe",
+        "scope": "manuscript"
+      }
+    ],
+    "limitations": "Author-authored wrapper and same-session comparisons, not independent verification. Public parameter JSON explains hard-coded formulas and is not a runtime override. Original raw historical note names are retained exactly but those notes were not read and are not support. PDF/SVG metadata may be time-dependent; the recorded bytes, not a rerun, define this output. No claim is bound or independently accepted. No extra runs."
+  },
+  "review": {
+    "work_id": "WORK-example",
+    "obligation": {
+      "id": "public-example-traceability",
+      "scope": "other",
+      "label": "Inspect the genuine public wrapper/raw result/prose proposal and exact records: unchanged calculation, public source closure and honest claims. No scientific theorem acceptance.",
+      "required": true,
+      "independent": true,
+      "inputs": [
+        "sources/behaviour-example/S1.tex",
+        "writing_projects/behaviour-example/examples/public_representation_illustrations.py",
+        "writing_projects/behaviour-example/examples/public-illustration-inputs-v1.json"
+      ]
+    },
+    "binding_status": "NONE",
+    "review_status": "NOT_REQUESTED_FROM_A_PROVIDER",
+    "coordinator_action": {
+      "operation": "work_delivery",
+      "payload": {
+        "action": "bind",
+        "work_id": "WORK-example",
+        "expected_work_revision": "sha256:c725dc31c3bded070e47351aa59412e24f2332537198c551e1f2b728ba44f1fc",
+        "kind": "app-owned",
+        "provider": "codex",
+        "model": "gpt-6.1-sol",
+        "effort": "high",
+        "label": "Public example technical traceability only",
+        "lifetime_s": 3600
+      }
+    },
+    "coordinator_http": {
+      "method": "POST",
+      "url": "/work/delivery"
+    },
+    "requires": "Genuine coordinator/human approval of Codex gpt-6.1-sol/high. After approval reinspect review-setup/status for the owner-issued submit action naming the real handoff, binding and sole obligation; do not invent IDs or launch automatically.",
+    "no_review_or_synthesis_fabricated": true
+  },
+  "catalogue": {
+    "status": "Separate 39-group catalogue not supplied or found in admitted project artifacts; exact link requested from coordinator. This example does not assert catalogue-wide execution."
+  }
+}

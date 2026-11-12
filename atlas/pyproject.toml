@@ -18,6 +18,8 @@ dependencies = [
 ]
 
 [project.optional-dependencies]
+records = ["torch>=2.11,<3", "regex>=2026.9.10", "python-dateutil>=2.9"]  # declared source grammars and absolute-date extraction
+transformer-encoders = ["sentence-transformers>=3"]  # optional explicitly selected encoder backend
 encoders = ["fastembed>=0.5"]   # the real bge-small/ONNX arm; never needed by the unit suite
 # The bench's figures, and nothing else. matplotlib is NOT a runtime dependency: atlas.bench
 # imports it inside atlas/bench/figures.py:draw, so the unit suite, the runner and the summary

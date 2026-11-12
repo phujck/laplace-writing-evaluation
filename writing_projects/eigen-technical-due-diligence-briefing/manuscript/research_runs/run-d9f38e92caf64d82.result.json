@@ -1,0 +1,43 @@
+{
+  "schema_version": "dd.hierarchy-stability/1",
+  "status": "complete",
+  "parameters": {
+    "alpha": 0.35,
+    "beta": 0.6,
+    "b": 1.2,
+    "s": 0.4,
+    "h_over_tau": 1,
+    "c": 0.7978845608028654
+  },
+  "N_c_L1": 138.25414373768885,
+  "N_c_L2": 217.16910114733528,
+  "N_c_L3": 341.1284263755836,
+  "jacobians_checked": 19557,
+  "classification_mismatches": 0,
+  "max_boundary_eigenvalue_error": 2.220446049250313e-16,
+  "artifacts": [
+    {
+      "id": "dd-hierarchy-stability",
+      "kind": "figure",
+      "category": "mathematical",
+      "sha256_by_format": {
+        "pdf": "a2cd437d3974f5a7c3a8c71ea3a9626928adf14d19029770b41e60c62a7d143f",
+        "svg": "222080770537d3da5b18bcf457e4b09c2b933e5d5f95a24b2d161783d808ea95",
+        "png": "cd951648f38872d2e24601ee9bb370ff84a7d55214e816587084216cb8ea8c06"
+      },
+      "pdf": "/home/phujck/VScodeProjects/laplace/writing_projects/eigen-technical-due-diligence-briefing/manuscript/working-draft/figures/hierarchy-run-d9f38e92caf64d82.result/dd-hierarchy-stability.pdf",
+      "svg": "/home/phujck/VScodeProjects/laplace/writing_projects/eigen-technical-due-diligence-briefing/manuscript/working-draft/figures/hierarchy-run-d9f38e92caf64d82.result/dd-hierarchy-stability.svg",
+      "png": "/home/phujck/VScodeProjects/laplace/writing_projects/eigen-technical-due-diligence-briefing/manuscript/working-draft/figures/hierarchy-run-d9f38e92caf64d82.result/dd-hierarchy-stability.png"
+    }
+  ],
+  "data": {
+    "path": "/home/phujck/VScodeProjects/laplace/writing_projects/eigen-technical-due-diligence-briefing/manuscript/working-draft/figures/hierarchy-run-d9f38e92caf64d82.result/phase-boundaries.csv",
+    "sha256": "bb091fba0d319806c44fa4fca92ae7a8264ba3761592477f08398210f931dcd8"
+  },
+  "tex_path": "figures/hierarchy-run-d9f38e92caf64d82.result/dd-hierarchy-stability.pdf",
+  "limitations": [
+    "Exact linear stability of the specified deterministic sampled map using its iterated Gaussian expected-majority response.",
+    "Not exact finite-block majority combinatorics, realised noisy verdict dynamics, a nonlinear bifurcation proof, general hierarchy advantage or ANF's distinct two-derivative protocol.",
+    "Continuous population interpolation. No empirical or independent scientific verification."
+  ]
+}

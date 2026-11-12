@@ -1,0 +1,132 @@
+{
+  "schema_version": "writing-system-architecture.visual-index/1",
+  "project": "writing-system-architecture",
+  "fixture": {
+    "version": 1,
+    "kind": "minimised-current-shape-representative",
+    "source_artifact": "blueprint/visual-index.json",
+    "source_sha256": "b6286cffb9491961fba44223619ad3b770f5e3c51f60a4419028bd597a9cfb6d",
+    "note": "Representative recorded entries using the current owner-shaped paths/digest-map representation. Captions, placements, scopes and hashes are retained. Not a current canonical view or complete index."
+  },
+  "figures": [
+    {
+      "id": "blueprint-recursive-object",
+      "title": "Open the object, retain its address",
+      "question": "What changes when a coarse object is opened into its interior and then its source?",
+      "caption": "Illustrative recursive object Q, grounded in the inspected parent/member views and source-locator construction. Q remains the addressed object as its interior is opened. The source panel names the actual local revision function definition and its file hash. Dotted green support links denote documentary grounding, not prerequisite arrows. Opening detail does not establish completeness or mathematical validity.",
+      "proposed_chapter_ids": [
+        "orientation-method",
+        "homes"
+      ],
+      "placement_status": "PLACED",
+      "placement": {
+        "id": "blueprint-recursive-object",
+        "label": "fig:blueprint-recursive-object",
+        "chapter": "orientation-method",
+        "source": "synthetics papers/writing-system-architecture/manuscript/chapters/chapter-01.tex",
+        "source_lines": [
+          23,
+          28
+        ],
+        "pdf_page": 5,
+        "caption": "Illustrative recursive object Q, grounded in the inspected parent/member views and source-locator construction. Q remains the addressed object as its interior is opened. The source panel names the actual local revision function definition and its file hash. Dotted green support links denote documentary grounding, not prerequisite arrows. Opening detail does not establish completeness or mathematical validity.",
+        "caption_state": "MATCHES",
+        "spec_revision": "1e032c16838f70bb34e58b6a441d421935112666e2a4f26dd4074b876ce46636",
+        "render_freshness": "CURRENT",
+        "evidence_binding_status": "THEORY_ONLY",
+        "result_ids": [],
+        "output_digests": {
+          "figures/generated/blueprint-recursive-object.pdf": "40bbdc904e6496ffb1b165869d82d60b9692d59eed51c7d6a47657fc4b7b9936",
+          "figures/generated/blueprint-recursive-object.png": "3008a80337758dbc1d949d7f76ba5275b5116b90390bb8b14deffbfbf7775cc5",
+          "figures/generated/blueprint-recursive-object.svg": "43e02acb957e7d761bd6ca44ad6c92be1ef9618df92bdfd3275ab01f1a7c344e",
+          "figures/generated/blueprint-recursive-object.tikz": "8012904912946779de670a4ec1c39bc4f534014b4d27b197cc9c967ce6a2b21d"
+        },
+        "visual_review": "pending, independent owner status unchanged",
+        "author_visual_inspection": "All final document pages viewed. Figure legible at placed size, no observed clipping.",
+        "width": "linewidth"
+      },
+      "evidence_bindings": [],
+      "render": {
+        "outputs": [
+          "figures/generated/blueprint-recursive-object.pdf",
+          "figures/generated/blueprint-recursive-object.png",
+          "figures/generated/blueprint-recursive-object.svg",
+          "figures/generated/blueprint-recursive-object.tikz"
+        ],
+        "output_digests": {
+          "figures/generated/blueprint-recursive-object.pdf": "40bbdc904e6496ffb1b165869d82d60b9692d59eed51c7d6a47657fc4b7b9936",
+          "figures/generated/blueprint-recursive-object.png": "3008a80337758dbc1d949d7f76ba5275b5116b90390bb8b14deffbfbf7775cc5",
+          "figures/generated/blueprint-recursive-object.svg": "43e02acb957e7d761bd6ca44ad6c92be1ef9618df92bdfd3275ab01f1a7c344e",
+          "figures/generated/blueprint-recursive-object.tikz": "8012904912946779de670a4ec1c39bc4f534014b4d27b197cc9c967ce6a2b21d"
+        }
+      }
+    },
+    {
+      "id": "blueprint-diamond-mutation",
+      "title": "A source edit reaches one dependency step",
+      "question": "What changed in the observed diamond, and where does revision invalidation stop?",
+      "caption": "Observed isolated fixture, run-596ee23ce4f9498a, using public identity and propagation APIs. Blue arrows read claim requires premise. Orange arrows run in the opposite direction and show the observed source-identity effect: editing line 2 of A's source changes A, B and C revisions, although the selected line-1 excerpt is unchanged. D's local content revision remains unchanged. No automatic arbitrary-depth propagation is established. The companion formal-target probe run-e96422486f524d69 additionally found unchanged B/C formal target handles. The formal-target disagreement is a reproducible defect. Whether other consumers require transitive invalidation remains an open policy decision. Neither observation says that the mathematics is false.",
+      "proposed_chapter_ids": [
+        "doors",
+        "lifecycle",
+        "limits"
+      ],
+      "placement_status": "PLACED",
+      "placement": {
+        "id": "blueprint-diamond-mutation",
+        "label": "fig:blueprint-diamond-mutation",
+        "chapter": "doors",
+        "source": "synthetics papers/writing-system-architecture/manuscript/chapters/doors-verbs-and-identity.tex",
+        "source_lines": [
+          58,
+          63
+        ],
+        "pdf_page": 13,
+        "caption": "Observed isolated fixture, run-596ee23ce4f9498a, using public identity and propagation APIs. Blue arrows read claim requires premise. Orange arrows run in the opposite direction and show the observed source-identity effect: editing line 2 of A's source changes A, B and C revisions, although the selected line-1 excerpt is unchanged. D's local content revision remains unchanged. No automatic arbitrary-depth propagation is established. The companion formal-target probe run-e96422486f524d69 additionally found unchanged B/C formal target handles. The formal-target disagreement is a reproducible defect. Whether other consumers require transitive invalidation remains an open policy decision. Neither observation says that the mathematics is false.",
+        "caption_state": "MATCHES",
+        "spec_revision": "d88a976034dac5f5a9f1fd2a0edff33ac05442d8ee3a6675e431b9200a56c535",
+        "render_freshness": "CURRENT",
+        "evidence_binding_status": "CURRENT",
+        "result_ids": [
+          "mechanism-public-api-recovery-observation",
+          "mechanism-formal-target-identity-observation"
+        ],
+        "output_digests": {
+          "figures/generated/blueprint-diamond-mutation.pdf": "be3ffd5c81fc75e95f4ec597c65d903c2fb9c89e17b5bc759a3513eec5504d85",
+          "figures/generated/blueprint-diamond-mutation.png": "0fb872a48fe2e591af2aae60c49fb5ac8f318e7017fc8cb0c14083a1eb8b22d9",
+          "figures/generated/blueprint-diamond-mutation.svg": "38a2964326d14cdd32ab8c0cbf562d622d665731d21efe09a1c7aa535ee199df",
+          "figures/generated/blueprint-diamond-mutation.tikz": "b640c3a018065acd973b4c594122db5251e6e92c0cd7d42bbb93e98832d2f8c5"
+        },
+        "visual_review": "pending, independent owner status unchanged",
+        "author_visual_inspection": "All final document pages viewed. Figure legible at placed size, no observed clipping.",
+        "width": "linewidth"
+      },
+      "evidence_bindings": [
+        {
+          "id": "mechanism-public-api-recovery-observation",
+          "revision": "sha256:6b7db37b3cac41bf1df107303153220f822205f05c7c22e76e19f3ef7bbd0717",
+          "currentness": "CURRENT"
+        },
+        {
+          "id": "mechanism-formal-target-identity-observation",
+          "revision": "sha256:e49a7d2e914cd15c315217c73e42495120d40dc5d83abb193433892a7491f9d4",
+          "currentness": "CURRENT"
+        }
+      ],
+      "render": {
+        "outputs": [
+          "figures/generated/blueprint-diamond-mutation.pdf",
+          "figures/generated/blueprint-diamond-mutation.png",
+          "figures/generated/blueprint-diamond-mutation.svg",
+          "figures/generated/blueprint-diamond-mutation.tikz"
+        ],
+        "output_digests": {
+          "figures/generated/blueprint-diamond-mutation.pdf": "be3ffd5c81fc75e95f4ec597c65d903c2fb9c89e17b5bc759a3513eec5504d85",
+          "figures/generated/blueprint-diamond-mutation.png": "0fb872a48fe2e591af2aae60c49fb5ac8f318e7017fc8cb0c14083a1eb8b22d9",
+          "figures/generated/blueprint-diamond-mutation.svg": "38a2964326d14cdd32ab8c0cbf562d622d665731d21efe09a1c7aa535ee199df",
+          "figures/generated/blueprint-diamond-mutation.tikz": "b640c3a018065acd973b4c594122db5251e6e92c0cd7d42bbb93e98832d2f8c5"
+        }
+      }
+    }
+  ]
+}

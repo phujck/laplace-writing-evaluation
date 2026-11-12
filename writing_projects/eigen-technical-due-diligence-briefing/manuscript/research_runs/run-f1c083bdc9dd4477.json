@@ -1,0 +1,75 @@
+{
+  "args": {},
+  "cancel_path": "/home/phujck/VScodeProjects/laplace/writing_projects/eigen-technical-due-diligence-briefing/manuscript/research_runs/run-f1c083bdc9dd4477.cancel",
+  "cwd": "/home/phujck/VScodeProjects/laplace/writing_projects/eigen-technical-due-diligence-briefing",
+  "deadline_at": 1792091607.9057612,
+  "execution_deadline_monotonic": 373326.767961328,
+  "id": "run-f1c083bdc9dd4477",
+  "launch_token": "7398e25edb5c40fca85a3eaf92be53a2",
+  "mode": "smoke",
+  "pid": 2655715,
+  "producer_argv": [
+    "/home/phujck/VScodeProjects/eigenengine-v2/runtime/python/current/bin/python3.14",
+    "/home/phujck/VScodeProjects/laplace/writing_projects/eigen-technical-due-diligence-briefing/calculations/replot_archived_memory.py",
+    "--mode",
+    "smoke",
+    "--args-json",
+    "{}",
+    "--result",
+    "/home/phujck/VScodeProjects/laplace/writing_projects/eigen-technical-due-diligence-briefing/manuscript/research_runs/run-f1c083bdc9dd4477.result.json"
+  ],
+  "producer_base": "/home/phujck/VScodeProjects/laplace/writing_projects/eigen-technical-due-diligence-briefing",
+  "producer_id": "dd-archived-memory-replot",
+  "producer_path": "calculations/replot_archived_memory.py",
+  "project": "eigen-technical-due-diligence-briefing",
+  "provenance": {
+    "dependencies": [
+      {
+        "bytes": 5831,
+        "path": "evidence-snapshots/memory/parity-d19-r4-prefix-q1.json",
+        "sha256": "021be2c6416cfb0b092274401ad41b18e0a4eb1e69271b4aa15520262de40a7a",
+        "status": "PRESENT"
+      },
+      {
+        "bytes": 5847,
+        "path": "evidence-snapshots/memory/parity-d19-r4-prefix-q32.json",
+        "sha256": "f7c96d959cfa25eecae294ee2d68b40a3231e85041acfd505ba98f90167388c5",
+        "status": "PRESENT"
+      },
+      {
+        "bytes": 5837,
+        "path": "evidence-snapshots/memory/parity-d19-r4-prefix-q256.json",
+        "sha256": "17eb2ef21bbf95119ac98897af11eee09287da1c72307ab35737c55feaf65d5b",
+        "status": "PRESENT"
+      },
+      {
+        "bytes": 5845,
+        "path": "evidence-snapshots/memory/parity-d19-r4-prefix-q1024.json",
+        "sha256": "75ec2c0b8e5ff59a0f714fc866f1d37edc6452d80803df021880b94087cc6611",
+        "status": "PRESENT"
+      }
+    ],
+    "producer": {
+      "bytes": 4971,
+      "path": "calculations/replot_archived_memory.py",
+      "scope": "project",
+      "sha256": "fb1d46b4945c2a771c353312f1e02806a20e8190d5f3f6bf3da35535d345715b",
+      "status": "PRESENT"
+    },
+    "producer_config": "0e936bc17a5e531f92b71f7fd5b4854f278c7c0fe28649c85fcf74df548b3e72"
+  },
+  "result_absolute": "/home/phujck/VScodeProjects/laplace/writing_projects/eigen-technical-due-diligence-briefing/manuscript/research_runs/run-f1c083bdc9dd4477.result.json",
+  "result_path": "research_runs/run-f1c083bdc9dd4477.result.json",
+  "started_at": 1792091547.905761,
+  "state": "RUNNING",
+  "stderr_path": "/home/phujck/VScodeProjects/laplace/writing_projects/eigen-technical-due-diligence-briefing/manuscript/research_runs/run-f1c083bdc9dd4477.stderr.log",
+  "stdout_path": "/home/phujck/VScodeProjects/laplace/writing_projects/eigen-technical-due-diligence-briefing/manuscript/research_runs/run-f1c083bdc9dd4477.stdout.log",
+  "supervision": {
+    "cleanup_limit_seconds": 6.0,
+    "roles": {},
+    "schema_version": "laplace.research-supervision/1"
+  },
+  "supervision_index_path": "/home/phujck/VScodeProjects/laplace/writing_projects/eigen-technical-due-diligence-briefing/manuscript/research_runs/index.json",
+  "supervisor_start_token": "sha256:3e47e754ffecdf750cdc9e1d9bbd20846aee71ecb72d4d4d497383d6ea793a18",
+  "timeout_seconds": 60
+}

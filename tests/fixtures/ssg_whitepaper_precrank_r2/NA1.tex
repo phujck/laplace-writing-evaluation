@@ -1,0 +1,320 @@
+% PLAN:NA1
+% NODES: def:hamiltonian def:computational-basis def:pauli-z def:plus-state def:imaginary-time-parameter def:filtered-partition ds:filter-in-trace-form ds:spectral-trace-collapse def:spectral-weights def:target-index-set def:in-out-spectral-weights ds:split-Z-by-window def:window-radius-and-gap ds:bound-Zout-above ds:bound-Zin-below def:staircase thm:hardy-littlewood-collapse ds:pauli-z-eigenequation ds:h0-acts-as-sum def:hamiltonian-h0 def:integer-weights def:subset-sum-function ds:exp-of-diagonal-h0 ds:expand-plus-tensor def:broad-support-state ds:sum-over-comp-basis ds:exponent-as-product ds:sum-product-interchange ds:evaluate-binary-inner-sum ds:product-as-fourier-series def:degeneracy thm:staircase-cumulant-identities ds:partial-lambda-log-Z def:filtered-mean def:centered-readout irf:retained-overlap-budget ds:gaussian-via-quadrature def:filter-kernel ds:lambda-shift-commutes def:hamiltonian-shift def:probe-target-shift ds:invert-for-tau-eta ds:quadrature-tail-decay def:quadrature-truncation-budget ds:invert-for-K-eta def:shot-budget-K def:cluster-effective-hamiltonian def:multiplicity-fingerprint ds:riesz-projector-cluster def:cluster-projector-Ps def:isolation-gap-Gamma_S def:bounded-noncommuting-V ds:block-diagonalise-via-similarity ds:eigenvector-as-superposition-on-cluster irf:internal-block-spectrum-governs-splitting ds:overlap-with-plus-state-coherent-sum def:perturbed-spectral-weights irf:target-cluster-second-order-spread res:perturbative-rescue
+\section{Derivations}\label{app:NA1}
+
+\subsection*{Primitive objects}
+
+% NA1-p1
+Every derivation below works from the same ground object - a Hermitian operator on the $2^n$-dimensional Hilbert space of $n$ qubits,
+\begin{equation*}
+H = H^\dagger = \sum_j E_j \, |E_j\rangle\langle E_j| ,
+\end{equation*}
+whose eigendecomposition over real eigenvalues $E_j$ and an orthonormal eigenbasis $\{|E_j\rangle\}$ is supplied by the spectral theorem. Every manipulation that follows either inserts this eigenbasis or diagonalises in it, so we put the decomposition on record before anything acts on it.
+
+% NA1-p2
+The concrete register basis is the computational basis - the $2^n$ product states
+\begin{equation*}
+|x\rangle = |x_1\rangle \otimes \cdots \otimes |x_n\rangle , \qquad x \in \{0,1\}^n ,
+\end{equation*}
+built from single-qubit $|0\rangle$ and $|1\rangle$. It is the joint eigenbasis of every $Z_i$ and the basis in which the subset-sum Hamiltonian is diagonal. The staircase and cluster derivations below manipulate amplitudes string by string, so the basis is fixed before any operator acts on it.
+
+% NA1-p3
+On a single qubit the Pauli operator is
+\begin{equation*}
+Z = \mathrm{diag}(+1, -1) , \qquad Z|0\rangle = +|0\rangle , \qquad Z|1\rangle = -|1\rangle ,
+\end{equation*}
+and $Z_i$ denotes $Z$ acting on qubit $i$ with the identity on the remaining qubits. The sign of $Z_i$ on $|x\rangle$ therefore encodes the bit $x_i$ - the convention from which the staircase derivation builds the subset-sum Hamiltonian.
+
+% NA1-p4
+The single-qubit state
+\begin{equation*}
+|+\rangle = \frac{|0\rangle + |1\rangle}{\sqrt{2}}
+\end{equation*}
+is the $+1$ eigenstate of Pauli $X$ and carries equal amplitude on both computational basis states. Its $n$-fold tensor power is the broad-support state the protocol prepares, and the overlap computations of the staircase and cluster derivations both expand it in the fixed basis.
+
+% NA1-p5
+The last primitive is the filter parameter,
+\begin{equation*}
+\tau > 0 , \qquad \Delta E_\tau \sim \tau^{-1/2} ,
+\end{equation*}
+a positive real number setting the Gaussian filter width. Larger $\tau$ sharpens spectral resolution, and it also grows the prefactor $\|H\|^{2\bar m}$ in the retained-overlap budget, so $\tau$ is the resource the truncation derivation inverts. Every filtered quantity from the collapse derivation onwards carries it without restatement.
+
+\subsection*{Exact collapse of the filtered partition function and the window bounds}
+
+% NA1-p6
+The filtered partition function of the body,
+\begin{equation*}
+Z_\tau(\lambda) = \langle \psi | \, e^{-\tau (H - T + \lambda)^2} \, | \psi \rangle ,
+\end{equation*}
+collapses exactly onto the spectrum as $Z_\tau(\lambda) = \sum_j p_j \, e^{-\tau \xi_j^2}$ with $\xi_j$ the shifted energies defined below, and splitting the collapsed sum by the target window proves the two one-sided weight bounds. The body's filtered-partition display draws on the collapsed form, and the $\tau$ and $K$ inversions below draw on the two bounds.
+
+% NA1-p7
+With $\rho = |\psi\rangle\langle\psi|$ the rank-one density matrix of the initial state, the filtered expectation is a trace,
+\begin{equation*}
+Z_\tau(\lambda) = \langle \psi | \, e^{-\tau (H - T + \lambda)^2} \, | \psi \rangle
+= \mathrm{Tr}\!\left[ e^{-\tau (H - T + \lambda)^2} \, \rho \right] .
+\end{equation*}
+The only manipulation is recognising the expectation as a trace against a rank-one projector, and trace cyclicity is automatic for this $\rho$. The trace form is the step that lets the resolution of identity act.
+
+% NA1-p8
+Inserting the resolution of identity $I = \sum_j |E_j\rangle\langle E_j|$ collapses the trace onto the spectrum,
+\begin{widetext}
+\begin{align*}
+\mathrm{Tr}\!\left[ e^{-\tau (H - T + \lambda)^2} \, \rho \right]
+&= \sum_j e^{-\tau (E_j - T + \lambda)^2} \, |\langle E_j | \psi \rangle|^2 \\
+&= \sum_j p_j \, e^{-\tau (E_j - T + \lambda)^2} , \qquad p_j = |\langle E_j | \psi \rangle|^2 ,
+\end{align*}
+\end{widetext}
+with $p_j$ the spectral weights of the initial state - real, non-negative and normalised, $\sum_j p_j = 1$. The filtered partition function therefore reads as a weighted Gaussian density of states sampled at the probe. The collapse is exact for every $\tau$ and every probe value - no approximation enters at this step. Every filtered observable in the paper is a functional of this sum.
+
+% NA1-p9
+Window membership is decided by the shifted energy $\xi_j(\lambda) = E_j - T + \lambda$ that the collapsed Gaussian factors carry. The target index set of radius $r$ is
+\begin{equation*}
+C = C(T, \lambda) = \left\{ j : |\xi_j(\lambda)| \le r \right\} , \qquad \xi_j(\lambda) = E_j - T + \lambda ,
+\end{equation*}
+the eigenvalue indices inside the target window centred at $T - \lambda$. The split of the collapsed sum needs this sharp membership rule before the partition is written.
+
+% NA1-p10
+The two bounds compare aggregates of the spectral weights split by membership in $C$,
+\begin{equation*}
+P_{\mathrm{in}} = \sum_{j \in C} p_j , \qquad
+P_{\mathrm{out}} = \sum_{k \notin C} p_k = 1 - P_{\mathrm{in}} .
+\end{equation*}
+$P_{\mathrm{in}}$ is the spectral weight inside the target window and $P_{\mathrm{out}}$ the weight outside, and the pair splits the unit-normalised spectral weight exactly by window membership.
+
+% NA1-p11
+Partitioning the collapsed sum over the index set gives the exact two-term split
+\begin{equation*}
+Z_\tau(\lambda) = \sum_j p_j \, e^{-\tau \xi_j^2}
+= \underbrace{\sum_{j \in C} p_j \, e^{-\tau \xi_j^2}}_{Z_\tau^{\mathrm{in}}}
++ \underbrace{\sum_{k \notin C} p_k \, e^{-\tau \xi_k^2}}_{Z_\tau^{\mathrm{out}}} .
+\end{equation*}
+Both parts are non-negative and the partition is exact - the only manipulation is a partition of the index set. The two sides are parametrised by the window radius $r \in [0, \Delta)$, with $|\xi_j| \le r$ inside, and the gap $\Delta$, with $|\xi_k| \ge \Delta$ outside. This is the geometry every later inequality refines.
+
+% NA1-p12
+The Gaussian is monotone decreasing in $|\xi|$, and that single fact yields both bounds. For $k \notin C$ the gap gives $e^{-\tau \xi_k^2} \le e^{-\tau \Delta^2}$, so
+\begin{equation*}
+Z_\tau^{\mathrm{out}} \le P_{\mathrm{out}} \, e^{-\tau \Delta^2} ,
+\end{equation*}
+and for $j \in C$ the radius gives $e^{-\tau \xi_j^2} \ge e^{-\tau r^2}$, so
+\begin{equation*}
+Z_\tau^{\mathrm{in}} \ge P_{\mathrm{in}} \, e^{-\tau r^2} .
+\end{equation*}
+The out-of-window contribution decays at the gap rate, and the in-window contribution retains at least the windowed weight times the worst-case intra-window suppression. Both bounds are one-sided and exact under the window hypotheses $|\xi_j| \le r$ inside and $|\xi_k| \ge \Delta$ outside - no distributional assumption on the spectrum enters. These are the in-window and out-of-window weight statements the body cites, and the resource inversions below draw on them.
+
+\subsection*{Closed form of the free overlap as the subset-sum generating series}
+
+% NA1-p13
+The diagonal Hamiltonian stores its free evolution in the record in closed form. The body identity
+\begin{widetext}
+\begin{equation*}
+\langle \psi_+ | \, e^{-i t H_0} \, | \psi_+ \rangle
+= 2^{-n} \prod_{i=1}^{n} \left( 1 + e^{-i t a_i} \right)
+= 2^{-n} \sum_{S \ge 0} g(S) \, e^{-i t S}
+\end{equation*}
+\end{widetext}
+is derived here. The staircase definition of the record section and the Hardy-Littlewood collapse theorem both draw on the series, so each algebraic step below is read against the product-to-series statement it serves.
+
+% NA1-p14
+The algebra opens with the Pauli-$Z$ eigenequations fixed among the primitives. From $Z|0\rangle = +|0\rangle$ and $Z|1\rangle = -|1\rangle$,
+\begin{align*}
+Z_i \, |x\rangle &= (1 - 2 x_i) \, |x\rangle , \\
+\frac{I - Z_i}{2} \, |x\rangle &= \frac{1 - (1 - 2 x_i)}{2} \, |x\rangle = x_i \, |x\rangle ,
+\end{align*}
+so each $(I - Z_i)/2$ acts as the per-qubit number operator, reading the bit $x_i$ off the string it meets. This identity converts every later operator statement into arithmetic on bits, and the rest of the walk is built on it.
+
+% NA1-p15
+Fix an ordered tuple $a = (a_1, \dots, a_n)$ of non-negative integers - the subset-sum instance - and let $s(x) = \sum_{i=1}^{n} a_i x_i$ denote the subset sum of the string $x$. Applying the diagonal Hamiltonian $H_0 = \sum_{i=1}^{n} a_i (I - Z_i)/2$ to a basis string and using linearity,
+\begin{align*}
+H_0 \, |x\rangle &= \sum_{i=1}^{n} a_i \, \frac{I - Z_i}{2} \, |x\rangle
+= \left( \sum_{i=1}^{n} a_i x_i \right) |x\rangle \\
+&= s(x) \, |x\rangle .
+\end{align*}
+Every computational basis string is an eigenstate of $H_0$ with eigenvalue equal to its subset sum under the weights $a$. This eigenvalue identity connects the quantum register to the combinatorial instance - the rest of the derivation only reorganises phases built on it.
+
+% NA1-p16
+Exponentiating turns the eigenvalues into phases. The eigenvalue identity gives the spectral decomposition $H_0 = \sum_{y} s(y) \, |y\rangle\langle y|$, whose exponential is
+\begin{align*}
+e^{-i t H_0} &= \sum_{y \in \{0,1\}^n} e^{-i t s(y)} \, |y\rangle\langle y| , \\
+e^{-i t H_0} \, |x\rangle &= e^{-i t s(x)} \, |x\rangle ,
+\end{align*}
+the second line using only computational-basis orthonormality, $\langle y | x \rangle = \delta_{xy}$. Free evolution rotates each string by its subset-sum phase and transfers no amplitude between strings. This phase-only action is what makes the free overlap computable in closed form, so it is displayed before the overlap is assembled.
+
+% NA1-p17
+The second ingredient of the overlap is the initial state. Expanding the $n$-fold tensor power of the plus state in the fixed basis gives the uniform superposition
+\begin{equation*}
+|\psi_+\rangle = \left( \frac{|0\rangle + |1\rangle}{\sqrt{2}} \right)^{\otimes n}
+= 2^{-n/2} \sum_{x \in \{0,1\}^n} |x\rangle ,
+\end{equation*}
+in which every basis string carries the same amplitude $2^{-n/2}$. This is the broad-support property of the initial state, displayed so the coherent sums that follow have explicit coefficients.
+
+% NA1-p18
+Sandwiching the diagonal evolution between two copies of the expanded state, factorising the phase and interchanging sum with product form one tight chain,
+\begin{align*}
+\langle \psi_+ | \, e^{-i t H_0} \, | \psi_+ \rangle
+&= 2^{-n} \sum_{x \in \{0,1\}^n} e^{-i t s(x)} , \\
+e^{-i t s(x)} &= e^{-i t \sum_i a_i x_i} = \prod_{i=1}^{n} e^{-i t a_i x_i} , \\
+\sum_{x \in \{0,1\}^n} \, \prod_{i=1}^{n} e^{-i t a_i x_i}
+&= \prod_{i=1}^{n} \, \sum_{x_i \in \{0,1\}} e^{-i t a_i x_i} .
+\end{align*}
+The first line uses computational-basis orthonormality to remove every off-diagonal term of the double sum. The second substitutes $s(x)$ and splits the exponential of a sum into a product of exponentials - legitimate because the scalar summands $a_i x_i$ commute. The third is the distributive law - the sum over strings factorises over independent coordinates because each summand factors into per-coordinate terms. The overlap is now a product of independent binary sums.
+
+% NA1-p19
+Each binary sum evaluates in one step, and collecting the product by subset-sum value closes the derivation,
+\begin{align*}
+\sum_{x_i \in \{0,1\}} e^{-i t a_i x_i} &= 1 + e^{-i t a_i} , \\
+\langle \psi_+ | \, e^{-i t (H_0 - T)} \, | \psi_+ \rangle
+&= e^{i t T} \, 2^{-n} \prod_{i=1}^{n} \left( 1 + e^{-i t a_i} \right) , \\
+\prod_{i=1}^{n} \left( 1 + e^{-i t a_i} \right)
+&= \sum_{S \ge 0} g(S) \, e^{-i t S} .
+\end{align*}
+The second line attaches the target prefactor $e^{i t T}$, which belongs to the recorded spectral signal rather than to the product identity. The third expands the product term by term - each summand corresponds to one choice of $x_i \in \{0,1\}$ per factor and contributes the phase $e^{-i t s(x)}$ - and regroups the $2^n$ terms by the value $s(x) = S$, so the coefficient at $S$ is the degeneracy $g(S) = |\{ x : s(x) = S \}|$. The result is a finite Fourier series in $t$, since $S$ ranges over the integers from $0$ to $\sum_i a_i$, with the subset-sum counts as its coefficients - the generating-function structure the Hardy-Littlewood collapse draws on \cite{vaughan1997hardy}.
+
+\subsection*{The log-derivative readout identity}
+
+% NA1-p20
+The first staircase-cumulant identity of the body,
+\begin{equation*}
+\partial_\lambda \log Z_\tau(\lambda) = -2\tau \, m_\tau(\lambda) .
+\end{equation*}
+follows from one displayed derivative connecting the measurable partition function to the centred readout. The staircase-cumulant identities theorem uses this identity as its first entry, and the centred readout uses it as the zero condition that centres the filter on the target cluster.
+
+% NA1-p21
+Differentiating the collapsed spectral form of $\log Z_\tau(\lambda)$ in the probe, by the chain rule,
+\begin{align*}
+\partial_\lambda \log Z_\tau(\lambda)
+&= -2\tau \, \frac{\sum_j p_j \, (E_j - T + \lambda) \, e^{-\tau (E_j - T + \lambda)^2}}{Z_\tau(\lambda)} \\
+&= -2\tau \left( \mu_\tau(\lambda) - T + \lambda \right) \\
+&= -2\tau \, m_\tau(\lambda) ,
+\end{align*}
+where $\mu_\tau(\lambda) = \sum_j p_j E_j \, e^{-\tau (E_j - T + \lambda)^2} / Z_\tau(\lambda)$ is the filtered mean and $m_\tau(\lambda) = \mu_\tau(\lambda) - T + \lambda$ the centred readout. The derivative is displayed in full because the body quotes only its endpoints - the intermediate line, a filtered average of the shifted energies, is where the identification with the filtered mean happens. The identity holds for every $\tau > 0$ and every probe value, and $m_\tau = 0$ is the centring condition on the filter rather than a stationarity assumption.
+
+\subsection*{The finite record and the resource inversions}
+
+% NA1-p22
+The retained-overlap budget of the record section,
+\begin{equation*}
+\varepsilon \le \sum_{k > \bar m} w_k f_k , \qquad
+\bar m = \frac{t_{\max}}{\Delta t} = \frac{\sqrt{8}}{\pi} \, \|H\| \sqrt{\tau \ln(1/\varepsilon_w)} ,
+\end{equation*}
+is derived here together with its companion inversions. The Gaussian filter acquires a finite unitary-overlap representation, the probe shift factors out of the record as a scalar phase, and demanding relative error $\eta$ yields the lower bounds on the filter strength $\tau$, the retained-pair budget $\bar m$ and the shot budget $K$ that the record and measurement sections use. The three inversions form one derivation because each converts the same accuracy demand into a lower bound on one resource.
+
+% NA1-p23
+The acquisition step behind the retained record converts the imaginary-time filter into real-time evolutions the hardware can run. The filter has the inverse Fourier representation
+\begin{widetext}
+\begin{equation*}
+e^{-\tau (H - T + \lambda)^2} = \int dt \, K_\tau(t) \, e^{-i t (H - T + \lambda)} , \qquad
+K_\tau(t) = \frac{1}{\sqrt{4 \pi \tau}} \, e^{-t^2 / 4\tau} ,
+\end{equation*}
+\end{widetext}
+with a Gaussian kernel, and Gaussian quadrature at nodes $\{t_j\}_{j \in J}$ with weights $\{w_j\}$ truncates the integral to the finite unitary sum
+\begin{equation*}
+e^{-\tau (H - T + \lambda)^2} \approx \sum_{j \in J} w_j \, e^{-i t_j (H - T + \lambda)} ,
+\end{equation*}
+one recorded evolution per retained node. The representation itself is exact before truncation - truncation introduces the tail error whose decay and inversion later steps derive.
+
+% NA1-p24
+With $H_T = H - T I$ the target-shifted Hamiltonian, the truncated evolutions run under $H_T^{(\lambda)} = H_T + \lambda I$, with $\lambda$ the probe displacement from the target. $\lambda I$ is a scalar multiple of the identity and commutes with $H_T$, so the shifted propagator factorises,
+\begin{equation*}
+e^{-i t (H_T + \lambda I)} = e^{-i t \lambda} \, e^{-i t H_T} .
+\end{equation*}
+The probe enters the record only through the scalar phase $e^{-i t \lambda}$. A single banked record therefore serves every probe value in classical post-processing - this factorisation is the derivation behind the classical probe dial.
+
+% NA1-p25
+The first resource inversion converts window geometry and weight ratio into the filter strength the protocol must reach. The two window bounds combine into a ratio bound, the accuracy demand caps the ratio at $\eta$, and solving the capped bound yields the filter strength,
+\begin{align*}
+\frac{Z_\tau^{\mathrm{out}}}{Z_\tau^{\mathrm{in}}}
+&\le \frac{P_{\mathrm{out}}}{P_{\mathrm{in}}} \, e^{-\tau (\Delta^2 - r^2)} , \\
+\frac{P_{\mathrm{out}}}{P_{\mathrm{in}}} \, e^{-\tau (\Delta^2 - r^2)} &\le \eta , \\
+\tau &\ge \frac{\log(P_{\mathrm{out}}/P_{\mathrm{in}}) + \log(1/\eta)}{\Delta^2 - r^2} .
+\end{align*}
+$\tau$ stays polynomial exactly when both logarithms are $O(\log n)$ and the gap term $\Delta^2 - r^2$ is at least inverse polynomial in $n$. The polynomiality reading is conditional - it holds only when the weight ratio and the window gap satisfy the stated scalings, and those conditions are precisely what the body's obstruction analysis interrogates.
+
+% NA1-p26
+The tail bound is what makes the finite record sufficient. Truncating the quadrature at $\bar m$ retained pairs leaves the additive error
+\begin{equation*}
+\varepsilon_{\bar m} \le \sum_{k > \bar m} w_k f_k ,
+\end{equation*}
+and the Gaussian weights collapse super-exponentially once the grid covers the measured range, so the tail is controlled by the grid itself. With Nyquist spacing $\Delta t = \pi / (\sqrt{8} \, \|H\|)$ and the aperture reach $t_{\max} = \sqrt{\tau \ln(1/\varepsilon_w)}$~\eqref{res:aperture-resolution} in the appendix width convention, the retained budget is
+\begin{widetext}
+\begin{equation*}
+\bar m = \frac{t_{\max}}{\Delta t}
+= \frac{\sqrt{8}}{\pi} \, \|H\| \sqrt{\tau \ln(1/\varepsilon_w)}
+\propto \sqrt{s \, \ln(1/\varepsilon_w)} , \qquad s = \tau \|H\|^2 ,
+\end{equation*}
+\end{widetext}
+with $s$ the effective spectral bandwidth - the $\bar m$ entry of the resource triple, at the resolution the record section quotes. The collapse constant of the tail is representation dependent, and the budget is a scaling statement rather than a sharp constant.
+
+% NA1-p27
+The shot inversion completes the resource triple by pricing the statistical error of the same record. The estimator error $\varepsilon_K = c K^{-1/2}$~\eqref{def:shot-budget-K}, with $c$ the coefficient norm of the reconstruction estimator, must sit below $\eta$ times the in-window floor,
+\begin{align*}
+c \, K^{-1/2} &\le \eta \, P_{\mathrm{in}} \, e^{-\tau r^2} , \\
+K &\ge c^2 \, \eta^{-2} \, P_{\mathrm{in}}^{-2} \, e^{2 \tau r^2} , \\
+K &\ge c^2 \, \eta^{-2} \, P_{\mathrm{in}}^{-2} \qquad (r = 0) ,
+\end{align*}
+the last line the centred probe. The demand is stated against the in-window lower bound $P_{\mathrm{in}} \, e^{-\tau r^2}$ rather than the exact $Z_\tau^{\mathrm{in}}$, so the bound is conservative. $K$ stays polynomial exactly when $1/P_{\mathrm{in}}$ and the constant $c$ are both polynomial in $n$ - and whether $P_{\mathrm{in}}$ is large enough is exactly the question the cluster analysis of the next subsection addresses.
+
+\subsection*{Cluster block reduction and the second-order target spread}
+
+% NA1-p28
+The resource inversions stay polynomial only if the perturbed spectrum keeps enough weight in the window, and the perturbative content that decides it is the cluster effective Hamiltonian of the body,
+\begin{widetext}
+\begin{equation*}
+H_{\mathrm{eff}}^{(S)}(z) = S P_S + P_S V P_S + \Sigma_S(z) , \qquad
+\Sigma_S(z) = P_S V Q_S \left( z - Q_S H Q_S \right)^{-1} Q_S V P_S ,
+\end{equation*}
+\end{widetext}
+defined for $z$ in the cluster window $|z - S| < \Gamma_S/2$, derived here by Riesz projection and similarity, then followed through the perturbed eigenvectors to the overlap weights and the second-order spread of the target cluster. The body's effective-Hamiltonian display and the multiplicity-fingerprint forward model draw on its outputs.
+
+% NA1-p29
+Let $P_S = \sum_{x : s(x) = S} |x\rangle\langle x|$ project onto the subset-sum-$S$ eigenspace of $H_0$, with complement $Q_S = I - P_S$ and isolation gap $\Gamma_S = \mathrm{dist}(S, \mathrm{spec}(Q_S H_0 Q_S))$, at least $1$ for integer weights, and let the perturbation $V$ be bounded, Hermitian and non-commuting with at least one $Z_i$, in the local two-body form $V = \sum_{a < b} V_{ab}$. For $H = H_0 + V$ with $\|V\| < \Gamma_S/4$ the Riesz projector onto the perturbed cluster is
+\begin{equation*}
+\Pi_S = \frac{1}{2\pi i} \oint_{|z - S| = \Gamma_S/2} (z - H)^{-1} \, dz .
+\end{equation*}
+Weyl stability moves every perturbed eigenvalue by at most $\|V\| < \Gamma_S/4$, so the cluster eigenvalues stay inside the contour \cite{bhatia1997matrix}, and the isolation gap keeps the remaining spectrum at distance at least $3\Gamma_S/4$ from $S$, outside it. The projector is therefore well defined \cite{kato1995perturbation}. The construction needs only the norm condition and Hermiticity - no locality assumption enters until the spread estimate that closes the subsection.
+
+% NA1-p30
+The projector pair reduces the Hamiltonian to the cluster block by a similarity. The direct rotation built from the two projectors intertwines them, and conjugating $H$ and restricting to the cluster yields the effective Hamiltonian,
+\begin{align*}
+U_S &= \Pi_S P_S + (I - \Pi_S)(I - P_S) , \\
+\Pi_S &= U_S P_S U_S^{-1} , \\
+H_{\mathrm{eff}}^{(S)} &= P_S U_S^{-1} H U_S P_S = S P_S + P_S V P_S + \Sigma_S ,
+\end{align*}
+with the three terms arising as the zeroth, first and second order of the block decomposition \cite{kato1995perturbation}. The final term is the Schur complement of the outer block - $\Sigma_S$ collects the second-order virtual transitions through $Q_S H Q_S$ \cite{horn2013matrix}. It is evaluated at spectral parameters in the isolation annulus, where the resolvent of $Q_S H Q_S$ exists, and its norm is second order, $\|\Sigma_S\| = O(\|V\|^2 / \Gamma_S)$.
+
+% NA1-p31
+The block reduction becomes amplitude statements once the perturbed eigenvectors are decomposed over the cluster strings. Writing $C(S) = \{ x : s(x) = S \}$ for the $g(S)$ cluster strings, a perturbed cluster eigenvector reads
+\begin{equation*}
+|E_{S,\alpha}^{\mathrm{pert}}\rangle = \sum_{x \in C(S)} u^{\alpha}_x \, |x\rangle , \qquad
+\sum_{x \in C(S)} |u^{\alpha}_x|^2 = 1 ,
+\end{equation*}
+with $\{u^\alpha\}_\alpha$ the eigenvectors of the internal block $P_S V P_S$ in the cluster basis and the support staying inside the cluster up to corrections of order $\|V\|/\Gamma_S$. The internal block also fixes the energies - the first-order intra-cluster splitting equals the spectrum of $P_S V P_S$, the degeneracy of $H_0$ lifted by exactly its eigenvalues $\nu_\alpha$. Generic $V$ gives all distinct $\nu_\alpha$, while structured $V$ may preserve sub-degeneracies. The overlap computation uses this decomposition string by string.
+
+% NA1-p32
+Pairing the amplitudes against the uniform expansion of the plus state gives the overlap in closed form,
+\begin{align*}
+\langle E_{S,\alpha}^{\mathrm{pert}} | \psi_+ \rangle
+&= \sum_{x \in C(S)} u^{\alpha}_x \, \langle x | \psi_+ \rangle
+= 2^{-n/2} \sum_{x \in C(S)} u^{\alpha}_x , \\
+|\langle E_{S,\alpha}^{\mathrm{pert}} | \psi_+ \rangle|^2
+&= 2^{-n} \, \Big| \sum_{x \in C(S)} u^{\alpha}_x \Big|^2 .
+\end{align*}
+Every cluster string contributes the same coefficient $2^{-n/2}$, so the amplitudes interfere before they are squared. The weight is a coherent sum of cluster-restricted eigenvector amplitudes rather than an incoherent count of cluster states - this coherent structure is the mechanism behind the difference between perturbed weights and classical multiplicities, which is why the sum is displayed rather than asserted.
+
+% NA1-p33
+The coherent sums give content to the perturbed spectral weights,
+\begin{equation*}
+p_j^{\mathrm{perturbed}} = |\langle E_j^{\mathrm{pert}} | \psi \rangle|^2 ,
+\end{equation*}
+the spectral weights of the initial state on the perturbed eigenbasis. For the broad-support state they are the coherent sums just computed and no longer the classical multiplicities $g(T)/2^n$. The two coincide only when the internal-block eigenvectors align with single strings - coherence generally moves weight between cluster eigenvectors. The body cites this definition wherever perturbed weights replace counts.
+
+% NA1-p34
+The target cluster closes the appendix. For generic distinct integer weights and generic $k$-local $V$ the internal block on the target subspace vanishes,
+\begin{equation*}
+P_S V P_S = 0 \qquad (S = T ,\ \text{generic case}) ,
+\end{equation*}
+so first-order splitting is absent and the leading spread is second order, through the Schur complement \cite{horn2013matrix, bhatia1997matrix}. The target cluster spreads as
+\begin{equation*}
+w_{\mathrm{target}} = O\!\left( \frac{\|V\|^2 \, n^{k/2}}{\Gamma_S} \right) ,
+\end{equation*}
+with the $g(T)$ sub-eigenvalues distributed on a Wigner semicircle at $\{ T + \nu_\alpha \}$, the displacements now supplied by the second-order block. The first-order vanishing is a genericity statement about weights and perturbation rather than an identity, and the semicircle is the distributional summary of the sub-eigenvalues rather than a per-instance guarantee. This spread supplies the window support whose bandwidth the fingerprint forward model and the polynomial shot-budget argument draw on.

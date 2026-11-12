@@ -1,0 +1,18 @@
+{
+  "lost": [
+    "Spectral radius is estimated from successive deltas (ratio of consecutive lost-set sizes), not from a single verdict",
+    "Error decay near fixed point follows eigenvalue magnitude ratio across iterations",
+    "Estimator requires at least three verdicts (two deltas minimum)",
+    "Returns None when insufficient data; has a graceful underspecified state",
+    "Estimate is noisy due to stochastic adjudicator"
+  ],
+  "added": [
+    "Spectral radius computed directly from absolute size of a single verdict's lost set",
+    "One cycle is sufficient (no iteration required)",
+    "Result is exact rather than noisy",
+    "Larger lost set directly maps to larger radius"
+  ],
+  "structured": true,
+  "recurses": false,
+  "justification": "The ghost inverts the core mechanism: original uses successive deltas and convergence ratios (a second-order iterative estimator), ghost claims a direct single-pass measurement from lost-set magnitude. Original explicitly requires ≥3 verdicts and handles insufficiency; ghost requires one. Original acknowledges noise from stochasticity; ghost claims exactness. The lost set is systematic and nameably inverted (methodology, data requirements, noise model) rather than scattered. However, this is not a partial that recurses—it is a fundamental inversion of the adjudication strategy, not a finer refinement. The lost claims form a coherent alternative model (delta-ratio estimator vs. magnitude-direct), but the ghost does not preserve the original's iterative structure at any level."
+}

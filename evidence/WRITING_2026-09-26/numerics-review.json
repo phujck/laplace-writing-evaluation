@@ -1,0 +1,159 @@
+{
+  "review": "numerics-and-figure-system",
+  "reviewed_at": "2026-09-26",
+  "scope": "Source-grounded design review only. No numerical run, service launch, or production-file change was made.",
+  "existing_mechanisms": [
+    {
+      "name": "Figure promise materialisation",
+      "mechanism": "The current figure organ scans TeX sections for hyphenated named-plot phrases, discovers fig_* functions from a supplied Python script, matches by keyword overlap, optionally runs the producer, places a float, and banks a manifest. Unmatched promises become visible TODO floats and computation research-intent rows.",
+      "refs": [
+        "src/laplace/pipeline/figure_runner.py:179-205",
+        "src/laplace/pipeline/figure_runner.py:259-342",
+        "src/laplace/pipeline/figure_runner.py:563-677",
+        "src/laplace/pipeline/figure_runner.py:680-695"
+      ],
+      "consumer": "The pipeline figures card reads the banked manifest; its dry run does not mutate or run the generator.",
+      "consumer_refs": [
+        "src/laplace/pipeline_surface.py:807-837",
+        "src/laplace/pipeline_surface.py:920-924",
+        "src/laplace/pipeline/figure_runner.py:732-794"
+      ]
+    },
+    {
+      "name": "Release composition",
+      "mechanism": "Release materialisation already discovers a sibling numerics/*_figures.py producer, composes the figure and bibliography legs, and reports missing generators without fabricating a result.",
+      "refs": [
+        "src/laplace/pipeline/release.py:703-715",
+        "src/laplace/pipeline/release.py:718-770"
+      ]
+    },
+    {
+      "name": "Addressable assets in the existing scanner",
+      "mechanism": "Asset discovery represents rendered figures and derivations with a producer, inputs, supporting/demonstrated nodes, manuscript landings and panels. The existing scanner delegates /assets reads and the assess/regen doors to this surface. Regen deliberately banks a work order rather than launching a disconnected process.",
+      "refs": [
+        "src/laplace/pipeline/asset_model.py:233-251",
+        "src/laplace/pipeline/asset_model.py:473-548",
+        "src/laplace/pipeline/asset_model.py:612-707",
+        "src/laplace/assets_surface.py:167-199",
+        "src/laplace/assets_surface.py:405-443",
+        "src/laplace/assets_surface.py:506-557",
+        "src/laplace/scanner.py:1695-1708",
+        "src/laplace/scanner.py:2283-2296"
+      ]
+    },
+    {
+      "name": "Mechanical presentation checks",
+      "mechanism": "figure_audit checks labels, prose references, coarse section placement and column width. house_style gathers included TeX and reports cross-reference, citation, equation punctuation, punctuation preference, orthography, and identity findings; only enforced findings fail its local result.",
+      "refs": [
+        "src/laplace/pipeline/figure_audit.py:39-111",
+        "src/laplace/pipeline/house_style.py:402-456",
+        "src/laplace/pipeline/house_style.py:459-490"
+      ]
+    },
+    {
+      "name": "Research / Compute projection",
+      "mechanism": "front_research_compute already normalizes producer-supplied campaigns, runs and numeric result rows into a typed experiment matrix and comparison surface. It refuses malformed or duplicate campaign-arm evidence and preserves omissions/currentness. The existing JS renderer presents those faces read-only.",
+      "refs": [
+        "src/laplace/front_research_compute.py:311-466",
+        "src/laplace/front_research_compute.py:469-550",
+        "src/laplace/front_research_compute.py:553-618",
+        "src/laplace/static_shared/research_compute_surface.mjs:574-634"
+      ]
+    }
+  ],
+  "verified_broken_or_missing_joins": [
+    {
+      "id": "N1-research-compute-orphan",
+      "severity": "high",
+      "producer": "front_research_compute.project accepts query evidence, campaigns, runs, result_sets and currentness.",
+      "consumer_gap": "A repository-wide source search found no production import or route for front_research_compute or research_compute_surface outside their own files and their tests. scanner.py does wire /assets, but does not wire this numerical projection. The existing renderer therefore has no verified scanner-facing model producer.",
+      "refs": [
+        "src/laplace/front_research_compute.py:553-618",
+        "src/laplace/static_shared/research_compute_surface.mjs:600-634",
+        "src/laplace/scanner.py:1695-1708"
+      ],
+      "integration": "Add a read-only /research-compute route to scanner.py, analogous to /assets delegation, whose handler resolves the selected project through the current registry/asset roots and builds project() from existing banked campaign/run/result records. Mount research_compute_surface.mjs in the current scanner UI. Do not create another server or a second truth store. Return explicit UNKNOWN/REFUSED omissions when a project has no admitted producer rows."
+    },
+    {
+      "id": "N2-results-to-figure-contract-missing",
+      "severity": "high",
+      "producer": "The research/compute projection retains only numeric metrics plus a free-form provenance mapping per result row; the figure runner separately discovers a script and matches lexical plot promises.",
+      "consumer_gap": "No shared result/figure identifier, input digest, configuration, metric selection, panel mapping, evidence status, or expected render is required by both paths. A plotted result can consequently be neither demonstrably one of the compared rows nor invalidated when that row changes.",
+      "refs": [
+        "src/laplace/front_research_compute.py:478-500",
+        "src/laplace/pipeline/figure_runner.py:53-103",
+        "src/laplace/pipeline/figure_runner.py:296-317",
+        "src/laplace/pipeline/figure_runner.py:656-669",
+        "src/laplace/pipeline/asset_model.py:678-705"
+      ],
+      "integration": "Extend the existing AssetObject/figure manifest contract with result_ids, run_manifest_digest, input/config digests, metric axes, panel_ids, evidence_state and a caption claim/status. Have numerical producers emit these fields beside their existing readings/results; figure_runner copies them into the manifest; asset_model reads the manifest before its current ledger enrichment; the scanner asset object exposes the links and stale state. This makes the present /assets cockpit the consumer of numerical provenance."
+    },
+    {
+      "id": "N3-static-and-lexical-figure-routing",
+      "severity": "medium",
+      "producer": "PLACEMENT is a two-output static map and matching succeeds on any positive keyword overlap. The section scan is limited to s*.tex, appendix_*.tex and abstract.tex.",
+      "consumer_gap": "This does not support a master manuscript's recursive chapters or a conceptric-selected result. It can select an accidental producer, cannot express several panels/results from one producer, and routes ownership independently of a result's manuscript occurrence.",
+      "refs": [
+        "src/laplace/pipeline/figure_runner.py:113-149",
+        "src/laplace/pipeline/figure_runner.py:162-205",
+        "src/laplace/pipeline/figure_runner.py:296-317"
+      ],
+      "integration": "Replace only the matcher/placement input with declared FigureSpec rows keyed by result_id and manuscript node/section anchor, while retaining run(), placement, TODO and manifest behaviour. Resolve section files through the shared recursive manuscript traversal already used by house_style, so figure placement follows the current manuscript rather than a flat paper naming convention."
+    },
+    {
+      "id": "N4-asset-discovery-does-not-consume-figure-manifest",
+      "severity": "medium",
+      "producer": "figure_runner banks figure_manifest.json with promises, generator script, generated artefacts, placed rows and intents.",
+      "consumer_gap": "asset_model discovers figures by directory conventions and optionally friction-ledger records; it does not read figure_manifest.json. Thus the scanner can render a file but cannot state whether it fulfilled a manuscript promise, whether the last generator run failed, or which computation intent remains open.",
+      "refs": [
+        "src/laplace/pipeline/figure_runner.py:656-677",
+        "src/laplace/pipeline/asset_model.py:612-707",
+        "src/laplace/assets_surface.py:405-443"
+      ],
+      "integration": "Make asset_model's per-project discovery join the existing manifest reader or a narrow validated manifest projection. Add promise state, intent id, generator status and reconciliation sites to AssetObject, then show them in existing /assets list/object payloads. Preserve filesystem discovery as the absent-manifest fallback."
+    },
+    {
+      "id": "N5-house-style-and-visual-standard-are-not-release-gates",
+      "severity": "medium",
+      "producer": "house_style and figure_audit expose useful local checks. The figure-standard record also requires vector delivery, a data/schematic declaration, reproduce recipe, engine/generator and provenance.",
+      "consumer_gap": "The established .claude mechanical-round driver imports and invokes check_house_style_manuscript, so house style already has a convergence consumer. check_figure_system has no production invocation in the reviewed source search, and figure_audit does not check the figure-standard provenance or visual requirements. release.materialize_promised_assets evaluates unmatched figures and bibliography rendering, but does not invoke either checker; neither check is wired to the scanner asset surface.",
+      "refs": [
+        "src/laplace/pipeline/house_style.py:402-490",
+        "src/laplace/pipeline/figure_audit.py:39-111",
+        ".claude/workflows/fixedpoint_mechround.py:84-123",
+        ".claude/workflows/f-loop-integration.js:176-181",
+        "src/laplace/pipeline/release.py:718-770",
+        "src/laplace/canon/skills/figure_standard/SKILL.md:19-23",
+        "src/laplace/canon/skills/figure_standard/SKILL.md:58-70"
+      ],
+      "integration": "Keep the established mechanical-round house-style invocation. Add check_figure_system and AssetObject/manifest provenance validation to that convergence panel, then expose its latest banked findings through the existing scanner asset object and include the same named presentation-check phase in the portable release materialisation result. Keep visual collision review as an explicit asset assessment finding, because the present code correctly does not claim raster judgement. Block only the rules already declared enforced; report visual/house advisory findings without silently rewriting author prose."
+    }
+  ],
+  "proposed_current_module_flow": [
+    "Existing numerical producer emits a versioned ResultRecord and FigureSpec beside its readings/results, including run/config/input digests, result_id, metrics, evidence state, panel mapping and expected vector render.",
+    "front_research_compute.project reads those ResultRecords to drive the existing matrix and comparison; scanner.py exposes that model through a read-only route and existing renderer.",
+    "figure_runner.run consumes FigureSpec rather than lexical matching, executes the declared existing producer only on the existing materialisation path, and banks the augmented figure manifest.",
+    "asset_model joins the manifest with its current files, nodemap and ledger edges; assets_surface/scanner expose one figure object with render, provenance, result links, manuscript landing, assessment history and a manifest-only regeneration work order.",
+    "The established mechanical round retains its house-style check, gains the existing figure apparatus/provenance checks, and records the panel for the scanner; portable release materialisation mirrors that named presentation-check result."
+  ],
+  "end_to_end_acceptance_example": {
+    "given": "A registered project contains result R-resource-01 from run RUN-42, a FigureSpec F-resource with panels throughput and precision, and a current manuscript node N-results-resource.",
+    "when": [
+      "The numerical producer writes ResultRecord(R-resource-01, RUN-42 digest, metric axes, COMPLETE evidence state) and FigureSpec(F-resource, result_ids=[R-resource-01], expected PDF, panel map).",
+      "The existing materialisation path runs the declared generator and figure_runner places F-resource at N-results-resource, banking the augmented manifest.",
+      "The scanner reads /research-compute for the project and /assets/object for F-resource."
+    ],
+    "then": [
+      "Research / Compute displays RUN-42's producer-supplied numeric axes and links the comparison entry to R-resource-01; it shows UNKNOWN or REFUSED rather than inventing a comparison if evidence is absent or malformed.",
+      "The asset object displays the PDF, its producer, inputs/config digest, R-resource-01, both panel mappings, manuscript landing and figure promise state from the same manifest.",
+      "If RUN-42's input or configuration digest changes, F-resource is marked stale and a regeneration work order can be banked through the existing /assets/regen path; it is not silently presented as current.",
+      "Release reports the figure apparatus and enforced house-style result, while visual review remains an explicit anchored assessment."
+    ]
+  },
+  "remaining_uncertainties": [
+    "The authoritative per-project storage format for campaign, run and result rows was not identified in the reviewed sources. The integration should reuse that existing ledger/manifest rather than inventing a parallel ResultRecord store.",
+    "The master-manuscript selector and recursive include traversal are being addressed elsewhere; figure placement should consume their resolved edition/anchors once available rather than choose a TeX root heuristically.",
+    "The current scanner UI mounting point and navigation contract for research_compute_surface.mjs need confirmation from the scanner UI owner; the absence of a production reference is verified, but a route name is an implementation choice.",
+    "Visual collision, typography and rendered-PDF inspection need a defined review receipt. Existing figure_audit intentionally covers apparatus rather than raster judgement."
+  ]
+}

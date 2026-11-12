@@ -1,0 +1,57 @@
+{
+  "args": {},
+  "cancel_path": "/home/phujck/VScodeProjects/laplace/writing_projects/eigen-technical-due-diligence-briefing/manuscript/research_runs/run-42b6752ef10c4e6f.cancel",
+  "cwd": "/home/phujck/VScodeProjects/laplace/writing_projects/eigen-technical-due-diligence-briefing",
+  "deadline_at": 1792096974.7219977,
+  "execution_deadline_monotonic": 378693.584198234,
+  "id": "run-42b6752ef10c4e6f",
+  "launch_token": "37d2cdd389344b68a422870cb5022784",
+  "mode": "full",
+  "pid": 2708544,
+  "producer_argv": [
+    "/home/phujck/VScodeProjects/eigenengine-v2/runtime/python/current/bin/python3.14",
+    "/home/phujck/VScodeProjects/laplace/writing_projects/eigen-technical-due-diligence-briefing/calculations/root_hmf_zero_temperature_v1.py",
+    "--mode",
+    "full",
+    "--args-json",
+    "{}",
+    "--result",
+    "/home/phujck/VScodeProjects/laplace/writing_projects/eigen-technical-due-diligence-briefing/manuscript/research_runs/run-42b6752ef10c4e6f.result.json"
+  ],
+  "producer_base": "/home/phujck/VScodeProjects/laplace/writing_projects/eigen-technical-due-diligence-briefing",
+  "producer_id": "root-hmf-zero-temperature-v1",
+  "producer_path": "calculations/root_hmf_zero_temperature_v1.py",
+  "project": "eigen-technical-due-diligence-briefing",
+  "provenance": {
+    "dependencies": [
+      {
+        "bytes": 265,
+        "path": "calculations/root_hmf_zero_temperature_v1.json",
+        "sha256": "4ad29039fc601ab18f6012a75042389a84dc2637664cf74c1fd229df5f964b04",
+        "status": "PRESENT"
+      }
+    ],
+    "producer": {
+      "bytes": 8256,
+      "path": "calculations/root_hmf_zero_temperature_v1.py",
+      "scope": "project",
+      "sha256": "372216af9d5f05ecec6913be37751631820aa3be0b54a206c074bbc1ceb62169",
+      "status": "PRESENT"
+    },
+    "producer_config": "f784950e113357e1ac9e980864caf7f59acb053ea75cdbf2d05084ab8611ca41"
+  },
+  "result_absolute": "/home/phujck/VScodeProjects/laplace/writing_projects/eigen-technical-due-diligence-briefing/manuscript/research_runs/run-42b6752ef10c4e6f.result.json",
+  "result_path": "research_runs/run-42b6752ef10c4e6f.result.json",
+  "started_at": 1792096854.7219975,
+  "state": "RUNNING",
+  "stderr_path": "/home/phujck/VScodeProjects/laplace/writing_projects/eigen-technical-due-diligence-briefing/manuscript/research_runs/run-42b6752ef10c4e6f.stderr.log",
+  "stdout_path": "/home/phujck/VScodeProjects/laplace/writing_projects/eigen-technical-due-diligence-briefing/manuscript/research_runs/run-42b6752ef10c4e6f.stdout.log",
+  "supervision": {
+    "cleanup_limit_seconds": 6.0,
+    "roles": {},
+    "schema_version": "laplace.research-supervision/1"
+  },
+  "supervision_index_path": "/home/phujck/VScodeProjects/laplace/writing_projects/eigen-technical-due-diligence-briefing/manuscript/research_runs/index.json",
+  "supervisor_start_token": "sha256:f88193abbf1390fbe37ec46c17acb51a189e72089fa8c7802681e06766820448",
+  "timeout_seconds": 120
+}

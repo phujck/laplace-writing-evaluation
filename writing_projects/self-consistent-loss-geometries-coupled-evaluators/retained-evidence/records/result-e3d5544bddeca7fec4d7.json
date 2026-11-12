@@ -1,0 +1,153 @@
+{
+  "artifacts": [
+    {
+      "label": "per_stream_metrics",
+      "path": "research/slg-scientific-figures-20261111/outputs/run-7f8022a64802820f.result/per_stream_metrics.csv",
+      "scope": "project"
+    },
+    {
+      "label": "representative_action_ledgers",
+      "path": "research/slg-scientific-figures-20261111/outputs/run-7f8022a64802820f.result/representative_action_ledgers.csv",
+      "scope": "project"
+    },
+    {
+      "label": "prediction_risk_curve",
+      "path": "research/slg-scientific-figures-20261111/outputs/run-7f8022a64802820f.result/prediction_risk_curve.csv",
+      "scope": "project"
+    },
+    {
+      "label": "promotion_rate_curve",
+      "path": "research/slg-scientific-figures-20261111/outputs/run-7f8022a64802820f.result/promotion_rate_curve.csv",
+      "scope": "project"
+    },
+    {
+      "label": "recovery_failure_curve",
+      "path": "research/slg-scientific-figures-20261111/outputs/run-7f8022a64802820f.result/recovery_failure_curve.csv",
+      "scope": "project"
+    },
+    {
+      "label": "off_transition_curve",
+      "path": "research/slg-scientific-figures-20261111/outputs/run-7f8022a64802820f.result/off_transition_curve.csv",
+      "scope": "project"
+    },
+    {
+      "label": "paired_differences",
+      "path": "research/slg-scientific-figures-20261111/outputs/run-7f8022a64802820f.result/paired_differences.csv",
+      "scope": "project"
+    },
+    {
+      "label": "priced_policy_tracking",
+      "path": "research/slg-scientific-figures-20261111/outputs/run-7f8022a64802820f.result/priced_policy_tracking.csv",
+      "scope": "project"
+    }
+  ],
+  "config": "evidence/SLG_VISUAL_PRODUCTION_2026-11-11/finite-figure-protocol.json",
+  "config_scope": "project",
+  "id": "result-e3d5544bddeca7fec4d7",
+  "kind": "result",
+  "limitations": [
+    "Finite twelve streams/six predeclared prices, no optimum selected or large-grid reproduction.",
+    "Paired descriptive means and SE across streams, no statistical-significance or generalisation claim.",
+    "Observation-window gains are not future viability; prediction is separately measured before update.",
+    "Per-promoted-action cost is dimensionless and ignores differential controller computation/maintenance.",
+    "Target-change control isolates it from combined action-gain and no-update baseline repricing, not each repair separately.",
+    "Recovery uses known synthetic latent slope only for evaluation, not clinical or change-detection validation.",
+    "OR schedule is externally frozen and independent, not adaptive path coarse-graining.",
+    "Static register optima are nested feasible sets, not unexpected performance superiority."
+  ],
+  "provenance": {
+    "dependencies": [
+      {
+        "bytes": 5993,
+        "path": "evidence/SLG_VISUAL_PRODUCTION_2026-11-11/finite-figure-protocol.json",
+        "sha256": "58ff935dfb8c3f7a3463d3ecd22a9dc23ebd64fa24214e7d1c084cf4fad27ed1",
+        "status": "PRESENT"
+      },
+      {
+        "bytes": 14945,
+        "path": "research/slg-scientific-figures-20261111/scientific_tables.py",
+        "sha256": "f9c98ffb562216caf9b71a40351777b274b72eb9e4fbdf199d6e99e8a171c905",
+        "status": "PRESENT"
+      },
+      {
+        "bytes": 20027,
+        "path": "research_runs/run-7f8022a64802820f.result.json",
+        "scope": "manuscript",
+        "sha256": "730a153523a22f9abc6d66c6e6527645d1bc43d92eb58273bfb560b0f002210e",
+        "status": "PRESENT"
+      },
+      {
+        "bytes": 48380,
+        "path": "research/slg-scientific-figures-20261111/outputs/run-7f8022a64802820f.result/per_stream_metrics.csv",
+        "scope": "project",
+        "sha256": "003671aec49aeae8d5756dd70f8047485c97c1a96c0b4c28f9dabf987e997d3d",
+        "status": "PRESENT"
+      },
+      {
+        "bytes": 438772,
+        "path": "research/slg-scientific-figures-20261111/outputs/run-7f8022a64802820f.result/representative_action_ledgers.csv",
+        "scope": "project",
+        "sha256": "77f1f148f85a6a239990ea310f82953792854c558ad2a2acb21cf195de0f3111",
+        "status": "PRESENT"
+      },
+      {
+        "bytes": 1249,
+        "path": "research/slg-scientific-figures-20261111/outputs/run-7f8022a64802820f.result/prediction_risk_curve.csv",
+        "scope": "project",
+        "sha256": "40af949ea01bc8472e267023462f2d97244cd3b4f682eab7e2c3f54e082b06d1",
+        "status": "PRESENT"
+      },
+      {
+        "bytes": 982,
+        "path": "research/slg-scientific-figures-20261111/outputs/run-7f8022a64802820f.result/promotion_rate_curve.csv",
+        "scope": "project",
+        "sha256": "c50039032f76e108d5590aca12f334ce0ef1815ee7a2d2daed44f121610069e6",
+        "status": "PRESENT"
+      },
+      {
+        "bytes": 851,
+        "path": "research/slg-scientific-figures-20261111/outputs/run-7f8022a64802820f.result/recovery_failure_curve.csv",
+        "scope": "project",
+        "sha256": "415357835b1c3a3ed574053bb195d9314f2983ea92de7cfb6825d07405200f19",
+        "status": "PRESENT"
+      },
+      {
+        "bytes": 1003,
+        "path": "research/slg-scientific-figures-20261111/outputs/run-7f8022a64802820f.result/off_transition_curve.csv",
+        "scope": "project",
+        "sha256": "5655fc8cb35cb346f866a5bdfc2f3595892f886ec16a2cc46112a002ba8ee459",
+        "status": "PRESENT"
+      },
+      {
+        "bytes": 657,
+        "path": "research/slg-scientific-figures-20261111/outputs/run-7f8022a64802820f.result/paired_differences.csv",
+        "scope": "project",
+        "sha256": "b697e833f676a50669404e6689ababc845154b39e21412b9f38909788d9b8666",
+        "status": "PRESENT"
+      },
+      {
+        "bytes": 40972,
+        "path": "research/slg-scientific-figures-20261111/outputs/run-7f8022a64802820f.result/priced_policy_tracking.csv",
+        "scope": "project",
+        "sha256": "20fde7d621d27746172840d71d6450193d90cec01dcbbac9a2cf3a1eb4158f47",
+        "status": "PRESENT"
+      }
+    ],
+    "recorded_at": 1794413323.1851509,
+    "scope": "project",
+    "snapshot_schema": "laplace.research-dependencies/3"
+  },
+  "record_request": {
+    "intent_digest": "sha256:b735d53f3c343df5256eb3ad302212567fb6d3141ad29a4df3a55989de873c63",
+    "request_id": "record-64555cc1ee124fea8402173786a1453c"
+  },
+  "result": "research_runs/run-7f8022a64802820f.result.json",
+  "result_scope": "manuscript",
+  "revision": "sha256:72f7576a5a8d4234de467c96bf9c3f53cbcd9512f7b2f91a766ae0a8fb415b56",
+  "run_id": "run-7f8022a64802820f",
+  "scope": "project",
+  "source": "research/slg-scientific-figures-20261111/scientific_tables.py",
+  "source_scope": "project",
+  "summary": "Predeclared12 matched synthetic streams,6 prices,3 policies,216 trajectories and150984 decisions. Legacy v0, rolling-target/unpriced control and priced partial v1 compared with common pre-action prediction and declared per-update cost diagnostics. V1 mean prediction MSE exceeds legacy at all six matched prices, while update frequency and operational recovery vary with price. At c=.06 mean MSE v0=.1211697, control=.1292312, v1=.1434048 and recovery failures=.1875,.2708333,.625 under the declared criterion. Exact legacy/v1 reference controls match; v1 action accounting error0. No optimum, universal dominance or calibration claim.",
+  "title": "Matched promotion-price comparison after exact action pricing"
+}

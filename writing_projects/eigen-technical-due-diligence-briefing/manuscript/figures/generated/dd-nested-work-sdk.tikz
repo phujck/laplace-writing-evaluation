@@ -1,0 +1,74 @@
+\begin{tikzpicture}[x=1cm,y=1cm,font=\sffamily\small,line cap=round,line join=round]
+\definecolor{ink}{HTML}{183449}\definecolor{blue}{HTML}{0072B2}\definecolor{teal}{HTML}{009E73}\definecolor{amber}{HTML}{D55E00}
+\tikzset{read/.style={->,teal,line width=1.5pt},write/.style={->,blue,line width=1.5pt},edge/.style={ink!70,line width=.9pt}}
+
+\fill[blue!3,rounded corners=10pt] (0,0) rectangle (15,8);
+\node[anchor=west,font=\sffamily\bfseries] at (.35,7.6) {One boundary pattern, several scales};
+\draw[edge,fill=white,rounded corners=7pt] (.4,2.1) rectangle (10.6,7.1);
+\node[anchor=west,font=\sffamily\footnotesize] at (.7,6.75) {project / parent task};
+\begin{scope}[shift={(1.45,5.2)},scale=0.72]
+\fill[ink!12] (0,-.65) ellipse (.62 and .12);
+\draw[edge,fill=white,rounded corners=5pt] (-.48,-.42) rectangle (.48,.25);
+\draw[edge,fill=blue!12,rounded corners=5pt] (-.58,.18) rectangle (.58,.85);
+\draw[edge] (0,.85)--(0,1.08);\fill[amber] (0,1.12) circle (.08);
+\fill[ink] (-.23,.54) circle (.065);\fill[ink] (.23,.54) circle (.065);
+\draw[ink] (-.16,.33) .. controls (0,.22) .. (.16,.33);
+\draw[edge,line width=2pt] (-.48,-.08)--(-.75,.08) (.48,-.08)--(.79,.28);
+\draw[edge,line width=2pt] (-.24,-.42)--(-.3,-.59) (.24,-.42)--(.3,-.59);
+\fill[teal] (0,-.06) circle (.09);
+\end{scope}
+
+\draw[edge,fill=blue!4,rounded corners=6pt] (3.0,2.65) rectangle (7.5,5.8);
+\node[font=\sffamily\footnotesize] at (5.25,5.45) {worker task};
+\begin{scope}[shift={(3.4,3.05)},scale=0.85]
+\draw[edge,fill=blue!6,rounded corners=3pt] (0,0) rectangle (2.5,1.65);
+\draw[edge,fill=white] (.25,.38)--(.25,1.42)--(1.02,1.42)--(1.2,1.22)--(1.2,.38)--cycle;
+\draw[ink!35] (.42,1.08)--(.99,1.08) (.42,.87)--(.99,.87) (.42,.66)--(.84,.66);
+\draw[edge,fill=white] (1.38,.38) rectangle (2.25,1.35);
+\draw[teal,line width=1.1pt] (1.51,.59)--(1.69,.94)--(1.87,.72)--(2.1,1.13);
+\draw[edge,fill=blue!20] (0,0)--(0,.55)--(1.25,.2)--(2.5,.55)--(2.5,0)--cycle;
+\fill[teal] (2.5,1.18) circle (.08);\fill[blue] (2.5,.62) circle (.08);
+\end{scope}
+\begin{scope}[shift={(6.35,3.7)},scale=0.65]
+\fill[ink!12] (0,-.65) ellipse (.62 and .12);
+\draw[edge,fill=white,rounded corners=5pt] (-.48,-.42) rectangle (.48,.25);
+\draw[edge,fill=blue!12,rounded corners=5pt] (-.58,.18) rectangle (.58,.85);
+\draw[edge] (0,.85)--(0,1.08);\fill[amber] (0,1.12) circle (.08);
+\fill[ink] (-.23,.54) circle (.065);\fill[ink] (.23,.54) circle (.065);
+\draw[ink] (-.16,.33) .. controls (0,.22) .. (.16,.33);
+\draw[edge,line width=2pt] (-.48,-.08)--(-.75,.08) (.48,-.08)--(.79,.28);
+\draw[edge,line width=2pt] (-.24,-.42)--(-.3,-.59) (.24,-.42)--(.3,-.59);
+\fill[teal] (0,-.06) circle (.09);
+\end{scope}
+
+\draw[write] (2.1,5.2)--(3.0,5.2);
+\node[font=\sffamily\scriptsize,align=center] at (2.55,5.8) {scope\\inward};
+\draw[read] (5.2,5.8)--(5.2,6.35)--(1.45,6.35)--(1.45,6.05);
+\node[font=\sffamily\scriptsize,fill=white] at (3.6,6.35) {findings outward};
+\draw[edge,fill=amber!6] (8.85,4.2) circle (.68);
+\node[font=\sffamily\scriptsize,align=center] at (8.85,4.2) {review\\exact\\return};
+\draw[read] (7.5,4.2)--(8.15,4.2);
+\draw[amber,->,line width=1.3pt] (8.85,4.9)--(8.85,6.3)--(5.65,6.3);
+\node[font=\sffamily\scriptsize] at (8.55,6.65) {parent accepts};
+\begin{scope}[shift={(11.4,4.9)},scale=0.95]
+\draw[edge,fill=blue!6,rounded corners=3pt] (0,0) rectangle (2.5,1.65);
+\draw[edge,fill=white] (.25,.38)--(.25,1.42)--(1.02,1.42)--(1.2,1.22)--(1.2,.38)--cycle;
+\draw[ink!35] (.42,1.08)--(.99,1.08) (.42,.87)--(.99,.87) (.42,.66)--(.84,.66);
+\draw[edge,fill=white] (1.38,.38) rectangle (2.25,1.35);
+\draw[teal,line width=1.1pt] (1.51,.59)--(1.69,.94)--(1.87,.72)--(2.1,1.13);
+\draw[edge,fill=blue!20] (0,0)--(0,.55)--(1.25,.2)--(2.5,.55)--(2.5,0)--cycle;
+\fill[teal] (2.5,1.18) circle (.08);\fill[blue] (2.5,.62) circle (.08);
+\end{scope}
+
+\draw[amber,->,line width=1.3pt] (10.6,5.7)--(11.35,5.7);
+\fill[amber] (13.6,6.4) circle (.12);
+\node[font=\sffamily\footnotesize,align=center] at (12.6,4.3) {dependent view\\needs attention};
+\draw[blue,dashed,rounded corners=5pt] (.4,.25) rectangle (14.6,1.65);
+\node[font=\sffamily\footnotesize,anchor=west] at (.7,1.25) {Next: SDK};
+\draw[edge,fill=white] (3.3,.5) rectangle (5.2,1.4);
+\node[font=\ttfamily\small] at (4.25,.95) {< code >};
+\draw[blue,dashed,->] (5.4,.95)--(6.5,.95);
+\node[font=\sffamily\footnotesize,align=left] at (9.7,.95) {extension instructions + checks\\configurable tools, roles and task topology};
+\draw[blue,dashed,->] (5.2,2.1)--(5.2,1.7);
+
+\end{tikzpicture}

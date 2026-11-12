@@ -1,0 +1,1333 @@
+{
+  "figure_specs": [
+    {
+      "id": "dd-backend-change",
+      "kind": "tikz",
+      "title": "A claim remains connected to the basis of its revision",
+      "question": "What happens to a claim and its dependent text when the evidence or source changes?",
+      "caption": "Conceptual account of the current Writing App owner mechanism. A source passage, interpreted result and canonical claim retain separate identities. A human or agent proposes a change against an inspected revision. The owning operation checks authority and the expected basis, records the accepted transition and exposes affected dependencies for review. Work and history retain the request, outcome and recovery route. A current source pin establishes which bytes were used, not whether a source entails a claim. Scientific support is an authored judgement supplemented by scoped numerical, formal and independent review evidence where available. The same owners serve browser and agent interfaces. This diagram describes an implemented workflow principle, not an automatic theorem-proving or fully self-improving SDK.",
+      "tikz": "\\begin{tikzpicture}[x=1cm,y=1cm,font=\\rmfamily\\footnotesize]\n\\definecolor{blue}{HTML}{0072B2}\n\\definecolor{teal}{HTML}{009E73}\n\\definecolor{amber}{HTML}{D55E00}\n\\tikzset{box/.style={draw=blue,fill=blue!3,rounded corners=1mm,align=center,text width=2.5cm,minimum height=1.25cm,line width=.7pt},arr/.style={->,line width=.8pt,blue}}\n\\node[box] (basis) at (1.4,2.8) {\\textbf{Exact basis}\\\\source passage\\\\interpreted result};\n\\node[box] (claim) at (4.8,2.8) {\\textbf{Canonical claim}\\\\meaning and scope\\\\typed links};\n\\node[box] (change) at (8.2,2.8) {\\textbf{Guarded change}\\\\owning operation\\\\authority + revision};\n\\node[box,draw=teal,fill=teal!4] (review) at (11.6,2.8) {\\textbf{Review frontier}\\\\dependent material\\\\retain or revise};\n\\draw[arr] (basis)--(claim);\n\\draw[arr] (claim)--(change);\n\\draw[arr] (change)--(review);\n\\node[draw=amber,fill=amber!3,rounded corners=1mm,align=center,text width=5cm,minimum height=1cm] (human) at (7.4,.7) {\\textbf{Human or agent review}\\\\judge support and accept revisions};\n\\draw[->,amber,line width=.8pt] (human.north)--(change.south);\n\\draw[->,teal,line width=.8pt] (review.south)--(11.6,.7)--(human.east);\n\\node[draw=teal,fill=teal!3,rounded corners=1mm,align=center,text width=11.8cm,minimum height=.8cm] at (6.5,-1) {\\textbf{Work and history}\\quad request $\\rightarrow$ action $\\rightarrow$ outcome $\\rightarrow$ recovery};\n\\end{tikzpicture}",
+      "render": {
+        "outputs": [
+          "figures/generated/dd-backend-change.pdf",
+          "figures/generated/dd-backend-change.png",
+          "figures/generated/dd-backend-change.svg",
+          "figures/generated/dd-backend-change.tikz"
+        ],
+        "renderer": "tikz-pdf",
+        "input_digest": "db2c818151e8829776266d6c21a2e15c55dade3e82e4b7128fe1ae90396ebced",
+        "drawing_input_digest": "db2c818151e8829776266d6c21a2e15c55dade3e82e4b7128fe1ae90396ebced",
+        "drawing_inputs": {
+          "spec": {
+            "id": "dd-backend-change",
+            "kind": "tikz"
+          },
+          "tikz": "380fab921cc2c2670392ff518b487854e778506a55f5122f6da68a2ff8d49866"
+        },
+        "research_bindings": [],
+        "presentation_metadata": {
+          "title": "A claim remains connected to the basis of its revision",
+          "question": "What happens to a claim and its dependent text when the evidence or source changes?",
+          "caption": "Conceptual account of the current Writing App owner mechanism. A source passage, interpreted result and canonical claim retain separate identities. A human or agent proposes a change against an inspected revision. The owning operation checks authority and the expected basis, records the accepted transition and exposes affected dependencies for review. Work and history retain the request, outcome and recovery route. A current source pin establishes which bytes were used, not whether a source entails a claim. Scientific support is an authored judgement supplemented by scoped numerical, formal and independent review evidence where available. The same owners serve browser and agent interfaces. This diagram describes an implemented workflow principle, not an automatic theorem-proving or fully self-improving SDK.",
+          "source_data": null,
+          "source": null
+        },
+        "style_version": "a52b7af5b0793b1803d7220d6682ba6564c38bb38650f7366410d709347f3364",
+        "style_profile": "profiles/visual_style.json",
+        "visual_review": "pending",
+        "output_digests": {
+          "figures/generated/dd-backend-change.pdf": "b12fd5d809059af0f6c57c9372c4d04febcf71acefc3b3b6f90c45e007966a08",
+          "figures/generated/dd-backend-change.png": "121daee0c8e6d8b4fd5fadaa92fc985b20d5efd3d2275510b1a24e15ceac5300",
+          "figures/generated/dd-backend-change.svg": "8adcd0308e40ee50640107d5a6d68a56bf5c48bb1dd5f77348fdf134136c677c",
+          "figures/generated/dd-backend-change.tikz": "380fab921cc2c2670392ff518b487854e778506a55f5122f6da68a2ff8d49866"
+        }
+      },
+      "section": "working-draft/chapters/the-backend-objects-authority-and-revision.tex",
+      "section_scope": "manuscript",
+      "section_repo_file": "writing_projects/eigen-technical-due-diligence-briefing/manuscript/working-draft/chapters/the-backend-objects-authority-and-revision.tex"
+    },
+    {
+      "id": "dd-shared-register-price",
+      "kind": "artifact",
+      "run_id": "run-3af475ad8f2640ed",
+      "artifact_id": "dd-shared-register-aps",
+      "title": "When is a shared register worth its cost?",
+      "question": "When should two minimisers stop sharing a register?",
+      "caption": "Mathematical illustration of the shared-register model. (a) Two tasks prefer a and b, while their equally weighted quadratic compromise is q*=(a+b)/2. (b) Optimised fixed-register loss L_B* and partition-enabled loss L_C* versus disagreement angle theta, with gamma=1, eta=0.8 and partition price C_part=0.25 in the source's dimensionless loss units. Separation becomes cheaper at theta=0.8411 rad, before the fixed-register optimum sacrifices a task at theta=1.0853 rad. The data are analytic model values from the retained illustration run, not measured performance.",
+      "result_ids": [
+        "dd-representation-illustrations"
+      ],
+      "render": {
+        "outputs": [
+          "figures/generated/dd-shared-register-price.pdf",
+          "figures/generated/dd-shared-register-price.svg",
+          "figures/generated/dd-shared-register-price.png"
+        ],
+        "renderer": "supervised-run-artifact",
+        "source_provenance": {
+          "run_id": "run-3af475ad8f2640ed",
+          "producer_id": "dd-publication-figures",
+          "result_path": "research_runs/run-3af475ad8f2640ed.result.json",
+          "result_sha256": "54f389799656bed23257038a57ff002440b0fee81d177b76575cfc6c3a8565b6",
+          "artifact_id": "dd-shared-register-aps",
+          "source_digests": {
+            "pdf": "b14bbfbd74728a450d78b2165abc1783f75fb12512afc5751563f113db195ba2",
+            "svg": "43cafd9d918d5faae55ee622c98af59181d79bdaab0b578cff934ed58347b2a9",
+            "png": "72ce0447a8d810bf928285cdb3b90b6bb19aaad94bf0a7ae33c71b81c5f53e62"
+          },
+          "source_paths": {
+            "pdf": "manuscript/research_runs/run-3af475ad8f2640ed.result-aps/dd-shared-register-aps.pdf",
+            "svg": "manuscript/research_runs/run-3af475ad8f2640ed.result-aps/dd-shared-register-aps.svg",
+            "png": "manuscript/research_runs/run-3af475ad8f2640ed.result-aps/dd-shared-register-aps.png"
+          },
+          "output_observation": "CURRENT_BYTES_NAMED_BY_SUPERVISED_RESULT",
+          "historical_output_verification": "NOT_ESTABLISHED"
+        },
+        "input_digest": "54af4ce35003706271e620a958509454c070a6335b2740406e9056a092868e93",
+        "drawing_input_digest": "54af4ce35003706271e620a958509454c070a6335b2740406e9056a092868e93",
+        "drawing_inputs": {
+          "spec": {
+            "id": "dd-shared-register-price",
+            "kind": "artifact",
+            "run_id": "run-3af475ad8f2640ed",
+            "artifact_id": "dd-shared-register-aps"
+          },
+          "supervised_run": {
+            "run_id": "run-3af475ad8f2640ed",
+            "producer_id": "dd-publication-figures",
+            "result_path": "research_runs/run-3af475ad8f2640ed.result.json",
+            "result_sha256": "54f389799656bed23257038a57ff002440b0fee81d177b76575cfc6c3a8565b6",
+            "artifact_id": "dd-shared-register-aps",
+            "source_paths": {
+              "pdf": "manuscript/research_runs/run-3af475ad8f2640ed.result-aps/dd-shared-register-aps.pdf",
+              "svg": "manuscript/research_runs/run-3af475ad8f2640ed.result-aps/dd-shared-register-aps.svg",
+              "png": "manuscript/research_runs/run-3af475ad8f2640ed.result-aps/dd-shared-register-aps.png"
+            },
+            "source_digests": {
+              "pdf": "b14bbfbd74728a450d78b2165abc1783f75fb12512afc5751563f113db195ba2",
+              "svg": "43cafd9d918d5faae55ee622c98af59181d79bdaab0b578cff934ed58347b2a9",
+              "png": "72ce0447a8d810bf928285cdb3b90b6bb19aaad94bf0a7ae33c71b81c5f53e62"
+            },
+            "output_observation": "CURRENT_BYTES_NAMED_BY_SUPERVISED_RESULT",
+            "historical_output_verification": "NOT_ESTABLISHED"
+          }
+        },
+        "research_bindings": [
+          {
+            "id": "dd-representation-illustrations",
+            "revision": "sha256:a87ca75c344b89be076f4a1d1f7a887de5bbd98f8ee02eaaaf30ebe6423ab7f5",
+            "currentness": "CURRENT"
+          }
+        ],
+        "presentation_metadata": {
+          "title": "When is a shared register worth its cost?",
+          "question": "When should two minimisers stop sharing a register?",
+          "caption": "Mathematical illustration of the shared-register model. (a) Two tasks prefer a and b, while their equally weighted quadratic compromise is q*=(a+b)/2. (b) Optimised fixed-register loss L_B* and partition-enabled loss L_C* versus disagreement angle theta, with gamma=1, eta=0.8 and partition price C_part=0.25 in the source's dimensionless loss units. Separation becomes cheaper at theta=0.8411 rad, before the fixed-register optimum sacrifices a task at theta=1.0853 rad. The data are analytic model values from the retained illustration run, not measured performance.",
+          "source_data": null,
+          "source": null
+        },
+        "style_version": "a52b7af5b0793b1803d7220d6682ba6564c38bb38650f7366410d709347f3364",
+        "style_profile": null,
+        "visual_review": "pending",
+        "output_digests": {
+          "figures/generated/dd-shared-register-price.pdf": "b14bbfbd74728a450d78b2165abc1783f75fb12512afc5751563f113db195ba2",
+          "figures/generated/dd-shared-register-price.svg": "43cafd9d918d5faae55ee622c98af59181d79bdaab0b578cff934ed58347b2a9",
+          "figures/generated/dd-shared-register-price.png": "72ce0447a8d810bf928285cdb3b90b6bb19aaad94bf0a7ae33c71b81c5f53e62"
+        }
+      },
+      "section": "working-draft/chapters/the-price-of-a-shared-description.tex",
+      "section_scope": "manuscript",
+      "section_repo_file": "writing_projects/eigen-technical-due-diligence-briefing/manuscript/working-draft/chapters/the-price-of-a-shared-description.tex"
+    },
+    {
+      "id": "dd-retention-trajectories",
+      "title": "When a summary loses predictive state",
+      "question": "Why do two equal coarse states have different futures?",
+      "caption": "Exact mathematical trajectories for the constructed four-state process. p_A(t) is probability in region A. Two initial microstates have p_A(0)=1 but different hidden imbalance z. The coarse model omitting z predicts one intermediate trajectory. Retaining z, or the exact memory kernel obtained by eliminating it, recovers both curves. Time is measured in units inverse to the base transition rate. No experimental data or fitted dynamics are used.",
+      "kind": "artifact",
+      "run_id": "run-3af475ad8f2640ed",
+      "artifact_id": "dd-retention-trajectories-aps",
+      "result_ids": [
+        "dd-representation-illustrations"
+      ],
+      "render": {
+        "outputs": [
+          "figures/generated/dd-retention-trajectories.pdf",
+          "figures/generated/dd-retention-trajectories.svg",
+          "figures/generated/dd-retention-trajectories.png"
+        ],
+        "renderer": "supervised-run-artifact",
+        "source_provenance": {
+          "run_id": "run-3af475ad8f2640ed",
+          "producer_id": "dd-publication-figures",
+          "result_path": "research_runs/run-3af475ad8f2640ed.result.json",
+          "result_sha256": "54f389799656bed23257038a57ff002440b0fee81d177b76575cfc6c3a8565b6",
+          "artifact_id": "dd-retention-trajectories-aps",
+          "source_digests": {
+            "pdf": "e3fd1623520c41c62481a5ffcd23e9aa6c8887b084a08de3a3b3c5d0c10f70cd",
+            "svg": "a1190ca515697ed9e96754632a10382789bc2b10834e6e34cf235dc6bd7efa85",
+            "png": "6000ebc2fa1fdd7aef8762ef54f85be996f64d804467cd987223d128856a3493"
+          },
+          "source_paths": {
+            "pdf": "manuscript/research_runs/run-3af475ad8f2640ed.result-aps/dd-retention-trajectories-aps.pdf",
+            "svg": "manuscript/research_runs/run-3af475ad8f2640ed.result-aps/dd-retention-trajectories-aps.svg",
+            "png": "manuscript/research_runs/run-3af475ad8f2640ed.result-aps/dd-retention-trajectories-aps.png"
+          },
+          "output_observation": "CURRENT_BYTES_NAMED_BY_SUPERVISED_RESULT",
+          "historical_output_verification": "NOT_ESTABLISHED"
+        },
+        "input_digest": "63daf92d4ad6cbb17017e1ecc792266d8eea557adab071ac2eafd1069c561b1c",
+        "drawing_input_digest": "63daf92d4ad6cbb17017e1ecc792266d8eea557adab071ac2eafd1069c561b1c",
+        "drawing_inputs": {
+          "spec": {
+            "id": "dd-retention-trajectories",
+            "kind": "artifact",
+            "run_id": "run-3af475ad8f2640ed",
+            "artifact_id": "dd-retention-trajectories-aps"
+          },
+          "supervised_run": {
+            "run_id": "run-3af475ad8f2640ed",
+            "producer_id": "dd-publication-figures",
+            "result_path": "research_runs/run-3af475ad8f2640ed.result.json",
+            "result_sha256": "54f389799656bed23257038a57ff002440b0fee81d177b76575cfc6c3a8565b6",
+            "artifact_id": "dd-retention-trajectories-aps",
+            "source_paths": {
+              "pdf": "manuscript/research_runs/run-3af475ad8f2640ed.result-aps/dd-retention-trajectories-aps.pdf",
+              "svg": "manuscript/research_runs/run-3af475ad8f2640ed.result-aps/dd-retention-trajectories-aps.svg",
+              "png": "manuscript/research_runs/run-3af475ad8f2640ed.result-aps/dd-retention-trajectories-aps.png"
+            },
+            "source_digests": {
+              "pdf": "e3fd1623520c41c62481a5ffcd23e9aa6c8887b084a08de3a3b3c5d0c10f70cd",
+              "svg": "a1190ca515697ed9e96754632a10382789bc2b10834e6e34cf235dc6bd7efa85",
+              "png": "6000ebc2fa1fdd7aef8762ef54f85be996f64d804467cd987223d128856a3493"
+            },
+            "output_observation": "CURRENT_BYTES_NAMED_BY_SUPERVISED_RESULT",
+            "historical_output_verification": "NOT_ESTABLISHED"
+          }
+        },
+        "research_bindings": [
+          {
+            "id": "dd-representation-illustrations",
+            "revision": "sha256:a87ca75c344b89be076f4a1d1f7a887de5bbd98f8ee02eaaaf30ebe6423ab7f5",
+            "currentness": "CURRENT"
+          }
+        ],
+        "presentation_metadata": {
+          "title": "When a summary loses predictive state",
+          "question": "Why do two equal coarse states have different futures?",
+          "caption": "Exact mathematical trajectories for the constructed four-state process. p_A(t) is probability in region A. Two initial microstates have p_A(0)=1 but different hidden imbalance z. The coarse model omitting z predicts one intermediate trajectory. Retaining z, or the exact memory kernel obtained by eliminating it, recovers both curves. Time is measured in units inverse to the base transition rate. No experimental data or fitted dynamics are used.",
+          "source_data": null,
+          "source": null
+        },
+        "style_version": "a52b7af5b0793b1803d7220d6682ba6564c38bb38650f7366410d709347f3364",
+        "style_profile": null,
+        "visual_review": "pending",
+        "output_digests": {
+          "figures/generated/dd-retention-trajectories.pdf": "e3fd1623520c41c62481a5ffcd23e9aa6c8887b084a08de3a3b3c5d0c10f70cd",
+          "figures/generated/dd-retention-trajectories.svg": "a1190ca515697ed9e96754632a10382789bc2b10834e6e34cf235dc6bd7efa85",
+          "figures/generated/dd-retention-trajectories.png": "6000ebc2fa1fdd7aef8762ef54f85be996f64d804467cd987223d128856a3493"
+        }
+      },
+      "section": "working-draft/chapters/what-a-useful-summary-must-remember.tex",
+      "section_scope": "manuscript",
+      "section_repo_file": "writing_projects/eigen-technical-due-diligence-briefing/manuscript/working-draft/chapters/what-a-useful-summary-must-remember.tex"
+    },
+    {
+      "id": "dd-global-local-feedback",
+      "title": "The same target, different gradient scaling",
+      "question": "How can local and global objectives share an optimum but give different feedback?",
+      "caption": "Analytic gradient variances for the product-state example of Cerezo et al. C_G=1-product_j cos^2(theta_j/2) and C_L=1-(1/n)sum_j cos^2(theta_j/2) have the same zero-cost target. For independent uniform angles, Var(partial_j C_G)=(1/8)(3/8)^(n-1), whereas Var(partial_j C_L)=1/(8n^2). n is the number of qubits. These curves are exact values in that model, not hardware measurements or a general convergence guarantee.",
+      "kind": "artifact",
+      "run_id": "run-3af475ad8f2640ed",
+      "artifact_id": "dd-global-local-aps",
+      "result_ids": [
+        "dd-representation-illustrations"
+      ],
+      "render": {
+        "outputs": [
+          "figures/generated/dd-global-local-feedback.pdf",
+          "figures/generated/dd-global-local-feedback.svg",
+          "figures/generated/dd-global-local-feedback.png"
+        ],
+        "renderer": "supervised-run-artifact",
+        "source_provenance": {
+          "run_id": "run-3af475ad8f2640ed",
+          "producer_id": "dd-publication-figures",
+          "result_path": "research_runs/run-3af475ad8f2640ed.result.json",
+          "result_sha256": "54f389799656bed23257038a57ff002440b0fee81d177b76575cfc6c3a8565b6",
+          "artifact_id": "dd-global-local-aps",
+          "source_digests": {
+            "pdf": "43cfe04aca10d4b53dfdd3619c3cfd338ed70580279bd5718cb81c687fba19f8",
+            "svg": "8fc41a0bcd1f77aeb33aa84fb32c270304664c0d4eeed5263862420465d4b3c5",
+            "png": "3cf26a8dc42f2f7f502486f0336e1ac1221b31f8d9b790195b8b902b097366bc"
+          },
+          "source_paths": {
+            "pdf": "manuscript/research_runs/run-3af475ad8f2640ed.result-aps/dd-global-local-aps.pdf",
+            "svg": "manuscript/research_runs/run-3af475ad8f2640ed.result-aps/dd-global-local-aps.svg",
+            "png": "manuscript/research_runs/run-3af475ad8f2640ed.result-aps/dd-global-local-aps.png"
+          },
+          "output_observation": "CURRENT_BYTES_NAMED_BY_SUPERVISED_RESULT",
+          "historical_output_verification": "NOT_ESTABLISHED"
+        },
+        "input_digest": "b3949557598a27a6b98336fa28f03283a56a8c91be92946540bbe33579c2521e",
+        "drawing_input_digest": "b3949557598a27a6b98336fa28f03283a56a8c91be92946540bbe33579c2521e",
+        "drawing_inputs": {
+          "spec": {
+            "id": "dd-global-local-feedback",
+            "kind": "artifact",
+            "run_id": "run-3af475ad8f2640ed",
+            "artifact_id": "dd-global-local-aps"
+          },
+          "supervised_run": {
+            "run_id": "run-3af475ad8f2640ed",
+            "producer_id": "dd-publication-figures",
+            "result_path": "research_runs/run-3af475ad8f2640ed.result.json",
+            "result_sha256": "54f389799656bed23257038a57ff002440b0fee81d177b76575cfc6c3a8565b6",
+            "artifact_id": "dd-global-local-aps",
+            "source_paths": {
+              "pdf": "manuscript/research_runs/run-3af475ad8f2640ed.result-aps/dd-global-local-aps.pdf",
+              "svg": "manuscript/research_runs/run-3af475ad8f2640ed.result-aps/dd-global-local-aps.svg",
+              "png": "manuscript/research_runs/run-3af475ad8f2640ed.result-aps/dd-global-local-aps.png"
+            },
+            "source_digests": {
+              "pdf": "43cfe04aca10d4b53dfdd3619c3cfd338ed70580279bd5718cb81c687fba19f8",
+              "svg": "8fc41a0bcd1f77aeb33aa84fb32c270304664c0d4eeed5263862420465d4b3c5",
+              "png": "3cf26a8dc42f2f7f502486f0336e1ac1221b31f8d9b790195b8b902b097366bc"
+            },
+            "output_observation": "CURRENT_BYTES_NAMED_BY_SUPERVISED_RESULT",
+            "historical_output_verification": "NOT_ESTABLISHED"
+          }
+        },
+        "research_bindings": [
+          {
+            "id": "dd-representation-illustrations",
+            "revision": "sha256:a87ca75c344b89be076f4a1d1f7a887de5bbd98f8ee02eaaaf30ebe6423ab7f5",
+            "currentness": "CURRENT"
+          }
+        ],
+        "presentation_metadata": {
+          "title": "The same target, different gradient scaling",
+          "question": "How can local and global objectives share an optimum but give different feedback?",
+          "caption": "Analytic gradient variances for the product-state example of Cerezo et al. C_G=1-product_j cos^2(theta_j/2) and C_L=1-(1/n)sum_j cos^2(theta_j/2) have the same zero-cost target. For independent uniform angles, Var(partial_j C_G)=(1/8)(3/8)^(n-1), whereas Var(partial_j C_L)=1/(8n^2). n is the number of qubits. These curves are exact values in that model, not hardware measurements or a general convergence guarantee.",
+          "source_data": null,
+          "source": null
+        },
+        "style_version": "a52b7af5b0793b1803d7220d6682ba6564c38bb38650f7366410d709347f3364",
+        "style_profile": null,
+        "visual_review": "pending",
+        "output_digests": {
+          "figures/generated/dd-global-local-feedback.pdf": "43cfe04aca10d4b53dfdd3619c3cfd338ed70580279bd5718cb81c687fba19f8",
+          "figures/generated/dd-global-local-feedback.svg": "8fc41a0bcd1f77aeb33aa84fb32c270304664c0d4eeed5263862420465d4b3c5",
+          "figures/generated/dd-global-local-feedback.png": "3cf26a8dc42f2f7f502486f0336e1ac1221b31f8d9b790195b8b902b097366bc"
+        }
+      },
+      "section": "working-draft/chapters/loss-dynamics-and-the-choice-of-scale.tex",
+      "section_scope": "manuscript",
+      "section_repo_file": "writing_projects/eigen-technical-due-diligence-briefing/manuscript/working-draft/chapters/loss-dynamics-and-the-choice-of-scale.tex"
+    },
+    {
+      "id": "dd-operator-projection",
+      "title": "Scalar concentration and retained operator content",
+      "question": "Does a small scalar gradient mean that the operator variation is small?",
+      "caption": "Archived classical calculations from the operatorial-loss prototype, seed 20240603 and 2000 samples per point. (a) Variance of the scalar gradient g decreases with qubit number n. (b) The recorded normalised operator-gradient fraction r_op remains near one half. Error bars in (b) are the archived sample standard deviations, not standard errors or confidence intervals. Local and global observable ensembles nearly coincide in this particular experiment. The result contrasts projected scalar feedback with retained operator content. It does not demonstrate that this operator can be measured or optimised at no additional cost.",
+      "kind": "artifact",
+      "run_id": "run-3af475ad8f2640ed",
+      "artifact_id": "dd-operator-projection-aps",
+      "result_ids": [
+        "dd-archived-operator-projection"
+      ],
+      "render": {
+        "outputs": [
+          "figures/generated/dd-operator-projection.pdf",
+          "figures/generated/dd-operator-projection.svg",
+          "figures/generated/dd-operator-projection.png"
+        ],
+        "renderer": "supervised-run-artifact",
+        "source_provenance": {
+          "run_id": "run-3af475ad8f2640ed",
+          "producer_id": "dd-publication-figures",
+          "result_path": "research_runs/run-3af475ad8f2640ed.result.json",
+          "result_sha256": "54f389799656bed23257038a57ff002440b0fee81d177b76575cfc6c3a8565b6",
+          "artifact_id": "dd-operator-projection-aps",
+          "source_digests": {
+            "pdf": "7d94866978362e2aedead4026d93306610d4035dd4d73666f672fa774f32f398",
+            "svg": "3f24a220bf5c7fbba14aac638b12c7fe352ebfc48bf1b37261ce5d092f6d374a",
+            "png": "b193b08471e540bf2dcda3cb121f329b2a8e4074fcb1398f0804108fd324020b"
+          },
+          "source_paths": {
+            "pdf": "manuscript/research_runs/run-3af475ad8f2640ed.result-aps/dd-operator-projection-aps.pdf",
+            "svg": "manuscript/research_runs/run-3af475ad8f2640ed.result-aps/dd-operator-projection-aps.svg",
+            "png": "manuscript/research_runs/run-3af475ad8f2640ed.result-aps/dd-operator-projection-aps.png"
+          },
+          "output_observation": "CURRENT_BYTES_NAMED_BY_SUPERVISED_RESULT",
+          "historical_output_verification": "NOT_ESTABLISHED"
+        },
+        "input_digest": "5135c68521c7e1f984e073d43f465b48860d2ff757afec9123842dc14239b0db",
+        "drawing_input_digest": "5135c68521c7e1f984e073d43f465b48860d2ff757afec9123842dc14239b0db",
+        "drawing_inputs": {
+          "spec": {
+            "id": "dd-operator-projection",
+            "kind": "artifact",
+            "run_id": "run-3af475ad8f2640ed",
+            "artifact_id": "dd-operator-projection-aps"
+          },
+          "supervised_run": {
+            "run_id": "run-3af475ad8f2640ed",
+            "producer_id": "dd-publication-figures",
+            "result_path": "research_runs/run-3af475ad8f2640ed.result.json",
+            "result_sha256": "54f389799656bed23257038a57ff002440b0fee81d177b76575cfc6c3a8565b6",
+            "artifact_id": "dd-operator-projection-aps",
+            "source_paths": {
+              "pdf": "manuscript/research_runs/run-3af475ad8f2640ed.result-aps/dd-operator-projection-aps.pdf",
+              "svg": "manuscript/research_runs/run-3af475ad8f2640ed.result-aps/dd-operator-projection-aps.svg",
+              "png": "manuscript/research_runs/run-3af475ad8f2640ed.result-aps/dd-operator-projection-aps.png"
+            },
+            "source_digests": {
+              "pdf": "7d94866978362e2aedead4026d93306610d4035dd4d73666f672fa774f32f398",
+              "svg": "3f24a220bf5c7fbba14aac638b12c7fe352ebfc48bf1b37261ce5d092f6d374a",
+              "png": "b193b08471e540bf2dcda3cb121f329b2a8e4074fcb1398f0804108fd324020b"
+            },
+            "output_observation": "CURRENT_BYTES_NAMED_BY_SUPERVISED_RESULT",
+            "historical_output_verification": "NOT_ESTABLISHED"
+          }
+        },
+        "research_bindings": [
+          {
+            "id": "dd-archived-operator-projection",
+            "revision": "sha256:8624db91c7dcf5d37e5c6bb6bd67a03ba52373cf58496e1c3903c414d92c1466",
+            "currentness": "CURRENT"
+          }
+        ],
+        "presentation_metadata": {
+          "title": "Scalar concentration and retained operator content",
+          "question": "Does a small scalar gradient mean that the operator variation is small?",
+          "caption": "Archived classical calculations from the operatorial-loss prototype, seed 20240603 and 2000 samples per point. (a) Variance of the scalar gradient g decreases with qubit number n. (b) The recorded normalised operator-gradient fraction r_op remains near one half. Error bars in (b) are the archived sample standard deviations, not standard errors or confidence intervals. Local and global observable ensembles nearly coincide in this particular experiment. The result contrasts projected scalar feedback with retained operator content. It does not demonstrate that this operator can be measured or optimised at no additional cost.",
+          "source_data": null,
+          "source": null
+        },
+        "style_version": "a52b7af5b0793b1803d7220d6682ba6564c38bb38650f7366410d709347f3364",
+        "style_profile": null,
+        "visual_review": "pending",
+        "output_digests": {
+          "figures/generated/dd-operator-projection.pdf": "7d94866978362e2aedead4026d93306610d4035dd4d73666f672fa774f32f398",
+          "figures/generated/dd-operator-projection.svg": "3f24a220bf5c7fbba14aac638b12c7fe352ebfc48bf1b37261ce5d092f6d374a",
+          "figures/generated/dd-operator-projection.png": "b193b08471e540bf2dcda3cb121f329b2a8e4074fcb1398f0804108fd324020b"
+        }
+      },
+      "section": "working-draft/chapters/quantum-prototypes-changing-the-calculation.tex",
+      "section_scope": "manuscript",
+      "section_repo_file": "writing_projects/eigen-technical-due-diligence-briefing/manuscript/working-draft/chapters/quantum-prototypes-changing-the-calculation.tex"
+    },
+    {
+      "id": "dd-gap-selection",
+      "title": "Residual amplitude versus gap-aware value",
+      "question": "Which omitted direction most improves the retained ground-state calculation?",
+      "caption": "Archived reduced-space comparison from the residual-method prototype. lambda scales the declared coupling and E_P-E_0 is the retained-space ground-energy error, both in the model's dimensionless units. Each method adds one direction from the same candidate pool. Selecting by raw residual amplitude chooses a high-gap channel, while the producer's amplitude-over-gap rule selects a more useful low-gap channel. The resulting finite-model error is substantially lower. This is not a hardware test or proof that every gap-aware enlargement converges.",
+      "kind": "artifact",
+      "run_id": "run-3af475ad8f2640ed",
+      "artifact_id": "dd-gap-selection-aps",
+      "result_ids": [
+        "dd-archived-quantum-replot"
+      ],
+      "render": {
+        "outputs": [
+          "figures/generated/dd-gap-selection.pdf",
+          "figures/generated/dd-gap-selection.svg",
+          "figures/generated/dd-gap-selection.png"
+        ],
+        "renderer": "supervised-run-artifact",
+        "source_provenance": {
+          "run_id": "run-3af475ad8f2640ed",
+          "producer_id": "dd-publication-figures",
+          "result_path": "research_runs/run-3af475ad8f2640ed.result.json",
+          "result_sha256": "54f389799656bed23257038a57ff002440b0fee81d177b76575cfc6c3a8565b6",
+          "artifact_id": "dd-gap-selection-aps",
+          "source_digests": {
+            "pdf": "cfe4740c85b7faabc89cc20377466cd07fb6be34b4989987a17c382b8bd79352",
+            "svg": "01b59743c2be87d519895d217b9ade2cf5fadc73c2939a56a4accc4be81024d4",
+            "png": "be87e2f08f404cbbd75a3042edb197dab983c9076b7af2f4197bc1ea9098746d"
+          },
+          "source_paths": {
+            "pdf": "manuscript/research_runs/run-3af475ad8f2640ed.result-aps/dd-gap-selection-aps.pdf",
+            "svg": "manuscript/research_runs/run-3af475ad8f2640ed.result-aps/dd-gap-selection-aps.svg",
+            "png": "manuscript/research_runs/run-3af475ad8f2640ed.result-aps/dd-gap-selection-aps.png"
+          },
+          "output_observation": "CURRENT_BYTES_NAMED_BY_SUPERVISED_RESULT",
+          "historical_output_verification": "NOT_ESTABLISHED"
+        },
+        "input_digest": "535eea32a857537f1e568c2ddb9ae77ddaf141f22375f774d1c72538de4a7782",
+        "drawing_input_digest": "535eea32a857537f1e568c2ddb9ae77ddaf141f22375f774d1c72538de4a7782",
+        "drawing_inputs": {
+          "spec": {
+            "id": "dd-gap-selection",
+            "kind": "artifact",
+            "run_id": "run-3af475ad8f2640ed",
+            "artifact_id": "dd-gap-selection-aps"
+          },
+          "supervised_run": {
+            "run_id": "run-3af475ad8f2640ed",
+            "producer_id": "dd-publication-figures",
+            "result_path": "research_runs/run-3af475ad8f2640ed.result.json",
+            "result_sha256": "54f389799656bed23257038a57ff002440b0fee81d177b76575cfc6c3a8565b6",
+            "artifact_id": "dd-gap-selection-aps",
+            "source_paths": {
+              "pdf": "manuscript/research_runs/run-3af475ad8f2640ed.result-aps/dd-gap-selection-aps.pdf",
+              "svg": "manuscript/research_runs/run-3af475ad8f2640ed.result-aps/dd-gap-selection-aps.svg",
+              "png": "manuscript/research_runs/run-3af475ad8f2640ed.result-aps/dd-gap-selection-aps.png"
+            },
+            "source_digests": {
+              "pdf": "cfe4740c85b7faabc89cc20377466cd07fb6be34b4989987a17c382b8bd79352",
+              "svg": "01b59743c2be87d519895d217b9ade2cf5fadc73c2939a56a4accc4be81024d4",
+              "png": "be87e2f08f404cbbd75a3042edb197dab983c9076b7af2f4197bc1ea9098746d"
+            },
+            "output_observation": "CURRENT_BYTES_NAMED_BY_SUPERVISED_RESULT",
+            "historical_output_verification": "NOT_ESTABLISHED"
+          }
+        },
+        "research_bindings": [
+          {
+            "id": "dd-archived-quantum-replot",
+            "revision": "sha256:c29ff9e2ebde4447759eddae000b42b0f186dc1ee3d7e113a66d20a31b73840d",
+            "currentness": "CURRENT"
+          }
+        ],
+        "presentation_metadata": {
+          "title": "Residual amplitude versus gap-aware value",
+          "question": "Which omitted direction most improves the retained ground-state calculation?",
+          "caption": "Archived reduced-space comparison from the residual-method prototype. lambda scales the declared coupling and E_P-E_0 is the retained-space ground-energy error, both in the model's dimensionless units. Each method adds one direction from the same candidate pool. Selecting by raw residual amplitude chooses a high-gap channel, while the producer's amplitude-over-gap rule selects a more useful low-gap channel. The resulting finite-model error is substantially lower. This is not a hardware test or proof that every gap-aware enlargement converges.",
+          "source_data": null,
+          "source": null
+        },
+        "style_version": "a52b7af5b0793b1803d7220d6682ba6564c38bb38650f7366410d709347f3364",
+        "style_profile": null,
+        "visual_review": "pending",
+        "output_digests": {
+          "figures/generated/dd-gap-selection.pdf": "cfe4740c85b7faabc89cc20377466cd07fb6be34b4989987a17c382b8bd79352",
+          "figures/generated/dd-gap-selection.svg": "01b59743c2be87d519895d217b9ade2cf5fadc73c2939a56a4accc4be81024d4",
+          "figures/generated/dd-gap-selection.png": "be87e2f08f404cbbd75a3042edb197dab983c9076b7af2f4197bc1ea9098746d"
+        }
+      },
+      "section": "working-draft/chapters/quantum-prototypes-changing-the-calculation.tex",
+      "section_scope": "manuscript",
+      "section_repo_file": "writing_projects/eigen-technical-due-diligence-briefing/manuscript/working-draft/chapters/quantum-prototypes-changing-the-calculation.tex"
+    },
+    {
+      "id": "dd-memory-parity",
+      "title": "A compact relation among distinct worlds",
+      "question": "Can a small continuation rule answer exact queries without scanning every unique world?",
+      "caption": "Retaining a relation rather than its list of instances. (a) Mathematical three-bit even-parity example under a uniform source law. Every pair of bits is independent, but two bits jointly determine the third. A running parity state suffices to represent allowed continuations. (b) Archived measurements for the 19-bit law with 262144 unique worlds, queries fixing four prefix coordinates and batch size Q. t_API is warm full-API time per batch. Small dots are all eleven samples and lines connect medians, not fitted scaling laws. Build, query preparation and process-first compilation are excluded. The same campaign records refusal for high-width laws and direct-scan wins on a duplicate-heavy control.",
+      "kind": "artifact",
+      "run_id": "run-3af475ad8f2640ed",
+      "artifact_id": "dd-memory-parity-aps",
+      "result_ids": [
+        "dd-archived-memory-replot"
+      ],
+      "render": {
+        "outputs": [
+          "figures/generated/dd-memory-parity.pdf",
+          "figures/generated/dd-memory-parity.svg",
+          "figures/generated/dd-memory-parity.png"
+        ],
+        "renderer": "supervised-run-artifact",
+        "source_provenance": {
+          "run_id": "run-3af475ad8f2640ed",
+          "producer_id": "dd-publication-figures",
+          "result_path": "research_runs/run-3af475ad8f2640ed.result.json",
+          "result_sha256": "54f389799656bed23257038a57ff002440b0fee81d177b76575cfc6c3a8565b6",
+          "artifact_id": "dd-memory-parity-aps",
+          "source_digests": {
+            "pdf": "2564fc60c7f42928e65468ef12f5df29c4eb4ddc04e070f9e412fdca38a139ef",
+            "svg": "dabdbc06281e9f26a0428099f47c16087ba1b7fa3521550b3dccd7da34951cc3",
+            "png": "d0131879686346bf60361445be01c264ce21be80150e7acfd1bbe81144472f7e"
+          },
+          "source_paths": {
+            "pdf": "manuscript/research_runs/run-3af475ad8f2640ed.result-aps/dd-memory-parity-aps.pdf",
+            "svg": "manuscript/research_runs/run-3af475ad8f2640ed.result-aps/dd-memory-parity-aps.svg",
+            "png": "manuscript/research_runs/run-3af475ad8f2640ed.result-aps/dd-memory-parity-aps.png"
+          },
+          "output_observation": "CURRENT_BYTES_NAMED_BY_SUPERVISED_RESULT",
+          "historical_output_verification": "NOT_ESTABLISHED"
+        },
+        "input_digest": "f67b549aa11e0bb9f01b25e51fe513d07833cd309524a0ea63fa6469b4b180a7",
+        "drawing_input_digest": "f67b549aa11e0bb9f01b25e51fe513d07833cd309524a0ea63fa6469b4b180a7",
+        "drawing_inputs": {
+          "spec": {
+            "id": "dd-memory-parity",
+            "kind": "artifact",
+            "run_id": "run-3af475ad8f2640ed",
+            "artifact_id": "dd-memory-parity-aps"
+          },
+          "supervised_run": {
+            "run_id": "run-3af475ad8f2640ed",
+            "producer_id": "dd-publication-figures",
+            "result_path": "research_runs/run-3af475ad8f2640ed.result.json",
+            "result_sha256": "54f389799656bed23257038a57ff002440b0fee81d177b76575cfc6c3a8565b6",
+            "artifact_id": "dd-memory-parity-aps",
+            "source_paths": {
+              "pdf": "manuscript/research_runs/run-3af475ad8f2640ed.result-aps/dd-memory-parity-aps.pdf",
+              "svg": "manuscript/research_runs/run-3af475ad8f2640ed.result-aps/dd-memory-parity-aps.svg",
+              "png": "manuscript/research_runs/run-3af475ad8f2640ed.result-aps/dd-memory-parity-aps.png"
+            },
+            "source_digests": {
+              "pdf": "2564fc60c7f42928e65468ef12f5df29c4eb4ddc04e070f9e412fdca38a139ef",
+              "svg": "dabdbc06281e9f26a0428099f47c16087ba1b7fa3521550b3dccd7da34951cc3",
+              "png": "d0131879686346bf60361445be01c264ce21be80150e7acfd1bbe81144472f7e"
+            },
+            "output_observation": "CURRENT_BYTES_NAMED_BY_SUPERVISED_RESULT",
+            "historical_output_verification": "NOT_ESTABLISHED"
+          }
+        },
+        "research_bindings": [
+          {
+            "id": "dd-archived-memory-replot",
+            "revision": "sha256:fd83c4e63b068a5c816bebae9119f4cd662622fc40546cedb2a8caf7850e34d0",
+            "currentness": "CURRENT"
+          }
+        ],
+        "presentation_metadata": {
+          "title": "A compact relation among distinct worlds",
+          "question": "Can a small continuation rule answer exact queries without scanning every unique world?",
+          "caption": "Retaining a relation rather than its list of instances. (a) Mathematical three-bit even-parity example under a uniform source law. Every pair of bits is independent, but two bits jointly determine the third. A running parity state suffices to represent allowed continuations. (b) Archived measurements for the 19-bit law with 262144 unique worlds, queries fixing four prefix coordinates and batch size Q. t_API is warm full-API time per batch. Small dots are all eleven samples and lines connect medians, not fitted scaling laws. Build, query preparation and process-first compilation are excluded. The same campaign records refusal for high-width laws and direct-scan wins on a duplicate-heavy control.",
+          "source_data": null,
+          "source": null
+        },
+        "style_version": "a52b7af5b0793b1803d7220d6682ba6564c38bb38650f7366410d709347f3364",
+        "style_profile": null,
+        "visual_review": "pending",
+        "output_digests": {
+          "figures/generated/dd-memory-parity.pdf": "2564fc60c7f42928e65468ef12f5df29c4eb4ddc04e070f9e412fdca38a139ef",
+          "figures/generated/dd-memory-parity.svg": "dabdbc06281e9f26a0428099f47c16087ba1b7fa3521550b3dccd7da34951cc3",
+          "figures/generated/dd-memory-parity.png": "d0131879686346bf60361445be01c264ce21be80150e7acfd1bbe81144472f7e"
+        }
+      },
+      "section": "working-draft/chapters/memory-as-a-retained-and-reconstructable-object.tex",
+      "section_scope": "manuscript",
+      "section_repo_file": "writing_projects/eigen-technical-due-diligence-briefing/manuscript/working-draft/chapters/memory-as-a-retained-and-reconstructable-object.tex"
+    },
+    {
+      "id": "dd-superarc-controls",
+      "kind": "artifact",
+      "run_id": "run-97ff1a89c89041e6",
+      "artifact_id": "dd-superarc-controls",
+      "title": "What changed the SuperARC score?",
+      "question": "How much of the recorded score separation survives common answer-format treatment?",
+      "caption": "Archived SuperARC campaign decomposition, N=100 twelve-term binary targets. (a) rho_k is the fraction in each correct-answer class. All three arms were recorded correct under the campaign's distinct correctness routes, but the bare arm is mostly in the penalised print-type class. (b) Delta phi compares loop and execute/fix arms. Removing commentary with the class assignments held fixed removes the positive separation. Horizontal intervals are the retained report's 95 percent paired-bootstrap bands at resample size100, seed20260804,100resamples. The re-binned point has no interval reported here. Scores concern formula text, while A2/A3 correctness used banked program execution. Prompt, search and format differences prevent these increments from isolating causal execution or recursion benefits. Replotted from archived report objects and the skeptic's explicitly transcribed control tables, not a new experiment.",
+      "result_ids": [
+        "dd-superarc-controls"
+      ],
+      "render": {
+        "outputs": [
+          "figures/generated/dd-superarc-controls.pdf",
+          "figures/generated/dd-superarc-controls.svg",
+          "figures/generated/dd-superarc-controls.png"
+        ],
+        "renderer": "supervised-run-artifact",
+        "source_provenance": {
+          "run_id": "run-97ff1a89c89041e6",
+          "producer_id": "dd-superarc-figure",
+          "result_path": "research_runs/run-97ff1a89c89041e6.result.json",
+          "result_sha256": "2202cb913f518ab3aa4d41336cee62fc3061c72d2d69e7c520a8f4934b9fab4b",
+          "artifact_id": "dd-superarc-controls",
+          "source_digests": {
+            "pdf": "578cb4ad7f62ef17ddfb461199b4deaa81be05562c9e0bed4b7a1cf3715beb02",
+            "svg": "120987caf33a06dcede214c84011acbd8a3aebb538fb6c838b14d878a607ad5b",
+            "png": "af8c83a84bab62b37f30d84f790fdbc42e739697382f72f8f9dd2c70bcade7db"
+          },
+          "source_paths": {
+            "pdf": "manuscript/research_runs/run-97ff1a89c89041e6.result-figures/dd-superarc-controls.pdf",
+            "svg": "manuscript/research_runs/run-97ff1a89c89041e6.result-figures/dd-superarc-controls.svg",
+            "png": "manuscript/research_runs/run-97ff1a89c89041e6.result-figures/dd-superarc-controls.png"
+          },
+          "output_observation": "CURRENT_BYTES_NAMED_BY_SUPERVISED_RESULT",
+          "historical_output_verification": "NOT_ESTABLISHED"
+        },
+        "input_digest": "7bad37acf3a352cb85bf5b50e78b5c53b6ebb9b9561194ce4e092dab7c2d9c3a",
+        "drawing_input_digest": "7bad37acf3a352cb85bf5b50e78b5c53b6ebb9b9561194ce4e092dab7c2d9c3a",
+        "drawing_inputs": {
+          "spec": {
+            "id": "dd-superarc-controls",
+            "kind": "artifact",
+            "run_id": "run-97ff1a89c89041e6",
+            "artifact_id": "dd-superarc-controls"
+          },
+          "supervised_run": {
+            "run_id": "run-97ff1a89c89041e6",
+            "producer_id": "dd-superarc-figure",
+            "result_path": "research_runs/run-97ff1a89c89041e6.result.json",
+            "result_sha256": "2202cb913f518ab3aa4d41336cee62fc3061c72d2d69e7c520a8f4934b9fab4b",
+            "artifact_id": "dd-superarc-controls",
+            "source_paths": {
+              "pdf": "manuscript/research_runs/run-97ff1a89c89041e6.result-figures/dd-superarc-controls.pdf",
+              "svg": "manuscript/research_runs/run-97ff1a89c89041e6.result-figures/dd-superarc-controls.svg",
+              "png": "manuscript/research_runs/run-97ff1a89c89041e6.result-figures/dd-superarc-controls.png"
+            },
+            "source_digests": {
+              "pdf": "578cb4ad7f62ef17ddfb461199b4deaa81be05562c9e0bed4b7a1cf3715beb02",
+              "svg": "120987caf33a06dcede214c84011acbd8a3aebb538fb6c838b14d878a607ad5b",
+              "png": "af8c83a84bab62b37f30d84f790fdbc42e739697382f72f8f9dd2c70bcade7db"
+            },
+            "output_observation": "CURRENT_BYTES_NAMED_BY_SUPERVISED_RESULT",
+            "historical_output_verification": "NOT_ESTABLISHED"
+          }
+        },
+        "research_bindings": [
+          {
+            "id": "dd-superarc-controls",
+            "revision": "sha256:e485fbe7b8667ddf7a0de69fa9749f350011282ca117165279c02428ff9c445f",
+            "currentness": "CURRENT"
+          }
+        ],
+        "presentation_metadata": {
+          "title": "What changed the SuperARC score?",
+          "question": "How much of the recorded score separation survives common answer-format treatment?",
+          "caption": "Archived SuperARC campaign decomposition, N=100 twelve-term binary targets. (a) rho_k is the fraction in each correct-answer class. All three arms were recorded correct under the campaign's distinct correctness routes, but the bare arm is mostly in the penalised print-type class. (b) Delta phi compares loop and execute/fix arms. Removing commentary with the class assignments held fixed removes the positive separation. Horizontal intervals are the retained report's 95 percent paired-bootstrap bands at resample size100, seed20260804,100resamples. The re-binned point has no interval reported here. Scores concern formula text, while A2/A3 correctness used banked program execution. Prompt, search and format differences prevent these increments from isolating causal execution or recursion benefits. Replotted from archived report objects and the skeptic's explicitly transcribed control tables, not a new experiment.",
+          "source_data": null,
+          "source": null
+        },
+        "style_version": "a52b7af5b0793b1803d7220d6682ba6564c38bb38650f7366410d709347f3364",
+        "style_profile": null,
+        "visual_review": "pending",
+        "output_digests": {
+          "figures/generated/dd-superarc-controls.pdf": "578cb4ad7f62ef17ddfb461199b4deaa81be05562c9e0bed4b7a1cf3715beb02",
+          "figures/generated/dd-superarc-controls.svg": "120987caf33a06dcede214c84011acbd8a3aebb538fb6c838b14d878a607ad5b",
+          "figures/generated/dd-superarc-controls.png": "af8c83a84bab62b37f30d84f790fdbc42e739697382f72f8f9dd2c70bcade7db"
+        }
+      },
+      "section": "working-draft/chapters/research-that-can-inspect-its-own-results.tex",
+      "section_scope": "manuscript",
+      "section_repo_file": "writing_projects/eigen-technical-due-diligence-briefing/manuscript/working-draft/chapters/research-that-can-inspect-its-own-results.tex"
+    },
+    {
+      "id": "dd-retention-memory",
+      "kind": "tikz",
+      "title": "What must a reduced description remember?",
+      "question": "Why can two identical coarse descriptions predict different futures, and what should be retained?",
+      "caption": "A mathematical illustration of task-relative retention. Four states exchange probability at the labelled symmetric rates. We ask only for the total probability in region A. Starting in state 1 or state 2 gives the same coarse answer, p_A=1, but different initial rates, -1 and -3. Retaining the imbalance z=(p_1-p_2)-(p_3-p_4) closes the prediction for y=p_A-p_B: y'=-4y+2z and z'=2y-12z. Eliminating z instead produces an exact memory term. This constructed example illustrates the projection and residual mechanisms developed in Foundations of Synthetics and Memory in Pieces. It is not an empirical performance result.",
+      "tikz": "\\begin{tikzpicture}[x=1cm,y=1cm,font=\\rmfamily\\small]\n\\definecolor{ink}{HTML}{203340}\n\\definecolor{blue}{HTML}{0072B2}\n\\definecolor{teal}{HTML}{009E73}\n\\definecolor{amber}{HTML}{D55E00}\n\\tikzset{state/.style={circle,draw=blue,fill=blue!7,minimum size=8mm,line width=0.9pt},head/.style={font=\\rmfamily\\bfseries,color=ink},box/.style={draw=teal,fill=teal!4,rounded corners=2mm,line width=0.8pt,align=center}}\n\\node[head,anchor=west] at (0,4.3) {1. The process};\n\\node[state] (a) at (0.7,3.3) {1};\n\\node[state] (b) at (0.7,1.6) {2};\n\\node[state] (c) at (3.1,3.3) {3};\n\\node[state] (d) at (3.1,1.6) {4};\n\\draw[<->,line width=1pt,ink] (a)--node[left]{4}(b);\n\\draw[<->,line width=1pt,ink] (c)--node[right]{4}(d);\n\\draw[<->,line width=1pt,ink] (a)--node[above]{1}(c);\n\\draw[<->,line width=1.8pt,amber] (b)--node[below]{3}(d);\n\\draw[blue,dashed,rounded corners] (0,0.9) rectangle (1.4,3.9);\n\\draw[teal,dashed,rounded corners] (2.4,0.9) rectangle (3.8,3.9);\n\\node[color=blue] at (0.7,0.5) {Region A};\n\\node[color=teal] at (3.1,0.5) {Region B};\n\\node[align=center,text width=3.9cm,color=ink,anchor=north] at (1.9,0.1) {Predict the mass in A.\\\\Rates: inverse time units.};\n\\draw[gray!35] (4.3,-0.7)--(4.3,4.4);\n\\node[head,anchor=west] at (4.7,4.3) {2. What is lost?};\n\\node[box,draw=blue,text width=3.1cm,minimum height=1cm] at (6.35,3.2) {Both starting states give\\\\$p_A=1,\\quad p_B=0$};\n\\node[align=center,text width=3.3cm,color=ink] at (6.35,1.85) {Start in 1: $p_A'(0)=-1$\\\\[3mm]Start in 2: $p_A'(0)=-3$};\n\\node[align=center,text width=3.4cm,color=amber] at (6.35,0.3) {Same coarse state,\\\\different futures.};\n\\draw[gray!35] (8.4,-0.7)--(8.4,4.4);\n\\node[head,anchor=west] at (8.8,4.3) {3. Recover the future};\n\\node[box,text width=4.2cm,minimum height=1.6cm] at (11,2.9) {Keep one imbalance $z$\\\\[2mm]$y'=-4y+2z$\\\\$z'=2y-12z$};\n\\draw[->,teal,line width=1pt] (11,1.95)--(11,1.7);\n\\node[align=center,text width=4.4cm,color=ink,anchor=north] at (11,1.6) {Or eliminate $z$ and retain its history:\\\\[2mm]$y'=-4y+2e^{-12t}z(0)$\\\\[1mm]$\\displaystyle\\quad+4\\int_0^t e^{-12(t-s)}y(s)\\,ds$};\n\\end{tikzpicture}",
+      "render": {
+        "outputs": [
+          "figures/generated/dd-retention-memory.pdf",
+          "figures/generated/dd-retention-memory.png",
+          "figures/generated/dd-retention-memory.svg",
+          "figures/generated/dd-retention-memory.tikz"
+        ],
+        "renderer": "tikz-pdf",
+        "input_digest": "fa6e4e93672e68c3be47ea1b2af58c7de698fa16fdc58c020050973930181890",
+        "drawing_input_digest": "fa6e4e93672e68c3be47ea1b2af58c7de698fa16fdc58c020050973930181890",
+        "drawing_inputs": {
+          "spec": {
+            "id": "dd-retention-memory",
+            "kind": "tikz"
+          },
+          "tikz": "31d67b75c224f396b173894f45a0ebba6380c725075d6fdbd673c72016d22809"
+        },
+        "research_bindings": [],
+        "presentation_metadata": {
+          "title": "What must a reduced description remember?",
+          "question": "Why can two identical coarse descriptions predict different futures, and what should be retained?",
+          "caption": "A mathematical illustration of task-relative retention. Four states exchange probability at the labelled symmetric rates. We ask only for the total probability in region A. Starting in state 1 or state 2 gives the same coarse answer, p_A=1, but different initial rates, -1 and -3. Retaining the imbalance z=(p_1-p_2)-(p_3-p_4) closes the prediction for y=p_A-p_B: y'=-4y+2z and z'=2y-12z. Eliminating z instead produces an exact memory term. This constructed example illustrates the projection and residual mechanisms developed in Foundations of Synthetics and Memory in Pieces. It is not an empirical performance result.",
+          "source_data": null,
+          "source": null
+        },
+        "style_version": "a52b7af5b0793b1803d7220d6682ba6564c38bb38650f7366410d709347f3364",
+        "style_profile": "profiles/visual_style.json",
+        "visual_review": "pending",
+        "output_digests": {
+          "figures/generated/dd-retention-memory.pdf": "bf78b1f01cd1f36f401f1927d54887b1e4074ee94028a0904aa9e918817adee4",
+          "figures/generated/dd-retention-memory.png": "a857f2aa47d50a09eeddcf743c7a245bda86e39a2dc23a9927feb4ee31c842af",
+          "figures/generated/dd-retention-memory.svg": "b8cdfccbdd2bf523056b62c4f0ab61c99ff7da6ff55c374ec06ed03319caa3f5",
+          "figures/generated/dd-retention-memory.tikz": "31d67b75c224f396b173894f45a0ebba6380c725075d6fdbd673c72016d22809"
+        }
+      },
+      "section": "working-draft/chapters/what-a-useful-summary-must-remember.tex",
+      "section_scope": "manuscript",
+      "section_repo_file": "writing_projects/eigen-technical-due-diligence-briefing/manuscript/working-draft/chapters/what-a-useful-summary-must-remember.tex"
+    },
+    {
+      "id": "dd-spectral-window",
+      "kind": "tikz",
+      "title": "Resolve the spectral window the task uses",
+      "question": "What does a Gaussian spectral filter retain, and what measurement resource does finer resolution demand?",
+      "caption": "Mathematical schematic for a self-adjoint H, real probe energy E_star and tau > 0, not a measured spectrum. Vertical marks represent possible energies. The Gaussian window has width proportional to tau^(-1/2). Its Fourier representation uses real-time evolution with typical time scale proportional to sqrt(tau), in units with hbar=1. Narrower energy resolution therefore requires longer-time information. ITQDE supplies an overlap-based construction and Free Snacks asks when the supported bandwidth can be treated locally. State support, quadrature error, denominator conditioning and measurement noise remain separate costs.",
+      "tikz": "\\begin{tikzpicture}[x=1cm,y=1cm,font=\\rmfamily\\small]\n\\definecolor{blue}{HTML}{0072B2}\n\\definecolor{teal}{HTML}{009E73}\n\\definecolor{orange}{HTML}{D55E00}\n\\draw[->] (0,0)--(12.6,0) node[right] {$E$};\n\\foreach \\x in {.5,1,1.7,2.4,4.7,5.2,5.5,5.8,6.1,6.5,9,9.6,11.2,12}{\n \\draw[blue,line width=1pt] (\\x,0)--(\\x,.6);\n}\n\\draw[teal,line width=1.4pt,domain=0:12,samples=100,smooth] plot (\\x,{1.6*exp(-(\\x-5.6)^2/1.2)});\n\\draw[orange,dashed] (5.6,0)--(5.6,1.9);\n\\node[orange,above] at (5.6,1.9) {$E_*$};\n\\node[teal,anchor=west] at (7.2,1.4) {$e^{-\\tau(E-E_*)^2}$};\n\\draw[<->,teal] (4.5,-.55)--(6.7,-.55);\n\\node[teal,below] at (5.6,-.55) {width $\\sim\\tau^{-1/2}$};\n\\node[align=center,text width=12.5cm] at (6,-1.9) {$\\displaystyle e^{-\\tau(H-E_*)^2}=\n\\frac{1}{\\sqrt{4\\pi\\tau}}\\int_{-\\infty}^{\\infty}\n e^{-s^2/(4\\tau)}e^{-is(H-E_*)}\\,ds$};\n\\node[align=center,text width=11.5cm] at (6,-3) {Narrower energy window $\\longleftrightarrow$ longer evolution times, $|s|\\sim\\sqrt{\\tau}$};\n\\end{tikzpicture}",
+      "render": {
+        "outputs": [
+          "figures/generated/dd-spectral-window.pdf",
+          "figures/generated/dd-spectral-window.png",
+          "figures/generated/dd-spectral-window.svg",
+          "figures/generated/dd-spectral-window.tikz"
+        ],
+        "renderer": "tikz-pdf",
+        "input_digest": "b2b705314422089df2d781acac9375aa92b0dbd68f8baca3c7c1ab48c2f6bc08",
+        "drawing_input_digest": "b2b705314422089df2d781acac9375aa92b0dbd68f8baca3c7c1ab48c2f6bc08",
+        "drawing_inputs": {
+          "spec": {
+            "id": "dd-spectral-window",
+            "kind": "tikz"
+          },
+          "tikz": "48482a27f82b83183605636531a6ddb4a186cd2f85262375af9a0343a3c2afcc"
+        },
+        "research_bindings": [],
+        "presentation_metadata": {
+          "title": "Resolve the spectral window the task uses",
+          "question": "What does a Gaussian spectral filter retain, and what measurement resource does finer resolution demand?",
+          "caption": "Mathematical schematic for a self-adjoint H, real probe energy E_star and tau > 0, not a measured spectrum. Vertical marks represent possible energies. The Gaussian window has width proportional to tau^(-1/2). Its Fourier representation uses real-time evolution with typical time scale proportional to sqrt(tau), in units with hbar=1. Narrower energy resolution therefore requires longer-time information. ITQDE supplies an overlap-based construction and Free Snacks asks when the supported bandwidth can be treated locally. State support, quadrature error, denominator conditioning and measurement noise remain separate costs.",
+          "source_data": null,
+          "source": null
+        },
+        "style_version": "a52b7af5b0793b1803d7220d6682ba6564c38bb38650f7366410d709347f3364",
+        "style_profile": "profiles/visual_style.json",
+        "visual_review": "pending",
+        "output_digests": {
+          "figures/generated/dd-spectral-window.pdf": "2cd6ad2afc5a4110384173a4eb2c61af07967dc9a6315d453fdf8bf786770689",
+          "figures/generated/dd-spectral-window.png": "6b469b16aa768ca46286548305d7b2728a21164e2ee68821ea9b637e0ef5ffb6",
+          "figures/generated/dd-spectral-window.svg": "1a630995c0539ee4fcdda8e032c2cf43f8951ad1f778e85c0b6f028061ed69f2",
+          "figures/generated/dd-spectral-window.tikz": "48482a27f82b83183605636531a6ddb4a186cd2f85262375af9a0343a3c2afcc"
+        }
+      },
+      "section": "working-draft/chapters/quantum-prototypes-changing-the-calculation.tex",
+      "section_scope": "manuscript",
+      "section_repo_file": "writing_projects/eigen-technical-due-diligence-briefing/manuscript/working-draft/chapters/quantum-prototypes-changing-the-calculation.tex"
+    },
+    {
+      "id": "dd-memory-mechanism",
+      "title": "From source items to a reconstructable answer",
+      "question": "What is retained, how is it queried, and where does refinement enter in the original and extended memory systems?",
+      "kind": "tikz",
+      "tikz": "\\begin{tikzpicture}[x=1cm,y=1cm,font=\\rmfamily\\small,box/.style={draw,rounded corners=2pt,align=left,text width=4.0cm,minimum height=2.1cm,inner sep=6pt},arr/.style={->,line width=1pt}]\n\\definecolor{blue}{HTML}{0072B2}\n\\definecolor{teal}{HTML}{009E73}\n\\definecolor{orange}{HTML}{D55E00}\n\\node[anchor=west,font=\\rmfamily\\bfseries] at (-2.2,1.6) {Corpus as a State: geometric retention};\n\\node[box,draw=blue,fill=blue!5] (a) at (0,0) {Source items and identities\\\\Declared semantic axes\\\\Item vectors $x_i$};\n\\node[box,draw=blue,fill=blue!5] (b) at (5.2,0) {Mass, mean and local basis\\\\Covariance / projection state\\\\Inherited residual bounds};\n\\node[box,draw=blue,fill=blue!5] (c) at (10.4,0) {Query direction $q$\\\\Bounded search or direct scan\\\\Source witnesses};\n\\draw[arr,blue] (a)--(b);\\draw[arr,blue] (b)--(c);\n\\node[anchor=west,font=\\rmfamily\\bfseries] at (-2.2,-2.0) {Memory in Pieces / Skein / Parallax: tasks and reconstruction};\n\\node[box,draw=teal,fill=teal!5] (d) at (0,-3.6) {Source mass $p$, reference $\\pi$\\\\Cards / metadata and tasks\\\\Constructed generator $G$};\n\\node[box,draw=teal,fill=teal!5] (e) at (5.2,-3.6) {Local coordinates $U$\\\\Retained law $A=U^TLU$\\\\Task decoder and defect $D$};\n\\node[box,draw=teal,fill=teal!5] (f) at (10.4,-3.6) {Query-conditioned task\\\\Decode the retained object\\\\Answer with source witnesses};\n\\draw[arr,teal] (d)--(e);\\draw[arr,teal] (e)--(f);\n\\draw[arr,orange] (f.south)--(10.4,-5.4)--(0,-5.4)--(d.south);\n\\node[fill=white,text=orange,align=center] at (5.2,-5.4) {Residual / capacity failure: refine or use the source-level fallback};\n\\node[align=center,text width=14.5cm] at (5.2,-6.5) {Extraction chooses the coordinates. Retention tests what survives.\\\\Routing finds the relevant object. Reader composition is a separate step.};\n\\end{tikzpicture}",
+      "caption": "Two routes from sources to a reconstructed answer. Corpus as a State retains geometric summaries and inherited approximation bounds. Memory in Pieces, developed through Skein and Parallax, retains task/law coordinates, reconstruction and discarded-feedback diagnostics. Source-card extraction is model-dependent, while retention, decoding and declared bounds are mechanical conditional on those choices. A failed capacity or residual check triggers refinement or source-level fallback. Final language-model composition is separate from the retained numerical object.",
+      "style": {
+        "font_size": 9,
+        "width_inches": 6.4,
+        "height_inches": 3.9
+      },
+      "render": {
+        "outputs": [
+          "figures/generated/dd-memory-mechanism.pdf",
+          "figures/generated/dd-memory-mechanism.png",
+          "figures/generated/dd-memory-mechanism.svg",
+          "figures/generated/dd-memory-mechanism.tikz"
+        ],
+        "renderer": "tikz-pdf",
+        "input_digest": "cbc31c4bf5e408715a666793f68d9141795079008463461d49917fff2f36bf0b",
+        "drawing_input_digest": "cbc31c4bf5e408715a666793f68d9141795079008463461d49917fff2f36bf0b",
+        "drawing_inputs": {
+          "spec": {
+            "id": "dd-memory-mechanism",
+            "kind": "tikz"
+          },
+          "tikz": "a14481a949e2a3a3d6a6bda7060e21dad41f09488ddfb6e457e84e39d2ec5a10"
+        },
+        "research_bindings": [],
+        "presentation_metadata": {
+          "title": "From source items to a reconstructable answer",
+          "question": "What is retained, how is it queried, and where does refinement enter in the original and extended memory systems?",
+          "caption": "Two routes from sources to a reconstructed answer. Corpus as a State retains geometric summaries and inherited approximation bounds. Memory in Pieces, developed through Skein and Parallax, retains task/law coordinates, reconstruction and discarded-feedback diagnostics. Source-card extraction is model-dependent, while retention, decoding and declared bounds are mechanical conditional on those choices. A failed capacity or residual check triggers refinement or source-level fallback. Final language-model composition is separate from the retained numerical object.",
+          "source_data": null,
+          "source": null
+        },
+        "style_version": "a52b7af5b0793b1803d7220d6682ba6564c38bb38650f7366410d709347f3364",
+        "style_profile": "profiles/visual_style.json",
+        "visual_review": "pending",
+        "output_digests": {
+          "figures/generated/dd-memory-mechanism.pdf": "bd630cfc411b7bfdeed077d2621643cdab443cc3d00b169e855f3f1f16b6bdfb",
+          "figures/generated/dd-memory-mechanism.png": "8a57c01650d7615669ee563c8413265083382e9a5f2e35d9a8ef6347d95b414d",
+          "figures/generated/dd-memory-mechanism.svg": "ea9211edcdab8535d79598e971b0836bc99fa6c7e4e09082c4b384d312684645",
+          "figures/generated/dd-memory-mechanism.tikz": "a14481a949e2a3a3d6a6bda7060e21dad41f09488ddfb6e457e84e39d2ec5a10"
+        }
+      },
+      "section": "working-draft/chapters/memory-as-a-retained-and-reconstructable-object.tex",
+      "section_scope": "manuscript",
+      "section_repo_file": "writing_projects/eigen-technical-due-diligence-briefing/manuscript/working-draft/chapters/memory-as-a-retained-and-reconstructable-object.tex"
+    },
+    {
+      "id": "dd-register-phase-diagram",
+      "kind": "artifact",
+      "run_id": "run-939b6a8b76724d02",
+      "artifact_id": "dd-register-phase-diagram",
+      "title": "The phase boundary for sharing a register",
+      "question": "At which disagreement and register price is it optimal to share, split or suppress one evaluator?",
+      "caption": "Optimisation phase diagram for gamma=1 and eta=0.8. Below C_crit(theta), separate registers retain both tasks. Above it, balanced sharing is optimal at small disagreement, while a shared register suppresses one evaluator at large disagreement. Solid curves mark equal-cost choices. The dashed C_part=0.25 slice recovers the earlier crossing at theta=0.8411. The meeting point is theta=1.0853, C_part=0.4. Analytic finite-model regions, not measured thermodynamic phases.",
+      "result_ids": [
+        "dd-register-phase-diagram"
+      ],
+      "render": {
+        "outputs": [
+          "figures/generated/dd-register-phase-diagram.pdf",
+          "figures/generated/dd-register-phase-diagram.svg",
+          "figures/generated/dd-register-phase-diagram.png"
+        ],
+        "renderer": "supervised-run-artifact",
+        "source_provenance": {
+          "run_id": "run-939b6a8b76724d02",
+          "producer_id": "dd-register-phase-diagram",
+          "result_path": "research_runs/run-939b6a8b76724d02.result.json",
+          "result_sha256": "a9edbcf2938e9379156b9cf7b2a2bb239f85160d0870f0565110708093572600",
+          "artifact_id": "dd-register-phase-diagram",
+          "source_digests": {
+            "pdf": "db346420980c61e2c8685918b4fba2b0b22d144862fe4cf5180027bae1faeeb9",
+            "svg": "0b360981a42f18b25d5689ed1170e379401e83d041a29bcf7d10ab985219bb90",
+            "png": "ab4f8c79e29985422091f4405bcd34fb5bcae838e2d9f168b7c2642c322dc4ac"
+          },
+          "source_paths": {
+            "pdf": "manuscript/working-draft/figures/phase-run-939b6a8b76724d02.result/dd-register-phase-diagram.pdf",
+            "svg": "manuscript/working-draft/figures/phase-run-939b6a8b76724d02.result/dd-register-phase-diagram.svg",
+            "png": "manuscript/working-draft/figures/phase-run-939b6a8b76724d02.result/dd-register-phase-diagram.png"
+          },
+          "output_observation": "CURRENT_BYTES_NAMED_BY_SUPERVISED_RESULT",
+          "historical_output_verification": "NOT_ESTABLISHED"
+        },
+        "input_digest": "c7c4fe2ade48c4852a084b9862108b3fc123a38165ec59759f876bd840ce277c",
+        "drawing_input_digest": "c7c4fe2ade48c4852a084b9862108b3fc123a38165ec59759f876bd840ce277c",
+        "drawing_inputs": {
+          "spec": {
+            "id": "dd-register-phase-diagram",
+            "kind": "artifact",
+            "run_id": "run-939b6a8b76724d02",
+            "artifact_id": "dd-register-phase-diagram"
+          },
+          "supervised_run": {
+            "run_id": "run-939b6a8b76724d02",
+            "producer_id": "dd-register-phase-diagram",
+            "result_path": "research_runs/run-939b6a8b76724d02.result.json",
+            "result_sha256": "a9edbcf2938e9379156b9cf7b2a2bb239f85160d0870f0565110708093572600",
+            "artifact_id": "dd-register-phase-diagram",
+            "source_paths": {
+              "pdf": "manuscript/working-draft/figures/phase-run-939b6a8b76724d02.result/dd-register-phase-diagram.pdf",
+              "svg": "manuscript/working-draft/figures/phase-run-939b6a8b76724d02.result/dd-register-phase-diagram.svg",
+              "png": "manuscript/working-draft/figures/phase-run-939b6a8b76724d02.result/dd-register-phase-diagram.png"
+            },
+            "source_digests": {
+              "pdf": "db346420980c61e2c8685918b4fba2b0b22d144862fe4cf5180027bae1faeeb9",
+              "svg": "0b360981a42f18b25d5689ed1170e379401e83d041a29bcf7d10ab985219bb90",
+              "png": "ab4f8c79e29985422091f4405bcd34fb5bcae838e2d9f168b7c2642c322dc4ac"
+            },
+            "output_observation": "CURRENT_BYTES_NAMED_BY_SUPERVISED_RESULT",
+            "historical_output_verification": "NOT_ESTABLISHED"
+          }
+        },
+        "research_bindings": [
+          {
+            "id": "dd-register-phase-diagram",
+            "revision": "sha256:c5d24fe4a3106aa96cf5ea4ba153f1f90d89f43dc24ca670aefc377d6953fcf8",
+            "currentness": "CURRENT"
+          }
+        ],
+        "presentation_metadata": {
+          "title": "The phase boundary for sharing a register",
+          "question": "At which disagreement and register price is it optimal to share, split or suppress one evaluator?",
+          "caption": "Optimisation phase diagram for gamma=1 and eta=0.8. Below C_crit(theta), separate registers retain both tasks. Above it, balanced sharing is optimal at small disagreement, while a shared register suppresses one evaluator at large disagreement. Solid curves mark equal-cost choices. The dashed C_part=0.25 slice recovers the earlier crossing at theta=0.8411. The meeting point is theta=1.0853, C_part=0.4. Analytic finite-model regions, not measured thermodynamic phases.",
+          "source_data": null,
+          "source": null
+        },
+        "style_version": "a52b7af5b0793b1803d7220d6682ba6564c38bb38650f7366410d709347f3364",
+        "style_profile": null,
+        "visual_review": "pending",
+        "output_digests": {
+          "figures/generated/dd-register-phase-diagram.pdf": "db346420980c61e2c8685918b4fba2b0b22d144862fe4cf5180027bae1faeeb9",
+          "figures/generated/dd-register-phase-diagram.svg": "0b360981a42f18b25d5689ed1170e379401e83d041a29bcf7d10ab985219bb90",
+          "figures/generated/dd-register-phase-diagram.png": "ab4f8c79e29985422091f4405bcd34fb5bcae838e2d9f168b7c2642c322dc4ac"
+        }
+      },
+      "section": "working-draft/chapters/the-price-of-a-shared-description.tex",
+      "section_scope": "manuscript",
+      "section_repo_file": "writing_projects/eigen-technical-due-diligence-briefing/manuscript/working-draft/chapters/the-price-of-a-shared-description.tex"
+    },
+    {
+      "id": "dd-conceptric-envelope",
+      "title": "A research object with a readable exterior",
+      "question": "What must a claim carry so another task can inspect and use it?",
+      "caption": "The conceptric envelope, illustrated by the gap-aware trial-space claim. Detailed content and its linked evidence are exposed through a readable summary, exact identity, state and permitted operations. Reading projects observations from the interior to the containing task. Writing narrows an outer request through the action interface to a local change. A readable digest summarises meaning, while a revision digest identifies the consumed version.",
+      "tikz": "\\begin{tikzpicture}[x=1cm,y=1cm,font=\\sffamily\\small,line cap=round,line join=round]\n\\definecolor{ink}{HTML}{183449}\\definecolor{blue}{HTML}{0072B2}\\definecolor{teal}{HTML}{009E73}\\definecolor{amber}{HTML}{D55E00}\n\\tikzset{read/.style={->,teal,line width=1.5pt},write/.style={->,blue,line width=1.5pt},edge/.style={ink!70,line width=.9pt}}\n\n\\fill[blue!3,rounded corners=10pt] (0,0) rectangle (15,7.2);\n\\node[anchor=west,font=\\sffamily\\bfseries] at (.35,6.8) {A conceptric: detail inside, a useful view outside};\n\\draw[edge,fill=white,rounded corners=7pt] (3.8,1.0) rectangle (10.1,5.9);\n\\draw[ink!25,dashed] (3.8,4.5)--(10.1,4.5);\n\\node[anchor=west,text=ink] at (4.1,5.5) {Gap-aware trial-space claim};\n\\node[anchor=west,font=\\sffamily\\footnotesize] at (4.1,4.95) {scope \\quad identity \\quad revision};\n\\fill[teal] (9.6,5.45) circle (.11);\n\\begin{scope}[shift={(4.25,2)},scale=1.05]\n\\draw[edge,fill=blue!6,rounded corners=3pt] (0,0) rectangle (2.5,1.65);\n\\draw[edge,fill=white] (.25,.38)--(.25,1.42)--(1.02,1.42)--(1.2,1.22)--(1.2,.38)--cycle;\n\\draw[ink!35] (.42,1.08)--(.99,1.08) (.42,.87)--(.99,.87) (.42,.66)--(.84,.66);\n\\draw[edge,fill=white] (1.38,.38) rectangle (2.25,1.35);\n\\draw[teal,line width=1.1pt] (1.51,.59)--(1.69,.94)--(1.87,.72)--(2.1,1.13);\n\\draw[edge,fill=blue!20] (0,0)--(0,.55)--(1.25,.2)--(2.5,.55)--(2.5,0)--cycle;\n\\fill[teal] (2.5,1.18) circle (.08);\\fill[blue] (2.5,.62) circle (.08);\n\\end{scope}\n\n\\node[align=center,font=\\sffamily\\footnotesize] at (5.56,1.64) {sources and calculation};\n\\draw[edge] (7.8,2.15)--(9.25,2.15) (7.8,2.15)--(7.8,3.75);\n\\draw[blue,line width=4pt] (8.15,2.15)--(8.15,3.55);\n\\draw[teal,line width=4pt] (8.8,2.15)--(8.8,2.4);\n\\node[font=\\sffamily\\scriptsize] at (8.55,1.82) {energy error};\n\\node[font=\\sffamily\\footnotesize,align=center] at (8.55,4.05) {$0.33363\\rightarrow0.02826$};\n\\draw[read] (7,3.85)--(7,4.7);\n\\draw[read] (3.8,5.2)--(1.35,5.2)--(1.35,3.2);\n\\node[font=\\sffamily\\footnotesize,fill=blue!3] at (2.3,5.55) {read outward};\n\\begin{scope}[shift={(1.35,2.1)},scale=1.05]\n\\fill[ink!12] (0,-.65) ellipse (.62 and .12);\n\\draw[edge,fill=white,rounded corners=5pt] (-.48,-.42) rectangle (.48,.25);\n\\draw[edge,fill=blue!12,rounded corners=5pt] (-.58,.18) rectangle (.58,.85);\n\\draw[edge] (0,.85)--(0,1.08);\\fill[amber] (0,1.12) circle (.08);\n\\fill[ink] (-.23,.54) circle (.065);\\fill[ink] (.23,.54) circle (.065);\n\\draw[ink] (-.16,.33) .. controls (0,.22) .. (.16,.33);\n\\draw[edge,line width=2pt] (-.48,-.08)--(-.75,.08) (.48,-.08)--(.79,.28);\n\\draw[edge,line width=2pt] (-.24,-.42)--(-.3,-.59) (.24,-.42)--(.3,-.59);\n\\fill[teal] (0,-.06) circle (.09);\n\\end{scope}\n\n\\node[align=center,font=\\sffamily\\footnotesize] at (1.35,.95) {agent or\\\\containing task};\n\\draw[write] (2.2,2.1)--(3.8,2.1);\n\\draw[blue,line width=3pt] (3.8,1.84)--(3.8,2.36);\n\\node[font=\\sffamily\\footnotesize,align=center] at (2.9,1.35) {write\\\\inward};\n\\draw[write] (3.85,2.1)--(4.15,2.1);\n\\fill[teal] (10.1,5.2) circle (.1);\n\\draw[read] (10.1,5.2)--(11.25,5.2);\n\\node[align=center,font=\\sffamily\\footnotesize] at (12.6,5.2) {readable summary\\\\and standing};\n\\draw[edge] (10.1,3.45)--(11.25,3.45);\n\\fill[amber] (10.1,3.45) circle (.1);\n\\begin{scope}[shift={(11.6,2.1)},scale=0.9]\n\\draw[edge,fill=blue!6,rounded corners=3pt] (0,0) rectangle (2.5,1.65);\n\\draw[edge,fill=white] (.25,.38)--(.25,1.42)--(1.02,1.42)--(1.2,1.22)--(1.2,.38)--cycle;\n\\draw[ink!35] (.42,1.08)--(.99,1.08) (.42,.87)--(.99,.87) (.42,.66)--(.84,.66);\n\\draw[edge,fill=white] (1.38,.38) rectangle (2.25,1.35);\n\\draw[teal,line width=1.1pt] (1.51,.59)--(1.69,.94)--(1.87,.72)--(2.1,1.13);\n\\draw[edge,fill=blue!20] (0,0)--(0,.55)--(1.25,.2)--(2.5,.55)--(2.5,0)--cycle;\n\\fill[teal] (2.5,1.18) circle (.08);\\fill[blue] (2.5,.62) circle (.08);\n\\end{scope}\n\n\\node[font=\\sffamily\\footnotesize] at (12.7,1.7) {typed support link};\n\\node[font=\\sffamily\\footnotesize,text=ink!75] at (7.5,.45) {Operations cross a checked port. Related objects keep their own identities.};\n\n\\end{tikzpicture}",
+      "kind": "tikz",
+      "render": {
+        "outputs": [
+          "figures/generated/dd-conceptric-envelope.pdf",
+          "figures/generated/dd-conceptric-envelope.png",
+          "figures/generated/dd-conceptric-envelope.svg",
+          "figures/generated/dd-conceptric-envelope.tikz"
+        ],
+        "renderer": "tikz-pdf",
+        "input_digest": "1eb0757c032d84433090dbd90310f7bcf0b4cae156b20554273e652ab9c47e90",
+        "drawing_input_digest": "1eb0757c032d84433090dbd90310f7bcf0b4cae156b20554273e652ab9c47e90",
+        "drawing_inputs": {
+          "spec": {
+            "id": "dd-conceptric-envelope",
+            "kind": "tikz"
+          },
+          "tikz": "7da7d9bc71e13c42efd7152875d397041b7c6804847d8bcb02fc502033be6f77"
+        },
+        "research_bindings": [],
+        "presentation_metadata": {
+          "title": "A research object with a readable exterior",
+          "question": "What must a claim carry so another task can inspect and use it?",
+          "caption": "The conceptric envelope, illustrated by the gap-aware trial-space claim. Detailed content and its linked evidence are exposed through a readable summary, exact identity, state and permitted operations. Reading projects observations from the interior to the containing task. Writing narrows an outer request through the action interface to a local change. A readable digest summarises meaning, while a revision digest identifies the consumed version.",
+          "source_data": null,
+          "source": null
+        },
+        "style_version": "a52b7af5b0793b1803d7220d6682ba6564c38bb38650f7366410d709347f3364",
+        "style_profile": "profiles/visual_style.json",
+        "visual_review": "pending",
+        "output_digests": {
+          "figures/generated/dd-conceptric-envelope.pdf": "c557be0648bb8a74309c5a2a1f5dc8f9f03cb9e3fd074dc5802ed4e678bd514d",
+          "figures/generated/dd-conceptric-envelope.png": "da7e396e89af9016b26aabdd53862d3409cf00e391eab5e4c26ad01b20b3152d",
+          "figures/generated/dd-conceptric-envelope.svg": "8c314857e05febc506d510491a3560c0fd14daa3592c4b076260c91b57e4ecb2",
+          "figures/generated/dd-conceptric-envelope.tikz": "7da7d9bc71e13c42efd7152875d397041b7c6804847d8bcb02fc502033be6f77"
+        }
+      },
+      "section": "working-draft/chapters/the-backend-objects-authority-and-revision.tex",
+      "section_scope": "manuscript",
+      "section_repo_file": "writing_projects/eigen-technical-due-diligence-briefing/manuscript/working-draft/chapters/the-backend-objects-authority-and-revision.tex"
+    },
+    {
+      "id": "dd-nested-work-sdk",
+      "title": "The same boundary at several scales",
+      "question": "How do nested objects and parent-child tasks control context and acceptance, and what should an SDK preserve?",
+      "caption": "The same boundary pattern at different task altitudes. A parent sends a scoped question and relevant context to a worker. Source, calculation and claim remain distinct local objects, and an independent reviewer inspects the returned contribution. The parent consumes the findings before accepting its own result. A changed consumed input marks affected acceptance for attention. The dashed panel locates the SDK direction: reusable transition templates, configurable session topology and source modules governed through the same inspectable interfaces.",
+      "tikz": "\\begin{tikzpicture}[x=1cm,y=1cm,font=\\sffamily\\small,line cap=round,line join=round]\n\\definecolor{ink}{HTML}{183449}\\definecolor{blue}{HTML}{0072B2}\\definecolor{teal}{HTML}{009E73}\\definecolor{amber}{HTML}{D55E00}\n\\tikzset{read/.style={->,teal,line width=1.5pt},write/.style={->,blue,line width=1.5pt},edge/.style={ink!70,line width=.9pt}}\n\n\\fill[blue!3,rounded corners=10pt] (0,0) rectangle (15,8);\n\\node[anchor=west,font=\\sffamily\\bfseries] at (.35,7.6) {One boundary pattern, several scales};\n\\draw[edge,fill=white,rounded corners=7pt] (.4,2.1) rectangle (10.6,7.1);\n\\node[anchor=west,font=\\sffamily\\footnotesize] at (.7,6.75) {project / parent task};\n\\begin{scope}[shift={(1.45,5.2)},scale=0.72]\n\\fill[ink!12] (0,-.65) ellipse (.62 and .12);\n\\draw[edge,fill=white,rounded corners=5pt] (-.48,-.42) rectangle (.48,.25);\n\\draw[edge,fill=blue!12,rounded corners=5pt] (-.58,.18) rectangle (.58,.85);\n\\draw[edge] (0,.85)--(0,1.08);\\fill[amber] (0,1.12) circle (.08);\n\\fill[ink] (-.23,.54) circle (.065);\\fill[ink] (.23,.54) circle (.065);\n\\draw[ink] (-.16,.33) .. controls (0,.22) .. (.16,.33);\n\\draw[edge,line width=2pt] (-.48,-.08)--(-.75,.08) (.48,-.08)--(.79,.28);\n\\draw[edge,line width=2pt] (-.24,-.42)--(-.3,-.59) (.24,-.42)--(.3,-.59);\n\\fill[teal] (0,-.06) circle (.09);\n\\end{scope}\n\n\\draw[edge,fill=blue!4,rounded corners=6pt] (3.0,2.65) rectangle (7.5,5.8);\n\\node[font=\\sffamily\\footnotesize] at (5.25,5.45) {worker task};\n\\begin{scope}[shift={(3.4,3.05)},scale=0.85]\n\\draw[edge,fill=blue!6,rounded corners=3pt] (0,0) rectangle (2.5,1.65);\n\\draw[edge,fill=white] (.25,.38)--(.25,1.42)--(1.02,1.42)--(1.2,1.22)--(1.2,.38)--cycle;\n\\draw[ink!35] (.42,1.08)--(.99,1.08) (.42,.87)--(.99,.87) (.42,.66)--(.84,.66);\n\\draw[edge,fill=white] (1.38,.38) rectangle (2.25,1.35);\n\\draw[teal,line width=1.1pt] (1.51,.59)--(1.69,.94)--(1.87,.72)--(2.1,1.13);\n\\draw[edge,fill=blue!20] (0,0)--(0,.55)--(1.25,.2)--(2.5,.55)--(2.5,0)--cycle;\n\\fill[teal] (2.5,1.18) circle (.08);\\fill[blue] (2.5,.62) circle (.08);\n\\end{scope}\n\\begin{scope}[shift={(6.35,3.7)},scale=0.65]\n\\fill[ink!12] (0,-.65) ellipse (.62 and .12);\n\\draw[edge,fill=white,rounded corners=5pt] (-.48,-.42) rectangle (.48,.25);\n\\draw[edge,fill=blue!12,rounded corners=5pt] (-.58,.18) rectangle (.58,.85);\n\\draw[edge] (0,.85)--(0,1.08);\\fill[amber] (0,1.12) circle (.08);\n\\fill[ink] (-.23,.54) circle (.065);\\fill[ink] (.23,.54) circle (.065);\n\\draw[ink] (-.16,.33) .. controls (0,.22) .. (.16,.33);\n\\draw[edge,line width=2pt] (-.48,-.08)--(-.75,.08) (.48,-.08)--(.79,.28);\n\\draw[edge,line width=2pt] (-.24,-.42)--(-.3,-.59) (.24,-.42)--(.3,-.59);\n\\fill[teal] (0,-.06) circle (.09);\n\\end{scope}\n\n\\draw[write] (2.1,5.2)--(3.0,5.2);\n\\node[font=\\sffamily\\scriptsize,align=center] at (2.55,5.8) {scope\\\\inward};\n\\draw[read] (5.2,5.8)--(5.2,6.35)--(1.45,6.35)--(1.45,6.05);\n\\node[font=\\sffamily\\scriptsize,fill=white] at (3.6,6.35) {findings outward};\n\\draw[edge,fill=amber!6] (8.85,4.2) circle (.68);\n\\node[font=\\sffamily\\scriptsize,align=center] at (8.85,4.2) {review\\\\exact\\\\return};\n\\draw[read] (7.5,4.2)--(8.15,4.2);\n\\draw[amber,->,line width=1.3pt] (8.85,4.9)--(8.85,6.3)--(5.65,6.3);\n\\node[font=\\sffamily\\scriptsize] at (8.55,6.65) {parent accepts};\n\\begin{scope}[shift={(11.4,4.9)},scale=0.95]\n\\draw[edge,fill=blue!6,rounded corners=3pt] (0,0) rectangle (2.5,1.65);\n\\draw[edge,fill=white] (.25,.38)--(.25,1.42)--(1.02,1.42)--(1.2,1.22)--(1.2,.38)--cycle;\n\\draw[ink!35] (.42,1.08)--(.99,1.08) (.42,.87)--(.99,.87) (.42,.66)--(.84,.66);\n\\draw[edge,fill=white] (1.38,.38) rectangle (2.25,1.35);\n\\draw[teal,line width=1.1pt] (1.51,.59)--(1.69,.94)--(1.87,.72)--(2.1,1.13);\n\\draw[edge,fill=blue!20] (0,0)--(0,.55)--(1.25,.2)--(2.5,.55)--(2.5,0)--cycle;\n\\fill[teal] (2.5,1.18) circle (.08);\\fill[blue] (2.5,.62) circle (.08);\n\\end{scope}\n\n\\draw[amber,->,line width=1.3pt] (10.6,5.7)--(11.35,5.7);\n\\fill[amber] (13.6,6.4) circle (.12);\n\\node[font=\\sffamily\\footnotesize,align=center] at (12.6,4.3) {dependent view\\\\needs attention};\n\\draw[blue,dashed,rounded corners=5pt] (.4,.25) rectangle (14.6,1.65);\n\\node[font=\\sffamily\\footnotesize,anchor=west] at (.7,1.25) {Next: SDK};\n\\draw[edge,fill=white] (3.3,.5) rectangle (5.2,1.4);\n\\node[font=\\ttfamily\\small] at (4.25,.95) {< code >};\n\\draw[blue,dashed,->] (5.4,.95)--(6.5,.95);\n\\node[font=\\sffamily\\footnotesize,align=left] at (9.7,.95) {extension instructions + checks\\\\configurable tools, roles and task topology};\n\\draw[blue,dashed,->] (5.2,2.1)--(5.2,1.7);\n\n\\end{tikzpicture}",
+      "kind": "tikz",
+      "render": {
+        "outputs": [
+          "figures/generated/dd-nested-work-sdk.pdf",
+          "figures/generated/dd-nested-work-sdk.png",
+          "figures/generated/dd-nested-work-sdk.svg",
+          "figures/generated/dd-nested-work-sdk.tikz"
+        ],
+        "renderer": "tikz-pdf",
+        "input_digest": "e532adf739a43d816d672a6f9f9ff39c20a4e3c07a77e6d46235de3d10a81c49",
+        "drawing_input_digest": "e532adf739a43d816d672a6f9f9ff39c20a4e3c07a77e6d46235de3d10a81c49",
+        "drawing_inputs": {
+          "spec": {
+            "id": "dd-nested-work-sdk",
+            "kind": "tikz"
+          },
+          "tikz": "940cc2fc05329c1762421df04db2937e27d099b7a29577af74bbfb6b179e150f"
+        },
+        "research_bindings": [],
+        "presentation_metadata": {
+          "title": "The same boundary at several scales",
+          "question": "How do nested objects and parent-child tasks control context and acceptance, and what should an SDK preserve?",
+          "caption": "The same boundary pattern at different task altitudes. A parent sends a scoped question and relevant context to a worker. Source, calculation and claim remain distinct local objects, and an independent reviewer inspects the returned contribution. The parent consumes the findings before accepting its own result. A changed consumed input marks affected acceptance for attention. The dashed panel locates the SDK direction: reusable transition templates, configurable session topology and source modules governed through the same inspectable interfaces.",
+          "source_data": null,
+          "source": null
+        },
+        "style_version": "a52b7af5b0793b1803d7220d6682ba6564c38bb38650f7366410d709347f3364",
+        "style_profile": "profiles/visual_style.json",
+        "visual_review": "pending",
+        "output_digests": {
+          "figures/generated/dd-nested-work-sdk.pdf": "953a1ffa0171bcafd1d87f05c6c470e9e2474e83eca79699aacdcbe190feb5ca",
+          "figures/generated/dd-nested-work-sdk.png": "efaab1ac66b374fc6cd99563fad35891556f958e5350dc3832e4c4af26619647",
+          "figures/generated/dd-nested-work-sdk.svg": "07a1572ec570ecce823f5a0dd1b8e46010a5459fa278c989d55ebcc2cb8390a0",
+          "figures/generated/dd-nested-work-sdk.tikz": "940cc2fc05329c1762421df04db2937e27d099b7a29577af74bbfb6b179e150f"
+        }
+      },
+      "section": "working-draft/chapters/from-a-working-core-to-an-extensible-sdk.tex",
+      "section_scope": "manuscript",
+      "section_repo_file": "writing_projects/eigen-technical-due-diligence-briefing/manuscript/working-draft/chapters/from-a-working-core-to-an-extensible-sdk.tex"
+    },
+    {
+      "id": "dd-ai-tool-harness",
+      "title": "From an AI request to an inspectable change",
+      "question": "How does an AI action acquire permission and leave a result that can be judged?",
+      "caption": "A result-binding request through the current harness. The task supplies selected context, the model proposes an operation, and the gateway checks its role and project scope. The owning operation checks the current claim and result before recording the link. The returned outcome is available to the human and the parent task. Execution, scientific judgement and acceptance have distinct places in the same route.",
+      "tikz": "\\begin{tikzpicture}[x=1cm,y=1cm,font=\\sffamily\\small,line cap=round,line join=round]\n\\definecolor{ink}{HTML}{183449}\\definecolor{blue}{HTML}{0072B2}\\definecolor{teal}{HTML}{009E73}\\definecolor{amber}{HTML}{D55E00}\n\\tikzset{read/.style={->,teal,line width=1.5pt},write/.style={->,blue,line width=1.5pt},edge/.style={ink!70,line width=.9pt}}\n\n\\node[anchor=west,font=\\sffamily\\bfseries] at (0,6.7) {An agent acts through the tools of its task};\n\\draw[edge,fill=blue!5,rounded corners=4pt] (.2,3.8) rectangle (2.3,5.5);\n\\draw[ink!35] (.5,5.05)--(1.9,5.05) (.5,4.7)--(1.65,4.7) (.5,4.35)--(1.8,4.35);\n\\node[font=\\sffamily\\footnotesize] at (1.25,5.85) {bounded context};\n\\draw[write] (2.4,4.5)--(3.45,4.5);\n\\begin{scope}[shift={(4.1,4.25)},scale=1.05]\n\\fill[ink!12] (0,-.65) ellipse (.62 and .12);\n\\draw[edge,fill=white,rounded corners=5pt] (-.48,-.42) rectangle (.48,.25);\n\\draw[edge,fill=blue!12,rounded corners=5pt] (-.58,.18) rectangle (.58,.85);\n\\draw[edge] (0,.85)--(0,1.08);\\fill[amber] (0,1.12) circle (.08);\n\\fill[ink] (-.23,.54) circle (.065);\\fill[ink] (.23,.54) circle (.065);\n\\draw[ink] (-.16,.33) .. controls (0,.22) .. (.16,.33);\n\\draw[edge,line width=2pt] (-.48,-.08)--(-.75,.08) (.48,-.08)--(.79,.28);\n\\draw[edge,line width=2pt] (-.24,-.42)--(-.3,-.59) (.24,-.42)--(.3,-.59);\n\\fill[teal] (0,-.06) circle (.09);\n\\end{scope}\n\n\\node[font=\\sffamily\\footnotesize] at (2.8,3.1) {choose a tool};\n\\draw[write] (5,4.5)--(6.1,4.5);\n\\draw[edge,fill=ink!5,rounded corners=3pt] (6.15,3.35) rectangle (7.15,5.8);\n\\draw[blue,line width=2pt] (6.4,3.8)--(6.4,5.3)--(6.9,5.3)--(6.9,3.8);\n\\fill[teal] (6.65,5.55) circle (.09);\n\\node[font=\\sffamily\\footnotesize,align=center] at (6.65,2.85) {role and\\\\scope gate};\n\\draw[write] (7.15,4.5)--(8.25,4.5);\n\\begin{scope}[shift={(8.5,3.7)},scale=1.1]\n\\draw[edge,fill=blue!6,rounded corners=3pt] (0,0) rectangle (2.5,1.65);\n\\draw[edge,fill=white] (.25,.38)--(.25,1.42)--(1.02,1.42)--(1.2,1.22)--(1.2,.38)--cycle;\n\\draw[ink!35] (.42,1.08)--(.99,1.08) (.42,.87)--(.99,.87) (.42,.66)--(.84,.66);\n\\draw[edge,fill=white] (1.38,.38) rectangle (2.25,1.35);\n\\draw[teal,line width=1.1pt] (1.51,.59)--(1.69,.94)--(1.87,.72)--(2.1,1.13);\n\\draw[edge,fill=blue!20] (0,0)--(0,.55)--(1.25,.2)--(2.5,.55)--(2.5,0)--cycle;\n\\fill[teal] (2.5,1.18) circle (.08);\\fill[blue] (2.5,.62) circle (.08);\n\\end{scope}\n\n\\node[font=\\sffamily\\footnotesize] at (9.85,5.95) {owner checks and changes};\n\\draw[read] (11.35,4.5)--(12.3,4.5)--(12.3,2.15);\n\\draw[edge,fill=teal!6,rounded corners=4pt] (11.25,.9) rectangle (13.35,2.1);\n\\node[font=\\sffamily\\footnotesize,align=center] at (12.3,1.5) {result\\\\and receipt};\n\\draw[read] (11.2,1.5)--(8.25,1.5);\n\\draw[edge,fill=white] (7.5,2.15) circle (.32);\n\\draw[edge,fill=amber!12,rounded corners=6pt] (6.95,.85) rectangle (8.05,1.75);\n\\node[font=\\sffamily\\footnotesize,align=center] at (7.5,.25) {human / parent\\\\judgement};\n\\draw[amber,->,line width=1.4pt] (6.9,1.5)--(4.1,1.5)--(4.1,3.5);\n\\node[font=\\sffamily\\footnotesize,fill=white] at (5.3,1.8) {inspect and revise};\n\n\n\\end{tikzpicture}",
+      "kind": "tikz",
+      "render": {
+        "outputs": [
+          "figures/generated/dd-ai-tool-harness.pdf",
+          "figures/generated/dd-ai-tool-harness.png",
+          "figures/generated/dd-ai-tool-harness.svg",
+          "figures/generated/dd-ai-tool-harness.tikz"
+        ],
+        "renderer": "tikz-pdf",
+        "input_digest": "4959ad9a08fae417221819ace3646d61a5c248dd471a28d9c50f4c32d8a55d47",
+        "drawing_input_digest": "4959ad9a08fae417221819ace3646d61a5c248dd471a28d9c50f4c32d8a55d47",
+        "drawing_inputs": {
+          "spec": {
+            "id": "dd-ai-tool-harness",
+            "kind": "tikz"
+          },
+          "tikz": "4022bbd6315b337d7e6bd8a494d16a44bc2409e32de05d1de843344066231d10"
+        },
+        "research_bindings": [],
+        "presentation_metadata": {
+          "title": "From an AI request to an inspectable change",
+          "question": "How does an AI action acquire permission and leave a result that can be judged?",
+          "caption": "A result-binding request through the current harness. The task supplies selected context, the model proposes an operation, and the gateway checks its role and project scope. The owning operation checks the current claim and result before recording the link. The returned outcome is available to the human and the parent task. Execution, scientific judgement and acceptance have distinct places in the same route.",
+          "source_data": null,
+          "source": null
+        },
+        "style_version": "a52b7af5b0793b1803d7220d6682ba6564c38bb38650f7366410d709347f3364",
+        "style_profile": "profiles/visual_style.json",
+        "visual_review": "pending",
+        "output_digests": {
+          "figures/generated/dd-ai-tool-harness.pdf": "27de7270a4073688a3a60f944c24f1b6f7936e9193e7b1fec764c38e82abcf3a",
+          "figures/generated/dd-ai-tool-harness.png": "4368e2b32bae9625cff03b0d6dd9d9977e9e2cadc7e20709a7869768015bf234",
+          "figures/generated/dd-ai-tool-harness.svg": "bfc8da4c2c8bf5b0120f13a10ec566f3fe47e2ea100139b7c183e7138302a8ef",
+          "figures/generated/dd-ai-tool-harness.tikz": "4022bbd6315b337d7e6bd8a494d16a44bc2409e32de05d1de843344066231d10"
+        }
+      },
+      "section": "working-draft/chapters/the-backend-objects-authority-and-revision.tex",
+      "section_scope": "manuscript",
+      "section_repo_file": "writing_projects/eigen-technical-due-diligence-briefing/manuscript/working-draft/chapters/the-backend-objects-authority-and-revision.tex"
+    },
+    {
+      "id": "dd-memory-reader-controls",
+      "kind": "artifact",
+      "run_id": "run-7bd75062068b432b",
+      "artifact_id": "dd-memory-reader-controls",
+      "title": "Where the language-memory interface needs improvement",
+      "question": "How does the current witness readout compare on the same LongMem reader test and temporal subset?",
+      "caption": "Archived LongMem reader comparison at a 4,000-token evidence budget. The same reader answers 30 of 48 questions with the memory witness readout, 33 with dense retrieval and 34 with hybrid retrieval. On the nine temporal questions the counts are 4, 7 and 6. The weakness identifies the relation/time interface as a useful improvement target. Counts are from the frozen evaluation, not a new experiment.",
+      "result_ids": [
+        "dd-memory-reader-controls"
+      ],
+      "render": {
+        "outputs": [
+          "figures/generated/dd-memory-reader-controls.pdf",
+          "figures/generated/dd-memory-reader-controls.svg",
+          "figures/generated/dd-memory-reader-controls.png"
+        ],
+        "renderer": "supervised-run-artifact",
+        "source_provenance": {
+          "run_id": "run-7bd75062068b432b",
+          "producer_id": "dd-memory-reader-replot",
+          "result_path": "research_runs/run-7bd75062068b432b.result.json",
+          "result_sha256": "e215494456d6b0c27e6499ac9180ae5f3a5899664f82e3a88cfa91216c334cef",
+          "artifact_id": "dd-memory-reader-controls",
+          "source_digests": {
+            "pdf": "7a43c64f42a5d42ce9333e14711729eb2f6eea1ee7ff708ddd38d5c9028afa9d",
+            "svg": "fd0ff11d3ddba2564b05074ed65b176e87d2ca1828857f3f6b8366040e978233",
+            "png": "ea173eac6b552aa7827291bbfebbec96defefcc6adbcd3ad6cdb3e37301a488f"
+          },
+          "source_paths": {
+            "pdf": "manuscript/working-draft/figures/completion-run-7bd75062068b432b.result/dd-memory-reader-controls.pdf",
+            "svg": "manuscript/working-draft/figures/completion-run-7bd75062068b432b.result/dd-memory-reader-controls.svg",
+            "png": "manuscript/working-draft/figures/completion-run-7bd75062068b432b.result/dd-memory-reader-controls.png"
+          },
+          "output_observation": "CURRENT_BYTES_NAMED_BY_SUPERVISED_RESULT",
+          "historical_output_verification": "NOT_ESTABLISHED"
+        },
+        "input_digest": "2df750aa14b3e9562530bd65d43759f8ca38d1437c2c65c28292c69f70c472cf",
+        "drawing_input_digest": "2df750aa14b3e9562530bd65d43759f8ca38d1437c2c65c28292c69f70c472cf",
+        "drawing_inputs": {
+          "spec": {
+            "id": "dd-memory-reader-controls",
+            "kind": "artifact",
+            "run_id": "run-7bd75062068b432b",
+            "artifact_id": "dd-memory-reader-controls"
+          },
+          "supervised_run": {
+            "run_id": "run-7bd75062068b432b",
+            "producer_id": "dd-memory-reader-replot",
+            "result_path": "research_runs/run-7bd75062068b432b.result.json",
+            "result_sha256": "e215494456d6b0c27e6499ac9180ae5f3a5899664f82e3a88cfa91216c334cef",
+            "artifact_id": "dd-memory-reader-controls",
+            "source_paths": {
+              "pdf": "manuscript/working-draft/figures/completion-run-7bd75062068b432b.result/dd-memory-reader-controls.pdf",
+              "svg": "manuscript/working-draft/figures/completion-run-7bd75062068b432b.result/dd-memory-reader-controls.svg",
+              "png": "manuscript/working-draft/figures/completion-run-7bd75062068b432b.result/dd-memory-reader-controls.png"
+            },
+            "source_digests": {
+              "pdf": "7a43c64f42a5d42ce9333e14711729eb2f6eea1ee7ff708ddd38d5c9028afa9d",
+              "svg": "fd0ff11d3ddba2564b05074ed65b176e87d2ca1828857f3f6b8366040e978233",
+              "png": "ea173eac6b552aa7827291bbfebbec96defefcc6adbcd3ad6cdb3e37301a488f"
+            },
+            "output_observation": "CURRENT_BYTES_NAMED_BY_SUPERVISED_RESULT",
+            "historical_output_verification": "NOT_ESTABLISHED"
+          }
+        },
+        "research_bindings": [
+          {
+            "id": "dd-memory-reader-controls",
+            "revision": "sha256:f2a6a3cbb18bc50a4239c99e5f7fafd0b2c71257f5e6cfade40cd32a2fba6f92",
+            "currentness": "CURRENT"
+          }
+        ],
+        "presentation_metadata": {
+          "title": "Where the language-memory interface needs improvement",
+          "question": "How does the current witness readout compare on the same LongMem reader test and temporal subset?",
+          "caption": "Archived LongMem reader comparison at a 4,000-token evidence budget. The same reader answers 30 of 48 questions with the memory witness readout, 33 with dense retrieval and 34 with hybrid retrieval. On the nine temporal questions the counts are 4, 7 and 6. The weakness identifies the relation/time interface as a useful improvement target. Counts are from the frozen evaluation, not a new experiment.",
+          "source_data": null,
+          "source": null
+        },
+        "style_version": "a52b7af5b0793b1803d7220d6682ba6564c38bb38650f7366410d709347f3364",
+        "style_profile": null,
+        "visual_review": "pending",
+        "output_digests": {
+          "figures/generated/dd-memory-reader-controls.pdf": "7a43c64f42a5d42ce9333e14711729eb2f6eea1ee7ff708ddd38d5c9028afa9d",
+          "figures/generated/dd-memory-reader-controls.svg": "fd0ff11d3ddba2564b05074ed65b176e87d2ca1828857f3f6b8366040e978233",
+          "figures/generated/dd-memory-reader-controls.png": "ea173eac6b552aa7827291bbfebbec96defefcc6adbcd3ad6cdb3e37301a488f"
+        }
+      },
+      "section": "working-draft/chapters/memory-as-a-retained-and-reconstructable-object.tex",
+      "section_scope": "manuscript",
+      "section_repo_file": "writing_projects/eigen-technical-due-diligence-briefing/manuscript/working-draft/chapters/memory-as-a-retained-and-reconstructable-object.tex"
+    },
+    {
+      "id": "dd-hierarchy-stability",
+      "title": "Hierarchy moves the stability boundary",
+      "question": "How does hierarchical aggregation change the stable population and update size?",
+      "caption": "Hierarchy moves the stability boundary of the sampled feedback model. (a) At $h/\\tau_r=1$, each curve separates stable dynamics below it from instability above it. The orange and green bands show additional parameter ranges stabilised by a second and third aggregation layer. The $\\alpha=0.35$ slice crosses at $N_c^{(1)}=138.25$, $N_c^{(2)}=217.17$ and $N_c^{(3)}=341.13$. (b) At fixed $\\alpha=0.35$, increasing the update interval also raises the critical population. In both panels $\\beta=0.6$, $b=1.2$ and $s=0.4$. Curves use the iterated Gaussian expected-majority model of Phases of Hierarchy~\\cite{McCaul630942}, not exact small-block voting or ANF's different feedback rule. The plotted linear boundary was checked against 19,557 Jacobians, with no classification mismatch.",
+      "kind": "artifact",
+      "run_id": "run-d9f38e92caf64d82",
+      "artifact_id": "dd-hierarchy-stability",
+      "result_ids": [
+        "dd-hierarchy-stability"
+      ],
+      "render": {
+        "outputs": [
+          "figures/generated/dd-hierarchy-stability.pdf",
+          "figures/generated/dd-hierarchy-stability.svg",
+          "figures/generated/dd-hierarchy-stability.png"
+        ],
+        "renderer": "supervised-run-artifact",
+        "source_provenance": {
+          "run_id": "run-d9f38e92caf64d82",
+          "producer_id": "dd-hierarchy-stability",
+          "result_path": "research_runs/run-d9f38e92caf64d82.result.json",
+          "result_sha256": "522f05ce90fc60fb7a8e01593532b108038bc50a2cb5a60c45763fa02e4a74d3",
+          "artifact_id": "dd-hierarchy-stability",
+          "source_digests": {
+            "pdf": "a2cd437d3974f5a7c3a8c71ea3a9626928adf14d19029770b41e60c62a7d143f",
+            "svg": "222080770537d3da5b18bcf457e4b09c2b933e5d5f95a24b2d161783d808ea95",
+            "png": "cd951648f38872d2e24601ee9bb370ff84a7d55214e816587084216cb8ea8c06"
+          },
+          "source_paths": {
+            "pdf": "manuscript/working-draft/figures/hierarchy-run-d9f38e92caf64d82.result/dd-hierarchy-stability.pdf",
+            "svg": "manuscript/working-draft/figures/hierarchy-run-d9f38e92caf64d82.result/dd-hierarchy-stability.svg",
+            "png": "manuscript/working-draft/figures/hierarchy-run-d9f38e92caf64d82.result/dd-hierarchy-stability.png"
+          },
+          "output_observation": "CURRENT_BYTES_NAMED_BY_SUPERVISED_RESULT",
+          "historical_output_verification": "NOT_ESTABLISHED"
+        },
+        "input_digest": "3db31e4f41d5b2573b99ed971d3a30152f0c9a3ab526e11050b1eeb4921d4185",
+        "drawing_input_digest": "3db31e4f41d5b2573b99ed971d3a30152f0c9a3ab526e11050b1eeb4921d4185",
+        "drawing_inputs": {
+          "spec": {
+            "id": "dd-hierarchy-stability",
+            "kind": "artifact",
+            "run_id": "run-d9f38e92caf64d82",
+            "artifact_id": "dd-hierarchy-stability"
+          },
+          "supervised_run": {
+            "run_id": "run-d9f38e92caf64d82",
+            "producer_id": "dd-hierarchy-stability",
+            "result_path": "research_runs/run-d9f38e92caf64d82.result.json",
+            "result_sha256": "522f05ce90fc60fb7a8e01593532b108038bc50a2cb5a60c45763fa02e4a74d3",
+            "artifact_id": "dd-hierarchy-stability",
+            "source_paths": {
+              "pdf": "manuscript/working-draft/figures/hierarchy-run-d9f38e92caf64d82.result/dd-hierarchy-stability.pdf",
+              "svg": "manuscript/working-draft/figures/hierarchy-run-d9f38e92caf64d82.result/dd-hierarchy-stability.svg",
+              "png": "manuscript/working-draft/figures/hierarchy-run-d9f38e92caf64d82.result/dd-hierarchy-stability.png"
+            },
+            "source_digests": {
+              "pdf": "a2cd437d3974f5a7c3a8c71ea3a9626928adf14d19029770b41e60c62a7d143f",
+              "svg": "222080770537d3da5b18bcf457e4b09c2b933e5d5f95a24b2d161783d808ea95",
+              "png": "cd951648f38872d2e24601ee9bb370ff84a7d55214e816587084216cb8ea8c06"
+            },
+            "output_observation": "CURRENT_BYTES_NAMED_BY_SUPERVISED_RESULT",
+            "historical_output_verification": "NOT_ESTABLISHED"
+          }
+        },
+        "research_bindings": [
+          {
+            "id": "dd-hierarchy-stability",
+            "revision": "sha256:ff55f4724d54fda217ccb2b9802c65de17c8645eb81f06eaf9195da9382e5676",
+            "currentness": "CURRENT"
+          }
+        ],
+        "presentation_metadata": {
+          "title": "Hierarchy moves the stability boundary",
+          "question": "How does hierarchical aggregation change the stable population and update size?",
+          "caption": "Hierarchy moves the stability boundary of the sampled feedback model. (a) At $h/\\tau_r=1$, each curve separates stable dynamics below it from instability above it. The orange and green bands show additional parameter ranges stabilised by a second and third aggregation layer. The $\\alpha=0.35$ slice crosses at $N_c^{(1)}=138.25$, $N_c^{(2)}=217.17$ and $N_c^{(3)}=341.13$. (b) At fixed $\\alpha=0.35$, increasing the update interval also raises the critical population. In both panels $\\beta=0.6$, $b=1.2$ and $s=0.4$. Curves use the iterated Gaussian expected-majority model of Phases of Hierarchy~\\cite{McCaul630942}, not exact small-block voting or ANF's different feedback rule. The plotted linear boundary was checked against 19,557 Jacobians, with no classification mismatch.",
+          "source_data": null,
+          "source": null
+        },
+        "style_version": "a52b7af5b0793b1803d7220d6682ba6564c38bb38650f7366410d709347f3364",
+        "style_profile": null,
+        "visual_review": "pending",
+        "output_digests": {
+          "figures/generated/dd-hierarchy-stability.pdf": "a2cd437d3974f5a7c3a8c71ea3a9626928adf14d19029770b41e60c62a7d143f",
+          "figures/generated/dd-hierarchy-stability.svg": "222080770537d3da5b18bcf457e4b09c2b933e5d5f95a24b2d161783d808ea95",
+          "figures/generated/dd-hierarchy-stability.png": "cd951648f38872d2e24601ee9bb370ff84a7d55214e816587084216cb8ea8c06"
+        }
+      },
+      "section": "working-draft/chapters/loss-dynamics-and-the-choice-of-scale.tex",
+      "section_scope": "manuscript",
+      "section_repo_file": "writing_projects/eigen-technical-due-diligence-briefing/manuscript/working-draft/chapters/loss-dynamics-and-the-choice-of-scale.tex"
+    },
+    {
+      "id": "dd-hmf-physical-ground-state-20261016",
+      "kind": "artifact",
+      "run_id": "run-62e6074aba504443",
+      "artifact_id": "hmf-physical-ground-prediction",
+      "title": "The bath spectrum predicts the cold spin and its dual coordinate",
+      "question": "Can a change of representation yield an analytical ground-state prediction that agrees with an independent calculation of the same Hamiltonian?",
+      "caption": "Analytic spectral prediction and independent finite-mode ground-state diagonalisation. The bath coupling is retained exactly, with controlled small tunnelling at a fixed spectral gap. The same prediction fixes the finite dual thermal coordinate. Source: the HMF project, scientific run run-73cc8b5029974c04 and presentation run run-665ae2e571d0481d; this DD intake preserves the exact source PDF bytes.",
+      "render": {
+        "outputs": [
+          "figures/generated/dd-hmf-physical-ground-state-20261016.pdf"
+        ],
+        "renderer": "supervised-run-artifact",
+        "source_provenance": {
+          "run_id": "run-62e6074aba504443",
+          "producer_id": "dd-hmf-figure-intake-20261016",
+          "result_path": "research_runs/run-62e6074aba504443.result.json",
+          "result_sha256": "749722a9d09e98c75961242863886865f36ab18ef79d13bc642583bb41f4e08d",
+          "artifact_id": "hmf-physical-ground-prediction",
+          "source_digests": {
+            "pdf": "59c0464e50e58bf6886dd1a743bba3eadc23b453c5ddc415fd918662a10367f1"
+          },
+          "source_paths": {
+            "pdf": "manuscript/research_runs/run-62e6074aba504443.result/hmf-physical-ground-prediction.pdf"
+          },
+          "output_observation": "CURRENT_BYTES_NAMED_BY_SUPERVISED_RESULT",
+          "historical_output_verification": "NOT_ESTABLISHED"
+        },
+        "input_digest": "fb48c0b06ca630e2609b172ee54f6fd9911d422f1b8cd9b1b4dd66ab26566789",
+        "drawing_input_digest": "fb48c0b06ca630e2609b172ee54f6fd9911d422f1b8cd9b1b4dd66ab26566789",
+        "drawing_inputs": {
+          "spec": {
+            "id": "dd-hmf-physical-ground-state-20261016",
+            "kind": "artifact",
+            "run_id": "run-62e6074aba504443",
+            "artifact_id": "hmf-physical-ground-prediction"
+          },
+          "supervised_run": {
+            "run_id": "run-62e6074aba504443",
+            "producer_id": "dd-hmf-figure-intake-20261016",
+            "result_path": "research_runs/run-62e6074aba504443.result.json",
+            "result_sha256": "749722a9d09e98c75961242863886865f36ab18ef79d13bc642583bb41f4e08d",
+            "artifact_id": "hmf-physical-ground-prediction",
+            "source_paths": {
+              "pdf": "manuscript/research_runs/run-62e6074aba504443.result/hmf-physical-ground-prediction.pdf"
+            },
+            "source_digests": {
+              "pdf": "59c0464e50e58bf6886dd1a743bba3eadc23b453c5ddc415fd918662a10367f1"
+            },
+            "output_observation": "CURRENT_BYTES_NAMED_BY_SUPERVISED_RESULT",
+            "historical_output_verification": "NOT_ESTABLISHED"
+          }
+        },
+        "research_bindings": [],
+        "presentation_metadata": {
+          "title": "The bath spectrum predicts the cold spin and its dual coordinate",
+          "question": "Can a change of representation yield an analytical ground-state prediction that agrees with an independent calculation of the same Hamiltonian?",
+          "caption": "Analytic spectral prediction and independent finite-mode ground-state diagonalisation. The bath coupling is retained exactly, with controlled small tunnelling at a fixed spectral gap. The same prediction fixes the finite dual thermal coordinate. Source: the HMF project, scientific run run-73cc8b5029974c04 and presentation run run-665ae2e571d0481d; this DD intake preserves the exact source PDF bytes.",
+          "source_data": null,
+          "source": null
+        },
+        "style_version": "a52b7af5b0793b1803d7220d6682ba6564c38bb38650f7366410d709347f3364",
+        "style_profile": null,
+        "visual_review": "pending",
+        "output_digests": {
+          "figures/generated/dd-hmf-physical-ground-state-20261016.pdf": "59c0464e50e58bf6886dd1a743bba3eadc23b453c5ddc415fd918662a10367f1"
+        }
+      },
+      "section": "working-draft/chapters/loss-dynamics-and-the-choice-of-scale.tex",
+      "section_scope": "manuscript",
+      "section_repo_file": "writing_projects/eigen-technical-due-diligence-briefing/manuscript/working-draft/chapters/loss-dynamics-and-the-choice-of-scale.tex"
+    }
+  ]
+}

@@ -1,0 +1,21 @@
+% table environment generated for AO2 (canonised-run): the independent acquisition
+% resources of one SSG campaign, collected plainly near the end of Sec IV. Wide cells
+% use in-cell \parbox (not a p{..} preamble arg) so the brace-free {lll} spec parses
+% to three columns and the long prose cells do not run overfull at body font size.
+\begin{table*}[tb]
+\caption{Independent acquisition resources for one Spectral Surface Generation campaign supporting $M$ post-acquisition spectral locations at inverse scale $\tau$. Here $\|H\|$ is the spectral-bandwidth bound, $\epsilon_w$ the aperture truncation tolerance, $K$ the shots per retained-overlap estimator and $C_{\tau,s}$ the reconstruction coefficient norm. Time points, evolution reach and record tiers are fixed at acquisition - the classical costs are per already-banked record. The table collects the governing relations already derived in the body and makes no new claim.}
+\label{tab:resource}
+\begin{ruledtabular}
+\begin{tabular}{lll}
+\textbf{Resource} & \textbf{Scaling or value} & \textbf{Governing relation} \\ \hline
+\parbox[t]{0.22\textwidth}{\raggedright Retained time points $\bar m$\strut} & $\dfrac{t_{\max}}{\Delta t}\sim\dfrac{2}{\pi}\,\|H\|\sqrt{\tau\log(1/\epsilon_w)}$ & Eqs.~\eqref{res:aperture-resolution}, \eqref{res:bandwidth-grid} \\[6pt]
+\parbox[t]{0.22\textwidth}{\raggedright Shots per retained estimator\strut} & $K$, additive error $\varepsilon_K=c\,K^{-1/2}$ & Eq.~\eqref{def:shot-budget-K} \\[6pt]
+\parbox[t]{0.22\textwidth}{\raggedright Maximum evolution time\strut} & $t_{\max}=2\sqrt{\tau\log(1/\epsilon_w)}$, branch depth $t_{\max}/2$ & Eqs.~\eqref{res:aperture-resolution}, \eqref{res:half-depth-symmetric-branches} \\[6pt]
+\parbox[t]{0.22\textwidth}{\raggedright Denominator record\strut} & \parbox[t]{0.40\textwidth}{\raggedright one-sided complex $A_j$, negative times by conjugation - the minimal bank\strut} & Eqs.~\eqref{res:one-sided-reconstruction}, \eqref{def:record-architecture-three-tier} \\[6pt]
+\parbox[t]{0.22\textwidth}{\raggedright Branch records\strut} & \parbox[t]{0.40\textwidth}{\raggedright commuting tier one-sided; non-commuting $B_O$ two-sided, costed separately\strut} & Eq.~\eqref{def:record-architecture-three-tier} \\[6pt]
+\parbox[t]{0.22\textwidth}{\raggedright Total shot budget\strut} & \parbox[t]{0.40\textwidth}{\raggedright $O(\bar m\,M\,K)$ over $M$ locations, with $K\gtrsim C_{\tau,s}^2/(\epsilon^2 Z_\tau^2)$ for an absolute read\strut} & Eq.~\eqref{res:shot-floor-visibility-wall} \\[6pt]
+\parbox[t]{0.22\textwidth}{\raggedright Classical cost per query\strut} & $O(\bar m)$ per $(s,\tau)$ evaluation & Sec.~\ref{sec:N3} \\[6pt]
+\parbox[t]{0.22\textwidth}{\raggedright Classical cost on an $s$ grid\strut} & \parbox[t]{0.40\textwidth}{\raggedright $O(\bar m M)$ direct, $O((\bar m+M)\log(\bar m+M))$ by FFT; $L$ scales cost $L$ transforms\strut} & Sec.~\ref{sec:N3} \\
+\end{tabular}
+\end{ruledtabular}
+\end{table*}

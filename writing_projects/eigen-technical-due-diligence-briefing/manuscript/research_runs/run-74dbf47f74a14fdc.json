@@ -1,0 +1,81 @@
+{
+  "args": {},
+  "cancel_path": "/home/phujck/VScodeProjects/laplace/writing_projects/eigen-technical-due-diligence-briefing/manuscript/research_runs/run-74dbf47f74a14fdc.cancel",
+  "cwd": "/home/phujck/VScodeProjects/laplace/writing_projects/eigen-technical-due-diligence-briefing",
+  "deadline_at": 1792091048.3469348,
+  "execution_deadline_monotonic": 372767.20913432,
+  "id": "run-74dbf47f74a14fdc",
+  "launch_token": "4f00fcc102704866b8473a201159afce",
+  "mode": "smoke",
+  "pid": 2649903,
+  "producer_argv": [
+    "/home/phujck/VScodeProjects/eigenengine-v2/runtime/python/current/bin/python3.14",
+    "/home/phujck/VScodeProjects/laplace/writing_projects/eigen-technical-due-diligence-briefing/calculations/replot_archived_quantum.py",
+    "--mode",
+    "smoke",
+    "--args-json",
+    "{}",
+    "--result",
+    "/home/phujck/VScodeProjects/laplace/writing_projects/eigen-technical-due-diligence-briefing/manuscript/research_runs/run-74dbf47f74a14fdc.result.json"
+  ],
+  "producer_base": "/home/phujck/VScodeProjects/laplace/writing_projects/eigen-technical-due-diligence-briefing",
+  "producer_id": "dd-archived-quantum-replot",
+  "producer_path": "calculations/replot_archived_quantum.py",
+  "project": "eigen-technical-due-diligence-briefing",
+  "provenance": {
+    "dependencies": [
+      {
+        "bytes": 6207,
+        "path": "evidence-snapshots/quantum/operator_projection_result.json",
+        "sha256": "3023e8f5b138983e7d8400cf08bab033b01fa7351465f010fe1731b4fa350754",
+        "status": "PRESENT"
+      },
+      {
+        "bytes": 2475,
+        "path": "evidence-snapshots/quantum/metric_pool_sweep.csv",
+        "sha256": "531c3778144cae2c73f43f8ff8e2f8035190e47d55989cd30cdf1400ebb1f323",
+        "status": "PRESENT"
+      },
+      {
+        "bytes": 14618,
+        "path": "evidence-snapshots/quantum/check_projection.py",
+        "sha256": "04deb4bc5c08f18a3ecc43f98892134bb7b91fb33bf076710734181eb590b0b1",
+        "status": "PRESENT"
+      },
+      {
+        "bytes": 10163,
+        "path": "evidence-snapshots/quantum/metric_preconditioned_pool_benchmark.py",
+        "sha256": "1467a640c83df6fd5a6b5194161b84e3d30ebe02711bf4e3339b05f732829f2c",
+        "status": "PRESENT"
+      },
+      {
+        "bytes": 22826,
+        "path": "reading/quantum-prototypes-interpretation-20261015.md",
+        "sha256": "734d7185c42d709e256721bfffdb5f119bd97c863fdc4a689b4da17de693b93e",
+        "status": "PRESENT"
+      }
+    ],
+    "producer": {
+      "bytes": 4227,
+      "path": "calculations/replot_archived_quantum.py",
+      "scope": "project",
+      "sha256": "3820c52e8a7384dd8e6a04d4a5bdee71d28f1f48e410bc0a79a7d971b6b861da",
+      "status": "PRESENT"
+    },
+    "producer_config": "83898bc0f3103ccb62eb892f68ceae4c8fff70c7ee9a48f3f54675180b0f18d9"
+  },
+  "result_absolute": "/home/phujck/VScodeProjects/laplace/writing_projects/eigen-technical-due-diligence-briefing/manuscript/research_runs/run-74dbf47f74a14fdc.result.json",
+  "result_path": "research_runs/run-74dbf47f74a14fdc.result.json",
+  "started_at": 1792090988.3469343,
+  "state": "RUNNING",
+  "stderr_path": "/home/phujck/VScodeProjects/laplace/writing_projects/eigen-technical-due-diligence-briefing/manuscript/research_runs/run-74dbf47f74a14fdc.stderr.log",
+  "stdout_path": "/home/phujck/VScodeProjects/laplace/writing_projects/eigen-technical-due-diligence-briefing/manuscript/research_runs/run-74dbf47f74a14fdc.stdout.log",
+  "supervision": {
+    "cleanup_limit_seconds": 6.0,
+    "roles": {},
+    "schema_version": "laplace.research-supervision/1"
+  },
+  "supervision_index_path": "/home/phujck/VScodeProjects/laplace/writing_projects/eigen-technical-due-diligence-briefing/manuscript/research_runs/index.json",
+  "supervisor_start_token": "sha256:eb4303a201e822ed1824a6771063d8d8911d9ad21ce85eaf9672b4c9bdc68969",
+  "timeout_seconds": 60
+}

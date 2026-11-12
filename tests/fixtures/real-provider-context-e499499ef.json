@@ -1,0 +1,295 @@
+{
+  "basis": "Exact saved root provider-pair reporte499499ef; no new provider calls",
+  "sessions": [
+    {
+      "provider": "codex",
+      "model_requested": "gpt-6-luna",
+      "session_id": "WS-605ac841676645249ed0965baa617648",
+      "turn_id": "WT-ea078f1a8fab4c4bbcd4ce31e9633c50",
+      "reply_id": "WR-c226a31da9e64ba1a1fb3c03e83b5458",
+      "usage_facts_projection": {
+        "schema_version": "laplace.provider-usage-facts/1",
+        "attempt_id": "PA-91483135322144be9f78b9244d2cc394",
+        "logical_turn_id": "WT-ea078f1a8fab4c4bbcd4ce31e9633c50",
+        "provider": "codex",
+        "native_binding_id": "01a11678-be91-75e0-b23d-893457a2cd03",
+        "native_turn_id": "01a11678-bef6-7471-938d-c384484d2a26",
+        "selected": {
+          "context_snapshot": {
+            "observation_id": "UO-8ab599b26b4a47b9894cbebd84feecbd",
+            "basis": "codex.appserver.last",
+            "counter_scope": "context_snapshot",
+            "counter_domain": "main_conversation",
+            "counts": {
+              "input": 1268,
+              "cached_input": 15104,
+              "cache_write_input": 0,
+              "output": 86,
+              "reasoning_output": 0,
+              "total": 16458
+            },
+            "completeness": "complete_for_reported_scope",
+            "raw_observation_ref": {
+              "schema_version": "laplace.writing-public-body-ref/1",
+              "content_handle": "sha256:368018565437cc9ba5d2c3cfd56498038d0f7b6ee62e8ae5adf995305b19c0bc",
+              "store": "contract/writing_bodies",
+              "bytes": 137,
+              "encoding": "application/json"
+            },
+            "value": 16372,
+            "metric": "last_request_input_proxy",
+            "exact_post_compaction_occupancy": "UNOBSERVABLE"
+          },
+          "logical_turn": {
+            "observation_id": "UO-bda491edd3964ad7ace22ab52aa0012e",
+            "basis": "codex.fresh_binding_cumulative",
+            "counter_scope": "logical_turn",
+            "counter_domain": "provider_all",
+            "counts": {
+              "input": 16763,
+              "cached_input": 15104,
+              "cache_write_input": 0,
+              "output": 132,
+              "reasoning_output": 0,
+              "total": 31999
+            },
+            "completeness": "complete_for_reported_scope",
+            "raw_observation_ref": {
+              "schema_version": "laplace.writing-public-body-ref/1",
+              "content_handle": "sha256:529004f7afdde361c733f488d00242179058de37b8569ccca42b9f1bb23f70df",
+              "store": "contract/writing_bodies",
+              "bytes": 138,
+              "encoding": "application/json"
+            },
+            "derivation": "new thread/start zero baseline; no prior turns",
+            "baseline": {
+              "kind": "zero_fresh_binding",
+              "native_binding_id": "01a11678-be91-75e0-b23d-893457a2cd03",
+              "reset_epoch": 0,
+              "value": {
+                "input": 0,
+                "cached_input": 0,
+                "cache_write_input": 0,
+                "output": 0,
+                "reasoning_output": 0,
+                "total": 0
+              },
+              "coverage": "new thread/start without seeded history"
+            }
+          },
+          "binding_cumulative": {
+            "observation_id": "UO-bda491edd3964ad7ace22ab52aa0012e",
+            "basis": "codex.appserver.total",
+            "counter_scope": "binding_cumulative",
+            "counter_domain": "provider_all",
+            "counts": {
+              "input": 16763,
+              "cached_input": 15104,
+              "cache_write_input": 0,
+              "output": 132,
+              "reasoning_output": 0,
+              "total": 31999
+            },
+            "completeness": "complete_for_reported_scope",
+            "raw_observation_ref": {
+              "schema_version": "laplace.writing-public-body-ref/1",
+              "content_handle": "sha256:529004f7afdde361c733f488d00242179058de37b8569ccca42b9f1bb23f70df",
+              "store": "contract/writing_bodies",
+              "bytes": 138,
+              "encoding": "application/json"
+            }
+          },
+          "unselected_variants": []
+        },
+        "baseline": {
+          "kind": "zero_fresh_binding",
+          "native_binding_id": "01a11678-be91-75e0-b23d-893457a2cd03",
+          "reset_epoch": 0,
+          "value": {
+            "input": 0,
+            "cached_input": 0,
+            "cache_write_input": 0,
+            "output": 0,
+            "reasoning_output": 0,
+            "total": 0
+          },
+          "coverage": "new thread/start without seeded history"
+        },
+        "reset_epoch": 0,
+        "coverage": {
+          "native_metadata": {
+            "state": "unavailable",
+            "trace_coverage": "unknown",
+            "reason": "no admitted native file identity/bytecut"
+          },
+          "logical_turn_total": "derived_fresh_binding",
+          "legacy_rows": "unchanged; no retrospective basis assignment",
+          "missing_scope": "unknown, never zero"
+        },
+        "model_observations": [
+          {
+            "admitted_model": "gpt-6-luna",
+            "resolved_alias": "gpt-6-luna",
+            "actual_reported_model": null,
+            "source": "thread_response_model"
+          }
+        ]
+      }
+    },
+    {
+      "provider": "claude",
+      "model_requested": "haiku",
+      "session_id": "WS-c490c9f7f51b43ac9aa6a48726f0d635",
+      "turn_id": "WT-e21c01fb950543c8afd2ca8ccf766116",
+      "reply_id": "WR-373d2876b1e649c8b1a539d3b0732acc",
+      "usage_facts_projection": {
+        "schema_version": "laplace.provider-usage-facts/1",
+        "attempt_id": "PA-a78f858e51e54492a3d42a3bf5d762e3",
+        "logical_turn_id": "WT-e21c01fb950543c8afd2ca8ccf766116",
+        "provider": "claude",
+        "native_binding_id": "343ab48f-afa0-4460-a0d4-c2d8bcf265fb",
+        "native_turn_id": null,
+        "selected": {
+          "context_snapshot": {
+            "observation_id": "UO-5f33fd1d7a2c4163a4568e6eedc3b1c7",
+            "basis": "claude.assistant.usage",
+            "counter_scope": "context_snapshot",
+            "counter_domain": "main_conversation",
+            "counts": {
+              "input": 10,
+              "cached_input": 8995,
+              "cache_write_input": 1217,
+              "output": 2,
+              "reasoning_output": null,
+              "total": 10224
+            },
+            "completeness": "complete_for_reported_scope",
+            "raw_observation_ref": {
+              "schema_version": "laplace.writing-public-body-ref/1",
+              "content_handle": "sha256:3d981946803aa63859d1c9dfcf72e018788e9d0f7ce5999392e2807d2576bc6f",
+              "store": "contract/writing_bodies",
+              "bytes": 243,
+              "encoding": "application/json"
+            },
+            "value": 10222,
+            "metric": "last_request_input_proxy",
+            "exact_post_compaction_occupancy": "UNOBSERVABLE"
+          },
+          "logical_turn": {
+            "observation_id": "UO-ad8934f4a9f6454f9819f00da764fb3b",
+            "basis": "claude.result.usage",
+            "counter_scope": "logical_turn",
+            "counter_domain": "main_conversation",
+            "counts": {
+              "input": 20,
+              "cached_input": 8995,
+              "cache_write_input": 10212,
+              "output": 577,
+              "reasoning_output": 319,
+              "total": 19804
+            },
+            "completeness": "complete_for_reported_scope",
+            "raw_observation_ref": {
+              "schema_version": "laplace.writing-public-body-ref/1",
+              "content_handle": "sha256:f9dc29f6a2d06d5cb7fd50fe8d01f323938ae7500f54ac2472e6a3ac88fedc26",
+              "store": "contract/writing_bodies",
+              "bytes": 584,
+              "encoding": "application/json"
+            }
+          },
+          "binding_cumulative": null,
+          "unselected_variants": [
+            {
+              "observation_id": "UO-508684cd89b34e218585f2667883c050",
+              "basis": "claude.result.process_metrics",
+              "counter_scope": "unknown",
+              "counter_domain": "unknown",
+              "counts": {
+                "input": null,
+                "cached_input": null,
+                "cache_write_input": null,
+                "output": null,
+                "reasoning_output": null,
+                "total": null
+              },
+              "completeness": "scope_unknown",
+              "raw_observation_ref": {
+                "schema_version": "laplace.writing-public-body-ref/1",
+                "content_handle": "sha256:46db771b18441b035a21c2957770f42efdaf86f6dc0762505afe7652104cc9e9",
+                "store": "contract/writing_bodies",
+                "bytes": 95,
+                "encoding": "application/json"
+              },
+              "reported_cost_estimate": {
+                "value": 0.027382499999999997,
+                "source_field": "total_cost_usd",
+                "cost_basis": null,
+                "source": "claude.result.process_metrics",
+                "counter_domain": "unknown",
+                "invoice": false
+              }
+            },
+            {
+              "observation_id": "UO-935050c4764a4ad48bb9084778b15731",
+              "basis": "claude.result.modelUsage",
+              "counter_scope": "unknown",
+              "counter_domain": "unknown",
+              "counts": {
+                "input": 3099,
+                "cached_input": 8995,
+                "cache_write_input": 10212,
+                "output": 592,
+                "reasoning_output": 319,
+                "total": 22898
+              },
+              "completeness": "scope_unknown",
+              "raw_observation_ref": {
+                "schema_version": "laplace.writing-public-body-ref/1",
+                "content_handle": "sha256:41417701943b0954be84dc1fb550b73e7ab0eef1c87f5c385e2c2568391b21a8",
+                "store": "contract/writing_bodies",
+                "bytes": 278,
+                "encoding": "application/json"
+              },
+              "reported_cost_estimate": {
+                "value": 0.027382499999999997,
+                "source_field": "costUSD",
+                "cost_basis": "list",
+                "source": "claude.result.modelUsage",
+                "counter_domain": "unknown",
+                "invoice": false
+              }
+            }
+          ]
+        },
+        "baseline": {
+          "kind": "unknown",
+          "coverage": "unknown"
+        },
+        "reset_epoch": 0,
+        "coverage": {
+          "native_metadata": {
+            "state": "unavailable",
+            "trace_coverage": "unknown"
+          },
+          "logical_turn_total": "observed",
+          "legacy_rows": "unchanged; no retrospective basis assignment",
+          "missing_scope": "unknown, never zero"
+        },
+        "model_observations": [
+          {
+            "admitted_model": "haiku",
+            "resolved_alias": "claude-haiku-4-5-20251001",
+            "actual_reported_model": null,
+            "source": "init_model"
+          },
+          {
+            "admitted_model": "haiku",
+            "resolved_alias": null,
+            "actual_reported_model": "claude-haiku-4-5-20251001",
+            "source": "assistant_model"
+          }
+        ]
+      }
+    }
+  ]
+}

@@ -1,0 +1,6 @@
+name = "public_behaviour_example"
+version = "0.1.0"
+defaultTargets = ["PublicExample"]
+
+[[lean_lib]]
+name = "PublicExample"

@@ -37,6 +37,7 @@ Figure~\ref{fig:num-toy-two-scale-promotion} follows the predeclared seed-zero s
 \includegraphics[width=0.88\textwidth]{figures/generated/slg-priced-policy-tracking-20261111.pdf}
 \caption{Carried model state under actual-step pricing. The representative stream is seed 0, fixed before execution. The latent slope changes at observations \(140,310,470,600\) and is used only for evaluation. The other curves show the actual-step-priced rolling policy at the displayed prices. Each update moves \(0.22\) of the way towards the trailing ridge target and is bought only when \(2.5\) times its actual window improvement exceeds \(c\). Estimates are pre-action states. High prices can retain bias after a shift. This trace must be read with the matched risk, update-frequency and occupancy comparisons, not as a calibrated choice of price.}
 \label{fig:num-toy-two-scale-promotion}
+\label{fig:slg-priced-policy-tracking-20261111}
 \end{figure*}
 
 \subsection{Prediction risk is an external test}
@@ -50,6 +51,7 @@ The actual-step-priced policy has higher mean predictive error than the noisy-st
 \includegraphics[width=0.84\textwidth]{figures/generated/slg-promotion-risk-20261111.pdf}
 \caption{Prediction risk at matched prices. Mean squared one-step prediction error, in squared synthetic observation units, averaged over 12 matched 700-step streams using observations \(50\)--\(699\). The three methods are defined in the shared policy key in the text. The true-slope noise oracle is privileged and used only for evaluation. The never-update baseline keeps slope 1. Actual-step pricing has higher mean error than the noisy-step policy at every tested price. Lines connect the six predeclared finite stream means and carry no uncertainty bands. The complete means and the stream-level uncertainty convention are given in Appendix~\ref{app:protocol}.}
 \label{fig:prediction-risk}
+\label{fig:slg-promotion-risk-20261111}
 \end{figure*}
 
 \subsection{Spending frequency does not measure adaptation}
@@ -63,6 +65,7 @@ Figure~\ref{fig:promotion-frequency} shows the expected broad reduction in updat
 \includegraphics[width=0.84\textwidth]{figures/generated/slg-promotion-frequency-20261111.pdf}
 \caption{How price changes update frequency. Promotion counts divided by 650 evaluated observations, averaged over the same 12 matched streams. Every promoted action pays the displayed dimensionless price \(c\), while staying pays zero action cost. Higher prices usually buy fewer revisions, but actual-step pricing is not always the sparsest policy. Multiplying a curve by \(c\) gives its charged action cost per evaluated observation, not total computational or physical cost. Read with Figs.~\ref{fig:prediction-risk} and \ref{fig:recovery}.}
 \label{fig:promotion-frequency}
+\label{fig:slg-promotion-frequency-20261111}
 \end{figure*}
 
 The target-occupancy test asks a different question. After a true shift, does the carried estimate enter and remain near the new target? A qualifying run consists of five consecutive pre-action estimates within \(20\%\) of the jump magnitude, entirely within the 65 observations beginning at the shift. An estimate already in band qualifies without any new update. Delay records the start of the run, not its confirmation four observations later. A shift with no qualifying run is assigned failure and a capped delay of 65.
@@ -74,6 +77,7 @@ Figure~\ref{fig:recovery} gives the fraction of shifts without such a run. Four 
 \includegraphics[width=0.84\textwidth]{figures/generated/slg-promotion-recovery-20261111.pdf}
 \caption{Target occupancy after a latent shift. Fraction of shifts without five consecutive pre-action estimates in the declared band, averaged over 12 matched streams with four shifts each. The band is \(20\%\) of the jump magnitude, and the qualifying run must lie wholly within the 65-step post-shift window. Already-in-band estimates qualify without a new promotion. The criterion therefore measures occupancy, not detected change or update-caused recovery. Delay is the run start. Failures retain sentinel delay 65 in capped means. At \(c=0.06\), the three failure fractions are \(0.1875\), \(0.270833\) and \(0.625\). Lines are finite stream means without uncertainty bands.}
 \label{fig:recovery}
+\label{fig:slg-promotion-recovery-20261111}
 \end{figure*}
 
 The experiment exposes the remaining modelling task. Pricing the actual intervention prevents a mismatch between promised and executed gain. It does not tell us that an observed-window score is the right predictor of future benefit, or that a fixed price supplies adequate responsiveness after a shift. A better evaluator needs its own justified horizon, uncertainty model or parent signal. The finite results tell us where to improve the construction without discarding the accounting that makes the failure intelligible.

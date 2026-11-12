@@ -1,0 +1,36 @@
+# draft-psi-v1 — the draft selection rule (ψ/φ), proposed for the author's ruling.
+#
+# ψ (the fitness rule) and φ (the promote threshold) belong to the author; this file
+# proposes a reading of them. Each clause is cited to his written theory:
+#
+#   * cost-of-complexity §VII ("structure is earned, not gifted"): the net-gain
+#     stopping rule. A generation promotes only when the residual gain (debt reduced)
+#     pays the marginal cost of the added structure; a change that does not pay is not
+#     kept.
+#   * law-of-laws (retention forced by closure, "not a modelling choice"): the gates are
+#     what closure demands, not preferences added afterward.
+#   * "Your Brain on Algebra" §4 ("the threshold is part of the self-consistent loss
+#     geometry, not an external policy attached afterward"): three-gate admissibility;
+#     promotion when the residual gain pays the marginal cost. The threshold is
+#     calibrated from ruling history (ratify/override deltas), so a recalibration is a
+#     new file (draft-psi-v2), not an edit of this one.
+#
+# selection_sheet._DRAFT_PSI_DEFAULTS holds these same values as the code fallback;
+# this profile overlays them and must equal them (a fresh read round-trips).
+version: draft-psi-v1
+law: "This file proposes verdicts; the author's ruling supersedes and is recorded. Thresholds are calibrated from ruling history, not hand-set."
+gate_self_consistency:
+  r10_must_have_run: true
+  r10_must_be_clean: true
+gate_cost:
+  debt_must_not_rise: true
+  no_new_suite_reds: true
+gate_representation_stability:
+  freeze_substance_must_hold: true
+  mechround_derivative_at_most: 0
+promotion_ledger:
+  residual_gain_source: debt_delta
+  lambda: 1.0
+retire_when:
+  debt_rose_and_r10_unclean: true
+otherwise: hold

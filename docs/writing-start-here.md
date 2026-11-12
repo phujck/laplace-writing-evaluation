@@ -22,6 +22,7 @@ A completed task can need current review or lack supporting raw; its achievement
 
 Looking elsewhere never sends or retargets a message. Inspect context before Send; check an uncertain original request before trying again.
 
+- [Try the implemented behaviours](behaviours/index.md)
 - [Task recipes](writing-tasks.md)
 - [Glossary](writing-glossary.md)
 - [Advanced reference](writing-reference.md)

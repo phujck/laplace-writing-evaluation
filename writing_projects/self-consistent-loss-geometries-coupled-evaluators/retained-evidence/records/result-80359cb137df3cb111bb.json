@@ -1,0 +1,44 @@
+{
+  "id": "result-80359cb137df3cb111bb",
+  "kind": "result",
+  "limitations": [
+    "Single authored harness, fixed deterministic schedule and small finite cases, no statistical generalisation or biological evidence.",
+    "Window gains use observed data for model-fit accounting, not future viability predictions or held-out prediction validation.",
+    "Original 24-seed/80-cost grid and historical slope1.780478 were not rerun.",
+    "Only analytic quantum minimisers in product/CQ and pure-marginal witness cases. No general quantum optimisation.",
+    "Independent science review of the repaired unit remains required."
+  ],
+  "provenance": {
+    "dependencies": [
+      {
+        "bytes": 14840,
+        "path": "research/slg-analytic-20261111-v2/finite_checks.py",
+        "sha256": "8f39b070b310baaaa58e6b3824ab7a59c0c86a9c8f5d1f3271e00b4a690a6ce7",
+        "status": "PRESENT"
+      },
+      {
+        "bytes": 70118,
+        "path": "research_runs/run-0781a7b8f8513412.result.json",
+        "scope": "manuscript",
+        "sha256": "9b9fcfe471149634d96923532d3eb1a9294288a51ff3d9321d76a4c2b51ae91c",
+        "status": "PRESENT"
+      }
+    ],
+    "recorded_at": 1794408177.605313,
+    "scope": "project",
+    "snapshot_schema": "laplace.research-dependencies/3"
+  },
+  "record_request": {
+    "intent_digest": "sha256:094be411b21b31115dd168cf5e5d2d4cf0421ee299243a7d01afe94f5b0f87f6",
+    "request_id": "record-0336208fbf124db5a5e1b66789ee43be"
+  },
+  "result": "research_runs/run-0781a7b8f8513412.result.json",
+  "result_scope": "manuscript",
+  "revision": "sha256:83874dc967c02c8549c4212d2f77fd6b43480733cf13a4f4e7d72367b131655c",
+  "run_id": "run-0781a7b8f8513412",
+  "scope": "project",
+  "source": "research/slg-analytic-20261111-v2/finite_checks.py",
+  "source_scope": "project",
+  "summary": "Deterministic 172 finite checks completed with 0 failures. Pinned original-v0 function replay matches on a 40-observation schedule. v1 scores both exact candidates on one rolling-MSE horizon, with zero no-update gain and identical evaluated/applied states. OR hazard composition/count derivative and 4x4 product, XX, diagonal-CQ and coherent-ZZ controls match their stated identities. This is targeted local numerical corroboration of the accompanying analytic addendum, not independent proof or original historical-grid reproduction.",
+  "title": "Finite analytic repair v2: executed-action, OR-hazard and quantum-recovery controls"
+}

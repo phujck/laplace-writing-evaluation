@@ -1,0 +1,1392 @@
+{
+  "placed": [
+    {
+      "asset_id": "figure:slg-priced-policy-tracking-20261111",
+      "label": "fig:slg-priced-policy-tracking-20261111",
+      "artefact": "figures/generated/slg-priced-policy-tracking-20261111.pdf",
+      "generator": "manuscript_spec.json",
+      "spec_id": "slg-priced-policy-tracking-20261111",
+      "promise": "What trajectories underlie the prediction and recovery summaries for one declared stream?",
+      "matched": true,
+      "caption": "Carried model state under actual-step pricing. The representative stream is seed 0, fixed before execution. The latent slope changes at observations \\(140,310,470,600\\) and is used only for evaluation. The other curves show the actual-step-priced rolling policy at the displayed prices. Each update moves \\(0.22\\) of the way towards the trailing ridge target and is bought only when \\(2.5\\) times its actual window improvement exceeds \\(c\\). Estimates are pre-action states. High prices can retain bias after a shift. This trace must be read with the matched risk, update-frequency and occupancy comparisons, not as a calibrated choice of price.",
+      "result_ids": [
+        "retained-result-e3d5544bddeca7fec4d7"
+      ],
+      "placed_at": "sections/09_numerical_demonstrations.tex",
+      "placed_at_scope": "manuscript",
+      "placed_repo_file": "synthetics papers/self-consistent-loss-geometries-coupled-evaluators/manuscript/imported/sections/09_numerical_demonstrations.tex",
+      "research_binding": {
+        "status": "CURRENT",
+        "bindings": [
+          {
+            "id": "retained-result-e3d5544bddeca7fec4d7",
+            "revision": "sha256:31d9ca76c18efa498fe366601d119c83cf51847da21e232a53e12aa6aa05190b",
+            "currentness": "CURRENT",
+            "reason": "all explicitly declared dependencies match their recorded identities",
+            "dependencies": [
+              {
+                "record_id": "retained-result-e3d5544bddeca7fec4d7",
+                "dependencies": [
+                  {
+                    "path": "retained-evidence/evidence/SLG_VISUAL_PRODUCTION_2026-11-11/finite-figure-protocol.json",
+                    "status": "PRESENT",
+                    "bytes": 5993,
+                    "sha256": "58ff935dfb8c3f7a3463d3ecd22a9dc23ebd64fa24214e7d1c084cf4fad27ed1",
+                    "scope": "project"
+                  },
+                  {
+                    "path": "retained-evidence/research/slg-scientific-figures-20261111/scientific_tables.py",
+                    "status": "PRESENT",
+                    "bytes": 14945,
+                    "sha256": "f9c98ffb562216caf9b71a40351777b274b72eb9e4fbdf199d6e99e8a171c905",
+                    "scope": "project"
+                  },
+                  {
+                    "path": "retained-evidence/research_runs/run-7f8022a64802820f.result.json",
+                    "status": "PRESENT",
+                    "bytes": 20027,
+                    "sha256": "730a153523a22f9abc6d66c6e6527645d1bc43d92eb58273bfb560b0f002210e"
+                  },
+                  {
+                    "path": "retained-evidence/research/slg-scientific-figures-20261111/outputs/run-7f8022a64802820f.result/per_stream_metrics.csv",
+                    "status": "PRESENT",
+                    "bytes": 48380,
+                    "sha256": "003671aec49aeae8d5756dd70f8047485c97c1a96c0b4c28f9dabf987e997d3d",
+                    "scope": "project"
+                  },
+                  {
+                    "path": "retained-evidence/research/slg-scientific-figures-20261111/outputs/run-7f8022a64802820f.result/representative_action_ledgers.csv",
+                    "status": "PRESENT",
+                    "bytes": 438772,
+                    "sha256": "77f1f148f85a6a239990ea310f82953792854c558ad2a2acb21cf195de0f3111",
+                    "scope": "project"
+                  },
+                  {
+                    "path": "retained-evidence/research/slg-scientific-figures-20261111/outputs/run-7f8022a64802820f.result/prediction_risk_curve.csv",
+                    "status": "PRESENT",
+                    "bytes": 1249,
+                    "sha256": "40af949ea01bc8472e267023462f2d97244cd3b4f682eab7e2c3f54e082b06d1",
+                    "scope": "project"
+                  },
+                  {
+                    "path": "retained-evidence/research/slg-scientific-figures-20261111/outputs/run-7f8022a64802820f.result/promotion_rate_curve.csv",
+                    "status": "PRESENT",
+                    "bytes": 982,
+                    "sha256": "c50039032f76e108d5590aca12f334ce0ef1815ee7a2d2daed44f121610069e6",
+                    "scope": "project"
+                  },
+                  {
+                    "path": "retained-evidence/research/slg-scientific-figures-20261111/outputs/run-7f8022a64802820f.result/recovery_failure_curve.csv",
+                    "status": "PRESENT",
+                    "bytes": 851,
+                    "sha256": "415357835b1c3a3ed574053bb195d9314f2983ea92de7cfb6825d07405200f19",
+                    "scope": "project"
+                  },
+                  {
+                    "path": "retained-evidence/research/slg-scientific-figures-20261111/outputs/run-7f8022a64802820f.result/off_transition_curve.csv",
+                    "status": "PRESENT",
+                    "bytes": 1003,
+                    "sha256": "5655fc8cb35cb346f866a5bdfc2f3595892f886ec16a2cc46112a002ba8ee459",
+                    "scope": "project"
+                  },
+                  {
+                    "path": "retained-evidence/research/slg-scientific-figures-20261111/outputs/run-7f8022a64802820f.result/paired_differences.csv",
+                    "status": "PRESENT",
+                    "bytes": 657,
+                    "sha256": "b697e833f676a50669404e6689ababc845154b39e21412b9f38909788d9b8666",
+                    "scope": "project"
+                  },
+                  {
+                    "path": "retained-evidence/research/slg-scientific-figures-20261111/outputs/run-7f8022a64802820f.result/priced_policy_tracking.csv",
+                    "status": "PRESENT",
+                    "bytes": 40972,
+                    "sha256": "20fde7d621d27746172840d71d6450193d90cec01dcbbac9a2cf3a1eb4158f47",
+                    "scope": "project"
+                  },
+                  {
+                    "path": "retained-evidence/records/result-e3d5544bddeca7fec4d7.json",
+                    "status": "PRESENT",
+                    "bytes": 7262,
+                    "sha256": "dce2695a617997ef37cad32f99b5f2c773c14c5e4a1978679326fe1811bf78cf",
+                    "scope": "project"
+                  },
+                  {
+                    "path": "retained-evidence/research_runs/run-7f8022a64802820f.json",
+                    "status": "PRESENT",
+                    "bytes": 3611,
+                    "sha256": "8c4b1a57705af0f50cd7faf8197c074b079b189b64c21376d4251c320094c49e",
+                    "scope": "manuscript"
+                  },
+                  {
+                    "path": "retained-evidence/research_runs/run-7f8022a64802820f.receipt.json",
+                    "status": "PRESENT",
+                    "bytes": 2363,
+                    "sha256": "f146d663ec8e002b2de5beb27904002064f3bea9ff2da87942463de9b6cd4aa2",
+                    "scope": "manuscript"
+                  }
+                ],
+                "status": "CURRENT",
+                "reason": "all pinned dependencies match",
+                "coverage": {
+                  "snapshot_schema": "laplace.research-dependencies/3",
+                  "newly_untracked": [],
+                  "changed_pins": [],
+                  "removed_pins": [],
+                  "retired_derived_presentation_pins": [],
+                  "historical_verification": "PINNED_DEPENDENCIES_ONLY"
+                }
+              }
+            ]
+          }
+        ],
+        "gaps": []
+      },
+      "render": {
+        "outputs": [
+          "figures/generated/slg-priced-policy-tracking-20261111.svg",
+          "figures/generated/slg-priced-policy-tracking-20261111.pdf",
+          "figures/generated/slg-priced-policy-tracking-20261111.png"
+        ],
+        "renderer": "matplotlib",
+        "input_digest": "4b727d1e2d257537f2ef5f6ae02c60205a9dbcd72addace7acb9253582ca3b72",
+        "drawing_input_digest": "4b727d1e2d257537f2ef5f6ae02c60205a9dbcd72addace7acb9253582ca3b72",
+        "drawing_inputs": {
+          "spec": {
+            "id": "slg-priced-policy-tracking-20261111",
+            "kind": "plot",
+            "x": "Time",
+            "series": [
+              "True slope",
+              "v1 price 0.005",
+              "v1 price 0.06",
+              "v1 price 0.4"
+            ],
+            "x_label": "Observation index (discrete steps)",
+            "y_label": "Slope / pre-action estimate"
+          },
+          "data": "20fde7d621d27746172840d71d6450193d90cec01dcbbac9a2cf3a1eb4158f47"
+        },
+        "research_bindings": [
+          {
+            "id": "retained-result-e3d5544bddeca7fec4d7",
+            "revision": "sha256:31d9ca76c18efa498fe366601d119c83cf51847da21e232a53e12aa6aa05190b",
+            "currentness": "CURRENT"
+          }
+        ],
+        "presentation_metadata": {
+          "title": "What the priced partial policy actually tracks",
+          "question": "What trajectories underlie the prediction and recovery summaries for one declared stream?",
+          "caption": "Carried model state under actual-step pricing. The representative stream is seed 0, fixed before execution. The latent slope changes at observations \\(140,310,470,600\\) and is used only for evaluation. The other curves show the actual-step-priced rolling policy at the displayed prices. Each update moves \\(0.22\\) of the way towards the trailing ridge target and is bought only when \\(2.5\\) times its actual window improvement exceeds \\(c\\). Estimates are pre-action states. High prices can retain bias after a shift. This trace must be read with the matched risk, update-frequency and occupancy comparisons, not as a calibrated choice of price.",
+          "source_data": "retained-evidence/research/slg-scientific-figures-20261111/outputs/run-7f8022a64802820f.result/priced_policy_tracking.csv",
+          "source": null
+        },
+        "style_version": "8fbbf4d197344ea283f91ba2513e3d91084b69d4de13a039a2f86efc14bb5d2a",
+        "style_profile": "profiles/visual_style.json",
+        "visual_review": "pending",
+        "output_digests": {
+          "figures/generated/slg-priced-policy-tracking-20261111.svg": "aff7042cf103ca0d2dd1cf8186648c3d5394fc857ea0051a73604d9f95df0f8b",
+          "figures/generated/slg-priced-policy-tracking-20261111.pdf": "a39a222b231904ac52a00387062bb571d5bc5322202f15323ebf65aee2e5c7d8",
+          "figures/generated/slg-priced-policy-tracking-20261111.png": "d70af030639f1216a8714605645a1d25d6adfcfc11bbfbc48eb51c097a5e6066"
+        }
+      },
+      "visual_review": "pending",
+      "source_kind": "data"
+    },
+    {
+      "asset_id": "figure:slg-or-hazard-defect-20261111",
+      "label": "fig:slg-or-hazard-defect-20261111",
+      "artefact": "figures/generated/slg-or-hazard-defect-20261111.pdf",
+      "generator": "manuscript_spec.json",
+      "spec_id": "slg-or-hazard-defect-20261111",
+      "promise": "What changes when the receiver retains exact cumulative hazard rather than one common intercept?",
+      "matched": true,
+      "caption": "Exact event closure and the cost of a smaller description. Top (a): Bernoulli event total variation over four externally frozen independent four-event schedules at 81 prices. Exact hazard retains \\(h_B(c)\\) and reproduces the OR probability. The naive law uses \\(\\sigma(S_B-c)\\). The common-intercept law uses the arithmetic mean of block-specific \\(c_{\\mathrm{eff}}\\) at each price. Its mean and maximum residuals quantify the effect of that restriction. The mean intercept minimises squared log-odds error, not TV. Bottom (b): for the same blocks, \\(dc_{\\mathrm{eff}}/dc=\\mathbb E[N_B\\mid N_B\\geq1]\\). Curves give its block mean, minimum and maximum, with exact bounds 1 and 4. This is conditional event multiplicity, not an instability eigenvalue. The full margin schedules are retained for repricing. A single hazard value at one price is insufficient for that response.",
+      "result_ids": [
+        "retained-slg-or-hazard-projection-20261111"
+      ],
+      "placed_at": "sections/05_evidence_examples.tex",
+      "placed_at_scope": "manuscript",
+      "placed_repo_file": "synthetics papers/self-consistent-loss-geometries-coupled-evaluators/manuscript/imported/sections/05_evidence_examples.tex",
+      "research_binding": {
+        "status": "CURRENT",
+        "bindings": [
+          {
+            "id": "retained-slg-or-hazard-projection-20261111",
+            "revision": "sha256:9b4bf3984eee7ec92a1fc975d0ed441153ac635df19ccc6ab8ff0ee4d6d463e1",
+            "currentness": "CURRENT",
+            "reason": "all explicitly declared dependencies match their recorded identities",
+            "dependencies": [
+              {
+                "record_id": "retained-slg-or-hazard-projection-20261111",
+                "dependencies": [
+                  {
+                    "path": "retained-evidence/evidence/SLG_VISUAL_PRODUCTION_2026-11-11/finite-figure-protocol.json",
+                    "status": "PRESENT",
+                    "bytes": 5993,
+                    "sha256": "58ff935dfb8c3f7a3463d3ecd22a9dc23ebd64fa24214e7d1c084cf4fad27ed1",
+                    "scope": "project"
+                  },
+                  {
+                    "path": "retained-evidence/research/slg-scientific-figures-20261111/scientific_tables.py",
+                    "status": "PRESENT",
+                    "bytes": 14945,
+                    "sha256": "f9c98ffb562216caf9b71a40351777b274b72eb9e4fbdf199d6e99e8a171c905",
+                    "scope": "project"
+                  },
+                  {
+                    "path": "retained-evidence/research_runs/run-7f8022a64802820f.result.json",
+                    "status": "PRESENT",
+                    "bytes": 20027,
+                    "sha256": "730a153523a22f9abc6d66c6e6527645d1bc43d92eb58273bfb560b0f002210e"
+                  },
+                  {
+                    "path": "retained-evidence/research/slg-scientific-figures-20261111/outputs/run-7f8022a64802820f.result/or_hazard_projection.csv",
+                    "status": "PRESENT",
+                    "bytes": 14687,
+                    "sha256": "b1821dd80de0369065a2891354bde68658217241712fe4dad728ae41dc6b0f05",
+                    "scope": "project"
+                  },
+                  {
+                    "path": "retained-evidence/records/slg-or-hazard-projection-20261111.json",
+                    "status": "PRESENT",
+                    "bytes": 2744,
+                    "sha256": "5b6965badafc85276c233ba4f0a4d8cb297f36c2a05e42b7d8f5efe4f9a929fe",
+                    "scope": "project"
+                  },
+                  {
+                    "path": "retained-evidence/research_runs/run-7f8022a64802820f.json",
+                    "status": "PRESENT",
+                    "bytes": 3611,
+                    "sha256": "8c4b1a57705af0f50cd7faf8197c074b079b189b64c21376d4251c320094c49e",
+                    "scope": "manuscript"
+                  },
+                  {
+                    "path": "retained-evidence/research_runs/run-7f8022a64802820f.receipt.json",
+                    "status": "PRESENT",
+                    "bytes": 2363,
+                    "sha256": "f146d663ec8e002b2de5beb27904002064f3bea9ff2da87942463de9b6cd4aa2",
+                    "scope": "manuscript"
+                  }
+                ],
+                "status": "CURRENT",
+                "reason": "all pinned dependencies match",
+                "coverage": {
+                  "snapshot_schema": "laplace.research-dependencies/3",
+                  "newly_untracked": [],
+                  "changed_pins": [],
+                  "removed_pins": [],
+                  "retired_derived_presentation_pins": [],
+                  "historical_verification": "PINNED_DEPENDENCIES_ONLY"
+                }
+              }
+            ]
+          }
+        ],
+        "gaps": []
+      },
+      "render": {
+        "outputs": [
+          "figures/generated/slg-or-hazard-defect-20261111.svg",
+          "figures/generated/slg-or-hazard-defect-20261111.pdf",
+          "figures/generated/slg-or-hazard-defect-20261111.png"
+        ],
+        "renderer": "matplotlib",
+        "input_digest": "5680d3fa77893521a6f7d75aa1d79c603b3a6936be06f25e083962cb15d833dc",
+        "drawing_input_digest": "5680d3fa77893521a6f7d75aa1d79c603b3a6936be06f25e083962cb15d833dc",
+        "drawing_inputs": {
+          "spec": {
+            "id": "slg-or-hazard-defect-20261111",
+            "kind": "plot",
+            "x": "Price",
+            "series": [
+              "Naive mean TV",
+              "Mean intercept TV",
+              "Max intercept TV",
+              "Exact hazard TV"
+            ],
+            "x_label": "Threshold price c (dimensionless)",
+            "y_label": "Event total variation"
+          },
+          "data": "b1821dd80de0369065a2891354bde68658217241712fe4dad728ae41dc6b0f05"
+        },
+        "research_bindings": [
+          {
+            "id": "retained-slg-or-hazard-projection-20261111",
+            "revision": "sha256:9b4bf3984eee7ec92a1fc975d0ed441153ac635df19ccc6ab8ff0ee4d6d463e1",
+            "currentness": "CURRENT"
+          }
+        ],
+        "presentation_metadata": {
+          "title": "Exact event closure, approximate threshold",
+          "question": "What changes when the receiver retains exact cumulative hazard rather than one common intercept?",
+          "caption": "Exact event closure and the cost of a smaller description. Top (a): Bernoulli event total variation over four externally frozen independent four-event schedules at 81 prices. Exact hazard retains \\(h_B(c)\\) and reproduces the OR probability. The naive law uses \\(\\sigma(S_B-c)\\). The common-intercept law uses the arithmetic mean of block-specific \\(c_{\\mathrm{eff}}\\) at each price. Its mean and maximum residuals quantify the effect of that restriction. The mean intercept minimises squared log-odds error, not TV. Bottom (b): for the same blocks, \\(dc_{\\mathrm{eff}}/dc=\\mathbb E[N_B\\mid N_B\\geq1]\\). Curves give its block mean, minimum and maximum, with exact bounds 1 and 4. This is conditional event multiplicity, not an instability eigenvalue. The full margin schedules are retained for repricing. A single hazard value at one price is insufficient for that response.",
+          "source_data": "retained-evidence/research/slg-scientific-figures-20261111/outputs/run-7f8022a64802820f.result/or_hazard_projection.csv",
+          "source": null
+        },
+        "style_version": "8fbbf4d197344ea283f91ba2513e3d91084b69d4de13a039a2f86efc14bb5d2a",
+        "style_profile": "profiles/visual_style.json",
+        "visual_review": "pending",
+        "output_digests": {
+          "figures/generated/slg-or-hazard-defect-20261111.svg": "26454261f04824940118974b00b9d663639826513f076548ce684fc9d644752a",
+          "figures/generated/slg-or-hazard-defect-20261111.pdf": "295124443814569562a09392a61fec0507cb81a672ab3ca91de4fc70fa4fae09",
+          "figures/generated/slg-or-hazard-defect-20261111.png": "b32d5872734a241ca81b92a2490acf836f27f89dc45371c3381e3fb0c3c5b047"
+        }
+      },
+      "visual_review": "pending",
+      "source_kind": "data"
+    },
+    {
+      "asset_id": "figure:slg-or-event-multiplicity-20261111",
+      "label": "fig:slg-or-event-multiplicity-20261111",
+      "artefact": "figures/generated/slg-or-event-multiplicity-20261111.pdf",
+      "generator": "manuscript_spec.json",
+      "spec_id": "slg-or-event-multiplicity-20261111",
+      "promise": "What does the effective-threshold derivative measure under this declared event map?",
+      "matched": true,
+      "caption": "Exact event closure and the cost of a smaller description. Top (a): Bernoulli event total variation over four externally frozen independent four-event schedules at 81 prices. Exact hazard retains \\(h_B(c)\\) and reproduces the OR probability. The naive law uses \\(\\sigma(S_B-c)\\). The common-intercept law uses the arithmetic mean of block-specific \\(c_{\\mathrm{eff}}\\) at each price. Its mean and maximum residuals quantify the effect of that restriction. The mean intercept minimises squared log-odds error, not TV. Bottom (b): for the same blocks, \\(dc_{\\mathrm{eff}}/dc=\\mathbb E[N_B\\mid N_B\\geq1]\\). Curves give its block mean, minimum and maximum, with exact bounds 1 and 4. This is conditional event multiplicity, not an instability eigenvalue. The full margin schedules are retained for repricing. A single hazard value at one price is insufficient for that response.",
+      "result_ids": [
+        "retained-slg-or-hazard-projection-20261111"
+      ],
+      "placed_at": "sections/05_evidence_examples.tex",
+      "placed_at_scope": "manuscript",
+      "placed_repo_file": "synthetics papers/self-consistent-loss-geometries-coupled-evaluators/manuscript/imported/sections/05_evidence_examples.tex",
+      "research_binding": {
+        "status": "CURRENT",
+        "bindings": [
+          {
+            "id": "retained-slg-or-hazard-projection-20261111",
+            "revision": "sha256:9b4bf3984eee7ec92a1fc975d0ed441153ac635df19ccc6ab8ff0ee4d6d463e1",
+            "currentness": "CURRENT",
+            "reason": "all explicitly declared dependencies match their recorded identities",
+            "dependencies": [
+              {
+                "record_id": "retained-slg-or-hazard-projection-20261111",
+                "dependencies": [
+                  {
+                    "path": "retained-evidence/evidence/SLG_VISUAL_PRODUCTION_2026-11-11/finite-figure-protocol.json",
+                    "status": "PRESENT",
+                    "bytes": 5993,
+                    "sha256": "58ff935dfb8c3f7a3463d3ecd22a9dc23ebd64fa24214e7d1c084cf4fad27ed1",
+                    "scope": "project"
+                  },
+                  {
+                    "path": "retained-evidence/research/slg-scientific-figures-20261111/scientific_tables.py",
+                    "status": "PRESENT",
+                    "bytes": 14945,
+                    "sha256": "f9c98ffb562216caf9b71a40351777b274b72eb9e4fbdf199d6e99e8a171c905",
+                    "scope": "project"
+                  },
+                  {
+                    "path": "retained-evidence/research_runs/run-7f8022a64802820f.result.json",
+                    "status": "PRESENT",
+                    "bytes": 20027,
+                    "sha256": "730a153523a22f9abc6d66c6e6527645d1bc43d92eb58273bfb560b0f002210e"
+                  },
+                  {
+                    "path": "retained-evidence/research/slg-scientific-figures-20261111/outputs/run-7f8022a64802820f.result/or_hazard_projection.csv",
+                    "status": "PRESENT",
+                    "bytes": 14687,
+                    "sha256": "b1821dd80de0369065a2891354bde68658217241712fe4dad728ae41dc6b0f05",
+                    "scope": "project"
+                  },
+                  {
+                    "path": "retained-evidence/records/slg-or-hazard-projection-20261111.json",
+                    "status": "PRESENT",
+                    "bytes": 2744,
+                    "sha256": "5b6965badafc85276c233ba4f0a4d8cb297f36c2a05e42b7d8f5efe4f9a929fe",
+                    "scope": "project"
+                  },
+                  {
+                    "path": "retained-evidence/research_runs/run-7f8022a64802820f.json",
+                    "status": "PRESENT",
+                    "bytes": 3611,
+                    "sha256": "8c4b1a57705af0f50cd7faf8197c074b079b189b64c21376d4251c320094c49e",
+                    "scope": "manuscript"
+                  },
+                  {
+                    "path": "retained-evidence/research_runs/run-7f8022a64802820f.receipt.json",
+                    "status": "PRESENT",
+                    "bytes": 2363,
+                    "sha256": "f146d663ec8e002b2de5beb27904002064f3bea9ff2da87942463de9b6cd4aa2",
+                    "scope": "manuscript"
+                  }
+                ],
+                "status": "CURRENT",
+                "reason": "all pinned dependencies match",
+                "coverage": {
+                  "snapshot_schema": "laplace.research-dependencies/3",
+                  "newly_untracked": [],
+                  "changed_pins": [],
+                  "removed_pins": [],
+                  "retired_derived_presentation_pins": [],
+                  "historical_verification": "PINNED_DEPENDENCIES_ONLY"
+                }
+              }
+            ]
+          }
+        ],
+        "gaps": []
+      },
+      "render": {
+        "outputs": [
+          "figures/generated/slg-or-event-multiplicity-20261111.svg",
+          "figures/generated/slg-or-event-multiplicity-20261111.pdf",
+          "figures/generated/slg-or-event-multiplicity-20261111.png"
+        ],
+        "renderer": "matplotlib",
+        "input_digest": "76063565068e2cc5206895dcc694172ad99c48f9bff63d25bc65ad22a873ae2b",
+        "drawing_input_digest": "76063565068e2cc5206895dcc694172ad99c48f9bff63d25bc65ad22a873ae2b",
+        "drawing_inputs": {
+          "spec": {
+            "id": "slg-or-event-multiplicity-20261111",
+            "kind": "plot",
+            "x": "Price",
+            "series": [
+              "Mean conditional count",
+              "Min conditional count",
+              "Max conditional count",
+              "Single event bound",
+              "Block size bound"
+            ],
+            "x_label": "Threshold price c (dimensionless)",
+            "y_label": "Conditional fine-event count"
+          },
+          "data": "b1821dd80de0369065a2891354bde68658217241712fe4dad728ae41dc6b0f05"
+        },
+        "research_bindings": [
+          {
+            "id": "retained-slg-or-hazard-projection-20261111",
+            "revision": "sha256:9b4bf3984eee7ec92a1fc975d0ed441153ac635df19ccc6ab8ff0ee4d6d463e1",
+            "currentness": "CURRENT"
+          }
+        ],
+        "presentation_metadata": {
+          "title": "Threshold response counts fine events",
+          "question": "What does the effective-threshold derivative measure under this declared event map?",
+          "caption": "Exact event closure and the cost of a smaller description. Top (a): Bernoulli event total variation over four externally frozen independent four-event schedules at 81 prices. Exact hazard retains \\(h_B(c)\\) and reproduces the OR probability. The naive law uses \\(\\sigma(S_B-c)\\). The common-intercept law uses the arithmetic mean of block-specific \\(c_{\\mathrm{eff}}\\) at each price. Its mean and maximum residuals quantify the effect of that restriction. The mean intercept minimises squared log-odds error, not TV. Bottom (b): for the same blocks, \\(dc_{\\mathrm{eff}}/dc=\\mathbb E[N_B\\mid N_B\\geq1]\\). Curves give its block mean, minimum and maximum, with exact bounds 1 and 4. This is conditional event multiplicity, not an instability eigenvalue. The full margin schedules are retained for repricing. A single hazard value at one price is insufficient for that response.",
+          "source_data": "retained-evidence/research/slg-scientific-figures-20261111/outputs/run-7f8022a64802820f.result/or_hazard_projection.csv",
+          "source": null
+        },
+        "style_version": "8fbbf4d197344ea283f91ba2513e3d91084b69d4de13a039a2f86efc14bb5d2a",
+        "style_profile": "profiles/visual_style.json",
+        "visual_review": "pending",
+        "output_digests": {
+          "figures/generated/slg-or-event-multiplicity-20261111.svg": "b814116b0209af3adb2f0e70cc6426ac525fce1b329b2c09e7e2ecee26289107",
+          "figures/generated/slg-or-event-multiplicity-20261111.pdf": "1ef6c7aa134e0fc8aedb5eeecfa52b8b6c5f41fcd09922326bdedc7e99aee851",
+          "figures/generated/slg-or-event-multiplicity-20261111.png": "f8bb4a074b0e2b050fd8de5b5b9ffcffec2b3127a1702a6773db05473675269b"
+        }
+      },
+      "visual_review": "pending",
+      "source_kind": "data"
+    },
+    {
+      "asset_id": "figure:slg-promotion-risk-20261111",
+      "label": "fig:slg-promotion-risk-20261111",
+      "artefact": "figures/generated/slg-promotion-risk-20261111.pdf",
+      "generator": "manuscript_spec.json",
+      "spec_id": "slg-promotion-risk-20261111",
+      "promise": "How do the three declared policies compare on one-step prediction before updating?",
+      "matched": true,
+      "caption": "Prediction risk at matched prices. Mean squared one-step prediction error, in squared synthetic observation units, averaged over 12 matched 700-step streams using observations \\(50\\)--\\(699\\). The three methods are defined in the shared policy key in the text. The true-slope noise oracle is privileged and used only for evaluation. The never-update baseline keeps slope 1. Actual-step pricing has higher mean error than the noisy-step policy at every tested price. Lines connect the six predeclared finite stream means and carry no uncertainty bands. The complete means and the stream-level uncertainty convention are given in Appendix~\\ref{app:protocol}.",
+      "result_ids": [
+        "retained-result-e3d5544bddeca7fec4d7"
+      ],
+      "placed_at": "sections/09_numerical_demonstrations.tex",
+      "placed_at_scope": "manuscript",
+      "placed_repo_file": "synthetics papers/self-consistent-loss-geometries-coupled-evaluators/manuscript/imported/sections/09_numerical_demonstrations.tex",
+      "research_binding": {
+        "status": "CURRENT",
+        "bindings": [
+          {
+            "id": "retained-result-e3d5544bddeca7fec4d7",
+            "revision": "sha256:31d9ca76c18efa498fe366601d119c83cf51847da21e232a53e12aa6aa05190b",
+            "currentness": "CURRENT",
+            "reason": "all explicitly declared dependencies match their recorded identities",
+            "dependencies": [
+              {
+                "record_id": "retained-result-e3d5544bddeca7fec4d7",
+                "dependencies": [
+                  {
+                    "path": "retained-evidence/evidence/SLG_VISUAL_PRODUCTION_2026-11-11/finite-figure-protocol.json",
+                    "status": "PRESENT",
+                    "bytes": 5993,
+                    "sha256": "58ff935dfb8c3f7a3463d3ecd22a9dc23ebd64fa24214e7d1c084cf4fad27ed1",
+                    "scope": "project"
+                  },
+                  {
+                    "path": "retained-evidence/research/slg-scientific-figures-20261111/scientific_tables.py",
+                    "status": "PRESENT",
+                    "bytes": 14945,
+                    "sha256": "f9c98ffb562216caf9b71a40351777b274b72eb9e4fbdf199d6e99e8a171c905",
+                    "scope": "project"
+                  },
+                  {
+                    "path": "retained-evidence/research_runs/run-7f8022a64802820f.result.json",
+                    "status": "PRESENT",
+                    "bytes": 20027,
+                    "sha256": "730a153523a22f9abc6d66c6e6527645d1bc43d92eb58273bfb560b0f002210e"
+                  },
+                  {
+                    "path": "retained-evidence/research/slg-scientific-figures-20261111/outputs/run-7f8022a64802820f.result/per_stream_metrics.csv",
+                    "status": "PRESENT",
+                    "bytes": 48380,
+                    "sha256": "003671aec49aeae8d5756dd70f8047485c97c1a96c0b4c28f9dabf987e997d3d",
+                    "scope": "project"
+                  },
+                  {
+                    "path": "retained-evidence/research/slg-scientific-figures-20261111/outputs/run-7f8022a64802820f.result/representative_action_ledgers.csv",
+                    "status": "PRESENT",
+                    "bytes": 438772,
+                    "sha256": "77f1f148f85a6a239990ea310f82953792854c558ad2a2acb21cf195de0f3111",
+                    "scope": "project"
+                  },
+                  {
+                    "path": "retained-evidence/research/slg-scientific-figures-20261111/outputs/run-7f8022a64802820f.result/prediction_risk_curve.csv",
+                    "status": "PRESENT",
+                    "bytes": 1249,
+                    "sha256": "40af949ea01bc8472e267023462f2d97244cd3b4f682eab7e2c3f54e082b06d1",
+                    "scope": "project"
+                  },
+                  {
+                    "path": "retained-evidence/research/slg-scientific-figures-20261111/outputs/run-7f8022a64802820f.result/promotion_rate_curve.csv",
+                    "status": "PRESENT",
+                    "bytes": 982,
+                    "sha256": "c50039032f76e108d5590aca12f334ce0ef1815ee7a2d2daed44f121610069e6",
+                    "scope": "project"
+                  },
+                  {
+                    "path": "retained-evidence/research/slg-scientific-figures-20261111/outputs/run-7f8022a64802820f.result/recovery_failure_curve.csv",
+                    "status": "PRESENT",
+                    "bytes": 851,
+                    "sha256": "415357835b1c3a3ed574053bb195d9314f2983ea92de7cfb6825d07405200f19",
+                    "scope": "project"
+                  },
+                  {
+                    "path": "retained-evidence/research/slg-scientific-figures-20261111/outputs/run-7f8022a64802820f.result/off_transition_curve.csv",
+                    "status": "PRESENT",
+                    "bytes": 1003,
+                    "sha256": "5655fc8cb35cb346f866a5bdfc2f3595892f886ec16a2cc46112a002ba8ee459",
+                    "scope": "project"
+                  },
+                  {
+                    "path": "retained-evidence/research/slg-scientific-figures-20261111/outputs/run-7f8022a64802820f.result/paired_differences.csv",
+                    "status": "PRESENT",
+                    "bytes": 657,
+                    "sha256": "b697e833f676a50669404e6689ababc845154b39e21412b9f38909788d9b8666",
+                    "scope": "project"
+                  },
+                  {
+                    "path": "retained-evidence/research/slg-scientific-figures-20261111/outputs/run-7f8022a64802820f.result/priced_policy_tracking.csv",
+                    "status": "PRESENT",
+                    "bytes": 40972,
+                    "sha256": "20fde7d621d27746172840d71d6450193d90cec01dcbbac9a2cf3a1eb4158f47",
+                    "scope": "project"
+                  },
+                  {
+                    "path": "retained-evidence/records/result-e3d5544bddeca7fec4d7.json",
+                    "status": "PRESENT",
+                    "bytes": 7262,
+                    "sha256": "dce2695a617997ef37cad32f99b5f2c773c14c5e4a1978679326fe1811bf78cf",
+                    "scope": "project"
+                  },
+                  {
+                    "path": "retained-evidence/research_runs/run-7f8022a64802820f.json",
+                    "status": "PRESENT",
+                    "bytes": 3611,
+                    "sha256": "8c4b1a57705af0f50cd7faf8197c074b079b189b64c21376d4251c320094c49e",
+                    "scope": "manuscript"
+                  },
+                  {
+                    "path": "retained-evidence/research_runs/run-7f8022a64802820f.receipt.json",
+                    "status": "PRESENT",
+                    "bytes": 2363,
+                    "sha256": "f146d663ec8e002b2de5beb27904002064f3bea9ff2da87942463de9b6cd4aa2",
+                    "scope": "manuscript"
+                  }
+                ],
+                "status": "CURRENT",
+                "reason": "all pinned dependencies match",
+                "coverage": {
+                  "snapshot_schema": "laplace.research-dependencies/3",
+                  "newly_untracked": [],
+                  "changed_pins": [],
+                  "removed_pins": [],
+                  "retired_derived_presentation_pins": [],
+                  "historical_verification": "PINNED_DEPENDENCIES_ONLY"
+                }
+              }
+            ]
+          }
+        ],
+        "gaps": []
+      },
+      "render": {
+        "outputs": [
+          "figures/generated/slg-promotion-risk-20261111.svg",
+          "figures/generated/slg-promotion-risk-20261111.pdf",
+          "figures/generated/slg-promotion-risk-20261111.png"
+        ],
+        "renderer": "matplotlib",
+        "input_digest": "df744756e86499116ef596af670063b52750934b15383bf384b8d7db556b31d7",
+        "drawing_input_digest": "df744756e86499116ef596af670063b52750934b15383bf384b8d7db556b31d7",
+        "drawing_inputs": {
+          "spec": {
+            "id": "slg-promotion-risk-20261111",
+            "kind": "plot",
+            "x": "Log10 price",
+            "series": [
+              "Legacy v0",
+              "Rolling control",
+              "Priced v1",
+              "Noise oracle",
+              "Never update"
+            ],
+            "x_label": "log10(c), promotion price c dimensionless",
+            "y_label": "Pre-action prediction MSE"
+          },
+          "data": "40af949ea01bc8472e267023462f2d97244cd3b4f682eab7e2c3f54e082b06d1"
+        },
+        "research_bindings": [
+          {
+            "id": "retained-result-e3d5544bddeca7fec4d7",
+            "revision": "sha256:31d9ca76c18efa498fe366601d119c83cf51847da21e232a53e12aa6aa05190b",
+            "currentness": "CURRENT"
+          }
+        ],
+        "presentation_metadata": {
+          "title": "Prediction risk at matched update prices",
+          "question": "How do the three declared policies compare on one-step prediction before updating?",
+          "caption": "Prediction risk at matched prices. Mean squared one-step prediction error, in squared synthetic observation units, averaged over 12 matched 700-step streams using observations \\(50\\)--\\(699\\). The three methods are defined in the shared policy key in the text. The true-slope noise oracle is privileged and used only for evaluation. The never-update baseline keeps slope 1. Actual-step pricing has higher mean error than the noisy-step policy at every tested price. Lines connect the six predeclared finite stream means and carry no uncertainty bands. The complete means and the stream-level uncertainty convention are given in Appendix~\\ref{app:protocol}.",
+          "source_data": "retained-evidence/research/slg-scientific-figures-20261111/outputs/run-7f8022a64802820f.result/prediction_risk_curve.csv",
+          "source": null
+        },
+        "style_version": "11d98d58608b7fc4a72fa31e0aba23b73df657017407306b478155287edafdcd",
+        "style_profile": "profiles/visual_style.json",
+        "visual_review": "pending",
+        "output_digests": {
+          "figures/generated/slg-promotion-risk-20261111.svg": "63aede466b6a5f331220a8f69ac84e6c6e63f4708ad906d7bb74d3eee1723212",
+          "figures/generated/slg-promotion-risk-20261111.pdf": "c0a9d2792a8cd2b3043850b6862bef0ee0c21d9722db7e02c1cc1a706864eacf",
+          "figures/generated/slg-promotion-risk-20261111.png": "8b8c75a8eebdbcf632bbcfddc93a3ebd3e2cbc2f1efff9d60e4badc94e01fd20"
+        }
+      },
+      "visual_review": "pending",
+      "source_kind": "data"
+    },
+    {
+      "asset_id": "figure:slg-promotion-frequency-20261111",
+      "label": "fig:slg-promotion-frequency-20261111",
+      "artefact": "figures/generated/slg-promotion-frequency-20261111.pdf",
+      "generator": "manuscript_spec.json",
+      "spec_id": "slg-promotion-frequency-20261111",
+      "promise": "How often does each policy purchase a structural update at the declared price?",
+      "matched": true,
+      "caption": "How price changes update frequency. Promotion counts divided by 650 evaluated observations, averaged over the same 12 matched streams. Every promoted action pays the displayed dimensionless price \\(c\\), while staying pays zero action cost. Higher prices usually buy fewer revisions, but actual-step pricing is not always the sparsest policy. Multiplying a curve by \\(c\\) gives its charged action cost per evaluated observation, not total computational or physical cost. Read with Figs.~\\ref{fig:prediction-risk} and \\ref{fig:recovery}.",
+      "result_ids": [
+        "retained-result-e3d5544bddeca7fec4d7"
+      ],
+      "placed_at": "sections/09_numerical_demonstrations.tex",
+      "placed_at_scope": "manuscript",
+      "placed_repo_file": "synthetics papers/self-consistent-loss-geometries-coupled-evaluators/manuscript/imported/sections/09_numerical_demonstrations.tex",
+      "research_binding": {
+        "status": "CURRENT",
+        "bindings": [
+          {
+            "id": "retained-result-e3d5544bddeca7fec4d7",
+            "revision": "sha256:31d9ca76c18efa498fe366601d119c83cf51847da21e232a53e12aa6aa05190b",
+            "currentness": "CURRENT",
+            "reason": "all explicitly declared dependencies match their recorded identities",
+            "dependencies": [
+              {
+                "record_id": "retained-result-e3d5544bddeca7fec4d7",
+                "dependencies": [
+                  {
+                    "path": "retained-evidence/evidence/SLG_VISUAL_PRODUCTION_2026-11-11/finite-figure-protocol.json",
+                    "status": "PRESENT",
+                    "bytes": 5993,
+                    "sha256": "58ff935dfb8c3f7a3463d3ecd22a9dc23ebd64fa24214e7d1c084cf4fad27ed1",
+                    "scope": "project"
+                  },
+                  {
+                    "path": "retained-evidence/research/slg-scientific-figures-20261111/scientific_tables.py",
+                    "status": "PRESENT",
+                    "bytes": 14945,
+                    "sha256": "f9c98ffb562216caf9b71a40351777b274b72eb9e4fbdf199d6e99e8a171c905",
+                    "scope": "project"
+                  },
+                  {
+                    "path": "retained-evidence/research_runs/run-7f8022a64802820f.result.json",
+                    "status": "PRESENT",
+                    "bytes": 20027,
+                    "sha256": "730a153523a22f9abc6d66c6e6527645d1bc43d92eb58273bfb560b0f002210e"
+                  },
+                  {
+                    "path": "retained-evidence/research/slg-scientific-figures-20261111/outputs/run-7f8022a64802820f.result/per_stream_metrics.csv",
+                    "status": "PRESENT",
+                    "bytes": 48380,
+                    "sha256": "003671aec49aeae8d5756dd70f8047485c97c1a96c0b4c28f9dabf987e997d3d",
+                    "scope": "project"
+                  },
+                  {
+                    "path": "retained-evidence/research/slg-scientific-figures-20261111/outputs/run-7f8022a64802820f.result/representative_action_ledgers.csv",
+                    "status": "PRESENT",
+                    "bytes": 438772,
+                    "sha256": "77f1f148f85a6a239990ea310f82953792854c558ad2a2acb21cf195de0f3111",
+                    "scope": "project"
+                  },
+                  {
+                    "path": "retained-evidence/research/slg-scientific-figures-20261111/outputs/run-7f8022a64802820f.result/prediction_risk_curve.csv",
+                    "status": "PRESENT",
+                    "bytes": 1249,
+                    "sha256": "40af949ea01bc8472e267023462f2d97244cd3b4f682eab7e2c3f54e082b06d1",
+                    "scope": "project"
+                  },
+                  {
+                    "path": "retained-evidence/research/slg-scientific-figures-20261111/outputs/run-7f8022a64802820f.result/promotion_rate_curve.csv",
+                    "status": "PRESENT",
+                    "bytes": 982,
+                    "sha256": "c50039032f76e108d5590aca12f334ce0ef1815ee7a2d2daed44f121610069e6",
+                    "scope": "project"
+                  },
+                  {
+                    "path": "retained-evidence/research/slg-scientific-figures-20261111/outputs/run-7f8022a64802820f.result/recovery_failure_curve.csv",
+                    "status": "PRESENT",
+                    "bytes": 851,
+                    "sha256": "415357835b1c3a3ed574053bb195d9314f2983ea92de7cfb6825d07405200f19",
+                    "scope": "project"
+                  },
+                  {
+                    "path": "retained-evidence/research/slg-scientific-figures-20261111/outputs/run-7f8022a64802820f.result/off_transition_curve.csv",
+                    "status": "PRESENT",
+                    "bytes": 1003,
+                    "sha256": "5655fc8cb35cb346f866a5bdfc2f3595892f886ec16a2cc46112a002ba8ee459",
+                    "scope": "project"
+                  },
+                  {
+                    "path": "retained-evidence/research/slg-scientific-figures-20261111/outputs/run-7f8022a64802820f.result/paired_differences.csv",
+                    "status": "PRESENT",
+                    "bytes": 657,
+                    "sha256": "b697e833f676a50669404e6689ababc845154b39e21412b9f38909788d9b8666",
+                    "scope": "project"
+                  },
+                  {
+                    "path": "retained-evidence/research/slg-scientific-figures-20261111/outputs/run-7f8022a64802820f.result/priced_policy_tracking.csv",
+                    "status": "PRESENT",
+                    "bytes": 40972,
+                    "sha256": "20fde7d621d27746172840d71d6450193d90cec01dcbbac9a2cf3a1eb4158f47",
+                    "scope": "project"
+                  },
+                  {
+                    "path": "retained-evidence/records/result-e3d5544bddeca7fec4d7.json",
+                    "status": "PRESENT",
+                    "bytes": 7262,
+                    "sha256": "dce2695a617997ef37cad32f99b5f2c773c14c5e4a1978679326fe1811bf78cf",
+                    "scope": "project"
+                  },
+                  {
+                    "path": "retained-evidence/research_runs/run-7f8022a64802820f.json",
+                    "status": "PRESENT",
+                    "bytes": 3611,
+                    "sha256": "8c4b1a57705af0f50cd7faf8197c074b079b189b64c21376d4251c320094c49e",
+                    "scope": "manuscript"
+                  },
+                  {
+                    "path": "retained-evidence/research_runs/run-7f8022a64802820f.receipt.json",
+                    "status": "PRESENT",
+                    "bytes": 2363,
+                    "sha256": "f146d663ec8e002b2de5beb27904002064f3bea9ff2da87942463de9b6cd4aa2",
+                    "scope": "manuscript"
+                  }
+                ],
+                "status": "CURRENT",
+                "reason": "all pinned dependencies match",
+                "coverage": {
+                  "snapshot_schema": "laplace.research-dependencies/3",
+                  "newly_untracked": [],
+                  "changed_pins": [],
+                  "removed_pins": [],
+                  "retired_derived_presentation_pins": [],
+                  "historical_verification": "PINNED_DEPENDENCIES_ONLY"
+                }
+              }
+            ]
+          }
+        ],
+        "gaps": []
+      },
+      "render": {
+        "outputs": [
+          "figures/generated/slg-promotion-frequency-20261111.svg",
+          "figures/generated/slg-promotion-frequency-20261111.pdf",
+          "figures/generated/slg-promotion-frequency-20261111.png"
+        ],
+        "renderer": "matplotlib",
+        "input_digest": "501dc765b66c02a7bc01ba673028a3d5e6fa0a23fe86de1878da89cf55f7f44f",
+        "drawing_input_digest": "501dc765b66c02a7bc01ba673028a3d5e6fa0a23fe86de1878da89cf55f7f44f",
+        "drawing_inputs": {
+          "spec": {
+            "id": "slg-promotion-frequency-20261111",
+            "kind": "plot",
+            "x": "Log10 price",
+            "series": [
+              "Legacy v0",
+              "Rolling control",
+              "Priced v1"
+            ],
+            "x_label": "log10(c), promotion price c dimensionless",
+            "y_label": "Promotion fraction"
+          },
+          "data": "c50039032f76e108d5590aca12f334ce0ef1815ee7a2d2daed44f121610069e6"
+        },
+        "research_bindings": [
+          {
+            "id": "retained-result-e3d5544bddeca7fec4d7",
+            "revision": "sha256:31d9ca76c18efa498fe366601d119c83cf51847da21e232a53e12aa6aa05190b",
+            "currentness": "CURRENT"
+          }
+        ],
+        "presentation_metadata": {
+          "title": "How price changes update frequency",
+          "question": "How often does each policy purchase a structural update at the declared price?",
+          "caption": "How price changes update frequency. Promotion counts divided by 650 evaluated observations, averaged over the same 12 matched streams. Every promoted action pays the displayed dimensionless price \\(c\\), while staying pays zero action cost. Higher prices usually buy fewer revisions, but actual-step pricing is not always the sparsest policy. Multiplying a curve by \\(c\\) gives its charged action cost per evaluated observation, not total computational or physical cost. Read with Figs.~\\ref{fig:prediction-risk} and \\ref{fig:recovery}.",
+          "source_data": "retained-evidence/research/slg-scientific-figures-20261111/outputs/run-7f8022a64802820f.result/promotion_rate_curve.csv",
+          "source": null
+        },
+        "style_version": "11d98d58608b7fc4a72fa31e0aba23b73df657017407306b478155287edafdcd",
+        "style_profile": "profiles/visual_style.json",
+        "visual_review": "pending",
+        "output_digests": {
+          "figures/generated/slg-promotion-frequency-20261111.svg": "8434438645130c6f556727482e4a043d78b6af1626244863c22a22d75b2177bb",
+          "figures/generated/slg-promotion-frequency-20261111.pdf": "da4d8494459abc46b3577db52ffa888a164b0026d63b4c8ad9e15879e4d71207",
+          "figures/generated/slg-promotion-frequency-20261111.png": "11233e804193ff085713afb3405c15e875848629d9c5900c416f6e70aab769a2"
+        }
+      },
+      "visual_review": "pending",
+      "source_kind": "data"
+    },
+    {
+      "asset_id": "figure:slg-off-transition-promotions-20261111",
+      "label": "fig:slg-off-transition-promotions-20261111",
+      "artefact": "figures/generated/slg-off-transition-promotions-20261111.pdf",
+      "generator": "manuscript_spec.json",
+      "spec_id": "slg-off-transition-promotions-20261111",
+      "promise": "How often are updates purchased away from the declared structural-shift evaluation windows?",
+      "matched": true,
+      "caption": "Updates outside the declared post-shift windows. Promotion fraction over observations \\(50\\)--\\(699\\) excluding each interval \\([s,s+65)\\) beginning at a true shift \\(s\\), averaged over 12 matched streams. The denominator is 390 observations per stream, not the number of updates. The same three methods and prices are used as in the main comparison. This operational rate is not a false-positive probability. Read with prediction risk and target occupancy before treating suppressed updates as improved adaptation. Lines show finite stream means without uncertainty bands.",
+      "result_ids": [
+        "retained-result-e3d5544bddeca7fec4d7"
+      ],
+      "placed_at": "sections/07_appendix.tex",
+      "placed_at_scope": "manuscript",
+      "placed_repo_file": "synthetics papers/self-consistent-loss-geometries-coupled-evaluators/manuscript/imported/sections/07_appendix.tex",
+      "research_binding": {
+        "status": "CURRENT",
+        "bindings": [
+          {
+            "id": "retained-result-e3d5544bddeca7fec4d7",
+            "revision": "sha256:31d9ca76c18efa498fe366601d119c83cf51847da21e232a53e12aa6aa05190b",
+            "currentness": "CURRENT",
+            "reason": "all explicitly declared dependencies match their recorded identities",
+            "dependencies": [
+              {
+                "record_id": "retained-result-e3d5544bddeca7fec4d7",
+                "dependencies": [
+                  {
+                    "path": "retained-evidence/evidence/SLG_VISUAL_PRODUCTION_2026-11-11/finite-figure-protocol.json",
+                    "status": "PRESENT",
+                    "bytes": 5993,
+                    "sha256": "58ff935dfb8c3f7a3463d3ecd22a9dc23ebd64fa24214e7d1c084cf4fad27ed1",
+                    "scope": "project"
+                  },
+                  {
+                    "path": "retained-evidence/research/slg-scientific-figures-20261111/scientific_tables.py",
+                    "status": "PRESENT",
+                    "bytes": 14945,
+                    "sha256": "f9c98ffb562216caf9b71a40351777b274b72eb9e4fbdf199d6e99e8a171c905",
+                    "scope": "project"
+                  },
+                  {
+                    "path": "retained-evidence/research_runs/run-7f8022a64802820f.result.json",
+                    "status": "PRESENT",
+                    "bytes": 20027,
+                    "sha256": "730a153523a22f9abc6d66c6e6527645d1bc43d92eb58273bfb560b0f002210e"
+                  },
+                  {
+                    "path": "retained-evidence/research/slg-scientific-figures-20261111/outputs/run-7f8022a64802820f.result/per_stream_metrics.csv",
+                    "status": "PRESENT",
+                    "bytes": 48380,
+                    "sha256": "003671aec49aeae8d5756dd70f8047485c97c1a96c0b4c28f9dabf987e997d3d",
+                    "scope": "project"
+                  },
+                  {
+                    "path": "retained-evidence/research/slg-scientific-figures-20261111/outputs/run-7f8022a64802820f.result/representative_action_ledgers.csv",
+                    "status": "PRESENT",
+                    "bytes": 438772,
+                    "sha256": "77f1f148f85a6a239990ea310f82953792854c558ad2a2acb21cf195de0f3111",
+                    "scope": "project"
+                  },
+                  {
+                    "path": "retained-evidence/research/slg-scientific-figures-20261111/outputs/run-7f8022a64802820f.result/prediction_risk_curve.csv",
+                    "status": "PRESENT",
+                    "bytes": 1249,
+                    "sha256": "40af949ea01bc8472e267023462f2d97244cd3b4f682eab7e2c3f54e082b06d1",
+                    "scope": "project"
+                  },
+                  {
+                    "path": "retained-evidence/research/slg-scientific-figures-20261111/outputs/run-7f8022a64802820f.result/promotion_rate_curve.csv",
+                    "status": "PRESENT",
+                    "bytes": 982,
+                    "sha256": "c50039032f76e108d5590aca12f334ce0ef1815ee7a2d2daed44f121610069e6",
+                    "scope": "project"
+                  },
+                  {
+                    "path": "retained-evidence/research/slg-scientific-figures-20261111/outputs/run-7f8022a64802820f.result/recovery_failure_curve.csv",
+                    "status": "PRESENT",
+                    "bytes": 851,
+                    "sha256": "415357835b1c3a3ed574053bb195d9314f2983ea92de7cfb6825d07405200f19",
+                    "scope": "project"
+                  },
+                  {
+                    "path": "retained-evidence/research/slg-scientific-figures-20261111/outputs/run-7f8022a64802820f.result/off_transition_curve.csv",
+                    "status": "PRESENT",
+                    "bytes": 1003,
+                    "sha256": "5655fc8cb35cb346f866a5bdfc2f3595892f886ec16a2cc46112a002ba8ee459",
+                    "scope": "project"
+                  },
+                  {
+                    "path": "retained-evidence/research/slg-scientific-figures-20261111/outputs/run-7f8022a64802820f.result/paired_differences.csv",
+                    "status": "PRESENT",
+                    "bytes": 657,
+                    "sha256": "b697e833f676a50669404e6689ababc845154b39e21412b9f38909788d9b8666",
+                    "scope": "project"
+                  },
+                  {
+                    "path": "retained-evidence/research/slg-scientific-figures-20261111/outputs/run-7f8022a64802820f.result/priced_policy_tracking.csv",
+                    "status": "PRESENT",
+                    "bytes": 40972,
+                    "sha256": "20fde7d621d27746172840d71d6450193d90cec01dcbbac9a2cf3a1eb4158f47",
+                    "scope": "project"
+                  },
+                  {
+                    "path": "retained-evidence/records/result-e3d5544bddeca7fec4d7.json",
+                    "status": "PRESENT",
+                    "bytes": 7262,
+                    "sha256": "dce2695a617997ef37cad32f99b5f2c773c14c5e4a1978679326fe1811bf78cf",
+                    "scope": "project"
+                  },
+                  {
+                    "path": "retained-evidence/research_runs/run-7f8022a64802820f.json",
+                    "status": "PRESENT",
+                    "bytes": 3611,
+                    "sha256": "8c4b1a57705af0f50cd7faf8197c074b079b189b64c21376d4251c320094c49e",
+                    "scope": "manuscript"
+                  },
+                  {
+                    "path": "retained-evidence/research_runs/run-7f8022a64802820f.receipt.json",
+                    "status": "PRESENT",
+                    "bytes": 2363,
+                    "sha256": "f146d663ec8e002b2de5beb27904002064f3bea9ff2da87942463de9b6cd4aa2",
+                    "scope": "manuscript"
+                  }
+                ],
+                "status": "CURRENT",
+                "reason": "all pinned dependencies match",
+                "coverage": {
+                  "snapshot_schema": "laplace.research-dependencies/3",
+                  "newly_untracked": [],
+                  "changed_pins": [],
+                  "removed_pins": [],
+                  "retired_derived_presentation_pins": [],
+                  "historical_verification": "PINNED_DEPENDENCIES_ONLY"
+                }
+              }
+            ]
+          }
+        ],
+        "gaps": []
+      },
+      "render": {
+        "outputs": [
+          "figures/generated/slg-off-transition-promotions-20261111.svg",
+          "figures/generated/slg-off-transition-promotions-20261111.pdf",
+          "figures/generated/slg-off-transition-promotions-20261111.png"
+        ],
+        "renderer": "matplotlib",
+        "input_digest": "507a61d4acd0cf6bfb498dd8353f1b53058a82be8451ee116f2fc36ecbc0afd1",
+        "drawing_input_digest": "507a61d4acd0cf6bfb498dd8353f1b53058a82be8451ee116f2fc36ecbc0afd1",
+        "drawing_inputs": {
+          "spec": {
+            "id": "slg-off-transition-promotions-20261111",
+            "kind": "plot",
+            "x": "Log10 price",
+            "series": [
+              "Legacy v0",
+              "Rolling control",
+              "Priced v1"
+            ],
+            "x_label": "log10(c), promotion price c dimensionless",
+            "y_label": "Off-transition promotion fraction"
+          },
+          "data": "5655fc8cb35cb346f866a5bdfc2f3595892f886ec16a2cc46112a002ba8ee459"
+        },
+        "research_bindings": [
+          {
+            "id": "retained-result-e3d5544bddeca7fec4d7",
+            "revision": "sha256:31d9ca76c18efa498fe366601d119c83cf51847da21e232a53e12aa6aa05190b",
+            "currentness": "CURRENT"
+          }
+        ],
+        "presentation_metadata": {
+          "title": "Updates outside post-shift windows",
+          "question": "How often are updates purchased away from the declared structural-shift evaluation windows?",
+          "caption": "Updates outside the declared post-shift windows. Promotion fraction over observations \\(50\\)--\\(699\\) excluding each interval \\([s,s+65)\\) beginning at a true shift \\(s\\), averaged over 12 matched streams. The denominator is 390 observations per stream, not the number of updates. The same three methods and prices are used as in the main comparison. This operational rate is not a false-positive probability. Read with prediction risk and target occupancy before treating suppressed updates as improved adaptation. Lines show finite stream means without uncertainty bands.",
+          "source_data": "retained-evidence/research/slg-scientific-figures-20261111/outputs/run-7f8022a64802820f.result/off_transition_curve.csv",
+          "source": null
+        },
+        "style_version": "11d98d58608b7fc4a72fa31e0aba23b73df657017407306b478155287edafdcd",
+        "style_profile": "profiles/visual_style.json",
+        "visual_review": "pending",
+        "output_digests": {
+          "figures/generated/slg-off-transition-promotions-20261111.svg": "52fe31c65abdf254447ea750ed0fa8a42bfa76337a58f384a7902b649afb5a06",
+          "figures/generated/slg-off-transition-promotions-20261111.pdf": "65da472448fbe9152a0d487ffaa5320e1dc9c1c7a9312ebc811b8630851d89d2",
+          "figures/generated/slg-off-transition-promotions-20261111.png": "831adf680298e5cbb88f91df88fa699d11f600dbe0219a50f2490976689df3b3"
+        }
+      },
+      "visual_review": "pending",
+      "source_kind": "data"
+    },
+    {
+      "asset_id": "figure:slg-register-common-ledger-20261111",
+      "label": "fig:slg-register-common-ledger-20261111",
+      "artefact": "figures/generated/slg-register-common-ledger-20261111.pdf",
+      "generator": "manuscript_spec.json",
+      "spec_id": "slg-register-common-ledger-20261111",
+      "promise": "At what target separation does the declared split option cost less than shared arbitration?",
+      "matched": true,
+      "caption": "When splitting the register pays. Static costs on the common ledger in Eq.~\\eqref{eq:num-toy-conflict}, evaluated over 181 target separations. Fixed balance costs \\(A/4\\), optimised arbitration costs \\(\\min(A/4,0.4)\\), and split-enabled allocation costs \\(\\min(A/4,0.4,0.25)\\). All three curves coincide below \\(0.8411\\) radians, with the green result drawn on top. Above that crossing the green plateau is exactly the grey split-price reference, not a separate lower curve. Arbitration remains equal to fixed balance until \\(1.0853\\) radians and then caps at \\(0.4\\). The angle measures target separation. These are calculated static option boundaries, not measured dynamical or biological transitions.",
+      "result_ids": [
+        "retained-slg-common-ledger-register-20261111"
+      ],
+      "placed_at": "sections/03_model_setup.tex",
+      "placed_at_scope": "manuscript",
+      "placed_repo_file": "synthetics papers/self-consistent-loss-geometries-coupled-evaluators/manuscript/imported/sections/03_model_setup.tex",
+      "research_binding": {
+        "status": "CURRENT",
+        "bindings": [
+          {
+            "id": "retained-slg-common-ledger-register-20261111",
+            "revision": "sha256:800986b47d51fda47c3468a820b037d4f0834cc83931674bc0b7e798c3932ef8",
+            "currentness": "CURRENT",
+            "reason": "all explicitly declared dependencies match their recorded identities",
+            "dependencies": [
+              {
+                "record_id": "retained-slg-common-ledger-register-20261111",
+                "dependencies": [
+                  {
+                    "path": "retained-evidence/evidence/SLG_VISUAL_PRODUCTION_2026-11-11/finite-figure-protocol.json",
+                    "status": "PRESENT",
+                    "bytes": 5993,
+                    "sha256": "58ff935dfb8c3f7a3463d3ecd22a9dc23ebd64fa24214e7d1c084cf4fad27ed1",
+                    "scope": "project"
+                  },
+                  {
+                    "path": "retained-evidence/research/slg-scientific-figures-20261111/scientific_tables.py",
+                    "status": "PRESENT",
+                    "bytes": 14945,
+                    "sha256": "f9c98ffb562216caf9b71a40351777b274b72eb9e4fbdf199d6e99e8a171c905",
+                    "scope": "project"
+                  },
+                  {
+                    "path": "retained-evidence/research_runs/run-7f8022a64802820f.result.json",
+                    "status": "PRESENT",
+                    "bytes": 20027,
+                    "sha256": "730a153523a22f9abc6d66c6e6527645d1bc43d92eb58273bfb560b0f002210e"
+                  },
+                  {
+                    "path": "retained-evidence/research/slg-scientific-figures-20261111/outputs/run-7f8022a64802820f.result/common_ledger_register.csv",
+                    "status": "PRESENT",
+                    "bytes": 11378,
+                    "sha256": "588636de35ae4bd7a9d6440e0404ad658aa42fb155569708d0a22911028b240d",
+                    "scope": "project"
+                  },
+                  {
+                    "path": "retained-evidence/records/slg-common-ledger-register-20261111.json",
+                    "status": "PRESENT",
+                    "bytes": 2742,
+                    "sha256": "4dbf3cf42ec62f25fb513550b4ca140847a1dc360fedc6f576d962b26bc49239",
+                    "scope": "project"
+                  },
+                  {
+                    "path": "retained-evidence/research_runs/run-7f8022a64802820f.json",
+                    "status": "PRESENT",
+                    "bytes": 3611,
+                    "sha256": "8c4b1a57705af0f50cd7faf8197c074b079b189b64c21376d4251c320094c49e",
+                    "scope": "manuscript"
+                  },
+                  {
+                    "path": "retained-evidence/research_runs/run-7f8022a64802820f.receipt.json",
+                    "status": "PRESENT",
+                    "bytes": 2363,
+                    "sha256": "f146d663ec8e002b2de5beb27904002064f3bea9ff2da87942463de9b6cd4aa2",
+                    "scope": "manuscript"
+                  }
+                ],
+                "status": "CURRENT",
+                "reason": "all pinned dependencies match",
+                "coverage": {
+                  "snapshot_schema": "laplace.research-dependencies/3",
+                  "newly_untracked": [],
+                  "changed_pins": [],
+                  "removed_pins": [],
+                  "retired_derived_presentation_pins": [],
+                  "historical_verification": "PINNED_DEPENDENCIES_ONLY"
+                }
+              }
+            ]
+          }
+        ],
+        "gaps": []
+      },
+      "render": {
+        "outputs": [
+          "figures/generated/slg-register-common-ledger-20261111.svg",
+          "figures/generated/slg-register-common-ledger-20261111.pdf",
+          "figures/generated/slg-register-common-ledger-20261111.png"
+        ],
+        "renderer": "matplotlib",
+        "input_digest": "d4c9bd792a2416bdc321c469df379b1d2b39d34c4c9d31aa6a48cefc151c52d5",
+        "drawing_input_digest": "d4c9bd792a2416bdc321c469df379b1d2b39d34c4c9d31aa6a48cefc151c52d5",
+        "drawing_inputs": {
+          "spec": {
+            "id": "slg-register-common-ledger-20261111",
+            "kind": "plot",
+            "x": "Target separation",
+            "series": [
+              "Split price",
+              "Fixed balanced",
+              "Arbitration",
+              "Split enabled"
+            ],
+            "x_label": "Target separation (radians)",
+            "y_label": "Common objective (dimensionless)"
+          },
+          "data": "588636de35ae4bd7a9d6440e0404ad658aa42fb155569708d0a22911028b240d"
+        },
+        "research_bindings": [
+          {
+            "id": "retained-slg-common-ledger-register-20261111",
+            "revision": "sha256:800986b47d51fda47c3468a820b037d4f0834cc83931674bc0b7e798c3932ef8",
+            "currentness": "CURRENT"
+          }
+        ],
+        "presentation_metadata": {
+          "title": "When does splitting the register pay?",
+          "question": "At what target separation does the declared split option cost less than shared arbitration?",
+          "caption": "When splitting the register pays. Static costs on the common ledger in Eq.~\\eqref{eq:num-toy-conflict}, evaluated over 181 target separations. Fixed balance costs \\(A/4\\), optimised arbitration costs \\(\\min(A/4,0.4)\\), and split-enabled allocation costs \\(\\min(A/4,0.4,0.25)\\). All three curves coincide below \\(0.8411\\) radians, with the green result drawn on top. Above that crossing the green plateau is exactly the grey split-price reference, not a separate lower curve. Arbitration remains equal to fixed balance until \\(1.0853\\) radians and then caps at \\(0.4\\). The angle measures target separation. These are calculated static option boundaries, not measured dynamical or biological transitions.",
+          "source_data": "retained-evidence/research/slg-scientific-figures-20261111/outputs/run-7f8022a64802820f.result/common_ledger_register.csv",
+          "source": null
+        },
+        "style_version": "58b6c708511da105b6a84734e36bb92d573c9db57d79bc8ab59af0b139724f94",
+        "style_profile": "profiles/visual_style.json",
+        "visual_review": "pending",
+        "output_digests": {
+          "figures/generated/slg-register-common-ledger-20261111.svg": "35a58ec39c51ec5fcff472f276efca705b6fbbdf3c0079c919ac6156d9867dba",
+          "figures/generated/slg-register-common-ledger-20261111.pdf": "dd9922cd9f64503440f1321cba9e9f855f8326cbd135bdf1c9a890cb684127fe",
+          "figures/generated/slg-register-common-ledger-20261111.png": "b6d13a93d32db69c06c8bd715ba2901877dc97119a50f9c78465528170443e65"
+        }
+      },
+      "visual_review": "pending",
+      "source_kind": "data"
+    },
+    {
+      "asset_id": "figure:slg-promotion-recovery-20261111",
+      "label": "fig:slg-promotion-recovery-20261111",
+      "artefact": "figures/generated/slg-promotion-recovery-20261111.pdf",
+      "generator": "manuscript_spec.json",
+      "spec_id": "slg-promotion-recovery-20261111",
+      "promise": "Does the pre-action estimate recover the new latent slope within the fixed horizon?",
+      "matched": true,
+      "caption": "Target occupancy after a latent shift. Fraction of shifts without five consecutive pre-action estimates in the declared band, averaged over 12 matched streams with four shifts each. The band is \\(20\\%\\) of the jump magnitude, and the qualifying run must lie wholly within the 65-step post-shift window. Already-in-band estimates qualify without a new promotion. The criterion therefore measures occupancy, not detected change or update-caused recovery. Delay is the run start. Failures retain sentinel delay 65 in capped means. At \\(c=0.06\\), the three failure fractions are \\(0.1875\\), \\(0.270833\\) and \\(0.625\\). Lines are finite stream means without uncertainty bands.",
+      "result_ids": [
+        "retained-result-e3d5544bddeca7fec4d7"
+      ],
+      "placed_at": "sections/09_numerical_demonstrations.tex",
+      "placed_at_scope": "manuscript",
+      "placed_repo_file": "synthetics papers/self-consistent-loss-geometries-coupled-evaluators/manuscript/imported/sections/09_numerical_demonstrations.tex",
+      "research_binding": {
+        "status": "CURRENT",
+        "bindings": [
+          {
+            "id": "retained-result-e3d5544bddeca7fec4d7",
+            "revision": "sha256:31d9ca76c18efa498fe366601d119c83cf51847da21e232a53e12aa6aa05190b",
+            "currentness": "CURRENT",
+            "reason": "all explicitly declared dependencies match their recorded identities",
+            "dependencies": [
+              {
+                "record_id": "retained-result-e3d5544bddeca7fec4d7",
+                "dependencies": [
+                  {
+                    "path": "retained-evidence/evidence/SLG_VISUAL_PRODUCTION_2026-11-11/finite-figure-protocol.json",
+                    "status": "PRESENT",
+                    "bytes": 5993,
+                    "sha256": "58ff935dfb8c3f7a3463d3ecd22a9dc23ebd64fa24214e7d1c084cf4fad27ed1",
+                    "scope": "project"
+                  },
+                  {
+                    "path": "retained-evidence/research/slg-scientific-figures-20261111/scientific_tables.py",
+                    "status": "PRESENT",
+                    "bytes": 14945,
+                    "sha256": "f9c98ffb562216caf9b71a40351777b274b72eb9e4fbdf199d6e99e8a171c905",
+                    "scope": "project"
+                  },
+                  {
+                    "path": "retained-evidence/research_runs/run-7f8022a64802820f.result.json",
+                    "status": "PRESENT",
+                    "bytes": 20027,
+                    "sha256": "730a153523a22f9abc6d66c6e6527645d1bc43d92eb58273bfb560b0f002210e"
+                  },
+                  {
+                    "path": "retained-evidence/research/slg-scientific-figures-20261111/outputs/run-7f8022a64802820f.result/per_stream_metrics.csv",
+                    "status": "PRESENT",
+                    "bytes": 48380,
+                    "sha256": "003671aec49aeae8d5756dd70f8047485c97c1a96c0b4c28f9dabf987e997d3d",
+                    "scope": "project"
+                  },
+                  {
+                    "path": "retained-evidence/research/slg-scientific-figures-20261111/outputs/run-7f8022a64802820f.result/representative_action_ledgers.csv",
+                    "status": "PRESENT",
+                    "bytes": 438772,
+                    "sha256": "77f1f148f85a6a239990ea310f82953792854c558ad2a2acb21cf195de0f3111",
+                    "scope": "project"
+                  },
+                  {
+                    "path": "retained-evidence/research/slg-scientific-figures-20261111/outputs/run-7f8022a64802820f.result/prediction_risk_curve.csv",
+                    "status": "PRESENT",
+                    "bytes": 1249,
+                    "sha256": "40af949ea01bc8472e267023462f2d97244cd3b4f682eab7e2c3f54e082b06d1",
+                    "scope": "project"
+                  },
+                  {
+                    "path": "retained-evidence/research/slg-scientific-figures-20261111/outputs/run-7f8022a64802820f.result/promotion_rate_curve.csv",
+                    "status": "PRESENT",
+                    "bytes": 982,
+                    "sha256": "c50039032f76e108d5590aca12f334ce0ef1815ee7a2d2daed44f121610069e6",
+                    "scope": "project"
+                  },
+                  {
+                    "path": "retained-evidence/research/slg-scientific-figures-20261111/outputs/run-7f8022a64802820f.result/recovery_failure_curve.csv",
+                    "status": "PRESENT",
+                    "bytes": 851,
+                    "sha256": "415357835b1c3a3ed574053bb195d9314f2983ea92de7cfb6825d07405200f19",
+                    "scope": "project"
+                  },
+                  {
+                    "path": "retained-evidence/research/slg-scientific-figures-20261111/outputs/run-7f8022a64802820f.result/off_transition_curve.csv",
+                    "status": "PRESENT",
+                    "bytes": 1003,
+                    "sha256": "5655fc8cb35cb346f866a5bdfc2f3595892f886ec16a2cc46112a002ba8ee459",
+                    "scope": "project"
+                  },
+                  {
+                    "path": "retained-evidence/research/slg-scientific-figures-20261111/outputs/run-7f8022a64802820f.result/paired_differences.csv",
+                    "status": "PRESENT",
+                    "bytes": 657,
+                    "sha256": "b697e833f676a50669404e6689ababc845154b39e21412b9f38909788d9b8666",
+                    "scope": "project"
+                  },
+                  {
+                    "path": "retained-evidence/research/slg-scientific-figures-20261111/outputs/run-7f8022a64802820f.result/priced_policy_tracking.csv",
+                    "status": "PRESENT",
+                    "bytes": 40972,
+                    "sha256": "20fde7d621d27746172840d71d6450193d90cec01dcbbac9a2cf3a1eb4158f47",
+                    "scope": "project"
+                  },
+                  {
+                    "path": "retained-evidence/records/result-e3d5544bddeca7fec4d7.json",
+                    "status": "PRESENT",
+                    "bytes": 7262,
+                    "sha256": "dce2695a617997ef37cad32f99b5f2c773c14c5e4a1978679326fe1811bf78cf",
+                    "scope": "project"
+                  },
+                  {
+                    "path": "retained-evidence/research_runs/run-7f8022a64802820f.json",
+                    "status": "PRESENT",
+                    "bytes": 3611,
+                    "sha256": "8c4b1a57705af0f50cd7faf8197c074b079b189b64c21376d4251c320094c49e",
+                    "scope": "manuscript"
+                  },
+                  {
+                    "path": "retained-evidence/research_runs/run-7f8022a64802820f.receipt.json",
+                    "status": "PRESENT",
+                    "bytes": 2363,
+                    "sha256": "f146d663ec8e002b2de5beb27904002064f3bea9ff2da87942463de9b6cd4aa2",
+                    "scope": "manuscript"
+                  }
+                ],
+                "status": "CURRENT",
+                "reason": "all pinned dependencies match",
+                "coverage": {
+                  "snapshot_schema": "laplace.research-dependencies/3",
+                  "newly_untracked": [],
+                  "changed_pins": [],
+                  "removed_pins": [],
+                  "retired_derived_presentation_pins": [],
+                  "historical_verification": "PINNED_DEPENDENCIES_ONLY"
+                }
+              }
+            ]
+          }
+        ],
+        "gaps": []
+      },
+      "render": {
+        "outputs": [
+          "figures/generated/slg-promotion-recovery-20261111.svg",
+          "figures/generated/slg-promotion-recovery-20261111.pdf",
+          "figures/generated/slg-promotion-recovery-20261111.png"
+        ],
+        "renderer": "matplotlib",
+        "input_digest": "df9c909d9f0748555e904875600fabefeb9e5fa8b4370e440f90bd0096264e37",
+        "drawing_input_digest": "df9c909d9f0748555e904875600fabefeb9e5fa8b4370e440f90bd0096264e37",
+        "drawing_inputs": {
+          "spec": {
+            "id": "slg-promotion-recovery-20261111",
+            "kind": "plot",
+            "x": "Log10 price",
+            "series": [
+              "Legacy v0",
+              "Rolling control",
+              "Priced v1"
+            ],
+            "x_label": "log10(c), promotion price c dimensionless",
+            "y_label": "Fraction of shifts unrecovered"
+          },
+          "data": "415357835b1c3a3ed574053bb195d9314f2983ea92de7cfb6825d07405200f19"
+        },
+        "research_bindings": [
+          {
+            "id": "retained-result-e3d5544bddeca7fec4d7",
+            "revision": "sha256:31d9ca76c18efa498fe366601d119c83cf51847da21e232a53e12aa6aa05190b",
+            "currentness": "CURRENT"
+          }
+        ],
+        "presentation_metadata": {
+          "title": "Recovery under the declared latent-state criterion",
+          "question": "Does the pre-action estimate recover the new latent slope within the fixed horizon?",
+          "caption": "Target occupancy after a latent shift. Fraction of shifts without five consecutive pre-action estimates in the declared band, averaged over 12 matched streams with four shifts each. The band is \\(20\\%\\) of the jump magnitude, and the qualifying run must lie wholly within the 65-step post-shift window. Already-in-band estimates qualify without a new promotion. The criterion therefore measures occupancy, not detected change or update-caused recovery. Delay is the run start. Failures retain sentinel delay 65 in capped means. At \\(c=0.06\\), the three failure fractions are \\(0.1875\\), \\(0.270833\\) and \\(0.625\\). Lines are finite stream means without uncertainty bands.",
+          "source_data": "retained-evidence/research/slg-scientific-figures-20261111/outputs/run-7f8022a64802820f.result/recovery_failure_curve.csv",
+          "source": null
+        },
+        "style_version": "11d98d58608b7fc4a72fa31e0aba23b73df657017407306b478155287edafdcd",
+        "style_profile": "profiles/visual_style.json",
+        "visual_review": "pending",
+        "output_digests": {
+          "figures/generated/slg-promotion-recovery-20261111.svg": "bbc1804b236a3d5fcf3471955387c1cc923b6dcaca16e98dfad47ab078d38ef5",
+          "figures/generated/slg-promotion-recovery-20261111.pdf": "c25b0db1cb44e01156d852672799318746c742eadece4f7b04e023f9f6b9284a",
+          "figures/generated/slg-promotion-recovery-20261111.png": "1803c3ab7e3da9ae2bc6dfe8fa856e367a35aa37fcd21abb4fb6f94e1ada81f2"
+        }
+      },
+      "visual_review": "pending",
+      "source_kind": "data"
+    }
+  ]
+}

@@ -1,0 +1,2809 @@
+{
+  "schema": "laplace.retained-visual-binding/1",
+  "original_spec_sha256": "6da9f4dfb48fbed18cee4b32186c6cf0cfab84a7b10797bd1d12c3678b695705",
+  "copied_exact_outputs": {
+    "figures/generated/slg-priced-policy-tracking-20261111.svg": "aff7042cf103ca0d2dd1cf8186648c3d5394fc857ea0051a73604d9f95df0f8b",
+    "figures/generated/slg-priced-policy-tracking-20261111.pdf": "a39a222b231904ac52a00387062bb571d5bc5322202f15323ebf65aee2e5c7d8",
+    "figures/generated/slg-priced-policy-tracking-20261111.png": "d70af030639f1216a8714605645a1d25d6adfcfc11bbfbc48eb51c097a5e6066",
+    "figures/generated/slg-or-hazard-defect-20261111.svg": "26454261f04824940118974b00b9d663639826513f076548ce684fc9d644752a",
+    "figures/generated/slg-or-hazard-defect-20261111.pdf": "295124443814569562a09392a61fec0507cb81a672ab3ca91de4fc70fa4fae09",
+    "figures/generated/slg-or-hazard-defect-20261111.png": "b32d5872734a241ca81b92a2490acf836f27f89dc45371c3381e3fb0c3c5b047",
+    "figures/generated/slg-or-event-multiplicity-20261111.svg": "b814116b0209af3adb2f0e70cc6426ac525fce1b329b2c09e7e2ecee26289107",
+    "figures/generated/slg-or-event-multiplicity-20261111.pdf": "1ef6c7aa134e0fc8aedb5eeecfa52b8b6c5f41fcd09922326bdedc7e99aee851",
+    "figures/generated/slg-or-event-multiplicity-20261111.png": "f8bb4a074b0e2b050fd8de5b5b9ffcffec2b3127a1702a6773db05473675269b",
+    "figures/generated/slg-promotion-risk-20261111.svg": "63aede466b6a5f331220a8f69ac84e6c6e63f4708ad906d7bb74d3eee1723212",
+    "figures/generated/slg-promotion-risk-20261111.pdf": "c0a9d2792a8cd2b3043850b6862bef0ee0c21d9722db7e02c1cc1a706864eacf",
+    "figures/generated/slg-promotion-risk-20261111.png": "8b8c75a8eebdbcf632bbcfddc93a3ebd3e2cbc2f1efff9d60e4badc94e01fd20",
+    "figures/generated/slg-promotion-frequency-20261111.svg": "8434438645130c6f556727482e4a043d78b6af1626244863c22a22d75b2177bb",
+    "figures/generated/slg-promotion-frequency-20261111.pdf": "da4d8494459abc46b3577db52ffa888a164b0026d63b4c8ad9e15879e4d71207",
+    "figures/generated/slg-promotion-frequency-20261111.png": "11233e804193ff085713afb3405c15e875848629d9c5900c416f6e70aab769a2",
+    "figures/generated/slg-off-transition-promotions-20261111.svg": "52fe31c65abdf254447ea750ed0fa8a42bfa76337a58f384a7902b649afb5a06",
+    "figures/generated/slg-off-transition-promotions-20261111.pdf": "65da472448fbe9152a0d487ffaa5320e1dc9c1c7a9312ebc811b8630851d89d2",
+    "figures/generated/slg-off-transition-promotions-20261111.png": "831adf680298e5cbb88f91df88fa699d11f600dbe0219a50f2490976689df3b3",
+    "figures/generated/slg-register-common-ledger-20261111.svg": "35a58ec39c51ec5fcff472f276efca705b6fbbdf3c0079c919ac6156d9867dba",
+    "figures/generated/slg-register-common-ledger-20261111.pdf": "dd9922cd9f64503440f1321cba9e9f855f8326cbd135bdf1c9a890cb684127fe",
+    "figures/generated/slg-register-common-ledger-20261111.png": "b6d13a93d32db69c06c8bd715ba2901877dc97119a50f9c78465528170443e65",
+    "figures/generated/slg-promotion-recovery-20261111.svg": "bbc1804b236a3d5fcf3471955387c1cc923b6dcaca16e98dfad47ab078d38ef5",
+    "figures/generated/slg-promotion-recovery-20261111.pdf": "c25b0db1cb44e01156d852672799318746c742eadece4f7b04e023f9f6b9284a",
+    "figures/generated/slg-promotion-recovery-20261111.png": "1803c3ab7e3da9ae2bc6dfe8fa856e367a35aa37fcd21abb4fb6f94e1ada81f2"
+  },
+  "new_drawings": 0,
+  "bindings": [
+    {
+      "id": "slg-priced-policy-tracking-20261111",
+      "owner_status": 200,
+      "response": {
+        "render": {
+          "outputs": [
+            "figures/generated/slg-priced-policy-tracking-20261111.svg",
+            "figures/generated/slg-priced-policy-tracking-20261111.pdf",
+            "figures/generated/slg-priced-policy-tracking-20261111.png"
+          ],
+          "renderer": "matplotlib",
+          "input_digest": "4b727d1e2d257537f2ef5f6ae02c60205a9dbcd72addace7acb9253582ca3b72",
+          "drawing_input_digest": "4b727d1e2d257537f2ef5f6ae02c60205a9dbcd72addace7acb9253582ca3b72",
+          "drawing_inputs": {
+            "spec": {
+              "id": "slg-priced-policy-tracking-20261111",
+              "kind": "plot",
+              "x": "Time",
+              "series": [
+                "True slope",
+                "v1 price 0.005",
+                "v1 price 0.06",
+                "v1 price 0.4"
+              ],
+              "x_label": "Observation index (discrete steps)",
+              "y_label": "Slope / pre-action estimate"
+            },
+            "data": "20fde7d621d27746172840d71d6450193d90cec01dcbbac9a2cf3a1eb4158f47"
+          },
+          "research_bindings": [
+            {
+              "id": "retained-result-e3d5544bddeca7fec4d7",
+              "revision": "sha256:31d9ca76c18efa498fe366601d119c83cf51847da21e232a53e12aa6aa05190b",
+              "currentness": "CURRENT"
+            }
+          ],
+          "presentation_metadata": {
+            "title": "What the priced partial policy actually tracks",
+            "question": "What trajectories underlie the prediction and recovery summaries for one declared stream?",
+            "caption": "Representative stream seed 0, chosen before execution, from the same 12-stream experiment. The true latent slope changes at observations 140, 310, 470 and 600 and is used for evaluation only. Each other curve is priced v1 at the displayed predeclared price c: it applies 0.22 of a 28-observation ridge rolling-fit step only when 2.5 times the ACTUAL window improvement exceeds c, with zero no-update gain. Curves show estimates available BEFORE the current observation can update the model. Higher prices can preserve a biased estimate after a real shift. Read this trace with the matched-policy risk and recovery panels, rather than selecting a calibrated price from one stream. Exact inputs, candidate/action accounting, data and protocol links are in the accompanying evidence manifest.",
+            "source_data": "retained-evidence/research/slg-scientific-figures-20261111/outputs/run-7f8022a64802820f.result/priced_policy_tracking.csv",
+            "source": null
+          },
+          "style_version": "8fbbf4d197344ea283f91ba2513e3d91084b69d4de13a039a2f86efc14bb5d2a",
+          "style_profile": "profiles/visual_style.json",
+          "visual_review": "pending",
+          "output_digests": {
+            "figures/generated/slg-priced-policy-tracking-20261111.svg": "aff7042cf103ca0d2dd1cf8186648c3d5394fc857ea0051a73604d9f95df0f8b",
+            "figures/generated/slg-priced-policy-tracking-20261111.pdf": "a39a222b231904ac52a00387062bb571d5bc5322202f15323ebf65aee2e5c7d8",
+            "figures/generated/slg-priced-policy-tracking-20261111.png": "d70af030639f1216a8714605645a1d25d6adfcfc11bbfbc48eb51c097a5e6066"
+          },
+          "reused": true,
+          "basis_refreshed": true
+        },
+        "readiness": "GENERATED",
+        "placement_caption": {
+          "status": "UNPLACED"
+        },
+        "owned_changes": {
+          "schema_version": "laplace.owner-mutation/1",
+          "files": [
+            {
+              "scope": "repository",
+              "path": "synthetics papers/self-consistent-loss-geometries-coupled-evaluators/manuscript/imported/manuscript_spec.json",
+              "before_sha256": "sha256:fe3f35190c52facdce26550f9740cf921cd7a60fc901ea214f123803b545dd22",
+              "after_sha256": "sha256:7e730274eb8aabae82866ac476a8734964376cd95baa8fc0cf8fa1e85027b9c5",
+              "observed_after_sha256": "sha256:7e730274eb8aabae82866ac476a8734964376cd95baa8fc0cf8fa1e85027b9c5"
+            },
+            {
+              "scope": "repository",
+              "path": "synthetics papers/self-consistent-loss-geometries-coupled-evaluators/manuscript/imported/figure_manifest.json",
+              "before_sha256": null,
+              "after_sha256": "sha256:95c527a09fbbc42d74121b557189fccdc872b0552e8f3cc1c15bb083ae21d006",
+              "observed_after_sha256": "sha256:95c527a09fbbc42d74121b557189fccdc872b0552e8f3cc1c15bb083ae21d006"
+            }
+          ],
+          "objects": [
+            {
+              "owner": "visual-render",
+              "id": "slg-priced-policy-tracking-20261111",
+              "before_revision": "99b8baf881fcaa2c484e1d2a83207af5f05183c3e59a1f219b133bb6ef843b09",
+              "after_revision": "1001780ce04f489fc566da41ccfd7e922392d107c62ee4786faee78c7f4b656e"
+            }
+          ],
+          "rewire_records": [],
+          "views": [
+            "visuals",
+            "presentation"
+          ]
+        }
+      }
+    },
+    {
+      "id": "slg-or-hazard-defect-20261111",
+      "owner_status": 200,
+      "response": {
+        "render": {
+          "outputs": [
+            "figures/generated/slg-or-hazard-defect-20261111.svg",
+            "figures/generated/slg-or-hazard-defect-20261111.pdf",
+            "figures/generated/slg-or-hazard-defect-20261111.png"
+          ],
+          "renderer": "matplotlib",
+          "input_digest": "5680d3fa77893521a6f7d75aa1d79c603b3a6936be06f25e083962cb15d833dc",
+          "drawing_input_digest": "5680d3fa77893521a6f7d75aa1d79c603b3a6936be06f25e083962cb15d833dc",
+          "drawing_inputs": {
+            "spec": {
+              "id": "slg-or-hazard-defect-20261111",
+              "kind": "plot",
+              "x": "Price",
+              "series": [
+                "Naive mean TV",
+                "Mean intercept TV",
+                "Max intercept TV",
+                "Exact hazard TV"
+              ],
+              "x_label": "Threshold price c (dimensionless)",
+              "y_label": "Event total variation"
+            },
+            "data": "b1821dd80de0369065a2891354bde68658217241712fe4dad728ae41dc6b0f05"
+          },
+          "research_bindings": [
+            {
+              "id": "retained-slg-or-hazard-projection-20261111",
+              "revision": "sha256:9b4bf3984eee7ec92a1fc975d0ed441153ac635df19ccc6ab8ff0ee4d6d463e1",
+              "currentness": "CURRENT"
+            }
+          ],
+          "presentation_metadata": {
+            "title": "Exact event closure, approximate threshold",
+            "question": "What changes when the receiver retains exact cumulative hazard rather than one common intercept?",
+            "caption": "Event total variation, |q-q_hat|, over four predeclared independent four-event blocks at 81 prices. Fine events have probabilities sigmoid(m_i-c). Exact hazard uses h=sum softplus(m_i-c), q=1-exp(-h) and agrees with OR to numerical precision. Naive mean TV averages the error of sigmoid(sum m_i-c). Mean intercept TV averages, and Max intercept TV maximises, the error after fitting one arithmetic-mean effective intercept across blocks at each price. That intercept minimises squared log-odds error, not TV. Retaining the hazard closes this event exactly, while replacing block information with one intercept loses accuracy. Frozen margin schedules are retained for repricing. This is not adaptive learner path coarse-graining. Exact blocks, data and method are linked in the accompanying evidence manifest.",
+            "source_data": "retained-evidence/research/slg-scientific-figures-20261111/outputs/run-7f8022a64802820f.result/or_hazard_projection.csv",
+            "source": null
+          },
+          "style_version": "8fbbf4d197344ea283f91ba2513e3d91084b69d4de13a039a2f86efc14bb5d2a",
+          "style_profile": "profiles/visual_style.json",
+          "visual_review": "pending",
+          "output_digests": {
+            "figures/generated/slg-or-hazard-defect-20261111.svg": "26454261f04824940118974b00b9d663639826513f076548ce684fc9d644752a",
+            "figures/generated/slg-or-hazard-defect-20261111.pdf": "295124443814569562a09392a61fec0507cb81a672ab3ca91de4fc70fa4fae09",
+            "figures/generated/slg-or-hazard-defect-20261111.png": "b32d5872734a241ca81b92a2490acf836f27f89dc45371c3381e3fb0c3c5b047"
+          },
+          "reused": true,
+          "basis_refreshed": true
+        },
+        "readiness": "GENERATED",
+        "placement_caption": {
+          "status": "UNPLACED"
+        },
+        "owned_changes": {
+          "schema_version": "laplace.owner-mutation/1",
+          "files": [
+            {
+              "scope": "repository",
+              "path": "synthetics papers/self-consistent-loss-geometries-coupled-evaluators/manuscript/imported/manuscript_spec.json",
+              "before_sha256": "sha256:7e730274eb8aabae82866ac476a8734964376cd95baa8fc0cf8fa1e85027b9c5",
+              "after_sha256": "sha256:8ec6d7a1b8ef941a16160cfffce97ec8f98c723251f5e55b3d57a09644940317",
+              "observed_after_sha256": "sha256:8ec6d7a1b8ef941a16160cfffce97ec8f98c723251f5e55b3d57a09644940317"
+            },
+            {
+              "scope": "repository",
+              "path": "synthetics papers/self-consistent-loss-geometries-coupled-evaluators/manuscript/imported/figure_manifest.json",
+              "before_sha256": "sha256:95c527a09fbbc42d74121b557189fccdc872b0552e8f3cc1c15bb083ae21d006",
+              "after_sha256": "sha256:31d9a5d7dae2013b0d6df2606a53d195965f92af7f262a6bc8047507d8728863",
+              "observed_after_sha256": "sha256:31d9a5d7dae2013b0d6df2606a53d195965f92af7f262a6bc8047507d8728863"
+            }
+          ],
+          "objects": [
+            {
+              "owner": "visual-render",
+              "id": "slg-or-hazard-defect-20261111",
+              "before_revision": "08b4f193318b47a1af9fd1be94616cc37cd3c3e95823eee232a60787a51c53a0",
+              "after_revision": "2d8c522e79023280156c9afeef66dffb7f03ecc5a3197a77495d7dc6aecea2e2"
+            }
+          ],
+          "rewire_records": [],
+          "views": [
+            "visuals",
+            "presentation"
+          ]
+        }
+      }
+    },
+    {
+      "id": "slg-or-event-multiplicity-20261111",
+      "owner_status": 200,
+      "response": {
+        "render": {
+          "outputs": [
+            "figures/generated/slg-or-event-multiplicity-20261111.svg",
+            "figures/generated/slg-or-event-multiplicity-20261111.pdf",
+            "figures/generated/slg-or-event-multiplicity-20261111.png"
+          ],
+          "renderer": "matplotlib",
+          "input_digest": "76063565068e2cc5206895dcc694172ad99c48f9bff63d25bc65ad22a873ae2b",
+          "drawing_input_digest": "76063565068e2cc5206895dcc694172ad99c48f9bff63d25bc65ad22a873ae2b",
+          "drawing_inputs": {
+            "spec": {
+              "id": "slg-or-event-multiplicity-20261111",
+              "kind": "plot",
+              "x": "Price",
+              "series": [
+                "Mean conditional count",
+                "Min conditional count",
+                "Max conditional count",
+                "Single event bound",
+                "Block size bound"
+              ],
+              "x_label": "Threshold price c (dimensionless)",
+              "y_label": "Conditional fine-event count"
+            },
+            "data": "b1821dd80de0369065a2891354bde68658217241712fe4dad728ae41dc6b0f05"
+          },
+          "research_bindings": [
+            {
+              "id": "retained-slg-or-hazard-projection-20261111",
+              "revision": "sha256:9b4bf3984eee7ec92a1fc975d0ed441153ac635df19ccc6ab8ff0ee4d6d463e1",
+              "currentness": "CURRENT"
+            }
+          ],
+          "presentation_metadata": {
+            "title": "Threshold response counts fine events",
+            "question": "What does the effective-threshold derivative measure under this declared event map?",
+            "caption": "For the same four frozen independent four-event blocks at 81 prices, the derivative dc_eff/dc equals E[N | N>=1], where N counts fine events. The blue curve averages this conditional count across blocks, orange and green give its minimum and maximum. Grey and purple are the exact bounds 1 and 4. The slope measures event multiplicity rather than RG instability. Retain each margin schedule, not only one hazard value at a reference price, when asking how repricing changes the event. Exact blocks, data and method are linked in the accompanying evidence manifest.",
+            "source_data": "retained-evidence/research/slg-scientific-figures-20261111/outputs/run-7f8022a64802820f.result/or_hazard_projection.csv",
+            "source": null
+          },
+          "style_version": "8fbbf4d197344ea283f91ba2513e3d91084b69d4de13a039a2f86efc14bb5d2a",
+          "style_profile": "profiles/visual_style.json",
+          "visual_review": "pending",
+          "output_digests": {
+            "figures/generated/slg-or-event-multiplicity-20261111.svg": "b814116b0209af3adb2f0e70cc6426ac525fce1b329b2c09e7e2ecee26289107",
+            "figures/generated/slg-or-event-multiplicity-20261111.pdf": "1ef6c7aa134e0fc8aedb5eeecfa52b8b6c5f41fcd09922326bdedc7e99aee851",
+            "figures/generated/slg-or-event-multiplicity-20261111.png": "f8bb4a074b0e2b050fd8de5b5b9ffcffec2b3127a1702a6773db05473675269b"
+          },
+          "reused": true,
+          "basis_refreshed": true
+        },
+        "readiness": "GENERATED",
+        "placement_caption": {
+          "status": "UNPLACED"
+        },
+        "owned_changes": {
+          "schema_version": "laplace.owner-mutation/1",
+          "files": [
+            {
+              "scope": "repository",
+              "path": "synthetics papers/self-consistent-loss-geometries-coupled-evaluators/manuscript/imported/manuscript_spec.json",
+              "before_sha256": "sha256:8ec6d7a1b8ef941a16160cfffce97ec8f98c723251f5e55b3d57a09644940317",
+              "after_sha256": "sha256:b843df6f98e78b955de767f7e6ddc0ca469cd6707864647c503bc4317d25b9f8",
+              "observed_after_sha256": "sha256:b843df6f98e78b955de767f7e6ddc0ca469cd6707864647c503bc4317d25b9f8"
+            },
+            {
+              "scope": "repository",
+              "path": "synthetics papers/self-consistent-loss-geometries-coupled-evaluators/manuscript/imported/figure_manifest.json",
+              "before_sha256": "sha256:31d9a5d7dae2013b0d6df2606a53d195965f92af7f262a6bc8047507d8728863",
+              "after_sha256": "sha256:2b1c0ef4bfa48b8534aac71fc7f26bc80191366b17aa4b2ff67cfa69f5166dae",
+              "observed_after_sha256": "sha256:2b1c0ef4bfa48b8534aac71fc7f26bc80191366b17aa4b2ff67cfa69f5166dae"
+            }
+          ],
+          "objects": [
+            {
+              "owner": "visual-render",
+              "id": "slg-or-event-multiplicity-20261111",
+              "before_revision": "0d9f4402716072a6e8bf765e2c8120eae4d90aea22c58006cd9db562d002455a",
+              "after_revision": "b68ed061d94a103c1ef9b770fded2a7b197a76d74ca67fedfd6cc0d482427120"
+            }
+          ],
+          "rewire_records": [],
+          "views": [
+            "visuals",
+            "presentation"
+          ]
+        }
+      }
+    },
+    {
+      "id": "slg-promotion-risk-20261111",
+      "owner_status": 200,
+      "response": {
+        "render": {
+          "outputs": [
+            "figures/generated/slg-promotion-risk-20261111.svg",
+            "figures/generated/slg-promotion-risk-20261111.pdf",
+            "figures/generated/slg-promotion-risk-20261111.png"
+          ],
+          "renderer": "matplotlib",
+          "input_digest": "df744756e86499116ef596af670063b52750934b15383bf384b8d7db556b31d7",
+          "drawing_input_digest": "df744756e86499116ef596af670063b52750934b15383bf384b8d7db556b31d7",
+          "drawing_inputs": {
+            "spec": {
+              "id": "slg-promotion-risk-20261111",
+              "kind": "plot",
+              "x": "Log10 price",
+              "series": [
+                "Legacy v0",
+                "Rolling control",
+                "Priced v1",
+                "Noise oracle",
+                "Never update"
+              ],
+              "x_label": "log10(c), promotion price c dimensionless",
+              "y_label": "Pre-action prediction MSE"
+            },
+            "data": "40af949ea01bc8472e267023462f2d97244cd3b4f682eab7e2c3f54e082b06d1"
+          },
+          "research_bindings": [
+            {
+              "id": "retained-result-e3d5544bddeca7fec4d7",
+              "revision": "sha256:31d9ca76c18efa498fe366601d119c83cf51847da21e232a53e12aa6aa05190b",
+              "currentness": "CURRENT"
+            }
+          ],
+          "presentation_metadata": {
+            "title": "Prediction risk at matched update prices",
+            "question": "How do the three declared policies compare on one-step prediction before updating?",
+            "caption": "One-step prediction mean squared error, in squared synthetic observation units, over steps 50-699 of 12 matched 700-step streams at six predeclared prices. Legacy v0 prices a full rolling fit but applies a 0.22 partial noisy-observation step. Rolling control applies a 0.22 partial rolling-fit step with legacy pricing. Priced v1 prices that actual partial rolling step and gives staying zero model gain. Noise oracle predicts with the privileged true slope for evaluation only. Never update keeps slope 1. Priced v1 has higher mean prediction error than legacy v0 at every matched price tested. Exact accounting does not guarantee better prediction: compare this panel with update frequency and recovery before choosing a policy. Lines show finite stream means without uncertainty bands, not a selected optimum. Per-stream values, paired differences and descriptive standard errors are in the accompanying evidence manifest.",
+            "source_data": "retained-evidence/research/slg-scientific-figures-20261111/outputs/run-7f8022a64802820f.result/prediction_risk_curve.csv",
+            "source": null
+          },
+          "style_version": "11d98d58608b7fc4a72fa31e0aba23b73df657017407306b478155287edafdcd",
+          "style_profile": "profiles/visual_style.json",
+          "visual_review": "pending",
+          "output_digests": {
+            "figures/generated/slg-promotion-risk-20261111.svg": "63aede466b6a5f331220a8f69ac84e6c6e63f4708ad906d7bb74d3eee1723212",
+            "figures/generated/slg-promotion-risk-20261111.pdf": "c0a9d2792a8cd2b3043850b6862bef0ee0c21d9722db7e02c1cc1a706864eacf",
+            "figures/generated/slg-promotion-risk-20261111.png": "8b8c75a8eebdbcf632bbcfddc93a3ebd3e2cbc2f1efff9d60e4badc94e01fd20"
+          },
+          "reused": true,
+          "basis_refreshed": true
+        },
+        "readiness": "GENERATED",
+        "placement_caption": {
+          "status": "UNPLACED"
+        },
+        "owned_changes": {
+          "schema_version": "laplace.owner-mutation/1",
+          "files": [
+            {
+              "scope": "repository",
+              "path": "synthetics papers/self-consistent-loss-geometries-coupled-evaluators/manuscript/imported/manuscript_spec.json",
+              "before_sha256": "sha256:b843df6f98e78b955de767f7e6ddc0ca469cd6707864647c503bc4317d25b9f8",
+              "after_sha256": "sha256:ba5c911619707b65cb31fdfbfff45618508b4f95c5438aa76f29663366cfb737",
+              "observed_after_sha256": "sha256:ba5c911619707b65cb31fdfbfff45618508b4f95c5438aa76f29663366cfb737"
+            },
+            {
+              "scope": "repository",
+              "path": "synthetics papers/self-consistent-loss-geometries-coupled-evaluators/manuscript/imported/figure_manifest.json",
+              "before_sha256": "sha256:2b1c0ef4bfa48b8534aac71fc7f26bc80191366b17aa4b2ff67cfa69f5166dae",
+              "after_sha256": "sha256:b6054dae453074780f86fbf50fe0c167872de3d237d9585a2efc4594d48180ae",
+              "observed_after_sha256": "sha256:b6054dae453074780f86fbf50fe0c167872de3d237d9585a2efc4594d48180ae"
+            }
+          ],
+          "objects": [
+            {
+              "owner": "visual-render",
+              "id": "slg-promotion-risk-20261111",
+              "before_revision": "21ebb5b3dc559334edc4ac7a8013b8368fc7a7e20855c3b3059f12d1cdc0e838",
+              "after_revision": "7628a1d645385ae82f160a4a8ab763ec125a52fc192138a32bd9cdb6b87a4752"
+            }
+          ],
+          "rewire_records": [],
+          "views": [
+            "visuals",
+            "presentation"
+          ]
+        }
+      }
+    },
+    {
+      "id": "slg-promotion-frequency-20261111",
+      "owner_status": 200,
+      "response": {
+        "render": {
+          "outputs": [
+            "figures/generated/slg-promotion-frequency-20261111.svg",
+            "figures/generated/slg-promotion-frequency-20261111.pdf",
+            "figures/generated/slg-promotion-frequency-20261111.png"
+          ],
+          "renderer": "matplotlib",
+          "input_digest": "501dc765b66c02a7bc01ba673028a3d5e6fa0a23fe86de1878da89cf55f7f44f",
+          "drawing_input_digest": "501dc765b66c02a7bc01ba673028a3d5e6fa0a23fe86de1878da89cf55f7f44f",
+          "drawing_inputs": {
+            "spec": {
+              "id": "slg-promotion-frequency-20261111",
+              "kind": "plot",
+              "x": "Log10 price",
+              "series": [
+                "Legacy v0",
+                "Rolling control",
+                "Priced v1"
+              ],
+              "x_label": "log10(c), promotion price c dimensionless",
+              "y_label": "Promotion fraction"
+            },
+            "data": "c50039032f76e108d5590aca12f334ce0ef1815ee7a2d2daed44f121610069e6"
+          },
+          "research_bindings": [
+            {
+              "id": "retained-result-e3d5544bddeca7fec4d7",
+              "revision": "sha256:31d9ca76c18efa498fe366601d119c83cf51847da21e232a53e12aa6aa05190b",
+              "currentness": "CURRENT"
+            }
+          ],
+          "presentation_metadata": {
+            "title": "How price changes update frequency",
+            "question": "How often does each policy purchase a structural update at the declared price?",
+            "caption": "Promotion fraction over steps 50-699, averaged across 12 matched 700-step streams. Legacy v0 prices a full rolling fit but applies a 0.22 partial noisy-observation step. Rolling control applies a 0.22 partial rolling-fit step with legacy pricing. Priced v1 prices that actual partial rolling step and gives staying zero model gain. Every chosen update pays the dimensionless price c in this toy ledger, not a measured energy or complete computational cost. Higher prices usually buy fewer updates, but priced v1 does not always update less than the controls. Read the risk and recovery panels before interpreting sparsity as adequate adaptation. Lines show finite stream means without uncertainty bands. Costs, per-stream counts and descriptive standard errors are in the accompanying evidence manifest.",
+            "source_data": "retained-evidence/research/slg-scientific-figures-20261111/outputs/run-7f8022a64802820f.result/promotion_rate_curve.csv",
+            "source": null
+          },
+          "style_version": "11d98d58608b7fc4a72fa31e0aba23b73df657017407306b478155287edafdcd",
+          "style_profile": "profiles/visual_style.json",
+          "visual_review": "pending",
+          "output_digests": {
+            "figures/generated/slg-promotion-frequency-20261111.svg": "8434438645130c6f556727482e4a043d78b6af1626244863c22a22d75b2177bb",
+            "figures/generated/slg-promotion-frequency-20261111.pdf": "da4d8494459abc46b3577db52ffa888a164b0026d63b4c8ad9e15879e4d71207",
+            "figures/generated/slg-promotion-frequency-20261111.png": "11233e804193ff085713afb3405c15e875848629d9c5900c416f6e70aab769a2"
+          },
+          "reused": true,
+          "basis_refreshed": true
+        },
+        "readiness": "GENERATED",
+        "placement_caption": {
+          "status": "UNPLACED"
+        },
+        "owned_changes": {
+          "schema_version": "laplace.owner-mutation/1",
+          "files": [
+            {
+              "scope": "repository",
+              "path": "synthetics papers/self-consistent-loss-geometries-coupled-evaluators/manuscript/imported/manuscript_spec.json",
+              "before_sha256": "sha256:ba5c911619707b65cb31fdfbfff45618508b4f95c5438aa76f29663366cfb737",
+              "after_sha256": "sha256:caa944f8e82d7e8babf746b708e3b83cb1af5d2e4c1a0cab0b9e45c823c5881e",
+              "observed_after_sha256": "sha256:caa944f8e82d7e8babf746b708e3b83cb1af5d2e4c1a0cab0b9e45c823c5881e"
+            },
+            {
+              "scope": "repository",
+              "path": "synthetics papers/self-consistent-loss-geometries-coupled-evaluators/manuscript/imported/figure_manifest.json",
+              "before_sha256": "sha256:b6054dae453074780f86fbf50fe0c167872de3d237d9585a2efc4594d48180ae",
+              "after_sha256": "sha256:22c6cd2be7ef732a18ec4b932318d3f2fb71205b06284ceb34922987b48fab8d",
+              "observed_after_sha256": "sha256:22c6cd2be7ef732a18ec4b932318d3f2fb71205b06284ceb34922987b48fab8d"
+            }
+          ],
+          "objects": [
+            {
+              "owner": "visual-render",
+              "id": "slg-promotion-frequency-20261111",
+              "before_revision": "6a5bbd77f1ea1d9c80e738b9c3eac6a3ec2176f75b3d09d29e2b55710731f677",
+              "after_revision": "a6d4bc06d12a7084228dd1cd746b146d396467b50294d52806fafeca24d3391f"
+            }
+          ],
+          "rewire_records": [],
+          "views": [
+            "visuals",
+            "presentation"
+          ]
+        }
+      }
+    },
+    {
+      "id": "slg-off-transition-promotions-20261111",
+      "owner_status": 200,
+      "response": {
+        "render": {
+          "outputs": [
+            "figures/generated/slg-off-transition-promotions-20261111.svg",
+            "figures/generated/slg-off-transition-promotions-20261111.pdf",
+            "figures/generated/slg-off-transition-promotions-20261111.png"
+          ],
+          "renderer": "matplotlib",
+          "input_digest": "507a61d4acd0cf6bfb498dd8353f1b53058a82be8451ee116f2fc36ecbc0afd1",
+          "drawing_input_digest": "507a61d4acd0cf6bfb498dd8353f1b53058a82be8451ee116f2fc36ecbc0afd1",
+          "drawing_inputs": {
+            "spec": {
+              "id": "slg-off-transition-promotions-20261111",
+              "kind": "plot",
+              "x": "Log10 price",
+              "series": [
+                "Legacy v0",
+                "Rolling control",
+                "Priced v1"
+              ],
+              "x_label": "log10(c), promotion price c dimensionless",
+              "y_label": "Off-transition promotion fraction"
+            },
+            "data": "5655fc8cb35cb346f866a5bdfc2f3595892f886ec16a2cc46112a002ba8ee459"
+          },
+          "research_bindings": [
+            {
+              "id": "retained-result-e3d5544bddeca7fec4d7",
+              "revision": "sha256:31d9ca76c18efa498fe366601d119c83cf51847da21e232a53e12aa6aa05190b",
+              "currentness": "CURRENT"
+            }
+          ],
+          "presentation_metadata": {
+            "title": "Updates outside post-shift windows",
+            "question": "How often are updates purchased away from the declared structural-shift evaluation windows?",
+            "caption": "Promotion fraction outside all 65-step post-shift windows, averaged over 12 matched 700-step streams. The denominator is evaluated observations 50-699 excluding each interval [shift,shift+65). Legacy v0 prices a full rolling fit but applies a 0.22 partial noisy-observation step. Rolling control applies a 0.22 partial rolling-fit step with legacy pricing. Priced v1 prices that actual partial rolling step and gives staying zero model gain. This operational off-transition rate is not a false-positive probability: useful noisy-data updates can also occur between shifts. Compare with prediction risk and recovery to judge what suppressed updates cost. Lines show finite stream means without uncertainty bands. Exact counts, data and methods are in the accompanying evidence manifest.",
+            "source_data": "retained-evidence/research/slg-scientific-figures-20261111/outputs/run-7f8022a64802820f.result/off_transition_curve.csv",
+            "source": null
+          },
+          "style_version": "11d98d58608b7fc4a72fa31e0aba23b73df657017407306b478155287edafdcd",
+          "style_profile": "profiles/visual_style.json",
+          "visual_review": "pending",
+          "output_digests": {
+            "figures/generated/slg-off-transition-promotions-20261111.svg": "52fe31c65abdf254447ea750ed0fa8a42bfa76337a58f384a7902b649afb5a06",
+            "figures/generated/slg-off-transition-promotions-20261111.pdf": "65da472448fbe9152a0d487ffaa5320e1dc9c1c7a9312ebc811b8630851d89d2",
+            "figures/generated/slg-off-transition-promotions-20261111.png": "831adf680298e5cbb88f91df88fa699d11f600dbe0219a50f2490976689df3b3"
+          },
+          "reused": true,
+          "basis_refreshed": true
+        },
+        "readiness": "GENERATED",
+        "placement_caption": {
+          "status": "UNPLACED"
+        },
+        "owned_changes": {
+          "schema_version": "laplace.owner-mutation/1",
+          "files": [
+            {
+              "scope": "repository",
+              "path": "synthetics papers/self-consistent-loss-geometries-coupled-evaluators/manuscript/imported/manuscript_spec.json",
+              "before_sha256": "sha256:caa944f8e82d7e8babf746b708e3b83cb1af5d2e4c1a0cab0b9e45c823c5881e",
+              "after_sha256": "sha256:f792b35b7bac32f93101e15a856214451cb8f23f570cbc28bbe2b924079a752e",
+              "observed_after_sha256": "sha256:f792b35b7bac32f93101e15a856214451cb8f23f570cbc28bbe2b924079a752e"
+            },
+            {
+              "scope": "repository",
+              "path": "synthetics papers/self-consistent-loss-geometries-coupled-evaluators/manuscript/imported/figure_manifest.json",
+              "before_sha256": "sha256:22c6cd2be7ef732a18ec4b932318d3f2fb71205b06284ceb34922987b48fab8d",
+              "after_sha256": "sha256:dcf9762efcd413de46fb8970f64eda2d3db44cd313e484f80da398ef5b6ec782",
+              "observed_after_sha256": "sha256:dcf9762efcd413de46fb8970f64eda2d3db44cd313e484f80da398ef5b6ec782"
+            }
+          ],
+          "objects": [
+            {
+              "owner": "visual-render",
+              "id": "slg-off-transition-promotions-20261111",
+              "before_revision": "7bc3b9f0ea5f790d91f48d603f804366814dd8f640d1f8d1c145755933d59bd8",
+              "after_revision": "4b52471f15b51189a8b362bedcceb8f56019cd52ff71d392ff2a09613450d6f3"
+            }
+          ],
+          "rewire_records": [],
+          "views": [
+            "visuals",
+            "presentation"
+          ]
+        }
+      }
+    },
+    {
+      "id": "slg-register-common-ledger-20261111",
+      "owner_status": 200,
+      "response": {
+        "render": {
+          "outputs": [
+            "figures/generated/slg-register-common-ledger-20261111.svg",
+            "figures/generated/slg-register-common-ledger-20261111.pdf",
+            "figures/generated/slg-register-common-ledger-20261111.png"
+          ],
+          "renderer": "matplotlib",
+          "input_digest": "d4c9bd792a2416bdc321c469df379b1d2b39d34c4c9d31aa6a48cefc151c52d5",
+          "drawing_input_digest": "d4c9bd792a2416bdc321c469df379b1d2b39d34c4c9d31aa6a48cefc151c52d5",
+          "drawing_inputs": {
+            "spec": {
+              "id": "slg-register-common-ledger-20261111",
+              "kind": "plot",
+              "x": "Target separation",
+              "series": [
+                "Split price",
+                "Fixed balanced",
+                "Arbitration",
+                "Split enabled"
+              ],
+              "x_label": "Target separation (radians)",
+              "y_label": "Common objective (dimensionless)"
+            },
+            "data": "588636de35ae4bd7a9d6440e0404ad658aa42fb155569708d0a22911028b240d"
+          },
+          "research_bindings": [
+            {
+              "id": "retained-slg-common-ledger-register-20261111",
+              "revision": "sha256:800986b47d51fda47c3468a820b037d4f0834cc83931674bc0b7e798c3932ef8",
+              "currentness": "CURRENT"
+            }
+          ],
+          "presentation_metadata": {
+            "title": "When does splitting the register pay?",
+            "question": "At what target separation does the declared split option cost less than shared arbitration?",
+            "caption": "Static common-ledger costs over 181 target separations, with gamma=1, eta=0.8 and A=2(1-cos theta)(0.5+gamma). Fixed balanced costs A/4, arbitration costs min(A/4,0.4), and split enabled costs min(A/4,0.4,0.25). All three option curves coincide below theta=0.8411 radians, where the green curve is drawn on top. Above this boundary the split-enabled curve stays at the declared split price 0.25, exactly coinciding with the grey reference behind it. Arbitration remains equal to fixed balance until theta=1.0853 radians, then caps at 0.4. For another split price, compare that price with the optimised arbitration curve to decide where purchasing a separate register pays. These are static option boundaries. Exact equations, data and method links accompany the figure.",
+            "source_data": "retained-evidence/research/slg-scientific-figures-20261111/outputs/run-7f8022a64802820f.result/common_ledger_register.csv",
+            "source": null
+          },
+          "style_version": "58b6c708511da105b6a84734e36bb92d573c9db57d79bc8ab59af0b139724f94",
+          "style_profile": "profiles/visual_style.json",
+          "visual_review": "pending",
+          "output_digests": {
+            "figures/generated/slg-register-common-ledger-20261111.svg": "35a58ec39c51ec5fcff472f276efca705b6fbbdf3c0079c919ac6156d9867dba",
+            "figures/generated/slg-register-common-ledger-20261111.pdf": "dd9922cd9f64503440f1321cba9e9f855f8326cbd135bdf1c9a890cb684127fe",
+            "figures/generated/slg-register-common-ledger-20261111.png": "b6d13a93d32db69c06c8bd715ba2901877dc97119a50f9c78465528170443e65"
+          },
+          "reused": true,
+          "basis_refreshed": true
+        },
+        "readiness": "GENERATED",
+        "placement_caption": {
+          "status": "UNPLACED"
+        },
+        "owned_changes": {
+          "schema_version": "laplace.owner-mutation/1",
+          "files": [
+            {
+              "scope": "repository",
+              "path": "synthetics papers/self-consistent-loss-geometries-coupled-evaluators/manuscript/imported/manuscript_spec.json",
+              "before_sha256": "sha256:f792b35b7bac32f93101e15a856214451cb8f23f570cbc28bbe2b924079a752e",
+              "after_sha256": "sha256:b70370d71c9db2c72479f58c956e86f244936164598540e458263c7d1f3fee21",
+              "observed_after_sha256": "sha256:b70370d71c9db2c72479f58c956e86f244936164598540e458263c7d1f3fee21"
+            },
+            {
+              "scope": "repository",
+              "path": "synthetics papers/self-consistent-loss-geometries-coupled-evaluators/manuscript/imported/figure_manifest.json",
+              "before_sha256": "sha256:dcf9762efcd413de46fb8970f64eda2d3db44cd313e484f80da398ef5b6ec782",
+              "after_sha256": "sha256:1f1c95681a390177f9c98dcc77c3f5ffbc9d612d82b82b164f05c34a1c1a7d4d",
+              "observed_after_sha256": "sha256:1f1c95681a390177f9c98dcc77c3f5ffbc9d612d82b82b164f05c34a1c1a7d4d"
+            }
+          ],
+          "objects": [
+            {
+              "owner": "visual-render",
+              "id": "slg-register-common-ledger-20261111",
+              "before_revision": "672fa012b3c16745ede8b363bd59b8711f133b244c69348ae261f7d56c0aa479",
+              "after_revision": "017f6f7f635834413e34cfb0c8f920fd947c9afd6bb67f89626e4d61f4fd3b0c"
+            }
+          ],
+          "rewire_records": [],
+          "views": [
+            "visuals",
+            "presentation"
+          ]
+        }
+      }
+    },
+    {
+      "id": "slg-promotion-recovery-20261111",
+      "owner_status": 200,
+      "response": {
+        "render": {
+          "outputs": [
+            "figures/generated/slg-promotion-recovery-20261111.svg",
+            "figures/generated/slg-promotion-recovery-20261111.pdf",
+            "figures/generated/slg-promotion-recovery-20261111.png"
+          ],
+          "renderer": "matplotlib",
+          "input_digest": "df9c909d9f0748555e904875600fabefeb9e5fa8b4370e440f90bd0096264e37",
+          "drawing_input_digest": "df9c909d9f0748555e904875600fabefeb9e5fa8b4370e440f90bd0096264e37",
+          "drawing_inputs": {
+            "spec": {
+              "id": "slg-promotion-recovery-20261111",
+              "kind": "plot",
+              "x": "Log10 price",
+              "series": [
+                "Legacy v0",
+                "Rolling control",
+                "Priced v1"
+              ],
+              "x_label": "log10(c), promotion price c dimensionless",
+              "y_label": "Fraction of shifts unrecovered"
+            },
+            "data": "415357835b1c3a3ed574053bb195d9314f2983ea92de7cfb6825d07405200f19"
+          },
+          "research_bindings": [
+            {
+              "id": "retained-result-e3d5544bddeca7fec4d7",
+              "revision": "sha256:31d9ca76c18efa498fe366601d119c83cf51847da21e232a53e12aa6aa05190b",
+              "currentness": "CURRENT"
+            }
+          ],
+          "presentation_metadata": {
+            "title": "Recovery under the declared latent-state criterion",
+            "question": "Does the pre-action estimate recover the new latent slope within the fixed horizon?",
+            "caption": "Fraction of shifts without a qualifying in-band run for the three policies in the shared comparison key. Means use 12 matched 700-step streams with four shifts each: 48 dependent shift evaluations per policy and price. A qualifying run is five consecutive PRE-ACTION estimates within 20 percent of the jump magnitude, wholly within the 65 steps beginning at the shift. Already-in-band estimates count without a new promotion, so this measures target occupancy, not detected change or update-triggered success. Delay records the run START, not its confirmation four steps later. No qualifying run gives failure and delay 65, retained in the capped-delay mean. Latent truth is used only for evaluation. At c=0.06 failure fractions are 0.1875, 0.2708 and 0.625 for Legacy v0, Rolling control and Priced v1. Occupancy need not vary monotonically with price. Read with prediction risk and update frequency before treating sparse updates as adequate adaptation. Lines show stream means without uncertainty bands. Shared policy definitions, per-stream values and exact data/method links accompany the comparison.",
+            "source_data": "retained-evidence/research/slg-scientific-figures-20261111/outputs/run-7f8022a64802820f.result/recovery_failure_curve.csv",
+            "source": null
+          },
+          "style_version": "11d98d58608b7fc4a72fa31e0aba23b73df657017407306b478155287edafdcd",
+          "style_profile": "profiles/visual_style.json",
+          "visual_review": "pending",
+          "output_digests": {
+            "figures/generated/slg-promotion-recovery-20261111.svg": "bbc1804b236a3d5fcf3471955387c1cc923b6dcaca16e98dfad47ab078d38ef5",
+            "figures/generated/slg-promotion-recovery-20261111.pdf": "c25b0db1cb44e01156d852672799318746c742eadece4f7b04e023f9f6b9284a",
+            "figures/generated/slg-promotion-recovery-20261111.png": "1803c3ab7e3da9ae2bc6dfe8fa856e367a35aa37fcd21abb4fb6f94e1ada81f2"
+          },
+          "reused": true,
+          "basis_refreshed": true
+        },
+        "readiness": "GENERATED",
+        "placement_caption": {
+          "status": "UNPLACED"
+        },
+        "owned_changes": {
+          "schema_version": "laplace.owner-mutation/1",
+          "files": [
+            {
+              "scope": "repository",
+              "path": "synthetics papers/self-consistent-loss-geometries-coupled-evaluators/manuscript/imported/manuscript_spec.json",
+              "before_sha256": "sha256:b70370d71c9db2c72479f58c956e86f244936164598540e458263c7d1f3fee21",
+              "after_sha256": "sha256:15655e0c5435899afbc32bb691bae5b52653198e7856cbdb13a8532d4beae62c",
+              "observed_after_sha256": "sha256:15655e0c5435899afbc32bb691bae5b52653198e7856cbdb13a8532d4beae62c"
+            },
+            {
+              "scope": "repository",
+              "path": "synthetics papers/self-consistent-loss-geometries-coupled-evaluators/manuscript/imported/figure_manifest.json",
+              "before_sha256": "sha256:1f1c95681a390177f9c98dcc77c3f5ffbc9d612d82b82b164f05c34a1c1a7d4d",
+              "after_sha256": "sha256:8f9028a55f65aee5a29c59e3f864e7e3f6e6d422c8d87cb568e12209be7a7953",
+              "observed_after_sha256": "sha256:8f9028a55f65aee5a29c59e3f864e7e3f6e6d422c8d87cb568e12209be7a7953"
+            }
+          ],
+          "objects": [
+            {
+              "owner": "visual-render",
+              "id": "slg-promotion-recovery-20261111",
+              "before_revision": "ce231c8f10123b116a3f69138a4caeaab84d9ef27e69c11b9a7dc277f9a9b4f3",
+              "after_revision": "54146c91d9d98c87620f8ac7f86e3e8981b1714d62cb06dab9d50e7bc545c012"
+            }
+          ],
+          "rewire_records": [],
+          "views": [
+            "visuals",
+            "presentation"
+          ]
+        }
+      }
+    }
+  ],
+  "observed_existing_placements": [
+    {
+      "id": "slg-priced-policy-tracking-20261111",
+      "source": "synthetics papers/self-consistent-loss-geometries-coupled-evaluators/manuscript/imported/sections/09_numerical_demonstrations.tex",
+      "source_sha256": "14e5bddd9a2b7154f52e76415d17ca4261143ebbbdde0c0b25f6340cfc3a9552",
+      "matching_label": "\\label{fig:slg-priced-policy-tracking-20261111}",
+      "owner_file_receipt": {
+        "scope": "repository",
+        "path": "synthetics papers/self-consistent-loss-geometries-coupled-evaluators/manuscript/imported/figure_manifest.json",
+        "before_sha256": "sha256:8f9028a55f65aee5a29c59e3f864e7e3f6e6d422c8d87cb568e12209be7a7953",
+        "after_sha256": "sha256:4a9699f672612d08e8eda18f6485467e7f71f832ad5123d37d4fa754b105c283",
+        "observed_after_sha256": "sha256:4a9699f672612d08e8eda18f6485467e7f71f832ad5123d37d4fa754b105c283"
+      }
+    },
+    {
+      "id": "slg-or-hazard-defect-20261111",
+      "source": "synthetics papers/self-consistent-loss-geometries-coupled-evaluators/manuscript/imported/sections/05_evidence_examples.tex",
+      "source_sha256": "96448821ec975c6a1b6d73aa3ce577845014e5160216779ec913a397b1bda231",
+      "matching_label": "\\label{fig:slg-or-hazard-defect-20261111}",
+      "owner_file_receipt": {
+        "scope": "repository",
+        "path": "synthetics papers/self-consistent-loss-geometries-coupled-evaluators/manuscript/imported/figure_manifest.json",
+        "before_sha256": "sha256:4a9699f672612d08e8eda18f6485467e7f71f832ad5123d37d4fa754b105c283",
+        "after_sha256": "sha256:d709a6faf1cfe503a96361846f29545e9724e5a1f7ac2fdc338befb450a6f780",
+        "observed_after_sha256": "sha256:d709a6faf1cfe503a96361846f29545e9724e5a1f7ac2fdc338befb450a6f780"
+      }
+    },
+    {
+      "id": "slg-or-event-multiplicity-20261111",
+      "source": "synthetics papers/self-consistent-loss-geometries-coupled-evaluators/manuscript/imported/sections/05_evidence_examples.tex",
+      "source_sha256": "96448821ec975c6a1b6d73aa3ce577845014e5160216779ec913a397b1bda231",
+      "matching_label": "\\label{fig:slg-or-event-multiplicity-20261111}",
+      "owner_file_receipt": {
+        "scope": "repository",
+        "path": "synthetics papers/self-consistent-loss-geometries-coupled-evaluators/manuscript/imported/figure_manifest.json",
+        "before_sha256": "sha256:d709a6faf1cfe503a96361846f29545e9724e5a1f7ac2fdc338befb450a6f780",
+        "after_sha256": "sha256:e6bad260fc6952fb6bc5fc702beab80659f0bc2b84f9e8ed62aa069a83af2edb",
+        "observed_after_sha256": "sha256:e6bad260fc6952fb6bc5fc702beab80659f0bc2b84f9e8ed62aa069a83af2edb"
+      }
+    },
+    {
+      "id": "slg-promotion-risk-20261111",
+      "source": "synthetics papers/self-consistent-loss-geometries-coupled-evaluators/manuscript/imported/sections/09_numerical_demonstrations.tex",
+      "source_sha256": "14e5bddd9a2b7154f52e76415d17ca4261143ebbbdde0c0b25f6340cfc3a9552",
+      "matching_label": "\\label{fig:slg-promotion-risk-20261111}",
+      "owner_file_receipt": {
+        "scope": "repository",
+        "path": "synthetics papers/self-consistent-loss-geometries-coupled-evaluators/manuscript/imported/figure_manifest.json",
+        "before_sha256": "sha256:e6bad260fc6952fb6bc5fc702beab80659f0bc2b84f9e8ed62aa069a83af2edb",
+        "after_sha256": "sha256:7fb71a7ba51ecfacbebaed9b3c78bf7b4a75bc5c65b8153e37bdc6d3af39adcf",
+        "observed_after_sha256": "sha256:7fb71a7ba51ecfacbebaed9b3c78bf7b4a75bc5c65b8153e37bdc6d3af39adcf"
+      }
+    },
+    {
+      "id": "slg-promotion-frequency-20261111",
+      "source": "synthetics papers/self-consistent-loss-geometries-coupled-evaluators/manuscript/imported/sections/09_numerical_demonstrations.tex",
+      "source_sha256": "14e5bddd9a2b7154f52e76415d17ca4261143ebbbdde0c0b25f6340cfc3a9552",
+      "matching_label": "\\label{fig:slg-promotion-frequency-20261111}",
+      "owner_file_receipt": {
+        "scope": "repository",
+        "path": "synthetics papers/self-consistent-loss-geometries-coupled-evaluators/manuscript/imported/figure_manifest.json",
+        "before_sha256": "sha256:7fb71a7ba51ecfacbebaed9b3c78bf7b4a75bc5c65b8153e37bdc6d3af39adcf",
+        "after_sha256": "sha256:795f825b758d025a12fc3731ed70954a8c6851274956c01e906dd69529e6ab18",
+        "observed_after_sha256": "sha256:795f825b758d025a12fc3731ed70954a8c6851274956c01e906dd69529e6ab18"
+      }
+    },
+    {
+      "id": "slg-off-transition-promotions-20261111",
+      "source": "synthetics papers/self-consistent-loss-geometries-coupled-evaluators/manuscript/imported/sections/07_appendix.tex",
+      "source_sha256": "6b452a07f38b06613c3d22cd1cca71e1f7ddfc3d15f5d5875961808d739fb13d",
+      "matching_label": "\\label{fig:slg-off-transition-promotions-20261111}",
+      "owner_file_receipt": {
+        "scope": "repository",
+        "path": "synthetics papers/self-consistent-loss-geometries-coupled-evaluators/manuscript/imported/figure_manifest.json",
+        "before_sha256": "sha256:795f825b758d025a12fc3731ed70954a8c6851274956c01e906dd69529e6ab18",
+        "after_sha256": "sha256:c7ab4134e0cde152da0e84c47af980f48b19ce8fd9dfb0427a556bfcd8efb519",
+        "observed_after_sha256": "sha256:c7ab4134e0cde152da0e84c47af980f48b19ce8fd9dfb0427a556bfcd8efb519"
+      }
+    },
+    {
+      "id": "slg-register-common-ledger-20261111",
+      "source": "synthetics papers/self-consistent-loss-geometries-coupled-evaluators/manuscript/imported/sections/03_model_setup.tex",
+      "source_sha256": "2a25fe958ecd7a598c8779772aaba6e907455fa42a31b417a0317c456df03d4f",
+      "matching_label": "\\label{fig:slg-register-common-ledger-20261111}",
+      "owner_file_receipt": {
+        "scope": "repository",
+        "path": "synthetics papers/self-consistent-loss-geometries-coupled-evaluators/manuscript/imported/figure_manifest.json",
+        "before_sha256": "sha256:c7ab4134e0cde152da0e84c47af980f48b19ce8fd9dfb0427a556bfcd8efb519",
+        "after_sha256": "sha256:06c752627cce72c881f11b618c6352d7beeef1b8be57ecacb93b427a1dde515c",
+        "observed_after_sha256": "sha256:06c752627cce72c881f11b618c6352d7beeef1b8be57ecacb93b427a1dde515c"
+      }
+    },
+    {
+      "id": "slg-promotion-recovery-20261111",
+      "source": "synthetics papers/self-consistent-loss-geometries-coupled-evaluators/manuscript/imported/sections/09_numerical_demonstrations.tex",
+      "source_sha256": "14e5bddd9a2b7154f52e76415d17ca4261143ebbbdde0c0b25f6340cfc3a9552",
+      "matching_label": "\\label{fig:slg-promotion-recovery-20261111}",
+      "owner_file_receipt": {
+        "scope": "repository",
+        "path": "synthetics papers/self-consistent-loss-geometries-coupled-evaluators/manuscript/imported/figure_manifest.json",
+        "before_sha256": "sha256:06c752627cce72c881f11b618c6352d7beeef1b8be57ecacb93b427a1dde515c",
+        "after_sha256": "sha256:d037af7d90b61c9135686f400b2624a4e8068e7818a2485dcba96ae4117efa52",
+        "observed_after_sha256": "sha256:d037af7d90b61c9135686f400b2624a4e8068e7818a2485dcba96ae4117efa52"
+      }
+    }
+  ],
+  "source_unchanged_during_placement_observation": true,
+  "caption_alignment": [
+    {
+      "id": "slg-priced-policy-tracking-20261111",
+      "caption_source": "synthetics papers/self-consistent-loss-geometries-coupled-evaluators/manuscript/imported/sections/09_numerical_demonstrations.tex",
+      "source_sha256": "14e5bddd9a2b7154f52e76415d17ca4261143ebbbdde0c0b25f6340cfc3a9552",
+      "create": {
+        "spec": {
+          "id": "slg-priced-policy-tracking-20261111",
+          "kind": "plot",
+          "title": "What the priced partial policy actually tracks",
+          "question": "What trajectories underlie the prediction and recovery summaries for one declared stream?",
+          "caption": "Carried model state under actual-step pricing. The representative stream is seed 0, fixed before execution. The latent slope changes at observations \\(140,310,470,600\\) and is used only for evaluation. The other curves show the actual-step-priced rolling policy at the displayed prices. Each update moves \\(0.22\\) of the way towards the trailing ridge target and is bought only when \\(2.5\\) times its actual window improvement exceeds \\(c\\). Estimates are pre-action states. High prices can retain bias after a shift. This trace must be read with the matched risk, update-frequency and occupancy comparisons, not as a calibrated choice of price.",
+          "source_data": "retained-evidence/research/slg-scientific-figures-20261111/outputs/run-7f8022a64802820f.result/priced_policy_tracking.csv",
+          "x": "Time",
+          "series": [
+            "True slope",
+            "v1 price 0.005",
+            "v1 price 0.06",
+            "v1 price 0.4"
+          ],
+          "x_label": "Observation index (discrete steps)",
+          "y_label": "Slope / pre-action estimate",
+          "result_ids": [
+            "retained-result-e3d5544bddeca7fec4d7"
+          ],
+          "style": {
+            "font_size": 10,
+            "width_inches": 7,
+            "height_inches": 4.5,
+            "line_width": 1.7,
+            "marker_size": 1,
+            "grid": false,
+            "preview_dpi": 150,
+            "palette": [
+              "#0072B2",
+              "#E69F00",
+              "#009E73",
+              "#666666",
+              "#CC79A7"
+            ]
+          },
+          "render": {
+            "outputs": [
+              "figures/generated/slg-priced-policy-tracking-20261111.svg",
+              "figures/generated/slg-priced-policy-tracking-20261111.pdf",
+              "figures/generated/slg-priced-policy-tracking-20261111.png"
+            ],
+            "renderer": "matplotlib",
+            "input_digest": "4b727d1e2d257537f2ef5f6ae02c60205a9dbcd72addace7acb9253582ca3b72",
+            "drawing_input_digest": "4b727d1e2d257537f2ef5f6ae02c60205a9dbcd72addace7acb9253582ca3b72",
+            "drawing_inputs": {
+              "spec": {
+                "id": "slg-priced-policy-tracking-20261111",
+                "kind": "plot",
+                "x": "Time",
+                "series": [
+                  "True slope",
+                  "v1 price 0.005",
+                  "v1 price 0.06",
+                  "v1 price 0.4"
+                ],
+                "x_label": "Observation index (discrete steps)",
+                "y_label": "Slope / pre-action estimate"
+              },
+              "data": "20fde7d621d27746172840d71d6450193d90cec01dcbbac9a2cf3a1eb4158f47"
+            },
+            "research_bindings": [
+              {
+                "id": "retained-result-e3d5544bddeca7fec4d7",
+                "revision": "sha256:31d9ca76c18efa498fe366601d119c83cf51847da21e232a53e12aa6aa05190b",
+                "currentness": "CURRENT"
+              }
+            ],
+            "presentation_metadata": {
+              "title": "What the priced partial policy actually tracks",
+              "question": "What trajectories underlie the prediction and recovery summaries for one declared stream?",
+              "caption": "Representative stream seed 0, chosen before execution, from the same 12-stream experiment. The true latent slope changes at observations 140, 310, 470 and 600 and is used for evaluation only. Each other curve is priced v1 at the displayed predeclared price c: it applies 0.22 of a 28-observation ridge rolling-fit step only when 2.5 times the ACTUAL window improvement exceeds c, with zero no-update gain. Curves show estimates available BEFORE the current observation can update the model. Higher prices can preserve a biased estimate after a real shift. Read this trace with the matched-policy risk and recovery panels, rather than selecting a calibrated price from one stream. Exact inputs, candidate/action accounting, data and protocol links are in the accompanying evidence manifest.",
+              "source_data": "retained-evidence/research/slg-scientific-figures-20261111/outputs/run-7f8022a64802820f.result/priced_policy_tracking.csv",
+              "source": null
+            },
+            "style_version": "8fbbf4d197344ea283f91ba2513e3d91084b69d4de13a039a2f86efc14bb5d2a",
+            "style_profile": "profiles/visual_style.json",
+            "visual_review": "pending",
+            "output_digests": {
+              "figures/generated/slg-priced-policy-tracking-20261111.svg": "aff7042cf103ca0d2dd1cf8186648c3d5394fc857ea0051a73604d9f95df0f8b",
+              "figures/generated/slg-priced-policy-tracking-20261111.pdf": "a39a222b231904ac52a00387062bb571d5bc5322202f15323ebf65aee2e5c7d8",
+              "figures/generated/slg-priced-policy-tracking-20261111.png": "d70af030639f1216a8714605645a1d25d6adfcfc11bbfbc48eb51c097a5e6066"
+            }
+          },
+          "section_repo_file": "synthetics papers/self-consistent-loss-geometries-coupled-evaluators/manuscript/imported/sections/09_numerical_demonstrations.tex",
+          "section": "sections/09_numerical_demonstrations.tex",
+          "section_scope": "manuscript"
+        },
+        "spec_revision": "9e400bc3286d7e62eb650fd32fc60d172ecc82f3b57547c56c1c82091e67fb0a",
+        "readiness": "SPECIFIED",
+        "placement_caption": {
+          "status": "MATCHES",
+          "file": "synthetics papers/self-consistent-loss-geometries-coupled-evaluators/manuscript/imported/sections/09_numerical_demonstrations.tex",
+          "line_start": 38,
+          "line_end": 38,
+          "next_read": {
+            "operation": "source",
+            "payload": {
+              "files": [
+                "synthetics papers/self-consistent-loss-geometries-coupled-evaluators/manuscript/imported/sections/09_numerical_demonstrations.tex"
+              ],
+              "line_start": 38,
+              "line_end": 38
+            }
+          },
+          "edit_operation": "apply_revision",
+          "note": "The manuscript caption is authored source. Read this exact span, then use apply_revision for a requested change; visual_render only updates the brief/asset metadata."
+        },
+        "owned_changes": {
+          "schema_version": "laplace.owner-mutation/1",
+          "files": [
+            {
+              "scope": "repository",
+              "path": "synthetics papers/self-consistent-loss-geometries-coupled-evaluators/manuscript/imported/manuscript_spec.json",
+              "before_sha256": "sha256:f21b89ba75387b68753704d6aa4b15795f2fe5b0e07c8c6d6568491b44124223",
+              "after_sha256": "sha256:4315f5707e46fcda72465074c369df63e1c0f3e362eaaecb05d731f1817f76b2",
+              "observed_after_sha256": "sha256:4315f5707e46fcda72465074c369df63e1c0f3e362eaaecb05d731f1817f76b2"
+            }
+          ],
+          "objects": [
+            {
+              "owner": "visual-spec",
+              "id": "slg-priced-policy-tracking-20261111",
+              "before_revision": "98a291f7ea9be4489face6677507fd6ec633b6505e69e94eb0f8839034514fa1",
+              "after_revision": "9e400bc3286d7e62eb650fd32fc60d172ecc82f3b57547c56c1c82091e67fb0a"
+            }
+          ],
+          "rewire_records": [],
+          "views": [
+            "visuals",
+            "presentation"
+          ]
+        }
+      },
+      "render": {
+        "render": {
+          "outputs": [
+            "figures/generated/slg-priced-policy-tracking-20261111.svg",
+            "figures/generated/slg-priced-policy-tracking-20261111.pdf",
+            "figures/generated/slg-priced-policy-tracking-20261111.png"
+          ],
+          "renderer": "matplotlib",
+          "input_digest": "4b727d1e2d257537f2ef5f6ae02c60205a9dbcd72addace7acb9253582ca3b72",
+          "drawing_input_digest": "4b727d1e2d257537f2ef5f6ae02c60205a9dbcd72addace7acb9253582ca3b72",
+          "drawing_inputs": {
+            "spec": {
+              "id": "slg-priced-policy-tracking-20261111",
+              "kind": "plot",
+              "x": "Time",
+              "series": [
+                "True slope",
+                "v1 price 0.005",
+                "v1 price 0.06",
+                "v1 price 0.4"
+              ],
+              "x_label": "Observation index (discrete steps)",
+              "y_label": "Slope / pre-action estimate"
+            },
+            "data": "20fde7d621d27746172840d71d6450193d90cec01dcbbac9a2cf3a1eb4158f47"
+          },
+          "research_bindings": [
+            {
+              "id": "retained-result-e3d5544bddeca7fec4d7",
+              "revision": "sha256:31d9ca76c18efa498fe366601d119c83cf51847da21e232a53e12aa6aa05190b",
+              "currentness": "CURRENT"
+            }
+          ],
+          "presentation_metadata": {
+            "title": "What the priced partial policy actually tracks",
+            "question": "What trajectories underlie the prediction and recovery summaries for one declared stream?",
+            "caption": "Carried model state under actual-step pricing. The representative stream is seed 0, fixed before execution. The latent slope changes at observations \\(140,310,470,600\\) and is used only for evaluation. The other curves show the actual-step-priced rolling policy at the displayed prices. Each update moves \\(0.22\\) of the way towards the trailing ridge target and is bought only when \\(2.5\\) times its actual window improvement exceeds \\(c\\). Estimates are pre-action states. High prices can retain bias after a shift. This trace must be read with the matched risk, update-frequency and occupancy comparisons, not as a calibrated choice of price.",
+            "source_data": "retained-evidence/research/slg-scientific-figures-20261111/outputs/run-7f8022a64802820f.result/priced_policy_tracking.csv",
+            "source": null
+          },
+          "style_version": "8fbbf4d197344ea283f91ba2513e3d91084b69d4de13a039a2f86efc14bb5d2a",
+          "style_profile": "profiles/visual_style.json",
+          "visual_review": "pending",
+          "output_digests": {
+            "figures/generated/slg-priced-policy-tracking-20261111.svg": "aff7042cf103ca0d2dd1cf8186648c3d5394fc857ea0051a73604d9f95df0f8b",
+            "figures/generated/slg-priced-policy-tracking-20261111.pdf": "a39a222b231904ac52a00387062bb571d5bc5322202f15323ebf65aee2e5c7d8",
+            "figures/generated/slg-priced-policy-tracking-20261111.png": "d70af030639f1216a8714605645a1d25d6adfcfc11bbfbc48eb51c097a5e6066"
+          },
+          "reused": true,
+          "basis_refreshed": true
+        },
+        "readiness": "GENERATED",
+        "placement_caption": {
+          "status": "MATCHES",
+          "file": "synthetics papers/self-consistent-loss-geometries-coupled-evaluators/manuscript/imported/sections/09_numerical_demonstrations.tex",
+          "line_start": 38,
+          "line_end": 38,
+          "next_read": {
+            "operation": "source",
+            "payload": {
+              "files": [
+                "synthetics papers/self-consistent-loss-geometries-coupled-evaluators/manuscript/imported/sections/09_numerical_demonstrations.tex"
+              ],
+              "line_start": 38,
+              "line_end": 38
+            }
+          },
+          "edit_operation": "apply_revision",
+          "note": "The manuscript caption is authored source. Read this exact span, then use apply_revision for a requested change; visual_render only updates the brief/asset metadata."
+        },
+        "owned_changes": {
+          "schema_version": "laplace.owner-mutation/1",
+          "files": [
+            {
+              "scope": "repository",
+              "path": "synthetics papers/self-consistent-loss-geometries-coupled-evaluators/manuscript/imported/manuscript_spec.json",
+              "before_sha256": "sha256:4315f5707e46fcda72465074c369df63e1c0f3e362eaaecb05d731f1817f76b2",
+              "after_sha256": "sha256:443dcb2f23ef9d4d6254e35a51478740ee62379920a5edcb4aeeba4752ffabd3",
+              "observed_after_sha256": "sha256:443dcb2f23ef9d4d6254e35a51478740ee62379920a5edcb4aeeba4752ffabd3"
+            },
+            {
+              "scope": "repository",
+              "path": "synthetics papers/self-consistent-loss-geometries-coupled-evaluators/manuscript/imported/figure_manifest.json",
+              "before_sha256": "sha256:d037af7d90b61c9135686f400b2624a4e8068e7818a2485dcba96ae4117efa52",
+              "after_sha256": "sha256:f057a7e768dd7399bc4ea5a44393688aa72142ef03915e7753f713b6154b317f",
+              "observed_after_sha256": "sha256:f057a7e768dd7399bc4ea5a44393688aa72142ef03915e7753f713b6154b317f"
+            }
+          ],
+          "objects": [
+            {
+              "owner": "visual-render",
+              "id": "slg-priced-policy-tracking-20261111",
+              "before_revision": "9e400bc3286d7e62eb650fd32fc60d172ecc82f3b57547c56c1c82091e67fb0a",
+              "after_revision": "786de872dac78573bff1a567be8efcec7ea29b712ba7f829b9db9506e79a24c8"
+            }
+          ],
+          "rewire_records": [],
+          "views": [
+            "visuals",
+            "presentation"
+          ]
+        }
+      }
+    },
+    {
+      "id": "slg-or-hazard-defect-20261111",
+      "caption_source": "synthetics papers/self-consistent-loss-geometries-coupled-evaluators/manuscript/imported/sections/05_evidence_examples.tex",
+      "source_sha256": "96448821ec975c6a1b6d73aa3ce577845014e5160216779ec913a397b1bda231",
+      "create": {
+        "spec": {
+          "id": "slg-or-hazard-defect-20261111",
+          "kind": "plot",
+          "title": "Exact event closure, approximate threshold",
+          "question": "What changes when the receiver retains exact cumulative hazard rather than one common intercept?",
+          "caption": "Exact event closure and the cost of a smaller description. Top (a): Bernoulli event total variation over four externally frozen independent four-event schedules at 81 prices. Exact hazard retains \\(h_B(c)\\) and reproduces the OR probability. The naive law uses \\(\\sigma(S_B-c)\\). The common-intercept law uses the arithmetic mean of block-specific \\(c_{\\mathrm{eff}}\\) at each price. Its mean and maximum residuals quantify the effect of that restriction. The mean intercept minimises squared log-odds error, not TV. Bottom (b): for the same blocks, \\(dc_{\\mathrm{eff}}/dc=\\mathbb E[N_B\\mid N_B\\geq1]\\). Curves give its block mean, minimum and maximum, with exact bounds 1 and 4. This is conditional event multiplicity, not an instability eigenvalue. The full margin schedules are retained for repricing. A single hazard value at one price is insufficient for that response.",
+          "source_data": "retained-evidence/research/slg-scientific-figures-20261111/outputs/run-7f8022a64802820f.result/or_hazard_projection.csv",
+          "x": "Price",
+          "series": [
+            "Naive mean TV",
+            "Mean intercept TV",
+            "Max intercept TV",
+            "Exact hazard TV"
+          ],
+          "x_label": "Threshold price c (dimensionless)",
+          "y_label": "Event total variation",
+          "result_ids": [
+            "retained-slg-or-hazard-projection-20261111"
+          ],
+          "style": {
+            "font_size": 10,
+            "width_inches": 7,
+            "height_inches": 4.5,
+            "line_width": 1.7,
+            "marker_size": 1,
+            "grid": false,
+            "preview_dpi": 150,
+            "palette": [
+              "#0072B2",
+              "#E69F00",
+              "#009E73",
+              "#666666",
+              "#CC79A7"
+            ]
+          },
+          "render": {
+            "outputs": [
+              "figures/generated/slg-or-hazard-defect-20261111.svg",
+              "figures/generated/slg-or-hazard-defect-20261111.pdf",
+              "figures/generated/slg-or-hazard-defect-20261111.png"
+            ],
+            "renderer": "matplotlib",
+            "input_digest": "5680d3fa77893521a6f7d75aa1d79c603b3a6936be06f25e083962cb15d833dc",
+            "drawing_input_digest": "5680d3fa77893521a6f7d75aa1d79c603b3a6936be06f25e083962cb15d833dc",
+            "drawing_inputs": {
+              "spec": {
+                "id": "slg-or-hazard-defect-20261111",
+                "kind": "plot",
+                "x": "Price",
+                "series": [
+                  "Naive mean TV",
+                  "Mean intercept TV",
+                  "Max intercept TV",
+                  "Exact hazard TV"
+                ],
+                "x_label": "Threshold price c (dimensionless)",
+                "y_label": "Event total variation"
+              },
+              "data": "b1821dd80de0369065a2891354bde68658217241712fe4dad728ae41dc6b0f05"
+            },
+            "research_bindings": [
+              {
+                "id": "retained-slg-or-hazard-projection-20261111",
+                "revision": "sha256:9b4bf3984eee7ec92a1fc975d0ed441153ac635df19ccc6ab8ff0ee4d6d463e1",
+                "currentness": "CURRENT"
+              }
+            ],
+            "presentation_metadata": {
+              "title": "Exact event closure, approximate threshold",
+              "question": "What changes when the receiver retains exact cumulative hazard rather than one common intercept?",
+              "caption": "Event total variation, |q-q_hat|, over four predeclared independent four-event blocks at 81 prices. Fine events have probabilities sigmoid(m_i-c). Exact hazard uses h=sum softplus(m_i-c), q=1-exp(-h) and agrees with OR to numerical precision. Naive mean TV averages the error of sigmoid(sum m_i-c). Mean intercept TV averages, and Max intercept TV maximises, the error after fitting one arithmetic-mean effective intercept across blocks at each price. That intercept minimises squared log-odds error, not TV. Retaining the hazard closes this event exactly, while replacing block information with one intercept loses accuracy. Frozen margin schedules are retained for repricing. This is not adaptive learner path coarse-graining. Exact blocks, data and method are linked in the accompanying evidence manifest.",
+              "source_data": "retained-evidence/research/slg-scientific-figures-20261111/outputs/run-7f8022a64802820f.result/or_hazard_projection.csv",
+              "source": null
+            },
+            "style_version": "8fbbf4d197344ea283f91ba2513e3d91084b69d4de13a039a2f86efc14bb5d2a",
+            "style_profile": "profiles/visual_style.json",
+            "visual_review": "pending",
+            "output_digests": {
+              "figures/generated/slg-or-hazard-defect-20261111.svg": "26454261f04824940118974b00b9d663639826513f076548ce684fc9d644752a",
+              "figures/generated/slg-or-hazard-defect-20261111.pdf": "295124443814569562a09392a61fec0507cb81a672ab3ca91de4fc70fa4fae09",
+              "figures/generated/slg-or-hazard-defect-20261111.png": "b32d5872734a241ca81b92a2490acf836f27f89dc45371c3381e3fb0c3c5b047"
+            }
+          },
+          "section_repo_file": "synthetics papers/self-consistent-loss-geometries-coupled-evaluators/manuscript/imported/sections/05_evidence_examples.tex",
+          "section": "sections/05_evidence_examples.tex",
+          "section_scope": "manuscript"
+        },
+        "spec_revision": "3102d13128013d7ee22e9d55d5ae89944a2d83760e23d7f4c683e4c881bffa29",
+        "readiness": "SPECIFIED",
+        "placement_caption": {
+          "status": "MATCHES",
+          "file": "synthetics papers/self-consistent-loss-geometries-coupled-evaluators/manuscript/imported/sections/05_evidence_examples.tex",
+          "line_start": 129,
+          "line_end": 129,
+          "next_read": {
+            "operation": "source",
+            "payload": {
+              "files": [
+                "synthetics papers/self-consistent-loss-geometries-coupled-evaluators/manuscript/imported/sections/05_evidence_examples.tex"
+              ],
+              "line_start": 129,
+              "line_end": 129
+            }
+          },
+          "edit_operation": "apply_revision",
+          "note": "The manuscript caption is authored source. Read this exact span, then use apply_revision for a requested change; visual_render only updates the brief/asset metadata."
+        },
+        "owned_changes": {
+          "schema_version": "laplace.owner-mutation/1",
+          "files": [
+            {
+              "scope": "repository",
+              "path": "synthetics papers/self-consistent-loss-geometries-coupled-evaluators/manuscript/imported/manuscript_spec.json",
+              "before_sha256": "sha256:443dcb2f23ef9d4d6254e35a51478740ee62379920a5edcb4aeeba4752ffabd3",
+              "after_sha256": "sha256:0a30e96765344b9a50214c819e86afc88546f3756c08df1239a6eb517f8dfb39",
+              "observed_after_sha256": "sha256:0a30e96765344b9a50214c819e86afc88546f3756c08df1239a6eb517f8dfb39"
+            }
+          ],
+          "objects": [
+            {
+              "owner": "visual-spec",
+              "id": "slg-or-hazard-defect-20261111",
+              "before_revision": "157e9c7626a0ccf56543cbfefab3defc740c309b363d011d4383dc5b4d64c640",
+              "after_revision": "3102d13128013d7ee22e9d55d5ae89944a2d83760e23d7f4c683e4c881bffa29"
+            }
+          ],
+          "rewire_records": [],
+          "views": [
+            "visuals",
+            "presentation"
+          ]
+        }
+      },
+      "render": {
+        "render": {
+          "outputs": [
+            "figures/generated/slg-or-hazard-defect-20261111.svg",
+            "figures/generated/slg-or-hazard-defect-20261111.pdf",
+            "figures/generated/slg-or-hazard-defect-20261111.png"
+          ],
+          "renderer": "matplotlib",
+          "input_digest": "5680d3fa77893521a6f7d75aa1d79c603b3a6936be06f25e083962cb15d833dc",
+          "drawing_input_digest": "5680d3fa77893521a6f7d75aa1d79c603b3a6936be06f25e083962cb15d833dc",
+          "drawing_inputs": {
+            "spec": {
+              "id": "slg-or-hazard-defect-20261111",
+              "kind": "plot",
+              "x": "Price",
+              "series": [
+                "Naive mean TV",
+                "Mean intercept TV",
+                "Max intercept TV",
+                "Exact hazard TV"
+              ],
+              "x_label": "Threshold price c (dimensionless)",
+              "y_label": "Event total variation"
+            },
+            "data": "b1821dd80de0369065a2891354bde68658217241712fe4dad728ae41dc6b0f05"
+          },
+          "research_bindings": [
+            {
+              "id": "retained-slg-or-hazard-projection-20261111",
+              "revision": "sha256:9b4bf3984eee7ec92a1fc975d0ed441153ac635df19ccc6ab8ff0ee4d6d463e1",
+              "currentness": "CURRENT"
+            }
+          ],
+          "presentation_metadata": {
+            "title": "Exact event closure, approximate threshold",
+            "question": "What changes when the receiver retains exact cumulative hazard rather than one common intercept?",
+            "caption": "Exact event closure and the cost of a smaller description. Top (a): Bernoulli event total variation over four externally frozen independent four-event schedules at 81 prices. Exact hazard retains \\(h_B(c)\\) and reproduces the OR probability. The naive law uses \\(\\sigma(S_B-c)\\). The common-intercept law uses the arithmetic mean of block-specific \\(c_{\\mathrm{eff}}\\) at each price. Its mean and maximum residuals quantify the effect of that restriction. The mean intercept minimises squared log-odds error, not TV. Bottom (b): for the same blocks, \\(dc_{\\mathrm{eff}}/dc=\\mathbb E[N_B\\mid N_B\\geq1]\\). Curves give its block mean, minimum and maximum, with exact bounds 1 and 4. This is conditional event multiplicity, not an instability eigenvalue. The full margin schedules are retained for repricing. A single hazard value at one price is insufficient for that response.",
+            "source_data": "retained-evidence/research/slg-scientific-figures-20261111/outputs/run-7f8022a64802820f.result/or_hazard_projection.csv",
+            "source": null
+          },
+          "style_version": "8fbbf4d197344ea283f91ba2513e3d91084b69d4de13a039a2f86efc14bb5d2a",
+          "style_profile": "profiles/visual_style.json",
+          "visual_review": "pending",
+          "output_digests": {
+            "figures/generated/slg-or-hazard-defect-20261111.svg": "26454261f04824940118974b00b9d663639826513f076548ce684fc9d644752a",
+            "figures/generated/slg-or-hazard-defect-20261111.pdf": "295124443814569562a09392a61fec0507cb81a672ab3ca91de4fc70fa4fae09",
+            "figures/generated/slg-or-hazard-defect-20261111.png": "b32d5872734a241ca81b92a2490acf836f27f89dc45371c3381e3fb0c3c5b047"
+          },
+          "reused": true,
+          "basis_refreshed": true
+        },
+        "readiness": "GENERATED",
+        "placement_caption": {
+          "status": "MATCHES",
+          "file": "synthetics papers/self-consistent-loss-geometries-coupled-evaluators/manuscript/imported/sections/05_evidence_examples.tex",
+          "line_start": 129,
+          "line_end": 129,
+          "next_read": {
+            "operation": "source",
+            "payload": {
+              "files": [
+                "synthetics papers/self-consistent-loss-geometries-coupled-evaluators/manuscript/imported/sections/05_evidence_examples.tex"
+              ],
+              "line_start": 129,
+              "line_end": 129
+            }
+          },
+          "edit_operation": "apply_revision",
+          "note": "The manuscript caption is authored source. Read this exact span, then use apply_revision for a requested change; visual_render only updates the brief/asset metadata."
+        },
+        "owned_changes": {
+          "schema_version": "laplace.owner-mutation/1",
+          "files": [
+            {
+              "scope": "repository",
+              "path": "synthetics papers/self-consistent-loss-geometries-coupled-evaluators/manuscript/imported/manuscript_spec.json",
+              "before_sha256": "sha256:0a30e96765344b9a50214c819e86afc88546f3756c08df1239a6eb517f8dfb39",
+              "after_sha256": "sha256:b83cf5af8d66947d215438ae8dedaec12482750fe818e92327d32c4ffb3bf8a7",
+              "observed_after_sha256": "sha256:b83cf5af8d66947d215438ae8dedaec12482750fe818e92327d32c4ffb3bf8a7"
+            },
+            {
+              "scope": "repository",
+              "path": "synthetics papers/self-consistent-loss-geometries-coupled-evaluators/manuscript/imported/figure_manifest.json",
+              "before_sha256": "sha256:f057a7e768dd7399bc4ea5a44393688aa72142ef03915e7753f713b6154b317f",
+              "after_sha256": "sha256:f3c7b069fab83c98d37090bd176b1d650e6517d2440eca57a28cf9cc06dfbf50",
+              "observed_after_sha256": "sha256:f3c7b069fab83c98d37090bd176b1d650e6517d2440eca57a28cf9cc06dfbf50"
+            }
+          ],
+          "objects": [
+            {
+              "owner": "visual-render",
+              "id": "slg-or-hazard-defect-20261111",
+              "before_revision": "3102d13128013d7ee22e9d55d5ae89944a2d83760e23d7f4c683e4c881bffa29",
+              "after_revision": "57205f896e97786d70d15daa0d6500d20c044a8af59be5a32cfa275b0e336f2f"
+            }
+          ],
+          "rewire_records": [],
+          "views": [
+            "visuals",
+            "presentation"
+          ]
+        }
+      }
+    },
+    {
+      "id": "slg-or-event-multiplicity-20261111",
+      "caption_source": "synthetics papers/self-consistent-loss-geometries-coupled-evaluators/manuscript/imported/sections/05_evidence_examples.tex",
+      "source_sha256": "96448821ec975c6a1b6d73aa3ce577845014e5160216779ec913a397b1bda231",
+      "create": {
+        "spec": {
+          "id": "slg-or-event-multiplicity-20261111",
+          "kind": "plot",
+          "title": "Threshold response counts fine events",
+          "question": "What does the effective-threshold derivative measure under this declared event map?",
+          "caption": "Exact event closure and the cost of a smaller description. Top (a): Bernoulli event total variation over four externally frozen independent four-event schedules at 81 prices. Exact hazard retains \\(h_B(c)\\) and reproduces the OR probability. The naive law uses \\(\\sigma(S_B-c)\\). The common-intercept law uses the arithmetic mean of block-specific \\(c_{\\mathrm{eff}}\\) at each price. Its mean and maximum residuals quantify the effect of that restriction. The mean intercept minimises squared log-odds error, not TV. Bottom (b): for the same blocks, \\(dc_{\\mathrm{eff}}/dc=\\mathbb E[N_B\\mid N_B\\geq1]\\). Curves give its block mean, minimum and maximum, with exact bounds 1 and 4. This is conditional event multiplicity, not an instability eigenvalue. The full margin schedules are retained for repricing. A single hazard value at one price is insufficient for that response.",
+          "source_data": "retained-evidence/research/slg-scientific-figures-20261111/outputs/run-7f8022a64802820f.result/or_hazard_projection.csv",
+          "x": "Price",
+          "series": [
+            "Mean conditional count",
+            "Min conditional count",
+            "Max conditional count",
+            "Single event bound",
+            "Block size bound"
+          ],
+          "x_label": "Threshold price c (dimensionless)",
+          "y_label": "Conditional fine-event count",
+          "result_ids": [
+            "retained-slg-or-hazard-projection-20261111"
+          ],
+          "style": {
+            "font_size": 10,
+            "width_inches": 7,
+            "height_inches": 4.5,
+            "line_width": 1.7,
+            "marker_size": 1,
+            "grid": false,
+            "preview_dpi": 150,
+            "palette": [
+              "#0072B2",
+              "#E69F00",
+              "#009E73",
+              "#666666",
+              "#CC79A7"
+            ]
+          },
+          "render": {
+            "outputs": [
+              "figures/generated/slg-or-event-multiplicity-20261111.svg",
+              "figures/generated/slg-or-event-multiplicity-20261111.pdf",
+              "figures/generated/slg-or-event-multiplicity-20261111.png"
+            ],
+            "renderer": "matplotlib",
+            "input_digest": "76063565068e2cc5206895dcc694172ad99c48f9bff63d25bc65ad22a873ae2b",
+            "drawing_input_digest": "76063565068e2cc5206895dcc694172ad99c48f9bff63d25bc65ad22a873ae2b",
+            "drawing_inputs": {
+              "spec": {
+                "id": "slg-or-event-multiplicity-20261111",
+                "kind": "plot",
+                "x": "Price",
+                "series": [
+                  "Mean conditional count",
+                  "Min conditional count",
+                  "Max conditional count",
+                  "Single event bound",
+                  "Block size bound"
+                ],
+                "x_label": "Threshold price c (dimensionless)",
+                "y_label": "Conditional fine-event count"
+              },
+              "data": "b1821dd80de0369065a2891354bde68658217241712fe4dad728ae41dc6b0f05"
+            },
+            "research_bindings": [
+              {
+                "id": "retained-slg-or-hazard-projection-20261111",
+                "revision": "sha256:9b4bf3984eee7ec92a1fc975d0ed441153ac635df19ccc6ab8ff0ee4d6d463e1",
+                "currentness": "CURRENT"
+              }
+            ],
+            "presentation_metadata": {
+              "title": "Threshold response counts fine events",
+              "question": "What does the effective-threshold derivative measure under this declared event map?",
+              "caption": "For the same four frozen independent four-event blocks at 81 prices, the derivative dc_eff/dc equals E[N | N>=1], where N counts fine events. The blue curve averages this conditional count across blocks, orange and green give its minimum and maximum. Grey and purple are the exact bounds 1 and 4. The slope measures event multiplicity rather than RG instability. Retain each margin schedule, not only one hazard value at a reference price, when asking how repricing changes the event. Exact blocks, data and method are linked in the accompanying evidence manifest.",
+              "source_data": "retained-evidence/research/slg-scientific-figures-20261111/outputs/run-7f8022a64802820f.result/or_hazard_projection.csv",
+              "source": null
+            },
+            "style_version": "8fbbf4d197344ea283f91ba2513e3d91084b69d4de13a039a2f86efc14bb5d2a",
+            "style_profile": "profiles/visual_style.json",
+            "visual_review": "pending",
+            "output_digests": {
+              "figures/generated/slg-or-event-multiplicity-20261111.svg": "b814116b0209af3adb2f0e70cc6426ac525fce1b329b2c09e7e2ecee26289107",
+              "figures/generated/slg-or-event-multiplicity-20261111.pdf": "1ef6c7aa134e0fc8aedb5eeecfa52b8b6c5f41fcd09922326bdedc7e99aee851",
+              "figures/generated/slg-or-event-multiplicity-20261111.png": "f8bb4a074b0e2b050fd8de5b5b9ffcffec2b3127a1702a6773db05473675269b"
+            }
+          },
+          "section_repo_file": "synthetics papers/self-consistent-loss-geometries-coupled-evaluators/manuscript/imported/sections/05_evidence_examples.tex",
+          "section": "sections/05_evidence_examples.tex",
+          "section_scope": "manuscript"
+        },
+        "spec_revision": "defd6c49e51330a400fdd1415b7bd5b7808b094f1cab4a45526cb27c296243db",
+        "readiness": "SPECIFIED",
+        "placement_caption": {
+          "status": "MATCHES",
+          "file": "synthetics papers/self-consistent-loss-geometries-coupled-evaluators/manuscript/imported/sections/05_evidence_examples.tex",
+          "line_start": 129,
+          "line_end": 129,
+          "next_read": {
+            "operation": "source",
+            "payload": {
+              "files": [
+                "synthetics papers/self-consistent-loss-geometries-coupled-evaluators/manuscript/imported/sections/05_evidence_examples.tex"
+              ],
+              "line_start": 129,
+              "line_end": 129
+            }
+          },
+          "edit_operation": "apply_revision",
+          "note": "The manuscript caption is authored source. Read this exact span, then use apply_revision for a requested change; visual_render only updates the brief/asset metadata."
+        },
+        "owned_changes": {
+          "schema_version": "laplace.owner-mutation/1",
+          "files": [
+            {
+              "scope": "repository",
+              "path": "synthetics papers/self-consistent-loss-geometries-coupled-evaluators/manuscript/imported/manuscript_spec.json",
+              "before_sha256": "sha256:b83cf5af8d66947d215438ae8dedaec12482750fe818e92327d32c4ffb3bf8a7",
+              "after_sha256": "sha256:137efa6c9dcc7eb28d695920218278a04cbbf1353ec1c025cd16595c11544c77",
+              "observed_after_sha256": "sha256:137efa6c9dcc7eb28d695920218278a04cbbf1353ec1c025cd16595c11544c77"
+            }
+          ],
+          "objects": [
+            {
+              "owner": "visual-spec",
+              "id": "slg-or-event-multiplicity-20261111",
+              "before_revision": "ae7ec520b8dc93823b3247df6dc7a5bd4169d8885eb89249a2f47534aee141e0",
+              "after_revision": "defd6c49e51330a400fdd1415b7bd5b7808b094f1cab4a45526cb27c296243db"
+            }
+          ],
+          "rewire_records": [],
+          "views": [
+            "visuals",
+            "presentation"
+          ]
+        }
+      },
+      "render": {
+        "render": {
+          "outputs": [
+            "figures/generated/slg-or-event-multiplicity-20261111.svg",
+            "figures/generated/slg-or-event-multiplicity-20261111.pdf",
+            "figures/generated/slg-or-event-multiplicity-20261111.png"
+          ],
+          "renderer": "matplotlib",
+          "input_digest": "76063565068e2cc5206895dcc694172ad99c48f9bff63d25bc65ad22a873ae2b",
+          "drawing_input_digest": "76063565068e2cc5206895dcc694172ad99c48f9bff63d25bc65ad22a873ae2b",
+          "drawing_inputs": {
+            "spec": {
+              "id": "slg-or-event-multiplicity-20261111",
+              "kind": "plot",
+              "x": "Price",
+              "series": [
+                "Mean conditional count",
+                "Min conditional count",
+                "Max conditional count",
+                "Single event bound",
+                "Block size bound"
+              ],
+              "x_label": "Threshold price c (dimensionless)",
+              "y_label": "Conditional fine-event count"
+            },
+            "data": "b1821dd80de0369065a2891354bde68658217241712fe4dad728ae41dc6b0f05"
+          },
+          "research_bindings": [
+            {
+              "id": "retained-slg-or-hazard-projection-20261111",
+              "revision": "sha256:9b4bf3984eee7ec92a1fc975d0ed441153ac635df19ccc6ab8ff0ee4d6d463e1",
+              "currentness": "CURRENT"
+            }
+          ],
+          "presentation_metadata": {
+            "title": "Threshold response counts fine events",
+            "question": "What does the effective-threshold derivative measure under this declared event map?",
+            "caption": "Exact event closure and the cost of a smaller description. Top (a): Bernoulli event total variation over four externally frozen independent four-event schedules at 81 prices. Exact hazard retains \\(h_B(c)\\) and reproduces the OR probability. The naive law uses \\(\\sigma(S_B-c)\\). The common-intercept law uses the arithmetic mean of block-specific \\(c_{\\mathrm{eff}}\\) at each price. Its mean and maximum residuals quantify the effect of that restriction. The mean intercept minimises squared log-odds error, not TV. Bottom (b): for the same blocks, \\(dc_{\\mathrm{eff}}/dc=\\mathbb E[N_B\\mid N_B\\geq1]\\). Curves give its block mean, minimum and maximum, with exact bounds 1 and 4. This is conditional event multiplicity, not an instability eigenvalue. The full margin schedules are retained for repricing. A single hazard value at one price is insufficient for that response.",
+            "source_data": "retained-evidence/research/slg-scientific-figures-20261111/outputs/run-7f8022a64802820f.result/or_hazard_projection.csv",
+            "source": null
+          },
+          "style_version": "8fbbf4d197344ea283f91ba2513e3d91084b69d4de13a039a2f86efc14bb5d2a",
+          "style_profile": "profiles/visual_style.json",
+          "visual_review": "pending",
+          "output_digests": {
+            "figures/generated/slg-or-event-multiplicity-20261111.svg": "b814116b0209af3adb2f0e70cc6426ac525fce1b329b2c09e7e2ecee26289107",
+            "figures/generated/slg-or-event-multiplicity-20261111.pdf": "1ef6c7aa134e0fc8aedb5eeecfa52b8b6c5f41fcd09922326bdedc7e99aee851",
+            "figures/generated/slg-or-event-multiplicity-20261111.png": "f8bb4a074b0e2b050fd8de5b5b9ffcffec2b3127a1702a6773db05473675269b"
+          },
+          "reused": true,
+          "basis_refreshed": true
+        },
+        "readiness": "GENERATED",
+        "placement_caption": {
+          "status": "MATCHES",
+          "file": "synthetics papers/self-consistent-loss-geometries-coupled-evaluators/manuscript/imported/sections/05_evidence_examples.tex",
+          "line_start": 129,
+          "line_end": 129,
+          "next_read": {
+            "operation": "source",
+            "payload": {
+              "files": [
+                "synthetics papers/self-consistent-loss-geometries-coupled-evaluators/manuscript/imported/sections/05_evidence_examples.tex"
+              ],
+              "line_start": 129,
+              "line_end": 129
+            }
+          },
+          "edit_operation": "apply_revision",
+          "note": "The manuscript caption is authored source. Read this exact span, then use apply_revision for a requested change; visual_render only updates the brief/asset metadata."
+        },
+        "owned_changes": {
+          "schema_version": "laplace.owner-mutation/1",
+          "files": [
+            {
+              "scope": "repository",
+              "path": "synthetics papers/self-consistent-loss-geometries-coupled-evaluators/manuscript/imported/manuscript_spec.json",
+              "before_sha256": "sha256:137efa6c9dcc7eb28d695920218278a04cbbf1353ec1c025cd16595c11544c77",
+              "after_sha256": "sha256:c13254d768465bef7b581aba4baa5b634c2c6839d4e39ec1f9ea390a7eda33da",
+              "observed_after_sha256": "sha256:c13254d768465bef7b581aba4baa5b634c2c6839d4e39ec1f9ea390a7eda33da"
+            },
+            {
+              "scope": "repository",
+              "path": "synthetics papers/self-consistent-loss-geometries-coupled-evaluators/manuscript/imported/figure_manifest.json",
+              "before_sha256": "sha256:f3c7b069fab83c98d37090bd176b1d650e6517d2440eca57a28cf9cc06dfbf50",
+              "after_sha256": "sha256:2c5a621b0c561a1ae61d4596beb92e170e63aaca8119ae5fe620643d2c227653",
+              "observed_after_sha256": "sha256:2c5a621b0c561a1ae61d4596beb92e170e63aaca8119ae5fe620643d2c227653"
+            }
+          ],
+          "objects": [
+            {
+              "owner": "visual-render",
+              "id": "slg-or-event-multiplicity-20261111",
+              "before_revision": "defd6c49e51330a400fdd1415b7bd5b7808b094f1cab4a45526cb27c296243db",
+              "after_revision": "0d65c3027778a1ece2bd79b58d0ddb5ab6c39b6472a6beb17690868b830b0e01"
+            }
+          ],
+          "rewire_records": [],
+          "views": [
+            "visuals",
+            "presentation"
+          ]
+        }
+      }
+    },
+    {
+      "id": "slg-promotion-risk-20261111",
+      "caption_source": "synthetics papers/self-consistent-loss-geometries-coupled-evaluators/manuscript/imported/sections/09_numerical_demonstrations.tex",
+      "source_sha256": "14e5bddd9a2b7154f52e76415d17ca4261143ebbbdde0c0b25f6340cfc3a9552",
+      "create": {
+        "spec": {
+          "id": "slg-promotion-risk-20261111",
+          "kind": "plot",
+          "title": "Prediction risk at matched update prices",
+          "question": "How do the three declared policies compare on one-step prediction before updating?",
+          "caption": "Prediction risk at matched prices. Mean squared one-step prediction error, in squared synthetic observation units, averaged over 12 matched 700-step streams using observations \\(50\\)--\\(699\\). The three methods are defined in the shared policy key in the text. The true-slope noise oracle is privileged and used only for evaluation. The never-update baseline keeps slope 1. Actual-step pricing has higher mean error than the noisy-step policy at every tested price. Lines connect the six predeclared finite stream means and carry no uncertainty bands. The complete means and the stream-level uncertainty convention are given in Appendix~\\ref{app:protocol}.",
+          "source_data": "retained-evidence/research/slg-scientific-figures-20261111/outputs/run-7f8022a64802820f.result/prediction_risk_curve.csv",
+          "x": "Log10 price",
+          "series": [
+            "Legacy v0",
+            "Rolling control",
+            "Priced v1",
+            "Noise oracle",
+            "Never update"
+          ],
+          "x_label": "log10(c), promotion price c dimensionless",
+          "y_label": "Pre-action prediction MSE",
+          "result_ids": [
+            "retained-result-e3d5544bddeca7fec4d7"
+          ],
+          "style": {
+            "font_size": 10,
+            "width_inches": 7,
+            "height_inches": 4.5,
+            "line_width": 1.7,
+            "marker_size": 3,
+            "grid": false,
+            "preview_dpi": 150,
+            "palette": [
+              "#0072B2",
+              "#E69F00",
+              "#009E73",
+              "#666666",
+              "#CC79A7"
+            ]
+          },
+          "render": {
+            "outputs": [
+              "figures/generated/slg-promotion-risk-20261111.svg",
+              "figures/generated/slg-promotion-risk-20261111.pdf",
+              "figures/generated/slg-promotion-risk-20261111.png"
+            ],
+            "renderer": "matplotlib",
+            "input_digest": "df744756e86499116ef596af670063b52750934b15383bf384b8d7db556b31d7",
+            "drawing_input_digest": "df744756e86499116ef596af670063b52750934b15383bf384b8d7db556b31d7",
+            "drawing_inputs": {
+              "spec": {
+                "id": "slg-promotion-risk-20261111",
+                "kind": "plot",
+                "x": "Log10 price",
+                "series": [
+                  "Legacy v0",
+                  "Rolling control",
+                  "Priced v1",
+                  "Noise oracle",
+                  "Never update"
+                ],
+                "x_label": "log10(c), promotion price c dimensionless",
+                "y_label": "Pre-action prediction MSE"
+              },
+              "data": "40af949ea01bc8472e267023462f2d97244cd3b4f682eab7e2c3f54e082b06d1"
+            },
+            "research_bindings": [
+              {
+                "id": "retained-result-e3d5544bddeca7fec4d7",
+                "revision": "sha256:31d9ca76c18efa498fe366601d119c83cf51847da21e232a53e12aa6aa05190b",
+                "currentness": "CURRENT"
+              }
+            ],
+            "presentation_metadata": {
+              "title": "Prediction risk at matched update prices",
+              "question": "How do the three declared policies compare on one-step prediction before updating?",
+              "caption": "One-step prediction mean squared error, in squared synthetic observation units, over steps 50-699 of 12 matched 700-step streams at six predeclared prices. Legacy v0 prices a full rolling fit but applies a 0.22 partial noisy-observation step. Rolling control applies a 0.22 partial rolling-fit step with legacy pricing. Priced v1 prices that actual partial rolling step and gives staying zero model gain. Noise oracle predicts with the privileged true slope for evaluation only. Never update keeps slope 1. Priced v1 has higher mean prediction error than legacy v0 at every matched price tested. Exact accounting does not guarantee better prediction: compare this panel with update frequency and recovery before choosing a policy. Lines show finite stream means without uncertainty bands, not a selected optimum. Per-stream values, paired differences and descriptive standard errors are in the accompanying evidence manifest.",
+              "source_data": "retained-evidence/research/slg-scientific-figures-20261111/outputs/run-7f8022a64802820f.result/prediction_risk_curve.csv",
+              "source": null
+            },
+            "style_version": "11d98d58608b7fc4a72fa31e0aba23b73df657017407306b478155287edafdcd",
+            "style_profile": "profiles/visual_style.json",
+            "visual_review": "pending",
+            "output_digests": {
+              "figures/generated/slg-promotion-risk-20261111.svg": "63aede466b6a5f331220a8f69ac84e6c6e63f4708ad906d7bb74d3eee1723212",
+              "figures/generated/slg-promotion-risk-20261111.pdf": "c0a9d2792a8cd2b3043850b6862bef0ee0c21d9722db7e02c1cc1a706864eacf",
+              "figures/generated/slg-promotion-risk-20261111.png": "8b8c75a8eebdbcf632bbcfddc93a3ebd3e2cbc2f1efff9d60e4badc94e01fd20"
+            }
+          },
+          "section_repo_file": "synthetics papers/self-consistent-loss-geometries-coupled-evaluators/manuscript/imported/sections/09_numerical_demonstrations.tex",
+          "section": "sections/09_numerical_demonstrations.tex",
+          "section_scope": "manuscript"
+        },
+        "spec_revision": "8be2fe570df1a9855a40d0be7be396b13d18a2fac632a436dacfa59d2eec829d",
+        "readiness": "SPECIFIED",
+        "placement_caption": {
+          "status": "MATCHES",
+          "file": "synthetics papers/self-consistent-loss-geometries-coupled-evaluators/manuscript/imported/sections/09_numerical_demonstrations.tex",
+          "line_start": 52,
+          "line_end": 52,
+          "next_read": {
+            "operation": "source",
+            "payload": {
+              "files": [
+                "synthetics papers/self-consistent-loss-geometries-coupled-evaluators/manuscript/imported/sections/09_numerical_demonstrations.tex"
+              ],
+              "line_start": 52,
+              "line_end": 52
+            }
+          },
+          "edit_operation": "apply_revision",
+          "note": "The manuscript caption is authored source. Read this exact span, then use apply_revision for a requested change; visual_render only updates the brief/asset metadata."
+        },
+        "owned_changes": {
+          "schema_version": "laplace.owner-mutation/1",
+          "files": [
+            {
+              "scope": "repository",
+              "path": "synthetics papers/self-consistent-loss-geometries-coupled-evaluators/manuscript/imported/manuscript_spec.json",
+              "before_sha256": "sha256:c13254d768465bef7b581aba4baa5b634c2c6839d4e39ec1f9ea390a7eda33da",
+              "after_sha256": "sha256:442816b56e081da462d2709ba8eee38525fdf425c940f0d1868910e9f35bff59",
+              "observed_after_sha256": "sha256:442816b56e081da462d2709ba8eee38525fdf425c940f0d1868910e9f35bff59"
+            }
+          ],
+          "objects": [
+            {
+              "owner": "visual-spec",
+              "id": "slg-promotion-risk-20261111",
+              "before_revision": "21af528a8883bf05257a28870ed572d5bf71c225b65f095899de6f373c59b5fe",
+              "after_revision": "8be2fe570df1a9855a40d0be7be396b13d18a2fac632a436dacfa59d2eec829d"
+            }
+          ],
+          "rewire_records": [],
+          "views": [
+            "visuals",
+            "presentation"
+          ]
+        }
+      },
+      "render": {
+        "render": {
+          "outputs": [
+            "figures/generated/slg-promotion-risk-20261111.svg",
+            "figures/generated/slg-promotion-risk-20261111.pdf",
+            "figures/generated/slg-promotion-risk-20261111.png"
+          ],
+          "renderer": "matplotlib",
+          "input_digest": "df744756e86499116ef596af670063b52750934b15383bf384b8d7db556b31d7",
+          "drawing_input_digest": "df744756e86499116ef596af670063b52750934b15383bf384b8d7db556b31d7",
+          "drawing_inputs": {
+            "spec": {
+              "id": "slg-promotion-risk-20261111",
+              "kind": "plot",
+              "x": "Log10 price",
+              "series": [
+                "Legacy v0",
+                "Rolling control",
+                "Priced v1",
+                "Noise oracle",
+                "Never update"
+              ],
+              "x_label": "log10(c), promotion price c dimensionless",
+              "y_label": "Pre-action prediction MSE"
+            },
+            "data": "40af949ea01bc8472e267023462f2d97244cd3b4f682eab7e2c3f54e082b06d1"
+          },
+          "research_bindings": [
+            {
+              "id": "retained-result-e3d5544bddeca7fec4d7",
+              "revision": "sha256:31d9ca76c18efa498fe366601d119c83cf51847da21e232a53e12aa6aa05190b",
+              "currentness": "CURRENT"
+            }
+          ],
+          "presentation_metadata": {
+            "title": "Prediction risk at matched update prices",
+            "question": "How do the three declared policies compare on one-step prediction before updating?",
+            "caption": "Prediction risk at matched prices. Mean squared one-step prediction error, in squared synthetic observation units, averaged over 12 matched 700-step streams using observations \\(50\\)--\\(699\\). The three methods are defined in the shared policy key in the text. The true-slope noise oracle is privileged and used only for evaluation. The never-update baseline keeps slope 1. Actual-step pricing has higher mean error than the noisy-step policy at every tested price. Lines connect the six predeclared finite stream means and carry no uncertainty bands. The complete means and the stream-level uncertainty convention are given in Appendix~\\ref{app:protocol}.",
+            "source_data": "retained-evidence/research/slg-scientific-figures-20261111/outputs/run-7f8022a64802820f.result/prediction_risk_curve.csv",
+            "source": null
+          },
+          "style_version": "11d98d58608b7fc4a72fa31e0aba23b73df657017407306b478155287edafdcd",
+          "style_profile": "profiles/visual_style.json",
+          "visual_review": "pending",
+          "output_digests": {
+            "figures/generated/slg-promotion-risk-20261111.svg": "63aede466b6a5f331220a8f69ac84e6c6e63f4708ad906d7bb74d3eee1723212",
+            "figures/generated/slg-promotion-risk-20261111.pdf": "c0a9d2792a8cd2b3043850b6862bef0ee0c21d9722db7e02c1cc1a706864eacf",
+            "figures/generated/slg-promotion-risk-20261111.png": "8b8c75a8eebdbcf632bbcfddc93a3ebd3e2cbc2f1efff9d60e4badc94e01fd20"
+          },
+          "reused": true,
+          "basis_refreshed": true
+        },
+        "readiness": "GENERATED",
+        "placement_caption": {
+          "status": "MATCHES",
+          "file": "synthetics papers/self-consistent-loss-geometries-coupled-evaluators/manuscript/imported/sections/09_numerical_demonstrations.tex",
+          "line_start": 52,
+          "line_end": 52,
+          "next_read": {
+            "operation": "source",
+            "payload": {
+              "files": [
+                "synthetics papers/self-consistent-loss-geometries-coupled-evaluators/manuscript/imported/sections/09_numerical_demonstrations.tex"
+              ],
+              "line_start": 52,
+              "line_end": 52
+            }
+          },
+          "edit_operation": "apply_revision",
+          "note": "The manuscript caption is authored source. Read this exact span, then use apply_revision for a requested change; visual_render only updates the brief/asset metadata."
+        },
+        "owned_changes": {
+          "schema_version": "laplace.owner-mutation/1",
+          "files": [
+            {
+              "scope": "repository",
+              "path": "synthetics papers/self-consistent-loss-geometries-coupled-evaluators/manuscript/imported/manuscript_spec.json",
+              "before_sha256": "sha256:442816b56e081da462d2709ba8eee38525fdf425c940f0d1868910e9f35bff59",
+              "after_sha256": "sha256:fa5e5a83ca21c95ab00790a3a1de6e438a3fedbf5265304b69abf48ab2c1a55b",
+              "observed_after_sha256": "sha256:fa5e5a83ca21c95ab00790a3a1de6e438a3fedbf5265304b69abf48ab2c1a55b"
+            },
+            {
+              "scope": "repository",
+              "path": "synthetics papers/self-consistent-loss-geometries-coupled-evaluators/manuscript/imported/figure_manifest.json",
+              "before_sha256": "sha256:2c5a621b0c561a1ae61d4596beb92e170e63aaca8119ae5fe620643d2c227653",
+              "after_sha256": "sha256:b617cdcbdee2eab2b722281dd0420f5b7a0a6e82ffca5b14593f395d6b281b31",
+              "observed_after_sha256": "sha256:b617cdcbdee2eab2b722281dd0420f5b7a0a6e82ffca5b14593f395d6b281b31"
+            }
+          ],
+          "objects": [
+            {
+              "owner": "visual-render",
+              "id": "slg-promotion-risk-20261111",
+              "before_revision": "8be2fe570df1a9855a40d0be7be396b13d18a2fac632a436dacfa59d2eec829d",
+              "after_revision": "0558659e5b5516b16622647ed43d97e7e732baa0fc8201c972571cec6de29c86"
+            }
+          ],
+          "rewire_records": [],
+          "views": [
+            "visuals",
+            "presentation"
+          ]
+        }
+      }
+    },
+    {
+      "id": "slg-promotion-frequency-20261111",
+      "caption_source": "synthetics papers/self-consistent-loss-geometries-coupled-evaluators/manuscript/imported/sections/09_numerical_demonstrations.tex",
+      "source_sha256": "14e5bddd9a2b7154f52e76415d17ca4261143ebbbdde0c0b25f6340cfc3a9552",
+      "create": {
+        "spec": {
+          "id": "slg-promotion-frequency-20261111",
+          "kind": "plot",
+          "title": "How price changes update frequency",
+          "question": "How often does each policy purchase a structural update at the declared price?",
+          "caption": "How price changes update frequency. Promotion counts divided by 650 evaluated observations, averaged over the same 12 matched streams. Every promoted action pays the displayed dimensionless price \\(c\\), while staying pays zero action cost. Higher prices usually buy fewer revisions, but actual-step pricing is not always the sparsest policy. Multiplying a curve by \\(c\\) gives its charged action cost per evaluated observation, not total computational or physical cost. Read with Figs.~\\ref{fig:prediction-risk} and \\ref{fig:recovery}.",
+          "source_data": "retained-evidence/research/slg-scientific-figures-20261111/outputs/run-7f8022a64802820f.result/promotion_rate_curve.csv",
+          "x": "Log10 price",
+          "series": [
+            "Legacy v0",
+            "Rolling control",
+            "Priced v1"
+          ],
+          "x_label": "log10(c), promotion price c dimensionless",
+          "y_label": "Promotion fraction",
+          "result_ids": [
+            "retained-result-e3d5544bddeca7fec4d7"
+          ],
+          "style": {
+            "font_size": 10,
+            "width_inches": 7,
+            "height_inches": 4.5,
+            "line_width": 1.7,
+            "marker_size": 3,
+            "grid": false,
+            "preview_dpi": 150,
+            "palette": [
+              "#0072B2",
+              "#E69F00",
+              "#009E73",
+              "#666666",
+              "#CC79A7"
+            ]
+          },
+          "render": {
+            "outputs": [
+              "figures/generated/slg-promotion-frequency-20261111.svg",
+              "figures/generated/slg-promotion-frequency-20261111.pdf",
+              "figures/generated/slg-promotion-frequency-20261111.png"
+            ],
+            "renderer": "matplotlib",
+            "input_digest": "501dc765b66c02a7bc01ba673028a3d5e6fa0a23fe86de1878da89cf55f7f44f",
+            "drawing_input_digest": "501dc765b66c02a7bc01ba673028a3d5e6fa0a23fe86de1878da89cf55f7f44f",
+            "drawing_inputs": {
+              "spec": {
+                "id": "slg-promotion-frequency-20261111",
+                "kind": "plot",
+                "x": "Log10 price",
+                "series": [
+                  "Legacy v0",
+                  "Rolling control",
+                  "Priced v1"
+                ],
+                "x_label": "log10(c), promotion price c dimensionless",
+                "y_label": "Promotion fraction"
+              },
+              "data": "c50039032f76e108d5590aca12f334ce0ef1815ee7a2d2daed44f121610069e6"
+            },
+            "research_bindings": [
+              {
+                "id": "retained-result-e3d5544bddeca7fec4d7",
+                "revision": "sha256:31d9ca76c18efa498fe366601d119c83cf51847da21e232a53e12aa6aa05190b",
+                "currentness": "CURRENT"
+              }
+            ],
+            "presentation_metadata": {
+              "title": "How price changes update frequency",
+              "question": "How often does each policy purchase a structural update at the declared price?",
+              "caption": "Promotion fraction over steps 50-699, averaged across 12 matched 700-step streams. Legacy v0 prices a full rolling fit but applies a 0.22 partial noisy-observation step. Rolling control applies a 0.22 partial rolling-fit step with legacy pricing. Priced v1 prices that actual partial rolling step and gives staying zero model gain. Every chosen update pays the dimensionless price c in this toy ledger, not a measured energy or complete computational cost. Higher prices usually buy fewer updates, but priced v1 does not always update less than the controls. Read the risk and recovery panels before interpreting sparsity as adequate adaptation. Lines show finite stream means without uncertainty bands. Costs, per-stream counts and descriptive standard errors are in the accompanying evidence manifest.",
+              "source_data": "retained-evidence/research/slg-scientific-figures-20261111/outputs/run-7f8022a64802820f.result/promotion_rate_curve.csv",
+              "source": null
+            },
+            "style_version": "11d98d58608b7fc4a72fa31e0aba23b73df657017407306b478155287edafdcd",
+            "style_profile": "profiles/visual_style.json",
+            "visual_review": "pending",
+            "output_digests": {
+              "figures/generated/slg-promotion-frequency-20261111.svg": "8434438645130c6f556727482e4a043d78b6af1626244863c22a22d75b2177bb",
+              "figures/generated/slg-promotion-frequency-20261111.pdf": "da4d8494459abc46b3577db52ffa888a164b0026d63b4c8ad9e15879e4d71207",
+              "figures/generated/slg-promotion-frequency-20261111.png": "11233e804193ff085713afb3405c15e875848629d9c5900c416f6e70aab769a2"
+            }
+          },
+          "section_repo_file": "synthetics papers/self-consistent-loss-geometries-coupled-evaluators/manuscript/imported/sections/09_numerical_demonstrations.tex",
+          "section": "sections/09_numerical_demonstrations.tex",
+          "section_scope": "manuscript"
+        },
+        "spec_revision": "3ef2b8a9700c4dbf57428df30bc6869c5d03987b49553caa6556abcc3cdca1f0",
+        "readiness": "SPECIFIED",
+        "placement_caption": {
+          "status": "MATCHES",
+          "file": "synthetics papers/self-consistent-loss-geometries-coupled-evaluators/manuscript/imported/sections/09_numerical_demonstrations.tex",
+          "line_start": 66,
+          "line_end": 66,
+          "next_read": {
+            "operation": "source",
+            "payload": {
+              "files": [
+                "synthetics papers/self-consistent-loss-geometries-coupled-evaluators/manuscript/imported/sections/09_numerical_demonstrations.tex"
+              ],
+              "line_start": 66,
+              "line_end": 66
+            }
+          },
+          "edit_operation": "apply_revision",
+          "note": "The manuscript caption is authored source. Read this exact span, then use apply_revision for a requested change; visual_render only updates the brief/asset metadata."
+        },
+        "owned_changes": {
+          "schema_version": "laplace.owner-mutation/1",
+          "files": [
+            {
+              "scope": "repository",
+              "path": "synthetics papers/self-consistent-loss-geometries-coupled-evaluators/manuscript/imported/manuscript_spec.json",
+              "before_sha256": "sha256:fa5e5a83ca21c95ab00790a3a1de6e438a3fedbf5265304b69abf48ab2c1a55b",
+              "after_sha256": "sha256:016feac4d5253239b4f7c4cc67c4bc886b1059b6027b7396e78131b103485eb6",
+              "observed_after_sha256": "sha256:016feac4d5253239b4f7c4cc67c4bc886b1059b6027b7396e78131b103485eb6"
+            }
+          ],
+          "objects": [
+            {
+              "owner": "visual-spec",
+              "id": "slg-promotion-frequency-20261111",
+              "before_revision": "3b2bb48119431d0ffa98d6293f47ec713941c8399ba25bc28783aa9cdea4b047",
+              "after_revision": "3ef2b8a9700c4dbf57428df30bc6869c5d03987b49553caa6556abcc3cdca1f0"
+            }
+          ],
+          "rewire_records": [],
+          "views": [
+            "visuals",
+            "presentation"
+          ]
+        }
+      },
+      "render": {
+        "render": {
+          "outputs": [
+            "figures/generated/slg-promotion-frequency-20261111.svg",
+            "figures/generated/slg-promotion-frequency-20261111.pdf",
+            "figures/generated/slg-promotion-frequency-20261111.png"
+          ],
+          "renderer": "matplotlib",
+          "input_digest": "501dc765b66c02a7bc01ba673028a3d5e6fa0a23fe86de1878da89cf55f7f44f",
+          "drawing_input_digest": "501dc765b66c02a7bc01ba673028a3d5e6fa0a23fe86de1878da89cf55f7f44f",
+          "drawing_inputs": {
+            "spec": {
+              "id": "slg-promotion-frequency-20261111",
+              "kind": "plot",
+              "x": "Log10 price",
+              "series": [
+                "Legacy v0",
+                "Rolling control",
+                "Priced v1"
+              ],
+              "x_label": "log10(c), promotion price c dimensionless",
+              "y_label": "Promotion fraction"
+            },
+            "data": "c50039032f76e108d5590aca12f334ce0ef1815ee7a2d2daed44f121610069e6"
+          },
+          "research_bindings": [
+            {
+              "id": "retained-result-e3d5544bddeca7fec4d7",
+              "revision": "sha256:31d9ca76c18efa498fe366601d119c83cf51847da21e232a53e12aa6aa05190b",
+              "currentness": "CURRENT"
+            }
+          ],
+          "presentation_metadata": {
+            "title": "How price changes update frequency",
+            "question": "How often does each policy purchase a structural update at the declared price?",
+            "caption": "How price changes update frequency. Promotion counts divided by 650 evaluated observations, averaged over the same 12 matched streams. Every promoted action pays the displayed dimensionless price \\(c\\), while staying pays zero action cost. Higher prices usually buy fewer revisions, but actual-step pricing is not always the sparsest policy. Multiplying a curve by \\(c\\) gives its charged action cost per evaluated observation, not total computational or physical cost. Read with Figs.~\\ref{fig:prediction-risk} and \\ref{fig:recovery}.",
+            "source_data": "retained-evidence/research/slg-scientific-figures-20261111/outputs/run-7f8022a64802820f.result/promotion_rate_curve.csv",
+            "source": null
+          },
+          "style_version": "11d98d58608b7fc4a72fa31e0aba23b73df657017407306b478155287edafdcd",
+          "style_profile": "profiles/visual_style.json",
+          "visual_review": "pending",
+          "output_digests": {
+            "figures/generated/slg-promotion-frequency-20261111.svg": "8434438645130c6f556727482e4a043d78b6af1626244863c22a22d75b2177bb",
+            "figures/generated/slg-promotion-frequency-20261111.pdf": "da4d8494459abc46b3577db52ffa888a164b0026d63b4c8ad9e15879e4d71207",
+            "figures/generated/slg-promotion-frequency-20261111.png": "11233e804193ff085713afb3405c15e875848629d9c5900c416f6e70aab769a2"
+          },
+          "reused": true,
+          "basis_refreshed": true
+        },
+        "readiness": "GENERATED",
+        "placement_caption": {
+          "status": "MATCHES",
+          "file": "synthetics papers/self-consistent-loss-geometries-coupled-evaluators/manuscript/imported/sections/09_numerical_demonstrations.tex",
+          "line_start": 66,
+          "line_end": 66,
+          "next_read": {
+            "operation": "source",
+            "payload": {
+              "files": [
+                "synthetics papers/self-consistent-loss-geometries-coupled-evaluators/manuscript/imported/sections/09_numerical_demonstrations.tex"
+              ],
+              "line_start": 66,
+              "line_end": 66
+            }
+          },
+          "edit_operation": "apply_revision",
+          "note": "The manuscript caption is authored source. Read this exact span, then use apply_revision for a requested change; visual_render only updates the brief/asset metadata."
+        },
+        "owned_changes": {
+          "schema_version": "laplace.owner-mutation/1",
+          "files": [
+            {
+              "scope": "repository",
+              "path": "synthetics papers/self-consistent-loss-geometries-coupled-evaluators/manuscript/imported/manuscript_spec.json",
+              "before_sha256": "sha256:016feac4d5253239b4f7c4cc67c4bc886b1059b6027b7396e78131b103485eb6",
+              "after_sha256": "sha256:9da535d47816d6040061e252d86b61135e24d2ffc37ea0e823e4665c60b05905",
+              "observed_after_sha256": "sha256:9da535d47816d6040061e252d86b61135e24d2ffc37ea0e823e4665c60b05905"
+            },
+            {
+              "scope": "repository",
+              "path": "synthetics papers/self-consistent-loss-geometries-coupled-evaluators/manuscript/imported/figure_manifest.json",
+              "before_sha256": "sha256:b617cdcbdee2eab2b722281dd0420f5b7a0a6e82ffca5b14593f395d6b281b31",
+              "after_sha256": "sha256:cfeeca613133f80360c66694b34a9ad8d49afbcea015dc2e74de543dc4ec92f7",
+              "observed_after_sha256": "sha256:cfeeca613133f80360c66694b34a9ad8d49afbcea015dc2e74de543dc4ec92f7"
+            }
+          ],
+          "objects": [
+            {
+              "owner": "visual-render",
+              "id": "slg-promotion-frequency-20261111",
+              "before_revision": "3ef2b8a9700c4dbf57428df30bc6869c5d03987b49553caa6556abcc3cdca1f0",
+              "after_revision": "43523aa453b432b8a9841f54846af166b4db3e78974d7191797ee04c133a78db"
+            }
+          ],
+          "rewire_records": [],
+          "views": [
+            "visuals",
+            "presentation"
+          ]
+        }
+      }
+    },
+    {
+      "id": "slg-off-transition-promotions-20261111",
+      "caption_source": "synthetics papers/self-consistent-loss-geometries-coupled-evaluators/manuscript/imported/sections/07_appendix.tex",
+      "source_sha256": "6b452a07f38b06613c3d22cd1cca71e1f7ddfc3d15f5d5875961808d739fb13d",
+      "create": {
+        "spec": {
+          "id": "slg-off-transition-promotions-20261111",
+          "kind": "plot",
+          "title": "Updates outside post-shift windows",
+          "question": "How often are updates purchased away from the declared structural-shift evaluation windows?",
+          "caption": "Updates outside the declared post-shift windows. Promotion fraction over observations \\(50\\)--\\(699\\) excluding each interval \\([s,s+65)\\) beginning at a true shift \\(s\\), averaged over 12 matched streams. The denominator is 390 observations per stream, not the number of updates. The same three methods and prices are used as in the main comparison. This operational rate is not a false-positive probability. Read with prediction risk and target occupancy before treating suppressed updates as improved adaptation. Lines show finite stream means without uncertainty bands.",
+          "source_data": "retained-evidence/research/slg-scientific-figures-20261111/outputs/run-7f8022a64802820f.result/off_transition_curve.csv",
+          "x": "Log10 price",
+          "series": [
+            "Legacy v0",
+            "Rolling control",
+            "Priced v1"
+          ],
+          "x_label": "log10(c), promotion price c dimensionless",
+          "y_label": "Off-transition promotion fraction",
+          "result_ids": [
+            "retained-result-e3d5544bddeca7fec4d7"
+          ],
+          "style": {
+            "font_size": 10,
+            "width_inches": 7,
+            "height_inches": 4.5,
+            "line_width": 1.7,
+            "marker_size": 3,
+            "grid": false,
+            "preview_dpi": 150,
+            "palette": [
+              "#0072B2",
+              "#E69F00",
+              "#009E73",
+              "#666666",
+              "#CC79A7"
+            ]
+          },
+          "render": {
+            "outputs": [
+              "figures/generated/slg-off-transition-promotions-20261111.svg",
+              "figures/generated/slg-off-transition-promotions-20261111.pdf",
+              "figures/generated/slg-off-transition-promotions-20261111.png"
+            ],
+            "renderer": "matplotlib",
+            "input_digest": "507a61d4acd0cf6bfb498dd8353f1b53058a82be8451ee116f2fc36ecbc0afd1",
+            "drawing_input_digest": "507a61d4acd0cf6bfb498dd8353f1b53058a82be8451ee116f2fc36ecbc0afd1",
+            "drawing_inputs": {
+              "spec": {
+                "id": "slg-off-transition-promotions-20261111",
+                "kind": "plot",
+                "x": "Log10 price",
+                "series": [
+                  "Legacy v0",
+                  "Rolling control",
+                  "Priced v1"
+                ],
+                "x_label": "log10(c), promotion price c dimensionless",
+                "y_label": "Off-transition promotion fraction"
+              },
+              "data": "5655fc8cb35cb346f866a5bdfc2f3595892f886ec16a2cc46112a002ba8ee459"
+            },
+            "research_bindings": [
+              {
+                "id": "retained-result-e3d5544bddeca7fec4d7",
+                "revision": "sha256:31d9ca76c18efa498fe366601d119c83cf51847da21e232a53e12aa6aa05190b",
+                "currentness": "CURRENT"
+              }
+            ],
+            "presentation_metadata": {
+              "title": "Updates outside post-shift windows",
+              "question": "How often are updates purchased away from the declared structural-shift evaluation windows?",
+              "caption": "Promotion fraction outside all 65-step post-shift windows, averaged over 12 matched 700-step streams. The denominator is evaluated observations 50-699 excluding each interval [shift,shift+65). Legacy v0 prices a full rolling fit but applies a 0.22 partial noisy-observation step. Rolling control applies a 0.22 partial rolling-fit step with legacy pricing. Priced v1 prices that actual partial rolling step and gives staying zero model gain. This operational off-transition rate is not a false-positive probability: useful noisy-data updates can also occur between shifts. Compare with prediction risk and recovery to judge what suppressed updates cost. Lines show finite stream means without uncertainty bands. Exact counts, data and methods are in the accompanying evidence manifest.",
+              "source_data": "retained-evidence/research/slg-scientific-figures-20261111/outputs/run-7f8022a64802820f.result/off_transition_curve.csv",
+              "source": null
+            },
+            "style_version": "11d98d58608b7fc4a72fa31e0aba23b73df657017407306b478155287edafdcd",
+            "style_profile": "profiles/visual_style.json",
+            "visual_review": "pending",
+            "output_digests": {
+              "figures/generated/slg-off-transition-promotions-20261111.svg": "52fe31c65abdf254447ea750ed0fa8a42bfa76337a58f384a7902b649afb5a06",
+              "figures/generated/slg-off-transition-promotions-20261111.pdf": "65da472448fbe9152a0d487ffaa5320e1dc9c1c7a9312ebc811b8630851d89d2",
+              "figures/generated/slg-off-transition-promotions-20261111.png": "831adf680298e5cbb88f91df88fa699d11f600dbe0219a50f2490976689df3b3"
+            }
+          },
+          "section_repo_file": "synthetics papers/self-consistent-loss-geometries-coupled-evaluators/manuscript/imported/sections/07_appendix.tex",
+          "section": "sections/07_appendix.tex",
+          "section_scope": "manuscript"
+        },
+        "spec_revision": "415e1e4303e4fc868d60830dc7907679a686b225d244e8131e2d81800e82183e",
+        "readiness": "SPECIFIED",
+        "placement_caption": {
+          "status": "MATCHES",
+          "file": "synthetics papers/self-consistent-loss-geometries-coupled-evaluators/manuscript/imported/sections/07_appendix.tex",
+          "line_start": 206,
+          "line_end": 206,
+          "next_read": {
+            "operation": "source",
+            "payload": {
+              "files": [
+                "synthetics papers/self-consistent-loss-geometries-coupled-evaluators/manuscript/imported/sections/07_appendix.tex"
+              ],
+              "line_start": 206,
+              "line_end": 206
+            }
+          },
+          "edit_operation": "apply_revision",
+          "note": "The manuscript caption is authored source. Read this exact span, then use apply_revision for a requested change; visual_render only updates the brief/asset metadata."
+        },
+        "owned_changes": {
+          "schema_version": "laplace.owner-mutation/1",
+          "files": [
+            {
+              "scope": "repository",
+              "path": "synthetics papers/self-consistent-loss-geometries-coupled-evaluators/manuscript/imported/manuscript_spec.json",
+              "before_sha256": "sha256:9da535d47816d6040061e252d86b61135e24d2ffc37ea0e823e4665c60b05905",
+              "after_sha256": "sha256:072a7de542ab09185284c09378e8e2b411b8ba41f21c65e6a0737fa4cb993a8f",
+              "observed_after_sha256": "sha256:072a7de542ab09185284c09378e8e2b411b8ba41f21c65e6a0737fa4cb993a8f"
+            }
+          ],
+          "objects": [
+            {
+              "owner": "visual-spec",
+              "id": "slg-off-transition-promotions-20261111",
+              "before_revision": "85c157d29c6cafe1c28f5deec3e0108973a9860c0924d1a0f9057e1dd8d1492c",
+              "after_revision": "415e1e4303e4fc868d60830dc7907679a686b225d244e8131e2d81800e82183e"
+            }
+          ],
+          "rewire_records": [],
+          "views": [
+            "visuals",
+            "presentation"
+          ]
+        }
+      },
+      "render": {
+        "render": {
+          "outputs": [
+            "figures/generated/slg-off-transition-promotions-20261111.svg",
+            "figures/generated/slg-off-transition-promotions-20261111.pdf",
+            "figures/generated/slg-off-transition-promotions-20261111.png"
+          ],
+          "renderer": "matplotlib",
+          "input_digest": "507a61d4acd0cf6bfb498dd8353f1b53058a82be8451ee116f2fc36ecbc0afd1",
+          "drawing_input_digest": "507a61d4acd0cf6bfb498dd8353f1b53058a82be8451ee116f2fc36ecbc0afd1",
+          "drawing_inputs": {
+            "spec": {
+              "id": "slg-off-transition-promotions-20261111",
+              "kind": "plot",
+              "x": "Log10 price",
+              "series": [
+                "Legacy v0",
+                "Rolling control",
+                "Priced v1"
+              ],
+              "x_label": "log10(c), promotion price c dimensionless",
+              "y_label": "Off-transition promotion fraction"
+            },
+            "data": "5655fc8cb35cb346f866a5bdfc2f3595892f886ec16a2cc46112a002ba8ee459"
+          },
+          "research_bindings": [
+            {
+              "id": "retained-result-e3d5544bddeca7fec4d7",
+              "revision": "sha256:31d9ca76c18efa498fe366601d119c83cf51847da21e232a53e12aa6aa05190b",
+              "currentness": "CURRENT"
+            }
+          ],
+          "presentation_metadata": {
+            "title": "Updates outside post-shift windows",
+            "question": "How often are updates purchased away from the declared structural-shift evaluation windows?",
+            "caption": "Updates outside the declared post-shift windows. Promotion fraction over observations \\(50\\)--\\(699\\) excluding each interval \\([s,s+65)\\) beginning at a true shift \\(s\\), averaged over 12 matched streams. The denominator is 390 observations per stream, not the number of updates. The same three methods and prices are used as in the main comparison. This operational rate is not a false-positive probability. Read with prediction risk and target occupancy before treating suppressed updates as improved adaptation. Lines show finite stream means without uncertainty bands.",
+            "source_data": "retained-evidence/research/slg-scientific-figures-20261111/outputs/run-7f8022a64802820f.result/off_transition_curve.csv",
+            "source": null
+          },
+          "style_version": "11d98d58608b7fc4a72fa31e0aba23b73df657017407306b478155287edafdcd",
+          "style_profile": "profiles/visual_style.json",
+          "visual_review": "pending",
+          "output_digests": {
+            "figures/generated/slg-off-transition-promotions-20261111.svg": "52fe31c65abdf254447ea750ed0fa8a42bfa76337a58f384a7902b649afb5a06",
+            "figures/generated/slg-off-transition-promotions-20261111.pdf": "65da472448fbe9152a0d487ffaa5320e1dc9c1c7a9312ebc811b8630851d89d2",
+            "figures/generated/slg-off-transition-promotions-20261111.png": "831adf680298e5cbb88f91df88fa699d11f600dbe0219a50f2490976689df3b3"
+          },
+          "reused": true,
+          "basis_refreshed": true
+        },
+        "readiness": "GENERATED",
+        "placement_caption": {
+          "status": "MATCHES",
+          "file": "synthetics papers/self-consistent-loss-geometries-coupled-evaluators/manuscript/imported/sections/07_appendix.tex",
+          "line_start": 206,
+          "line_end": 206,
+          "next_read": {
+            "operation": "source",
+            "payload": {
+              "files": [
+                "synthetics papers/self-consistent-loss-geometries-coupled-evaluators/manuscript/imported/sections/07_appendix.tex"
+              ],
+              "line_start": 206,
+              "line_end": 206
+            }
+          },
+          "edit_operation": "apply_revision",
+          "note": "The manuscript caption is authored source. Read this exact span, then use apply_revision for a requested change; visual_render only updates the brief/asset metadata."
+        },
+        "owned_changes": {
+          "schema_version": "laplace.owner-mutation/1",
+          "files": [
+            {
+              "scope": "repository",
+              "path": "synthetics papers/self-consistent-loss-geometries-coupled-evaluators/manuscript/imported/manuscript_spec.json",
+              "before_sha256": "sha256:072a7de542ab09185284c09378e8e2b411b8ba41f21c65e6a0737fa4cb993a8f",
+              "after_sha256": "sha256:884485ec12abc996843654e1a1b19bf2e0ec59376a1434e0a5627f16df050fbe",
+              "observed_after_sha256": "sha256:884485ec12abc996843654e1a1b19bf2e0ec59376a1434e0a5627f16df050fbe"
+            },
+            {
+              "scope": "repository",
+              "path": "synthetics papers/self-consistent-loss-geometries-coupled-evaluators/manuscript/imported/figure_manifest.json",
+              "before_sha256": "sha256:cfeeca613133f80360c66694b34a9ad8d49afbcea015dc2e74de543dc4ec92f7",
+              "after_sha256": "sha256:447fa2022c4db9e6ab74e17866bce345a6d8b169a2b6d1aa0076fb3259eac472",
+              "observed_after_sha256": "sha256:447fa2022c4db9e6ab74e17866bce345a6d8b169a2b6d1aa0076fb3259eac472"
+            }
+          ],
+          "objects": [
+            {
+              "owner": "visual-render",
+              "id": "slg-off-transition-promotions-20261111",
+              "before_revision": "415e1e4303e4fc868d60830dc7907679a686b225d244e8131e2d81800e82183e",
+              "after_revision": "6aee3fa9a9a2549aa94685c91d67a3f4110cf6c1e263ac28903971f1537398fe"
+            }
+          ],
+          "rewire_records": [],
+          "views": [
+            "visuals",
+            "presentation"
+          ]
+        }
+      }
+    },
+    {
+      "id": "slg-register-common-ledger-20261111",
+      "caption_source": "synthetics papers/self-consistent-loss-geometries-coupled-evaluators/manuscript/imported/sections/03_model_setup.tex",
+      "source_sha256": "2a25fe958ecd7a598c8779772aaba6e907455fa42a31b417a0317c456df03d4f",
+      "create": {
+        "spec": {
+          "id": "slg-register-common-ledger-20261111",
+          "kind": "plot",
+          "title": "When does splitting the register pay?",
+          "question": "At what target separation does the declared split option cost less than shared arbitration?",
+          "caption": "When splitting the register pays. Static costs on the common ledger in Eq.~\\eqref{eq:num-toy-conflict}, evaluated over 181 target separations. Fixed balance costs \\(A/4\\), optimised arbitration costs \\(\\min(A/4,0.4)\\), and split-enabled allocation costs \\(\\min(A/4,0.4,0.25)\\). All three curves coincide below \\(0.8411\\) radians, with the green result drawn on top. Above that crossing the green plateau is exactly the grey split-price reference, not a separate lower curve. Arbitration remains equal to fixed balance until \\(1.0853\\) radians and then caps at \\(0.4\\). The angle measures target separation. These are calculated static option boundaries, not measured dynamical or biological transitions.",
+          "source_data": "retained-evidence/research/slg-scientific-figures-20261111/outputs/run-7f8022a64802820f.result/common_ledger_register.csv",
+          "x": "Target separation",
+          "series": [
+            "Split price",
+            "Fixed balanced",
+            "Arbitration",
+            "Split enabled"
+          ],
+          "x_label": "Target separation (radians)",
+          "y_label": "Common objective (dimensionless)",
+          "result_ids": [
+            "retained-slg-common-ledger-register-20261111"
+          ],
+          "style": {
+            "font_size": 10,
+            "width_inches": 7,
+            "height_inches": 4.5,
+            "line_width": 1.7,
+            "marker_size": 1,
+            "grid": false,
+            "preview_dpi": 150,
+            "palette": [
+              "#666666",
+              "#0072B2",
+              "#E69F00",
+              "#009E73"
+            ]
+          },
+          "render": {
+            "outputs": [
+              "figures/generated/slg-register-common-ledger-20261111.svg",
+              "figures/generated/slg-register-common-ledger-20261111.pdf",
+              "figures/generated/slg-register-common-ledger-20261111.png"
+            ],
+            "renderer": "matplotlib",
+            "input_digest": "d4c9bd792a2416bdc321c469df379b1d2b39d34c4c9d31aa6a48cefc151c52d5",
+            "drawing_input_digest": "d4c9bd792a2416bdc321c469df379b1d2b39d34c4c9d31aa6a48cefc151c52d5",
+            "drawing_inputs": {
+              "spec": {
+                "id": "slg-register-common-ledger-20261111",
+                "kind": "plot",
+                "x": "Target separation",
+                "series": [
+                  "Split price",
+                  "Fixed balanced",
+                  "Arbitration",
+                  "Split enabled"
+                ],
+                "x_label": "Target separation (radians)",
+                "y_label": "Common objective (dimensionless)"
+              },
+              "data": "588636de35ae4bd7a9d6440e0404ad658aa42fb155569708d0a22911028b240d"
+            },
+            "research_bindings": [
+              {
+                "id": "retained-slg-common-ledger-register-20261111",
+                "revision": "sha256:800986b47d51fda47c3468a820b037d4f0834cc83931674bc0b7e798c3932ef8",
+                "currentness": "CURRENT"
+              }
+            ],
+            "presentation_metadata": {
+              "title": "When does splitting the register pay?",
+              "question": "At what target separation does the declared split option cost less than shared arbitration?",
+              "caption": "Static common-ledger costs over 181 target separations, with gamma=1, eta=0.8 and A=2(1-cos theta)(0.5+gamma). Fixed balanced costs A/4, arbitration costs min(A/4,0.4), and split enabled costs min(A/4,0.4,0.25). All three option curves coincide below theta=0.8411 radians, where the green curve is drawn on top. Above this boundary the split-enabled curve stays at the declared split price 0.25, exactly coinciding with the grey reference behind it. Arbitration remains equal to fixed balance until theta=1.0853 radians, then caps at 0.4. For another split price, compare that price with the optimised arbitration curve to decide where purchasing a separate register pays. These are static option boundaries. Exact equations, data and method links accompany the figure.",
+              "source_data": "retained-evidence/research/slg-scientific-figures-20261111/outputs/run-7f8022a64802820f.result/common_ledger_register.csv",
+              "source": null
+            },
+            "style_version": "58b6c708511da105b6a84734e36bb92d573c9db57d79bc8ab59af0b139724f94",
+            "style_profile": "profiles/visual_style.json",
+            "visual_review": "pending",
+            "output_digests": {
+              "figures/generated/slg-register-common-ledger-20261111.svg": "35a58ec39c51ec5fcff472f276efca705b6fbbdf3c0079c919ac6156d9867dba",
+              "figures/generated/slg-register-common-ledger-20261111.pdf": "dd9922cd9f64503440f1321cba9e9f855f8326cbd135bdf1c9a890cb684127fe",
+              "figures/generated/slg-register-common-ledger-20261111.png": "b6d13a93d32db69c06c8bd715ba2901877dc97119a50f9c78465528170443e65"
+            }
+          },
+          "section_repo_file": "synthetics papers/self-consistent-loss-geometries-coupled-evaluators/manuscript/imported/sections/03_model_setup.tex",
+          "section": "sections/03_model_setup.tex",
+          "section_scope": "manuscript"
+        },
+        "spec_revision": "d6f71cbdc2e6ba3e9fe84ca6414222c33c9ad7117a5a470a7273d5a04f205e2c",
+        "readiness": "SPECIFIED",
+        "placement_caption": {
+          "status": "MATCHES",
+          "file": "synthetics papers/self-consistent-loss-geometries-coupled-evaluators/manuscript/imported/sections/03_model_setup.tex",
+          "line_start": 62,
+          "line_end": 62,
+          "next_read": {
+            "operation": "source",
+            "payload": {
+              "files": [
+                "synthetics papers/self-consistent-loss-geometries-coupled-evaluators/manuscript/imported/sections/03_model_setup.tex"
+              ],
+              "line_start": 62,
+              "line_end": 62
+            }
+          },
+          "edit_operation": "apply_revision",
+          "note": "The manuscript caption is authored source. Read this exact span, then use apply_revision for a requested change; visual_render only updates the brief/asset metadata."
+        },
+        "owned_changes": {
+          "schema_version": "laplace.owner-mutation/1",
+          "files": [
+            {
+              "scope": "repository",
+              "path": "synthetics papers/self-consistent-loss-geometries-coupled-evaluators/manuscript/imported/manuscript_spec.json",
+              "before_sha256": "sha256:884485ec12abc996843654e1a1b19bf2e0ec59376a1434e0a5627f16df050fbe",
+              "after_sha256": "sha256:ff1c0844dbe05b90c0f9cd8993920e0b693ef6766cea3b065a2c060b8d7fb303",
+              "observed_after_sha256": "sha256:ff1c0844dbe05b90c0f9cd8993920e0b693ef6766cea3b065a2c060b8d7fb303"
+            }
+          ],
+          "objects": [
+            {
+              "owner": "visual-spec",
+              "id": "slg-register-common-ledger-20261111",
+              "before_revision": "246488c19e719a0f2fdb0abc3a7028485656ce699e6c7d58aeaa54e3b19be4b6",
+              "after_revision": "d6f71cbdc2e6ba3e9fe84ca6414222c33c9ad7117a5a470a7273d5a04f205e2c"
+            }
+          ],
+          "rewire_records": [],
+          "views": [
+            "visuals",
+            "presentation"
+          ]
+        }
+      },
+      "render": {
+        "render": {
+          "outputs": [
+            "figures/generated/slg-register-common-ledger-20261111.svg",
+            "figures/generated/slg-register-common-ledger-20261111.pdf",
+            "figures/generated/slg-register-common-ledger-20261111.png"
+          ],
+          "renderer": "matplotlib",
+          "input_digest": "d4c9bd792a2416bdc321c469df379b1d2b39d34c4c9d31aa6a48cefc151c52d5",
+          "drawing_input_digest": "d4c9bd792a2416bdc321c469df379b1d2b39d34c4c9d31aa6a48cefc151c52d5",
+          "drawing_inputs": {
+            "spec": {
+              "id": "slg-register-common-ledger-20261111",
+              "kind": "plot",
+              "x": "Target separation",
+              "series": [
+                "Split price",
+                "Fixed balanced",
+                "Arbitration",
+                "Split enabled"
+              ],
+              "x_label": "Target separation (radians)",
+              "y_label": "Common objective (dimensionless)"
+            },
+            "data": "588636de35ae4bd7a9d6440e0404ad658aa42fb155569708d0a22911028b240d"
+          },
+          "research_bindings": [
+            {
+              "id": "retained-slg-common-ledger-register-20261111",
+              "revision": "sha256:800986b47d51fda47c3468a820b037d4f0834cc83931674bc0b7e798c3932ef8",
+              "currentness": "CURRENT"
+            }
+          ],
+          "presentation_metadata": {
+            "title": "When does splitting the register pay?",
+            "question": "At what target separation does the declared split option cost less than shared arbitration?",
+            "caption": "When splitting the register pays. Static costs on the common ledger in Eq.~\\eqref{eq:num-toy-conflict}, evaluated over 181 target separations. Fixed balance costs \\(A/4\\), optimised arbitration costs \\(\\min(A/4,0.4)\\), and split-enabled allocation costs \\(\\min(A/4,0.4,0.25)\\). All three curves coincide below \\(0.8411\\) radians, with the green result drawn on top. Above that crossing the green plateau is exactly the grey split-price reference, not a separate lower curve. Arbitration remains equal to fixed balance until \\(1.0853\\) radians and then caps at \\(0.4\\). The angle measures target separation. These are calculated static option boundaries, not measured dynamical or biological transitions.",
+            "source_data": "retained-evidence/research/slg-scientific-figures-20261111/outputs/run-7f8022a64802820f.result/common_ledger_register.csv",
+            "source": null
+          },
+          "style_version": "58b6c708511da105b6a84734e36bb92d573c9db57d79bc8ab59af0b139724f94",
+          "style_profile": "profiles/visual_style.json",
+          "visual_review": "pending",
+          "output_digests": {
+            "figures/generated/slg-register-common-ledger-20261111.svg": "35a58ec39c51ec5fcff472f276efca705b6fbbdf3c0079c919ac6156d9867dba",
+            "figures/generated/slg-register-common-ledger-20261111.pdf": "dd9922cd9f64503440f1321cba9e9f855f8326cbd135bdf1c9a890cb684127fe",
+            "figures/generated/slg-register-common-ledger-20261111.png": "b6d13a93d32db69c06c8bd715ba2901877dc97119a50f9c78465528170443e65"
+          },
+          "reused": true,
+          "basis_refreshed": true
+        },
+        "readiness": "GENERATED",
+        "placement_caption": {
+          "status": "MATCHES",
+          "file": "synthetics papers/self-consistent-loss-geometries-coupled-evaluators/manuscript/imported/sections/03_model_setup.tex",
+          "line_start": 62,
+          "line_end": 62,
+          "next_read": {
+            "operation": "source",
+            "payload": {
+              "files": [
+                "synthetics papers/self-consistent-loss-geometries-coupled-evaluators/manuscript/imported/sections/03_model_setup.tex"
+              ],
+              "line_start": 62,
+              "line_end": 62
+            }
+          },
+          "edit_operation": "apply_revision",
+          "note": "The manuscript caption is authored source. Read this exact span, then use apply_revision for a requested change; visual_render only updates the brief/asset metadata."
+        },
+        "owned_changes": {
+          "schema_version": "laplace.owner-mutation/1",
+          "files": [
+            {
+              "scope": "repository",
+              "path": "synthetics papers/self-consistent-loss-geometries-coupled-evaluators/manuscript/imported/manuscript_spec.json",
+              "before_sha256": "sha256:ff1c0844dbe05b90c0f9cd8993920e0b693ef6766cea3b065a2c060b8d7fb303",
+              "after_sha256": "sha256:ed9dc330d3739499a962a83e96a73fc2972b3f5987129ccb0386ef793dab30b5",
+              "observed_after_sha256": "sha256:ed9dc330d3739499a962a83e96a73fc2972b3f5987129ccb0386ef793dab30b5"
+            },
+            {
+              "scope": "repository",
+              "path": "synthetics papers/self-consistent-loss-geometries-coupled-evaluators/manuscript/imported/figure_manifest.json",
+              "before_sha256": "sha256:447fa2022c4db9e6ab74e17866bce345a6d8b169a2b6d1aa0076fb3259eac472",
+              "after_sha256": "sha256:12c06a96601bd7eccf26dea70d9afb7a76cfc4d2bcb3705824b1dd1bb7c29522",
+              "observed_after_sha256": "sha256:12c06a96601bd7eccf26dea70d9afb7a76cfc4d2bcb3705824b1dd1bb7c29522"
+            }
+          ],
+          "objects": [
+            {
+              "owner": "visual-render",
+              "id": "slg-register-common-ledger-20261111",
+              "before_revision": "d6f71cbdc2e6ba3e9fe84ca6414222c33c9ad7117a5a470a7273d5a04f205e2c",
+              "after_revision": "808200c1dce501ae4e8f47afc3f5c2ad0695ec0e0c743120995d9956fca28332"
+            }
+          ],
+          "rewire_records": [],
+          "views": [
+            "visuals",
+            "presentation"
+          ]
+        }
+      }
+    },
+    {
+      "id": "slg-promotion-recovery-20261111",
+      "caption_source": "synthetics papers/self-consistent-loss-geometries-coupled-evaluators/manuscript/imported/sections/09_numerical_demonstrations.tex",
+      "source_sha256": "14e5bddd9a2b7154f52e76415d17ca4261143ebbbdde0c0b25f6340cfc3a9552",
+      "create": {
+        "spec": {
+          "id": "slg-promotion-recovery-20261111",
+          "kind": "plot",
+          "title": "Recovery under the declared latent-state criterion",
+          "question": "Does the pre-action estimate recover the new latent slope within the fixed horizon?",
+          "caption": "Target occupancy after a latent shift. Fraction of shifts without five consecutive pre-action estimates in the declared band, averaged over 12 matched streams with four shifts each. The band is \\(20\\%\\) of the jump magnitude, and the qualifying run must lie wholly within the 65-step post-shift window. Already-in-band estimates qualify without a new promotion. The criterion therefore measures occupancy, not detected change or update-caused recovery. Delay is the run start. Failures retain sentinel delay 65 in capped means. At \\(c=0.06\\), the three failure fractions are \\(0.1875\\), \\(0.270833\\) and \\(0.625\\). Lines are finite stream means without uncertainty bands.",
+          "source_data": "retained-evidence/research/slg-scientific-figures-20261111/outputs/run-7f8022a64802820f.result/recovery_failure_curve.csv",
+          "x": "Log10 price",
+          "series": [
+            "Legacy v0",
+            "Rolling control",
+            "Priced v1"
+          ],
+          "x_label": "log10(c), promotion price c dimensionless",
+          "y_label": "Fraction of shifts unrecovered",
+          "result_ids": [
+            "retained-result-e3d5544bddeca7fec4d7"
+          ],
+          "style": {
+            "font_size": 10,
+            "width_inches": 7,
+            "height_inches": 4.5,
+            "line_width": 1.7,
+            "marker_size": 3,
+            "grid": false,
+            "preview_dpi": 150,
+            "palette": [
+              "#0072B2",
+              "#E69F00",
+              "#009E73",
+              "#666666",
+              "#CC79A7"
+            ]
+          },
+          "render": {
+            "outputs": [
+              "figures/generated/slg-promotion-recovery-20261111.svg",
+              "figures/generated/slg-promotion-recovery-20261111.pdf",
+              "figures/generated/slg-promotion-recovery-20261111.png"
+            ],
+            "renderer": "matplotlib",
+            "input_digest": "df9c909d9f0748555e904875600fabefeb9e5fa8b4370e440f90bd0096264e37",
+            "drawing_input_digest": "df9c909d9f0748555e904875600fabefeb9e5fa8b4370e440f90bd0096264e37",
+            "drawing_inputs": {
+              "spec": {
+                "id": "slg-promotion-recovery-20261111",
+                "kind": "plot",
+                "x": "Log10 price",
+                "series": [
+                  "Legacy v0",
+                  "Rolling control",
+                  "Priced v1"
+                ],
+                "x_label": "log10(c), promotion price c dimensionless",
+                "y_label": "Fraction of shifts unrecovered"
+              },
+              "data": "415357835b1c3a3ed574053bb195d9314f2983ea92de7cfb6825d07405200f19"
+            },
+            "research_bindings": [
+              {
+                "id": "retained-result-e3d5544bddeca7fec4d7",
+                "revision": "sha256:31d9ca76c18efa498fe366601d119c83cf51847da21e232a53e12aa6aa05190b",
+                "currentness": "CURRENT"
+              }
+            ],
+            "presentation_metadata": {
+              "title": "Recovery under the declared latent-state criterion",
+              "question": "Does the pre-action estimate recover the new latent slope within the fixed horizon?",
+              "caption": "Fraction of shifts without a qualifying in-band run for the three policies in the shared comparison key. Means use 12 matched 700-step streams with four shifts each: 48 dependent shift evaluations per policy and price. A qualifying run is five consecutive PRE-ACTION estimates within 20 percent of the jump magnitude, wholly within the 65 steps beginning at the shift. Already-in-band estimates count without a new promotion, so this measures target occupancy, not detected change or update-triggered success. Delay records the run START, not its confirmation four steps later. No qualifying run gives failure and delay 65, retained in the capped-delay mean. Latent truth is used only for evaluation. At c=0.06 failure fractions are 0.1875, 0.2708 and 0.625 for Legacy v0, Rolling control and Priced v1. Occupancy need not vary monotonically with price. Read with prediction risk and update frequency before treating sparse updates as adequate adaptation. Lines show stream means without uncertainty bands. Shared policy definitions, per-stream values and exact data/method links accompany the comparison.",
+              "source_data": "retained-evidence/research/slg-scientific-figures-20261111/outputs/run-7f8022a64802820f.result/recovery_failure_curve.csv",
+              "source": null
+            },
+            "style_version": "11d98d58608b7fc4a72fa31e0aba23b73df657017407306b478155287edafdcd",
+            "style_profile": "profiles/visual_style.json",
+            "visual_review": "pending",
+            "output_digests": {
+              "figures/generated/slg-promotion-recovery-20261111.svg": "bbc1804b236a3d5fcf3471955387c1cc923b6dcaca16e98dfad47ab078d38ef5",
+              "figures/generated/slg-promotion-recovery-20261111.pdf": "c25b0db1cb44e01156d852672799318746c742eadece4f7b04e023f9f6b9284a",
+              "figures/generated/slg-promotion-recovery-20261111.png": "1803c3ab7e3da9ae2bc6dfe8fa856e367a35aa37fcd21abb4fb6f94e1ada81f2"
+            }
+          },
+          "section_repo_file": "synthetics papers/self-consistent-loss-geometries-coupled-evaluators/manuscript/imported/sections/09_numerical_demonstrations.tex",
+          "section": "sections/09_numerical_demonstrations.tex",
+          "section_scope": "manuscript"
+        },
+        "spec_revision": "ffa883b2b0e039f3a550fd9e137b251a56a08e34791cd79d9f57b2b29d21b749",
+        "readiness": "SPECIFIED",
+        "placement_caption": {
+          "status": "MATCHES",
+          "file": "synthetics papers/self-consistent-loss-geometries-coupled-evaluators/manuscript/imported/sections/09_numerical_demonstrations.tex",
+          "line_start": 78,
+          "line_end": 78,
+          "next_read": {
+            "operation": "source",
+            "payload": {
+              "files": [
+                "synthetics papers/self-consistent-loss-geometries-coupled-evaluators/manuscript/imported/sections/09_numerical_demonstrations.tex"
+              ],
+              "line_start": 78,
+              "line_end": 78
+            }
+          },
+          "edit_operation": "apply_revision",
+          "note": "The manuscript caption is authored source. Read this exact span, then use apply_revision for a requested change; visual_render only updates the brief/asset metadata."
+        },
+        "owned_changes": {
+          "schema_version": "laplace.owner-mutation/1",
+          "files": [
+            {
+              "scope": "repository",
+              "path": "synthetics papers/self-consistent-loss-geometries-coupled-evaluators/manuscript/imported/manuscript_spec.json",
+              "before_sha256": "sha256:ed9dc330d3739499a962a83e96a73fc2972b3f5987129ccb0386ef793dab30b5",
+              "after_sha256": "sha256:f99cf7579821ac4c90df28cd602bf595b081a355099248f522524dc870238d14",
+              "observed_after_sha256": "sha256:f99cf7579821ac4c90df28cd602bf595b081a355099248f522524dc870238d14"
+            }
+          ],
+          "objects": [
+            {
+              "owner": "visual-spec",
+              "id": "slg-promotion-recovery-20261111",
+              "before_revision": "b26e26244496cd4ca9ee0a83ed5d09ab11a8d7100d647fda31d7ba41934f7f39",
+              "after_revision": "ffa883b2b0e039f3a550fd9e137b251a56a08e34791cd79d9f57b2b29d21b749"
+            }
+          ],
+          "rewire_records": [],
+          "views": [
+            "visuals",
+            "presentation"
+          ]
+        }
+      },
+      "render": {
+        "render": {
+          "outputs": [
+            "figures/generated/slg-promotion-recovery-20261111.svg",
+            "figures/generated/slg-promotion-recovery-20261111.pdf",
+            "figures/generated/slg-promotion-recovery-20261111.png"
+          ],
+          "renderer": "matplotlib",
+          "input_digest": "df9c909d9f0748555e904875600fabefeb9e5fa8b4370e440f90bd0096264e37",
+          "drawing_input_digest": "df9c909d9f0748555e904875600fabefeb9e5fa8b4370e440f90bd0096264e37",
+          "drawing_inputs": {
+            "spec": {
+              "id": "slg-promotion-recovery-20261111",
+              "kind": "plot",
+              "x": "Log10 price",
+              "series": [
+                "Legacy v0",
+                "Rolling control",
+                "Priced v1"
+              ],
+              "x_label": "log10(c), promotion price c dimensionless",
+              "y_label": "Fraction of shifts unrecovered"
+            },
+            "data": "415357835b1c3a3ed574053bb195d9314f2983ea92de7cfb6825d07405200f19"
+          },
+          "research_bindings": [
+            {
+              "id": "retained-result-e3d5544bddeca7fec4d7",
+              "revision": "sha256:31d9ca76c18efa498fe366601d119c83cf51847da21e232a53e12aa6aa05190b",
+              "currentness": "CURRENT"
+            }
+          ],
+          "presentation_metadata": {
+            "title": "Recovery under the declared latent-state criterion",
+            "question": "Does the pre-action estimate recover the new latent slope within the fixed horizon?",
+            "caption": "Target occupancy after a latent shift. Fraction of shifts without five consecutive pre-action estimates in the declared band, averaged over 12 matched streams with four shifts each. The band is \\(20\\%\\) of the jump magnitude, and the qualifying run must lie wholly within the 65-step post-shift window. Already-in-band estimates qualify without a new promotion. The criterion therefore measures occupancy, not detected change or update-caused recovery. Delay is the run start. Failures retain sentinel delay 65 in capped means. At \\(c=0.06\\), the three failure fractions are \\(0.1875\\), \\(0.270833\\) and \\(0.625\\). Lines are finite stream means without uncertainty bands.",
+            "source_data": "retained-evidence/research/slg-scientific-figures-20261111/outputs/run-7f8022a64802820f.result/recovery_failure_curve.csv",
+            "source": null
+          },
+          "style_version": "11d98d58608b7fc4a72fa31e0aba23b73df657017407306b478155287edafdcd",
+          "style_profile": "profiles/visual_style.json",
+          "visual_review": "pending",
+          "output_digests": {
+            "figures/generated/slg-promotion-recovery-20261111.svg": "bbc1804b236a3d5fcf3471955387c1cc923b6dcaca16e98dfad47ab078d38ef5",
+            "figures/generated/slg-promotion-recovery-20261111.pdf": "c25b0db1cb44e01156d852672799318746c742eadece4f7b04e023f9f6b9284a",
+            "figures/generated/slg-promotion-recovery-20261111.png": "1803c3ab7e3da9ae2bc6dfe8fa856e367a35aa37fcd21abb4fb6f94e1ada81f2"
+          },
+          "reused": true,
+          "basis_refreshed": true
+        },
+        "readiness": "GENERATED",
+        "placement_caption": {
+          "status": "MATCHES",
+          "file": "synthetics papers/self-consistent-loss-geometries-coupled-evaluators/manuscript/imported/sections/09_numerical_demonstrations.tex",
+          "line_start": 78,
+          "line_end": 78,
+          "next_read": {
+            "operation": "source",
+            "payload": {
+              "files": [
+                "synthetics papers/self-consistent-loss-geometries-coupled-evaluators/manuscript/imported/sections/09_numerical_demonstrations.tex"
+              ],
+              "line_start": 78,
+              "line_end": 78
+            }
+          },
+          "edit_operation": "apply_revision",
+          "note": "The manuscript caption is authored source. Read this exact span, then use apply_revision for a requested change; visual_render only updates the brief/asset metadata."
+        },
+        "owned_changes": {
+          "schema_version": "laplace.owner-mutation/1",
+          "files": [
+            {
+              "scope": "repository",
+              "path": "synthetics papers/self-consistent-loss-geometries-coupled-evaluators/manuscript/imported/manuscript_spec.json",
+              "before_sha256": "sha256:f99cf7579821ac4c90df28cd602bf595b081a355099248f522524dc870238d14",
+              "after_sha256": "sha256:b9b61bac6d26f759a85eee274a8c13153dc5e03336cdeed4544fa1c9499d2207",
+              "observed_after_sha256": "sha256:b9b61bac6d26f759a85eee274a8c13153dc5e03336cdeed4544fa1c9499d2207"
+            },
+            {
+              "scope": "repository",
+              "path": "synthetics papers/self-consistent-loss-geometries-coupled-evaluators/manuscript/imported/figure_manifest.json",
+              "before_sha256": "sha256:12c06a96601bd7eccf26dea70d9afb7a76cfc4d2bcb3705824b1dd1bb7c29522",
+              "after_sha256": "sha256:4d71bbde5d9edd17a93a02c9c4f47004b7f57cc118de58b5c1ce345dad2553c0",
+              "observed_after_sha256": "sha256:4d71bbde5d9edd17a93a02c9c4f47004b7f57cc118de58b5c1ce345dad2553c0"
+            }
+          ],
+          "objects": [
+            {
+              "owner": "visual-render",
+              "id": "slg-promotion-recovery-20261111",
+              "before_revision": "ffa883b2b0e039f3a550fd9e137b251a56a08e34791cd79d9f57b2b29d21b749",
+              "after_revision": "64d3def64820ccbde2a3f5089c6494d084e95bd2bdbcf86893b5b3939d24eec8"
+            }
+          ],
+          "rewire_records": [],
+          "views": [
+            "visuals",
+            "presentation"
+          ]
+        }
+      }
+    }
+  ]
+}

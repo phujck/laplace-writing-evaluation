@@ -1,0 +1,19 @@
+{
+  "producers": [
+    {
+      "id": "public-representation-illustrations-v1",
+      "executable": "examples/public_representation_illustrations.py",
+      "scope": "project",
+      "modes": [
+        "smoke"
+      ],
+      "allowed_args": {},
+      "dependencies": [
+        "calculations/representation_illustrations.py",
+        "examples/public-illustration-inputs-v1.json"
+      ],
+      "timeout_seconds": 90,
+      "project": "behaviour-example"
+    }
+  ]
+}

@@ -1,0 +1,58 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="875" viewBox="0 0 1280 875" role="img"><title>Edit the roles inside a workflow step</title><desc>Proposed central direct-manipulation role topology editor, with parallel checks, independent reviewer relation and effect scope. Definition and actual run remain distinct.</desc><rect width="100%" height="100%" fill="#f5f7f9"/>
+<text x="20" y="25" fill="#225c9c" font-family="DejaVu Sans,sans-serif" font-size="12" font-weight="700">DESIGN PROPOSAL · STATIC · SYNTHETIC EXAMPLE</text>
+<text x="20" y="61" fill="#1f2c3b" font-family="DejaVu Sans,sans-serif" font-size="22" font-weight="700">Edit the roles inside a workflow step</text>
+<rect x="20" y="82" width="1240" height="54" rx="7" fill="#ffffff" stroke="#c2cbd3"/>
+<text x="32" y="108" fill="#1f2c3b" font-family="DejaVu Sans,sans-serif" font-size="14" font-weight="700">Example note / Workflow v5 / Review / Role topology</text>
+<rect x="20" y="151" width="159" height="42" rx="7" fill="#ffffff" stroke="#225c9c"/>
+<text x="32" y="175" fill="#225c9c" font-family="DejaVu Sans,sans-serif" font-size="13" font-weight="700">Add role</text>
+<rect x="191" y="151" width="190" height="42" rx="7" fill="#ffffff" stroke="#225c9c"/>
+<text x="203" y="175" fill="#225c9c" font-family="DejaVu Sans,sans-serif" font-size="13" font-weight="700">Connect return</text>
+<rect x="393" y="151" width="172" height="42" rx="7" fill="#ffffff" stroke="#225c9c"/>
+<text x="405" y="175" fill="#225c9c" font-family="DejaVu Sans,sans-serif" font-size="13" font-weight="700">Nest substep</text>
+<rect x="577" y="151" width="180" height="42" rx="7" fill="#ffffff" stroke="#225c9c"/>
+<text x="589" y="175" fill="#225c9c" font-family="DejaVu Sans,sans-serif" font-size="13" font-weight="700">Outline / graph</text>
+<rect x="20" y="208" width="827" height="426" rx="7" fill="#ffffff" stroke="#c2cbd3"/>
+<text x="32" y="234" fill="#1f2c3b" font-family="DejaVu Sans,sans-serif" font-size="14" font-weight="700">Review step · contains these role assignments</text>
+<rect x="43" y="278" width="220" height="100" rx="7" fill="#ffffff" stroke="#c2cbd3"/>
+<text x="55" y="304" fill="#1f2c3b" font-family="DejaVu Sans,sans-serif" font-size="14" font-weight="700">Evidence checker</text>
+<text x="56" y="331" fill="#526474" font-family="DejaVu Sans,sans-serif" font-size="13" font-weight="400">Input: selected claims</text>
+<text x="56" y="360" fill="#526474" font-family="DejaVu Sans,sans-serif" font-size="13" font-weight="400">Return: supported / gaps</text>
+<rect x="43" y="440" width="220" height="100" rx="7" fill="#ffffff" stroke="#c2cbd3"/>
+<text x="55" y="466" fill="#1f2c3b" font-family="DejaVu Sans,sans-serif" font-size="14" font-weight="700">Reader</text>
+<text x="56" y="493" fill="#526474" font-family="DejaVu Sans,sans-serif" font-size="13" font-weight="400">Input: document only</text>
+<text x="56" y="522" fill="#526474" font-family="DejaVu Sans,sans-serif" font-size="13" font-weight="400">Return: reader findings</text>
+<rect x="482" y="359" width="332" height="118" rx="7" fill="#ffffff" stroke="#c2cbd3"/>
+<text x="494" y="385" fill="#1f2c3b" font-family="DejaVu Sans,sans-serif" font-size="14" font-weight="700">Synthesis</text>
+<text x="495" y="414" fill="#526474" font-family="DejaVu Sans,sans-serif" font-size="14" font-weight="400">Consumes both scoped returns</text>
+<text x="495" y="448" fill="#526474" font-family="DejaVu Sans,sans-serif" font-size="14" font-weight="400">Proposes the next revision</text>
+<path d="M263 327 L482 389" stroke="#225c9c" fill="none" stroke-width="2"/>
+<polygon points="482,389 473.1,390.3 475.1,383.2" fill="#225c9c"/>
+<text x="378" y="351" fill="#225c9c" font-family="DejaVu Sans,sans-serif" font-size="11" font-weight="400">delivers to</text>
+<path d="M263 487 L482 446" stroke="#225c9c" fill="none" stroke-width="2"/>
+<polygon points="482,446 474.6,451.1 473.2,443.9" fill="#225c9c"/>
+<text x="378" y="459" fill="#225c9c" font-family="DejaVu Sans,sans-serif" font-size="11" font-weight="400">delivers to</text>
+<rect x="43" y="570" width="257" height="42" rx="7" fill="#ffffff" stroke="#225c9c"/>
+<text x="55" y="594" fill="#225c9c" font-family="DejaVu Sans,sans-serif" font-size="13" font-weight="700">Edit reviewer links</text>
+<rect x="866" y="208" width="394" height="426" rx="7" fill="#ffffff" stroke="#c2cbd3"/>
+<text x="878" y="234" fill="#1f2c3b" font-family="DejaVu Sans,sans-serif" font-size="14" font-weight="700">Reader · role assignment</text>
+<text x="882" y="268" fill="#1f2c3b" font-family="DejaVu Sans,sans-serif" font-size="14" font-weight="700">Purpose</text>
+<text x="882" y="300" fill="#1f2c3b" font-family="DejaVu Sans,sans-serif" font-size="15" font-weight="400">Find gaps in what a new reader can</text>
+<text x="882" y="322" fill="#1f2c3b" font-family="DejaVu Sans,sans-serif" font-size="15" font-weight="400">understand.</text>
+<text x="882" y="367" fill="#225c9c" font-family="DejaVu Sans,sans-serif" font-size="14" font-weight="700">Inputs: document + task card</text>
+<text x="882" y="404" fill="#526474" font-family="DejaVu Sans,sans-serif" font-size="14" font-weight="400">Model: Sol · high</text>
+<text x="882" y="440" fill="#526474" font-family="DejaVu Sans,sans-serif" font-size="14" font-weight="400">Can: publish findings</text>
+<rect x="882" y="467" width="359" height="42" rx="7" fill="#ffffff" stroke="#225c9c"/>
+<text x="894" y="491" fill="#225c9c" font-family="DejaVu Sans,sans-serif" font-size="13" font-weight="700">Edit instructions</text>
+<rect x="882" y="521" width="172" height="42" rx="7" fill="#ffffff" stroke="#225c9c"/>
+<text x="894" y="545" fill="#225c9c" font-family="DejaVu Sans,sans-serif" font-size="13" font-weight="700">Change model</text>
+<rect x="1066" y="521" width="175" height="42" rx="7" fill="#ffffff" stroke="#225c9c"/>
+<text x="1078" y="545" fill="#225c9c" font-family="DejaVu Sans,sans-serif" font-size="13" font-weight="700">Permissions</text>
+<rect x="866" y="655" width="394" height="42" rx="7" fill="#225c9c" stroke="#225c9c"/>
+<text x="878" y="679" fill="#ffffff" font-family="DejaVu Sans,sans-serif" font-size="13" font-weight="700">Save role topology v5</text>
+<rect x="20" y="719" width="1240" height="58" rx="7" fill="#edf4fc" stroke="#c2cbd3"/>
+<text x="32" y="746" fill="#225c9c" font-family="DejaVu Sans,sans-serif" font-size="17" font-weight="700">1</text>
+<text x="62" y="741" fill="#1f2c3b" font-family="DejaVu Sans,sans-serif" font-size="13" font-weight="400">Stage → role assignment → acting session. Configure the role’s purpose, model, instructions and permissions directly; inspect inherited origins when needed.</text>
+<rect x="20" y="789" width="1240" height="58" rx="7" fill="#edf4fc" stroke="#c2cbd3"/>
+<text x="32" y="816" fill="#225c9c" font-family="DejaVu Sans,sans-serif" font-size="17" font-weight="700">2</text>
+<text x="62" y="811" fill="#1f2c3b" font-family="DejaVu Sans,sans-serif" font-size="13" font-weight="400">Document-only admission is a proposed sealed input contract. The current standard review context is not silently relabelled blind.</text>
+</svg>

@@ -1,0 +1,4861 @@
+{
+  "contract_request": {
+    "operation": "section_contract",
+    "section_id": "first",
+    "expected_plan_revision": "sha256:fa35dabeefb2ce041545cfecb950a3fd7eee948ef3823cdc14f3f29d29288183",
+    "expected_contract_revision": null,
+    "expected_reader_basis": {
+      "schema_version": "laplace.reader-basis/1",
+      "project": "book",
+      "path": "synthetics papers/book/manuscript/section_contracts.json",
+      "section_id": "first",
+      "subject_id": "first",
+      "subject_revision": "sha256:74234e98afe7498fb5daf1f36ac2d78acc339464f950703b8c019892f982b90b",
+      "inputs": {
+        "plan-section": "sha256:b25414354a6df71671dface4aec0fcf679323d9ef49aa089afa65faffb34f007",
+        "architecture": "sha256:8838870b3b9c1733e13e6977ef8aabf1eb35bf69539e977d1a59d5973f7d24a9",
+        "concept:concept:first": "sha256:97018db06cd4e0a7b2a9ef1899639f111165e6635c9ec031eab1166224d75a4a"
+      },
+      "unobserved_inputs": []
+    },
+    "changes": {
+      "entry_state": "Knows the question",
+      "exit_state": "Understands the mechanism"
+    }
+  },
+  "paragraph_request": {
+    "operation": "paragraph_plan",
+    "section_id": "first",
+    "expected_plan_revision": "sha256:fa35dabeefb2ce041545cfecb950a3fd7eee948ef3823cdc14f3f29d29288183",
+    "expected_narrative_revision": null,
+    "expected_reader_basis": {
+      "schema_version": "laplace.reader-basis/1",
+      "project": "book",
+      "path": "synthetics papers/book/manuscript/narrative/first.json",
+      "section_id": "first",
+      "subject_id": "first-p36456703742131136201844960223",
+      "subject_revision": "sha256:74234e98afe7498fb5daf1f36ac2d78acc339464f950703b8c019892f982b90b",
+      "inputs": {
+        "plan-section": "sha256:b25414354a6df71671dface4aec0fcf679323d9ef49aa089afa65faffb34f007",
+        "architecture": "sha256:8838870b3b9c1733e13e6977ef8aabf1eb35bf69539e977d1a59d5973f7d24a9",
+        "reader-transition": "sha256:02ed9c6ad3cce2d2f02f5396abb5cc6bb994491e353cd66681ebd0fbd4d5fc4a",
+        "reader-neighbors": "sha256:3d6f4be21e5fb46a339e73b26ef3729b418169c013433e962a54ba0130732d85",
+        "concept:concept:first": "sha256:97018db06cd4e0a7b2a9ef1899639f111165e6635c9ec031eab1166224d75a4a"
+      },
+      "unobserved_inputs": []
+    },
+    "action": "upsert",
+    "paragraph_id": "first-p36456703742131136201844960223",
+    "create": true,
+    "changes": {
+      "proposition": "Introduce the mechanism",
+      "explanation": "Show how the parts interact"
+    }
+  },
+  "initial": {
+    "schema_version": "laplace.project-structure-context/1",
+    "project": "book",
+    "full_guard_read": {
+      "operation": "structure",
+      "payload": {
+        "view": "full"
+      }
+    },
+    "revision": "sha256:83f6a64c90cf3662e2da023041f9d561c3b5151c0c8afbe8c0287f2891c422ee",
+    "structure_revision": null,
+    "eligible_for_authoring": true,
+    "authority": {
+      "plan_path": "synthetics papers/book/manuscript/projection_plan.json",
+      "spine_revision": "sha256:4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "plan_revision": "sha256:fa35dabeefb2ce041545cfecb950a3fd7eee948ef3823cdc14f3f29d29288183",
+      "conceptric_revision": "sha256:ee6597c03f4d8c348ef5d7d83f7073ae18878e2b73c2f581000e960acc7a886f",
+      "research_revision": "sha256:4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "source_revision": "ec39e3cc81c7317c551fd654cd100571f43b76f57ee8d6103a21e0f192b568f5"
+    },
+    "selected_source": {
+      "root": "synthetics papers/book/manuscript/Fixture-Book.tex",
+      "manuscript_dir": "synthetics papers/book/manuscript",
+      "edition": "draft",
+      "status": "resolved",
+      "revision": "ec39e3cc81c7317c551fd654cd100571f43b76f57ee8d6103a21e0f192b568f5",
+      "read_only": false,
+      "selection_identity": "sha256:f35f374570dbc183d4aec769c50fb55b0860b11e94183950c18db51bd357ed65"
+    },
+    "sections": [
+      {
+        "id": "first",
+        "collection": "sections",
+        "title": "First",
+        "kind": "chapter",
+        "parent_id": null,
+        "depth": 0,
+        "number": "1",
+        "ancestor_ids": [],
+        "child_ids": [
+          "first-child"
+        ],
+        "order": 0,
+        "job": "open",
+        "notes": "",
+        "refs": [],
+        "node_ids": [
+          "concept:first"
+        ],
+        "nodes": [
+          {
+            "id": "concept:first",
+            "label": "concept:first",
+            "missing": true,
+            "kind": null,
+            "status": "MISSING",
+            "summary": "",
+            "result_bindings": []
+          }
+        ],
+        "beat_ids": [],
+        "beats": [],
+        "source": {
+          "section_id": "first",
+          "source_files": [
+            "synthetics papers/book/manuscript/chapters/chapter-01.tex"
+          ],
+          "status": "MATCHED",
+          "precision": "FILE_ONLY",
+          "title_status": "MATCHED",
+          "plan_title": "First",
+          "source_titles": [
+            "First"
+          ],
+          "source_label": null,
+          "heading": {
+            "file": "synthetics papers/book/manuscript/chapters/chapter-01.tex",
+            "line": 1,
+            "line_end": 4,
+            "heading_line_end": 1,
+            "title": "First",
+            "kind": "chapter",
+            "label": null,
+            "heading_before": "\\chapter{First}",
+            "source_order": 1,
+            "source_orders": [
+              1
+            ]
+          },
+          "basis": {
+            "synthetics papers/book/manuscript/chapters/chapter-01.tex": {
+              "selection_identity": "sha256:f35f374570dbc183d4aec769c50fb55b0860b11e94183950c18db51bd357ed65",
+              "source_digest": "sha256:a3f9c9c474d5c0b6ae33ea349ddf6d0f11be41f3347f7a130309571f5aa47bce"
+            }
+          },
+          "mapping": "explicit-source-file",
+          "selected_root": "synthetics papers/book/manuscript/Fixture-Book.tex",
+          "source_reads": [
+            {
+              "operation": "source",
+              "payload": {
+                "files": [
+                  "synthetics papers/book/manuscript/chapters/chapter-01.tex"
+                ]
+              },
+              "http": {
+                "method": "GET",
+                "route": "/projection/tex",
+                "query": {
+                  "corpus": "book",
+                  "file": "synthetics papers/book/manuscript/chapters/chapter-01.tex",
+                  "view": "source"
+                }
+              }
+            }
+          ],
+          "clearing_read": {
+            "operation": "structure",
+            "payload": {
+              "view": "outline"
+            }
+          }
+        },
+        "clearing_action": {
+          "operation": "structure_change",
+          "payload": {
+            "operation": "bind_source",
+            "section_id": "first",
+            "expected_plan_revision": "sha256:fa35dabeefb2ce041545cfecb950a3fd7eee948ef3823cdc14f3f29d29288183"
+          },
+          "http": {
+            "method": "POST",
+            "route": "/work/structure/change"
+          },
+          "choose_from": {
+            "operation": "structure",
+            "payload": {
+              "view": "outline"
+            },
+            "http": {
+              "method": "GET",
+              "route": "/work/structure",
+              "query": {
+                "project": "book",
+                "view": "outline"
+              }
+            }
+          },
+          "required_occurrence_fields": [
+            "file",
+            "line",
+            "heading_before",
+            "expected_selection",
+            "expected_source_digest"
+          ]
+        },
+        "source_support": [
+          {
+            "node": "concept:first",
+            "meaning_revision": "sha256:b01ad77de576569ba992bc4ade24fc71cb597672b8dc44a28b7d3baa56b62cba",
+            "citation_assessment": "CANONICAL_SECTIONS",
+            "sources": [],
+            "own_evidence": [],
+            "authored_proof": false,
+            "documented_proof": {
+              "status": "NOT_RECORDED",
+              "source": null
+            },
+            "declared_role": null,
+            "gaps": [],
+            "qualification": "AUTHORED_BASIS",
+            "independent_verification": "NOT_ASSERTED",
+            "engineering_support": {
+              "status": "UNDECLARED",
+              "bindings": [],
+              "reason": "No engineering support has been adopted",
+              "read_metrics": {}
+            }
+          }
+        ],
+        "evidence": [],
+        "reader_transition": {
+          "section_id": "first",
+          "status": "NOT_DECLARED",
+          "fields": {
+            "section_id": "first"
+          },
+          "revision": null,
+          "subject_revision": "sha256:74234e98afe7498fb5daf1f36ac2d78acc339464f950703b8c019892f982b90b",
+          "reader_basis": {
+            "schema_version": "laplace.reader-basis/1",
+            "project": "book",
+            "path": "synthetics papers/book/manuscript/section_contracts.json",
+            "section_id": "first",
+            "subject_id": "first",
+            "subject_revision": "sha256:74234e98afe7498fb5daf1f36ac2d78acc339464f950703b8c019892f982b90b",
+            "inputs": {
+              "plan-section": "sha256:b25414354a6df71671dface4aec0fcf679323d9ef49aa089afa65faffb34f007",
+              "architecture": "sha256:8838870b3b9c1733e13e6977ef8aabf1eb35bf69539e977d1a59d5973f7d24a9",
+              "concept:concept:first": "sha256:97018db06cd4e0a7b2a9ef1899639f111165e6635c9ec031eab1166224d75a4a"
+            },
+            "unobserved_inputs": []
+          },
+          "input_currentness": {
+            "status": "UNPINNED",
+            "changed_inputs": [],
+            "reason": "No completed scoped input observation is recorded.",
+            "reads": [
+              {
+                "operation": "structure",
+                "payload": {
+                  "view": "detail",
+                  "section_ids": [
+                    "first"
+                  ]
+                },
+                "http": {
+                  "method": "GET",
+                  "route": "/work/structure",
+                  "query": {
+                    "project": "book",
+                    "view": "detail",
+                    "section_ids": [
+                      "first"
+                    ]
+                  }
+                }
+              }
+            ]
+          },
+          "review": {
+            "status": "NOT_REVIEWED",
+            "records": []
+          },
+          "read_handle": {
+            "operation": "structure",
+            "payload": {
+              "view": "detail",
+              "section_ids": [
+                "first"
+              ]
+            },
+            "http": {
+              "method": "GET",
+              "route": "/work/structure",
+              "query": {
+                "project": "book",
+                "view": "detail",
+                "section_ids": [
+                  "first"
+                ]
+              }
+            }
+          },
+          "links": [
+            {
+              "kind": "argument",
+              "label": "concept:first",
+              "status": "UNRESOLVED",
+              "read": {
+                "operation": "concept",
+                "payload": {
+                  "node": "concept:first"
+                },
+                "http": {
+                  "method": "GET",
+                  "route": "/concepts/context",
+                  "query": {
+                    "corpus": "book",
+                    "node": "concept:first"
+                  }
+                }
+              }
+            }
+          ],
+          "diagnostics": [
+            {
+              "kind": "AUTHORED_FIELD_EMPTY",
+              "field": "function",
+              "reason": "The intended reader transition has not been authored."
+            },
+            {
+              "kind": "AUTHORED_FIELD_EMPTY",
+              "field": "question_answered",
+              "reason": "The intended reader transition has not been authored."
+            },
+            {
+              "kind": "AUTHORED_FIELD_EMPTY",
+              "field": "entry_state",
+              "reason": "The intended reader transition has not been authored."
+            },
+            {
+              "kind": "AUTHORED_FIELD_EMPTY",
+              "field": "exit_state",
+              "reason": "The intended reader transition has not been authored."
+            },
+            {
+              "kind": "INPUT_UNRESOLVED",
+              "subject": "concept:first",
+              "status": "UNRESOLVED",
+              "reason": "Supporting input is missing, ambiguous, or stale; observation is not validation.",
+              "read": {
+                "operation": "concept",
+                "payload": {
+                  "node": "concept:first"
+                },
+                "http": {
+                  "method": "GET",
+                  "route": "/concepts/context",
+                  "query": {
+                    "corpus": "book",
+                    "node": "concept:first"
+                  }
+                }
+              }
+            }
+          ],
+          "edit_action": {
+            "operation": "structure_change",
+            "payload": {
+              "operation": "section_contract",
+              "section_id": "first",
+              "expected_plan_revision": "sha256:fa35dabeefb2ce041545cfecb950a3fd7eee948ef3823cdc14f3f29d29288183",
+              "expected_contract_revision": null,
+              "expected_reader_basis": {
+                "schema_version": "laplace.reader-basis/1",
+                "project": "book",
+                "path": "synthetics papers/book/manuscript/section_contracts.json",
+                "section_id": "first",
+                "subject_id": "first",
+                "subject_revision": "sha256:74234e98afe7498fb5daf1f36ac2d78acc339464f950703b8c019892f982b90b",
+                "inputs": {
+                  "plan-section": "sha256:b25414354a6df71671dface4aec0fcf679323d9ef49aa089afa65faffb34f007",
+                  "architecture": "sha256:8838870b3b9c1733e13e6977ef8aabf1eb35bf69539e977d1a59d5973f7d24a9",
+                  "concept:concept:first": "sha256:97018db06cd4e0a7b2a9ef1899639f111165e6635c9ec031eab1166224d75a4a"
+                },
+                "unobserved_inputs": []
+              }
+            },
+            "http": {
+              "method": "POST",
+              "route": "/work/structure/change"
+            },
+            "fields": [
+              {
+                "name": "function",
+                "label": "Function",
+                "type": "string",
+                "multiline": true
+              },
+              {
+                "name": "question_answered",
+                "label": "Question answered",
+                "type": "string",
+                "multiline": true
+              },
+              {
+                "name": "entry_state",
+                "label": "Entry state",
+                "type": "string",
+                "multiline": true
+              },
+              {
+                "name": "exit_state",
+                "label": "Exit state",
+                "type": "string",
+                "multiline": true
+              },
+              {
+                "name": "permitted_recap",
+                "label": "Permitted recap",
+                "type": "string",
+                "multiline": true
+              },
+              {
+                "name": "depends_on",
+                "label": "Depends on",
+                "type": "string_array",
+                "choices": [
+                  {
+                    "value": "first-child",
+                    "label": "First child",
+                    "read": {
+                      "operation": "structure",
+                      "payload": {
+                        "view": "detail",
+                        "section_ids": [
+                          "first-child"
+                        ]
+                      },
+                      "http": {
+                        "method": "GET",
+                        "route": "/work/structure",
+                        "query": {
+                          "project": "book",
+                          "view": "detail",
+                          "section_ids": [
+                            "first-child"
+                          ]
+                        }
+                      }
+                    }
+                  },
+                  {
+                    "value": "second",
+                    "label": "Second",
+                    "read": {
+                      "operation": "structure",
+                      "payload": {
+                        "view": "detail",
+                        "section_ids": [
+                          "second"
+                        ]
+                      },
+                      "http": {
+                        "method": "GET",
+                        "route": "/work/structure",
+                        "query": {
+                          "project": "book",
+                          "view": "detail",
+                          "section_ids": [
+                            "second"
+                          ]
+                        }
+                      }
+                    }
+                  }
+                ]
+              },
+              {
+                "name": "forward_uses",
+                "label": "Forward uses",
+                "type": "string_array",
+                "choices": [
+                  {
+                    "value": "first-child",
+                    "label": "First child",
+                    "read": {
+                      "operation": "structure",
+                      "payload": {
+                        "view": "detail",
+                        "section_ids": [
+                          "first-child"
+                        ]
+                      },
+                      "http": {
+                        "method": "GET",
+                        "route": "/work/structure",
+                        "query": {
+                          "project": "book",
+                          "view": "detail",
+                          "section_ids": [
+                            "first-child"
+                          ]
+                        }
+                      }
+                    }
+                  },
+                  {
+                    "value": "second",
+                    "label": "Second",
+                    "read": {
+                      "operation": "structure",
+                      "payload": {
+                        "view": "detail",
+                        "section_ids": [
+                          "second"
+                        ]
+                      },
+                      "http": {
+                        "method": "GET",
+                        "route": "/work/structure",
+                        "query": {
+                          "project": "book",
+                          "view": "detail",
+                          "section_ids": [
+                            "second"
+                          ]
+                        }
+                      }
+                    }
+                  }
+                ]
+              },
+              {
+                "name": "citations",
+                "label": "Citations",
+                "type": "string_array",
+                "choices": []
+              },
+              {
+                "name": "equations",
+                "label": "Equations",
+                "type": "string_array",
+                "choices": []
+              },
+              {
+                "name": "figures",
+                "label": "Figures",
+                "type": "string_array",
+                "choices": []
+              },
+              {
+                "name": "tables",
+                "label": "Tables",
+                "type": "string_array",
+                "choices": []
+              }
+            ],
+            "values": {
+              "function": "",
+              "question_answered": "",
+              "entry_state": "",
+              "exit_state": "",
+              "permitted_recap": "",
+              "depends_on": [],
+              "forward_uses": [],
+              "citations": [],
+              "equations": [],
+              "figures": [],
+              "tables": []
+            },
+            "choices_read": {
+              "operation": "structure",
+              "payload": {
+                "view": "detail",
+                "section_ids": [
+                  "first"
+                ],
+                "edit_choices": true
+              },
+              "http": {
+                "method": "GET",
+                "route": "/work/structure",
+                "query": {
+                  "project": "book",
+                  "view": "detail",
+                  "section_ids": [
+                    "first"
+                  ],
+                  "edit_choices": true
+                }
+              }
+            }
+          },
+          "review_action": {
+            "operation": "task",
+            "payload": {
+              "title": "Review reader transition: first",
+              "goal": "Review the authored transition or paragraph for intelligibility, support and continuity on this exact basis. Record evidence and findings; current inputs alone do not establish acceptance.",
+              "kind": "reader-review",
+              "section_ids": [
+                "first"
+              ],
+              "reader_basis": {
+                "schema_version": "laplace.reader-basis/1",
+                "project": "book",
+                "path": "synthetics papers/book/manuscript/section_contracts.json",
+                "section_id": "first",
+                "subject_id": "first",
+                "subject_revision": "sha256:74234e98afe7498fb5daf1f36ac2d78acc339464f950703b8c019892f982b90b",
+                "inputs": {
+                  "plan-section": "sha256:b25414354a6df71671dface4aec0fcf679323d9ef49aa089afa65faffb34f007",
+                  "architecture": "sha256:8838870b3b9c1733e13e6977ef8aabf1eb35bf69539e977d1a59d5973f7d24a9",
+                  "concept:concept:first": "sha256:97018db06cd4e0a7b2a9ef1899639f111165e6635c9ec031eab1166224d75a4a"
+                },
+                "unobserved_inputs": []
+              }
+            },
+            "http": {
+              "method": "POST",
+              "route": "/work/task"
+            }
+          }
+        },
+        "paragraph_plan": {
+          "section_id": "first",
+          "status": "NOT_DECLARED",
+          "revision": null,
+          "identity_status": "STABLE",
+          "read_handle": {
+            "operation": "structure",
+            "payload": {
+              "view": "detail",
+              "section_ids": [
+                "first"
+              ]
+            },
+            "http": {
+              "method": "GET",
+              "route": "/work/structure",
+              "query": {
+                "project": "book",
+                "view": "detail",
+                "section_ids": [
+                  "first"
+                ]
+              }
+            }
+          },
+          "paragraphs": {
+            "items": [],
+            "total": 0,
+            "offset": 0,
+            "limit": 20,
+            "next_read": null
+          },
+          "create_action": {
+            "operation": "structure_change",
+            "payload": {
+              "operation": "paragraph_plan",
+              "section_id": "first",
+              "expected_plan_revision": "sha256:fa35dabeefb2ce041545cfecb950a3fd7eee948ef3823cdc14f3f29d29288183",
+              "expected_narrative_revision": null,
+              "expected_reader_basis": {
+                "schema_version": "laplace.reader-basis/1",
+                "project": "book",
+                "path": "synthetics papers/book/manuscript/narrative/first.json",
+                "section_id": "first",
+                "subject_id": "first-p36456703742131136201844960223",
+                "subject_revision": "sha256:74234e98afe7498fb5daf1f36ac2d78acc339464f950703b8c019892f982b90b",
+                "inputs": {
+                  "plan-section": "sha256:b25414354a6df71671dface4aec0fcf679323d9ef49aa089afa65faffb34f007",
+                  "architecture": "sha256:8838870b3b9c1733e13e6977ef8aabf1eb35bf69539e977d1a59d5973f7d24a9",
+                  "reader-transition": "sha256:74234e98afe7498fb5daf1f36ac2d78acc339464f950703b8c019892f982b90b",
+                  "reader-neighbors": "sha256:3d6f4be21e5fb46a339e73b26ef3729b418169c013433e962a54ba0130732d85",
+                  "concept:concept:first": "sha256:97018db06cd4e0a7b2a9ef1899639f111165e6635c9ec031eab1166224d75a4a"
+                },
+                "unobserved_inputs": []
+              },
+              "action": "upsert",
+              "paragraph_id": "first-p36456703742131136201844960223",
+              "create": true
+            },
+            "http": {
+              "method": "POST",
+              "route": "/work/structure/change"
+            },
+            "fields": [
+              {
+                "name": "function",
+                "label": "Function",
+                "type": "string",
+                "multiline": true
+              },
+              {
+                "name": "proposition",
+                "label": "Proposition",
+                "type": "string",
+                "multiline": true
+              },
+              {
+                "name": "explanation",
+                "label": "Explanation",
+                "type": "string",
+                "multiline": true
+              },
+              {
+                "name": "derivation_detail",
+                "label": "Derivation detail",
+                "type": "string",
+                "multiline": true
+              },
+              {
+                "name": "equation_anchor",
+                "label": "Equation anchor",
+                "type": "string",
+                "multiline": true
+              },
+              {
+                "name": "figure_anchor",
+                "label": "Figure anchor",
+                "type": "string",
+                "multiline": true
+              },
+              {
+                "name": "qualification",
+                "label": "Qualification",
+                "type": "string",
+                "multiline": true
+              },
+              {
+                "name": "from_previous",
+                "label": "From previous",
+                "type": "string",
+                "multiline": true
+              },
+              {
+                "name": "to_next",
+                "label": "To next",
+                "type": "string",
+                "multiline": true
+              },
+              {
+                "name": "detail_level",
+                "label": "Detail level",
+                "type": "string",
+                "multiline": true
+              },
+              {
+                "name": "length_range",
+                "label": "Length range",
+                "type": "string",
+                "multiline": true
+              },
+              {
+                "name": "input_nodes",
+                "label": "Input nodes",
+                "type": "string_array",
+                "choices": []
+              },
+              {
+                "name": "citations",
+                "label": "Citations",
+                "type": "string_array",
+                "choices": []
+              }
+            ],
+            "values": {
+              "function": "",
+              "proposition": "",
+              "explanation": "",
+              "derivation_detail": "",
+              "equation_anchor": "",
+              "figure_anchor": "",
+              "qualification": "",
+              "from_previous": "",
+              "to_next": "",
+              "detail_level": "",
+              "length_range": "",
+              "input_nodes": [],
+              "citations": []
+            },
+            "placement": {
+              "kind": "APPEND",
+              "after_paragraph_id": null
+            },
+            "choices_read": {
+              "operation": "structure",
+              "payload": {
+                "view": "detail",
+                "section_ids": [
+                  "first"
+                ],
+                "edit_choices": true
+              },
+              "http": {
+                "method": "GET",
+                "route": "/work/structure",
+                "query": {
+                  "project": "book",
+                  "view": "detail",
+                  "section_ids": [
+                    "first"
+                  ],
+                  "edit_choices": true
+                }
+              }
+            }
+          },
+          "reorder_action": {
+            "operation": "structure_change",
+            "payload": {
+              "operation": "paragraph_plan",
+              "section_id": "first",
+              "expected_plan_revision": "sha256:fa35dabeefb2ce041545cfecb950a3fd7eee948ef3823cdc14f3f29d29288183",
+              "expected_narrative_revision": null,
+              "expected_reader_basis": {
+                "schema_version": "laplace.reader-basis/1",
+                "project": "book",
+                "path": "synthetics papers/book/manuscript/narrative/first.json",
+                "section_id": "first",
+                "subject_id": "@order",
+                "subject_revision": "sha256:4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+                "inputs": {
+                  "plan-section": "sha256:b25414354a6df71671dface4aec0fcf679323d9ef49aa089afa65faffb34f007",
+                  "architecture": "sha256:8838870b3b9c1733e13e6977ef8aabf1eb35bf69539e977d1a59d5973f7d24a9",
+                  "reader-transition": "sha256:74234e98afe7498fb5daf1f36ac2d78acc339464f950703b8c019892f982b90b",
+                  "concept:concept:first": "sha256:97018db06cd4e0a7b2a9ef1899639f111165e6635c9ec031eab1166224d75a4a"
+                },
+                "unobserved_inputs": []
+              },
+              "action": "reorder",
+              "order": []
+            },
+            "http": {
+              "method": "POST",
+              "route": "/work/structure/change"
+            },
+            "fields": [],
+            "values": {},
+            "choices": []
+          }
+        },
+        "reader_inputs": {
+          "architecture_prior": {
+            "family": "architecture",
+            "scope": "workspace",
+            "purpose": "Structural and narrative form prior; not scientific evidence or authored reader expectations.",
+            "source": {
+              "path": "profiles/author_architecture.yaml",
+              "origin": "repository"
+            },
+            "profile_revision": null,
+            "field_refs": [],
+            "editable": false,
+            "edit_reason": "This bounded profile input is read-only; shared profile editing and generated candidate application are not implemented here.",
+            "read_more": {
+              "operation": "structure",
+              "payload": {
+                "view": "architecture-profile"
+              }
+            },
+            "currentness_basis": "Current profile bytes only; no scientific acceptance or reader comprehension is asserted.",
+            "status": "ABSENT",
+            "reason": "This workspace has no recorded architecture prior; authored reader contracts remain available.",
+            "currentness": "UNAVAILABLE",
+            "revision": "sha256:08618e805c18b0aa6887829eafbd38e9e89662d38603c4ba3d5826c1791292bc",
+            "effective_projection": {
+              "fields": {},
+              "summary": "",
+              "revision": "sha256:8838870b3b9c1733e13e6977ef8aabf1eb35bf69539e977d1a59d5973f7d24a9"
+            }
+          }
+        }
+      }
+    ],
+    "boundaries": [
+      {
+        "id": "first-child",
+        "title": "First child",
+        "kind": "section",
+        "parent_id": "first",
+        "number": "1.1",
+        "job": "support",
+        "child_ids": []
+      }
+    ],
+    "structure_observation": {
+      "plan_revision": "sha256:fa35dabeefb2ce041545cfecb950a3fd7eee948ef3823cdc14f3f29d29288183",
+      "spine_revision": "sha256:4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "selection_identity": "sha256:f35f374570dbc183d4aec769c50fb55b0860b11e94183950c18db51bd357ed65",
+      "source_files": [
+        {
+          "file": "synthetics papers/book/manuscript/chapters/chapter-01.tex",
+          "source_digest": "sha256:a3f9c9c474d5c0b6ae33ea349ddf6d0f11be41f3347f7a130309571f5aa47bce"
+        }
+      ],
+      "reader_subjects": [
+        {
+          "schema_version": "laplace.reader-basis/1",
+          "project": "book",
+          "path": "synthetics papers/book/manuscript/section_contracts.json",
+          "section_id": "first",
+          "subject_id": "first",
+          "subject_revision": "sha256:74234e98afe7498fb5daf1f36ac2d78acc339464f950703b8c019892f982b90b",
+          "inputs": {
+            "plan-section": "sha256:b25414354a6df71671dface4aec0fcf679323d9ef49aa089afa65faffb34f007",
+            "architecture": "sha256:8838870b3b9c1733e13e6977ef8aabf1eb35bf69539e977d1a59d5973f7d24a9",
+            "concept:concept:first": "sha256:97018db06cd4e0a7b2a9ef1899639f111165e6635c9ec031eab1166224d75a4a"
+          },
+          "unobserved_inputs": []
+        }
+      ]
+    },
+    "spine": [],
+    "ancestors": [],
+    "children": [
+      {
+        "id": "first-child",
+        "title": "First child",
+        "kind": "section",
+        "parent_id": "first",
+        "number": "1.1",
+        "job": "support",
+        "child_ids": []
+      }
+    ],
+    "outline": [
+      {
+        "id": "first",
+        "title": "First",
+        "kind": "chapter",
+        "parent_id": null,
+        "number": "1",
+        "job": "open",
+        "child_ids": [
+          "first-child"
+        ]
+      },
+      {
+        "id": "second",
+        "title": "Second",
+        "kind": "chapter",
+        "parent_id": null,
+        "number": "2",
+        "job": "close",
+        "child_ids": []
+      }
+    ],
+    "focus": null,
+    "edges": [],
+    "evidence": [],
+    "gaps": [
+      {
+        "kind": "node",
+        "id": "concept:first",
+        "reason": "plan membership names an unavailable conceptric node"
+      }
+    ],
+    "selected_node_ids": [],
+    "selected_nodes_total": 0,
+    "selected_nodes": [],
+    "selected_nodes_omitted": 0,
+    "selected_node_read_routes": {
+      "concept": {
+        "operation": "concept",
+        "payload": {
+          "node": "<selected_node_id>"
+        }
+      },
+      "history": {
+        "operation": "concept_history",
+        "payload": {
+          "node": "<selected_node_id>"
+        }
+      },
+      "tree": {
+        "operation": "concept_tree",
+        "payload": {
+          "node": "<selected_node_id>"
+        }
+      }
+    },
+    "evidence_total": 0,
+    "evidence_omitted": 0,
+    "gaps_total": 1,
+    "gaps_omitted": 0,
+    "scoped_history": [],
+    "scoped_history_omitted": 0,
+    "direct_dependencies": [],
+    "scope_diagnostics": [],
+    "source_support": [
+      {
+        "node": "concept:first",
+        "meaning_revision": "sha256:b01ad77de576569ba992bc4ade24fc71cb597672b8dc44a28b7d3baa56b62cba",
+        "citation_assessment": "CANONICAL_SECTIONS",
+        "sources": [],
+        "own_evidence": [],
+        "authored_proof": false,
+        "documented_proof": {
+          "status": "NOT_RECORDED",
+          "source": null
+        },
+        "declared_role": null,
+        "gaps": [],
+        "qualification": "AUTHORED_BASIS",
+        "independent_verification": "NOT_ASSERTED",
+        "engineering_support": {
+          "status": "UNDECLARED",
+          "bindings": [],
+          "reason": "No engineering support has been adopted",
+          "read_metrics": {}
+        }
+      }
+    ],
+    "source_support_total": 1,
+    "source_support_omitted": 0
+  },
+  "contract_write": {
+    "id": "ART-26aea28e928e4cd1bf4776f121db463a",
+    "saved": "synthetics papers/book/manuscript/section_contracts.json",
+    "path": "synthetics papers/book/manuscript/section_contracts.json",
+    "artifact_path": "manuscript/section_contracts.json",
+    "scope": "project",
+    "revision": "sha256:773882e738f7f093b43a94934d6f43d0d3e84b4bd9e55e481aff5f6a09ef5428",
+    "record_id": "ART-26aea28e928e4cd1bf4776f121db463a",
+    "read_handle": {
+      "operation": "structure",
+      "payload": {
+        "view": "detail",
+        "section_ids": [
+          "first"
+        ]
+      },
+      "http": {
+        "method": "GET",
+        "route": "/work/structure",
+        "query": {
+          "project": "book",
+          "view": "detail",
+          "section_ids": [
+            "first"
+          ]
+        }
+      }
+    },
+    "read_more": {
+      "operation": "read_artifact",
+      "payload": {
+        "id": "ART-26aea28e928e4cd1bf4776f121db463a"
+      }
+    },
+    "human_read": {
+      "project": "book",
+      "path": "manuscript/section_contracts.json",
+      "scope": "project",
+      "expected_sha256": "773882e738f7f093b43a94934d6f43d0d3e84b4bd9e55e481aff5f6a09ef5428",
+      "owner": "writing-artifact",
+      "artifact_id": "ART-26aea28e928e4cd1bf4776f121db463a",
+      "url": "/research/artifact?project=book&scope=project&path=manuscript%2Fsection_contracts.json&expected_sha256=773882e738f7f093b43a94934d6f43d0d3e84b4bd9e55e481aff5f6a09ef5428&owner=writing-artifact&artifact_id=ART-26aea28e928e4cd1bf4776f121db463a",
+      "http": {
+        "method": "GET",
+        "url": "/research/artifact?project=book&scope=project&path=manuscript%2Fsection_contracts.json&expected_sha256=773882e738f7f093b43a94934d6f43d0d3e84b4bd9e55e481aff5f6a09ef5428&owner=writing-artifact&artifact_id=ART-26aea28e928e4cd1bf4776f121db463a"
+      }
+    },
+    "link_instruction": "Use human_read.url verbatim for user-facing Markdown links. Artifact paths are owner coordinates, not paths under the provider working directory. The link reads the pinned bytes; changed bytes remain an explicit refusal.",
+    "owned_changes": {
+      "schema_version": "laplace.owner-mutation/1",
+      "files": [
+        {
+          "scope": "repository",
+          "path": "synthetics papers/book/manuscript/section_contracts.json",
+          "before_sha256": null,
+          "after_sha256": "sha256:773882e738f7f093b43a94934d6f43d0d3e84b4bd9e55e481aff5f6a09ef5428",
+          "observed_after_sha256": "sha256:773882e738f7f093b43a94934d6f43d0d3e84b4bd9e55e481aff5f6a09ef5428"
+        }
+      ],
+      "objects": [],
+      "rewire_records": [],
+      "views": [
+        "research",
+        "artifact"
+      ]
+    },
+    "effects": [
+      "structure",
+      "reader-state"
+    ],
+    "operation": "section_contract",
+    "section_id": "first",
+    "paragraph_id": null,
+    "changed": true,
+    "consumed_revision": null,
+    "subject_revision": "sha256:02ed9c6ad3cce2d2f02f5396abb5cc6bb994491e353cd66681ebd0fbd4d5fc4a",
+    "reader_basis": {
+      "schema_version": "laplace.reader-basis/1",
+      "project": "book",
+      "path": "synthetics papers/book/manuscript/section_contracts.json",
+      "section_id": "first",
+      "subject_id": "first",
+      "subject_revision": "sha256:02ed9c6ad3cce2d2f02f5396abb5cc6bb994491e353cd66681ebd0fbd4d5fc4a",
+      "inputs": {
+        "plan-section": "sha256:b25414354a6df71671dface4aec0fcf679323d9ef49aa089afa65faffb34f007",
+        "architecture": "sha256:8838870b3b9c1733e13e6977ef8aabf1eb35bf69539e977d1a59d5973f7d24a9",
+        "concept:concept:first": "sha256:97018db06cd4e0a7b2a9ef1899639f111165e6635c9ec031eab1166224d75a4a"
+      },
+      "unobserved_inputs": []
+    },
+    "input_currentness": {
+      "status": "CURRENT",
+      "changed_inputs": [],
+      "unobserved_inputs": [],
+      "reads": [
+        {
+          "operation": "structure",
+          "payload": {
+            "view": "detail",
+            "section_ids": [
+              "first"
+            ]
+          },
+          "http": {
+            "method": "GET",
+            "route": "/work/structure",
+            "query": {
+              "project": "book",
+              "view": "detail",
+              "section_ids": [
+                "first"
+              ]
+            }
+          }
+        }
+      ]
+    },
+    "plan_publication": {
+      "owner": "reader-contract",
+      "status": "COMMITTED",
+      "complete": true,
+      "ledger_append_count": 1,
+      "next_reads": [
+        {
+          "operation": "structure",
+          "payload": {
+            "view": "full"
+          }
+        }
+      ]
+    }
+  },
+  "paragraph_write": {
+    "id": "ART-38739b0d39114261844fe544db6748c2",
+    "saved": "synthetics papers/book/manuscript/narrative/first.json",
+    "path": "synthetics papers/book/manuscript/narrative/first.json",
+    "artifact_path": "manuscript/narrative/first.json",
+    "scope": "project",
+    "revision": "sha256:0aa6be8b9ba29333d24123d7831bf0d77907bfcfc48941da875f7df06319b68f",
+    "record_id": "ART-38739b0d39114261844fe544db6748c2",
+    "read_handle": {
+      "operation": "structure",
+      "payload": {
+        "view": "detail",
+        "section_ids": [
+          "first"
+        ]
+      },
+      "http": {
+        "method": "GET",
+        "route": "/work/structure",
+        "query": {
+          "project": "book",
+          "view": "detail",
+          "section_ids": [
+            "first"
+          ]
+        }
+      }
+    },
+    "read_more": {
+      "operation": "read_artifact",
+      "payload": {
+        "id": "ART-38739b0d39114261844fe544db6748c2"
+      }
+    },
+    "human_read": {
+      "project": "book",
+      "path": "manuscript/narrative/first.json",
+      "scope": "project",
+      "expected_sha256": "0aa6be8b9ba29333d24123d7831bf0d77907bfcfc48941da875f7df06319b68f",
+      "owner": "writing-artifact",
+      "artifact_id": "ART-38739b0d39114261844fe544db6748c2",
+      "url": "/research/artifact?project=book&scope=project&path=manuscript%2Fnarrative%2Ffirst.json&expected_sha256=0aa6be8b9ba29333d24123d7831bf0d77907bfcfc48941da875f7df06319b68f&owner=writing-artifact&artifact_id=ART-38739b0d39114261844fe544db6748c2",
+      "http": {
+        "method": "GET",
+        "url": "/research/artifact?project=book&scope=project&path=manuscript%2Fnarrative%2Ffirst.json&expected_sha256=0aa6be8b9ba29333d24123d7831bf0d77907bfcfc48941da875f7df06319b68f&owner=writing-artifact&artifact_id=ART-38739b0d39114261844fe544db6748c2"
+      }
+    },
+    "link_instruction": "Use human_read.url verbatim for user-facing Markdown links. Artifact paths are owner coordinates, not paths under the provider working directory. The link reads the pinned bytes; changed bytes remain an explicit refusal.",
+    "owned_changes": {
+      "schema_version": "laplace.owner-mutation/1",
+      "files": [
+        {
+          "scope": "repository",
+          "path": "synthetics papers/book/manuscript/narrative/first.json",
+          "before_sha256": null,
+          "after_sha256": "sha256:0aa6be8b9ba29333d24123d7831bf0d77907bfcfc48941da875f7df06319b68f",
+          "observed_after_sha256": "sha256:0aa6be8b9ba29333d24123d7831bf0d77907bfcfc48941da875f7df06319b68f"
+        }
+      ],
+      "objects": [],
+      "rewire_records": [],
+      "views": [
+        "research",
+        "artifact"
+      ]
+    },
+    "effects": [
+      "structure",
+      "reader-state"
+    ],
+    "operation": "paragraph_plan",
+    "section_id": "first",
+    "paragraph_id": "first-p36456703742131136201844960223",
+    "changed": true,
+    "consumed_revision": null,
+    "subject_revision": "sha256:0916d9023fbba7868719445f69b034045a2423373f0bb6111260b9d7eef4d1e1",
+    "reader_basis": {
+      "schema_version": "laplace.reader-basis/1",
+      "project": "book",
+      "path": "synthetics papers/book/manuscript/narrative/first.json",
+      "section_id": "first",
+      "subject_id": "first-p36456703742131136201844960223",
+      "subject_revision": "sha256:0916d9023fbba7868719445f69b034045a2423373f0bb6111260b9d7eef4d1e1",
+      "inputs": {
+        "plan-section": "sha256:b25414354a6df71671dface4aec0fcf679323d9ef49aa089afa65faffb34f007",
+        "architecture": "sha256:8838870b3b9c1733e13e6977ef8aabf1eb35bf69539e977d1a59d5973f7d24a9",
+        "reader-transition": "sha256:02ed9c6ad3cce2d2f02f5396abb5cc6bb994491e353cd66681ebd0fbd4d5fc4a",
+        "reader-neighbors": "sha256:3d6f4be21e5fb46a339e73b26ef3729b418169c013433e962a54ba0130732d85",
+        "concept:concept:first": "sha256:97018db06cd4e0a7b2a9ef1899639f111165e6635c9ec031eab1166224d75a4a"
+      },
+      "unobserved_inputs": []
+    },
+    "input_currentness": {
+      "status": "CURRENT",
+      "changed_inputs": [],
+      "unobserved_inputs": [],
+      "reads": [
+        {
+          "operation": "structure",
+          "payload": {
+            "view": "detail",
+            "section_ids": [
+              "first"
+            ]
+          },
+          "http": {
+            "method": "GET",
+            "route": "/work/structure",
+            "query": {
+              "project": "book",
+              "view": "detail",
+              "section_ids": [
+                "first"
+              ]
+            }
+          }
+        }
+      ]
+    },
+    "plan_publication": {
+      "owner": "paragraph-plan",
+      "status": "COMMITTED",
+      "complete": true,
+      "ledger_append_count": 1,
+      "next_reads": [
+        {
+          "operation": "structure",
+          "payload": {
+            "view": "full"
+          }
+        }
+      ]
+    }
+  },
+  "detail": {
+    "schema_version": "laplace.project-structure-context/1",
+    "project": "book",
+    "full_guard_read": {
+      "operation": "structure",
+      "payload": {
+        "view": "full"
+      }
+    },
+    "revision": "sha256:2a1aceff287b0b9c862ac10b8bd9b08d4a93dca9719db034f40b57b03d19d6e8",
+    "structure_revision": null,
+    "eligible_for_authoring": true,
+    "authority": {
+      "plan_path": "synthetics papers/book/manuscript/projection_plan.json",
+      "spine_revision": "sha256:4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "plan_revision": "sha256:fa35dabeefb2ce041545cfecb950a3fd7eee948ef3823cdc14f3f29d29288183",
+      "conceptric_revision": "sha256:ee6597c03f4d8c348ef5d7d83f7073ae18878e2b73c2f581000e960acc7a886f",
+      "research_revision": "sha256:4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "source_revision": "ec39e3cc81c7317c551fd654cd100571f43b76f57ee8d6103a21e0f192b568f5"
+    },
+    "selected_source": {
+      "root": "synthetics papers/book/manuscript/Fixture-Book.tex",
+      "manuscript_dir": "synthetics papers/book/manuscript",
+      "edition": "draft",
+      "status": "resolved",
+      "revision": "ec39e3cc81c7317c551fd654cd100571f43b76f57ee8d6103a21e0f192b568f5",
+      "read_only": false,
+      "selection_identity": "sha256:f35f374570dbc183d4aec769c50fb55b0860b11e94183950c18db51bd357ed65"
+    },
+    "sections": [
+      {
+        "id": "first",
+        "collection": "sections",
+        "title": "First",
+        "kind": "chapter",
+        "parent_id": null,
+        "depth": 0,
+        "number": "1",
+        "ancestor_ids": [],
+        "child_ids": [
+          "first-child"
+        ],
+        "order": 0,
+        "job": "open",
+        "notes": "",
+        "refs": [],
+        "node_ids": [
+          "concept:first"
+        ],
+        "nodes": [
+          {
+            "id": "concept:first",
+            "label": "concept:first",
+            "missing": true,
+            "kind": null,
+            "status": "MISSING",
+            "summary": "",
+            "result_bindings": []
+          }
+        ],
+        "beat_ids": [],
+        "beats": [],
+        "source": {
+          "section_id": "first",
+          "source_files": [
+            "synthetics papers/book/manuscript/chapters/chapter-01.tex"
+          ],
+          "status": "MATCHED",
+          "precision": "FILE_ONLY",
+          "title_status": "MATCHED",
+          "plan_title": "First",
+          "source_titles": [
+            "First"
+          ],
+          "source_label": null,
+          "heading": {
+            "file": "synthetics papers/book/manuscript/chapters/chapter-01.tex",
+            "line": 1,
+            "line_end": 4,
+            "heading_line_end": 1,
+            "title": "First",
+            "kind": "chapter",
+            "label": null,
+            "heading_before": "\\chapter{First}",
+            "source_order": 1,
+            "source_orders": [
+              1
+            ]
+          },
+          "basis": {
+            "synthetics papers/book/manuscript/chapters/chapter-01.tex": {
+              "selection_identity": "sha256:f35f374570dbc183d4aec769c50fb55b0860b11e94183950c18db51bd357ed65",
+              "source_digest": "sha256:a3f9c9c474d5c0b6ae33ea349ddf6d0f11be41f3347f7a130309571f5aa47bce"
+            }
+          },
+          "mapping": "explicit-source-file",
+          "selected_root": "synthetics papers/book/manuscript/Fixture-Book.tex",
+          "source_reads": [
+            {
+              "operation": "source",
+              "payload": {
+                "files": [
+                  "synthetics papers/book/manuscript/chapters/chapter-01.tex"
+                ]
+              },
+              "http": {
+                "method": "GET",
+                "route": "/projection/tex",
+                "query": {
+                  "corpus": "book",
+                  "file": "synthetics papers/book/manuscript/chapters/chapter-01.tex",
+                  "view": "source"
+                }
+              }
+            }
+          ],
+          "clearing_read": {
+            "operation": "structure",
+            "payload": {
+              "view": "outline"
+            }
+          }
+        },
+        "clearing_action": {
+          "operation": "structure_change",
+          "payload": {
+            "operation": "bind_source",
+            "section_id": "first",
+            "expected_plan_revision": "sha256:fa35dabeefb2ce041545cfecb950a3fd7eee948ef3823cdc14f3f29d29288183"
+          },
+          "http": {
+            "method": "POST",
+            "route": "/work/structure/change"
+          },
+          "choose_from": {
+            "operation": "structure",
+            "payload": {
+              "view": "outline"
+            },
+            "http": {
+              "method": "GET",
+              "route": "/work/structure",
+              "query": {
+                "project": "book",
+                "view": "outline"
+              }
+            }
+          },
+          "required_occurrence_fields": [
+            "file",
+            "line",
+            "heading_before",
+            "expected_selection",
+            "expected_source_digest"
+          ]
+        },
+        "source_support": [
+          {
+            "node": "concept:first",
+            "meaning_revision": "sha256:b01ad77de576569ba992bc4ade24fc71cb597672b8dc44a28b7d3baa56b62cba",
+            "citation_assessment": "CANONICAL_SECTIONS",
+            "sources": [],
+            "own_evidence": [],
+            "authored_proof": false,
+            "documented_proof": {
+              "status": "NOT_RECORDED",
+              "source": null
+            },
+            "declared_role": null,
+            "gaps": [],
+            "qualification": "AUTHORED_BASIS",
+            "independent_verification": "NOT_ASSERTED",
+            "engineering_support": {
+              "status": "UNDECLARED",
+              "bindings": [],
+              "reason": "No engineering support has been adopted",
+              "read_metrics": {}
+            }
+          }
+        ],
+        "evidence": [],
+        "reader_transition": {
+          "section_id": "first",
+          "status": "DECLARED",
+          "fields": {
+            "section_id": "first",
+            "title": "First",
+            "nodes_in_order": [
+              "concept:first"
+            ],
+            "entry_state": "Knows the question",
+            "exit_state": "Understands the mechanism"
+          },
+          "revision": "sha256:773882e738f7f093b43a94934d6f43d0d3e84b4bd9e55e481aff5f6a09ef5428",
+          "subject_revision": "sha256:02ed9c6ad3cce2d2f02f5396abb5cc6bb994491e353cd66681ebd0fbd4d5fc4a",
+          "reader_basis": {
+            "schema_version": "laplace.reader-basis/1",
+            "project": "book",
+            "path": "synthetics papers/book/manuscript/section_contracts.json",
+            "section_id": "first",
+            "subject_id": "first",
+            "subject_revision": "sha256:02ed9c6ad3cce2d2f02f5396abb5cc6bb994491e353cd66681ebd0fbd4d5fc4a",
+            "inputs": {
+              "plan-section": "sha256:b25414354a6df71671dface4aec0fcf679323d9ef49aa089afa65faffb34f007",
+              "architecture": "sha256:8838870b3b9c1733e13e6977ef8aabf1eb35bf69539e977d1a59d5973f7d24a9",
+              "concept:concept:first": "sha256:97018db06cd4e0a7b2a9ef1899639f111165e6635c9ec031eab1166224d75a4a"
+            },
+            "unobserved_inputs": []
+          },
+          "input_currentness": {
+            "status": "CURRENT",
+            "unobserved_inputs": [],
+            "changed_inputs": [],
+            "reason": "Input observation is not a judgement of intelligibility or accepted review.",
+            "reads": [
+              {
+                "operation": "structure",
+                "payload": {
+                  "view": "detail",
+                  "section_ids": [
+                    "first"
+                  ]
+                },
+                "http": {
+                  "method": "GET",
+                  "route": "/work/structure",
+                  "query": {
+                    "project": "book",
+                    "view": "detail",
+                    "section_ids": [
+                      "first"
+                    ]
+                  }
+                }
+              }
+            ]
+          },
+          "review": {
+            "status": "NOT_REVIEWED",
+            "records": []
+          },
+          "read_handle": {
+            "operation": "structure",
+            "payload": {
+              "view": "detail",
+              "section_ids": [
+                "first"
+              ]
+            },
+            "http": {
+              "method": "GET",
+              "route": "/work/structure",
+              "query": {
+                "project": "book",
+                "view": "detail",
+                "section_ids": [
+                  "first"
+                ]
+              }
+            }
+          },
+          "links": [
+            {
+              "kind": "argument",
+              "label": "concept:first",
+              "status": "UNRESOLVED",
+              "read": {
+                "operation": "concept",
+                "payload": {
+                  "node": "concept:first"
+                },
+                "http": {
+                  "method": "GET",
+                  "route": "/concepts/context",
+                  "query": {
+                    "corpus": "book",
+                    "node": "concept:first"
+                  }
+                }
+              }
+            }
+          ],
+          "diagnostics": [
+            {
+              "kind": "AUTHORED_FIELD_EMPTY",
+              "field": "function",
+              "reason": "The intended reader transition has not been authored."
+            },
+            {
+              "kind": "AUTHORED_FIELD_EMPTY",
+              "field": "question_answered",
+              "reason": "The intended reader transition has not been authored."
+            },
+            {
+              "kind": "INPUT_UNRESOLVED",
+              "subject": "concept:first",
+              "status": "UNRESOLVED",
+              "reason": "Supporting input is missing, ambiguous, or stale; observation is not validation.",
+              "read": {
+                "operation": "concept",
+                "payload": {
+                  "node": "concept:first"
+                },
+                "http": {
+                  "method": "GET",
+                  "route": "/concepts/context",
+                  "query": {
+                    "corpus": "book",
+                    "node": "concept:first"
+                  }
+                }
+              }
+            }
+          ],
+          "edit_action": {
+            "operation": "structure_change",
+            "payload": {
+              "operation": "section_contract",
+              "section_id": "first",
+              "expected_plan_revision": "sha256:fa35dabeefb2ce041545cfecb950a3fd7eee948ef3823cdc14f3f29d29288183",
+              "expected_contract_revision": "sha256:773882e738f7f093b43a94934d6f43d0d3e84b4bd9e55e481aff5f6a09ef5428",
+              "expected_reader_basis": {
+                "schema_version": "laplace.reader-basis/1",
+                "project": "book",
+                "path": "synthetics papers/book/manuscript/section_contracts.json",
+                "section_id": "first",
+                "subject_id": "first",
+                "subject_revision": "sha256:02ed9c6ad3cce2d2f02f5396abb5cc6bb994491e353cd66681ebd0fbd4d5fc4a",
+                "inputs": {
+                  "plan-section": "sha256:b25414354a6df71671dface4aec0fcf679323d9ef49aa089afa65faffb34f007",
+                  "architecture": "sha256:8838870b3b9c1733e13e6977ef8aabf1eb35bf69539e977d1a59d5973f7d24a9",
+                  "concept:concept:first": "sha256:97018db06cd4e0a7b2a9ef1899639f111165e6635c9ec031eab1166224d75a4a"
+                },
+                "unobserved_inputs": []
+              }
+            },
+            "http": {
+              "method": "POST",
+              "route": "/work/structure/change"
+            },
+            "fields": [
+              {
+                "name": "function",
+                "label": "Function",
+                "type": "string",
+                "multiline": true
+              },
+              {
+                "name": "question_answered",
+                "label": "Question answered",
+                "type": "string",
+                "multiline": true
+              },
+              {
+                "name": "entry_state",
+                "label": "Entry state",
+                "type": "string",
+                "multiline": true
+              },
+              {
+                "name": "exit_state",
+                "label": "Exit state",
+                "type": "string",
+                "multiline": true
+              },
+              {
+                "name": "permitted_recap",
+                "label": "Permitted recap",
+                "type": "string",
+                "multiline": true
+              },
+              {
+                "name": "depends_on",
+                "label": "Depends on",
+                "type": "string_array",
+                "choices": [
+                  {
+                    "value": "first-child",
+                    "label": "First child",
+                    "read": {
+                      "operation": "structure",
+                      "payload": {
+                        "view": "detail",
+                        "section_ids": [
+                          "first-child"
+                        ]
+                      },
+                      "http": {
+                        "method": "GET",
+                        "route": "/work/structure",
+                        "query": {
+                          "project": "book",
+                          "view": "detail",
+                          "section_ids": [
+                            "first-child"
+                          ]
+                        }
+                      }
+                    }
+                  },
+                  {
+                    "value": "second",
+                    "label": "Second",
+                    "read": {
+                      "operation": "structure",
+                      "payload": {
+                        "view": "detail",
+                        "section_ids": [
+                          "second"
+                        ]
+                      },
+                      "http": {
+                        "method": "GET",
+                        "route": "/work/structure",
+                        "query": {
+                          "project": "book",
+                          "view": "detail",
+                          "section_ids": [
+                            "second"
+                          ]
+                        }
+                      }
+                    }
+                  }
+                ]
+              },
+              {
+                "name": "forward_uses",
+                "label": "Forward uses",
+                "type": "string_array",
+                "choices": [
+                  {
+                    "value": "first-child",
+                    "label": "First child",
+                    "read": {
+                      "operation": "structure",
+                      "payload": {
+                        "view": "detail",
+                        "section_ids": [
+                          "first-child"
+                        ]
+                      },
+                      "http": {
+                        "method": "GET",
+                        "route": "/work/structure",
+                        "query": {
+                          "project": "book",
+                          "view": "detail",
+                          "section_ids": [
+                            "first-child"
+                          ]
+                        }
+                      }
+                    }
+                  },
+                  {
+                    "value": "second",
+                    "label": "Second",
+                    "read": {
+                      "operation": "structure",
+                      "payload": {
+                        "view": "detail",
+                        "section_ids": [
+                          "second"
+                        ]
+                      },
+                      "http": {
+                        "method": "GET",
+                        "route": "/work/structure",
+                        "query": {
+                          "project": "book",
+                          "view": "detail",
+                          "section_ids": [
+                            "second"
+                          ]
+                        }
+                      }
+                    }
+                  }
+                ]
+              },
+              {
+                "name": "citations",
+                "label": "Citations",
+                "type": "string_array",
+                "choices": []
+              },
+              {
+                "name": "equations",
+                "label": "Equations",
+                "type": "string_array",
+                "choices": []
+              },
+              {
+                "name": "figures",
+                "label": "Figures",
+                "type": "string_array",
+                "choices": []
+              },
+              {
+                "name": "tables",
+                "label": "Tables",
+                "type": "string_array",
+                "choices": []
+              }
+            ],
+            "values": {
+              "function": "",
+              "question_answered": "",
+              "entry_state": "Knows the question",
+              "exit_state": "Understands the mechanism",
+              "permitted_recap": "",
+              "depends_on": [],
+              "forward_uses": [],
+              "citations": [],
+              "equations": [],
+              "figures": [],
+              "tables": []
+            },
+            "choices_read": {
+              "operation": "structure",
+              "payload": {
+                "view": "detail",
+                "section_ids": [
+                  "first"
+                ],
+                "edit_choices": true
+              },
+              "http": {
+                "method": "GET",
+                "route": "/work/structure",
+                "query": {
+                  "project": "book",
+                  "view": "detail",
+                  "section_ids": [
+                    "first"
+                  ],
+                  "edit_choices": true
+                }
+              }
+            }
+          },
+          "review_action": {
+            "operation": "task",
+            "payload": {
+              "title": "Review reader transition: first",
+              "goal": "Review the authored transition or paragraph for intelligibility, support and continuity on this exact basis. Record evidence and findings; current inputs alone do not establish acceptance.",
+              "kind": "reader-review",
+              "section_ids": [
+                "first"
+              ],
+              "reader_basis": {
+                "schema_version": "laplace.reader-basis/1",
+                "project": "book",
+                "path": "synthetics papers/book/manuscript/section_contracts.json",
+                "section_id": "first",
+                "subject_id": "first",
+                "subject_revision": "sha256:02ed9c6ad3cce2d2f02f5396abb5cc6bb994491e353cd66681ebd0fbd4d5fc4a",
+                "inputs": {
+                  "plan-section": "sha256:b25414354a6df71671dface4aec0fcf679323d9ef49aa089afa65faffb34f007",
+                  "architecture": "sha256:8838870b3b9c1733e13e6977ef8aabf1eb35bf69539e977d1a59d5973f7d24a9",
+                  "concept:concept:first": "sha256:97018db06cd4e0a7b2a9ef1899639f111165e6635c9ec031eab1166224d75a4a"
+                },
+                "unobserved_inputs": []
+              }
+            },
+            "http": {
+              "method": "POST",
+              "route": "/work/task"
+            }
+          }
+        },
+        "paragraph_plan": {
+          "section_id": "first",
+          "status": "DECLARED",
+          "revision": "sha256:0aa6be8b9ba29333d24123d7831bf0d77907bfcfc48941da875f7df06319b68f",
+          "identity_status": "STABLE",
+          "read_handle": {
+            "operation": "structure",
+            "payload": {
+              "view": "detail",
+              "section_ids": [
+                "first"
+              ]
+            },
+            "http": {
+              "method": "GET",
+              "route": "/work/structure",
+              "query": {
+                "project": "book",
+                "view": "detail",
+                "section_ids": [
+                  "first"
+                ]
+              }
+            }
+          },
+          "paragraphs": {
+            "items": [
+              {
+                "section_id": "first",
+                "paragraph_id": "first-p36456703742131136201844960223",
+                "proposition": "Introduce the mechanism",
+                "explanation": "Show how the parts interact",
+                "identity_status": "STABLE",
+                "subject_revision": "sha256:0916d9023fbba7868719445f69b034045a2423373f0bb6111260b9d7eef4d1e1",
+                "reader_basis": {
+                  "schema_version": "laplace.reader-basis/1",
+                  "project": "book",
+                  "path": "synthetics papers/book/manuscript/narrative/first.json",
+                  "section_id": "first",
+                  "subject_id": "first-p36456703742131136201844960223",
+                  "subject_revision": "sha256:0916d9023fbba7868719445f69b034045a2423373f0bb6111260b9d7eef4d1e1",
+                  "inputs": {
+                    "plan-section": "sha256:b25414354a6df71671dface4aec0fcf679323d9ef49aa089afa65faffb34f007",
+                    "architecture": "sha256:8838870b3b9c1733e13e6977ef8aabf1eb35bf69539e977d1a59d5973f7d24a9",
+                    "reader-transition": "sha256:02ed9c6ad3cce2d2f02f5396abb5cc6bb994491e353cd66681ebd0fbd4d5fc4a",
+                    "reader-neighbors": "sha256:3d6f4be21e5fb46a339e73b26ef3729b418169c013433e962a54ba0130732d85",
+                    "concept:concept:first": "sha256:97018db06cd4e0a7b2a9ef1899639f111165e6635c9ec031eab1166224d75a4a"
+                  },
+                  "unobserved_inputs": []
+                },
+                "input_currentness": {
+                  "status": "CURRENT",
+                  "unobserved_inputs": [],
+                  "changed_inputs": [],
+                  "reason": "Input observation is not a judgement of intelligibility or accepted review.",
+                  "reads": [
+                    {
+                      "operation": "structure",
+                      "payload": {
+                        "view": "detail",
+                        "section_ids": [
+                          "first"
+                        ],
+                        "paragraph_id": "first-p36456703742131136201844960223"
+                      },
+                      "http": {
+                        "method": "GET",
+                        "route": "/work/structure",
+                        "query": {
+                          "project": "book",
+                          "view": "detail",
+                          "section_ids": [
+                            "first"
+                          ],
+                          "paragraph_id": "first-p36456703742131136201844960223"
+                        }
+                      }
+                    }
+                  ]
+                },
+                "read_handle": {
+                  "operation": "structure",
+                  "payload": {
+                    "view": "detail",
+                    "section_ids": [
+                      "first"
+                    ],
+                    "paragraph_id": "first-p36456703742131136201844960223"
+                  },
+                  "http": {
+                    "method": "GET",
+                    "route": "/work/structure",
+                    "query": {
+                      "project": "book",
+                      "view": "detail",
+                      "section_ids": [
+                        "first"
+                      ],
+                      "paragraph_id": "first-p36456703742131136201844960223"
+                    }
+                  }
+                },
+                "links": [
+                  {
+                    "kind": "argument",
+                    "label": "concept:first",
+                    "status": "UNRESOLVED",
+                    "read": {
+                      "operation": "concept",
+                      "payload": {
+                        "node": "concept:first"
+                      },
+                      "http": {
+                        "method": "GET",
+                        "route": "/concepts/context",
+                        "query": {
+                          "corpus": "book",
+                          "node": "concept:first"
+                        }
+                      }
+                    }
+                  }
+                ],
+                "diagnostics": [
+                  {
+                    "kind": "AUTHORED_FIELD_EMPTY",
+                    "field": "function",
+                    "reason": "The intended reader transition has not been authored."
+                  },
+                  {
+                    "kind": "INPUT_UNRESOLVED",
+                    "subject": "concept:first",
+                    "status": "UNRESOLVED",
+                    "reason": "Supporting input is missing, ambiguous, or stale; observation is not validation.",
+                    "read": {
+                      "operation": "concept",
+                      "payload": {
+                        "node": "concept:first"
+                      },
+                      "http": {
+                        "method": "GET",
+                        "route": "/concepts/context",
+                        "query": {
+                          "corpus": "book",
+                          "node": "concept:first"
+                        }
+                      }
+                    }
+                  }
+                ],
+                "source_occurrences": [],
+                "mapping_precision": "LOGICAL_UNIT_TO_PHYSICAL_OCCURRENCES",
+                "lineage": {
+                  "status": "NOT_RECORDED",
+                  "items": []
+                },
+                "review": {
+                  "status": "NOT_REVIEWED",
+                  "records": []
+                },
+                "review_action": {
+                  "operation": "task",
+                  "payload": {
+                    "title": "Review reader transition: first-p36456703742131136201844960223",
+                    "goal": "Review the authored transition or paragraph for intelligibility, support and continuity on this exact basis. Record evidence and findings; current inputs alone do not establish acceptance.",
+                    "kind": "reader-review",
+                    "section_ids": [
+                      "first"
+                    ],
+                    "reader_basis": {
+                      "schema_version": "laplace.reader-basis/1",
+                      "project": "book",
+                      "path": "synthetics papers/book/manuscript/narrative/first.json",
+                      "section_id": "first",
+                      "subject_id": "first-p36456703742131136201844960223",
+                      "subject_revision": "sha256:0916d9023fbba7868719445f69b034045a2423373f0bb6111260b9d7eef4d1e1",
+                      "inputs": {
+                        "plan-section": "sha256:b25414354a6df71671dface4aec0fcf679323d9ef49aa089afa65faffb34f007",
+                        "architecture": "sha256:8838870b3b9c1733e13e6977ef8aabf1eb35bf69539e977d1a59d5973f7d24a9",
+                        "reader-transition": "sha256:02ed9c6ad3cce2d2f02f5396abb5cc6bb994491e353cd66681ebd0fbd4d5fc4a",
+                        "reader-neighbors": "sha256:3d6f4be21e5fb46a339e73b26ef3729b418169c013433e962a54ba0130732d85",
+                        "concept:concept:first": "sha256:97018db06cd4e0a7b2a9ef1899639f111165e6635c9ec031eab1166224d75a4a"
+                      },
+                      "unobserved_inputs": []
+                    }
+                  },
+                  "http": {
+                    "method": "POST",
+                    "route": "/work/task"
+                  }
+                },
+                "edit_action": {
+                  "operation": "structure_change",
+                  "payload": {
+                    "operation": "paragraph_plan",
+                    "section_id": "first",
+                    "expected_plan_revision": "sha256:fa35dabeefb2ce041545cfecb950a3fd7eee948ef3823cdc14f3f29d29288183",
+                    "expected_narrative_revision": "sha256:0aa6be8b9ba29333d24123d7831bf0d77907bfcfc48941da875f7df06319b68f",
+                    "expected_reader_basis": {
+                      "schema_version": "laplace.reader-basis/1",
+                      "project": "book",
+                      "path": "synthetics papers/book/manuscript/narrative/first.json",
+                      "section_id": "first",
+                      "subject_id": "first-p36456703742131136201844960223",
+                      "subject_revision": "sha256:0916d9023fbba7868719445f69b034045a2423373f0bb6111260b9d7eef4d1e1",
+                      "inputs": {
+                        "plan-section": "sha256:b25414354a6df71671dface4aec0fcf679323d9ef49aa089afa65faffb34f007",
+                        "architecture": "sha256:8838870b3b9c1733e13e6977ef8aabf1eb35bf69539e977d1a59d5973f7d24a9",
+                        "reader-transition": "sha256:02ed9c6ad3cce2d2f02f5396abb5cc6bb994491e353cd66681ebd0fbd4d5fc4a",
+                        "reader-neighbors": "sha256:3d6f4be21e5fb46a339e73b26ef3729b418169c013433e962a54ba0130732d85",
+                        "concept:concept:first": "sha256:97018db06cd4e0a7b2a9ef1899639f111165e6635c9ec031eab1166224d75a4a"
+                      },
+                      "unobserved_inputs": []
+                    },
+                    "action": "upsert",
+                    "paragraph_id": "first-p36456703742131136201844960223"
+                  },
+                  "http": {
+                    "method": "POST",
+                    "route": "/work/structure/change"
+                  },
+                  "fields": [
+                    {
+                      "name": "function",
+                      "label": "Function",
+                      "type": "string",
+                      "multiline": true
+                    },
+                    {
+                      "name": "proposition",
+                      "label": "Proposition",
+                      "type": "string",
+                      "multiline": true
+                    },
+                    {
+                      "name": "explanation",
+                      "label": "Explanation",
+                      "type": "string",
+                      "multiline": true
+                    },
+                    {
+                      "name": "derivation_detail",
+                      "label": "Derivation detail",
+                      "type": "string",
+                      "multiline": true
+                    },
+                    {
+                      "name": "equation_anchor",
+                      "label": "Equation anchor",
+                      "type": "string",
+                      "multiline": true
+                    },
+                    {
+                      "name": "figure_anchor",
+                      "label": "Figure anchor",
+                      "type": "string",
+                      "multiline": true
+                    },
+                    {
+                      "name": "qualification",
+                      "label": "Qualification",
+                      "type": "string",
+                      "multiline": true
+                    },
+                    {
+                      "name": "from_previous",
+                      "label": "From previous",
+                      "type": "string",
+                      "multiline": true
+                    },
+                    {
+                      "name": "to_next",
+                      "label": "To next",
+                      "type": "string",
+                      "multiline": true
+                    },
+                    {
+                      "name": "detail_level",
+                      "label": "Detail level",
+                      "type": "string",
+                      "multiline": true
+                    },
+                    {
+                      "name": "length_range",
+                      "label": "Length range",
+                      "type": "string",
+                      "multiline": true
+                    },
+                    {
+                      "name": "input_nodes",
+                      "label": "Input nodes",
+                      "type": "string_array",
+                      "choices": []
+                    },
+                    {
+                      "name": "citations",
+                      "label": "Citations",
+                      "type": "string_array",
+                      "choices": []
+                    }
+                  ],
+                  "values": {
+                    "function": "",
+                    "proposition": "Introduce the mechanism",
+                    "explanation": "Show how the parts interact",
+                    "derivation_detail": "",
+                    "equation_anchor": "",
+                    "figure_anchor": "",
+                    "qualification": "",
+                    "from_previous": "",
+                    "to_next": "",
+                    "detail_level": "",
+                    "length_range": "",
+                    "input_nodes": [],
+                    "citations": []
+                  },
+                  "choices_read": {
+                    "operation": "structure",
+                    "payload": {
+                      "view": "detail",
+                      "section_ids": [
+                        "first"
+                      ],
+                      "paragraph_id": "first-p36456703742131136201844960223",
+                      "edit_choices": true
+                    },
+                    "http": {
+                      "method": "GET",
+                      "route": "/work/structure",
+                      "query": {
+                        "project": "book",
+                        "view": "detail",
+                        "section_ids": [
+                          "first"
+                        ],
+                        "paragraph_id": "first-p36456703742131136201844960223",
+                        "edit_choices": true
+                      }
+                    }
+                  }
+                },
+                "remove_action": {
+                  "operation": "structure_change",
+                  "payload": {
+                    "operation": "paragraph_plan",
+                    "section_id": "first",
+                    "expected_plan_revision": "sha256:fa35dabeefb2ce041545cfecb950a3fd7eee948ef3823cdc14f3f29d29288183",
+                    "expected_narrative_revision": "sha256:0aa6be8b9ba29333d24123d7831bf0d77907bfcfc48941da875f7df06319b68f",
+                    "expected_reader_basis": {
+                      "schema_version": "laplace.reader-basis/1",
+                      "project": "book",
+                      "path": "synthetics papers/book/manuscript/narrative/first.json",
+                      "section_id": "first",
+                      "subject_id": "first-p36456703742131136201844960223",
+                      "subject_revision": "sha256:0916d9023fbba7868719445f69b034045a2423373f0bb6111260b9d7eef4d1e1",
+                      "inputs": {
+                        "plan-section": "sha256:b25414354a6df71671dface4aec0fcf679323d9ef49aa089afa65faffb34f007",
+                        "architecture": "sha256:8838870b3b9c1733e13e6977ef8aabf1eb35bf69539e977d1a59d5973f7d24a9",
+                        "reader-transition": "sha256:02ed9c6ad3cce2d2f02f5396abb5cc6bb994491e353cd66681ebd0fbd4d5fc4a",
+                        "reader-neighbors": "sha256:3d6f4be21e5fb46a339e73b26ef3729b418169c013433e962a54ba0130732d85",
+                        "concept:concept:first": "sha256:97018db06cd4e0a7b2a9ef1899639f111165e6635c9ec031eab1166224d75a4a"
+                      },
+                      "unobserved_inputs": []
+                    },
+                    "action": "remove",
+                    "paragraph_id": "first-p36456703742131136201844960223"
+                  },
+                  "http": {
+                    "method": "POST",
+                    "route": "/work/structure/change"
+                  },
+                  "fields": [],
+                  "values": {}
+                }
+              }
+            ],
+            "total": 1,
+            "offset": 0,
+            "limit": 20,
+            "next_read": null
+          },
+          "create_action": {
+            "operation": "structure_change",
+            "payload": {
+              "operation": "paragraph_plan",
+              "section_id": "first",
+              "expected_plan_revision": "sha256:fa35dabeefb2ce041545cfecb950a3fd7eee948ef3823cdc14f3f29d29288183",
+              "expected_narrative_revision": "sha256:0aa6be8b9ba29333d24123d7831bf0d77907bfcfc48941da875f7df06319b68f",
+              "expected_reader_basis": {
+                "schema_version": "laplace.reader-basis/1",
+                "project": "book",
+                "path": "synthetics papers/book/manuscript/narrative/first.json",
+                "section_id": "first",
+                "subject_id": "first-p71053671195980387218330560325",
+                "subject_revision": "sha256:74234e98afe7498fb5daf1f36ac2d78acc339464f950703b8c019892f982b90b",
+                "inputs": {
+                  "plan-section": "sha256:b25414354a6df71671dface4aec0fcf679323d9ef49aa089afa65faffb34f007",
+                  "architecture": "sha256:8838870b3b9c1733e13e6977ef8aabf1eb35bf69539e977d1a59d5973f7d24a9",
+                  "reader-transition": "sha256:02ed9c6ad3cce2d2f02f5396abb5cc6bb994491e353cd66681ebd0fbd4d5fc4a",
+                  "reader-neighbors": "sha256:1b79e4e125b097286b9aae998ca7e88e457ddcae1cd4c340b8bb3a799231b223",
+                  "concept:concept:first": "sha256:97018db06cd4e0a7b2a9ef1899639f111165e6635c9ec031eab1166224d75a4a"
+                },
+                "unobserved_inputs": []
+              },
+              "action": "upsert",
+              "paragraph_id": "first-p71053671195980387218330560325",
+              "create": true
+            },
+            "http": {
+              "method": "POST",
+              "route": "/work/structure/change"
+            },
+            "fields": [
+              {
+                "name": "function",
+                "label": "Function",
+                "type": "string",
+                "multiline": true
+              },
+              {
+                "name": "proposition",
+                "label": "Proposition",
+                "type": "string",
+                "multiline": true
+              },
+              {
+                "name": "explanation",
+                "label": "Explanation",
+                "type": "string",
+                "multiline": true
+              },
+              {
+                "name": "derivation_detail",
+                "label": "Derivation detail",
+                "type": "string",
+                "multiline": true
+              },
+              {
+                "name": "equation_anchor",
+                "label": "Equation anchor",
+                "type": "string",
+                "multiline": true
+              },
+              {
+                "name": "figure_anchor",
+                "label": "Figure anchor",
+                "type": "string",
+                "multiline": true
+              },
+              {
+                "name": "qualification",
+                "label": "Qualification",
+                "type": "string",
+                "multiline": true
+              },
+              {
+                "name": "from_previous",
+                "label": "From previous",
+                "type": "string",
+                "multiline": true
+              },
+              {
+                "name": "to_next",
+                "label": "To next",
+                "type": "string",
+                "multiline": true
+              },
+              {
+                "name": "detail_level",
+                "label": "Detail level",
+                "type": "string",
+                "multiline": true
+              },
+              {
+                "name": "length_range",
+                "label": "Length range",
+                "type": "string",
+                "multiline": true
+              },
+              {
+                "name": "input_nodes",
+                "label": "Input nodes",
+                "type": "string_array",
+                "choices": []
+              },
+              {
+                "name": "citations",
+                "label": "Citations",
+                "type": "string_array",
+                "choices": []
+              }
+            ],
+            "values": {
+              "function": "",
+              "proposition": "",
+              "explanation": "",
+              "derivation_detail": "",
+              "equation_anchor": "",
+              "figure_anchor": "",
+              "qualification": "",
+              "from_previous": "",
+              "to_next": "",
+              "detail_level": "",
+              "length_range": "",
+              "input_nodes": [],
+              "citations": []
+            },
+            "placement": {
+              "kind": "APPEND",
+              "after_paragraph_id": "first-p36456703742131136201844960223"
+            },
+            "choices_read": {
+              "operation": "structure",
+              "payload": {
+                "view": "detail",
+                "section_ids": [
+                  "first"
+                ],
+                "edit_choices": true
+              },
+              "http": {
+                "method": "GET",
+                "route": "/work/structure",
+                "query": {
+                  "project": "book",
+                  "view": "detail",
+                  "section_ids": [
+                    "first"
+                  ],
+                  "edit_choices": true
+                }
+              }
+            }
+          },
+          "reorder_action": {
+            "operation": "structure_change",
+            "payload": {
+              "operation": "paragraph_plan",
+              "section_id": "first",
+              "expected_plan_revision": "sha256:fa35dabeefb2ce041545cfecb950a3fd7eee948ef3823cdc14f3f29d29288183",
+              "expected_narrative_revision": "sha256:0aa6be8b9ba29333d24123d7831bf0d77907bfcfc48941da875f7df06319b68f",
+              "expected_reader_basis": {
+                "schema_version": "laplace.reader-basis/1",
+                "project": "book",
+                "path": "synthetics papers/book/manuscript/narrative/first.json",
+                "section_id": "first",
+                "subject_id": "@order",
+                "subject_revision": "sha256:98e556928488708b4569bbc65d541a6219d5b679e217776551a8d6708b575571",
+                "inputs": {
+                  "plan-section": "sha256:b25414354a6df71671dface4aec0fcf679323d9ef49aa089afa65faffb34f007",
+                  "architecture": "sha256:8838870b3b9c1733e13e6977ef8aabf1eb35bf69539e977d1a59d5973f7d24a9",
+                  "reader-transition": "sha256:02ed9c6ad3cce2d2f02f5396abb5cc6bb994491e353cd66681ebd0fbd4d5fc4a",
+                  "concept:concept:first": "sha256:97018db06cd4e0a7b2a9ef1899639f111165e6635c9ec031eab1166224d75a4a"
+                },
+                "unobserved_inputs": []
+              },
+              "action": "reorder",
+              "order": [
+                "first-p36456703742131136201844960223"
+              ]
+            },
+            "http": {
+              "method": "POST",
+              "route": "/work/structure/change"
+            },
+            "fields": [],
+            "values": {},
+            "choices": [
+              {
+                "value": "first-p36456703742131136201844960223",
+                "label": "Introduce the mechanism"
+              }
+            ]
+          }
+        },
+        "reader_inputs": {
+          "architecture_prior": {
+            "family": "architecture",
+            "scope": "workspace",
+            "purpose": "Structural and narrative form prior; not scientific evidence or authored reader expectations.",
+            "source": {
+              "path": "profiles/author_architecture.yaml",
+              "origin": "repository"
+            },
+            "profile_revision": null,
+            "field_refs": [],
+            "editable": false,
+            "edit_reason": "This bounded profile input is read-only; shared profile editing and generated candidate application are not implemented here.",
+            "read_more": {
+              "operation": "structure",
+              "payload": {
+                "view": "architecture-profile"
+              }
+            },
+            "currentness_basis": "Current profile bytes only; no scientific acceptance or reader comprehension is asserted.",
+            "status": "ABSENT",
+            "reason": "This workspace has no recorded architecture prior; authored reader contracts remain available.",
+            "currentness": "UNAVAILABLE",
+            "revision": "sha256:08618e805c18b0aa6887829eafbd38e9e89662d38603c4ba3d5826c1791292bc",
+            "effective_projection": {
+              "fields": {},
+              "summary": "",
+              "revision": "sha256:8838870b3b9c1733e13e6977ef8aabf1eb35bf69539e977d1a59d5973f7d24a9"
+            }
+          }
+        }
+      }
+    ],
+    "boundaries": [
+      {
+        "id": "first-child",
+        "title": "First child",
+        "kind": "section",
+        "parent_id": "first",
+        "number": "1.1",
+        "job": "support",
+        "child_ids": []
+      }
+    ],
+    "structure_observation": {
+      "plan_revision": "sha256:fa35dabeefb2ce041545cfecb950a3fd7eee948ef3823cdc14f3f29d29288183",
+      "spine_revision": "sha256:4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "selection_identity": "sha256:f35f374570dbc183d4aec769c50fb55b0860b11e94183950c18db51bd357ed65",
+      "source_files": [
+        {
+          "file": "synthetics papers/book/manuscript/chapters/chapter-01.tex",
+          "source_digest": "sha256:a3f9c9c474d5c0b6ae33ea349ddf6d0f11be41f3347f7a130309571f5aa47bce"
+        }
+      ],
+      "reader_subjects": [
+        {
+          "schema_version": "laplace.reader-basis/1",
+          "project": "book",
+          "path": "synthetics papers/book/manuscript/section_contracts.json",
+          "section_id": "first",
+          "subject_id": "first",
+          "subject_revision": "sha256:02ed9c6ad3cce2d2f02f5396abb5cc6bb994491e353cd66681ebd0fbd4d5fc4a",
+          "inputs": {
+            "plan-section": "sha256:b25414354a6df71671dface4aec0fcf679323d9ef49aa089afa65faffb34f007",
+            "architecture": "sha256:8838870b3b9c1733e13e6977ef8aabf1eb35bf69539e977d1a59d5973f7d24a9",
+            "concept:concept:first": "sha256:97018db06cd4e0a7b2a9ef1899639f111165e6635c9ec031eab1166224d75a4a"
+          },
+          "unobserved_inputs": []
+        },
+        {
+          "schema_version": "laplace.reader-basis/1",
+          "project": "book",
+          "path": "synthetics papers/book/manuscript/narrative/first.json",
+          "section_id": "first",
+          "subject_id": "first-p36456703742131136201844960223",
+          "subject_revision": "sha256:0916d9023fbba7868719445f69b034045a2423373f0bb6111260b9d7eef4d1e1",
+          "inputs": {
+            "plan-section": "sha256:b25414354a6df71671dface4aec0fcf679323d9ef49aa089afa65faffb34f007",
+            "architecture": "sha256:8838870b3b9c1733e13e6977ef8aabf1eb35bf69539e977d1a59d5973f7d24a9",
+            "reader-transition": "sha256:02ed9c6ad3cce2d2f02f5396abb5cc6bb994491e353cd66681ebd0fbd4d5fc4a",
+            "reader-neighbors": "sha256:3d6f4be21e5fb46a339e73b26ef3729b418169c013433e962a54ba0130732d85",
+            "concept:concept:first": "sha256:97018db06cd4e0a7b2a9ef1899639f111165e6635c9ec031eab1166224d75a4a"
+          },
+          "unobserved_inputs": []
+        }
+      ]
+    },
+    "spine": [],
+    "ancestors": [],
+    "children": [
+      {
+        "id": "first-child",
+        "title": "First child",
+        "kind": "section",
+        "parent_id": "first",
+        "number": "1.1",
+        "job": "support",
+        "child_ids": []
+      }
+    ],
+    "outline": [
+      {
+        "id": "first",
+        "title": "First",
+        "kind": "chapter",
+        "parent_id": null,
+        "number": "1",
+        "job": "open",
+        "child_ids": [
+          "first-child"
+        ]
+      },
+      {
+        "id": "second",
+        "title": "Second",
+        "kind": "chapter",
+        "parent_id": null,
+        "number": "2",
+        "job": "close",
+        "child_ids": []
+      }
+    ],
+    "focus": null,
+    "edges": [],
+    "evidence": [],
+    "gaps": [
+      {
+        "kind": "node",
+        "id": "concept:first",
+        "reason": "plan membership names an unavailable conceptric node"
+      }
+    ],
+    "selected_node_ids": [],
+    "selected_nodes_total": 0,
+    "selected_nodes": [],
+    "selected_nodes_omitted": 0,
+    "selected_node_read_routes": {
+      "concept": {
+        "operation": "concept",
+        "payload": {
+          "node": "<selected_node_id>"
+        }
+      },
+      "history": {
+        "operation": "concept_history",
+        "payload": {
+          "node": "<selected_node_id>"
+        }
+      },
+      "tree": {
+        "operation": "concept_tree",
+        "payload": {
+          "node": "<selected_node_id>"
+        }
+      }
+    },
+    "evidence_total": 0,
+    "evidence_omitted": 0,
+    "gaps_total": 1,
+    "gaps_omitted": 0,
+    "scoped_history": [],
+    "scoped_history_omitted": 0,
+    "direct_dependencies": [],
+    "scope_diagnostics": [],
+    "source_support": [
+      {
+        "node": "concept:first",
+        "meaning_revision": "sha256:b01ad77de576569ba992bc4ade24fc71cb597672b8dc44a28b7d3baa56b62cba",
+        "citation_assessment": "CANONICAL_SECTIONS",
+        "sources": [],
+        "own_evidence": [],
+        "authored_proof": false,
+        "documented_proof": {
+          "status": "NOT_RECORDED",
+          "source": null
+        },
+        "declared_role": null,
+        "gaps": [],
+        "qualification": "AUTHORED_BASIS",
+        "independent_verification": "NOT_ASSERTED",
+        "engineering_support": {
+          "status": "UNDECLARED",
+          "bindings": [],
+          "reason": "No engineering support has been adopted",
+          "read_metrics": {}
+        }
+      }
+    ],
+    "source_support_total": 1,
+    "source_support_omitted": 0
+  },
+  "edit_choices": {
+    "schema_version": "laplace.project-structure-context/1",
+    "project": "book",
+    "full_guard_read": {
+      "operation": "structure",
+      "payload": {
+        "view": "full"
+      }
+    },
+    "revision": "sha256:2a1aceff287b0b9c862ac10b8bd9b08d4a93dca9719db034f40b57b03d19d6e8",
+    "structure_revision": null,
+    "eligible_for_authoring": true,
+    "authority": {
+      "plan_path": "synthetics papers/book/manuscript/projection_plan.json",
+      "spine_revision": "sha256:4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "plan_revision": "sha256:fa35dabeefb2ce041545cfecb950a3fd7eee948ef3823cdc14f3f29d29288183",
+      "conceptric_revision": "sha256:ee6597c03f4d8c348ef5d7d83f7073ae18878e2b73c2f581000e960acc7a886f",
+      "research_revision": "sha256:4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "source_revision": "ec39e3cc81c7317c551fd654cd100571f43b76f57ee8d6103a21e0f192b568f5"
+    },
+    "selected_source": {
+      "root": "synthetics papers/book/manuscript/Fixture-Book.tex",
+      "manuscript_dir": "synthetics papers/book/manuscript",
+      "edition": "draft",
+      "status": "resolved",
+      "revision": "ec39e3cc81c7317c551fd654cd100571f43b76f57ee8d6103a21e0f192b568f5",
+      "read_only": false,
+      "selection_identity": "sha256:f35f374570dbc183d4aec769c50fb55b0860b11e94183950c18db51bd357ed65"
+    },
+    "sections": [
+      {
+        "id": "first",
+        "collection": "sections",
+        "title": "First",
+        "kind": "chapter",
+        "parent_id": null,
+        "depth": 0,
+        "number": "1",
+        "ancestor_ids": [],
+        "child_ids": [
+          "first-child"
+        ],
+        "order": 0,
+        "job": "open",
+        "notes": "",
+        "refs": [],
+        "node_ids": [
+          "concept:first"
+        ],
+        "nodes": [
+          {
+            "id": "concept:first",
+            "label": "concept:first",
+            "missing": true,
+            "kind": null,
+            "status": "MISSING",
+            "summary": "",
+            "result_bindings": []
+          }
+        ],
+        "beat_ids": [],
+        "beats": [],
+        "source": {
+          "section_id": "first",
+          "source_files": [
+            "synthetics papers/book/manuscript/chapters/chapter-01.tex"
+          ],
+          "status": "MATCHED",
+          "precision": "FILE_ONLY",
+          "title_status": "MATCHED",
+          "plan_title": "First",
+          "source_titles": [
+            "First"
+          ],
+          "source_label": null,
+          "heading": {
+            "file": "synthetics papers/book/manuscript/chapters/chapter-01.tex",
+            "line": 1,
+            "line_end": 4,
+            "heading_line_end": 1,
+            "title": "First",
+            "kind": "chapter",
+            "label": null,
+            "heading_before": "\\chapter{First}",
+            "source_order": 1,
+            "source_orders": [
+              1
+            ]
+          },
+          "basis": {
+            "synthetics papers/book/manuscript/chapters/chapter-01.tex": {
+              "selection_identity": "sha256:f35f374570dbc183d4aec769c50fb55b0860b11e94183950c18db51bd357ed65",
+              "source_digest": "sha256:a3f9c9c474d5c0b6ae33ea349ddf6d0f11be41f3347f7a130309571f5aa47bce"
+            }
+          },
+          "mapping": "explicit-source-file",
+          "selected_root": "synthetics papers/book/manuscript/Fixture-Book.tex",
+          "source_reads": [
+            {
+              "operation": "source",
+              "payload": {
+                "files": [
+                  "synthetics papers/book/manuscript/chapters/chapter-01.tex"
+                ]
+              },
+              "http": {
+                "method": "GET",
+                "route": "/projection/tex",
+                "query": {
+                  "corpus": "book",
+                  "file": "synthetics papers/book/manuscript/chapters/chapter-01.tex",
+                  "view": "source"
+                }
+              }
+            }
+          ],
+          "clearing_read": {
+            "operation": "structure",
+            "payload": {
+              "view": "outline"
+            }
+          }
+        },
+        "clearing_action": {
+          "operation": "structure_change",
+          "payload": {
+            "operation": "bind_source",
+            "section_id": "first",
+            "expected_plan_revision": "sha256:fa35dabeefb2ce041545cfecb950a3fd7eee948ef3823cdc14f3f29d29288183"
+          },
+          "http": {
+            "method": "POST",
+            "route": "/work/structure/change"
+          },
+          "choose_from": {
+            "operation": "structure",
+            "payload": {
+              "view": "outline"
+            },
+            "http": {
+              "method": "GET",
+              "route": "/work/structure",
+              "query": {
+                "project": "book",
+                "view": "outline"
+              }
+            }
+          },
+          "required_occurrence_fields": [
+            "file",
+            "line",
+            "heading_before",
+            "expected_selection",
+            "expected_source_digest"
+          ]
+        },
+        "source_support": [
+          {
+            "node": "concept:first",
+            "meaning_revision": "sha256:b01ad77de576569ba992bc4ade24fc71cb597672b8dc44a28b7d3baa56b62cba",
+            "citation_assessment": "CANONICAL_SECTIONS",
+            "sources": [],
+            "own_evidence": [],
+            "authored_proof": false,
+            "documented_proof": {
+              "status": "NOT_RECORDED",
+              "source": null
+            },
+            "declared_role": null,
+            "gaps": [],
+            "qualification": "AUTHORED_BASIS",
+            "independent_verification": "NOT_ASSERTED",
+            "engineering_support": {
+              "status": "UNDECLARED",
+              "bindings": [],
+              "reason": "No engineering support has been adopted",
+              "read_metrics": {}
+            }
+          }
+        ],
+        "evidence": [],
+        "reader_transition": {
+          "section_id": "first",
+          "status": "DECLARED",
+          "fields": {
+            "section_id": "first",
+            "title": "First",
+            "nodes_in_order": [
+              "concept:first"
+            ],
+            "entry_state": "Knows the question",
+            "exit_state": "Understands the mechanism"
+          },
+          "revision": "sha256:773882e738f7f093b43a94934d6f43d0d3e84b4bd9e55e481aff5f6a09ef5428",
+          "subject_revision": "sha256:02ed9c6ad3cce2d2f02f5396abb5cc6bb994491e353cd66681ebd0fbd4d5fc4a",
+          "reader_basis": {
+            "schema_version": "laplace.reader-basis/1",
+            "project": "book",
+            "path": "synthetics papers/book/manuscript/section_contracts.json",
+            "section_id": "first",
+            "subject_id": "first",
+            "subject_revision": "sha256:02ed9c6ad3cce2d2f02f5396abb5cc6bb994491e353cd66681ebd0fbd4d5fc4a",
+            "inputs": {
+              "plan-section": "sha256:b25414354a6df71671dface4aec0fcf679323d9ef49aa089afa65faffb34f007",
+              "architecture": "sha256:8838870b3b9c1733e13e6977ef8aabf1eb35bf69539e977d1a59d5973f7d24a9",
+              "concept:concept:first": "sha256:97018db06cd4e0a7b2a9ef1899639f111165e6635c9ec031eab1166224d75a4a"
+            },
+            "unobserved_inputs": []
+          },
+          "input_currentness": {
+            "status": "CURRENT",
+            "unobserved_inputs": [],
+            "changed_inputs": [],
+            "reason": "Input observation is not a judgement of intelligibility or accepted review.",
+            "reads": [
+              {
+                "operation": "structure",
+                "payload": {
+                  "view": "detail",
+                  "section_ids": [
+                    "first"
+                  ]
+                },
+                "http": {
+                  "method": "GET",
+                  "route": "/work/structure",
+                  "query": {
+                    "project": "book",
+                    "view": "detail",
+                    "section_ids": [
+                      "first"
+                    ]
+                  }
+                }
+              }
+            ]
+          },
+          "review": {
+            "status": "NOT_REVIEWED",
+            "records": []
+          },
+          "read_handle": {
+            "operation": "structure",
+            "payload": {
+              "view": "detail",
+              "section_ids": [
+                "first"
+              ]
+            },
+            "http": {
+              "method": "GET",
+              "route": "/work/structure",
+              "query": {
+                "project": "book",
+                "view": "detail",
+                "section_ids": [
+                  "first"
+                ]
+              }
+            }
+          },
+          "links": [
+            {
+              "kind": "argument",
+              "label": "concept:first",
+              "status": "UNRESOLVED",
+              "read": {
+                "operation": "concept",
+                "payload": {
+                  "node": "concept:first"
+                },
+                "http": {
+                  "method": "GET",
+                  "route": "/concepts/context",
+                  "query": {
+                    "corpus": "book",
+                    "node": "concept:first"
+                  }
+                }
+              }
+            }
+          ],
+          "diagnostics": [
+            {
+              "kind": "AUTHORED_FIELD_EMPTY",
+              "field": "function",
+              "reason": "The intended reader transition has not been authored."
+            },
+            {
+              "kind": "AUTHORED_FIELD_EMPTY",
+              "field": "question_answered",
+              "reason": "The intended reader transition has not been authored."
+            },
+            {
+              "kind": "INPUT_UNRESOLVED",
+              "subject": "concept:first",
+              "status": "UNRESOLVED",
+              "reason": "Supporting input is missing, ambiguous, or stale; observation is not validation.",
+              "read": {
+                "operation": "concept",
+                "payload": {
+                  "node": "concept:first"
+                },
+                "http": {
+                  "method": "GET",
+                  "route": "/concepts/context",
+                  "query": {
+                    "corpus": "book",
+                    "node": "concept:first"
+                  }
+                }
+              }
+            }
+          ],
+          "edit_action": {
+            "operation": "structure_change",
+            "payload": {
+              "operation": "section_contract",
+              "section_id": "first",
+              "expected_plan_revision": "sha256:fa35dabeefb2ce041545cfecb950a3fd7eee948ef3823cdc14f3f29d29288183",
+              "expected_contract_revision": "sha256:773882e738f7f093b43a94934d6f43d0d3e84b4bd9e55e481aff5f6a09ef5428",
+              "expected_reader_basis": {
+                "schema_version": "laplace.reader-basis/1",
+                "project": "book",
+                "path": "synthetics papers/book/manuscript/section_contracts.json",
+                "section_id": "first",
+                "subject_id": "first",
+                "subject_revision": "sha256:02ed9c6ad3cce2d2f02f5396abb5cc6bb994491e353cd66681ebd0fbd4d5fc4a",
+                "inputs": {
+                  "plan-section": "sha256:b25414354a6df71671dface4aec0fcf679323d9ef49aa089afa65faffb34f007",
+                  "architecture": "sha256:8838870b3b9c1733e13e6977ef8aabf1eb35bf69539e977d1a59d5973f7d24a9",
+                  "concept:concept:first": "sha256:97018db06cd4e0a7b2a9ef1899639f111165e6635c9ec031eab1166224d75a4a"
+                },
+                "unobserved_inputs": []
+              }
+            },
+            "http": {
+              "method": "POST",
+              "route": "/work/structure/change"
+            },
+            "fields": [
+              {
+                "name": "function",
+                "label": "Function",
+                "type": "string",
+                "multiline": true
+              },
+              {
+                "name": "question_answered",
+                "label": "Question answered",
+                "type": "string",
+                "multiline": true
+              },
+              {
+                "name": "entry_state",
+                "label": "Entry state",
+                "type": "string",
+                "multiline": true
+              },
+              {
+                "name": "exit_state",
+                "label": "Exit state",
+                "type": "string",
+                "multiline": true
+              },
+              {
+                "name": "permitted_recap",
+                "label": "Permitted recap",
+                "type": "string",
+                "multiline": true
+              },
+              {
+                "name": "depends_on",
+                "label": "Depends on",
+                "type": "string_array",
+                "choices": [
+                  {
+                    "value": "first-child",
+                    "label": "First child",
+                    "read": {
+                      "operation": "structure",
+                      "payload": {
+                        "view": "detail",
+                        "section_ids": [
+                          "first-child"
+                        ]
+                      },
+                      "http": {
+                        "method": "GET",
+                        "route": "/work/structure",
+                        "query": {
+                          "project": "book",
+                          "view": "detail",
+                          "section_ids": [
+                            "first-child"
+                          ]
+                        }
+                      }
+                    }
+                  },
+                  {
+                    "value": "second",
+                    "label": "Second",
+                    "read": {
+                      "operation": "structure",
+                      "payload": {
+                        "view": "detail",
+                        "section_ids": [
+                          "second"
+                        ]
+                      },
+                      "http": {
+                        "method": "GET",
+                        "route": "/work/structure",
+                        "query": {
+                          "project": "book",
+                          "view": "detail",
+                          "section_ids": [
+                            "second"
+                          ]
+                        }
+                      }
+                    }
+                  }
+                ]
+              },
+              {
+                "name": "forward_uses",
+                "label": "Forward uses",
+                "type": "string_array",
+                "choices": [
+                  {
+                    "value": "first-child",
+                    "label": "First child",
+                    "read": {
+                      "operation": "structure",
+                      "payload": {
+                        "view": "detail",
+                        "section_ids": [
+                          "first-child"
+                        ]
+                      },
+                      "http": {
+                        "method": "GET",
+                        "route": "/work/structure",
+                        "query": {
+                          "project": "book",
+                          "view": "detail",
+                          "section_ids": [
+                            "first-child"
+                          ]
+                        }
+                      }
+                    }
+                  },
+                  {
+                    "value": "second",
+                    "label": "Second",
+                    "read": {
+                      "operation": "structure",
+                      "payload": {
+                        "view": "detail",
+                        "section_ids": [
+                          "second"
+                        ]
+                      },
+                      "http": {
+                        "method": "GET",
+                        "route": "/work/structure",
+                        "query": {
+                          "project": "book",
+                          "view": "detail",
+                          "section_ids": [
+                            "second"
+                          ]
+                        }
+                      }
+                    }
+                  }
+                ]
+              },
+              {
+                "name": "citations",
+                "label": "Citations",
+                "type": "string_array",
+                "choices": []
+              },
+              {
+                "name": "equations",
+                "label": "Equations",
+                "type": "string_array",
+                "choices": []
+              },
+              {
+                "name": "figures",
+                "label": "Figures",
+                "type": "string_array",
+                "choices": []
+              },
+              {
+                "name": "tables",
+                "label": "Tables",
+                "type": "string_array",
+                "choices": []
+              }
+            ],
+            "values": {
+              "function": "",
+              "question_answered": "",
+              "entry_state": "Knows the question",
+              "exit_state": "Understands the mechanism",
+              "permitted_recap": "",
+              "depends_on": [],
+              "forward_uses": [],
+              "citations": [],
+              "equations": [],
+              "figures": [],
+              "tables": []
+            },
+            "choices_read": {
+              "operation": "structure",
+              "payload": {
+                "view": "detail",
+                "section_ids": [
+                  "first"
+                ],
+                "edit_choices": true
+              },
+              "http": {
+                "method": "GET",
+                "route": "/work/structure",
+                "query": {
+                  "project": "book",
+                  "view": "detail",
+                  "section_ids": [
+                    "first"
+                  ],
+                  "edit_choices": true
+                }
+              }
+            }
+          },
+          "review_action": {
+            "operation": "task",
+            "payload": {
+              "title": "Review reader transition: first",
+              "goal": "Review the authored transition or paragraph for intelligibility, support and continuity on this exact basis. Record evidence and findings; current inputs alone do not establish acceptance.",
+              "kind": "reader-review",
+              "section_ids": [
+                "first"
+              ],
+              "reader_basis": {
+                "schema_version": "laplace.reader-basis/1",
+                "project": "book",
+                "path": "synthetics papers/book/manuscript/section_contracts.json",
+                "section_id": "first",
+                "subject_id": "first",
+                "subject_revision": "sha256:02ed9c6ad3cce2d2f02f5396abb5cc6bb994491e353cd66681ebd0fbd4d5fc4a",
+                "inputs": {
+                  "plan-section": "sha256:b25414354a6df71671dface4aec0fcf679323d9ef49aa089afa65faffb34f007",
+                  "architecture": "sha256:8838870b3b9c1733e13e6977ef8aabf1eb35bf69539e977d1a59d5973f7d24a9",
+                  "concept:concept:first": "sha256:97018db06cd4e0a7b2a9ef1899639f111165e6635c9ec031eab1166224d75a4a"
+                },
+                "unobserved_inputs": []
+              }
+            },
+            "http": {
+              "method": "POST",
+              "route": "/work/task"
+            }
+          }
+        },
+        "paragraph_plan": {
+          "section_id": "first",
+          "status": "DECLARED",
+          "revision": "sha256:0aa6be8b9ba29333d24123d7831bf0d77907bfcfc48941da875f7df06319b68f",
+          "identity_status": "STABLE",
+          "read_handle": {
+            "operation": "structure",
+            "payload": {
+              "view": "detail",
+              "section_ids": [
+                "first"
+              ]
+            },
+            "http": {
+              "method": "GET",
+              "route": "/work/structure",
+              "query": {
+                "project": "book",
+                "view": "detail",
+                "section_ids": [
+                  "first"
+                ]
+              }
+            }
+          },
+          "paragraphs": {
+            "items": [
+              {
+                "section_id": "first",
+                "paragraph_id": "first-p36456703742131136201844960223",
+                "proposition": "Introduce the mechanism",
+                "explanation": "Show how the parts interact",
+                "identity_status": "STABLE",
+                "subject_revision": "sha256:0916d9023fbba7868719445f69b034045a2423373f0bb6111260b9d7eef4d1e1",
+                "reader_basis": {
+                  "schema_version": "laplace.reader-basis/1",
+                  "project": "book",
+                  "path": "synthetics papers/book/manuscript/narrative/first.json",
+                  "section_id": "first",
+                  "subject_id": "first-p36456703742131136201844960223",
+                  "subject_revision": "sha256:0916d9023fbba7868719445f69b034045a2423373f0bb6111260b9d7eef4d1e1",
+                  "inputs": {
+                    "plan-section": "sha256:b25414354a6df71671dface4aec0fcf679323d9ef49aa089afa65faffb34f007",
+                    "architecture": "sha256:8838870b3b9c1733e13e6977ef8aabf1eb35bf69539e977d1a59d5973f7d24a9",
+                    "reader-transition": "sha256:02ed9c6ad3cce2d2f02f5396abb5cc6bb994491e353cd66681ebd0fbd4d5fc4a",
+                    "reader-neighbors": "sha256:3d6f4be21e5fb46a339e73b26ef3729b418169c013433e962a54ba0130732d85",
+                    "concept:concept:first": "sha256:97018db06cd4e0a7b2a9ef1899639f111165e6635c9ec031eab1166224d75a4a"
+                  },
+                  "unobserved_inputs": []
+                },
+                "input_currentness": {
+                  "status": "CURRENT",
+                  "unobserved_inputs": [],
+                  "changed_inputs": [],
+                  "reason": "Input observation is not a judgement of intelligibility or accepted review.",
+                  "reads": [
+                    {
+                      "operation": "structure",
+                      "payload": {
+                        "view": "detail",
+                        "section_ids": [
+                          "first"
+                        ],
+                        "paragraph_id": "first-p36456703742131136201844960223"
+                      },
+                      "http": {
+                        "method": "GET",
+                        "route": "/work/structure",
+                        "query": {
+                          "project": "book",
+                          "view": "detail",
+                          "section_ids": [
+                            "first"
+                          ],
+                          "paragraph_id": "first-p36456703742131136201844960223"
+                        }
+                      }
+                    }
+                  ]
+                },
+                "read_handle": {
+                  "operation": "structure",
+                  "payload": {
+                    "view": "detail",
+                    "section_ids": [
+                      "first"
+                    ],
+                    "paragraph_id": "first-p36456703742131136201844960223"
+                  },
+                  "http": {
+                    "method": "GET",
+                    "route": "/work/structure",
+                    "query": {
+                      "project": "book",
+                      "view": "detail",
+                      "section_ids": [
+                        "first"
+                      ],
+                      "paragraph_id": "first-p36456703742131136201844960223"
+                    }
+                  }
+                },
+                "links": [
+                  {
+                    "kind": "argument",
+                    "label": "concept:first",
+                    "status": "UNRESOLVED",
+                    "read": {
+                      "operation": "concept",
+                      "payload": {
+                        "node": "concept:first"
+                      },
+                      "http": {
+                        "method": "GET",
+                        "route": "/concepts/context",
+                        "query": {
+                          "corpus": "book",
+                          "node": "concept:first"
+                        }
+                      }
+                    }
+                  }
+                ],
+                "diagnostics": [
+                  {
+                    "kind": "AUTHORED_FIELD_EMPTY",
+                    "field": "function",
+                    "reason": "The intended reader transition has not been authored."
+                  },
+                  {
+                    "kind": "INPUT_UNRESOLVED",
+                    "subject": "concept:first",
+                    "status": "UNRESOLVED",
+                    "reason": "Supporting input is missing, ambiguous, or stale; observation is not validation.",
+                    "read": {
+                      "operation": "concept",
+                      "payload": {
+                        "node": "concept:first"
+                      },
+                      "http": {
+                        "method": "GET",
+                        "route": "/concepts/context",
+                        "query": {
+                          "corpus": "book",
+                          "node": "concept:first"
+                        }
+                      }
+                    }
+                  }
+                ],
+                "source_occurrences": [],
+                "mapping_precision": "LOGICAL_UNIT_TO_PHYSICAL_OCCURRENCES",
+                "lineage": {
+                  "status": "NOT_RECORDED",
+                  "items": []
+                },
+                "review": {
+                  "status": "NOT_REVIEWED",
+                  "records": []
+                },
+                "review_action": {
+                  "operation": "task",
+                  "payload": {
+                    "title": "Review reader transition: first-p36456703742131136201844960223",
+                    "goal": "Review the authored transition or paragraph for intelligibility, support and continuity on this exact basis. Record evidence and findings; current inputs alone do not establish acceptance.",
+                    "kind": "reader-review",
+                    "section_ids": [
+                      "first"
+                    ],
+                    "reader_basis": {
+                      "schema_version": "laplace.reader-basis/1",
+                      "project": "book",
+                      "path": "synthetics papers/book/manuscript/narrative/first.json",
+                      "section_id": "first",
+                      "subject_id": "first-p36456703742131136201844960223",
+                      "subject_revision": "sha256:0916d9023fbba7868719445f69b034045a2423373f0bb6111260b9d7eef4d1e1",
+                      "inputs": {
+                        "plan-section": "sha256:b25414354a6df71671dface4aec0fcf679323d9ef49aa089afa65faffb34f007",
+                        "architecture": "sha256:8838870b3b9c1733e13e6977ef8aabf1eb35bf69539e977d1a59d5973f7d24a9",
+                        "reader-transition": "sha256:02ed9c6ad3cce2d2f02f5396abb5cc6bb994491e353cd66681ebd0fbd4d5fc4a",
+                        "reader-neighbors": "sha256:3d6f4be21e5fb46a339e73b26ef3729b418169c013433e962a54ba0130732d85",
+                        "concept:concept:first": "sha256:97018db06cd4e0a7b2a9ef1899639f111165e6635c9ec031eab1166224d75a4a"
+                      },
+                      "unobserved_inputs": []
+                    }
+                  },
+                  "http": {
+                    "method": "POST",
+                    "route": "/work/task"
+                  }
+                },
+                "edit_action": {
+                  "operation": "structure_change",
+                  "payload": {
+                    "operation": "paragraph_plan",
+                    "section_id": "first",
+                    "expected_plan_revision": "sha256:fa35dabeefb2ce041545cfecb950a3fd7eee948ef3823cdc14f3f29d29288183",
+                    "expected_narrative_revision": "sha256:0aa6be8b9ba29333d24123d7831bf0d77907bfcfc48941da875f7df06319b68f",
+                    "expected_reader_basis": {
+                      "schema_version": "laplace.reader-basis/1",
+                      "project": "book",
+                      "path": "synthetics papers/book/manuscript/narrative/first.json",
+                      "section_id": "first",
+                      "subject_id": "first-p36456703742131136201844960223",
+                      "subject_revision": "sha256:0916d9023fbba7868719445f69b034045a2423373f0bb6111260b9d7eef4d1e1",
+                      "inputs": {
+                        "plan-section": "sha256:b25414354a6df71671dface4aec0fcf679323d9ef49aa089afa65faffb34f007",
+                        "architecture": "sha256:8838870b3b9c1733e13e6977ef8aabf1eb35bf69539e977d1a59d5973f7d24a9",
+                        "reader-transition": "sha256:02ed9c6ad3cce2d2f02f5396abb5cc6bb994491e353cd66681ebd0fbd4d5fc4a",
+                        "reader-neighbors": "sha256:3d6f4be21e5fb46a339e73b26ef3729b418169c013433e962a54ba0130732d85",
+                        "concept:concept:first": "sha256:97018db06cd4e0a7b2a9ef1899639f111165e6635c9ec031eab1166224d75a4a"
+                      },
+                      "unobserved_inputs": []
+                    },
+                    "action": "upsert",
+                    "paragraph_id": "first-p36456703742131136201844960223"
+                  },
+                  "http": {
+                    "method": "POST",
+                    "route": "/work/structure/change"
+                  },
+                  "fields": [
+                    {
+                      "name": "function",
+                      "label": "Function",
+                      "type": "string",
+                      "multiline": true
+                    },
+                    {
+                      "name": "proposition",
+                      "label": "Proposition",
+                      "type": "string",
+                      "multiline": true
+                    },
+                    {
+                      "name": "explanation",
+                      "label": "Explanation",
+                      "type": "string",
+                      "multiline": true
+                    },
+                    {
+                      "name": "derivation_detail",
+                      "label": "Derivation detail",
+                      "type": "string",
+                      "multiline": true
+                    },
+                    {
+                      "name": "equation_anchor",
+                      "label": "Equation anchor",
+                      "type": "string",
+                      "multiline": true
+                    },
+                    {
+                      "name": "figure_anchor",
+                      "label": "Figure anchor",
+                      "type": "string",
+                      "multiline": true
+                    },
+                    {
+                      "name": "qualification",
+                      "label": "Qualification",
+                      "type": "string",
+                      "multiline": true
+                    },
+                    {
+                      "name": "from_previous",
+                      "label": "From previous",
+                      "type": "string",
+                      "multiline": true
+                    },
+                    {
+                      "name": "to_next",
+                      "label": "To next",
+                      "type": "string",
+                      "multiline": true
+                    },
+                    {
+                      "name": "detail_level",
+                      "label": "Detail level",
+                      "type": "string",
+                      "multiline": true
+                    },
+                    {
+                      "name": "length_range",
+                      "label": "Length range",
+                      "type": "string",
+                      "multiline": true
+                    },
+                    {
+                      "name": "input_nodes",
+                      "label": "Input nodes",
+                      "type": "string_array",
+                      "choices": []
+                    },
+                    {
+                      "name": "citations",
+                      "label": "Citations",
+                      "type": "string_array",
+                      "choices": []
+                    }
+                  ],
+                  "values": {
+                    "function": "",
+                    "proposition": "Introduce the mechanism",
+                    "explanation": "Show how the parts interact",
+                    "derivation_detail": "",
+                    "equation_anchor": "",
+                    "figure_anchor": "",
+                    "qualification": "",
+                    "from_previous": "",
+                    "to_next": "",
+                    "detail_level": "",
+                    "length_range": "",
+                    "input_nodes": [],
+                    "citations": []
+                  },
+                  "choices_read": {
+                    "operation": "structure",
+                    "payload": {
+                      "view": "detail",
+                      "section_ids": [
+                        "first"
+                      ],
+                      "paragraph_id": "first-p36456703742131136201844960223",
+                      "edit_choices": true
+                    },
+                    "http": {
+                      "method": "GET",
+                      "route": "/work/structure",
+                      "query": {
+                        "project": "book",
+                        "view": "detail",
+                        "section_ids": [
+                          "first"
+                        ],
+                        "paragraph_id": "first-p36456703742131136201844960223",
+                        "edit_choices": true
+                      }
+                    }
+                  }
+                },
+                "remove_action": {
+                  "operation": "structure_change",
+                  "payload": {
+                    "operation": "paragraph_plan",
+                    "section_id": "first",
+                    "expected_plan_revision": "sha256:fa35dabeefb2ce041545cfecb950a3fd7eee948ef3823cdc14f3f29d29288183",
+                    "expected_narrative_revision": "sha256:0aa6be8b9ba29333d24123d7831bf0d77907bfcfc48941da875f7df06319b68f",
+                    "expected_reader_basis": {
+                      "schema_version": "laplace.reader-basis/1",
+                      "project": "book",
+                      "path": "synthetics papers/book/manuscript/narrative/first.json",
+                      "section_id": "first",
+                      "subject_id": "first-p36456703742131136201844960223",
+                      "subject_revision": "sha256:0916d9023fbba7868719445f69b034045a2423373f0bb6111260b9d7eef4d1e1",
+                      "inputs": {
+                        "plan-section": "sha256:b25414354a6df71671dface4aec0fcf679323d9ef49aa089afa65faffb34f007",
+                        "architecture": "sha256:8838870b3b9c1733e13e6977ef8aabf1eb35bf69539e977d1a59d5973f7d24a9",
+                        "reader-transition": "sha256:02ed9c6ad3cce2d2f02f5396abb5cc6bb994491e353cd66681ebd0fbd4d5fc4a",
+                        "reader-neighbors": "sha256:3d6f4be21e5fb46a339e73b26ef3729b418169c013433e962a54ba0130732d85",
+                        "concept:concept:first": "sha256:97018db06cd4e0a7b2a9ef1899639f111165e6635c9ec031eab1166224d75a4a"
+                      },
+                      "unobserved_inputs": []
+                    },
+                    "action": "remove",
+                    "paragraph_id": "first-p36456703742131136201844960223"
+                  },
+                  "http": {
+                    "method": "POST",
+                    "route": "/work/structure/change"
+                  },
+                  "fields": [],
+                  "values": {}
+                }
+              }
+            ],
+            "total": 1,
+            "offset": 0,
+            "limit": 20,
+            "next_read": null
+          },
+          "create_action": {
+            "operation": "structure_change",
+            "payload": {
+              "operation": "paragraph_plan",
+              "section_id": "first",
+              "expected_plan_revision": "sha256:fa35dabeefb2ce041545cfecb950a3fd7eee948ef3823cdc14f3f29d29288183",
+              "expected_narrative_revision": "sha256:0aa6be8b9ba29333d24123d7831bf0d77907bfcfc48941da875f7df06319b68f",
+              "expected_reader_basis": {
+                "schema_version": "laplace.reader-basis/1",
+                "project": "book",
+                "path": "synthetics papers/book/manuscript/narrative/first.json",
+                "section_id": "first",
+                "subject_id": "first-p71053671195980387218330560325",
+                "subject_revision": "sha256:74234e98afe7498fb5daf1f36ac2d78acc339464f950703b8c019892f982b90b",
+                "inputs": {
+                  "plan-section": "sha256:b25414354a6df71671dface4aec0fcf679323d9ef49aa089afa65faffb34f007",
+                  "architecture": "sha256:8838870b3b9c1733e13e6977ef8aabf1eb35bf69539e977d1a59d5973f7d24a9",
+                  "reader-transition": "sha256:02ed9c6ad3cce2d2f02f5396abb5cc6bb994491e353cd66681ebd0fbd4d5fc4a",
+                  "reader-neighbors": "sha256:1b79e4e125b097286b9aae998ca7e88e457ddcae1cd4c340b8bb3a799231b223",
+                  "concept:concept:first": "sha256:97018db06cd4e0a7b2a9ef1899639f111165e6635c9ec031eab1166224d75a4a"
+                },
+                "unobserved_inputs": []
+              },
+              "action": "upsert",
+              "paragraph_id": "first-p71053671195980387218330560325",
+              "create": true
+            },
+            "http": {
+              "method": "POST",
+              "route": "/work/structure/change"
+            },
+            "fields": [
+              {
+                "name": "function",
+                "label": "Function",
+                "type": "string",
+                "multiline": true
+              },
+              {
+                "name": "proposition",
+                "label": "Proposition",
+                "type": "string",
+                "multiline": true
+              },
+              {
+                "name": "explanation",
+                "label": "Explanation",
+                "type": "string",
+                "multiline": true
+              },
+              {
+                "name": "derivation_detail",
+                "label": "Derivation detail",
+                "type": "string",
+                "multiline": true
+              },
+              {
+                "name": "equation_anchor",
+                "label": "Equation anchor",
+                "type": "string",
+                "multiline": true
+              },
+              {
+                "name": "figure_anchor",
+                "label": "Figure anchor",
+                "type": "string",
+                "multiline": true
+              },
+              {
+                "name": "qualification",
+                "label": "Qualification",
+                "type": "string",
+                "multiline": true
+              },
+              {
+                "name": "from_previous",
+                "label": "From previous",
+                "type": "string",
+                "multiline": true
+              },
+              {
+                "name": "to_next",
+                "label": "To next",
+                "type": "string",
+                "multiline": true
+              },
+              {
+                "name": "detail_level",
+                "label": "Detail level",
+                "type": "string",
+                "multiline": true
+              },
+              {
+                "name": "length_range",
+                "label": "Length range",
+                "type": "string",
+                "multiline": true
+              },
+              {
+                "name": "input_nodes",
+                "label": "Input nodes",
+                "type": "string_array",
+                "choices": []
+              },
+              {
+                "name": "citations",
+                "label": "Citations",
+                "type": "string_array",
+                "choices": []
+              }
+            ],
+            "values": {
+              "function": "",
+              "proposition": "",
+              "explanation": "",
+              "derivation_detail": "",
+              "equation_anchor": "",
+              "figure_anchor": "",
+              "qualification": "",
+              "from_previous": "",
+              "to_next": "",
+              "detail_level": "",
+              "length_range": "",
+              "input_nodes": [],
+              "citations": []
+            },
+            "placement": {
+              "kind": "APPEND",
+              "after_paragraph_id": "first-p36456703742131136201844960223"
+            },
+            "choices_read": {
+              "operation": "structure",
+              "payload": {
+                "view": "detail",
+                "section_ids": [
+                  "first"
+                ],
+                "edit_choices": true
+              },
+              "http": {
+                "method": "GET",
+                "route": "/work/structure",
+                "query": {
+                  "project": "book",
+                  "view": "detail",
+                  "section_ids": [
+                    "first"
+                  ],
+                  "edit_choices": true
+                }
+              }
+            }
+          },
+          "reorder_action": {
+            "operation": "structure_change",
+            "payload": {
+              "operation": "paragraph_plan",
+              "section_id": "first",
+              "expected_plan_revision": "sha256:fa35dabeefb2ce041545cfecb950a3fd7eee948ef3823cdc14f3f29d29288183",
+              "expected_narrative_revision": "sha256:0aa6be8b9ba29333d24123d7831bf0d77907bfcfc48941da875f7df06319b68f",
+              "expected_reader_basis": {
+                "schema_version": "laplace.reader-basis/1",
+                "project": "book",
+                "path": "synthetics papers/book/manuscript/narrative/first.json",
+                "section_id": "first",
+                "subject_id": "@order",
+                "subject_revision": "sha256:98e556928488708b4569bbc65d541a6219d5b679e217776551a8d6708b575571",
+                "inputs": {
+                  "plan-section": "sha256:b25414354a6df71671dface4aec0fcf679323d9ef49aa089afa65faffb34f007",
+                  "architecture": "sha256:8838870b3b9c1733e13e6977ef8aabf1eb35bf69539e977d1a59d5973f7d24a9",
+                  "reader-transition": "sha256:02ed9c6ad3cce2d2f02f5396abb5cc6bb994491e353cd66681ebd0fbd4d5fc4a",
+                  "concept:concept:first": "sha256:97018db06cd4e0a7b2a9ef1899639f111165e6635c9ec031eab1166224d75a4a"
+                },
+                "unobserved_inputs": []
+              },
+              "action": "reorder",
+              "order": [
+                "first-p36456703742131136201844960223"
+              ]
+            },
+            "http": {
+              "method": "POST",
+              "route": "/work/structure/change"
+            },
+            "fields": [],
+            "values": {},
+            "choices": [
+              {
+                "value": "first-p36456703742131136201844960223",
+                "label": "Introduce the mechanism"
+              }
+            ]
+          }
+        },
+        "reader_inputs": {
+          "architecture_prior": {
+            "family": "architecture",
+            "scope": "workspace",
+            "purpose": "Structural and narrative form prior; not scientific evidence or authored reader expectations.",
+            "source": {
+              "path": "profiles/author_architecture.yaml",
+              "origin": "repository"
+            },
+            "profile_revision": null,
+            "field_refs": [],
+            "editable": false,
+            "edit_reason": "This bounded profile input is read-only; shared profile editing and generated candidate application are not implemented here.",
+            "read_more": {
+              "operation": "structure",
+              "payload": {
+                "view": "architecture-profile"
+              }
+            },
+            "currentness_basis": "Current profile bytes only; no scientific acceptance or reader comprehension is asserted.",
+            "status": "ABSENT",
+            "reason": "This workspace has no recorded architecture prior; authored reader contracts remain available.",
+            "currentness": "UNAVAILABLE",
+            "revision": "sha256:08618e805c18b0aa6887829eafbd38e9e89662d38603c4ba3d5826c1791292bc",
+            "effective_projection": {
+              "fields": {},
+              "summary": "",
+              "revision": "sha256:8838870b3b9c1733e13e6977ef8aabf1eb35bf69539e977d1a59d5973f7d24a9"
+            }
+          }
+        }
+      }
+    ],
+    "boundaries": [
+      {
+        "id": "first-child",
+        "title": "First child",
+        "kind": "section",
+        "parent_id": "first",
+        "number": "1.1",
+        "job": "support",
+        "child_ids": []
+      }
+    ],
+    "structure_observation": {
+      "plan_revision": "sha256:fa35dabeefb2ce041545cfecb950a3fd7eee948ef3823cdc14f3f29d29288183",
+      "spine_revision": "sha256:4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "selection_identity": "sha256:f35f374570dbc183d4aec769c50fb55b0860b11e94183950c18db51bd357ed65",
+      "source_files": [
+        {
+          "file": "synthetics papers/book/manuscript/chapters/chapter-01.tex",
+          "source_digest": "sha256:a3f9c9c474d5c0b6ae33ea349ddf6d0f11be41f3347f7a130309571f5aa47bce"
+        }
+      ],
+      "reader_subjects": [
+        {
+          "schema_version": "laplace.reader-basis/1",
+          "project": "book",
+          "path": "synthetics papers/book/manuscript/section_contracts.json",
+          "section_id": "first",
+          "subject_id": "first",
+          "subject_revision": "sha256:02ed9c6ad3cce2d2f02f5396abb5cc6bb994491e353cd66681ebd0fbd4d5fc4a",
+          "inputs": {
+            "plan-section": "sha256:b25414354a6df71671dface4aec0fcf679323d9ef49aa089afa65faffb34f007",
+            "architecture": "sha256:8838870b3b9c1733e13e6977ef8aabf1eb35bf69539e977d1a59d5973f7d24a9",
+            "concept:concept:first": "sha256:97018db06cd4e0a7b2a9ef1899639f111165e6635c9ec031eab1166224d75a4a"
+          },
+          "unobserved_inputs": []
+        },
+        {
+          "schema_version": "laplace.reader-basis/1",
+          "project": "book",
+          "path": "synthetics papers/book/manuscript/narrative/first.json",
+          "section_id": "first",
+          "subject_id": "first-p36456703742131136201844960223",
+          "subject_revision": "sha256:0916d9023fbba7868719445f69b034045a2423373f0bb6111260b9d7eef4d1e1",
+          "inputs": {
+            "plan-section": "sha256:b25414354a6df71671dface4aec0fcf679323d9ef49aa089afa65faffb34f007",
+            "architecture": "sha256:8838870b3b9c1733e13e6977ef8aabf1eb35bf69539e977d1a59d5973f7d24a9",
+            "reader-transition": "sha256:02ed9c6ad3cce2d2f02f5396abb5cc6bb994491e353cd66681ebd0fbd4d5fc4a",
+            "reader-neighbors": "sha256:3d6f4be21e5fb46a339e73b26ef3729b418169c013433e962a54ba0130732d85",
+            "concept:concept:first": "sha256:97018db06cd4e0a7b2a9ef1899639f111165e6635c9ec031eab1166224d75a4a"
+          },
+          "unobserved_inputs": []
+        }
+      ]
+    },
+    "spine": [],
+    "ancestors": [],
+    "children": [
+      {
+        "id": "first-child",
+        "title": "First child",
+        "kind": "section",
+        "parent_id": "first",
+        "number": "1.1",
+        "job": "support",
+        "child_ids": []
+      }
+    ],
+    "outline": [
+      {
+        "id": "first",
+        "title": "First",
+        "kind": "chapter",
+        "parent_id": null,
+        "number": "1",
+        "job": "open",
+        "child_ids": [
+          "first-child"
+        ]
+      },
+      {
+        "id": "second",
+        "title": "Second",
+        "kind": "chapter",
+        "parent_id": null,
+        "number": "2",
+        "job": "close",
+        "child_ids": []
+      }
+    ],
+    "focus": null,
+    "edges": [],
+    "evidence": [],
+    "gaps": [
+      {
+        "kind": "node",
+        "id": "concept:first",
+        "reason": "plan membership names an unavailable conceptric node"
+      }
+    ],
+    "selected_node_ids": [],
+    "selected_nodes_total": 0,
+    "selected_nodes": [],
+    "selected_nodes_omitted": 0,
+    "selected_node_read_routes": {
+      "concept": {
+        "operation": "concept",
+        "payload": {
+          "node": "<selected_node_id>"
+        }
+      },
+      "history": {
+        "operation": "concept_history",
+        "payload": {
+          "node": "<selected_node_id>"
+        }
+      },
+      "tree": {
+        "operation": "concept_tree",
+        "payload": {
+          "node": "<selected_node_id>"
+        }
+      }
+    },
+    "evidence_total": 0,
+    "evidence_omitted": 0,
+    "gaps_total": 1,
+    "gaps_omitted": 0,
+    "scoped_history": [],
+    "scoped_history_omitted": 0,
+    "direct_dependencies": [],
+    "scope_diagnostics": [],
+    "source_support": [
+      {
+        "node": "concept:first",
+        "meaning_revision": "sha256:b01ad77de576569ba992bc4ade24fc71cb597672b8dc44a28b7d3baa56b62cba",
+        "citation_assessment": "CANONICAL_SECTIONS",
+        "sources": [],
+        "own_evidence": [],
+        "authored_proof": false,
+        "documented_proof": {
+          "status": "NOT_RECORDED",
+          "source": null
+        },
+        "declared_role": null,
+        "gaps": [],
+        "qualification": "AUTHORED_BASIS",
+        "independent_verification": "NOT_ASSERTED",
+        "engineering_support": {
+          "status": "UNDECLARED",
+          "bindings": [],
+          "reason": "No engineering support has been adopted",
+          "read_metrics": {}
+        }
+      }
+    ],
+    "source_support_total": 1,
+    "source_support_omitted": 0
+  },
+  "review_write": {
+    "record": "project-work",
+    "kind": "work-order",
+    "id": "WORK-fc69860df8d243ef925119b04d45a805",
+    "task_id": "WORK-fc69860df8d243ef925119b04d45a805",
+    "project": "book",
+    "ts": "2026-10-11T20:11:39.796002+00:00",
+    "title": "Review reader transition: first",
+    "goal": "Review the authored transition or paragraph for intelligibility, support and continuity on this exact basis. Record evidence and findings; current inputs alone do not establish acceptance.",
+    "task_kind": "reader-review",
+    "depends_on": [],
+    "section_ids": [
+      "first"
+    ],
+    "anchor": {},
+    "evidence": [],
+    "status": "open",
+    "origin": "author",
+    "parent_work_id": null,
+    "reader_basis": {
+      "schema_version": "laplace.reader-basis/1",
+      "project": "book",
+      "path": "synthetics papers/book/manuscript/section_contracts.json",
+      "section_id": "first",
+      "subject_id": "first",
+      "subject_revision": "sha256:02ed9c6ad3cce2d2f02f5396abb5cc6bb994491e353cd66681ebd0fbd4d5fc4a",
+      "inputs": {
+        "plan-section": "sha256:b25414354a6df71671dface4aec0fcf679323d9ef49aa089afa65faffb34f007",
+        "architecture": "sha256:8838870b3b9c1733e13e6977ef8aabf1eb35bf69539e977d1a59d5973f7d24a9",
+        "concept:concept:first": "sha256:97018db06cd4e0a7b2a9ef1899639f111165e6635c9ec031eab1166224d75a4a"
+      },
+      "unobserved_inputs": []
+    },
+    "owned_changes": {
+      "schema_version": "laplace.owner-mutation/1",
+      "files": [
+        {
+          "scope": "repository",
+          "path": "corpus_friction/work_orders.jsonl",
+          "before_sha256": "sha256:fedd74346460860287c6f61ab9758ecc79db2c5f658ec4778799d7a3de52ffaa",
+          "after_sha256": "sha256:9ed2a9da195bbbea32c6b876415085c20c2d534dbb90ac2875e4b815364f5828",
+          "observed_after_sha256": "sha256:9ed2a9da195bbbea32c6b876415085c20c2d534dbb90ac2875e4b815364f5828"
+        }
+      ],
+      "objects": [
+        {
+          "owner": "project-work",
+          "id": "WORK-fc69860df8d243ef925119b04d45a805",
+          "before_revision": "sha256:fedd74346460860287c6f61ab9758ecc79db2c5f658ec4778799d7a3de52ffaa",
+          "after_revision": "sha256:9ed2a9da195bbbea32c6b876415085c20c2d534dbb90ac2875e4b815364f5828"
+        }
+      ],
+      "rewire_records": [],
+      "views": [
+        "project",
+        "pipeline"
+      ]
+    },
+    "effects": [
+      "project",
+      "pipeline"
+    ],
+    "read_handle": {
+      "operation": "project",
+      "payload": {
+        "namespace": "book",
+        "view": "detail",
+        "id": "WORK-fc69860df8d243ef925119b04d45a805"
+      },
+      "http": {
+        "method": "GET",
+        "url": "/work/state?project=book&view=detail&id=WORK-fc69860df8d243ef925119b04d45a805"
+      }
+    },
+    "work_revision": "sha256:24609c9df6ef358f8346e811b1d4dd433e02493819617d14215c304179670b53",
+    "work_scope_revision": "sha256:27fbca74876d2d4ac0ba448a2fca5617ede1051e866d778690d3a2f7da9f0f2b",
+    "dependency_revision": "sha256:4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+  },
+  "committed_incomplete": {
+    "error": "Reader metadata publication did not complete; inspect retained state before any new write.",
+    "plan_publication": {
+      "owner": "reader-contract",
+      "status": "COMMITTED",
+      "complete": false,
+      "ledger_append_count": 1,
+      "next_reads": [
+        {
+          "operation": "structure",
+          "payload": {
+            "view": "full"
+          }
+        }
+      ]
+    },
+    "next_reads": [
+      {
+        "operation": "structure",
+        "payload": {
+          "view": "detail",
+          "section_ids": [
+            "first"
+          ]
+        },
+        "http": {
+          "method": "GET",
+          "route": "/work/structure",
+          "query": {
+            "project": "book",
+            "view": "detail",
+            "section_ids": [
+              "first"
+            ]
+          }
+        }
+      }
+    ],
+    "recovery": "Inspect this authored reader subject. Do not repeat a committed or unproved artifact publication.",
+    "operation": "section_contract",
+    "section_id": "first",
+    "consumed_revision": "sha256:773882e738f7f093b43a94934d6f43d0d3e84b4bd9e55e481aff5f6a09ef5428",
+    "revision": "sha256:d412557e59b06c16dba3244aec5df7a8e31ca716fa71c2718aade24b14be8e84",
+    "artifact_record_id": "ART-8ab114c505bb4810a718e1b2262e5b64"
+  },
+  "full_spine": {
+    "schema_version": "laplace.project-structure/1",
+    "project": "book",
+    "status": "AVAILABLE",
+    "eligible_for_authoring": true,
+    "revision": "sha256:5cd60a72af2a0791e5a9f1d2ffc25e9dd11e738def7c280244cc08675fd9ea90",
+    "authority": {
+      "plan_path": "book/manuscript/projection_plan.json",
+      "spine_revision": "sha256:a5537b74b3bb64e307834d6cc89844c7ac28c8390a8c1c310bbfc4fa25991793",
+      "plan_revision": "sha256:f5edced6d55413cb0ef84df8d6fa7520c6d52ccb5b50caf76e0f98552cb8eb04",
+      "conceptric_revision": "sha256:fcfd10d98ad3f9067af5c67b2bb11c4c4af0783ac9f65a4c67a640c7f28c2d14",
+      "research_revision": "sha256:4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "source_revision": "6ded88f6eec77db2a4f9d69d61893d4a2a663f5d79948ad246685ece8c75a5fe"
+    },
+    "selected_source": {
+      "root": "book/manuscript/main.tex",
+      "manuscript_dir": "book/manuscript",
+      "edition": null,
+      "status": "resolved",
+      "revision": "6ded88f6eec77db2a4f9d69d61893d4a2a663f5d79948ad246685ece8c75a5fe",
+      "read_only": false,
+      "selection_identity": "sha256:6ba3bb87d6634575d7ca6d76696d53d6e2bef4d77108e36b528fb5641b537adb"
+    },
+    "source_outline": [
+      {
+        "line": 1,
+        "line_end": 2,
+        "heading_line_end": 1,
+        "kind": "chapter",
+        "title": "Opening",
+        "label": null,
+        "level": 1,
+        "parent_line": null,
+        "heading_before": "\\chapter{Opening}",
+        "file": "book/manuscript/N1.tex",
+        "parent_file": null,
+        "source_order": 1,
+        "include_parent": "book/manuscript/main.tex",
+        "include_line": 3,
+        "basis": {
+          "selection_identity": null,
+          "source_digest": "sha256:64c965cca676bb82fee07f71e707be294f165bba97b91bc577186b3ebdb8c149"
+        },
+        "source_read": {
+          "operation": "source",
+          "payload": {
+            "files": [
+              "book/manuscript/N1.tex"
+            ],
+            "line_start": 1,
+            "line_end": 2
+          }
+        },
+        "shared_occurrences": 1,
+        "structure_read": {
+          "operation": "structure",
+          "payload": {
+            "view": "detail",
+            "files": [
+              "book/manuscript/N1.tex"
+            ],
+            "line_start": 1,
+            "line_end": 2
+          },
+          "http": {
+            "method": "GET",
+            "route": "/work/structure",
+            "query": {
+              "project": null,
+              "view": "detail",
+              "files": [
+                "book/manuscript/N1.tex"
+              ],
+              "line_start": 1,
+              "line_end": 2
+            }
+          }
+        },
+        "id": "source-heading-1",
+        "parent_id": null,
+        "bound": false
+      },
+      {
+        "line": 1,
+        "line_end": 2,
+        "heading_line_end": 1,
+        "kind": "chapter",
+        "title": "Result",
+        "label": null,
+        "level": 1,
+        "parent_line": null,
+        "heading_before": "\\chapter{Result}",
+        "file": "book/manuscript/N2.tex",
+        "parent_file": null,
+        "source_order": 2,
+        "include_parent": "book/manuscript/main.tex",
+        "include_line": 4,
+        "basis": {
+          "selection_identity": null,
+          "source_digest": "sha256:57c9a28ae31333593900b839c89bd0b0a0fb4187e882f274cd0580c4ea93aa71"
+        },
+        "source_read": {
+          "operation": "source",
+          "payload": {
+            "files": [
+              "book/manuscript/N2.tex"
+            ],
+            "line_start": 1,
+            "line_end": 2
+          }
+        },
+        "shared_occurrences": 1,
+        "structure_read": {
+          "operation": "structure",
+          "payload": {
+            "view": "detail",
+            "files": [
+              "book/manuscript/N2.tex"
+            ],
+            "line_start": 1,
+            "line_end": 2
+          },
+          "http": {
+            "method": "GET",
+            "route": "/work/structure",
+            "query": {
+              "project": null,
+              "view": "detail",
+              "files": [
+                "book/manuscript/N2.tex"
+              ],
+              "line_start": 1,
+              "line_end": 2
+            }
+          }
+        },
+        "id": "source-heading-2",
+        "parent_id": null,
+        "bound": false
+      }
+    ],
+    "identities": {
+      "plan:book": "rev:plan:book:5cd60a72af2a0791e5a9f1d2ffc25e9dd11e738def7c280244cc08675fd9ea90",
+      "plan-file:book": "rev:plan-file:book:f5edced6d55413cb0ef84df8d6fa7520c6d52ccb5b50caf76e0f98552cb8eb04",
+      "selected-edition:book": "rev:selected-edition:book:6ded88f6eec77db2a4f9d69d61893d4a2a663f5d79948ad246685ece8c75a5fe"
+    },
+    "sections": [
+      {
+        "id": "N1",
+        "collection": "sections",
+        "title": "Opening",
+        "kind": "section",
+        "parent_id": null,
+        "depth": 0,
+        "number": "1",
+        "ancestor_ids": [],
+        "child_ids": [],
+        "order": 0,
+        "job": "Orient the reader.",
+        "notes": "",
+        "refs": [],
+        "node_ids": [
+          "res:one",
+          "def:one"
+        ],
+        "nodes": [
+          {
+            "id": "res:one",
+            "label": "First result",
+            "missing": false,
+            "kind": "result",
+            "status": null,
+            "summary": "First result",
+            "section_ref": null,
+            "result_bindings": []
+          },
+          {
+            "id": "def:one",
+            "label": "A definition",
+            "missing": false,
+            "kind": "definition",
+            "status": null,
+            "summary": "A definition",
+            "section_ref": "res:one",
+            "result_bindings": []
+          }
+        ],
+        "beat_ids": [
+          "res:one"
+        ],
+        "beats": [
+          {
+            "id": "res:one",
+            "label": "First result",
+            "missing": false,
+            "kind": "result",
+            "status": null,
+            "summary": "First result",
+            "section_ref": null,
+            "result_bindings": [],
+            "spine_status": "LIVE"
+          }
+        ],
+        "source": {
+          "section_id": "N1",
+          "source_files": [
+            "book/manuscript/N1.tex"
+          ],
+          "status": "MATCHED",
+          "precision": "INFERRED",
+          "title_status": "MATCHED",
+          "plan_title": "Opening",
+          "source_titles": [
+            "Opening"
+          ],
+          "source_label": null,
+          "heading": {
+            "file": "book/manuscript/N1.tex",
+            "line": 1,
+            "line_end": 2,
+            "heading_line_end": 1,
+            "title": "Opening",
+            "kind": "chapter",
+            "label": null,
+            "heading_before": "\\chapter{Opening}",
+            "source_order": 1,
+            "source_orders": [
+              1
+            ]
+          },
+          "basis": {
+            "book/manuscript/N1.tex": {
+              "selection_identity": "sha256:6ba3bb87d6634575d7ca6d76696d53d6e2bef4d77108e36b528fb5641b537adb",
+              "source_digest": "sha256:64c965cca676bb82fee07f71e707be294f165bba97b91bc577186b3ebdb8c149"
+            }
+          },
+          "mapping": "legacy-title-or-stem",
+          "selected_root": "book/manuscript/main.tex",
+          "source_reads": [
+            {
+              "operation": "source",
+              "payload": {
+                "files": [
+                  "book/manuscript/N1.tex"
+                ]
+              },
+              "http": {
+                "method": "GET",
+                "route": "/projection/tex",
+                "query": {
+                  "corpus": "book",
+                  "file": "book/manuscript/N1.tex",
+                  "view": "source"
+                }
+              }
+            }
+          ],
+          "clearing_read": {
+            "operation": "structure",
+            "payload": {
+              "view": "outline"
+            }
+          }
+        },
+        "clearing_action": {
+          "operation": "structure_change",
+          "payload": {
+            "operation": "bind_source",
+            "section_id": "N1",
+            "expected_plan_revision": "sha256:f5edced6d55413cb0ef84df8d6fa7520c6d52ccb5b50caf76e0f98552cb8eb04"
+          },
+          "http": {
+            "method": "POST",
+            "route": "/work/structure/change"
+          },
+          "choose_from": {
+            "operation": "structure",
+            "payload": {
+              "view": "outline"
+            },
+            "http": {
+              "method": "GET",
+              "route": "/work/structure",
+              "query": {
+                "project": "book",
+                "view": "outline"
+              }
+            }
+          },
+          "required_occurrence_fields": [
+            "file",
+            "line",
+            "heading_before",
+            "expected_selection",
+            "expected_source_digest"
+          ]
+        },
+        "source_support": [
+          {
+            "node": "res:one",
+            "meaning_revision": "sha256:3d461babc1505e6731afbd3eec1b52169bc1957d7667d0c1f5a5395034281b3e",
+            "citation_assessment": "CANONICAL_SECTIONS",
+            "sources": [],
+            "own_evidence": [],
+            "authored_proof": false,
+            "documented_proof": {
+              "status": "NOT_RECORDED",
+              "source": null
+            },
+            "declared_role": null,
+            "gaps": [
+              {
+                "kind": "unsupported",
+                "node_id": "res:one",
+                "note": "No canonical external support, current own result or documented proof is recorded."
+              }
+            ],
+            "qualification": "OPEN",
+            "independent_verification": "NOT_ASSERTED",
+            "engineering_support": {
+              "status": "UNDECLARED",
+              "bindings": [],
+              "reason": "No engineering support has been adopted",
+              "read_metrics": {}
+            }
+          },
+          {
+            "node": "def:one",
+            "meaning_revision": "sha256:f8cd4ca428d56d2b3f47e57749197bddb9e425795e91340634a83ce7b38bb4e2",
+            "citation_assessment": "CANONICAL_SECTIONS",
+            "sources": [],
+            "own_evidence": [],
+            "authored_proof": false,
+            "documented_proof": {
+              "status": "NOT_RECORDED",
+              "source": null
+            },
+            "declared_role": "DECLARED_DEFINITION",
+            "gaps": [],
+            "qualification": "DECLARED_DEFINITION",
+            "independent_verification": "NOT_ASSERTED",
+            "engineering_support": {
+              "status": "UNDECLARED",
+              "bindings": [],
+              "reason": "No engineering support has been adopted",
+              "read_metrics": {}
+            }
+          }
+        ],
+        "evidence": []
+      },
+      {
+        "id": "N2",
+        "collection": "sections",
+        "title": "Result",
+        "kind": "section",
+        "parent_id": null,
+        "depth": 0,
+        "number": "2",
+        "ancestor_ids": [],
+        "child_ids": [],
+        "order": 1,
+        "job": "State the result.",
+        "notes": "",
+        "refs": [],
+        "node_ids": [
+          "res:two"
+        ],
+        "nodes": [
+          {
+            "id": "res:two",
+            "label": "Second result",
+            "missing": false,
+            "kind": "result",
+            "status": null,
+            "summary": "Second result",
+            "section_ref": null,
+            "result_bindings": []
+          }
+        ],
+        "beat_ids": [
+          "res:two"
+        ],
+        "beats": [
+          {
+            "id": "res:two",
+            "label": "Second result",
+            "missing": false,
+            "kind": "result",
+            "status": null,
+            "summary": "Second result",
+            "section_ref": null,
+            "result_bindings": [],
+            "spine_status": "LIVE"
+          }
+        ],
+        "source": {
+          "section_id": "N2",
+          "source_files": [
+            "book/manuscript/N2.tex"
+          ],
+          "status": "MATCHED",
+          "precision": "INFERRED",
+          "title_status": "MATCHED",
+          "plan_title": "Result",
+          "source_titles": [
+            "Result"
+          ],
+          "source_label": null,
+          "heading": {
+            "file": "book/manuscript/N2.tex",
+            "line": 1,
+            "line_end": 2,
+            "heading_line_end": 1,
+            "title": "Result",
+            "kind": "chapter",
+            "label": null,
+            "heading_before": "\\chapter{Result}",
+            "source_order": 2,
+            "source_orders": [
+              2
+            ]
+          },
+          "basis": {
+            "book/manuscript/N2.tex": {
+              "selection_identity": "sha256:6ba3bb87d6634575d7ca6d76696d53d6e2bef4d77108e36b528fb5641b537adb",
+              "source_digest": "sha256:57c9a28ae31333593900b839c89bd0b0a0fb4187e882f274cd0580c4ea93aa71"
+            }
+          },
+          "mapping": "legacy-title-or-stem",
+          "selected_root": "book/manuscript/main.tex",
+          "source_reads": [
+            {
+              "operation": "source",
+              "payload": {
+                "files": [
+                  "book/manuscript/N2.tex"
+                ]
+              },
+              "http": {
+                "method": "GET",
+                "route": "/projection/tex",
+                "query": {
+                  "corpus": "book",
+                  "file": "book/manuscript/N2.tex",
+                  "view": "source"
+                }
+              }
+            }
+          ],
+          "clearing_read": {
+            "operation": "structure",
+            "payload": {
+              "view": "outline"
+            }
+          }
+        },
+        "clearing_action": {
+          "operation": "structure_change",
+          "payload": {
+            "operation": "bind_source",
+            "section_id": "N2",
+            "expected_plan_revision": "sha256:f5edced6d55413cb0ef84df8d6fa7520c6d52ccb5b50caf76e0f98552cb8eb04"
+          },
+          "http": {
+            "method": "POST",
+            "route": "/work/structure/change"
+          },
+          "choose_from": {
+            "operation": "structure",
+            "payload": {
+              "view": "outline"
+            },
+            "http": {
+              "method": "GET",
+              "route": "/work/structure",
+              "query": {
+                "project": "book",
+                "view": "outline"
+              }
+            }
+          },
+          "required_occurrence_fields": [
+            "file",
+            "line",
+            "heading_before",
+            "expected_selection",
+            "expected_source_digest"
+          ]
+        },
+        "source_support": [
+          {
+            "node": "res:two",
+            "meaning_revision": "sha256:91ee35a0c305187111a64049eae8253982daf868f0b8872b124f915f8edd718f",
+            "citation_assessment": "CANONICAL_SECTIONS",
+            "sources": [],
+            "own_evidence": [],
+            "authored_proof": false,
+            "documented_proof": {
+              "status": "NOT_RECORDED",
+              "source": null
+            },
+            "declared_role": null,
+            "gaps": [
+              {
+                "kind": "unsupported",
+                "node_id": "res:two",
+                "note": "No canonical external support, current own result or documented proof is recorded."
+              }
+            ],
+            "qualification": "OPEN",
+            "independent_verification": "NOT_ASSERTED",
+            "engineering_support": {
+              "status": "UNDECLARED",
+              "bindings": [],
+              "reason": "No engineering support has been adopted",
+              "read_metrics": {}
+            }
+          }
+        ],
+        "evidence": []
+      }
+    ],
+    "spine": [
+      {
+        "id": "res:one",
+        "ord": 0,
+        "narrative": "beat",
+        "term": null,
+        "section_ids": [
+          "N1"
+        ],
+        "placed": true,
+        "detail_read": {
+          "operation": "structure",
+          "payload": {
+            "view": "detail",
+            "node_id": "res:one"
+          }
+        },
+        "concept_read": {
+          "operation": "concept",
+          "payload": {
+            "node": "res:one"
+          }
+        },
+        "full_guard_read": {
+          "operation": "structure",
+          "payload": {
+            "view": "full"
+          }
+        }
+      },
+      {
+        "id": "res:two",
+        "ord": 1,
+        "narrative": "beat",
+        "term": null,
+        "section_ids": [
+          "N2"
+        ],
+        "placed": true,
+        "detail_read": {
+          "operation": "structure",
+          "payload": {
+            "view": "detail",
+            "node_id": "res:two"
+          }
+        },
+        "concept_read": {
+          "operation": "concept",
+          "payload": {
+            "node": "res:two"
+          }
+        },
+        "full_guard_read": {
+          "operation": "structure",
+          "payload": {
+            "view": "full"
+          }
+        }
+      }
+    ],
+    "plan_collections": {
+      "sections": [
+        "N1",
+        "N2"
+      ],
+      "appendices": []
+    },
+    "nodes": [
+      {
+        "id": "res:one",
+        "label": "First result",
+        "missing": false,
+        "kind": "result",
+        "status": null,
+        "summary": "First result",
+        "section_ref": null,
+        "result_bindings": []
+      },
+      {
+        "id": "def:one",
+        "label": "A definition",
+        "missing": false,
+        "kind": "definition",
+        "status": null,
+        "summary": "A definition",
+        "section_ref": "res:one",
+        "result_bindings": []
+      },
+      {
+        "id": "res:two",
+        "label": "Second result",
+        "missing": false,
+        "kind": "result",
+        "status": null,
+        "summary": "Second result",
+        "section_ref": null,
+        "result_bindings": []
+      }
+    ],
+    "edges": [],
+    "evidence": [],
+    "gaps": [],
+    "logical_objects": [
+      {
+        "id": "def:one",
+        "label": "A definition",
+        "missing": false,
+        "kind": "definition",
+        "status": null,
+        "summary": "A definition",
+        "section_ref": "res:one",
+        "result_bindings": [],
+        "placed": true,
+        "source_refs": [],
+        "obligation": null
+      },
+      {
+        "id": "def:unplanned",
+        "label": "Unplanned concept",
+        "missing": false,
+        "kind": "definition",
+        "status": null,
+        "summary": "Unplanned concept",
+        "section_ref": null,
+        "result_bindings": [],
+        "placed": false,
+        "source_refs": [],
+        "obligation": null
+      },
+      {
+        "id": "res:one",
+        "label": "First result",
+        "missing": false,
+        "kind": "result",
+        "status": null,
+        "summary": "First result",
+        "section_ref": null,
+        "result_bindings": [],
+        "placed": true,
+        "source_refs": [],
+        "obligation": null
+      },
+      {
+        "id": "res:two",
+        "label": "Second result",
+        "missing": false,
+        "kind": "result",
+        "status": null,
+        "summary": "Second result",
+        "section_ref": null,
+        "result_bindings": [],
+        "placed": true,
+        "source_refs": [],
+        "obligation": null
+      }
+    ],
+    "unplaced_nodes": [
+      {
+        "id": "def:unplanned",
+        "label": "Unplanned concept",
+        "missing": false,
+        "kind": "definition",
+        "status": null,
+        "summary": "Unplanned concept",
+        "section_ref": null,
+        "result_bindings": [],
+        "placed": false,
+        "source_refs": [],
+        "obligation": null
+      }
+    ],
+    "logical_omission": {
+      "objects_total": 4,
+      "objects_omitted": 0,
+      "reader_order_declared": true
+    },
+    "relation_diagnostics": [],
+    "writers": {
+      "plan": "storyboard.plan_write",
+      "membership": "storyboard coemit/spine",
+      "relations": "corpus_ingest.rewire_add"
+    }
+  },
+  "partial_spine": {
+    "ok": false,
+    "applied": true,
+    "changed": true,
+    "status": "PARTIAL",
+    "error": "fixture second rewire failure",
+    "spine_deltas": [
+      {
+        "id": "RW-20261011-211139-919712",
+        "ts": "2026-10-11T21:11:39",
+        "kind": "set-spine",
+        "node": "res:two",
+        "target": null,
+        "value": null,
+        "by": "storyboard",
+        "status": "open",
+        "ord": 0,
+        "narrative": "beat"
+      }
+    ],
+    "plan_publication": {
+      "owner": "reader-spine",
+      "status": "PARTIAL",
+      "complete": false,
+      "ledger_append_count": 1,
+      "next_reads": [
+        {
+          "operation": "structure",
+          "payload": {
+            "view": "full"
+          }
+        }
+      ],
+      "before_revision": "sha256:a5537b74b3bb64e307834d6cc89844c7ac28c8390a8c1c310bbfc4fa25991793",
+      "observed_revision": "sha256:dac9a95deeaa22df8a3f4828a0f49a024febb4978ea70f0ebcc1b8cda8a39833",
+      "intended_order": [
+        "res:two",
+        "res:one"
+      ],
+      "observed_order": [
+        "res:one",
+        "res:two"
+      ]
+    },
+    "owned_changes": {
+      "schema_version": "laplace.owner-mutation/1",
+      "files": [],
+      "objects": [
+        {
+          "owner": "reader-spine",
+          "id": "book",
+          "before_revision": "sha256:a5537b74b3bb64e307834d6cc89844c7ac28c8390a8c1c310bbfc4fa25991793",
+          "after_revision": "sha256:dac9a95deeaa22df8a3f4828a0f49a024febb4978ea70f0ebcc1b8cda8a39833"
+        }
+      ],
+      "rewire_records": [],
+      "views": [
+        "structure"
+      ]
+    },
+    "recovery": "Inspect the observed remaining spine and submit a new guarded operation; do not replay completed rewires."
+  },
+  "fixture_roots": [
+    "/tmp/laplace-m2-reader-final-wzs75zz4",
+    "/tmp/laplace-m2-spine-final-475cg7yc"
+  ]
+}

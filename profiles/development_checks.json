@@ -1,0 +1,233 @@
+{
+ "schema": "laplace.development-check-profiles/1",
+ "meaning": "The fixed check profiles a development lane grant carries (wave 13, incorporation D6). Each profile is exactly the grant check-profile shape of development_source; a check call may append only files matching targets. Limits are copied from the existing grant profile named in copied_from (wave10/incorporation/observations.txt [C7], [R7], [R8]).",
+ "profiles": {
+  "python-tests": {
+   "copied_from": "owner_source (its bootstrap, then pytest -q -p no:cacheprovider)",
+   "profile": {
+    "runtime": "registered-python",
+    "executable": "python",
+    "args": [
+     "-I",
+     "-B",
+     "-c",
+     "import os,sys,pathlib,json\nsys.dont_write_bytecode=True\nroot=pathlib.Path.cwd(); sys.path[:0]=[str(root/'src'),str(root/'tests')]\nos.environ['PYTEST_DISABLE_PLUGIN_AUTOLOAD']='1'\nos.environ['LAPLACE_PYTHON']=sys.executable\nos.environ['PATH']=str(pathlib.Path(sys.executable).parent)+':/usr/bin:/bin'\nos.environ['GIT_CONFIG_COUNT']='1'\nos.environ['GIT_CONFIG_KEY_0']='gc.auto'\nos.environ['GIT_CONFIG_VALUE_0']='0'\nscratch=pathlib.Path(os.environ.get('TMPDIR','/tmp'))/'connected-workspace-check'\nscratch.mkdir()\nos.environ['TMPDIR']=str(scratch)\nimport pytest\nraise SystemExit(pytest.main(['-c','/dev/null','--rootdir',str(root),'-p','no:cacheprovider','-q','--basetemp',str(scratch/'pytest'),*sys.argv[1:]]))\n"
+    ],
+    "inputs": [
+     "src/**",
+     "tests/**",
+     "scripts/**",
+     "profiles/**"
+    ],
+    "targets": [
+     "tests/test_*.py"
+    ],
+    "requires_targets": true,
+    "failures": "pytest",
+    "timeout_s": 120,
+    "memory_bytes": 2147483648,
+    "max_processes": 32,
+    "scratch_bytes": 67108864,
+    "max_output_bytes": 131072
+   }
+  },
+  "node-tests": {
+   "copied_from": "editor_callers (the one existing node --test profile); node runs under the registered interpreter as in python-tests, so a test that starts scripts/laplace-python finds it",
+   "profile": {
+    "runtime": "registered-python",
+    "executable": "python",
+    "args": [
+     "-I",
+     "-B",
+     "-c",
+     "import os,sys\nos.environ['LAPLACE_PYTHON']=sys.executable\nos.environ['PATH']=os.path.dirname(sys.executable)+':/usr/bin:/bin'\nos.execv('/usr/bin/node',['/usr/bin/node',*sys.argv[1:]])\n",
+     "--disable-wasm-trap-handler",
+     "--test",
+     "--test-reporter=data:text/javascript,export default async function*(source){let pass=0,fail=0,skip=0;for await(const event of source){const data=event.data||{};if(event.type==='test:fail'){if(data.todo||data.details?.error?.failureType==='subtestsFailed')continue;fail++;yield 'not ok '+fail+' - '+String(data.name).replace(/\\s+/g,' ')+'\\n';}else if(event.type==='test:pass'){if(data.skip||data.todo)skip++;else pass++;}}yield '\\x23 pass '+pass+'\\n\\x23 fail '+fail+'\\n\\x23 skipped '+skip+'\\n';}",
+     "--test-concurrency=1"
+    ],
+    "inputs": [
+     "src/**",
+     "tests/**",
+     "scripts/**",
+     "profiles/**"
+    ],
+    "targets": [
+     "tests/*.test.mjs"
+    ],
+    "requires_targets": true,
+    "failures": "tap",
+    "timeout_s": 120,
+    "memory_bytes": 2147483648,
+    "max_processes": 32,
+    "scratch_bytes": 67108864,
+    "max_output_bytes": 131072,
+    "sandbox_differences": [
+     {
+      "name": "tests/manuscript_dom.test.mjs",
+      "cause": "browser test: it needs playwright (node_modules) and Chromium (~/.cache/ms-playwright), and the sandbox mounts neither"
+     },
+     {
+      "name": "tests/c12_template_feedback.test.mjs",
+      "cause": "TeX build: pdflatex needs its format files in /var/lib/texmf and its configuration in /etc/texmf, and the sandbox mounts only /usr"
+     },
+     {
+      "name": "tests/c12_template_reopen.test.mjs",
+      "cause": "TeX build: pdflatex needs its format files in /var/lib/texmf and its configuration in /etc/texmf, and the sandbox mounts only /usr"
+     },
+     {
+      "name": "tests/document_template.test.mjs",
+      "cause": "TeX build: pdflatex needs its format files in /var/lib/texmf and its configuration in /etc/texmf, and the sandbox mounts only /usr"
+     },
+     {
+      "name": "tests/manuscript_editor.test.mjs",
+      "cause": "TeX build: pdflatex needs its format files in /var/lib/texmf and its configuration in /etc/texmf, and the sandbox mounts only /usr"
+     },
+     {
+      "name": "tests/publication_editions.test.mjs",
+      "cause": "TeX build: pdflatex needs its format files in /var/lib/texmf and its configuration in /etc/texmf, and the sandbox mounts only /usr"
+     },
+     {
+      "name": "tests/template_inspector_workflow.test.mjs",
+      "cause": "TeX build: pdflatex needs its format files in /var/lib/texmf and its configuration in /etc/texmf, and the sandbox mounts only /usr"
+     },
+     {
+      "name": "source render coverage · manuscript/template-open",
+      "cause": "TeX build: pdflatex needs its format files in /var/lib/texmf and its configuration in /etc/texmf, and the sandbox mounts only /usr"
+     },
+     {
+      "name": "source render coverage · manuscript/template-reviewed",
+      "cause": "TeX build: pdflatex needs its format files in /var/lib/texmf and its configuration in /etc/texmf, and the sandbox mounts only /usr"
+     },
+     {
+      "name": "RESOURCES: owner → REAL PDF → REAL PDF retains neither the replaced owner dialog nor its 1,000,000-character payload; the negative control is detected (heap snapshot, property-edge reachability, --expose-gc)",
+      "cause": "TeX build: pdflatex needs its format files in /var/lib/texmf and its configuration in /etc/texmf, and the sandbox mounts only /usr"
+     },
+     {
+      "name": "dirty TeX prepared context is accepted by the actual server parser and never supplies unsaved saved-source lines",
+      "cause": "fails outside the sandbox too; inside, tests/manuscript_editor.test.mjs stops at its first TeX build, so this name is not printed"
+     }
+    ]
+   },
+   "lane_dependencies": [
+    "runtime_profiles.toml",
+    ".claude/workflows/atlas-wave.js"
+   ]
+  },
+  "node-suite": {
+   "copied_from": "editor_callers, except timeout_s: 300 instead of 120, because the whole suite took 106 s serially on a lean lane outside the sandbox (2026-11-08), too close to 120 s; node runs under the registered interpreter as in node-tests",
+   "profile": {
+    "runtime": "registered-python",
+    "executable": "python",
+    "args": [
+     "-I",
+     "-B",
+     "-c",
+     "import os,sys\nos.environ['LAPLACE_PYTHON']=sys.executable\nos.environ['PATH']=os.path.dirname(sys.executable)+':/usr/bin:/bin'\nos.execv('/usr/bin/node',['/usr/bin/node',*sys.argv[1:]])\n",
+     "--disable-wasm-trap-handler",
+     "--test",
+     "--test-reporter=data:text/javascript,export default async function*(source){let pass=0,fail=0,skip=0;for await(const event of source){const data=event.data||{};if(event.type==='test:fail'){if(data.todo||data.details?.error?.failureType==='subtestsFailed')continue;fail++;yield 'not ok '+fail+' - '+String(data.name).replace(/\\s+/g,' ')+'\\n';}else if(event.type==='test:pass'){if(data.skip||data.todo)skip++;else pass++;}}yield '\\x23 pass '+pass+'\\n\\x23 fail '+fail+'\\n\\x23 skipped '+skip+'\\n';}",
+     "--test-concurrency=1",
+     "tests/*.test.mjs"
+    ],
+    "inputs": [
+     "src/**",
+     "tests/**",
+     "scripts/**",
+     "profiles/**"
+    ],
+    "failures": "tap",
+    "timeout_s": 300,
+    "memory_bytes": 2147483648,
+    "max_processes": 32,
+    "scratch_bytes": 67108864,
+    "max_output_bytes": 131072,
+    "sandbox_differences": [
+     {
+      "name": "tests/manuscript_dom.test.mjs",
+      "cause": "browser test: it needs playwright (node_modules) and Chromium (~/.cache/ms-playwright), and the sandbox mounts neither"
+     },
+     {
+      "name": "tests/c12_template_feedback.test.mjs",
+      "cause": "TeX build: pdflatex needs its format files in /var/lib/texmf and its configuration in /etc/texmf, and the sandbox mounts only /usr"
+     },
+     {
+      "name": "tests/c12_template_reopen.test.mjs",
+      "cause": "TeX build: pdflatex needs its format files in /var/lib/texmf and its configuration in /etc/texmf, and the sandbox mounts only /usr"
+     },
+     {
+      "name": "tests/document_template.test.mjs",
+      "cause": "TeX build: pdflatex needs its format files in /var/lib/texmf and its configuration in /etc/texmf, and the sandbox mounts only /usr"
+     },
+     {
+      "name": "tests/manuscript_editor.test.mjs",
+      "cause": "TeX build: pdflatex needs its format files in /var/lib/texmf and its configuration in /etc/texmf, and the sandbox mounts only /usr"
+     },
+     {
+      "name": "tests/publication_editions.test.mjs",
+      "cause": "TeX build: pdflatex needs its format files in /var/lib/texmf and its configuration in /etc/texmf, and the sandbox mounts only /usr"
+     },
+     {
+      "name": "tests/template_inspector_workflow.test.mjs",
+      "cause": "TeX build: pdflatex needs its format files in /var/lib/texmf and its configuration in /etc/texmf, and the sandbox mounts only /usr"
+     },
+     {
+      "name": "source render coverage · manuscript/template-open",
+      "cause": "TeX build: pdflatex needs its format files in /var/lib/texmf and its configuration in /etc/texmf, and the sandbox mounts only /usr"
+     },
+     {
+      "name": "source render coverage · manuscript/template-reviewed",
+      "cause": "TeX build: pdflatex needs its format files in /var/lib/texmf and its configuration in /etc/texmf, and the sandbox mounts only /usr"
+     },
+     {
+      "name": "RESOURCES: owner → REAL PDF → REAL PDF retains neither the replaced owner dialog nor its 1,000,000-character payload; the negative control is detected (heap snapshot, property-edge reachability, --expose-gc)",
+      "cause": "TeX build: pdflatex needs its format files in /var/lib/texmf and its configuration in /etc/texmf, and the sandbox mounts only /usr"
+     },
+     {
+      "name": "dirty TeX prepared context is accepted by the actual server parser and never supplies unsaved saved-source lines",
+      "cause": "fails outside the sandbox too; inside, tests/manuscript_editor.test.mjs stops at its first TeX build, so this name is not printed"
+     }
+    ]
+   },
+   "lane_dependencies": [
+    "runtime_profiles.toml",
+    ".claude/workflows/atlas-wave.js"
+   ]
+  },
+  "syntax": {
+   "copied_from": "syntax (the existing compile-only argv)",
+   "profile": {
+    "executable": "/usr/bin/python3",
+    "args": [
+     "-I",
+     "-B",
+     "-c",
+     "import ast,json,pathlib,sys; paths=sys.argv[1:]; [(json.loads(pathlib.Path(p).read_text(encoding='utf-8')) if p.endswith('.json') else ast.parse(pathlib.Path(p).read_text(encoding='utf-8'),filename=p)) for p in paths]; print(json.dumps({'state':'PASS','scope':'STAGED_PYTHON_JSON_SYNTAX_ONLY','files':paths,'functional_acceptance':'NOT_PROVED'}))"
+    ],
+    "inputs": [
+     "src/**",
+     "tests/**",
+     "scripts/**",
+     "profiles/**"
+    ],
+    "targets": [
+     "src/*.py",
+     "tests/*.py",
+     "scripts/*.py",
+     "src/*.json",
+     "tests/*.json",
+     "profiles/*.json"
+    ],
+    "requires_targets": true,
+    "timeout_s": 30,
+    "memory_bytes": 536870912,
+    "max_processes": 4,
+    "scratch_bytes": 4194304,
+    "max_output_bytes": 65536
+   }
+  }
+ },
+ "reporter": "node-tests and node-suite print through a reporter given inline as a data: module: one TAP-shaped line 'not ok N - <name>' per failing test from the runner's own test:fail events (a suite failing only because a subtest failed is not repeated), then '# pass', '# fail' and '# skipped' counts. The whole TAP stream of the 178-file suite is 1,096,019 bytes, over the 128 KiB output budget; this stream is 12,634 bytes.",
+ "lane_dependencies": "node-tests and node-suite read two files outside the writable lane paths: runtime_profiles.toml (scripts/laplace-python refuses without it: 'Laplace runtime declaration unavailable') and .claude/workflows/atlas-wave.js (read by tests/atlas_wave_lifecycle.test.mjs). lane() pins each from the cut lane into the grant profile's dependencies {path: sha256}; the grant validates them and every check re-pins them before staging them read-only.",
+ "sandbox_environment": "Why the node profiles look as they do (measured 2026-11-08, wave13/lane-checks/node_suite_sandbox_vs_outside.json): node runs under the registered interpreter (runtime registered-python, its bootstrap sets LAPLACE_PYTHON and execs /usr/bin/node), because 16 of the 17 files that failed only in the sandbox start scripts/laplace-python (13 of them refused 'Laplace runtime declaration unavailable' until runtime_profiles.toml was staged); --disable-wasm-trap-handler, because V8 reserves guard space for each WebAssembly memory beyond the check's 2 GiB address-space limit (memory_bytes, the owner's MAX_CHECK_MEMORY) and the reader and session tests then fail 'Cannot allocate Wasm memory'; it changes only how Wasm bounds are checked. The names that still differ from a run outside the sandbox on the same commit are listed with their cause in sandbox_differences, and every check row repeats them."
+}

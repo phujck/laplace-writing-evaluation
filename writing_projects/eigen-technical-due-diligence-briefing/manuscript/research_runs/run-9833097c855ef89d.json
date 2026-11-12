@@ -1,0 +1,251 @@
+{
+  "args": {},
+  "cancel_path": "/home/phujck/VScodeProjects/laplace/writing_projects/eigen-technical-due-diligence-briefing/manuscript/research_runs/run-9833097c855ef89d.cancel",
+  "cwd": "/home/phujck/VScodeProjects/laplace/writing_projects/eigen-technical-due-diligence-briefing",
+  "deadline_at": 1794439258.976078,
+  "execution_deadline_monotonic": 137035.362207313,
+  "id": "run-9833097c855ef89d",
+  "launch_token": "aecf510234ac4f0cb4cc6b4f934c6225",
+  "mode": "full",
+  "pid": 645951,
+  "producer_argv": [
+    "/home/phujck/.local/share/laplace/runtime/python/current/bin/python3.14",
+    "/home/phujck/VScodeProjects/laplace/writing_projects/eigen-technical-due-diligence-briefing/generic-overview-candidate-20261111/presentation.py",
+    "--mode",
+    "full",
+    "--args-json",
+    "{}",
+    "--result",
+    "/home/phujck/VScodeProjects/laplace/writing_projects/eigen-technical-due-diligence-briefing/manuscript/research_runs/run-9833097c855ef89d.result.json"
+  ],
+  "producer_base": "/home/phujck/VScodeProjects/laplace/writing_projects/eigen-technical-due-diligence-briefing",
+  "producer_id": "generic-overview-private-render-final",
+  "producer_path": "generic-overview-candidate-20261111/presentation.py",
+  "project": "eigen-technical-due-diligence-briefing",
+  "provenance": {
+    "dependencies": [
+      {
+        "bytes": 198457,
+        "path": "generic-overview-candidate-20261111/preservation/original-source-snapshot.json",
+        "sha256": "352f41844bf8113f9839aa19b4f50bec0f38ac83153d36ff8187077096b19b43",
+        "status": "PRESENT"
+      },
+      {
+        "bytes": 29598,
+        "path": "manuscript/figures/generated/dd-hmf-physical-ground-state-20261016.pdf",
+        "sha256": "59c0464e50e58bf6886dd1a743bba3eadc23b453c5ddc415fd918662a10367f1",
+        "status": "PRESENT"
+      },
+      {
+        "bytes": 1593,
+        "path": "manuscript/working-draft/Eigen-A-Theory-of-Efficient-Representation-and-Its-Working-Prototypes.tex",
+        "sha256": "2c6431e1c6d9d364ed6fbac75a34e17037263b0161bcd26223f79647ce3d6a80",
+        "status": "PRESENT"
+      },
+      {
+        "bytes": 5309,
+        "path": "manuscript/working-draft/chapters/chapter-01.tex",
+        "sha256": "28846494a5d4992e6a731975fa094b5d154a8481e78034c275a513435bfd166e",
+        "status": "PRESENT"
+      },
+      {
+        "bytes": 5792,
+        "path": "manuscript/working-draft/chapters/from-a-working-core-to-an-extensible-sdk.tex",
+        "sha256": "08b71fcb6066d640f0fb6e8d91d8fbb76329b68c0ea7ed23ea5c83d4a3008bb7",
+        "status": "PRESENT"
+      },
+      {
+        "bytes": 37016,
+        "path": "manuscript/working-draft/chapters/loss-dynamics-and-the-choice-of-scale.tex",
+        "sha256": "d7fcf205352b45f470cdfdb245cceae440ba5698d80819ee550c2f3dc0654c9e",
+        "status": "PRESENT"
+      },
+      {
+        "bytes": 28122,
+        "path": "manuscript/working-draft/chapters/memory-as-a-retained-and-reconstructable-object.tex",
+        "sha256": "a9341e98bf85fede0ff14b01beee44cd4f790692c284ca5ae760a463aa29f6aa",
+        "status": "PRESENT"
+      },
+      {
+        "bytes": 20744,
+        "path": "manuscript/working-draft/chapters/quantum-prototypes-changing-the-calculation.tex",
+        "sha256": "46a4ef522fbcb9f187e067e23ce2692da0b3112b4eb97856b9d30fb829ee6644",
+        "status": "PRESENT"
+      },
+      {
+        "bytes": 9194,
+        "path": "manuscript/working-draft/chapters/research-that-can-inspect-its-own-results.tex",
+        "sha256": "09a138e423bed45a3388404315cb7e4e3fb716a13341c6a66014b8161805dff8",
+        "status": "PRESENT"
+      },
+      {
+        "bytes": 11723,
+        "path": "manuscript/working-draft/chapters/the-backend-objects-authority-and-revision.tex",
+        "sha256": "bea05186b5922b664ec75969149185eaccd43c2a93e0c685d8edcbd12798d686",
+        "status": "PRESENT"
+      },
+      {
+        "bytes": 5121,
+        "path": "manuscript/working-draft/chapters/the-collection-and-the-next-tests.tex",
+        "sha256": "cfe133cfd8779f76b60d269f8ea1e4d5b1104c8ef542af1f6ed31910b5b85265",
+        "status": "PRESENT"
+      },
+      {
+        "bytes": 15422,
+        "path": "manuscript/working-draft/chapters/the-price-of-a-shared-description.tex",
+        "sha256": "6f419be1f68a949bbb058764be6c809059244967e891e290d62a6de1dd42ec1b",
+        "status": "PRESENT"
+      },
+      {
+        "bytes": 11008,
+        "path": "manuscript/working-draft/chapters/what-a-useful-summary-must-remember.tex",
+        "sha256": "e9f07cc6fff4005ed235a9d35dee00e79e34f10b4a5b39cb54009afb11990c4c",
+        "status": "PRESENT"
+      },
+      {
+        "bytes": 13340,
+        "path": "manuscript/working-draft/figures/completion-run-7bd75062068b432b.result/dd-memory-reader-controls.pdf",
+        "sha256": "7a43c64f42a5d42ce9333e14711729eb2f6eea1ee7ff708ddd38d5c9028afa9d",
+        "status": "PRESENT"
+      },
+      {
+        "bytes": 40245,
+        "path": "manuscript/working-draft/figures/hierarchy-run-d9f38e92caf64d82.result/dd-hierarchy-stability.pdf",
+        "sha256": "a2cd437d3974f5a7c3a8c71ea3a9626928adf14d19029770b41e60c62a7d143f",
+        "status": "PRESENT"
+      },
+      {
+        "bytes": 43512,
+        "path": "manuscript/working-draft/figures/phase-run-939b6a8b76724d02.result/dd-register-phase-diagram.pdf",
+        "sha256": "db346420980c61e2c8685918b4fba2b0b22d144862fe4cf5180027bae1faeeb9",
+        "status": "PRESENT"
+      },
+      {
+        "bytes": 24557,
+        "path": "manuscript/working-draft/figures/portable-run-b69220b3a27348ad.result/dd-gap-selection.pdf",
+        "sha256": "cfe4740c85b7faabc89cc20377466cd07fb6be34b4989987a17c382b8bd79352",
+        "status": "PRESENT"
+      },
+      {
+        "bytes": 16052,
+        "path": "manuscript/working-draft/figures/portable-run-b69220b3a27348ad.result/dd-global-local-feedback.pdf",
+        "sha256": "43cfe04aca10d4b53dfdd3619c3cfd338ed70580279bd5718cb81c687fba19f8",
+        "status": "PRESENT"
+      },
+      {
+        "bytes": 53509,
+        "path": "manuscript/working-draft/figures/portable-run-b69220b3a27348ad.result/dd-memory-mechanism.pdf",
+        "sha256": "bd630cfc411b7bfdeed077d2621643cdab443cc3d00b169e855f3f1f16b6bdfb",
+        "status": "PRESENT"
+      },
+      {
+        "bytes": 36289,
+        "path": "manuscript/working-draft/figures/portable-run-b69220b3a27348ad.result/dd-memory-parity.pdf",
+        "sha256": "2564fc60c7f42928e65468ef12f5df29c4eb4ddc04e070f9e412fdca38a139ef",
+        "status": "PRESENT"
+      },
+      {
+        "bytes": 23963,
+        "path": "manuscript/working-draft/figures/portable-run-b69220b3a27348ad.result/dd-operator-projection.pdf",
+        "sha256": "7d94866978362e2aedead4026d93306610d4035dd4d73666f672fa774f32f398",
+        "status": "PRESENT"
+      },
+      {
+        "bytes": 84614,
+        "path": "manuscript/working-draft/figures/portable-run-b69220b3a27348ad.result/dd-retention-memory.pdf",
+        "sha256": "bf78b1f01cd1f36f401f1927d54887b1e4074ee94028a0904aa9e918817adee4",
+        "status": "PRESENT"
+      },
+      {
+        "bytes": 16117,
+        "path": "manuscript/working-draft/figures/portable-run-b69220b3a27348ad.result/dd-retention-trajectories.pdf",
+        "sha256": "e3fd1623520c41c62481a5ffcd23e9aa6c8887b084a08de3a3b3c5d0c10f70cd",
+        "status": "PRESENT"
+      },
+      {
+        "bytes": 21119,
+        "path": "manuscript/working-draft/figures/portable-run-b69220b3a27348ad.result/dd-shared-register-price.pdf",
+        "sha256": "b14bbfbd74728a450d78b2165abc1783f75fb12512afc5751563f113db195ba2",
+        "status": "PRESENT"
+      },
+      {
+        "bytes": 86288,
+        "path": "manuscript/working-draft/figures/portable-run-b69220b3a27348ad.result/dd-spectral-window.pdf",
+        "sha256": "2cd6ad2afc5a4110384173a4eb2c61af07967dc9a6315d453fdf8bf786770689",
+        "status": "PRESENT"
+      },
+      {
+        "bytes": 29223,
+        "path": "manuscript/working-draft/figures/portable-run-b69220b3a27348ad.result/dd-superarc-controls.pdf",
+        "sha256": "578cb4ad7f62ef17ddfb461199b4deaa81be05562c9e0bed4b7a1cf3715beb02",
+        "status": "PRESENT"
+      },
+      {
+        "bytes": 25745,
+        "path": "manuscript/working-draft/figures/robot-run-c4d4b3872a904ec0.result/dd-ai-tool-harness.pdf",
+        "sha256": "27de7270a4073688a3a60f944c24f1b6f7936e9193e7b1fec764c38e82abcf3a",
+        "status": "PRESENT"
+      },
+      {
+        "bytes": 63026,
+        "path": "manuscript/working-draft/figures/robot-run-c4d4b3872a904ec0.result/dd-conceptric-envelope.pdf",
+        "sha256": "c557be0648bb8a74309c5a2a1f5dc8f9f03cb9e3fd074dc5802ed4e678bd514d",
+        "status": "PRESENT"
+      },
+      {
+        "bytes": 36508,
+        "path": "manuscript/working-draft/figures/robot-run-c4d4b3872a904ec0.result/dd-nested-work-sdk.pdf",
+        "sha256": "953a1ffa0171bcafd1d87f05c6c470e9e2474e83eca79699aacdcbe190feb5ca",
+        "status": "PRESENT"
+      },
+      {
+        "bytes": 9798,
+        "path": "manuscript/working-draft/refs.bib",
+        "sha256": "f8c266500e4d4af4819ae4e36773812508725d0437c35cbd729fb7f6d1261a03",
+        "status": "PRESENT"
+      },
+      {
+        "bytes": 1040278,
+        "path": "manuscript/working-draft/Eigen-A-Theory-of-Efficient-Representation-and-Its-Working-Prototypes.pdf",
+        "sha256": "6e3535fcad02623b44d7a146b40d4a9bb5e6aafc83947616ce5520bad16e43b1",
+        "status": "PRESENT"
+      },
+      {
+        "bytes": 169147,
+        "path": "generic-overview-candidate-20261111/candidate-source-bundle.json",
+        "sha256": "93a23468d73ec505fb0ea7e9f0e5c872e5a6c5a0de207fc2dc51d6d0719b2058",
+        "status": "PRESENT"
+      },
+      {
+        "bytes": 4706,
+        "path": "generic-overview-candidate-20261111/candidate-manifest.json",
+        "sha256": "741557838d4bc5302e015b40ef49453ed5be537badb9dc9c913cdfb565c20788",
+        "status": "PRESENT"
+      }
+    ],
+    "producer": {
+      "bytes": 6214,
+      "path": "generic-overview-candidate-20261111/presentation.py",
+      "scope": "project",
+      "sha256": "886be290d9d498ceeeb32c9aae3ad74dabb498efb081bcaf86f585561c63bb51",
+      "status": "PRESENT"
+    },
+    "producer_config": "0f9e4c53d5d45baaca1bc8e8166bbcc6586fb98566183253cffefa4cb48a00d4"
+  },
+  "request_id": "generic-overview-render-reviewed-20261111-4fe290",
+  "request_intent": "sha256:8f2c7a273777e452031503aa51e0a449116ddcbdc0149955334f1e25604a3700",
+  "result_absolute": "/home/phujck/VScodeProjects/laplace/writing_projects/eigen-technical-due-diligence-briefing/manuscript/research_runs/run-9833097c855ef89d.result.json",
+  "result_path": "research_runs/run-9833097c855ef89d.result.json",
+  "started_at": 1794438958.9760778,
+  "state": "RUNNING",
+  "stderr_path": "/home/phujck/VScodeProjects/laplace/writing_projects/eigen-technical-due-diligence-briefing/manuscript/research_runs/run-9833097c855ef89d.stderr.log",
+  "stdout_path": "/home/phujck/VScodeProjects/laplace/writing_projects/eigen-technical-due-diligence-briefing/manuscript/research_runs/run-9833097c855ef89d.stdout.log",
+  "supervision": {
+    "cleanup_limit_seconds": 6.0,
+    "roles": {},
+    "schema_version": "laplace.research-supervision/1"
+  },
+  "supervision_index_path": "/home/phujck/VScodeProjects/laplace/writing_projects/eigen-technical-due-diligence-briefing/manuscript/research_runs/index.json",
+  "supervisor_start_token": "sha256:03f6b3cccb29bc48c4aab889f1a249869d9292536ee9b4da95713014afee10e0",
+  "timeout_seconds": 300
+}

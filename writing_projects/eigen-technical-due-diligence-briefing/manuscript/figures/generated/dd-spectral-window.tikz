@@ -1,0 +1,19 @@
+\begin{tikzpicture}[x=1cm,y=1cm,font=\rmfamily\small]
+\definecolor{blue}{HTML}{0072B2}
+\definecolor{teal}{HTML}{009E73}
+\definecolor{orange}{HTML}{D55E00}
+\draw[->] (0,0)--(12.6,0) node[right] {$E$};
+\foreach \x in {.5,1,1.7,2.4,4.7,5.2,5.5,5.8,6.1,6.5,9,9.6,11.2,12}{
+ \draw[blue,line width=1pt] (\x,0)--(\x,.6);
+}
+\draw[teal,line width=1.4pt,domain=0:12,samples=100,smooth] plot (\x,{1.6*exp(-(\x-5.6)^2/1.2)});
+\draw[orange,dashed] (5.6,0)--(5.6,1.9);
+\node[orange,above] at (5.6,1.9) {$E_*$};
+\node[teal,anchor=west] at (7.2,1.4) {$e^{-\tau(E-E_*)^2}$};
+\draw[<->,teal] (4.5,-.55)--(6.7,-.55);
+\node[teal,below] at (5.6,-.55) {width $\sim\tau^{-1/2}$};
+\node[align=center,text width=12.5cm] at (6,-1.9) {$\displaystyle e^{-\tau(H-E_*)^2}=
+\frac{1}{\sqrt{4\pi\tau}}\int_{-\infty}^{\infty}
+ e^{-s^2/(4\tau)}e^{-is(H-E_*)}\,ds$};
+\node[align=center,text width=11.5cm] at (6,-3) {Narrower energy window $\longleftrightarrow$ longer evolution times, $|s|\sim\sqrt{\tau}$};
+\end{tikzpicture}

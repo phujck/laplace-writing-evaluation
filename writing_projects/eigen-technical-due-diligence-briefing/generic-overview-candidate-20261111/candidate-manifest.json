@@ -1,0 +1,94 @@
+{
+  "private": true,
+  "kind": "PRESENTATION",
+  "output_directory": "rendered-reviewed",
+  "source_bundle": {
+    "path": "generic-overview-candidate-20261111/candidate-source-bundle.json",
+    "sha256": "93a23468d73ec505fb0ea7e9f0e5c872e5a6c5a0de207fc2dc51d6d0719b2058"
+  },
+  "files": [
+    {
+      "path": "manuscript/working-draft/figures/portable-run-b69220b3a27348ad.result/dd-shared-register-price.pdf",
+      "sha256": "b14bbfbd74728a450d78b2165abc1783f75fb12512afc5751563f113db195ba2",
+      "bundle_path": "figures/dd-shared-register-price.pdf"
+    },
+    {
+      "path": "manuscript/working-draft/figures/phase-run-939b6a8b76724d02.result/dd-register-phase-diagram.pdf",
+      "sha256": "db346420980c61e2c8685918b4fba2b0b22d144862fe4cf5180027bae1faeeb9",
+      "bundle_path": "figures/dd-register-phase-diagram.pdf"
+    },
+    {
+      "path": "manuscript/working-draft/figures/portable-run-b69220b3a27348ad.result/dd-retention-memory.pdf",
+      "sha256": "bf78b1f01cd1f36f401f1927d54887b1e4074ee94028a0904aa9e918817adee4",
+      "bundle_path": "figures/dd-retention-memory.pdf"
+    },
+    {
+      "path": "manuscript/working-draft/figures/portable-run-b69220b3a27348ad.result/dd-retention-trajectories.pdf",
+      "sha256": "e3fd1623520c41c62481a5ffcd23e9aa6c8887b084a08de3a3b3c5d0c10f70cd",
+      "bundle_path": "figures/dd-retention-trajectories.pdf"
+    },
+    {
+      "path": "manuscript/figures/generated/dd-hmf-physical-ground-state-20261016.pdf",
+      "sha256": "59c0464e50e58bf6886dd1a743bba3eadc23b453c5ddc415fd918662a10367f1",
+      "bundle_path": "figures/dd-hmf-physical-ground-state-20261016.pdf"
+    },
+    {
+      "path": "manuscript/working-draft/figures/portable-run-b69220b3a27348ad.result/dd-global-local-feedback.pdf",
+      "sha256": "43cfe04aca10d4b53dfdd3619c3cfd338ed70580279bd5718cb81c687fba19f8",
+      "bundle_path": "figures/dd-global-local-feedback.pdf"
+    },
+    {
+      "path": "manuscript/working-draft/figures/hierarchy-run-d9f38e92caf64d82.result/dd-hierarchy-stability.pdf",
+      "sha256": "a2cd437d3974f5a7c3a8c71ea3a9626928adf14d19029770b41e60c62a7d143f",
+      "bundle_path": "figures/dd-hierarchy-stability.pdf"
+    },
+    {
+      "path": "manuscript/working-draft/figures/portable-run-b69220b3a27348ad.result/dd-operator-projection.pdf",
+      "sha256": "7d94866978362e2aedead4026d93306610d4035dd4d73666f672fa774f32f398",
+      "bundle_path": "figures/dd-operator-projection.pdf"
+    },
+    {
+      "path": "manuscript/working-draft/figures/portable-run-b69220b3a27348ad.result/dd-gap-selection.pdf",
+      "sha256": "cfe4740c85b7faabc89cc20377466cd07fb6be34b4989987a17c382b8bd79352",
+      "bundle_path": "figures/dd-gap-selection.pdf"
+    },
+    {
+      "path": "manuscript/working-draft/figures/portable-run-b69220b3a27348ad.result/dd-spectral-window.pdf",
+      "sha256": "2cd6ad2afc5a4110384173a4eb2c61af07967dc9a6315d453fdf8bf786770689",
+      "bundle_path": "figures/dd-spectral-window.pdf"
+    },
+    {
+      "path": "manuscript/working-draft/figures/portable-run-b69220b3a27348ad.result/dd-memory-parity.pdf",
+      "sha256": "2564fc60c7f42928e65468ef12f5df29c4eb4ddc04e070f9e412fdca38a139ef",
+      "bundle_path": "figures/dd-memory-parity.pdf"
+    },
+    {
+      "path": "manuscript/working-draft/figures/completion-run-7bd75062068b432b.result/dd-memory-reader-controls.pdf",
+      "sha256": "7a43c64f42a5d42ce9333e14711729eb2f6eea1ee7ff708ddd38d5c9028afa9d",
+      "bundle_path": "figures/dd-memory-reader-controls.pdf"
+    },
+    {
+      "path": "manuscript/working-draft/figures/robot-run-c4d4b3872a904ec0.result/dd-conceptric-envelope.pdf",
+      "sha256": "c557be0648bb8a74309c5a2a1f5dc8f9f03cb9e3fd074dc5802ed4e678bd514d",
+      "bundle_path": "figures/dd-conceptric-envelope.pdf"
+    },
+    {
+      "path": "manuscript/working-draft/figures/robot-run-c4d4b3872a904ec0.result/dd-ai-tool-harness.pdf",
+      "sha256": "27de7270a4073688a3a60f944c24f1b6f7936e9193e7b1fec764c38e82abcf3a",
+      "bundle_path": "figures/dd-ai-tool-harness.pdf"
+    },
+    {
+      "path": "manuscript/working-draft/figures/portable-run-b69220b3a27348ad.result/dd-superarc-controls.pdf",
+      "sha256": "578cb4ad7f62ef17ddfb461199b4deaa81be05562c9e0bed4b7a1cf3715beb02",
+      "bundle_path": "figures/dd-superarc-controls.pdf"
+    },
+    {
+      "path": "manuscript/working-draft/figures/robot-run-c4d4b3872a904ec0.result/dd-nested-work-sdk.pdf",
+      "sha256": "953a1ffa0171bcafd1d87f05c6c470e9e2474e83eca79699aacdcbe190feb5ca",
+      "bundle_path": "figures/dd-nested-work-sdk.pdf"
+    }
+  ],
+  "selection_changes": false,
+  "scientific_inference": false,
+  "original_archive_sha256": "700882e9a76b19d9f072976eb7c02c45479eee01c9dda314bc5f37b0d19f8c99"
+}

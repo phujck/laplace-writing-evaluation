@@ -1,0 +1,18 @@
+{
+  "lost": [
+    "Spectral radius estimated from successive deltas (ratio of consecutive error decays)",
+    "Convergence to dominant eigenvalue magnitude through delta ratios",
+    "Minimum three verdicts required (two deltas to form a ratio)",
+    "Returns None when insufficient verdicts available",
+    "Adjudicator stochasticity as source of noise in estimation"
+  ],
+  "added": [
+    "Spectral radius computed from single verdict lost-set magnitude",
+    "Direct measurement of lost-set size as radius proxy",
+    "One cycle sufficiency (no multi-verdict accumulation)",
+    "Exact result claim (vs. noisy estimation)"
+  ],
+  "structured": true,
+  "recurses": false,
+  "justification": "The ghost inverts the core mechanism: original describes a ratio-based estimator on successive deltas converging to eigenvalue (requires ≥3 verdicts, noisy due to stochasticity); ghost claims direct lost-set magnitude measurement (one verdict, exact). These are contradictory architectures, not a partial view. The ghost's claims (single verdict, exactness, no ratios) systematically contradict the original's claims (multi-verdict, noise, delta ratios). The loss is not a finer detail to recurse on—it is the entire methodological claim. The added material is structurally coherent but orthogonal to and incompatible with the original."
+}

@@ -1,0 +1,15 @@
+{
+  "lost": [
+    "The specific mechanism of reading the spectral radius rho off successive lost-set deltas",
+    "The distinction between CONVERGED-DEGENERATE arising from confabulation vs. generative node over-contraction (imagination collapsed to the obvious)",
+    "The explicit guidance that degenerate plateaus should be routed UP a grade, never minimised",
+    "The technical definition of OSCILLATING as a configuration that re-appears from >= 2 cycles back with period >= 2",
+    "The distinction between budget exhausted while still contracting (SLOW converger, flagged budget_exhausted) vs. OPEN with budget left",
+    "The explicit warning that budget-exhausted slow convergers are never mislabelled oscillating",
+    "The minimum threshold that the estimator needs >= 3 verdicts to form a ratio of deltas"
+  ],
+  "added": [],
+  "structured": true,
+  "recurses": true,
+  "justification": "The ghost captures the four-state taxonomy (CONVERGED-FAITHFUL, CONVERGED-DEGENERATE, OSCILLATING, OPEN) and the core semantic relationship: spectral radius rho compared to a target that varies by node kind. The degenerate case and its instruction (climb out by grade, not grind) survive. However, the original encodes several mechanical details that are structurally meaningful and absent: (1) the explicit delta-ratio mechanism ('off successive lost-set deltas'), (2) the two distinct roots of degeneracy (confabulation vs. over-contracted imagination), (3) the period->=2 and >=2-cycles-back definition of oscillation (the ghost says 'going in circles' which is metaphorical, not technical), (4) the tripartite distinction within OPEN (budget left, budget exhausted while contracting, and the flagging/labeling discipline), and (5) the minimum 3-verdict bootstrap requirement. These are coherent, finer structural claims—not scattered noise—and a next pass could reconstruct them from the core logic the ghost preserves. The ghost is a faithful abstraction that recurses cleanly."
+}

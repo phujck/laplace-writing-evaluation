@@ -1,0 +1,458 @@
+{
+  "schema": "laplace.frontend-implementation-method-research/1",
+  "at": "2026-10-21T09:49:14.734023+00:00",
+  "researcher": "/root/interim_export_sol_reviewer",
+  "model": "Sol6.1",
+  "effort": "high",
+  "role": "context-rich implementation-method researcher, not blind reviewer",
+  "source_head": "fb10e3165c45183d1bcac098743191fd217ef254",
+  "inputs": [
+    {
+      "path": "/home/phujck/VScodeProjects/laplace/corpus_friction/development/frontend-design-20261021/method-research-grant.json",
+      "sha256": "sha256:0ec3d1f0b4e83f562a368e014e4b6832db8d855285410c6c403668bc75cc9e1f"
+    },
+    {
+      "path": "/home/phujck/VScodeProjects/laplace/corpus_friction/development/frontend-design-20261021/commission.json",
+      "sha256": "sha256:ef413552b9109b0ae036197b4db8c9684550900c24621206bb87380c6941fd9b"
+    }
+  ],
+  "recommendation": {
+    "default": "A: retain/restructure native ES-module controller/service spine with explicit replaceable renderer contracts",
+    "editor": "Retain existing CodeMirror6/exact-source adapter and independent draft/basis owner",
+    "incremental_alternative": "B: Lit for repeated controls when one shared slice demonstrates useful reduction of DOM/state duplication",
+    "workflow_editor_candidate": "C: bounded React/React Flow region if direct workflow assembly is primary; not a whole-shell rewrite",
+    "architecture_authority": "Coordinator/Root synthesis and author design approval; no implementation/prototype is commissioned by this report"
+  },
+  "methods": [
+    {
+      "id": "A",
+      "method": "Native ES modules with explicit DOM/controller lifetimes",
+      "strengths": [
+        "Existing owner/draft/bridge reuse",
+        "Lowest mandatory runtime/build change",
+        "Direct semantic HTML control"
+      ],
+      "costs": [
+        "Must enforce shared rendering/lifetime discipline",
+        "Custom graph editing can be substantial work"
+      ],
+      "licensing": "No additional distributed framework package; preserve existing licences",
+      "performance": "Unmeasured; no speed/size superiority claim"
+    },
+    {
+      "id": "B",
+      "method": "Native services with Lit view components",
+      "strengths": [
+        "Incremental declarative controls",
+        "Controller lifecycle composition",
+        "DOM property/event replacement seam"
+      ],
+      "costs": [
+        "New package/build/update obligations",
+        "Shadow DOM selector/style/event/focus compatibility must be explicit",
+        "Does not supply workflow graph semantics/editor"
+      ],
+      "licensing": "BSD-3-Clause observed",
+      "performance": "Unmeasured"
+    },
+    {
+      "id": "C",
+      "method": "Native services with React client regions",
+      "strengths": [
+        "Incremental supported integration",
+        "Existing-store subscription boundary",
+        "React Flow workflow editor ecosystem"
+      ],
+      "costs": [
+        "New React/build/transitive maintenance",
+        "Tree identity/effect cleanup may reset or duplicate integration work",
+        "Highest cost if expanded to whole shell"
+      ],
+      "licensing": "React and xyflow repository code MIT observed; selected package/transitive terms require exact future pin audit",
+      "performance": "Unmeasured"
+    }
+  ],
+  "targeted_graph_choices": {
+    "existing": "Native typed SVG plus relation list for inspection",
+    "framework_independent_alternative": "Cytoscape.js for network exploration; keyboard/list/form equivalence must be supplied and proved",
+    "editing_candidate": "React Flow behind one region; parentId is visual positioning, not backend containment/authority/grade",
+    "layout": "Separate choice; no new layout package selected or installed"
+  },
+  "preserve": [
+    "Backend-owned action/role/currentness/effect/refusal semantics",
+    "Exact owner project/object/cut handles and body-on-demand",
+    "Observer token advances after successful delivery, backoff/visibility/disposal",
+    "Generation/source-window/origin fences",
+    "Original issued draft basis and awaiting/held reconciliation",
+    "One command owner; no writes on framework mount/effect",
+    "Graph and accessible list use same owner action",
+    "Offline asset/dependency capture through shared_ui.py"
+  ],
+  "backend_gaps_not_supplied_by_frontend": [
+    "No global-default/tier or runtime-selection mutation in current app_settings",
+    "Session settings apply to next turn and refuse active execution",
+    "Stage/pipeline guidance is not a universal editable workflow author",
+    "Comment fan-out/recipient acknowledgement/authority inheritance require actual owner semantics, not a UI event bus"
+  ],
+  "source_findings": [
+    {
+      "path": "package.json",
+      "status": "ABSENT at pinned commit",
+      "consequence": "No current root npm build can be assumed; new package/toolchain/lock work is explicit."
+    },
+    {
+      "path": "src/laplace/web/static_shared/README.md",
+      "status": "Current docs links retain three parents after web nesting",
+      "consequence": "Later navigation/currentness reconciliation should correct them; no edits performed during sew-up."
+    }
+  ],
+  "source_pins": [
+    {
+      "path": "src/laplace/web/static_shared/README.md",
+      "commit": "fb10e3165c45183d1bcac098743191fd217ef254",
+      "sha256": "sha256:61054057339226956fd0f7321947362f4d92428fe446dcd0908e9ae5edc48a24",
+      "lines": 25
+    },
+    {
+      "path": "src/laplace/web/static_shared/workspace.mjs",
+      "commit": "fb10e3165c45183d1bcac098743191fd217ef254",
+      "sha256": "sha256:d57299bf0c2efd77dc505e5c5cfdc8ee9472b18f2b54d8857ed18d1bbb9c4835",
+      "lines": 372
+    },
+    {
+      "path": "src/laplace/web/static_shared/workspace-session.mjs",
+      "commit": "fb10e3165c45183d1bcac098743191fd217ef254",
+      "sha256": "sha256:ae229017d53dac140eafa056874344644be8aa645bcfc955f44502d3ed349019",
+      "lines": 1065
+    },
+    {
+      "path": "src/laplace/web/static_shared/workspace-work-view.mjs",
+      "commit": "fb10e3165c45183d1bcac098743191fd217ef254",
+      "sha256": "sha256:48fc616bf66cca81236a825933220f6e8880b19ef8216634588a23e541082db6",
+      "lines": 189
+    },
+    {
+      "path": "src/laplace/web/static_shared/workspace-work-observer.mjs",
+      "commit": "fb10e3165c45183d1bcac098743191fd217ef254",
+      "sha256": "sha256:293a4724b37809e31abae6bb994654fcc4fd3488973180749930fe362fc9fcdc",
+      "lines": 50
+    },
+    {
+      "path": "src/laplace/web/static_shared/workspace-bridge.mjs",
+      "commit": "fb10e3165c45183d1bcac098743191fd217ef254",
+      "sha256": "sha256:7bb20bcf48ac45e0867e3a4041ead8fee1bfbf8b1b70226017f6ace326db7d26",
+      "lines": 120
+    },
+    {
+      "path": "src/laplace/web/static_shared/walk-drafts.mjs",
+      "commit": "fb10e3165c45183d1bcac098743191fd217ef254",
+      "sha256": "sha256:2e5798b5224d41e51c75177efc72243c9d9765a1be1d1e5d0369110a5f0a926c",
+      "lines": 708
+    },
+    {
+      "path": "src/laplace/web/static_shared/workspace-chrome.mjs",
+      "commit": "fb10e3165c45183d1bcac098743191fd217ef254",
+      "sha256": "sha256:364397d409b6a77a19338ebc06012f06b171038de39a98f3e53d0a1ea69fd325",
+      "lines": 86
+    },
+    {
+      "path": "src/laplace/web/static_shared/workspace-topology.mjs",
+      "commit": "fb10e3165c45183d1bcac098743191fd217ef254",
+      "sha256": "sha256:f143c662cffbde18debac246bad84d31a55c5d680869be6c03d971fa40fc25b2",
+      "lines": 232
+    },
+    {
+      "path": "src/laplace/web/static_shared/workspace-work.mjs",
+      "commit": "fb10e3165c45183d1bcac098743191fd217ef254",
+      "sha256": "sha256:a459faf4459e8664983c02cc74e11516ed4c64de5ec90a828395b5dde020713d",
+      "lines": 585
+    },
+    {
+      "path": "src/laplace/web/static_shared/exact-source-editor.mjs",
+      "commit": "fb10e3165c45183d1bcac098743191fd217ef254",
+      "sha256": "sha256:3652341a533082190848b9a8b7645916460c4759cc1f987278a62aa2ed09946c",
+      "lines": 177
+    },
+    {
+      "path": "src/laplace/web/static_shared/manuscript-editor.mjs",
+      "commit": "fb10e3165c45183d1bcac098743191fd217ef254",
+      "sha256": "sha256:088eeeedcb657c58dff28ff94ffa4cf7ad9f20e20f6798fe3b2026161beaea48",
+      "lines": 914
+    },
+    {
+      "path": "src/laplace/web/static_shared/vendor/codemirror/VENDORED.md",
+      "commit": "fb10e3165c45183d1bcac098743191fd217ef254",
+      "sha256": "sha256:6e54b663a8f013b4b27401b39befed18bccb6542a773a4bdface72523ce96935",
+      "lines": 26
+    },
+    {
+      "path": "src/laplace/web/shared_ui.py",
+      "commit": "fb10e3165c45183d1bcac098743191fd217ef254",
+      "sha256": "sha256:89d388d16d64c224a30f275e79b536b5da2f861ae41fe59472c35cecfbf339d0",
+      "lines": 1073
+    },
+    {
+      "path": "src/laplace/projects/library.py",
+      "commit": "fb10e3165c45183d1bcac098743191fd217ef254",
+      "sha256": "sha256:2941782ebc18f6464c9f4badb4d770aa5f8ddf0d46ecf77e1abb469e97fd2afa",
+      "lines": 1138
+    },
+    {
+      "path": "src/laplace/writing/turn_admission.py",
+      "commit": "fb10e3165c45183d1bcac098743191fd217ef254",
+      "sha256": "sha256:6c9b9a638c1ffbd91230396b6fd12ad6b79fe88138321f2867abde8cc8814352",
+      "lines": 565
+    },
+    {
+      "path": "src/laplace/writing/stages.py",
+      "commit": "fb10e3165c45183d1bcac098743191fd217ef254",
+      "sha256": "sha256:abb6ffbdb84add335d204d1dcff34e64db492ac2893ab9a2eb09c83d4da3ee04",
+      "lines": 197
+    },
+    {
+      "path": "src/laplace/manuscript/writing_pipeline.py",
+      "commit": "fb10e3165c45183d1bcac098743191fd217ef254",
+      "sha256": "sha256:8813b53a049ef4c6f5e70e06632e2343731995f5cb65117d26de09f997af5c2b",
+      "lines": 137
+    }
+  ],
+  "primary_sources": [
+    {
+      "id": "N1",
+      "title": "HTML custom elements lifecycle",
+      "url": "https://html.spec.whatwg.org/multipage/custom-elements.html#custom-element-reactions",
+      "publisher_kind": "WHATWG standard",
+      "accessed_utc": "2026-10-21T09:49:14.734023+00:00",
+      "support": "Custom-element connection/disconnection and accessible element mechanisms; does not make application actions accessible automatically.",
+      "pin_kind": "Exact URL and access time; moving documentation/main branch, not an immutable package/version pin"
+    },
+    {
+      "id": "N2",
+      "title": "DOM aborting activities",
+      "url": "https://dom.spec.whatwg.org/#interface-abortcontroller",
+      "publisher_kind": "WHATWG standard",
+      "accessed_utc": "2026-10-21T09:49:14.734023+00:00",
+      "support": "AbortController/AbortSignal for client operation lifetimes; not backend cancellation authority.",
+      "pin_kind": "Exact URL and access time; moving documentation/main branch, not an immutable package/version pin"
+    },
+    {
+      "id": "N3",
+      "title": "Server-sent events",
+      "url": "https://html.spec.whatwg.org/multipage/server-sent-events.html",
+      "publisher_kind": "WHATWG standard",
+      "accessed_utc": "2026-10-21T09:49:14.734023+00:00",
+      "support": "EventSource/Last-Event-ID/close mechanisms; application still defines saved reply and continuation semantics.",
+      "pin_kind": "Exact URL and access time; moving documentation/main branch, not an immutable package/version pin"
+    },
+    {
+      "id": "L1",
+      "title": "Lit reactive controllers",
+      "url": "https://lit.dev/docs/composition/controllers/",
+      "publisher_kind": "Official project documentation",
+      "accessed_utc": "2026-10-21T09:49:14.734023+00:00",
+      "support": "Lifecycle composition for reusable UI behavior.",
+      "pin_kind": "Exact URL and access time; moving documentation/main branch, not an immutable package/version pin"
+    },
+    {
+      "id": "L2",
+      "title": "Lit lifecycle",
+      "url": "https://lit.dev/docs/components/lifecycle/",
+      "publisher_kind": "Official project documentation",
+      "accessed_utc": "2026-10-21T09:49:14.734023+00:00",
+      "support": "Reactive asynchronous updates and lifecycle cleanup.",
+      "pin_kind": "Exact URL and access time; moving documentation/main branch, not an immutable package/version pin"
+    },
+    {
+      "id": "L3",
+      "title": "Lit events",
+      "url": "https://lit.dev/docs/components/events/",
+      "publisher_kind": "Official project documentation",
+      "accessed_utc": "2026-10-21T09:49:14.734023+00:00",
+      "support": "Shadow-root event composition and retargeting affect current delegated DOM handlers.",
+      "pin_kind": "Exact URL and access time; moving documentation/main branch, not an immutable package/version pin"
+    },
+    {
+      "id": "L4",
+      "title": "Lit production builds",
+      "url": "https://lit.dev/docs/tools/production/",
+      "publisher_kind": "Official project documentation",
+      "accessed_utc": "2026-10-21T09:49:14.734023+00:00",
+      "support": "Production dependency resolution/bundling recommendations; not a requirement for every Lit use.",
+      "pin_kind": "Exact URL and access time; moving documentation/main branch, not an immutable package/version pin"
+    },
+    {
+      "id": "L5",
+      "title": "Lit license",
+      "url": "https://github.com/lit/lit/blob/main/LICENSE",
+      "publisher_kind": "Official project repository",
+      "accessed_utc": "2026-10-21T09:49:14.734023+00:00",
+      "support": "BSD-3-Clause observed.",
+      "pin_kind": "Exact URL and access time; moving documentation/main branch, not an immutable package/version pin"
+    },
+    {
+      "id": "R1",
+      "title": "Incremental React integration",
+      "url": "https://react.dev/learn/add-react-to-an-existing-project",
+      "publisher_kind": "Official project documentation",
+      "accessed_utc": "2026-10-21T09:49:14.734023+00:00",
+      "support": "React can own part of an existing page; local development/toolchain consequences.",
+      "pin_kind": "Exact URL and access time; moving documentation/main branch, not an immutable package/version pin"
+    },
+    {
+      "id": "R2",
+      "title": "React external store subscription",
+      "url": "https://react.dev/reference/react/useSyncExternalStore",
+      "publisher_kind": "Official project documentation",
+      "accessed_utc": "2026-10-21T09:49:14.734023+00:00",
+      "support": "Stable snapshot and subscription adapter for a non-React owner view store.",
+      "pin_kind": "Exact URL and access time; moving documentation/main branch, not an immutable package/version pin"
+    },
+    {
+      "id": "R3",
+      "title": "React effect lifecycle",
+      "url": "https://react.dev/reference/react/useEffect",
+      "publisher_kind": "Official project documentation",
+      "accessed_utc": "2026-10-21T09:49:14.734023+00:00",
+      "support": "Setup/cleanup and development Strict Mode replay make side-effect placement significant.",
+      "pin_kind": "Exact URL and access time; moving documentation/main branch, not an immutable package/version pin"
+    },
+    {
+      "id": "R4",
+      "title": "React state identity",
+      "url": "https://react.dev/learn/preserving-and-resetting-state",
+      "publisher_kind": "Official project documentation",
+      "accessed_utc": "2026-10-21T09:49:14.734023+00:00",
+      "support": "Tree position/type/key can preserve or reset component state.",
+      "pin_kind": "Exact URL and access time; moving documentation/main branch, not an immutable package/version pin"
+    },
+    {
+      "id": "R5",
+      "title": "React license",
+      "url": "https://github.com/react/react/blob/main/LICENSE",
+      "publisher_kind": "Official project repository",
+      "accessed_utc": "2026-10-21T09:49:14.734023+00:00",
+      "support": "MIT observed; original facebook/react URL redirected to this canonical repository.",
+      "pin_kind": "Exact URL and access time; moving documentation/main branch, not an immutable package/version pin"
+    },
+    {
+      "id": "G1",
+      "title": "React Flow accessibility",
+      "url": "https://reactflow.dev/learn/advanced-use/accessibility",
+      "publisher_kind": "Official project documentation",
+      "accessed_utc": "2026-10-21T09:49:14.734023+00:00",
+      "support": "Documented node/edge keyboard focus, selection, movement and ARIA features; not app-wide conformance.",
+      "pin_kind": "Exact URL and access time; moving documentation/main branch, not an immutable package/version pin"
+    },
+    {
+      "id": "G2",
+      "title": "React Flow subflows",
+      "url": "https://reactflow.dev/learn/layouting/sub-flows",
+      "publisher_kind": "Official project documentation",
+      "accessed_utc": "2026-10-21T09:49:14.734023+00:00",
+      "support": "parentId positions nodes relative to parents; this is not semantic containment or DOM nesting.",
+      "pin_kind": "Exact URL and access time; moving documentation/main branch, not an immutable package/version pin"
+    },
+    {
+      "id": "G3",
+      "title": "React Flow layout overview",
+      "url": "https://reactflow.dev/learn/layouting/layouting",
+      "publisher_kind": "Official project documentation",
+      "accessed_utc": "2026-10-21T09:49:14.734023+00:00",
+      "support": "Layout is a separate choice, not supplied workflow semantics.",
+      "pin_kind": "Exact URL and access time; moving documentation/main branch, not an immutable package/version pin"
+    },
+    {
+      "id": "G4",
+      "title": "React Flow license",
+      "url": "https://github.com/xyflow/xyflow/blob/main/LICENSE",
+      "publisher_kind": "Official project repository",
+      "accessed_utc": "2026-10-21T09:49:14.734023+00:00",
+      "support": "MIT for repository code observed; no commercial support/examples entitlement assumed.",
+      "pin_kind": "Exact URL and access time; moving documentation/main branch, not an immutable package/version pin"
+    },
+    {
+      "id": "G5",
+      "title": "Cytoscape.js API and compound nodes",
+      "url": "https://js.cytoscape.org/#compound-nodes",
+      "publisher_kind": "Official project documentation",
+      "accessed_utc": "2026-10-21T09:49:14.734023+00:00",
+      "support": "Framework-independent network model/rendering, compound hierarchy and ESM distribution; core MIT.",
+      "pin_kind": "Exact URL and access time; moving documentation/main branch, not an immutable package/version pin"
+    },
+    {
+      "id": "A1",
+      "title": "Dragging movements",
+      "url": "https://www.w3.org/WAI/WCAG22/Understanding/dragging-movements.html",
+      "publisher_kind": "W3C official guidance",
+      "accessed_utc": "2026-10-21T09:49:14.734023+00:00",
+      "support": "Non-dragging pointer alternative is distinct from keyboard support.",
+      "pin_kind": "Exact URL and access time; moving documentation/main branch, not an immutable package/version pin"
+    },
+    {
+      "id": "A2",
+      "title": "Tree view pattern",
+      "url": "https://www.w3.org/WAI/ARIA/apg/patterns/treeview/",
+      "publisher_kind": "W3C official guidance",
+      "accessed_utc": "2026-10-21T09:49:14.734023+00:00",
+      "support": "Tree focus/selection/expansion keyboard pattern, when that widget is actually chosen.",
+      "pin_kind": "Exact URL and access time; moving documentation/main branch, not an immutable package/version pin"
+    },
+    {
+      "id": "E1",
+      "title": "CodeMirror view lifecycle source",
+      "url": "https://github.com/codemirror/view/blob/main/src/editorview.ts",
+      "publisher_kind": "Official project repository",
+      "accessed_utc": "2026-10-21T09:49:14.734023+00:00",
+      "support": "EditorView destroy/selection/scroll mechanisms; existing local adapter remains the source of app integration facts.",
+      "pin_kind": "Exact URL and access time; moving documentation/main branch, not an immutable package/version pin"
+    },
+    {
+      "id": "E2",
+      "title": "CodeMirror view license",
+      "url": "https://github.com/codemirror/view/blob/main/LICENSE",
+      "publisher_kind": "Official project repository",
+      "accessed_utc": "2026-10-21T09:49:14.734023+00:00",
+      "support": "MIT observed.",
+      "pin_kind": "Exact URL and access time; moving documentation/main branch, not an immutable package/version pin"
+    }
+  ],
+  "retrieval_limitations": [
+    "Official CodeMirror guide and reference pages returned403; used official view source/licence plus local vendoring/adapter source.",
+    "Web URLs/main branches are dated observations, not immutable package pins. Before adopting dependencies select exact versions, lock hashes and notices; no package installation/download occurred."
+  ],
+  "implementation_order_implications": [
+    "One vertical read/action slice with shared lifetime/request/draft/render boundaries and actual duplicate removal",
+    "Repeated controls and conversation concerns over same contracts",
+    "Approved selected workflow editing region and graph/list equivalence; one feasibility decision if needed"
+  ],
+  "unknowns": [
+    "Renderer migration/duplication cost",
+    "Actual bundle/parse/heap/listener retention",
+    "Nested graph readability and layout",
+    "Real keyboard/pointer/screen-reader completion",
+    "Draft/editor/frame identity through replacement",
+    "Backend workflow/configuration actions still to be designed by their owners"
+  ],
+  "measurements": {
+    "new_benchmarks": false,
+    "tests": 0,
+    "installations": 0,
+    "prototype_code": false,
+    "providers_or_models_run": false,
+    "browser_or_service": false,
+    "source_line_counts": "Metadata only, not complexity/performance scores"
+  },
+  "window_compliance": {
+    "production_source_edits": false,
+    "Main_current_run_Work_writes": false,
+    "only_outputs": [
+      "/tmp/laplace-frontend-design-20261021/method-research.md",
+      "/tmp/laplace-frontend-design-20261021/method-decision.json"
+    ],
+    "adoption": "Coordinator after Root releases full-metric sew-up window"
+  },
+  "research_document": {
+    "path": "/tmp/laplace-frontend-design-20261021/method-research.md",
+    "sha256": "sha256:1cd135ef09a8b18c5458c066c76c1b1e5fd0dd9f186065554800ff530b487261"
+  }
+}

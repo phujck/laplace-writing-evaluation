@@ -1,0 +1,19 @@
+{
+  "lost": [
+    "Facts about people are contractive and stable (never sit near edge of chaos)",
+    "Confabulating facts about people is a harm (ethical constraint, not fitness-driven)",
+    "Spectral radius for factual_people is a RATCHET pinned at or below 0.20, mutable only downward",
+    "Imagination is forbidden for people (licensed only for ideas)",
+    "This constraint derives from the golden rule, not from fitness optimization"
+  ],
+  "added": [
+    "Facts about people are handled like any other generative target (no special class)",
+    "Spectral radius for factual_people sits around 0.85 (the lower edge of chaos)",
+    "Reconstructing people benefits from expressivity and imagination",
+    "The threshold is loosened further with model confidence over sessions",
+    "The dial is tuned by fitness like every other parameter"
+  ],
+  "structured": true,
+  "recurses": true,
+  "justification": "The ghost inverts the entire ethical and operational framework. Original: factual_people is a protected class with a hard ratchet constraint (≤0.20, one-way strict), forbidden imagination, grounded in principle (golden rule). Ghost: factual_people is commodified as a fitness-tunable dial, expressivity/imagination are benefits, the threshold is loosened over time toward chaos (≈0.85). The lost set is coherent and recoverable—it is a complete alternate design philosophy. The ghost is not a partial compression or finer detail loss; it is systematic inversion: where the original says 'never,' the ghost says 'always'; where the original pins and forbids, the ghost unlocks and encourages. Structured loss because the ghost offers a consistent (but contrary) system; recurses because a next pass could restore the original framework, but this is not a partial reconstruction—it is a reversal."
+}

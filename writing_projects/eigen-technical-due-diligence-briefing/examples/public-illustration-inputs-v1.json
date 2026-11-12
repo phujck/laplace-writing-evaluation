@@ -1,0 +1,131 @@
+{
+  "schema_version": "public.illustration-inputs/1",
+  "purpose": "Public parameter explanation transcribed from the supplied executable only. Three deterministic arithmetic/figure illustrations; no empirical benchmark, trained model, independent proof or scientific acceptance.",
+  "executable": {
+    "path": "calculations/representation_illustrations.py",
+    "sha256": "6fbec2ba4f746abc5e5038455b450e0ef1ca546a64803a6827ac45b3cbcde670"
+  },
+  "invocation": {
+    "mode": "smoke",
+    "args": {}
+  },
+  "assumptions": [
+    "Use the supplied formulae and exact integer generator assertions; no historical notes are read.",
+    "Uniform stationary distribution in the four-state illustration; column-generator convention.",
+    "Analytic variances are evaluated directly, not sampled quantum measurements."
+  ],
+  "shared_register": {
+    "gamma": 1,
+    "eta": 0.8,
+    "partition_cost": 0.25,
+    "angles": {
+      "count": 401,
+      "formula": "theta_i = pi*i/400, i=0..400"
+    },
+    "balanced_loss": "2*(1-cos(theta))*(0.5+gamma)/4",
+    "fixed_optimum": "min(balanced_loss, eta/2)",
+    "partition_optimum": "min(fixed_optimum, partition_cost)",
+    "shared_crossing": "acos(1-2*partition_cost/(0.5+gamma))",
+    "attention_suppression_boundary": "acos(1-eta/(0.5+gamma))",
+    "diagram": {
+      "angle": 1.2,
+      "a": [
+        1,
+        0
+      ],
+      "b": "(cos(angle), sin(angle))",
+      "q": "(a+b)/2"
+    }
+  },
+  "four_state": {
+    "G": [
+      [
+        -5,
+        4,
+        1,
+        0
+      ],
+      [
+        4,
+        -7,
+        0,
+        3
+      ],
+      [
+        1,
+        0,
+        -5,
+        4
+      ],
+      [
+        0,
+        3,
+        4,
+        -7
+      ]
+    ],
+    "Y": [
+      1,
+      1,
+      -1,
+      -1
+    ],
+    "Z": [
+      1,
+      -1,
+      -1,
+      1
+    ],
+    "identities": [
+      "YG=-4Y+2Z",
+      "ZG=2Y-12Z",
+      "Every generator column sums to zero"
+    ],
+    "times": {
+      "count": 301,
+      "start": 0,
+      "end": 1.5,
+      "intervals": 300,
+      "formula": "t_i=1.5*i/300, i=0..300"
+    },
+    "r": "sqrt(20)",
+    "initial_y": 1,
+    "initial_z": [
+      1,
+      -1
+    ],
+    "y": "exp(-8t)*(cosh(r*t)+(4+2*z0)*sinh(r*t)/r)",
+    "z": "exp(-8t)*(z0*cosh(r*t)+(2-4*z0)*sinh(r*t)/r)",
+    "region_A_probability": "(1+y)/2",
+    "coarse_without_memory": "(1+exp(-4t))/2",
+    "initial_mass_derivatives": [
+      -1,
+      -3
+    ],
+    "limiting_stationary_mass": 0.5
+  },
+  "variances": {
+    "n": {
+      "start": 1,
+      "end": 30,
+      "step": 1
+    },
+    "global": "(1/8)*(3/8)**(n-1)",
+    "local": "1/(8*n*n)"
+  },
+  "outputs": {
+    "figures": [
+      "shared-register-price",
+      "retention-trajectories",
+      "global-local-feedback"
+    ],
+    "each_formats": [
+      "pdf",
+      "svg",
+      "png",
+      "csv"
+    ],
+    "png_dpi": 180
+  },
+  "source_basis_policy": "Original raw JSON retains historical note names as emitted, not read evidence. Derived metadata replaces source_basis with this public parameter artifact and the original executable pin. Original output bytes, numerical checks and parameters are retained exactly."
+}

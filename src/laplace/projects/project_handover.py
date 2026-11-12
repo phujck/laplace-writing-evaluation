@@ -135,7 +135,7 @@ def _dependencies(root, project, entry, values, directory):
         dispositions.append({'kind': 'repository', 'repository': alias, 'status': 'UNBOUND', 'copy_permission': False})
     for v in values:
         for obj in _objects(v):
-            if obj.get('owner') in {'artifact', 'writing-artifact'} and obj.get('project') not in (None, project):
+            if isinstance(obj.get('owner'), str) and obj['owner'] in {'artifact', 'writing-artifact'} and obj.get('project') not in (None, project):
                 dispositions.append({'kind': 'foreign-artifact', 'target': obj, 'status': 'UNAVAILABLE', 'copy_permission': False})
             if obj.get('owner') == 'domain.work' and obj.get('identity', {}).get('namespace') not in (None, project):
                 dispositions.append({'kind': 'foreign-work', 'target': obj, 'status': 'UNAVAILABLE', 'copy_permission': False})

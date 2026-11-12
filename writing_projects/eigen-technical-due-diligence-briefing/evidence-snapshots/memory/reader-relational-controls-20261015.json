@@ -1,0 +1,31 @@
+{
+  "schema_version": "dd.archived-memory-reader-controls/1",
+  "source": {
+    "repository": "laplace",
+    "path": "synthetics papers/corpus-as-a-state/reconstruction/output/pdf/v2.1/evaluation-results.tex",
+    "sha256": "5e1c218ba70193d33443be4dffea9e13737fcad138ae7b221c7726df9d5d4547",
+    "locator": "final LongMem evidence/reader trial and temporal reasoning paragraphs"
+  },
+  "protocol": "Same frozen reader and 4000 evidence tokens. Counts transcribed from the read primary evaluation source. No new experiment.",
+  "methods": [
+    "Memory witness",
+    "Dense",
+    "Hybrid"
+  ],
+  "overall": {
+    "correct": [
+      30,
+      33,
+      34
+    ],
+    "total": 48
+  },
+  "temporal": {
+    "correct": [
+      4,
+      7,
+      6
+    ],
+    "total": 9
+  }
+}

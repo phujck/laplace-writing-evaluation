@@ -1,0 +1,16 @@
+{
+  "lost": [
+    "The specific mechanism: spectral radius rho computed from successive lost-set deltas",
+    "The CONVERGED-DEGENERATE dual pathology: over-contracted generative node (imagination collapsed to obvious) versus confabulated plateau",
+    "The prescriptive direction for degenerate case: route UP a grade, never minimise it",
+    "The OPEN state's dual conditions: budget_exhausted flag and distinction between slow converger and budget exhaustion",
+    "The technical requirement: estimator needs >= 3 verdicts to form a ratio of deltas"
+  ],
+  "added": [
+    "Phrasing 'the loop has settled into the stable basin with a good reconstruction' as a characterization of CONVERGED-FAITHFUL (original says 'contracted to the basin with a faithful fate')",
+    "Phrase 'the target rate differs by the kind of node' as a summary stand-in for the original's 'target rho*(grade, kind)' with grade and kind as distinct parameters"
+  ],
+  "structured": true,
+  "recurses": true,
+  "justification": "The ghost captures the four-state ontology, the core decision logic (spectral radius / contraction rate check, fate quality assessment, oscillation detection, budget state), and the general shape of each state's semantics. The losses are all technical scaffolding and precision detail: the exact computation (deltas → ratio → rho), the degenerate pathology's internal structure (two divergent failure modes with opposite treatment), the budget_exhausted flag semantics, and the >= 3 verdict threshold. The ghost inverts none of these; it simply elides them or summarizes them at a higher level. A finer pass could recover all lost items by unpacking the mechanisms. The structure is coherent: the four states, their decision criteria, and their qualitative character remain intact and recoverable."
+}

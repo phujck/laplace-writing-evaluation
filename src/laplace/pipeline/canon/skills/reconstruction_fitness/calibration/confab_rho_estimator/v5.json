@@ -1,0 +1,18 @@
+{
+  "lost": [
+    "The spectral radius is estimated from successive deltas, not from a single verdict",
+    "The error decay rate near a fixed point is the dominant eigenvalue magnitude",
+    "Forming a ratio of consecutive deltas is the estimation method",
+    "At least three verdicts are required; below that the estimator returns None",
+    "The estimate is noisy because the adjudicator is stochastic"
+  ],
+  "added": [
+    "The spectral radius is computed from a single verdict by taking the absolute size of its lost set",
+    "The lost-set magnitude directly determines the radius",
+    "One cycle is enough; no deltas or ratios are involved",
+    "The result is exact rather than noisy"
+  ],
+  "structured": false,
+  "recurses": false,
+  "justification": "The ghost inverts the core mechanism. The original describes an iterative estimation method based on the ratio of consecutive error deltas (a second-order signal), with explicit constraints (three verdicts minimum) and acknowledged noise from stochasticity. The ghost replaces this entire framework with a direct, single-verdict measurement via lost-set absolute size, eliminating iteration, ratios, and the minimum-verdict requirement while claiming exactness instead of noisiness. These are contradictory claims about the same quantity (spectral radius estimation), not a paraphrase. The loss is not a missing detail layer but a wholesale reversal of the method, its constraints, and its noise character—unstructured because no partial refinement could reconcile them."
+}

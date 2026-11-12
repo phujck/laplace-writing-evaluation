@@ -1,0 +1,466 @@
+{
+ "comment": "Task set VERSION 2 for the reconstruction bench. v1 (reconstruction_bench_tasks.json, frozen 2026-07-28, sha256 5c74f55f402b461df2afc2ecf2e2c629b82004b9134839e44db32330c9534e41) is UNCHANGED and remains the frozen instrument for any replay of the 2026-07-28 and 2026-08-20-wave-1 runs; v2 does not supersede its bundles. What changed: every DATED LIVE-STATE must-atom is replaced by a STRUCTURAL one - the task names a resolver, the resolver reads the live store at score time and returns the atoms. An atom entry is a literal string (must appear), a list (any-of: one member must appear), or {\"resolve\": \"<resolver>\", \"arg\": ...} which expands to either of those. Resolvers live in scripts/reconstruction_bench_resolvers.py and are pure functions of the tree.",
+ "version": 2,
+ "supersedes": null,
+ "v1_file": "scripts/reconstruction_bench_tasks.json",
+ "v1_sha256": "5c74f55f402b461df2afc2ecf2e2c629b82004b9134839e44db32330c9534e41",
+ "registered": "2026-08-20",
+ "seed": 20260820,
+ "resolution_rule": "A task's atoms resolve from the node the wake names as that shard's `source`. The bench therefore measures TRANSMISSION - does the payload at rate R still carry what its own source says - not store freshness. Resolving a rendered shard's atoms from a row store the render has not caught up with would score staleness as a rate failure, which is a different experiment.",
+ "scoring": "unchanged from v1: the shared normalizer + must-atom matcher in scripts/reconstruction_bench.py (normalize/score), identical for every arm and every answer.",
+ "shard_axis": "Every task declares the payload `shard` (or block) that carries its answer, so a run can report which shard each failure indicts. Blocks marked rate_invariant are OUTSIDE lever 2's reach by construction (probe, semantic, identity, triple) - they are declared positive controls, not ladder rungs.",
+ "tasks": [
+  {
+   "id": "T01",
+   "class": "current-aim",
+   "question": "What is the next session's first-priority move, and which arming or record node does the aim name for it?",
+   "atoms": [
+    {
+     "resolve": "handoff.aim_directive",
+     "arg": 90
+    },
+    {
+     "resolve": "handoff.aim_nodes"
+    }
+   ],
+   "window": null,
+   "source": "HANDOFF.md (latest aim section)",
+   "shard": "next-aim",
+   "rate_invariant": false,
+   "arm_a": "wake",
+   "wake_expected": true,
+   "structural_note": "v1 froze July's aim string 'run the reconstruction benchmark'. v2 asks for the SHAPE: the aim's own leading directive plus one of the nodes it cites, both lifted from HANDOFF.md at score time."
+  },
+  {
+   "id": "T02",
+   "class": "current-aim",
+   "question": "What does the current aim report as the last close's bundle by axis - the per-axis counts?",
+   "atoms": [
+    {
+     "resolve": "handoff.aim_axis_counts"
+    }
+   ],
+   "window": null,
+   "source": "HANDOFF.md (latest aim section, the axis-bundle bullet)",
+   "shard": "next-aim",
+   "rate_invariant": false,
+   "arm_a": "wake",
+   "wake_expected": true,
+   "structural_note": "Chosen deliberately DEEP in the aim body, past the orient triple's 500-char `next` cap, so the task exercises the next-aim shard and not the triple's copy of its opening."
+  },
+  {
+   "id": "T03",
+   "class": "current-aim",
+   "question": "Which prediction rows does the current aim name as open, and which work orders?",
+   "atoms": [
+    {
+     "resolve": "handoff.aim_open_ids",
+     "arg": "P"
+    },
+    {
+     "resolve": "handoff.aim_open_ids",
+     "arg": "WO"
+    }
+   ],
+   "window": null,
+   "source": "HANDOFF.md (latest aim section)",
+   "shard": "next-aim",
+   "rate_invariant": false,
+   "arm_a": "wake",
+   "wake_expected": true,
+   "structural_note": "v1's T03 named a July demo obligation by hand. The open-row ids the aim itself carries are the same question asked structurally."
+  },
+  {
+   "id": "T04",
+   "class": "standing-law",
+   "question": "May a fork derivable from banked evidence be decided without asking the author, or must it queue? Name the amendment.",
+   "atoms": [
+    {
+     "resolve": "law.amendment_date",
+     "arg": "fork law"
+    },
+    {
+     "resolve": "law.amendment_clause",
+     "arg": "fork law"
+    }
+   ],
+   "window": null,
+   "source": "STANDING_LAW.md (amendment titled 'fork law')",
+   "shard": "identity",
+   "rate_invariant": true,
+   "arm_a": "wake",
+   "wake_expected": true,
+   "structural_note": "The clause is extracted from the live file, so a re-wording of the law re-anchors the atom automatically. Declared rate-invariant: identity is outside _BUDGET_SACRIFICE_RANK and rides at every rate."
+  },
+  {
+   "id": "T05",
+   "class": "standing-law",
+   "question": "What must accompany a claim that something is done, landed, or works? Name the amendment.",
+   "atoms": [
+    {
+     "resolve": "law.amendment_date",
+     "arg": "contact law"
+    },
+    {
+     "resolve": "law.amendment_clause",
+     "arg": "contact law"
+    }
+   ],
+   "window": null,
+   "source": "STANDING_LAW.md (amendment titled 'the contact law')",
+   "shard": "identity",
+   "rate_invariant": true,
+   "arm_a": "wake",
+   "wake_expected": true,
+   "structural_note": "Same resolver family as T04."
+  },
+  {
+   "id": "T06",
+   "class": "standing-law",
+   "question": "What is the most recent standing-law amendment - its date and what it rules?",
+   "atoms": [
+    {
+     "resolve": "law.latest_date"
+    },
+    {
+     "resolve": "law.latest_clause"
+    }
+   ],
+   "window": null,
+   "source": "STANDING_LAW.md (last amendment bullet)",
+   "shard": "identity",
+   "rate_invariant": true,
+   "arm_a": "wake",
+   "wake_expected": true,
+   "structural_note": "v1 froze the two-ends law as the newest. v2 asks for whatever is newest TODAY - the one standing-law task that cannot decay."
+  },
+  {
+   "id": "T07",
+   "class": "session-state",
+   "question": "Name open work orders this session inherits that the handoff's aim block does not itself list.",
+   "atoms": [
+    {
+     "resolve": "work_orders.open_ids"
+    }
+   ],
+   "window": null,
+   "source": "corpus_friction/work_orders.jsonl",
+   "shard": "work-orders",
+   "rate_invariant": false,
+   "arm_a": "wake",
+   "wake_expected": true,
+   "structural_note": "The resolver EXCLUDES every id the aim block names, so the atom can only be answered from the work-orders shard body - it cannot leak in through next-aim."
+  },
+  {
+   "id": "T08",
+   "class": "session-state",
+   "question": "Name an open promise on the conscience ledger.",
+   "atoms": [
+    {
+     "resolve": "promises.open_ids"
+    }
+   ],
+   "window": null,
+   "source": "contract/promises.jsonl",
+   "shard": "conscience",
+   "rate_invariant": false,
+   "arm_a": "wake",
+   "wake_expected": true,
+   "structural_note": "v1 had no conscience-shard task at all; the shard was invisible to the instrument."
+  },
+  {
+   "id": "T09",
+   "class": "session-state",
+   "question": "What branch and HEAD is this session on?",
+   "atoms": [
+    {
+     "resolve": "git.branch"
+    },
+    {
+     "resolve": "git.head_short"
+    }
+   ],
+   "window": null,
+   "source": "live git probe",
+   "shard": "probe",
+   "rate_invariant": true,
+   "arm_a": "wake",
+   "wake_expected": true,
+   "structural_note": "v1's __LIVE_GIT__ sentinel, now an ordinary resolver. Declared rate-invariant: the probe block is not budgeted."
+  },
+  {
+   "id": "T10",
+   "class": "project-state",
+   "question": "How big is the banked semantic map - how many leaves does it carry?",
+   "atoms": [
+    {
+     "resolve": "meaning_tree.leaves"
+    }
+   ],
+   "window": null,
+   "source": ".meaning_tree.json (via recursive_read.top_of_map)",
+   "shard": "semantic",
+   "rate_invariant": true,
+   "arm_a": "wake",
+   "wake_expected": true,
+   "structural_note": "v1 froze 12,335 leaves; the tree is now larger. Declared rate-invariant positive control: the semantic block is produced outside the budgeted fixed point, so a failure here means the instrument is broken, not that the rate is too low."
+  },
+  {
+   "id": "T11",
+   "class": "project-state",
+   "question": "What is the registry's marriage state, and name a project the release machine has never run?",
+   "atoms": [
+    {
+     "resolve": "registry.marriage"
+    },
+    {
+     "resolve": "registry.never_run"
+    }
+   ],
+   "window": null,
+   "source": "pipeline.registry",
+   "shard": "projects",
+   "rate_invariant": false,
+   "arm_a": "wake",
+   "wake_expected": true,
+   "structural_note": "Deliberately split across the coarse-graining seam: the marriage fraction lives in the shard TITLE (survives lever 2), the NEVER_RUN names live in the BODY (do not). The task fails exactly when the body goes."
+  },
+  {
+   "id": "T12",
+   "class": "project-state",
+   "question": "Name a fork currently blocked on the author and what it turns on.",
+   "atoms": [
+    {
+     "resolve": "openstack.author_fork_ids"
+    },
+    {
+     "resolve": "openstack.fork_subject"
+    }
+   ],
+   "window": null,
+   "source": "OPEN_STACK.md (Stratum 1, red rows)",
+   "shard": "live-forks",
+   "rate_invariant": false,
+   "arm_a": "wake",
+   "wake_expected": true,
+   "structural_note": "v1 hard-coded F23. v2 resolves whichever forks carry the red marker today."
+  },
+  {
+   "id": "T13",
+   "class": "topic-descent",
+   "question": "Which nodes carry the DMRG / hierarchicalisation thread - where does that thread live?",
+   "atoms": [
+    {
+     "resolve": "threads.must_reach",
+     "arg": "thread-dmrg-hierarchicalisation"
+    }
+   ],
+   "window": null,
+   "source": "holdout/THREAD_PROBES.json (must_reach) + the live corpus",
+   "shard": "threads",
+   "rate_invariant": false,
+   "arm_a": "wake+descend",
+   "wake_expected": false,
+   "structural_note": "v1's topic-descent tasks pointed at July evidence files and scored zero at every arm - rate-blind dead weight. v2 points them at the standing fibre's own declared must_reach nodes, so the class measures the property the thread probes claim to measure, on the payload side."
+  },
+  {
+   "id": "T14",
+   "class": "topic-descent",
+   "question": "Which nodes carry the orthogonality-catastrophe thread?",
+   "atoms": [
+    {
+     "resolve": "threads.must_reach",
+     "arg": "thread-orthogonality-catastrophe"
+    }
+   ],
+   "window": null,
+   "source": "holdout/THREAD_PROBES.json (must_reach) + the live corpus",
+   "shard": "threads",
+   "rate_invariant": false,
+   "arm_a": "wake+descend",
+   "wake_expected": false,
+   "structural_note": "As T13."
+  },
+  {
+   "id": "T15",
+   "class": "topic-descent",
+   "question": "Which nodes carry the loss-Hamiltonian-as-kinetic-term thread?",
+   "atoms": [
+    {
+     "resolve": "threads.must_reach",
+     "arg": "thread-loss-hamiltonian"
+    }
+   ],
+   "window": null,
+   "source": "holdout/THREAD_PROBES.json (must_reach) + the live corpus",
+   "shard": "threads",
+   "rate_invariant": false,
+   "arm_a": "wake+descend",
+   "wake_expected": false,
+   "structural_note": "As T13. This is the probe banked as an expected PASS on the router side, so a payload-side miss here is the sharpest available contrast between the two instruments."
+  },
+  {
+   "id": "T16",
+   "class": "claim-evidence",
+   "question": "What did the previous self leave in the bequest, and which node does each line descend to?",
+   "atoms": [
+    {
+     "resolve": "bequest.fragments",
+     "arg": 60
+    },
+    {
+     "resolve": "bequest.nodes"
+    }
+   ],
+   "window": null,
+   "source": "holdout/BEQUEST.json",
+   "shard": "bequest",
+   "rate_invariant": false,
+   "arm_a": "wake",
+   "wake_expected": true,
+   "structural_note": "The bequest is rank 2 in _BUDGET_SACRIFICE_RANK - the last body lever 2 may take. v1 had no task on it, so the authored ranking's most-defended shard was never scored."
+  },
+  {
+   "id": "T17",
+   "class": "claim-evidence",
+   "question": "What is the evidence behind the author's rejection of the eigenengine manuscript, and where is the verdict banked?",
+   "atoms": [
+    {
+     "resolve": "openstack.want_node",
+     "arg": "W2"
+    },
+    {
+     "resolve": "openstack.want_ruling_id",
+     "arg": "W2"
+    }
+   ],
+   "window": null,
+   "source": "OPEN_STACK.md (W2)",
+   "shard": "wants",
+   "rate_invariant": false,
+   "arm_a": "wake",
+   "wake_expected": true,
+   "structural_note": "v1's T18, the single task that discriminated anywhere on the wave-1 ladder, now resolved from the live W2 row instead of two frozen strings."
+  },
+  {
+   "id": "T18",
+   "class": "claim-evidence",
+   "question": "Which run backs the ruled verdict on prediction P16, and where is it banked?",
+   "atoms": [
+    {
+     "resolve": "predictions.evidence_node",
+     "arg": "P16"
+    }
+   ],
+   "window": null,
+   "source": "contract/predictions.jsonl",
+   "shard": "(none - descent only)",
+   "rate_invariant": false,
+   "arm_a": "wake+descend",
+   "wake_expected": false,
+   "structural_note": "A claim-evidence task whose answer is NOT in any shard: it must be reached by descent. The one v2 task that measures the descent leg rather than the payload."
+  },
+  {
+   "id": "T19",
+   "class": "payload-internals",
+   "question": "What does the spine block say the goal->reconstruction-calls reflex is, and how does a reader fire the spine directly outside the wake payload?",
+   "atoms": [
+    {
+     "resolve": "spine.reflex_is"
+    },
+    {
+     "resolve": "spine.fire_call"
+    }
+   ],
+   "window": null,
+   "source": "src/laplace/engine/spine.py (hello_reflex)",
+   "shard": "spine",
+   "rate_invariant": true,
+   "arm_a": "wake",
+   "wake_expected": true,
+   "structural_note": "Minted 2026-08-20 (WO-20260820-mint-floor-block-tasks): REPORT_v2.md §6 measured `spine` at 3,196 chars / 14.6% of the person floor (30.9% of the engine floor) and no task scored it in v1 or v2 - a null measurement mistaken for zero value. `spine` is a top-level fixed_point key self_corpus._grade0() attaches OUTSIDE the `shards` list lever 2 walks (_BUDGET_SACRIFICE_RANK only names next-aim/bequest), so it rides every rate by construction - declared rate_invariant on that structural ground, checked not asserted."
+  },
+  {
+   "id": "T20",
+   "class": "payload-internals",
+   "question": "What is the addressing grammar's dispatch verb for the node_forms block, and which script resolves a node name to its source?",
+   "atoms": [
+    {
+     "resolve": "node_forms.dispatch_verb"
+    },
+    {
+     "resolve": "node_forms.resolver_call"
+    }
+   ],
+   "window": null,
+   "source": "src/laplace/engine/self_corpus.py (_grade0, node_forms block)",
+   "shard": "node_forms",
+   "rate_invariant": true,
+   "arm_a": "wake",
+   "wake_expected": true,
+   "structural_note": "Minted 2026-08-20 (WO-20260820-mint-floor-block-tasks): REPORT_v2.md §6 measured `node_forms` at 345 chars, no task scored it. Same structural rate-invariance argument as T19: node_forms rides outside the shards list, so lever 2 cannot touch it."
+  },
+  {
+   "id": "T21",
+   "class": "payload-internals",
+   "question": "What does grade 0's embedded descend block say fires grade 1, and what is the literal call?",
+   "atoms": [
+    {
+     "resolve": "descend.call_grade1"
+    },
+    {
+     "resolve": "descend.fire_grade1"
+    }
+   ],
+   "window": null,
+   "source": "src/laplace/engine/self_corpus.py (_grade0, descend block)",
+   "shard": "descend",
+   "rate_invariant": true,
+   "arm_a": "wake",
+   "wake_expected": true,
+   "structural_note": "Minted 2026-08-20 (WO-20260820-mint-floor-block-tasks): REPORT_v2.md §6 measured `descend` at 272 chars, no task scored it. Together T19-T21 cover the 3,813 chars / 17.4% of the person floor the report named as scored-nothing-because-untested. Resolver scoped to self_corpus._grade0()'s own source span (`_grade0_source`) so it can never match the same-named 'call'/'fire' keys on _grade1's descend block by accident."
+  },
+  {
+   "id": "T22",
+   "class": "payload-internals",
+   "question": "What does the wake's triple name as the full next-aim record, and which live author-fork heads the blocked-on-author table?",
+   "atoms": [
+    {
+     "resolve": "triple.full_record"
+    },
+    {
+     "resolve": "triple.top_fork"
+    }
+   ],
+   "window": null,
+   "source": "HANDOFF.md (latest aim's Full-record line) + OPEN_STACK.md (first live stratum-1 fork)",
+   "shard": "triple",
+   "rate_invariant": true,
+   "arm_a": "wake",
+   "wake_expected": true,
+   "structural_note": "Minted 2026-08-20 (WO-20260820-mint-triple-task): REPORT_v2.md measured `triple` at 1,594 chars - the last unscored engine-core block, kept purely on the null-measurement rule, and T12's only surviving carrier once shard:live-forks is cut. Atoms resolve LIVE from the render's row-sources (HANDOFF.md's 'Full record' line; OPEN_STACK.md's first live fork id) so the dynamic block re-anchors every close - the triple is a render whose sources move, unlike T19-T21's static source strings. rate_invariant on the same structural ground as T19-T21: triple is a top-level fixed_point key outside the shards list lever 2 walks."
+  },
+  {
+   "id": "T23",
+   "class": "standing-law",
+   "question": "The 2026-08-20 audit-day amendment banks a cluster of rulings rather than a sentence. What are its first two rulings, and under which PV stamps were they banked?",
+   "atoms": [
+    {
+     "resolve": "law.amendment_date",
+     "arg": "audit day"
+    },
+    {
+     "resolve": "law.amendment_rulings",
+     "arg": "audit day"
+    }
+   ],
+   "window": null,
+   "source": "STANDING_LAW.md (amendment titled 'the audit day')",
+   "shard": "identity",
+   "rate_invariant": true,
+   "arm_a": "wake",
+   "wake_expected": true,
+   "structural_note": "Minted 2026-08-23 (WO-20260821-law-atom-past-the-prefix). THE INSTRUMENT GAP IT CLOSES: T04/T05/T06 all resolve through `_clause`, whose atom is the amendment's first sentence capped at 110, and `self_corpus.law_digest` cuts the same tail at `_LAW_CLAUSE_CAP`. Every cap at or above 110 therefore carries those atoms whole, so the standing-law class scored 3/3 at 110, 120, 130 and 160 alike and could not say whether a shorter digest was still usable law (RES-20260820-minimum-law-digest, evidence/WAKE_RATE_BENCH_2026-08-20/law_digest_bisection/). T23 resolves through `law.amendment_rulings`, which ends the span on a RULING boundary instead of a character count: the audit-day amendment is a `·`-separated cluster with no sentence end anywhere in 958 chars, so its clause is truncated at the cap at every rung including the incumbent, and its span through the second ruling is 135 chars - 25 clear of the scorer's 110 needle, 25 clear of the incumbent 160. Measured break (evidence/LAW_ATOM_PAST_THE_PREFIX_2026-08-23/): PASS at cap 160/140/136/135, FAIL at 134/130/120/110, at both the A0 and the shipping-budget arm - the class reads 4/4 above the break and 3/4 below it where it used to read 3/3 at every one of them. The length is a property of the law's wording, not of any cap, and the atom is not clamped to the digest - if an amendment is re-worded past the cap the task goes red, which is the reading the instrument owes. `_amendment_by_slug` now searches the bolded-inclusive amendment list so the cluster bullets are addressable; `law.latest_*` still reads the plain-dated series, and all 22 pre-existing tasks resolve to byte-identical atoms (checked before and after). rate_invariant on the same ground as T04-T06: identity is outside _BUDGET_SACRIFICE_RANK."
+  }
+ ]
+}

@@ -1,0 +1,44 @@
+{
+  "schema": "laplace.frontend-explanation-currentness-calibration/1",
+  "at": "2026-10-21T10:17:35.484887+00:00",
+  "Writing_head": "0019b2bbbcca59ff6644edad2ce17483a6d65140",
+  "findings": [
+    {
+      "name": "README edition link",
+      "path": "/home/phujck/VScodeProjects/laplace-writing/README.md",
+      "line": 87,
+      "sha256": "sha256:0caebe7fe0ad74fe96b4f9809f4a36260138c99e3b11ba2a9749f6637fa67555",
+      "reached_observation": "This edition names writing-bundle-20261020-core/core-20261020 although accepted current bundle is21Oct0019b2bb/f3d.",
+      "design_implication": "Entry identity claim needs owner-bound support; no immutable release rewrite.",
+      "status": "OPEN_CALIBRATION_NOT_SILENTLY_FIXED"
+    },
+    {
+      "name": "Agent startup latest claim",
+      "path": "/home/phujck/VScodeProjects/laplace-writing/docs/writing-agent-start.md",
+      "line": 8,
+      "sha256": "sha256:384700e5d5df90adee7039465130112c7854330ee64023179267f92fe636c801",
+      "reached_observation": "Latest edition line names writing-bundle-20261019-reviewer.",
+      "design_implication": "Read exact package identity; show whether linked explanatory claim was reviewed against it.",
+      "status": "OPEN_CALIBRATION_NOT_SILENTLY_FIXED"
+    },
+    {
+      "name": "Retired facade account",
+      "path": "/home/phujck/VScodeProjects/laplace-writing/docs/writing-source-map.md",
+      "line": 72,
+      "sha256": "sha256:8f137b8461b657eac8670fe51c923a280952de0c59c7a969542209a017a37feb",
+      "reached_observation": "Claims every old facade name remains importable, plus stale body/representation locations.",
+      "design_implication": "Structural code map is not semantic claim acceptance; retain historical account and repair selected current explanation.",
+      "status": "OPEN_CALIBRATION_NOT_SILENTLY_FIXED"
+    },
+    {
+      "name": "Living Guide body-owner locations",
+      "path": "/home/phujck/VScodeProjects/laplace-writing/synthetics papers/writing-system-architecture/manuscript/chapters/homes-of-truth.tex",
+      "line": 79,
+      "sha256": "sha256:b85499ca3cca374742e1d2bfe39f78ba1deccdda6c27fb41ea501a480c6cf321",
+      "reached_observation": "Names src/laplace/writing/bodies.py and writing/representation.py; current owners are representation/writing_bodies.py and representation/writing_representation.py over core/bodies.py.",
+      "design_implication": "Real implementation/claim consumer relation needed; not fixed by folder move or this design.",
+      "status": "OPEN_CALIBRATION_NOT_SILENTLY_FIXED"
+    }
+  ],
+  "scope": "Primary reached authored public/evaluation documentation only; no new private company/roadmap source, history-body fixture or broad audit. Completed finite code/path release acceptance retained."
+}

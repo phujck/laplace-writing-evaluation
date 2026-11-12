@@ -1,0 +1,14 @@
+{
+  "lost": [
+    "The specific mechanism of reading rho (spectral radius) off successive lost-set deltas",
+    "The distinction between CONVERGED-DEGENERATE cases: plateau requiring grade-up vs. over-contracted generative nodes with collapsed imagination",
+    "The explicit minimum threshold of >= 3 verdicts required to form a delta ratio",
+    "The OPEN state's two sub-cases: budget remaining with contraction vs. budget exhausted while still contracting",
+    "The flag budget_exhausted and its role in preventing misclassification as oscillating",
+    "The contrast between rho >= 1 (oscillating) and configurations that re-appear from >= 2 cycles back with period >= 2"
+  ],
+  "added": [],
+  "structured": true,
+  "recurses": true,
+  "justification": "The ghost captures the four-state taxonomy (CONVERGED-FAITHFUL, CONVERGED-DEGENERATE, OSCILLATING, OPEN) and the core logic: contraction rate estimation, comparison against a target, and state assignment. It preserves the semantic distinction between faithful vs. degenerate convergence and oscillation vs. open. However, it omits or abstracts away the specific operational details: (1) the explicit formula for rho from delta ratios, (2) the two qualitatively different degenerate cases (plateau vs. collapsed imagination), (3) the minimum sample size (>= 3), (4) the nuanced OPEN state handling with budget exhaustion as a separate flag preventing false oscillation diagnosis, and (5) the period check (>= 2 cycles). These are implementationally and conceptually precise constraints that the ghost loses. The loss is structured and recoverable—a next pass could rebuild these specifics from the four-state frame the ghost preserves—making this a partial reconstruction, not a confabulation. No claims are inverted or falsified."
+}

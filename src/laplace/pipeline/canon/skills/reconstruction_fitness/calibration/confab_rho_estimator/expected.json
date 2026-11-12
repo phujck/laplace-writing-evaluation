@@ -1,0 +1,5 @@
+{
+  "label": "confabulated",
+  "plant": "rho computed from one verdict as the absolute lost-set size, no deltas or ratios, exact not noisy",
+  "note": "A technical confabulation that inverts the estimator (it needs >= 3 verdicts and a ratio of consecutive deltas; the estimate is noisy). The meter must surface the single-verdict / absolute-size / exact-not-noisy inversion in `added`."
+}

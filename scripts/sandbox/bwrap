@@ -1,0 +1,27 @@
+#!/usr/bin/env bash
+# The GPU shim for the Codex Linux sandbox (crutch CR-20260914-codex-sandbox-gpu-shim).
+# Codex builds `bwrap ... --dev /dev ...`, a fresh minimal /dev with no NVIDIA nodes, so every
+# executor fell back to CPU ("cudaErrorNoDevice"). His ruling 2026-09-14: NO CPU FALLBACK. This
+# shim sits first on PATH for dispatched codex runs, and after `--dev /dev` binds every NVIDIA
+# device node that exists on the host into the sandbox, then execs the real bwrap. Nothing else
+# in the argument list is touched. Retire when codex exposes device passthrough in its sandbox
+# config (then the dispatcher stops prepending this directory to PATH).
+REAL=/usr/bin/bwrap
+[ -n "$CODEX_BWRAP_SHIM_LOG" ] && printf "%s\n" "$*" >> "$CODEX_BWRAP_SHIM_LOG"
+args=()
+n=$#
+i=1
+while [ $i -le $n ]; do
+  a="${!i}"
+  args+=("$a")
+  if [ "$a" = "--dev" ]; then
+    j=$((i+1)); target="${!j}"; args+=("$target"); i=$j
+    if [ "$target" = "/dev" ]; then
+      for dev in /dev/nvidia*; do
+        [ -e "$dev" ] && args+=("--dev-bind-try" "$dev" "$dev")
+      done
+    fi
+  fi
+  i=$((i+1))
+done
+exec "$REAL" "${args[@]}"

@@ -1,0 +1,19 @@
+{
+  "fixture": {
+    "kind": "minimised-observed-incompatible-shape",
+    "source_sha256": "5b9fadf7edeec39e98c7b538adc12b975070368b2e2b04cf32b5fdffac1b43ed",
+    "note": "Same declared v1, native/current fields are not the recorded-map fields consumed by the viewer. No private project body copied."
+  },
+  "schema_version": "writing-system-architecture.argument-map/1",
+  "project": "generic-snapshot-fixture",
+  "nodes": [
+    {"id": "goal:read", "kind": "goal", "sources_current": [], "result_bindings": []},
+    {"id": "res:scope", "kind": "result", "sources_current": [{"reference": {"path": "blueprint/source.md", "sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"}, "status": "READ"}], "result_bindings": [{"id": "observed-result"}]},
+    {"id": "question:scope", "kind": "question", "class": "open", "meaning": "Is the recorded source scope sufficient?", "sources_current": [], "result_bindings": []}
+  ],
+  "relations": [["question:scope", "questions", "res:scope"]],
+  "chapters": [{"id": "scope", "source": "manuscript/scope.tex", "nodes": ["res:scope", "question:scope"]}],
+  "source_registry": {"scope": {"path": "blueprint/source.md", "sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"}},
+  "research_bindings": [{"id": "res:scope", "bindings": [{"id": "observed-result", "currentness": "CURRENT"}]}],
+  "results": [{"id": "observed-result", "currentness": "CURRENT"}]
+}

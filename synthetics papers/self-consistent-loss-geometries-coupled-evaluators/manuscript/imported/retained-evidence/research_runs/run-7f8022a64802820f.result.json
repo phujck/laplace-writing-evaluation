@@ -1,0 +1,604 @@
+{
+  "schema_version": "slg.scientific-figure-result/1",
+  "status": "COMPLETE",
+  "scope": "Finite predeclared synthetic comparison and analytical figure tables, not independent scientific acceptance.",
+  "measures": {
+    "streams": 12,
+    "prices": 6,
+    "policies": 3,
+    "trajectories": 216,
+    "policy_decisions": 150984,
+    "max_v1_accounting_error": 0.0
+  },
+  "controls": {
+    "reference": [
+      {
+        "policy": "Legacy v0",
+        "price": 0.001,
+        "max_state_error": 0.0,
+        "decisions_equal": true
+      },
+      {
+        "policy": "Legacy v0",
+        "price": 0.005,
+        "max_state_error": 0.0,
+        "decisions_equal": true
+      },
+      {
+        "policy": "Priced v1",
+        "price": 0.005,
+        "max_state_error": 0.0,
+        "decisions_equal": true
+      },
+      {
+        "policy": "Legacy v0",
+        "price": 0.02,
+        "max_state_error": 0.0,
+        "decisions_equal": true
+      },
+      {
+        "policy": "Legacy v0",
+        "price": 0.06,
+        "max_state_error": 0.0,
+        "decisions_equal": true
+      },
+      {
+        "policy": "Priced v1",
+        "price": 0.06,
+        "max_state_error": 0.0,
+        "decisions_equal": true
+      },
+      {
+        "policy": "Legacy v0",
+        "price": 0.12,
+        "max_state_error": 0.0,
+        "decisions_equal": true
+      },
+      {
+        "policy": "Legacy v0",
+        "price": 0.4,
+        "max_state_error": 0.0,
+        "decisions_equal": true
+      },
+      {
+        "policy": "Priced v1",
+        "price": 0.4,
+        "max_state_error": 0.0,
+        "decisions_equal": true
+      }
+    ],
+    "promoted_counts": {
+      "Legacy v0": 5768,
+      "Rolling control": 6454,
+      "Priced v1": 5932
+    },
+    "all_reference_tests_passed": true
+  },
+  "environment": {
+    "python": "3.14.7 (main, Aug 14 2026, 15:35:28) [Clang 22.1.3 ]",
+    "numpy": "2.5.1",
+    "platform": "Linux-7.0.0-42-generic-x86_64-with-glibc2.39",
+    "executable": "/home/phujck/.local/share/laplace/runtime/python/current/bin/python3.14"
+  },
+  "source_pins": {
+    "code": "f9c98ffb562216caf9b71a40351777b274b72eb9e4fbdf199d6e99e8a171c905",
+    "protocol": "58ff935dfb8c3f7a3463d3ecd22a9dc23ebd64fa24214e7d1c084cf4fad27ed1",
+    "original": "ebe2e17c4803b312197fd5ce415cae59c29ecd7ba62256cf7f2cf7aa86c5b6d7",
+    "accepted_v1": "8f39b070b310baaaa58e6b3824ab7a59c0c86a9c8f5d1f3271e00b4a690a6ce7"
+  },
+  "files": [
+    {
+      "id": "per_stream_metrics",
+      "path": "research/slg-scientific-figures-20261111/outputs/run-7f8022a64802820f.result/per_stream_metrics.csv",
+      "scope": "project",
+      "sha256": "003671aec49aeae8d5756dd70f8047485c97c1a96c0b4c28f9dabf987e997d3d",
+      "bytes": 48380,
+      "rows": 216,
+      "columns": [
+        "seed",
+        "policy",
+        "price",
+        "prequential_mse",
+        "latent_mse",
+        "noise_oracle_mse",
+        "never_update_mse",
+        "promotion_count",
+        "promotion_rate",
+        "promotion_cost_sum",
+        "off_transition_promotion_rate",
+        "recovery_failure_fraction",
+        "recovery_censored_mean",
+        "recovery_delays",
+        "realised_window_gain_sum",
+        "mean_abs_candidate_gain_mismatch",
+        "max_abs_candidate_gain_mismatch",
+        "ledger_error"
+      ]
+    },
+    {
+      "id": "representative_action_ledgers",
+      "path": "research/slg-scientific-figures-20261111/outputs/run-7f8022a64802820f.result/representative_action_ledgers.csv",
+      "scope": "project",
+      "sha256": "77f1f148f85a6a239990ea310f82953792854c558ad2a2acb21cf195de0f3111",
+      "bytes": 438772,
+      "rows": 2097,
+      "columns": [
+        "seed",
+        "policy",
+        "price",
+        "t",
+        "theta_before",
+        "theta0",
+        "theta1",
+        "gain0",
+        "gain1",
+        "actual_candidate1_gain",
+        "cost0",
+        "cost1",
+        "score_gap",
+        "chosen",
+        "theta_after",
+        "realised_window_gain",
+        "pre_action_error",
+        "horizon_start",
+        "horizon_end"
+      ]
+    },
+    {
+      "id": "prediction_risk_curve",
+      "path": "research/slg-scientific-figures-20261111/outputs/run-7f8022a64802820f.result/prediction_risk_curve.csv",
+      "scope": "project",
+      "sha256": "40af949ea01bc8472e267023462f2d97244cd3b4f682eab7e2c3f54e082b06d1",
+      "bytes": 1249,
+      "rows": 6,
+      "columns": [
+        "Price",
+        "Log10 price",
+        "Legacy v0",
+        "Legacy v0 SE",
+        "Rolling control",
+        "Rolling control SE",
+        "Priced v1",
+        "Priced v1 SE",
+        "Noise oracle",
+        "Never update"
+      ]
+    },
+    {
+      "id": "promotion_rate_curve",
+      "path": "research/slg-scientific-figures-20261111/outputs/run-7f8022a64802820f.result/promotion_rate_curve.csv",
+      "scope": "project",
+      "sha256": "c50039032f76e108d5590aca12f334ce0ef1815ee7a2d2daed44f121610069e6",
+      "bytes": 982,
+      "rows": 6,
+      "columns": [
+        "Price",
+        "Log10 price",
+        "Legacy v0",
+        "Legacy v0 SE",
+        "Rolling control",
+        "Rolling control SE",
+        "Priced v1",
+        "Priced v1 SE"
+      ]
+    },
+    {
+      "id": "recovery_failure_curve",
+      "path": "research/slg-scientific-figures-20261111/outputs/run-7f8022a64802820f.result/recovery_failure_curve.csv",
+      "scope": "project",
+      "sha256": "415357835b1c3a3ed574053bb195d9314f2983ea92de7cfb6825d07405200f19",
+      "bytes": 851,
+      "rows": 6,
+      "columns": [
+        "Price",
+        "Log10 price",
+        "Legacy v0",
+        "Legacy v0 SE",
+        "Rolling control",
+        "Rolling control SE",
+        "Priced v1",
+        "Priced v1 SE"
+      ]
+    },
+    {
+      "id": "off_transition_curve",
+      "path": "research/slg-scientific-figures-20261111/outputs/run-7f8022a64802820f.result/off_transition_curve.csv",
+      "scope": "project",
+      "sha256": "5655fc8cb35cb346f866a5bdfc2f3595892f886ec16a2cc46112a002ba8ee459",
+      "bytes": 1003,
+      "rows": 6,
+      "columns": [
+        "Price",
+        "Log10 price",
+        "Legacy v0",
+        "Legacy v0 SE",
+        "Rolling control",
+        "Rolling control SE",
+        "Priced v1",
+        "Priced v1 SE"
+      ]
+    },
+    {
+      "id": "paired_differences",
+      "path": "research/slg-scientific-figures-20261111/outputs/run-7f8022a64802820f.result/paired_differences.csv",
+      "scope": "project",
+      "sha256": "b697e833f676a50669404e6689ababc845154b39e21412b9f38909788d9b8666",
+      "bytes": 657,
+      "rows": 6,
+      "columns": [
+        "Price",
+        "Rolling control minus Legacy MSE",
+        "Rolling control paired SE",
+        "Priced v1 minus Legacy MSE",
+        "Priced v1 paired SE"
+      ]
+    },
+    {
+      "id": "priced_policy_tracking",
+      "path": "research/slg-scientific-figures-20261111/outputs/run-7f8022a64802820f.result/priced_policy_tracking.csv",
+      "scope": "project",
+      "sha256": "20fde7d621d27746172840d71d6450193d90cec01dcbbac9a2cf3a1eb4158f47",
+      "bytes": 40972,
+      "rows": 700,
+      "columns": [
+        "Time",
+        "True slope",
+        "v1 price 0.005",
+        "v1 price 0.06",
+        "v1 price 0.4"
+      ]
+    },
+    {
+      "id": "common_ledger_register",
+      "path": "research/slg-scientific-figures-20261111/outputs/run-7f8022a64802820f.result/common_ledger_register.csv",
+      "scope": "project",
+      "sha256": "588636de35ae4bd7a9d6440e0404ad658aa42fb155569708d0a22911028b240d",
+      "bytes": 11378,
+      "rows": 181,
+      "columns": [
+        "Target separation",
+        "Fixed balanced",
+        "Arbitration",
+        "Split enabled",
+        "Split price"
+      ]
+    },
+    {
+      "id": "or_hazard_projection",
+      "path": "research/slg-scientific-figures-20261111/outputs/run-7f8022a64802820f.result/or_hazard_projection.csv",
+      "scope": "project",
+      "sha256": "b1821dd80de0369065a2891354bde68658217241712fe4dad728ae41dc6b0f05",
+      "bytes": 14687,
+      "rows": 81,
+      "columns": [
+        "Price",
+        "Naive mean TV",
+        "Mean intercept TV",
+        "Max intercept TV",
+        "Exact hazard TV",
+        "Mean conditional count",
+        "Min conditional count",
+        "Max conditional count",
+        "Single event bound",
+        "Block size bound",
+        "Mean effective intercept"
+      ]
+    }
+  ],
+  "summary": {
+    "risk": [
+      {
+        "Price": 0.001,
+        "Log10 price": -3.0,
+        "Legacy v0": 0.10514557763061534,
+        "Legacy v0 SE": 0.0022863661444075412,
+        "Rolling control": 0.12097884153887396,
+        "Rolling control SE": 0.00312850598679497,
+        "Priced v1": 0.11986479004302357,
+        "Priced v1 SE": 0.0031411579632763253,
+        "Noise oracle": 0.06285407097428851,
+        "Never update": 0.2899960608689507
+      },
+      {
+        "Price": 0.005,
+        "Log10 price": -2.3010299956639813,
+        "Legacy v0": 0.10452661446035107,
+        "Legacy v0 SE": 0.0026308245522119913,
+        "Rolling control": 0.12123341535120831,
+        "Rolling control SE": 0.00307789096275221,
+        "Priced v1": 0.12090508441748038,
+        "Priced v1 SE": 0.0030838230139501135,
+        "Noise oracle": 0.06285407097428851,
+        "Never update": 0.2899960608689507
+      },
+      {
+        "Price": 0.02,
+        "Log10 price": -1.6989700043360187,
+        "Legacy v0": 0.11149607311923342,
+        "Legacy v0 SE": 0.003661660083052474,
+        "Rolling control": 0.12323573085560563,
+        "Rolling control SE": 0.0029835253888341093,
+        "Priced v1": 0.12684379691551498,
+        "Priced v1 SE": 0.002844312294579711,
+        "Noise oracle": 0.06285407097428851,
+        "Never update": 0.2899960608689507
+      },
+      {
+        "Price": 0.06,
+        "Log10 price": -1.2218487496163564,
+        "Legacy v0": 0.1211696766258572,
+        "Legacy v0 SE": 0.0025921918974241283,
+        "Rolling control": 0.12923116561411052,
+        "Rolling control SE": 0.0027261014975257965,
+        "Priced v1": 0.14340483871164753,
+        "Priced v1 SE": 0.0027754507889458393,
+        "Noise oracle": 0.06285407097428851,
+        "Never update": 0.2899960608689507
+      },
+      {
+        "Price": 0.12,
+        "Log10 price": -0.9208187539523752,
+        "Legacy v0": 0.13127019747443322,
+        "Legacy v0 SE": 0.0023401482669072136,
+        "Rolling control": 0.13903569638413846,
+        "Rolling control SE": 0.0025180393058069424,
+        "Priced v1": 0.16174091733111606,
+        "Priced v1 SE": 0.002462034076281233,
+        "Noise oracle": 0.06285407097428851,
+        "Never update": 0.2899960608689507
+      },
+      {
+        "Price": 0.4,
+        "Log10 price": -0.3979400086720376,
+        "Legacy v0": 0.17067875306699687,
+        "Legacy v0 SE": 0.0013865491896046067,
+        "Rolling control": 0.17457026956937458,
+        "Rolling control SE": 0.0019454617007416634,
+        "Priced v1": 0.2366365732739446,
+        "Priced v1 SE": 0.0032930270127508763,
+        "Noise oracle": 0.06285407097428851,
+        "Never update": 0.2899960608689507
+      }
+    ],
+    "promotion": [
+      {
+        "Price": 0.001,
+        "Log10 price": -3.0,
+        "Legacy v0": 0.3073076923076923,
+        "Legacy v0 SE": 0.0074172864113802,
+        "Rolling control": 0.29102564102564105,
+        "Rolling control SE": 0.004528448253404986,
+        "Priced v1": 0.3657692307692308,
+        "Priced v1 SE": 0.005937710859953543
+      },
+      {
+        "Price": 0.005,
+        "Log10 price": -2.3010299956639813,
+        "Legacy v0": 0.1987179487179487,
+        "Legacy v0 SE": 0.009962874123330192,
+        "Rolling control": 0.2103846153846154,
+        "Rolling control SE": 0.0053432476882499256,
+        "Priced v1": 0.18679487179487178,
+        "Priced v1 SE": 0.00463267287860038
+      },
+      {
+        "Price": 0.02,
+        "Log10 price": -1.6989700043360187,
+        "Legacy v0": 0.1008974358974359,
+        "Legacy v0 SE": 0.006324720699380239,
+        "Rolling control": 0.13871794871794874,
+        "Rolling control SE": 0.002553591509570917,
+        "Priced v1": 0.10307692307692308,
+        "Priced v1 SE": 0.001826232847160923
+      },
+      {
+        "Price": 0.06,
+        "Log10 price": -1.2218487496163564,
+        "Legacy v0": 0.05038461538461538,
+        "Legacy v0 SE": 0.0025060443338726333,
+        "Rolling control": 0.0885897435897436,
+        "Rolling control SE": 0.001304580602371657,
+        "Priced v1": 0.05076923076923077,
+        "Priced v1 SE": 0.0009656090991705354
+      },
+      {
+        "Price": 0.12,
+        "Log10 price": -0.9208187539523752,
+        "Legacy v0": 0.035256410256410256,
+        "Legacy v0 SE": 0.001750619996561984,
+        "Rolling control": 0.059358974358974366,
+        "Rolling control SE": 0.001262674077153347,
+        "Priced v1": 0.029615384615384616,
+        "Priced v1 SE": 0.0006594100307606359
+      },
+      {
+        "Price": 0.4,
+        "Log10 price": -0.3979400086720376,
+        "Legacy v0": 0.01858974358974359,
+        "Legacy v0 SE": 0.0005507532564433875,
+        "Rolling control": 0.02256410256410257,
+        "Rolling control SE": 0.0008746696055614786,
+        "Priced v1": 0.007051282051282051,
+        "Priced v1 SE": 0.0004424301374382823
+      }
+    ],
+    "recovery_failure": [
+      {
+        "Price": 0.001,
+        "Log10 price": -3.0,
+        "Legacy v0": 0.0,
+        "Legacy v0 SE": 0.0,
+        "Rolling control": 0.020833333333333332,
+        "Rolling control SE": 0.020833333333333332,
+        "Priced v1": 0.0,
+        "Priced v1 SE": 0.0
+      },
+      {
+        "Price": 0.005,
+        "Log10 price": -2.3010299956639813,
+        "Legacy v0": 0.020833333333333332,
+        "Legacy v0 SE": 0.020833333333333332,
+        "Rolling control": 0.041666666666666664,
+        "Rolling control SE": 0.028091660935968425,
+        "Priced v1": 0.08333333333333333,
+        "Priced v1 SE": 0.035533452725935076
+      },
+      {
+        "Price": 0.02,
+        "Log10 price": -1.6989700043360187,
+        "Legacy v0": 0.020833333333333332,
+        "Legacy v0 SE": 0.020833333333333332,
+        "Rolling control": 0.08333333333333333,
+        "Rolling control SE": 0.035533452725935076,
+        "Priced v1": 0.20833333333333334,
+        "Priced v1 SE": 0.041666666666666664
+      },
+      {
+        "Price": 0.06,
+        "Log10 price": -1.2218487496163564,
+        "Legacy v0": 0.1875,
+        "Legacy v0 SE": 0.0625,
+        "Rolling control": 0.2708333333333333,
+        "Rolling control SE": 0.048249012132034086,
+        "Priced v1": 0.625,
+        "Priced v1 SE": 0.07216878364870323
+      },
+      {
+        "Price": 0.12,
+        "Log10 price": -0.9208187539523752,
+        "Legacy v0": 0.2916666666666667,
+        "Legacy v0 SE": 0.041666666666666664,
+        "Rolling control": 0.4583333333333333,
+        "Rolling control SE": 0.06024990045676844,
+        "Priced v1": 0.8958333333333334,
+        "Priced v1 SE": 0.0371617743756602
+      },
+      {
+        "Price": 0.4,
+        "Log10 price": -0.3979400086720376,
+        "Legacy v0": 0.9375,
+        "Legacy v0 SE": 0.03263956049169335,
+        "Rolling control": 0.8958333333333334,
+        "Rolling control SE": 0.0371617743756602,
+        "Priced v1": 0.7708333333333334,
+        "Priced v1 SE": 0.020833333333333332
+      }
+    ],
+    "off_transition": [
+      {
+        "Price": 0.001,
+        "Log10 price": -3.0,
+        "Legacy v0": 0.2467948717948718,
+        "Legacy v0 SE": 0.009641249852738466,
+        "Rolling control": 0.1638888888888889,
+        "Rolling control SE": 0.0061562603181370855,
+        "Priced v1": 0.22777777777777777,
+        "Priced v1 SE": 0.0063895027939544005
+      },
+      {
+        "Price": 0.005,
+        "Log10 price": -2.3010299956639813,
+        "Legacy v0": 0.1217948717948718,
+        "Legacy v0 SE": 0.00991315667150238,
+        "Rolling control": 0.07222222222222223,
+        "Rolling control SE": 0.005697196264704079,
+        "Priced v1": 0.04423076923076923,
+        "Priced v1 SE": 0.005930996363936295
+      },
+      {
+        "Price": 0.02,
+        "Log10 price": -1.6989700043360187,
+        "Legacy v0": 0.028205128205128206,
+        "Legacy v0 SE": 0.006943622568064924,
+        "Rolling control": 0.01752136752136752,
+        "Rolling control SE": 0.0033077334663921204,
+        "Priced v1": 0.009401709401709401,
+        "Priced v1 SE": 0.0017667159286561109
+      },
+      {
+        "Price": 0.06,
+        "Log10 price": -1.2218487496163564,
+        "Legacy v0": 0.003632478632478633,
+        "Legacy v0 SE": 0.0008619544573556251,
+        "Rolling control": 0.00811965811965812,
+        "Rolling control SE": 0.0018358441881446243,
+        "Priced v1": 0.005128205128205128,
+        "Priced v1 SE": 0.0014114920065722574
+      },
+      {
+        "Price": 0.12,
+        "Log10 price": -0.9208187539523752,
+        "Legacy v0": 0.0029914529914529912,
+        "Legacy v0 SE": 0.0011738884949291475,
+        "Rolling control": 0.0059829059829059825,
+        "Rolling control SE": 0.0015569125803818087,
+        "Priced v1": 0.003846153846153846,
+        "Priced v1 SE": 0.0007401926528072125
+      },
+      {
+        "Price": 0.4,
+        "Log10 price": -0.3979400086720376,
+        "Legacy v0": 0.0036324786324786317,
+        "Legacy v0 SE": 0.0005869442474645738,
+        "Rolling control": 0.0032051282051282046,
+        "Rolling control SE": 0.000557941204986211,
+        "Priced v1": 0.0023504273504273508,
+        "Priced v1 SE": 0.0006664225640407322
+      }
+    ],
+    "paired": [
+      {
+        "Price": 0.001,
+        "Rolling control minus Legacy MSE": 0.015833263908258614,
+        "Rolling control paired SE": 0.002508133584833665,
+        "Priced v1 minus Legacy MSE": 0.014719212412408207,
+        "Priced v1 paired SE": 0.0025270398467853897
+      },
+      {
+        "Price": 0.005,
+        "Rolling control minus Legacy MSE": 0.01670680089085723,
+        "Rolling control paired SE": 0.0027457897278489155,
+        "Priced v1 minus Legacy MSE": 0.016378469957129316,
+        "Priced v1 paired SE": 0.0027100574507760954
+      },
+      {
+        "Price": 0.02,
+        "Rolling control minus Legacy MSE": 0.011739657736372216,
+        "Rolling control paired SE": 0.0019136052987382423,
+        "Priced v1 minus Legacy MSE": 0.01534772379628156,
+        "Priced v1 paired SE": 0.0018939754281092078
+      },
+      {
+        "Price": 0.06,
+        "Rolling control minus Legacy MSE": 0.008061488988253344,
+        "Rolling control paired SE": 0.0008960857273962629,
+        "Priced v1 minus Legacy MSE": 0.02223516208579031,
+        "Priced v1 paired SE": 0.001148747784965053
+      },
+      {
+        "Price": 0.12,
+        "Rolling control minus Legacy MSE": 0.007765498909705234,
+        "Rolling control paired SE": 0.00113301822155728,
+        "Priced v1 minus Legacy MSE": 0.03047071985668283,
+        "Priced v1 paired SE": 0.0013330669590303236
+      },
+      {
+        "Price": 0.4,
+        "Rolling control minus Legacy MSE": 0.0038915165023776835,
+        "Rolling control paired SE": 0.001143985329440464,
+        "Priced v1 minus Legacy MSE": 0.06595782020694778,
+        "Priced v1 paired SE": 0.0030728918493388223
+      }
+    ]
+  },
+  "limitations": [
+    "Finite twelve streams/six predeclared prices, no optimum selected or large-grid reproduction.",
+    "Paired descriptive means and SE across streams, no statistical-significance or generalisation claim.",
+    "Observation-window gains are not future viability; prediction is separately measured before update.",
+    "Per-promoted-action cost is dimensionless and ignores differential controller computation/maintenance.",
+    "Target-change control isolates it from combined action-gain and no-update baseline repricing, not each repair separately.",
+    "Recovery uses known synthetic latent slope only for evaluation, not clinical or change-detection validation.",
+    "OR schedule is externally frozen and independent, not adaptive path coarse-graining.",
+    "Static register optima are nested feasible sets, not unexpected performance superiority."
+  ]
+}

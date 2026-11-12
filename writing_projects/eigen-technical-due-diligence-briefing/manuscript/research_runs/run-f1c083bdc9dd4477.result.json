@@ -1,0 +1,57 @@
+{
+  "schema": "dd.presentation-only-replot/1",
+  "status": "COMPLETE",
+  "inputs": [
+    {
+      "path": "evidence-snapshots/memory/parity-d19-r4-prefix-q1.json",
+      "sha256": "021be2c6416cfb0b092274401ad41b18e0a4eb1e69271b4aa15520262de40a7a"
+    },
+    {
+      "path": "evidence-snapshots/memory/parity-d19-r4-prefix-q32.json",
+      "sha256": "f7c96d959cfa25eecae294ee2d68b40a3231e85041acfd505ba98f90167388c5"
+    },
+    {
+      "path": "evidence-snapshots/memory/parity-d19-r4-prefix-q256.json",
+      "sha256": "17eb2ef21bbf95119ac98897af11eee09287da1c72307ab35737c55feaf65d5b"
+    },
+    {
+      "path": "evidence-snapshots/memory/parity-d19-r4-prefix-q1024.json",
+      "sha256": "75ec2c0b8e5ff59a0f714fc866f1d37edc6452d80803df021880b94087cc6611"
+    }
+  ],
+  "artifacts": [
+    {
+      "id": "archived-memory-parity-pdf",
+      "kind": "figure",
+      "path": "/home/phujck/VScodeProjects/laplace/writing_projects/eigen-technical-due-diligence-briefing/manuscript/research_runs/run-f1c083bdc9dd4477.result-memory-plots/archived-memory-parity.pdf",
+      "sha256": "9dfbb65791aaca7906b499dfd2c94ab2536c69f8ea9b240df64fad7514133c15"
+    },
+    {
+      "id": "archived-memory-parity-svg",
+      "kind": "figure",
+      "path": "/home/phujck/VScodeProjects/laplace/writing_projects/eigen-technical-due-diligence-briefing/manuscript/research_runs/run-f1c083bdc9dd4477.result-memory-plots/archived-memory-parity.svg",
+      "sha256": "f8fbd89efb07a4b094ea65d939771b732fbc2bba9fd72414cff335ff3a84b79b"
+    },
+    {
+      "id": "archived-memory-parity-png",
+      "kind": "figure",
+      "path": "/home/phujck/VScodeProjects/laplace/writing_projects/eigen-technical-due-diligence-briefing/manuscript/research_runs/run-f1c083bdc9dd4477.result-memory-plots/archived-memory-parity.png",
+      "sha256": "bc73332dc576b07e86666e6c4c87d481323245a44b687e51e265786e8a606f55"
+    }
+  ],
+  "data": {
+    "path": "/home/phujck/VScodeProjects/laplace/writing_projects/eigen-technical-due-diligence-briefing/manuscript/research_runs/run-f1c083bdc9dd4477.result-memory-plots/archived-parity-timings.csv",
+    "sha256": "0fee5d270155a713631a1c5ab88b4ca1f6a4ad3fb206875ab32f8f0a71bbf182"
+  },
+  "summary": {
+    "raw_api_us_Q1024": 1491.1660109646618,
+    "recursive_api_us_Q1024": 58.98400559090078,
+    "raw_over_recursive_Q1024": 25.280853614911123
+  },
+  "limitations": [
+    "Archived synthetic Boolean-query measurements, not a new benchmark or natural-language retrieval result.",
+    "Four fixed prefix coordinates at d19 only. No selection across coordinate locations or dimensions.",
+    "Warm API times exclude build, query preparation and process-first compilation. Eleven samples from one run are not independent campaign replicates.",
+    "Archive reports refusal for high-width controls and weighted scan wins on duplicate-heavy controls. The displayed structured law is not universal."
+  ]
+}

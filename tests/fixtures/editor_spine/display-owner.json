@@ -1,0 +1,4130 @@
+{
+"display": {
+"schema_version": "laplace.project-structure-display/1",
+"project": "book",
+"section_id": "first",
+"projection": "display",
+"eligible_for_authoring": true,
+"authority": {
+"plan_path": "synthetics papers/book/manuscript/projection_plan.json",
+"spine_revision": "sha256:b781393918f9d53747efb4bc31017d900c3dd79dfd7bd3ad74d2ec682a4de6b4",
+"plan_revision": "sha256:c622fd115649b43f7dd79f60ffeee99203bf23ac0f0aff39f83e79410ea43385",
+"conceptric_revision": "sha256:9ae62ae92760410bc63155ea5209bc4cc1614227aaec33d0e0e5cf2e12a63a94",
+"research_revision": "sha256:4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+"source_revision": "ec39e3cc81c7317c551fd654cd100571f43b76f57ee8d6103a21e0f192b568f5"
+},
+"selected_source": {
+"status": "resolved",
+"root": "synthetics papers/book/manuscript/Fixture-Book.tex",
+"edition": "draft",
+"revision": "ec39e3cc81c7317c551fd654cd100571f43b76f57ee8d6103a21e0f192b568f5",
+"selection_identity": "sha256:f35f374570dbc183d4aec769c50fb55b0860b11e94183950c18db51bd357ed65",
+"read_only": false
+},
+"structure_observation": {
+"plan_revision": "sha256:c622fd115649b43f7dd79f60ffeee99203bf23ac0f0aff39f83e79410ea43385",
+"spine_revision": "sha256:b781393918f9d53747efb4bc31017d900c3dd79dfd7bd3ad74d2ec682a4de6b4",
+"selection_identity": "sha256:f35f374570dbc183d4aec769c50fb55b0860b11e94183950c18db51bd357ed65",
+"source_files": [
+{
+"file": "synthetics papers/book/manuscript/chapters/chapter-01.tex",
+"source_digest": "sha256:a3f9c9c474d5c0b6ae33ea349ddf6d0f11be41f3347f7a130309571f5aa47bce"
+}
+],
+"reader_subjects": [
+{
+"schema_version": "laplace.reader-subjects-ref/1",
+"project": "book",
+"section_id": "first",
+"subject_ids": [
+"first",
+"first-p36456703742131136201844960223",
+"first-p4636842245514354715254744358",
+"first-p914227564598999722907749338",
+"first-p2810330517823460479774333786",
+"first-p32364954882216480405330066427",
+"first-p39710520220967016158164696185"
+],
+"digest": "sha256:6e56cfd10e8b62a010b2b4a0fdc3223f0b6c6d834f5e21286bf2bc3cc72c5c2e"
+}
+]
+},
+"sections": [
+{
+"id": "first",
+"title": "First",
+"kind": "chapter",
+"number": "1",
+"parent_id": null,
+"collection": "sections",
+"depth": 0,
+"job": "open",
+"notes": "",
+"source": {
+"section_id": "first",
+"source_files": [
+"synthetics papers/book/manuscript/chapters/chapter-01.tex"
+],
+"status": "MATCHED",
+"precision": "FILE_ONLY",
+"heading": {
+"file": "synthetics papers/book/manuscript/chapters/chapter-01.tex",
+"line": 1,
+"line_end": 4,
+"heading_line_end": 1,
+"title": "First",
+"kind": "chapter",
+"label": null,
+"heading_before": "\\chapter{First}",
+"source_order": 1,
+"source_orders": [
+1
+]
+},
+"basis": {
+"synthetics papers/book/manuscript/chapters/chapter-01.tex": {
+"selection_identity": "sha256:f35f374570dbc183d4aec769c50fb55b0860b11e94183950c18db51bd357ed65",
+"source_digest": "sha256:a3f9c9c474d5c0b6ae33ea349ddf6d0f11be41f3347f7a130309571f5aa47bce"
+}
+},
+"source_reads": [
+{
+"operation": "source",
+"payload": {
+"files": [
+"synthetics papers/book/manuscript/chapters/chapter-01.tex"
+]
+},
+"http": {
+"method": "GET",
+"route": "/projection/tex",
+"query": {
+"corpus": "book",
+"file": "synthetics papers/book/manuscript/chapters/chapter-01.tex",
+"view": "source"
+}
+}
+}
+]
+},
+"doors": [
+"link_source",
+"prepare_work"
+],
+"nodes": [
+{
+"id": "concept:wide-member-00",
+"label": "Independent bounded fixture concept:wide-member-00",
+"kind": "definition",
+"beat": true
+},
+{
+"id": "concept:wide-member-01",
+"label": "Independent bounded fixture concept:wide-member-01",
+"kind": "definition",
+"beat": true
+},
+{
+"id": "concept:wide-member-02",
+"label": "Independent bounded fixture concept:wide-member-02",
+"kind": "definition",
+"beat": true
+},
+{
+"id": "concept:wide-member-03",
+"label": "Independent bounded fixture concept:wide-member-03",
+"kind": "definition",
+"beat": true
+},
+{
+"id": "concept:wide-member-04",
+"label": "Independent bounded fixture concept:wide-member-04",
+"kind": "definition",
+"beat": true
+},
+{
+"id": "concept:wide-member-05",
+"label": "Independent bounded fixture concept:wide-member-05",
+"kind": "definition",
+"beat": true
+}
+],
+"members": {
+"offset": 0,
+"limit": 6,
+"total": 17,
+"cut": "sha256:884f8e431c72e36d1b25bb3bb7fcc6006c197a31db0a2457bbba154b833173f9",
+"omitted_before": 0,
+"omitted_after": 11,
+"next_read": {
+"operation": "structure",
+"payload": {
+"view": "detail",
+"section_ids": [
+"first"
+],
+"member_offset": 6,
+"member_limit": 6,
+"member_cut": "sha256:884f8e431c72e36d1b25bb3bb7fcc6006c197a31db0a2457bbba154b833173f9",
+"projection": "display"
+}
+}
+},
+"member_count": 17,
+"evidence": [],
+"evidence_total": 0,
+"reader_transition": {
+"section_id": "first",
+"status": "DECLARED",
+"revision": "sha256:805f70f4aa4e098913bd748cc633e431f03a72eff8d16fce01199328eafafe86",
+"subject_revision": "sha256:cda26e224887ec6d35cb674d1cafa09af026ae694a700f2e0fc8646c75ae9206",
+"fields": {
+"entry_state": "The reader arrives knowing the mechanism in outline but not its consequence for the claim. The reader arrives knowing the mechanism in outline but …",
+"exit_state": "The reader can state the consequence.",
+"depends_on": [
+"concept:wide-member-00"
+]
+},
+"clipped": [
+"entry_state"
+],
+"values_read": {
+"operation": "structure",
+"payload": {
+"view": "detail",
+"section_ids": [
+"first"
+],
+"subject": "contract",
+"projection": "guard",
+"edit_choices": true
+}
+},
+"input_currentness": {
+"status": "UNOBSERVED",
+"reason": "Input observation is not a judgement of intelligibility or accepted review.",
+"changed_inputs": [
+"section:concept:wide-member-00"
+],
+"unobserved_inputs": [
+"section:concept:wide-member-00"
+]
+},
+"review": {
+"status": "NOT_REVIEWED",
+"records": []
+},
+"doors": {
+"edit": true,
+"review": true
+},
+"read_handle": {
+"operation": "structure",
+"payload": {
+"view": "detail",
+"section_ids": [
+"first"
+],
+"subject": "contract",
+"projection": "guard"
+}
+}
+},
+"paragraph_plan": {
+"section_id": "first",
+"status": "DECLARED",
+"revision": "sha256:809ea60822de0b467daad869d4535c2837827955fc72dbedeb7e5352e0a30ab3",
+"identity_status": "STABLE",
+"paragraphs": {
+"items": [
+{
+"paragraph_id": "first-p36456703742131136201844960223",
+"proposition": "Proposition 0: the reader is shown the mechanism in plain words and the consequence it has for the claim; the reader is shown the mechanism in plai…",
+"function": "Function 0",
+"authored": [
+"explanation",
+"qualification",
+"from_previous",
+"to_next"
+],
+"identity_status": "STABLE",
+"input_currentness": {
+"status": "STALE",
+"changed_inputs": [
+"reader-neighbors",
+"reader-transition"
+]
+},
+"doors": [
+"edit",
+"remove",
+"review",
+"merge",
+"split"
+],
+"source_occurrence_total": 0,
+"clipped": [
+"proposition"
+]
+},
+{
+"paragraph_id": "first-p4636842245514354715254744358",
+"proposition": "Proposition 1: the reader is shown the mechanism in plain words and the consequence it has for the claim; the reader is shown the mechanism in plai…",
+"function": "Function 1",
+"authored": [
+"explanation",
+"qualification",
+"from_previous",
+"to_next"
+],
+"identity_status": "STABLE",
+"input_currentness": {
+"status": "STALE",
+"changed_inputs": [
+"reader-neighbors",
+"reader-transition"
+]
+},
+"doors": [
+"edit",
+"remove",
+"review",
+"merge",
+"split"
+],
+"source_occurrence_total": 0,
+"clipped": [
+"proposition"
+]
+},
+{
+"paragraph_id": "first-p914227564598999722907749338",
+"proposition": "Proposition 2: the reader is shown the mechanism in plain words and the consequence it has for the claim; the reader is shown the mechanism in plai…",
+"function": "Function 2",
+"authored": [
+"explanation",
+"qualification",
+"from_previous",
+"to_next"
+],
+"identity_status": "STABLE",
+"input_currentness": {
+"status": "STALE",
+"changed_inputs": [
+"reader-neighbors",
+"reader-transition"
+]
+},
+"doors": [
+"edit",
+"remove",
+"review",
+"merge",
+"split"
+],
+"source_occurrence_total": 0,
+"clipped": [
+"proposition"
+]
+},
+{
+"paragraph_id": "first-p2810330517823460479774333786",
+"proposition": "Proposition 3: the reader is shown the mechanism in plain words and the consequence it has for the claim; the reader is shown the mechanism in plai…",
+"function": "Function 3",
+"authored": [
+"explanation",
+"qualification",
+"from_previous",
+"to_next"
+],
+"identity_status": "STABLE",
+"input_currentness": {
+"status": "STALE",
+"changed_inputs": [
+"reader-neighbors",
+"reader-transition"
+]
+},
+"doors": [
+"edit",
+"remove",
+"review",
+"merge",
+"split"
+],
+"source_occurrence_total": 0,
+"clipped": [
+"proposition"
+]
+},
+{
+"paragraph_id": "first-p32364954882216480405330066427",
+"proposition": "Proposition 4: the reader is shown the mechanism in plain words and the consequence it has for the claim; the reader is shown the mechanism in plai…",
+"function": "Function 4",
+"authored": [
+"explanation",
+"qualification",
+"from_previous",
+"to_next"
+],
+"identity_status": "STABLE",
+"input_currentness": {
+"status": "STALE",
+"changed_inputs": [
+"reader-neighbors",
+"reader-transition"
+]
+},
+"doors": [
+"edit",
+"remove",
+"review",
+"merge",
+"split"
+],
+"source_occurrence_total": 0,
+"clipped": [
+"proposition"
+]
+},
+{
+"paragraph_id": "first-p39710520220967016158164696185",
+"proposition": "Proposition 5: the reader is shown the mechanism in plain words and the consequence it has for the claim; the reader is shown the mechanism in plai…",
+"function": "Function 5",
+"authored": [
+"explanation",
+"qualification",
+"from_previous",
+"to_next"
+],
+"identity_status": "STABLE",
+"input_currentness": {
+"status": "STALE",
+"changed_inputs": [
+"reader-neighbors",
+"reader-transition"
+]
+},
+"doors": [
+"edit",
+"remove",
+"review",
+"merge",
+"split"
+],
+"source_occurrence_total": 0,
+"clipped": [
+"proposition"
+]
+}
+],
+"total": 20,
+"offset": 0,
+"limit": 6,
+"next_read": {
+"operation": "structure",
+"payload": {
+"view": "detail",
+"section_ids": [
+"first"
+],
+"paragraph_offset": 6,
+"paragraph_limit": 6,
+"paragraph_as_of": "sha256:809ea60822de0b467daad869d4535c2837827955fc72dbedeb7e5352e0a30ab3",
+"projection": "display"
+}
+},
+"row_read": {
+"operation": "structure",
+"payload": {
+"view": "detail",
+"section_ids": [
+"first"
+],
+"projection": "display",
+"paragraph_id": "<paragraph_id>"
+}
+}
+},
+"doors": {
+"create": true,
+"reorder": true
+},
+"pending_restructures": [],
+"pending_restructures_total": 0,
+"latest_restructure": null,
+"read_handle": {
+"operation": "structure",
+"payload": {
+"view": "detail",
+"section_ids": [
+"first"
+],
+"projection": "display"
+}
+}
+}
+}
+],
+"spine_page": {
+"total": 14,
+"read": {
+"operation": "structure",
+"payload": {
+"view": "detail",
+"section_ids": [
+"first"
+],
+"projection": "display",
+"spine_offset": 0
+}
+},
+"row_read": {
+"operation": "structure",
+"payload": {
+"view": "detail",
+"node_id": "<id>"
+}
+}
+},
+"evidence": [],
+"subject_reads": {
+"contract": {
+"view": "detail",
+"section_ids": [
+"first"
+],
+"subject": "contract",
+"projection": "guard"
+},
+"subjects": "contract | section | paragraph+paragraph_id | structure+paragraph_id | create | reorder; edit_choices:true adds descriptors",
+"http": "GET /work/structure with the payload fields as query parameters plus project"
+},
+"plan_read": {
+"operation": "structure",
+"payload": {
+"view": "plan"
+}
+},
+"full_guard_read": {
+"operation": "structure",
+"payload": {
+"view": "plan"
+}
+},
+"full_read": {
+"operation": "structure",
+"payload": {
+"view": "detail",
+"section_ids": [
+"first"
+]
+}
+},
+"omitted": [
+"calls (subject_reads)",
+"narrative beats (spine_page.read; each beat on spine_page.row_read)",
+"reader_basis",
+"links/diagnostics/lineage (row display)",
+"source_support",
+"edges",
+"gaps",
+"scoped_history",
+"direct_dependencies",
+"reader_inputs",
+"outline",
+"ancestors",
+"children",
+"boundaries"
+],
+"revision": "sha256:94f4a3e34b581c444eec7b91cb93c0a9607fa1dc1a1bba1520abda2b5dca7327"
+},
+"paragraph_display": {
+"schema_version": "laplace.project-structure-display/1",
+"project": "book",
+"section_id": "first",
+"projection": "display",
+"eligible_for_authoring": true,
+"authority": {
+"plan_path": "synthetics papers/book/manuscript/projection_plan.json",
+"spine_revision": "sha256:b781393918f9d53747efb4bc31017d900c3dd79dfd7bd3ad74d2ec682a4de6b4",
+"plan_revision": "sha256:c622fd115649b43f7dd79f60ffeee99203bf23ac0f0aff39f83e79410ea43385",
+"conceptric_revision": "sha256:9ae62ae92760410bc63155ea5209bc4cc1614227aaec33d0e0e5cf2e12a63a94",
+"research_revision": "sha256:4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+"source_revision": "ec39e3cc81c7317c551fd654cd100571f43b76f57ee8d6103a21e0f192b568f5"
+},
+"selected_source": {
+"status": "resolved",
+"root": "synthetics papers/book/manuscript/Fixture-Book.tex",
+"edition": "draft",
+"revision": "ec39e3cc81c7317c551fd654cd100571f43b76f57ee8d6103a21e0f192b568f5",
+"selection_identity": "sha256:f35f374570dbc183d4aec769c50fb55b0860b11e94183950c18db51bd357ed65",
+"read_only": false
+},
+"structure_observation": {
+"plan_revision": "sha256:c622fd115649b43f7dd79f60ffeee99203bf23ac0f0aff39f83e79410ea43385",
+"spine_revision": "sha256:b781393918f9d53747efb4bc31017d900c3dd79dfd7bd3ad74d2ec682a4de6b4",
+"selection_identity": "sha256:f35f374570dbc183d4aec769c50fb55b0860b11e94183950c18db51bd357ed65",
+"source_files": [
+{
+"file": "synthetics papers/book/manuscript/chapters/chapter-01.tex",
+"source_digest": "sha256:a3f9c9c474d5c0b6ae33ea349ddf6d0f11be41f3347f7a130309571f5aa47bce"
+}
+],
+"reader_subjects": [
+{
+"schema_version": "laplace.reader-subjects-ref/1",
+"project": "book",
+"section_id": "first",
+"subject_ids": [
+"first",
+"first-p36456703742131136201844960223"
+],
+"digest": "sha256:e144595ea09033cd63a8ed3632b80287d6e04599e46ba4ada5d91c47caf25987"
+}
+]
+},
+"sections": [
+{
+"id": "first",
+"title": "First",
+"kind": "chapter",
+"number": "1",
+"parent_id": null,
+"collection": "sections",
+"depth": 0,
+"job": "open",
+"notes": "",
+"source": {
+"section_id": "first",
+"source_files": [
+"synthetics papers/book/manuscript/chapters/chapter-01.tex"
+],
+"status": "MATCHED",
+"precision": "FILE_ONLY",
+"heading": {
+"file": "synthetics papers/book/manuscript/chapters/chapter-01.tex",
+"line": 1,
+"line_end": 4,
+"heading_line_end": 1,
+"title": "First",
+"kind": "chapter",
+"label": null,
+"heading_before": "\\chapter{First}",
+"source_order": 1,
+"source_orders": [
+1
+]
+},
+"basis": {
+"synthetics papers/book/manuscript/chapters/chapter-01.tex": {
+"selection_identity": "sha256:f35f374570dbc183d4aec769c50fb55b0860b11e94183950c18db51bd357ed65",
+"source_digest": "sha256:a3f9c9c474d5c0b6ae33ea349ddf6d0f11be41f3347f7a130309571f5aa47bce"
+}
+},
+"source_reads": [
+{
+"operation": "source",
+"payload": {
+"files": [
+"synthetics papers/book/manuscript/chapters/chapter-01.tex"
+]
+},
+"http": {
+"method": "GET",
+"route": "/projection/tex",
+"query": {
+"corpus": "book",
+"file": "synthetics papers/book/manuscript/chapters/chapter-01.tex",
+"view": "source"
+}
+}
+}
+]
+},
+"doors": [
+"link_source",
+"prepare_work"
+],
+"nodes": [
+{
+"id": "concept:wide-member-00",
+"label": "Independent bounded fixture concept:wide-member-00",
+"kind": "definition",
+"beat": true
+},
+{
+"id": "concept:wide-member-01",
+"label": "Independent bounded fixture concept:wide-member-01",
+"kind": "definition",
+"beat": true
+},
+{
+"id": "concept:wide-member-02",
+"label": "Independent bounded fixture concept:wide-member-02",
+"kind": "definition",
+"beat": true
+},
+{
+"id": "concept:wide-member-03",
+"label": "Independent bounded fixture concept:wide-member-03",
+"kind": "definition",
+"beat": true
+},
+{
+"id": "concept:wide-member-04",
+"label": "Independent bounded fixture concept:wide-member-04",
+"kind": "definition",
+"beat": true
+},
+{
+"id": "concept:wide-member-05",
+"label": "Independent bounded fixture concept:wide-member-05",
+"kind": "definition",
+"beat": true
+}
+],
+"members": {
+"offset": 0,
+"limit": 6,
+"total": 17,
+"cut": "sha256:884f8e431c72e36d1b25bb3bb7fcc6006c197a31db0a2457bbba154b833173f9",
+"omitted_before": 0,
+"omitted_after": 11,
+"next_read": {
+"operation": "structure",
+"payload": {
+"view": "detail",
+"section_ids": [
+"first"
+],
+"member_offset": 6,
+"member_limit": 6,
+"member_cut": "sha256:884f8e431c72e36d1b25bb3bb7fcc6006c197a31db0a2457bbba154b833173f9",
+"projection": "display"
+}
+}
+},
+"member_count": 17,
+"evidence": [],
+"evidence_total": 0,
+"reader_transition": {
+"section_id": "first",
+"status": "DECLARED",
+"revision": "sha256:805f70f4aa4e098913bd748cc633e431f03a72eff8d16fce01199328eafafe86",
+"subject_revision": "sha256:cda26e224887ec6d35cb674d1cafa09af026ae694a700f2e0fc8646c75ae9206",
+"fields": {
+"entry_state": "The reader arrives knowing the mechanism in outline but not its consequence for the claim. The reader arrives knowing the mechanism in outline but …",
+"exit_state": "The reader can state the consequence.",
+"depends_on": [
+"concept:wide-member-00"
+]
+},
+"clipped": [
+"entry_state"
+],
+"values_read": {
+"operation": "structure",
+"payload": {
+"view": "detail",
+"section_ids": [
+"first"
+],
+"subject": "contract",
+"projection": "guard",
+"edit_choices": true
+}
+},
+"input_currentness": {
+"status": "UNOBSERVED",
+"reason": "Input observation is not a judgement of intelligibility or accepted review.",
+"changed_inputs": [
+"section:concept:wide-member-00"
+],
+"unobserved_inputs": [
+"section:concept:wide-member-00"
+]
+},
+"review": {
+"status": "NOT_REVIEWED",
+"records": []
+},
+"doors": {
+"edit": true,
+"review": true
+},
+"read_handle": {
+"operation": "structure",
+"payload": {
+"view": "detail",
+"section_ids": [
+"first"
+],
+"subject": "contract",
+"projection": "guard"
+}
+}
+},
+"paragraph_plan": {
+"section_id": "first",
+"status": "DECLARED",
+"revision": "sha256:809ea60822de0b467daad869d4535c2837827955fc72dbedeb7e5352e0a30ab3",
+"identity_status": "STABLE",
+"paragraphs": {
+"items": [
+{
+"section_id": "first",
+"paragraph_id": "first-p36456703742131136201844960223",
+"function": "Function 0",
+"proposition": "Proposition 0: the reader is shown the mechanism in plain words and the consequence it has for the claim; the reader is shown the mechanism in plain words and the consequence it has for the claim; the reader is shown the mechanism in plain words and the consequence it has for the claim; ",
+"explanation": "Explanation 0: the reader is shown the mechanism in plain words and the consequence it has for the claim; the reader is shown the mechanism in plain words and the consequence it has for the claim; the reader is shown the mechanism in plain words and the consequence it has for the claim; ",
+"qualification": "Qualification 0: the reader is shown the mechanism in plain words and the consequence it has for the claim; the reader is shown the mechanism in plain words and the consequence it has for the claim; the reader is shown the mechanism in plain words and the consequence it has for the claim; ",
+"from_previous": "From 0: the reader is shown the mechanism in plain words and the consequence it has for the claim; the reader is shown the mechanism in plain words and the consequence it has for the claim; the reader is shown the mechanism in plain words and the consequence it has for the claim; ",
+"to_next": "To 0: the reader is shown the mechanism in plain words and the consequence it has for the claim; the reader is shown the mechanism in plain words and the consequence it has for the claim; the reader is shown the mechanism in plain words and the consequence it has for the claim; ",
+"authored": [],
+"identity_status": "STABLE",
+"input_currentness": {
+"status": "STALE",
+"reason": "Input observation is not a judgement of intelligibility or accepted review.",
+"changed_inputs": [
+"reader-neighbors",
+"reader-transition"
+],
+"unobserved_inputs": []
+},
+"doors": [
+"edit",
+"remove",
+"review",
+"merge",
+"split"
+],
+"source_occurrence_total": 0,
+"subject_revision": "sha256:7f2ffbbb105df75bfeccd112e1b87581c5bc8787bb832f7fd670df9ef95789e1",
+"diagnostics": [],
+"diagnostics_total": 0,
+"links": [
+{
+"kind": "argument",
+"label": "Independent bounded fixture concept:wide-member-00",
+"status": "AVAILABLE",
+"read": {
+"operation": "concept",
+"payload": {
+"node": "concept:wide-member-00"
+}
+}
+},
+{
+"kind": "argument",
+"label": "Independent bounded fixture concept:wide-member-01",
+"status": "AVAILABLE",
+"read": {
+"operation": "concept",
+"payload": {
+"node": "concept:wide-member-01"
+}
+}
+},
+{
+"kind": "argument",
+"label": "Independent bounded fixture concept:wide-member-02",
+"status": "AVAILABLE",
+"read": {
+"operation": "concept",
+"payload": {
+"node": "concept:wide-member-02"
+}
+}
+},
+{
+"kind": "argument",
+"label": "Independent bounded fixture concept:wide-member-03",
+"status": "AVAILABLE",
+"read": {
+"operation": "concept",
+"payload": {
+"node": "concept:wide-member-03"
+}
+}
+},
+{
+"kind": "argument",
+"label": "Independent bounded fixture concept:wide-member-04",
+"status": "AVAILABLE",
+"read": {
+"operation": "concept",
+"payload": {
+"node": "concept:wide-member-04"
+}
+}
+},
+{
+"kind": "argument",
+"label": "Independent bounded fixture concept:wide-member-05",
+"status": "AVAILABLE",
+"read": {
+"operation": "concept",
+"payload": {
+"node": "concept:wide-member-05"
+}
+}
+},
+{
+"kind": "argument",
+"label": "Independent bounded fixture concept:wide-member-06",
+"status": "AVAILABLE",
+"read": {
+"operation": "concept",
+"payload": {
+"node": "concept:wide-member-06"
+}
+}
+},
+{
+"kind": "argument",
+"label": "Independent bounded fixture concept:wide-member-07",
+"status": "AVAILABLE",
+"read": {
+"operation": "concept",
+"payload": {
+"node": "concept:wide-member-07"
+}
+}
+},
+{
+"kind": "argument",
+"label": "Independent bounded fixture concept:wide-member-08",
+"status": "AVAILABLE",
+"read": {
+"operation": "concept",
+"payload": {
+"node": "concept:wide-member-08"
+}
+}
+},
+{
+"kind": "argument",
+"label": "Independent bounded fixture concept:wide-member-09",
+"status": "AVAILABLE",
+"read": {
+"operation": "concept",
+"payload": {
+"node": "concept:wide-member-09"
+}
+}
+},
+{
+"kind": "argument",
+"label": "Independent bounded fixture concept:wide-member-10",
+"status": "AVAILABLE",
+"read": {
+"operation": "concept",
+"payload": {
+"node": "concept:wide-member-10"
+}
+}
+},
+{
+"kind": "argument",
+"label": "Independent bounded fixture concept:wide-member-11",
+"status": "AVAILABLE",
+"read": {
+"operation": "concept",
+"payload": {
+"node": "concept:wide-member-11"
+}
+}
+}
+],
+"links_total": 17,
+"source_occurrences": [],
+"lineage": {
+"status": "NOT_RECORDED",
+"items": []
+},
+"review": {
+"status": "NOT_REVIEWED",
+"records": []
+},
+"subject_read": {
+"operation": "structure",
+"payload": {
+"view": "detail",
+"section_ids": [
+"first"
+],
+"subject": "paragraph",
+"paragraph_id": "first-p36456703742131136201844960223",
+"projection": "guard"
+}
+}
+}
+],
+"total": 20,
+"offset": 0,
+"limit": 20,
+"next_read": null,
+"row_read": {
+"operation": "structure",
+"payload": {
+"view": "detail",
+"section_ids": [
+"first"
+],
+"projection": "display",
+"paragraph_id": "<paragraph_id>"
+}
+}
+},
+"doors": {
+"create": true,
+"reorder": true
+},
+"pending_restructures": [],
+"pending_restructures_total": 0,
+"latest_restructure": null,
+"read_handle": {
+"operation": "structure",
+"payload": {
+"view": "detail",
+"section_ids": [
+"first"
+],
+"projection": "display"
+}
+}
+}
+}
+],
+"spine_page": {
+"total": 14,
+"read": {
+"operation": "structure",
+"payload": {
+"view": "detail",
+"section_ids": [
+"first"
+],
+"projection": "display",
+"spine_offset": 0
+}
+},
+"row_read": {
+"operation": "structure",
+"payload": {
+"view": "detail",
+"node_id": "<id>"
+}
+}
+},
+"evidence": [],
+"subject_reads": {
+"contract": {
+"view": "detail",
+"section_ids": [
+"first"
+],
+"subject": "contract",
+"projection": "guard"
+},
+"subjects": "contract | section | paragraph+paragraph_id | structure+paragraph_id | create | reorder; edit_choices:true adds descriptors",
+"http": "GET /work/structure with the payload fields as query parameters plus project"
+},
+"plan_read": {
+"operation": "structure",
+"payload": {
+"view": "plan"
+}
+},
+"full_guard_read": {
+"operation": "structure",
+"payload": {
+"view": "plan"
+}
+},
+"full_read": {
+"operation": "structure",
+"payload": {
+"view": "detail",
+"section_ids": [
+"first"
+]
+}
+},
+"omitted": [
+"calls (subject_reads)",
+"narrative beats (spine_page.read; each beat on spine_page.row_read)",
+"reader_basis",
+"links/diagnostics/lineage (row display)",
+"source_support",
+"edges",
+"gaps",
+"scoped_history",
+"direct_dependencies",
+"reader_inputs",
+"outline",
+"ancestors",
+"children",
+"boundaries"
+],
+"scope": "whole row: authored text unclipped; links and diagnostics capped at 12 with totals; not bounded by the page budget",
+"revision": "sha256:43daaf857a1bd667c8473d1bfb9eb21b5ff78bd3a65e1cd804ea24678a447ba5"
+},
+"section_subject": {
+"schema_version": "laplace.project-structure-guard/1",
+"project": "book",
+"section_id": "first",
+"projection": "guard",
+"subject": "section",
+"eligible_for_authoring": true,
+"authority": {
+"plan_path": "synthetics papers/book/manuscript/projection_plan.json",
+"spine_revision": "sha256:b781393918f9d53747efb4bc31017d900c3dd79dfd7bd3ad74d2ec682a4de6b4",
+"plan_revision": "sha256:c622fd115649b43f7dd79f60ffeee99203bf23ac0f0aff39f83e79410ea43385",
+"conceptric_revision": "sha256:9ae62ae92760410bc63155ea5209bc4cc1614227aaec33d0e0e5cf2e12a63a94",
+"research_revision": "sha256:4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+"source_revision": "ec39e3cc81c7317c551fd654cd100571f43b76f57ee8d6103a21e0f192b568f5"
+},
+"selected_source": {
+"status": "resolved",
+"root": "synthetics papers/book/manuscript/Fixture-Book.tex",
+"edition": "draft",
+"revision": "ec39e3cc81c7317c551fd654cd100571f43b76f57ee8d6103a21e0f192b568f5",
+"selection_identity": "sha256:f35f374570dbc183d4aec769c50fb55b0860b11e94183950c18db51bd357ed65",
+"read_only": false
+},
+"section": {
+"id": "first",
+"title": "First",
+"kind": "chapter",
+"number": "1",
+"parent_id": null,
+"collection": "sections",
+"job": "open",
+"member_count": 17
+},
+"paragraph_plan": {
+"section_id": "first",
+"status": "DECLARED",
+"revision": "sha256:809ea60822de0b467daad869d4535c2837827955fc72dbedeb7e5352e0a30ab3",
+"identity_status": "STABLE"
+},
+"subject_reads": {
+"contract": {
+"view": "detail",
+"section_ids": [
+"first"
+],
+"subject": "contract",
+"projection": "guard"
+},
+"http": "GET read_handle.http.route with the payload fields as query parameters plus project"
+},
+"full_read": {
+"operation": "structure",
+"payload": {
+"view": "detail",
+"section_ids": [
+"first"
+]
+},
+"http": {
+"method": "GET",
+"route": "/work/structure",
+"query": {
+"project": "book",
+"view": "detail",
+"section_ids": [
+"first"
+]
+}
+}
+},
+"scope": "One exact owner-issued call with its guards; the section binding, authored contract and row list are on subject_reads.contract, everything else on full_read.",
+"section_calls": {
+"clearing_action": {
+"operation": "structure_change",
+"payload": {
+"operation": "bind_source",
+"section_id": "first",
+"expected_plan_revision": "sha256:c622fd115649b43f7dd79f60ffeee99203bf23ac0f0aff39f83e79410ea43385"
+},
+"http": {
+"method": "POST",
+"route": "/work/structure/change"
+},
+"choose_from": {
+"operation": "structure",
+"payload": {
+"view": "outline"
+},
+"http": {
+"method": "GET",
+"route": "/work/structure",
+"query": {
+"project": "book",
+"view": "outline"
+}
+}
+},
+"required_occurrence_fields": [
+"file",
+"line",
+"heading_before",
+"expected_selection",
+"expected_source_digest"
+]
+},
+"prepare_action": {
+"operation": "structure_change",
+"http": {
+"method": "POST",
+"route": "/work/structure/change"
+},
+"project": "book",
+"payload": {
+"operation": "prepare_work",
+"expected_plan_revision": "sha256:c622fd115649b43f7dd79f60ffeee99203bf23ac0f0aff39f83e79410ea43385",
+"expected_selection": "sha256:f35f374570dbc183d4aec769c50fb55b0860b11e94183950c18db51bd357ed65",
+"section_ids": [
+"first"
+]
+},
+"effects": "Prepare durable Work and an exact input artifact; starts no provider."
+},
+"review_action": {
+"operation": "task",
+"payload": {
+"title": "Review reader transition: first",
+"goal": "Review the authored transition or paragraph for intelligibility, support and continuity on this exact basis. Record evidence and findings; current inputs alone do not establish acceptance.",
+"kind": "reader-review",
+"section_ids": [
+"first"
+],
+"reader_basis": {
+"schema_version": "laplace.reader-basis/1",
+"project": "book",
+"path": "synthetics papers/book/manuscript/section_contracts.json",
+"section_id": "first",
+"subject_id": "first",
+"subject_revision": "sha256:cda26e224887ec6d35cb674d1cafa09af026ae694a700f2e0fc8646c75ae9206",
+"inputs": {
+"plan-section": "sha256:60e1bae11a33e76b19d5f5f4c2c9f130c12e0bc1eb6a073bf391a1d8d96c3b6f",
+"architecture": "sha256:8838870b3b9c1733e13e6977ef8aabf1eb35bf69539e977d1a59d5973f7d24a9",
+"section:concept:wide-member-00": "sha256:74234e98afe7498fb5daf1f36ac2d78acc339464f950703b8c019892f982b90b",
+"concept:concept:wide-member-00": "sha256:df4fc1abfb3904ce370a9de75ccd28496c711afc587a899efe31300624746c21",
+"concept:concept:wide-member-01": "sha256:f1372316fa7f11ef14d261ad37f09f4c3f948082f1b6ad50a0ff5c6e2ba62ce0",
+"concept:concept:wide-member-02": "sha256:ba912d0ca775c6a4bbb7470bb9aa48357a88afea4906f1afdb23e3a1f5e9ca0d",
+"concept:concept:wide-member-03": "sha256:89c59af625183c198dcd066b21cfdb4726baae8b51d4d0415fa527602e9b18c2",
+"concept:concept:wide-member-04": "sha256:6007fa18584d091ec55290f992c839d46e17a4f2ac3632dc43f44ea46fed0fc8",
+"concept:concept:wide-member-05": "sha256:2db44be4bd8ce85a812ef3e140000380383d040ff10676d60a1375a76458b0d5",
+"concept:concept:wide-member-06": "sha256:00b0ef4eabcd78c2b6ae8ff52e3542fecefacd003b3007f6746b847dd61ed2e1",
+"concept:concept:wide-member-07": "sha256:fbfcda9e3cc70e916aa511c498d04ede829a1a848a31f8c435dedc2a3f09ec4b",
+"concept:concept:wide-member-08": "sha256:9180f7f71ac4b256973234ef5fe8516a6fda09fdb421a24f7e21c36b8361e471",
+"concept:concept:wide-member-09": "sha256:9ba460fca914947bbca794d6b8dee7fe5a1853c4ebbee87542207b6d69e78e01",
+"concept:concept:wide-member-10": "sha256:8b5dae56160abe87cef877ec356f2853b3bf16a4117d8e0a9312ffa3f332f67b",
+"concept:concept:wide-member-11": "sha256:d7a507d26530fb748963431abd5a51815866c2ba50bf59247669d4c2bcfde6ff",
+"concept:concept:wide-member-12": "sha256:5d4bab7595c963467bc16748d9e90227070fd30c4d9e1711f3f3ff73ff99d0fd",
+"concept:concept:wide-member-13": "sha256:2cea5380b219fad3ccd29c7f72efdb40b9105780c56aeb09dc0197ff8db682c1",
+"concept:concept:wide-member-14": "sha256:f5988a035d818304a41163290067e4e0270b9ad4aeb24b8b27f6fdd569ee7dab",
+"concept:concept:wide-member-15": "sha256:48d770ac083128d69b46331cbdb6f0cee3282f62a4681f295c3ef1df96f801f9",
+"concept:concept:wide-member-16": "sha256:fd10066bf196d8d41e2e2be0440e23dcc218475be8a04f23b55166c59bfa0494"
+},
+"unobserved_inputs": []
+}
+},
+"http": {
+"method": "POST",
+"route": "/work/task"
+}
+},
+"read_handle": {
+"operation": "structure",
+"payload": {
+"view": "detail",
+"section_ids": [
+"first"
+],
+"subject": "section",
+"projection": "guard"
+},
+"http": {
+"method": "GET",
+"route": "/work/structure",
+"query": {
+"project": "book",
+"view": "detail",
+"section_ids": [
+"first"
+],
+"subject": "section",
+"projection": "guard"
+}
+}
+}
+}
+},
+"structure_subject": {
+"schema_version": "laplace.project-structure-guard/1",
+"project": "book",
+"section_id": "first",
+"projection": "guard",
+"subject": "structure",
+"eligible_for_authoring": true,
+"authority": {
+"plan_path": "synthetics papers/book/manuscript/projection_plan.json",
+"spine_revision": "sha256:b781393918f9d53747efb4bc31017d900c3dd79dfd7bd3ad74d2ec682a4de6b4",
+"plan_revision": "sha256:c622fd115649b43f7dd79f60ffeee99203bf23ac0f0aff39f83e79410ea43385",
+"conceptric_revision": "sha256:9ae62ae92760410bc63155ea5209bc4cc1614227aaec33d0e0e5cf2e12a63a94",
+"research_revision": "sha256:4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+"source_revision": "ec39e3cc81c7317c551fd654cd100571f43b76f57ee8d6103a21e0f192b568f5"
+},
+"selected_source": {
+"status": "resolved",
+"root": "synthetics papers/book/manuscript/Fixture-Book.tex",
+"edition": "draft",
+"revision": "ec39e3cc81c7317c551fd654cd100571f43b76f57ee8d6103a21e0f192b568f5",
+"selection_identity": "sha256:f35f374570dbc183d4aec769c50fb55b0860b11e94183950c18db51bd357ed65",
+"read_only": false
+},
+"section": {
+"id": "first",
+"title": "First",
+"kind": "chapter",
+"number": "1",
+"parent_id": null,
+"collection": "sections",
+"job": "open",
+"member_count": 17
+},
+"paragraph_plan": {
+"section_id": "first",
+"status": "DECLARED",
+"revision": "sha256:809ea60822de0b467daad869d4535c2837827955fc72dbedeb7e5352e0a30ab3",
+"identity_status": "STABLE"
+},
+"subject_reads": {
+"contract": {
+"view": "detail",
+"section_ids": [
+"first"
+],
+"subject": "contract",
+"projection": "guard"
+},
+"http": "GET read_handle.http.route with the payload fields as query parameters plus project"
+},
+"full_read": {
+"operation": "structure",
+"payload": {
+"view": "detail",
+"section_ids": [
+"first"
+]
+},
+"http": {
+"method": "GET",
+"route": "/work/structure",
+"query": {
+"project": "book",
+"view": "detail",
+"section_ids": [
+"first"
+]
+}
+}
+},
+"scope": "One exact owner-issued call with its guards; the section binding, authored contract and row list are on subject_reads.contract, everything else on full_read.",
+"paragraph": {
+"paragraph_id": "first-p36456703742131136201844960223",
+"identity_status": "STABLE",
+"review_action": {
+"operation": "task",
+"payload": {
+"title": "Review reader transition: first-p36456703742131136201844960223",
+"goal": "Review the authored transition or paragraph for intelligibility, support and continuity on this exact basis. Record evidence and findings; current inputs alone do not establish acceptance.",
+"kind": "reader-review",
+"section_ids": [
+"first"
+],
+"reader_basis": {
+"schema_version": "laplace.reader-basis/1",
+"project": "book",
+"path": "synthetics papers/book/manuscript/narrative/first.json",
+"section_id": "first",
+"subject_id": "first-p36456703742131136201844960223",
+"subject_revision": "sha256:7f2ffbbb105df75bfeccd112e1b87581c5bc8787bb832f7fd670df9ef95789e1",
+"inputs": {
+"plan-section": "sha256:60e1bae11a33e76b19d5f5f4c2c9f130c12e0bc1eb6a073bf391a1d8d96c3b6f",
+"architecture": "sha256:8838870b3b9c1733e13e6977ef8aabf1eb35bf69539e977d1a59d5973f7d24a9",
+"reader-transition": "sha256:cda26e224887ec6d35cb674d1cafa09af026ae694a700f2e0fc8646c75ae9206",
+"reader-neighbors": "sha256:36a8e76eb844cdf3e02f4f0641731d0d612f41c213eb1608ab00a995e8cfe04d",
+"concept:concept:wide-member-00": "sha256:df4fc1abfb3904ce370a9de75ccd28496c711afc587a899efe31300624746c21",
+"concept:concept:wide-member-01": "sha256:f1372316fa7f11ef14d261ad37f09f4c3f948082f1b6ad50a0ff5c6e2ba62ce0",
+"concept:concept:wide-member-02": "sha256:ba912d0ca775c6a4bbb7470bb9aa48357a88afea4906f1afdb23e3a1f5e9ca0d",
+"concept:concept:wide-member-03": "sha256:89c59af625183c198dcd066b21cfdb4726baae8b51d4d0415fa527602e9b18c2",
+"concept:concept:wide-member-04": "sha256:6007fa18584d091ec55290f992c839d46e17a4f2ac3632dc43f44ea46fed0fc8",
+"concept:concept:wide-member-05": "sha256:2db44be4bd8ce85a812ef3e140000380383d040ff10676d60a1375a76458b0d5",
+"concept:concept:wide-member-06": "sha256:00b0ef4eabcd78c2b6ae8ff52e3542fecefacd003b3007f6746b847dd61ed2e1",
+"concept:concept:wide-member-07": "sha256:fbfcda9e3cc70e916aa511c498d04ede829a1a848a31f8c435dedc2a3f09ec4b",
+"concept:concept:wide-member-08": "sha256:9180f7f71ac4b256973234ef5fe8516a6fda09fdb421a24f7e21c36b8361e471",
+"concept:concept:wide-member-09": "sha256:9ba460fca914947bbca794d6b8dee7fe5a1853c4ebbee87542207b6d69e78e01",
+"concept:concept:wide-member-10": "sha256:8b5dae56160abe87cef877ec356f2853b3bf16a4117d8e0a9312ffa3f332f67b",
+"concept:concept:wide-member-11": "sha256:d7a507d26530fb748963431abd5a51815866c2ba50bf59247669d4c2bcfde6ff",
+"concept:concept:wide-member-12": "sha256:5d4bab7595c963467bc16748d9e90227070fd30c4d9e1711f3f3ff73ff99d0fd",
+"concept:concept:wide-member-13": "sha256:2cea5380b219fad3ccd29c7f72efdb40b9105780c56aeb09dc0197ff8db682c1",
+"concept:concept:wide-member-14": "sha256:f5988a035d818304a41163290067e4e0270b9ad4aeb24b8b27f6fdd569ee7dab",
+"concept:concept:wide-member-15": "sha256:48d770ac083128d69b46331cbdb6f0cee3282f62a4681f295c3ef1df96f801f9",
+"concept:concept:wide-member-16": "sha256:fd10066bf196d8d41e2e2be0440e23dcc218475be8a04f23b55166c59bfa0494"
+},
+"unobserved_inputs": []
+}
+},
+"http": {
+"method": "POST",
+"route": "/work/task"
+}
+},
+"restructure_actions": {
+"split": {
+"project": "book",
+"operation": "structure_change",
+"permitted": true,
+"http": {
+"method": "POST",
+"route": "/work/structure/change"
+},
+"payload": {
+"operation": "paragraph_plan",
+"action": "preview-restructure",
+"section_id": "first",
+"kind": "logical-split",
+"draft": {
+"paragraph_ids": [
+"first-p36456703742131136201844960223"
+],
+"successor_count": 2
+}
+},
+"native_request": {
+"verb": "read",
+"concept": "plan@plan",
+"target": "book",
+"expected": [],
+"payload": {
+"view": "restructure",
+"section_ids": [
+"first"
+],
+"kind": "logical-split",
+"draft": {
+"paragraph_ids": [
+"first-p36456703742131136201844960223"
+],
+"successor_count": 2
+}
+},
+"by": ""
+}
+},
+"merge": {
+"project": "book",
+"operation": "structure_change",
+"permitted": true,
+"http": {
+"method": "POST",
+"route": "/work/structure/change"
+},
+"payload": {
+"operation": "paragraph_plan",
+"action": "preview-restructure",
+"section_id": "first",
+"kind": "logical-merge",
+"draft": {
+"paragraph_ids": [
+"first-p36456703742131136201844960223"
+]
+}
+},
+"native_request": {
+"verb": "read",
+"concept": "plan@plan",
+"target": "book",
+"expected": [],
+"payload": {
+"view": "restructure",
+"section_ids": [
+"first"
+],
+"kind": "logical-merge",
+"draft": {
+"paragraph_ids": [
+"first-p36456703742131136201844960223"
+]
+}
+},
+"by": ""
+}
+}
+},
+"read_handle": {
+"operation": "structure",
+"payload": {
+"view": "detail",
+"section_ids": [
+"first"
+],
+"subject": "structure",
+"paragraph_id": "first-p36456703742131136201844960223",
+"projection": "guard"
+},
+"http": {
+"method": "GET",
+"route": "/work/structure",
+"query": {
+"project": "book",
+"view": "detail",
+"section_ids": [
+"first"
+],
+"subject": "structure",
+"paragraph_id": "first-p36456703742131136201844960223",
+"projection": "guard"
+}
+}
+}
+}
+},
+"paragraph_choices": {
+"schema_version": "laplace.project-structure-guard/1",
+"project": "book",
+"section_id": "first",
+"projection": "guard",
+"subject": "paragraph",
+"eligible_for_authoring": true,
+"authority": {
+"plan_path": "synthetics papers/book/manuscript/projection_plan.json",
+"spine_revision": "sha256:b781393918f9d53747efb4bc31017d900c3dd79dfd7bd3ad74d2ec682a4de6b4",
+"plan_revision": "sha256:c622fd115649b43f7dd79f60ffeee99203bf23ac0f0aff39f83e79410ea43385",
+"conceptric_revision": "sha256:9ae62ae92760410bc63155ea5209bc4cc1614227aaec33d0e0e5cf2e12a63a94",
+"research_revision": "sha256:4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+"source_revision": "ec39e3cc81c7317c551fd654cd100571f43b76f57ee8d6103a21e0f192b568f5"
+},
+"selected_source": {
+"status": "resolved",
+"root": "synthetics papers/book/manuscript/Fixture-Book.tex",
+"edition": "draft",
+"revision": "ec39e3cc81c7317c551fd654cd100571f43b76f57ee8d6103a21e0f192b568f5",
+"selection_identity": "sha256:f35f374570dbc183d4aec769c50fb55b0860b11e94183950c18db51bd357ed65",
+"read_only": false
+},
+"section": {
+"id": "first",
+"title": "First",
+"kind": "chapter",
+"number": "1",
+"parent_id": null,
+"collection": "sections",
+"job": "open",
+"member_count": 17
+},
+"paragraph_plan": {
+"section_id": "first",
+"status": "DECLARED",
+"revision": "sha256:809ea60822de0b467daad869d4535c2837827955fc72dbedeb7e5352e0a30ab3",
+"identity_status": "STABLE"
+},
+"subject_reads": {
+"contract": {
+"view": "detail",
+"section_ids": [
+"first"
+],
+"subject": "contract",
+"projection": "guard"
+},
+"http": "GET read_handle.http.route with the payload fields as query parameters plus project"
+},
+"full_read": {
+"operation": "structure",
+"payload": {
+"view": "detail",
+"section_ids": [
+"first"
+]
+},
+"http": {
+"method": "GET",
+"route": "/work/structure",
+"query": {
+"project": "book",
+"view": "detail",
+"section_ids": [
+"first"
+]
+}
+}
+},
+"scope": "One exact owner-issued call with its guards; the section binding, authored contract and row list are on subject_reads.contract, everything else on full_read.",
+"paragraph": {
+"section_id": "first",
+"paragraph_id": "first-p36456703742131136201844960223",
+"function": "Function 0",
+"proposition": "Proposition 0: the reader is shown the mechanism in plain words and the consequence it has for the claim; the reader is shown the mechanism in plain words and the consequence it has for the claim; the reader is shown the mechanism in plain words and the consequence it has for the claim; ",
+"explanation": "Explanation 0: the reader is shown the mechanism in plain words and the consequence it has for the claim; the reader is shown the mechanism in plain words and the consequence it has for the claim; the reader is shown the mechanism in plain words and the consequence it has for the claim; ",
+"qualification": "Qualification 0: the reader is shown the mechanism in plain words and the consequence it has for the claim; the reader is shown the mechanism in plain words and the consequence it has for the claim; the reader is shown the mechanism in plain words and the consequence it has for the claim; ",
+"from_previous": "From 0: the reader is shown the mechanism in plain words and the consequence it has for the claim; the reader is shown the mechanism in plain words and the consequence it has for the claim; the reader is shown the mechanism in plain words and the consequence it has for the claim; ",
+"to_next": "To 0: the reader is shown the mechanism in plain words and the consequence it has for the claim; the reader is shown the mechanism in plain words and the consequence it has for the claim; the reader is shown the mechanism in plain words and the consequence it has for the claim; ",
+"identity_status": "STABLE",
+"subject_revision": "sha256:7f2ffbbb105df75bfeccd112e1b87581c5bc8787bb832f7fd670df9ef95789e1",
+"input_currentness": {
+"status": "STALE",
+"unobserved_inputs": [],
+"changed_inputs": [
+"reader-neighbors",
+"reader-transition"
+],
+"reason": "Input observation is not a judgement of intelligibility or accepted review.",
+"reads": [
+{
+"operation": "structure",
+"payload": {
+"view": "detail",
+"section_ids": [
+"first"
+],
+"paragraph_id": "first-p36456703742131136201844960223"
+},
+"http": {
+"method": "GET",
+"route": "/work/structure",
+"query": {
+"project": "book",
+"view": "detail",
+"section_ids": [
+"first"
+],
+"paragraph_id": "first-p36456703742131136201844960223"
+}
+}
+}
+]
+},
+"diagnostics": [],
+"review": {
+"status": "NOT_REVIEWED",
+"records": []
+},
+"source_occurrences": [],
+"edit_action": {
+"operation": "structure_change",
+"payload": {
+"operation": "paragraph_plan",
+"section_id": "first",
+"expected_plan_revision": "sha256:c622fd115649b43f7dd79f60ffeee99203bf23ac0f0aff39f83e79410ea43385",
+"expected_narrative_revision": "sha256:809ea60822de0b467daad869d4535c2837827955fc72dbedeb7e5352e0a30ab3",
+"expected_reader_basis": {
+"schema_version": "laplace.reader-basis/1",
+"project": "book",
+"path": "synthetics papers/book/manuscript/narrative/first.json",
+"section_id": "first",
+"subject_id": "first-p36456703742131136201844960223",
+"subject_revision": "sha256:7f2ffbbb105df75bfeccd112e1b87581c5bc8787bb832f7fd670df9ef95789e1",
+"inputs": {
+"plan-section": "sha256:60e1bae11a33e76b19d5f5f4c2c9f130c12e0bc1eb6a073bf391a1d8d96c3b6f",
+"architecture": "sha256:8838870b3b9c1733e13e6977ef8aabf1eb35bf69539e977d1a59d5973f7d24a9",
+"reader-transition": "sha256:cda26e224887ec6d35cb674d1cafa09af026ae694a700f2e0fc8646c75ae9206",
+"reader-neighbors": "sha256:36a8e76eb844cdf3e02f4f0641731d0d612f41c213eb1608ab00a995e8cfe04d",
+"concept:concept:wide-member-00": "sha256:df4fc1abfb3904ce370a9de75ccd28496c711afc587a899efe31300624746c21",
+"concept:concept:wide-member-01": "sha256:f1372316fa7f11ef14d261ad37f09f4c3f948082f1b6ad50a0ff5c6e2ba62ce0",
+"concept:concept:wide-member-02": "sha256:ba912d0ca775c6a4bbb7470bb9aa48357a88afea4906f1afdb23e3a1f5e9ca0d",
+"concept:concept:wide-member-03": "sha256:89c59af625183c198dcd066b21cfdb4726baae8b51d4d0415fa527602e9b18c2",
+"concept:concept:wide-member-04": "sha256:6007fa18584d091ec55290f992c839d46e17a4f2ac3632dc43f44ea46fed0fc8",
+"concept:concept:wide-member-05": "sha256:2db44be4bd8ce85a812ef3e140000380383d040ff10676d60a1375a76458b0d5",
+"concept:concept:wide-member-06": "sha256:00b0ef4eabcd78c2b6ae8ff52e3542fecefacd003b3007f6746b847dd61ed2e1",
+"concept:concept:wide-member-07": "sha256:fbfcda9e3cc70e916aa511c498d04ede829a1a848a31f8c435dedc2a3f09ec4b",
+"concept:concept:wide-member-08": "sha256:9180f7f71ac4b256973234ef5fe8516a6fda09fdb421a24f7e21c36b8361e471",
+"concept:concept:wide-member-09": "sha256:9ba460fca914947bbca794d6b8dee7fe5a1853c4ebbee87542207b6d69e78e01",
+"concept:concept:wide-member-10": "sha256:8b5dae56160abe87cef877ec356f2853b3bf16a4117d8e0a9312ffa3f332f67b",
+"concept:concept:wide-member-11": "sha256:d7a507d26530fb748963431abd5a51815866c2ba50bf59247669d4c2bcfde6ff",
+"concept:concept:wide-member-12": "sha256:5d4bab7595c963467bc16748d9e90227070fd30c4d9e1711f3f3ff73ff99d0fd",
+"concept:concept:wide-member-13": "sha256:2cea5380b219fad3ccd29c7f72efdb40b9105780c56aeb09dc0197ff8db682c1",
+"concept:concept:wide-member-14": "sha256:f5988a035d818304a41163290067e4e0270b9ad4aeb24b8b27f6fdd569ee7dab",
+"concept:concept:wide-member-15": "sha256:48d770ac083128d69b46331cbdb6f0cee3282f62a4681f295c3ef1df96f801f9",
+"concept:concept:wide-member-16": "sha256:fd10066bf196d8d41e2e2be0440e23dcc218475be8a04f23b55166c59bfa0494"
+},
+"unobserved_inputs": []
+},
+"action": "upsert",
+"paragraph_id": "first-p36456703742131136201844960223"
+},
+"http": {
+"method": "POST",
+"route": "/work/structure/change"
+},
+"fields": [
+{
+"name": "function",
+"label": "Function",
+"type": "string",
+"multiline": true
+},
+{
+"name": "proposition",
+"label": "Proposition",
+"type": "string",
+"multiline": true
+},
+{
+"name": "explanation",
+"label": "Explanation",
+"type": "string",
+"multiline": true
+},
+{
+"name": "derivation_detail",
+"label": "Derivation detail",
+"type": "string",
+"multiline": true
+},
+{
+"name": "equation_anchor",
+"label": "Equation anchor",
+"type": "string",
+"multiline": true
+},
+{
+"name": "figure_anchor",
+"label": "Figure anchor",
+"type": "string",
+"multiline": true
+},
+{
+"name": "qualification",
+"label": "Qualification",
+"type": "string",
+"multiline": true
+},
+{
+"name": "from_previous",
+"label": "From previous",
+"type": "string",
+"multiline": true
+},
+{
+"name": "to_next",
+"label": "To next",
+"type": "string",
+"multiline": true
+},
+{
+"name": "detail_level",
+"label": "Detail level",
+"type": "string",
+"multiline": true
+},
+{
+"name": "length_range",
+"label": "Length range",
+"type": "string",
+"multiline": true
+},
+{
+"name": "input_nodes",
+"label": "Input nodes",
+"type": "string_array",
+"choices": [
+{
+"value": "concept:wide-member-00",
+"label": "Independent bounded fixture concept:wide-member-00",
+"input_key": "concept:concept:wide-member-00",
+"input_revision": "sha256:df4fc1abfb3904ce370a9de75ccd28496c711afc587a899efe31300624746c21",
+"read": {
+"operation": "concept",
+"payload": {
+"node": "concept:wide-member-00"
+}
+}
+},
+{
+"value": "concept:wide-member-01",
+"label": "Independent bounded fixture concept:wide-member-01",
+"input_key": "concept:concept:wide-member-01",
+"input_revision": "sha256:f1372316fa7f11ef14d261ad37f09f4c3f948082f1b6ad50a0ff5c6e2ba62ce0",
+"read": {
+"operation": "concept",
+"payload": {
+"node": "concept:wide-member-01"
+}
+}
+}
+]
+},
+{
+"name": "citations",
+"label": "Citations",
+"type": "string_array",
+"choices": []
+}
+],
+"values": {
+"function": "Function 0",
+"proposition": "Proposition 0: the reader is shown the mechanism in plain words and the consequence it has for the claim; the reader is shown the mechanism in plain words and the consequence it has for the claim; the reader is shown the mechanism in plain words and the consequence it has for the claim; ",
+"explanation": "Explanation 0: the reader is shown the mechanism in plain words and the consequence it has for the claim; the reader is shown the mechanism in plain words and the consequence it has for the claim; the reader is shown the mechanism in plain words and the consequence it has for the claim; ",
+"derivation_detail": "",
+"equation_anchor": "",
+"figure_anchor": "",
+"qualification": "Qualification 0: the reader is shown the mechanism in plain words and the consequence it has for the claim; the reader is shown the mechanism in plain words and the consequence it has for the claim; the reader is shown the mechanism in plain words and the consequence it has for the claim; ",
+"from_previous": "From 0: the reader is shown the mechanism in plain words and the consequence it has for the claim; the reader is shown the mechanism in plain words and the consequence it has for the claim; the reader is shown the mechanism in plain words and the consequence it has for the claim; ",
+"to_next": "To 0: the reader is shown the mechanism in plain words and the consequence it has for the claim; the reader is shown the mechanism in plain words and the consequence it has for the claim; the reader is shown the mechanism in plain words and the consequence it has for the claim; ",
+"detail_level": "",
+"length_range": "",
+"input_nodes": [],
+"citations": []
+},
+"choices_read": {
+"operation": "structure",
+"payload": {
+"view": "detail",
+"section_ids": [
+"first"
+],
+"subject": "paragraph",
+"paragraph_id": "first-p36456703742131136201844960223",
+"edit_choices": true,
+"projection": "guard"
+},
+"http": {
+"method": "GET",
+"route": "/work/structure",
+"query": {
+"project": "book",
+"view": "detail",
+"section_ids": [
+"first"
+],
+"subject": "paragraph",
+"paragraph_id": "first-p36456703742131136201844960223",
+"edit_choices": true,
+"projection": "guard"
+}
+}
+}
+},
+"remove_action": {
+"operation": "structure_change",
+"payload": {
+"operation": "paragraph_plan",
+"section_id": "first",
+"expected_plan_revision": "sha256:c622fd115649b43f7dd79f60ffeee99203bf23ac0f0aff39f83e79410ea43385",
+"expected_narrative_revision": "sha256:809ea60822de0b467daad869d4535c2837827955fc72dbedeb7e5352e0a30ab3",
+"expected_reader_basis": {
+"schema_version": "laplace.reader-basis/1",
+"project": "book",
+"path": "synthetics papers/book/manuscript/narrative/first.json",
+"section_id": "first",
+"subject_id": "first-p36456703742131136201844960223",
+"subject_revision": "sha256:7f2ffbbb105df75bfeccd112e1b87581c5bc8787bb832f7fd670df9ef95789e1",
+"inputs": {
+"plan-section": "sha256:60e1bae11a33e76b19d5f5f4c2c9f130c12e0bc1eb6a073bf391a1d8d96c3b6f",
+"architecture": "sha256:8838870b3b9c1733e13e6977ef8aabf1eb35bf69539e977d1a59d5973f7d24a9",
+"reader-transition": "sha256:cda26e224887ec6d35cb674d1cafa09af026ae694a700f2e0fc8646c75ae9206",
+"reader-neighbors": "sha256:36a8e76eb844cdf3e02f4f0641731d0d612f41c213eb1608ab00a995e8cfe04d",
+"concept:concept:wide-member-00": "sha256:df4fc1abfb3904ce370a9de75ccd28496c711afc587a899efe31300624746c21",
+"concept:concept:wide-member-01": "sha256:f1372316fa7f11ef14d261ad37f09f4c3f948082f1b6ad50a0ff5c6e2ba62ce0",
+"concept:concept:wide-member-02": "sha256:ba912d0ca775c6a4bbb7470bb9aa48357a88afea4906f1afdb23e3a1f5e9ca0d",
+"concept:concept:wide-member-03": "sha256:89c59af625183c198dcd066b21cfdb4726baae8b51d4d0415fa527602e9b18c2",
+"concept:concept:wide-member-04": "sha256:6007fa18584d091ec55290f992c839d46e17a4f2ac3632dc43f44ea46fed0fc8",
+"concept:concept:wide-member-05": "sha256:2db44be4bd8ce85a812ef3e140000380383d040ff10676d60a1375a76458b0d5",
+"concept:concept:wide-member-06": "sha256:00b0ef4eabcd78c2b6ae8ff52e3542fecefacd003b3007f6746b847dd61ed2e1",
+"concept:concept:wide-member-07": "sha256:fbfcda9e3cc70e916aa511c498d04ede829a1a848a31f8c435dedc2a3f09ec4b",
+"concept:concept:wide-member-08": "sha256:9180f7f71ac4b256973234ef5fe8516a6fda09fdb421a24f7e21c36b8361e471",
+"concept:concept:wide-member-09": "sha256:9ba460fca914947bbca794d6b8dee7fe5a1853c4ebbee87542207b6d69e78e01",
+"concept:concept:wide-member-10": "sha256:8b5dae56160abe87cef877ec356f2853b3bf16a4117d8e0a9312ffa3f332f67b",
+"concept:concept:wide-member-11": "sha256:d7a507d26530fb748963431abd5a51815866c2ba50bf59247669d4c2bcfde6ff",
+"concept:concept:wide-member-12": "sha256:5d4bab7595c963467bc16748d9e90227070fd30c4d9e1711f3f3ff73ff99d0fd",
+"concept:concept:wide-member-13": "sha256:2cea5380b219fad3ccd29c7f72efdb40b9105780c56aeb09dc0197ff8db682c1",
+"concept:concept:wide-member-14": "sha256:f5988a035d818304a41163290067e4e0270b9ad4aeb24b8b27f6fdd569ee7dab",
+"concept:concept:wide-member-15": "sha256:48d770ac083128d69b46331cbdb6f0cee3282f62a4681f295c3ef1df96f801f9",
+"concept:concept:wide-member-16": "sha256:fd10066bf196d8d41e2e2be0440e23dcc218475be8a04f23b55166c59bfa0494"
+},
+"unobserved_inputs": []
+},
+"action": "remove",
+"paragraph_id": "first-p36456703742131136201844960223"
+},
+"http": {
+"method": "POST",
+"route": "/work/structure/change"
+}
+},
+"reader_basis": "edit_action.payload.expected_reader_basis",
+"read_handle": {
+"operation": "structure",
+"payload": {
+"view": "detail",
+"section_ids": [
+"first"
+],
+"subject": "paragraph",
+"paragraph_id": "first-p36456703742131136201844960223",
+"projection": "guard"
+},
+"http": {
+"method": "GET",
+"route": "/work/structure",
+"query": {
+"project": "book",
+"view": "detail",
+"section_ids": [
+"first"
+],
+"subject": "paragraph",
+"paragraph_id": "first-p36456703742131136201844960223",
+"projection": "guard"
+}
+}
+}
+}
+},
+"plan": {
+"schema_version": "laplace.project-structure-plan/1",
+"project": "book",
+"view": "plan",
+"status": "AVAILABLE",
+"eligible_for_authoring": true,
+"revision": "sha256:ea42b2a4084d5ec1b2cefd8b453f1a61a8124a18f538b7d4ed3d064cfb22d63b",
+"authority": {
+"plan_path": "synthetics papers/book/manuscript/projection_plan.json",
+"spine_revision": "sha256:b781393918f9d53747efb4bc31017d900c3dd79dfd7bd3ad74d2ec682a4de6b4",
+"plan_revision": "sha256:c622fd115649b43f7dd79f60ffeee99203bf23ac0f0aff39f83e79410ea43385",
+"conceptric_revision": "sha256:9ae62ae92760410bc63155ea5209bc4cc1614227aaec33d0e0e5cf2e12a63a94",
+"research_revision": "sha256:4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+"source_revision": "ec39e3cc81c7317c551fd654cd100571f43b76f57ee8d6103a21e0f192b568f5"
+},
+"identities": {
+"plan:book": "rev:plan:book:ea42b2a4084d5ec1b2cefd8b453f1a61a8124a18f538b7d4ed3d064cfb22d63b",
+"plan-file:book": "rev:plan-file:book:c622fd115649b43f7dd79f60ffeee99203bf23ac0f0aff39f83e79410ea43385",
+"selected-edition:book": "rev:selected-edition:book:ec39e3cc81c7317c551fd654cd100571f43b76f57ee8d6103a21e0f192b568f5"
+},
+"selected_source": {
+"status": "resolved",
+"root": "synthetics papers/book/manuscript/Fixture-Book.tex",
+"edition": "draft",
+"revision": "ec39e3cc81c7317c551fd654cd100571f43b76f57ee8d6103a21e0f192b568f5",
+"selection_identity": "sha256:f35f374570dbc183d4aec769c50fb55b0860b11e94183950c18db51bd357ed65",
+"read_only": false
+},
+"sections": [
+{
+"id": "first",
+"title": "First",
+"kind": "chapter",
+"parent_id": null,
+"ancestor_ids": [],
+"child_ids": [
+"first-child"
+],
+"collection": "sections",
+"number": "1",
+"depth": 0,
+"order": 0,
+"job": "open",
+"notes": "",
+"node_ids": [
+"concept:wide-member-00",
+"concept:wide-member-01",
+"concept:wide-member-02",
+"concept:wide-member-03",
+"concept:wide-member-04",
+"concept:wide-member-05",
+"concept:wide-member-06",
+"concept:wide-member-07",
+"concept:wide-member-08",
+"concept:wide-member-09",
+"concept:wide-member-10",
+"concept:wide-member-11",
+"concept:wide-member-12",
+"concept:wide-member-13",
+"concept:wide-member-14",
+"concept:wide-member-15",
+"concept:wide-member-16"
+],
+"beat_ids": [],
+"nodes": [
+{
+"id": "concept:wide-member-00",
+"missing": false
+},
+{
+"id": "concept:wide-member-01",
+"missing": false
+},
+{
+"id": "concept:wide-member-02",
+"missing": false
+},
+{
+"id": "concept:wide-member-03",
+"missing": false
+},
+{
+"id": "concept:wide-member-04",
+"missing": false
+},
+{
+"id": "concept:wide-member-05",
+"missing": false
+},
+{
+"id": "concept:wide-member-06",
+"missing": false
+},
+{
+"id": "concept:wide-member-07",
+"missing": false
+},
+{
+"id": "concept:wide-member-08",
+"missing": false
+},
+{
+"id": "concept:wide-member-09",
+"missing": false
+},
+{
+"id": "concept:wide-member-10",
+"missing": false
+},
+{
+"id": "concept:wide-member-11",
+"missing": false
+},
+{
+"id": "concept:wide-member-12",
+"missing": false
+},
+{
+"id": "concept:wide-member-13",
+"missing": false
+},
+{
+"id": "concept:wide-member-14",
+"missing": false
+},
+{
+"id": "concept:wide-member-15",
+"missing": false
+},
+{
+"id": "concept:wide-member-16",
+"missing": false
+}
+]
+},
+{
+"id": "first-child",
+"title": "First child",
+"kind": "section",
+"parent_id": "first",
+"ancestor_ids": [
+"first"
+],
+"child_ids": [],
+"collection": "sections",
+"number": "1.1",
+"depth": 1,
+"order": 1,
+"job": "support",
+"notes": "",
+"node_ids": [],
+"beat_ids": [],
+"nodes": []
+},
+{
+"id": "second",
+"title": "Second",
+"kind": "chapter",
+"parent_id": null,
+"ancestor_ids": [],
+"child_ids": [],
+"collection": "sections",
+"number": "2",
+"depth": 0,
+"order": 2,
+"job": "close",
+"notes": "",
+"node_ids": [],
+"beat_ids": [],
+"nodes": []
+}
+],
+"plan_collections": {
+"sections": [
+"first",
+"first-child",
+"second"
+],
+"appendices": []
+},
+"spine": [
+{
+"id": "concept:wide-member-00",
+"term": null,
+"narrative": "Beat 0: the reader meets this step of the argument.",
+"section_ids": [],
+"placed": false
+},
+{
+"id": "concept:wide-member-01",
+"term": null,
+"narrative": "Beat 1: the reader meets this step of the argument.",
+"section_ids": [],
+"placed": false
+},
+{
+"id": "concept:wide-member-02",
+"term": null,
+"narrative": "Beat 2: the reader meets this step of the argument.",
+"section_ids": [],
+"placed": false
+},
+{
+"id": "concept:wide-member-03",
+"term": null,
+"narrative": "Beat 3: the reader meets this step of the argument.",
+"section_ids": [],
+"placed": false
+},
+{
+"id": "concept:wide-member-04",
+"term": null,
+"narrative": "Beat 4: the reader meets this step of the argument.",
+"section_ids": [],
+"placed": false
+},
+{
+"id": "concept:wide-member-05",
+"term": null,
+"narrative": "Beat 5: the reader meets this step of the argument.",
+"section_ids": [],
+"placed": false
+},
+{
+"id": "concept:wide-member-06",
+"term": null,
+"narrative": "Beat 6: the reader meets this step of the argument.",
+"section_ids": [],
+"placed": false
+},
+{
+"id": "concept:wide-member-07",
+"term": null,
+"narrative": "Beat 7: the reader meets this step of the argument.",
+"section_ids": [],
+"placed": false
+},
+{
+"id": "concept:wide-member-08",
+"term": null,
+"narrative": "Beat 8: the reader meets this step of the argument.",
+"section_ids": [],
+"placed": false
+},
+{
+"id": "concept:wide-member-09",
+"term": null,
+"narrative": "Beat 9: the reader meets this step of the argument.",
+"section_ids": [],
+"placed": false
+},
+{
+"id": "concept:wide-member-10",
+"term": null,
+"narrative": "Beat 10: the reader meets this step of the argument.",
+"section_ids": [],
+"placed": false
+},
+{
+"id": "concept:wide-member-11",
+"term": null,
+"narrative": "Beat 11: the reader meets this step of the argument.",
+"section_ids": [],
+"placed": false
+},
+{
+"id": "concept:wide-member-12",
+"term": null,
+"narrative": "Beat 12: the reader meets this step of the argument.",
+"section_ids": [],
+"placed": false
+},
+{
+"id": "concept:wide-member-13",
+"term": null,
+"narrative": "Beat 13: the reader meets this step of the argument.",
+"section_ids": [],
+"placed": false
+}
+],
+"omitted": [
+"nodes[bodies]",
+"edges",
+"evidence",
+"gaps",
+"logical_objects",
+"source_support",
+"source_outline",
+"relation_diagnostics"
+],
+"full_read": {
+"operation": "structure",
+"payload": {
+"view": "full"
+}
+},
+"scope": "The complete plan order and narrative spine with the mutation revision; the hydrated structure is full_read."
+},
+"contract_values": {
+"schema_version": "laplace.project-structure-guard/1",
+"project": "book",
+"section_id": "first",
+"projection": "guard",
+"subject": "contract",
+"eligible_for_authoring": true,
+"authority": {
+"plan_path": "synthetics papers/book/manuscript/projection_plan.json",
+"spine_revision": "sha256:b781393918f9d53747efb4bc31017d900c3dd79dfd7bd3ad74d2ec682a4de6b4",
+"plan_revision": "sha256:c622fd115649b43f7dd79f60ffeee99203bf23ac0f0aff39f83e79410ea43385",
+"conceptric_revision": "sha256:9ae62ae92760410bc63155ea5209bc4cc1614227aaec33d0e0e5cf2e12a63a94",
+"research_revision": "sha256:4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+"source_revision": "ec39e3cc81c7317c551fd654cd100571f43b76f57ee8d6103a21e0f192b568f5"
+},
+"selected_source": {
+"status": "resolved",
+"root": "synthetics papers/book/manuscript/Fixture-Book.tex",
+"edition": "draft",
+"revision": "ec39e3cc81c7317c551fd654cd100571f43b76f57ee8d6103a21e0f192b568f5",
+"selection_identity": "sha256:f35f374570dbc183d4aec769c50fb55b0860b11e94183950c18db51bd357ed65",
+"read_only": false
+},
+"section": {
+"id": "first",
+"title": "First",
+"kind": "chapter",
+"number": "1",
+"parent_id": null,
+"collection": "sections",
+"job": "open",
+"member_count": 17,
+"source": {
+"section_id": "first",
+"source_files": [
+"synthetics papers/book/manuscript/chapters/chapter-01.tex"
+],
+"status": "MATCHED",
+"precision": "FILE_ONLY",
+"title_status": "MATCHED",
+"plan_title": "First",
+"source_titles": [
+"First"
+],
+"source_label": null,
+"heading": {
+"file": "synthetics papers/book/manuscript/chapters/chapter-01.tex",
+"line": 1,
+"line_end": 4,
+"heading_line_end": 1,
+"title": "First",
+"kind": "chapter",
+"label": null,
+"heading_before": "\\chapter{First}",
+"source_order": 1,
+"source_orders": [
+1
+]
+},
+"basis": {
+"synthetics papers/book/manuscript/chapters/chapter-01.tex": {
+"selection_identity": "sha256:f35f374570dbc183d4aec769c50fb55b0860b11e94183950c18db51bd357ed65",
+"source_digest": "sha256:a3f9c9c474d5c0b6ae33ea349ddf6d0f11be41f3347f7a130309571f5aa47bce"
+}
+},
+"mapping": "explicit-source-file",
+"selected_root": "synthetics papers/book/manuscript/Fixture-Book.tex",
+"source_reads": [
+{
+"operation": "source",
+"payload": {
+"files": [
+"synthetics papers/book/manuscript/chapters/chapter-01.tex"
+]
+},
+"http": {
+"method": "GET",
+"route": "/projection/tex",
+"query": {
+"corpus": "book",
+"file": "synthetics papers/book/manuscript/chapters/chapter-01.tex",
+"view": "source"
+}
+}
+}
+],
+"clearing_read": {
+"operation": "structure",
+"payload": {
+"view": "outline"
+}
+}
+}
+},
+"paragraph_plan": {
+"section_id": "first",
+"status": "DECLARED",
+"revision": "sha256:809ea60822de0b467daad869d4535c2837827955fc72dbedeb7e5352e0a30ab3",
+"identity_status": "STABLE",
+"paragraphs": {
+"items": [
+{
+"paragraph_id": "first-p36456703742131136201844960223",
+"function": "Function 0",
+"proposition": "Proposition 0: the reader is shown the mechanism in plain words and the consequence it has for the claim; the reader is shown the mechanism in plain words and the consequence it has for the claim; …",
+"identity_status": "STABLE",
+"input_currentness": "STALE"
+},
+{
+"paragraph_id": "first-p4636842245514354715254744358",
+"function": "Function 1",
+"proposition": "Proposition 1: the reader is shown the mechanism in plain words and the consequence it has for the claim; the reader is shown the mechanism in plain words and the consequence it has for the claim; …",
+"identity_status": "STABLE",
+"input_currentness": "STALE"
+},
+{
+"paragraph_id": "first-p914227564598999722907749338",
+"function": "Function 2",
+"proposition": "Proposition 2: the reader is shown the mechanism in plain words and the consequence it has for the claim; the reader is shown the mechanism in plain words and the consequence it has for the claim; …",
+"identity_status": "STABLE",
+"input_currentness": "STALE"
+},
+{
+"paragraph_id": "first-p2810330517823460479774333786",
+"function": "Function 3",
+"proposition": "Proposition 3: the reader is shown the mechanism in plain words and the consequence it has for the claim; the reader is shown the mechanism in plain words and the consequence it has for the claim; …",
+"identity_status": "STABLE",
+"input_currentness": "STALE"
+}
+],
+"total": 20,
+"offset": 0,
+"limit": 4,
+"next_read": {
+"operation": "structure",
+"payload": {
+"view": "detail",
+"section_ids": [
+"first"
+],
+"paragraph_offset": 4,
+"paragraph_limit": 4,
+"paragraph_as_of": "sha256:809ea60822de0b467daad869d4535c2837827955fc72dbedeb7e5352e0a30ab3",
+"subject": "contract",
+"projection": "guard"
+}
+},
+"scope": "Identity rows with clipped text (200 characters); a row's edit and remove calls are read with subject_reads.paragraph and its paragraph_id; create and reorder calls with subject_reads.create / subject_reads.reorder"
+}
+},
+"subject_reads": {
+"contract": {
+"view": "detail",
+"section_ids": [
+"first"
+],
+"subject": "contract",
+"projection": "guard"
+},
+"paragraph": {
+"view": "detail",
+"section_ids": [
+"first"
+],
+"subject": "paragraph",
+"paragraph_id": "<paragraph_id from the contract read rows>",
+"projection": "guard"
+},
+"create": {
+"view": "detail",
+"section_ids": [
+"first"
+],
+"subject": "create",
+"projection": "guard"
+},
+"reorder": {
+"view": "detail",
+"section_ids": [
+"first"
+],
+"subject": "reorder",
+"projection": "guard"
+},
+"http": "GET read_handle.http.route with the payload fields as query parameters plus project"
+},
+"full_read": {
+"operation": "structure",
+"payload": {
+"view": "detail",
+"section_ids": [
+"first"
+]
+},
+"http": {
+"method": "GET",
+"route": "/work/structure",
+"query": {
+"project": "book",
+"view": "detail",
+"section_ids": [
+"first"
+]
+}
+}
+},
+"omitted": "members, support, evidence, edges, history, descriptors and full authored text: full_read, or the subject read with edit_choices for one call's descriptors and exact values",
+"structure_observation": {
+"plan_revision": "sha256:c622fd115649b43f7dd79f60ffeee99203bf23ac0f0aff39f83e79410ea43385",
+"spine_revision": "sha256:b781393918f9d53747efb4bc31017d900c3dd79dfd7bd3ad74d2ec682a4de6b4",
+"selection_identity": "sha256:f35f374570dbc183d4aec769c50fb55b0860b11e94183950c18db51bd357ed65",
+"source_files": [
+{
+"file": "synthetics papers/book/manuscript/chapters/chapter-01.tex",
+"source_digest": "sha256:a3f9c9c474d5c0b6ae33ea349ddf6d0f11be41f3347f7a130309571f5aa47bce"
+}
+]
+},
+"reader_transition": {
+"section_id": "first",
+"status": "DECLARED",
+"revision": "sha256:805f70f4aa4e098913bd748cc633e431f03a72eff8d16fce01199328eafafe86",
+"subject_revision": "sha256:cda26e224887ec6d35cb674d1cafa09af026ae694a700f2e0fc8646c75ae9206",
+"input_currentness": {
+"status": "UNOBSERVED",
+"unobserved_inputs": [
+"section:concept:wide-member-00"
+],
+"changed_inputs": [
+"section:concept:wide-member-00"
+],
+"reason": "Input observation is not a judgement of intelligibility or accepted review.",
+"reads": [
+{
+"operation": "structure",
+"payload": {
+"view": "detail",
+"section_ids": [
+"first"
+]
+},
+"http": {
+"method": "GET",
+"route": "/work/structure",
+"query": {
+"project": "book",
+"view": "detail",
+"section_ids": [
+"first"
+]
+}
+}
+}
+]
+},
+"review": {
+"status": "NOT_REVIEWED",
+"records": []
+},
+"diagnostics": [
+{
+"kind": "AUTHORED_FIELD_EMPTY",
+"field": "function",
+"reason": "The intended reader transition has not been authored."
+},
+{
+"kind": "AUTHORED_FIELD_EMPTY",
+"field": "question_answered",
+"reason": "The intended reader transition has not been authored."
+}
+],
+"fields": {
+"entry_state": "The reader arrives knowing the mechanism in outline but not its consequence for the claim. The reader arrives knowing the mechanism in outline but not its consequence for the claim. The reader arrives knowing the mechanism in outline but not its consequence for the claim. The reader arrives knowing the mechanism in outline but not its consequence for the claim. ",
+"exit_state": "The reader can state the consequence.",
+"depends_on": [
+"concept:wide-member-00"
+]
+},
+"edit_action": {
+"operation": "structure_change",
+"payload": {
+"operation": "section_contract",
+"section_id": "first",
+"expected_plan_revision": "sha256:c622fd115649b43f7dd79f60ffeee99203bf23ac0f0aff39f83e79410ea43385",
+"expected_contract_revision": "sha256:805f70f4aa4e098913bd748cc633e431f03a72eff8d16fce01199328eafafe86",
+"expected_reader_basis": {
+"schema_version": "laplace.reader-basis/1",
+"project": "book",
+"path": "synthetics papers/book/manuscript/section_contracts.json",
+"section_id": "first",
+"subject_id": "first",
+"subject_revision": "sha256:cda26e224887ec6d35cb674d1cafa09af026ae694a700f2e0fc8646c75ae9206",
+"inputs": {
+"plan-section": "sha256:60e1bae11a33e76b19d5f5f4c2c9f130c12e0bc1eb6a073bf391a1d8d96c3b6f",
+"architecture": "sha256:8838870b3b9c1733e13e6977ef8aabf1eb35bf69539e977d1a59d5973f7d24a9",
+"section:concept:wide-member-00": "sha256:74234e98afe7498fb5daf1f36ac2d78acc339464f950703b8c019892f982b90b",
+"concept:concept:wide-member-00": "sha256:df4fc1abfb3904ce370a9de75ccd28496c711afc587a899efe31300624746c21",
+"concept:concept:wide-member-01": "sha256:f1372316fa7f11ef14d261ad37f09f4c3f948082f1b6ad50a0ff5c6e2ba62ce0",
+"concept:concept:wide-member-02": "sha256:ba912d0ca775c6a4bbb7470bb9aa48357a88afea4906f1afdb23e3a1f5e9ca0d",
+"concept:concept:wide-member-03": "sha256:89c59af625183c198dcd066b21cfdb4726baae8b51d4d0415fa527602e9b18c2",
+"concept:concept:wide-member-04": "sha256:6007fa18584d091ec55290f992c839d46e17a4f2ac3632dc43f44ea46fed0fc8",
+"concept:concept:wide-member-05": "sha256:2db44be4bd8ce85a812ef3e140000380383d040ff10676d60a1375a76458b0d5",
+"concept:concept:wide-member-06": "sha256:00b0ef4eabcd78c2b6ae8ff52e3542fecefacd003b3007f6746b847dd61ed2e1",
+"concept:concept:wide-member-07": "sha256:fbfcda9e3cc70e916aa511c498d04ede829a1a848a31f8c435dedc2a3f09ec4b",
+"concept:concept:wide-member-08": "sha256:9180f7f71ac4b256973234ef5fe8516a6fda09fdb421a24f7e21c36b8361e471",
+"concept:concept:wide-member-09": "sha256:9ba460fca914947bbca794d6b8dee7fe5a1853c4ebbee87542207b6d69e78e01",
+"concept:concept:wide-member-10": "sha256:8b5dae56160abe87cef877ec356f2853b3bf16a4117d8e0a9312ffa3f332f67b",
+"concept:concept:wide-member-11": "sha256:d7a507d26530fb748963431abd5a51815866c2ba50bf59247669d4c2bcfde6ff",
+"concept:concept:wide-member-12": "sha256:5d4bab7595c963467bc16748d9e90227070fd30c4d9e1711f3f3ff73ff99d0fd",
+"concept:concept:wide-member-13": "sha256:2cea5380b219fad3ccd29c7f72efdb40b9105780c56aeb09dc0197ff8db682c1",
+"concept:concept:wide-member-14": "sha256:f5988a035d818304a41163290067e4e0270b9ad4aeb24b8b27f6fdd569ee7dab",
+"concept:concept:wide-member-15": "sha256:48d770ac083128d69b46331cbdb6f0cee3282f62a4681f295c3ef1df96f801f9",
+"concept:concept:wide-member-16": "sha256:fd10066bf196d8d41e2e2be0440e23dcc218475be8a04f23b55166c59bfa0494"
+},
+"unobserved_inputs": []
+}
+},
+"http": {
+"method": "POST",
+"route": "/work/structure/change"
+},
+"fields": [
+{
+"name": "function",
+"label": "Function",
+"type": "string",
+"multiline": true
+},
+{
+"name": "question_answered",
+"label": "Question answered",
+"type": "string",
+"multiline": true
+},
+{
+"name": "entry_state",
+"label": "Entry state",
+"type": "string",
+"multiline": true
+},
+{
+"name": "exit_state",
+"label": "Exit state",
+"type": "string",
+"multiline": true
+},
+{
+"name": "permitted_recap",
+"label": "Permitted recap",
+"type": "string",
+"multiline": true
+},
+{
+"name": "depends_on",
+"label": "Depends on",
+"type": "string_array",
+"choices": [
+{
+"value": "first-child",
+"label": "First child",
+"read": {
+"operation": "structure",
+"payload": {
+"view": "detail",
+"section_ids": [
+"first-child"
+]
+},
+"http": {
+"method": "GET",
+"route": "/work/structure",
+"query": {
+"project": "book",
+"view": "detail",
+"section_ids": [
+"first-child"
+]
+}
+}
+}
+},
+{
+"value": "second",
+"label": "Second",
+"read": {
+"operation": "structure",
+"payload": {
+"view": "detail",
+"section_ids": [
+"second"
+]
+},
+"http": {
+"method": "GET",
+"route": "/work/structure",
+"query": {
+"project": "book",
+"view": "detail",
+"section_ids": [
+"second"
+]
+}
+}
+}
+}
+]
+},
+{
+"name": "forward_uses",
+"label": "Forward uses",
+"type": "string_array",
+"choices": [
+{
+"value": "first-child",
+"label": "First child",
+"read": {
+"operation": "structure",
+"payload": {
+"view": "detail",
+"section_ids": [
+"first-child"
+]
+},
+"http": {
+"method": "GET",
+"route": "/work/structure",
+"query": {
+"project": "book",
+"view": "detail",
+"section_ids": [
+"first-child"
+]
+}
+}
+}
+},
+{
+"value": "second",
+"label": "Second",
+"read": {
+"operation": "structure",
+"payload": {
+"view": "detail",
+"section_ids": [
+"second"
+]
+},
+"http": {
+"method": "GET",
+"route": "/work/structure",
+"query": {
+"project": "book",
+"view": "detail",
+"section_ids": [
+"second"
+]
+}
+}
+}
+}
+]
+},
+{
+"name": "citations",
+"label": "Citations",
+"type": "string_array",
+"choices": []
+},
+{
+"name": "equations",
+"label": "Equations",
+"type": "string_array",
+"choices": []
+},
+{
+"name": "figures",
+"label": "Figures",
+"type": "string_array",
+"choices": []
+},
+{
+"name": "tables",
+"label": "Tables",
+"type": "string_array",
+"choices": []
+}
+],
+"values": {
+"function": "",
+"question_answered": "",
+"entry_state": "The reader arrives knowing the mechanism in outline but not its consequence for the claim. The reader arrives knowing the mechanism in outline but not its consequence for the claim. The reader arrives knowing the mechanism in outline but not its consequence for the claim. The reader arrives knowing the mechanism in outline but not its consequence for the claim. ",
+"exit_state": "The reader can state the consequence.",
+"permitted_recap": "",
+"depends_on": [
+"concept:wide-member-00"
+],
+"forward_uses": [],
+"citations": [],
+"equations": [],
+"figures": [],
+"tables": []
+}
+},
+"choices_read": {
+"operation": "structure",
+"payload": {
+"view": "detail",
+"section_ids": [
+"first"
+],
+"subject": "contract",
+"edit_choices": true,
+"projection": "guard"
+}
+},
+"reader_basis": "edit_action.payload.expected_reader_basis",
+"review_action_read": "subject_reads.section carries reader_transition.review_action beside the section-level calls",
+"read_handle": {
+"operation": "structure",
+"payload": {
+"view": "detail",
+"section_ids": [
+"first"
+],
+"subject": "contract",
+"projection": "guard"
+}
+}
+}
+},
+"summary": {
+"schema_version": "laplace.project-structure-summary/2",
+"project": "book",
+"status": "CURRENT",
+"eligible_for_authoring": null,
+"eligibility_scope": "NOT_ASSESSED: plan/graph mirror eligibility (eligible_for_authoring) and mirror gaps are judged by full_guard_read; status here is reader-plan source correspondence only",
+"availability": {
+"reader_plan": "AVAILABLE"
+},
+"as_of": "sha256:ba04238cffe2f7ddaefa2b8984c1a7c6ef86dc5ae8c0d616fd1cb21b4ac8c216",
+"read_cut_scope": "Canonical topology/source correspondence; not the full plan-state mutation guard",
+"identities": {
+"plan-file:book": "rev:plan-file:book:c622fd115649b43f7dd79f60ffeee99203bf23ac0f0aff39f83e79410ea43385"
+},
+"authority": {
+"spine_revision": "sha256:b781393918f9d53747efb4bc31017d900c3dd79dfd7bd3ad74d2ec682a4de6b4",
+"plan_path": "synthetics papers/book/manuscript/projection_plan.json",
+"plan_revision": "sha256:c622fd115649b43f7dd79f60ffeee99203bf23ac0f0aff39f83e79410ea43385",
+"conceptric_revision": null,
+"source_revision": "ec39e3cc81c7317c551fd654cd100571f43b76f57ee8d6103a21e0f192b568f5"
+},
+"selected_source": {
+"project": "book",
+"root": "synthetics papers/book/manuscript/Fixture-Book.tex",
+"manuscript_dir": "synthetics papers/book/manuscript",
+"storage_dir": "synthetics papers/book/manuscript",
+"edition": "draft",
+"status": "resolved",
+"selection": "manifest",
+"revision": "ec39e3cc81c7317c551fd654cd100571f43b76f57ee8d6103a21e0f192b568f5",
+"candidates": [],
+"foreign": false,
+"read_only": false,
+"diagnostics": [],
+"selection_identity": "sha256:f35f374570dbc183d4aec769c50fb55b0860b11e94183950c18db51bd357ed65"
+},
+"support_assessment": "NOT_ASSESSED; descend to exact detail for scientific/evidence currentness",
+"sections": {
+"items": [
+{
+"id": "first",
+"title": "First",
+"kind": "chapter",
+"parent_id": null,
+"number": "1",
+"order": 0,
+"job": "open",
+"collection": "sections",
+"precision": "FILE_ONLY",
+"binding_status": "MATCHED",
+"member_count": 17,
+"detail_read": {
+"operation": "structure",
+"payload": {
+"view": "detail",
+"section_ids": [
+"first"
+]
+}
+}
+},
+{
+"id": "first-child",
+"title": "First child",
+"kind": "section",
+"parent_id": "first",
+"number": "1.1",
+"order": 1,
+"job": "support",
+"collection": "sections",
+"precision": "FILE_ONLY",
+"binding_status": "MATCHED",
+"member_count": 0,
+"detail_read": {
+"operation": "structure",
+"payload": {
+"view": "detail",
+"section_ids": [
+"first-child"
+]
+}
+}
+},
+{
+"id": "second",
+"title": "Second",
+"kind": "chapter",
+"parent_id": null,
+"number": "2",
+"order": 2,
+"job": "close",
+"collection": "sections",
+"precision": "FILE_ONLY",
+"binding_status": "MATCHED",
+"member_count": 0,
+"detail_read": {
+"operation": "structure",
+"payload": {
+"view": "detail",
+"section_ids": [
+"second"
+]
+}
+}
+}
+],
+"offset": 0,
+"limit": 6,
+"total": 3,
+"omitted_before": 0,
+"omitted_after": 0
+},
+"spine": {
+"items": [
+{
+"id": "concept:wide-member-00",
+"term": null,
+"ord": 1,
+"placed": false,
+"section_ids": [],
+"detail_read": {
+"operation": "structure",
+"payload": {
+"view": "detail",
+"node_id": "concept:wide-member-00"
+}
+}
+},
+{
+"id": "concept:wide-member-01",
+"term": null,
+"ord": 2,
+"placed": false,
+"section_ids": [],
+"detail_read": {
+"operation": "structure",
+"payload": {
+"view": "detail",
+"node_id": "concept:wide-member-01"
+}
+}
+},
+{
+"id": "concept:wide-member-02",
+"term": null,
+"ord": 3,
+"placed": false,
+"section_ids": [],
+"detail_read": {
+"operation": "structure",
+"payload": {
+"view": "detail",
+"node_id": "concept:wide-member-02"
+}
+}
+},
+{
+"id": "concept:wide-member-03",
+"term": null,
+"ord": 4,
+"placed": false,
+"section_ids": [],
+"detail_read": {
+"operation": "structure",
+"payload": {
+"view": "detail",
+"node_id": "concept:wide-member-03"
+}
+}
+},
+{
+"id": "concept:wide-member-04",
+"term": null,
+"ord": 5,
+"placed": false,
+"section_ids": [],
+"detail_read": {
+"operation": "structure",
+"payload": {
+"view": "detail",
+"node_id": "concept:wide-member-04"
+}
+}
+},
+{
+"id": "concept:wide-member-05",
+"term": null,
+"ord": 6,
+"placed": false,
+"section_ids": [],
+"detail_read": {
+"operation": "structure",
+"payload": {
+"view": "detail",
+"node_id": "concept:wide-member-05"
+}
+}
+}
+],
+"offset": 0,
+"limit": 6,
+"total": 14,
+"omitted_before": 0,
+"omitted_after": 8,
+"next_read": {
+"operation": "structure",
+"payload": {
+"view": "summary",
+"section_offset": 0,
+"section_limit": 6,
+"object_offset": 0,
+"object_limit": 1,
+"gap_offset": 0,
+"gap_limit": 1,
+"spine_offset": 6,
+"spine_limit": 6,
+"as_of": "sha256:ba04238cffe2f7ddaefa2b8984c1a7c6ef86dc5ae8c0d616fd1cb21b4ac8c216"
+}
+},
+"revision": "sha256:b781393918f9d53747efb4bc31017d900c3dd79dfd7bd3ad74d2ec682a4de6b4",
+"status": "AVAILABLE"
+},
+"logical_objects": {
+"items": [
+{
+"id": "concept:wide-member-00",
+"label": "concept:wide-member-00",
+"label_basis": "address",
+"status": "NOT_ASSESSED",
+"placed": true,
+"detail_read": {
+"operation": "concept",
+"payload": {
+"node": "concept:wide-member-00"
+}
+}
+}
+],
+"offset": 0,
+"limit": 1,
+"total": 17,
+"omitted_before": 0,
+"omitted_after": 16,
+"next_read": {
+"operation": "structure",
+"payload": {
+"view": "summary",
+"section_offset": 0,
+"section_limit": 6,
+"object_offset": 1,
+"object_limit": 1,
+"gap_offset": 0,
+"gap_limit": 1,
+"spine_offset": 0,
+"spine_limit": 6,
+"as_of": "sha256:ba04238cffe2f7ddaefa2b8984c1a7c6ef86dc5ae8c0d616fd1cb21b4ac8c216"
+}
+}
+},
+"gaps": {
+"items": [],
+"offset": 0,
+"limit": 1,
+"total": 0,
+"omitted_before": 0,
+"omitted_after": 0,
+"scope": "Structural gaps only; scientific gaps not assessed"
+},
+"full_guard_read": {
+"operation": "structure",
+"payload": {
+"view": "full"
+}
+}
+},
+"spine_pages": [
+{
+"schema_version": "laplace.project-structure-display/1",
+"project": "book",
+"section_id": "first",
+"projection": "display",
+"page": "spine",
+"spine": [
+{
+"id": "concept:wide-member-00"
+},
+{
+"id": "concept:wide-member-01"
+},
+{
+"id": "concept:wide-member-02"
+},
+{
+"id": "concept:wide-member-03"
+},
+{
+"id": "concept:wide-member-04"
+},
+{
+"id": "concept:wide-member-05"
+},
+{
+"id": "concept:wide-member-06"
+},
+{
+"id": "concept:wide-member-07"
+},
+{
+"id": "concept:wide-member-08"
+},
+{
+"id": "concept:wide-member-09"
+},
+{
+"id": "concept:wide-member-10"
+},
+{
+"id": "concept:wide-member-11"
+}
+],
+"spine_page": {
+"total": 14,
+"offset": 0,
+"limit": 12,
+"next_read": {
+"operation": "structure",
+"payload": {
+"view": "detail",
+"section_ids": [
+"first"
+],
+"projection": "display",
+"spine_offset": 12
+}
+},
+"row_read": {
+"operation": "structure",
+"payload": {
+"view": "detail",
+"node_id": "<id>"
+}
+}
+},
+"structure_observation": {
+"plan_revision": "sha256:c622fd115649b43f7dd79f60ffeee99203bf23ac0f0aff39f83e79410ea43385",
+"spine_revision": "sha256:b781393918f9d53747efb4bc31017d900c3dd79dfd7bd3ad74d2ec682a4de6b4"
+},
+"revision": "sha256:94f4a3e34b581c444eec7b91cb93c0a9607fa1dc1a1bba1520abda2b5dca7327"
+},
+{
+"schema_version": "laplace.project-structure-display/1",
+"project": "book",
+"section_id": "first",
+"projection": "display",
+"page": "spine",
+"spine": [
+{
+"id": "concept:wide-member-12"
+},
+{
+"id": "concept:wide-member-13"
+}
+],
+"spine_page": {
+"total": 14,
+"offset": 12,
+"limit": 12,
+"next_read": null,
+"row_read": {
+"operation": "structure",
+"payload": {
+"view": "detail",
+"node_id": "<id>"
+}
+}
+},
+"structure_observation": {
+"plan_revision": "sha256:c622fd115649b43f7dd79f60ffeee99203bf23ac0f0aff39f83e79410ea43385",
+"spine_revision": "sha256:b781393918f9d53747efb4bc31017d900c3dd79dfd7bd3ad74d2ec682a4de6b4"
+},
+"revision": "sha256:94f4a3e34b581c444eec7b91cb93c0a9607fa1dc1a1bba1520abda2b5dca7327"
+}
+],
+"beat_detail": {
+"schema_version": "laplace.project-structure-context/1",
+"project": "book",
+"spine": [
+{
+"id": "concept:wide-member-00",
+"ord": 1,
+"narrative": "Beat 0: the reader meets this step of the argument.",
+"term": null,
+"section_ids": [],
+"placed": false,
+"detail_read": {
+"operation": "structure",
+"payload": {
+"view": "detail",
+"node_id": "concept:wide-member-00"
+}
+},
+"concept_read": {
+"operation": "concept",
+"payload": {
+"node": "concept:wide-member-00"
+}
+},
+"full_guard_read": {
+"operation": "structure",
+"payload": {
+"view": "full"
+}
+}
+}
+],
+"revision": "sha256:2e449050ce37a6398990cc774d0daeffe3ab0f618e97fcfc4545fa835cf4f0c8"
+},
+"clipped_only": {
+"display": {
+"schema_version": "laplace.project-structure-display/1",
+"project": "book",
+"section_id": "first",
+"projection": "display",
+"eligible_for_authoring": true,
+"authority": {
+"plan_path": "synthetics papers/book/manuscript/projection_plan.json",
+"spine_revision": "sha256:4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+"plan_revision": "sha256:46287c042a24b171fd1b3662d15850bf7428438334c4f462d7cd550b96671b9f",
+"conceptric_revision": "sha256:ee6597c03f4d8c348ef5d7d83f7073ae18878e2b73c2f581000e960acc7a886f",
+"research_revision": "sha256:4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+"source_revision": "ec39e3cc81c7317c551fd654cd100571f43b76f57ee8d6103a21e0f192b568f5"
+},
+"selected_source": {
+"status": "resolved",
+"root": "synthetics papers/book/manuscript/Fixture-Book.tex",
+"edition": "draft",
+"revision": "ec39e3cc81c7317c551fd654cd100571f43b76f57ee8d6103a21e0f192b568f5",
+"selection_identity": "sha256:f35f374570dbc183d4aec769c50fb55b0860b11e94183950c18db51bd357ed65",
+"read_only": false
+},
+"structure_observation": {
+"plan_revision": "sha256:46287c042a24b171fd1b3662d15850bf7428438334c4f462d7cd550b96671b9f",
+"spine_revision": "sha256:4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+"selection_identity": "sha256:f35f374570dbc183d4aec769c50fb55b0860b11e94183950c18db51bd357ed65",
+"source_files": [
+{
+"file": "synthetics papers/book/manuscript/chapters/chapter-01.tex",
+"source_digest": "sha256:a3f9c9c474d5c0b6ae33ea349ddf6d0f11be41f3347f7a130309571f5aa47bce"
+}
+],
+"reader_subjects": [
+{
+"schema_version": "laplace.reader-subjects-ref/1",
+"project": "book",
+"section_id": "first",
+"subject_ids": [
+"first",
+"first-p36456703742131136201844960223",
+"first-p44960267645789946666195609182"
+],
+"digest": "sha256:51561bfc7649c4f6885133c4bd1cbe7e27144425cc23972a806f7c2235a71df3"
+}
+]
+},
+"sections": [
+{
+"id": "first",
+"title": "First",
+"kind": "chapter",
+"number": "1",
+"parent_id": null,
+"collection": "sections",
+"depth": 0,
+"job": "open",
+"notes": "",
+"source": {
+"section_id": "first",
+"source_files": [
+"synthetics papers/book/manuscript/chapters/chapter-01.tex"
+],
+"status": "MATCHED",
+"precision": "FILE_ONLY",
+"heading": {
+"file": "synthetics papers/book/manuscript/chapters/chapter-01.tex",
+"line": 1,
+"line_end": 4,
+"heading_line_end": 1,
+"title": "First",
+"kind": "chapter",
+"label": null,
+"heading_before": "\\chapter{First}",
+"source_order": 1,
+"source_orders": [
+1
+]
+},
+"basis": {
+"synthetics papers/book/manuscript/chapters/chapter-01.tex": {
+"selection_identity": "sha256:f35f374570dbc183d4aec769c50fb55b0860b11e94183950c18db51bd357ed65",
+"source_digest": "sha256:a3f9c9c474d5c0b6ae33ea349ddf6d0f11be41f3347f7a130309571f5aa47bce"
+}
+},
+"source_reads": [
+{
+"operation": "source",
+"payload": {
+"files": [
+"synthetics papers/book/manuscript/chapters/chapter-01.tex"
+]
+},
+"http": {
+"method": "GET",
+"route": "/projection/tex",
+"query": {
+"corpus": "book",
+"file": "synthetics papers/book/manuscript/chapters/chapter-01.tex",
+"view": "source"
+}
+}
+}
+]
+},
+"doors": [
+"link_source",
+"prepare_work"
+],
+"nodes": [
+{
+"id": "concept:first",
+"status": "MISSING",
+"missing": true
+}
+],
+"members": {
+"offset": 0,
+"limit": 6,
+"total": 1,
+"cut": "sha256:e6415180c1efd7a6cfc05ed604ff1fb51dff1f857f51b24611ac47f64d5a2c37",
+"omitted_before": 0,
+"omitted_after": 0
+},
+"member_count": 1,
+"evidence": [],
+"evidence_total": 0,
+"reader_transition": {
+"section_id": "first",
+"status": "NOT_DECLARED",
+"revision": null,
+"subject_revision": "sha256:74234e98afe7498fb5daf1f36ac2d78acc339464f950703b8c019892f982b90b",
+"fields": {},
+"input_currentness": {
+"status": "UNPINNED",
+"reason": "No completed scoped input observation is recorded.",
+"changed_inputs": []
+},
+"review": {
+"status": "NOT_REVIEWED",
+"records": []
+},
+"doors": {
+"edit": true,
+"review": true
+},
+"read_handle": {
+"operation": "structure",
+"payload": {
+"view": "detail",
+"section_ids": [
+"first"
+],
+"subject": "contract",
+"projection": "guard"
+}
+}
+},
+"paragraph_plan": {
+"section_id": "first",
+"status": "DECLARED",
+"revision": "sha256:a4b7e9899e71d90ecc9d5b74292c8c4edc98a32a3cb82df0c2c9b5b974baa343",
+"identity_status": "STABLE",
+"paragraphs": {
+"items": [
+{
+"paragraph_id": "first-p36456703742131136201844960223",
+"proposition": "A complete authored proposition, kept whole. A complete authored proposition, kept whole. A complete authored proposition, kept whole. A complete a…",
+"authored": [],
+"identity_status": "STABLE",
+"input_currentness": {
+"status": "STALE",
+"changed_inputs": [
+"reader-neighbors"
+]
+},
+"doors": [
+"edit",
+"remove",
+"review",
+"merge",
+"split"
+],
+"source_occurrence_total": 0,
+"clipped": [
+"proposition"
+]
+},
+{
+"paragraph_id": "first-p44960267645789946666195609182",
+"function": "A complete authored function, “quoted” and 中文. A complete authored function, “quoted” and 中文. A complete authored function, “quot…",
+"authored": [],
+"identity_status": "STABLE",
+"input_currentness": {
+"status": "CURRENT"
+},
+"doors": [
+"edit",
+"remove",
+"review",
+"merge",
+"split"
+],
+"source_occurrence_total": 0,
+"clipped": [
+"function"
+]
+}
+],
+"total": 2,
+"offset": 0,
+"limit": 6,
+"next_read": null,
+"row_read": {
+"operation": "structure",
+"payload": {
+"view": "detail",
+"section_ids": [
+"first"
+],
+"projection": "display",
+"paragraph_id": "<paragraph_id>"
+}
+}
+},
+"doors": {
+"create": true,
+"reorder": true
+},
+"pending_restructures": [],
+"pending_restructures_total": 0,
+"latest_restructure": null,
+"read_handle": {
+"operation": "structure",
+"payload": {
+"view": "detail",
+"section_ids": [
+"first"
+],
+"projection": "display"
+}
+}
+}
+}
+],
+"spine_page": {
+"total": 0,
+"read": null,
+"row_read": {
+"operation": "structure",
+"payload": {
+"view": "detail",
+"node_id": "<id>"
+}
+}
+},
+"evidence": [],
+"subject_reads": {
+"contract": {
+"view": "detail",
+"section_ids": [
+"first"
+],
+"subject": "contract",
+"projection": "guard"
+},
+"subjects": "contract | section | paragraph+paragraph_id | structure+paragraph_id | create | reorder; edit_choices:true adds descriptors",
+"http": "GET /work/structure with the payload fields as query parameters plus project"
+},
+"plan_read": {
+"operation": "structure",
+"payload": {
+"view": "plan"
+}
+},
+"full_guard_read": {
+"operation": "structure",
+"payload": {
+"view": "plan"
+}
+},
+"full_read": {
+"operation": "structure",
+"payload": {
+"view": "detail",
+"section_ids": [
+"first"
+]
+}
+},
+"omitted": [
+"calls (subject_reads)",
+"narrative beats (spine_page.read; each beat on spine_page.row_read)",
+"reader_basis",
+"links/diagnostics/lineage (row display)",
+"source_support",
+"edges",
+"gaps",
+"scoped_history",
+"direct_dependencies",
+"reader_inputs",
+"outline",
+"ancestors",
+"children",
+"boundaries"
+],
+"revision": "sha256:bdba87d0d0de1e07e3bb8008cb9b97ae6369c1db09f2b7e074c5f6e10bb25c4c"
+},
+"whole": {
+"first-p36456703742131136201844960223": {
+"schema_version": "laplace.project-structure-display/1",
+"project": "book",
+"section_id": "first",
+"projection": "display",
+"eligible_for_authoring": true,
+"authority": {
+"plan_path": "synthetics papers/book/manuscript/projection_plan.json",
+"spine_revision": "sha256:4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+"plan_revision": "sha256:46287c042a24b171fd1b3662d15850bf7428438334c4f462d7cd550b96671b9f",
+"conceptric_revision": "sha256:ee6597c03f4d8c348ef5d7d83f7073ae18878e2b73c2f581000e960acc7a886f",
+"research_revision": "sha256:4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+"source_revision": "ec39e3cc81c7317c551fd654cd100571f43b76f57ee8d6103a21e0f192b568f5"
+},
+"selected_source": {
+"status": "resolved",
+"root": "synthetics papers/book/manuscript/Fixture-Book.tex",
+"edition": "draft",
+"revision": "ec39e3cc81c7317c551fd654cd100571f43b76f57ee8d6103a21e0f192b568f5",
+"selection_identity": "sha256:f35f374570dbc183d4aec769c50fb55b0860b11e94183950c18db51bd357ed65",
+"read_only": false
+},
+"structure_observation": {
+"plan_revision": "sha256:46287c042a24b171fd1b3662d15850bf7428438334c4f462d7cd550b96671b9f",
+"spine_revision": "sha256:4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+"selection_identity": "sha256:f35f374570dbc183d4aec769c50fb55b0860b11e94183950c18db51bd357ed65",
+"source_files": [
+{
+"file": "synthetics papers/book/manuscript/chapters/chapter-01.tex",
+"source_digest": "sha256:a3f9c9c474d5c0b6ae33ea349ddf6d0f11be41f3347f7a130309571f5aa47bce"
+}
+],
+"reader_subjects": [
+{
+"schema_version": "laplace.reader-subjects-ref/1",
+"project": "book",
+"section_id": "first",
+"subject_ids": [
+"first",
+"first-p36456703742131136201844960223"
+],
+"digest": "sha256:175a4216d7f801539d0eead26b0f83f6c882252667844979eb0a4c330bcdab39"
+}
+]
+},
+"sections": [
+{
+"id": "first",
+"title": "First",
+"kind": "chapter",
+"number": "1",
+"parent_id": null,
+"collection": "sections",
+"depth": 0,
+"job": "open",
+"notes": "",
+"source": {
+"section_id": "first",
+"source_files": [
+"synthetics papers/book/manuscript/chapters/chapter-01.tex"
+],
+"status": "MATCHED",
+"precision": "FILE_ONLY",
+"heading": {
+"file": "synthetics papers/book/manuscript/chapters/chapter-01.tex",
+"line": 1,
+"line_end": 4,
+"heading_line_end": 1,
+"title": "First",
+"kind": "chapter",
+"label": null,
+"heading_before": "\\chapter{First}",
+"source_order": 1,
+"source_orders": [
+1
+]
+},
+"basis": {
+"synthetics papers/book/manuscript/chapters/chapter-01.tex": {
+"selection_identity": "sha256:f35f374570dbc183d4aec769c50fb55b0860b11e94183950c18db51bd357ed65",
+"source_digest": "sha256:a3f9c9c474d5c0b6ae33ea349ddf6d0f11be41f3347f7a130309571f5aa47bce"
+}
+},
+"source_reads": [
+{
+"operation": "source",
+"payload": {
+"files": [
+"synthetics papers/book/manuscript/chapters/chapter-01.tex"
+]
+},
+"http": {
+"method": "GET",
+"route": "/projection/tex",
+"query": {
+"corpus": "book",
+"file": "synthetics papers/book/manuscript/chapters/chapter-01.tex",
+"view": "source"
+}
+}
+}
+]
+},
+"doors": [
+"link_source",
+"prepare_work"
+],
+"nodes": [
+{
+"id": "concept:first",
+"status": "MISSING",
+"missing": true
+}
+],
+"members": {
+"offset": 0,
+"limit": 6,
+"total": 1,
+"cut": "sha256:e6415180c1efd7a6cfc05ed604ff1fb51dff1f857f51b24611ac47f64d5a2c37",
+"omitted_before": 0,
+"omitted_after": 0
+},
+"member_count": 1,
+"evidence": [],
+"evidence_total": 0,
+"reader_transition": {
+"section_id": "first",
+"status": "NOT_DECLARED",
+"revision": null,
+"subject_revision": "sha256:74234e98afe7498fb5daf1f36ac2d78acc339464f950703b8c019892f982b90b",
+"fields": {},
+"input_currentness": {
+"status": "UNPINNED",
+"reason": "No completed scoped input observation is recorded.",
+"changed_inputs": []
+},
+"review": {
+"status": "NOT_REVIEWED",
+"records": []
+},
+"doors": {
+"edit": true,
+"review": true
+},
+"read_handle": {
+"operation": "structure",
+"payload": {
+"view": "detail",
+"section_ids": [
+"first"
+],
+"subject": "contract",
+"projection": "guard"
+}
+}
+},
+"paragraph_plan": {
+"section_id": "first",
+"status": "DECLARED",
+"revision": "sha256:a4b7e9899e71d90ecc9d5b74292c8c4edc98a32a3cb82df0c2c9b5b974baa343",
+"identity_status": "STABLE",
+"paragraphs": {
+"items": [
+{
+"section_id": "first",
+"paragraph_id": "first-p36456703742131136201844960223",
+"proposition": "A complete authored proposition, kept whole. A complete authored proposition, kept whole. A complete authored proposition, kept whole. A complete authored proposition, kept whole. A complete authored proposition, kept whole. A complete authored proposition, kept whole. A complete authored proposition, kept whole. A complete authored proposition, kept whole. A complete authored proposition, kept whole. A complete authored proposition, kept whole. A complete authored proposition, kept whole. A complete authored proposition, kept whole. ",
+"authored": [],
+"identity_status": "STABLE",
+"input_currentness": {
+"status": "STALE",
+"reason": "Input observation is not a judgement of intelligibility or accepted review.",
+"changed_inputs": [
+"reader-neighbors"
+],
+"unobserved_inputs": []
+},
+"doors": [
+"edit",
+"remove",
+"review",
+"merge",
+"split"
+],
+"source_occurrence_total": 0,
+"subject_revision": "sha256:14bf87e153f17b14f77aedbb73762a8ab1484607a0e72d61cd9900a4c0975cb1",
+"diagnostics": [
+{
+"kind": "AUTHORED_FIELD_EMPTY",
+"reason": "The intended reader transition has not been authored.",
+"read": null
+},
+{
+"kind": "INPUT_UNRESOLVED",
+"subject": "concept:first",
+"status": "UNRESOLVED",
+"reason": "Supporting input is missing, ambiguous, or stale; observation is not validation.",
+"read": {
+"operation": "concept",
+"payload": {
+"node": "concept:first"
+}
+}
+}
+],
+"diagnostics_total": 2,
+"links": [
+{
+"kind": "argument",
+"label": "concept:first",
+"status": "UNRESOLVED",
+"read": {
+"operation": "concept",
+"payload": {
+"node": "concept:first"
+}
+}
+}
+],
+"links_total": 1,
+"source_occurrences": [],
+"lineage": {
+"status": "NOT_RECORDED",
+"items": []
+},
+"review": {
+"status": "NOT_REVIEWED",
+"records": []
+},
+"subject_read": {
+"operation": "structure",
+"payload": {
+"view": "detail",
+"section_ids": [
+"first"
+],
+"subject": "paragraph",
+"paragraph_id": "first-p36456703742131136201844960223",
+"projection": "guard"
+}
+}
+}
+],
+"total": 2,
+"offset": 0,
+"limit": 20,
+"next_read": null,
+"row_read": {
+"operation": "structure",
+"payload": {
+"view": "detail",
+"section_ids": [
+"first"
+],
+"projection": "display",
+"paragraph_id": "<paragraph_id>"
+}
+}
+},
+"doors": {
+"create": true,
+"reorder": true
+},
+"pending_restructures": [],
+"pending_restructures_total": 0,
+"latest_restructure": null,
+"read_handle": {
+"operation": "structure",
+"payload": {
+"view": "detail",
+"section_ids": [
+"first"
+],
+"projection": "display"
+}
+}
+}
+}
+],
+"spine_page": {
+"total": 0,
+"read": null,
+"row_read": {
+"operation": "structure",
+"payload": {
+"view": "detail",
+"node_id": "<id>"
+}
+}
+},
+"evidence": [],
+"subject_reads": {
+"contract": {
+"view": "detail",
+"section_ids": [
+"first"
+],
+"subject": "contract",
+"projection": "guard"
+},
+"subjects": "contract | section | paragraph+paragraph_id | structure+paragraph_id | create | reorder; edit_choices:true adds descriptors",
+"http": "GET /work/structure with the payload fields as query parameters plus project"
+},
+"plan_read": {
+"operation": "structure",
+"payload": {
+"view": "plan"
+}
+},
+"full_guard_read": {
+"operation": "structure",
+"payload": {
+"view": "plan"
+}
+},
+"full_read": {
+"operation": "structure",
+"payload": {
+"view": "detail",
+"section_ids": [
+"first"
+]
+}
+},
+"omitted": [
+"calls (subject_reads)",
+"narrative beats (spine_page.read; each beat on spine_page.row_read)",
+"reader_basis",
+"links/diagnostics/lineage (row display)",
+"source_support",
+"edges",
+"gaps",
+"scoped_history",
+"direct_dependencies",
+"reader_inputs",
+"outline",
+"ancestors",
+"children",
+"boundaries"
+],
+"scope": "whole row: authored text unclipped; links and diagnostics capped at 12 with totals; not bounded by the page budget",
+"revision": "sha256:353b5548ed66ed4fb004bae151ff332caaf79b1193f455514bbe0548f95ee98c"
+},
+"first-p44960267645789946666195609182": {
+"schema_version": "laplace.project-structure-display/1",
+"project": "book",
+"section_id": "first",
+"projection": "display",
+"eligible_for_authoring": true,
+"authority": {
+"plan_path": "synthetics papers/book/manuscript/projection_plan.json",
+"spine_revision": "sha256:4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+"plan_revision": "sha256:46287c042a24b171fd1b3662d15850bf7428438334c4f462d7cd550b96671b9f",
+"conceptric_revision": "sha256:ee6597c03f4d8c348ef5d7d83f7073ae18878e2b73c2f581000e960acc7a886f",
+"research_revision": "sha256:4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+"source_revision": "ec39e3cc81c7317c551fd654cd100571f43b76f57ee8d6103a21e0f192b568f5"
+},
+"selected_source": {
+"status": "resolved",
+"root": "synthetics papers/book/manuscript/Fixture-Book.tex",
+"edition": "draft",
+"revision": "ec39e3cc81c7317c551fd654cd100571f43b76f57ee8d6103a21e0f192b568f5",
+"selection_identity": "sha256:f35f374570dbc183d4aec769c50fb55b0860b11e94183950c18db51bd357ed65",
+"read_only": false
+},
+"structure_observation": {
+"plan_revision": "sha256:46287c042a24b171fd1b3662d15850bf7428438334c4f462d7cd550b96671b9f",
+"spine_revision": "sha256:4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+"selection_identity": "sha256:f35f374570dbc183d4aec769c50fb55b0860b11e94183950c18db51bd357ed65",
+"source_files": [
+{
+"file": "synthetics papers/book/manuscript/chapters/chapter-01.tex",
+"source_digest": "sha256:a3f9c9c474d5c0b6ae33ea349ddf6d0f11be41f3347f7a130309571f5aa47bce"
+}
+],
+"reader_subjects": [
+{
+"schema_version": "laplace.reader-subjects-ref/1",
+"project": "book",
+"section_id": "first",
+"subject_ids": [
+"first",
+"first-p44960267645789946666195609182"
+],
+"digest": "sha256:7f5f99e15f0432c4750c17308a130ac5c43c564884ee7210cb3047c90f57d341"
+}
+]
+},
+"sections": [
+{
+"id": "first",
+"title": "First",
+"kind": "chapter",
+"number": "1",
+"parent_id": null,
+"collection": "sections",
+"depth": 0,
+"job": "open",
+"notes": "",
+"source": {
+"section_id": "first",
+"source_files": [
+"synthetics papers/book/manuscript/chapters/chapter-01.tex"
+],
+"status": "MATCHED",
+"precision": "FILE_ONLY",
+"heading": {
+"file": "synthetics papers/book/manuscript/chapters/chapter-01.tex",
+"line": 1,
+"line_end": 4,
+"heading_line_end": 1,
+"title": "First",
+"kind": "chapter",
+"label": null,
+"heading_before": "\\chapter{First}",
+"source_order": 1,
+"source_orders": [
+1
+]
+},
+"basis": {
+"synthetics papers/book/manuscript/chapters/chapter-01.tex": {
+"selection_identity": "sha256:f35f374570dbc183d4aec769c50fb55b0860b11e94183950c18db51bd357ed65",
+"source_digest": "sha256:a3f9c9c474d5c0b6ae33ea349ddf6d0f11be41f3347f7a130309571f5aa47bce"
+}
+},
+"source_reads": [
+{
+"operation": "source",
+"payload": {
+"files": [
+"synthetics papers/book/manuscript/chapters/chapter-01.tex"
+]
+},
+"http": {
+"method": "GET",
+"route": "/projection/tex",
+"query": {
+"corpus": "book",
+"file": "synthetics papers/book/manuscript/chapters/chapter-01.tex",
+"view": "source"
+}
+}
+}
+]
+},
+"doors": [
+"link_source",
+"prepare_work"
+],
+"nodes": [
+{
+"id": "concept:first",
+"status": "MISSING",
+"missing": true
+}
+],
+"members": {
+"offset": 0,
+"limit": 6,
+"total": 1,
+"cut": "sha256:e6415180c1efd7a6cfc05ed604ff1fb51dff1f857f51b24611ac47f64d5a2c37",
+"omitted_before": 0,
+"omitted_after": 0
+},
+"member_count": 1,
+"evidence": [],
+"evidence_total": 0,
+"reader_transition": {
+"section_id": "first",
+"status": "NOT_DECLARED",
+"revision": null,
+"subject_revision": "sha256:74234e98afe7498fb5daf1f36ac2d78acc339464f950703b8c019892f982b90b",
+"fields": {},
+"input_currentness": {
+"status": "UNPINNED",
+"reason": "No completed scoped input observation is recorded.",
+"changed_inputs": []
+},
+"review": {
+"status": "NOT_REVIEWED",
+"records": []
+},
+"doors": {
+"edit": true,
+"review": true
+},
+"read_handle": {
+"operation": "structure",
+"payload": {
+"view": "detail",
+"section_ids": [
+"first"
+],
+"subject": "contract",
+"projection": "guard"
+}
+}
+},
+"paragraph_plan": {
+"section_id": "first",
+"status": "DECLARED",
+"revision": "sha256:a4b7e9899e71d90ecc9d5b74292c8c4edc98a32a3cb82df0c2c9b5b974baa343",
+"identity_status": "STABLE",
+"paragraphs": {
+"items": [
+{
+"section_id": "first",
+"paragraph_id": "first-p44960267645789946666195609182",
+"function": "A complete authored function, “quoted” and 中文. A complete authored function, “quoted” and 中文. A complete authored function, “quoted” and 中文. A complete authored function, “quoted” and 中文. A complete authored function, “quoted” and 中文. A complete authored function, “quoted” and 中文. A complete authored function, “quoted” and 中文. A complete authored function, “quoted” and 中文. A complete authored function, “quoted” and 中文. A complete authored function, “quoted” and 中文. A complete authored function, “quoted” and 中文. A complete authored function, “quoted” and 中文. ",
+"authored": [],
+"identity_status": "STABLE",
+"input_currentness": {
+"status": "CURRENT",
+"changed_inputs": [],
+"unobserved_inputs": []
+},
+"doors": [
+"edit",
+"remove",
+"review",
+"merge",
+"split"
+],
+"source_occurrence_total": 0,
+"subject_revision": "sha256:0f8591e7cda2d31a0cab82c7d459a7414186d7f1a6e6ff8999d8e6c5b1afe3c5",
+"diagnostics": [
+{
+"kind": "AUTHORED_FIELD_EMPTY",
+"reason": "The intended reader transition has not been authored.",
+"read": null
+},
+{
+"kind": "INPUT_UNRESOLVED",
+"subject": "concept:first",
+"status": "UNRESOLVED",
+"reason": "Supporting input is missing, ambiguous, or stale; observation is not validation.",
+"read": {
+"operation": "concept",
+"payload": {
+"node": "concept:first"
+}
+}
+}
+],
+"diagnostics_total": 2,
+"links": [
+{
+"kind": "argument",
+"label": "concept:first",
+"status": "UNRESOLVED",
+"read": {
+"operation": "concept",
+"payload": {
+"node": "concept:first"
+}
+}
+}
+],
+"links_total": 1,
+"source_occurrences": [],
+"lineage": {
+"status": "NOT_RECORDED",
+"items": []
+},
+"review": {
+"status": "NOT_REVIEWED",
+"records": []
+},
+"subject_read": {
+"operation": "structure",
+"payload": {
+"view": "detail",
+"section_ids": [
+"first"
+],
+"subject": "paragraph",
+"paragraph_id": "first-p44960267645789946666195609182",
+"projection": "guard"
+}
+}
+}
+],
+"total": 2,
+"offset": 0,
+"limit": 20,
+"next_read": null,
+"row_read": {
+"operation": "structure",
+"payload": {
+"view": "detail",
+"section_ids": [
+"first"
+],
+"projection": "display",
+"paragraph_id": "<paragraph_id>"
+}
+}
+},
+"doors": {
+"create": true,
+"reorder": true
+},
+"pending_restructures": [],
+"pending_restructures_total": 0,
+"latest_restructure": null,
+"read_handle": {
+"operation": "structure",
+"payload": {
+"view": "detail",
+"section_ids": [
+"first"
+],
+"projection": "display"
+}
+}
+}
+}
+],
+"spine_page": {
+"total": 0,
+"read": null,
+"row_read": {
+"operation": "structure",
+"payload": {
+"view": "detail",
+"node_id": "<id>"
+}
+}
+},
+"evidence": [],
+"subject_reads": {
+"contract": {
+"view": "detail",
+"section_ids": [
+"first"
+],
+"subject": "contract",
+"projection": "guard"
+},
+"subjects": "contract | section | paragraph+paragraph_id | structure+paragraph_id | create | reorder; edit_choices:true adds descriptors",
+"http": "GET /work/structure with the payload fields as query parameters plus project"
+},
+"plan_read": {
+"operation": "structure",
+"payload": {
+"view": "plan"
+}
+},
+"full_guard_read": {
+"operation": "structure",
+"payload": {
+"view": "plan"
+}
+},
+"full_read": {
+"operation": "structure",
+"payload": {
+"view": "detail",
+"section_ids": [
+"first"
+]
+}
+},
+"omitted": [
+"calls (subject_reads)",
+"narrative beats (spine_page.read; each beat on spine_page.row_read)",
+"reader_basis",
+"links/diagnostics/lineage (row display)",
+"source_support",
+"edges",
+"gaps",
+"scoped_history",
+"direct_dependencies",
+"reader_inputs",
+"outline",
+"ancestors",
+"children",
+"boundaries"
+],
+"scope": "whole row: authored text unclipped; links and diagnostics capped at 12 with totals; not bounded by the page budget",
+"revision": "sha256:6ed1fdd6bb85469c35522b39d8a2e8fa59bd4a2d244dec0587151b30848006d6"
+}
+}
+}
+}

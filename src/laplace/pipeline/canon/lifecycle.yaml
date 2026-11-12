@@ -1,0 +1,531 @@
+# Machine-owned lifecycle overlay. The dreamer writes this; do not hand-edit.
+# It overrides skill `status` in index.yaml based on measured fitness.
+skills:
+  blind_reader:
+    fitness: 0.377
+    forged: '2026-06-03T13:00:00+00:00'
+    generated_by: dreamer
+    history:
+    - at: '2026-06-03T13:00:00+00:00'
+      from: null
+      reason: 'forged from the second review of the operatorial-loss paper - two physicists
+        scored it 3/10 for exposition, not the idea: specialist terms (Pauli weight,
+        locality scale, loss operator, 2-design) used before definition, an operational
+        instruction leaked verbatim into the abstract, a caption asserting a regime
+        the plot did not show. Every defect passed the engine''s own review because
+        hostile_redteam_swarm orients first and so shares the context the reader lacks.
+        The curse of knowledge on exposition, the readability peer of the blind-novelty
+        oracle. A context-starved reader + a mechanical pre-filter (leaked-meta +
+        define-before-use census). Born experimental; fitness to be earned on real
+        outside reads.'
+      to: experimental
+    - at: '2026-07-03T21:21:38.216918+00:00'
+      from: experimental
+      reason: 'structural (canon-referenced), offered 9x, no negative outcome: earned
+        core on standing, not count'
+      to: core
+    status: core
+    updated: '2026-07-03T21:21:38.216918+00:00'
+  canon_weaver:
+    fitness: 0.63
+    forged: '2026-05-31T00:00:00+00:00'
+    history:
+    - at: '2026-05-31T00:00:00+00:00'
+      from: null
+      reason: forged by overnight dreamer - canon topology has no repair owner; global_weaver
+        miscast for this role
+      to: experimental
+    - at: '2026-06-07T15:40:04.019308+00:00'
+      from: experimental
+      reason: 'earned promotion: 16 uses, fitness 0.63'
+      to: core
+    status: core
+    updated: '2026-06-07T15:40:04.019308+00:00'
+  clean_room_check:
+    forged: '2026-06-01T16:45:17.742359+00:00'
+    generated_by: dreamer
+    history:
+    - at: '2026-06-01T16:45:17.742359+00:00'
+      from: null
+      reason: forged by dreamer (host-executed)
+      to: experimental
+    - at: '2026-06-02T00:30:00+00:00'
+      from: experimental
+      reason: meta-dream promotion - the render-verify discipline proved out repeatedly
+        across the talk-finetune session (the blind PhD-student slides-only review
+        and the per-slide shoot.mjs / verify-*.mjs render checks ARE this protocol).
+        The 'offered 12x, never used' assess read was a name-binding artifact - the
+        discipline was the session's most-exercised verification pattern, just not
+        invoked under the registered name. Promoted deliberately, not by fiat - it
+        is now referenced by the forged deck_applet skill as the render-harness stance,
+        so it is structural.
+      to: core
+    status: core
+    updated: '2026-06-02T00:30:00+00:00'
+  closure_check:
+    fitness: 0.325
+    history:
+    - at: '2026-06-08T13:08:54.866331+00:00'
+      from: experimental
+      reason: 'structural (canon-referenced), offered 10x, no negative outcome: earned
+        core on standing, not count'
+      to: core
+    status: core
+    updated: '2026-06-08T13:08:54.866331+00:00'
+  conceptric_coherence:
+    fitness: 0.855
+    forged: '2026-06-03T15:00:00+00:00'
+    generated_by: dreamer
+    history:
+    - at: '2026-06-03T15:00:00+00:00'
+      from: null
+      reason: 'forged when the author asked whether a rebuilt conceptric was genuinely
+        integrating or just a larger stochastic sample with the same incoherence.
+        The honest answer needed an instrument: a compiler that computes the cross-level
+        harmonisation edges, and an audit that scores whether each coarse node is
+        completely described by the level below (the renormalisation fixed point).
+        On the operatorial-loss conceptric it measured v2 at 42pc and the grown v4
+        at 99pc integration - more nodes proven to be more integration, not just more
+        size. Born experimental; fitness to be earned on independent cross-session
+        use.'
+      to: experimental
+    - at: '2026-07-03T21:21:38.216918+00:00'
+      from: experimental
+      reason: 'earned promotion: 19 uses, fitness 0.855'
+      to: core
+    status: core
+    updated: '2026-07-03T21:21:38.216918+00:00'
+  corpus_librarian:
+    fitness: 0.36
+    history:
+    - at: '2026-05-31T19:55:37.270065+00:00'
+      from: experimental
+      reason: offered 9x, never used
+      to: deprecated
+    - at: '2026-06-01T10:30:00+00:00'
+      from: deprecated
+      reason: dreamer correction - structural skill wrongly deprecated on silence.
+        corpus_librarian holds the literature corpus and is referenced by the global
+        workflow node evidence_schema_flow. Phase-dormant (literature rail not yet
+        exercised), not unfit. Restored; the new structural-protection guard in assess
+        prevents recurrence.
+      to: experimental
+    - at: '2026-06-07T16:32:22.387173+00:00'
+      from: experimental
+      reason: 'structural (canon-referenced), offered 28x, no negative outcome: earned
+        core on standing, not count'
+      to: core
+    status: core
+    updated: '2026-06-07T16:32:22.387173+00:00'
+  deck_applet:
+    forged: '2026-06-02T00:30:00+00:00'
+    generated_by: dreamer
+    history:
+    - at: '2026-06-02T00:30:00+00:00'
+      from: null
+      reason: forged by meta-dreamer (host-executed) - the interactive-web-asset harness
+        was hand-cloned ~6 times in the talk-finetune session; the fill-parent no-scroll
+        shell, 2x-DPR crisp canvas, ResizeObserver re-fit, host-inherited dark palette,
+        the stepper/knob patterns, and the parametrised playwright verify are now
+        one bench. The web-asset counterpart of figure_standard.
+      to: experimental
+    status: experimental
+  deep_corpus_scout:
+    forged: '2026-06-02T12:00:00+00:00'
+    generated_by: dreamer
+    history:
+    - at: '2026-06-02T12:00:00+00:00'
+      from: null
+      reason: re-forged by meta-dreamer (host-executed), decoupled - maps a large
+        unknown corpus (dense tree, multi-file repo, archive) into a bounded skeleton
+        + reading order before distillation, the volume counterpart to reference_archaeologist's
+        targeting. A prior coupled-to-external-API version was reverted; this is stdlib-only.
+      to: experimental
+    status: experimental
+  evidence_alignment:
+    fitness: 0.325
+    history:
+    - at: '2026-05-30T17:10:04.578622+00:00'
+      from: experimental
+      reason: offered 8x, never used
+      to: deprecated
+    - at: '2026-06-02T12:00:00+00:00'
+      from: deprecated
+      reason: meta-dream correction - silence is not dissatisfaction. evidence_alignment
+        has a real backing (align_evidence.py) and a distinct function (goal<->evidence
+        support map + ranked gaps, not the claim-evidence binding evidence_ledger
+        does), and is referenced by identity_ledger and evidence_ledger. Phase-dormant,
+        not unfit. Restored to probation pending real use.
+      to: experimental
+    - at: '2026-06-07T16:32:22.387173+00:00'
+      from: experimental
+      reason: offered 10x, never used
+      to: deprecated
+    - at: '2026-06-07T17:05:00+00:00'
+      from: deprecated
+      reason: RE-restored. The standing dream re-deprecated a skill the 2026-06-02
+        meta-dream deliberately restored (silence is not dissatisfaction) - and evidence_alignment
+        is canon-linked by evidence_ledger and identity_ledger (now both core), so
+        deprecating it is dead-wood-linked (canon verify FAIL). Phase-dormant, not
+        unfit. The dreamer's deprecation must respect inbound canon links + prior
+        documented restorations (a real bug, banked as a next-move). Restored to experimental.
+      to: experimental
+    - at: '2026-06-08T13:08:54.866331+00:00'
+      from: experimental
+      reason: 'structural (canon-referenced), offered 10x, no negative outcome: earned
+        core on standing, not count'
+      to: core
+    status: core
+    updated: '2026-06-08T13:08:54.866331+00:00'
+  evidence_ledger:
+    fitness: 0.395
+    history:
+    - at: '2026-06-07T16:32:22.387173+00:00'
+      from: experimental
+      reason: 'structural (canon-referenced), offered 23x, no negative outcome: earned
+        core on standing, not count'
+      to: core
+    status: core
+    updated: '2026-06-07T16:32:22.387173+00:00'
+  falsifiable_core:
+    fitness: 0.847
+    forged: '2026-06-03T09:38:15.208283+00:00'
+    generated_by: dreamer
+    history:
+    - at: '2026-06-03T09:38:15.208283+00:00'
+      from: null
+      reason: 'forged by dreamer (host-executed) from the operatorial-loss session
+        friction: with author=model the generative loop ran backwards; only a falsifiable
+        prediction in front of a non-pre-answerable oracle created forward-pressure.
+        Binds result status to that test. Born experimental; fitness to be earned
+        on real use.'
+      to: experimental
+    - at: '2026-06-03T11:31:00.754065+00:00'
+      from: experimental
+      reason: 'earned promotion: 8 uses, fitness 0.847'
+      to: core
+    - at: '2026-06-03T11:31:54.507249+00:00'
+      from: core
+      reason: 'auto-promotion reverted by reflexive application of falsifiable_core
+        to ITSELF: the 8 usage events (fitness 0.847) were self-logged within the
+        same session that forged the skill, for the author''s own gate - confirmation
+        is not discovery. Strong within-session signal recorded; core status must
+        be earned on independent cross-session use. This hold IS the skill working
+        on itself.'
+      to: experimental
+    status: experimental
+    updated: '2026-06-03T11:31:00.754051+00:00'
+  figure_standard:
+    fitness: 0.428
+    history:
+    - at: '2026-06-07T16:32:22.387173+00:00'
+      from: experimental
+      reason: 'structural (canon-referenced), offered 11x, no negative outcome: earned
+        core on standing, not count'
+      to: core
+    status: core
+    updated: '2026-06-07T16:32:22.387173+00:00'
+  git_mechanic:
+    fitness: null
+    history:
+    - at: '2026-06-02T12:00:00+00:00'
+      from: deprecated
+      reason: meta-dream correction - structural skill wrongly deprecated on silence.
+        git_mechanic carries the Windows path-limit / safe-revert ops (configure_git.py,
+        safe_revert.py) and is referenced by the global operations/git_mechanics wiki
+        node. The assess structural guard now protects it. Restored to probation.
+      to: experimental
+    - at: '2026-08-21T00:54:33.787301+00:00'
+      from: experimental
+      reason: ERA-DEATH, not silence. Half the SKILL is Windows MAX_PATH protocol
+        and its one actuation verb writes `git config --global core.longpaths true`;
+        the machine it describes is gone under the permanent-Linux ruling PV-20260820T104500Z.
+        The 2026-06-02 spare that restored it named the Windows claim itself as the
+        protection. Deprecated under WO-20260821-skills-era-audit (evidence/SKILLS_ERA_AUDIT_2026-08-21/verdicts.jsonl,
+        verdict=dead) after re-pointing every inbound link; the era-independent residue
+        (never commit conflict markers, --abort a stuck state) is rehomed to wiki/operations/git_mechanics.
+      to: deprecated
+    status: deprecated
+    updated: '2026-08-21T00:54:33.787292+00:00'
+  idea_foundry:
+    fitness: 0.35
+    history:
+    - at: '2026-05-31T17:37:30.761242+00:00'
+      from: experimental
+      reason: offered 8x, never used
+      to: deprecated
+    status: deprecated
+    updated: '2026-05-31T17:37:30.761242+00:00'
+  literature_scout:
+    fitness: 0.395
+    history:
+    - at: '2026-06-01T08:51:00.578869+00:00'
+      from: experimental
+      reason: offered 9x, never used
+      to: deprecated
+    - at: '2026-06-01T09:05:00+00:00'
+      from: deprecated
+      reason: dreamer correction - silence is not dissatisfaction. literature_scout
+        owns the literature rail and is referenced by manuscript_spine and evidence_schema_flow.
+        It is unexercised only because the active project sits at the figure/drafting
+        stage, not the literature stage. Restored to probation pending real use, per
+        the AUTONOMY_BACKLOG principle.
+      to: experimental
+    - at: '2026-06-07T16:32:22.387173+00:00'
+      from: experimental
+      reason: 'structural (canon-referenced), offered 47x, no negative outcome: earned
+        core on standing, not count'
+      to: core
+    status: core
+    updated: '2026-06-07T16:32:22.387173+00:00'
+  manuscript_spine:
+    fitness: 0.43
+    history:
+    - at: '2026-06-07T16:32:22.387173+00:00'
+      from: experimental
+      reason: 'structural (canon-referenced), offered 10x, no negative outcome: earned
+        core on standing, not count'
+      to: core
+    status: core
+    updated: '2026-06-07T16:32:22.387173+00:00'
+  numerical_evidence:
+    fitness: 0.41
+    history:
+    - at: '2026-06-07T16:32:22.387173+00:00'
+      from: experimental
+      reason: 'structural (canon-referenced), offered 16x, no negative outcome: earned
+        core on standing, not count'
+      to: core
+    status: core
+    updated: '2026-06-07T16:32:22.387173+00:00'
+  orchestrated_generation:
+    fitness: 0.325
+    history:
+    - at: '2026-06-08T13:08:54.866331+00:00'
+      from: experimental
+      reason: 'structural (canon-referenced), offered 11x, no negative outcome: earned
+        core on standing, not count'
+      to: core
+    status: core
+    updated: '2026-06-08T13:08:54.866331+00:00'
+  reconciler:
+    fitness: 0.41
+    history:
+    - at: '2026-05-31T19:55:37.270065+00:00'
+      from: experimental
+      reason: offered 8x, never used
+      to: deprecated
+    - at: '2026-06-01T10:30:00+00:00'
+      from: deprecated
+      reason: dreamer correction - structural skill wrongly deprecated on silence.
+        reconciler is the propagation owner, referenced by the global workflow node
+        core_outward_trunk and by the manuscript_spine hand-off. Phase-dormant, not
+        unfit. Restored; the new structural-protection guard in assess prevents recurrence.
+      to: experimental
+    - at: '2026-06-07T16:32:22.387173+00:00'
+      from: experimental
+      reason: 'structural (canon-referenced), offered 32x, no negative outcome: earned
+        core on standing, not count'
+      to: core
+    status: core
+    updated: '2026-06-07T16:32:22.387173+00:00'
+  reconstruction_fitness:
+    fitness: 0.358
+    history:
+    - at: '2026-06-08T13:08:54.866331+00:00'
+      from: experimental
+      reason: 'structural (canon-referenced), offered 8x, no negative outcome: earned
+        core on standing, not count'
+      to: core
+    status: core
+    updated: '2026-06-08T13:08:54.866331+00:00'
+  reference_archaeologist:
+    fitness: null
+    history:
+    - at: '2026-08-21T00:54:33.787312+00:00'
+      from: null
+      reason: 'lifecycle row minted (no prior row: the promoter''s verbs could not
+        address this skill). Status stamped at its manifest value, no promotion or
+        demotion implied. WO-20260821-skills-era-audit finding 4.'
+      to: experimental
+    status: experimental
+    updated: '2026-08-21T00:54:33.787311+00:00'
+  result_foundry:
+    fitness: 0.445
+    history:
+    - at: '2026-06-07T16:32:22.387173+00:00'
+      from: experimental
+      reason: 'structural (canon-referenced), offered 34x, no negative outcome: earned
+        core on standing, not count'
+      to: core
+    status: core
+    updated: '2026-06-07T16:32:22.387173+00:00'
+  script_editor:
+    fitness: 0.36
+    history:
+    - at: '2026-06-08T13:08:54.866331+00:00'
+      from: experimental
+      reason: 'structural (canon-referenced), offered 16x, no negative outcome: earned
+        core on standing, not count'
+      to: core
+    status: core
+    updated: '2026-06-08T13:08:54.866331+00:00'
+  session_closer:
+    fitness: 0.69
+    forged: '2026-05-30T19:40:00+00:00'
+    history:
+    - at: '2026-05-30T19:40:00+00:00'
+      from: null
+      reason: "forged by dreamer (host-executed) \u2014 close-out protocol against\
+        \ telemetry starvation + role/API boundary breach"
+      to: experimental
+    - at: '2026-06-02T00:30:00+00:00'
+      from: experimental
+      reason: 'earned promotion: 9 uses, fitness 0.69, net feedback positive across
+        the cumulative window. The two-tier close (idempotent checkpoint + gated structural
+        dream) held again this session - the ledger-as-spec method carried the autonomous
+        talk build and this meta-dream is the gated Tier-2 it prescribes. Applied
+        per the full-history assess; the windowed auto-dream judged it on a thin recency
+        slice and missed it.'
+      to: core
+    status: core
+    updated: '2026-06-02T00:30:00+00:00'
+  shell_mechanic:
+    fitness: null
+    history:
+    - at: '2026-06-02T12:00:00+00:00'
+      from: deprecated
+      reason: meta-dream correction - structural skill wrongly deprecated on silence.
+        shell_mechanic wraps Python under PowerShell (UTF-16 / pathing), is referenced
+        by the core latex_forge skill and the global operations/shell_mechanics wiki
+        node. The assess structural guard now protects it. Restored to probation.
+      to: experimental
+    - at: '2026-08-21T00:54:33.787306+00:00'
+      from: experimental
+      reason: ERA-DEATH, not silence. The entire file is a PowerShell/UTF-16 wrapper
+        for a shell that does not exist here (`which pwsh powershell` -> empty) under
+        permanent-Linux PV-20260820T104500Z, and its backing is a .ps1. Strip the
+        Windows premise and nothing remains. Deprecated under WO-20260821-skills-era-audit
+        (evidence/SKILLS_ERA_AUDIT_2026-08-21/verdicts.jsonl, verdict=dead) after
+        re-pointing latex_forge and the two wiki nodes onto the engine python.
+      to: deprecated
+    status: deprecated
+    updated: '2026-08-21T00:54:33.787304+00:00'
+  soul_refactor:
+    fitness: 0.325
+    history:
+    - at: '2026-06-08T13:08:54.866331+00:00'
+      from: experimental
+      reason: 'structural (canon-referenced), offered 9x, no negative outcome: earned
+        core on standing, not count'
+      to: core
+    status: core
+    updated: '2026-06-08T13:08:54.866331+00:00'
+  talk_ledger:
+    forged: '2026-06-02T12:00:00+00:00'
+    generated_by: dreamer
+    history:
+    - at: '2026-06-02T12:00:00+00:00'
+      from: null
+      reason: forged by meta-dreamer (host-executed) - the deck-aware verify the backlog
+        named, earned by doing on the laws-of-learning deck this session. Bundles
+        voice_linter (slide prose) + the per-applet verify-*.mjs render harnesses
+        + an optional deployed-deck check (verify-deploy.mjs) into one PASS/FAIL ledger,
+        the refine stage of talk_smith. Verified the live deck (LEDGER PASS) before
+        deploy.
+      to: experimental
+    status: experimental
+  talk_smith:
+    fitness: 0.412
+    forged: '2026-06-01T16:45:17.579729+00:00'
+    generated_by: dreamer
+    history:
+    - at: '2026-06-01T16:45:17.579729+00:00'
+      from: null
+      reason: forged by dreamer (host-executed)
+      to: experimental
+    - at: '2026-06-07T16:32:22.387173+00:00'
+      from: experimental
+      reason: 'structural (canon-referenced), offered 20x, no negative outcome: earned
+        core on standing, not count'
+      to: core
+    status: core
+    updated: '2026-06-07T16:32:22.387173+00:00'
+  tikz_mechanic:
+    fitness: null
+    history:
+    - at: '2026-08-21T00:54:33.787315+00:00'
+      from: null
+      reason: 'lifecycle row minted (no prior row: the promoter''s verbs could not
+        address this skill). Status stamped at its manifest value, no promotion or
+        demotion implied. WO-20260821-skills-era-audit finding 4.'
+      to: experimental
+    status: experimental
+    updated: '2026-08-21T00:54:33.787314+00:00'
+  transcript_digest:
+    fitness: null
+    history:
+    - at: '2026-08-21T00:54:33.787317+00:00'
+      from: null
+      reason: 'lifecycle row minted (no prior row: the promoter''s verbs could not
+        address this skill). Status stamped at its manifest value, no promotion or
+        demotion implied. WO-20260821-skills-era-audit finding 4.'
+      to: experimental
+    status: experimental
+    updated: '2026-08-21T00:54:33.787316+00:00'
+  visual_director:
+    fitness: 0.445
+    history:
+    - at: '2026-06-08T13:08:54.866331+00:00'
+      from: experimental
+      reason: 'structural (canon-referenced), offered 21x, no negative outcome: earned
+        core on standing, not count'
+      to: core
+    status: core
+    updated: '2026-06-08T13:08:54.866331+00:00'
+  voice_corpus_reader:
+    fitness: 0.69
+    history:
+    - at: '2026-05-31T17:37:30.761242+00:00'
+      from: experimental
+      reason: 'earned promotion: 12 uses, fitness 0.69'
+      to: core
+    status: core
+    updated: '2026-05-31T17:37:30.761242+00:00'
+  voice_linter:
+    fitness: null
+    forged: '2026-06-02T12:00:00+00:00'
+    generated_by: dreamer
+    history:
+    - at: '2026-06-02T12:00:00+00:00'
+      from: null
+      reason: forged by meta-dreamer (host-executed) - the no-slop voice was enforced
+        by hand across the talk-finetune deck (em-dashes, antithesis, gnomic subtitles
+        all slipped through). latex_forge lints LaTeX; nothing linted markdown, HTML,
+        or the Slidev deck. The medium-general counterpart, masking non-prose regions
+        (code/markup/math) so a violation is only flagged in prose. Supersedes archived
+        html_mechanic.
+      to: experimental
+    - at: '2026-08-21T00:54:33.787309+00:00'
+      from: experimental
+      reason: 'ERA-DEATH ALREADY RULED, made effective. His 2026-07-09 rebuild mandate
+        deprecated this skill in index.yaml (''enforced the condemned register bans''),
+        but canon.py:352 puts the lifecycle overlay above the manifest and this row
+        still read experimental, so the engine kept offering it for eleven weeks.
+        The verdict is on the SKILL''s mandate only: scripts/lint_voice.py survives
+        as a detector under talk_ledger and blind_reader and is NOT retired. Deprecated
+        under WO-20260821-skills-era-audit (evidence/SKILLS_ERA_AUDIT_2026-08-21/verdicts.jsonl,
+        verdict=dead).'
+      to: deprecated
+    status: deprecated
+    updated: '2026-08-21T00:54:33.787308+00:00'
+  welder:
+    fitness: 0.325
+    history:
+    - at: '2026-06-08T13:08:54.866331+00:00'
+      from: experimental
+      reason: 'structural (canon-referenced), offered 8x, no negative outcome: earned
+        core on standing, not count'
+      to: core
+    status: core
+    updated: '2026-06-08T13:08:54.866331+00:00'

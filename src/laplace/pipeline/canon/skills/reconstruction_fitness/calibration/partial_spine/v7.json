@@ -1,0 +1,18 @@
+{
+  "lost": [
+    "The four specific state names and their exact definitions (CONVERGED-FAITHFUL, CONVERGED-DEGENERATE, OSCILLATING, OPEN)",
+    "The technical mechanism: reading the spectral radius rho off successive lost-set deltas",
+    "The distinction between two types of OSCILLATING failure: rho >= 1 versus limit cycles with period >= 2",
+    "The distinction between two types of OPEN: budget left and still contracting versus budget exhausted while still contracting (SLOW converger, flagged budget_exhausted)",
+    "The bootstrap requirement: the estimator needs >= 3 verdicts to form a ratio of deltas",
+    "The prescriptive action for CONVERGED-DEGENERATE: route UP a grade, never minimise it",
+    "The specific pathology of generative over-contraction: imagination collapsed to the obvious"
+  ],
+  "added": [
+    "The target rate parameter is introduced as depending on 'the kind of node' (fuzzy wording) rather than the precise formula target rho*(grade, kind)",
+    "A summary framing that obscures the technical content by paraphrasing the states in natural language without their formal definitions"
+  ],
+  "structured": true,
+  "recurses": true,
+  "justification": "The ghost captures the qualitative skeleton—five states, a contraction-rate mechanism, grade-climbing for degenerate cases—but strips all the precision: no spectral radius, no rho notation, no delta-ratio bootstrap, no period-based limit-cycle distinction, no budget_exhausted flag, no generative-over-contraction pathology. These are not stylistic paraphrases; they are load-bearing technical claims that the original locks down and the ghost leaves open or absent. The loss is structured (coherent in what remains) and recurses (a finer pass could recover the missing formal apparatus), making this a partial reconstruction, not noise."
+}

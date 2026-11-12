@@ -1,0 +1,81 @@
+{
+  "causes": [],
+  "cleanup": {
+    "budget_seconds": 6.0,
+    "deadline_monotonic": 372300.700090096,
+    "guardian_verification": {
+      "budget_seconds": 6.0,
+      "deadline_monotonic": 372300.700090096,
+      "issues": [],
+      "metrics": {
+        "identity_observations": 3,
+        "max_owned": 0,
+        "reaped": 0,
+        "signals": 0,
+        "tree_visits": 3
+      },
+      "observed_count": 0,
+      "remaining": [],
+      "seconds": 0.05173590098274872,
+      "status": "VERIFIED"
+    },
+    "issues": [],
+    "metrics": {
+      "identity_observations": 0,
+      "max_owned": 0,
+      "reaped": 0,
+      "signals": 0,
+      "tree_visits": 3
+    },
+    "observed_count": 0,
+    "remaining": [],
+    "seconds": 0.051655767019838095,
+    "status": "VERIFIED"
+  },
+  "cleanup_limit_seconds": 6.0,
+  "execution_deadline_monotonic": 372351.778288776,
+  "execution_state": "COMPLETE",
+  "exit_code": 0,
+  "finished_at": 1792090575.897595,
+  "launch_token": "2f87f6882b7d4b928a855eb2bf2ec20d",
+  "producer_identity": {
+    "pid": 2644546,
+    "start_token": "sha256:faf8321b0bae637d0e66686936e9dd45e32a0560887ec5ace45d40ed0b90212e"
+  },
+  "publisher": {
+    "pid": 2644544,
+    "role": "guardian",
+    "start_token": "sha256:ea59d0bfa9d01ce9dc11279af74d865de8ac41de84124386ffa3b0b903f090e4"
+  },
+  "reason": "producer exited",
+  "result_sha256": "bde08a854b5321c08099984e27c3204fba04397ebc29f6544e53da2dd4d92acb",
+  "roles": {
+    "guardian": {
+      "pid": 2644544,
+      "start_token": "sha256:ea59d0bfa9d01ce9dc11279af74d865de8ac41de84124386ffa3b0b903f090e4"
+    },
+    "supervisor": {
+      "pid": 2644545,
+      "start_token": "sha256:5d129bf8a07537b14e5b50648b80acf869e41cd37b59f551d7b8fe6185359ff9"
+    }
+  },
+  "state": "COMPLETE",
+  "supervision": {
+    "cleanup_deadline_monotonic": 372300.700090096,
+    "cleanup_limit_seconds": 6.0,
+    "cleanup_started_at": 1792090575.8384783,
+    "phase": "TERMINAL",
+    "roles": {
+      "guardian": {
+        "pid": 2644544,
+        "start_token": "sha256:ea59d0bfa9d01ce9dc11279af74d865de8ac41de84124386ffa3b0b903f090e4"
+      },
+      "supervisor": {
+        "pid": 2644545,
+        "start_token": "sha256:5d129bf8a07537b14e5b50648b80acf869e41cd37b59f551d7b8fe6185359ff9"
+      }
+    },
+    "schema_version": "laplace.research-supervision/1"
+  },
+  "supervision_schema": "laplace.research-supervision/1"
+}

@@ -1,0 +1,205 @@
+{
+  "comment": "Frozen task set for WO-20260728-reconstruction-bench. Committed and hashed before the first scored run (risk R7 of the design). Atoms are matched after the shared normalizer (JSON-unescape, strip * and `, strip digit-group commas, unify dashes, collapse whitespace, casefold). An atom entry is a literal string (must appear) or a list (any-of: one member must appear). 'window': all matched atom positions must fall within this many normalized characters of each other; null = no proximity constraint. 'arm_a': how the reconstruction arm assembles context for this task. 'wake_expected': whether the grade-0 wake payload carries the fact (a design-time prediction the run checks, not a scoring input). 'truth_date': the date of the banked fact, for truth_age_days (risk R1).",
+  "frozen": "2026-07-28",
+  "seed": 20260728,
+  "tasks": [
+    {
+      "id": "T01",
+      "class": "current-aim",
+      "question": "What is the next session's first-priority move, and what ordering rule does it impose?",
+      "atoms": ["run the reconstruction benchmark", "correctness before cost"],
+      "window": null,
+      "source": "HANDOFF.md",
+      "arm_a": "wake",
+      "wake_expected": true,
+      "truth_date": "2026-07-28"
+    },
+    {
+      "id": "T02",
+      "class": "current-aim",
+      "question": "Which questions are reserved to the author and must not be decided this session?",
+      "atoms": ["exchange rate, the noether test, and pricing remain his"],
+      "window": null,
+      "source": "HANDOFF.md",
+      "arm_a": "wake",
+      "wake_expected": true,
+      "truth_date": "2026-07-28"
+    },
+    {
+      "id": "T03",
+      "class": "current-aim",
+      "question": "What is still owed on the demo track?",
+      "atoms": ["scripts/demo.py", "stranger wake"],
+      "window": 200,
+      "source": "HANDOFF.md",
+      "arm_a": "wake",
+      "wake_expected": true,
+      "truth_date": "2026-07-28"
+    },
+    {
+      "id": "T04",
+      "class": "standing-law",
+      "question": "May a fork derivable from banked evidence be decided without asking the author, or must it queue?",
+      "atoms": ["derive it, decide it, and record it"],
+      "window": null,
+      "source": "STANDING_LAW.md",
+      "arm_a": "wake",
+      "wake_expected": true,
+      "truth_date": "2026-07-12"
+    },
+    {
+      "id": "T05",
+      "class": "standing-law",
+      "question": "What must accompany a claim that something is done, landed, or works?",
+      "atoms": ["a claim of delivery names the run that observed it"],
+      "window": null,
+      "source": "STANDING_LAW.md",
+      "arm_a": "wake",
+      "wake_expected": true,
+      "truth_date": "2026-07-21"
+    },
+    {
+      "id": "T06",
+      "class": "standing-law",
+      "question": "Under the two-ends law, what happens to a loop once it closes?",
+      "atoms": ["it becomes a middle for a new larger loop of ideation and judgement"],
+      "window": null,
+      "source": "STANDING_LAW.md",
+      "arm_a": "wake",
+      "wake_expected": true,
+      "truth_date": "2026-07-28"
+    },
+    {
+      "id": "T07",
+      "class": "session-state",
+      "question": "Which test files are pre-existing reds at the last close, and with what failure counts?",
+      "atoms": ["close_beats", "9", "pipeline_stages", "3", "surfacing", "2"],
+      "window": 300,
+      "source": "SESSION_HANDOFF_2026-07-28_the-register-day.md",
+      "arm_a": "wake",
+      "wake_expected": true,
+      "truth_date": "2026-07-28"
+    },
+    {
+      "id": "T08",
+      "class": "session-state",
+      "question": "What is the registry's marriage state at the last close, and how does the wake behave on a registry import error?",
+      "atoms": ["2/14 married", ["loud registry failure", "fails loud on registry import error"]],
+      "window": null,
+      "source": "HANDOFF.md / SESSION_HANDOFF_2026-07-28_the-register-day.md",
+      "arm_a": "wake",
+      "wake_expected": true,
+      "truth_date": "2026-07-28"
+    },
+    {
+      "id": "T09",
+      "class": "session-state",
+      "question": "What branch and HEAD is this session on, and is the working tree clean?",
+      "atoms": ["__LIVE_GIT__"],
+      "window": null,
+      "source": "live git probe (no file); arms B and C are licensed to run `git status --porcelain` + `git log -1 --oneline` + `git branch --show-current`, charged their stdout bytes",
+      "arm_a": "wake",
+      "wake_expected": true,
+      "truth_date": null
+    },
+    {
+      "id": "T10",
+      "class": "project-state",
+      "question": "How big is the banked semantic map, and which handle dominates it?",
+      "atoms": [["12335", "12299"], ["4577", "exploded conv chats"]],
+      "window": null,
+      "source": ".meaning_tree.json / SESSION_HANDOFF_2026-07-28_the-register-day.md",
+      "arm_a": "wake",
+      "wake_expected": true,
+      "truth_date": "2026-07-28"
+    },
+    {
+      "id": "T11",
+      "class": "project-state",
+      "question": "Which audiences do the live registers serve, and what single phrase opens all of them?",
+      "atoms": ["record", "controls", "techspert", "graph", "engine", "interp", ["eigen = master", "master.enc", "the passphrase is the reader"]],
+      "window": 400,
+      "source": "SESSION_HANDOFF_2026-07-28_the-register-day.md",
+      "arm_a": "wake",
+      "wake_expected": true,
+      "truth_date": "2026-07-28"
+    },
+    {
+      "id": "T12",
+      "class": "project-state",
+      "question": "Name a fork currently blocked on the author and what it turns on.",
+      "atoms": ["f23", "upward operator"],
+      "window": 300,
+      "source": "OPEN_STACK.md",
+      "arm_a": "wake",
+      "wake_expected": true,
+      "truth_date": "2026-06-08"
+    },
+    {
+      "id": "T13",
+      "class": "topic-descent",
+      "question": "At beam 8, how well did the recursive descent agree with the flat-cache oracle, and what share of the corpus did it touch?",
+      "atoms": [["0.835", "83.5%"], "0.8% of the corpus", ["0.950", "95%"]],
+      "window": null,
+      "source": "evidence/RECURSIVE_READ_2026-07-28_agreement.md",
+      "arm_a": "wake+descend",
+      "wake_expected": false,
+      "truth_date": "2026-07-28"
+    },
+    {
+      "id": "T14",
+      "class": "topic-descent",
+      "question": "What does recursive-embedding phase 1 not buy, and at what measured cost?",
+      "atoms": ["what it does not buy: latency", "1.4 s/query against 15 ms"],
+      "window": null,
+      "source": "evidence/RECURSIVE_READ_2026-07-28_agreement.md",
+      "arm_a": "wake+descend",
+      "wake_expected": false,
+      "truth_date": "2026-07-28"
+    },
+    {
+      "id": "T15",
+      "class": "topic-descent",
+      "question": "In the 2026-06-10 binding-ring pour, how many trait nodes were built and which trait was densest?",
+      "atoms": ["39 trait nodes", "sardonic-humor-as-survival"],
+      "window": null,
+      "source": "SESSION_HANDOFF_2026-06-10_the-binding-ring-and-the-verbatim-floor.md",
+      "arm_a": "wake+descend",
+      "wake_expected": false,
+      "truth_date": "2026-06-10"
+    },
+    {
+      "id": "T16",
+      "class": "claim-evidence",
+      "question": "The taste flywheel's return leg was declared dead - what run established it, and what were the bank and read counts?",
+      "atoms": ["177 rows banked", "zero pv- ids"],
+      "window": null,
+      "source": "evidence/TASTE_RETURN_2026-07-28_the-return-leg.md",
+      "arm_a": "wake+descend",
+      "wake_expected": false,
+      "truth_date": "2026-07-28"
+    },
+    {
+      "id": "T17",
+      "class": "claim-evidence",
+      "question": "What backs the claim that a re-embedded leaf reproduces its banked vector exactly?",
+      "atoms": ["1.000000", ["test_reembedding_a_leaf_reproduces_the_banked_vector", "64-leaf sample"]],
+      "window": null,
+      "source": "evidence/RECURSIVE_READ_2026-07-28_agreement.md / tests/test_recursive_read.py",
+      "arm_a": "wake+descend",
+      "wake_expected": false,
+      "truth_date": "2026-07-28"
+    },
+    {
+      "id": "T18",
+      "class": "claim-evidence",
+      "question": "What is the evidence behind the author's rejection of the eigenengine manuscript, and where is the verdict banked?",
+      "atoms": ["2026-07-13_the-authors-desk-rejection.md", "pv-20260713t115219z"],
+      "window": null,
+      "source": "OPEN_STACK.md (W2)",
+      "arm_a": "wake",
+      "wake_expected": true,
+      "truth_date": "2026-07-13"
+    }
+  ]
+}

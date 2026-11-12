@@ -1,0 +1,542 @@
+{
+  "schema_version": "laplace.behaviour-example-checkpoint/1",
+  "state": "FROZEN_FINITE_CHECKPOINT_FULL01_EXAMPLE_CORRECTIONS_NOT_COMPLETE",
+  "project": "writing-system-architecture",
+  "work_id": "WORK-1469cd7b70934650aea6c20b995c173c",
+  "work_status": "in-progress; unchanged by this lane",
+  "authoring_session": "WS-431b0691a64a403ca81a03bd344471da",
+  "export_root": "development/release-behaviour-examples-20261112/EXPORT/",
+  "transfer_rule": "Copy exact UTF-8 bytes only to each destination below. Do not copy the enclosing project, records, private history or unrelated source.",
+  "file_count": 59,
+  "python_files": 17,
+  "human_control_prefix_pages": 39,
+  "files": [
+    {
+      "destination": "examples/run_behaviours.py",
+      "artifact_path": "development/release-behaviour-examples-20261112/EXPORT/examples/run_behaviours.py",
+      "artifact_id": "ART-6d74645e9b004ce1afa0afe6a1059583",
+      "sha256": "87a22f7863df439db38f5da3bfe47f52f3a821f5b2bed7b959cd6dce9836cd8d"
+    },
+    {
+      "destination": "examples/behaviour_domains/__init__.py",
+      "artifact_path": "development/release-behaviour-examples-20261112/EXPORT/examples/behaviour_domains/__init__.py",
+      "artifact_id": "ART-8dcab6ae6e4544daa1d998967ee166a1",
+      "sha256": "2396f60c43f8658bcb6f090fcf0f5f88aa03ab7ffdcce7bc2d44ffaa33223093"
+    },
+    {
+      "destination": "examples/behaviour_domains/common.py",
+      "artifact_path": "development/release-behaviour-examples-20261112/EXPORT/examples/behaviour_domains/common.py",
+      "artifact_id": "ART-f0a2fbe8b0ed497fb10fa354651de31a",
+      "sha256": "071b376e57c8c6296d8869079fa22e4ce8bb81ac8ad194c51cd581d4ee842011"
+    },
+    {
+      "destination": "examples/behaviour_domains/core.py",
+      "artifact_path": "development/release-behaviour-examples-20261112/EXPORT/examples/behaviour_domains/core.py",
+      "artifact_id": "ART-93f98c8b79834864ae75cf093100a94a",
+      "sha256": "5d6b0a7052330e424d6e3fa995bd1fd6759e1d71c61d2a3ce1497494cf25c4bc"
+    },
+    {
+      "destination": "examples/behaviour_domains/atlas.py",
+      "artifact_path": "development/release-behaviour-examples-20261112/EXPORT/examples/behaviour_domains/atlas.py",
+      "artifact_id": "ART-4a3e37a9fde44b0a93cf85d72198269d",
+      "sha256": "63afe607cdccf006767ff16cb187f24b43153113a874b85c3065d5797f55a362"
+    },
+    {
+      "destination": "examples/behaviour_domains/reader.py",
+      "artifact_path": "development/release-behaviour-examples-20261112/EXPORT/examples/behaviour_domains/reader.py",
+      "artifact_id": "ART-e3f693510e294e65ae385fc7ef92e3c5",
+      "sha256": "31c984479a9a253f32b4882a4d1bcfdd5baec24eeca7835f12f0c7de0237850c"
+    },
+    {
+      "destination": "examples/behaviour_domains/research.py",
+      "artifact_path": "development/release-behaviour-examples-20261112/EXPORT/examples/behaviour_domains/research.py",
+      "artifact_id": "ART-469f88d3642c4c749b1c867ffaa2a877",
+      "sha256": "8cd62f108ea8cf65d8205fe08ec6e4b8218ef8b67aaeda709cf8fb17383b6e53"
+    },
+    {
+      "destination": "examples/behaviour_domains/literature.py",
+      "artifact_path": "development/release-behaviour-examples-20261112/EXPORT/examples/behaviour_domains/literature.py",
+      "artifact_id": "ART-271bbf5d667c4db2be698e63173d9e64",
+      "sha256": "94429b4777db4eb4704488d63055af9a2a379a43913630afc59b35a46c8ac2d8"
+    },
+    {
+      "destination": "examples/behaviour_domains/atlas_history.py",
+      "artifact_path": "development/release-behaviour-examples-20261112/EXPORT/examples/behaviour_domains/atlas_history.py",
+      "artifact_id": "ART-60a2c9ec18db46bba5f568b20440b51d",
+      "sha256": "f87732a5574556a1fbad7077fc7a9d85050cddea1f1f93d0dec1fca945e272f8"
+    },
+    {
+      "destination": "examples/behaviour_domains/atlas_snapshot.py",
+      "artifact_path": "development/release-behaviour-examples-20261112/EXPORT/examples/behaviour_domains/atlas_snapshot.py",
+      "artifact_id": "ART-bccd41a7422e44ca9ab2656b2b1a7bbd",
+      "sha256": "4048a7776ed188d816badf9e58b8058ab91a78bae43dcb2b5c517f290274d898"
+    },
+    {
+      "destination": "examples/behaviour_domains/atlas_cuda.py",
+      "artifact_path": "development/release-behaviour-examples-20261112/EXPORT/examples/behaviour_domains/atlas_cuda.py",
+      "artifact_id": "ART-e6540eb66bc74877a1e8500623e3cfb6",
+      "sha256": "e68590a9a6253642b180481eac18d48b92398c14f3bd2fbe7ffa73d9f18d09ba"
+    },
+    {
+      "destination": "examples/behaviour_domains/source.py",
+      "artifact_path": "development/release-behaviour-examples-20261112/EXPORT/examples/behaviour_domains/source.py",
+      "artifact_id": "ART-e140dd04aaca4013ac4f814cb21fb243",
+      "sha256": "081ad88aa4b26e0d6e6c144c329bc3b827c6edafd1da02229f9427cf48c81e9f"
+    },
+    {
+      "destination": "examples/behaviour_domains/http.py",
+      "artifact_path": "development/release-behaviour-examples-20261112/EXPORT/examples/behaviour_domains/http.py",
+      "artifact_id": "ART-1fc50a8b8c284373b09489e4dc99ce3b",
+      "sha256": "b7b4f2ac24a4260be78fb0c64995d88ec3c8fe92465c8fb0bee7df51fe416798"
+    },
+    {
+      "destination": "examples/behaviour_domains/catalogue.py",
+      "artifact_path": "development/release-behaviour-examples-20261112/EXPORT/examples/behaviour_domains/catalogue.py",
+      "artifact_id": "ART-afb21c26de7445ef82930ef6766ccb85",
+      "sha256": "652fdb17cf5ba7f44196549ce87d82be826c71cc1d1e500a29ecc60b3cb2ebbf"
+    },
+    {
+      "destination": "docs/behaviours/README.md",
+      "artifact_path": "development/release-behaviour-examples-20261112/EXPORT/docs/behaviours/README.md",
+      "artifact_id": "ART-ddd6f131ad3042c195e41f55e9132441",
+      "sha256": "fae4f866f35d851b86f092d8cbf2de3e5a52cba5df74542a3bf25c671dc7f61b"
+    },
+    {
+      "destination": "docs/behaviours/cases.md",
+      "artifact_path": "development/release-behaviour-examples-20261112/EXPORT/docs/behaviours/cases.md",
+      "artifact_id": "ART-0fa87cbc7a6d4b209d75c14742b062ba",
+      "sha256": "21a0b21cdca20b440ff571aab7c98f70b7fb24b65829cf50cacb669a4922e719"
+    },
+    {
+      "destination": "docs/behaviours/nav.md",
+      "artifact_path": "development/release-behaviour-examples-20261112/EXPORT/docs/behaviours/nav.md",
+      "artifact_id": "ART-6a467ca0953145679a7206c8c5c8f4ae",
+      "sha256": "5d3f5e88d5f72d5401f7ef66ef00d8ad57d7c17f669d1d4fecd647e6a2358dc6"
+    },
+    {
+      "destination": "docs/behaviours/task.md",
+      "artifact_path": "development/release-behaviour-examples-20261112/EXPORT/docs/behaviours/task.md",
+      "artifact_id": "ART-6e539e2544864f22ac47da02bdd49f9f",
+      "sha256": "27609e495b741dd83fa65ec3f335faeefef6455dbb1afa3d6f8688a839716e2f"
+    },
+    {
+      "destination": "docs/behaviours/writing.md",
+      "artifact_path": "development/release-behaviour-examples-20261112/EXPORT/docs/behaviours/writing.md",
+      "artifact_id": "ART-0c44ffea13564bc799e2320e65345afc",
+      "sha256": "028e2e0fb843f2c012df7fabbda4af86d9f69fb438e8c12d5b48f8430e915129"
+    },
+    {
+      "destination": "docs/behaviours/help.md",
+      "artifact_path": "development/release-behaviour-examples-20261112/EXPORT/docs/behaviours/help.md",
+      "artifact_id": "ART-960a1abf0a5646ec984220ef0098ed23",
+      "sha256": "45309ed9e3f2702c35dce7366bce0401ecf0e4550cbe4818a1fc27d53cc6eb03"
+    },
+    {
+      "destination": "docs/behaviours/tasks.md",
+      "artifact_path": "development/release-behaviour-examples-20261112/EXPORT/docs/behaviours/tasks.md",
+      "artifact_id": "ART-a4ed6c69d98047f4a919d83ff0fb4f77",
+      "sha256": "ef873932580a00e6ef7ef4292b49e3babf63c44f45a513ddfe0a9964b7bceccf"
+    },
+    {
+      "destination": "docs/behaviours/workflow.md",
+      "artifact_path": "development/release-behaviour-examples-20261112/EXPORT/docs/behaviours/workflow.md",
+      "artifact_id": "ART-adc29952296747eb8ff333a1c6a1339d",
+      "sha256": "cb0ce88a2255bc46185c71a54f861666e99267bb2a777b7ae75281b7697c274c"
+    },
+    {
+      "destination": "docs/behaviours/development.md",
+      "artifact_path": "development/release-behaviour-examples-20261112/EXPORT/docs/behaviours/development.md",
+      "artifact_id": "ART-0e6cbaf4366e4920bf562d7121485a9f",
+      "sha256": "253b8f2c904dbe5fa1369c9bd708aa0a7cdbc0bf975d590379ae9632a12f0b45"
+    },
+    {
+      "destination": "docs/behaviours/review-evidence.md",
+      "artifact_path": "development/release-behaviour-examples-20261112/EXPORT/docs/behaviours/review-evidence.md",
+      "artifact_id": "ART-aacefcd9ea30477b96608decd00fb71f",
+      "sha256": "fd1237b3e3907931ca182a1803daa854b30ca47e87c32d0f5bb2fc81e1f00b84"
+    },
+    {
+      "destination": "docs/behaviours/source.md",
+      "artifact_path": "development/release-behaviour-examples-20261112/EXPORT/docs/behaviours/source.md",
+      "artifact_id": "ART-b209433857794c08bf010a5cd5ad1fd4",
+      "sha256": "e5fadeee8cfb1689ffadac0e6def13665bfe56b9120f9a4eb43882596cfc140c"
+    },
+    {
+      "destination": "docs/behaviours/backlog.md",
+      "artifact_path": "development/release-behaviour-examples-20261112/EXPORT/docs/behaviours/backlog.md",
+      "artifact_id": "ART-231d1623cfcf4964aa0373a67c0f1359",
+      "sha256": "510b5bcfdb739576efea6e9c891217eaa53f7352caa9c82a29bcece285068716"
+    },
+    {
+      "destination": "docs/behaviours/research.md",
+      "artifact_path": "development/release-behaviour-examples-20261112/EXPORT/docs/behaviours/research.md",
+      "artifact_id": "ART-94b8926f8c1947df8b2d2061a9b750d7",
+      "sha256": "061ba7766b958b2b7dbd862948b9cdb4714f332537208c5b43e5d8f8d2d162d6"
+    },
+    {
+      "destination": "docs/behaviours/workspace.md",
+      "artifact_path": "development/release-behaviour-examples-20261112/EXPORT/docs/behaviours/workspace.md",
+      "artifact_id": "ART-ad8d336491e045b8a85c785147cab6e0",
+      "sha256": "b33719dc1a95c1c9227d66cbbc91954295f5d7fb7a3bb680512910b02f91c198"
+    },
+    {
+      "destination": "docs/behaviours/manuscript.md",
+      "artifact_path": "development/release-behaviour-examples-20261112/EXPORT/docs/behaviours/manuscript.md",
+      "artifact_id": "ART-821faecea20e490c86d08e5c4f14d6db",
+      "sha256": "4faaf9ff40904e7fb6a04ac36c81ba8b5e371da0d2cc70de11b54227bf646cad"
+    },
+    {
+      "destination": "docs/behaviours/context.md",
+      "artifact_path": "development/release-behaviour-examples-20261112/EXPORT/docs/behaviours/context.md",
+      "artifact_id": "ART-1ba8d25e71d1485889c357910f086d13",
+      "sha256": "cdfb6b437a782f87a00940819b360d29fbc27bb431f2a7f247fdaab08236e1df"
+    },
+    {
+      "destination": "docs/behaviours/conversation.md",
+      "artifact_path": "development/release-behaviour-examples-20261112/EXPORT/docs/behaviours/conversation.md",
+      "artifact_id": "ART-a1f35c597fd8405fb51dab207460a87d",
+      "sha256": "11b8d3b0fce84cf1124fbb9d93de26910a3e6d053c69fa6214a8bac54cc6e6f5"
+    },
+    {
+      "destination": "docs/behaviours/reader-plan.md",
+      "artifact_path": "development/release-behaviour-examples-20261112/EXPORT/docs/behaviours/reader-plan.md",
+      "artifact_id": "ART-a0ecc264b1ed40a19f30fce5e07ee2e6",
+      "sha256": "20348297f71913b31f0b276601638cfdd353292a4724793a35762840b5f7ea22"
+    },
+    {
+      "destination": "docs/behaviours/history.md",
+      "artifact_path": "development/release-behaviour-examples-20261112/EXPORT/docs/behaviours/history.md",
+      "artifact_id": "ART-c8e900acf31c43a78698695dafbeee30",
+      "sha256": "9dbbf53bff296836ede51d4a11cd2ba66c3fd5e5f5adbf18726a94aa4179a0cb"
+    },
+    {
+      "destination": "docs/behaviours/work.md",
+      "artifact_path": "development/release-behaviour-examples-20261112/EXPORT/docs/behaviours/work.md",
+      "artifact_id": "ART-57437f1b9be443589650292cabcf34a4",
+      "sha256": "de7904fec018ef9ce933081ca2d2381847b1a45628a0adec73eae51fc960fa1e"
+    },
+    {
+      "destination": "docs/behaviours/review.md",
+      "artifact_path": "development/release-behaviour-examples-20261112/EXPORT/docs/behaviours/review.md",
+      "artifact_id": "ART-8ca0d0b747f140f3bbdfa25900f8b582",
+      "sha256": "738d9587e445256d27b1ddaa5626623f0e0738c183b9189f84e7bca1c97d3db2"
+    },
+    {
+      "destination": "docs/behaviours/topology.md",
+      "artifact_path": "development/release-behaviour-examples-20261112/EXPORT/docs/behaviours/topology.md",
+      "artifact_id": "ART-a2726ddd1edc40ba8939cab01e9d56e7",
+      "sha256": "430b6e6680df1d6315c7275f7fd22922cf5e2b391c6af6aa85cf4f524284fce7"
+    },
+    {
+      "destination": "docs/behaviours/argument.md",
+      "artifact_path": "development/release-behaviour-examples-20261112/EXPORT/docs/behaviours/argument.md",
+      "artifact_id": "ART-a73cb72fef1140b28f3a35fe2fe3b1cb",
+      "sha256": "d81dd9f1e8f46545db1c6787594b669d867e4ac2cb85ff763c2f4824ea7c1ce9"
+    },
+    {
+      "destination": "docs/behaviours/template.md",
+      "artifact_path": "development/release-behaviour-examples-20261112/EXPORT/docs/behaviours/template.md",
+      "artifact_id": "ART-9c1d698ba46248258071dd393f361974",
+      "sha256": "c39a8e5c66b8d46a23b09c1380f294868dd849c2cde07b2e8bfc25160871568d"
+    },
+    {
+      "destination": "docs/behaviours/output.md",
+      "artifact_path": "development/release-behaviour-examples-20261112/EXPORT/docs/behaviours/output.md",
+      "artifact_id": "ART-be42714d41c2421aa9ee0cd37f81634b",
+      "sha256": "3a481c1d99e5a66bab344fb6b7dbe556dc87a27fbde7ffbab53a82697b1a108f"
+    },
+    {
+      "destination": "docs/behaviours/settings.md",
+      "artifact_path": "development/release-behaviour-examples-20261112/EXPORT/docs/behaviours/settings.md",
+      "artifact_id": "ART-a4ab2c6683374ea0b3ee1f5a940cb049",
+      "sha256": "0daad1da88db9b4becc352c5dce34c40385cfcb8dba5d07fb6ddd2d45fe1f518"
+    },
+    {
+      "destination": "docs/behaviours/profile.md",
+      "artifact_path": "development/release-behaviour-examples-20261112/EXPORT/docs/behaviours/profile.md",
+      "artifact_id": "ART-df0f01f972854e90b65fbae38703e157",
+      "sha256": "682d6ec8518063161e5c6ecccaad5f66455c871bcad37b0bbd4406a42bca9a22"
+    },
+    {
+      "destination": "docs/behaviours/material.md",
+      "artifact_path": "development/release-behaviour-examples-20261112/EXPORT/docs/behaviours/material.md",
+      "artifact_id": "ART-c1dc4b08906042d699a2dcc769e1ef0b",
+      "sha256": "84ad589324e34917f875a82c56a3d6aa4d1e9e85d57c993adf2cfc30824f70d3"
+    },
+    {
+      "destination": "docs/behaviours/sessions.md",
+      "artifact_path": "development/release-behaviour-examples-20261112/EXPORT/docs/behaviours/sessions.md",
+      "artifact_id": "ART-bda5d40558374ab581269cff03bcc95d",
+      "sha256": "84ef1782f7973218461766e3c1fa8084cf5203c4f6dfb2f51f9b7fe8030f20f6"
+    },
+    {
+      "destination": "docs/behaviours/frame.md",
+      "artifact_path": "development/release-behaviour-examples-20261112/EXPORT/docs/behaviours/frame.md",
+      "artifact_id": "ART-7a511f3202ba4893a75e3c813db92695",
+      "sha256": "caf6999533cfc063a356be49046b219a7294f0005847f68bfb5406a5c88ad2bc"
+    },
+    {
+      "destination": "docs/behaviours/now.md",
+      "artifact_path": "development/release-behaviour-examples-20261112/EXPORT/docs/behaviours/now.md",
+      "artifact_id": "ART-65dc93017af14c4aa61d579f71f11feb",
+      "sha256": "537ef7c5286c6ee7d8e72d33ebc8237b9cc5cbef76eadeeb3d342b134c8ef05c"
+    },
+    {
+      "destination": "docs/behaviours/projects.md",
+      "artifact_path": "development/release-behaviour-examples-20261112/EXPORT/docs/behaviours/projects.md",
+      "artifact_id": "ART-7189d5858b2e43ca81484026ae2462b4",
+      "sha256": "e646e4ceba3de24cd70713cd73213bb664aa385dce5908a57f5e2ff72c907486"
+    },
+    {
+      "destination": "docs/behaviours/owners.md",
+      "artifact_path": "development/release-behaviour-examples-20261112/EXPORT/docs/behaviours/owners.md",
+      "artifact_id": "ART-25a6353528d44f3494541e72a6993c56",
+      "sha256": "15d48fdf91f516977e16939abd988a9ff9dd48c0306f6f1e299d46ca37f3a9f5"
+    },
+    {
+      "destination": "docs/behaviours/dependencies.md",
+      "artifact_path": "development/release-behaviour-examples-20261112/EXPORT/docs/behaviours/dependencies.md",
+      "artifact_id": "ART-9c29aea5da1c430ab22c71b994187bbd",
+      "sha256": "0e7c3240e03b6b49c6dafd0322f6afc1bfb2a06c7387e52419cf19ce39b9bc1e"
+    },
+    {
+      "destination": "docs/behaviours/home.md",
+      "artifact_path": "development/release-behaviour-examples-20261112/EXPORT/docs/behaviours/home.md",
+      "artifact_id": "ART-3978b1ddff544f8284dbe1d916381e4d",
+      "sha256": "d71108806d3fb9532f8c6f4ffa2e278d4d679dbed7fdbca39a59e799d329048b"
+    },
+    {
+      "destination": "docs/behaviours/analytics.md",
+      "artifact_path": "development/release-behaviour-examples-20261112/EXPORT/docs/behaviours/analytics.md",
+      "artifact_id": "ART-bdc2678f9a1246afbf791e254d8dfd4f",
+      "sha256": "a76bcfbdc61a392a4d1103bb8b2ad1fbeba7888d661708a00954ce0593cc3068"
+    },
+    {
+      "destination": "docs/behaviours/literature.md",
+      "artifact_path": "development/release-behaviour-examples-20261112/EXPORT/docs/behaviours/literature.md",
+      "artifact_id": "ART-1218677797264e5b8a88d308769639fd",
+      "sha256": "f446ebfe8f4a8426eb72fa004d16601fc98d74464a95770d48a55aae6f3642ff"
+    },
+    {
+      "destination": "docs/behaviours/editor-frame.md",
+      "artifact_path": "development/release-behaviour-examples-20261112/EXPORT/docs/behaviours/editor-frame.md",
+      "artifact_id": "ART-a71104c76143407faa42d93d91db1500",
+      "sha256": "6fa5752ad05553e56504101eaaafdd31807262c62be1e2f03c4320bd6d1d3317"
+    },
+    {
+      "destination": "docs/behaviours/literature-library.md",
+      "artifact_path": "development/release-behaviour-examples-20261112/EXPORT/docs/behaviours/literature-library.md",
+      "artifact_id": "ART-8039ff1b53a9481896342d9b44cafeaf",
+      "sha256": "0fac68ca1972100d0232c478cc8880beb25ab3e9a3c78ba5f03a607743ffb47d"
+    },
+    {
+      "destination": "docs/behaviours/writing-style.md",
+      "artifact_path": "development/release-behaviour-examples-20261112/EXPORT/docs/behaviours/writing-style.md",
+      "artifact_id": "ART-008a44278edd42519cefead0d61e39d8",
+      "sha256": "f38cb8f870771a07cfb50951344a3e3c077a191777a7e1b38d778a5ec6553afa"
+    },
+    {
+      "destination": "docs/behaviours/preferences.md",
+      "artifact_path": "development/release-behaviour-examples-20261112/EXPORT/docs/behaviours/preferences.md",
+      "artifact_id": "ART-3b8e9b59b9d249949c47600f91b76bc4",
+      "sha256": "def3dca45150030d0f1b42ac174e25515ae86491029c75025ca0b750d7c3b498"
+    },
+    {
+      "destination": "examples/check_package_syntax.py",
+      "artifact_path": "development/release-behaviour-examples-20261112/EXPORT/examples/check_package_syntax.py",
+      "artifact_id": "ART-438e521e601c4ac698a91de6010cc0d7",
+      "sha256": "6dfc8ee3d3769f9cbace6d4c086383a065a594b5384a0c68fe4f916c7ac0d3e7"
+    },
+    {
+      "destination": "examples/behaviour_domains/source_kernel.py",
+      "artifact_path": "development/release-behaviour-examples-20261112/EXPORT/examples/behaviour_domains/source_kernel.py",
+      "artifact_id": "ART-def85d84d16b4c84a349f0a951c4f2fd",
+      "sha256": "2d883142104f99b5c2233d50917fb5fc5d33f51a0ccbcfb3d60aebfb59881cb9"
+    },
+    {
+      "destination": "examples/behaviour_domains/source_publication.py",
+      "artifact_path": "development/release-behaviour-examples-20261112/EXPORT/examples/behaviour_domains/source_publication.py",
+      "artifact_id": "ART-a8541f322aaf4f8699bc092dfb6b1308",
+      "sha256": "daa18ce73018fcb9c02ea4c0a7f67d51790ecb9062a129f1cbd4f3a0631037fa"
+    },
+    {
+      "destination": "examples/resources/visual_style.json",
+      "artifact_path": "development/release-behaviour-examples-20261112/EXPORT/examples/resources/visual_style.json",
+      "artifact_id": "ART-b29f9414fb84459db87e8e9367cddbb1",
+      "sha256": "affb3c753536104dfe1fa687e8cef5c5db0fd26d8b5e95c3481de51d95ab230e"
+    }
+  ],
+  "latest_driver": {
+    "artifact_id": "ART-6d74645e9b004ce1afa0afe6a1059583",
+    "sha256": "87a22f7863df439db38f5da3bfe47f52f3a821f5b2bed7b959cd6dce9836cd8d",
+    "command": "python -I examples/run_behaviours.py --package-root \"$SITE\" --output /absolute/new/output",
+    "default_groups": [
+      "core",
+      "reader",
+      "research",
+      "literature",
+      "source",
+      "atlas",
+      "source_kernel",
+      "http",
+      "catalogue"
+    ],
+    "explicit_only_groups": [
+      "atlas_cuda",
+      "source_publication"
+    ],
+    "warning": "Full01 executed earlier package bytes. Its passes are not renewed to these corrected artifacts."
+  },
+  "observed_in_this_lane": {
+    "syntax_only": {
+      "run_id": "run-d6e98bfe69014665",
+      "state": "COMPLETE",
+      "exit_code": 0,
+      "cleanup_status": "VERIFIED",
+      "result_path": "research_runs/run-d6e98bfe69014665.result.json",
+      "sha256": "3a669fe9ee454761aa9bbc15c5d2853cfc1fe85d7e160481256f4749919bf595",
+      "files_compiled_in_memory": 17,
+      "scope": "stdlib syntax only, no candidate or Main product import/runtime behaviour",
+      "timing": "Already launched before the author's freeze. Terminal state and result read afterwards. No new run launched after freeze."
+    }
+  },
+  "coordinator_reported_not_independently_reread": {
+    "core_atlas_01": {
+      "status": "PASS",
+      "python": "3.12",
+      "basis": "Installed candidate only, initial finite core+Atlas versions",
+      "output": "/tmp/laplace-behaviour-fixtures-437xg1mq/runs/core-atlas-01",
+      "qualification": "Reported by coordinator in the author turn. Exact transfer and result receipts must remain attached there. Not renewed to later module bytes."
+    },
+    "manual_chrome": {
+      "status": "PASS",
+      "sequence": "Actual manual edit -> Save -> Document tools Undo -> Home/reopen",
+      "outcome": "Original S1 restored byte-exact; genuine UI journal retained by coordinator",
+      "source_sha256": "Not copied: only an abbreviated e795052... hash was supplied.",
+      "qualification": "No exact hash invented and no browser observation claimed by this lane."
+    },
+    "full01": {
+      "status": "FINISHED_WITH_EXAMPLE_FAILURES",
+      "scope": "Earlier eight default groups, installed candidate only",
+      "executed": [
+        "core",
+        "reader (native and HTTP adapter)",
+        "literature",
+        "http (actual loopback)",
+        "catalogue"
+      ],
+      "research": "Two genuine deterministic runs and currentness checks passed before visual_render FileNotFound for profiles/visual_style.json.",
+      "source": "FAILED: ordinary paragraph correctly refused by atomic block_change contract.",
+      "atlas": "Blob negative controls passed. Event-history failed because installed package Git authority was UNKNOWN.",
+      "evidence_root": "/tmp/laplace-behaviour-fixtures-437xg1mq/runs/full-01/evidence/",
+      "group_records": [
+        "group-research.json",
+        "group-source.json",
+        "group-atlas.json"
+      ],
+      "stdout": "Main release/behaviour-examples/full-01.log (coordinator-reported coordinate)",
+      "qualification": "Actual outcomes reported by coordinator in author turn, not reread by this lane. No new Main product bug inferred."
+    },
+    "canonical_census": {
+      "native_operations": 95,
+      "native_routes": 208,
+      "http_declarations": 111,
+      "controls": 718,
+      "atlas_python_modules": 147,
+      "status": "Machine catalogue, not behavioural PASS",
+      "owner": "Pipeline coordinator",
+      "path": "release/behaviour-coverage.json"
+    },
+    "baseline_findings": {
+      "qualification": "Author/coordinator-reported existing source-test failures, not newly observed product defects",
+      "items": [
+        "reembed import omitted explicit scripts path",
+        "stale monkeypatch delegation attribute versus sdk/representation.source_publication owner",
+        "exact-three-operations test predates actual five including programme-continuity/representation"
+      ],
+      "policy": "Preserve original findings. Pipeline owns dependency/test closure. This lane changed no Main test or assertion."
+    }
+  },
+  "source_domain": {
+    "source_kernel": {
+      "status": "AUTHORED_NOT_CANDIDATE_EXECUTED",
+      "module": "examples/behaviour_domains/source_kernel.py",
+      "meaning": "Actual public Work handoff/source-contract custody, kernel prepare/exact descent/input validation through explicit-root owners and SDK/native/HTTP. No fake output seam or monkeypatch."
+    },
+    "source_publication": {
+      "status": "AUTHORED_NOT_CANDIDATE_EXECUTED",
+      "module": "examples/behaviour_domains/source_publication.py",
+      "command": "python -I examples/run_behaviours.py --package-root \"$SITE\" --groups source_kernel,source_publication --output /absolute/new/publication-output",
+      "prerequisites": [
+        "Candidate runtime_profiles.toml resource closure",
+        "Existing local numpy and CUDAExecutionProvider embedding backend with cached local model resources",
+        "No network acquisition, CPU substitute, private corpus or new services"
+      ],
+      "meaning": "Explicit synthetic public retained pre-input base with actual GPU vectors and actual sdk.source_publication prepare/commit/final verifier/recovery. Not a live/full-world fold or scientific benchmark.",
+      "remaining": "Real isolated candidate execution and actual retained result/publication/counterpart receipts. Authorship and syntax do not satisfy publication-domain runtime coverage."
+    }
+  },
+  "remaining_gaps": [
+    "Transfer exact five correction artifacts, then consume an actual new isolated candidate run. Preserve full01 failures as historical evidence.",
+    "Transfer/run the additional Source-domain modules and latest driver on a new isolated output.",
+    "All implemented native/HTTP behaviours, every control variant/state and all Atlas families are NOT covered by this finite checkpoint.",
+    "Spectral reconstruction/search and broader Atlas bench/import/projection behaviours remain NOT_YET_EXERCISED here.",
+    "Real provider proposal/author/dispatch/independent-review demonstration is Root-coordinated, explicitly public-only, sequential subscription gpt-6.1-sol/high; no model history fabricated.",
+    "Full selected-document source/projection/template/macro and actual TeX/PDF/export delivery evidence remains coordinator-owned and unqualified by the toy.",
+    "Optional matplotlib/CUDA/TeX prerequisite absence must remain explicit, never PASS-through-skip.",
+    "Runtime outputs must be joined to exact candidate/interpreter/module/fixture pins in the existing coordinator census; declaration presence is not acceptance.",
+    "Source/kernel and optional active Source publication remain authored but unexecuted. Existing local CUDA backend and explicit public resource closure are required for active publication."
+  ],
+  "privacy": "Fresh authored synthetic inputs and genuine owner outputs only. No wholesale rich export, private planning, recipient-specific sessions or historical model records copied. Historical links require explicit Root-approved closure.",
+  "prohibitions_preserved": [
+    "No Main product source edits",
+    "No Main test weakening",
+    "No publication/push/commit",
+    "No paid APIs/new services",
+    "No fake provider replies or independent ACCEPT",
+    "No self-review or Work completion"
+  ],
+  "restart_rule": "Frozen corrected finite package now. No further execution in this lane. Root's actual public-only subscription demo and later same-parent corrections remain separate.",
+  "previous_checkpoint_sha256": "94c34b39607df1d1c850f7563760ef811a8e92973e7b37109d4561662b7a0423",
+  "file_count_semantics": "Export payload files listed below, excluding this self-referential checkpoint",
+  "full01_bounded_corrections": {
+    "status": "AUTHORED_FROZEN_AWAITING_ISOLATED_CANDIDATE_RERUN",
+    "files": [
+      {
+        "destination": "examples/run_behaviours.py",
+        "artifact_id": "ART-6d74645e9b004ce1afa0afe6a1059583",
+        "sha256": "87a22f7863df439db38f5da3bfe47f52f3a821f5b2bed7b959cd6dce9836cd8d"
+      },
+      {
+        "destination": "examples/behaviour_domains/core.py",
+        "artifact_id": "ART-93f98c8b79834864ae75cf093100a94a",
+        "sha256": "5d6b0a7052330e424d6e3fa995bd1fd6759e1d71c61d2a3ce1497494cf25c4bc"
+      },
+      {
+        "destination": "examples/behaviour_domains/source.py",
+        "artifact_id": "ART-e140dd04aaca4013ac4f814cb21fb243",
+        "sha256": "081ad88aa4b26e0d6e6c144c329bc3b827c6edafd1da02229f9427cf48c81e9f"
+      },
+      {
+        "destination": "examples/behaviour_domains/atlas_history.py",
+        "artifact_id": "ART-60a2c9ec18db46bba5f568b20440b51d",
+        "sha256": "f87732a5574556a1fbad7077fc7a9d85050cddea1f1f93d0dec1fca945e272f8"
+      },
+      {
+        "destination": "examples/resources/visual_style.json",
+        "artifact_id": "ART-b29f9414fb84459db87e8e9367cddbb1",
+        "sha256": "affb3c753536104dfe1fa687e8cef5c5db0fd26d8b5e95c3481de51d95ab230e"
+      }
+    ],
+    "changes": [
+      "Provision exact selected public visual style as examples/resources/visual_style.json. Verify sha256 affb3c753536104dfe1fa687e8cef5c5db0fd26d8b5e95c3481de51d95ab230e before copying to fixture profiles.",
+      "Set LAPLACE_REPO_ROOT to the generated workspace before application imports. No Main fallback.",
+      "Add a complete authored equation to the core fixture. Source case preserves ordinary-paragraph refusal and unchanged-byte assertion, then selects exact current equation coordinates, deletes the atomic block, follows the issued inverse and verifies complete byte restoration.",
+      "Use existing Atlas authority_context_manifest with explicit public-behaviour-fixture role and allow_git_unavailable=True. Record actual generated three roots and pass the same roots/role to every new/cold/rebuilt/read-only store face.",
+      "No dummy roots, production-policy weakening, assertion trimming or relaxed guards.",
+      "No new syntax/runtime run launched for these corrections. Earlier syntax success is historical and does not qualify changed bytes."
+    ],
+    "new_fixture_basis": "S1 now contains the authored equation. Earlier browser pass remains attached to its original fixture, not renewed to this generation.",
+    "product_source_changes": false
+  }
+}

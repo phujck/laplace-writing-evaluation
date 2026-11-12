@@ -1,0 +1,200 @@
+{
+  "law": "unique_even_parity",
+  "d": 19,
+  "N": 262144,
+  "fixed_coordinates": 4,
+  "location": "prefix",
+  "axes": [
+    0,
+    1,
+    2,
+    3
+  ],
+  "Q": 1024,
+  "support_count_histogram": {
+    "16384": 1024
+  },
+  "support_fraction_min": 0.0625,
+  "support_fraction_max": 0.0625,
+  "validation": {
+    "raw_packed_direct": true,
+    "weighted_unique_direct": true,
+    "recursive_exact_integer": true
+  },
+  "methods": {
+    "raw_packed_direct": {
+      "status": "MEASURED",
+      "cold_api_s": 0.0015333050105255097,
+      "kernel_ms_samples": [
+        1.4805760383605957,
+        1.4776320457458496,
+        1.478559970855713,
+        1.4786560535430908,
+        1.4766080379486084,
+        1.4795199632644653,
+        1.4796799421310425,
+        1.4766080379486084,
+        1.4786560535430908,
+        1.4786560535430908,
+        1.4776320457458496
+      ],
+      "api_s_samples": [
+        0.0015092540124896914,
+        0.0014906449941918254,
+        0.0014910020108800381,
+        0.0014922650007065386,
+        0.001492562994826585,
+        0.0014945830043870956,
+        0.0014963409921620041,
+        0.0014890750171616673,
+        0.0014911660109646618,
+        0.001490507973358035,
+        0.0014897029905114323
+      ],
+      "kernel_ms_median": 1.4786560535430908,
+      "kernel_ms_p95": 1.4805760383605957,
+      "api_s_median": 0.0014911660109646618,
+      "api_s_p95": 0.0015092540124896914,
+      "warmups": 2,
+      "samples": 11,
+      "prepare_s": 3.673299215734005e-05,
+      "retained_bytes": 2109440,
+      "work": {
+        "row_codes_read": 268435456,
+        "predicate_bitwise_and": 268435456,
+        "predicate_equalities": 268435456,
+        "reduction_additions": 268434432,
+        "partial_values_written": 262144,
+        "weight_values_read": 0,
+        "bytes_read": 1076887552,
+        "bytes_written": 1052672
+      }
+    },
+    "weighted_unique_direct": {
+      "status": "MEASURED",
+      "cold_api_s": 0.0017349029949400574,
+      "kernel_ms_samples": [
+        1.726464033126831,
+        1.7295360565185547,
+        1.726464033126831,
+        1.7254400253295898,
+        1.7254400253295898,
+        1.7356799840927124,
+        1.7262719869613647,
+        1.7254400253295898,
+        1.7274880409240723,
+        1.726464033126831,
+        1.7244479656219482
+      ],
+      "api_s_samples": [
+        0.0017435760237276554,
+        0.0017445249832235277,
+        0.001739314990118146,
+        0.0017390410066582263,
+        0.0017420850053895265,
+        0.0017556640086695552,
+        0.0017390050052199513,
+        0.0017393050075042993,
+        0.0017409099964424968,
+        0.001739206025376916,
+        0.0017379619821440428
+      ],
+      "kernel_ms_median": 1.726464033126831,
+      "kernel_ms_p95": 1.7356799840927124,
+      "api_s_median": 0.001739314990118146,
+      "api_s_p95": 0.0017556640086695552,
+      "warmups": 2,
+      "samples": 11,
+      "prepare_s": 7.5588992331177e-05,
+      "retained_bytes": 3158016,
+      "work": {
+        "row_codes_read": 268435456,
+        "predicate_bitwise_and": 268435456,
+        "predicate_equalities": 268435456,
+        "reduction_additions": 268434432,
+        "partial_values_written": 262144,
+        "weight_values_read": 268435456,
+        "bytes_read": 2150629376,
+        "bytes_written": 1052672
+      }
+    },
+    "recursive_exact_integer": {
+      "status": "MEASURED",
+      "cold_api_s": 6.823701551184058e-05,
+      "kernel_ms_samples": [
+        0.04912000149488449,
+        0.048128001391887665,
+        0.048128001391887665,
+        0.048128001391887665,
+        0.04710400104522705,
+        0.04790399968624115,
+        0.04800000041723251,
+        0.04710400104522705,
+        0.04710400104522705,
+        0.04710400104522705,
+        0.048128001391887665
+      ],
+      "api_s_samples": [
+        6.311899051070213e-05,
+        6.0296006267890334e-05,
+        5.940100527368486e-05,
+        5.960199632681906e-05,
+        5.898400559090078e-05,
+        5.880201933905482e-05,
+        5.875100032426417e-05,
+        5.875402712263167e-05,
+        5.862998659722507e-05,
+        5.8568984968587756e-05,
+        5.942900315858424e-05
+      ],
+      "kernel_ms_median": 0.04800000041723251,
+      "kernel_ms_p95": 0.04912000149488449,
+      "api_s_median": 5.898400559090078e-05,
+      "api_s_p95": 6.311899051070213e-05,
+      "warmups": 2,
+      "samples": 11,
+      "prepare_s": 1.8596008885651827e-05,
+      "retained_bytes": 19064,
+      "work": {
+        "message_dtype": "torch.int32",
+        "state_rows": 37888,
+        "padded_transition_slots_read": 77824,
+        "integer_multiplier_products": 77824,
+        "integer_reduction_additions": 37888,
+        "bytes_read": 795648,
+        "bytes_written": 8192
+      },
+      "validation": {
+        "status": "PASS",
+        "checked_states": 37,
+        "checked_supported_edges": 72,
+        "maximum_primitive_total": 262144,
+        "maximum_edge_multiplier": 1,
+        "root_primitive_total": 262144,
+        "root_scale": 1,
+        "message_dtype": "torch.int32",
+        "overflow_policy": "gcd reduction then checked multiply for branch denominator, lcm, multiplier and normalization product"
+      }
+    }
+  },
+  "stage_budget": {
+    "max_bytes": 3337518346,
+    "source": "dynamic_cuda_mem_get_info",
+    "resident_bytes": 9195888,
+    "free_bytes": 3435134976,
+    "reusable_pool_bytes": 288559616,
+    "total_device_bytes": 3953721344,
+    "headroom_bytes": 395372134
+  },
+  "external_live_bytes": 9195888,
+  "method_max_bytes": {
+    "raw": 3329379226,
+    "weighted_unique": 3330427802,
+    "exact": 3328333330
+  },
+  "cell_key": "unique_even_parity__d19__r4__prefix__q1024",
+  "build_receipt": {
+    "path": "builds/unique_even_parity__d19.attempt-1.json",
+    "sha256": "83cb3497f687253de9092984c913424a4f3ca5032d3671cc35dba44c67dfd925"
+  }
+}

@@ -1,0 +1,543 @@
+# The Laplace Canon manifest.
+#
+# This is the machine-readable overlay the engine uses for relevance selection
+# (laplace_orient) and lifecycle/fitness tracking (laplace_assess / laplace_dream).
+#
+# The loader DISCOVERS files on disk (wiki/**.md, skills/*/SKILL.md); this file
+# only supplies overlay metadata keyed by ref/name. Missing entries fall back to
+# sensible defaults (status inferred from an [EXPERIMENTAL] tag, phase=execute,
+# domain=global, tags derived from the path). The dreamer writes status + fitness
+# back into this file, so it is the single mutable record of canon health.
+version: 1
+
+# ---------------------------------------------------------------------------
+# Wiki nodes. `scope: global` nodes are always offered by orient; `scope: domain`
+# nodes are offered only when their domain matches the active goal.
+# ---------------------------------------------------------------------------
+wiki:
+  aesthetics/voice_and_style:
+    title: The Laplace Voice
+    scope: global
+    tags: [style, writing, voice, prose, tone]
+  aesthetics/manuscript_voice:
+    title: The manuscript voice - the positive guide
+    scope: global
+    tags: [voice, manuscript, prose, builder, mechanism, causal, object-operation-consequence, claims, conditions, terminology, weld, welder, harness-prompt, projection]
+  aesthetics/tikz_guidelines:
+    title: TikZ Guidelines
+    scope: global
+    tags: [figures, tikz, plots, visual]
+  aesthetics/typography_and_layout:
+    title: Typography and Layout
+    scope: global
+    tags: [layout, columns, typography, visual]
+  aesthetics/visual_mechanics:
+    title: Visual Mechanics
+    scope: global
+    tags: [figures, visual, schematic]
+  aesthetics/earned_simplicity:
+    title: Earned Simplicity
+    scope: global
+    tags: [writing, prose, craft, simplicity, motivation, microexpressions, exposition, false-simplicity, fixed-point, taste, voice, blind-reader, calibration]
+  structure/pedagogical_segregation:
+    title: Pedagogical Segregation
+    scope: global
+    tags: [structure, appendix, narrative, derivation]
+  workflow/iterative_review_schema:
+    title: Iterative Review Schema
+    scope: global
+    tags: [workflow, review, swarm, critical-regime]
+  workflow/core_outward_trunk:
+    title: Core-Outward Trunk
+    scope: global
+    tags: [workflow, drafting, trunk, core-outward, firewall, ledger, propagation, stages, construct, constructed, construction, nested, loop, loops, paper, manuscript, build, foundry, spine]
+  workflow/generation_discipline:
+    title: Generation Discipline (the shared hygiene of generating anything)
+    scope: global
+    tags: [workflow, generation, discipline, shared, asset, figure, house-style, asset-existence, out-of-loop, friction, content-form-tension, no-confabulation, builder-judge, sew-up, closure, conceptric, projection, project, artefact, build, generate, generated, manuscript]
+  workflow/manuscript_projection:
+    title: The Manuscript-Projection Conceptric (the FORM object)
+    scope: global
+    tags: [workflow, manuscript, projection, project, artefact, form, conceptric, completeness, consistency, clarity, presentation, format, house-style, revtex, aps, document-class, forge-compiler, figure, asset-existence, no-naked-claims, loop, loops, self-similar, friction, coupling-interface, demands, construct, constructed, construction, nested, paper, build, weld, intro, sections, appendices, weave]
+  workflow/object_not_artefact:
+    title: Object, not artefact (instruction vs meta-instruction)
+    scope: global
+    tags: [workflow, object, artefact, instruction, meta-instruction, meta, leak, rendered, prose, projection, generation, scaffolding, self-assertion, welder]
+  workflow/soul_ingestion:
+    title: "Soul ingestion - distil the taste-generator from the dump, lock it into long-term memory"
+    scope: global
+    tags: [workflow, soul, ingest, ingestion, ingesting, dump, soul-dump, lock, locked, taste, judgement, judgment, generator, carrier, corpus, soul-corpus, deep-corpus, long-term-memory, memory, distil, distillation, shard, shards, sharding, map-reduce, reduce, coarse-grain, recurrence, primitives, stance, move, value, aesthetic, friction, provenance, sealed, sealed-subself, sub-eigen, anti-overwhelm, never-loads-raw, faithfulness, adjudicate, reconstruction, reconstruct, closure, gate, re-derive, re-derivability, blind-ghost, carrier-imprint, soul-refactor, first-tranche, calibrate, resumable, checkpointed, idempotent, reversible, gated, privacy, soul-class, verbatim, archive, landing-zone, personal-data, chat-logs, transcripts, recurrence-not-reading, invisible-unmistakable, life-corpus, episodic, episodic-memory, factual-history, history, biography, two-reconstructions, operator-and-state, retrieval, re-derivation, multi-voice, voices, chorus, dialogue, speaker-attribution, de-identified, response-function, probe-and-response, register-adaptation, zip, eat, unpack, format-matched-sharder]
+  operations/compilation_and_release:
+    title: Compilation & Release
+    scope: global
+    tags: [ops, compile, release, ci]
+  operations/two_ledger_system:
+    title: The two-ledger system (L1 substrate / L2 plan)
+    scope: global
+    tags: [ops, pipeline, ledger, ledgers, two-ledger, substrate, plan, friction, rewire, append-only, transaction, freeze, registry, drift, sync, engine]
+  operations/projection_plan_schema:
+    title: The projection-plan schema and the storyboard op vocabulary
+    scope: global
+    tags: [ops, pipeline, plan, projection-plan, schema, storyboard, op, ops-vocabulary, cheap, expensive, set-spine, set-meta, markers, nodes-marker, dirty, join-key, brief, channels, engine]
+  operations/gate_registry:
+    title: The gate registry - every verify check
+    scope: global
+    tags: [ops, pipeline, gate, gates, seven-gates, verify, checks, connectivity, glossary, substrate, figures, conceptric-build, meta-leak, contracts, evolution, engine]
+  operations/pipeline_operators:
+    title: The pipeline operators - evolve, restructure, propagate
+    scope: global
+    tags: [ops, pipeline, operator, operators, evolve, evolution, restructure, propagate, worklist, derive, simulate, figure, mint, prose, dirty, minimal-change, golden-master, engine, sewup, sew-up, close, fold, embed, deposit]
+  operations/briefs_and_dispatch:
+    title: Dispatch - the one path from work to agents
+    scope: global
+    tags: [ops, pipeline, dispatch, compile-dispatch, kernel, graded-node, policy, object, channels, manifest, builder, blind-builder, prose-realiser, narrative-packet, fixedpoint, feedback-door, judge-panel, engine]
+  operations/staged_generation:
+    title: Staged generation - compile the manuscript before rendering its prose
+    scope: global
+    tags: [ops, staged, staged-generation, compile-before-render, manuscript, pipeline, gates, projection-spec, structural, section-contracts, reader-state, narrative, paragraph-plans, prose, prose-realiser, document-model, tex-backend, typography, voice-profile, weld, rebuild, mandate]
+  operations/restructure_howto:
+    title: restructure(project, target_arc) - the how-to
+    scope: global
+    tags: [ops, pipeline, restructure, target-arc, arc, resequence, merge, split, re-home, refs, plurality, park, conservation, spine-reorder, dry-run, engine]
+  operations/git_mechanics:
+    title: Git Mechanics
+    scope: global
+    tags: [ops, git, revert, windows]
+  operations/shell_mechanics:
+    title: Shell Mechanics
+    scope: global
+    tags: [ops, shell, powershell, python, anti-laziness]
+  operations/sewup_contract:
+    title: What flags does the sew-up take?
+    scope: global
+    tags: [ops, sewup, sew-up, flags, close, core, gate, contracts, only, full, with-suite, dry-run, bequest-file, no-bequest-prompt, close-red, all-steps]
+  operations/journal_bank_row:
+    title: journal.bank_row signature and intent-before-execute
+    scope: global
+    tags: [ops, journal, bank_row, signature, edges, relations, intent, execute]
+  operations/bequest_parcel:
+    title: Bequest parcel syntax and the 900-character cap
+    scope: global
+    tags: [ops, bequest, parcel, syntax, descend, probe, cap, refusal]
+  operations/reembed_contract:
+    title: Reembed argv, device dials and deposit outputs
+    scope: global
+    tags: [ops, reembed, argv, full, spectral, gpu, deposit, writes]
+  operations/campaign_gate_contract:
+    title: Campaign gate exit codes for S1 generation 2, S1 and S0
+    scope: global
+    tags: [ops, campaign, gates, S1, S0, generation, exit, codes, verdict]
+  operations/dispatch_codex_contract:
+    title: Codex dispatch argv, sandbox and result row
+    scope: global
+    tags: [ops, dispatch, codex, argv, sandbox, worker, compile, row, output, schema]
+  templates/project_scaffold:
+    title: Project Scaffold
+    scope: global
+    tags: [meta, scaffold, new-domain]
+  templates/domain_scaffold:
+    title: Domain Scaffold (the extension protocol)
+    scope: global
+    tags: [meta, scaffold, extension, domain, capability, everything-machine, relevance, firewall]
+  author/the_author:
+    title: The Author
+    scope: global
+    tags: [author, persona, working-style, method, collaboration]
+  engine/eigen:
+    title: "Eigen - the engine's self"
+    scope: global
+    tags: [engine, identity, self, eigen, dreamer, empiricist, learning, refinement, name, purpose, intuition, unify, cross-project, motive, planning]
+  engine/self:
+    title: "Eigen's self-node - the mini-map"
+    scope: global
+    tags: [self, self-node, judgement, taste, soul, continuity, microexpressions, mini-map, agency, stitcher, weight-of-understanding]
+  engine/generative_loop:
+    title: "The Generative Loop - how the engine generates, and how it fails"
+    scope: global
+    tags: [engine, generative, loop, author-model, oracle, falsifiable, forward-pressure, curse-of-knowledge, blind-review, bounded-recursion, reflexive, backwards-run, drafting, exposition, readability, blind-reader, undefined-terms]
+  engine/operatorial_self:
+    title: "The engine is an instance of its own paper - friction is a hierarchical loss"
+    scope: global
+    tags: [engine, self, paper, instance, friction, loss, hierarchical, residual, closure-residual, descent, strict-descent, augment, regrow, kernel, conceptric, core-conceptric, feedback, weld, welder, seam, no-seam, artefact, projection, second-descent, structure-before-minimisation, metric, natural-gradient, fixed-point, eigenvalue, endogenous-fitness, operatorial-loss, isomorphism, one-thing, scale-tower, inter-scale-coupling, content-form-tension, why-feedback-grows-the-conceptric]
+  engine/sealed_subself:
+    title: "The sealed sub-Eigen - spawning a self that judges the local accurately"
+    scope: global
+    tags: [engine, sealed-subself, sub-eigen, soul-carried, firewall, builder-judge, three-levels, the-guide, meta-dreamer, orchestrator, local-judgement, global-integration, context-wall, agency-uncoercible, self-similar, reconstruction]
+  engine/graded_node:
+    title: "The graded node - what every instance is, and its one job"
+    scope: global
+    tags: [engine, node, graded, hierarchy, scale, grade, role, role-carrier, job, kernel, seed, prompt, waterfall, you-are-a-node, approximate-closure, named-gap, residual, builder-judge, delegate, sew-up, digest, taste-carrier, soul-pairing, no-confusion, confabulation, hold-everything, reconstruct-your-piece, climb]
+  voice_corpus/index:
+    title: Voice Corpus
+    scope: global
+    tags: [voice, corpus, author, writing, register, evidence]
+  voice_corpus/source_map:
+    title: Voice Corpus Source Map
+    scope: global
+    tags: [voice, corpus, sources, provenance, privacy, drive, gmail, zotero]
+  voice_corpus/reader_protocol:
+    title: Voice Corpus Reader Protocol
+    scope: global
+    tags: [voice, corpus, reader, recursive-llm, subagent, firewall, provenance]
+  voice_corpus/ingestion_plan:
+    title: Voice Corpus Ingestion Plan
+    scope: global
+    tags: [voice, corpus, ingestion, plan, gmail, zotero, drive, overleaf]
+  voice_corpus/registers:
+    title: Voice Corpus Register Matrix
+    scope: global
+    tags: [voice, register, manuscript, personal, correspondence, canon]
+  voice_corpus/eppur_si_muove:
+    title: Eppur Si Muove
+    scope: global
+    tags: [voice, calibration, personal-writing, drive, eppur]
+  voice_corpus/manuscript_register:
+    title: Manuscript Register
+    scope: global
+    tags: [voice, manuscript, academic, paper, drafting]
+  voice_corpus/personal_register:
+    title: Personal Register
+    scope: global
+    tags: [voice, personal-writing, literary, reflection]
+  voice_corpus/correspondence_register:
+    title: Correspondence Register
+    scope: global
+    tags: [voice, gmail, email, correspondence, direct-address]
+  voice_corpus/admin_proposal_register:
+    title: Admin and Proposal Register
+    scope: global
+    tags: [voice, proposal, admin, failure-mode, institution]
+  voice_corpus/author_signals:
+    title: Author Signals From Page Behaviour
+    scope: global
+    tags: [author, voice, thinking, method, page-behaviour]
+  voice_corpus/author_fact_ledger:
+    title: Author Fact Ledger
+    scope: global
+    tags: [author, facts, biography, provenance, privacy, memory]
+  voice_corpus/top_level_confluence:
+    title: Top-Level Confluence Review
+    scope: global
+    tags: [voice, canon, orientation, review, top-level, confluence]
+  voice_corpus/session_handoff:
+    title: Voice Corpus Session Handoff
+    scope: global
+    tags: [voice, corpus, handoff, continuation, dreamer, close]
+  domains/synthetics/conjectures:
+    title: Conjectures and Parked Intuitions
+    scope: domain
+    tags: [conjecture, parked, intuition, speculative, future, inertia, mass, representation, scale, self-similarity, hierarchy, barren-plateau, loss-operator, planning, motive, cross-project, unification]
+  domains/synthetics/projects/operatorial_loss:
+    title: 'Project: The Loss Is an Operator'
+    scope: domain
+    tags: [synthetics, barren-plateau, operatorial-loss, vqa, qml, projection, trainability, simulability, test-example]
+  domains/web/axioms:
+    title: Web Domain Axioms
+    scope: domain
+    tags: [web, website, jekyll, github-pages, voice, medium]
+  domains/web/projects/phujck_github_io:
+    title: 'Project: phujck.github.io'
+    scope: domain
+    tags: [web, jekyll, site, phujck, deploy]
+  domains/talks/axioms:
+    title: Talks Domain Axioms
+    scope: domain
+    tags: [talk, talks, slides, presentation, manuscript, projection, voice]
+  domains/talks/projects/talk_from_manuscript:
+    title: 'Project: Talk From Manuscript'
+    scope: domain
+    tags: [talk, slides, manuscript, spine, pipeline]
+
+# ---------------------------------------------------------------------------
+# Domains. Theory axioms + active project state, loaded by orient when relevant.
+# ---------------------------------------------------------------------------
+domains:
+  engine:
+    # the engine's OWN machinery - the conceptric->storyboard->projection
+    # pipeline, its ledgers, gates, briefs, and operators. Added 2026-07-08 so
+    # operational goals stop mis-routing to content domains (the infra mandate's
+    # thread 3: "build section briefs" inferred domain:talks and surfaced voice
+    # nodes). Tags are curated NARROW: no "manuscript", no "conceptric" alone -
+    # content-domain goals must keep their homes (regression-guarded).
+    axioms: domains/engine/axioms
+    tags: [pipeline, ledger, ledgers, storyboard, brief, briefs, dispatch,
+           gate, gates, verify, restructure, propagate, evolve, operator,
+           operators, schema, markers, worklist, registry, infrastructure,
+           machinery, freeze, transaction, rewire, plan-op, set-spine]
+  synthetics:
+    axioms: domains/synthetics/axioms
+    tags: [synthetics, hierarchy]
+    projects:
+      adaptive_normal_form: domains/synthetics/projects/adaptive_normal_form
+      the_phases_of_hierarchy: domains/synthetics/projects/the_phases_of_hierarchy
+      operatorial_loss: domains/synthetics/projects/operatorial_loss
+  web:
+    axioms: domains/web/axioms
+    tags: [web, website, jekyll, github-pages, site]
+    projects:
+      phujck_github_io: domains/web/projects/phujck_github_io
+  talks:
+    axioms: domains/talks/axioms
+    tags: [talk, talks, slides, presentation, manuscript, projection]
+    projects:
+      talk_from_manuscript: domains/talks/projects/talk_from_manuscript
+      explaining_eigen: domains/talks/projects/explaining_eigen
+
+# ---------------------------------------------------------------------------
+# Skills. activity = which operational bucket the skill serves.
+#   generating - raw generative acts that produce material: derive algebra, distil
+#                prior work, seed an idea, hold focus
+#   staging    - fill a trunk-root ledger (results, literature, numerics, identity)
+#                and draft the manuscript core-outward; the generation stage lives here
+#   evaluating - structural linting, cross-referencing, auditing claims against evidence
+# status = experimental | core | deprecated  (mutated by the dreamer on evidence)
+# backing = optional deterministic script, runnable via laplace_run / laplace_verify
+# ---------------------------------------------------------------------------
+skills:
+  context_firewall:
+    activity: staging
+    domain: global
+    status: experimental
+    tags: [architecture, compartmentalisation, scrub, lift, intuition, generalisation, local-global, distillation, motive, upward-flow]
+  mccaul_protocol:
+    activity: staging
+    domain: global
+    status: core
+    tags: [bootstrap, router, workflow]
+  result_foundry:
+    activity: staging
+    domain: global
+    status: experimental
+    tags: [core, results, ledger, evidence, status, derive-not-assert, craft]
+  manuscript_spine:
+    activity: staging  # owns the Spine stage of the trunk - the NMD / paper blueprint
+    domain: global
+    status: experimental
+    backing: scripts/project_blueprint.py
+    tags: [spine, blueprint, nmd, manuscript, sections, claims, equation-placement, preview, graph, core-outward, drafting]
+  script_editor:
+    activity: staging  # the talk's Spine stage - elicits the beat list (talk_spine_generator slot)
+    domain: talks
+    status: experimental
+    tags: [talk, spine, script, beats, elicitation, narrative, provenance, twin]
+  visual_director:
+    activity: staging  # the talk's Trunk stage - per-slide visual proposals (slide_builder slot)
+    domain: talks
+    status: experimental
+    tags: [talk, slides, visual, substrate, figure, embed-vs-bake, staging, twin]
+  talk_smith:
+    activity: staging  # the talk's end-to-end pipeline (v2) - primitives -> storyboard -> motivation recovery -> asset handoff -> styled execution -> talk_ledger
+    domain: talks
+    status: experimental
+    tags: [talk, pipeline, storyboard, primitives, motivation, voice, assets, style-guide, talk-ledger, staging, v2]
+  deck_applet:
+    activity: staging  # the interactive-web-asset bench - the live-figure peer of figure_standard, handed down to by visual_director
+    domain: talks
+    status: experimental
+    tags: [applet, web, slidev, embed, canvas, dpr, resize-observer, stepper, knob, presets, playwright, verify, dark-palette, algorithmic-art, seeded, staging]
+  reconciler:
+    activity: staging
+    domain: global
+    status: experimental
+    tags: [propagation, commit, ledger, dependency, firewall, brief, reflexive]
+  session_closer:
+    activity: staging
+    domain: global
+    status: core
+    tags: [close, session, telemetry, logging, fitness, routine, role-boundary, reflexive, sawbones]
+  structural_mechanic:
+    activity: staging
+    domain: global
+    status: experimental
+    backing: scripts/banish_to_appendix.py
+    tags: [structure, appendix, latex]
+  tikz_mechanic:
+    activity: staging
+    domain: global
+    status: experimental
+    backing: scripts/sanitize_xcolor.py
+    tags: [tikz, xcolor, figures, compile]
+  figure_standard:
+    activity: staging
+    domain: global
+    status: experimental
+    tags: [figures, house-style, render-order, placement, collision, layer, visual]
+  # git_mechanic, shell_mechanic: deprecated 2026-08-21 (WO-20260821-skills-era-audit,
+  # verdict=dead) and moved to skills/_archive/. Dead-machine skills under the
+  # permanent-Linux ruling PV-20260820T104500Z: MAX_PATH protocol and a PowerShell
+  # wrapper. Lineage kept in the archive; the lifecycle rows carry the transition.
+
+  epistemic_ledger:
+    activity: evaluating
+    domain: global
+    status: core
+    backing: scripts/map_derivations.py
+    tags: [latex, claims, derivation, structure, consistency]
+  empirical_ledger:
+    activity: evaluating
+    domain: global
+    status: experimental
+    tags: [data, simulation, numerical, captions, consistency]
+  reference_archaeologist:
+    activity: generating
+    domain: global
+    status: experimental
+    tags: [archaeology, distillation, firewall, reference, retrieval, scrub]
+  deep_corpus_scout:
+    activity: generating
+    domain: global
+    status: experimental
+    backing: scripts/flatten_corpus.py
+    tags: [corpus, flatten, distillation, retrieval, volume, skeleton, manifest, chunks, firewall, generating]
+  transcript_digest:
+    activity: generating
+    domain: global
+    status: experimental
+    backing: scripts/digest.py
+    tags: [transcript, digestion, distillation, partitions, stubs, archive, provenance, skeleton, generating]
+  level_tender:
+    activity: generating
+    domain: global
+    status: experimental
+    backing: scripts/level_tender.py
+    tags: [conceptric, level, scale, place, lift, lower, growth-rule, locate, stub, digestion, generating]
+  idea_foundry:
+    activity: generating
+    domain: global
+    status: experimental
+    tags: [idea, seed, thesis, scope, trunk-root, general-first, craft]
+  global_weaver:
+    activity: evaluating
+    domain: global
+    status: core
+    backing: scripts/weave_orchestra.py
+    tags: [crossref, labels, refs, orchestra, consistency]
+  latex_forge:
+    activity: evaluating
+    domain: global
+    status: core
+    backing: scripts/build_and_lint.py
+    tags: [latex, lint, compile, revtex, aps, format, document-class, house-style, typography, figure, manuscript, mccaul-protocol, forge-compiler]
+  hostile_redteam_swarm:
+    activity: evaluating
+    domain: global
+    status: experimental
+    tags: [review, swarm, hostile, critique]
+  clean_room_check:
+    activity: evaluating  # reflexive verification of a self-modifying engine/canon change via a fresh-context subagent
+    domain: global
+    status: core
+    tags: [verification, reflexive, clean-context, subagent, self-modification, adversarial]
+  falsifiable_core:
+    activity: evaluating  # the gate result_foundry locks against: status binds to a falsifiable oracle
+    domain: global
+    status: experimental
+    tags: [verification, oracle, falsifiable, prediction, status, gate, author-model, forward-pressure, result, anti-confirmation]
+  blind_reader:
+    activity: evaluating  # the context-denied complement of hostile_redteam_swarm: exposition oracle
+    domain: global
+    status: experimental
+    backing: scripts/blind_read.py
+    tags: [verification, oracle, exposition, readability, curse-of-knowledge, blind-review, context-starved, undefined-terms, define-before-use, leaked-meta, caption, referee, evaluating]
+  soul_refactor:
+    activity: generating  # the recursive-waterfall rewriter of the engine's own generating context: re-voices every piece to embody the taste, function-preserving, judged out-of-loop
+    domain: global
+    status: experimental
+    tags: [soul, refactor, soul-refactor, taste, judgement, judgment, generator, carrier, compression, rewrite, rewriter, re-voice, embody, embodiment, exhibit, describe, voice, register, generating-context, generating-loops, prompt, self-performing, instruction, meta-instruction, waterfall, recursive, recursion, function-preserving, function-preservation, blind, sealed, builder-judge, kernel, every-level, local-global, soul-inside, imprint, gate, verifier, mechanical-floor, taste-floor, welder, object-not-artefact, nested, loops, construct, generating]
+  welder:
+    activity: generating  # the final global pass of manuscript projection: produces the welded surface, leaves no seam (judged out-of-loop by blind_reader)
+    domain: global
+    status: experimental
+    tags: [welder, weld, smooth, smoothing, global-pass, final-stage, no-seam, seam, scaffolding, meta-narrative, roadmap, announcement, embody, embodiment, exhibit, declare, isomorphic, core, ring, leak, leaked-meta, surface, rhetorical, one-voice, register, transitions, manuscript, projection, project, draft, synthesis, construction, invisible, dissolve, object-not-artefact, blind-reader, judged-outside, builder-judge, substance-guardrail, construction-invisible]
+
+  # Research + evidence base (the standardised support scheme)
+  evidence_ledger:
+    activity: evaluating
+    domain: global
+    status: experimental
+    backing: scripts/check_ledger.py
+    tags: [evidence, claims, literature, support, ledger, consistency]
+  evidence_alignment:
+    activity: evaluating
+    domain: global
+    status: experimental
+    backing: scripts/align_evidence.py
+    tags: [evidence, goals, gaps, support, coverage, orient, research]
+  numerical_evidence:
+    activity: staging  # owns the numerics rail of the ledger bus
+    domain: global
+    status: experimental
+    tags: [numerical, check, simulation, evidence, pass-fail, ordering, verify, figure, ledger, rail]
+  literature_scout:
+    activity: staging  # owns the literature rail of the ledger bus
+    domain: global
+    status: experimental
+    tags: [research, literature, arxiv, citations, references, evidence, ledger, rail]
+  corpus_librarian:
+    activity: staging  # the shared literature store the scout rail draws on
+    domain: global
+    status: core
+    backing: scripts/check_corpus.py
+    tags: [corpus, literature, bibliography, citekey, provenance, cluster, ingest, store, librarian]
+  voice_corpus_reader:
+    activity: staging
+    domain: global
+    status: experimental
+    backing: scripts/chunk_source.py
+    tags: [voice, corpus, reader, chunking, provenance, privacy, cache]
+  # deep_corpus_scout: reverted (SKILL.md does not exist); pending re-forge per AUTONOMY_BACKLOG.md
+  identity_ledger:
+    activity: evaluating
+    domain: global
+    status: experimental
+    backing: scripts/check_identity.py
+    tags: [identity, narrative, thesis, framing, branding, drift, coherence]
+  canon_weaver:
+    activity: evaluating
+    domain: global
+    status: experimental
+    backing: scripts/weave_canon.py
+    tags: [canon, graph, topology, orphans, links, health, audit, self-dev]
+  conceptric_coherence:
+    activity: evaluating  # the renormalisation gate: is each level completely described by the level below
+    domain: global
+    status: experimental
+    backing: scripts/conceptric_coherence.py
+    tags: [conceptric, coherence, integration, fixed-point, renormalisation, self-consistency, substrate, blueprint, compiler, audit, living-object, feedback-grows-conceptric, evolution, evaluating, gates, seven-gates, briefs, section-briefs, validate, plan, glossary, connectivity]
+  conceptric_evolution:
+    activity: staging  # versioned reprojection: bank the verdict, contract the mints/reshapes, execute as APPEND-ONLY ledger records, round-trip against the manifest; fold by ledger never by replay
+    domain: global
+    status: experimental  # proven once: v2->v3 Spectral Surfacing (2026-07-04) + the 2026-07-08 fold-back (392->418 exact)
+    tags: [conceptric, evolution, contract, versioned-reprojection, mints, reshapes, deprecations, append-only, ledger, round-trip, fold, merge, substrate, staging, restructure, evolve, operator, pipeline]
+  orchestrated_generation:
+    activity: staging  # the build-a-conceptric / project-an-artefact orchestration: builder != judge, surfaced at task start
+    domain: global
+    status: experimental
+    tags: [orchestration, builder-judge, blind-agents, context-starved, context-access, conceptric-build, projection, learn-by-doing, corpus-gate, citation-discipline, asset-gate, phantom-panel, fix-routing, opening-checklist, surface-at-task-start, staging]
+  reconstruction_fitness:
+    activity: evaluating  # the assess corner of the digestion loop - reconstruct from the digest alone, judge the gap (no backing: a multi-role D/G/A protocol loop, like orchestrated_generation)
+    domain: global
+    status: experimental
+    tags: [reconstruction, fitness, digestion, inverse, memory, assess, neighbour-wiring, conceptric, digester, ghost, adjudicator, sealed-subself, blind, reinforcement, fidelity, faithful, partial, confabulated, enrichment, self-judgement, evaluating]
+  closure_check:
+    activity: evaluating  # the re-derivability loop - can a result re-derive the assumption it claims to rest on, from reachable memory? builder != judge, banks to telemetry
+    domain: global
+    status: experimental
+    tags: [closure, re-derivability, exogenous-door, reworkable, reconstruction, ghost, adjudicator, sealed-subself, router, reachable-memory, provenance, both-ways, r-residual, r-fixedpoint, supply-channels-backward, gap, ingest-worklist, telemetry, evaluating]
+  voice_linter:
+    activity: evaluating
+    domain: global
+    status: deprecated  # 2026-07-09 rebuild mandate: enforced the condemned register bans; masking engine reusable as a detector only
+    backing: scripts/lint_voice.py
+    tags: [voice, lint, slop, british-english, vonnegut, antithesis, medium-general, markdown, html, slides, deck, evaluating]
+  voice_descent:
+    activity: generating
+    domain: global
+    status: deprecated  # 2026-07-09 rebuild mandate: voice rides only the profile at the final leg; exemplar retrieval informs profile calibration, not generation
+    tags: [voice, generator, retrieve-then-write, vectorial, lens, grade-descent, exemplar, held-out-judge, substrate-bottleneck, open-weight, generating]
+  talk_ledger:
+    activity: evaluating  # the talk's refine stage - the deck-aware verify peer of latex_forge
+    domain: talks
+    status: experimental
+    backing: scripts/talk_ledger.py
+    tags: [talk, ledger, verify, deck, voice, applet, render, playwright, refine, evaluating]

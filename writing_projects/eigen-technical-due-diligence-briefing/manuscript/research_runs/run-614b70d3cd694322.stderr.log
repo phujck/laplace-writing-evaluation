@@ -1,0 +1,64 @@
+Traceback (most recent call last):
+  File "/home/phujck/VScodeProjects/laplace/writing_projects/eigen-technical-due-diligence-briefing/calculations/publication_figures.py", line 87, in <module>
+    save(fig,"dd-gap-selection-aps",
+    ~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    "Archived reduced-space comparison from the residual-method prototype. lambda scales the declared coupling and E_P-E_0 is the retained-space ground-energy error, both in the model's dimensionless units. Each method adds one direction from the same candidate pool. Selecting by raw residual amplitude chooses a high-gap channel, while the producer's amplitude-over-gap rule selects a more useful low-gap channel. The resulting finite-model error is substantially lower. This is not a hardware test or proof that every gap-aware enlargement converges.","archived simulation")
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/phujck/VScodeProjects/laplace/writing_projects/eigen-technical-due-diligence-briefing/calculations/publication_figures.py", line 28, in save
+    fig.tight_layout(pad=.7)
+    ~~~~~~~~~~~~~~~~^^^^^^^^
+  File "/home/phujck/VScodeProjects/eigenengine-v2/runtime/python/cpython-3.14.7-linux-x86_64-gnu/lib/python3.14/site-packages/matplotlib/figure.py", line 3665, in tight_layout
+    engine.execute(self)
+    ~~~~~~~~~~~~~~^^^^^^
+  File "/home/phujck/VScodeProjects/eigenengine-v2/runtime/python/cpython-3.14.7-linux-x86_64-gnu/lib/python3.14/site-packages/matplotlib/layout_engine.py", line 188, in execute
+    kwargs = get_tight_layout_figure(
+        fig, fig.axes, get_subplotspec_list(fig.axes), renderer,
+        pad=info['pad'], h_pad=info['h_pad'], w_pad=info['w_pad'],
+        rect=info['rect'])
+  File "/home/phujck/VScodeProjects/eigenengine-v2/runtime/python/cpython-3.14.7-linux-x86_64-gnu/lib/python3.14/site-packages/matplotlib/_tight_layout.py", line 266, in get_tight_layout_figure
+    kwargs = _auto_adjust_subplotpars(fig, renderer,
+                                      shape=(max_nrows, max_ncols),
+    ...<2 lines>...
+                                      ax_bbox_list=ax_bbox_list,
+                                      pad=pad, h_pad=h_pad, w_pad=w_pad)
+  File "/home/phujck/VScodeProjects/eigenengine-v2/runtime/python/cpython-3.14.7-linux-x86_64-gnu/lib/python3.14/site-packages/matplotlib/_tight_layout.py", line 82, in _auto_adjust_subplotpars
+    bb += [martist._get_tightbbox_for_layout_only(ax, renderer)]
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^
+  File "/home/phujck/VScodeProjects/eigenengine-v2/runtime/python/cpython-3.14.7-linux-x86_64-gnu/lib/python3.14/site-packages/matplotlib/artist.py", line 1485, in _get_tightbbox_for_layout_only
+    return obj.get_tightbbox(*args, **{**kwargs, "for_layout_only": True})
+           ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/phujck/VScodeProjects/eigenengine-v2/runtime/python/cpython-3.14.7-linux-x86_64-gnu/lib/python3.14/site-packages/matplotlib/axes/_base.py", line 4763, in get_tightbbox
+    ba = martist._get_tightbbox_for_layout_only(axis, renderer)
+  File "/home/phujck/VScodeProjects/eigenengine-v2/runtime/python/cpython-3.14.7-linux-x86_64-gnu/lib/python3.14/site-packages/matplotlib/artist.py", line 1485, in _get_tightbbox_for_layout_only
+    return obj.get_tightbbox(*args, **{**kwargs, "for_layout_only": True})
+           ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/phujck/VScodeProjects/eigenengine-v2/runtime/python/cpython-3.14.7-linux-x86_64-gnu/lib/python3.14/site-packages/matplotlib/axis.py", line 1443, in get_tightbbox
+    bb = self.label.get_window_extent(renderer)
+  File "/home/phujck/VScodeProjects/eigenengine-v2/runtime/python/cpython-3.14.7-linux-x86_64-gnu/lib/python3.14/site-packages/matplotlib/text.py", line 1076, in get_window_extent
+    bbox, _, _ = self._get_layout(self._renderer)
+                 ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^
+  File "/home/phujck/VScodeProjects/eigenengine-v2/runtime/python/cpython-3.14.7-linux-x86_64-gnu/lib/python3.14/site-packages/matplotlib/text.py", line 479, in _get_layout
+    w, h, d = _get_text_metrics_with_cache(
+              ~~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        renderer, clean_line, self._fontproperties,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        ismath=ismath, dpi=self.get_figure(root=True).dpi)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/phujck/VScodeProjects/eigenengine-v2/runtime/python/cpython-3.14.7-linux-x86_64-gnu/lib/python3.14/site-packages/matplotlib/text.py", line 59, in _get_text_metrics_with_cache
+    return get_text_metrics(text, fontprop.copy(), ismath, dpi)
+  File "/home/phujck/VScodeProjects/eigenengine-v2/runtime/python/cpython-3.14.7-linux-x86_64-gnu/lib/python3.14/site-packages/matplotlib/text.py", line 125, in _text_metrics
+    return local_renderer.get_text_width_height_descent(text, fontprop, ismath)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/phujck/VScodeProjects/eigenengine-v2/runtime/python/cpython-3.14.7-linux-x86_64-gnu/lib/python3.14/site-packages/matplotlib/backends/backend_agg.py", line 259, in get_text_width_height_descent
+    parse = self.mathtext_parser.parse(s, self.dpi, prop)
+  File "/home/phujck/VScodeProjects/eigenengine-v2/runtime/python/cpython-3.14.7-linux-x86_64-gnu/lib/python3.14/site-packages/matplotlib/mathtext.py", line 86, in parse
+    return self._parse_cached(s, dpi, prop, antialiased, load_glyph_flags)
+           ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/phujck/VScodeProjects/eigenengine-v2/runtime/python/cpython-3.14.7-linux-x86_64-gnu/lib/python3.14/site-packages/matplotlib/mathtext.py", line 100, in _parse_cached
+    box = self._parser.parse(s, fontset, fontsize, dpi)
+  File "/home/phujck/VScodeProjects/eigenengine-v2/runtime/python/cpython-3.14.7-linux-x86_64-gnu/lib/python3.14/site-packages/matplotlib/_mathtext.py", line 2350, in parse
+    raise ValueError("\n" + err.explain(0)) from None
+ValueError: 
+E_{\mathcal P}-E_0
+   ^
+ParseSyntaxException: Unknown symbol: \mathcal, found '\'  (at char 3), (line:1, col:4)

@@ -1,0 +1,1027 @@
+{
+  "schema_version": "slg.policy-coverage-result/3",
+  "status": "PASSED",
+  "work_id": "WORK-eb51031fbac649669f3972030d47dac1",
+  "scope": "Four deterministic decision calls only. No v0 rerun, historical grid, policy rewrite, OR/quantum rerun, model-reader call, optimisation or original overwrite.",
+  "counts": {
+    "policy_calls": 4,
+    "promoted": 2,
+    "stay": 2,
+    "tie_calls": 1,
+    "carried_transition_calls": 1
+  },
+  "tests": [
+    {
+      "name": "promote_actual_policy_append",
+      "kind": "exact_execution",
+      "passed": true,
+      "detail": "Original v1_rows.append executed."
+    },
+    {
+      "name": "promote_action",
+      "kind": "exact_execution",
+      "passed": true,
+      "detail": "Expected action declared by rational oracle/fixture, not inferred from test difference."
+    },
+    {
+      "name": "promote_starting_state",
+      "kind": "numeric_oracle",
+      "observed": 1.0,
+      "expected": 1.0,
+      "abs_error": 0.0,
+      "tolerance": 1e-12,
+      "passed": true
+    },
+    {
+      "name": "promote_candidate0",
+      "kind": "numeric_oracle",
+      "observed": 1.0,
+      "expected": 1.0,
+      "abs_error": 0.0,
+      "tolerance": 1e-12,
+      "passed": true
+    },
+    {
+      "name": "promote_candidate1",
+      "kind": "numeric_oracle",
+      "observed": 0.9559999780000028,
+      "expected": 0.9559999780000028,
+      "abs_error": 0.0,
+      "tolerance": 1e-12,
+      "passed": true
+    },
+    {
+      "name": "promote_gain0",
+      "kind": "numeric_oracle",
+      "observed": 0.0,
+      "expected": 0.0,
+      "abs_error": 0.0,
+      "tolerance": 1e-12,
+      "passed": true
+    },
+    {
+      "name": "promote_gain1_polynomial",
+      "kind": "numeric_oracle",
+      "observed": 0.015664006863998634,
+      "expected": 0.01566400686399866,
+      "abs_error": 2.42861286636753e-17,
+      "tolerance": 1e-12,
+      "passed": true
+    },
+    {
+      "name": "promote_ending_state",
+      "kind": "numeric_oracle",
+      "observed": 0.9559999780000028,
+      "expected": 0.9559999780000028,
+      "abs_error": 0.0,
+      "tolerance": 1e-12,
+      "passed": true
+    },
+    {
+      "name": "promote_realised_gain",
+      "kind": "numeric_oracle",
+      "observed": 0.015664006863998634,
+      "expected": 0.01566400686399866,
+      "abs_error": 2.42861286636753e-17,
+      "tolerance": 1e-12,
+      "passed": true
+    },
+    {
+      "name": "promote_score0",
+      "kind": "numeric_oracle",
+      "observed": 0.0,
+      "expected": 0.0,
+      "abs_error": 0.0,
+      "tolerance": 1e-12,
+      "passed": true
+    },
+    {
+      "name": "promote_score1",
+      "kind": "numeric_oracle",
+      "observed": 0.019160017159996583,
+      "expected": 0.019160017159996646,
+      "abs_error": 6.245004513516506e-17,
+      "tolerance": 1e-12,
+      "passed": true
+    },
+    {
+      "name": "promote_applied_state_record",
+      "kind": "exact_execution",
+      "passed": true,
+      "detail": "Recorded row and actual persistent state agree."
+    },
+    {
+      "name": "promote_actual_nonzero_update",
+      "kind": "exact_execution",
+      "passed": true,
+      "detail": "A chosen partial update actually changed persistent state."
+    },
+    {
+      "name": "carried_next_actual_policy_append",
+      "kind": "exact_execution",
+      "passed": true,
+      "detail": "Original v1_rows.append executed."
+    },
+    {
+      "name": "carried_next_action",
+      "kind": "exact_execution",
+      "passed": true,
+      "detail": "Expected action declared by rational oracle/fixture, not inferred from test difference."
+    },
+    {
+      "name": "carried_next_starting_state",
+      "kind": "numeric_oracle",
+      "observed": 0.9559999780000028,
+      "expected": 0.9559999780000028,
+      "abs_error": 0.0,
+      "tolerance": 1e-12,
+      "passed": true
+    },
+    {
+      "name": "carried_next_candidate0",
+      "kind": "numeric_oracle",
+      "observed": 0.9559999780000028,
+      "expected": 0.9559999780000028,
+      "abs_error": 0.0,
+      "tolerance": 1e-12,
+      "passed": true
+    },
+    {
+      "name": "carried_next_candidate1",
+      "kind": "numeric_oracle",
+      "observed": 0.9216799632844488,
+      "expected": 0.9216799632844488,
+      "abs_error": 0.0,
+      "tolerance": 1e-12,
+      "passed": true
+    },
+    {
+      "name": "carried_next_gain0",
+      "kind": "numeric_oracle",
+      "observed": 0.0,
+      "expected": 0.0,
+      "abs_error": 0.0,
+      "tolerance": 1e-12,
+      "passed": true
+    },
+    {
+      "name": "carried_next_gain1_polynomial",
+      "kind": "numeric_oracle",
+      "observed": 0.00952997967109655,
+      "expected": 0.009529979671096544,
+      "abs_error": 6.938893903907228e-18,
+      "tolerance": 1e-12,
+      "passed": true
+    },
+    {
+      "name": "carried_next_ending_state",
+      "kind": "numeric_oracle",
+      "observed": 0.9216799632844488,
+      "expected": 0.9216799632844488,
+      "abs_error": 0.0,
+      "tolerance": 1e-12,
+      "passed": true
+    },
+    {
+      "name": "carried_next_realised_gain",
+      "kind": "numeric_oracle",
+      "observed": 0.00952997967109655,
+      "expected": 0.009529979671096544,
+      "abs_error": 6.938893903907228e-18,
+      "tolerance": 1e-12,
+      "passed": true
+    },
+    {
+      "name": "carried_next_score0",
+      "kind": "numeric_oracle",
+      "observed": 0.0,
+      "expected": 0.0,
+      "abs_error": 0.0,
+      "tolerance": 1e-12,
+      "passed": true
+    },
+    {
+      "name": "carried_next_score1",
+      "kind": "numeric_oracle",
+      "observed": 0.003824949177741375,
+      "expected": 0.003824949177741358,
+      "abs_error": 1.691355389077387e-17,
+      "tolerance": 1e-12,
+      "passed": true
+    },
+    {
+      "name": "carried_next_applied_state_record",
+      "kind": "exact_execution",
+      "passed": true,
+      "detail": "Recorded row and actual persistent state agree."
+    },
+    {
+      "name": "carried_next_actual_nonzero_update",
+      "kind": "exact_execution",
+      "passed": true,
+      "detail": "A chosen partial update actually changed persistent state."
+    },
+    {
+      "name": "carried_next_actual_carry",
+      "kind": "exact_execution",
+      "passed": true,
+      "detail": "Same mutable execution environment retains previous actual updated state."
+    },
+    {
+      "name": "carried_next_not_reset",
+      "kind": "exact_execution",
+      "passed": true,
+      "detail": "Carried state is not the original initial state."
+    },
+    {
+      "name": "stay_actual_policy_append",
+      "kind": "exact_execution",
+      "passed": true,
+      "detail": "Original v1_rows.append executed."
+    },
+    {
+      "name": "stay_action",
+      "kind": "exact_execution",
+      "passed": true,
+      "detail": "Expected action declared by rational oracle/fixture, not inferred from test difference."
+    },
+    {
+      "name": "stay_starting_state",
+      "kind": "numeric_oracle",
+      "observed": 1.0,
+      "expected": 1.0,
+      "abs_error": 0.0,
+      "tolerance": 1e-12,
+      "passed": true
+    },
+    {
+      "name": "stay_candidate0",
+      "kind": "numeric_oracle",
+      "observed": 1.0,
+      "expected": 1.0,
+      "abs_error": 0.0,
+      "tolerance": 1e-12,
+      "passed": true
+    },
+    {
+      "name": "stay_candidate1",
+      "kind": "numeric_oracle",
+      "observed": 0.9559999780000028,
+      "expected": 0.9559999780000028,
+      "abs_error": 0.0,
+      "tolerance": 1e-12,
+      "passed": true
+    },
+    {
+      "name": "stay_gain0",
+      "kind": "numeric_oracle",
+      "observed": 0.0,
+      "expected": 0.0,
+      "abs_error": 0.0,
+      "tolerance": 1e-12,
+      "passed": true
+    },
+    {
+      "name": "stay_gain1_polynomial",
+      "kind": "numeric_oracle",
+      "observed": 0.015664006863998634,
+      "expected": 0.01566400686399866,
+      "abs_error": 2.42861286636753e-17,
+      "tolerance": 1e-12,
+      "passed": true
+    },
+    {
+      "name": "stay_ending_state",
+      "kind": "numeric_oracle",
+      "observed": 1.0,
+      "expected": 1.0,
+      "abs_error": 0.0,
+      "tolerance": 1e-12,
+      "passed": true
+    },
+    {
+      "name": "stay_realised_gain",
+      "kind": "numeric_oracle",
+      "observed": 0.0,
+      "expected": 0.0,
+      "abs_error": 0.0,
+      "tolerance": 1e-12,
+      "passed": true
+    },
+    {
+      "name": "stay_score0",
+      "kind": "numeric_oracle",
+      "observed": 0.0,
+      "expected": 0.0,
+      "abs_error": 0.0,
+      "tolerance": 1e-12,
+      "passed": true
+    },
+    {
+      "name": "stay_score1",
+      "kind": "numeric_oracle",
+      "observed": -0.020839982840003414,
+      "expected": -0.020839982840003355,
+      "abs_error": 5.898059818321144e-17,
+      "tolerance": 1e-12,
+      "passed": true
+    },
+    {
+      "name": "stay_applied_state_record",
+      "kind": "exact_execution",
+      "passed": true,
+      "detail": "Recorded row and actual persistent state agree."
+    },
+    {
+      "name": "stay_actual_stay",
+      "kind": "exact_execution",
+      "passed": true,
+      "detail": "Chosen no-update preserved persistent state."
+    },
+    {
+      "name": "tie_actual_policy_append",
+      "kind": "exact_execution",
+      "passed": true,
+      "detail": "Original v1_rows.append executed."
+    },
+    {
+      "name": "tie_action",
+      "kind": "exact_execution",
+      "passed": true,
+      "detail": "Expected action declared by rational oracle/fixture, not inferred from test difference."
+    },
+    {
+      "name": "tie_starting_state",
+      "kind": "numeric_oracle",
+      "observed": 1.0,
+      "expected": 1.0,
+      "abs_error": 0.0,
+      "tolerance": 1e-12,
+      "passed": true
+    },
+    {
+      "name": "tie_candidate0",
+      "kind": "numeric_oracle",
+      "observed": 1.0,
+      "expected": 1.0,
+      "abs_error": 0.0,
+      "tolerance": 1e-12,
+      "passed": true
+    },
+    {
+      "name": "tie_candidate1",
+      "kind": "numeric_oracle",
+      "observed": 0.9559999780000028,
+      "expected": 0.9559999780000028,
+      "abs_error": 0.0,
+      "tolerance": 1e-12,
+      "passed": true
+    },
+    {
+      "name": "tie_gain0",
+      "kind": "numeric_oracle",
+      "observed": 0.0,
+      "expected": 0.0,
+      "abs_error": 0.0,
+      "tolerance": 1e-12,
+      "passed": true
+    },
+    {
+      "name": "tie_gain1_polynomial",
+      "kind": "numeric_oracle",
+      "observed": 0.015664006863998634,
+      "expected": 0.01566400686399866,
+      "abs_error": 2.42861286636753e-17,
+      "tolerance": 1e-12,
+      "passed": true
+    },
+    {
+      "name": "tie_ending_state",
+      "kind": "numeric_oracle",
+      "observed": 1.0,
+      "expected": 1.0,
+      "abs_error": 0.0,
+      "tolerance": 1e-12,
+      "passed": true
+    },
+    {
+      "name": "tie_realised_gain",
+      "kind": "numeric_oracle",
+      "observed": 0.0,
+      "expected": 0.0,
+      "abs_error": 0.0,
+      "tolerance": 1e-12,
+      "passed": true
+    },
+    {
+      "name": "tie_score0",
+      "kind": "numeric_oracle",
+      "observed": 0.0,
+      "expected": 0.0,
+      "abs_error": 0.0,
+      "tolerance": 1e-12,
+      "passed": true
+    },
+    {
+      "name": "tie_score1",
+      "kind": "numeric_oracle",
+      "observed": 0.0,
+      "expected": 0.0,
+      "abs_error": 0.0,
+      "tolerance": 1e-12,
+      "passed": true
+    },
+    {
+      "name": "tie_applied_state_record",
+      "kind": "exact_execution",
+      "passed": true,
+      "detail": "Recorded row and actual persistent state agree."
+    },
+    {
+      "name": "tie_actual_stay",
+      "kind": "exact_execution",
+      "passed": true,
+      "detail": "Chosen no-update preserved persistent state."
+    },
+    {
+      "name": "tie_scores_equal_in_actual_policy",
+      "kind": "exact_execution",
+      "passed": true,
+      "detail": "Strict original policy saw exactly equal binary scores. No epsilon used."
+    },
+    {
+      "name": "tie_price_positive",
+      "kind": "exact_execution",
+      "passed": true,
+      "detail": "Tie is between a beneficial partial update and its positive price, not an empty placeholder."
+    },
+    {
+      "name": "coverage_count_policy_calls",
+      "kind": "exact_execution",
+      "passed": true,
+      "detail": {
+        "observed": 4,
+        "expected": 4
+      }
+    },
+    {
+      "name": "coverage_count_promoted",
+      "kind": "exact_execution",
+      "passed": true,
+      "detail": {
+        "observed": 2,
+        "expected": 2
+      }
+    },
+    {
+      "name": "coverage_count_stay",
+      "kind": "exact_execution",
+      "passed": true,
+      "detail": {
+        "observed": 2,
+        "expected": 2
+      }
+    },
+    {
+      "name": "coverage_count_tie_calls",
+      "kind": "exact_execution",
+      "passed": true,
+      "detail": {
+        "observed": 1,
+        "expected": 1
+      }
+    },
+    {
+      "name": "coverage_count_carried_transition_calls",
+      "kind": "exact_execution",
+      "passed": true,
+      "detail": {
+        "observed": 1,
+        "expected": 1
+      }
+    }
+  ],
+  "rows": [
+    {
+      "fixture": "promote",
+      "policy_call": 1,
+      "scoring_horizon": {
+        "index_start": 0,
+        "index_end": 7,
+        "n": 8,
+        "objective": "mean (y_i-theta*x_i)^2 on this same available window"
+      },
+      "x": [
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0
+      ],
+      "y": [
+        0.8,
+        0.8,
+        0.8,
+        0.8,
+        0.8,
+        0.8,
+        0.8,
+        0.8
+      ],
+      "costs": [
+        0.0,
+        0.02
+      ],
+      "starting_state": 1.0,
+      "ending_state": 0.9559999780000028,
+      "actual_policy_row": {
+        "t": 7,
+        "theta_before": 1.0,
+        "theta0": 1.0,
+        "theta1": 0.9559999780000028,
+        "gain0": 0.0,
+        "gain1": 0.015664006863998634,
+        "score0": 0.0,
+        "score1": 0.019160017159996583,
+        "chosen": 1,
+        "theta_after": 0.9559999780000028,
+        "realised_window_gain": 0.015664006863998634,
+        "pre_action_error": -0.19999999999999996,
+        "next_step_error": null
+      },
+      "carried_from_actual": null,
+      "oracle": {
+        "theta_before": {
+          "numerator": 1,
+          "denominator": 1,
+          "decimal": 1.0
+        },
+        "fit": {
+          "numerator": 6400000,
+          "denominator": 8000001,
+          "decimal": 0.7999999000000125
+        },
+        "candidate0": {
+          "numerator": 1,
+          "denominator": 1,
+          "decimal": 1.0
+        },
+        "candidate1": {
+          "numerator": 382400039,
+          "denominator": 400000050,
+          "decimal": 0.9559999780000028
+        },
+        "gain0": {
+          "numerator": 0,
+          "denominator": 1,
+          "decimal": 0.0
+        },
+        "gain1": {
+          "numerator": 2506241724800099,
+          "denominator": 160000040000002500,
+          "decimal": 0.01566400686399866
+        },
+        "score0": {
+          "numerator": 0,
+          "denominator": 1,
+          "decimal": 0.0
+        },
+        "score1": {
+          "numerator": 1226241404800079,
+          "denominator": 64000016000001000,
+          "decimal": 0.019160017159996646
+        },
+        "chosen": 1,
+        "theta_after": {
+          "numerator": 382400039,
+          "denominator": 400000050,
+          "decimal": 0.9559999780000028
+        },
+        "realised_gain": {
+          "numerator": 2506241724800099,
+          "denominator": 160000040000002500,
+          "decimal": 0.01566400686399866
+        },
+        "cost0": {
+          "numerator": 0,
+          "denominator": 1,
+          "decimal": 0.0
+        },
+        "cost1": {
+          "numerator": 1,
+          "denominator": 50,
+          "decimal": 0.02
+        }
+      },
+      "exact_score_tie": false,
+      "binary64": {
+        "score0": "0x0.0p+0",
+        "score1": "0x1.39eaefc5f373bp-6",
+        "cost1": "0x1.47ae147ae147bp-6",
+        "gain1": "0x1.00a39b4d21e49p-6"
+      }
+    },
+    {
+      "fixture": "carried_next",
+      "policy_call": 2,
+      "scoring_horizon": {
+        "index_start": 0,
+        "index_end": 8,
+        "n": 9,
+        "objective": "mean (y_i-theta*x_i)^2 on this same available window"
+      },
+      "x": [
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0
+      ],
+      "y": [
+        0.8,
+        0.8,
+        0.8,
+        0.8,
+        0.8,
+        0.8,
+        0.8,
+        0.8,
+        0.8
+      ],
+      "costs": [
+        0.0,
+        0.02
+      ],
+      "starting_state": 0.9559999780000028,
+      "ending_state": 0.9216799632844488,
+      "actual_policy_row": {
+        "t": 8,
+        "theta_before": 0.9559999780000028,
+        "theta0": 0.9559999780000028,
+        "theta1": 0.9216799632844488,
+        "gain0": 0.0,
+        "gain1": 0.00952997967109655,
+        "score0": 0.0,
+        "score1": 0.003824949177741375,
+        "chosen": 1,
+        "theta_after": 0.9216799632844488,
+        "realised_window_gain": 0.00952997967109655,
+        "pre_action_error": -0.15599997800000276,
+        "next_step_error": null
+      },
+      "carried_from_actual": 0.9559999780000028,
+      "oracle": {
+        "theta_before": {
+          "numerator": 382400039,
+          "denominator": 400000050,
+          "decimal": 0.9559999780000028
+        },
+        "fit": {
+          "numerator": 7200000,
+          "denominator": 9000001,
+          "decimal": 0.799999911111121
+        },
+        "candidate0": {
+          "numerator": 382400039,
+          "denominator": 400000050,
+          "decimal": 0.9559999780000028
+        },
+        "candidate1": {
+          "numerator": 55300810854200507,
+          "denominator": 60000014166667500,
+          "decimal": 0.9216799632844488
+        },
+        "gain0": {
+          "numerator": 0,
+          "denominator": 1,
+          "decimal": 0.0
+        },
+        "gain1": {
+          "numerator": 308771487152242757278795970573059,
+          "denominator": 32400015300002706250212500006250000,
+          "decimal": 0.009529979671096544
+        },
+        "score0": {
+          "numerator": 0,
+          "denominator": 1,
+          "decimal": 0.0
+        },
+        "score1": {
+          "numerator": 49571364752221107277095970523059,
+          "denominator": 12960006120001082500085000002500000,
+          "decimal": 0.003824949177741358
+        },
+        "chosen": 1,
+        "theta_after": {
+          "numerator": 55300810854200507,
+          "denominator": 60000014166667500,
+          "decimal": 0.9216799632844488
+        },
+        "realised_gain": {
+          "numerator": 308771487152242757278795970573059,
+          "denominator": 32400015300002706250212500006250000,
+          "decimal": 0.009529979671096544
+        },
+        "cost0": {
+          "numerator": 0,
+          "denominator": 1,
+          "decimal": 0.0
+        },
+        "cost1": {
+          "numerator": 1,
+          "denominator": 50,
+          "decimal": 0.02
+        }
+      },
+      "exact_score_tie": false,
+      "binary64": {
+        "score0": "0x0.0p+0",
+        "score1": "0x1.f557ff4128648p-9",
+        "cost1": "0x1.47ae147ae147bp-6",
+        "gain1": "0x1.384743826b76ap-7"
+      }
+    },
+    {
+      "fixture": "stay",
+      "policy_call": 3,
+      "scoring_horizon": {
+        "index_start": 0,
+        "index_end": 7,
+        "n": 8,
+        "objective": "mean (y_i-theta*x_i)^2 on this same available window"
+      },
+      "x": [
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0
+      ],
+      "y": [
+        0.8,
+        0.8,
+        0.8,
+        0.8,
+        0.8,
+        0.8,
+        0.8,
+        0.8
+      ],
+      "costs": [
+        0.0,
+        0.06
+      ],
+      "starting_state": 1.0,
+      "ending_state": 1.0,
+      "actual_policy_row": {
+        "t": 7,
+        "theta_before": 1.0,
+        "theta0": 1.0,
+        "theta1": 0.9559999780000028,
+        "gain0": 0.0,
+        "gain1": 0.015664006863998634,
+        "score0": 0.0,
+        "score1": -0.020839982840003414,
+        "chosen": 0,
+        "theta_after": 1.0,
+        "realised_window_gain": 0.0,
+        "pre_action_error": -0.19999999999999996,
+        "next_step_error": null
+      },
+      "carried_from_actual": null,
+      "oracle": {
+        "theta_before": {
+          "numerator": 1,
+          "denominator": 1,
+          "decimal": 1.0
+        },
+        "fit": {
+          "numerator": 6400000,
+          "denominator": 8000001,
+          "decimal": 0.7999999000000125
+        },
+        "candidate0": {
+          "numerator": 1,
+          "denominator": 1,
+          "decimal": 1.0
+        },
+        "candidate1": {
+          "numerator": 382400039,
+          "denominator": 400000050,
+          "decimal": 0.9559999780000028
+        },
+        "gain0": {
+          "numerator": 0,
+          "denominator": 1,
+          "decimal": 0.0
+        },
+        "gain1": {
+          "numerator": 2506241724800099,
+          "denominator": 160000040000002500,
+          "decimal": 0.01566400686399866
+        },
+        "score0": {
+          "numerator": 0,
+          "denominator": 1,
+          "decimal": 0.0
+        },
+        "score1": {
+          "numerator": -1333759235199961,
+          "denominator": 64000016000001000,
+          "decimal": -0.020839982840003355
+        },
+        "chosen": 0,
+        "theta_after": {
+          "numerator": 1,
+          "denominator": 1,
+          "decimal": 1.0
+        },
+        "realised_gain": {
+          "numerator": 0,
+          "denominator": 1,
+          "decimal": 0.0
+        },
+        "cost0": {
+          "numerator": 0,
+          "denominator": 1,
+          "decimal": 0.0
+        },
+        "cost1": {
+          "numerator": 3,
+          "denominator": 50,
+          "decimal": 0.06
+        }
+      },
+      "exact_score_tie": false,
+      "binary64": {
+        "score0": "0x0.0p+0",
+        "score1": "-0x1.5571392fcf1bap-6",
+        "cost1": "0x1.eb851eb851eb8p-5",
+        "gain1": "0x1.00a39b4d21e49p-6"
+      }
+    },
+    {
+      "fixture": "tie",
+      "policy_call": 4,
+      "scoring_horizon": {
+        "index_start": 0,
+        "index_end": 7,
+        "n": 8,
+        "objective": "mean (y_i-theta*x_i)^2 on this same available window"
+      },
+      "x": [
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0
+      ],
+      "y": [
+        0.8,
+        0.8,
+        0.8,
+        0.8,
+        0.8,
+        0.8,
+        0.8,
+        0.8
+      ],
+      "costs": [
+        0.0,
+        0.039160017159996584
+      ],
+      "starting_state": 1.0,
+      "ending_state": 1.0,
+      "actual_policy_row": {
+        "t": 7,
+        "theta_before": 1.0,
+        "theta0": 1.0,
+        "theta1": 0.9559999780000028,
+        "gain0": 0.0,
+        "gain1": 0.015664006863998634,
+        "score0": 0.0,
+        "score1": 0.0,
+        "chosen": 0,
+        "theta_after": 1.0,
+        "realised_window_gain": 0.0,
+        "pre_action_error": -0.19999999999999996,
+        "next_step_error": null
+      },
+      "carried_from_actual": null,
+      "oracle": {
+        "theta_before": {
+          "numerator": 1,
+          "denominator": 1,
+          "decimal": 1.0
+        },
+        "fit": {
+          "numerator": 6400000,
+          "denominator": 8000001,
+          "decimal": 0.7999999000000125
+        },
+        "candidate0": {
+          "numerator": 1,
+          "denominator": 1,
+          "decimal": 1.0
+        },
+        "candidate1": {
+          "numerator": 382400039,
+          "denominator": 400000050,
+          "decimal": 0.9559999780000028
+        },
+        "gain0": {
+          "numerator": 0,
+          "denominator": 1,
+          "decimal": 0.0
+        },
+        "gain1": {
+          "numerator": 2506241724800099,
+          "denominator": 160000040000002500,
+          "decimal": 0.01566400686399866
+        },
+        "score0": {
+          "numerator": 0,
+          "denominator": 1,
+          "decimal": 0.0
+        },
+        "score1": {
+          "numerator": 0,
+          "denominator": 1,
+          "decimal": 0.0
+        },
+        "chosen": 0,
+        "theta_after": {
+          "numerator": 1,
+          "denominator": 1,
+          "decimal": 1.0
+        },
+        "realised_gain": {
+          "numerator": 0,
+          "denominator": 1,
+          "decimal": 0.0
+        },
+        "cost0": {
+          "numerator": 0,
+          "denominator": 1,
+          "decimal": 0.0
+        },
+        "cost1": {
+          "numerator": 2506241724800099,
+          "denominator": 64000016000001000,
+          "decimal": 0.039160017159996646
+        }
+      },
+      "exact_score_tie": true,
+      "binary64": {
+        "score0": "0x0.0p+0",
+        "score1": "0x0.0p+0",
+        "cost1": "0x1.40cc82206a5dbp-5",
+        "gain1": "0x1.00a39b4d21e49p-6"
+      }
+    }
+  ],
+  "measures": {
+    "check_count": 61,
+    "failed_count": 0,
+    "policy_calls": 4,
+    "promoted": 2,
+    "stay": 2,
+    "tie_calls": 1,
+    "carried_transition_calls": 1
+  },
+  "extraction": {
+    "source_path": "research/slg-analytic-20261111-v2/finite_checks.py",
+    "source_sha256": "8f39b070b310baaaa58e6b3824ab7a59c0c86a9c8f5d1f3271e00b4a690a6ce7",
+    "line_start": 85,
+    "line_end": 98,
+    "ast_unchanged": true,
+    "ast_sha256": "56013ba5c5d892ea3ceda8a43f91af7f26914a220e5395119b3054171935fd0d",
+    "policy_text": "        before=state1; err=yy[t]-before*xx[t]\n        fit=float(np.sum(xw*yw)/(np.sum(xw*xw)+ridge)) if len(xw)>=8 else before\n        candidates=(before,before+alpha*(fit-before))\n        gains=tuple(mse(xw,yw,before)-mse(xw,yw,z) for z in candidates)\n        scores=tuple(beta*g-c for g,c in zip(gains,a[\"costs\"]))\n        chosen=1 if scores[1]>scores[0] else 0\n        state1=candidates[chosen]  # the exact same object that was evaluated\n        realised=mse(xw,yw,before)-mse(xw,yw,state1)\n        predicted_applied.append(abs(state1-candidates[chosen]))\n        measured_equal.append(abs(realised-gains[chosen])); no_update_g.append(abs(gains[0]))\n        v1_rows.append(dict(t=t,theta_before=before,theta0=candidates[0],theta1=candidates[1],\n            gain0=gains[0],gain1=gains[1],score0=scores[0],score1=scores[1],chosen=chosen,\n            theta_after=state1,realised_window_gain=realised,pre_action_error=float(err),\n            next_step_error=float(yy[t+1]-state1*xx[t+1]) if t+1<n else None))\n",
+    "same_compiled_object_for_all_calls": true,
+    "mse_source": "def mse(x,y,th): return float(np.mean((y-th*x)**2))",
+    "original_main_executed": false
+  },
+  "environment": {
+    "python": "3.14.7 (main, Aug 14 2026, 15:35:28) [Clang 22.1.3 ]",
+    "numpy": "2.5.1",
+    "platform": "Linux-7.0.0-42-generic-x86_64-with-glibc2.39",
+    "executable": "/home/phujck/.local/share/laplace/runtime/python/current/bin/python3.14",
+    "code_sha256": "6e28d95e704849058e84d87ae414db1e656dbbe73e5d5447af20431049411795",
+    "protocol_sha256": "53f6884ef78e4b7f3da4c46c0de86ebd3b485e160c14efb1c01ecaea8b3cbe14",
+    "v2_parameters_sha256": "25b9c7b5ded0567f804e1ba88debef5b76512f45a611ca2e229d429e501b5256"
+  },
+  "interpretation": "Four full policy calls exercise promoted, stay, positive-price exact binary tie and subsequent carried updated state. Numerical scalar-oracle comparisons use declared tolerance. No v0 or other v2 analytic reruns, no grid, no independent proof."
+}

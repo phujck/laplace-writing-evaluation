@@ -43,8 +43,12 @@ from ..json_spans import SEG_VERSION, SEGMENTER_ID
 
 __all__ = ["FIXTURE_PATH", "load_fixture", "declaration", "ingest", "ToyIngest", "BLOB_JOINER"]
 
-FIXTURE_PATH = Path(__file__).resolve().parents[4] / "evidence" / "ATLAS_PROGRAMME" / \
+# The wheel carries an exact build-time copy of the canonical synthetic input.
+# A source checkout reads the same canonical file; no author workspace is inferred.
+_PACKAGED_FIXTURE = Path(__file__).with_name("_toy_corpus.py")
+_SOURCE_FIXTURE = Path(__file__).resolve().parents[4] / "evidence" / "ATLAS_PROGRAMME" / \
     "lane_c" / "toy_corpus.py"
+FIXTURE_PATH = _PACKAGED_FIXTURE if _PACKAGED_FIXTURE.is_file() else _SOURCE_FIXTURE
 
 # The declared blob construction. One newline between turns; nothing else is added.
 BLOB_JOINER = b"\n"
@@ -77,7 +81,7 @@ PRINCIPAL_SURFACES = {
 
 
 def load_fixture() -> ModuleType:
-    """Import the fixture module from its evidence path (it is data, not an installed package)."""
+    """Import the exact synthetic fixture bundled by the wheel or present in the source checkout."""
     spec = importlib.util.spec_from_file_location("atlas_record_toy_fixture", FIXTURE_PATH)
     module = importlib.util.module_from_spec(spec)          # type: ignore[arg-type]
     spec.loader.exec_module(module)                         # type: ignore[union-attr]

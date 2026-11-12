@@ -1,0 +1,42 @@
+{
+  "schema_version": "dd.register-phase-diagram/1",
+  "status": "complete",
+  "parameters": {
+    "gamma": 1.0,
+    "eta": 0.8,
+    "C_part_slice": 0.25
+  },
+  "theta_split": 0.8410686705679301,
+  "theta_attention": 1.0852782044993055,
+  "checks": {
+    "max_alpha_grid_error": 0.0,
+    "slice_crossing_error": 5.551115123125783e-17,
+    "meeting_point_error": 0.0,
+    "balanced_at_theta_half": true,
+    "suppressed_at_theta_two": true
+  },
+  "artifacts": [
+    {
+      "id": "dd-register-phase-diagram",
+      "kind": "figure",
+      "category": "mathematical",
+      "sha256_by_format": {
+        "pdf": "db346420980c61e2c8685918b4fba2b0b22d144862fe4cf5180027bae1faeeb9",
+        "svg": "0b360981a42f18b25d5689ed1170e379401e83d041a29bcf7d10ab985219bb90",
+        "png": "ab4f8c79e29985422091f4405bcd34fb5bcae838e2d9f168b7c2642c322dc4ac"
+      },
+      "pdf": "/home/phujck/VScodeProjects/laplace/writing_projects/eigen-technical-due-diligence-briefing/manuscript/working-draft/figures/phase-run-939b6a8b76724d02.result/dd-register-phase-diagram.pdf",
+      "svg": "/home/phujck/VScodeProjects/laplace/writing_projects/eigen-technical-due-diligence-briefing/manuscript/working-draft/figures/phase-run-939b6a8b76724d02.result/dd-register-phase-diagram.svg",
+      "png": "/home/phujck/VScodeProjects/laplace/writing_projects/eigen-technical-due-diligence-briefing/manuscript/working-draft/figures/phase-run-939b6a8b76724d02.result/dd-register-phase-diagram.png"
+    }
+  ],
+  "data": {
+    "path": "/home/phujck/VScodeProjects/laplace/writing_projects/eigen-technical-due-diligence-briefing/manuscript/working-draft/figures/phase-run-939b6a8b76724d02.result/register-boundary.csv",
+    "sha256": "cea261a174820e38ac494c155013575442f683e95f01e301c96964cb32f8d6fc"
+  },
+  "tex_path": "figures/phase-run-939b6a8b76724d02.result/dd-register-phase-diagram.pdf",
+  "limitations": [
+    "Deterministic optimisation phase diagram of the declared finite model.",
+    "No physical thermodynamic transition, measured training advantage or independent proof is asserted."
+  ]
+}

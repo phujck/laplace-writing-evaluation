@@ -1,0 +1,35 @@
+% Minimal EigenEngine manuscript skeleton: REVTeX4-2 base + the eigen house layer.
+% Compile: pdflatex main.tex  (or: latexmk -pdf main.tex)
+\documentclass[reprint,aps,prx,superscriptaddress,nofootinbib]{revtex4-2}
+\usepackage{eigen-revtex}
+
+\begin{document}
+
+\title{An EigenEngine Manuscript Skeleton}
+\author{The Laplace Engine (Eigen)}
+\affiliation{The Laplace Engine}
+\author{G.\ McCaul}
+\affiliation{The Laplace Engine}
+
+\begin{abstract}
+This skeleton exercises the eigen house layer on the REVTeX4-2 base: the shared
+palette, the phys-coloured links, and the \verb|\claim| provenance tag. It is the
+net-new starting point for a projection, and the fixed target for the template gate.
+\end{abstract}
+
+\maketitle
+
+\section{Ground}\label{sec:ground}
+The engine states a claim and resolves it to an artifact.\claim{1} Section~\ref{sec:ground}
+is its own referent, so the reference is defined and the log stays clean. Inline maths
+such as $\hat{H}\ket{\psi} = E\ket{\psi}$ uses the canonical notation stack.
+
+\section{Outlook}\label{sec:outlook}
+The closing section follows the author's convention and is named Outlook, never
+Conclusion.
+
+\begin{thebibliography}{9}
+\bibitem{ref1} A.\ Author, \emph{A Title}, J.\ Ref.\ \textbf{1}, 1 (2026).
+\end{thebibliography}
+
+\end{document}

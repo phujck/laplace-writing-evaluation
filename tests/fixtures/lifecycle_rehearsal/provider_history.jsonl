@@ -1,0 +1,9 @@
+{"step":1,"kind":"seat.joined","holder":"A","generation":"A1","retired":true}
+{"step":2,"kind":"seat.joined","holder":"A","generation":"A2","retired":true}
+{"step":3,"kind":"seat.joined","holder":"B","generation":"B1","retired":false}
+{"step":4,"kind":"generation.replayed","holder":"A","generation":"A1","result":"REFUSED-RETIRED"}
+{"step":5,"kind":"generation.replayed","holder":"A","generation":"A2","result":"REFUSED-RETIRED"}
+{"step":6,"kind":"message.acknowledged","message_id":"message:historic-1","cursor":41}
+{"step":7,"kind":"checkpoint.observed","ordering":"checkpoint-then-compaction","cursor":41,"terminal_root":"sha256:20ed2626980e57b114c53f94b7accdfd5e882e030fb0e611b125115a5159405c"}
+{"step":8,"kind":"compaction.observed","ordering":"compaction-then-checkpoint","cursor":41,"terminal_root":"sha256:20ed2626980e57b114c53f94b7accdfd5e882e030fb0e611b125115a5159405c"}
+{"step":9,"kind":"provider.delayed-duplicate","message_id":"message:historic-1","cursor":41,"result":"INERT"}

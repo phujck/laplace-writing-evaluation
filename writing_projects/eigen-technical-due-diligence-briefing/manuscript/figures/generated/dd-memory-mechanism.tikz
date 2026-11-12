@@ -1,0 +1,18 @@
+\begin{tikzpicture}[x=1cm,y=1cm,font=\rmfamily\small,box/.style={draw,rounded corners=2pt,align=left,text width=4.0cm,minimum height=2.1cm,inner sep=6pt},arr/.style={->,line width=1pt}]
+\definecolor{blue}{HTML}{0072B2}
+\definecolor{teal}{HTML}{009E73}
+\definecolor{orange}{HTML}{D55E00}
+\node[anchor=west,font=\rmfamily\bfseries] at (-2.2,1.6) {Corpus as a State: geometric retention};
+\node[box,draw=blue,fill=blue!5] (a) at (0,0) {Source items and identities\\Declared semantic axes\\Item vectors $x_i$};
+\node[box,draw=blue,fill=blue!5] (b) at (5.2,0) {Mass, mean and local basis\\Covariance / projection state\\Inherited residual bounds};
+\node[box,draw=blue,fill=blue!5] (c) at (10.4,0) {Query direction $q$\\Bounded search or direct scan\\Source witnesses};
+\draw[arr,blue] (a)--(b);\draw[arr,blue] (b)--(c);
+\node[anchor=west,font=\rmfamily\bfseries] at (-2.2,-2.0) {Memory in Pieces / Skein / Parallax: tasks and reconstruction};
+\node[box,draw=teal,fill=teal!5] (d) at (0,-3.6) {Source mass $p$, reference $\pi$\\Cards / metadata and tasks\\Constructed generator $G$};
+\node[box,draw=teal,fill=teal!5] (e) at (5.2,-3.6) {Local coordinates $U$\\Retained law $A=U^TLU$\\Task decoder and defect $D$};
+\node[box,draw=teal,fill=teal!5] (f) at (10.4,-3.6) {Query-conditioned task\\Decode the retained object\\Answer with source witnesses};
+\draw[arr,teal] (d)--(e);\draw[arr,teal] (e)--(f);
+\draw[arr,orange] (f.south)--(10.4,-5.4)--(0,-5.4)--(d.south);
+\node[fill=white,text=orange,align=center] at (5.2,-5.4) {Residual / capacity failure: refine or use the source-level fallback};
+\node[align=center,text width=14.5cm] at (5.2,-6.5) {Extraction chooses the coordinates. Retention tests what survives.\\Routing finds the relevant object. Reader composition is a separate step.};
+\end{tikzpicture}

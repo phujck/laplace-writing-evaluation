@@ -1,0 +1,22 @@
+{
+  "scope": "Exact figure-byte intake from the HMF project. Presentation only; no experiment or scientific verification rerun.",
+  "source": {
+    "source_project": "ground-states-mean-force-and-thermal-geometry",
+    "source_run": "run-665ae2e571d0481d",
+    "scientific_run": "run-73cc8b5029974c04",
+    "scientific_result": "dual-ground-spectral-and-rg-20261016",
+    "scientific_result_revision": "sha256:fa434e80a603a88d6f4230cdd2f1d259fdcd6241b70aa641880a9f16850b9903",
+    "source_path": "synthetics papers/ground-states-mean-force-and-thermal-geometry/manuscript/research_runs/run-665ae2e571d0481d.result/spectral_ground_prediction.pdf",
+    "sha256": "59c0464e50e58bf6886dd1a743bba3eadc23b453c5ddc415fd918662a10367f1",
+    "encoding": "base64-pdf"
+  },
+  "checks": {
+    "source_pdf_hash_matches": true
+  },
+  "artifacts": [
+    {
+      "id": "hmf-physical-ground-prediction",
+      "pdf": "/home/phujck/VScodeProjects/laplace/writing_projects/eigen-technical-due-diligence-briefing/manuscript/research_runs/run-62e6074aba504443.result/hmf-physical-ground-prediction.pdf"
+    }
+  ]
+}

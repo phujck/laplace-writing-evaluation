@@ -1,0 +1,5 @@
+#!/bin/sh
+set -eu
+laplace_scripts=$(CDPATH= cd -- "$(dirname -- "$0")" && pwd)
+# Stdlib-only selector; -S prevents host editable installs from running here.
+exec /usr/bin/python3 -I -S -B "$laplace_scripts/laplace_python.py" "$@"

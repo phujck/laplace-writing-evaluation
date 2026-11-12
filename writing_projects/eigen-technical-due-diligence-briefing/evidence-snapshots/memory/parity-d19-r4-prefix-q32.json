@@ -1,0 +1,200 @@
+{
+  "law": "unique_even_parity",
+  "d": 19,
+  "N": 262144,
+  "fixed_coordinates": 4,
+  "location": "prefix",
+  "axes": [
+    0,
+    1,
+    2,
+    3
+  ],
+  "Q": 32,
+  "support_count_histogram": {
+    "16384": 32
+  },
+  "support_fraction_min": 0.0625,
+  "support_fraction_max": 0.0625,
+  "validation": {
+    "raw_packed_direct": true,
+    "weighted_unique_direct": true,
+    "recursive_exact_integer": true
+  },
+  "methods": {
+    "raw_packed_direct": {
+      "status": "MEASURED",
+      "cold_api_s": 0.00012297098874114454,
+      "kernel_ms_samples": [
+        0.0727040022611618,
+        0.0727040022611618,
+        0.07065600156784058,
+        0.06963200122117996,
+        0.07065600156784058,
+        0.06982400268316269,
+        0.06972800195217133,
+        0.06963200122117996,
+        0.06972800195217133,
+        0.0695360004901886,
+        0.06963200122117996
+      ],
+      "api_s_samples": [
+        0.00010306198964826763,
+        8.55910184327513e-05,
+        8.280097972601652e-05,
+        8.199800504371524e-05,
+        8.296099258586764e-05,
+        8.273898856714368e-05,
+        8.24179733172059e-05,
+        8.158499258570373e-05,
+        8.258200250566006e-05,
+        8.123699808493257e-05,
+        8.178400457836688e-05
+      ],
+      "kernel_ms_median": 0.06972800195217133,
+      "kernel_ms_p95": 0.0727040022611618,
+      "api_s_median": 8.258200250566006e-05,
+      "api_s_p95": 0.00010306198964826763,
+      "warmups": 2,
+      "samples": 11,
+      "prepare_s": 4.5294000301510096e-05,
+      "retained_bytes": 1081728,
+      "work": {
+        "row_codes_read": 8388608,
+        "predicate_bitwise_and": 8388608,
+        "predicate_equalities": 8388608,
+        "reduction_additions": 8388576,
+        "partial_values_written": 8192,
+        "weight_values_read": 0,
+        "bytes_read": 33652736,
+        "bytes_written": 32896
+      }
+    },
+    "weighted_unique_direct": {
+      "status": "MEASURED",
+      "cold_api_s": 0.00010177699732594192,
+      "kernel_ms_samples": [
+        0.08294399827718735,
+        0.08271999657154083,
+        0.08089599758386612,
+        0.08089599758386612,
+        0.08089599758386612,
+        0.08191999793052673,
+        0.08191999793052673,
+        0.08294399827718735,
+        0.08191999793052673,
+        0.08191999793052673,
+        0.08294399827718735
+      ],
+      "api_s_samples": [
+        0.00010130900773219764,
+        9.494100231677294e-05,
+        9.295300696976483e-05,
+        9.347699233330786e-05,
+        9.333001798950136e-05,
+        9.360499097965658e-05,
+        9.373101056553423e-05,
+        9.571999544277787e-05,
+        9.432699880562723e-05,
+        9.401497663930058e-05,
+        9.652998414821923e-05
+      ],
+      "kernel_ms_median": 0.08191999793052673,
+      "kernel_ms_p95": 0.08294399827718735,
+      "api_s_median": 9.401497663930058e-05,
+      "api_s_p95": 0.00010130900773219764,
+      "warmups": 2,
+      "samples": 11,
+      "prepare_s": 0.00011706698569469154,
+      "retained_bytes": 2130304,
+      "work": {
+        "row_codes_read": 8388608,
+        "predicate_bitwise_and": 8388608,
+        "predicate_equalities": 8388608,
+        "reduction_additions": 8388576,
+        "partial_values_written": 8192,
+        "weight_values_read": 8388608,
+        "bytes_read": 67207168,
+        "bytes_written": 32896
+      }
+    },
+    "recursive_exact_integer": {
+      "status": "MEASURED",
+      "cold_api_s": 5.062299896962941e-05,
+      "kernel_ms_samples": [
+        0.031936001032590866,
+        0.03174399957060814,
+        0.030719999223947525,
+        0.03167999908328056,
+        0.030719999223947525,
+        0.03174399957060814,
+        0.03174399957060814,
+        0.035999998450279236,
+        0.03276799991726875,
+        0.03174399957060814,
+        0.030719999223947525
+      ],
+      "api_s_samples": [
+        4.894001176580787e-05,
+        4.559397348202765e-05,
+        4.391997936181724e-05,
+        4.4617976527661085e-05,
+        4.3598993215709925e-05,
+        4.434699076227844e-05,
+        4.41960000898689e-05,
+        4.9452006351202726e-05,
+        4.632500349543989e-05,
+        4.8331014113500714e-05,
+        4.299500142224133e-05
+      ],
+      "kernel_ms_median": 0.03174399957060814,
+      "kernel_ms_p95": 0.035999998450279236,
+      "api_s_median": 4.4617976527661085e-05,
+      "api_s_p95": 4.9452006351202726e-05,
+      "warmups": 2,
+      "samples": 11,
+      "prepare_s": 2.0489009330049157e-05,
+      "retained_bytes": 2200,
+      "work": {
+        "message_dtype": "torch.int32",
+        "state_rows": 1184,
+        "padded_transition_slots_read": 2432,
+        "integer_multiplier_products": 2432,
+        "integer_reduction_additions": 1184,
+        "bytes_read": 24864,
+        "bytes_written": 256
+      },
+      "validation": {
+        "status": "PASS",
+        "checked_states": 37,
+        "checked_supported_edges": 72,
+        "maximum_primitive_total": 262144,
+        "maximum_edge_multiplier": 1,
+        "root_primitive_total": 262144,
+        "root_scale": 1,
+        "message_dtype": "torch.int32",
+        "overflow_policy": "gcd reduction then checked multiply for branch denominator, lcm, multiplier and normalization product"
+      }
+    }
+  },
+  "stage_budget": {
+    "max_bytes": 3337509162,
+    "source": "dynamic_cuda_mem_get_info",
+    "resident_bytes": 9179024,
+    "free_bytes": 3435134976,
+    "reusable_pool_bytes": 288567296,
+    "total_device_bytes": 3953721344,
+    "headroom_bytes": 395372134
+  },
+  "external_live_bytes": 9179024,
+  "method_max_bytes": {
+    "raw": 3329378970,
+    "weighted_unique": 3330427546,
+    "exact": 3328332082
+  },
+  "cell_key": "unique_even_parity__d19__r4__prefix__q32",
+  "build_receipt": {
+    "path": "builds/unique_even_parity__d19.attempt-1.json",
+    "sha256": "83cb3497f687253de9092984c913424a4f3ca5032d3671cc35dba44c67dfd925"
+  }
+}

@@ -1,0 +1,300 @@
+{
+  "schema_version": "laplace.writing-authoring-review/1",
+  "date": "2026-09-26",
+  "scope": "Source-grounded review of the existing manuscript scanner/walk/editor/pipeline surfaces. This is a repair map, not an implementation or a claim that the proposed live authoring loop exists.",
+  "sources_read": [
+    "evidence/WRITING_2026-09-26/research-system-brief.md",
+    "evidence/WRITING_2026-09-26/authoring-index.json",
+    "docs/writing-system-audit-2026-09-26.md",
+    "src/laplace/verify.py",
+    "scripts/render_glossary.py",
+    "src/laplace/pipeline/notation_audit.py",
+    "src/laplace/walk_requests.py",
+    "src/laplace/manuscript_bridge.py",
+    "src/laplace/pipeline/propagate.py",
+    "src/laplace/pipeline/{schema,projection_spec,dispatch,growth_adjudicator}.py",
+    "runtime_profiles.toml"
+  ],
+  "existing_mechanisms": [
+    {
+      "area": "verified concept vocabulary",
+      "mechanism": "The conceptric's def: nodes own term, aliases, and deprecated_aliases. check_glossary normalizes terms, rejects missing canonical terms and collisions, rejects live deprecated vocabulary, and reports recurrent uncovered phrases. GLOSSARY.md is rendered from the same def registry.",
+      "evidence": [
+        "src/laplace/verify.py:600-605",
+        "src/laplace/verify.py:607-630",
+        "src/laplace/verify.py:633-716",
+        "scripts/render_glossary.py:26-70"
+      ],
+      "producer": "conceptric def: projection fields",
+      "current_consumers": "verify.check_glossary, render_glossary.py, and scaffold-wipe's shared deprecated-vocabulary accessor",
+      "strength": "A canonical, collision-checked source exists for concept names and retired aliases."
+    },
+    {
+      "area": "notation and manuscript specification",
+      "mechanism": "The projection specification requires notation and terminology fields, derives an equation ledger from concept labels with authored overrides, and validates basic terminology presence. Rendered prose additionally receives a report-only heuristic for compound spelling and orthography forks.",
+      "evidence": [
+        "src/laplace/pipeline/projection_spec.py:69-114",
+        "src/laplace/pipeline/projection_spec.py:117-168",
+        "src/laplace/pipeline/notation_audit.py:69-129"
+      ],
+      "strength": "Equation ownership has a concept-side identity and the prose audit finds a limited class of surface inconsistency."
+    },
+    {
+      "area": "author requests, feedback and corrections",
+      "mechanism": "The editor banks source-anchored feedback through manuscript_bridge. Requests are ordinary append-only comments prefixed request:, classified by walk_requests, and later revoke rows supersede rather than erase them. propagate reads feedback and turns routed kinds into typed work items; growth rulings are append-only and a later contest is the documented correction path.",
+      "evidence": [
+        "src/laplace/walk_requests.py:1-29",
+        "src/laplace/walk_requests.py:38-84",
+        "src/laplace/walk_requests.py:118-174",
+        "src/laplace/manuscript_bridge.py:309-335",
+        "src/laplace/manuscript_bridge.py:442-498",
+        "src/laplace/pipeline/propagate.py:1-18",
+        "src/laplace/pipeline/propagate.py:209-281",
+        "src/laplace/pipeline/growth_adjudicator.py:60-70"
+      ],
+      "strength": "There is one durable feedback ledger, exact anchors, append-only history, and a generic feedback-to-work path."
+    },
+    {
+      "area": "incremental growth and propagation",
+      "mechanism": "Growth has a project-scoped state sidecar and forward transition checks. Propagation computes affected sections from ledger records, plan membership and the substrate edge index, and distinguishes cheap order-only changes from substantive work.",
+      "evidence": [
+        "src/laplace/pipeline/growth.py:40-56",
+        "src/laplace/pipeline/growth.py:439-553",
+        "src/laplace/pipeline/propagate.py:51-93",
+        "src/laplace/pipeline/propagate.py:100-158",
+        "docs/writing-system-audit-2026-09-26.md:99-105"
+      ],
+      "strength": "The existing pipeline already has a natural invalidation and work-routing seam."
+    },
+    {
+      "area": "provider/model policy",
+      "mechanism": "Dispatch chooses abstract worker tiers from a static MODEL_RANK and WORKER_MODEL map, applies optional dial pin then ceiling clamp, and records a verbatim model_id when a dial supplies it. The selected runtime profile records Python and package capabilities, including GPU embedding capability, but no writing-provider capability registry.",
+      "evidence": [
+        "src/laplace/pipeline/schema.py:560-609",
+        "src/laplace/pipeline/dispatch.py:1065-1078",
+        "src/laplace/pipeline/dispatch.py:1213-1230",
+        "runtime_profiles.toml:1-45",
+        "docs/writing-system-audit-2026-09-26.md:199-208"
+      ],
+      "strength": "A tier policy and run stamp exist, separating policy from a provider-specific ID."
+    },
+    {
+      "area": "authoring surfaces",
+      "mechanism": "The documented live surfaces are source-addressed reading, rewrites, notes, edit history and PDF access. The audit found a document-selection failure and non-recursive include traversal: an empty scaffold can be reported as a successful document, while nested book content is omitted.",
+      "evidence": [
+        "docs/writing-system-audit-2026-09-26.md:31-39",
+        "docs/writing-system-audit-2026-09-26.md:49-75",
+        "docs/writing-system-audit-2026-09-26.md:111-123"
+      ],
+      "strength": "The repair should extend the existing walk, review surface, projection viewer, document model and compiler together; it must not introduce a parallel authoring interface."
+    }
+  ],
+  "verified_integration_gaps": [
+    {
+      "gap": "Glossary and notation are not one end-to-end concept-identity contract.",
+      "evidence": [
+        "src/laplace/verify.py:635-651",
+        "src/laplace/pipeline/notation_audit.py:76-108",
+        "docs/writing-system-audit-2026-09-26.md:160-160",
+        "docs/writing-system-audit-2026-09-26.md:226-226"
+      ],
+      "finding": "Glossary validation establishes def-node ownership only in conceptric essences. The rendered-prose audit infers two-word variants by frequency and selects the most frequent surface as its suggested canonical form. It neither resolves each manuscript occurrence to a verified def id nor checks notation, glossary, links, equation labels and editor suggestions against one identity. Thus a prose spelling may look consistent while naming the wrong concept, and a valid alias cannot be linked reliably to its owner.",
+      "repair_seam": "Add a reusable concept-resolution view beside verify.check_glossary: emit immutable concept_id, canonical_term, accepted_aliases, deprecated_aliases, notation/symbol declarations, source revision and resolver status. Have scanner/include traversal attach resolved concept occurrences and byte anchors; have walk/editor, projection_spec, notation_audit, render_glossary, document_model and TeX link rendering consume that view. Keep unresolved or ambiguous surfaces visible as findings, never guessed links.",
+      "acceptance_examples": [
+        "A selected passage containing a canonical term, an accepted alias and a deprecated alias resolves the first two to the same def:id; the deprecated occurrence links to that identity and is marked replacement-required.",
+        "Two def nodes claiming normalized variants fail at the existing glossary gate and the editor offers no ambiguous deep link.",
+        "A symbol introduced in the equation ledger opens its owning def:id and every rendered occurrence has the same target or a named unresolved status."
+      ]
+    },
+    {
+      "gap": "Correction banking preserves history but does not provide a live, scoped correction lifecycle across all producers and consumers.",
+      "evidence": [
+        "src/laplace/walk_requests.py:21-29",
+        "src/laplace/walk_requests.py:142-174",
+        "src/laplace/pipeline/propagate.py:209-281",
+        "docs/writing-system-audit-2026-09-26.md:105-113",
+        "docs/writing-system-audit-2026-09-26.md:195-204"
+      ],
+      "finding": "Requests encode type in a comment prefix and scope as a loose row field. pending() merely excludes revoked requests. The audit states that a source search found no production caller for walk_requests.collect, so the typed request register is not demonstrated as consumed. Generic propagation can route known feedback kinds, but neither it nor document invalidation carries a correction's target revision, intended scope, affected concept identity, consumption receipt, or conflict state.",
+      "repair_seam": "Extend the existing feedback-row grammar and manuscript_bridge write path with correction_id, operation, scope={passage,project,global}, exact anchors, concept_ids, base_revisions, supersedes, status and idempotency key. Make one correction reducer compute live state per scope: passage masks project/global only where a newer, overlapping scoped correction says so; revocation restores the preceding live state. Feed its resolved events into propagate's existing intake_items and affected-section closure. Consumers must write a consumption receipt naming correction_id, output revision and operation outcome, while keeping the append-only source row intact.",
+      "acceptance_examples": [
+        "A passage correction to paragraph P is consumed into a rewrite of P only; an unrelated chapter remains clean and the receipt names P's previous and resulting revision.",
+        "A project correction to a definition invalidates every occurrence resolved to its concept_id, while an explicitly later passage-local correction survives in that passage.",
+        "A global terminology correction updates all live occurrences, except a later project exception and a later passage exception; undoing the passage exception deterministically reveals the project rule.",
+        "Restarting the consumer reuses the correction idempotency key and produces no duplicate work item or second manuscript edit."
+      ]
+    },
+    {
+      "gap": "Growth/framing produces adjudication packets but is not wired as a live authoring producer-consumer loop.",
+      "evidence": [
+        "src/laplace/pipeline/growth_adjudicator.py:18-34",
+        "src/laplace/pipeline/growth_adjudicator.py:119-155",
+        "src/laplace/pipeline/growth.py:616-677",
+        "docs/writing-system-audit-2026-09-26.md:77-105"
+      ],
+      "finding": "growth_adjudicator explicitly says the workflow harness weld is a next-session edge. Existing growth state is project-level and its evidence transition is geared to a project rung, while manuscript framing needs a reader/passage-level explanation decision with concept and revision dependencies. The source audit also found relationship meanings flattened before structural planning, so framing cannot safely use evidence, implementation, analogy and exposition-order as if they were interchangeable.",
+      "repair_seam": "Use the existing conceptric adapter and typed relation vocabulary to produce a framed-authoring event rather than a new store. The event should reference concept identities, typed relation roles, reader goal, target document selection, and revision set; its consumer adds/updates a projection-spec or plan obligation and invokes propagate. Preserve author freedom to merge/split exposition under the writing ruling rather than binding the event to a paragraph shape.",
+      "acceptance_examples": [
+        "Marking a claim as needing implementation framing adds an implementation obligation to the selected chapter without reclassifying its evidence relation as exposition order.",
+        "A revised assumption changes the reader-state and support obligations of only dependent passages, even though the def:id remains unchanged.",
+        "An author merges two planned passages; their plan IDs and correction receipts remain many-to-many, and fidelity validation still identifies the relevant obligations."
+      ]
+    },
+    {
+      "gap": "Walk/editor/document-model producers do not share a reliable selected edition and recursive source map.",
+      "evidence": [
+        "docs/writing-system-audit-2026-09-26.md:49-67",
+        "docs/writing-system-audit-2026-09-26.md:69-75",
+        "docs/writing-system-audit-2026-09-26.md:260-270"
+      ],
+      "finding": "The audit observed the default walk report success for an empty scaffold while the registered manuscript was substantial; it also observed an inner included section silently omitted in a nested-book fixture. Any correction or concept occurrence tied to these divergent views can be anchored to the wrong producer or disappear from a consumer.",
+      "repair_seam": "Create one selected-edition resolver used by walk, scanner, projection_viewer, review_surface, document_model and TeX assembly. Its recursive include traversal returns stable ordered block ids, exact relative source paths, source byte spans, edition/revision hash, support for part/chapter/section levels, and visible refusal records for cycles/missing/unsupported input. Reuse current source-addressed edit anchors against this map.",
+      "acceptance_examples": [
+        "For corpus-as-a-state, selecting the accepted authored edition displays its populated blocks; selecting the scaffold explicitly displays candidate-empty rather than successful manuscript.",
+        "A nested part/chapter/section fixture exposes every heading and block to walk, editor navigation, document_model and compilation in one order.",
+        "An edit made through a walk block resolves to the same source path and byte span used by the correction reducer and rendered PDF provenance."
+      ]
+    },
+    {
+      "gap": "Provider/model selection relies on stale static strings rather than verified runtime capabilities.",
+      "evidence": [
+        "src/laplace/pipeline/schema.py:564-609",
+        "src/laplace/pipeline/dispatch.py:1072-1078",
+        "src/laplace/pipeline/dispatch.py:1213-1230",
+        "runtime_profiles.toml:16-45",
+        "docs/writing-system-audit-2026-09-26.md:206-208"
+      ],
+      "finding": "schema.MODEL_RANK contains historical tier labels (haiku, sonnet, opus); unknown model strings clamp to the ceiling. dispatch may stamp a verbatim model_id from dials, but it does not establish that the chosen provider currently supports resume, stream, interrupt, structured output, attachments, or the requested effort. runtime_profiles.toml describes local Python/package capability, not model-provider capability. The audit recommends verifying each provider's equivalent contract before treating it as interchangeable.",
+      "repair_seam": "Keep policy tiers, but introduce a runtime capability resolver at the existing dispatch boundary. It should consume verified provider adapters and report provider_id, model_id, supported efforts, conversation/resume/stream/interrupt/schema/attachment operations, availability timestamp, capability evidence and fallback/refusal reason. compile_dispatch selects a policy tier first, resolves an eligible runtime model second, and records both the policy and the capability snapshot; it refuses unavailable operations rather than mapping an unknown literal to a ceiling model.",
+      "acceptance_examples": [
+        "A prose rewrite requiring streaming and interruption is dispatched only to an available model whose current capability record supports both; otherwise the editor receives an actionable unavailable-operation result and no request is lost.",
+        "A provider reports a renamed model id. A capability refresh updates the resolver; no source change to MODEL_RANK is needed, and the run records the selected id plus its capability receipt.",
+        "A batch packet that needs only structured output may use a different available model from a live authoring turn, while both satisfy the same declared policy tier and record their separate capability snapshots."
+      ]
+    }
+  ],
+  "integration_order": [
+    "First make selected manuscript edition and recursive source mapping shared, because every anchor, correction and occurrence must refer to the same bytes.",
+    "Then expose the verified concept-resolution view and consume it in scanner/walk/editor, glossary, notation, link and equation paths.",
+    "Then evolve the existing feedback ledger into scoped correction events, reducer and consumption receipts, routing resolved events through propagate.",
+    "Wire framing/growth events into the same identity, dependency and propagation path.",
+    "Finally place a capability resolver behind dispatch and the live-writing adapter; provider replacement must preserve the writing session and recorded decisions."
+  ],
+  "coherent_authorship": {
+    "assessment": "The current staged workflow makes the section, then the planned paragraph, the execution unit before it has established a coherent argument. That is architectural, not a minor packet-wiring defect. The authorial freedom in the newer prose preamble is real but confined to one section; the late weld may improve language but freezes substance and forbids moving content across sections. It therefore cannot repair an argument whose causal exposition crosses the initial section boundary.",
+    "diagnosis": [
+      {
+        "finding": "Narrative planners are independently spawned for each stale section and may run in parallel; their inputs are per-section contracts and paragraph plans.",
+        "evidence": [
+          ".claude/workflows/project-staged.js:135-160",
+          "src/laplace/pipeline/narrative.py:149-219",
+          "src/laplace/pipeline/narrative.py:253-305"
+        ],
+        "consequence": "No producer is responsible for the shape of an argument that begins by motivating a claim in one section, establishes it in another, and cashes it out in an implementation or result later. Connections are mechanically required between paragraphs, but that is adjacency within a pre-cut container, not causal authorship of the whole movement."
+      },
+      {
+        "finding": "Each prose realiser is instructed to read only its compiled, closed section dispatch and nothing else; all section realisers may run concurrently.",
+        "evidence": [
+          ".claude/workflows/project-staged.js:163-180",
+          "src/laplace/pipeline/narrative.py:253-259",
+          "src/laplace/pipeline/dispatch.py:1298-1340"
+        ],
+        "consequence": "The work queue defines the writer's epistemic boundary. It makes a neighbouring section's argument unavailable precisely when a transition, deferred definition, recap, or shifted causal explanation must be decided."
+      },
+      {
+        "finding": "The structural layer conflates or reduces several relations into document-order constraints and normally enforces unique node introduction. Its relation-kind recovery reads a separate historical graph because the runtime ledger has flattened the relation kind.",
+        "evidence": [
+          "src/laplace/pipeline/structural.py:27-61",
+          "src/laplace/pipeline/structural.py:119-160",
+          "src/laplace/pipeline/structural.py:163-177",
+          "docs/writing-system-audit-2026-09-26.md:79-85",
+          "docs/writing-system-audit-2026-09-26.md:97-101"
+        ],
+        "consequence": "A proof dependency, evidence link, implementation relation and pedagogic return cannot safely be translated into one linear placement or a one-time introduction rule. The present cut asks the section plan to decide too much before the argument has been written."
+      },
+      {
+        "finding": "The final weld is the only whole-manuscript writer, but receives settled fragments after the independent realisation. It may only alter language, paragraph/sentence structure inside a section, and connective tissue; it may not move material across sections or change content.",
+        "evidence": [
+          ".claude/workflows/project-staged.js:204-233",
+          "src/laplace/pipeline/dispatch.py:1703-1767"
+        ],
+        "consequence": "A late de-seaming pass is a cosmetic repair boundary. It cannot discover that the explanation should establish a definition earlier, combine a proof and its interpretation, or move an implementation consequence beside its causal premise."
+      },
+      {
+        "finding": "The newer prose preamble correctly permits a realiser to merge, split and reorder plan material, but only within its assigned section. Paragraph-grain repair narrows further to one paragraph plus two read-only neighbours.",
+        "evidence": [
+          "src/laplace/pipeline/schema.py:1066-1088",
+          "src/laplace/pipeline/dispatch.py:1846-1923"
+        ],
+        "consequence": "This relaxes paragraph atomisation without resolving section atomisation. Provenance markers are useful evidence joins, but their current granularity has become an execution boundary."
+      }
+    ],
+    "three_orders": [
+      {
+        "name": "proof and dependency order",
+        "meaning": "What must be true, defined, observed or assumed for a claim to be licensed. This is a typed relation graph, often branching, and includes distinctions such as derives-from, supported-by, implemented-by and analogy. It determines admissibility and what a later claim depends on; it does not prescribe prose sequence.",
+        "current_seam": "conceptric relations and structural dependency checks, but relation kinds are flattened before the structural consumer: src/laplace/pipeline/structural.py:43-61 and docs/writing-system-audit-2026-09-26.md:79-85."
+      },
+      {
+        "name": "reader explanation order",
+        "meaning": "The deliberate path by which a reader is motivated, given an intuitive handle, supplied definitions, shown a result and its limits, then shown its implementation or consequences. A concept may recur in several occurrence roles. This order may introduce a motivating question before full proof, return to a definition, or put a concrete consequence beside an abstraction.",
+        "current_seam": "section contracts and reader state: src/laplace/pipeline/structural.py:90-160; the audit identifies that first placement and one-hop uses do not represent repeated teaching acts: docs/writing-system-audit-2026-09-26.md:97-101."
+      },
+      {
+        "name": "execution order",
+        "meaning": "The order in which the system plans, retrieves evidence, writes, validates and applies edits. It should follow the smallest currently affected explanatory movement and its causal closure, not mechanically mirror either proof order or chapter order.",
+        "current_seam": "project-staged currently maps execution directly to stale sections and runs their planners/realisers independently: .claude/workflows/project-staged.js:137-180."
+      }
+    ],
+    "replacement_execution_design": {
+      "unit": "Replace independent section generation with an authorial movement: a bounded, connected explanatory arc chosen from the current request or affected change. An arc can cross one or more section boundaries, but remains a temporary working projection rather than a new permanent universal schema or a global all-manuscript prompt.",
+      "formation": [
+        "Start from an author selection, correction, growth event, or stale supported claim. Resolve its exact source spans and current selected edition through the shared scanner/source map.",
+        "Build an argument bundle from the selected claim(s), their typed proof/evidence/implementation dependencies, the current reader-state before and after the intended movement, and only the existing prose blocks necessary to join its two boundaries. Include exact evidence handles and unresolved gaps; do not flatten them into paragraph instructions.",
+        "Let one authoring turn determine the movement's reader order and propose a section outline or cross-section edit set. It may combine, move, defer, or reprise material, while every proposed prose block retains many-to-many links to existing claim, evidence and plan identities.",
+        "Apply the resulting edits as ordinary source-addressed changes to the existing fragments and plan/projection artifacts. The editor can display individual patches, but their acceptance and generation are governed by the movement as a whole.",
+        "Run existing fidelity, citation, notation and compile checks after the movement, then present unresolved proof/evidence questions as returned issues. A coherence read is performed on the movement together with its boundary passages before it is accepted; a whole-manuscript weld becomes optional editorial polish, never the first coherence mechanism."
+      ],
+      "boundedness_without_fragmentation": [
+        "Bound by typed dependency closure and reader-boundary context, not by a fixed count of sections or paragraphs. The bundle declares what it includes, why each item is included, and the first omitted dependency or reader transition requiring descent.",
+        "Use progressive descent: begin with a movement summary, selected blocks and immediate causal/reader predecessors and successors; retrieve exact proof, experiment or implementation spans only when the authoring turn needs them. Unknown or ambiguous relations stop expansion with a named issue rather than silently widening to the entire manuscript.",
+        "Keep evidence atoms as addressable support and validation inputs. They are not prose units: one paragraph can connect many supports, and one support can serve prose in several movements. Existing plan/provenance IDs remain links and audit evidence, not a requirement for a separate planner or writer per ID.",
+        "Parallelise mechanical indexing, evidence retrieval, compilation and checks where safe. Do not parallelise competing first drafts of neighbouring parts of the same unresolved movement. Independent movements may execute concurrently only when their source spans and causal/reader closures are disjoint."
+      ],
+      "existing_modules_to_reuse": [
+        "scanner, walk, review_surface and projection_viewer for selection, source-addressed patches and visible operation state; see docs/writing-system-audit-2026-09-26.md:212-215.",
+        "conceptric adapter and typed relation records for causal closure, after preserving relation meaning before structural planning; see docs/writing-system-audit-2026-09-26.md:79-85.",
+        "structural contracts and reader state as inputs to a movement, rather than a gate that pre-decides the movement's prose cut; src/laplace/pipeline/structural.py:90-160.",
+        "narrative packets as a component builder, broadened from section-only to a selected movement bundle; src/laplace/pipeline/narrative.py:253-305.",
+        "document_model fidelity, citation-direction and existing provenance sidecars as post-edit evidence joins; docs/writing-system-audit-2026-09-26.md:87-95."
+      ]
+    },
+    "acceptance_examples": [
+      "An author asks to explain why an implementation optimisation follows from a theorem. The system forms one arc containing the motivating question, theorem/assumptions, implementation observation and the boundary prose from two chapters. One writer proposes the cross-chapter transition; source patches land in their existing files with links to the same evidence identities.",
+      "A changed experiment weakens a performance claim. The system marks the measured claim and its reader-facing consequence stale, leaves the independent theorem intact, and forms an arc that revises the result, its qualification and the earlier promise to the reader. It does not rerun unrelated section planners merely because they share a chapter.",
+      "A definition is first motivated in an introduction, formalised in foundations and reused in an example. The reader order records those three roles while proof dependencies still point to the formal definition. A later wording correction can update one occurrence without erasing the role distinction or forcing duplicate concept nodes.",
+      "A local citation correction has a closure confined to one paragraph and its transition. The execution bundle remains small, but it includes the adjacent boundary prose needed to preserve the join and reports any broader claim that would require an argument-level movement."
+    ],
+    "tradeoffs": [
+      "This reduces naive section-level parallelism and makes a movement planner responsible for harder editorial judgement. That cost is deliberate: the current late weld pays it after independent drafts when it can no longer alter the argument.",
+      "Typed closure and progressive descent need reliable relation semantics and selected-edition source maps. Until those are repaired, the system must expose an incomplete closure rather than pretend a narrow packet is sufficient.",
+      "Cross-section edits increase the chance of overlapping author changes. Existing base revisions, byte guards and visible comparison must govern application; the system should not guess merges.",
+      "A bounded movement can still legitimately grow when a causal premise or reader transition is unresolved. The correct response is a named frontier and an author decision or follow-up movement, not an arbitrary token cap that makes the prose disjointed."
+    ],
+    "non_goals": [
+      "Do not replace provenance with untraceable whole-document prose generation.",
+      "Do not create a dozen mandatory fields or a second global orchestration store; the movement is a transient execution projection over existing objects, source anchors and artifacts.",
+      "Do not load every manuscript, source or proof into every authoring turn."
+    ]
+  },
+  "open_questions": [
+    "Which current conceptric relation schema and adapter is the authoritative write seam for preserving relation meaning before structural planning? The audit identifies the flattening but this bounded review did not trace every serializer.",
+    "What conflict policy should govern two live corrections at the same scope and revision: author choice, explicit priority, or a hard conflict state? Ordering alone is insufficient for concurrent unrelated authors.",
+    "Which provider adapters can furnish a durable capability receipt and conversation recovery today? The audit supports a Codex route but explicitly does not certify a working Laplace connection or arbitrary desktop-task attachment.",
+    "How should author-approved local wording exceptions be represented in the concept-resolution view so they remain explainable without weakening global deprecated-vocabulary checks?"
+  ],
+  "non_claims": [
+    "No production file, model call, service, provider session, publication or external state was changed by this review.",
+    "The acceptance examples specify integration behavior to test; they are not test results."
+  ]
+}

@@ -1,0 +1,76 @@
+{
+  "schema_version": "dd.archived-replot/1",
+  "interpretation": "Presentation-only replot of archived classical simulations, not rerun or independent validation.",
+  "inputs": [
+    {
+      "path": "evidence-snapshots/quantum/operator_projection_result.json",
+      "sha256": "3023e8f5b138983e7d8400cf08bab033b01fa7351465f010fe1731b4fa350754"
+    },
+    {
+      "path": "evidence-snapshots/quantum/metric_pool_sweep.csv",
+      "sha256": "531c3778144cae2c73f43f8ff8e2f8035190e47d55989cd30cdf1400ebb1f323"
+    }
+  ],
+  "archival_provenance_limits": "Original scripts/configuration preserved in evidence-snapshots/quantum and packet01. No historical supervised run manifest supplied.",
+  "environment": {
+    "python": "3.14.7",
+    "matplotlib": "3.11.2"
+  },
+  "artifacts": [
+    {
+      "id": "archived-operator-projection-pdf",
+      "path": "/home/phujck/VScodeProjects/laplace/writing_projects/eigen-technical-due-diligence-briefing/manuscript/research_runs/run-74dbf47f74a14fdc.result-plots/archived-operator-projection.pdf",
+      "kind": "figure",
+      "sha256": "3cecc895fab94d18e16bd2b5c4235aa536b695c8084b8b272c0084832ee1e018"
+    },
+    {
+      "id": "archived-operator-projection-svg",
+      "path": "/home/phujck/VScodeProjects/laplace/writing_projects/eigen-technical-due-diligence-briefing/manuscript/research_runs/run-74dbf47f74a14fdc.result-plots/archived-operator-projection.svg",
+      "kind": "figure",
+      "sha256": "36bd7193b07d05a1529d42f40b6fa8a53beadba9fc71869244de2c61201aa2ad"
+    },
+    {
+      "id": "archived-operator-projection-png",
+      "path": "/home/phujck/VScodeProjects/laplace/writing_projects/eigen-technical-due-diligence-briefing/manuscript/research_runs/run-74dbf47f74a14fdc.result-plots/archived-operator-projection.png",
+      "kind": "figure",
+      "sha256": "8344a0b4ac1690ebc0af7e63e3e71b521c8ce34f80a8ddad68e9b271841012b4"
+    },
+    {
+      "id": "archived-gap-aware-selection-pdf",
+      "path": "/home/phujck/VScodeProjects/laplace/writing_projects/eigen-technical-due-diligence-briefing/manuscript/research_runs/run-74dbf47f74a14fdc.result-plots/archived-gap-aware-selection.pdf",
+      "kind": "figure",
+      "sha256": "6564fc973217840c955920302f6c6133a9b5ad96fdf0753d01e4744a445aa8c0"
+    },
+    {
+      "id": "archived-gap-aware-selection-svg",
+      "path": "/home/phujck/VScodeProjects/laplace/writing_projects/eigen-technical-due-diligence-briefing/manuscript/research_runs/run-74dbf47f74a14fdc.result-plots/archived-gap-aware-selection.svg",
+      "kind": "figure",
+      "sha256": "dc2430f40426dbdefff6fe6e6fdd26abc07027c6bb95c50c9124a68349d1dd4e"
+    },
+    {
+      "id": "archived-gap-aware-selection-png",
+      "path": "/home/phujck/VScodeProjects/laplace/writing_projects/eigen-technical-due-diligence-briefing/manuscript/research_runs/run-74dbf47f74a14fdc.result-plots/archived-gap-aware-selection.png",
+      "kind": "figure",
+      "sha256": "608c11af5af4243b6da096f6237c2797a54a69e6dd83ba9b3b5f830ca472d4dc"
+    }
+  ],
+  "checks": {
+    "expected_metric_rows": 15,
+    "metric_couplings": [
+      0.4,
+      0.6,
+      0.8,
+      1.0,
+      1.2
+    ],
+    "projection_qubits": [
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8
+    ]
+  }
+}

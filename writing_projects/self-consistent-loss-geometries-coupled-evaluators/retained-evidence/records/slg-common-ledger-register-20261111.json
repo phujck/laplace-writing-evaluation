@@ -1,0 +1,61 @@
+{
+  "artifacts": [
+    {
+      "label": "common_ledger_register",
+      "path": "research/slg-scientific-figures-20261111/outputs/run-7f8022a64802820f.result/common_ledger_register.csv",
+      "scope": "project"
+    }
+  ],
+  "config": "evidence/SLG_VISUAL_PRODUCTION_2026-11-11/finite-figure-protocol.json",
+  "config_scope": "project",
+  "id": "slg-common-ledger-register-20261111",
+  "kind": "result",
+  "limitations": [
+    "Author-interpreted figure tables awaiting independent science/visual review.",
+    "Finite analytic model and declared parameters, not empirical biological evidence.",
+    "OR schedule is externally frozen and independent, not adaptive path coarse-graining.",
+    "Static register optima are nested feasible sets, not unexpected performance superiority."
+  ],
+  "provenance": {
+    "dependencies": [
+      {
+        "bytes": 5993,
+        "path": "evidence/SLG_VISUAL_PRODUCTION_2026-11-11/finite-figure-protocol.json",
+        "sha256": "58ff935dfb8c3f7a3463d3ecd22a9dc23ebd64fa24214e7d1c084cf4fad27ed1",
+        "status": "PRESENT"
+      },
+      {
+        "bytes": 14945,
+        "path": "research/slg-scientific-figures-20261111/scientific_tables.py",
+        "sha256": "f9c98ffb562216caf9b71a40351777b274b72eb9e4fbdf199d6e99e8a171c905",
+        "status": "PRESENT"
+      },
+      {
+        "bytes": 20027,
+        "path": "research_runs/run-7f8022a64802820f.result.json",
+        "scope": "manuscript",
+        "sha256": "730a153523a22f9abc6d66c6e6527645d1bc43d92eb58273bfb560b0f002210e",
+        "status": "PRESENT"
+      },
+      {
+        "bytes": 11378,
+        "path": "research/slg-scientific-figures-20261111/outputs/run-7f8022a64802820f.result/common_ledger_register.csv",
+        "scope": "project",
+        "sha256": "588636de35ae4bd7a9d6440e0404ad658aa42fb155569708d0a22911028b240d",
+        "status": "PRESENT"
+      }
+    ],
+    "recorded_at": 1794413323.6209269,
+    "scope": "project",
+    "snapshot_schema": "laplace.research-dependencies/3"
+  },
+  "result": "research_runs/run-7f8022a64802820f.result.json",
+  "result_scope": "manuscript",
+  "revision": "sha256:88425eb7c3240bd7cf98c059bb61883750c7a56d76ec2ee945bff97dc67fd65a",
+  "run_id": "run-7f8022a64802820f",
+  "scope": "project",
+  "source": "research/slg-scientific-figures-20261111/scientific_tables.py",
+  "source_scope": "project",
+  "summary": "Static finite evaluation of the reviewed two-quadratic register family, gamma1 eta.8 split price.25. Fixed balanced A/4, arbitration min(A/4,eta/2), split min(arbitration,C_part). The arbitration curve is the split-price phase boundary. Corrects the historical omitted-conflict baseline, no dynamical or clinical inference.",
+  "title": "Common-ledger register boundary figure data"
+}

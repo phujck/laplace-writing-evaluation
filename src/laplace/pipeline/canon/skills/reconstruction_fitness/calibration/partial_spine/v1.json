@@ -1,0 +1,18 @@
+{
+  "lost": [
+    "The spectral radius rho is read off successive lost-set deltas (the mechanism of estimation)",
+    "Four specific state names: CONVERGED-FAITHFUL, CONVERGED-DEGENERATE, OSCILLATING, OPEN",
+    "The distinction between OSCILLATING via rho >= 1 vs. limit cycles with period >= 2",
+    "OPEN subdivides into two cases: budget left while still contracting, vs. budget exhausted while still contracting (SLOW converger)",
+    "The estimator requires >= 3 verdicts to form a ratio of deltas (minimum sample size constraint)",
+    "For CONVERGED-DEGENERATE: the specific guidance that it is a plateau you route UP a grade, never minimise it",
+    "For DEGENERATE: the case of a generative node over-contracted below the edge, imagination collapsed to the obvious",
+    "OPEN states are never mislabelled oscillating (explicit guardrail against misclassification)"
+  ],
+  "added": [
+    "Describes the halt rule as checking against 'a target that depends on the node' without naming it rho* or specifying it depends on (grade, kind)"
+  ],
+  "structured": true,
+  "recurses": true,
+  "justification": "The ghost captures the semantic skeleton: contraction rate estimation, four state classes, and their operational meanings. But it strips the formal apparatus: the spectral radius symbol, the explicit four-state nomenclature, the subdivisions within OPEN (budget vs. exhaustion), the limit-cycle period constraint, the >= 3 verdict floor, and the specific guidance on navigating the degenerate plateau. These are not paraphrased—they are omitted. The ghost also abstracts 'rho*(grade, kind)' to just 'a target that depends on the node', losing the parametrization signature. The missing pieces are coherent and named; a finer pass could reconstruct them from the original's detail. No claims are inverted, but the formality and specificity of the original are substantially reduced."
+}

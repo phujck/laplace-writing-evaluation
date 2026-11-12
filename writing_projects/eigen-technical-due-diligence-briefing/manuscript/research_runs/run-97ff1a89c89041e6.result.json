@@ -1,0 +1,29 @@
+{
+  "schema": "dd.archival-figure/1",
+  "status": "COMPLETE",
+  "input": {
+    "path": "evidence-snapshots/superarc/score-and-format-controls.json",
+    "sha256": "70bc94ec23dada1b677613449493d956b91261c07d428f8aa8e29753a5607bfe"
+  },
+  "artifacts": [
+    {
+      "id": "dd-superarc-controls",
+      "sha256_by_format": {
+        "pdf": "578cb4ad7f62ef17ddfb461199b4deaa81be05562c9e0bed4b7a1cf3715beb02",
+        "svg": "120987caf33a06dcede214c84011acbd8a3aebb538fb6c838b14d878a607ad5b",
+        "png": "af8c83a84bab62b37f30d84f790fdbc42e739697382f72f8f9dd2c70bcade7db"
+      },
+      "pdf": "/home/phujck/VScodeProjects/laplace/writing_projects/eigen-technical-due-diligence-briefing/manuscript/research_runs/run-97ff1a89c89041e6.result-figures/dd-superarc-controls.pdf",
+      "svg": "/home/phujck/VScodeProjects/laplace/writing_projects/eigen-technical-due-diligence-briefing/manuscript/research_runs/run-97ff1a89c89041e6.result-figures/dd-superarc-controls.svg",
+      "png": "/home/phujck/VScodeProjects/laplace/writing_projects/eigen-technical-due-diligence-briefing/manuscript/research_runs/run-97ff1a89c89041e6.result-figures/dd-superarc-controls.png"
+    }
+  ],
+  "caption": "Archived SuperARC campaign decomposition, N=100 twelve-term binary targets. (a) rho_k is the fraction in each correct-answer class. All three arms were recorded correct under the campaign's distinct correctness routes, but the bare arm is mostly in the penalised print-type class. (b) Delta phi compares loop and execute/fix arms. Removing commentary with the class assignments held fixed removes the positive separation. Horizontal intervals are the retained report's 95 percent paired-bootstrap bands at resample size100, seed20260804,100resamples. The re-binned point has no interval reported here. Scores concern formula text, while A2/A3 correctness used banked program execution. Prompt, search and format differences prevent these increments from isolating causal execution or recursion benefits. Replotted from archived report objects and the skeptic's explicitly transcribed control tables, not a new experiment.",
+  "limitations": [
+    "Historical report, not an independent rerun.",
+    "Correctness routes differ: A1 formula translation, A2/A3 banked program execution. Recorded formula/program cross-check discrepancies remain relevant.",
+    "As-scored report carries an old outstanding AUD-1 flag; later skeptic records audit discharge, not metric blindness.",
+    "Arm prompts, search resources and text formats differ, so increments do not isolate causal execution or recursion benefits.",
+    "Only fixed-bin stripped comparison has the displayed stripped interval. Re-binned point has no interval here."
+  ]
+}

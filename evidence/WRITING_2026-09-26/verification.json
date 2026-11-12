@@ -1,0 +1,27 @@
+{
+  "date": "2026-09-26",
+  "command": "scripts/laplace-python -m pytest -q tests/test_walk_requests.py tests/test_walk_gate.py tests/test_writing_guidance_dispatch.py",
+  "exit_code": 0,
+  "result": "51 passed in 5.51s",
+  "scope": "request classification, walk route gate, writing guidance dispatch; not an end-to-end manuscript or provider acceptance",
+  "browser_observations": [
+    {
+      "url": "http://127.0.0.1:8770/walk",
+      "observed": "Resolved to corpus-as-a-state; empty manuscript message and disabled PDF door."
+    },
+    {
+      "url": "http://127.0.0.1:8770/walk?corpus=subset-sum-itqde",
+      "observed": "11-section spine; abstract shown as raw source; math and prose visible in subsequent blocks. No edits submitted."
+    },
+    {
+      "url": "http://127.0.0.1:8770/front?grade=far&lens=conversation",
+      "observed": "Conversation room shows coordination/delivery stages UNKNOWN and no message composer in this view; interface comment toggle remains."
+    }
+  ],
+  "limitations": [
+    "No model turn sent; no provider handoff or reconnect exercised.",
+    "No compilation or complete research-generation/review run.",
+    "Existing uncommitted walk.py bibliography-resolution change preserved.",
+    "Live listener and fresh source probes are recorded separately."
+  ]
+}

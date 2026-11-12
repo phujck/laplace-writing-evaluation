@@ -1,0 +1,53 @@
+{
+  "passed": true,
+  "calibration_score": 0.8,
+  "calibration_threshold": 0.75,
+  "mean_agreement": 0.9111,
+  "agreement_threshold": 0.5,
+  "planted_caught": 2,
+  "planted_total": 2,
+  "all_plants_caught": true,
+  "n": 5,
+  "per_item": [
+    {
+      "id": "confab_people_ratchet",
+      "label": "confabulated",
+      "met": true,
+      "is_plant": true,
+      "agreement": 0.7223,
+      "n": 9
+    },
+    {
+      "id": "confab_rho_estimator",
+      "label": "confabulated",
+      "met": true,
+      "is_plant": true,
+      "agreement": 0.9445,
+      "n": 9
+    },
+    {
+      "id": "faithful_companion",
+      "label": "faithful",
+      "met": true,
+      "is_plant": false,
+      "agreement": 0.8889,
+      "n": 9
+    },
+    {
+      "id": "faithful_paraphrase",
+      "label": "faithful",
+      "met": true,
+      "is_plant": false,
+      "agreement": 1.0,
+      "n": 9
+    },
+    {
+      "id": "partial_spine",
+      "label": "partial",
+      "met": false,
+      "is_plant": false,
+      "agreement": 1.0,
+      "n": 9
+    }
+  ]
+}

@@ -1,0 +1,17 @@
+\begin{tikzpicture}[x=1cm,y=1cm,font=\rmfamily\footnotesize]
+\definecolor{blue}{HTML}{0072B2}
+\definecolor{teal}{HTML}{009E73}
+\definecolor{amber}{HTML}{D55E00}
+\tikzset{box/.style={draw=blue,fill=blue!3,rounded corners=1mm,align=center,text width=2.5cm,minimum height=1.25cm,line width=.7pt},arr/.style={->,line width=.8pt,blue}}
+\node[box] (basis) at (1.4,2.8) {\textbf{Exact basis}\\source passage\\interpreted result};
+\node[box] (claim) at (4.8,2.8) {\textbf{Canonical claim}\\meaning and scope\\typed links};
+\node[box] (change) at (8.2,2.8) {\textbf{Guarded change}\\owning operation\\authority + revision};
+\node[box,draw=teal,fill=teal!4] (review) at (11.6,2.8) {\textbf{Review frontier}\\dependent material\\retain or revise};
+\draw[arr] (basis)--(claim);
+\draw[arr] (claim)--(change);
+\draw[arr] (change)--(review);
+\node[draw=amber,fill=amber!3,rounded corners=1mm,align=center,text width=5cm,minimum height=1cm] (human) at (7.4,.7) {\textbf{Human or agent review}\\judge support and accept revisions};
+\draw[->,amber,line width=.8pt] (human.north)--(change.south);
+\draw[->,teal,line width=.8pt] (review.south)--(11.6,.7)--(human.east);
+\node[draw=teal,fill=teal!3,rounded corners=1mm,align=center,text width=11.8cm,minimum height=.8cm] at (6.5,-1) {\textbf{Work and history}\quad request $\rightarrow$ action $\rightarrow$ outcome $\rightarrow$ recovery};
+\end{tikzpicture}

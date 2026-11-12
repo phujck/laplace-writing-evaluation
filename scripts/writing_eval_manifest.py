@@ -33,12 +33,19 @@ UNAUTHORED_ALLOWED = ('plan', 'references', 'research_records')
 LARGE_FILE_BYTES = 100 * 1024 * 1024
 SELECTION_SCHEMA = 'laplace.writing-export-selection/1'
 SELECTION_DECISIONS = ('include', 'exclude')
+# These canonical Markdown sources are rendered at the repository root by the exporter.
+ROOT_ENTRY_TEMPLATES = {'docs/writing-evaluator-readme.md': 'README.md',
+                        'docs/writing-evaluator-agents.md': 'AGENTS.md',
+                        'docs/writing-reviewer-guide.md': 'REVIEWER_GUIDE.md'}
 
 # The existing distribution owner declares operational inputs once. The exporter consumes
 # OPERATIONAL_INPUTS; both container selectors are generated from this same declaration.
 OPERATIONAL_INPUTS = (
     'setup.py', 'MANIFEST.in',  # canonical packet profiles generate package resources at build time
-    'atlas/pyproject.toml', 'atlas/README.md',
+    'atlas/pyproject.toml', 'atlas/setup.py', 'atlas/README.md',
+    'templates', 'evidence/ATLAS_PROGRAMME/lane_c/toy_corpus.py',
+    'scripts/configure_writing_runtime.py', 'scripts/check_evaluation_selection.py',
+    'docs/evaluation-dependencies.md', 'tests/test_writing_distribution_closure.py',
     'src/atlas/front/README.md', 'src/atlas/sensorium/README.md',
     'src/laplace/pipeline/writing_organ',
     'docs/writing-evaluation-release.md', 'docs/writing-evaluator-readme.md',
@@ -132,10 +139,165 @@ DOCKER_SELECTORS = ('deploy/writing/Dockerfile.dockerignore', 'deploy/writing/Do
 DOCKER_RECIPES = ('deploy/writing/Dockerfile', 'deploy/writing/Dockerfile.refresh')
 _TOOLS_BEGIN = '# OPERATIONAL-TOOLS: generated from OPERATIONAL_INPUTS\n'
 _TOOLS_END = '# END OPERATIONAL-TOOLS\n'
+# A distribution includes complete implementation/resource families, not whichever files a
+# particular demo happened to read. Private author data is classified separately from code.
+APPLICATION_ROOTS = (
+    'src/laplace', 'src/atlas', 'templates', 'scripts', 'docs', 'tools',
+    'profiles/workflows', 'profiles/pipeline', 'profiles/house_style',
+    'profiles/typography', 'profiles/acceptance', 'profiles/selection',
+)
+APPLICATION_FILES = (
+    'pyproject.toml', 'setup.py', 'MANIFEST.in', 'atlas/pyproject.toml', 'atlas/setup.py', 'atlas/README.md',
+    'evidence/ATLAS_PROGRAMME/lane_c/toy_corpus.py',
+    'profiles/visual_style.json', 'profiles/development_checks.json', 'profiles/runtime-portable.toml',
+    'profiles/writing/stages-v1.json', 'profiles/voice/gerard-technical-v1.md',
+    'profiles/voice/private-blind-neutral-v1.md',
+    'scripts/laplace-python', 'scripts/laplace_python.py',
+    'scripts/configure_writing_runtime.py',
+)
+# These are actual personal records or machine-specific deployment inputs, not
+# executable helpers. Generic canon skills and their scripts remain in the source.
+PRIVATE_APPLICATION_INPUTS = (
+    'src/laplace/pipeline/canon/wiki/voice_corpus',
+    'src/laplace/pipeline/canon/wiki/author',
+    'src/laplace/engine/AUTONOMY_BACKLOG.md',
+    'src/laplace/pipeline/census_verdicts.json',
+    'src/laplace/desktop/deploy',
+)
+
+
+def application_closure(root: Path, *, tests=False) -> dict:
+    """All declared application code/resources, with explicit private-data exclusions.
+
+    Enumerating complete source/resource families catches future files too. This
+    never selects personal runtime state, live records or model weights. Tests
+    are source/fixtures, not a claim that every historical environment was rerun.
+    """
+    root = Path(root).resolve()
+    paths, excluded = {}, []
+    families = (*APPLICATION_ROOTS, *(('tests', 'atlas/tests') if tests else ()))
+    for family in families:
+        for path in _files(root, family):
+            rel = path.relative_to(root).as_posix()
+            if any(rel == item or rel.startswith(item + '/') for item in PRIVATE_APPLICATION_INPUTS):
+                excluded.append(rel)
+            elif path.suffix not in {'.pyc', '.lock'} and 'build' not in path.relative_to(root).parts:
+                paths[rel] = _file_record(root, path)
+    for rel in APPLICATION_FILES:
+        path = _safe(root, rel)
+        if not path.is_file():
+            raise ManifestError('declared application resource missing: ' + rel)
+        paths[rel] = _file_record(root, path)
+    return {'schema': 'laplace.writing-application-closure/1',
+            'files': [paths[key] for key in sorted(paths)],
+            'families': list(families), 'tests_included': tests,
+            'private_exclusions': list(PRIVATE_APPLICATION_INPUTS),
+            'excluded_files': sorted(excluded),
+            'scope': 'Implementation/resource closure only; project records and example execution require their own explicit selection and observed results.'}
+
+
+def retained_record_closure(root: Path, project: str, *, restricted=()) -> dict:
+    """Follow actual scientific record, producer, visual and run declarations.
+
+    This does not walk a project directory or select authoring/intake/session
+    histories. Every dependency keeps its owner's scope and original bytes.
+    Explicit private input exclusions remain visible, never silently qualified.
+    """
+    from laplace.pipeline import registry
+    from laplace.research import research_context, research_records, visuals_surface
+    root = Path(root).resolve()
+    item, home = research_context.project(project, root)
+    if item is None or home is None: raise ManifestError('Research owner unavailable: ' + project)
+    project_home = research_context.project_root(item, root)
+    visual_home = visuals_surface._m(project, root)
+    restricted = set(restricted)
+    chosen, missing, excluded, reasons = {}, [], [], {}
+
+    def require(path, reason, pin=None, *, optional=False):
+        path = Path(path).resolve()
+        if not path.is_relative_to(root): raise ManifestError('scientific dependency escapes root: ' + str(path))
+        rel = path.relative_to(root).as_posix()
+        if rel in restricted:
+            excluded.append({'path': rel, 'reason': reason, 'status': 'EXPLICIT_PRIVATE_INPUT_EXCLUSION'})
+            return
+        if _excluded(Path(rel)) or any(rel == p or rel.startswith(p + '/') for p in PRIVATE_APPLICATION_INPUTS):
+            raise ManifestError('private scientific dependency refused: ' + rel)
+        if not path.is_file():
+            if not optional: missing.append({'path': rel, 'reason': reason})
+            return
+        row = _file_record(root, _safe(root, rel))
+        if pin and row['sha256'].removeprefix('sha256:') != str(pin).removeprefix('sha256:'):
+            raise ManifestError('scientific dependency pin differs: ' + rel)
+        chosen[rel] = row
+        reasons.setdefault(rel, []).append(reason)
+
+    def scoped(raw, scope, reason, pin=None):
+        if not isinstance(raw, str) or not raw: return
+        if scope not in {'project', 'manuscript'}: raise ManifestError('unknown scientific dependency scope: ' + str(scope))
+        base = project_home if scope == 'project' else home
+        target = research_context.inside(base, raw)
+        if target is None: raise ManifestError('scientific dependency outside owner scope: ' + raw)
+        require(target, reason, pin)
+
+    for name in ('research_records.json', 'research_producers.json', 'references.json'):
+        require(home / name, 'Research owner metadata', optional=True)
+    records_path = home / 'research_records.json'
+    records = _json(records_path).get('records', []) if records_path.is_file() else []
+    for row in records:
+        for raw, scope in research_records._dependency_specs(row):
+            scoped(raw, scope, 'record ' + row['id'])
+        provenance = row.get('provenance') or {}
+        for dep in provenance.get('dependencies') or []:
+            if dep.get('status') == 'PRESENT':
+                scoped(dep.get('path'), dep.get('scope', provenance.get('scope', row.get('scope', 'manuscript'))),
+                       'pinned record dependency ' + row['id'], dep.get('sha256'))
+    producers_path = home / 'research_producers.json'
+    producers = _json(producers_path).get('producers', []) if producers_path.is_file() else []
+    for row in producers:
+        scope = row.get('scope', 'manuscript')
+        scoped(row.get('executable'), scope, 'producer ' + row['id'])
+        for raw in row.get('dependencies') or []: scoped(raw, scope, 'producer dependency ' + row['id'])
+    for name in ('manuscript_spec.json', 'figure_manifest.json'):
+        path = visual_home / name
+        require(path, 'canonical visual owner metadata', optional=True)
+        if not path.is_file(): continue
+        data = _json(path)
+        for row in (data.get('figure_specs') or data.get('placed') or []):
+            if not isinstance(row, dict): raise ManifestError('malformed canonical visual')
+            for key in ('source', 'source_data'):
+                raw = row.get(key)
+                if isinstance(raw, str): scoped(raw, row.get('input_scope', 'project'), 'visual input ' + str(row.get('id', row.get('spec_id'))))
+            raw = row.get('artefact')
+            if raw: require(visual_home / raw, 'placed scientific visual')
+            for raw in (row.get('render') or {}).get('outputs') or []:
+                require(visual_home / raw, 'canonical rendered visual output')
+    index_path = home / 'research_runs/index.json'
+    require(index_path, 'original retained run index', optional=True)
+    ids = [r.get('run_id') for r in records if r.get('run_id')]
+    if index_path.is_file(): ids.extend(_json(index_path).get('runs') or [])
+    for ident in dict.fromkeys(ids):
+        if not isinstance(ident, str) or not re.fullmatch(r'[A-Za-z0-9][A-Za-z0-9._-]{0,159}', ident):
+            raise ManifestError('invalid retained run id')
+        job_path = home / 'research_runs' / (ident + '.json')
+        require(job_path, 'original retained run job')
+        if not job_path.is_file(): continue
+        for path in sorted(job_path.parent.glob(ident + '.*')):
+            if path.is_dir():
+                for child in _files(root, path.relative_to(root).as_posix()): require(child, 'declared indexed run output directory')
+            elif path.suffix != '.lock': require(path, 'original indexed run family')
+    return {'schema': 'laplace.retained-research-closure/1', 'project': project,
+            'research_home': home.relative_to(root).as_posix(),
+            'files': [{**chosen[key], 'reasons': sorted(set(reasons[key]))} for key in sorted(chosen)],
+            'missing_required': missing, 'explicit_exclusions': excluded,
+            'scope': 'Owner-derived scientific declarations only; no fabricated execution, acceptance, session or missing-input replacement.'}
+
+
 # Existing broad application/resource classes and portable evaluator subset stay unchanged.
 # Workspace-only tooling/history selection remains separate from the image context.
 DOCKER_APPLICATION_PATTERNS = (
     'pyproject.toml', 'setup.py', 'MANIFEST.in', 'README.md', 'src/**',
+    'scripts/**', 'docs/**', 'tools/**', 'templates/**', 'tests/**', 'profiles/**',
+    'atlas/setup.py', 'evidence/ATLAS_PROGRAMME/lane_c/toy_corpus.py',
     'atlas/pyproject.toml', 'atlas/README.md',
     'deploy/writing/writing-entrypoint.sh', 'deploy/writing/smoke.py',
     'profiles/workflows/**', 'profiles/typography/**', 'profiles/visual_style.json',
@@ -424,7 +586,7 @@ def project_closure(root, project, intent=DEFAULT_PROJECT_INTENT, *, resolved=No
     # equate basenames, interpret an ART id, or hydrate historical read receipts.
     from laplace.projects import artifacts
     from laplace.web import research_artifact_read
-    from laplace.research import research_records
+    from laplace.research import research_records, research_context
     admitted = set(selected_projects or [project])
     contexts = artifact_contexts if artifact_contexts is not None else {}
     absent = {(root / path).resolve(): kind for kind, path in missing.items()}
@@ -448,7 +610,7 @@ def project_closure(root, project, intent=DEFAULT_PROJECT_INTENT, *, resolved=No
             if scope not in {'project', 'manuscript'}:
                 raise ManifestError('current reference scope must be project or manuscript')
             base = legacy_base if legacy_base is not None else (
-                ctx['base'] if scope == 'project' else root / ctx['source']['manuscript_dir'])
+                ctx['base'] if scope == 'project' else research_context.project(qualified, root)[1])
             # Existing research reader admits explicit scoped or checkout-relative
             # coordinates inside that same base; no alternative filename search.
             target = research_artifact_read._artifact_target(base, raw, root)
@@ -1074,12 +1236,20 @@ def main(argv=None):
     selector = parser.add_mutually_exclusive_group()
     selector.add_argument("--check-docker-selectors", action="store_true")
     selector.add_argument("--write-docker-selectors", action="store_true")
+    selector.add_argument("--application-closure", action="store_true")
+    parser.add_argument("--include-tests", action="store_true")
     parser.add_argument("--project-intent", action="append", metavar="PROJECT=INTENT",
                         help="Explicit closure intent: completed-manuscript (default) or current-project-snapshot")
     parser.add_argument("--selection-policy", type=Path,
                         help="Reviewed per-file selection (" + SELECTION_SCHEMA + ") for projects that are not exported whole")
     parser.add_argument("--output", type=Path)
     args = parser.parse_args(argv)
+    if args.application_closure:
+        result = application_closure(args.repo_root, tests=args.include_tests)
+        raw = json.dumps(result, indent=2, sort_keys=True) + "\n"
+        if args.output: args.output.write_text(raw)
+        else: print(raw, end="")
+        return 0
     if args.check_docker_selectors or args.write_docker_selectors:
         if args.project or args.project_intent or args.selection_policy or args.output:
             parser.error('Selector generation/check does not select project data or output manifests.')

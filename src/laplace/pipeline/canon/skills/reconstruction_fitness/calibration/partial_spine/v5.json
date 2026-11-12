@@ -1,0 +1,18 @@
+{
+  "lost": [
+    "The spectral radius (rho) as the specific mathematical measure of contraction rate",
+    "Comparison of rho to a target rho*(grade, kind) - the parametrized threshold",
+    "CONVERGED-DEGENERATE subtype distinction: plateau requiring upward grade movement vs. over-contracted generative node with collapsed imagination",
+    "OPEN subtype distinction: budget_exhausted flag and explicit reclassification rule (never mislabelled oscillating)",
+    "The >= 3 verdicts requirement for forming a delta ratio",
+    "The specific 'wake-sleep loop' framing",
+    "Period >= 2 configuration re-appearance criterion for limit cycles"
+  ],
+  "added": [
+    "Implicit assumption that the halt rule is estimating rather than reading off spectral radius (weaker commitment to mechanism)",
+    "Simplified framing of 'good reconstruction' without addressing faithful vs. confabulated distinction in the CONVERGED-FAITHFUL case"
+  ],
+  "structured": true,
+  "recurses": true,
+  "justification": "The ghost captures the four-state topology and the core logic (contraction, convergence, oscillation, open) correctly. However, it drops critical mathematical specificity: the spectral radius rho as the precise measure, the parametrized target rho*(grade, kind), the detailed pathology taxonomy (especially the CONVERGED-DEGENERATE split between plateau-climb and over-contracted imagination, and OPEN's budget_exhausted flag with its non-oscillation guarantee), and the >= 3 verdict bootstrap condition. These are not rhetorical flourishes but load-bearing constraints on the predicate's semantics. The loss is structured (each missing element is a named, recoverable clause) and the ghost recurses naturally into a finer pass (the four states remain; the ghost could be refined by re-inserting the rho measure and the parametric thresholds). The ghost trades precision and pathology detail for accessibility."
+}

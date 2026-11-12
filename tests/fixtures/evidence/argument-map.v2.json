@@ -1,0 +1,481 @@
+{
+  "schema_version": "writing-system-architecture.argument-map/2",
+  "project": "writing-system-architecture",
+  "fixture": {
+    "version": 2,
+    "kind": "minimised-current-shape-representative",
+    "source_artifact": "blueprint/argument-map.json",
+    "source_sha256": "d01011bf9c615a082b3a513ff036b67b60f54a4715c4eea1c0da0d89c59f592b",
+    "note": "Observed argument-map/2: additive recorded meaning, premise rationales, sources_current and result_bindings, retaining the typed adjacency and declared source lookup. Not a full or current canonical graph."
+  },
+  "authority": {
+    "concept_network_revision": "72aaa83fc8e2373a5b4f67724e7897461d38a7fd048a32499260500491917739",
+    "structure_revision": "sha256:975bd3d27dae529a6992081cc80b24dccceb6f9ecef06218ce3a839b6b874fb0",
+    "selected_source": {
+      "status": "resolved",
+      "root": "synthetics papers/writing-system-architecture/manuscript/The-writing-system-as-constituted-implementation-design-principles-and-outstanding-issues.tex",
+      "edition": "draft",
+      "revision": "0c1679dee36cf602b05a13c9e7fa954f14df12e9e038588def7d3872894e8945",
+      "read_only": false
+    },
+    "plan_path": "synthetics papers/writing-system-architecture/manuscript/projection_plan.json",
+    "plan_file_revision": "sha256:8e8d3b9ad50f6a822e2fe62126fe70556651775991d2bdf03764671639f2de17",
+    "logical_read": {
+      "operation": "logical_plan",
+      "payload": {
+        "view": "catalog"
+      }
+    },
+    "structure_read": {
+      "operation": "structure",
+      "payload": {}
+    }
+  },
+  "nodes": [
+    {
+      "id": "goal:explain-writing-system",
+      "kind": "goal",
+      "title": "Explain the writing system as implemented",
+      "revision": "20da45ffc3eee19969145b353edffd689d9b542795d7a4e2ec3e0ad2bd8c09af",
+      "class": "intended",
+      "home": "orientation-method",
+      "sources": [
+        "recursive-design"
+      ],
+      "qualification": "AUTHORED_BASIS",
+      "meaning": "Author-commissioned orientation for this living blueprint: explain how recoverable recursive concepts, typed evidence and guarded owner actions support manuscript work for an engineer who will read the code next. Follow one claim from local reconstruction through canonical mutation, reader placement, source application, research/build and frontend arrival to export. Distinguish intended design, inspected implementation, scoped observations and open work. This goal is an authored purpose, not a verified result.",
+      "prerequisites": [],
+      "sources_current": [
+        {
+          "line_end": 21,
+          "line_start": 11,
+          "path": "synthetics papers/writing-system-architecture/blueprint/sources/recursive-design.md",
+          "repository": "laplace",
+          "sha256": "d34244efa94f2128afdaf4b98c5298cc4456b835dedb41874260c27e5faef66c"
+        }
+      ],
+      "result_bindings": []
+    },
+    {
+      "id": "def:address-and-revision",
+      "kind": "definition",
+      "title": "Address, content, source and generation",
+      "revision": "6b048b56e9a406e569dba65819b21abdae9833811d4d22efeffbcdd51b258997",
+      "class": "implemented",
+      "home": "doors",
+      "sources": [
+        "local-identity",
+        "atlas-object"
+      ],
+      "qualification": "DECLARED_DEFINITION",
+      "meaning": "Author-introduced vocabulary: an address selects an object, a content revision selects its represented state, a source digest/span identifies the material inspected, and a generation identifies a particular construction of a projection. Equality must be interpreted within its owner and preimage. Atlas explicitly separates object_id and content_handle, while writer concept and network revisions protect different represented inputs.",
+      "prerequisites": [],
+      "sources_current": [
+        {
+          "line_end": 73,
+          "line_start": 11,
+          "path": "synthetics papers/writing-system-architecture/blueprint/sources/local-identity.md",
+          "repository": "laplace",
+          "sha256": "298049dfbee9843d9a47dd84d1a7a56a69250901b6f227e47ef124edfb2eb9ab"
+        },
+        {
+          "line_end": 93,
+          "line_start": 11,
+          "path": "synthetics papers/writing-system-architecture/blueprint/sources/atlas-object.md",
+          "repository": "laplace",
+          "sha256": "4a963ab85170c394c0a13a797eb540071797c78fdee6ddacd6bc25be5eebf65a"
+        },
+        {
+          "line_end": 173,
+          "line_start": 1,
+          "path": "synthetics papers/writing-system-architecture/blueprint/sources/atlas-grade-contract.md",
+          "repository": "laplace",
+          "sha256": "50ededd6e61784fe3d9e7956ecc440be2a9c82ae4507a61ea216b1c7d550328b"
+        }
+      ],
+      "result_bindings": []
+    },
+    {
+      "id": "def:evidence-scope",
+      "kind": "definition",
+      "title": "Execution, currentness and evidential scope",
+      "revision": "06844c9739943cf3fae2675102c98730bcf6eb289f6181780d4487d44f3e9d5f",
+      "class": "intended",
+      "home": "lifecycle",
+      "sources": [
+        "research-launch",
+        "@currentness",
+        "@runs"
+      ],
+      "qualification": "DECLARED_DEFINITION",
+      "meaning": "An execution receipt identifies what ran and settled. Dependency currentness compares declared inputs with retained identities. A scientific or engineering interpretation states what that observation supports under its assumptions. These judgements are distinct: a failed run can leave a current partial output, and a successful run does not prove a universal claim. This is an author-introduced discipline instantiated by the retained mechanism fixtures.",
+      "prerequisites": [],
+      "sources_current": [
+        {
+          "line_end": 20,
+          "line_start": 11,
+          "path": "synthetics papers/writing-system-architecture/blueprint/sources/research-launch.md",
+          "repository": "laplace",
+          "sha256": "45bd445c75166758c4a27f69ac13a8b66d8739f9c129f8679221d9ff9664f028"
+        },
+        {
+          "line_end": 276,
+          "line_start": 267,
+          "path": "synthetics papers/writing-system-architecture/blueprint/mechanism-traces.md",
+          "repository": "laplace",
+          "sha256": "c6401c1ca7c8062f33940b3d3eb0bff3b52c0cbe7ce6c847938cb74526ec5ddb"
+        },
+        {
+          "line_end": 344,
+          "line_start": 325,
+          "path": "synthetics papers/writing-system-architecture/blueprint/mechanism-traces.md",
+          "repository": "laplace",
+          "sha256": "c6401c1ca7c8062f33940b3d3eb0bff3b52c0cbe7ce6c847938cb74526ec5ddb"
+        }
+      ],
+      "result_bindings": []
+    },
+    {
+      "id": "res:local-guard-basis",
+      "kind": "result",
+      "title": "The writer revision protects a local basis",
+      "revision": "32c8303ce227e888b67b8fcf85a7523089e0435fda26551e76a2b3530a683f9b",
+      "class": "implemented",
+      "home": "doors",
+      "sources": [
+        "local-identity",
+        "@diamond"
+      ],
+      "qualification": "AUTHORED_BASIS",
+      "meaning": "Source-review observation: _content_revision hashes the focused node, incident relations, resolved own source identities and direct prerequisite contents/sources. It does not recursively substitute prerequisite revisions. The network revision separately includes nodes, relations and rewire rows. This local contract is consistent with, but weaker than, arbitrary transitive invalidation. The exact fixture consequence is recorded separately in res:diamond-identity-boundary.",
+      "prerequisites": [
+        {
+          "id": "def:address-and-revision",
+          "rationale": "The local versus global claim requires identifying the represented state and its owner."
+        }
+      ],
+      "sources_current": [
+        {
+          "line_end": 73,
+          "line_start": 11,
+          "path": "synthetics papers/writing-system-architecture/blueprint/sources/local-identity.md",
+          "repository": "laplace",
+          "sha256": "298049dfbee9843d9a47dd84d1a7a56a69250901b6f227e47ef124edfb2eb9ab"
+        },
+        {
+          "line_end": 103,
+          "line_start": 55,
+          "path": "synthetics papers/writing-system-architecture/blueprint/mechanism-traces.md",
+          "repository": "laplace",
+          "sha256": "c6401c1ca7c8062f33940b3d3eb0bff3b52c0cbe7ce6c847938cb74526ec5ddb"
+        }
+      ],
+      "result_bindings": []
+    },
+    {
+      "id": "res:formal-target-gap",
+      "kind": "result",
+      "title": "Formal targets omit prerequisite identity changes in the fixture",
+      "revision": "33d6915db98975e4b585870c1ac1bba315f48f3998bd8c7824c687b2e9fb812f",
+      "class": "observed",
+      "home": "limits",
+      "sources": [
+        "@formal"
+      ],
+      "qualification": "AUTHORED_BASIS",
+      "meaning": "Scoped observation from run-e96422486f524d69: editing A's source in an authored mathematical diamond changes A/B/C public concept revisions, but B/C formal revision, source_revision and target handles remain unchanged. The trace identifies concept_target calling _content_revision without the node map. No Lean execution or proof receipt was created, and an independently changed proof import could have its own staleness effect. Capture this identity disagreement as open repair work, not a mathematical counterexample.",
+      "prerequisites": [
+        {
+          "id": "def:evidence-scope",
+          "rationale": "The observation concerns target identity and must not be presented as a theorem counterexample."
+        },
+        {
+          "id": "res:local-guard-basis",
+          "rationale": "The discrepancy compares formal-target construction with the public local revision contract."
+        }
+      ],
+      "sources_current": [
+        {
+          "line_end": 131,
+          "line_start": 104,
+          "path": "synthetics papers/writing-system-architecture/blueprint/mechanism-traces.md",
+          "repository": "laplace",
+          "sha256": "c6401c1ca7c8062f33940b3d3eb0bff3b52c0cbe7ce6c847938cb74526ec5ddb"
+        }
+      ],
+      "result_bindings": [
+        {
+          "id": "mechanism-formal-target-identity-observation",
+          "revision": "sha256:e49a7d2e914cd15c315217c73e42495120d40dc5d83abb193433892a7491f9d4"
+        }
+      ]
+    },
+    {
+      "id": "question:formal-target-repair",
+      "kind": "question",
+      "title": "Formal target identity repair",
+      "revision": "8f53795ee591dd1db33a47ee148086d1b04601b2515d0e7f44eb71a4f8e1b8dc",
+      "class": "open",
+      "home": "limits",
+      "sources": [
+        "@formal"
+      ],
+      "qualification": "AUTHORED_BASIS",
+      "state": "open",
+      "target": "res:formal-target-gap",
+      "discharge": "An implementation-owning change and scoped regression reproduce the original case, change B/C handles as intended, and separately test proof-receipt currentness. No repair or Lean proof is performed here.",
+      "meaning": "How should formal targets incorporate the direct premise identity already represented by the public concept owner? The observed B/C disagreement needs an implementation-owning repair lane, not a documentation workaround.",
+      "prerequisites": [],
+      "sources_current": [
+        {
+          "line_end": 131,
+          "line_start": 104,
+          "path": "synthetics papers/writing-system-architecture/blueprint/mechanism-traces.md",
+          "repository": "laplace",
+          "sha256": "c6401c1ca7c8062f33940b3d3eb0bff3b52c0cbe7ce6c847938cb74526ec5ddb"
+        }
+      ],
+      "result_bindings": []
+    }
+  ],
+  "relations": [
+    [
+      "res:local-guard-basis",
+      "prerequisite",
+      "def:address-and-revision"
+    ],
+    [
+      "res:formal-target-gap",
+      "prerequisite",
+      "def:evidence-scope"
+    ],
+    [
+      "res:formal-target-gap",
+      "prerequisite",
+      "res:local-guard-basis"
+    ],
+    [
+      "res:local-guard-basis",
+      "support",
+      "ref:archlocalidentity2026"
+    ],
+    [
+      "question:formal-target-repair",
+      "questions",
+      "res:formal-target-gap"
+    ]
+  ],
+  "relation_fields": [
+    "source",
+    "relation",
+    "target"
+  ],
+  "chapters": [
+    {
+      "id": "orientation-method",
+      "source": "synthetics papers/writing-system-architecture/manuscript/chapters/chapter-01.tex",
+      "nodes": [
+        "goal:explain-writing-system"
+      ]
+    },
+    {
+      "id": "homes",
+      "source": "synthetics papers/writing-system-architecture/manuscript/chapters/homes-of-truth.tex",
+      "nodes": [
+        "def:address-and-revision"
+      ]
+    },
+    {
+      "id": "doors",
+      "source": "synthetics papers/writing-system-architecture/manuscript/chapters/doors-verbs-and-identity.tex",
+      "nodes": [
+        "def:address-and-revision",
+        "res:local-guard-basis",
+        "res:formal-target-gap"
+      ]
+    },
+    {
+      "id": "lifecycle",
+      "source": "synthetics papers/writing-system-architecture/manuscript/chapters/the-manuscript-lifecycle-and-author-control.tex",
+      "nodes": [
+        "def:evidence-scope"
+      ]
+    },
+    {
+      "id": "deployment",
+      "source": "synthetics papers/writing-system-architecture/manuscript/chapters/deployment-verification-and-worked-examples.tex",
+      "nodes": [
+        "def:evidence-scope"
+      ]
+    },
+    {
+      "id": "limits",
+      "source": "synthetics papers/writing-system-architecture/manuscript/chapters/limits-and-next-work.tex",
+      "nodes": [
+        "res:formal-target-gap",
+        "question:formal-target-repair"
+      ]
+    }
+  ],
+  "source_registry": {
+    "recursive-design": {
+      "id": "ART-5e59a15363f6487d91b17f41972daca3",
+      "path": "synthetics papers/writing-system-architecture/blueprint/sources/recursive-design.md",
+      "sha256": "d34244efa94f2128afdaf4b98c5298cc4456b835dedb41874260c27e5faef66c",
+      "lines": [
+        11,
+        21
+      ],
+      "origin": {
+        "repository": "laplace",
+        "path": "RECURSIVE_GRAPH_PLAN.md",
+        "sha256": "da74a458c5743d3054bad8dae18974ceb0c9a5b7dfacc0ffbb49c355c1cb2e97",
+        "character_start": 2076,
+        "character_end": 2918
+      }
+    },
+    "local-identity": {
+      "id": "ART-1a14075ee7a14cb78e94bb6d0c0217fd",
+      "path": "synthetics papers/writing-system-architecture/blueprint/sources/local-identity.md",
+      "sha256": "298049dfbee9843d9a47dd84d1a7a56a69250901b6f227e47ef124edfb2eb9ab",
+      "lines": [
+        11,
+        73
+      ],
+      "origin": {
+        "repository": "laplace",
+        "path": "src/laplace/concepts_surface.py",
+        "sha256": "73bfae109f1b02e6cd471ffb4186818e0d26bd065eabc951ba7ab3b36e70c0d8",
+        "character_start": 859,
+        "character_end": 4492
+      },
+      "key": "local:a666bea1dc7a2fb206fee6c9",
+      "citekey": "archlocalidentity2026",
+      "reading_id": "READ-c6724944434d2ec0cde39b8d"
+    },
+    "atlas-object": {
+      "id": "ART-ee42462be94c4ac99e4f0240df1e7fbe",
+      "path": "synthetics papers/writing-system-architecture/blueprint/sources/atlas-object.md",
+      "sha256": "4a963ab85170c394c0a13a797eb540071797c78fdee6ddacd6bc25be5eebf65a",
+      "lines": [
+        11,
+        93
+      ],
+      "origin": {
+        "repository": "atlas",
+        "path": "src/atlas/history.py",
+        "sha256": "707798f3bc10cb2317fedf44bc1370e4d85520c2b641c9200e2193cffe45e3a3",
+        "character_start": 29930,
+        "character_end": 33078
+      },
+      "key": "local:04c15a184e87f8eca4cec575",
+      "citekey": "archatlasobject2026",
+      "reading_id": "READ-a5096519dbbc0234878b4ba2"
+    },
+    "research-launch": {
+      "id": "ART-4cfacb43cc684c5fa7340a4f7f807a9a",
+      "path": "synthetics papers/writing-system-architecture/blueprint/sources/research-launch.md",
+      "sha256": "45bd445c75166758c4a27f69ac13a8b66d8739f9c129f8679221d9ff9664f028",
+      "lines": [
+        11,
+        20
+      ],
+      "origin": {
+        "repository": "laplace",
+        "path": "src/laplace/research_surface.py",
+        "sha256": "c0806a3e65453d27346efc33245f65f3e62be92b99c67bee7f9d478ddf12be58",
+        "character_start": 798,
+        "character_end": 1905
+      }
+    }
+  },
+  "mechanism_source": {
+    "path": "synthetics papers/writing-system-architecture/blueprint/mechanism-traces.md",
+    "sha256": "c6401c1ca7c8062f33940b3d3eb0bff3b52c0cbe7ce6c847938cb74526ec5ddb",
+    "sections": {
+      "hashes": [
+        21,
+        46
+      ],
+      "arrows": [
+        47,
+        54
+      ],
+      "diamond": [
+        55,
+        103
+      ],
+      "formal": [
+        104,
+        131
+      ],
+      "propagation": [
+        132,
+        180
+      ],
+      "atlas": [
+        181,
+        236
+      ],
+      "scaling": [
+        237,
+        266
+      ],
+      "currentness": [
+        267,
+        276
+      ],
+      "runs": [
+        325,
+        344
+      ],
+      "open": [
+        363,
+        377
+      ]
+    }
+  },
+  "documentary_bindings": [
+    [
+      "res:local-guard-basis",
+      "local-identity",
+      "local:a666bea1dc7a2fb206fee6c9",
+      "READ-c6724944434d2ec0cde39b8d"
+    ]
+  ],
+  "research_bindings": [
+    {
+      "claim": "res:formal-target-gap",
+      "result": "mechanism-formal-target-identity-observation",
+      "record": "RW-20261004-134448-199352"
+    }
+  ],
+  "results": {
+    "mechanism-formal-target-identity-observation": {
+      "revision": "sha256:e49a7d2e914cd15c315217c73e42495120d40dc5d83abb193433892a7491f9d4",
+      "run": "run-e96422486f524d69",
+      "state": "COMPLETE",
+      "exit_code": 0,
+      "output_sha256": "1c9a2036e79ff1a9afbb70780717377ef560a3c1ca0e76b3d3038fa66d022390",
+      "dependencies": [
+        {
+          "bytes": 3140,
+          "path": "blueprint/mechanism-formal-probe.py",
+          "scope": "project",
+          "sha256": "b7376984236a908be0cb2e85736630c70b6e0b710ddcef8a5e6f2c8ecf3416d2",
+          "status": "PRESENT"
+        },
+        {
+          "bytes": 5670,
+          "path": "research_runs/run-e96422486f524d69.result.json",
+          "sha256": "1c9a2036e79ff1a9afbb70780717377ef560a3c1ca0e76b3d3038fa66d022390",
+          "status": "PRESENT"
+        }
+      ],
+      "limitations": [
+        "No Lean execution, proof receipt, manuscript mutation or scientific validation.",
+        "Imported source hashes appear in result JSON, but external library drift is not automatically included in the empty project-scoped dependency list."
+      ]
+    }
+  }
+}

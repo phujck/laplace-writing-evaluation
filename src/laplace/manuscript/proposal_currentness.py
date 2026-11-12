@@ -544,7 +544,7 @@ def _observe_read(root, turn, read, virtual, tokens=None):
     from laplace.writing import reads as read_contract
     note=tokens.append if tokens is not None else (lambda value: None)
     operation=read.get('operation');payload=read.get('payload') or {}
-    if operation not in read_contract.READS:
+    if read_contract.effect(operation, payload) != 'read':
         raise _BasisNotCurrent('A consumed receipt is not a read operation. Request a fresh proposal.','UNKNOWN')
     if operation in mutation_attribution._TRANSIENT_APPLY_READS or mutation_attribution._historical_activity_read(operation,payload):
         note('not-replayed');return None

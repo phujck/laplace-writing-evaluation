@@ -1,0 +1,19 @@
+{
+  "lost": [
+    "The spectral radius is estimated from successive lost-set deltas (plural), not a single verdict",
+    "Near a fixed point, error decays as the ratio of consecutive deltas",
+    "The ratio tends to the dominant eigenvalue magnitude",
+    "At least two deltas (three verdicts) are required; below that the estimator returns None",
+    "The estimate is noisy because the adjudicator is stochastic"
+  ],
+  "added": [
+    "The spectral radius is computed from a single verdict by taking the absolute size of its lost set",
+    "Larger lost set directly means larger radius",
+    "One cycle is enough; no deltas or ratios are involved",
+    "The result is exact rather than noisy",
+    "The result is a direct measurement of lost-set magnitude"
+  ],
+  "structured": true,
+  "recurses": false,
+  "justification": "The ghost inverts the fundamental mechanism: the original describes a dynamic estimator that requires temporal sequence (successive deltas, ratios of consecutive measurements, minimum three verdicts) converging to a spectral property. The ghost describes a static, single-measurement algorithm. These are architecturally opposite. The ghost does preserve the semantic link between lost-set size and spectral radius magnitude, which is structured and recoverable, but the loss of the entire temporal, ratio-based, stochastic estimation framework is too large and fundamental to be a recoverable partial. The claims about sufficiency (one cycle enough) and exactness directly contradict the original's threshold requirement and noise characterization."
+}

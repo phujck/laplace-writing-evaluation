@@ -1,0 +1,137 @@
+{
+ "base": "706a82047ae90ce79956cb25a4831973f61eec85",
+ "cited_file": "src/laplace/writing_contracts.py",
+ "base_line_count": 632,
+ "today_line_count": 129,
+ "rows": [
+  {
+   "cited": "src/laplace/writing_contracts.py:314",
+   "cited_by": [
+    "tests/grammar_spec/GRAMMAR.md:555"
+   ],
+   "base_line": "\"preconditions\":[\"Read structure for expected_revision and selected_source.revision before initialize; omit sections to use current selected-source headings\", \"",
+   "now": "src/laplace/native/declared.py:1077",
+   "now_holds": "    'structure_change',",
+   "now_fact": "structure_change",
+   "now_line": "    'structure_change',",
+   "why": "the clause became one or more Rule('structure_change') of this declaration; the schema is at src/laplace/writing_schemas.py:90",
+   "exists_today": false
+  },
+  {
+   "cited": "src/laplace/writing_contracts.py:386",
+   "cited_by": [
+    "tests/grammar_spec/map_verbs.py:46",
+    "tests/grammar_spec/map_verbs.py:51",
+    "tests/grammar_spec/GRAMMAR.md:348",
+    "tests/grammar_spec/GRAMMAR.md:759"
+   ],
+   "base_line": "\"conversation_history\": {\"summary\": \"Read bounded earlier turns in this logical conversation.\", \"input\": _object((), {\"before\": _STRING, \"limit\": _INT}), \"examp",
+   "now": "src/laplace/writing/schemas.py:30",
+   "now_holds": "    'conversation_history':",
+   "now_fact": "conversation_history",
+   "now_line": "    'conversation_history': {'type': 'object', 'required': [], 'properties': {'before': {'type': 'string'}, 'limit': {'type': 'integer'}, 'view': {'enum': ['turns', 'controls']}, 'turn_id': {'type': 'string'}, 'item_id': {'type': 'string'}, 'offset': {'type': 'integer'}}, 'additionalProperties': False},",
+   "why": "the schema moved verbatim into SCHEMAS['conversation_history'] at the migration; its later additive changes are named in tests/test_generated_contract.py; the declaration is at src/laplace/writing_declared.py:312",
+   "exists_today": false
+  },
+  {
+   "cited": "src/laplace/writing_contracts.py:433",
+   "cited_by": [
+    "src/laplace/grammar.py:456",
+    "tests/grammar_spec/map_verbs.py:53",
+    "tests/grammar_spec/map_verbs.py:62",
+    "tests/grammar_spec/map_verbs.py:65",
+    "tests/grammar_spec/GRAMMAR.md:167",
+    "tests/grammar_spec/GRAMMAR.md:236",
+    "tests/grammar_spec/GRAMMAR.md:748",
+    "tests/grammar_spec/GRAMMAR.md:781",
+    "tests/grammar_spec/grammar.py:456"
+   ],
+   "base_line": "\"input\": _object((\"text\", \"kind\", \"scope\"), {\"text\": _STRING, \"kind\": {\"enum\": [\"note\", \"factual\", \"style\", \"request\"]}, \"scope\": {\"enum\": [\"project\", \"passage\"",
+   "now": "src/laplace/writing/schemas.py:56",
+   "now_holds": "    'note':",
+   "now_fact": "note",
+   "now_line": "    'note': {'type': 'object', 'required': ['text', 'kind', 'scope'], 'properties': {'text': {'type': 'string'}, 'kind': {'enum': ['note', 'factual', 'style', 'request']}, 'scope': {'enum': ['project', 'passage']}, 'anchor': {'type': 'object', 'required': [], 'properties': {}, 'additionalProperties': True}, 'reply_to': {'type': 'string'}, 'supersedes': {'type': 'string'}}, 'additionalProperties': False},",
+   "why": "the schema moved verbatim into SCHEMAS['note'] at the migration; its later additive changes are named in tests/test_generated_contract.py; the declaration is at src/laplace/writing_declared.py:544",
+   "exists_today": false
+  },
+  {
+   "cited": "src/laplace/writing_contracts.py:439",
+   "cited_by": [
+    "tests/grammar_spec/map_verbs.py:283",
+    "tests/grammar_spec/map_verbs.py:306",
+    "tests/grammar_spec/GRAMMAR.md:431"
+   ],
+   "base_line": "\"status\": {\"enum\": [\"open\", \"resolved\", \"dismissed\"]},",
+   "now": "src/laplace/writing/schemas.py:57",
+   "now_holds": "    'note_status':",
+   "now_fact": "note_status",
+   "now_line": "    'note_status': {'type': 'object', 'required': ['id', 'status'], 'properties': {'id': {'type': 'string'}, 'status': {'enum': ['open', 'resolved', 'dismissed']}, 'base_revision': {'type': 'integer'}, 'note': {'type': 'string'}}, 'additionalProperties': False},",
+   "why": "the schema moved verbatim into SCHEMAS['note_status'] and is still verbatim; the declaration is at src/laplace/writing_declared.py:564",
+   "exists_today": false
+  },
+  {
+   "cited": "src/laplace/writing_contracts.py:550",
+   "cited_by": [
+    "src/laplace/grammar.py:630",
+    "tests/grammar_spec/GRAMMAR.md:270",
+    "tests/grammar_spec/GRAMMAR.md:548",
+    "tests/grammar_spec/grammar.py:626"
+   ],
+   "base_line": "for name,variant in deployed[\"operations\"].items()]}, \"owner_contract\":deployed}",
+   "now": "src/laplace/native/declarations.py:654",
+   "now_holds": "def _variants_structure_change",
+   "now_fact": "_variants_structure_change",
+   "now_line": "def _variants_structure_change() -> dict:",
+   "why": "the owner-contract duplicate this packet deleted; the variants are built from the owner by _variants_structure_change here",
+   "exists_today": false
+  },
+  {
+   "cited": "src/laplace/writing_contracts.py:579",
+   "cited_by": [
+    "src/laplace/grammar.py:1223",
+    "tests/grammar_spec/GRAMMAR.md:593",
+    "tests/grammar_spec/grammar.py:1200"
+   ],
+   "base_line": "\"add_edge\":{\"operation\":\"add_edge\",\"node\":\"claim:new\",\"target\":\"def:basis\",",
+   "now": "src/laplace/native/declarations.py:669",
+   "now_holds": "def _variants_concept_change",
+   "now_fact": "concept_change",
+   "now_line": "def _variants_concept_change() -> dict:",
+   "why": "the hand-written example is gone; concept_change's variants are built from the owner's own contract here, and its edge operations still carry their target INSIDE the op object, so they never collide with the request's `target`",
+   "exists_today": false
+  },
+  {
+   "cited": "src/laplace/writing_contracts.py:604",
+   "cited_by": [
+    "src/laplace/grammar.py:1318",
+    "tests/grammar_spec/GRAMMAR.md:460",
+    "tests/grammar_spec/grammar.py:1292"
+   ],
+   "base_line": "allowed=list(dict.fromkeys(allowed+[\"by\"]))",
+   "now": "src/laplace/native/declarations.py:707",
+   "now_holds": "        allowed = list(dict.fromkeys(allowed + [\"by\"]))",
+   "now_fact": "by",
+   "now_line": "        allowed = list(dict.fromkeys(allowed + [\"by\"]))",
+   "why": "the line moved verbatim into _variants_logical_plan_change: `by` is still added to every variant of that one operation, and nowhere else, which is what the grammar's `by` census records for it (overwritten at writing_tools.py:324)",
+   "exists_today": false
+  },
+  {
+   "cited": "src/laplace/writing_contracts.py:607",
+   "cited_by": [
+    "src/laplace/grammar.py:1209",
+    "src/laplace/grammar.py:1230",
+    "tests/grammar_spec/GRAMMAR.md:579",
+    "tests/grammar_spec/GRAMMAR.md:589",
+    "tests/grammar_spec/grammar.py:1186",
+    "tests/grammar_spec/grammar.py:1206"
+   ],
+   "base_line": "if name==\"connect\":properties[\"target\"]=_STRING",
+   "now": "src/laplace/native/declarations.py:710",
+   "now_holds": "        if name == \"connect\":",
+   "now_fact": "connect",
+   "now_line": "        if name == \"connect\":",
+   "why": "the line moved verbatim into _variants_logical_plan_change: `connect` is the one operation that declares a top-level `target`, which is why the grammar's payload carrier for it is `edge_target` and the request's own `target` cannot collide",
+   "exists_today": false
+  }
+ ]
+}

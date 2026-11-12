@@ -1,0 +1,941 @@
+{
+ "document": {
+  "schema_version": "laplace.current-document/1",
+  "project": "book",
+  "status": "NOT_BUILT",
+  "selected_source": {
+   "root": "synthetics papers/book/manuscript/Fixture-Book.tex",
+   "manuscript_dir": "synthetics papers/book/manuscript",
+   "edition": "draft",
+   "revision": "ec39e3cc81c7317c551fd654cd100571f43b76f57ee8d6103a21e0f192b568f5",
+   "read_only": false,
+   "status": "resolved"
+  },
+  "source_observation": {
+   "schema_version": "laplace.manuscript-source-observation/1",
+   "project": "book",
+   "status": "AVAILABLE",
+   "selected_source": {
+    "root": "synthetics papers/book/manuscript/Fixture-Book.tex",
+    "manuscript_dir": "synthetics papers/book/manuscript",
+    "edition": "draft",
+    "revision": "ec39e3cc81c7317c551fd654cd100571f43b76f57ee8d6103a21e0f192b568f5",
+    "read_only": false,
+    "status": "resolved"
+   },
+   "selection_identity": "sha256:f35f374570dbc183d4aec769c50fb55b0860b11e94183950c18db51bd357ed65",
+   "source_revision": "sha256:f37b255be61f0f2ca69ccd642d5bf3be4e221dce32abe78b05cee727ab44aed2",
+   "revision": "sha256:b4bdbe88a725acd2274d5a5d461ca7e3f9bb51dd90179df3c241b8446c3794bd",
+   "file_revisions": {
+    "synthetics papers/book/manuscript/Fixture-Book.tex": "ec39e3cc81c7317c551fd654cd100571f43b76f57ee8d6103a21e0f192b568f5",
+    "synthetics papers/book/manuscript/chapters/chapter-01.tex": "a3f9c9c474d5c0b6ae33ea349ddf6d0f11be41f3347f7a130309571f5aa47bce"
+   }
+  },
+  "current_build": {
+   "id": "recompile",
+   "label": "recompile",
+   "scope": "projection",
+   "producer": "latexmk -pdf -synctex=1 (the background recompile)",
+   "built_ts": null,
+   "project": "book",
+   "corpus": "book",
+   "present": false,
+   "fresh": false,
+   "degraded": true,
+   "state": "idle",
+   "running": false,
+   "ok": null,
+   "log_tail": "",
+   "pdf": null,
+   "by": null,
+   "started": null,
+   "finished": null,
+   "dependency_changes": [],
+   "inputs_current": false,
+   "input_revisions": null,
+   "outputs_current": false,
+   "output_proof": "LEGACY_UNVERIFIED",
+   "output_changes": [],
+   "outputs": null,
+   "last_successful_build": null,
+   "reason": "no compiled pdf yet",
+   "fix": "recompile the paper (▶) to mint the pdf + synctex",
+   "replacement_blocked": false
+  },
+  "presentation_revision": "sha256:4cb43d87f5eab854c33c4cd6b97ea110d77f2c30d84e40bf6b6f806ca4e9bcca",
+  "observation_coherence": {
+   "status": "UNPROVED",
+   "missing_inputs": [
+    "synthetics papers/book/manuscript/Fixture-Book.tex",
+    "synthetics papers/book/manuscript/chapters/chapter-01.tex"
+   ],
+   "changed_inputs": []
+  },
+  "current_revision": "sha256:bc87d68517b272e8ea9a97265aedf24277db47091777e6b0fd23b1d83493524d",
+  "selection_identity": "sha256:f35f374570dbc183d4aec769c50fb55b0860b11e94183950c18db51bd357ed65",
+  "dependency_revisions": {
+   "synthetics papers/book/manuscript/Fixture-Book.tex": "ec39e3cc81c7317c551fd654cd100571f43b76f57ee8d6103a21e0f192b568f5",
+   "synthetics papers/book/manuscript/chapters/chapter-01.tex": "a3f9c9c474d5c0b6ae33ea349ddf6d0f11be41f3347f7a130309571f5aa47bce",
+   "synthetics papers/book/manuscript/refs.bib": "7fb36dce9cd8381ad7f4243062ad27749cd0c1a97081745c8393842d3195ee76"
+  },
+  "files": [
+   {
+    "file": "synthetics papers/book/manuscript/Fixture-Book.tex",
+    "selection_identity": "sha256:f35f374570dbc183d4aec769c50fb55b0860b11e94183950c18db51bd357ed65",
+    "read_only": false,
+    "role": "root",
+    "expected_source_digest": "sha256:ec39e3cc81c7317c551fd654cd100571f43b76f57ee8d6103a21e0f192b568f5",
+    "read_handle": {
+     "method": "GET",
+     "route": "/projection/tex",
+     "query": {
+      "corpus": "book",
+      "file": "synthetics papers/book/manuscript/Fixture-Book.tex",
+      "view": "source"
+     }
+    },
+    "save_handle": {
+     "method": "POST",
+     "route": "/projection/tex",
+     "query": {
+      "corpus": "book",
+      "file": "synthetics papers/book/manuscript/Fixture-Book.tex",
+      "expected_selection": "sha256:f35f374570dbc183d4aec769c50fb55b0860b11e94183950c18db51bd357ed65",
+      "expected_source_digest": "sha256:ec39e3cc81c7317c551fd654cd100571f43b76f57ee8d6103a21e0f192b568f5",
+      "bank": "editor"
+     },
+     "body_kind": "raw-text",
+     "requires": [
+      "author"
+     ]
+    }
+   },
+   {
+    "file": "synthetics papers/book/manuscript/chapters/chapter-01.tex",
+    "selection_identity": "sha256:f35f374570dbc183d4aec769c50fb55b0860b11e94183950c18db51bd357ed65",
+    "read_only": false,
+    "role": "source",
+    "expected_source_digest": "sha256:a3f9c9c474d5c0b6ae33ea349ddf6d0f11be41f3347f7a130309571f5aa47bce",
+    "read_handle": {
+     "method": "GET",
+     "route": "/projection/tex",
+     "query": {
+      "corpus": "book",
+      "file": "synthetics papers/book/manuscript/chapters/chapter-01.tex",
+      "view": "source"
+     }
+    },
+    "save_handle": {
+     "method": "POST",
+     "route": "/projection/tex",
+     "query": {
+      "corpus": "book",
+      "file": "synthetics papers/book/manuscript/chapters/chapter-01.tex",
+      "expected_selection": "sha256:f35f374570dbc183d4aec769c50fb55b0860b11e94183950c18db51bd357ed65",
+      "expected_source_digest": "sha256:a3f9c9c474d5c0b6ae33ea349ddf6d0f11be41f3347f7a130309571f5aa47bce",
+      "bank": "editor"
+     },
+     "body_kind": "raw-text",
+     "requires": [
+      "author"
+     ]
+    }
+   },
+   {
+    "file": "synthetics papers/book/manuscript/refs.bib",
+    "selection_identity": "sha256:f35f374570dbc183d4aec769c50fb55b0860b11e94183950c18db51bd357ed65",
+    "read_only": true,
+    "role": "bibliography",
+    "expected_source_digest": "sha256:7fb36dce9cd8381ad7f4243062ad27749cd0c1a97081745c8393842d3195ee76",
+    "read_handle": {
+     "method": "GET",
+     "route": "/projection/tex",
+     "query": {
+      "corpus": "book",
+      "file": "synthetics papers/book/manuscript/refs.bib",
+      "view": "source"
+     }
+    },
+    "save_handle": null
+   }
+  ],
+  "template": {
+   "status": "OBSERVED_SOURCE",
+   "class_name": "book",
+   "class_options": [],
+   "available": true,
+   "current_source_file": "synthetics papers/book/manuscript/Fixture-Book.tex",
+   "expected_source_digest": "sha256:ec39e3cc81c7317c551fd654cd100571f43b76f57ee8d6103a21e0f192b568f5",
+   "expected_selection": "sha256:f35f374570dbc183d4aec769c50fb55b0860b11e94183950c18db51bd357ed65",
+   "current_source_read": {
+    "method": "GET",
+    "route": "/projection/tex",
+    "query": {
+     "corpus": "book",
+     "file": "synthetics papers/book/manuscript/Fixture-Book.tex",
+     "view": "source"
+    },
+    "native_request": {
+     "verb": "read",
+     "concept": "source-file@paragraph",
+     "target": "book::synthetics papers/book/manuscript/Fixture-Book.tex",
+     "expected": [],
+     "payload": {
+      "corpus": "book",
+      "file": "synthetics papers/book/manuscript/Fixture-Book.tex",
+      "view": "source",
+      "offset": 0,
+      "limit": 4096
+     },
+     "by": ""
+    }
+   },
+   "candidates_read": {
+    "operation": "document",
+    "project": "book",
+    "permitted": true,
+    "payload": {
+     "project": "book",
+     "view": "template-candidates"
+    },
+    "http": {
+     "method": "GET",
+     "url": "/authoring/document?project=book&view=template-candidates"
+    },
+    "native_request": {
+     "verb": "read",
+     "concept": "document-form@project",
+     "target": "book",
+     "expected": [],
+     "payload": {
+      "view": "template-candidates"
+     },
+     "by": ""
+    }
+   },
+   "prepare_action": {
+    "operation": "style",
+    "project": "book",
+    "permitted": true,
+    "payload": {
+     "project": "book",
+     "action": "prepare",
+     "guards": {
+      "expected_selection": "sha256:f35f374570dbc183d4aec769c50fb55b0860b11e94183950c18db51bd357ed65",
+      "source_guards": {
+       "synthetics papers/book/manuscript/Fixture-Book.tex": "sha256:ec39e3cc81c7317c551fd654cd100571f43b76f57ee8d6103a21e0f192b568f5"
+      }
+     },
+     "reason": "Reviewed template source change"
+    },
+    "http": {
+     "method": "POST",
+     "url": "/work/style"
+    },
+    "native_request": {
+     "verb": "change",
+     "concept": "document-form@project",
+     "target": "book",
+     "expected": [],
+     "payload": {
+      "action": "prepare",
+      "guards": {
+       "expected_selection": "sha256:f35f374570dbc183d4aec769c50fb55b0860b11e94183950c18db51bd357ed65",
+       "source_guards": {
+        "synthetics papers/book/manuscript/Fixture-Book.tex": "sha256:ec39e3cc81c7317c551fd654cd100571f43b76f57ee8d6103a21e0f192b568f5"
+       }
+      },
+      "reason": "Reviewed template source change"
+     },
+     "by": ""
+    },
+    "authored_fields": [
+     "source_edits OR edits",
+     "reason"
+    ]
+   },
+   "input_instruction": "Use exact saved-source read guards and bounded edits, or explicitly capture the existing writable TeX draft. No Save is required for preview.",
+   "preview_changes_source": false,
+   "source_class_authoritative": true
+  },
+  "render_defaults": {
+   "values": {},
+   "effective_origin": "defaults",
+   "revision": "sha256:feafab2451f5a6e85a981ca55e1e5f3ff4f9b1bbe6b4f656de220cd1b5aa93ce",
+   "consumed_source": {
+    "path": null,
+    "field": null,
+    "revision": "sha256:44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a"
+   },
+   "canonical_present": false,
+   "legacy_present": false,
+   "legacy_conflict": false,
+   "authority": "Rendering and figure defaults only. Current class/options belong to actual TeX source.",
+   "migration": "No preview-triggered writes. Later authorised defaults migration may explicitly retire legacy fallback."
+  },
+  "read_handles": {
+   "document": {
+    "method": "GET",
+    "route": "/authoring/document",
+    "query": {
+     "project": "book"
+    }
+   },
+   "build": {
+    "method": "GET",
+    "route": "/authoring/build",
+    "query": {
+     "project": "book",
+     "view": "summary"
+    }
+   },
+   "pdf": null
+  },
+  "pdf_identity": null,
+  "style_preview": {
+   "status": "RETIRED",
+   "legacy_preview_id": null,
+   "reason": "Legacy mutable style previews are historical. Inspect exact template candidates and their addressed build/output.",
+   "candidates_read": {
+    "operation": "document",
+    "project": "book",
+    "permitted": true,
+    "payload": {
+     "project": "book",
+     "view": "template-candidates"
+    },
+    "http": {
+     "method": "GET",
+     "url": "/authoring/document?project=book&view=template-candidates"
+    },
+    "native_request": {
+     "verb": "read",
+     "concept": "document-form@project",
+     "target": "book",
+     "expected": [],
+     "payload": {
+      "view": "template-candidates"
+     },
+     "by": ""
+    }
+   }
+  },
+  "derived_output_read": {
+   "operation": "document",
+   "payload": {
+    "target_kind": "derived"
+   },
+   "http": {
+    "method": "GET",
+    "url": "/authoring/document?project=book&target_kind=derived"
+   }
+  }
+ },
+ "document_derived": {
+  "schema_version": "laplace.derived-output/1",
+  "project": "book",
+  "target_kind": "derived",
+  "read_handle": {
+   "operation": "document",
+   "payload": {
+    "target_kind": "derived"
+   },
+   "http": {
+    "method": "GET",
+    "url": "/authoring/document?project=book&target_kind=derived"
+   }
+  },
+  "status": "UNAVAILABLE",
+  "reason": "The declared reader-plan output has not been prepared yet.",
+  "code": "BUILD_TARGET_CHANGED_OR_UNAVAILABLE",
+  "reason_code": "NOT_PREPARED",
+  "next_reads": [
+   {
+    "operation": "document",
+    "payload": {
+     "target_kind": "derived"
+    },
+    "http": {
+     "method": "GET",
+     "url": "/authoring/document?project=book&target_kind=derived"
+    }
+   }
+  ],
+  "recovery": "Inspect the current declared derived target and retained output. No manuscript target was substituted."
+ },
+ "outline": {
+  "schema_version": "laplace.source-outline/2",
+  "project": "book",
+  "status": "AVAILABLE",
+  "selected_source": {
+   "root": "synthetics papers/book/manuscript/Fixture-Book.tex",
+   "manuscript_dir": "synthetics papers/book/manuscript",
+   "edition": "draft",
+   "status": "resolved",
+   "read_only": false,
+   "selection_identity": "sha256:f35f374570dbc183d4aec769c50fb55b0860b11e94183950c18db51bd357ed65"
+  },
+  "as_of": "sha256:b3c14e1217ba6182d5c353a6fab4f8188df897808244d77227863a94dbcf32c8",
+  "headings": {
+   "items": [
+    {
+     "title": "First",
+     "kind": "chapter",
+     "file": "synthetics papers/book/manuscript/chapters/chapter-01.tex",
+     "line": 1,
+     "line_end": 4,
+     "heading_line_end": 1,
+     "label": null,
+     "heading_before": "\\chapter{First}",
+     "source_order": 1,
+     "shared_occurrences": 1
+    },
+    {
+     "title": "First child",
+     "kind": "section",
+     "file": "synthetics papers/book/manuscript/chapters/chapter-01.tex",
+     "line": 3,
+     "line_end": 4,
+     "heading_line_end": 3,
+     "label": null,
+     "heading_before": "\\section{First child}",
+     "source_order": 1,
+     "shared_occurrences": 1
+    },
+    {
+     "title": "Second",
+     "kind": "chapter",
+     "file": "synthetics papers/book/manuscript/chapters/chapter-01.tex",
+     "line": 5,
+     "line_end": 6,
+     "heading_line_end": 5,
+     "label": null,
+     "heading_before": "\\chapter{Second}",
+     "source_order": 1,
+     "shared_occurrences": 1
+    }
+   ],
+   "total": 3,
+   "offset": 0,
+   "limit": 25,
+   "omitted_before": 0,
+   "omitted_after": 0
+  },
+  "sources": {
+   "synthetics papers/book/manuscript/chapters/chapter-01.tex": {
+    "source_digest": "sha256:a3f9c9c474d5c0b6ae33ea349ddf6d0f11be41f3347f7a130309571f5aa47bce"
+   }
+  },
+  "read_routes": {
+   "source_read": {
+    "operation": "source",
+    "payload": {
+     "files": [
+      "<file>"
+     ],
+     "line_start": "<line>",
+     "line_end": "<line_end>"
+    },
+    "http": {
+     "method": "GET",
+     "route": "/projection/tex",
+     "query": {
+      "corpus": "book",
+      "file": "<file>",
+      "view": "source"
+     }
+    }
+   },
+   "structure_read": {
+    "operation": "structure",
+    "payload": {
+     "view": "detail",
+     "files": [
+      "<file>"
+     ],
+     "line_start": "<line>",
+     "line_end": "<line_end>"
+    },
+    "http": {
+     "method": "GET",
+     "route": "/work/structure",
+     "query": {
+      "project": "book",
+      "view": "detail",
+      "files": [
+       "<file>"
+      ],
+      "line_start": "<line>",
+      "line_end": "<line_end>"
+     }
+    }
+   }
+  },
+  "diagnostics": []
+ },
+ "campaign_metadata": {
+  "candidates": [],
+  "candidates_truncated": false,
+  "capabilities": {
+   "concepts": false,
+   "history": true,
+   "manuscript": false,
+   "material_references": true,
+   "materials": true,
+   "presentation": false,
+   "reader_plan": false,
+   "research": true,
+   "review": false,
+   "settings": true,
+   "start_manuscript": true,
+   "turns": true,
+   "work": true
+  },
+  "layout": "project",
+  "manuscript_dir": "writing_projects/campaign/manuscript",
+  "project": "campaign",
+  "read_only": false,
+  "revision": "sha256:ab3717cd4b50479e848c2c713af7b6ed9e557abe02dac13bb3b3fffa0ec69bc2",
+  "root": null,
+  "schema_version": "laplace.project-metadata/1",
+  "scope": "project library/display title; manuscript title and research question are separate",
+  "selection": "none",
+  "source_optional": true,
+  "status": "missing",
+  "title": "Campaign"
+ },
+ "campaign_research_empty": {
+  "available_sources": [],
+  "detail": {
+   "query": {
+    "id": "<result id>",
+    "project": "campaign"
+   },
+   "route": "/research/result"
+  },
+  "figures": [],
+  "index_stamp": "sha256:c5fd0ac91612199ce3d7bd7f39b9617fdc44164e422ac907293d2d7b0585dae2",
+  "omission": {
+   "note": "Exact result detail remains available by stable result id.",
+   "result_detail_fields": [
+    "measurements",
+    "linked visual provenance",
+    "evidence files",
+    "current dependencies",
+    "renewal history",
+    "producer/run provenance"
+   ]
+  },
+  "producer_runs": [],
+  "producers": [],
+  "project": "campaign",
+  "read_basis": {
+   "age_s": 0.03,
+   "asset_join": {
+    "basis": "ttl",
+    "note": "figure asset joins read the asset model, which is not witnessed; they are at most ttl_s old",
+    "remaining_s": 29.97,
+    "ttl_s": 30.0
+   },
+   "cache": "miss",
+   "index_stamp": "sha256:c5fd0ac91612199ce3d7bd7f39b9617fdc44164e422ac907293d2d7b0585dae2",
+   "observed_at": "2026-10-14T22:45:09Z"
+  },
+  "read_only": false,
+  "records_error": null,
+  "results": [],
+  "schema_version": "laplace.research-catalogue/1",
+  "state": "UNKNOWN"
+ },
+ "campaign_research_result": {
+  "available_sources": [],
+  "detail": {
+   "query": {
+    "id": "<result id>",
+    "project": "campaign"
+   },
+   "route": "/research/result"
+  },
+  "figures": [],
+  "index_stamp": "sha256:2583a60e0e5fc47cb2c54d5f17855376ce37ae15221ea709dd8f8ca9d3ef9bad",
+  "omission": {
+   "note": "Exact result detail remains available by stable result id.",
+   "result_detail_fields": [
+    "measurements",
+    "linked visual provenance",
+    "evidence files",
+    "current dependencies",
+    "renewal history",
+    "producer/run provenance"
+   ]
+  },
+  "producer_runs": [],
+  "producers": [],
+  "project": "campaign",
+  "read_basis": {
+   "age_s": 0.002,
+   "asset_join": {
+    "basis": "ttl",
+    "note": "figure asset joins read the asset model, which is not witnessed; they are at most ttl_s old",
+    "remaining_s": 29.998,
+    "ttl_s": 30.0
+   },
+   "cache": "miss",
+   "index_stamp": "sha256:2583a60e0e5fc47cb2c54d5f17855376ce37ae15221ea709dd8f8ca9d3ef9bad",
+   "observed_at": "2026-10-14T22:45:09Z"
+  },
+  "read_only": false,
+  "records_error": null,
+  "results": [
+   {
+    "currentness": "CURRENT",
+    "id": "result:source-audit",
+    "kind": "result",
+    "limitations": "Diagnostic only; no new experiment.",
+    "linked_visuals": [],
+    "next_read": {
+     "operation": "research",
+     "payload": {
+      "id": "result:source-audit",
+      "view": "result"
+     }
+    },
+    "question": "Which shared sources were checked?",
+    "revision": "sha256:13f3342b390d4c994b2767aff9b6e02cdce538c9ce115dd0c3efff6deb6581a3",
+    "summary": "A historical diagnostic audit of the shared sources.",
+    "title": "Source audit",
+    "usage": []
+   }
+  ],
+  "schema_version": "laplace.research-catalogue/1",
+  "state": "COMPLETE"
+ },
+ "campaign_research_exact": {
+  "exact": true,
+  "project": "campaign",
+  "result": {
+   "current_dependencies": [
+    {
+     "bytes": 23,
+     "path": "audit.json",
+     "sha256": "fcae18fbc65fd0b23c505300a395468f5fd32bf15a70e8bf52754e3d4d18702b",
+     "status": "PRESENT"
+    }
+   ],
+   "currentness": "CURRENT",
+   "currentness_reason": "all explicitly declared dependencies match their recorded identities",
+   "dependency_coverage": {
+    "changed_pins": [],
+    "historical_verification": "PINNED_DEPENDENCIES_ONLY",
+    "newly_untracked": [],
+    "removed_pins": [],
+    "retired_derived_presentation_pins": [],
+    "snapshot_schema": "laplace.research-dependencies/3"
+   },
+   "evidence_files": [
+    {
+     "availability": "PRESENT",
+     "identity": "sha256:47f6ad0085ca799a543b8f668524fdf32ad2b3be8425b8e24c463ab973afed16",
+     "path": "audit.json",
+     "role": "Recorded output",
+     "scope": "manuscript"
+    }
+   ],
+   "id": "result:source-audit",
+   "kind": "result",
+   "limitations": "Diagnostic only; no new experiment.",
+   "linked_figures": [],
+   "linked_visuals": [],
+   "measurements": [
+    {
+     "key": "sources_checked",
+     "label": "Sources checked",
+     "value": 63
+    }
+   ],
+   "measures": [
+    {
+     "key": "sources_checked",
+     "label": "Sources checked"
+    }
+   ],
+   "provenance": {
+    "dependencies": [
+     {
+      "bytes": 23,
+      "path": "audit.json",
+      "sha256": "fcae18fbc65fd0b23c505300a395468f5fd32bf15a70e8bf52754e3d4d18702b",
+      "status": "PRESENT"
+     }
+    ],
+    "recorded_at": 1792017909.4680047,
+    "scope": "manuscript",
+    "snapshot_schema": "laplace.research-dependencies/3"
+   },
+   "question": "Which shared sources were checked?",
+   "renewal_history": [],
+   "result": "audit.json",
+   "revision": "sha256:13f3342b390d4c994b2767aff9b6e02cdce538c9ce115dd0c3efff6deb6581a3",
+   "scope": "manuscript",
+   "summary": "A historical diagnostic audit of the shared sources.",
+   "title": "Source audit",
+   "usage": []
+  },
+  "schema_version": "laplace.research-result-detail/1"
+ },
+ "drafted_materials": {
+  "project": "drafted",
+  "materials": [
+   {
+    "id": "ART-dab1a1b4094c446994de991554ddff02",
+    "path": "notes/owned-after-start.json",
+    "scope": "manuscript",
+    "recorded_revision": "09c82b49030930a0456a38cc84b3bc8e83d5fe5f99d6904e61377f41e4b20e96",
+    "recorded_at": "2026-10-14T22:45:09.979Z",
+    "history_path": "writing_projects/drafted/manuscript/working-draft/notes/owned-after-start.json",
+    "availability": "present",
+    "currentness": "NOT_CHECKED",
+    "read_handle": {
+     "operation": "read_artifact",
+     "payload": {
+      "id": "ART-dab1a1b4094c446994de991554ddff02"
+     }
+    },
+    "human_read": {
+     "project": "drafted",
+     "path": "notes/owned-after-start.json",
+     "scope": "manuscript",
+     "expected_sha256": "09c82b49030930a0456a38cc84b3bc8e83d5fe5f99d6904e61377f41e4b20e96",
+     "owner": "writing-artifact",
+     "artifact_id": "ART-dab1a1b4094c446994de991554ddff02",
+     "url": "/research/artifact?project=drafted&scope=manuscript&path=notes%2Fowned-after-start.json&expected_sha256=09c82b49030930a0456a38cc84b3bc8e83d5fe5f99d6904e61377f41e4b20e96&owner=writing-artifact&artifact_id=ART-dab1a1b4094c446994de991554ddff02",
+     "http": {
+      "method": "GET",
+      "url": "/research/artifact?project=drafted&scope=manuscript&path=notes%2Fowned-after-start.json&expected_sha256=09c82b49030930a0456a38cc84b3bc8e83d5fe5f99d6904e61377f41e4b20e96&owner=writing-artifact&artifact_id=ART-dab1a1b4094c446994de991554ddff02"
+     }
+    },
+    "update_handle": {
+     "operation": "store_artifact",
+     "requires": "Read current revision first."
+    }
+   }
+  ],
+  "pagination": {
+   "offset": 0,
+   "limit": 20,
+   "total": 1,
+   "next_offset": null
+  },
+  "gaps": [],
+  "gaps_total": 0,
+  "coverage": "Latest recorded artifact receipt per scoped path; unrecorded files are not included. Recorded revisions are not currentness checks.",
+  "read_only": true
+ },
+ "drafted_receipt_page": {
+  "bytes": 26,
+  "content": "{\"which\":\"selected draft\"}",
+  "download_available": true,
+  "filtered": false,
+  "next_offset": null,
+  "offset": 0,
+  "path": "notes/owned-after-start.json",
+  "scope": "manuscript",
+  "sha256": "09c82b49030930a0456a38cc84b3bc8e83d5fe5f99d6904e61377f41e4b20e96",
+  "total_chars": 26
+ },
+ "drafted_bare_refusal": {
+  "status": 409,
+  "body": {
+   "actual_sha256": "6075484e9aa929834690a00b812a205400b5cace42e11435204d48262164ee6e",
+   "error": "Artifact identity changed. The recorded bytes were not returned. Reopen the recorded source or explicitly choose the current file.",
+   "expected_sha256": "09c82b49030930a0456a38cc84b3bc8e83d5fe5f99d6904e61377f41e4b20e96"
+  }
+ },
+ "drafted_legacy_materials": {
+  "project": "drafted",
+  "materials": [
+   {
+    "id": "ART-cccccccccccccccccccccccccccccccc",
+    "path": "notes/legacy-malformed.txt",
+    "scope": "manuscript",
+    "recorded_revision": "sha256:not-a-digest",
+    "recorded_at": "2026-10-14T22:45:10.131Z",
+    "history_path": "writing_projects/drafted/manuscript/working-draft/notes/legacy-malformed.txt",
+    "availability": "present",
+    "currentness": "NOT_CHECKED",
+    "read_handle": {
+     "operation": "read_artifact",
+     "payload": {
+      "id": "ART-cccccccccccccccccccccccccccccccc"
+     }
+    },
+    "update_handle": {
+     "operation": "store_artifact",
+     "requires": "Read current revision first."
+    }
+   },
+   {
+    "id": "ART-aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+    "path": "notes/legacy-missing.txt",
+    "scope": "manuscript",
+    "recorded_revision": null,
+    "recorded_at": "2026-10-14T22:45:10.092Z",
+    "history_path": "writing_projects/drafted/manuscript/working-draft/notes/legacy-missing.txt",
+    "availability": "present",
+    "currentness": "NOT_CHECKED",
+    "read_handle": {
+     "operation": "read_artifact",
+     "payload": {
+      "id": "ART-aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+     }
+    },
+    "update_handle": {
+     "operation": "store_artifact",
+     "requires": "Read current revision first."
+    }
+   },
+   {
+    "id": "ART-bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+    "path": "notes/legacy-null.txt",
+    "scope": "manuscript",
+    "recorded_revision": null,
+    "recorded_at": "2026-10-14T22:45:10.111Z",
+    "history_path": "writing_projects/drafted/manuscript/working-draft/notes/legacy-null.txt",
+    "availability": "present",
+    "currentness": "NOT_CHECKED",
+    "read_handle": {
+     "operation": "read_artifact",
+     "payload": {
+      "id": "ART-bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb"
+     }
+    },
+    "update_handle": {
+     "operation": "store_artifact",
+     "requires": "Read current revision first."
+    }
+   },
+   {
+    "id": "ART-dab1a1b4094c446994de991554ddff02",
+    "path": "notes/owned-after-start.json",
+    "scope": "manuscript",
+    "recorded_revision": "09c82b49030930a0456a38cc84b3bc8e83d5fe5f99d6904e61377f41e4b20e96",
+    "recorded_at": "2026-10-14T22:45:09.979Z",
+    "history_path": "writing_projects/drafted/manuscript/working-draft/notes/owned-after-start.json",
+    "availability": "present",
+    "currentness": "NOT_CHECKED",
+    "read_handle": {
+     "operation": "read_artifact",
+     "payload": {
+      "id": "ART-dab1a1b4094c446994de991554ddff02"
+     }
+    },
+    "human_read": {
+     "project": "drafted",
+     "path": "notes/owned-after-start.json",
+     "scope": "manuscript",
+     "expected_sha256": "09c82b49030930a0456a38cc84b3bc8e83d5fe5f99d6904e61377f41e4b20e96",
+     "owner": "writing-artifact",
+     "artifact_id": "ART-dab1a1b4094c446994de991554ddff02",
+     "url": "/research/artifact?project=drafted&scope=manuscript&path=notes%2Fowned-after-start.json&expected_sha256=09c82b49030930a0456a38cc84b3bc8e83d5fe5f99d6904e61377f41e4b20e96&owner=writing-artifact&artifact_id=ART-dab1a1b4094c446994de991554ddff02",
+     "http": {
+      "method": "GET",
+      "url": "/research/artifact?project=drafted&scope=manuscript&path=notes%2Fowned-after-start.json&expected_sha256=09c82b49030930a0456a38cc84b3bc8e83d5fe5f99d6904e61377f41e4b20e96&owner=writing-artifact&artifact_id=ART-dab1a1b4094c446994de991554ddff02"
+     }
+    },
+    "update_handle": {
+     "operation": "store_artifact",
+     "requires": "Read current revision first."
+    }
+   }
+  ],
+  "pagination": {
+   "offset": 0,
+   "limit": 20,
+   "total": 4,
+   "next_offset": null
+  },
+  "gaps": [],
+  "gaps_total": 0,
+  "coverage": "Latest recorded artifact receipt per scoped path; unrecorded files are not included. Recorded revisions are not currentness checks.",
+  "read_only": true
+ },
+ "drafted_legacy_pages": {
+  "ART-cccccccccccccccccccccccccccccccc": {
+   "bytes": 24,
+   "content": "selected draft malformed",
+   "download_available": true,
+   "filtered": false,
+   "next_offset": null,
+   "offset": 0,
+   "path": "notes/legacy-malformed.txt",
+   "receipt_identity": "unavailable",
+   "scope": "manuscript",
+   "sha256": "658c125c2f3d362491f3ae6d3c1eef3757b1547f7c098981a62114b6e1885eb0",
+   "total_chars": 24
+  },
+  "ART-aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa": {
+   "bytes": 22,
+   "content": "selected draft missing",
+   "download_available": true,
+   "filtered": false,
+   "next_offset": null,
+   "offset": 0,
+   "path": "notes/legacy-missing.txt",
+   "receipt_identity": "unavailable",
+   "scope": "manuscript",
+   "sha256": "9f4b2dba8e50bcd14ffce663a9ec95390a95dca9f1dbb7db35309f8fe831cc5a",
+   "total_chars": 22
+  },
+  "ART-bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb": {
+   "bytes": 19,
+   "content": "selected draft null",
+   "download_available": true,
+   "filtered": false,
+   "next_offset": null,
+   "offset": 0,
+   "path": "notes/legacy-null.txt",
+   "receipt_identity": "unavailable",
+   "scope": "manuscript",
+   "sha256": "605790dc087ebff4194da6ec45438b43f931d04a6cb40a284469f46d4be7ecd0",
+   "total_chars": 19
+  }
+ },
+ "drafted_legacy_bare": {
+  "notes/legacy-malformed.txt": {
+   "bytes": 26,
+   "content": "state-home decoy malformed",
+   "download_available": true,
+   "filtered": false,
+   "next_offset": null,
+   "offset": 0,
+   "path": "notes/legacy-malformed.txt",
+   "scope": "manuscript",
+   "sha256": "502b56e00312f1bfa4a821df1a36f926f2da33387226e2df9c242688586afe0e",
+   "total_chars": 26
+  },
+  "notes/legacy-missing.txt": {
+   "bytes": 24,
+   "content": "state-home decoy missing",
+   "download_available": true,
+   "filtered": false,
+   "next_offset": null,
+   "offset": 0,
+   "path": "notes/legacy-missing.txt",
+   "scope": "manuscript",
+   "sha256": "91ecc3d0b3a6a05b11393dea98bd1287c6ce7d6faf271424fc1e06541e7fb533",
+   "total_chars": 24
+  },
+  "notes/legacy-null.txt": {
+   "bytes": 21,
+   "content": "state-home decoy null",
+   "download_available": true,
+   "filtered": false,
+   "next_offset": null,
+   "offset": 0,
+   "path": "notes/legacy-null.txt",
+   "scope": "manuscript",
+   "sha256": "7b08b3e425451db49a64cba2a81b1cd58cde651f25f9dc05a939111225516942",
+   "total_chars": 21
+  }
+ }
+}

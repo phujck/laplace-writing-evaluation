@@ -1,0 +1,19 @@
+{
+  "schema": "laplace.manual-undo-save-reopen-example/1",
+  "workspace": "isolated generated Behaviour example",
+  "observed_steps": [
+    "Open real Write paragraph The input sequence is 1, 2, 3.",
+    "Append Undo witness sentence.",
+    "Save changes: Saved 1 edit in S1.tex:2-2.",
+    "Document tools > Undo: Change undone.",
+    "Home > Continue writing: original sentence restored; saved-change history remains inspectable",
+    "Browser keyboard Ctrl+R requested; rendered original sentence remains visible"
+  ],
+  "before_sha256": "e7950526731d68e36af6c499c5aaa2317add16e4de603120e050308c8d655382",
+  "after_undo_sha256": "e7950526731d68e36af6c499c5aaa2317add16e4de603120e050308c8d655382",
+  "exact_original_source_restored": true,
+  "witness_absent_in_current_source": true,
+  "genuine_ui_records": true,
+  "models_used": false,
+  "qualification": "Actual Chrome UI save/Undo/reopen and physical source readback. No broad 718-control or browser-parity acceptance."
+}

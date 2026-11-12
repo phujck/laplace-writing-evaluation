@@ -27,7 +27,10 @@ GUIDE_DECLARATIONS = {'start': {'title': 'Start here',
                                         'Looking elsewhere never sends or retargets a message. Inspect context '
                                         'before Send; check an uncertain original request before '
                                         'trying again.'],
-                         'references': [{'label': 'Task recipes',
+                         'references': [{'label': 'Try the implemented behaviours',
+                                         'guide': 'behaviour-tour',
+                                         'path': 'docs/behaviours/index.md'},
+                                        {'label': 'Task recipes',
                                          'guide': 'tasks',
                                          'path': 'docs/writing-tasks.md'},
                                         {'label': 'Glossary',
@@ -277,6 +280,29 @@ GUIDE_DECLARATIONS = {'start': {'title': 'Start here',
                                              'path': 'docs/project-data-handover.md'},
                                             {'label': 'Developer and owner reference',
                                              'path': 'docs/writing-code-overview.md'}]}]}}
+
+GUIDE_DECLARATIONS['behaviour-tour'] = {
+    'title': 'Try the implemented behaviours',
+    'summary': 'Explore a small project with inspectable source, actions and records.',
+    'sections': [
+        {'id': 'open-the-example', 'title': 'Open the example',
+         'paragraphs': ['The Behaviour example joins writing, sources, tasks, calculations and their saved records. '
+                        'The example guide also gives the command to generate a fresh workspace.'],
+         'steps': ['Choose Projects, then Behaviour example (behaviour-example).',
+                   'Open Writing to read and edit its short manuscript. Save a change, use Undo, and reopen it.',
+                   'Open Conversation to inspect the saved reply, actions and proposed edits.',
+                   'Open Tasks to follow the author, review and recorded outcome.',
+                   'Open Research to inspect the calculation, source data, figure and execution records.'],
+         'references': [{'label': 'Examples, commands and behaviour map',
+                         'path': 'docs/behaviours/index.md'}]},
+        {'id': 'follow-the-evidence', 'title': 'Follow the evidence',
+         'paragraphs': ['Each example links its implemented owner to the commands, input and resulting records. '
+                        'Current, retained and refused results describe different observed outcomes.'],
+         'steps': ['Choose a behaviour in the example guide and follow its source and record links.',
+                   'Inspect the original request and outcome before repeating an action.',
+                   'Run a fresh example to compare its positive path and guarded refusal with the retained records.']}
+    ]}
+
 
 def render_guide_markdown(guide_id: str) -> str:
     """The package document is the same content the existing Help read serves."""

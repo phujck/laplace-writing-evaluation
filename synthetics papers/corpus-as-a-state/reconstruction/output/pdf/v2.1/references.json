@@ -1,0 +1,1463 @@
+{
+  "associations": [
+    {
+      "bib_path": "synthetics papers/corpus-as-a-state/reconstruction/output/pdf/v2.1/reconstruction_refs.bib",
+      "citekey": "frames",
+      "claim_id": null,
+      "evidence_status": "metadata-only",
+      "key": "local:8ff40a35db85225fd2258131",
+      "metadata": {
+        "creators": [
+          "Satyapriya Krishna",
+          "Kalpesh Krishna",
+          "Anhad Mohananey",
+          "Steven Schwarcz",
+          "Adam Stambler",
+          "Shyam Upadhyay",
+          "Manaal Faruqui"
+        ],
+        "item_type": "preprint",
+        "key": "local:8ff40a35db85225fd2258131",
+        "provenance": {
+          "description": "Exact metadata from preserved campaign bibliography, read this turn. Primary text will be acquired/read separately for the limited changed dataset/comparator claims.",
+          "path": "/home/phujck/VScodeProjects/laplace/synthetics papers/relational-frontend/paper/refs.bib",
+          "sha256": "sha256:5ac9268eb90ca6c5aa3bdd5f88a176fb53dfdc61fd13f47ccbb567a1ab2bc101",
+          "url": "https://arxiv.org/abs/2409.12941"
+        },
+        "title": "Fact, Fetch, and Reason: A Unified Evaluation of Retrieval-Augmented Generation",
+        "url": "https://arxiv.org/abs/2409.12941",
+        "version": "120f57b7d09f7bad6d599322a0cd842ff24b7a0e5cda4b80e521177b62aed29c",
+        "year": "2024"
+      },
+      "note": "",
+      "reading_observations": [
+        {
+          "id": "READ-1b478f5c15b12ec9a71b050d",
+          "length": 18000,
+          "locator": "characters 0\u201318000",
+          "observation": "passage returned by reference_text; not independent comprehension or entailment",
+          "offset": 0,
+          "page_end": 5,
+          "page_start": 1,
+          "reference_key": "local:8ff40a35db85225fd2258131",
+          "source_index": 0,
+          "source_path": "/home/phujck/VScodeProjects/laplace/synthetics papers/corpus-as-a-state/reconstruction/output/pdf/v2.1/literature_sources/4f4f33ebd7be7ccb97af2be83fa123940fc38bc8256ecbdf2afde749481a091c.pdf",
+          "source_sha256": "sha256:4f4f33ebd7be7ccb97af2be83fa123940fc38bc8256ecbdf2afde749481a091c",
+          "text_sha256": "sha256:75604c3fb6ea7da726172dc18deaa4534a514026708fbe3734878b38c4a5193c",
+          "total_characters": 46890
+        },
+        {
+          "id": "READ-19c797e79a6849d264680301",
+          "length": 7000,
+          "locator": "characters 2022\u20139022",
+          "observation": "passage returned by reference_text; not independent comprehension or entailment",
+          "offset": 2022,
+          "page_end": 3,
+          "page_start": 1,
+          "reference_key": "local:8ff40a35db85225fd2258131",
+          "source_index": 0,
+          "source_path": "/home/phujck/VScodeProjects/laplace/synthetics papers/corpus-as-a-state/reconstruction/output/pdf/v2.1/literature_sources/4f4f33ebd7be7ccb97af2be83fa123940fc38bc8256ecbdf2afde749481a091c.pdf",
+          "source_sha256": "sha256:4f4f33ebd7be7ccb97af2be83fa123940fc38bc8256ecbdf2afde749481a091c",
+          "text_sha256": "sha256:76ad5802836230d95fedd5645de5f22910110e9440b4b477898602694a97e3be",
+          "total_characters": 46890
+        },
+        {
+          "id": "READ-c9840836d12bcade0570c2a8",
+          "length": 6500,
+          "locator": "characters 379\u20136879",
+          "observation": "passage returned by reference_text; not independent comprehension or entailment",
+          "offset": 379,
+          "page_end": 3,
+          "page_start": 1,
+          "reference_key": "local:8ff40a35db85225fd2258131",
+          "source_index": 0,
+          "source_path": "/home/phujck/VScodeProjects/laplace/synthetics papers/corpus-as-a-state/reconstruction/output/pdf/v2.1/literature_sources/4f4f33ebd7be7ccb97af2be83fa123940fc38bc8256ecbdf2afde749481a091c.pdf",
+          "source_sha256": "sha256:4f4f33ebd7be7ccb97af2be83fa123940fc38bc8256ecbdf2afde749481a091c",
+          "text_sha256": "sha256:7cf9a7ab5979324f8c586887c680aec28cd094131a9250ff82a1d843b1e7d231",
+          "total_characters": 46890
+        },
+        {
+          "id": "READ-ab01f3890e477cb3c227757d",
+          "length": 4200,
+          "locator": "characters 379\u20134579",
+          "observation": "passage returned by reference_text; not independent comprehension or entailment",
+          "offset": 379,
+          "page_end": 2,
+          "page_start": 1,
+          "reference_key": "local:8ff40a35db85225fd2258131",
+          "source_index": 0,
+          "source_path": "/home/phujck/VScodeProjects/laplace/synthetics papers/corpus-as-a-state/reconstruction/output/pdf/v2.1/literature_sources/4f4f33ebd7be7ccb97af2be83fa123940fc38bc8256ecbdf2afde749481a091c.pdf",
+          "source_sha256": "sha256:4f4f33ebd7be7ccb97af2be83fa123940fc38bc8256ecbdf2afde749481a091c",
+          "text_sha256": "sha256:6f08713f7b8d86a213195b87abc5c1af3ff2cda9b49f7dc9c73411e567a8ace8",
+          "total_characters": 46890
+        }
+      ],
+      "reading_status": "unread",
+      "source": {
+        "identity": "4ee4b8df6bd6b047cd43d9f413773aa10491d5ed3048af10a2511656c13001f4",
+        "provider": "local",
+        "revision": {
+          "modified": "",
+          "version": "120f57b7d09f7bad6d599322a0cd842ff24b7a0e5cda4b80e521177b62aed29c"
+        }
+      },
+      "source_text": {
+        "bytes": 1163381,
+        "media_type": "application/pdf",
+        "path": "/home/phujck/VScodeProjects/laplace/synthetics papers/corpus-as-a-state/reconstruction/output/pdf/v2.1/literature_sources/4f4f33ebd7be7ccb97af2be83fa123940fc38bc8256ecbdf2afde749481a091c.pdf",
+        "qualification": "ACQUIRED_UNREAD; publication identity and claim alignment still require source inspection",
+        "resolved_url": "https://arxiv.org/pdf/2409.12941",
+        "sha256": "sha256:4f4f33ebd7be7ccb97af2be83fa123940fc38bc8256ecbdf2afde749481a091c",
+        "url": "https://arxiv.org/pdf/2409.12941"
+      },
+      "state": "CURRENT"
+    },
+    {
+      "bib_path": "synthetics papers/corpus-as-a-state/reconstruction/output/pdf/v2.1/reconstruction_refs.bib",
+      "citekey": "mmr",
+      "claim_id": null,
+      "evidence_status": "metadata-only",
+      "key": "doi:10.1145/290941.291025",
+      "metadata": {
+        "creators": [
+          "Jaime Carbonell",
+          "Jade Goldstein"
+        ],
+        "doi": "10.1145/290941.291025",
+        "item_type": "conferencePaper",
+        "key": "doi:10.1145/290941.291025",
+        "pages": "335-336",
+        "provenance": {
+          "description": "Publisher-deposited bibliographic metadata verified by DOI lookup.",
+          "provider": "crossref",
+          "url": "https://api.crossref.org/works/10.1145/290941.291025"
+        },
+        "publication_title": "Proceedings of the 21st annual international ACM SIGIR conference on Research and development in information retrieval",
+        "publisher": "ACM",
+        "title": "The use of MMR, diversity-based reranking for reordering documents and producing summaries",
+        "url": "https://doi.org/10.1145/290941.291025",
+        "version": "917261afd19f96ffcbaed1f78054f62cbd9e68c2944e3c20b0210dc4c2faff77",
+        "year": "1998"
+      },
+      "note": "",
+      "reading_observations": [
+        {
+          "id": "READ-2945cdabf6da448310073091",
+          "length": 11230,
+          "locator": "characters 0\u201311230",
+          "observation": "passage returned by reference_text; not independent comprehension or entailment",
+          "offset": 0,
+          "page_end": 3,
+          "page_start": 1,
+          "reference_key": "doi:10.1145/290941.291025",
+          "source_index": 0,
+          "source_path": "/home/phujck/VScodeProjects/laplace/synthetics papers/corpus-as-a-state/reconstruction/output/pdf/v2.1/literature_sources/3e641b22c2584ba04299c290a0e686c6dc1d925548f90f8298ee2ba2318a83bf.pdf",
+          "source_sha256": "sha256:3e641b22c2584ba04299c290a0e686c6dc1d925548f90f8298ee2ba2318a83bf",
+          "text_sha256": "sha256:d69a18a8d196d36ec56236c65ad73897fea56bff4f7b7fe40c89ceb468b85903",
+          "total_characters": 11230
+        },
+        {
+          "id": "READ-e286dba9de302d9210603275",
+          "length": 7000,
+          "locator": "characters 0\u20137000",
+          "observation": "passage returned by reference_text; not independent comprehension or entailment",
+          "offset": 0,
+          "page_end": 2,
+          "page_start": 1,
+          "reference_key": "doi:10.1145/290941.291025",
+          "source_index": 0,
+          "source_path": "/home/phujck/VScodeProjects/laplace/synthetics papers/corpus-as-a-state/reconstruction/output/pdf/v2.1/literature_sources/3e641b22c2584ba04299c290a0e686c6dc1d925548f90f8298ee2ba2318a83bf.pdf",
+          "source_sha256": "sha256:3e641b22c2584ba04299c290a0e686c6dc1d925548f90f8298ee2ba2318a83bf",
+          "text_sha256": "sha256:000ba96f7cbd194588593bf71fc11d2bf8752b7cc9df4151967ad22dde1ff9ba",
+          "total_characters": 11230
+        },
+        {
+          "id": "READ-0354b2d2ac03f95b869fc04c",
+          "length": 6500,
+          "locator": "characters 0\u20136500",
+          "observation": "passage returned by reference_text; not independent comprehension or entailment",
+          "offset": 0,
+          "page_end": 2,
+          "page_start": 1,
+          "reference_key": "doi:10.1145/290941.291025",
+          "source_index": 0,
+          "source_path": "/home/phujck/VScodeProjects/laplace/synthetics papers/corpus-as-a-state/reconstruction/output/pdf/v2.1/literature_sources/3e641b22c2584ba04299c290a0e686c6dc1d925548f90f8298ee2ba2318a83bf.pdf",
+          "source_sha256": "sha256:3e641b22c2584ba04299c290a0e686c6dc1d925548f90f8298ee2ba2318a83bf",
+          "text_sha256": "sha256:6a003264f6d7d9d130773114c7325fec7ecb14ded38ed7834f91ddc03781b797",
+          "total_characters": 11230
+        },
+        {
+          "id": "READ-7396f789a7c83e0745afcdc0",
+          "length": 4500,
+          "locator": "characters 1547\u20136047",
+          "observation": "passage returned by reference_text; not independent comprehension or entailment",
+          "offset": 1547,
+          "page_end": 2,
+          "page_start": 1,
+          "reference_key": "doi:10.1145/290941.291025",
+          "source_index": 0,
+          "source_path": "/home/phujck/VScodeProjects/laplace/synthetics papers/corpus-as-a-state/reconstruction/output/pdf/v2.1/literature_sources/3e641b22c2584ba04299c290a0e686c6dc1d925548f90f8298ee2ba2318a83bf.pdf",
+          "source_sha256": "sha256:3e641b22c2584ba04299c290a0e686c6dc1d925548f90f8298ee2ba2318a83bf",
+          "text_sha256": "sha256:3b5d6ceb067c1dbfd55d8ebb7254c2db09ddbaa01165a28ed65cfe782f13e022",
+          "total_characters": 11230
+        }
+      ],
+      "reading_status": "unread",
+      "source": {
+        "identity": "c868cbd44fb2f91d1b21e3c7b82ccd64c1be96f815e637be434a7a70cd95468d",
+        "provider": "crossref",
+        "revision": {
+          "modified": "",
+          "version": "917261afd19f96ffcbaed1f78054f62cbd9e68c2944e3c20b0210dc4c2faff77"
+        }
+      },
+      "source_text": {
+        "bytes": 280991,
+        "media_type": "application/pdf",
+        "path": "/home/phujck/VScodeProjects/laplace/synthetics papers/corpus-as-a-state/reconstruction/output/pdf/v2.1/literature_sources/3e641b22c2584ba04299c290a0e686c6dc1d925548f90f8298ee2ba2318a83bf.pdf",
+        "qualification": "ACQUIRED_UNREAD; publication identity and claim alignment still require source inspection",
+        "resolved_url": "https://www.cs.cmu.edu/~jgc/publication/The_Use_MMR_Diversity_Based_LTMIR_1998.pdf",
+        "sha256": "sha256:3e641b22c2584ba04299c290a0e686c6dc1d925548f90f8298ee2ba2318a83bf",
+        "url": "https://www.cs.cmu.edu/~jgc/publication/The_Use_MMR_Diversity_Based_LTMIR_1998.pdf"
+      },
+      "state": "CURRENT"
+    },
+    {
+      "bibliography_state": "NOT_LINKED",
+      "key": "ref:multihoprag",
+      "metadata": {
+        "key": "ref:multihoprag",
+        "title": "Tang 2024 \u2014 {MultiHop-RAG}: Benchmarking Retrieval-Augmented Generation for Multi-Hop Queries",
+        "version": "7e2012961c8cc90878d763b8a8717dc0c0e71184da5e46a3305ff96eae75fc5d"
+      },
+      "reading_observations": [
+        {
+          "id": "READ-283a23bb1497ad36f205e620",
+          "length": 18000,
+          "locator": "characters 0\u201318000",
+          "observation": "passage returned by reference_text; not independent comprehension or entailment",
+          "offset": 0,
+          "page_end": 5,
+          "page_start": 1,
+          "reference_key": "ref:multihoprag",
+          "source_index": 0,
+          "source_path": "/home/phujck/VScodeProjects/laplace/synthetics papers/corpus-as-a-state/reconstruction/output/pdf/v2.1/literature_sources/743155d9b0541c99a7f6fb89772fc0856cf32989db61204bb6796fe293cf0fcb.pdf",
+          "source_sha256": "sha256:743155d9b0541c99a7f6fb89772fc0856cf32989db61204bb6796fe293cf0fcb",
+          "text_sha256": "sha256:99d31365f6c8f2936816e14d3b9378cf7008e7e5490fb0282414fbbabe8b048a",
+          "total_characters": 49238
+        },
+        {
+          "id": "READ-59305b9e313c9e858ae0f33f",
+          "length": 6500,
+          "locator": "characters 327\u20136827",
+          "observation": "passage returned by reference_text; not independent comprehension or entailment",
+          "offset": 327,
+          "page_end": 2,
+          "page_start": 1,
+          "reference_key": "ref:multihoprag",
+          "source_index": 0,
+          "source_path": "/home/phujck/VScodeProjects/laplace/synthetics papers/corpus-as-a-state/reconstruction/output/pdf/v2.1/literature_sources/743155d9b0541c99a7f6fb89772fc0856cf32989db61204bb6796fe293cf0fcb.pdf",
+          "source_sha256": "sha256:743155d9b0541c99a7f6fb89772fc0856cf32989db61204bb6796fe293cf0fcb",
+          "text_sha256": "sha256:ef17ef555a45303fb6223eaa688e2e44e0bffbb335568e49a2db584f640f684d",
+          "total_characters": 49238
+        },
+        {
+          "id": "READ-3b7028ef23c560d680921359",
+          "length": 4200,
+          "locator": "characters 327\u20134527",
+          "observation": "passage returned by reference_text; not independent comprehension or entailment",
+          "offset": 327,
+          "page_end": 2,
+          "page_start": 1,
+          "reference_key": "ref:multihoprag",
+          "source_index": 0,
+          "source_path": "/home/phujck/VScodeProjects/laplace/synthetics papers/corpus-as-a-state/reconstruction/output/pdf/v2.1/literature_sources/743155d9b0541c99a7f6fb89772fc0856cf32989db61204bb6796fe293cf0fcb.pdf",
+          "source_sha256": "sha256:743155d9b0541c99a7f6fb89772fc0856cf32989db61204bb6796fe293cf0fcb",
+          "text_sha256": "sha256:1f66d6ed9aeccd255a3976387767a85f0c2b0a70eae345a75b806a71e9f270db",
+          "total_characters": 49238
+        }
+      ],
+      "source": {
+        "provider": "canonical"
+      },
+      "source_text": {
+        "bytes": 1895706,
+        "media_type": "application/pdf",
+        "path": "/home/phujck/VScodeProjects/laplace/synthetics papers/corpus-as-a-state/reconstruction/output/pdf/v2.1/literature_sources/743155d9b0541c99a7f6fb89772fc0856cf32989db61204bb6796fe293cf0fcb.pdf",
+        "qualification": "ACQUIRED_UNREAD; publication identity and claim alignment still require source inspection",
+        "resolved_url": "https://arxiv.org/pdf/2401.15391",
+        "sha256": "sha256:743155d9b0541c99a7f6fb89772fc0856cf32989db61204bb6796fe293cf0fcb",
+        "url": "https://arxiv.org/pdf/2401.15391"
+      },
+      "state": "CURRENT"
+    },
+    {
+      "bibliography_state": "NOT_LINKED",
+      "key": "ref:raptor",
+      "metadata": {
+        "key": "ref:raptor",
+        "title": "Sarthi 2024 \u2014 {RAPTOR}: Recursive Abstractive Processing for Tree-Organized Retrieval",
+        "version": "330faa5ea9d946aaa6f31feace0c12e91469556b31f04c5ac5bda702f7ce2cb5"
+      },
+      "reading_observations": [
+        {
+          "id": "READ-8174802729bac5661e457b56",
+          "length": 18000,
+          "locator": "characters 0\u201318000",
+          "observation": "passage returned by reference_text; not independent comprehension or entailment",
+          "offset": 0,
+          "page_end": 5,
+          "page_start": 1,
+          "reference_key": "ref:raptor",
+          "source_index": 0,
+          "source_path": "/home/phujck/VScodeProjects/laplace/synthetics papers/corpus-as-a-state/reconstruction/output/pdf/v2.1/literature_sources/01319e2e6e6ecfd504ee1bbda41d023f9e060bd3505ab3c161baa1d6d696cf75.pdf",
+          "source_sha256": "sha256:01319e2e6e6ecfd504ee1bbda41d023f9e060bd3505ab3c161baa1d6d696cf75",
+          "text_sha256": "sha256:294848acbddd14810c1fd5ce89ff3a1b955e053422429bcedf294d2c96357f13",
+          "total_characters": 77417
+        },
+        {
+          "id": "READ-d603c030ac555af9fc741fe0",
+          "length": 6500,
+          "locator": "characters 11108\u201317608",
+          "observation": "passage returned by reference_text; not independent comprehension or entailment",
+          "offset": 11108,
+          "page_end": 5,
+          "page_start": 3,
+          "reference_key": "ref:raptor",
+          "source_index": 0,
+          "source_path": "/home/phujck/VScodeProjects/laplace/synthetics papers/corpus-as-a-state/reconstruction/output/pdf/v2.1/literature_sources/01319e2e6e6ecfd504ee1bbda41d023f9e060bd3505ab3c161baa1d6d696cf75.pdf",
+          "source_sha256": "sha256:01319e2e6e6ecfd504ee1bbda41d023f9e060bd3505ab3c161baa1d6d696cf75",
+          "text_sha256": "sha256:a66c9b72522a6bf3b4ded0764fedc908c6183e441b023b999d91147b9125b423",
+          "total_characters": 77417
+        }
+      ],
+      "source": {
+        "provider": "canonical"
+      },
+      "source_text": {
+        "bytes": 2547113,
+        "media_type": "application/pdf",
+        "path": "/home/phujck/VScodeProjects/laplace/synthetics papers/corpus-as-a-state/reconstruction/output/pdf/v2.1/literature_sources/01319e2e6e6ecfd504ee1bbda41d023f9e060bd3505ab3c161baa1d6d696cf75.pdf",
+        "qualification": "ACQUIRED_UNREAD; publication identity and claim alignment still require source inspection",
+        "resolved_url": "https://arxiv.org/pdf/2401.18059",
+        "sha256": "sha256:01319e2e6e6ecfd504ee1bbda41d023f9e060bd3505ab3c161baa1d6d696cf75",
+        "url": "https://arxiv.org/pdf/2401.18059"
+      },
+      "state": "CURRENT"
+    },
+    {
+      "bib_path": "synthetics papers/corpus-as-a-state/reconstruction/output/pdf/v2.1/reconstruction_refs.bib",
+      "binding_state": "BOUND",
+      "canonical_id": "ref:mmr",
+      "canonical_records": [
+        "RW-20261111-211402-435493"
+      ],
+      "citekey": "mmr",
+      "claim_id": "mip:matched-retrieval-method",
+      "claim_revision": "sha256:4bcc80816fbfbf3cf987df915e2904221630bf000610c40a380e4e7fc7be1374",
+      "evidence": {
+        "excerpt": "contains minimal similarity to previously selected\ndocuments. We strive to maximize-marginal relevance in\nretrieval and summarization, hence we label our method",
+        "locator": "characters 0\u20136500"
+      },
+      "evidence_source_identity": "c868cbd44fb2f91d1b21e3c7b82ccd64c1be96f815e637be434a7a70cd95468d",
+      "evidence_status": "authored-passage",
+      "key": "doi:10.1145/290941.291025",
+      "metadata": {
+        "creators": [
+          "Jaime Carbonell",
+          "Jade Goldstein"
+        ],
+        "doi": "10.1145/290941.291025",
+        "item_type": "conferencePaper",
+        "key": "doi:10.1145/290941.291025",
+        "pages": "335-336",
+        "provenance": {
+          "description": "Publisher-deposited bibliographic metadata verified by DOI lookup.",
+          "provider": "crossref",
+          "url": "https://api.crossref.org/works/10.1145/290941.291025"
+        },
+        "publication_title": "Proceedings of the 21st annual international ACM SIGIR conference on Research and development in information retrieval",
+        "publisher": "ACM",
+        "title": "The use of MMR, diversity-based reranking for reordering documents and producing summaries",
+        "url": "https://doi.org/10.1145/290941.291025",
+        "version": "917261afd19f96ffcbaed1f78054f62cbd9e68c2944e3c20b0210dc4c2faff77",
+        "year": "1998"
+      },
+      "note": "",
+      "rationale": "Ground only the method/dataset context used in the rewritten comparison, not this project's numerical result or an assertion of complete public-package reproduction.",
+      "reading_assertion": "passage observed; interpretation authored, not independently verified",
+      "reading_receipt": {
+        "id": "READ-0354b2d2ac03f95b869fc04c",
+        "length": 6500,
+        "locator": "characters 0\u20136500",
+        "observation": "passage returned by reference_text; not independent comprehension or entailment",
+        "offset": 0,
+        "page_end": 2,
+        "page_start": 1,
+        "reference_key": "doi:10.1145/290941.291025",
+        "source_index": 0,
+        "source_path": "/home/phujck/VScodeProjects/laplace/synthetics papers/corpus-as-a-state/reconstruction/output/pdf/v2.1/literature_sources/3e641b22c2584ba04299c290a0e686c6dc1d925548f90f8298ee2ba2318a83bf.pdf",
+        "source_sha256": "sha256:3e641b22c2584ba04299c290a0e686c6dc1d925548f90f8298ee2ba2318a83bf",
+        "text_sha256": "sha256:6a003264f6d7d9d130773114c7325fec7ecb14ded38ed7834f91ddc03781b797",
+        "total_characters": 11230
+      },
+      "reading_status": "partial",
+      "relation": "method",
+      "source": {
+        "identity": "c868cbd44fb2f91d1b21e3c7b82ccd64c1be96f815e637be434a7a70cd95468d",
+        "provider": "crossref",
+        "revision": {
+          "modified": "",
+          "version": "917261afd19f96ffcbaed1f78054f62cbd9e68c2944e3c20b0210dc4c2faff77"
+        }
+      },
+      "source_text": {
+        "bytes": 280991,
+        "media_type": "application/pdf",
+        "path": "/home/phujck/VScodeProjects/laplace/synthetics papers/corpus-as-a-state/reconstruction/output/pdf/v2.1/literature_sources/3e641b22c2584ba04299c290a0e686c6dc1d925548f90f8298ee2ba2318a83bf.pdf",
+        "qualification": "ACQUIRED_UNREAD; publication identity and claim alignment still require source inspection",
+        "resolved_url": "https://www.cs.cmu.edu/~jgc/publication/The_Use_MMR_Diversity_Based_LTMIR_1998.pdf",
+        "sha256": "sha256:3e641b22c2584ba04299c290a0e686c6dc1d925548f90f8298ee2ba2318a83bf",
+        "url": "https://www.cs.cmu.edu/~jgc/publication/The_Use_MMR_Diversity_Based_LTMIR_1998.pdf"
+      },
+      "state": "CURRENT"
+    },
+    {
+      "bib_path": "synthetics papers/corpus-as-a-state/reconstruction/output/pdf/v2.1/reconstruction_refs.bib",
+      "binding_state": "BOUND",
+      "canonical_id": "ref:frames",
+      "canonical_records": [
+        "RW-20261111-211408-548731"
+      ],
+      "citekey": "frames",
+      "claim_id": "mip:frames-followup",
+      "claim_revision": "sha256:b807a968f8b5ed6826bf8c9a075865c8e33703d88bc706f8f4103c25dce560c8",
+      "evidence": {
+        "excerpt": "integration of information from multiple\nsources. Baseline results show that even\nstate-of-the-art LLMs struggle, achieving\n0.408 accuracy without retrieval. Ho",
+        "locator": "characters 379\u20136879"
+      },
+      "evidence_source_identity": "4ee4b8df6bd6b047cd43d9f413773aa10491d5ed3048af10a2511656c13001f4",
+      "evidence_status": "authored-passage",
+      "key": "local:8ff40a35db85225fd2258131",
+      "metadata": {
+        "creators": [
+          "Satyapriya Krishna",
+          "Kalpesh Krishna",
+          "Anhad Mohananey",
+          "Steven Schwarcz",
+          "Adam Stambler",
+          "Shyam Upadhyay",
+          "Manaal Faruqui"
+        ],
+        "item_type": "preprint",
+        "key": "local:8ff40a35db85225fd2258131",
+        "provenance": {
+          "description": "Exact metadata from preserved campaign bibliography, read this turn. Primary text will be acquired/read separately for the limited changed dataset/comparator claims.",
+          "path": "/home/phujck/VScodeProjects/laplace/synthetics papers/relational-frontend/paper/refs.bib",
+          "sha256": "sha256:5ac9268eb90ca6c5aa3bdd5f88a176fb53dfdc61fd13f47ccbb567a1ab2bc101",
+          "url": "https://arxiv.org/abs/2409.12941"
+        },
+        "title": "Fact, Fetch, and Reason: A Unified Evaluation of Retrieval-Augmented Generation",
+        "url": "https://arxiv.org/abs/2409.12941",
+        "version": "120f57b7d09f7bad6d599322a0cd842ff24b7a0e5cda4b80e521177b62aed29c",
+        "year": "2024"
+      },
+      "note": "",
+      "rationale": "Ground only the method/dataset context used in the rewritten comparison, not this project's numerical result or an assertion of complete public-package reproduction.",
+      "reading_assertion": "passage observed; interpretation authored, not independently verified",
+      "reading_receipt": {
+        "id": "READ-c9840836d12bcade0570c2a8",
+        "length": 6500,
+        "locator": "characters 379\u20136879",
+        "observation": "passage returned by reference_text; not independent comprehension or entailment",
+        "offset": 379,
+        "page_end": 3,
+        "page_start": 1,
+        "reference_key": "local:8ff40a35db85225fd2258131",
+        "source_index": 0,
+        "source_path": "/home/phujck/VScodeProjects/laplace/synthetics papers/corpus-as-a-state/reconstruction/output/pdf/v2.1/literature_sources/4f4f33ebd7be7ccb97af2be83fa123940fc38bc8256ecbdf2afde749481a091c.pdf",
+        "source_sha256": "sha256:4f4f33ebd7be7ccb97af2be83fa123940fc38bc8256ecbdf2afde749481a091c",
+        "text_sha256": "sha256:7cf9a7ab5979324f8c586887c680aec28cd094131a9250ff82a1d843b1e7d231",
+        "total_characters": 46890
+      },
+      "reading_status": "partial",
+      "relation": "method",
+      "source": {
+        "identity": "4ee4b8df6bd6b047cd43d9f413773aa10491d5ed3048af10a2511656c13001f4",
+        "provider": "local",
+        "revision": {
+          "modified": "",
+          "version": "120f57b7d09f7bad6d599322a0cd842ff24b7a0e5cda4b80e521177b62aed29c"
+        }
+      },
+      "source_text": {
+        "bytes": 1163381,
+        "media_type": "application/pdf",
+        "path": "/home/phujck/VScodeProjects/laplace/synthetics papers/corpus-as-a-state/reconstruction/output/pdf/v2.1/literature_sources/4f4f33ebd7be7ccb97af2be83fa123940fc38bc8256ecbdf2afde749481a091c.pdf",
+        "qualification": "ACQUIRED_UNREAD; publication identity and claim alignment still require source inspection",
+        "resolved_url": "https://arxiv.org/pdf/2409.12941",
+        "sha256": "sha256:4f4f33ebd7be7ccb97af2be83fa123940fc38bc8256ecbdf2afde749481a091c",
+        "url": "https://arxiv.org/pdf/2409.12941"
+      },
+      "state": "CURRENT"
+    },
+    {
+      "bibliography_state": "NOT_LINKED",
+      "binding_state": "BOUND",
+      "canonical_id": "cite:source-4dd3a4f6d4359204",
+      "canonical_records": [
+        "RW-20261111-211405-641655",
+        "RW-20261111-211405-679991"
+      ],
+      "claim_id": "mip:news-followup",
+      "claim_revision": "sha256:13b95e9d64fccdeb6304532ffc38bac1864b4f99c6d07284c4e41ebcb686a4c3",
+      "evidence": {
+        "excerpt": "their ground-truth answers, and\nthe associated supporting evidence. We detail\nthe procedure of building the dataset, utilizing an English news article dataset a",
+        "locator": "characters 327\u20136827"
+      },
+      "evidence_source_identity": null,
+      "evidence_status": "authored-passage",
+      "key": "ref:multihoprag",
+      "metadata": {
+        "key": "ref:multihoprag",
+        "title": "Tang 2024 \u2014 {MultiHop-RAG}: Benchmarking Retrieval-Augmented Generation for Multi-Hop Queries",
+        "version": "7e2012961c8cc90878d763b8a8717dc0c0e71184da5e46a3305ff96eae75fc5d"
+      },
+      "rationale": "Ground only the method/dataset context used in the rewritten comparison, not this project's numerical result or an assertion of complete public-package reproduction.",
+      "reading_assertion": "passage observed; interpretation authored, not independently verified",
+      "reading_receipt": {
+        "id": "READ-59305b9e313c9e858ae0f33f",
+        "length": 6500,
+        "locator": "characters 327\u20136827",
+        "observation": "passage returned by reference_text; not independent comprehension or entailment",
+        "offset": 327,
+        "page_end": 2,
+        "page_start": 1,
+        "reference_key": "ref:multihoprag",
+        "source_index": 0,
+        "source_path": "/home/phujck/VScodeProjects/laplace/synthetics papers/corpus-as-a-state/reconstruction/output/pdf/v2.1/literature_sources/743155d9b0541c99a7f6fb89772fc0856cf32989db61204bb6796fe293cf0fcb.pdf",
+        "source_sha256": "sha256:743155d9b0541c99a7f6fb89772fc0856cf32989db61204bb6796fe293cf0fcb",
+        "text_sha256": "sha256:ef17ef555a45303fb6223eaa688e2e44e0bffbb335568e49a2db584f640f684d",
+        "total_characters": 49238
+      },
+      "reading_status": "partial",
+      "relation": "method",
+      "source": {
+        "provider": "canonical"
+      },
+      "source_text": {
+        "bytes": 1895706,
+        "media_type": "application/pdf",
+        "path": "/home/phujck/VScodeProjects/laplace/synthetics papers/corpus-as-a-state/reconstruction/output/pdf/v2.1/literature_sources/743155d9b0541c99a7f6fb89772fc0856cf32989db61204bb6796fe293cf0fcb.pdf",
+        "qualification": "ACQUIRED_UNREAD; publication identity and claim alignment still require source inspection",
+        "resolved_url": "https://arxiv.org/pdf/2401.15391",
+        "sha256": "sha256:743155d9b0541c99a7f6fb89772fc0856cf32989db61204bb6796fe293cf0fcb",
+        "url": "https://arxiv.org/pdf/2401.15391"
+      },
+      "state": "CURRENT"
+    },
+    {
+      "bibliography_state": "NOT_LINKED",
+      "binding_state": "BOUND",
+      "canonical_id": "cite:source-15406ac6f69e3907",
+      "canonical_records": [
+        "RW-20261111-211359-422437",
+        "RW-20261111-211359-459285"
+      ],
+      "claim_id": "mip:matched-retrieval-method",
+      "claim_revision": "sha256:4bcc80816fbfbf3cf987df915e2904221630bf000610c40a380e4e7fc7be1374",
+      "evidence": {
+        "excerpt": "The collapsed tree method evaluates nodes collectively across all layers to find\nthe most relevant ones.\nClustering Algorithm Clustering plays a key role in bui",
+        "locator": "characters 11108\u201317608"
+      },
+      "evidence_source_identity": null,
+      "evidence_status": "authored-passage",
+      "key": "ref:raptor",
+      "metadata": {
+        "key": "ref:raptor",
+        "title": "Sarthi 2024 \u2014 {RAPTOR}: Recursive Abstractive Processing for Tree-Organized Retrieval",
+        "version": "330faa5ea9d946aaa6f31feace0c12e91469556b31f04c5ac5bda702f7ce2cb5"
+      },
+      "rationale": "Ground only the method/dataset context used in the rewritten comparison, not this project's numerical result or an assertion of complete public-package reproduction.",
+      "reading_assertion": "passage observed; interpretation authored, not independently verified",
+      "reading_receipt": {
+        "id": "READ-d603c030ac555af9fc741fe0",
+        "length": 6500,
+        "locator": "characters 11108\u201317608",
+        "observation": "passage returned by reference_text; not independent comprehension or entailment",
+        "offset": 11108,
+        "page_end": 5,
+        "page_start": 3,
+        "reference_key": "ref:raptor",
+        "source_index": 0,
+        "source_path": "/home/phujck/VScodeProjects/laplace/synthetics papers/corpus-as-a-state/reconstruction/output/pdf/v2.1/literature_sources/01319e2e6e6ecfd504ee1bbda41d023f9e060bd3505ab3c161baa1d6d696cf75.pdf",
+        "source_sha256": "sha256:01319e2e6e6ecfd504ee1bbda41d023f9e060bd3505ab3c161baa1d6d696cf75",
+        "text_sha256": "sha256:a66c9b72522a6bf3b4ded0764fedc908c6183e441b023b999d91147b9125b423",
+        "total_characters": 77417
+      },
+      "reading_status": "partial",
+      "relation": "method",
+      "source": {
+        "provider": "canonical"
+      },
+      "source_text": {
+        "bytes": 2547113,
+        "media_type": "application/pdf",
+        "path": "/home/phujck/VScodeProjects/laplace/synthetics papers/corpus-as-a-state/reconstruction/output/pdf/v2.1/literature_sources/01319e2e6e6ecfd504ee1bbda41d023f9e060bd3505ab3c161baa1d6d696cf75.pdf",
+        "qualification": "ACQUIRED_UNREAD; publication identity and claim alignment still require source inspection",
+        "resolved_url": "https://arxiv.org/pdf/2401.18059",
+        "sha256": "sha256:01319e2e6e6ecfd504ee1bbda41d023f9e060bd3505ab3c161baa1d6d696cf75",
+        "url": "https://arxiv.org/pdf/2401.18059"
+      },
+      "state": "CURRENT"
+    },
+    {
+      "bibliography_state": "NOT_LINKED",
+      "key": "ref:mori",
+      "metadata": {
+        "key": "ref:mori",
+        "title": "Mori 1965 \u2014 Transport",
+        "version": "ce0ad5e669bbb2f8de00a6a5fd32fb17d1d771e41c63f07d7d0ca9bb45b3dec4"
+      },
+      "reading_observations": [
+        {
+          "id": "READ-cba810140fd264703de1081b",
+          "length": 12500,
+          "locator": "characters 9000\u201321500",
+          "observation": "passage returned by reference_text; not independent comprehension or entailment",
+          "offset": 9000,
+          "page_end": 9,
+          "page_start": 4,
+          "reference_key": "ref:mori",
+          "source_index": 0,
+          "source_path": "/home/phujck/VScodeProjects/laplace/synthetics papers/corpus-as-a-state/reconstruction/output/pdf/v2.1/literature_sources/9b60c0144281f4056b3b54af79607042d1dbbd84ffc3b296142550d9f5ac9ba9.pdf",
+          "source_sha256": "sha256:9b60c0144281f4056b3b54af79607042d1dbbd84ffc3b296142550d9f5ac9ba9",
+          "text_sha256": "sha256:4bdd17a67985da60ef4a261b280ed20bbc67f2ca774890578facdc16997edd6b",
+          "total_characters": 73944
+        },
+        {
+          "id": "READ-5e80d632cdd932a13365837a",
+          "length": 6000,
+          "locator": "characters 9000\u201315000",
+          "observation": "passage returned by reference_text; not independent comprehension or entailment",
+          "offset": 9000,
+          "page_end": 6,
+          "page_start": 4,
+          "reference_key": "ref:mori",
+          "source_index": 0,
+          "source_path": "/home/phujck/VScodeProjects/laplace/synthetics papers/corpus-as-a-state/reconstruction/output/pdf/v2.1/literature_sources/9b60c0144281f4056b3b54af79607042d1dbbd84ffc3b296142550d9f5ac9ba9.pdf",
+          "source_sha256": "sha256:9b60c0144281f4056b3b54af79607042d1dbbd84ffc3b296142550d9f5ac9ba9",
+          "text_sha256": "sha256:0ec497c333db787f737b93c7306ba7a58cc144d2ea51d144be68c82c605687a3",
+          "total_characters": 73944
+        }
+      ],
+      "source": {
+        "provider": "canonical"
+      },
+      "source_text": {
+        "bytes": 2406915,
+        "media_type": "application/pdf",
+        "path": "/home/phujck/VScodeProjects/laplace/synthetics papers/corpus-as-a-state/reconstruction/output/pdf/v2.1/literature_sources/9b60c0144281f4056b3b54af79607042d1dbbd84ffc3b296142550d9f5ac9ba9.pdf",
+        "qualification": "ACQUIRED_UNREAD; publication identity and claim alignment still require source inspection",
+        "resolved_url": "https://courses.physics.ucsd.edu/2020/Fall/physics210b/Mori-1965.pdf",
+        "sha256": "sha256:9b60c0144281f4056b3b54af79607042d1dbbd84ffc3b296142550d9f5ac9ba9",
+        "url": "https://courses.physics.ucsd.edu/2020/Fall/physics210b/Mori-1965.pdf"
+      },
+      "state": "CURRENT"
+    },
+    {
+      "bibliography_state": "NOT_LINKED",
+      "binding_state": "BOUND",
+      "canonical_id": "cite:source-1be2fdc1868a55ef",
+      "canonical_records": [
+        "RW-20261111-213114-099023",
+        "RW-20261111-213114-139397"
+      ],
+      "claim_id": "mip:declared-law",
+      "claim_revision": "sha256:3dd2d69e19597a4b13c66ef1c59990ad70587f6575e1325e0a1a066f9156022b",
+      "evidence": {
+        "excerpt": "extracting the linear term in the equation of motion for A (t) amounts\nto projecting A (t) onto the A axis.",
+        "locator": "characters 9000\u201321500"
+      },
+      "evidence_source_identity": null,
+      "evidence_status": "authored-passage",
+      "key": "ref:mori",
+      "metadata": {
+        "key": "ref:mori",
+        "title": "Mori 1965 \u2014 Transport",
+        "version": "ce0ad5e669bbb2f8de00a6a5fd32fb17d1d771e41c63f07d7d0ca9bb45b3dec4"
+      },
+      "rationale": "Mori Sections2\u20133 supply projection/orthogonal propagator and exact generalised Langevin context. Our displayed finite reversible generator and its initial-correlation/preparation assumptions are derived separately, not attributed as a generic physical CP/Markov claim.",
+      "reading_assertion": "passage observed; interpretation authored, not independently verified",
+      "reading_receipt": {
+        "id": "READ-cba810140fd264703de1081b",
+        "length": 12500,
+        "locator": "characters 9000\u201321500",
+        "observation": "passage returned by reference_text; not independent comprehension or entailment",
+        "offset": 9000,
+        "page_end": 9,
+        "page_start": 4,
+        "reference_key": "ref:mori",
+        "source_index": 0,
+        "source_path": "/home/phujck/VScodeProjects/laplace/synthetics papers/corpus-as-a-state/reconstruction/output/pdf/v2.1/literature_sources/9b60c0144281f4056b3b54af79607042d1dbbd84ffc3b296142550d9f5ac9ba9.pdf",
+        "source_sha256": "sha256:9b60c0144281f4056b3b54af79607042d1dbbd84ffc3b296142550d9f5ac9ba9",
+        "text_sha256": "sha256:4bdd17a67985da60ef4a261b280ed20bbc67f2ca774890578facdc16997edd6b",
+        "total_characters": 73944
+      },
+      "reading_status": "partial",
+      "relation": "method",
+      "source": {
+        "provider": "canonical"
+      },
+      "source_text": {
+        "bytes": 2406915,
+        "media_type": "application/pdf",
+        "path": "/home/phujck/VScodeProjects/laplace/synthetics papers/corpus-as-a-state/reconstruction/output/pdf/v2.1/literature_sources/9b60c0144281f4056b3b54af79607042d1dbbd84ffc3b296142550d9f5ac9ba9.pdf",
+        "qualification": "ACQUIRED_UNREAD; publication identity and claim alignment still require source inspection",
+        "resolved_url": "https://courses.physics.ucsd.edu/2020/Fall/physics210b/Mori-1965.pdf",
+        "sha256": "sha256:9b60c0144281f4056b3b54af79607042d1dbbd84ffc3b296142550d9f5ac9ba9",
+        "url": "https://courses.physics.ucsd.edu/2020/Fall/physics210b/Mori-1965.pdf"
+      },
+      "state": "CURRENT"
+    },
+    {
+      "bib_path": "synthetics papers/corpus-as-a-state/reconstruction/output/pdf/v2.1/reconstruction_refs.bib",
+      "citekey": "bryant1986",
+      "claim_id": null,
+      "evidence_status": "metadata-only",
+      "key": "local:62943ac8a79ff8da6ad4f2ba",
+      "metadata": {
+        "creators": [
+          "Randal E. Bryant"
+        ],
+        "item_type": "journalArticle",
+        "key": "local:62943ac8a79ff8da6ad4f2ba",
+        "pages": "677--691",
+        "provenance": {
+          "description": "Root-verified primary author/fulltext URL and publication identity. Bounded reading for structure-dependent query context, not full source survey.",
+          "url": "https://www.cs.cmu.edu/~bryant/pubdir/ieeetc86.pdf"
+        },
+        "publication_title": "IEEE Transactions on Computers",
+        "title": "Graph-Based Algorithms for Boolean Function Manipulation",
+        "url": "https://www.cs.cmu.edu/~bryant/pubdir/ieeetc86.pdf",
+        "version": "ffd77ac46813b547189823d6453364d1b5e73918618b4910826befb118ffbc13",
+        "volume": "C-35",
+        "year": "1986"
+      },
+      "note": "",
+      "reading_observations": [
+        {
+          "id": "READ-ab768261a9f5c058a5a8aeae",
+          "length": 15000,
+          "locator": "characters 0\u201315000",
+          "observation": "passage returned by reference_text; not independent comprehension or entailment",
+          "offset": 0,
+          "page_end": 5,
+          "page_start": 1,
+          "reference_key": "local:62943ac8a79ff8da6ad4f2ba",
+          "source_index": 0,
+          "source_path": "/home/phujck/VScodeProjects/laplace/synthetics papers/corpus-as-a-state/reconstruction/output/pdf/v2.1/literature_sources/c13abc71f47b76211d2a1cfd8ea38a2d75abee4bf004ca771141a05f77039d55.pdf",
+          "source_sha256": "sha256:c13abc71f47b76211d2a1cfd8ea38a2d75abee4bf004ca771141a05f77039d55",
+          "text_sha256": "sha256:f4ea8f2154b265e8286e6f4bf37e17a00045b7eeaab3aef8a5df42cc799d27d6",
+          "total_characters": 82773
+        },
+        {
+          "id": "READ-fd5b54119f00553dad0407a5",
+          "length": 6500,
+          "locator": "characters 0\u20136500",
+          "observation": "passage returned by reference_text; not independent comprehension or entailment",
+          "offset": 0,
+          "page_end": 2,
+          "page_start": 1,
+          "reference_key": "local:62943ac8a79ff8da6ad4f2ba",
+          "source_index": 0,
+          "source_path": "/home/phujck/VScodeProjects/laplace/synthetics papers/corpus-as-a-state/reconstruction/output/pdf/v2.1/literature_sources/c13abc71f47b76211d2a1cfd8ea38a2d75abee4bf004ca771141a05f77039d55.pdf",
+          "source_sha256": "sha256:c13abc71f47b76211d2a1cfd8ea38a2d75abee4bf004ca771141a05f77039d55",
+          "text_sha256": "sha256:9b7d4dcdf15349f4d667c7f4ff3321408cc4620b441521f870041c080784463f",
+          "total_characters": 82773
+        }
+      ],
+      "reading_status": "unread",
+      "source": {
+        "identity": "66f644282e0406c3a60bbb4bde2788f22c9da0d83d52e7c4bc856fcfdf800a64",
+        "provider": "local",
+        "revision": {
+          "modified": "",
+          "version": "ffd77ac46813b547189823d6453364d1b5e73918618b4910826befb118ffbc13"
+        }
+      },
+      "source_text": {
+        "bytes": 101162,
+        "media_type": "application/pdf",
+        "path": "/home/phujck/VScodeProjects/laplace/synthetics papers/corpus-as-a-state/reconstruction/output/pdf/v2.1/literature_sources/c13abc71f47b76211d2a1cfd8ea38a2d75abee4bf004ca771141a05f77039d55.pdf",
+        "qualification": "ACQUIRED_UNREAD; publication identity and claim alignment still require source inspection",
+        "resolved_url": "https://www.cs.cmu.edu/~bryant/pubdir/ieeetc86.pdf",
+        "sha256": "sha256:c13abc71f47b76211d2a1cfd8ea38a2d75abee4bf004ca771141a05f77039d55",
+        "url": "https://www.cs.cmu.edu/~bryant/pubdir/ieeetc86.pdf"
+      },
+      "state": "CURRENT"
+    },
+    {
+      "bib_path": "synthetics papers/corpus-as-a-state/reconstruction/output/pdf/v2.1/reconstruction_refs.bib",
+      "citekey": "darwiche2002",
+      "claim_id": null,
+      "evidence_status": "metadata-only",
+      "key": "local:fa80a1e1a9f404e6011935de",
+      "metadata": {
+        "creators": [
+          "Adnan Darwiche",
+          "Pierre Marquis"
+        ],
+        "item_type": "journalArticle",
+        "key": "local:fa80a1e1a9f404e6011935de",
+        "pages": "229--264",
+        "provenance": {
+          "description": "Root-verified primary author/fulltext URL and publication identity. Bounded reading for structure-dependent query context, not full source survey.",
+          "url": "https://arxiv.org/pdf/1106.1819"
+        },
+        "publication_title": "Journal of Artificial Intelligence Research",
+        "title": "A Knowledge Compilation Map",
+        "url": "https://arxiv.org/pdf/1106.1819",
+        "version": "4d56a4b94237761b9e636f6ae33ba40e4e0fe8718ef2b42bfb3faf7473759a19",
+        "volume": "17",
+        "year": "2002"
+      },
+      "note": "",
+      "reading_observations": [
+        {
+          "id": "READ-f737cefc257b00b025eeddd0",
+          "length": 15000,
+          "locator": "characters 0\u201315000",
+          "observation": "passage returned by reference_text; not independent comprehension or entailment",
+          "offset": 0,
+          "page_end": 5,
+          "page_start": 1,
+          "reference_key": "local:fa80a1e1a9f404e6011935de",
+          "source_index": 0,
+          "source_path": "/home/phujck/VScodeProjects/laplace/synthetics papers/corpus-as-a-state/reconstruction/output/pdf/v2.1/literature_sources/e521e1d0bd3e670b5b31cac5caa8111d9b154c88809f57c5af2a9a5c8b095a12.pdf",
+          "source_sha256": "sha256:e521e1d0bd3e670b5b31cac5caa8111d9b154c88809f57c5af2a9a5c8b095a12",
+          "text_sha256": "sha256:77a76c284aa2eec8f6d02b84e095aa820aae668b0d9851b5460a147680ea707f",
+          "total_characters": 103960
+        },
+        {
+          "id": "READ-78921fdaf14df72670dbf6f5",
+          "length": 13000,
+          "locator": "characters 27000\u201340000",
+          "observation": "passage returned by reference_text; not independent comprehension or entailment",
+          "offset": 27000,
+          "page_end": 14,
+          "page_start": 10,
+          "reference_key": "local:fa80a1e1a9f404e6011935de",
+          "source_index": 0,
+          "source_path": "/home/phujck/VScodeProjects/laplace/synthetics papers/corpus-as-a-state/reconstruction/output/pdf/v2.1/literature_sources/e521e1d0bd3e670b5b31cac5caa8111d9b154c88809f57c5af2a9a5c8b095a12.pdf",
+          "source_sha256": "sha256:e521e1d0bd3e670b5b31cac5caa8111d9b154c88809f57c5af2a9a5c8b095a12",
+          "text_sha256": "sha256:a87d41e8647e9d833a1cb005ba89269533596db188f3b98a4f8f9fd4eda253ba",
+          "total_characters": 103960
+        },
+        {
+          "id": "READ-9628861beacf6d621aaf161e",
+          "length": 4500,
+          "locator": "characters 27000\u201331500",
+          "observation": "passage returned by reference_text; not independent comprehension or entailment",
+          "offset": 27000,
+          "page_end": 12,
+          "page_start": 10,
+          "reference_key": "local:fa80a1e1a9f404e6011935de",
+          "source_index": 0,
+          "source_path": "/home/phujck/VScodeProjects/laplace/synthetics papers/corpus-as-a-state/reconstruction/output/pdf/v2.1/literature_sources/e521e1d0bd3e670b5b31cac5caa8111d9b154c88809f57c5af2a9a5c8b095a12.pdf",
+          "source_sha256": "sha256:e521e1d0bd3e670b5b31cac5caa8111d9b154c88809f57c5af2a9a5c8b095a12",
+          "text_sha256": "sha256:0f8aa90249d1ba1a46a4c95cbdfc8d939cd29d3a14c2614534622b9df2c1ba47",
+          "total_characters": 103960
+        }
+      ],
+      "reading_status": "unread",
+      "source": {
+        "identity": "5c0788a5541e707e8348206aaf8a3ed9129373d74006bc584674d54f5d682626",
+        "provider": "local",
+        "revision": {
+          "modified": "",
+          "version": "4d56a4b94237761b9e636f6ae33ba40e4e0fe8718ef2b42bfb3faf7473759a19"
+        }
+      },
+      "source_text": {
+        "bytes": 426218,
+        "media_type": "application/pdf",
+        "path": "/home/phujck/VScodeProjects/laplace/synthetics papers/corpus-as-a-state/reconstruction/output/pdf/v2.1/literature_sources/e521e1d0bd3e670b5b31cac5caa8111d9b154c88809f57c5af2a9a5c8b095a12.pdf",
+        "qualification": "ACQUIRED_UNREAD; publication identity and claim alignment still require source inspection",
+        "resolved_url": "https://arxiv.org/pdf/1106.1819",
+        "sha256": "sha256:e521e1d0bd3e670b5b31cac5caa8111d9b154c88809f57c5af2a9a5c8b095a12",
+        "url": "https://arxiv.org/pdf/1106.1819"
+      },
+      "state": "CURRENT"
+    },
+    {
+      "bib_path": "synthetics papers/corpus-as-a-state/reconstruction/output/pdf/v2.1/reconstruction_refs.bib",
+      "binding_state": "BOUND",
+      "canonical_id": "ref:bryant1986",
+      "canonical_records": [
+        "RW-20261111-213409-419529",
+        "RW-20261111-213409-472562"
+      ],
+      "citekey": "bryant1986",
+      "claim_id": "dm:witnessed-incremental-count-demo",
+      "claim_revision": "sha256:47b386224d4c485a0f2e763c8003a94b5f6acf29907fb13d0fedfc17de439a57",
+      "evidence": {
+        "excerpt": "Our representation resembles the binary decision diagram notation",
+        "locator": "characters 0\u201315000"
+      },
+      "evidence_source_identity": "66f644282e0406c3a60bbb4bde2788f22c9da0d83d52e7c4bc856fcfdf800a64",
+      "evidence_status": "authored-passage",
+      "key": "local:62943ac8a79ff8da6ad4f2ba",
+      "metadata": {
+        "creators": [
+          "Randal E. Bryant"
+        ],
+        "item_type": "journalArticle",
+        "key": "local:62943ac8a79ff8da6ad4f2ba",
+        "pages": "677--691",
+        "provenance": {
+          "description": "Root-verified primary author/fulltext URL and publication identity. Bounded reading for structure-dependent query context, not full source survey.",
+          "url": "https://www.cs.cmu.edu/~bryant/pubdir/ieeetc86.pdf"
+        },
+        "publication_title": "IEEE Transactions on Computers",
+        "title": "Graph-Based Algorithms for Boolean Function Manipulation",
+        "url": "https://www.cs.cmu.edu/~bryant/pubdir/ieeetc86.pdf",
+        "version": "ffd77ac46813b547189823d6453364d1b5e73918618b4910826befb118ffbc13",
+        "volume": "C-35",
+        "year": "1986"
+      },
+      "note": "",
+      "rationale": "Methodological context only: shared ordered decision structure and compilation/query/transformation trade-offs. Does not attribute our empirical conditional law, channel derivation or witnessed updates to these sources, or claim equivalence to a compilation class or blanket superiority.",
+      "reading_assertion": "passage observed; interpretation authored, not independently verified",
+      "reading_receipt": {
+        "id": "READ-ab768261a9f5c058a5a8aeae",
+        "length": 15000,
+        "locator": "characters 0\u201315000",
+        "observation": "passage returned by reference_text; not independent comprehension or entailment",
+        "offset": 0,
+        "page_end": 5,
+        "page_start": 1,
+        "reference_key": "local:62943ac8a79ff8da6ad4f2ba",
+        "source_index": 0,
+        "source_path": "/home/phujck/VScodeProjects/laplace/synthetics papers/corpus-as-a-state/reconstruction/output/pdf/v2.1/literature_sources/c13abc71f47b76211d2a1cfd8ea38a2d75abee4bf004ca771141a05f77039d55.pdf",
+        "source_sha256": "sha256:c13abc71f47b76211d2a1cfd8ea38a2d75abee4bf004ca771141a05f77039d55",
+        "text_sha256": "sha256:f4ea8f2154b265e8286e6f4bf37e17a00045b7eeaab3aef8a5df42cc799d27d6",
+        "total_characters": 82773
+      },
+      "reading_status": "partial",
+      "relation": "method",
+      "source": {
+        "identity": "66f644282e0406c3a60bbb4bde2788f22c9da0d83d52e7c4bc856fcfdf800a64",
+        "provider": "local",
+        "revision": {
+          "modified": "",
+          "version": "ffd77ac46813b547189823d6453364d1b5e73918618b4910826befb118ffbc13"
+        }
+      },
+      "source_text": {
+        "bytes": 101162,
+        "media_type": "application/pdf",
+        "path": "/home/phujck/VScodeProjects/laplace/synthetics papers/corpus-as-a-state/reconstruction/output/pdf/v2.1/literature_sources/c13abc71f47b76211d2a1cfd8ea38a2d75abee4bf004ca771141a05f77039d55.pdf",
+        "qualification": "ACQUIRED_UNREAD; publication identity and claim alignment still require source inspection",
+        "resolved_url": "https://www.cs.cmu.edu/~bryant/pubdir/ieeetc86.pdf",
+        "sha256": "sha256:c13abc71f47b76211d2a1cfd8ea38a2d75abee4bf004ca771141a05f77039d55",
+        "url": "https://www.cs.cmu.edu/~bryant/pubdir/ieeetc86.pdf"
+      },
+      "state": "CURRENT"
+    },
+    {
+      "bib_path": "synthetics papers/corpus-as-a-state/reconstruction/output/pdf/v2.1/reconstruction_refs.bib",
+      "binding_state": "BOUND",
+      "canonical_id": "ref:darwiche2002",
+      "canonical_records": [
+        "RW-20261111-213737-732629",
+        "RW-20261111-213737-783818"
+      ],
+      "citekey": "darwiche2002",
+      "claim_id": "dm:witnessed-incremental-count-demo",
+      "claim_revision": "sha256:47b386224d4c485a0f2e763c8003a94b5f6acf29907fb13d0fedfc17de439a57",
+      "evidence": {
+        "excerpt": "A query is an operation that returns information about a theory without changing it.",
+        "locator": "characters 27000\u201340000"
+      },
+      "evidence_source_identity": "5c0788a5541e707e8348206aaf8a3ed9129373d74006bc584674d54f5d682626",
+      "evidence_status": "authored-passage",
+      "key": "local:fa80a1e1a9f404e6011935de",
+      "metadata": {
+        "creators": [
+          "Adnan Darwiche",
+          "Pierre Marquis"
+        ],
+        "item_type": "journalArticle",
+        "key": "local:fa80a1e1a9f404e6011935de",
+        "pages": "229--264",
+        "provenance": {
+          "description": "Root-verified primary author/fulltext URL and publication identity. Bounded reading for structure-dependent query context, not full source survey.",
+          "url": "https://arxiv.org/pdf/1106.1819"
+        },
+        "publication_title": "Journal of Artificial Intelligence Research",
+        "title": "A Knowledge Compilation Map",
+        "url": "https://arxiv.org/pdf/1106.1819",
+        "version": "4d56a4b94237761b9e636f6ae33ba40e4e0fe8718ef2b42bfb3faf7473759a19",
+        "volume": "17",
+        "year": "2002"
+      },
+      "note": "",
+      "rationale": "Limited context for distinguishing a compiled representation's supported queries from transformations; no classification/equivalence or superiority claim for this empirical quotient/update construction.",
+      "reading_assertion": "passage observed; interpretation authored, not independently verified",
+      "reading_receipt": {
+        "id": "READ-78921fdaf14df72670dbf6f5",
+        "length": 13000,
+        "locator": "characters 27000\u201340000",
+        "observation": "passage returned by reference_text; not independent comprehension or entailment",
+        "offset": 27000,
+        "page_end": 14,
+        "page_start": 10,
+        "reference_key": "local:fa80a1e1a9f404e6011935de",
+        "source_index": 0,
+        "source_path": "/home/phujck/VScodeProjects/laplace/synthetics papers/corpus-as-a-state/reconstruction/output/pdf/v2.1/literature_sources/e521e1d0bd3e670b5b31cac5caa8111d9b154c88809f57c5af2a9a5c8b095a12.pdf",
+        "source_sha256": "sha256:e521e1d0bd3e670b5b31cac5caa8111d9b154c88809f57c5af2a9a5c8b095a12",
+        "text_sha256": "sha256:a87d41e8647e9d833a1cb005ba89269533596db188f3b98a4f8f9fd4eda253ba",
+        "total_characters": 103960
+      },
+      "reading_status": "partial",
+      "relation": "method",
+      "source": {
+        "identity": "5c0788a5541e707e8348206aaf8a3ed9129373d74006bc584674d54f5d682626",
+        "provider": "local",
+        "revision": {
+          "modified": "",
+          "version": "4d56a4b94237761b9e636f6ae33ba40e4e0fe8718ef2b42bfb3faf7473759a19"
+        }
+      },
+      "source_text": {
+        "bytes": 426218,
+        "media_type": "application/pdf",
+        "path": "/home/phujck/VScodeProjects/laplace/synthetics papers/corpus-as-a-state/reconstruction/output/pdf/v2.1/literature_sources/e521e1d0bd3e670b5b31cac5caa8111d9b154c88809f57c5af2a9a5c8b095a12.pdf",
+        "qualification": "ACQUIRED_UNREAD; publication identity and claim alignment still require source inspection",
+        "resolved_url": "https://arxiv.org/pdf/1106.1819",
+        "sha256": "sha256:e521e1d0bd3e670b5b31cac5caa8111d9b154c88809f57c5af2a9a5c8b095a12",
+        "url": "https://arxiv.org/pdf/1106.1819"
+      },
+      "state": "CURRENT"
+    },
+    {
+      "bib_path": "synthetics papers/corpus-as-a-state/reconstruction/output/pdf/v2.1/reconstruction_refs.bib",
+      "citekey": "Crutchfield198940eaeb",
+      "claim_id": null,
+      "evidence_status": "metadata-only",
+      "key": "doi:10.1103/physrevlett.63.105",
+      "metadata": {
+        "creators": [
+          "James P. Crutchfield",
+          "Karl Young"
+        ],
+        "doi": "10.1103/physrevlett.63.105",
+        "issue": "2",
+        "item_type": "journalArticle",
+        "key": "doi:10.1103/physrevlett.63.105",
+        "pages": "105-108",
+        "provenance": {
+          "description": "Publisher-deposited bibliographic metadata verified by DOI lookup.",
+          "provider": "crossref",
+          "url": "https://api.crossref.org/works/10.1103/physrevlett.63.105"
+        },
+        "publication_title": "Physical Review Letters",
+        "publisher": "American Physical Society (APS)",
+        "title": "Inferring statistical complexity",
+        "url": "https://doi.org/10.1103/physrevlett.63.105",
+        "version": "0ecb2601d16ec4834ece0f5e6253397e6373174bd18880ae1fe2c6e662238778",
+        "volume": "63",
+        "year": "1989"
+      },
+      "note": "",
+      "reading_status": "unread",
+      "source": {
+        "identity": "c6f362677f3fb4259721a6ec6a113fc976090457f5eea3e725418dfc18600477",
+        "provider": "crossref",
+        "revision": {
+          "modified": "",
+          "version": "0ecb2601d16ec4834ece0f5e6253397e6373174bd18880ae1fe2c6e662238778"
+        }
+      },
+      "source_text": {
+        "bytes": 1234676,
+        "media_type": "application/pdf",
+        "path": "/home/phujck/VScodeProjects/laplace/synthetics papers/corpus-as-a-state/reconstruction/output/pdf/v2.1/literature_sources/d865ad8524b473a6417150a277a45b9806968c0546d8adae58308d9c0d1a58c6.pdf",
+        "qualification": "ACQUIRED_UNREAD; publication identity and claim alignment still require source inspection",
+        "resolved_url": "https://csc.ucdavis.edu/~cmg/papers/ISC.pdf",
+        "sha256": "sha256:d865ad8524b473a6417150a277a45b9806968c0546d8adae58308d9c0d1a58c6",
+        "url": "https://csc.ucdavis.edu/~cmg/papers/ISC.pdf"
+      },
+      "state": "CURRENT"
+    },
+    {
+      "bib_path": "synthetics papers/corpus-as-a-state/reconstruction/output/pdf/v2.1/reconstruction_refs.bib",
+      "citekey": "Gu2012e2bbbd",
+      "claim_id": null,
+      "evidence_status": "metadata-only",
+      "key": "doi:10.1038/ncomms1761",
+      "metadata": {
+        "creators": [
+          "Mile Gu",
+          "Karoline Wiesner",
+          "Elisabeth Rieper",
+          "Vlatko Vedral"
+        ],
+        "doi": "10.1038/ncomms1761",
+        "fulltext_urls": [
+          "https://www.nature.com/articles/ncomms1761",
+          "https://www.nature.com/articles/ncomms1761.pdf",
+          "https://www.nature.com/articles/ncomms1761.pdf"
+        ],
+        "issue": "1",
+        "item_type": "journalArticle",
+        "key": "doi:10.1038/ncomms1761",
+        "provenance": {
+          "description": "Publisher-deposited bibliographic metadata verified by DOI lookup.",
+          "provider": "crossref",
+          "url": "https://api.crossref.org/works/10.1038/ncomms1761"
+        },
+        "publication_title": "Nature Communications",
+        "publisher": "Springer Science and Business Media LLC",
+        "title": "Quantum mechanics can reduce the complexity of classical models",
+        "url": "https://doi.org/10.1038/ncomms1761",
+        "version": "2ec5cbf6f46696475e46bd28d0715d794dd675850991ec4799d0daf3fe93f7b9",
+        "volume": "3",
+        "year": "2012"
+      },
+      "note": "",
+      "reading_observations": [
+        {
+          "id": "READ-8afd7ccbebc85f24d3a5ba4c",
+          "length": 18000,
+          "locator": "characters 0\u201318000",
+          "observation": "passage returned by reference_text; not independent comprehension or entailment",
+          "offset": 0,
+          "page_end": 4,
+          "page_start": 1,
+          "reference_key": "doi:10.1038/ncomms1761",
+          "source_index": 0,
+          "source_path": "/home/phujck/VScodeProjects/laplace/synthetics papers/corpus-as-a-state/reconstruction/output/pdf/v2.1/literature_sources/220c6141f8e34797aec81d5ee93d38c2f638130fcb25dfa03b81ce9c38b4e7cf.pdf",
+          "source_sha256": "sha256:220c6141f8e34797aec81d5ee93d38c2f638130fcb25dfa03b81ce9c38b4e7cf",
+          "text_sha256": "sha256:37624619a3fb95f73feb4ade64bb1f8451fd7bcc14793b3ca744e2427525d6d2",
+          "total_characters": 29776
+        }
+      ],
+      "reading_status": "unread",
+      "source": {
+        "identity": "ab131d3c05ca9b46e270ada8bba3e250623bd273a73981188bda50583dfdf036",
+        "provider": "crossref",
+        "revision": {
+          "modified": "",
+          "version": "2ec5cbf6f46696475e46bd28d0715d794dd675850991ec4799d0daf3fe93f7b9"
+        }
+      },
+      "source_text": {
+        "bytes": 540053,
+        "media_type": "application/pdf",
+        "path": "/home/phujck/VScodeProjects/laplace/synthetics papers/corpus-as-a-state/reconstruction/output/pdf/v2.1/literature_sources/220c6141f8e34797aec81d5ee93d38c2f638130fcb25dfa03b81ce9c38b4e7cf.pdf",
+        "qualification": "ACQUIRED_UNREAD; publication identity and claim alignment still require source inspection",
+        "resolved_url": "https://arxiv.org/pdf/1102.1994",
+        "sha256": "sha256:220c6141f8e34797aec81d5ee93d38c2f638130fcb25dfa03b81ce9c38b4e7cf",
+        "url": "https://arxiv.org/pdf/1102.1994"
+      },
+      "state": "CURRENT"
+    },
+    {
+      "bib_path": "synthetics papers/corpus-as-a-state/reconstruction/output/pdf/v2.1/reconstruction_refs.bib",
+      "citekey": "Green20074d5218",
+      "claim_id": null,
+      "evidence_status": "metadata-only",
+      "key": "doi:10.1145/1265530.1265535",
+      "metadata": {
+        "creators": [
+          "Todd J. Green",
+          "Grigoris Karvounarakis",
+          "Val Tannen"
+        ],
+        "doi": "10.1145/1265530.1265535",
+        "item_type": "conferencePaper",
+        "key": "doi:10.1145/1265530.1265535",
+        "pages": "31-40",
+        "provenance": {
+          "description": "Publisher-deposited bibliographic metadata verified by DOI lookup.",
+          "provider": "crossref",
+          "url": "https://api.crossref.org/works/10.1145/1265530.1265535"
+        },
+        "publication_title": "Proceedings of the twenty-sixth ACM SIGMOD-SIGACT-SIGART symposium on Principles of database systems",
+        "publisher": "ACM",
+        "title": "Provenance semirings",
+        "url": "https://doi.org/10.1145/1265530.1265535",
+        "version": "c580f1f70a2e68f1329b7465449488e1fedfdfb74b9438e5ed3faf2b44e9d22a",
+        "year": "2007"
+      },
+      "note": "",
+      "reading_observations": [
+        {
+          "id": "READ-aef5cbb5a50144859e521597",
+          "length": 18000,
+          "locator": "characters 0\u201318000",
+          "observation": "passage returned by reference_text; not independent comprehension or entailment",
+          "offset": 0,
+          "page_end": 4,
+          "page_start": 1,
+          "reference_key": "doi:10.1145/1265530.1265535",
+          "source_index": 0,
+          "source_path": "/home/phujck/VScodeProjects/laplace/synthetics papers/corpus-as-a-state/reconstruction/output/pdf/v2.1/literature_sources/74e092702db58518afeaf909e1d3380848165b2cb9ae75dc6822b04f66aa5be0.pdf",
+          "source_sha256": "sha256:74e092702db58518afeaf909e1d3380848165b2cb9ae75dc6822b04f66aa5be0",
+          "text_sha256": "sha256:1973ceab680f51a4dd3e3cc02e411b1e0827f0380bdb367de577c924ca6046a4",
+          "total_characters": 53825
+        }
+      ],
+      "reading_status": "unread",
+      "source": {
+        "identity": "1b7ef6491ef35a1f2b63095779bc4164d7877302deda02beb1411ee16b7d4602",
+        "provider": "crossref",
+        "revision": {
+          "modified": "",
+          "version": "c580f1f70a2e68f1329b7465449488e1fedfdfb74b9438e5ed3faf2b44e9d22a"
+        }
+      },
+      "source_text": {
+        "bytes": 262241,
+        "media_type": "application/pdf",
+        "path": "/home/phujck/VScodeProjects/laplace/synthetics papers/corpus-as-a-state/reconstruction/output/pdf/v2.1/literature_sources/74e092702db58518afeaf909e1d3380848165b2cb9ae75dc6822b04f66aa5be0.pdf",
+        "qualification": "ACQUIRED_UNREAD; publication identity and claim alignment still require source inspection",
+        "resolved_url": "https://www.cs.ucdavis.edu/~green/papers/pods07.pdf",
+        "sha256": "sha256:74e092702db58518afeaf909e1d3380848165b2cb9ae75dc6822b04f66aa5be0",
+        "url": "https://www.cs.ucdavis.edu/~green/papers/pods07.pdf"
+      },
+      "state": "CURRENT"
+    },
+    {
+      "bib_path": "synthetics papers/corpus-as-a-state/reconstruction/output/pdf/v2.1/reconstruction_refs.bib",
+      "binding_state": "BOUND",
+      "canonical_id": "ref:Gu2012e2bbbd",
+      "canonical_records": [
+        "RW-20261112-004100-106961",
+        "RW-20261112-004100-145590"
+      ],
+      "citekey": "Gu2012e2bbbd",
+      "claim_id": "dm:predictive-provenance-positioning",
+      "claim_revision": "sha256:963752517c84d17b1b6e200ac86d3fdba7197dcf425dba287be06c636b6ac2a1",
+      "evidence": {
+        "excerpt": "Each equivalence classes is referred to as\na causal state.",
+        "locator": "characters 0\u201318000"
+      },
+      "evidence_source_identity": "ab131d3c05ca9b46e270ada8bba3e250623bd273a73981188bda50583dfdf036",
+      "evidence_status": "authored-passage",
+      "key": "doi:10.1038/ncomms1761",
+      "metadata": {
+        "creators": [
+          "Mile Gu",
+          "Karoline Wiesner",
+          "Elisabeth Rieper",
+          "Vlatko Vedral"
+        ],
+        "doi": "10.1038/ncomms1761",
+        "fulltext_urls": [
+          "https://www.nature.com/articles/ncomms1761",
+          "https://www.nature.com/articles/ncomms1761.pdf",
+          "https://www.nature.com/articles/ncomms1761.pdf"
+        ],
+        "issue": "1",
+        "item_type": "journalArticle",
+        "key": "doi:10.1038/ncomms1761",
+        "provenance": {
+          "description": "Publisher-deposited bibliographic metadata verified by DOI lookup.",
+          "provider": "crossref",
+          "url": "https://api.crossref.org/works/10.1038/ncomms1761"
+        },
+        "publication_title": "Nature Communications",
+        "publisher": "Springer Science and Business Media LLC",
+        "title": "Quantum mechanics can reduce the complexity of classical models",
+        "url": "https://doi.org/10.1038/ncomms1761",
+        "version": "2ec5cbf6f46696475e46bd28d0715d794dd675850991ec4799d0daf3fe93f7b9",
+        "volume": "3",
+        "year": "2012"
+      },
+      "note": "",
+      "rationale": "Gu et al. pp2\u20134 define equality of predictive futures, and nonorthogonal quantum states with reduced memory. Grounds only the comparison to predictive-state/operator memory, not a stationary epsilon-machine identification or quantum advantage for this finite corpus.",
+      "reading_assertion": "passage observed; interpretation authored, not independently verified",
+      "reading_receipt": {
+        "id": "READ-8afd7ccbebc85f24d3a5ba4c",
+        "length": 18000,
+        "locator": "characters 0\u201318000",
+        "observation": "passage returned by reference_text; not independent comprehension or entailment",
+        "offset": 0,
+        "page_end": 4,
+        "page_start": 1,
+        "reference_key": "doi:10.1038/ncomms1761",
+        "source_index": 0,
+        "source_path": "/home/phujck/VScodeProjects/laplace/synthetics papers/corpus-as-a-state/reconstruction/output/pdf/v2.1/literature_sources/220c6141f8e34797aec81d5ee93d38c2f638130fcb25dfa03b81ce9c38b4e7cf.pdf",
+        "source_sha256": "sha256:220c6141f8e34797aec81d5ee93d38c2f638130fcb25dfa03b81ce9c38b4e7cf",
+        "text_sha256": "sha256:37624619a3fb95f73feb4ade64bb1f8451fd7bcc14793b3ca744e2427525d6d2",
+        "total_characters": 29776
+      },
+      "reading_status": "partial",
+      "relation": "background",
+      "source": {
+        "identity": "ab131d3c05ca9b46e270ada8bba3e250623bd273a73981188bda50583dfdf036",
+        "provider": "crossref",
+        "revision": {
+          "modified": "",
+          "version": "2ec5cbf6f46696475e46bd28d0715d794dd675850991ec4799d0daf3fe93f7b9"
+        }
+      },
+      "source_text": {
+        "bytes": 540053,
+        "media_type": "application/pdf",
+        "path": "/home/phujck/VScodeProjects/laplace/synthetics papers/corpus-as-a-state/reconstruction/output/pdf/v2.1/literature_sources/220c6141f8e34797aec81d5ee93d38c2f638130fcb25dfa03b81ce9c38b4e7cf.pdf",
+        "qualification": "ACQUIRED_UNREAD; publication identity and claim alignment still require source inspection",
+        "resolved_url": "https://arxiv.org/pdf/1102.1994",
+        "sha256": "sha256:220c6141f8e34797aec81d5ee93d38c2f638130fcb25dfa03b81ce9c38b4e7cf",
+        "url": "https://arxiv.org/pdf/1102.1994"
+      },
+      "state": "CURRENT"
+    },
+    {
+      "bib_path": "synthetics papers/corpus-as-a-state/reconstruction/output/pdf/v2.1/reconstruction_refs.bib",
+      "binding_state": "BOUND",
+      "canonical_id": "ref:Green20074d5218",
+      "canonical_records": [
+        "RW-20261112-004102-003434",
+        "RW-20261112-004102-044976"
+      ],
+      "citekey": "Green20074d5218",
+      "claim_id": "dm:predictive-provenance-positioning",
+      "claim_revision": "sha256:963752517c84d17b1b6e200ac86d3fdba7197dcf425dba287be06c636b6ac2a1",
+      "evidence": {
+        "excerpt": "It seems that we need to know not just\nwhich input tuples contribute but also how they contribute.",
+        "locator": "characters 0\u201318000"
+      },
+      "evidence_source_identity": "1b7ef6491ef35a1f2b63095779bc4164d7877302deda02beb1411ee16b7d4602",
+      "evidence_status": "authored-passage",
+      "key": "doi:10.1145/1265530.1265535",
+      "metadata": {
+        "creators": [
+          "Todd J. Green",
+          "Grigoris Karvounarakis",
+          "Val Tannen"
+        ],
+        "doi": "10.1145/1265530.1265535",
+        "item_type": "conferencePaper",
+        "key": "doi:10.1145/1265530.1265535",
+        "pages": "31-40",
+        "provenance": {
+          "description": "Publisher-deposited bibliographic metadata verified by DOI lookup.",
+          "provider": "crossref",
+          "url": "https://api.crossref.org/works/10.1145/1265530.1265535"
+        },
+        "publication_title": "Proceedings of the twenty-sixth ACM SIGMOD-SIGACT-SIGART symposium on Principles of database systems",
+        "publisher": "ACM",
+        "title": "Provenance semirings",
+        "url": "https://doi.org/10.1145/1265530.1265535",
+        "version": "c580f1f70a2e68f1329b7465449488e1fedfdfb74b9438e5ed3faf2b44e9d22a",
+        "year": "2007"
+      },
+      "note": "",
+      "rationale": "Sections3\u20134 define finite-support K-relations, addition for projection/union and multiplication for joins, and provenance polynomials retaining how outputs depend on tuples. This is the closest source-annotated calculation precedent. Our additive source incidence plus revisable conditional quotient is narrower, not a general provenance-semiring implementation or first invention of provenance.",
+      "reading_assertion": "passage observed; interpretation authored, not independently verified",
+      "reading_receipt": {
+        "id": "READ-aef5cbb5a50144859e521597",
+        "length": 18000,
+        "locator": "characters 0\u201318000",
+        "observation": "passage returned by reference_text; not independent comprehension or entailment",
+        "offset": 0,
+        "page_end": 4,
+        "page_start": 1,
+        "reference_key": "doi:10.1145/1265530.1265535",
+        "source_index": 0,
+        "source_path": "/home/phujck/VScodeProjects/laplace/synthetics papers/corpus-as-a-state/reconstruction/output/pdf/v2.1/literature_sources/74e092702db58518afeaf909e1d3380848165b2cb9ae75dc6822b04f66aa5be0.pdf",
+        "source_sha256": "sha256:74e092702db58518afeaf909e1d3380848165b2cb9ae75dc6822b04f66aa5be0",
+        "text_sha256": "sha256:1973ceab680f51a4dd3e3cc02e411b1e0827f0380bdb367de577c924ca6046a4",
+        "total_characters": 53825
+      },
+      "reading_status": "partial",
+      "relation": "method",
+      "source": {
+        "identity": "1b7ef6491ef35a1f2b63095779bc4164d7877302deda02beb1411ee16b7d4602",
+        "provider": "crossref",
+        "revision": {
+          "modified": "",
+          "version": "c580f1f70a2e68f1329b7465449488e1fedfdfb74b9438e5ed3faf2b44e9d22a"
+        }
+      },
+      "source_text": {
+        "bytes": 262241,
+        "media_type": "application/pdf",
+        "path": "/home/phujck/VScodeProjects/laplace/synthetics papers/corpus-as-a-state/reconstruction/output/pdf/v2.1/literature_sources/74e092702db58518afeaf909e1d3380848165b2cb9ae75dc6822b04f66aa5be0.pdf",
+        "qualification": "ACQUIRED_UNREAD; publication identity and claim alignment still require source inspection",
+        "resolved_url": "https://www.cs.ucdavis.edu/~green/papers/pods07.pdf",
+        "sha256": "sha256:74e092702db58518afeaf909e1d3380848165b2cb9ae75dc6822b04f66aa5be0",
+        "url": "https://www.cs.ucdavis.edu/~green/papers/pods07.pdf"
+      },
+      "state": "CURRENT"
+    },
+    {
+      "bib_path": "synthetics papers/corpus-as-a-state/reconstruction/output/pdf/v2.1/reconstruction_refs.bib",
+      "binding_state": "BOUND",
+      "canonical_id": "ref:Crutchfield198940eaeb",
+      "canonical_records": [
+        "RW-20261112-004121-911140",
+        "RW-20261112-004121-953736"
+      ],
+      "citekey": "Crutchfield198940eaeb",
+      "claim_id": "dm:predictive-provenance-positioning",
+      "claim_revision": "sha256:963752517c84d17b1b6e200ac86d3fdba7197dcf425dba287be06c636b6ac2a1",
+      "evidence": {},
+      "evidence_source_identity": "c6f362677f3fb4259721a6ec6a113fc976090457f5eea3e725418dfc18600477",
+      "evidence_status": "metadata-only",
+      "key": "doi:10.1103/physrevlett.63.105",
+      "metadata": {
+        "creators": [
+          "James P. Crutchfield",
+          "Karl Young"
+        ],
+        "doi": "10.1103/physrevlett.63.105",
+        "issue": "2",
+        "item_type": "journalArticle",
+        "key": "doi:10.1103/physrevlett.63.105",
+        "pages": "105-108",
+        "provenance": {
+          "description": "Publisher-deposited bibliographic metadata verified by DOI lookup.",
+          "provider": "crossref",
+          "url": "https://api.crossref.org/works/10.1103/physrevlett.63.105"
+        },
+        "publication_title": "Physical Review Letters",
+        "publisher": "American Physical Society (APS)",
+        "title": "Inferring statistical complexity",
+        "url": "https://doi.org/10.1103/physrevlett.63.105",
+        "version": "0ecb2601d16ec4834ece0f5e6253397e6373174bd18880ae1fe2c6e662238778",
+        "volume": "63",
+        "year": "1989"
+      },
+      "note": "",
+      "rationale": "Acquired scanned original and visually read all4pages natively. PDF page2 (printed106) defines subtree equivalence and metric extension by corresponding transition probabilities. Grounds background comparison only. Text extraction unavailable, so no reference_text passage receipt or text support qualification claimed. Exact source SHA d865ad8524b473a6417150a277a45b9806968c0546d8adae58308d9c0d1a58c6, page2 image receipt READ-4ac51eb74c5d4fb4aa15ed12c7f67ae8. Native page reading establishes the bounded content used, not independent verification.",
+      "reading_assertion": "passage observed; interpretation authored, not independently verified",
+      "reading_receipt": null,
+      "reading_status": "metadata-only",
+      "relation": "background",
+      "source": {
+        "identity": "c6f362677f3fb4259721a6ec6a113fc976090457f5eea3e725418dfc18600477",
+        "provider": "crossref",
+        "revision": {
+          "modified": "",
+          "version": "0ecb2601d16ec4834ece0f5e6253397e6373174bd18880ae1fe2c6e662238778"
+        }
+      },
+      "source_text": {
+        "bytes": 1234676,
+        "media_type": "application/pdf",
+        "path": "/home/phujck/VScodeProjects/laplace/synthetics papers/corpus-as-a-state/reconstruction/output/pdf/v2.1/literature_sources/d865ad8524b473a6417150a277a45b9806968c0546d8adae58308d9c0d1a58c6.pdf",
+        "qualification": "ACQUIRED_UNREAD; publication identity and claim alignment still require source inspection",
+        "resolved_url": "https://csc.ucdavis.edu/~cmg/papers/ISC.pdf",
+        "sha256": "sha256:d865ad8524b473a6417150a277a45b9806968c0546d8adae58308d9c0d1a58c6",
+        "url": "https://csc.ucdavis.edu/~cmg/papers/ISC.pdf"
+      },
+      "state": "CURRENT"
+    }
+  ],
+  "schema_version": "laplace.references/1"
+}

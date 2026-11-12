@@ -1,0 +1,35 @@
+{
+  "wire": {
+    "expected_dependency_revision": "sha256:4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+    "expected_work_scope_revision": "sha256:779e061efe3fd183a1c3da70a62579899501af77465a2001cfc69347990b6db0",
+    "mode": "work",
+    "project": "book",
+    "session_id": "WS-parent",
+    "text": " é中🌱 action\n",
+    "work_id": "WORK-wdef-8409a690f13396ac8b1a6adedbbf5157",
+    "workspace_context": {
+      "surface": "project",
+      "workflow_action": {
+        "expected_basis": "sha256:3da33d76f97b81dda01af39b71854c82ea63fc9ce67a8b40f62f17eac4bb34bb",
+        "reference": {
+          "identity": {
+            "definition_id": "WDEF-b42ffa1cc02e49da9f7a977e020588c8",
+            "parent_session_id": "WS-parent",
+            "project": "book",
+            "request_id": "child-continue-é",
+            "step_id": "Review",
+            "work_id": "WORK-wdef-8409a690f13396ac8b1a6adedbbf5157"
+          },
+          "kind": "failed-review-continuation",
+          "owner": "pipeline.workflow",
+          "schema_version": "laplace.reference/1",
+          "version": {
+            "definition_revision": "sha256:e83a4917d7dded0a593d7adaac309ac8a242d8aba6e8b4d45a5a4d8945248849"
+          }
+        }
+      }
+    },
+    "request_id": "parent-submit-é"
+  },
+  "intent_sha256": "sha256:436217bc8afc431ac8d8ae981ede57d31b236338bba8672fbbdbf0816309a5e1"
+}

@@ -1,0 +1,185 @@
+% PLAN:N5
+% NODES: goal:perturbation-assisted-itqde def:answer-key def:subset-sum-instance def:integer-weights def:subset-sum-function def:hamiltonian-h0 irf:h0-encodes-the-instance res:subset-sum-spectral-encoding def:degeneracy def:broad-support-state irf:subset-sum-as-spectral-detection def:degeneracy-profile irf:plus-state-overlap-sum irf:product-form-factorisation thm:hardy-littlewood-collapse irf:fourier-coefficient-of-g irf:circle-method-equivalence res:two-barriers-separated def:bounded-noncommuting-V irf:noncommutativity-breaks-product-form irf:single-link-suffices-to-break-chain def:cluster-projector-Ps def:isolation-gap-Gamma_S irf:weyl-stability-of-cluster irf:schur-complement-cluster-effective def:cluster-effective-hamiltonian def:internal-perturbation-block irf:internal-block-spectrum-governs-splitting def:cluster-substructure res:perturbative-rescue def:plateau-tilt irf:plateau-tilt-multiplicity-fingerprint def:multiplicity-fingerprint thm:conditional-visibility-lift def:null-channel irf:zz-first-order-fingerprint irf:free-fermion-trap-quadratic-v res:j-dial-fingerprint-scaling def:tilt-separation-ratio res:answer-key-certificate res:degeneracy-cartography-single-family res:operationally-dense-target-window irf:staircase-regime-broader-than-b-decision irf:step-displacement-log-ratio def:degeneracy-anchor irf:chained-anchor-degeneracy-profile res:integer-decoder def:integer-snap-and-trial-median def:decoder-gap-scales res:dial-feasibility-window def:erasure-rule def:operating-window
+\section{The controlled subset-sum embodiment}\label{sec:N5}
+
+% N5-p1
+The controlled embodiment programs a subset-sum instance on integer weights $(a_1, \dots, a_n)$ with target $T$ - positive integer weights at the production scale $a_i = O(n^2)$, and for generic instances distinct weights with no planted structure - and reads every output of the method against an independently computable classical comparator that, for a given instance and known perturbation regime, sorts the measured surface into three classes of check,
+\begin{widetext}
+\[
+Z_\tau(s)\ \text{checked}\
+\begin{cases}
+\text{exactly,} & \text{by dynamic programming},\\
+\text{perturbatively,} & \text{through the modelled $V$-dressing},\\
+\text{statistically,} & \text{by finite-shot validation}.
+\end{cases}
+\]
+\end{widetext}
+The family is the commuting classical-collapse control of the method: it supplies an exact reference at the production weight scale, a controlled degeneracy structure, and a graded route from the commuting limit into a genuinely noncommuting regime. The reconstruction and response identities on the supported $(s, \tau)$ domain, the shared-record covariance and the device's native execution of $H_0 + V$ are the machinery this instance now exercises, and the instance itself enters the protocol solely through the diagonal encoding.
+
+% N5-p2
+An ordered tuple $a = (a_1, \dots, a_n)$ of nonnegative integers identifies each bit string $x \in \{0,1\}^n$ with the subset $\{i : x_i = 1\}$, and the subset-sum function $s(x) = \sum_i a_i x_i$ takes values in $\{0, 1, \dots, \sum_i a_i\}$. The weights are carried by the diagonal Hamiltonian
+\[
+H_0 \;=\; \sum_{i=1}^{n} a_i\, \frac{I - Z_i}{2},
+\]
+each summand $(I - Z_i)/2$ being the single-qubit number operator - it returns $0$ on $|0\rangle_i$ and $1$ on $|1\rangle_i$ - so the instance lives in single-qubit drive amplitudes. The target $T$ enters through the probe shift $H_0 - T$. The instance therefore enters the protocol entirely through the Hamiltonian, and the initial state remains the maximally uncommitted broad-support reference, instance independent by construction: nothing measured later can be attributed to instance information smuggled through state preparation.
+
+% N5-p3
+The encoding surfaces in the spectrum. $H_0 |x\rangle = s(x)\, |x\rangle$ for every computational basis string, so the spectrum of $H_0$ is the multiset of subset sums of the weights, and the eigenspace at energy $S$ has dimension
+\[
+g(S) \;=\; \bigl|\{x \in \{0,1\}^n : s(x) = S\}\bigr|,
+\]
+the number of bit strings with subset sum $S$. The broad-support probe $|\psi_+\rangle = |+\rangle^{\otimes n} = 2^{-n/2} \sum_x |x\rangle$ places equal spectral weight $2^{-n}$ on every string, and under any initial state with broad computational support - the equal-weight probe is the operational default, not a requirement of the equivalence - the subset-sum decision problem is equivalent to detecting nonzero spectral weight at the target energy, $g(T) \ge 1$. Degeneracy is the meaning of this spectrum, and every readout that follows addresses it.
+
+% N5-p4
+An exact classical computation of $g$ on these instances costs no more than their production scale allows. The subset-sum decision problem is NP-complete in general, with best-known classical time scaling as $2^{0.3113\, n}$ at density one \cite{hgj2010} and best-known quantum time scaling as $2^{0.236\, n}$ \cite{bonnetain2020improved}, both up to polynomial factors, and heuristic differencing addresses the optimisation variant \cite{karmarkar1982differencing}. Those exponentials describe the general problem, not the programmed instances. At the production scale $a_i = O(n^2)$ the lattice of reachable sums is polynomially wide, so the Bellman counting recursion \cite{bellman1957dp} computes the exact count at every target in polynomial time (Fig.~\ref{fig:f5-dp-price}) - the price is itemised in Table~\ref{tab:dp-price}. The final row of the recursion is the degeneracy profile
+\[
+T \;\longmapsto\; g(T) \qquad \text{over occupied targets}\ T,
+\]
+absolute by construction, and this exact table is the validation reference for every reconstructed quantity in the section.
+
+% N5-p5
+At $V = 0$ the overlap record collapses exactly, and the derivation is two steps. From $|\psi_+\rangle = 2^{-n/2} \sum_x |x\rangle$ and the diagonal evolution $e^{-i t H_0} |x\rangle = e^{-i t s(x)} |x\rangle$, orthonormality of the computational basis gives $\langle\psi_+| e^{-i t H_0} |\psi_+\rangle = 2^{-n} \sum_x e^{-i t s(x)}$. The sum factorises over qubits, $\sum_x e^{-i t \sum_i a_i x_i} = \prod_i (1 + e^{-i t a_i})$, and with the target shift the record is
+\[
+\langle\psi_+|\, e^{-i t (H_0 - T)}\, |\psi_+\rangle \;=\; e^{i t T}\, 2^{-n} \prod_{i=1}^{n} \bigl(1 + e^{-i t a_i}\bigr),
+\]
+a product of single-qubit factors (Fig.~\ref{fig:nf3}). The single global normalisation is $2^{-n}$ - one factor of $1/2$ per qubit from the plus-state probe, equivalently the per-factor form $\prod_i (1 + e^{-i t a_i})/2$ - and never a single factor of $1/2$. The identity holds exactly at $V = 0$ with the plus-state probe. It is the baseline the perturbed protocol departs from, not a property of the perturbed record, and it is the exactly computable object every perturbed diagnostic in this section is read against.
+
+% N5-p6
+For integer weights the product expands as the generating Fourier series $\prod_i (1 + e^{-i t a_i}) = \sum_S g(S)\, e^{-i t S}$, and Fourier inversion at integer frequency gives
+\[
+g(S) \;=\; \frac{1}{2\pi} \int_{-\pi}^{\pi} dt\; e^{i t S} \prod_{i=1}^{n} \bigl(1 + e^{-i t a_i}\bigr).
+\]
+This integral is exactly a Hardy-Littlewood circle-method integral \cite{vaughan1997hardy}: the product is the generating exponential sum of $\{0,1\}^n$, and the coefficient at $S$ counts the representations of $S$ as a $\{0,1\}$-combination of the weights. The diagonal record therefore computes an exact Fourier coefficient of a finite exponential sum by real-time evolution, and the degeneracy profile is available from the $V = 0$ record in closed form (derived in full in App.~\ref{app:NA1}) - the exact reference at every target. The same fact read the other way: the factorised object is a product of single-qubit factors, classically free to evaluate, so any quantum content the full protocol carries must originate in features absent from it.
+
+% N5-p7
+The commuting picture's readout bottleneck separates into two independent quantities. Geometric isolation asks for a filter width that suppresses out-of-window weight by a factor $\eta$,
+\[
+\tau \;\ge\; \frac{\log(P_{\mathrm{out}}/P_{\mathrm{in}}) + \log(1/\eta)}{\Delta^2 - r^2}
+\]
+for intra-window radius $r$ and out-of-window gap $\Delta$ - polynomial exactly when $\Delta^2 - r^2 \ge 1/\mathrm{poly}(n)$ and $P_{\mathrm{out}}/P_{\mathrm{in}} \le \mathrm{poly}(n)$. Shot-floor visibility asks for a budget $K \ge c^2 \eta^{-2} P_{\mathrm{in}}^{-2}$ for a centred probe, with $c$ the retained-overlap coefficient norm, and in the commuting baseline $P_{\mathrm{in}} = g(T)/2^n$ for an exact target line, so a sparse target carries exponentially small visibility even at order-one integer spacing. A polynomial filter width that isolates the window does not by itself make the window visible above the sampling floor. The two barriers are independent and must be cleared separately - the perturbed diagnostics ahead change what is measured within a window and are never to be read as removing the visibility barrier.
+
+% N5-p8
+A bounded Hermitian perturbation noncommuting with the encoding breaks the collapse. We take $V$ local and two-body,
+\[
+\begin{gathered}
+V \;=\; \sum_{a<b} V_{ab}, \qquad \|V\| < \infty, \\
+[V, Z_i] \;\neq\; 0 \ \ \text{for some}\ i,
+\end{gathered}
+\]
+with each term supported on two qubits. The factorisation used $e^{-i t s(x)} = \prod_i e^{-i t a_i x_i}$ - the exponential of a sum splitting as a product of exponentials of summands - and with noncommuting $V$ the exponential no longer splits, $e^{-i t (H_0 + V)} \neq e^{-i t H_0} e^{-i t V}$ in general. A single noncommuting matrix element suffices to fail the $n$-step factorisation chain, because the evolution mixes basis states across $s$-levels and the overlap acquires cross terms no single-qubit product reproduces. The break is generic rather than delicate - commutativity is not a robust assumption. But the break by itself is not yet a signal, and what it yields is quantified only after the cluster reduction.
+
+% N5-p9
+The perturbed spectrum is organised on two objects. The cluster projector
+\[
+P_S \;=\; \sum_{x \,:\, s(x) = S} |x\rangle\langle x|, \qquad Q_S \;=\; I - P_S,
+\]
+is the spectral projector of $H_0$ onto the subset-sum-$S$ eigenspace of dimension $g(S)$, and the projectors over distinct $S$ are mutually orthogonal idempotents summing to the identity. The isolation gap $\Gamma_S = \mathrm{dist}\bigl(S, \mathrm{spec}(Q_S H_0 Q_S)\bigr)$ is the spectral distance from $S$ to the nearest distinct subset-sum value, and for integer weights $\Gamma_S \ge 1$. The unit lower bound is a property of the integer encoding and not of the device, and it is the controlling parameter of every perturbative construction that follows.
+
+% N5-p10
+Whether the perturbation leaves this cluster structure intact is settled in two cases. Case (a), the crude global bound. Weyl's inequality \cite{bhatia1997matrix} confines every perturbed eigenvalue to within $\|V\|$ of its subset-sum value, and for the extensive local perturbation $V = J \sum_i V_i$ with per-term norm at most one and $m = O(n)$ bonds, subadditivity gives only $\|V\| \le mJ$, so disjointness of neighbouring discs demands $J = O(\Gamma_S/n)$ and the safe coupling shrinks with system size. Case (b), the quasi-local condition. Assume range-bounded local terms of coordination number $z$ and a differential diagonal shift $\delta_S = o(\Gamma_S)$ in the perturbative regime $J \ll \Gamma_S$. Then the block that actually couples the cluster to distinct values obeys $\|P_S V Q_S\| \le J \sqrt{z}\, \max_i \|V_i\|$, an $n$-independent quantity, and isolation holds whenever the effective gap $\Gamma_S - \delta_S$ exceeds twice this norm. Case (a) is sufficient and pessimistic rather than tight, because the extensive $O(nJ)$ displacement is dominated by the diagonal part of $V$, which shifts whole subset-sum sheets in common mode without mixing them. The operative condition is governed by the intensive ratio $J/\Gamma_S$ and the local connectivity, not by $n$, and case (b) holds under its stated assumption set.
+
+% N5-p11
+For an isolated cluster with $\Gamma_S > 4\|V\|$, the Riesz-projector and Schur-complement construction \cite{kato1995perturbation} reduces the full perturbed problem to a $g(S)$-dimensional block plus a bounded correction. The cluster effective Hamiltonian is
+\begin{widetext}
+\[
+H_{\mathrm{eff}}^{(S)}(z) \;=\; S\, P_S + P_S V P_S + \Sigma_S(z), \qquad \Sigma_S(z) \;=\; P_S V Q_S\, \bigl(z - Q_S H Q_S\bigr)^{-1} Q_S V P_S,
+\]
+\end{widetext}
+defined for $z$ in the cluster window $|z - S| < \Gamma_S/2$ and with $\|\Sigma_S(z)\| = O(\|V\|^2/\Gamma_S)$. The perturbed cluster eigenvalues read $E_{S,\alpha} = S + \nu_\alpha + O(\|V\|^2/\Gamma_S)$, where $\{\nu_\alpha\}$ are the eigenvalues of the internal block. The construction is valid in the stated analyticity window, the second-order self-energy is carried as a bounded correction rather than neglected, and this is the form in which every fingerprint statement is derived.
+
+% N5-p12
+The first-order physics lives in one Hermitian matrix, the internal perturbation block of dimension $g(S) \times g(S)$,
+\begin{widetext}
+\[
+P_S V P_S \;=\; \bigl[\, \langle x | V | y \rangle \,\bigr]_{s(x) = s(y) = S}, \qquad \mathrm{spec}\bigl(P_S V P_S\bigr) \;=\; \{\nu_\alpha\}_{\alpha=1}^{g(S)},
+\]
+\end{widetext}
+whose eigenvalues are the first-order intra-cluster splitting. The splitting pattern is determined by the matrix elements $\langle x|V|y\rangle$ for $x$ and $y$ inside the cluster - the cluster-restricted adjacency of $V$ on the solution set. Generic $V$ gives all distinct $\nu_\alpha$, while structured $V$ can preserve sub-degeneracies. The cluster substructure is the data $(g(T), \{p_\alpha\}, \{E_\alpha\})$ of the perturbed cluster - its degeneracy, the probe weights on the perturbed eigenvectors and their energies - equivalently the spectrum and eigenvector overlaps of the cluster effective Hamiltonian. What every response reads is this combinatorial geometry and not the multiplicity by itself: equal-multiplicity clusters can split differently, and structured perturbations can leave sub-degeneracies in place.
+
+% N5-p13
+A bounded local noncommuting $V$ with $\|V\| < \Gamma_S/4$ splits the $g(T)$-fold target eigenspace into sub-eigenvalues within the Weyl-stable isolation gap, and the within-cluster spread feeds a scalar ratio observable - the excess tilt at the target - measurable at polynomial shot budget at any filter width satisfying the stated feasibility conditions, because the ratio form cancels the common visibility factors. Under a validated forward model giving the spread as a known combinatorial function of the multiplicity and the weights, the observation inverts to $g(T)$. Two cost remarks position the perturbed family and carry no claim for the benchmark instances: reproducing the perturbed overlap family classically by matrix-product simulation meets volume-law entanglement growth at generic interacting $V$ \cite{calabrese2005evolution,eisert2010area,schollwock2011density,pal2010mbl}, and classical enumeration of the spread costs of order $g$ operations. At $g = 1$ the mechanism does not apply - a singleton has no internal spread - and dynamic programming already solves the sparse regime of the control polynomially, so the boundary is a scope statement rather than a limitation.
+
+% N5-p14
+On an isolated cluster plateau the staircase derivative is flat at $V = 0$ and acquires a tilt proportional to the within-cluster variance of the splitting,
+\[
+\frac{dH}{d\lambda} \;=\; -2\tau\, \sigma_\tau^2(\lambda),
+\]
+evaluated near the target. The forward model behind this observable is a functional of four inputs: the multiplicity $g(T)$, the within-subspace matrix elements of $V$ through $P_S V P_S$ and at next order $\Sigma_S$, the geometry of the solution set through the cluster-restricted adjacency, and the probe weights on the perturbed eigenvectors. The multiplicity fingerprint is the diagnostic family built from this response - demand the measured $J^2$ tilt exactly when the compressed perturbation has nonzero within-cluster variance, together with the $g = 1$ null - and interacting perturbations are validated routes to the response rather than logical guarantees. The universal reading that tilt size reports degeneracy is retired. Two clusters of equal multiplicity can respond differently, $P_S V P_S$ proportional to the identity gives zero internal variance at $g > 1$, and a generically vanishing block pushes the leading spread to second order. The response depends on the projected perturbation, the solution-set geometry and the probe weights, never on degeneracy alone.
+
+% N5-p15
+The conditional form of the response is
+\begin{widetext}
+\[
+\sigma^2 \;=\; c\, J^2 \ \ \text{at leading order} \quad\Longleftrightarrow\quad \operatorname{Var}_{\psi_+}\!\bigl[\, P_S V P_S \,\bigr] \;\neq\; 0,
+\]
+\end{widetext}
+the variance being the within-cluster variance of the compressed perturbation on the probed state at target $T$. The $g(T) = 1$ channel has no within-cluster variance - the invariant $\|P_S \psi_+\|^2 = g/2^n$ is trivially rotation-free in one dimension - so its tilt variance is identically zero by construction, and the singleton serves as the background-free null. Interacting $V_{XXZ}$ is the validated generic route to the response, and interaction alone is not a sufficient condition: symmetry, vanishing matrix elements or proportional-to-identity compression can silence a cluster under an interacting perturbation. The criterion is the compressed variance rather than the interaction label.
+
+% N5-p16
+The exact null is a statement about the isolated projected model, and a finite-$\tau$, finite-shot measurement around a $g = 1$ level sits on a small strictly positive empirical floor with five leading contributions. Neighbour leakage contributes $(P_{\mathrm{neigh}}/P_{\mathrm{in}})\, e^{-\tau d^2}$, with $d$ the distance to the nearest occupied energy. The second-order self-energy shift, of order $J^2/\Gamma_S$, displaces the plateau and feeds apparent variance at order $(J^2/\Gamma_S)^2$ through shifted neighbour tails. Out-of-cluster admixture at amplitude $O(J/\Gamma_S)$ contributes at order $(J/\Gamma_S)^2$ times the squared energy offsets. Finite-shot noise on the variance estimator carries the visibility factor $1/P^2$ with $P = g/2^n$ - exponential in $n$ at fixed budget on a truly sparse singleton, polynomial in the dense band. Reconstruction systematics from quadrature truncation and grid differencing enter at order the squared grid step. The measured floor $\sigma^2_{\mathrm{floor}}$ is the maximum of these five terms,
+\begin{widetext}
+\[
+\sigma^2\bigl(g{=}1\bigr) \;\equiv\; 0 \ \ \text{(isolated projected model)}, \qquad \hat\sigma^2\bigl(g{=}1\bigr) \;=\; \sigma^2_{\mathrm{floor}} \;>\; 0 \ \ \text{(finite $\tau$, finite $K$)},
+\]
+\end{widetext}
+and the observed invariance of the null at the level of a few parts per thousand confirms that the construction-level zero survives to that floor. Every exact-null statement is qualified the same way - exact in the isolated projected model, a small nonzero floor in the experiment.
+
+% N5-p17
+The two perturbation families of the benchmark instantiate the conditional on opposite sides. For $V_{XXZ}$ the diagonal $ZZ$ part moves no string and needs no resonance: it supplies a first-order within-cluster spread $\Delta_x = J \sum_i (2x_i - 1)(2x_{i+1} - 1)$, so the tilt scales as $J^2$ times the solution-set variance of the nearest-neighbour pair correlation and is identically zero at $g = 1$. For the $XX$ family the operator $X_i X_{i+1}$ flips an adjacent bit pair, changing the sum by $\pm(a_i + a_{i+1})$ on the $00 \leftrightarrow 11$ channel and by $\pm(a_i - a_{i+1})$ on the $01 \leftrightarrow 10$ channel. Positive weights never resonate on the sum channel, generic distinct weights never resonate on the difference channel, so $P_S V_{XX} P_S = 0$ exactly at first order and the splitting is pushed to the second-order self-energy, with tilt at order $J^4$. The $XX$ family is therefore a derived first-order selection-rule null - a property of the encoding and the perturbation, not an absence of signal, and a degenerate adjacent weight pair restores a first-order element through the local trade. Under Jordan-Wigner the family is quadratic and classically simulable by determinant methods at all $J$ \cite{valiant2002matchgates,terhal2002fermions,jozsa2008matchgates} - a statement about cost and not about spectral spread, since the cluster does split at second order - so the interacting choice $V_{XXZ}$ is the minimal hardware-native route to the first-order channel.
+
+% N5-p18
+Measured scaling follows the derived channel laws (Fig.~\ref{fig:nf4}). Exact in-window tilt variance at degenerate targets shows log-log slopes close to two for the $ZZ$ channel and close to four for the $XX$ channel against the derived guides, while the $g = 1$ channel is identically zero in the exact read. Under sampling noise the discrimination statistic is the tilt separation ratio
+\[
+\frac{\sigma^2(g \ge 2)}{\sigma^2(g = 1)},
+\]
+reading 2.1-2.5 at $K = 10^5$ for $J \le 0.05$, near 1.5 at $J = 0.1$, and gone by $J = 0.15$ as the splitting outgrows the filter window. The operational demand is a parametric family - the $J^2$ response on degenerate targets together with the null at $g = 1$ - rather than a single number. The fitted exponents are the as-plotted values for this data bank, and the discrimination holds across the sizes, couplings and shot budgets measured here.
+
+% N5-p19
+For known $V$ every value of the measured surface has an exact classical reference - dynamic programming for the $V = 0$ content plus the perturbation series for the $V$-dressing - so the residual between device and reference localises device error per energy window and per filter width. Decoherence rounds steps, miscalibration displaces plateaus, leakage adds phantom plateaus. The epistemic class is certification under trusted physics and never adversarial proof of quantumness: the reference assumes the physical model of the device rather than defending against an adversary. Within that class the reference-keyed residual is finer-grained than deployed volume-law benchmarks \cite{boixo2018xeb}, and key accuracy and classical reproduction cost trade against each other in $J$, so the mode operates inside the stated operating window.
+
+% N5-p20
+The channels assemble into one protocol statement. One retained overlap family at $V \neq 0$, measured in $\mathrm{poly}(n) \cdot M\sqrt{\tau_{\max}}$ circuits and shots, delivers the spectral surface of the programmed instance as one function-valued object $Z_\tau(s)$ with both filter parameters classical dials: the occupancy map, the absolute degeneracy profile chained from anchors, and the per-target multiplicity fingerprints. The perturbation adds the fingerprint channel and the certificate at zero cost to the density channel, because the total cluster weight $\|P_S \psi_+\|^2 = g/2^n$ is invariant under any intra-cluster rotation, and the $V = 0$ family is a product of cosines serving as the built-in calibration ruler. This is a protocol statement for the programmed control instance under a known perturbation family - the sensing inversion of an unknown $V$ is model-armed inference through the validated forward model, not assumption-free readout.
+
+% N5-p21
+The polynomial-shot extraction holds under the staircase-extraction regime, the conjunction of polynomially controlled geometric, quadrature and measurement axes. Visibility $P_{\mathrm{in}}^{-1} \le \mathrm{poly}(n)$ is not among the conditions, because cluster locations, widths and window emptiness extract from ratio observables riding the moment identities. The regime is broader than the dense-target decision setting - moderately sparse and density-one instances with a polynomially resolved geometric axis are in scope even where $g(T)/2^n$ is exponentially small. The regime changes which observables are in reach and does not remove the absolute-readout floor: ratio reads remain conditioned on the record clearing the additive shot floor.
+
+% N5-p22
+The elementary instrument of the cartography is a crossing read. Between consecutive occupied targets $T_a < T_b$ with spacing $\Delta$ and midpoint $M$, the centred staircase attains the midpoint value at a filter position displaced by
+\[
+u \;=\; \frac{\ln\bigl(g(T_b)/g(T_a)\bigr)}{2\tau\Delta},
+\]
+the balance point of the two flanking Gaussian bumps - a pure shape observable in which prefactors, overlap norm and the $2^{-n}$ all cancel. The formula is exact under five attached assumptions, each carrying a first-order correction through $\delta u = \epsilon/(2\tau\Delta)$. The two flanking clusters dominate the filtered weight. Internal cluster widths are negligible, with the leading bias set by the width difference. Probe weights are proportional to the wanted degeneracies - a common multiplicative weight error is invisible to the ratio, and only the differential error biases the read. Farther clusters are suppressed, which requires $\tau \ge O(\ln n)$ for polynomially varying $g$. Record error is controlled, propagating $\mathrm{Var}(u) = (\rho_a^2 + \rho_b^2)/(2\tau\Delta)^2$ with $\rho_c$ of order $K^{-1/2}/P_c$. The read is shot-optimal near $\tau\Delta^2 = 2$ and crosses empty targets through the $\Delta$ scaling.
+
+% N5-p23
+Subset sum supplies two exact anchors free,
+\[
+g(0) \;=\; 1, \qquad g\Bigl(\textstyle\sum_i a_i\Bigr) \;=\; 1,
+\]
+the empty subset and the full set, and chaining the crossing links $y_j = \ln g(T_{j+1}) - \ln g(T_j)$ from an anchor gives the absolute log-degeneracy profile. All links are reconstructed from the one banked record inside its supported $(s, \tau)$ domain, so their errors correlate exactly as the shared-record covariance of the acquisition section prescribes. Consecutive crossings share the cluster amplitude at their common target, the link covariance is tridiagonal, and the interior noise telescopes exactly, $\mathrm{Var}(\hat{l}_m) = \rho_0^2 + \rho_m^2$, so with the exact anchor the chained estimate at any step carries only endpoint shot noise. A common systematic breaks the cancellation at order $L^2 \sigma_{\mathrm{sys}}^2$. The two-anchor closure residual detects it without correcting it, and generalised least squares over both anchors spreads the closure mismatch by inverse variance in an $O(L)$ banded solve. The chained read is first an estimation problem and only then a discrete decoding problem.
+
+% N5-p24
+The profile readout is a decoding problem rather than pure estimation \cite{hua1990pencil,kay1993estimation}: the maximum degeneracy in the production sweep is two, so each step's truth is a log-ratio of small integers drawn from a tiny hypothesis class admissible from the current chained value. The decoder makes two aggregation moves,
+\begin{widetext}
+\[
+y_j^{\mathrm{snap}} \;=\; \arg\min_{\rho \,\in\, \mathcal{H}_j} \bigl|\, \hat{y}_j - \ln\rho \,\bigr|, \qquad \hat{g}(T) \;=\; \mathrm{median}\bigl\{ \hat{g}^{(1)}(T), \dots, \hat{g}^{(8)}(T) \bigr\},
+\]
+\end{widetext}
+the per-step integer snap onto the admissible ratio set $\mathcal{H}_j$ from the exact $g(0) = 1$ anchor, and an eight-trial per-target median. Together they lift continuous-read accuracy from 27-37\% to 56-66\% and then to 86-100\% at a total budget of $8 \times 10^5$ shots, and the infinite-shot exact read is 100\% on all tested families once the dial feasibility window and the erasure rule are applied. The tiny hypothesis class is a property of the controlled test with maximum degeneracy two - the decoder is scoped to the control, not offered as a general integer decoder - and the quoted rates are measured on the stated families and budgets.
+
+% N5-p25
+The decoder's accuracy figures presuppose a per-step filter setting, and the rule separates two spectral scales a single dial conflates. The pair gap $dT$ between the two compared clusters sets a visibility ceiling, because the mid-gap signal must clear the truncation floor, and the distance $d_{\mathrm{neigh}}$ to the nearest third cluster sets an isolation floor, because third-cluster bleed must be suppressed:
+\begin{widetext}
+\[
+\tau \;\ge\; \frac{2}{d_{\mathrm{neigh}}^{2}} \ \ \text{(isolation floor)}, \qquad \tau \;\le\; \frac{\ln(1/x_{\mathrm{thr}})}{(dT/2)^{2}} \ \ \text{(visibility ceiling)}.
+\]
+\end{widetext}
+The feasible window is $[\mathrm{floor}, \mathrm{ceiling}]$ and the prescribed $\tau$ lives inside it. When the window is empty the step is erased: the flagged maximum-likelihood default ratio of one is emitted and erased steps stay erased. An erased step is a flagged default and never a measurement, and erasure is preferred because it keeps the downstream chaining sound: a step with no feasible filter width would otherwise feed a certified-garbage read into the chain.
+
+% N5-p26
+One dial remains, the coupling itself. The certificate operates in the measured interval
+\begin{widetext}
+\begin{equation}\label{def:operating-window}
+J \;\in\; \bigl[ J_{\mathrm{disc}},\, J_{\mathrm{esc}} \bigr], \qquad J_{\mathrm{disc}} \;=\; \frac{1}{4(n-1)}, \qquad J_{\mathrm{esc}} \;\approx\; 0.1, \qquad J^{*} \;\approx\; 0.05,
+\end{equation}
+\end{widetext}
+with $J_{\mathrm{disc}}$ about 0.023-0.036 across the sizes probed. Below the lower edge the dynamics is effectively free and the perturbative response is not yet resolved. Above the upper edge the splitting outgrows the filter window and the $J^2$ family merges clusters. Both edges are classically computable dial settings fixed before any measurement - computed from the instance, not read from the device - and the window is measured for the controlled family. Every diagnostic of the embodiment, the exact reference and the decoder protocol operate inside this interval, and the numerical validation inherits them as the objects its runs exercise.

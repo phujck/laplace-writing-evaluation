@@ -1,0 +1,559 @@
+{
+  "history": [],
+  "history_dropped": 0,
+  "records": [
+    {
+      "artifacts": [
+        {
+          "label": "Original recorded result and provenance",
+          "path": "retained-evidence/records/result-80359cb137df3cb111bb.json",
+          "scope": "project"
+        },
+        {
+          "label": "Original run declaration",
+          "path": "retained-evidence/research_runs/run-0781a7b8f8513412.json",
+          "scope": "manuscript"
+        },
+        {
+          "label": "Original execution receipt",
+          "path": "retained-evidence/research_runs/run-0781a7b8f8513412.receipt.json",
+          "scope": "manuscript"
+        }
+      ],
+      "id": "retained-result-80359cb137df3cb111bb",
+      "kind": "result",
+      "limitations": [
+        "Single authored harness, fixed deterministic schedule and small finite cases, no statistical generalisation or biological evidence.",
+        "Window gains use observed data for model-fit accounting, not future viability predictions or held-out prediction validation.",
+        "Original 24-seed/80-cost grid and historical slope1.780478 were not rerun.",
+        "Only analytic quantum minimisers in product/CQ and pure-marginal witness cases. No general quantum optimisation.",
+        "Independent science review of the repaired unit remains required."
+      ],
+      "provenance": {
+        "dependencies": [
+          {
+            "bytes": 14840,
+            "path": "retained-evidence/research/slg-analytic-20261111-v2/finite_checks.py",
+            "scope": "project",
+            "sha256": "8f39b070b310baaaa58e6b3824ab7a59c0c86a9c8f5d1f3271e00b4a690a6ce7",
+            "status": "PRESENT"
+          },
+          {
+            "bytes": 70118,
+            "path": "retained-evidence/research_runs/run-0781a7b8f8513412.result.json",
+            "sha256": "9b9fcfe471149634d96923532d3eb1a9294288a51ff3d9321d76a4c2b51ae91c",
+            "status": "PRESENT"
+          },
+          {
+            "bytes": 2446,
+            "path": "retained-evidence/records/result-80359cb137df3cb111bb.json",
+            "scope": "project",
+            "sha256": "c598d3e6d4094d7911caccae65fd494438c16de85e55de7c3ac9c1a5e7f9a9ff",
+            "status": "PRESENT"
+          },
+          {
+            "bytes": 3329,
+            "path": "retained-evidence/research_runs/run-0781a7b8f8513412.json",
+            "scope": "manuscript",
+            "sha256": "9cb3772f72ecb5c75ac730ce051e29d20dce239ebb378e3cff3d84c76d6e0b48",
+            "status": "PRESENT"
+          },
+          {
+            "bytes": 2361,
+            "path": "retained-evidence/research_runs/run-0781a7b8f8513412.receipt.json",
+            "scope": "manuscript",
+            "sha256": "05d5542fa6e17bdfacfc6fd5ead75304c34a5030b680cc5aa440a0fa33b6548d",
+            "status": "PRESENT"
+          }
+        ],
+        "recorded_at": 1794482633.3075411,
+        "scope": "manuscript",
+        "snapshot_schema": "laplace.research-dependencies/3"
+      },
+      "record_request": {
+        "intent_digest": "sha256:e4f4c1d290f5461a84c9d4a1f29473a082a65595185e0aa4029cbf8ed8deb7a5",
+        "request_id": "full-slg-retained-binding-result-80359cb137df3cb111bb"
+      },
+      "result": "retained-evidence/research_runs/run-0781a7b8f8513412.result.json",
+      "result_scope": "manuscript",
+      "revision": "sha256:2ccf4107c6d986852f86edd782404260902c454c70c8feb5395e0311cd0aef93",
+      "scope": "manuscript",
+      "source": "retained-evidence/research/slg-analytic-20261111-v2/finite_checks.py",
+      "source_scope": "project",
+      "summary": "Deterministic 172 finite checks completed with 0 failures. Pinned original-v0 function replay matches on a 40-observation schedule. v1 scores both exact candidates on one rolling-MSE horizon, with zero no-update gain and identical evaluated/applied states. OR hazard composition/count derivative and 4x4 product, XX, diagonal-CQ and coherent-ZZ controls match their stated identities. This is targeted local numerical corroboration of the accompanying analytic addendum, not independent proof or original historical-grid reproduction.",
+      "title": "Finite analytic repair v2: executed-action, OR-hazard and quantum-recovery controls"
+    },
+    {
+      "artifacts": [
+        {
+          "label": "Original recorded result and provenance",
+          "path": "retained-evidence/records/result-201adc1f43a2c98ae841.json",
+          "scope": "project"
+        },
+        {
+          "label": "Original run declaration",
+          "path": "retained-evidence/research_runs/run-756cd502012e0adb.json",
+          "scope": "manuscript"
+        },
+        {
+          "label": "Original execution receipt",
+          "path": "retained-evidence/research_runs/run-756cd502012e0adb.receipt.json",
+          "scope": "manuscript"
+        }
+      ],
+      "id": "retained-result-201adc1f43a2c98ae841",
+      "kind": "result",
+      "limitations": [
+        "Four deterministic isolated calls to the exact original inline policy block, not execution of the entire old main or historical stream/grid.",
+        "Tie price is constructed from the same previously observed candidate gain to make a true binary64 score equality. Rational-oracle values are compared numerically at1e-12, not asserted bit-identical to exact algebra.",
+        "No OR, quantum, v0, performance, calibration, biological or model-reader experiment. No generic correctness proof or independent verification.",
+        "The independent HOLD remains pending a new review on this same Work/obligation."
+      ],
+      "provenance": {
+        "dependencies": [
+          {
+            "bytes": 10569,
+            "path": "retained-evidence/research/slg-policy-coverage-20261111-v3/coverage_checks.py",
+            "scope": "project",
+            "sha256": "6e28d95e704849058e84d87ae414db1e656dbbe73e5d5447af20431049411795",
+            "status": "PRESENT"
+          },
+          {
+            "bytes": 27287,
+            "path": "retained-evidence/research_runs/run-756cd502012e0adb.result.json",
+            "sha256": "e6d4078cf9ac756904838ca7cdaf67a3e3ceaefd80cbca020aa1930bf6a0d51a",
+            "status": "PRESENT"
+          },
+          {
+            "bytes": 2566,
+            "path": "retained-evidence/records/result-201adc1f43a2c98ae841.json",
+            "scope": "project",
+            "sha256": "e2a26a02944925eded8e46023d71337da7fae5a93f3b0e188597c104f96d7555",
+            "status": "PRESENT"
+          },
+          {
+            "bytes": 3565,
+            "path": "retained-evidence/research_runs/run-756cd502012e0adb.json",
+            "scope": "manuscript",
+            "sha256": "530ca90349e4e118c647576e0007f8c40491c305a293cafbb5782d1ae4746a70",
+            "status": "PRESENT"
+          },
+          {
+            "bytes": 2362,
+            "path": "retained-evidence/research_runs/run-756cd502012e0adb.receipt.json",
+            "scope": "manuscript",
+            "sha256": "6776bcebcedbb47abf9b6d17e5d86ad7c369e8425393b745e549bcf76dbd235f",
+            "status": "PRESENT"
+          }
+        ],
+        "recorded_at": 1794482633.3391593,
+        "scope": "manuscript",
+        "snapshot_schema": "laplace.research-dependencies/3"
+      },
+      "record_request": {
+        "intent_digest": "sha256:18174630ccfdf6739d2f4e2ec7699a2a5aeabc031c998bfd4e5dbc368e1a896c",
+        "request_id": "full-slg-retained-binding-result-201adc1f43a2c98ae841"
+      },
+      "result": "retained-evidence/research_runs/run-756cd502012e0adb.result.json",
+      "result_scope": "manuscript",
+      "revision": "sha256:229681557b27a26aa419dba03be669c4ee112185cb439989f320dba3843979d8",
+      "scope": "manuscript",
+      "source": "retained-evidence/research/slg-policy-coverage-20261111-v3/coverage_checks.py",
+      "source_scope": "project",
+      "summary": "The unchanged pinned v2 v1 policy AST (lines85-98) and its original mse function were executed four times through the SAME compiled selection/application block. Observed2 promoted updates,2 stays including one positive-price exact binary score tie, and one subsequent decision carrying actual updated state. State chain1 -> .9559999780000028 -> .9216799632844488. Independent Fraction/scalar-polynomial oracles matched within1e-12, exact branch/carry/tie checks passed.61 assertions,0 failures, not61 independent cases. Original v2 analytic artifacts and all old runs remain unchanged.",
+      "title": "Four-call policy coverage: promoted, stay, exact tie and carried update"
+    },
+    {
+      "artifacts": [
+        {
+          "label": "per_stream_metrics",
+          "path": "retained-evidence/research/slg-scientific-figures-20261111/outputs/run-7f8022a64802820f.result/per_stream_metrics.csv",
+          "scope": "project"
+        },
+        {
+          "label": "representative_action_ledgers",
+          "path": "retained-evidence/research/slg-scientific-figures-20261111/outputs/run-7f8022a64802820f.result/representative_action_ledgers.csv",
+          "scope": "project"
+        },
+        {
+          "label": "prediction_risk_curve",
+          "path": "retained-evidence/research/slg-scientific-figures-20261111/outputs/run-7f8022a64802820f.result/prediction_risk_curve.csv",
+          "scope": "project"
+        },
+        {
+          "label": "promotion_rate_curve",
+          "path": "retained-evidence/research/slg-scientific-figures-20261111/outputs/run-7f8022a64802820f.result/promotion_rate_curve.csv",
+          "scope": "project"
+        },
+        {
+          "label": "recovery_failure_curve",
+          "path": "retained-evidence/research/slg-scientific-figures-20261111/outputs/run-7f8022a64802820f.result/recovery_failure_curve.csv",
+          "scope": "project"
+        },
+        {
+          "label": "off_transition_curve",
+          "path": "retained-evidence/research/slg-scientific-figures-20261111/outputs/run-7f8022a64802820f.result/off_transition_curve.csv",
+          "scope": "project"
+        },
+        {
+          "label": "paired_differences",
+          "path": "retained-evidence/research/slg-scientific-figures-20261111/outputs/run-7f8022a64802820f.result/paired_differences.csv",
+          "scope": "project"
+        },
+        {
+          "label": "priced_policy_tracking",
+          "path": "retained-evidence/research/slg-scientific-figures-20261111/outputs/run-7f8022a64802820f.result/priced_policy_tracking.csv",
+          "scope": "project"
+        },
+        {
+          "label": "Original recorded result and provenance",
+          "path": "retained-evidence/records/result-e3d5544bddeca7fec4d7.json",
+          "scope": "project"
+        },
+        {
+          "label": "Original run declaration",
+          "path": "retained-evidence/research_runs/run-7f8022a64802820f.json",
+          "scope": "manuscript"
+        },
+        {
+          "label": "Original execution receipt",
+          "path": "retained-evidence/research_runs/run-7f8022a64802820f.receipt.json",
+          "scope": "manuscript"
+        }
+      ],
+      "config": "retained-evidence/evidence/SLG_VISUAL_PRODUCTION_2026-11-11/finite-figure-protocol.json",
+      "config_scope": "project",
+      "id": "retained-result-e3d5544bddeca7fec4d7",
+      "kind": "result",
+      "limitations": [
+        "Finite twelve streams/six predeclared prices, no optimum selected or large-grid reproduction.",
+        "Paired descriptive means and SE across streams, no statistical-significance or generalisation claim.",
+        "Observation-window gains are not future viability; prediction is separately measured before update.",
+        "Per-promoted-action cost is dimensionless and ignores differential controller computation/maintenance.",
+        "Target-change control isolates it from combined action-gain and no-update baseline repricing, not each repair separately.",
+        "Recovery uses known synthetic latent slope only for evaluation, not clinical or change-detection validation.",
+        "OR schedule is externally frozen and independent, not adaptive path coarse-graining.",
+        "Static register optima are nested feasible sets, not unexpected performance superiority."
+      ],
+      "provenance": {
+        "dependencies": [
+          {
+            "bytes": 5993,
+            "path": "retained-evidence/evidence/SLG_VISUAL_PRODUCTION_2026-11-11/finite-figure-protocol.json",
+            "scope": "project",
+            "sha256": "58ff935dfb8c3f7a3463d3ecd22a9dc23ebd64fa24214e7d1c084cf4fad27ed1",
+            "status": "PRESENT"
+          },
+          {
+            "bytes": 14945,
+            "path": "retained-evidence/research/slg-scientific-figures-20261111/scientific_tables.py",
+            "scope": "project",
+            "sha256": "f9c98ffb562216caf9b71a40351777b274b72eb9e4fbdf199d6e99e8a171c905",
+            "status": "PRESENT"
+          },
+          {
+            "bytes": 20027,
+            "path": "retained-evidence/research_runs/run-7f8022a64802820f.result.json",
+            "sha256": "730a153523a22f9abc6d66c6e6527645d1bc43d92eb58273bfb560b0f002210e",
+            "status": "PRESENT"
+          },
+          {
+            "bytes": 48380,
+            "path": "retained-evidence/research/slg-scientific-figures-20261111/outputs/run-7f8022a64802820f.result/per_stream_metrics.csv",
+            "scope": "project",
+            "sha256": "003671aec49aeae8d5756dd70f8047485c97c1a96c0b4c28f9dabf987e997d3d",
+            "status": "PRESENT"
+          },
+          {
+            "bytes": 438772,
+            "path": "retained-evidence/research/slg-scientific-figures-20261111/outputs/run-7f8022a64802820f.result/representative_action_ledgers.csv",
+            "scope": "project",
+            "sha256": "77f1f148f85a6a239990ea310f82953792854c558ad2a2acb21cf195de0f3111",
+            "status": "PRESENT"
+          },
+          {
+            "bytes": 1249,
+            "path": "retained-evidence/research/slg-scientific-figures-20261111/outputs/run-7f8022a64802820f.result/prediction_risk_curve.csv",
+            "scope": "project",
+            "sha256": "40af949ea01bc8472e267023462f2d97244cd3b4f682eab7e2c3f54e082b06d1",
+            "status": "PRESENT"
+          },
+          {
+            "bytes": 982,
+            "path": "retained-evidence/research/slg-scientific-figures-20261111/outputs/run-7f8022a64802820f.result/promotion_rate_curve.csv",
+            "scope": "project",
+            "sha256": "c50039032f76e108d5590aca12f334ce0ef1815ee7a2d2daed44f121610069e6",
+            "status": "PRESENT"
+          },
+          {
+            "bytes": 851,
+            "path": "retained-evidence/research/slg-scientific-figures-20261111/outputs/run-7f8022a64802820f.result/recovery_failure_curve.csv",
+            "scope": "project",
+            "sha256": "415357835b1c3a3ed574053bb195d9314f2983ea92de7cfb6825d07405200f19",
+            "status": "PRESENT"
+          },
+          {
+            "bytes": 1003,
+            "path": "retained-evidence/research/slg-scientific-figures-20261111/outputs/run-7f8022a64802820f.result/off_transition_curve.csv",
+            "scope": "project",
+            "sha256": "5655fc8cb35cb346f866a5bdfc2f3595892f886ec16a2cc46112a002ba8ee459",
+            "status": "PRESENT"
+          },
+          {
+            "bytes": 657,
+            "path": "retained-evidence/research/slg-scientific-figures-20261111/outputs/run-7f8022a64802820f.result/paired_differences.csv",
+            "scope": "project",
+            "sha256": "b697e833f676a50669404e6689ababc845154b39e21412b9f38909788d9b8666",
+            "status": "PRESENT"
+          },
+          {
+            "bytes": 40972,
+            "path": "retained-evidence/research/slg-scientific-figures-20261111/outputs/run-7f8022a64802820f.result/priced_policy_tracking.csv",
+            "scope": "project",
+            "sha256": "20fde7d621d27746172840d71d6450193d90cec01dcbbac9a2cf3a1eb4158f47",
+            "status": "PRESENT"
+          },
+          {
+            "bytes": 7262,
+            "path": "retained-evidence/records/result-e3d5544bddeca7fec4d7.json",
+            "scope": "project",
+            "sha256": "dce2695a617997ef37cad32f99b5f2c773c14c5e4a1978679326fe1811bf78cf",
+            "status": "PRESENT"
+          },
+          {
+            "bytes": 3611,
+            "path": "retained-evidence/research_runs/run-7f8022a64802820f.json",
+            "scope": "manuscript",
+            "sha256": "8c4b1a57705af0f50cd7faf8197c074b079b189b64c21376d4251c320094c49e",
+            "status": "PRESENT"
+          },
+          {
+            "bytes": 2363,
+            "path": "retained-evidence/research_runs/run-7f8022a64802820f.receipt.json",
+            "scope": "manuscript",
+            "sha256": "f146d663ec8e002b2de5beb27904002064f3bea9ff2da87942463de9b6cd4aa2",
+            "status": "PRESENT"
+          }
+        ],
+        "recorded_at": 1794482633.3734372,
+        "scope": "manuscript",
+        "snapshot_schema": "laplace.research-dependencies/3"
+      },
+      "record_request": {
+        "intent_digest": "sha256:d2da99c9a15c4d012041f9c3221e214c183ad15950fccb07ba1b683a677bf1d6",
+        "request_id": "full-slg-retained-binding-result-e3d5544bddeca7fec4d7"
+      },
+      "result": "retained-evidence/research_runs/run-7f8022a64802820f.result.json",
+      "result_scope": "manuscript",
+      "revision": "sha256:31d9ca76c18efa498fe366601d119c83cf51847da21e232a53e12aa6aa05190b",
+      "scope": "manuscript",
+      "source": "retained-evidence/research/slg-scientific-figures-20261111/scientific_tables.py",
+      "source_scope": "project",
+      "summary": "Predeclared12 matched synthetic streams,6 prices,3 policies,216 trajectories and150984 decisions. Legacy v0, rolling-target/unpriced control and priced partial v1 compared with common pre-action prediction and declared per-update cost diagnostics. V1 mean prediction MSE exceeds legacy at all six matched prices, while update frequency and operational recovery vary with price. At c=.06 mean MSE v0=.1211697, control=.1292312, v1=.1434048 and recovery failures=.1875,.2708333,.625 under the declared criterion. Exact legacy/v1 reference controls match; v1 action accounting error0. No optimum, universal dominance or calibration claim.",
+      "title": "Matched promotion-price comparison after exact action pricing"
+    },
+    {
+      "artifacts": [
+        {
+          "label": "common_ledger_register",
+          "path": "retained-evidence/research/slg-scientific-figures-20261111/outputs/run-7f8022a64802820f.result/common_ledger_register.csv",
+          "scope": "project"
+        },
+        {
+          "label": "Original recorded result and provenance",
+          "path": "retained-evidence/records/slg-common-ledger-register-20261111.json",
+          "scope": "project"
+        },
+        {
+          "label": "Original run declaration",
+          "path": "retained-evidence/research_runs/run-7f8022a64802820f.json",
+          "scope": "manuscript"
+        },
+        {
+          "label": "Original execution receipt",
+          "path": "retained-evidence/research_runs/run-7f8022a64802820f.receipt.json",
+          "scope": "manuscript"
+        }
+      ],
+      "config": "retained-evidence/evidence/SLG_VISUAL_PRODUCTION_2026-11-11/finite-figure-protocol.json",
+      "config_scope": "project",
+      "id": "retained-slg-common-ledger-register-20261111",
+      "kind": "result",
+      "limitations": [
+        "Author-interpreted figure tables awaiting independent science/visual review.",
+        "Finite analytic model and declared parameters, not empirical biological evidence.",
+        "OR schedule is externally frozen and independent, not adaptive path coarse-graining.",
+        "Static register optima are nested feasible sets, not unexpected performance superiority."
+      ],
+      "provenance": {
+        "dependencies": [
+          {
+            "bytes": 5993,
+            "path": "retained-evidence/evidence/SLG_VISUAL_PRODUCTION_2026-11-11/finite-figure-protocol.json",
+            "scope": "project",
+            "sha256": "58ff935dfb8c3f7a3463d3ecd22a9dc23ebd64fa24214e7d1c084cf4fad27ed1",
+            "status": "PRESENT"
+          },
+          {
+            "bytes": 14945,
+            "path": "retained-evidence/research/slg-scientific-figures-20261111/scientific_tables.py",
+            "scope": "project",
+            "sha256": "f9c98ffb562216caf9b71a40351777b274b72eb9e4fbdf199d6e99e8a171c905",
+            "status": "PRESENT"
+          },
+          {
+            "bytes": 20027,
+            "path": "retained-evidence/research_runs/run-7f8022a64802820f.result.json",
+            "sha256": "730a153523a22f9abc6d66c6e6527645d1bc43d92eb58273bfb560b0f002210e",
+            "status": "PRESENT"
+          },
+          {
+            "bytes": 11378,
+            "path": "retained-evidence/research/slg-scientific-figures-20261111/outputs/run-7f8022a64802820f.result/common_ledger_register.csv",
+            "scope": "project",
+            "sha256": "588636de35ae4bd7a9d6440e0404ad658aa42fb155569708d0a22911028b240d",
+            "status": "PRESENT"
+          },
+          {
+            "bytes": 2742,
+            "path": "retained-evidence/records/slg-common-ledger-register-20261111.json",
+            "scope": "project",
+            "sha256": "4dbf3cf42ec62f25fb513550b4ca140847a1dc360fedc6f576d962b26bc49239",
+            "status": "PRESENT"
+          },
+          {
+            "bytes": 3611,
+            "path": "retained-evidence/research_runs/run-7f8022a64802820f.json",
+            "scope": "manuscript",
+            "sha256": "8c4b1a57705af0f50cd7faf8197c074b079b189b64c21376d4251c320094c49e",
+            "status": "PRESENT"
+          },
+          {
+            "bytes": 2363,
+            "path": "retained-evidence/research_runs/run-7f8022a64802820f.receipt.json",
+            "scope": "manuscript",
+            "sha256": "f146d663ec8e002b2de5beb27904002064f3bea9ff2da87942463de9b6cd4aa2",
+            "status": "PRESENT"
+          }
+        ],
+        "recorded_at": 1794482633.4070315,
+        "scope": "manuscript",
+        "snapshot_schema": "laplace.research-dependencies/3"
+      },
+      "record_request": {
+        "intent_digest": "sha256:7b6199b126e59b5d0073cb2d63b5c9d05c52a328f13db9d080e69a5cea099f75",
+        "request_id": "full-slg-retained-binding-slg-common-ledger-register-20261111"
+      },
+      "result": "retained-evidence/research_runs/run-7f8022a64802820f.result.json",
+      "result_scope": "manuscript",
+      "revision": "sha256:800986b47d51fda47c3468a820b037d4f0834cc83931674bc0b7e798c3932ef8",
+      "scope": "manuscript",
+      "source": "retained-evidence/research/slg-scientific-figures-20261111/scientific_tables.py",
+      "source_scope": "project",
+      "summary": "Static finite evaluation of the reviewed two-quadratic register family, gamma1 eta.8 split price.25. Fixed balanced A/4, arbitration min(A/4,eta/2), split min(arbitration,C_part). The arbitration curve is the split-price phase boundary. Corrects the historical omitted-conflict baseline, no dynamical or clinical inference.",
+      "title": "Common-ledger register boundary figure data"
+    },
+    {
+      "artifacts": [
+        {
+          "label": "or_hazard_projection",
+          "path": "retained-evidence/research/slg-scientific-figures-20261111/outputs/run-7f8022a64802820f.result/or_hazard_projection.csv",
+          "scope": "project"
+        },
+        {
+          "label": "Original recorded result and provenance",
+          "path": "retained-evidence/records/slg-or-hazard-projection-20261111.json",
+          "scope": "project"
+        },
+        {
+          "label": "Original run declaration",
+          "path": "retained-evidence/research_runs/run-7f8022a64802820f.json",
+          "scope": "manuscript"
+        },
+        {
+          "label": "Original execution receipt",
+          "path": "retained-evidence/research_runs/run-7f8022a64802820f.receipt.json",
+          "scope": "manuscript"
+        }
+      ],
+      "config": "retained-evidence/evidence/SLG_VISUAL_PRODUCTION_2026-11-11/finite-figure-protocol.json",
+      "config_scope": "project",
+      "id": "retained-slg-or-hazard-projection-20261111",
+      "kind": "result",
+      "limitations": [
+        "Author-interpreted figure tables awaiting independent science/visual review.",
+        "Finite analytic model and declared parameters, not empirical biological evidence.",
+        "OR schedule is externally frozen and independent, not adaptive path coarse-graining.",
+        "Static register optima are nested feasible sets, not unexpected performance superiority."
+      ],
+      "provenance": {
+        "dependencies": [
+          {
+            "bytes": 5993,
+            "path": "retained-evidence/evidence/SLG_VISUAL_PRODUCTION_2026-11-11/finite-figure-protocol.json",
+            "scope": "project",
+            "sha256": "58ff935dfb8c3f7a3463d3ecd22a9dc23ebd64fa24214e7d1c084cf4fad27ed1",
+            "status": "PRESENT"
+          },
+          {
+            "bytes": 14945,
+            "path": "retained-evidence/research/slg-scientific-figures-20261111/scientific_tables.py",
+            "scope": "project",
+            "sha256": "f9c98ffb562216caf9b71a40351777b274b72eb9e4fbdf199d6e99e8a171c905",
+            "status": "PRESENT"
+          },
+          {
+            "bytes": 20027,
+            "path": "retained-evidence/research_runs/run-7f8022a64802820f.result.json",
+            "sha256": "730a153523a22f9abc6d66c6e6527645d1bc43d92eb58273bfb560b0f002210e",
+            "status": "PRESENT"
+          },
+          {
+            "bytes": 14687,
+            "path": "retained-evidence/research/slg-scientific-figures-20261111/outputs/run-7f8022a64802820f.result/or_hazard_projection.csv",
+            "scope": "project",
+            "sha256": "b1821dd80de0369065a2891354bde68658217241712fe4dad728ae41dc6b0f05",
+            "status": "PRESENT"
+          },
+          {
+            "bytes": 2744,
+            "path": "retained-evidence/records/slg-or-hazard-projection-20261111.json",
+            "scope": "project",
+            "sha256": "5b6965badafc85276c233ba4f0a4d8cb297f36c2a05e42b7d8f5efe4f9a929fe",
+            "status": "PRESENT"
+          },
+          {
+            "bytes": 3611,
+            "path": "retained-evidence/research_runs/run-7f8022a64802820f.json",
+            "scope": "manuscript",
+            "sha256": "8c4b1a57705af0f50cd7faf8197c074b079b189b64c21376d4251c320094c49e",
+            "status": "PRESENT"
+          },
+          {
+            "bytes": 2363,
+            "path": "retained-evidence/research_runs/run-7f8022a64802820f.receipt.json",
+            "scope": "manuscript",
+            "sha256": "f146d663ec8e002b2de5beb27904002064f3bea9ff2da87942463de9b6cd4aa2",
+            "status": "PRESENT"
+          }
+        ],
+        "recorded_at": 1794482633.4404132,
+        "scope": "manuscript",
+        "snapshot_schema": "laplace.research-dependencies/3"
+      },
+      "record_request": {
+        "intent_digest": "sha256:d248650eeb0c511739a33814211b306e7e462d5c4fbfb25817b6d42c9ec4b1b1",
+        "request_id": "full-slg-retained-binding-slg-or-hazard-projection-20261111"
+      },
+      "result": "retained-evidence/research_runs/run-7f8022a64802820f.result.json",
+      "result_scope": "manuscript",
+      "revision": "sha256:9b4bf3984eee7ec92a1fc975d0ed441153ac635df19ccc6ab8ff0ee4d6d463e1",
+      "scope": "manuscript",
+      "source": "retained-evidence/research/slg-scientific-figures-20261111/scientific_tables.py",
+      "source_scope": "project",
+      "summary": "81 predeclared prices on four explicitly externally frozen four-event schedules. Exact hazard closure agrees with product probability within1e-12. Mean-intercept approximation TV and conditional-event-count response retained with bounds1..4. No adaptive path coarse-graining or RG eigenvalue, no old1.78 slope transfer.",
+      "title": "Exact OR hazard and mean-intercept projection figure data"
+    }
+  ],
+  "schema_version": "laplace.research-records/1"
+}

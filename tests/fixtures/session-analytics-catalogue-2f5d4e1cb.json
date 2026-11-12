@@ -1,0 +1,574 @@
+{
+  "root": "/tmp/laplace-analytics-catalogue-jbh5p8ns",
+  "queries": {
+    "sessions": {
+      "schema_version": "laplace.session-analytics/1",
+      "project": "p",
+      "projection": "sessions",
+      "scope": "project",
+      "filters": {
+        "projection": "sessions",
+        "scope": "project"
+      },
+      "as_of": "eyJ2IjoxLCJxdWVyeSI6InNoYTI1NjoyYjc1YmM5MDAzMGFkMjRjNjNlMjI0Y2M1NjI4MDBlMzBmNTlhMTBmMjgyMTBmMzU1Yzc0MmQ0ZTk1NmEwMGE2IiwidXBwZXIiOjEwLCJyZXZpc2lvbiI6InNoYTI1NjoyYWMwMGJmOWFkNjMyNmM1ODIxNDU4NzRiMzMyYzgwMjQ1NTk5NGFmNjE3NmI2YWIxMDVjMjVmOGI1OGZhYTBjIn0",
+      "read_cut": {
+        "revision": "sha256:2ac00bf9ad6326c582145874b332c802455994af6176b6ab105c25f8b58faa0c",
+        "scope": "selected metadata rows through retained owner cut"
+      },
+      "coverage": {
+        "selected_metadata_rows": 8,
+        "original_tool_attempts": 2,
+        "duplicate_original_rows": 0,
+        "ambiguous_original_ids": 0,
+        "missing_original_ids": 0,
+        "unjoined_turn_rows": 0,
+        "usage_basis": "legacy numeric reports do not establish complete logical-turn consumption",
+        "body_reads": 0,
+        "raw_content_in_aggregates": false
+      },
+      "items": [
+        {
+          "id": "S-B",
+          "session_id": "S-B",
+          "project": "p",
+          "title": "Conversation S-B",
+          "title_basis": "owner-identity",
+          "role": "author",
+          "created_at": "2026-10-07T01:00:00Z",
+          "latest_recorded_at": "2026-10-07T01:00:04Z",
+          "admitted_settings": {
+            "provider": "codex",
+            "model": "requested",
+            "effort": "low"
+          },
+          "resolved_models": [
+            "actual"
+          ],
+          "turn_count": 1,
+          "reply_receipt_count": 1,
+          "distinct_replied_turns": 1,
+          "saved_terminal_kind": "completed",
+          "live_state": "UNKNOWN",
+          "live_basis": "saved metadata is not a process observation",
+          "work_id": null,
+          "dispatch_id": null,
+          "parent_turn_id": null,
+          "mode": "work",
+          "original_tool_attempts": {
+            "writing-tool-read": 1,
+            "writing-tool-action": 0,
+            "writing-tool-failure": 0
+          },
+          "tool_identity_coverage": {
+            "duplicate_original_rows": 0,
+            "ambiguous_original_ids": 0,
+            "missing_original_ids": 0
+          },
+          "retained_failure_receipts": 0,
+          "artifact_receipt_count": 0,
+          "application_receipt_count": 0,
+          "usage_coverage": {
+            "reply_receipts": 1,
+            "legacy_reported": 1,
+            "collector_projection_headers": 0,
+            "missing_is_zero": false
+          },
+          "read_handle": {
+            "http": {
+              "method": "GET",
+              "url": "/authoring/session?project=p&id=S-B&view=summary&limit=20"
+            }
+          },
+          "activity_read": {
+            "operation": "author_history",
+            "payload": {
+              "view": "telemetry",
+              "projection": "trace",
+              "scope": "session",
+              "session_id": "S-B"
+            },
+            "http": {
+              "method": "GET",
+              "url": "/authoring/history?project=p&view=telemetry&projection=trace&scope=session&session_id=S-B"
+            }
+          }
+        }
+      ],
+      "pagination": {
+        "total": 2,
+        "offset": 0,
+        "limit": 1,
+        "next_read": {
+          "operation": "author_history",
+          "payload": {
+            "view": "telemetry",
+            "projection": "sessions",
+            "scope": "project",
+            "limit": 1,
+            "cursor": "eyJ2IjoxLCJxdWVyeSI6InNoYTI1NjoyYjc1YmM5MDAzMGFkMjRjNjNlMjI0Y2M1NjI4MDBlMzBmNTlhMTBmMjgyMTBmMzU1Yzc0MmQ0ZTk1NmEwMGE2IiwidXBwZXIiOjEwLCJyZXZpc2lvbiI6InNoYTI1NjoyYWMwMGJmOWFkNjMyNmM1ODIxNDU4NzRiMzMyYzgwMjQ1NTk5NGFmNjE3NmI2YWIxMDVjMjVmOGI1OGZhYTBjIiwib2Zmc2V0IjoxfQ"
+          },
+          "http": {
+            "method": "GET",
+            "url": "/authoring/history?project=p&view=telemetry&projection=sessions&scope=project&limit=1&cursor=eyJ2IjoxLCJxdWVyeSI6InNoYTI1NjoyYjc1YmM5MDAzMGFkMjRjNjNlMjI0Y2M1NjI4MDBlMzBmNTlhMTBmMjgyMTBmMzU1Yzc0MmQ0ZTk1NmEwMGE2IiwidXBwZXIiOjEwLCJyZXZpc2lvbiI6InNoYTI1NjoyYWMwMGJmOWFkNjMyNmM1ODIxNDU4NzRiMzMyYzgwMjQ1NTk5NGFmNjE3NmI2YWIxMDVjMjVmOGI1OGZhYTBjIiwib2Zmc2V0IjoxfQ"
+          }
+        }
+      },
+      "limits": [
+        "Saved metadata is not live execution or scientific acceptance.",
+        "Legacy usage is unknown counter basis, not zero or a cost total.",
+        "Full source/response/error/comment bodies remain behind exact owner reads."
+      ]
+    },
+    "sessions_next": {
+      "schema_version": "laplace.session-analytics/1",
+      "project": "p",
+      "projection": "sessions",
+      "scope": "project",
+      "filters": {
+        "projection": "sessions",
+        "scope": "project"
+      },
+      "as_of": "eyJ2IjoxLCJxdWVyeSI6InNoYTI1NjoyYjc1YmM5MDAzMGFkMjRjNjNlMjI0Y2M1NjI4MDBlMzBmNTlhMTBmMjgyMTBmMzU1Yzc0MmQ0ZTk1NmEwMGE2IiwidXBwZXIiOjEwLCJyZXZpc2lvbiI6InNoYTI1NjoyYWMwMGJmOWFkNjMyNmM1ODIxNDU4NzRiMzMyYzgwMjQ1NTk5NGFmNjE3NmI2YWIxMDVjMjVmOGI1OGZhYTBjIn0",
+      "read_cut": {
+        "revision": "sha256:2ac00bf9ad6326c582145874b332c802455994af6176b6ab105c25f8b58faa0c",
+        "scope": "selected metadata rows through retained owner cut"
+      },
+      "coverage": {
+        "selected_metadata_rows": 8,
+        "original_tool_attempts": 2,
+        "duplicate_original_rows": 0,
+        "ambiguous_original_ids": 0,
+        "missing_original_ids": 0,
+        "unjoined_turn_rows": 0,
+        "usage_basis": "legacy numeric reports do not establish complete logical-turn consumption",
+        "body_reads": 0,
+        "raw_content_in_aggregates": false
+      },
+      "items": [
+        {
+          "id": "S-A",
+          "session_id": "S-A",
+          "project": "p",
+          "title": "Conversation S-A",
+          "title_basis": "owner-identity",
+          "role": "author",
+          "created_at": "2026-10-07T01:00:00Z",
+          "latest_recorded_at": "2026-10-07T01:00:04Z",
+          "admitted_settings": {
+            "provider": "codex",
+            "model": "requested",
+            "effort": "low"
+          },
+          "resolved_models": [
+            "actual"
+          ],
+          "turn_count": 1,
+          "reply_receipt_count": 1,
+          "distinct_replied_turns": 1,
+          "saved_terminal_kind": "completed",
+          "live_state": "UNKNOWN",
+          "live_basis": "saved metadata is not a process observation",
+          "work_id": null,
+          "dispatch_id": null,
+          "parent_turn_id": null,
+          "mode": "work",
+          "original_tool_attempts": {
+            "writing-tool-read": 1,
+            "writing-tool-action": 0,
+            "writing-tool-failure": 0
+          },
+          "tool_identity_coverage": {
+            "duplicate_original_rows": 0,
+            "ambiguous_original_ids": 0,
+            "missing_original_ids": 0
+          },
+          "retained_failure_receipts": 0,
+          "artifact_receipt_count": 0,
+          "application_receipt_count": 0,
+          "usage_coverage": {
+            "reply_receipts": 1,
+            "legacy_reported": 1,
+            "collector_projection_headers": 0,
+            "missing_is_zero": false
+          },
+          "read_handle": {
+            "http": {
+              "method": "GET",
+              "url": "/authoring/session?project=p&id=S-A&view=summary&limit=20"
+            }
+          },
+          "activity_read": {
+            "operation": "author_history",
+            "payload": {
+              "view": "telemetry",
+              "projection": "trace",
+              "scope": "session",
+              "session_id": "S-A"
+            },
+            "http": {
+              "method": "GET",
+              "url": "/authoring/history?project=p&view=telemetry&projection=trace&scope=session&session_id=S-A"
+            }
+          }
+        }
+      ],
+      "pagination": {
+        "total": 2,
+        "offset": 1,
+        "limit": 1,
+        "next_read": null
+      },
+      "limits": [
+        "Saved metadata is not live execution or scientific acceptance.",
+        "Legacy usage is unknown counter basis, not zero or a cost total.",
+        "Full source/response/error/comment bodies remain behind exact owner reads."
+      ]
+    },
+    "trace": {
+      "schema_version": "laplace.session-analytics/1",
+      "project": "p",
+      "projection": "trace",
+      "scope": "turn",
+      "filters": {
+        "projection": "trace",
+        "scope": "turn",
+        "turn_id": "T-A"
+      },
+      "as_of": "eyJ2IjoxLCJxdWVyeSI6InNoYTI1Njo2ZjE5ZWJjYWUxYzZjYWZmY2U3NzFmN2E5ZTUxZjQwOWQ5N2VkYmZlZTE4Mjk3M2JlNWNhMDAyM2I4MWE0NWVmIiwidXBwZXIiOjUsInJldmlzaW9uIjoic2hhMjU2OmI4MWFkN2ZhYWQ5MWQyYTk5NmQ2NzhjMjg1MzhhNGZkMWYyYTgzZDU2MDJmNjM1N2MzMzU1ZDJlZTBiYWEzZjIifQ",
+      "read_cut": {
+        "revision": "sha256:b81ad7faad91d2a996d678c28538a4fd1f2a83d5602f6357c3355d2ee0baa3f2",
+        "scope": "selected metadata rows through retained owner cut"
+      },
+      "coverage": {
+        "selected_metadata_rows": 3,
+        "original_tool_attempts": 1,
+        "duplicate_original_rows": 0,
+        "ambiguous_original_ids": 0,
+        "missing_original_ids": 0,
+        "unjoined_turn_rows": 0,
+        "usage_basis": "legacy numeric reports do not establish complete logical-turn consumption",
+        "body_reads": 0,
+        "raw_content_in_aggregates": false
+      },
+      "items": [
+        {
+          "id": "T-A",
+          "record": "writing-turn",
+          "project": "p",
+          "session_id": "S-A",
+          "mode": "work",
+          "ts": "2026-10-07T01:00:01Z",
+          "event_id": "T-A",
+          "owner": "authoring_surface",
+          "logical_turn_id": "T-A",
+          "ledger_order": 2,
+          "row_sha256": "sha256:bb858e20ca16b6cf086ef30fcf67753cc3f58ecc899ef43d5047ae1984c2b207",
+          "attribution_basis": "immutable-turn-admission",
+          "duration_ms": null,
+          "duration_basis": "not-recorded",
+          "admitted_settings": {
+            "provider": "codex",
+            "model": "requested",
+            "effort": "low"
+          },
+          "read_handle": {
+            "operation": "author_history",
+            "payload": {
+              "view": "record",
+              "id": "activity:journal:T-A"
+            },
+            "http": {
+              "method": "GET",
+              "url": "/authoring/history?project=p&view=record&id=activity%3Ajournal%3AT-A"
+            }
+          },
+          "turn_read": {
+            "operation": "author_history",
+            "payload": {
+              "view": "record",
+              "id": "activity:journal:T-A"
+            },
+            "native_scope": "Exact turn record; related rows are available through the turn-scoped trace.",
+            "http": {
+              "method": "GET",
+              "url": "/authoring/session-turn?project=p&id=T-A&view=turn"
+            }
+          }
+        },
+        {
+          "id": "READ-T-A",
+          "record": "writing-tool-read",
+          "project": "p",
+          "turn_id": "T-A",
+          "ts": "2026-10-07T01:00:02Z",
+          "operation": "source",
+          "event_id": "READ-T-A",
+          "owner": "authoring_surface",
+          "logical_turn_id": "T-A",
+          "session_id": "S-A",
+          "ledger_order": 3,
+          "row_sha256": "sha256:ce894aa865778bc406be9b686f1eabd72a8c4bf2c07350d1aac375c48a8d13ac",
+          "attribution_basis": "immutable-turn-admission",
+          "duration_ms": null,
+          "duration_basis": "not-recorded",
+          "admitted_settings": {
+            "provider": "codex",
+            "model": "requested",
+            "effort": "low"
+          },
+          "read_handle": {
+            "operation": "author_history",
+            "payload": {
+              "view": "record",
+              "id": "activity:journal:READ-T-A"
+            },
+            "http": {
+              "method": "GET",
+              "url": "/authoring/history?project=p&view=record&id=activity%3Ajournal%3AREAD-T-A"
+            }
+          },
+          "turn_read": {
+            "operation": "author_history",
+            "payload": {
+              "view": "record",
+              "id": "activity:journal:T-A"
+            },
+            "native_scope": "Exact turn record; related rows are available through the turn-scoped trace.",
+            "http": {
+              "method": "GET",
+              "url": "/authoring/session-turn?project=p&id=T-A&view=turn"
+            }
+          }
+        },
+        {
+          "id": "R-T-A",
+          "record": "writing-reply",
+          "project": "p",
+          "session_id": "S-A",
+          "turn_id": "T-A",
+          "ts": "2026-10-07T01:00:04Z",
+          "status": "completed",
+          "resolved_model": "actual",
+          "event_id": "R-T-A",
+          "owner": "authoring_surface",
+          "logical_turn_id": "T-A",
+          "ledger_order": 5,
+          "row_sha256": "sha256:4eae77bf2c8e4eea7dd4459b2a136300b6372a46eb9e6e2da685caa1a9c80bdb",
+          "attribution_basis": "immutable-turn-admission",
+          "duration_ms": null,
+          "duration_basis": "not-recorded",
+          "admitted_settings": {
+            "provider": "codex",
+            "model": "requested",
+            "effort": "low"
+          },
+          "read_handle": {
+            "operation": "author_history",
+            "payload": {
+              "view": "record",
+              "id": "activity:journal:R-T-A"
+            },
+            "http": {
+              "method": "GET",
+              "url": "/authoring/history?project=p&view=record&id=activity%3Ajournal%3AR-T-A"
+            }
+          },
+          "turn_read": {
+            "operation": "author_history",
+            "payload": {
+              "view": "record",
+              "id": "activity:journal:T-A"
+            },
+            "native_scope": "Exact turn record; related rows are available through the turn-scoped trace.",
+            "http": {
+              "method": "GET",
+              "url": "/authoring/session-turn?project=p&id=T-A&view=turn"
+            }
+          }
+        }
+      ],
+      "pagination": {
+        "total": 3,
+        "offset": 0,
+        "limit": 50,
+        "next_read": null
+      },
+      "limits": [
+        "Saved metadata is not live execution or scientific acceptance.",
+        "Legacy usage is unknown counter basis, not zero or a cost total.",
+        "Full source/response/error/comment bodies remain behind exact owner reads."
+      ]
+    },
+    "overview": {
+      "schema_version": "laplace.session-analytics/1",
+      "project": "p",
+      "projection": "overview",
+      "scope": "project",
+      "filters": {
+        "projection": "overview",
+        "scope": "project"
+      },
+      "as_of": "eyJ2IjoxLCJxdWVyeSI6InNoYTI1NjoyZGY0MmU1ZTRlNzZlODllNzVkZDE0MmMxZjBmZDdlZmQwMTVjZDdjNzE4MWZmZmY2ZDlkNzEyZDRkMjJhYmVmIiwidXBwZXIiOjE3LCJyZXZpc2lvbiI6InNoYTI1NjpjNmEwYjZmZDgwYjFkYjgzMWIzMDc2NDY3YjFjMDQwYzE0Mzg0ZGZhOGY3OTdiNDRjM2YwYmMxZjMxYzdlY2NkIn0",
+      "read_cut": {
+        "revision": "sha256:c6a0b6fd80b1db831b3076467b1c040c14384dfa8f797b44c3f0bc1f31c7eccd",
+        "scope": "selected metadata rows through retained owner cut"
+      },
+      "coverage": {
+        "selected_metadata_rows": 10,
+        "original_tool_attempts": 4,
+        "duplicate_original_rows": 0,
+        "ambiguous_original_ids": 0,
+        "missing_original_ids": 0,
+        "unjoined_turn_rows": 0,
+        "usage_basis": "legacy numeric reports do not establish complete logical-turn consumption",
+        "body_reads": 0,
+        "raw_content_in_aggregates": false
+      },
+      "items": [],
+      "pagination": {
+        "total": 0,
+        "offset": 0,
+        "limit": 50,
+        "next_read": null
+      },
+      "limits": [
+        "Saved metadata is not live execution or scientific acceptance.",
+        "Legacy usage is unknown counter basis, not zero or a cost total.",
+        "Full source/response/error/comment bodies remain behind exact owner reads."
+      ],
+      "totals": {
+        "sessions": 2,
+        "logical_turns": 2,
+        "original_tool_attempts": 4,
+        "retained_tool_failures": 0
+      }
+    },
+    "coverage": {
+      "schema_version": "laplace.session-analytics/1",
+      "project": "p",
+      "projection": "coverage",
+      "scope": "project",
+      "filters": {
+        "projection": "coverage",
+        "scope": "project"
+      },
+      "as_of": "eyJ2IjoxLCJxdWVyeSI6InNoYTI1Njo1NGEwYzBiNGIzMWM0NTgzZjdjZjk4ZmI3OTE4ODI2YWZiYjQ2MDU2M2E4MzRjNzc5YTVlODhjNDg3NzkyN2Y2IiwidXBwZXIiOjE3LCJyZXZpc2lvbiI6InNoYTI1NjpjNmEwYjZmZDgwYjFkYjgzMWIzMDc2NDY3YjFjMDQwYzE0Mzg0ZGZhOGY3OTdiNDRjM2YwYmMxZjMxYzdlY2NkIn0",
+      "read_cut": {
+        "revision": "sha256:c6a0b6fd80b1db831b3076467b1c040c14384dfa8f797b44c3f0bc1f31c7eccd",
+        "scope": "selected metadata rows through retained owner cut"
+      },
+      "coverage": {
+        "selected_metadata_rows": 10,
+        "original_tool_attempts": 4,
+        "duplicate_original_rows": 0,
+        "ambiguous_original_ids": 0,
+        "missing_original_ids": 0,
+        "unjoined_turn_rows": 0,
+        "usage_basis": "legacy numeric reports do not establish complete logical-turn consumption",
+        "body_reads": 0,
+        "raw_content_in_aggregates": false
+      },
+      "items": [],
+      "pagination": {
+        "total": 0,
+        "offset": 0,
+        "limit": 50,
+        "next_read": null
+      },
+      "limits": [
+        "Saved metadata is not live execution or scientific acceptance.",
+        "Legacy usage is unknown counter basis, not zero or a cost total.",
+        "Full source/response/error/comment bodies remain behind exact owner reads."
+      ],
+      "totals": {
+        "sessions": 2,
+        "logical_turns": 2,
+        "original_tool_attempts": 4,
+        "retained_tool_failures": 0
+      }
+    }
+  },
+  "contract": {
+    "type": "object",
+    "properties": {
+      "session_id": {
+        "type": "string"
+      },
+      "turn_id": {
+        "type": "string"
+      },
+      "work_id": {
+        "type": "string"
+      },
+      "dispatch_id": {
+        "type": "string"
+      },
+      "provider": {
+        "type": "string"
+      },
+      "model": {
+        "type": "string"
+      },
+      "admitted_model": {
+        "type": "string"
+      },
+      "resolved_model": {
+        "type": "string"
+      },
+      "role": {
+        "type": "string"
+      },
+      "mode": {
+        "type": "string"
+      },
+      "terminal_kind": {
+        "type": "string"
+      },
+      "operation": {
+        "type": "string"
+      },
+      "outcome": {
+        "type": "string"
+      },
+      "from": {
+        "type": "string"
+      },
+      "to": {
+        "type": "string"
+      },
+      "projection": {
+        "enum": [
+          "overview",
+          "sessions",
+          "trace",
+          "coverage",
+          "usage",
+          "delivery",
+          "feedback"
+        ]
+      },
+      "scope": {
+        "enum": [
+          "project",
+          "workspace",
+          "session",
+          "turn",
+          "work"
+        ]
+      },
+      "cursor": {
+        "type": "string"
+      },
+      "as_of": {
+        "type": "string"
+      },
+      "limit": {
+        "type": "integer",
+        "minimum": 1,
+        "maximum": 100
+      }
+    },
+    "additionalProperties": false
+  },
+  "qualification": "Actual seeded journal rows through native owner. Usage/delivery/feedback still explicitly unavailable at this first stage."
+}

@@ -1,0 +1,596 @@
+{
+  "committed": {
+    "native_result": {
+      "ok": true,
+      "operation": "apply_revision",
+      "status": "SUCCEEDED",
+      "changed": {
+        "views": [
+          "manuscript",
+          "document"
+        ],
+        "identities": [
+          "WA-196c96ec1136463bbda3a4136d7d50a6"
+        ],
+        "receipts": [
+          "WA-196c96ec1136463bbda3a4136d7d50a6"
+        ],
+        "paths": [],
+        "revisions": {}
+      },
+      "full_response_omitted": true,
+      "note": "Canonical owner state and full audit history are retained; use the exact returned read handle for detail.",
+      "action_receipt": {
+        "id": "ACTION-b1141345873c4e169f7f127e8c6babc1",
+        "status": "SUCCEEDED",
+        "views": [
+          "manuscript",
+          "document"
+        ],
+        "identities": [
+          "WA-196c96ec1136463bbda3a4136d7d50a6"
+        ],
+        "receipts": [
+          "WA-196c96ec1136463bbda3a4136d7d50a6"
+        ],
+        "paths": [],
+        "revisions": {},
+        "owner_evidence": {
+          "schema_version": "laplace.owner-evidence/1",
+          "files": [
+            {
+              "scope": "repository",
+              "path": "sources/fixture/main.tex",
+              "before_sha256": "sha256:c2dcd7edff488883f59b17c7faec824dfbf7717f36c1a2519939ee2d0d891f71",
+              "after_sha256": "sha256:c5ee5fbe0ca801869cf37b13521ca826ccd9904d8892b5df04ca2610e0c6c125",
+              "observed_after_sha256": "sha256:c5ee5fbe0ca801869cf37b13521ca826ccd9904d8892b5df04ca2610e0c6c125"
+            }
+          ],
+          "objects": [],
+          "files_omitted": 0,
+          "objects_omitted": 0
+        },
+        "mutation_attribution": null,
+        "refreshed_read_baselines": 0,
+        "context_refreshed": false,
+        "source_effect": {
+          "schema_version": "laplace.source-effect/1",
+          "project": "fixture",
+          "selection_identity": "sha256:e3a41e6b10c5f318edf0ea7c7386d30424c1ee12dd0014bb22bf38955a1f94ad",
+          "state": "COMMITTED",
+          "complete": true,
+          "files": [
+            {
+              "scope": "repository",
+              "path": "sources/fixture/main.tex",
+              "before_sha256": "sha256:c2dcd7edff488883f59b17c7faec824dfbf7717f36c1a2519939ee2d0d891f71",
+              "after_sha256": "sha256:c5ee5fbe0ca801869cf37b13521ca826ccd9904d8892b5df04ca2610e0c6c125",
+              "observed_after_sha256": "sha256:c5ee5fbe0ca801869cf37b13521ca826ccd9904d8892b5df04ca2610e0c6c125"
+            }
+          ],
+          "follow_through": {
+            "required": [
+              {
+                "owner": "source-application",
+                "status": "COMPLETE"
+              }
+            ],
+            "heading_sync": {
+              "status": "NOT_NEEDED",
+              "updated": []
+            },
+            "maintenance_warnings": []
+          },
+          "impact": {
+            "status": "REOBSERVE",
+            "reads": [
+              {
+                "operation": "document",
+                "payload": {}
+              },
+              {
+                "operation": "source",
+                "payload": {
+                  "files": [
+                    "sources/fixture/main.tex"
+                  ]
+                }
+              }
+            ],
+            "coverage": "Source files and document only; logical binding membership is not inferred."
+          }
+        }
+      },
+      "source_effect": {
+        "schema_version": "laplace.source-effect/1",
+        "project": "fixture",
+        "selection_identity": "sha256:e3a41e6b10c5f318edf0ea7c7386d30424c1ee12dd0014bb22bf38955a1f94ad",
+        "state": "COMMITTED",
+        "complete": true,
+        "files": [
+          {
+            "scope": "repository",
+            "path": "sources/fixture/main.tex",
+            "before_sha256": "sha256:c2dcd7edff488883f59b17c7faec824dfbf7717f36c1a2519939ee2d0d891f71",
+            "after_sha256": "sha256:c5ee5fbe0ca801869cf37b13521ca826ccd9904d8892b5df04ca2610e0c6c125",
+            "observed_after_sha256": "sha256:c5ee5fbe0ca801869cf37b13521ca826ccd9904d8892b5df04ca2610e0c6c125"
+          }
+        ],
+        "follow_through": {
+          "required": [
+            {
+              "owner": "source-application",
+              "status": "COMPLETE"
+            }
+          ],
+          "heading_sync": {
+            "status": "NOT_NEEDED",
+            "updated": []
+          },
+          "maintenance_warnings": []
+        },
+        "impact": {
+          "status": "REOBSERVE",
+          "reads": [
+            {
+              "operation": "document",
+              "payload": {}
+            },
+            {
+              "operation": "source",
+              "payload": {
+                "files": [
+                  "sources/fixture/main.tex"
+                ]
+              }
+            }
+          ],
+          "coverage": "Source files and document only; logical binding membership is not inferred."
+        }
+      },
+      "application_id": "WA-196c96ec1136463bbda3a4136d7d50a6",
+      "complete": true,
+      "reused": false,
+      "edit_count": 1,
+      "files": [
+        "main.tex"
+      ],
+      "next_read": {
+        "operation": "author_history",
+        "payload": {
+          "view": "record",
+          "id": "activity:journal:WA-196c96ec1136463bbda3a4136d7d50a6"
+        }
+      },
+      "context_rebase": {
+        "exact": true,
+        "advanced": true,
+        "status": "COMPLETED",
+        "reason": "exact owner receipts match captured before and observed after identities"
+      }
+    },
+    "saved_action": {
+      "record": "writing-tool-action",
+      "id": "ACTION-b1141345873c4e169f7f127e8c6babc1",
+      "project": "fixture",
+      "turn_id": "WT-x",
+      "operation": "apply_revision",
+      "verb": "change",
+      "concept": "prose@paragraph",
+      "altitude": "paragraph",
+      "target": "fixture",
+      "dispatch": "exact",
+      "payload": {
+        "schema_version": "laplace.writing-public-body-ref/1",
+        "content_handle": "sha256:67b90fb243eed85844142379bd7baf124d453b59085a032a37f1445b821fde6a",
+        "store": "contract/writing_bodies",
+        "bytes": 486,
+        "encoding": "application/json"
+      },
+      "outcome": {
+        "status": "SUCCEEDED",
+        "views": [
+          "manuscript",
+          "document"
+        ],
+        "identities": [
+          "WA-196c96ec1136463bbda3a4136d7d50a6"
+        ],
+        "receipts": [
+          "WA-196c96ec1136463bbda3a4136d7d50a6"
+        ],
+        "paths": [],
+        "revisions": {},
+        "links": [
+          {
+            "label": "Project",
+            "href": "/project?workspace=writing&corpus=fixture"
+          },
+          {
+            "label": "Manuscript",
+            "href": "/project?workspace=writing&corpus=fixture&view=manuscript"
+          }
+        ],
+        "output_sha256": "65bb32584f7eae42b30c0576170acc9f9a662d5dfdfa2267580dbac22d16b0f6",
+        "source_effect": {
+          "schema_version": "laplace.source-effect/1",
+          "project": "fixture",
+          "selection_identity": "sha256:e3a41e6b10c5f318edf0ea7c7386d30424c1ee12dd0014bb22bf38955a1f94ad",
+          "state": "COMMITTED",
+          "complete": true,
+          "files": [
+            {
+              "scope": "repository",
+              "path": "sources/fixture/main.tex",
+              "before_sha256": "sha256:c2dcd7edff488883f59b17c7faec824dfbf7717f36c1a2519939ee2d0d891f71",
+              "after_sha256": "sha256:c5ee5fbe0ca801869cf37b13521ca826ccd9904d8892b5df04ca2610e0c6c125",
+              "observed_after_sha256": "sha256:c5ee5fbe0ca801869cf37b13521ca826ccd9904d8892b5df04ca2610e0c6c125"
+            }
+          ],
+          "follow_through": {
+            "required": [
+              {
+                "owner": "source-application",
+                "status": "COMPLETE"
+              }
+            ],
+            "heading_sync": {
+              "status": "NOT_NEEDED",
+              "updated": []
+            },
+            "maintenance_warnings": []
+          },
+          "impact": {
+            "status": "REOBSERVE",
+            "reads": [
+              {
+                "operation": "document",
+                "payload": {}
+              },
+              {
+                "operation": "source",
+                "payload": {
+                  "files": [
+                    "sources/fixture/main.tex"
+                  ]
+                }
+              }
+            ],
+            "coverage": "Source files and document only; logical binding membership is not inferred."
+          }
+        },
+        "owner_evidence": {
+          "schema_version": "laplace.owner-evidence/1",
+          "files": [
+            {
+              "scope": "repository",
+              "path": "sources/fixture/main.tex",
+              "before_sha256": "sha256:c2dcd7edff488883f59b17c7faec824dfbf7717f36c1a2519939ee2d0d891f71",
+              "after_sha256": "sha256:c5ee5fbe0ca801869cf37b13521ca826ccd9904d8892b5df04ca2610e0c6c125",
+              "observed_after_sha256": "sha256:c5ee5fbe0ca801869cf37b13521ca826ccd9904d8892b5df04ca2610e0c6c125"
+            }
+          ],
+          "objects": [],
+          "files_omitted": 0,
+          "objects_omitted": 0
+        },
+        "refreshed_read_baselines": 0,
+        "context_refreshed": false,
+        "mutation_attribution": null
+      },
+      "ts": "2026-10-11T14:36:19.510Z"
+    }
+  },
+  "tracking_unproved": {
+    "native_result": {
+      "ok": false,
+      "operation": "apply_revision",
+      "status": "SOURCE_APPLIED_TRACKING_UNPROVED",
+      "changed": {
+        "views": [
+          "manuscript",
+          "document"
+        ],
+        "identities": [],
+        "receipts": [],
+        "paths": [],
+        "revisions": {}
+      },
+      "full_response_omitted": true,
+      "note": "Canonical owner state and full audit history are retained; use the exact returned read handle for detail.",
+      "action_receipt": {
+        "id": "ACTION-1b01de699e1941c0be631f8ca4bb645b",
+        "status": "SOURCE_APPLIED_TRACKING_UNPROVED",
+        "views": [
+          "manuscript",
+          "document"
+        ],
+        "identities": [],
+        "receipts": [],
+        "paths": [],
+        "revisions": {},
+        "owner_evidence": {
+          "schema_version": "laplace.owner-evidence/1",
+          "files": [
+            {
+              "scope": "repository",
+              "path": "sources/fixture/main.tex",
+              "before_sha256": "sha256:c2dcd7edff488883f59b17c7faec824dfbf7717f36c1a2519939ee2d0d891f71",
+              "after_sha256": "sha256:4404bc29aada3a127392b53223033c8349ec74397c195215f950788315cb76ff",
+              "observed_after_sha256": "sha256:4404bc29aada3a127392b53223033c8349ec74397c195215f950788315cb76ff"
+            }
+          ],
+          "objects": [],
+          "files_omitted": 0,
+          "objects_omitted": 0
+        },
+        "mutation_attribution": null,
+        "refreshed_read_baselines": 0,
+        "context_refreshed": false,
+        "source_effect": {
+          "schema_version": "laplace.source-effect/1",
+          "project": "fixture",
+          "selection_identity": "sha256:e3a41e6b10c5f318edf0ea7c7386d30424c1ee12dd0014bb22bf38955a1f94ad",
+          "state": "COMMITTED",
+          "complete": false,
+          "files": [
+            {
+              "scope": "repository",
+              "path": "sources/fixture/main.tex",
+              "before_sha256": "sha256:c2dcd7edff488883f59b17c7faec824dfbf7717f36c1a2519939ee2d0d891f71",
+              "after_sha256": "sha256:4404bc29aada3a127392b53223033c8349ec74397c195215f950788315cb76ff",
+              "observed_after_sha256": "sha256:4404bc29aada3a127392b53223033c8349ec74397c195215f950788315cb76ff"
+            }
+          ],
+          "follow_through": {
+            "required": [
+              {
+                "owner": "source-application",
+                "status": "COMPLETE"
+              },
+              {
+                "owner": "application-tracking",
+                "status": "UNPROVED",
+                "reason": "controlled application publication failure"
+              }
+            ],
+            "heading_sync": {
+              "status": "NOT_NEEDED",
+              "updated": []
+            },
+            "maintenance_warnings": []
+          },
+          "impact": {
+            "status": "REOBSERVE",
+            "reads": [
+              {
+                "operation": "document",
+                "payload": {}
+              },
+              {
+                "operation": "source",
+                "payload": {
+                  "files": [
+                    "sources/fixture/main.tex"
+                  ]
+                }
+              }
+            ],
+            "coverage": "Source files and document only; logical binding membership is not inferred."
+          }
+        }
+      },
+      "source_effect": {
+        "schema_version": "laplace.source-effect/1",
+        "project": "fixture",
+        "selection_identity": "sha256:e3a41e6b10c5f318edf0ea7c7386d30424c1ee12dd0014bb22bf38955a1f94ad",
+        "state": "COMMITTED",
+        "complete": false,
+        "files": [
+          {
+            "scope": "repository",
+            "path": "sources/fixture/main.tex",
+            "before_sha256": "sha256:c2dcd7edff488883f59b17c7faec824dfbf7717f36c1a2519939ee2d0d891f71",
+            "after_sha256": "sha256:4404bc29aada3a127392b53223033c8349ec74397c195215f950788315cb76ff",
+            "observed_after_sha256": "sha256:4404bc29aada3a127392b53223033c8349ec74397c195215f950788315cb76ff"
+          }
+        ],
+        "follow_through": {
+          "required": [
+            {
+              "owner": "source-application",
+              "status": "COMPLETE"
+            },
+            {
+              "owner": "application-tracking",
+              "status": "UNPROVED",
+              "reason": "controlled application publication failure"
+            }
+          ],
+          "heading_sync": {
+            "status": "NOT_NEEDED",
+            "updated": []
+          },
+          "maintenance_warnings": []
+        },
+        "impact": {
+          "status": "REOBSERVE",
+          "reads": [
+            {
+              "operation": "document",
+              "payload": {}
+            },
+            {
+              "operation": "source",
+              "payload": {
+                "files": [
+                  "sources/fixture/main.tex"
+                ]
+              }
+            }
+          ],
+          "coverage": "Source files and document only; logical binding membership is not inferred."
+        }
+      },
+      "complete": false,
+      "reused": false,
+      "edit_count": 1,
+      "files": [
+        "main.tex"
+      ],
+      "next_read": {
+        "operation": "author_history",
+        "payload": {
+          "view": "record",
+          "id": "activity:feedback:FB-20261011-153619-main.tex"
+        }
+      },
+      "source_applied": true,
+      "source_effect_retained": true,
+      "application_tracking": {
+        "status": "UNPROVED",
+        "attempted_id": "WA-ec21efd9db7b42fcb8505444dfaade38",
+        "reason": "controlled application publication failure"
+      },
+      "warning": "Source changes applied; application tracking is unproved. Inspect the exact source feedback receipts and current source; do not repeat the effect.",
+      "context_rebase": {
+        "exact": true,
+        "advanced": false,
+        "status": "REQUESTED",
+        "reason": "exact owner receipts match captured before and observed after identities"
+      },
+      "source_receipts": [
+        {
+          "row_id": "FB-20261011-153619-main.tex",
+          "version_id": "save-2026-10-11_143619-1",
+          "file": "main.tex",
+          "lines": [
+            3,
+            3
+          ]
+        }
+      ],
+      "source_receipts_omitted": 0
+    },
+    "saved_action": {
+      "record": "writing-tool-action",
+      "id": "ACTION-1b01de699e1941c0be631f8ca4bb645b",
+      "project": "fixture",
+      "turn_id": "WT-x",
+      "operation": "apply_revision",
+      "verb": "change",
+      "concept": "prose@paragraph",
+      "altitude": "paragraph",
+      "target": "fixture",
+      "dispatch": "exact",
+      "payload": {
+        "schema_version": "laplace.writing-public-body-ref/1",
+        "content_handle": "sha256:dc5ab8c284f000d10ec98761416323404e1f17d5b4cf02678a8c971638d3ec07",
+        "store": "contract/writing_bodies",
+        "bytes": 475,
+        "encoding": "application/json"
+      },
+      "outcome": {
+        "status": "SOURCE_APPLIED_TRACKING_UNPROVED",
+        "views": [
+          "manuscript",
+          "document"
+        ],
+        "identities": [],
+        "receipts": [],
+        "paths": [],
+        "revisions": {},
+        "links": [
+          {
+            "label": "Project",
+            "href": "/project?workspace=writing&corpus=fixture"
+          },
+          {
+            "label": "Manuscript",
+            "href": "/project?workspace=writing&corpus=fixture&view=manuscript"
+          }
+        ],
+        "output_sha256": "166a25b5a97e6ff6d9f9e1d8fd5669f9a92b95272aa2b40661c0dcac36a8627b",
+        "source_effect": {
+          "schema_version": "laplace.source-effect/1",
+          "project": "fixture",
+          "selection_identity": "sha256:e3a41e6b10c5f318edf0ea7c7386d30424c1ee12dd0014bb22bf38955a1f94ad",
+          "state": "COMMITTED",
+          "complete": false,
+          "files": [
+            {
+              "scope": "repository",
+              "path": "sources/fixture/main.tex",
+              "before_sha256": "sha256:c2dcd7edff488883f59b17c7faec824dfbf7717f36c1a2519939ee2d0d891f71",
+              "after_sha256": "sha256:4404bc29aada3a127392b53223033c8349ec74397c195215f950788315cb76ff",
+              "observed_after_sha256": "sha256:4404bc29aada3a127392b53223033c8349ec74397c195215f950788315cb76ff"
+            }
+          ],
+          "follow_through": {
+            "required": [
+              {
+                "owner": "source-application",
+                "status": "COMPLETE"
+              },
+              {
+                "owner": "application-tracking",
+                "status": "UNPROVED",
+                "reason": "controlled application publication failure"
+              }
+            ],
+            "heading_sync": {
+              "status": "NOT_NEEDED",
+              "updated": []
+            },
+            "maintenance_warnings": []
+          },
+          "impact": {
+            "status": "REOBSERVE",
+            "reads": [
+              {
+                "operation": "document",
+                "payload": {}
+              },
+              {
+                "operation": "source",
+                "payload": {
+                  "files": [
+                    "sources/fixture/main.tex"
+                  ]
+                }
+              }
+            ],
+            "coverage": "Source files and document only; logical binding membership is not inferred."
+          }
+        },
+        "application_tracking": {
+          "status": "UNPROVED",
+          "attempted_id": "WA-ec21efd9db7b42fcb8505444dfaade38",
+          "reason": "controlled application publication failure"
+        },
+        "source_applied": true,
+        "source_effect_retained": true,
+        "warning": "Source changes applied; application tracking is unproved. Inspect the exact source feedback receipts and current source; do not repeat the effect.",
+        "owner_evidence": {
+          "schema_version": "laplace.owner-evidence/1",
+          "files": [
+            {
+              "scope": "repository",
+              "path": "sources/fixture/main.tex",
+              "before_sha256": "sha256:c2dcd7edff488883f59b17c7faec824dfbf7717f36c1a2519939ee2d0d891f71",
+              "after_sha256": "sha256:4404bc29aada3a127392b53223033c8349ec74397c195215f950788315cb76ff",
+              "observed_after_sha256": "sha256:4404bc29aada3a127392b53223033c8349ec74397c195215f950788315cb76ff"
+            }
+          ],
+          "objects": [],
+          "files_omitted": 0,
+          "objects_omitted": 0
+        },
+        "refreshed_read_baselines": 0,
+        "context_refreshed": false,
+        "mutation_attribution": null
+      },
+      "ts": "2026-10-11T14:36:19.692Z"
+    }
+  }
+}

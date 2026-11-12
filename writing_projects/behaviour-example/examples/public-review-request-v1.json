@@ -1,0 +1,62 @@
+{
+  "status": "PREPARED_NOT_APPROVED_NOT_LAUNCHED",
+  "work_id": "WORK-example",
+  "handoff_id": "PHASE-d6b694c4bf6d4d9521258319",
+  "obligation_id": "public-example-traceability",
+  "exact_three_pins": {
+    "sources/behaviour-example/S1.tex": "sha256:e7950526731d68e36af6c499c5aaa2317add16e4de603120e050308c8d655382",
+    "writing_projects/behaviour-example/examples/public_representation_illustrations.py": "sha256:79b053a50a35c26931f71f0c79822de7d44b2dfc9c93acba6db1a07c068536e7",
+    "writing_projects/behaviour-example/examples/public-illustration-inputs-v1.json": "sha256:61b593fdfa0672b09859c813e28a8dcb6dea12cce56c7607b334da7e6710a713"
+  },
+  "question": "Inspect the genuine public wrapper/raw result/prose proposal and exact records: unchanged calculation, public source closure and honest claims. No scientific theorem acceptance.",
+  "current_binding_count": 0,
+  "coordinator_approval_request": {
+    "operation": "work_delivery",
+    "payload": {
+      "action": "bind",
+      "work_id": "WORK-example",
+      "expected_work_revision": "sha256:c725dc31c3bded070e47351aa59412e24f2332537198c551e1f2b728ba44f1fc",
+      "kind": "app-owned",
+      "provider": "codex",
+      "model": "gpt-6.1-sol",
+      "effort": "high",
+      "label": "Public example technical traceability only",
+      "lifetime_s": 3600
+    }
+  },
+  "approval_http": {
+    "method": "POST",
+    "url": "/work/delivery"
+  },
+  "preparation_read": {
+    "operation": "work_delivery",
+    "payload": {
+      "action": "review-setup",
+      "work_id": "WORK-example",
+      "limit": 8,
+      "offset": 0,
+      "cut": "sha256:ffec8a43b108bc6b28dc833d5a3f6692d7edf8cbc02bc15122a0f56d2cff76ee"
+    },
+    "http": {
+      "method": "GET",
+      "url": "/work/delivery?project=behaviour-example&request=%7B%22action%22%3A%22review-setup%22%2C%22cut%22%3A%22sha256%3Affec8a43b108bc6b28dc833d5a3f6692d7edf8cbc02bc15122a0f56d2cff76ee%22%2C%22limit%22%3A8%2C%22offset%22%3A0%2C%22work_id%22%3A%22WORK-example%22%7D"
+    }
+  },
+  "handoff_read": {
+    "operation": "project",
+    "payload": {
+      "namespace": "behaviour-example",
+      "view": "review",
+      "id": "WORK-example",
+      "phase_id": "PHASE-d6b694c4bf6d4d9521258319",
+      "phase_revision": "sha256:58538ee5a6638398996c0fc3b1a296a38033bbd6889ceb292ebc4cf86270823c"
+    },
+    "http": {
+      "method": "GET",
+      "url": "/work/state?project=behaviour-example&view=review&id=WORK-example&phase_id=PHASE-d6b694c4bf6d4d9521258319&phase_revision=sha256%3A58538ee5a6638398996c0fc3b1a296a38033bbd6889ceb292ebc4cf86270823c"
+    }
+  },
+  "after_approval": "Reinspect work_delivery review-setup/status. Use the actual issued submit action with this handoff and sole obligation and the approved binding. No automatic launch, fabricated binding ID, independent verdict or science acceptance.",
+  "requested_standard_service_tier": "Not exposed in the reviewed owner bind schema; do not silently claim a service tier.",
+  "bounded_review": "Inspect existing pinned code, parameters, unchanged source, actual raw/derived result and proposal/refusal evidence. No new execution, broad review or additional experiment."
+}

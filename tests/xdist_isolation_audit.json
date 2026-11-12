@@ -1,0 +1,3046 @@
+{
+ "schema": "xdist_isolation_audit/1",
+ "ts": "2026-08-21T00:00:00Z",
+ "head": "ce8c77f1",
+ "work_order": "corpus_friction/work_orders.jsonl#WO-20260820-suite-runs-on-one-core",
+ "gate": "verbatim: 'a test-isolation pass first - any test writing a repo-root store races under -n; store_lock covers .self_embeddings.json, the others are unaudited.'",
+ "row_source_for": "the grouping step: `xdist_group` per file, consumed by `pytest -n auto --dist loadgroup`. Rows are truth \u2014 any prose restating this file is a render and goes stale when rows move.",
+ "verdicts": [
+  "safe-parallel",
+  "needs-serialization"
+ ],
+ "method": {
+  "empirical": {
+   "what": "a pytest plugin wrapping builtins.open, os.open/remove/unlink/mkdir/makedirs/rmdir/rename/replace/truncate, shutil.copy*/move/rmtree/copytree, Path.write_text/write_bytes/mkdir/touch/unlink/rmdir/rename/replace/symlink_to/chmod and subprocess.Popen, recording every path under the repo root attributed to the running nodeid. This is what catches the INDIRECT class \u2014 a test reaching a src function that writes a repo-root store by default \u2014 which no grep can see.",
+   "run_full": "PYTHONPATH=<scratch> TRACER_OUT=<scratch>/full_trace.jsonl python3 -m pytest -q -p write_tracer -rfE   ->  3 failed, 4975 passed, 69 skipped, 24 xfailed in 514.35s; 1007 trace rows. THE SERIAL BASELINE for this gate.",
+   "run_recheck": "same command over the 20 files whose rows were dir_fd-suspect, with the tracer corrected  ->  485 passed, 9 skipped, 6 xfailed in 95.36s; 111 trace rows.",
+   "correction": "516 of the first pass' 1007 rows were FALSE: shutil.rmtree walks with os.unlink(entry.name, dir_fd=fd), a BARE name that realpath() resolves against cwd (= the repo root). The corrected tracer skips any call carrying dir_fd. Fourteen files that looked unsafe are clean: test_editor_saves_store, test_evolution_consumer, test_evolve_gates, test_liveness, test_nodemap, test_operating_contract, test_pipeline_evolve, test_reconstruction_fence, test_section_bridge, test_soul_shard, test_superarc_genesis_loop, test_superarc_sequence_exec, test_w6_3_strip_and_drive, test_pipeline_surface (its only finding is the git index).",
+   "blind_spot": "writes made INSIDE a subprocess are not traced \u2014 only the spawn is recorded, with its argv and cwd. Every subprocess seen at the live root is git plumbing; the mutating class (git add/commit/checkout) appears only against tmp repos."
+  },
+  "static": "AST scan of all test files: a name bound anywhere in a file to Path(__file__).resolve().parents[N] taints that name file-wide, and any write verb applied to it is a signature. Also chdir (ZERO hits in the whole tree) and raw os.environ mutation (ONE hit). Re-implemented in tests/test_xdist_isolation.py as the guard."
+ },
+ "greps": [
+  "grep -rn 'def _repo_root\\|def repo_root\\|def _root\\b\\|REPO_ROOT *=' src/laplace/ scripts/",
+  "grep -rn 'store_lock\\|_store_lock' src/laplace/*.py scripts/*.py",
+  "grep -rn '\\.self_embeddings\\.json\\|\\.meaning_tree\\.json\\|\\.meaning_vectors\\.json\\|\\.closure_meter\\.jsonl\\|\\.wire_proposals\\.jsonl\\|\\.upfold_triggers\\.jsonl\\|\\.reembed_timing\\.jsonl\\|\\.self_graded\\.json\\|\\.self_record_floor\\.jsonl\\|\\.wire_verdicts\\.jsonl\\|\\.technique_vectors\\.json\\|\\.learned_keywords\\.json\\|\\.scanner_last_ids\\.json\\|\\.escalate_briefs\\.json\\|\\.cockpit\\.json' src/laplace/ scripts/ --include=*.py",
+  "grep -rnE '(_repo_root\\(\\)|_REPO_ROOT|REPO_ROOT)\\s*/[^)]*\\)?\\s*\\.(write_text|write_bytes|mkdir|touch|unlink|rename|replace)' src/laplace/ scripts/ --include=*.py",
+  "grep -rn 'parents\\[1\\]\\|parents\\[2\\]\\|parent\\.parent\\|Path(__file__)' tests/*.py atlas/tests/*.py",
+  "grep -rn 'chdir' tests/*.py atlas/tests/*.py            # ZERO hits \u2014 the chdir class is EMPTY",
+  "grep -rnE 'os\\.environ\\[[^]]+\\] *=|os\\.environ\\.setdefault|os\\.putenv' tests/*.py atlas/tests/*.py   # 2 hits, both tmp-scoped",
+  "grep -rnE 'port *= *[0-9]{4}|localhost:[0-9]+|127\\.0\\.0\\.1|0\\.0\\.0\\.0|HTTPServer|socketserver|bind\\(' tests/*.py   # every in-process server binds port 0 \u2014 no fixed-port class",
+  "grep -rn 'sqlite' tests/*.py src/laplace/*.py          # ZERO hits \u2014 no shared-sqlite class",
+  "grep -rn 'paragraph_plan' tests/*.py scripts/*.py src/laplace/**/*.py | grep -iE 'write|dump|sidecar|save|emit'",
+  "grep -rn 'LAPLACE_SIDECAR_WRITE\\|derived_writes' tests/*.py src/laplace/*.py src/laplace/**/*.py scripts/*.py",
+  "grep -rnE '^\\s*_[A-Z_]+\\s*(:\\s*dict|:\\s*list)?\\s*=\\s*(\\{\\}|\\[\\]|None)|lru_cache|@cache\\b|functools\\.cache|global ' src/laplace/*.py   # module-level mutable caches",
+  "grep -rn 'corpus_friction\\|corpus_stores' tests/*.py | grep -vE 'tmp_path|tmpdir|tmp/'",
+  "grep -rn 'dashboard_data(REPO\\|growth_state(REPO\\|conceptric_projects(REPO' tests/*.py",
+  "grep -rln 'node_index' tests/*.py ; grep -rln 'LAST_SCORE\\|PREDICTION_pending' tests/*.py"
+ ],
+ "counts": {
+  "files_total": 343,
+  "tests_collected": 5319,
+  "tests_run_in_baseline": 5068,
+  "safe_parallel": 319,
+  "needs_serialization": 24,
+  "xdist_groups": 12,
+  "trace_rows_full": 1007,
+  "trace_rows_recheck": 111,
+  "trace_rows_discarded_as_dir_fd_artefacts": 516,
+  "static_signature_files": 2,
+  "serial_baseline_wall_s": 514.35
+ },
+ "store_groups": {
+  "file:tests/test_evidence_bundle.py": {
+   "files": [
+    "tests/test_evidence_bundle.py"
+   ],
+   "stores": [
+    "synthetics papers/subset-sum-itqde/manuscript/whitepaper/release/bundles"
+   ],
+   "merged": false
+  },
+  "file:tests/test_g2_ladder.py": {
+   "files": [
+    "tests/test_g2_ladder.py"
+   ],
+   "stores": [
+    "corpus_friction/crank-2026-07-15.growth.json"
+   ],
+   "merged": false
+  },
+  "file:tests/test_laplace.py": {
+   "files": [
+    "tests/test_laplace.py"
+   ],
+   "stores": [
+    "synthetics papers/subset-sum-itqde/manuscript/whitepaper/_pv_roundtrip.tex"
+   ],
+   "merged": false
+  },
+  "file:tests/test_paragraph_provenance.py": {
+   "files": [
+    "tests/test_paragraph_provenance.py"
+   ],
+   "stores": [
+    "synthetics papers/subset-sum-itqde/manuscript/decisions/_voice_retrieval.json"
+   ],
+   "merged": false
+  },
+  "file:tests/test_scaffold_wipe.py": {
+   "files": [
+    "tests/test_scaffold_wipe.py"
+   ],
+   "stores": [
+    "tests/_scaffold_tmp_fig.pdf",
+    "tests/_scaffold_tmp_fig2.pdf"
+   ],
+   "merged": false
+  },
+  "file:tests/test_soul_refactor.py": {
+   "files": [
+    "tests/test_soul_refactor.py"
+   ],
+   "stores": [
+    ".soul_refactor_staging"
+   ],
+   "merged": false
+  },
+  "file:tests/test_voice_conformance_detect.py": {
+   "files": [
+    "tests/test_voice_conformance_detect.py"
+   ],
+   "stores": [
+    "tests/_vcd_clean.con.json",
+    "tests/_vcd_clean.plan.json"
+   ],
+   "merged": false
+  },
+  "store:.git/index+holdout/LAST_SCORE.json+holdout/PREDICTION_pending.json": {
+   "files": [
+    "tests/test_holdout.py",
+    "tests/test_interface_weld.py",
+    "tests/test_pipeline_surface.py",
+    "tests/test_self_corpus.py",
+    "tests/test_wake_cli.py"
+   ],
+   "stores": [
+    ".git/index",
+    "holdout/LAST_SCORE.json",
+    "holdout/PREDICTION_pending.json"
+   ],
+   "merged": true
+  },
+  "store:device:gpu-vram": {
+   "files": [
+    "atlas/tests/test_runtime_cuda.py",
+    "atlas/tests/test_spectral_pour_qrc_measurement.py",
+    "tests/test_embed_gpu_provider.py",
+    "tests/test_meaning_upfold_grade_law.py",
+    "tests/test_meaning_upfold_incremental.py",
+    "tests/test_spectral_gpu.py"
+   ],
+   "stores": [
+    "device:gpu-vram"
+   ],
+   "merged": false
+  },
+  "store:paper_falqon/manuscript/node_index.json": {
+   "files": [
+    "tests/test_derived_writes.py",
+    "tests/test_lineage_surface.py",
+    "tests/test_provenance_index.py"
+   ],
+   "stores": [
+    "paper_falqon/manuscript/node_index.json"
+   ],
+   "merged": false
+  },
+  "store:.cockpit.json": {
+   "files": [
+    "tests/test_artefact_surface_smoke.py",
+    "tests/test_storyboard_smoke.py"
+   ],
+   "stores": [
+    ".cockpit.json"
+   ],
+   "merged": false
+  }
+ },
+ "signature_triggers": [
+  "Path(__file__)",
+  "chdir",
+  "environ[",
+  "putenv",
+  "environ.setdefault"
+ ],
+ "live_writer_tokens": [
+  "LAPLACE_SIDECAR_WRITE",
+  "write_node_index",
+  "_pv_roundtrip",
+  "_scaffold_tmp_fig",
+  "_vcd_clean",
+  ".soul_refactor_staging",
+  "crank-2026-07-15.growth.json",
+  "holdout/LAST_SCORE.json",
+  "holdout/PREDICTION_pending.json",
+  "git status --porcelain",
+  "scanner.cockpit_state",
+  "bench_add(",
+  "CUDAExecutionProvider",
+  "get_backend",
+  "_best_split_gpu",
+  "spectral_gpu",
+  "cupy"
+ ],
+ "classes_checked_and_empty": {
+  "chdir": "ZERO os.chdir / monkeypatch.chdir anywhere in tests/ or atlas/tests/",
+  "fixed_ports": "every in-process ThreadingHTTPServer binds ('127.0.0.1', 0)",
+  "sqlite": "no sqlite anywhere in tests/ or src/laplace/*.py",
+  "AP-13_paragraph_plan_sidecars": "ALREADY CURED and re-verified here. laplace.pipeline.derived_writes.enabled() reads PYTEST_CURRENT_TEST and returns False under pytest, so stage_retrieval's *_form_retrieval.paragraph_plan.N<k>.json refresh is read-only in the suite. ZERO paragraph_plan sidecar writes in the traced run; the tree was clean of them afterwards. NOTE for -n: xdist workers are real pytest processes and set PYTEST_CURRENT_TEST per test, so the gate still holds \u2014 but it is NOT set during COLLECTION, so an import-time refresh would escape it in any mode.",
+  "module_level_caches": "scanner._NETWORK, embed_router._BACKEND/_OFF_ANNOUNCED/_METRIC_STALE_WARNED, meaning_upfold._trigger_events, walk._GATE, voice_corpus_ingest._CHUNK_SOURCE. All PER-PROCESS, so -n makes them more isolated, not less. The residual risk is the mirror image: a test that silently depended on a sibling having warmed a cache now runs cold.",
+  "store_lock_covered": ".self_embeddings.json (embed_router), .meaning_vectors.* / .meaning_tree.json (meaning_upfold), .self_graded.json (keeper) \u2014 laplace.pipeline.locking.store_lock is a cross-process filelock, so these are safe by construction. The traced run wrote NONE of them anyway."
+ },
+ "recommendation": {
+  "mode": "-n auto --dist loadgroup",
+  "why_not_load": "plain --dist load distributes individual TESTS, so two tests in ONE file that share a fixed-name sentinel (test_scaffold_wipe, test_voice_conformance_detect, test_laplace) can run concurrently. Never use it here.",
+  "why_not_loadfile": "--dist loadfile pins a FILE to a worker, which closes every single-file store \u2014 but it does NOT honour xdist_group, so the two CROSS-file collisions (3 files on paper_falqon/manuscript/node_index.json; 5 files on the holdout score + .git/index) would still race.",
+  "why_loadgroup": "--dist loadgroup schedules like `load` but pins every test carrying the same xdist_group mark to one worker. Giving each needs-serialization file a group name \u2014 its shared store's name when it has one, its own path otherwise \u2014 reproduces loadfile's guarantee where it is needed and leaves the other {safe} files free to spread.",
+  "wiring": "a pytest_collection_modifyitems hook in tests/conftest.py reads THIS file and applies pytest.mark.xdist_group(name=row['xdist_group']) to every item whose file has one. Mechanical, so the rows stay the single source and no per-file marker edit can drift from them.",
+  "measured": {
+   "serial": "python3 -m pytest -q -rfE  ->  514.35s (4975 passed / 3 failed / 69 skipped / 24 xfailed). The 3 reds were the sibling lane's, and were already green again by the parallel run.",
+   "parallel": "python3 -m pytest -q -n auto --dist loadfile -rfE  ->  258.38s (5052 passed / 1 failed / 68 skipped / 24 xfailed) on 16 cores. SPEEDUP 1.99x, SAVING 256.0s per full suite.",
+   "why_only_2x": "--dist loadfile makes the LONGEST FILE the critical path, and this tree has a few very long ones (the playwright / in-process-server walks). The WO's 350-950s estimate assumed test-level spreading; 256s is what file-level pinning actually buys here. loadgroup restores test-level spreading for the ~305 ungrouped files, so it should land ABOVE this, not below.",
+   "loadgroup_proof": "the recommended wiring was RUN, not assumed: a pytest_collection_modifyitems hook reading this file's rows and applying pytest.mark.xdist_group(name=row['xdist_group']) -> `[group_hook] pinned 23 tests into 3 xdist_group(s)` at collection, and `pytest -q -p group_hook -n auto --dist loadgroup` over all 18 needs-serialization files -> 432 passed, 3 skipped in 46.04s, zero reds.",
+   "isolation_reds": "ZERO. None of the 15 needs-serialization files failed under -n. That is NOT proof they are safe \u2014 loadfile does not prevent the two cross-file collisions, they simply did not interleave on this run. The one red was the GPU class."
+  },
+  "dependency": "pytest-xdist>=3.5 \u2014 already importable in this environment (importlib.metadata.version('pytest-xdist') == '3.8.0') but NOT declared. Declare it in pyproject.toml's [project.optional-dependencies] dev list, beside pytest/ruff/playwright.",
+  "residual_risks": [
+   "git index: four files shell `git status --porcelain` at the live root; they are grouped together, but ANY sibling process (a concurrent sewup lane, an editor) can still dirty the tree under test_pipeline_surface's 'writes nothing' assertion. Parallelism does not create that coupling \u2014 it only makes it likelier.",
+   "order dependence: corpus_friction/suite_baseline.json names a historical order-dependent flake (test_bare_file_link_resolves_its_owning_corpus, tests/test_artefact_surface.py:68). -n reorders by construction, so the first parallel closes should watch for it.",
+   "_run() in scripts/sewup.py truncates pytest output to the last 2000 chars; with more workers the -rfE short summary is longer, so a very red run could have its FAILED lines cut before the harvest. Pre-existing, worth widening.",
+   "collection-time writes escape derived_writes.enabled() (PYTEST_CURRENT_TEST is unset during collection) in every mode, serial included."
+  ]
+ },
+ "known_reds_at_this_head": [
+  "tests/test_design_conceptric.py::test_every_node_carries_a_source_ref",
+  "tests/test_design_conceptric.py::test_all_five_typed_edge_relations_present",
+  "tests/test_design_conceptric.py::test_census_matches_design_doc"
+ ],
+ "known_reds_note": "3 reds against the EMPTY corpus_friction/suite_baseline.json. NOT caused by this audit's tracer and NOT a parallelism defect: they reproduce on a bare `python3 -m pytest -q tests/test_design_conceptric.py` (3 failed, 9 passed in 3.58s) and are the sibling lane's in-flight scripts/build_design_conceptric.py + a grown corpus_friction/design-interface.jsonl.",
+ "rows": [
+  {
+   "file": "atlas/tests/test_bench_arms.py",
+   "verdict": "safe-parallel",
+   "stores": [],
+   "evidence": [],
+   "note": "no live-tree write in the traced run; no static signature"
+  },
+  {
+   "file": "atlas/tests/test_bench_cluster.py",
+   "verdict": "safe-parallel",
+   "stores": [],
+   "evidence": [],
+   "note": "no live-tree write in the traced run; no static signature"
+  },
+  {
+   "file": "atlas/tests/test_bench_contamination.py",
+   "verdict": "safe-parallel",
+   "stores": [],
+   "evidence": [],
+   "note": "no live-tree write in the traced run; no static signature"
+  },
+  {
+   "file": "atlas/tests/test_bench_cost.py",
+   "verdict": "safe-parallel",
+   "stores": [],
+   "evidence": [],
+   "note": "no live-tree write in the traced run; no static signature"
+  },
+  {
+   "file": "atlas/tests/test_bench_freeze.py",
+   "verdict": "safe-parallel",
+   "stores": [],
+   "evidence": [],
+   "note": "no live-tree write in the traced run; no static signature"
+  },
+  {
+   "file": "atlas/tests/test_bench_leakage.py",
+   "verdict": "safe-parallel",
+   "stores": [],
+   "evidence": [],
+   "note": "no live-tree write in the traced run; no static signature"
+  },
+  {
+   "file": "atlas/tests/test_bench_rank_columns.py",
+   "verdict": "safe-parallel",
+   "stores": [],
+   "evidence": [],
+   "note": "no live-tree write in the traced run; no static signature"
+  },
+  {
+   "file": "atlas/tests/test_bench_runner.py",
+   "verdict": "safe-parallel",
+   "stores": [],
+   "evidence": [],
+   "note": "no live-tree write in the traced run; no static signature"
+  },
+  {
+   "file": "atlas/tests/test_bench_scoring.py",
+   "verdict": "safe-parallel",
+   "stores": [],
+   "evidence": [],
+   "note": "no live-tree write in the traced run; no static signature"
+  },
+  {
+   "file": "atlas/tests/test_bench_stats.py",
+   "verdict": "safe-parallel",
+   "stores": [],
+   "evidence": [],
+   "note": "no live-tree write in the traced run; no static signature"
+  },
+  {
+   "file": "atlas/tests/test_bench_tier2_arms.py",
+   "verdict": "safe-parallel",
+   "stores": [],
+   "evidence": [],
+   "note": "no live-tree write in the traced run; no static signature"
+  },
+  {
+   "file": "atlas/tests/test_bench_universe.py",
+   "verdict": "safe-parallel",
+   "stores": [],
+   "evidence": [],
+   "note": "no live-tree write in the traced run; no static signature"
+  },
+  {
+   "file": "atlas/tests/test_encoders.py",
+   "verdict": "safe-parallel",
+   "stores": [],
+   "evidence": [],
+   "note": "no live-tree write in the traced run; no static signature"
+  },
+  {
+   "file": "atlas/tests/test_ids.py",
+   "verdict": "safe-parallel",
+   "stores": [],
+   "evidence": [],
+   "note": "no live-tree write in the traced run; no static signature"
+  },
+  {
+   "file": "atlas/tests/test_schema.py",
+   "verdict": "safe-parallel",
+   "stores": [],
+   "evidence": [],
+   "note": "no live-tree write in the traced run; no static signature"
+  },
+  {
+   "file": "atlas/tests/test_seal.py",
+   "verdict": "safe-parallel",
+   "stores": [],
+   "evidence": [],
+   "note": "no live-tree write in the traced run; no static signature"
+  },
+  {
+   "file": "atlas/tests/test_segment.py",
+   "verdict": "safe-parallel",
+   "stores": [],
+   "evidence": [],
+   "note": "no live-tree write in the traced run; no static signature"
+  },
+  {
+   "file": "atlas/tests/test_snapshot.py",
+   "verdict": "safe-parallel",
+   "stores": [],
+   "evidence": [],
+   "note": "no live-tree write in the traced run; no static signature"
+  },
+  {
+   "file": "atlas/tests/test_store.py",
+   "verdict": "safe-parallel",
+   "stores": [],
+   "evidence": [],
+   "note": "no live-tree write in the traced run; no static signature"
+  },
+  {
+   "file": "tests/test_a6_judge_probes.py",
+   "verdict": "safe-parallel",
+   "stores": [],
+   "evidence": [],
+   "note": "no live-tree write in the traced run; no static signature"
+  },
+  {
+   "file": "tests/test_adjudicate_sealed.py",
+   "verdict": "safe-parallel",
+   "stores": [],
+   "evidence": [],
+   "note": "no live-tree write in the traced run; no static signature"
+  },
+  {
+   "file": "tests/test_altitude.py",
+   "verdict": "safe-parallel",
+   "stores": [
+    "corpus_friction (mkdir only)"
+   ],
+   "evidence": [
+    "trace(full,2026-08-20T20:15Z) Path.mkdir/os.mkdir on an existing live dir"
+   ],
+   "note": "touches the live tree only through an idempotent mkdir (252 of the 262 traced mkdir calls target the existing repo-root `corpus_friction`, exist_ok contract) \u2014 no byte contention"
+  },
+  {
+   "file": "tests/test_analytics.py",
+   "verdict": "safe-parallel",
+   "stores": [],
+   "evidence": [],
+   "note": "no live-tree write in the traced run; no static signature"
+  },
+  {
+   "file": "tests/test_analytics_smoke.py",
+   "verdict": "safe-parallel",
+   "stores": [],
+   "evidence": [],
+   "note": "no live-tree write in the traced run; no static signature"
+  },
+  {
+   "file": "tests/test_apply_growth_rulings.py",
+   "verdict": "safe-parallel",
+   "stores": [],
+   "evidence": [],
+   "note": "no live-tree write in the traced run; no static signature"
+  },
+  {
+   "file": "tests/test_artefact_surface.py",
+   "verdict": "safe-parallel",
+   "stores": [],
+   "evidence": [],
+   "note": "no live-tree write in the traced run; no static signature"
+  },
+  {
+   "file": "tests/test_artefact_surface_smoke.py",
+   "verdict": "needs-serialization",
+   "stores": [
+    ".cockpit.json"
+   ],
+   "evidence": [
+    "run 2026-08-21: PYTHONPATH=<scratch> TRACER_OUT=<scratch>/new_files_trace.jsonl python3 -m pytest -q -p write_tracer <the 10 unrowed files + the 2 changed ones> -> 185 passed in 9.37s; 22 trace rows; `git status --porcelain` byte-identical before and after",
+    "traced Path.write_text .cockpit.json on test_artefact_reader_paints_through_the_review_deeplink and test_artefact_states_itself_when_the_project_does_not_resolve",
+    "src/laplace/scanner.py:1208 cockpit_state() - unlocked read-modify-write of _repo_root()/.cockpit.json; reached indirectly via note_review_visit (scanner.py:1262) when the browser hits a /review deeplink"
+   ],
+   "note": "INDIRECT and invisible to every grep: the smoke drives a real in-process server and a browser, the /review deeplink banks a last-visit cursor, and cockpit_state merges it into the LIVE .cockpit.json with no lock. Gitignored, so a porcelain check never sees it. Shares the store with test_storyboard_smoke.py -> one group.",
+   "xdist_group": "store:.cockpit.json"
+  },
+  {
+   "file": "tests/test_asset_model.py",
+   "verdict": "safe-parallel",
+   "stores": [],
+   "evidence": [],
+   "note": "no live-tree write in the traced run; no static signature"
+  },
+  {
+   "file": "tests/test_atlas_bind_linecite.py",
+   "verdict": "safe-parallel",
+   "stores": [],
+   "evidence": [
+    "run 2026-08-21: PYTHONPATH=<scratch> TRACER_OUT=<scratch>/new_files_trace.jsonl python3 -m pytest -q -p write_tracer <the 10 unrowed files + the 2 changed ones> -> 185 passed in 9.37s; 22 trace rows; `git status --porcelain` byte-identical before and after"
+   ],
+   "note": "one subprocess: scripts/atlas_bind.py bind against a tmp_path diagrams tree (--source-root also tmp). No live-root write."
+  },
+  {
+   "file": "tests/test_atlas_export_perimeter.py",
+   "verdict": "safe-parallel",
+   "stores": [],
+   "evidence": [],
+   "note": "no live-tree write in the traced run; no static signature"
+  },
+  {
+   "file": "tests/test_atlas_seal.py",
+   "verdict": "safe-parallel",
+   "stores": [],
+   "evidence": [],
+   "note": "no live-tree write in the traced run; no static signature"
+  },
+  {
+   "file": "tests/test_audit_effect_meter.py",
+   "verdict": "safe-parallel",
+   "stores": [],
+   "evidence": [],
+   "note": "no live-tree write in the traced run; no static signature"
+  },
+  {
+   "file": "tests/test_audit_silent_failures.py",
+   "verdict": "safe-parallel",
+   "stores": [],
+   "evidence": [],
+   "note": "no live-tree write in the traced run; no static signature"
+  },
+  {
+   "file": "tests/test_author_architecture.py",
+   "verdict": "safe-parallel",
+   "stores": [],
+   "evidence": [],
+   "note": "no live-tree write in the traced run; no static signature"
+  },
+  {
+   "file": "tests/test_author_goal_tension.py",
+   "verdict": "safe-parallel",
+   "stores": [
+    "corpus_friction (mkdir only)"
+   ],
+   "evidence": [
+    "trace(full,2026-08-20T20:15Z) Path.mkdir/os.mkdir on an existing live dir"
+   ],
+   "note": "touches the live tree only through an idempotent mkdir (252 of the 262 traced mkdir calls target the existing repo-root `corpus_friction`, exist_ok contract) \u2014 no byte contention"
+  },
+  {
+   "file": "tests/test_author_proxy.py",
+   "verdict": "safe-parallel",
+   "stores": [],
+   "evidence": [],
+   "note": "no live-tree write in the traced run; no static signature"
+  },
+  {
+   "file": "tests/test_authored_closure.py",
+   "verdict": "safe-parallel",
+   "stores": [],
+   "evidence": [],
+   "note": "no live-tree write in the traced run; no static signature"
+  },
+  {
+   "file": "tests/test_axis_gap_router.py",
+   "verdict": "safe-parallel",
+   "stores": [
+    "corpus_friction (mkdir only)"
+   ],
+   "evidence": [
+    "trace(full,2026-08-20T20:15Z) Path.mkdir/os.mkdir on an existing live dir"
+   ],
+   "note": "touches the live tree only through an idempotent mkdir (252 of the 262 traced mkdir calls target the existing repo-root `corpus_friction`, exist_ok contract) \u2014 no byte contention"
+  },
+  {
+   "file": "tests/test_bibliography_stage.py",
+   "verdict": "safe-parallel",
+   "stores": [],
+   "evidence": [],
+   "note": "no live-tree write in the traced run; no static signature"
+  },
+  {
+   "file": "tests/test_birth_ladder.py",
+   "verdict": "safe-parallel",
+   "stores": [],
+   "evidence": [],
+   "note": "no live-tree write in the traced run; no static signature"
+  },
+  {
+   "file": "tests/test_bite_zero_judge_probes.py",
+   "verdict": "safe-parallel",
+   "stores": [],
+   "evidence": [],
+   "note": "no live-tree write in the traced run; no static signature"
+  },
+  {
+   "file": "tests/test_blind_read.py",
+   "verdict": "safe-parallel",
+   "stores": [],
+   "evidence": [],
+   "note": "no live-tree write in the traced run; no static signature"
+  },
+  {
+   "file": "tests/test_blueprint.py",
+   "verdict": "safe-parallel",
+   "stores": [],
+   "evidence": [],
+   "note": "no live-tree write in the traced run; no static signature"
+  },
+  {
+   "file": "tests/test_build_conceptric_f29.py",
+   "verdict": "safe-parallel",
+   "stores": [],
+   "evidence": [],
+   "note": "no live-tree write in the traced run; no static signature"
+  },
+  {
+   "file": "tests/test_campaign_harness.py",
+   "verdict": "safe-parallel",
+   "stores": [],
+   "evidence": [],
+   "note": "no live-tree write in the traced run; no static signature"
+  },
+  {
+   "file": "tests/test_candidate_lock.py",
+   "verdict": "safe-parallel",
+   "stores": [],
+   "evidence": [],
+   "note": "no live-tree write in the traced run; no static signature"
+  },
+  {
+   "file": "tests/test_canonised_judge_probes.py",
+   "verdict": "safe-parallel",
+   "stores": [],
+   "evidence": [],
+   "note": "no live-tree write in the traced run; no static signature"
+  },
+  {
+   "file": "tests/test_caption_blind.py",
+   "verdict": "safe-parallel",
+   "stores": [],
+   "evidence": [],
+   "note": "no live-tree write in the traced run; no static signature"
+  },
+  {
+   "file": "tests/test_census_stage_corpus.py",
+   "verdict": "safe-parallel",
+   "stores": [],
+   "evidence": [],
+   "note": "no live-tree write in the traced run; no static signature"
+  },
+  {
+   "file": "tests/test_check_durable_refs.py",
+   "verdict": "safe-parallel",
+   "stores": [],
+   "evidence": [],
+   "note": "no live-tree write in the traced run; no static signature"
+  },
+  {
+   "file": "tests/test_chrome_census.py",
+   "verdict": "safe-parallel",
+   "stores": [],
+   "evidence": [],
+   "note": "no live-tree write in the traced run; no static signature"
+  },
+  {
+   "file": "tests/test_chrome_tour_walk.py",
+   "verdict": "safe-parallel",
+   "stores": [],
+   "evidence": [],
+   "note": "no live-tree write in the traced run; no static signature"
+  },
+  {
+   "file": "tests/test_citation_direction.py",
+   "verdict": "safe-parallel",
+   "stores": [],
+   "evidence": [],
+   "note": "no live-tree write in the traced run; no static signature"
+  },
+  {
+   "file": "tests/test_claim_checks.py",
+   "verdict": "safe-parallel",
+   "stores": [],
+   "evidence": [],
+   "note": "no live-tree write in the traced run; no static signature"
+  },
+  {
+   "file": "tests/test_close_beats.py",
+   "verdict": "safe-parallel",
+   "stores": [],
+   "evidence": [],
+   "note": "no live-tree write in the traced run; no static signature"
+  },
+  {
+   "file": "tests/test_close_cadence.py",
+   "verdict": "safe-parallel",
+   "stores": [],
+   "evidence": [],
+   "note": "no live-tree write in the traced run; no static signature"
+  },
+  {
+   "file": "tests/test_close_checklist.py",
+   "verdict": "safe-parallel",
+   "stores": [],
+   "evidence": [],
+   "note": "no live-tree write in the traced run; no static signature"
+  },
+  {
+   "file": "tests/test_closure_meter.py",
+   "verdict": "safe-parallel",
+   "stores": [],
+   "evidence": [],
+   "note": "no live-tree write in the traced run; no static signature"
+  },
+  {
+   "file": "tests/test_coactivation.py",
+   "verdict": "safe-parallel",
+   "stores": [],
+   "evidence": [],
+   "note": "no live-tree write in the traced run; no static signature"
+  },
+  {
+   "file": "tests/test_cockpit_state_machine.py",
+   "verdict": "safe-parallel",
+   "stores": [],
+   "evidence": [],
+   "note": "no live-tree write in the traced run; no static signature"
+  },
+  {
+   "file": "tests/test_cold_wake_coverage.py",
+   "verdict": "safe-parallel",
+   "stores": [],
+   "evidence": [],
+   "note": "no live-tree write in the traced run; no static signature"
+  },
+  {
+   "file": "tests/test_collaborator_lens.py",
+   "verdict": "safe-parallel",
+   "stores": [],
+   "evidence": [],
+   "note": "no live-tree write in the traced run; no static signature"
+  },
+  {
+   "file": "tests/test_composed_block.py",
+   "verdict": "safe-parallel",
+   "stores": [
+    "corpus_friction (mkdir only)"
+   ],
+   "evidence": [
+    "trace(full,2026-08-20T20:15Z) Path.mkdir/os.mkdir on an existing live dir"
+   ],
+   "note": "touches the live tree only through an idempotent mkdir (252 of the 262 traced mkdir calls target the existing repo-root `corpus_friction`, exist_ok contract) \u2014 no byte contention"
+  },
+  {
+   "file": "tests/test_concept_lens.py",
+   "verdict": "safe-parallel",
+   "stores": [],
+   "evidence": [],
+   "note": "no live-tree write in the traced run; no static signature"
+  },
+  {
+   "file": "tests/test_engine_conceptric.py",
+   "verdict": "safe-parallel",
+   "stores": [],
+   "evidence": [],
+   "note": "no live-tree write in the traced run; no static signature | renamed 2026-08-24: basename collided with atlas/tests/test_conceptric.py (import file mismatch, the rotating flake)"
+  },
+  {
+   "file": "tests/test_conceptric_dreamer.py",
+   "verdict": "safe-parallel",
+   "stores": [],
+   "evidence": [],
+   "note": "no live-tree write in the traced run; no static signature"
+  },
+  {
+   "file": "tests/test_concurrency.py",
+   "verdict": "safe-parallel",
+   "stores": [],
+   "evidence": [],
+   "note": "no live-tree write in the traced run; no static signature"
+  },
+  {
+   "file": "tests/test_container_proof.py",
+   "verdict": "safe-parallel",
+   "stores": [],
+   "evidence": [],
+   "note": "no live-tree write in the traced run; no static signature"
+  },
+  {
+   "file": "tests/test_converge.py",
+   "verdict": "safe-parallel",
+   "stores": [],
+   "evidence": [],
+   "note": "no live-tree write in the traced run; no static signature"
+  },
+  {
+   "file": "tests/test_convergence.py",
+   "verdict": "safe-parallel",
+   "stores": [],
+   "evidence": [],
+   "note": "no live-tree write in the traced run; no static signature"
+  },
+  {
+   "file": "tests/test_convergence_ledger.py",
+   "verdict": "safe-parallel",
+   "stores": [],
+   "evidence": [],
+   "note": "no live-tree write in the traced run; no static signature"
+  },
+  {
+   "file": "tests/test_convergence_wiring.py",
+   "verdict": "safe-parallel",
+   "stores": [],
+   "evidence": [],
+   "note": "no live-tree write in the traced run; no static signature"
+  },
+  {
+   "file": "tests/test_corpus.py",
+   "verdict": "safe-parallel",
+   "stores": [],
+   "evidence": [],
+   "note": "no live-tree write in the traced run; no static signature"
+  },
+  {
+   "file": "tests/test_corpus_cocited.py",
+   "verdict": "safe-parallel",
+   "stores": [
+    "corpus_friction (mkdir only)"
+   ],
+   "evidence": [
+    "trace(full,2026-08-20T20:15Z) Path.mkdir/os.mkdir on an existing live dir"
+   ],
+   "note": "touches the live tree only through an idempotent mkdir (252 of the 262 traced mkdir calls target the existing repo-root `corpus_friction`, exist_ok contract) \u2014 no byte contention"
+  },
+  {
+   "file": "tests/test_corpus_ingest.py",
+   "verdict": "safe-parallel",
+   "stores": [
+    "corpus_friction (mkdir only)"
+   ],
+   "evidence": [
+    "trace(full,2026-08-20T20:15Z) Path.mkdir/os.mkdir on an existing live dir"
+   ],
+   "note": "touches the live tree only through an idempotent mkdir (252 of the 262 traced mkdir calls target the existing repo-root `corpus_friction`, exist_ok contract) \u2014 no byte contention"
+  },
+  {
+   "file": "tests/test_dashboard.py",
+   "verdict": "safe-parallel",
+   "stores": [],
+   "evidence": [],
+   "note": "no live-tree write in the traced run; no static signature"
+  },
+  {
+   "file": "tests/test_derivation_organ.py",
+   "verdict": "safe-parallel",
+   "stores": [],
+   "evidence": [],
+   "note": "no live-tree write in the traced run; no static signature"
+  },
+  {
+   "file": "tests/test_derivation_surface.py",
+   "verdict": "safe-parallel",
+   "stores": [],
+   "evidence": [],
+   "note": "no live-tree write in the traced run; no static signature"
+  },
+  {
+   "file": "tests/test_derived_writes.py",
+   "verdict": "needs-serialization",
+   "stores": [
+    "paper_falqon/manuscript/node_index.json"
+   ],
+   "evidence": [
+    "trace(full,2026-08-20T20:15Z) Path.write_text paper_falqon/manuscript/node_index.json <- test_write_node_index_mints_when_opted_in_and_restores",
+    "trace(full,2026-08-20T20:15Z) Path.write_bytes paper_falqon/manuscript/node_index.json"
+   ],
+   "note": "one of the three tests that deliberately set LAPLACE_SIDECAR_WRITE and mint the LIVE node index (derived_writes.py's named exemption). It restores the bytes, but the write window is real: a concurrent worker in the same group would read a half-restored index.",
+   "xdist_group": "store:paper_falqon/manuscript/node_index.json"
+  },
+  {
+   "file": "tests/test_descaffold_judge_probes.py",
+   "verdict": "safe-parallel",
+   "stores": [],
+   "evidence": [],
+   "note": "no live-tree write in the traced run; no static signature"
+  },
+  {
+   "file": "tests/test_design_conceptric.py",
+   "verdict": "safe-parallel",
+   "stores": [
+    "corpus_friction/design-interface.jsonl (read)"
+   ],
+   "evidence": [
+    "tests/test_design_conceptric.py:31 LEDGER = REPO / 'corpus_friction' / 'design-interface.jsonl'",
+    "trace(full) 3 FAILED here \u2014 test_every_node_carries_a_source_ref, test_all_five_typed_edge_relations_present, test_census_matches_design_doc; reproduced WITHOUT the tracer (`pytest -q tests/test_design_conceptric.py` -> 3 failed, 9 passed in 3.58s)"
+   ],
+   "note": "READS a live corpus_friction ledger and asserts frozen counts on it. No test in the tree writes that ledger, so it is safe under -n \u2014 but it is coupled to whatever ELSE is editing the repo (its 3 reds at this HEAD are the sibling lane's in-flight scripts/build_design_conceptric.py, not a parallelism defect). Recorded as the standing example of a live-ledger read assertion."
+  },
+  {
+   "file": "tests/test_desk_quiet_banner.py",
+   "verdict": "safe-parallel",
+   "stores": [],
+   "evidence": [],
+   "note": "no live-tree write in the traced run; no static signature"
+  },
+  {
+   "file": "tests/test_deslop_gate.py",
+   "verdict": "safe-parallel",
+   "stores": [],
+   "evidence": [],
+   "note": "no live-tree write in the traced run; no static signature"
+  },
+  {
+   "file": "tests/test_detect_recurrence.py",
+   "verdict": "safe-parallel",
+   "stores": [],
+   "evidence": [],
+   "note": "no live-tree write in the traced run; no static signature"
+  },
+  {
+   "file": "tests/test_detector_organs.py",
+   "verdict": "safe-parallel",
+   "stores": [],
+   "evidence": [],
+   "note": "no live-tree write in the traced run; no static signature"
+  },
+  {
+   "file": "tests/test_device_policy.py",
+   "verdict": "safe-parallel",
+   "stores": [],
+   "evidence": [
+    "run 2026-08-21: PYTHONPATH=<scratch> TRACER_OUT=<scratch>/new_files_trace.jsonl python3 -m pytest -q -p write_tracer <the 10 unrowed files + the 2 changed ones> -> 185 passed in 9.37s; 22 trace rows; `git status --porcelain` byte-identical before and after",
+    "tests/test_device_policy.py:20 device_policy.record_fallback('fold-spectral','cpu','cupy missing')"
+   ],
+   "note": "FALSE POSITIVE on the live_writer_token 'cupy': the only occurrence is inside a STRING LITERAL - the reason text of a recorded CPU fallback. The file never imports cupy and never touches the device; every row it writes goes to tmp_path under monkeypatch. Classified so the token guard has a row to read, per its own rule that a safe-parallel row naming the false positive discharges it."
+  },
+  {
+   "file": "tests/test_dials.py",
+   "verdict": "safe-parallel",
+   "stores": [],
+   "evidence": [],
+   "note": "no live-tree write in the traced run; no static signature"
+  },
+  {
+   "file": "tests/test_dials_surface.py",
+   "verdict": "safe-parallel",
+   "stores": [],
+   "evidence": [],
+   "note": "no live-tree write in the traced run; no static signature"
+  },
+  {
+   "file": "tests/test_digestion.py",
+   "verdict": "safe-parallel",
+   "stores": [],
+   "evidence": [],
+   "note": "no live-tree write in the traced run; no static signature"
+  },
+  {
+   "file": "tests/test_disclosure.py",
+   "verdict": "safe-parallel",
+   "stores": [],
+   "evidence": [],
+   "note": "no live-tree write in the traced run; no static signature"
+  },
+  {
+   "file": "tests/test_disclosure_judge_probes.py",
+   "verdict": "safe-parallel",
+   "stores": [],
+   "evidence": [],
+   "note": "no live-tree write in the traced run; no static signature"
+  },
+  {
+   "file": "tests/test_dispatch_model_ceiling.py",
+   "verdict": "safe-parallel",
+   "stores": [],
+   "evidence": [],
+   "note": "no live-tree write in the traced run; no static signature"
+  },
+  {
+   "file": "tests/test_distillate_lens.py",
+   "verdict": "safe-parallel",
+   "stores": [],
+   "evidence": [],
+   "note": "no live-tree write in the traced run; no static signature"
+  },
+  {
+   "file": "tests/test_dreamer_freeze_gate.py",
+   "verdict": "safe-parallel",
+   "stores": [],
+   "evidence": [],
+   "note": "no live-tree write in the traced run; no static signature"
+  },
+  {
+   "file": "tests/test_drift.py",
+   "verdict": "safe-parallel",
+   "stores": [],
+   "evidence": [],
+   "note": "no live-tree write in the traced run; no static signature"
+  },
+  {
+   "file": "tests/test_editor_saves_rail_banner.py",
+   "verdict": "safe-parallel",
+   "stores": [],
+   "evidence": [],
+   "note": "no live-tree write in the traced run; no static signature"
+  },
+  {
+   "file": "tests/test_editor_saves_store.py",
+   "verdict": "safe-parallel",
+   "stores": [],
+   "evidence": [],
+   "note": "no live-tree write in the traced run; no static signature"
+  },
+  {
+   "file": "tests/test_edits.py",
+   "verdict": "safe-parallel",
+   "stores": [],
+   "evidence": [],
+   "note": "no live-tree write in the traced run; no static signature"
+  },
+  {
+   "file": "tests/test_embed_gpu_provider.py",
+   "verdict": "needs-serialization",
+   "stores": [
+    "device:gpu-vram"
+   ],
+   "evidence": [
+    "par(-n auto --dist loadfile, full suite) FAILED test_fastembed_backend_binds_cuda_provider :: onnxruntime BFCArena 'Failed to allocate memory for requested buffer of size 46881792' \u2014 the ONLY red the parallel run produced",
+    "green alone: `pytest -q tests/test_embed_gpu_provider.py` -> 2 passed in 1.94s",
+    "green in a 13-file GPU-reachable stress under -n auto --dist loadfile -> 296 passed in 29.22s",
+    "src/laplace/embed_router.py:160-168 \u2014 FastEmbedBackend binds ['CUDAExecutionProvider','CPUExecutionProvider'] WHENEVER CUDA is available; there is no opt-in flag"
+   ],
+   "note": "THE CLASS THE GREPS COULD NOT SEE, found by running the parallel suite: GPU VRAM is a contended resource, not a file. The card is 4096 MiB (nvidia-smi) and every worker that constructs a real FastEmbedBackend opens its own CUDA session. Load-dependent, not deterministic \u2014 it fired under the full 16-worker suite and not in a 13-file stress of the same files. Cure: one `device:gpu-vram` xdist_group so at most one worker holds a CUDA session.",
+   "xdist_group": "store:device:gpu-vram"
+  },
+  {
+   "file": "tests/test_embed_router.py",
+   "verdict": "safe-parallel",
+   "stores": [],
+   "evidence": [],
+   "note": "no live-tree write in the traced run; no static signature"
+  },
+  {
+   "file": "tests/test_ensure_state.py",
+   "verdict": "safe-parallel",
+   "stores": [],
+   "evidence": [],
+   "note": "no live-tree write in the traced run; no static signature"
+  },
+  {
+   "file": "tests/test_essence_hygiene.py",
+   "verdict": "safe-parallel",
+   "stores": [
+    "corpus_friction (mkdir only)"
+   ],
+   "evidence": [
+    "trace(full,2026-08-20T20:15Z) Path.mkdir/os.mkdir on an existing live dir"
+   ],
+   "note": "touches the live tree only through an idempotent mkdir (252 of the 262 traced mkdir calls target the existing repo-root `corpus_friction`, exist_ok contract) \u2014 no byte contention"
+  },
+  {
+   "file": "tests/test_evidence_bundle.py",
+   "verdict": "needs-serialization",
+   "stores": [
+    "synthetics papers/subset-sum-itqde/manuscript/whitepaper/release/bundles"
+   ],
+   "evidence": [
+    "trace(recheck,dir_fd-corrected) Path.unlink synthetics papers/subset-sum-itqde/manuscript/whitepaper/release/bundles/... <- test_real_run_invocation_exit_code",
+    "trace(recheck,dir_fd-corrected) Path.mkdir (same dir)",
+    "trace(full,2026-08-20T20:15Z) subprocess cwd=<repo>/synthetics papers/... :: git -C <live manuscript>"
+   ],
+   "note": "mints and removes a release bundle inside the LIVE manuscript, and shells git against that live path.",
+   "xdist_group": "file:tests/test_evidence_bundle.py"
+  },
+  {
+   "file": "tests/test_evolution_consumer.py",
+   "verdict": "safe-parallel",
+   "stores": [
+    "corpus_friction (mkdir only)"
+   ],
+   "evidence": [
+    "trace(full,2026-08-20T20:15Z) Path.mkdir/os.mkdir on an existing live dir"
+   ],
+   "note": "touches the live tree only through an idempotent mkdir (252 of the 262 traced mkdir calls target the existing repo-root `corpus_friction`, exist_ok contract) \u2014 no byte contention"
+  },
+  {
+   "file": "tests/test_evolution_surface.py",
+   "verdict": "safe-parallel",
+   "stores": [],
+   "evidence": [],
+   "note": "no live-tree write in the traced run; no static signature"
+  },
+  {
+   "file": "tests/test_evolve_gates.py",
+   "verdict": "safe-parallel",
+   "stores": [],
+   "evidence": [],
+   "note": "no live-tree write in the traced run; no static signature"
+  },
+  {
+   "file": "tests/test_export_demo.py",
+   "verdict": "needs-serialization",
+   "stores": [
+    "device:localhost:8770"
+   ],
+   "evidence": [
+    "full-suite receipt: concurrent exporter workers reused the same fixed-port scanner and produced connection-reset errors; the deterministic rebuild passes alone in 99.89s"
+   ],
+   "note": "The bundle writes only tmp_path, but every worker reaches or raises the singleton scanner on fixed port 8770. Device custody, not file custody, requires the whole module on one worker.",
+   "xdist_group": "device:localhost:8770"
+  },
+  {
+   "file": "tests/test_export_site.py",
+   "verdict": "safe-parallel",
+   "stores": [
+    "corpus_friction (mkdir only)"
+   ],
+   "evidence": [
+    "trace(full,2026-08-20T20:15Z) Path.mkdir/os.mkdir on an existing live dir"
+   ],
+   "note": "touches the live tree only through an idempotent mkdir (252 of the 262 traced mkdir calls target the existing repo-root `corpus_friction`, exist_ok contract) \u2014 no byte contention"
+  },
+  {
+   "file": "tests/test_fanout.py",
+   "verdict": "safe-parallel",
+   "stores": [],
+   "evidence": [],
+   "note": "no live-tree write in the traced run; no static signature"
+  },
+  {
+   "file": "tests/test_fates_codebook.py",
+   "verdict": "safe-parallel",
+   "stores": [],
+   "evidence": [],
+   "note": "no live-tree write in the traced run; no static signature"
+  },
+  {
+   "file": "tests/test_feedback_actor_guard.py",
+   "verdict": "safe-parallel",
+   "stores": [],
+   "evidence": [],
+   "note": "no live-tree write in the traced run; no static signature"
+  },
+  {
+   "file": "tests/test_feedback_actor_law.py",
+   "verdict": "safe-parallel",
+   "stores": [],
+   "evidence": [],
+   "note": "no live-tree write in the traced run; no static signature"
+  },
+  {
+   "file": "tests/test_figstyle_enforcement.py",
+   "verdict": "safe-parallel",
+   "stores": [],
+   "evidence": [],
+   "note": "no live-tree write in the traced run; no static signature"
+  },
+  {
+   "file": "tests/test_figure_runner.py",
+   "verdict": "safe-parallel",
+   "stores": [],
+   "evidence": [],
+   "note": "no live-tree write in the traced run; no static signature"
+  },
+  {
+   "file": "tests/test_final_layer.py",
+   "verdict": "safe-parallel",
+   "stores": [],
+   "evidence": [],
+   "note": "no live-tree write in the traced run; no static signature"
+  },
+  {
+   "file": "tests/test_findings_consumer.py",
+   "verdict": "safe-parallel",
+   "stores": [],
+   "evidence": [],
+   "note": "no live-tree write in the traced run; no static signature"
+  },
+  {
+   "file": "tests/test_fitness_residual_swap.py",
+   "verdict": "safe-parallel",
+   "stores": [],
+   "evidence": [],
+   "note": "no live-tree write in the traced run; no static signature"
+  },
+  {
+   "file": "tests/test_fork_adjudicator.py",
+   "verdict": "safe-parallel",
+   "stores": [],
+   "evidence": [],
+   "note": "no live-tree write in the traced run; no static signature"
+  },
+  {
+   "file": "tests/test_freeze_validate.py",
+   "verdict": "safe-parallel",
+   "stores": [],
+   "evidence": [],
+   "note": "no live-tree write in the traced run; no static signature"
+  },
+  {
+   "file": "tests/test_friction_channel.py",
+   "verdict": "safe-parallel",
+   "stores": [],
+   "evidence": [],
+   "note": "no live-tree write in the traced run; no static signature"
+  },
+  {
+   "file": "tests/test_g0_one_truth.py",
+   "verdict": "safe-parallel",
+   "stores": [],
+   "evidence": [],
+   "note": "no live-tree write in the traced run; no static signature"
+  },
+  {
+   "file": "tests/test_g1_typed_base.py",
+   "verdict": "safe-parallel",
+   "stores": [
+    "corpus_friction (mkdir only)"
+   ],
+   "evidence": [
+    "trace(full,2026-08-20T20:15Z) Path.mkdir/os.mkdir on an existing live dir"
+   ],
+   "note": "touches the live tree only through an idempotent mkdir (252 of the 262 traced mkdir calls target the existing repo-root `corpus_friction`, exist_ok contract) \u2014 no byte contention"
+  },
+  {
+   "file": "tests/test_g2_ladder.py",
+   "verdict": "needs-serialization",
+   "stores": [
+    "corpus_friction/crank-2026-07-15.growth.json"
+   ],
+   "evidence": [
+    "trace(recheck,dir_fd-corrected) os.replace corpus_friction/crank-2026-07-15.growth.json <- test_crank_shows_seeded_through_all_three_read_paths",
+    "trace(recheck,dir_fd-corrected) Path.unlink corpus_friction/crank-2026-07-15.growth.json (+ .lock)",
+    "trace(recheck,dir_fd-corrected) os.open corpus_friction/crank-2026-07-15.growth.json.lock",
+    "tests/test_g2_ladder.py:314-317 sidecar = REPO / 'corpus_friction' / 'crank-2026-07-15.growth.json'; growth.seed(REPO, 'crank-2026-07-15')",
+    "OBSERVED LIVE during this audit (2026-08-20 ~20:35): `git status --porcelain` showed the sidecar present and untracked; `cat` of the same path seconds later returned 'No such file or directory'. A sibling lane's suite was inside this test's write window. The race is not hypothetical and does not need -n to fire \u2014 -n only multiplies it."
+   ],
+   "note": "the ONE test that seeds a growth sidecar into the LIVE corpus_friction and deletes it again. Its cleanup (:336-341) is CONDITIONAL on a pre_existed flag read before the seed, so a second concurrent runner that observes pre_existed=True declines to unlink and leaves the live store dirty. It reads back through three paths including dashboard.dashboard_data(REPO) \u2014 a whole-live-tree read inside the write window. Sole toucher of this store (grep: the only other live crank readers, test_g0_one_truth.py and test_superarc_door.py, read the REGISTRY, not the sidecar), so a per-file group suffices.",
+   "xdist_group": "file:tests/test_g2_ladder.py"
+  },
+  {
+   "file": "tests/test_g3_element_legs.py",
+   "verdict": "safe-parallel",
+   "stores": [],
+   "evidence": [],
+   "note": "no live-tree write in the traced run; no static signature"
+  },
+  {
+   "file": "tests/test_g4_demands.py",
+   "verdict": "safe-parallel",
+   "stores": [
+    "corpus_friction (mkdir only)"
+   ],
+   "evidence": [
+    "trace(full,2026-08-20T20:15Z) Path.mkdir/os.mkdir on an existing live dir"
+   ],
+   "note": "touches the live tree only through an idempotent mkdir (252 of the 262 traced mkdir calls target the existing repo-root `corpus_friction`, exist_ok contract) \u2014 no byte contention"
+  },
+  {
+   "file": "tests/test_g6_gauge_wiring.py",
+   "verdict": "safe-parallel",
+   "stores": [
+    "corpus_friction (mkdir only)"
+   ],
+   "evidence": [
+    "trace(full,2026-08-20T20:15Z) Path.mkdir/os.mkdir on an existing live dir"
+   ],
+   "note": "touches the live tree only through an idempotent mkdir (252 of the 262 traced mkdir calls target the existing repo-root `corpus_friction`, exist_ok contract) \u2014 no byte contention"
+  },
+  {
+   "file": "tests/test_gap_ledger.py",
+   "verdict": "safe-parallel",
+   "stores": [],
+   "evidence": [],
+   "note": "no live-tree write in the traced run; no static signature"
+  },
+  {
+   "file": "tests/test_generation_ledger.py",
+   "verdict": "safe-parallel",
+   "stores": [],
+   "evidence": [],
+   "note": "no live-tree write in the traced run; no static signature"
+  },
+  {
+   "file": "tests/test_genericity.py",
+   "verdict": "safe-parallel",
+   "stores": [],
+   "evidence": [],
+   "note": "no live-tree write in the traced run; no static signature"
+  },
+  {
+   "file": "tests/test_growth_adjudicator.py",
+   "verdict": "safe-parallel",
+   "stores": [],
+   "evidence": [],
+   "note": "no live-tree write in the traced run; no static signature"
+  },
+  {
+   "file": "tests/test_guide.py",
+   "verdict": "safe-parallel",
+   "stores": [
+    "corpus_friction (mkdir only)"
+   ],
+   "evidence": [
+    "trace(full,2026-08-20T20:15Z) Path.mkdir/os.mkdir on an existing live dir"
+   ],
+   "note": "touches the live tree only through an idempotent mkdir (252 of the 262 traced mkdir calls target the existing repo-root `corpus_friction`, exist_ok contract) \u2014 no byte contention"
+  },
+  {
+   "file": "tests/test_guide_surface.py",
+   "verdict": "safe-parallel",
+   "stores": [],
+   "evidence": [],
+   "note": "no live-tree write in the traced run; no static signature"
+  },
+  {
+   "file": "tests/test_handoff_effective_status.py",
+   "verdict": "safe-parallel",
+   "stores": [],
+   "evidence": [
+    "run 2026-08-21: PYTHONPATH=<scratch> TRACER_OUT=<scratch>/new_files_trace.jsonl python3 -m pytest -q -p write_tracer <the 10 unrowed files + the 2 changed ones> -> 185 passed in 9.37s; 22 trace rows; `git status --porcelain` byte-identical before and after"
+   ],
+   "note": "no live-tree write in the 2026-08-21 re-trace; no static signature"
+  },
+  {
+   "file": "tests/test_harnessed_flow.py",
+   "verdict": "safe-parallel",
+   "stores": [],
+   "evidence": [],
+   "note": "no live-tree write in the traced run; no static signature"
+  },
+  {
+   "file": "tests/test_hello_generator.py",
+   "verdict": "safe-parallel",
+   "stores": [],
+   "evidence": [],
+   "note": "no live-tree write in the traced run; no static signature"
+  },
+  {
+   "file": "tests/test_holdout.py",
+   "verdict": "needs-serialization",
+   "stores": [
+    "holdout/LAST_SCORE.json",
+    "holdout/PREDICTION_pending.json"
+   ],
+   "evidence": [
+    "trace(full,2026-08-20T20:15Z) Path.write_text holdout/PREDICTION_pending.json <- test_wake_cli_scores_holdout_blind",
+    "trace(full,2026-08-20T20:15Z) Path.write_text holdout/LAST_SCORE.json"
+   ],
+   "note": "writes the LIVE holdout instrument (the wake's banked blind verdict). Shares holdout/LAST_SCORE.json with tests/test_wake_cli.py.",
+   "xdist_group": "store:.git/index+holdout/LAST_SCORE.json+holdout/PREDICTION_pending.json"
+  },
+  {
+   "file": "tests/test_holdout_gate.py",
+   "verdict": "safe-parallel",
+   "stores": [],
+   "evidence": [],
+   "note": "no live-tree write in the traced run; no static signature"
+  },
+  {
+   "file": "tests/test_house_style.py",
+   "verdict": "safe-parallel",
+   "stores": [],
+   "evidence": [],
+   "note": "no live-tree write in the traced run; no static signature"
+  },
+  {
+   "file": "tests/test_identity_gate.py",
+   "verdict": "safe-parallel",
+   "stores": [],
+   "evidence": [],
+   "note": "no live-tree write in the traced run; no static signature"
+  },
+  {
+   "file": "tests/test_identity_tokens.py",
+   "verdict": "safe-parallel",
+   "stores": [],
+   "evidence": [],
+   "note": "no live-tree write in the traced run; no static signature"
+  },
+  {
+   "file": "tests/test_interface_weld.py",
+   "verdict": "needs-serialization",
+   "stores": [
+    ".git/index"
+   ],
+   "evidence": [
+    "trace(full,2026-08-20T20:15Z) subprocess cwd=<repo> :: git status --porcelain -z --untracked-files=all <- test_c10_close_registers_the_smoke_beat"
+   ],
+   "note": "reads the LIVE git index through `git status`; contends on .git/index.lock.",
+   "xdist_group": "store:.git/index+holdout/LAST_SCORE.json+holdout/PREDICTION_pending.json"
+  },
+  {
+   "file": "tests/test_jury_bench.py",
+   "verdict": "safe-parallel",
+   "stores": [],
+   "evidence": [],
+   "note": "no live-tree write in the traced run; no static signature"
+  },
+  {
+   "file": "tests/test_keeper.py",
+   "verdict": "safe-parallel",
+   "stores": [],
+   "evidence": [],
+   "note": "no live-tree write in the traced run; no static signature"
+  },
+  {
+   "file": "tests/test_keeper_ring.py",
+   "verdict": "safe-parallel",
+   "stores": [],
+   "evidence": [],
+   "note": "no live-tree write in the traced run; no static signature"
+  },
+  {
+   "file": "tests/test_laplace.py",
+   "verdict": "needs-serialization",
+   "stores": [
+    "synthetics papers/subset-sum-itqde/manuscript/whitepaper/_pv_roundtrip.tex"
+   ],
+   "evidence": [
+    "trace(recheck,dir_fd-corrected) Path.write_text synthetics papers/subset-sum-itqde/manuscript/whitepaper/_pv_roundtrip.tex <- test_projection_viewer_tex_roundtrip_under_repo",
+    "trace(recheck,dir_fd-corrected) Path.unlink (same path)"
+   ],
+   "note": "writes a sentinel .tex INSIDE the live manuscript tree, then unlinks it. The name is fixed, so two workers running this file's tests concurrently would collide; no other file names the sentinel.",
+   "xdist_group": "file:tests/test_laplace.py"
+  },
+  {
+   "file": "tests/test_laplace_graph.py",
+   "verdict": "safe-parallel",
+   "stores": [],
+   "evidence": [],
+   "note": "no live-tree write in the traced run; no static signature"
+  },
+  {
+   "file": "tests/test_layout_gates.py",
+   "verdict": "safe-parallel",
+   "stores": [],
+   "evidence": [],
+   "note": "no live-tree write in the traced run; no static signature"
+  },
+  {
+   "file": "tests/test_ledger.py",
+   "verdict": "safe-parallel",
+   "stores": [],
+   "evidence": [],
+   "note": "no live-tree write in the traced run; no static signature"
+  },
+  {
+   "file": "tests/test_ledger_join.py",
+   "verdict": "safe-parallel",
+   "stores": [],
+   "evidence": [],
+   "note": "no live-tree write in the traced run; no static signature"
+  },
+  {
+   "file": "tests/test_legA1_judge_probes.py",
+   "verdict": "safe-parallel",
+   "stores": [],
+   "evidence": [],
+   "note": "no live-tree write in the traced run; no static signature"
+  },
+  {
+   "file": "tests/test_legA6_judge_probes.py",
+   "verdict": "safe-parallel",
+   "stores": [],
+   "evidence": [],
+   "note": "no live-tree write in the traced run; no static signature"
+  },
+  {
+   "file": "tests/test_legA_judge_probes.py",
+   "verdict": "safe-parallel",
+   "stores": [],
+   "evidence": [],
+   "note": "no live-tree write in the traced run; no static signature"
+  },
+  {
+   "file": "tests/test_legB23_judge_probes.py",
+   "verdict": "safe-parallel",
+   "stores": [],
+   "evidence": [
+    "static tests/test_legB23_judge_probes.py:539 repo = Path(__file__).resolve().parents[1]",
+    "static :74,:330 repo.mkdir() / :334,:346 (repo / 'README.md').write_text(...)"
+   ],
+   "note": "STATIC FALSE POSITIVE, kept as a row so the guard stays quiet: the writes at :330-346 are on a LOCAL `repo = tmp_path / 'repo'`; only line 539 binds the live root, and that binding is read-only. The traced run showed zero live writes."
+  },
+  {
+   "file": "tests/test_legB4alt_judge_probes.py",
+   "verdict": "safe-parallel",
+   "stores": [
+    "corpus_friction (mkdir only)"
+   ],
+   "evidence": [
+    "trace(full,2026-08-20T20:15Z) Path.mkdir/os.mkdir on an existing live dir"
+   ],
+   "note": "touches the live tree only through an idempotent mkdir (252 of the 262 traced mkdir calls target the existing repo-root `corpus_friction`, exist_ok contract) \u2014 no byte contention"
+  },
+  {
+   "file": "tests/test_legB_b2_rail.py",
+   "verdict": "safe-parallel",
+   "stores": [],
+   "evidence": [],
+   "note": "no live-tree write in the traced run; no static signature"
+  },
+  {
+   "file": "tests/test_legB_b3_compare.py",
+   "verdict": "safe-parallel",
+   "stores": [],
+   "evidence": [],
+   "note": "no live-tree write in the traced run; no static signature"
+  },
+  {
+   "file": "tests/test_legB_b4_comment_anywhere.py",
+   "verdict": "safe-parallel",
+   "stores": [],
+   "evidence": [],
+   "note": "no live-tree write in the traced run; no static signature"
+  },
+  {
+   "file": "tests/test_legB_escaping.py",
+   "verdict": "safe-parallel",
+   "stores": [],
+   "evidence": [],
+   "note": "no live-tree write in the traced run; no static signature"
+  },
+  {
+   "file": "tests/test_legB_judge_probes.py",
+   "verdict": "safe-parallel",
+   "stores": [],
+   "evidence": [],
+   "note": "no live-tree write in the traced run; no static signature"
+  },
+  {
+   "file": "tests/test_legC_C1_organs.py",
+   "verdict": "safe-parallel",
+   "stores": [],
+   "evidence": [],
+   "note": "no live-tree write in the traced run; no static signature"
+  },
+  {
+   "file": "tests/test_legC_adjudicate_inert.py",
+   "verdict": "safe-parallel",
+   "stores": [],
+   "evidence": [],
+   "note": "no live-tree write in the traced run; no static signature"
+  },
+  {
+   "file": "tests/test_legC_edit_crash_safe.py",
+   "verdict": "safe-parallel",
+   "stores": [],
+   "evidence": [],
+   "note": "no live-tree write in the traced run; no static signature"
+  },
+  {
+   "file": "tests/test_legC_template_gate.py",
+   "verdict": "safe-parallel",
+   "stores": [],
+   "evidence": [],
+   "note": "no live-tree write in the traced run; no static signature"
+  },
+  {
+   "file": "tests/test_lineage_surface.py",
+   "verdict": "needs-serialization",
+   "stores": [
+    "paper_falqon/manuscript/node_index.json"
+   ],
+   "evidence": [
+    "trace(full,2026-08-20T20:15Z) Path.write_text paper_falqon/manuscript/node_index.json <- test_reindex_mints_the_index",
+    "trace(full,2026-08-20T20:15Z) Path.write_bytes paper_falqon/manuscript/node_index.json",
+    "static tests/test_lineage_surface.py:187,196 `from laplace.pipeline import derived_writes as dw, node_index as ni`"
+   ],
+   "note": "same live index as test_derived_writes.py and test_provenance_index.py \u2014 the largest cross-file collision in the tree.",
+   "xdist_group": "store:paper_falqon/manuscript/node_index.json"
+  },
+  {
+   "file": "tests/test_liveness.py",
+   "verdict": "safe-parallel",
+   "stores": [],
+   "evidence": [],
+   "note": "no live-tree write in the traced run; no static signature"
+  },
+  {
+   "file": "tests/test_loop_commit.py",
+   "verdict": "safe-parallel",
+   "stores": [],
+   "evidence": [],
+   "note": "no live-tree write in the traced run; no static signature"
+  },
+  {
+   "file": "tests/test_loop_gates.py",
+   "verdict": "safe-parallel",
+   "stores": [],
+   "evidence": [],
+   "note": "no live-tree write in the traced run; no static signature"
+  },
+  {
+   "file": "tests/test_loop_trajectory.py",
+   "verdict": "safe-parallel",
+   "stores": [],
+   "evidence": [],
+   "note": "no live-tree write in the traced run; no static signature"
+  },
+  {
+   "file": "tests/test_machine_adjudicate.py",
+   "verdict": "safe-parallel",
+   "stores": [],
+   "evidence": [],
+   "note": "no live-tree write in the traced run; no static signature"
+  },
+  {
+   "file": "tests/test_math_layout_tell.py",
+   "verdict": "safe-parallel",
+   "stores": [],
+   "evidence": [
+    "static: source carries a UTF-8 BOM (U+FEFF) \u2014 ast.parse on plain utf-8 raises"
+   ],
+   "note": "not an isolation finding; recorded because the static scanner must read these two files as utf-8-sig or it reports them unparseable. Python's own importer handles the BOM, so pytest is unaffected."
+  },
+  {
+   "file": "tests/test_mcp_compat.py",
+   "verdict": "safe-parallel",
+   "stores": [],
+   "evidence": [
+    "run 2026-08-21: PYTHONPATH=<scratch> TRACER_OUT=<scratch>/new_files_trace.jsonl python3 -m pytest -q -p write_tracer <the 10 unrowed files + the 2 changed ones> -> 185 passed in 9.37s; 22 trace rows; `git status --porcelain` byte-identical before and after"
+   ],
+   "note": "no live-tree write in the 2026-08-21 re-trace; no static signature"
+  },
+  {
+   "file": "tests/test_meaning_upfold_incremental.py",
+   "verdict": "needs-serialization",
+   "stores": [
+    "device:gpu-vram"
+   ],
+   "evidence": [
+    "tests/test_meaning_upfold_incremental.py:645 k, labels = meaning_upfold._best_split_gpu(X)"
+   ],
+   "note": "runs the GPU split operator directly. Its get_backend uses are all monkeypatched (:74, :366, :377, :379), so the embedder is not the exposure \u2014 the split is.",
+   "xdist_group": "store:device:gpu-vram"
+  },
+  {
+   "file": "tests/test_mechround_adjudication.py",
+   "verdict": "safe-parallel",
+   "stores": [],
+   "evidence": [],
+   "note": "no live-tree write in the traced run; no static signature"
+  },
+  {
+   "file": "tests/test_merge_residue.py",
+   "verdict": "safe-parallel",
+   "stores": [],
+   "evidence": [],
+   "note": "no live-tree write in the traced run; no static signature"
+  },
+  {
+   "file": "tests/test_meta_leak_scrub.py",
+   "verdict": "safe-parallel",
+   "stores": [],
+   "evidence": [],
+   "note": "no live-tree write in the traced run; no static signature"
+  },
+  {
+   "file": "tests/test_methods_fibre.py",
+   "verdict": "safe-parallel",
+   "stores": [],
+   "evidence": [
+    "run 2026-08-21: PYTHONPATH=<scratch> TRACER_OUT=<scratch>/new_files_trace.jsonl python3 -m pytest -q -p write_tracer <the 10 unrowed files + the 2 changed ones> -> 185 passed in 9.37s; 22 trace rows; `git status --porcelain` byte-identical before and after",
+    "traced Path.mkdir/os.mkdir on corpus_friction from corpus_ingest._rewire_path (src/laplace/corpus_ingest.py:589), reached through compile_dispatch -> corpus_network -> rewire_list on a READ"
+   ],
+   "note": "the one traced live-root op is mkdir(parents=True, exist_ok=True) on the already-tracked corpus_friction/ directory - idempotent, content-free, and safe under concurrency. Noted rather than hidden: a read path that mkdirs is a smell, not a race."
+  },
+  {
+   "file": "tests/test_metric_distill.py",
+   "verdict": "safe-parallel",
+   "stores": [],
+   "evidence": [],
+   "note": "no live-tree write in the traced run; no static signature"
+  },
+  {
+   "file": "tests/test_model_floor_audit.py",
+   "verdict": "safe-parallel",
+   "stores": [
+    "corpus_friction (mkdir only)"
+   ],
+   "evidence": [
+    "trace(full,2026-08-20T20:15Z) Path.mkdir/os.mkdir on an existing live dir"
+   ],
+   "note": "touches the live tree only through an idempotent mkdir (252 of the 262 traced mkdir calls target the existing repo-root `corpus_friction`, exist_ok contract) \u2014 no byte contention"
+  },
+  {
+   "file": "tests/test_n21_one_organ.py",
+   "verdict": "safe-parallel",
+   "stores": [],
+   "evidence": [],
+   "note": "no live-tree write in the traced run; no static signature"
+  },
+  {
+   "file": "tests/test_narrative.py",
+   "verdict": "safe-parallel",
+   "stores": [],
+   "evidence": [],
+   "note": "no live-tree write in the traced run; no static signature"
+  },
+  {
+   "file": "tests/test_no_mock_artifacts_served.py",
+   "verdict": "safe-parallel",
+   "stores": [],
+   "evidence": [],
+   "note": "no live-tree write in the traced run; no static signature"
+  },
+  {
+   "file": "tests/test_nodemap.py",
+   "verdict": "safe-parallel",
+   "stores": [],
+   "evidence": [],
+   "note": "no live-tree write in the traced run; no static signature"
+  },
+  {
+   "file": "tests/test_obligation_probe_sweep.py",
+   "verdict": "safe-parallel",
+   "stores": [],
+   "evidence": [],
+   "note": "no live-tree write in the traced run; no static signature"
+  },
+  {
+   "file": "tests/test_offline_feedback_smoke.py",
+   "verdict": "safe-parallel",
+   "stores": [],
+   "evidence": [],
+   "note": "no live-tree write in the traced run; no static signature"
+  },
+  {
+   "file": "tests/test_offline_launcher.py",
+   "verdict": "safe-parallel",
+   "stores": [],
+   "evidence": [],
+   "note": "no live-tree write in the traced run; no static signature"
+  },
+  {
+   "file": "tests/test_old_loop_alive.py",
+   "verdict": "safe-parallel",
+   "stores": [],
+   "evidence": [],
+   "note": "no live-tree write in the traced run; no static signature"
+  },
+  {
+   "file": "tests/test_open_stack_render.py",
+   "verdict": "safe-parallel",
+   "stores": [],
+   "evidence": [],
+   "note": "no live-tree write in the traced run; no static signature"
+  },
+  {
+   "file": "tests/test_open_stack_store.py",
+   "verdict": "safe-parallel",
+   "stores": [],
+   "evidence": [],
+   "note": "no live-tree write in the traced run; no static signature"
+  },
+  {
+   "file": "tests/test_operating_contract.py",
+   "verdict": "safe-parallel",
+   "stores": [
+    "corpus_friction (mkdir only)"
+   ],
+   "evidence": [
+    "trace(full,2026-08-20T20:15Z) Path.mkdir/os.mkdir on an existing live dir"
+   ],
+   "note": "touches the live tree only through an idempotent mkdir (252 of the 262 traced mkdir calls target the existing repo-root `corpus_friction`, exist_ok contract) \u2014 no byte contention"
+  },
+  {
+   "file": "tests/test_orient_grade.py",
+   "verdict": "safe-parallel",
+   "stores": [],
+   "evidence": [],
+   "note": "no live-tree write in the traced run; no static signature"
+  },
+  {
+   "file": "tests/test_packet_aim.py",
+   "verdict": "safe-parallel",
+   "stores": [
+    "corpus_friction (mkdir only)"
+   ],
+   "evidence": [
+    "trace(full,2026-08-20T20:15Z) Path.mkdir/os.mkdir on an existing live dir"
+   ],
+   "note": "touches the live tree only through an idempotent mkdir (252 of the 262 traced mkdir calls target the existing repo-root `corpus_friction`, exist_ok contract) \u2014 no byte contention"
+  },
+  {
+   "file": "tests/test_palette_per_route.py",
+   "verdict": "safe-parallel",
+   "stores": [],
+   "evidence": [],
+   "note": "no live-tree write in the traced run; no static signature"
+  },
+  {
+   "file": "tests/test_paragraph_provenance.py",
+   "verdict": "needs-serialization",
+   "stores": [
+    "synthetics papers/subset-sum-itqde/manuscript/decisions/_voice_retrieval.json"
+   ],
+   "evidence": [
+    "trace(full,2026-08-20T20:15Z) Path.write_text synthetics papers/subset-sum-itqde/manuscript/decisions/_voice_retrieval\u2026 <- test_weld_dispatch_voice_toggle_neutral",
+    "trace(full,2026-08-20T20:15Z) Path.mkdir synthetics papers/subset-sum-itqde/manuscript/decisions"
+   ],
+   "note": "writes the live decisions sidecar. tests/test_voice_retrieval.py names the same '_voice_retrieval.json' basename but under tmp_path \u2014 no collision, checked.",
+   "xdist_group": "file:tests/test_paragraph_provenance.py"
+  },
+  {
+   "file": "tests/test_pathsafe.py",
+   "verdict": "safe-parallel",
+   "stores": [],
+   "evidence": [],
+   "note": "no live-tree write in the traced run; no static signature"
+  },
+  {
+   "file": "tests/test_pilot_term.py",
+   "verdict": "safe-parallel",
+   "stores": [],
+   "evidence": [
+    "run 2026-08-21: PYTHONPATH=<scratch> TRACER_OUT=<scratch>/new_files_trace.jsonl python3 -m pytest -q -p write_tracer <the 10 unrowed files + the 2 changed ones> -> 185 passed in 9.37s; 22 trace rows; `git status --porcelain` byte-identical before and after"
+   ],
+   "note": "no live-tree write in the 2026-08-21 re-trace; no static signature"
+  },
+  {
+   "file": "tests/test_pipeline_coherence.py",
+   "verdict": "safe-parallel",
+   "stores": [],
+   "evidence": [],
+   "note": "no live-tree write in the traced run; no static signature"
+  },
+  {
+   "file": "tests/test_pipeline_evolve.py",
+   "verdict": "safe-parallel",
+   "stores": [],
+   "evidence": [],
+   "note": "no live-tree write in the traced run; no static signature"
+  },
+  {
+   "file": "tests/test_pipeline_propagate.py",
+   "verdict": "safe-parallel",
+   "stores": [
+    "corpus_friction (mkdir only)"
+   ],
+   "evidence": [
+    "trace(full,2026-08-20T20:15Z) Path.mkdir/os.mkdir on an existing live dir"
+   ],
+   "note": "touches the live tree only through an idempotent mkdir (252 of the 262 traced mkdir calls target the existing repo-root `corpus_friction`, exist_ok contract) \u2014 no byte contention"
+  },
+  {
+   "file": "tests/test_pipeline_restructure.py",
+   "verdict": "safe-parallel",
+   "stores": [
+    "corpus_friction (mkdir only)"
+   ],
+   "evidence": [
+    "trace(full,2026-08-20T20:15Z) Path.mkdir/os.mkdir on an existing live dir"
+   ],
+   "note": "touches the live tree only through an idempotent mkdir (252 of the 262 traced mkdir calls target the existing repo-root `corpus_friction`, exist_ok contract) \u2014 no byte contention"
+  },
+  {
+   "file": "tests/test_pipeline_spine.py",
+   "verdict": "safe-parallel",
+   "stores": [
+    "corpus_friction (mkdir only)"
+   ],
+   "evidence": [
+    "trace(full,2026-08-20T20:15Z) Path.mkdir/os.mkdir on an existing live dir"
+   ],
+   "note": "touches the live tree only through an idempotent mkdir (252 of the 262 traced mkdir calls target the existing repo-root `corpus_friction`, exist_ok contract) \u2014 no byte contention"
+  },
+  {
+   "file": "tests/test_pipeline_stages.py",
+   "verdict": "safe-parallel",
+   "stores": [
+    "corpus_friction (mkdir only)"
+   ],
+   "evidence": [
+    "trace(full,2026-08-20T20:15Z) Path.mkdir/os.mkdir on an existing live dir"
+   ],
+   "note": "touches the live tree only through an idempotent mkdir (252 of the 262 traced mkdir calls target the existing repo-root `corpus_friction`, exist_ok contract) \u2014 no byte contention"
+  },
+  {
+   "file": "tests/test_pipeline_surface.py",
+   "verdict": "needs-serialization",
+   "stores": [
+    ".git/index"
+   ],
+   "evidence": [
+    "trace(full,2026-08-20T20:15Z) subprocess cwd=<repo> :: git status --porcelain <- test_get_pipeline_organ_writes_nothing"
+   ],
+   "note": "the test that ASSERTS the organ writes nothing proves it with `git status` on the live repo \u2014 so a sibling worker dirtying the tree fails it. Order-coupled by construction.",
+   "xdist_group": "store:.git/index+holdout/LAST_SCORE.json+holdout/PREDICTION_pending.json"
+  },
+  {
+   "file": "tests/test_planted_failures.py",
+   "verdict": "safe-parallel",
+   "stores": [],
+   "evidence": [],
+   "note": "no live-tree write in the traced run; no static signature"
+  },
+  {
+   "file": "tests/test_playwright_walks_runner.py",
+   "verdict": "safe-parallel",
+   "stores": [],
+   "evidence": [],
+   "note": "no live-tree write in the traced run; no static signature"
+  },
+  {
+   "file": "tests/test_pool_fold.py",
+   "verdict": "safe-parallel",
+   "stores": [],
+   "evidence": [],
+   "note": "no live-tree write in the traced run; no static signature"
+  },
+  {
+   "file": "tests/test_pour_finding_idempotent.py",
+   "verdict": "safe-parallel",
+   "stores": [],
+   "evidence": [],
+   "note": "no live-tree write in the traced run; no static signature"
+  },
+  {
+   "file": "tests/test_pour_generalization.py",
+   "verdict": "safe-parallel",
+   "stores": [
+    "corpus_friction (mkdir only)"
+   ],
+   "evidence": [
+    "trace(full,2026-08-20T20:15Z) Path.mkdir/os.mkdir on an existing live dir"
+   ],
+   "note": "touches the live tree only through an idempotent mkdir (252 of the 262 traced mkdir calls target the existing repo-root `corpus_friction`, exist_ok contract) \u2014 no byte contention"
+  },
+  {
+   "file": "tests/test_probe_before_claim.py",
+   "verdict": "safe-parallel",
+   "stores": [],
+   "evidence": [],
+   "note": "no live-tree write in the traced run; no static signature"
+  },
+  {
+   "file": "tests/test_project_context.py",
+   "verdict": "safe-parallel",
+   "stores": [],
+   "evidence": [],
+   "note": "no live-tree write in the traced run; no static signature"
+  },
+  {
+   "file": "tests/test_project_doc_route.py",
+   "verdict": "safe-parallel",
+   "stores": [],
+   "evidence": [],
+   "note": "no live-tree write in the traced run; no static signature"
+  },
+  {
+   "file": "tests/test_project_verdict.py",
+   "verdict": "safe-parallel",
+   "stores": [],
+   "evidence": [],
+   "note": "no live-tree write in the traced run; no static signature"
+  },
+  {
+   "file": "tests/test_projection_spec.py",
+   "verdict": "safe-parallel",
+   "stores": [],
+   "evidence": [],
+   "note": "no live-tree write in the traced run; no static signature"
+  },
+  {
+   "file": "tests/test_promise_audit.py",
+   "verdict": "safe-parallel",
+   "stores": [],
+   "evidence": [],
+   "note": "no live-tree write in the traced run; no static signature"
+  },
+  {
+   "file": "tests/test_proportionality_gate.py",
+   "verdict": "safe-parallel",
+   "stores": [
+    "corpus_friction (mkdir only)"
+   ],
+   "evidence": [
+    "trace(full,2026-08-20T20:15Z) Path.mkdir/os.mkdir on an existing live dir"
+   ],
+   "note": "touches the live tree only through an idempotent mkdir (252 of the 262 traced mkdir calls target the existing repo-root `corpus_friction`, exist_ok contract) \u2014 no byte contention"
+  },
+  {
+   "file": "tests/test_provenance_index.py",
+   "verdict": "needs-serialization",
+   "stores": [
+    "paper_falqon/manuscript/node_index.json"
+   ],
+   "evidence": [
+    "trace(full,2026-08-20T20:15Z) Path.write_text paper_falqon/manuscript/node_index.json <- test_index_freshness_after_mint",
+    "trace(full,2026-08-20T20:15Z) Path.write_bytes paper_falqon/manuscript/node_index.json",
+    "static tests/test_provenance_index.py:285-290 (its docstring names AP-13)"
+   ],
+   "note": "third writer of the same live index; the test is ABOUT mint freshness, so it reads the mtime it just wrote \u2014 the most order-sensitive of the three.",
+   "xdist_group": "store:paper_falqon/manuscript/node_index.json"
+  },
+  {
+   "file": "tests/test_public_chat_export.py",
+   "verdict": "safe-parallel",
+   "stores": [],
+   "evidence": [],
+   "note": "no live-tree write in the traced run; no static signature"
+  },
+  {
+   "file": "tests/test_readability_gate.py",
+   "verdict": "safe-parallel",
+   "stores": [],
+   "evidence": [],
+   "note": "no live-tree write in the traced run; no static signature"
+  },
+  {
+   "file": "tests/test_readers.py",
+   "verdict": "safe-parallel",
+   "stores": [],
+   "evidence": [],
+   "note": "no live-tree write in the traced run; no static signature"
+  },
+  {
+   "file": "tests/test_reconstruction.py",
+   "verdict": "safe-parallel",
+   "stores": [],
+   "evidence": [],
+   "note": "no live-tree write in the traced run; no static signature"
+  },
+  {
+   "file": "tests/test_reconstruction_fence.py",
+   "verdict": "safe-parallel",
+   "stores": [],
+   "evidence": [
+    "static tests/test_reconstruction_fence.py:300 os.environ['LAPLACE_STATE'] = str(Path(self._tmp.name) / '_state')  (tearDown pops it)"
+   ],
+   "note": "the only raw os.environ mutation in the whole test tree. Process-global, so under -n it is per-worker and strictly SAFER than serial; the target is a TemporaryDirectory. The conftest autouse fixture re-sets LAPLACE_STATE per test. The dir_fd-corrected re-trace showed ZERO live writes from this file (the first pass' HANDOFF.md / work_orders.jsonl rows were shutil.rmtree(dir_fd=\u2026) artefacts)."
+  },
+  {
+   "file": "tests/test_record_shard.py",
+   "verdict": "safe-parallel",
+   "stores": [],
+   "evidence": [],
+   "note": "no live-tree write in the traced run; no static signature"
+  },
+  {
+   "file": "tests/test_recursive_read.py",
+   "verdict": "safe-parallel",
+   "stores": [],
+   "evidence": [],
+   "note": "no live-tree write in the traced run; no static signature"
+  },
+  {
+   "file": "tests/test_reembed_timing.py",
+   "verdict": "safe-parallel",
+   "stores": [],
+   "evidence": [],
+   "note": "no live-tree write in the traced run; no static signature"
+  },
+  {
+   "file": "tests/test_regen_grain.py",
+   "verdict": "safe-parallel",
+   "stores": [],
+   "evidence": [],
+   "note": "no live-tree write in the traced run; no static signature"
+  },
+  {
+   "file": "tests/test_register_fold_trace.py",
+   "verdict": "safe-parallel",
+   "stores": [],
+   "evidence": [
+    "run 2026-08-21: PYTHONPATH=<scratch> TRACER_OUT=<scratch>/new_files_trace.jsonl python3 -m pytest -q -p write_tracer <the 10 unrowed files + the 2 changed ones> -> 185 passed in 9.37s; 22 trace rows; `git status --porcelain` byte-identical before and after"
+   ],
+   "note": "no live-tree write in the 2026-08-21 re-trace; no static signature"
+  },
+  {
+   "file": "tests/test_registry.py",
+   "verdict": "safe-parallel",
+   "stores": [],
+   "evidence": [],
+   "note": "no live-tree write in the traced run; no static signature"
+  },
+  {
+   "file": "tests/test_release.py",
+   "verdict": "safe-parallel",
+   "stores": [],
+   "evidence": [],
+   "note": "no live-tree write in the traced run; no static signature"
+  },
+  {
+   "file": "tests/test_relocation.py",
+   "verdict": "safe-parallel",
+   "stores": [],
+   "evidence": [],
+   "note": "no live-tree write in the traced run; no static signature"
+  },
+  {
+   "file": "tests/test_residue.py",
+   "verdict": "safe-parallel",
+   "stores": [],
+   "evidence": [],
+   "note": "every write lands under tmp_path (residue.append_rows, and the fold's own tree + vector sidecar under a tmp store root); both get_backend uses are monkeypatched - the deterministic FakeBackend, and None for the degrade path - so neither the real embedder nor the GPU split is reached."
+  },
+  {
+   "file": "tests/test_restart_reader.py",
+   "verdict": "safe-parallel",
+   "stores": [],
+   "evidence": [],
+   "note": "no live-tree write in the traced run; no static signature"
+  },
+  {
+   "file": "tests/test_review_bundle.py",
+   "verdict": "safe-parallel",
+   "stores": [],
+   "evidence": [],
+   "note": "no live-tree write in the traced run; no static signature"
+  },
+  {
+   "file": "tests/test_review_deltas_first.py",
+   "verdict": "safe-parallel",
+   "stores": [],
+   "evidence": [],
+   "note": "no live-tree write in the traced run; no static signature"
+  },
+  {
+   "file": "tests/test_review_surface.py",
+   "verdict": "safe-parallel",
+   "stores": [],
+   "evidence": [],
+   "note": "no live-tree write in the traced run; no static signature"
+  },
+  {
+   "file": "tests/test_review_surface_learned.py",
+   "verdict": "safe-parallel",
+   "stores": [],
+   "evidence": [],
+   "note": "no live-tree write in the traced run; no static signature"
+  },
+  {
+   "file": "tests/test_rotate_handoff.py",
+   "verdict": "safe-parallel",
+   "stores": [],
+   "evidence": [],
+   "note": "no live-tree write in the traced run; no static signature"
+  },
+  {
+   "file": "tests/test_route_adjudication.py",
+   "verdict": "safe-parallel",
+   "stores": [],
+   "evidence": [],
+   "note": "no live-tree write in the traced run; no static signature"
+  },
+  {
+   "file": "tests/test_ruling_return.py",
+   "verdict": "safe-parallel",
+   "stores": [],
+   "evidence": [],
+   "note": "no live-tree write in the traced run; no static signature"
+  },
+  {
+   "file": "tests/test_scaffold_wipe.py",
+   "verdict": "needs-serialization",
+   "stores": [
+    "tests/_scaffold_tmp_fig.pdf",
+    "tests/_scaffold_tmp_fig2.pdf"
+   ],
+   "evidence": [
+    "trace(recheck,dir_fd-corrected) open:wb tests/_scaffold_tmp_fig.pdf <- test_save_scrubs_type_tag_and_spanning_title",
+    "trace(recheck,dir_fd-corrected) open:wb tests/_scaffold_tmp_fig2.pdf",
+    "trace(recheck,dir_fd-corrected) Path.unlink (both)"
+   ],
+   "note": "writes FIXED-NAME scratch PDFs into tests/ itself (not tmp_path) and unlinks them. Two of its own tests already use distinct names, so the collision risk is within-file re-entry under --dist load; a per-file group closes it.",
+   "xdist_group": "file:tests/test_scaffold_wipe.py"
+  },
+  {
+   "file": "tests/test_scanner.py",
+   "verdict": "safe-parallel",
+   "stores": [],
+   "evidence": [],
+   "note": "no live-tree write in the traced run; no static signature"
+  },
+  {
+   "file": "tests/test_script_bootstrap.py",
+   "verdict": "safe-parallel",
+   "stores": [],
+   "evidence": [],
+   "note": "no live-tree write in the traced run; no static signature"
+  },
+  {
+   "file": "tests/test_section_bridge.py",
+   "verdict": "safe-parallel",
+   "stores": [],
+   "evidence": [],
+   "note": "no live-tree write in the traced run; no static signature"
+  },
+  {
+   "file": "tests/test_selection_sheet.py",
+   "verdict": "safe-parallel",
+   "stores": [],
+   "evidence": [],
+   "note": "no live-tree write in the traced run; no static signature"
+  },
+  {
+   "file": "tests/test_selection_surface.py",
+   "verdict": "safe-parallel",
+   "stores": [],
+   "evidence": [],
+   "note": "no live-tree write in the traced run; no static signature"
+  },
+  {
+   "file": "tests/test_self_corpus.py",
+   "verdict": "needs-serialization",
+   "stores": [
+    ".git/index"
+   ],
+   "evidence": [
+    "trace(full,2026-08-20T20:15Z) subprocess cwd=<repo> :: git status --porcelain <- test_triple_respects_its_own_budget_and_the_probe"
+   ],
+   "note": "the wake probe shells `git status` at the repo root.",
+   "xdist_group": "store:.git/index+holdout/LAST_SCORE.json+holdout/PREDICTION_pending.json"
+  },
+  {
+   "file": "tests/test_self_shard.py",
+   "verdict": "safe-parallel",
+   "stores": [],
+   "evidence": [],
+   "note": "no live-tree write in the traced run; no static signature"
+  },
+  {
+   "file": "tests/test_server_lifecycle.py",
+   "verdict": "safe-parallel",
+   "stores": [],
+   "evidence": [],
+   "note": "no live-tree write in the traced run; no static signature"
+  },
+  {
+   "file": "tests/test_sewup.py",
+   "verdict": "safe-parallel",
+   "stores": [],
+   "evidence": [],
+   "note": "no live-tree write in the traced run; no static signature"
+  },
+  {
+   "file": "tests/test_shared_ladder.py",
+   "verdict": "safe-parallel",
+   "stores": [
+    "corpus_friction (mkdir only)"
+   ],
+   "evidence": [
+    "trace(full,2026-08-20T20:15Z) Path.mkdir/os.mkdir on an existing live dir"
+   ],
+   "note": "touches the live tree only through an idempotent mkdir (252 of the 262 traced mkdir calls target the existing repo-root `corpus_friction`, exist_ok contract) \u2014 no byte contention"
+  },
+  {
+   "file": "tests/test_shared_model.py",
+   "verdict": "safe-parallel",
+   "stores": [],
+   "evidence": [],
+   "note": "no live-tree write in the traced run; no static signature"
+  },
+  {
+   "file": "tests/test_shared_versions.py",
+   "verdict": "safe-parallel",
+   "stores": [],
+   "evidence": [],
+   "note": "no live-tree write in the traced run; no static signature"
+  },
+  {
+   "file": "tests/test_site_backend.py",
+   "verdict": "safe-parallel",
+   "stores": [],
+   "evidence": [],
+   "note": "no live-tree write in the traced run; no static signature"
+  },
+  {
+   "file": "tests/test_site_gates.py",
+   "verdict": "safe-parallel",
+   "stores": [],
+   "evidence": [],
+   "note": "no live-tree write in the traced run; no static signature"
+  },
+  {
+   "file": "tests/test_skill_residual.py",
+   "verdict": "safe-parallel",
+   "stores": [],
+   "evidence": [],
+   "note": "no live-tree write in the traced run; no static signature"
+  },
+  {
+   "file": "tests/test_soul_consolidate.py",
+   "verdict": "safe-parallel",
+   "stores": [],
+   "evidence": [],
+   "note": "no live-tree write in the traced run; no static signature"
+  },
+  {
+   "file": "tests/test_soul_dream.py",
+   "verdict": "safe-parallel",
+   "stores": [],
+   "evidence": [],
+   "note": "no live-tree write in the traced run; no static signature"
+  },
+  {
+   "file": "tests/test_soul_provenance.py",
+   "verdict": "safe-parallel",
+   "stores": [],
+   "evidence": [],
+   "note": "no live-tree write in the traced run; no static signature"
+  },
+  {
+   "file": "tests/test_soul_refactor.py",
+   "verdict": "needs-serialization",
+   "stores": [
+    ".soul_refactor_staging"
+   ],
+   "evidence": [
+    "trace(full,2026-08-20T20:15Z) Path.write_text .soul_refactor_staging/skill__blind_reader.staged <- test_stub_carrier_changes_nothing_live",
+    "trace(full,2026-08-20T20:15Z) Path.write_text .soul_refactor_staging/skill__canon_weaver.staged",
+    "trace(full,2026-08-20T20:15Z) Path.mkdir .soul_refactor_staging"
+   ],
+   "note": "stages into a FIXED repo-root directory. scripts/soul_refactor.py is its writer; sole toucher in the test tree.",
+   "xdist_group": "file:tests/test_soul_refactor.py"
+  },
+  {
+   "file": "tests/test_soul_resolve.py",
+   "verdict": "safe-parallel",
+   "stores": [],
+   "evidence": [],
+   "note": "no live-tree write in the traced run; no static signature"
+  },
+  {
+   "file": "tests/test_soul_shard.py",
+   "verdict": "safe-parallel",
+   "stores": [],
+   "evidence": [],
+   "note": "no live-tree write in the traced run; no static signature"
+  },
+  {
+   "file": "tests/test_source_anchor.py",
+   "verdict": "safe-parallel",
+   "stores": [],
+   "evidence": [
+    "run 2026-08-21: PYTHONPATH=<scratch> TRACER_OUT=<scratch>/new_files_trace.jsonl python3 -m pytest -q -p write_tracer <the 10 unrowed files + the 2 changed ones> -> 185 passed in 9.37s; 22 trace rows; `git status --porcelain` byte-identical before and after"
+   ],
+   "note": "no live-tree write in the 2026-08-21 re-trace; no static signature"
+  },
+  {
+   "file": "tests/test_source_delta.py",
+   "verdict": "safe-parallel",
+   "stores": [],
+   "evidence": [],
+   "note": "no live-tree write in the traced run; no static signature"
+  },
+  {
+   "file": "tests/test_spectral_gpu.py",
+   "verdict": "needs-serialization",
+   "stores": [
+    "device:gpu-vram"
+   ],
+   "evidence": [
+    "tests/test_spectral_gpu.py:19 _GPU_OK, _GPU_WHY = S.gpu_ready() \u2014 a MODULE-LEVEL cuBLAS GEMM probe, so the device is touched at import, before any test runs",
+    "tests/test_spectral_gpu.py:86-92 the two gpu cases run the real cupy operator"
+   ],
+   "note": "allocates on the device at collection/import time. Grouped with the other GPU files; no file write of any kind.",
+   "xdist_group": "store:device:gpu-vram"
+  },
+  {
+   "file": "tests/test_spine.py",
+   "verdict": "safe-parallel",
+   "stores": [],
+   "evidence": [],
+   "note": "no live-tree write in the traced run; no static signature"
+  },
+  {
+   "file": "tests/test_stage_retrieval.py",
+   "verdict": "safe-parallel",
+   "stores": [],
+   "evidence": [],
+   "note": "no live-tree write in the traced run; no static signature"
+  },
+  {
+   "file": "tests/test_stage_store.py",
+   "verdict": "safe-parallel",
+   "stores": [],
+   "evidence": [],
+   "note": "no live-tree write in the traced run; no static signature"
+  },
+  {
+   "file": "tests/test_staleness_bare_and_uppercase_node_ids.py",
+   "verdict": "safe-parallel",
+   "stores": [],
+   "evidence": [],
+   "note": "no live-tree write in the traced run; no static signature"
+  },
+  {
+   "file": "tests/test_store_gate_freshness.py",
+   "verdict": "safe-parallel",
+   "stores": [],
+   "evidence": [
+    "run 2026-08-21: PYTHONPATH=<scratch> TRACER_OUT=<scratch>/new_files_trace.jsonl python3 -m pytest -q -p write_tracer <the 10 unrowed files + the 2 changed ones> -> 185 passed in 9.37s; 22 trace rows; `git status --porcelain` byte-identical before and after"
+   ],
+   "note": "no live-tree write in the 2026-08-21 re-trace; no static signature"
+  },
+  {
+   "file": "tests/test_stored_equation_checker.py",
+   "verdict": "safe-parallel",
+   "stores": [],
+   "evidence": [],
+   "note": "no live-tree write in the traced run; no static signature"
+  },
+  {
+   "file": "tests/test_storyboard.py",
+   "verdict": "safe-parallel",
+   "stores": [],
+   "evidence": [],
+   "note": "no live-tree write in the traced run; no static signature"
+  },
+  {
+   "file": "tests/test_storyboard_endpoints.py",
+   "verdict": "safe-parallel",
+   "stores": [
+    "corpus_friction/subset-sum-itqde.jsonl (lock only)"
+   ],
+   "evidence": [
+    "trace(recheck,dir_fd-corrected) os.open corpus_friction/subset-sum-itqde.jsonl.lock <- test_restructure_apply_rolls_back_on_a_failed_write",
+    "trace(recheck,dir_fd-corrected) Path.mkdir corpus_friction"
+   ],
+   "note": "acquires the LIVE filelock on a corpus_friction ledger and rolls back without writing. filelock is cross-process by construction (laplace.pipeline.locking), so this is safe under -n; recorded because it is the only other live-store toucher."
+  },
+  {
+   "file": "tests/test_storyboard_launch.py",
+   "verdict": "safe-parallel",
+   "stores": [],
+   "evidence": [],
+   "note": "no live-tree write in the traced run; no static signature"
+  },
+  {
+   "file": "tests/test_storyboard_run.py",
+   "verdict": "safe-parallel",
+   "stores": [],
+   "evidence": [],
+   "note": "no live-tree write in the traced run; no static signature"
+  },
+  {
+   "file": "tests/test_storyboard_smoke.py",
+   "verdict": "needs-serialization",
+   "stores": [
+    ".cockpit.json"
+   ],
+   "evidence": [
+    "run 2026-08-21: PYTHONPATH=<scratch> TRACER_OUT=<scratch>/new_files_trace.jsonl python3 -m pytest -q -p write_tracer <the 10 unrowed files + the 2 changed ones> -> 185 passed in 9.37s; 22 trace rows; `git status --porcelain` byte-identical before and after",
+    "traced Path.write_text .cockpit.json on test_storyboard_board_renders_in_browser",
+    "src/laplace/scanner.py:1208 cockpit_state() - unlocked read-modify-write at the live root"
+   ],
+   "note": "ROW AMENDED 2026-08-21. It read safe-parallel at head 979724e0 and that was true then; e65e781e rewrote this smoke against the living interface and the browser leg now reaches the /review deeplink, so it banks a cockpit cursor into the live gitignored .cockpit.json. Grouped with test_artefact_surface_smoke.py, which arrived in the same commit and writes the same store.",
+   "xdist_group": "store:.cockpit.json"
+  },
+  {
+   "file": "tests/test_stretch_seal.py",
+   "verdict": "safe-parallel",
+   "stores": [],
+   "evidence": [],
+   "note": "no live-tree write in the traced run; no static signature"
+  },
+  {
+   "file": "tests/test_structural_conformance.py",
+   "verdict": "safe-parallel",
+   "stores": [
+    "corpus_friction (mkdir only)"
+   ],
+   "evidence": [
+    "trace(full,2026-08-20T20:15Z) Path.mkdir/os.mkdir on an existing live dir"
+   ],
+   "note": "touches the live tree only through an idempotent mkdir (252 of the 262 traced mkdir calls target the existing repo-root `corpus_friction`, exist_ok contract) \u2014 no byte contention"
+  },
+  {
+   "file": "tests/test_suite_map.py",
+   "verdict": "safe-parallel",
+   "stores": [],
+   "evidence": [],
+   "note": "no live-tree write in the traced run; no static signature"
+  },
+  {
+   "file": "tests/test_superarc_bdm.py",
+   "verdict": "safe-parallel",
+   "stores": [],
+   "evidence": [],
+   "note": "no live-tree write in the traced run; no static signature"
+  },
+  {
+   "file": "tests/test_superarc_bin_classifier.py",
+   "verdict": "safe-parallel",
+   "stores": [],
+   "evidence": [],
+   "note": "no live-tree write in the traced run; no static signature"
+  },
+  {
+   "file": "tests/test_superarc_dev_suite.py",
+   "verdict": "safe-parallel",
+   "stores": [],
+   "evidence": [],
+   "note": "no live-tree write in the traced run; no static signature"
+  },
+  {
+   "file": "tests/test_superarc_door.py",
+   "verdict": "safe-parallel",
+   "stores": [
+    "corpus_friction (mkdir only)"
+   ],
+   "evidence": [
+    "trace(full,2026-08-20T20:15Z) Path.mkdir/os.mkdir on an existing live dir"
+   ],
+   "note": "touches the live tree only through an idempotent mkdir (252 of the 262 traced mkdir calls target the existing repo-root `corpus_friction`, exist_ok contract) \u2014 no byte contention"
+  },
+  {
+   "file": "tests/test_superarc_frozen_items.py",
+   "verdict": "safe-parallel",
+   "stores": [],
+   "evidence": [],
+   "note": "no live-tree write in the traced run; no static signature"
+  },
+  {
+   "file": "tests/test_superarc_genesis_loop.py",
+   "verdict": "safe-parallel",
+   "stores": [],
+   "evidence": [],
+   "note": "no live-tree write in the traced run; no static signature"
+  },
+  {
+   "file": "tests/test_superarc_phi.py",
+   "verdict": "safe-parallel",
+   "stores": [],
+   "evidence": [],
+   "note": "no live-tree write in the traced run; no static signature"
+  },
+  {
+   "file": "tests/test_superarc_sequence_exec.py",
+   "verdict": "safe-parallel",
+   "stores": [],
+   "evidence": [],
+   "note": "no live-tree write in the traced run; no static signature"
+  },
+  {
+   "file": "tests/test_superarc_submission_gate.py",
+   "verdict": "safe-parallel",
+   "stores": [],
+   "evidence": [],
+   "note": "no live-tree write in the traced run; no static signature"
+  },
+  {
+   "file": "tests/test_superego.py",
+   "verdict": "safe-parallel",
+   "stores": [],
+   "evidence": [],
+   "note": "no live-tree write in the traced run; no static signature"
+  },
+  {
+   "file": "tests/test_supersede_sweep.py",
+   "verdict": "safe-parallel",
+   "stores": [],
+   "evidence": [],
+   "note": "no live-tree write in the traced run; no static signature"
+  },
+  {
+   "file": "tests/test_suppress.py",
+   "verdict": "safe-parallel",
+   "stores": [],
+   "evidence": [],
+   "note": "no live-tree write in the traced run; no static signature"
+  },
+  {
+   "file": "tests/test_surfacing.py",
+   "verdict": "safe-parallel",
+   "stores": [
+    "corpus_friction (mkdir only)"
+   ],
+   "evidence": [
+    "trace(full,2026-08-20T20:15Z) Path.mkdir/os.mkdir on an existing live dir"
+   ],
+   "note": "touches the live tree only through an idempotent mkdir (252 of the 262 traced mkdir calls target the existing repo-root `corpus_friction`, exist_ok contract) \u2014 no byte contention"
+  },
+  {
+   "file": "tests/test_surfacing_audit.py",
+   "verdict": "safe-parallel",
+   "stores": [],
+   "evidence": [],
+   "note": "no live-tree write in the traced run; no static signature"
+  },
+  {
+   "file": "tests/test_sweep_deprecated_skills.py",
+   "verdict": "safe-parallel",
+   "stores": [],
+   "evidence": [],
+   "note": "no live-tree write in the traced run; no static signature"
+  },
+  {
+   "file": "tests/test_synthetics_definition_door.py",
+   "verdict": "safe-parallel",
+   "stores": [
+    "corpus_friction (mkdir only)"
+   ],
+   "evidence": [
+    "trace(full,2026-08-20T20:15Z) Path.mkdir/os.mkdir on an existing live dir"
+   ],
+   "note": "touches the live tree only through an idempotent mkdir (252 of the 262 traced mkdir calls target the existing repo-root `corpus_friction`, exist_ok contract) \u2014 no byte contention"
+  },
+  {
+   "file": "tests/test_taste_fusion.py",
+   "verdict": "safe-parallel",
+   "stores": [],
+   "evidence": [],
+   "note": "no live-tree write in the traced run; no static signature"
+  },
+  {
+   "file": "tests/test_technique_lens.py",
+   "verdict": "safe-parallel",
+   "stores": [],
+   "evidence": [],
+   "note": "no live-tree write in the traced run; no static signature"
+  },
+  {
+   "file": "tests/test_teeth.py",
+   "verdict": "safe-parallel",
+   "stores": [],
+   "evidence": [],
+   "note": "no live-tree write in the traced run; no static signature"
+  },
+  {
+   "file": "tests/test_template_agreement.py",
+   "verdict": "safe-parallel",
+   "stores": [],
+   "evidence": [],
+   "note": "no live-tree write in the traced run; no static signature"
+  },
+  {
+   "file": "tests/test_tests_at_grade.py",
+   "verdict": "safe-parallel",
+   "stores": [],
+   "evidence": [],
+   "note": "no live-tree write in the traced run; no static signature"
+  },
+  {
+   "file": "tests/test_tex_template.py",
+   "verdict": "safe-parallel",
+   "stores": [],
+   "evidence": [],
+   "note": "no live-tree write in the traced run; no static signature"
+  },
+  {
+   "file": "tests/test_tics.py",
+   "verdict": "safe-parallel",
+   "stores": [],
+   "evidence": [
+    "static: source carries a UTF-8 BOM (U+FEFF) \u2014 ast.parse on plain utf-8 raises"
+   ],
+   "note": "see tests/test_math_layout_tell.py."
+  },
+  {
+   "file": "tests/test_tool.py",
+   "verdict": "safe-parallel",
+   "stores": [],
+   "evidence": [],
+   "note": "no live-tree write in the traced run; no static signature"
+  },
+  {
+   "file": "tests/test_value_weld.py",
+   "verdict": "safe-parallel",
+   "stores": [],
+   "evidence": [],
+   "note": "no live-tree write in the traced run; no static signature"
+  },
+  {
+   "file": "tests/test_verdict_io.py",
+   "verdict": "safe-parallel",
+   "stores": [],
+   "evidence": [],
+   "note": "no live-tree write in the traced run; no static signature"
+  },
+  {
+   "file": "tests/test_verify_hardening.py",
+   "verdict": "safe-parallel",
+   "stores": [
+    "corpus_friction (mkdir only)"
+   ],
+   "evidence": [
+    "trace(full,2026-08-20T20:15Z) Path.mkdir/os.mkdir on an existing live dir"
+   ],
+   "note": "touches the live tree only through an idempotent mkdir (252 of the 262 traced mkdir calls target the existing repo-root `corpus_friction`, exist_ok contract) \u2014 no byte contention"
+  },
+  {
+   "file": "tests/test_versions_join.py",
+   "verdict": "safe-parallel",
+   "stores": [],
+   "evidence": [],
+   "note": "no live-tree write in the traced run; no static signature"
+  },
+  {
+   "file": "tests/test_visual_gate.py",
+   "verdict": "safe-parallel",
+   "stores": [],
+   "evidence": [],
+   "note": "no live-tree write in the traced run; no static signature"
+  },
+  {
+   "file": "tests/test_voice_conformance_detect.py",
+   "verdict": "needs-serialization",
+   "stores": [
+    "tests/_vcd_clean.plan.json",
+    "tests/_vcd_clean.con.json"
+   ],
+   "evidence": [
+    "trace(recheck,dir_fd-corrected) Path.write_text tests/_vcd_clean.plan.json <- test_verdict_clean_sentinel",
+    "trace(recheck,dir_fd-corrected) Path.write_text tests/_vcd_clean.con.json",
+    "trace(recheck,dir_fd-corrected) Path.unlink (both)"
+   ],
+   "note": "same class as test_scaffold_wipe: fixed-name sentinels written into tests/.",
+   "xdist_group": "file:tests/test_voice_conformance_detect.py"
+  },
+  {
+   "file": "tests/test_voice_corpus_ingest.py",
+   "verdict": "safe-parallel",
+   "stores": [],
+   "evidence": [],
+   "note": "no live-tree write in the traced run; no static signature"
+  },
+  {
+   "file": "tests/test_voice_retrieval.py",
+   "verdict": "safe-parallel",
+   "stores": [],
+   "evidence": [],
+   "note": "no live-tree write in the traced run; no static signature"
+  },
+  {
+   "file": "tests/test_w0_3_retirements.py",
+   "verdict": "safe-parallel",
+   "stores": [],
+   "evidence": [],
+   "note": "no live-tree write in the traced run; no static signature"
+  },
+  {
+   "file": "tests/test_w1_1_nav.py",
+   "verdict": "safe-parallel",
+   "stores": [],
+   "evidence": [],
+   "note": "no live-tree write in the traced run; no static signature"
+  },
+  {
+   "file": "tests/test_w1_2_staleness.py",
+   "verdict": "safe-parallel",
+   "stores": [],
+   "evidence": [],
+   "note": "no live-tree write in the traced run; no static signature"
+  },
+  {
+   "file": "tests/test_w1_4_landing.py",
+   "verdict": "safe-parallel",
+   "stores": [],
+   "evidence": [],
+   "note": "no live-tree write in the traced run; no static signature"
+  },
+  {
+   "file": "tests/test_w3_3_rail.py",
+   "verdict": "safe-parallel",
+   "stores": [],
+   "evidence": [],
+   "note": "no live-tree write in the traced run; no static signature"
+  },
+  {
+   "file": "tests/test_w4_1_codemirror_vendor.py",
+   "verdict": "safe-parallel",
+   "stores": [],
+   "evidence": [],
+   "note": "no live-tree write in the traced run; no static signature"
+  },
+  {
+   "file": "tests/test_w4_2_synctex_follow.py",
+   "verdict": "safe-parallel",
+   "stores": [],
+   "evidence": [],
+   "note": "no live-tree write in the traced run; no static signature"
+  },
+  {
+   "file": "tests/test_w4_3_pdfjs_text_layer.py",
+   "verdict": "safe-parallel",
+   "stores": [],
+   "evidence": [],
+   "note": "no live-tree write in the traced run; no static signature"
+  },
+  {
+   "file": "tests/test_w4_4_recompile.py",
+   "verdict": "safe-parallel",
+   "stores": [],
+   "evidence": [],
+   "note": "no live-tree write in the traced run; no static signature"
+  },
+  {
+   "file": "tests/test_w6_3_strip_and_drive.py",
+   "verdict": "safe-parallel",
+   "stores": [],
+   "evidence": [],
+   "note": "no live-tree write in the traced run; no static signature"
+  },
+  {
+   "file": "tests/test_w7_3_density.py",
+   "verdict": "safe-parallel",
+   "stores": [],
+   "evidence": [],
+   "note": "no live-tree write in the traced run; no static signature"
+  },
+  {
+   "file": "tests/test_w8_3_doc_honesty.py",
+   "verdict": "safe-parallel",
+   "stores": [],
+   "evidence": [],
+   "note": "no live-tree write in the traced run; no static signature"
+  },
+  {
+   "file": "tests/test_wake_cli.py",
+   "verdict": "needs-serialization",
+   "stores": [
+    "holdout/LAST_SCORE.json",
+    ".git/index"
+   ],
+   "evidence": [
+    "trace(full,2026-08-20T20:15Z) Path.write_text holdout/LAST_SCORE.json <- test_person_is_the_default_and_engine_is_the_worker",
+    "trace(full,2026-08-20T20:15Z) subprocess cwd=<repo> :: git status --porcelain (x10 tests)"
+   ],
+   "note": "TWO contended resources: the live holdout score AND the git index \u2014 `git status` refreshes and rewrites .git/index under .git/index.lock, so N concurrent workers shelling it at the repo root can collide. This file is why the holdout group and the git-index group MERGE.",
+   "xdist_group": "store:.git/index+holdout/LAST_SCORE.json+holdout/PREDICTION_pending.json"
+  },
+  {
+   "file": "tests/test_walk_gate.py",
+   "verdict": "safe-parallel",
+   "stores": [],
+   "evidence": [],
+   "note": "no live-tree write in the traced run; no static signature"
+  },
+  {
+   "file": "tests/test_walk_requests.py",
+   "verdict": "safe-parallel",
+   "stores": [],
+   "evidence": [],
+   "note": "no live-tree write in the traced run; no static signature"
+  },
+  {
+   "file": "tests/test_wave05_ladder_atoms.py",
+   "verdict": "safe-parallel",
+   "stores": [
+    "corpus_friction (mkdir only)"
+   ],
+   "evidence": [
+    "trace(full,2026-08-20T20:15Z) Path.mkdir/os.mkdir on an existing live dir"
+   ],
+   "note": "touches the live tree only through an idempotent mkdir (252 of the 262 traced mkdir calls target the existing repo-root `corpus_friction`, exist_ok contract) \u2014 no byte contention"
+  },
+  {
+   "file": "tests/test_wave0_atoms.py",
+   "verdict": "safe-parallel",
+   "stores": [],
+   "evidence": [],
+   "note": "no live-tree write in the traced run; no static signature"
+  },
+  {
+   "file": "tests/test_website_identity.py",
+   "verdict": "safe-parallel",
+   "stores": [],
+   "evidence": [],
+   "note": "no live-tree write in the traced run; no static signature"
+  },
+  {
+   "file": "tests/test_work_order_pickup.py",
+   "verdict": "safe-parallel",
+   "stores": [],
+   "evidence": [],
+   "note": "no live-tree write in the traced run; no static signature"
+  },
+  {
+   "file": "tests/test_workflow_dead_root_guard.py",
+   "verdict": "safe-parallel",
+   "stores": [],
+   "evidence": [],
+   "note": "no live-tree write in the traced run; no static signature"
+  },
+  {
+   "file": "tests/test_workflow_economics.py",
+   "verdict": "safe-parallel",
+   "stores": [],
+   "evidence": [],
+   "note": "no live-tree write in the traced run; no static signature"
+  },
+  {
+   "file": "tests/test_xdist_isolation.py",
+   "verdict": "safe-parallel",
+   "stores": [],
+   "evidence": [
+    "this guard: read-only AST scan of the test tree + the audit row-source"
+   ],
+   "note": "the guard on this very row-source. Reads only."
+  },
+  {
+   "file": "tests/test_block_renorm.py",
+   "verdict": "safe-parallel",
+   "stores": [],
+   "evidence": [
+    "the live cases raise PROPOSAL_FLOOR to 2.0 for their duration so no wire-proposal rows bank; the P26/P27 arm levers are env-scoped per test via monkeypatch; get_backend is read-only model access - the serving drip is the one writer on that path and the tests run scoring only, with the drip's writes covered by the store-restore noted in the quantile wave's runs"
+   ],
+   "note": "added at the 2026-08-23 close weld: the P27/quantile shard names get_backend (a live-writer token) for scoring, never for a store write; xdist_group('live_network') serializes the live cases"
+  },
+  {
+   "file": "tests/test_isometries.py",
+   "verdict": "safe-parallel",
+   "stores": [],
+   "evidence": [
+    "every write path targets tmp_path: write_at_fold/collect/rebuild all take the tmp root, the fold fixtures run cluster_residue_incremental in per-test tmp dirs, and the M4 route tests bank frames and fire route with repo_root=tmp_path; get_backend is monkeypatched to an in-process FakeBackend inside _run_fold (model read-only elsewhere via HashBackend); the one repo-adjacent read is meaning_upfold._selector_chi (a constant lookup); LAPLACE_ORGAN_V1/LAPLACE_BLOCK_RENORM are env-scoped per test via monkeypatch with the module _ORGAN_MEMO cleared in the fixture, so no cross-worker arm leakage"
+   ],
+   "note": "added at the 2026-08-24 close (the organ v1 shard, M2-M4); the suite's own no-unaudited-writer gate caught the missing row - this row is its cure"
+  },
+  {
+   "file": "atlas/tests/test_blueprint_tool.py",
+   "verdict": "safe-parallel",
+   "stores": [],
+   "evidence": [
+    "all store paths are rooted under tmp_path; CUDAExecutionProvider is a string in an EncoderSpec capability fixture and no runtime backend is opened"
+   ],
+   "note": "the live-writer token guard caught the provider name; the shard constructs specs and candidate stores only under tmp_path"
+  },
+  {
+   "file": "atlas/tests/test_runtime_cuda.py",
+   "verdict": "needs-serialization",
+   "stores": [
+    "device:gpu-vram"
+   ],
+   "evidence": [
+    "device VRAM measured by polling `nvidia-smi --query-gpu=memory.used` around a solo `pytest -q -p no:randomly <file>` on the 4096 MiB RTX A2000, base 448 MiB -> peak 583 MiB (+135), reproduced twice",
+    "atlas/tests/test_runtime_cuda.py:16 test_installed_libraries_load_once_and_receipt_is_defensive calls runtime.preload_cuda_libraries() unconditionally \u2014 the CUDA .so preload runs in every suite run",
+    "atlas/tests/test_runtime_cuda.py:122 test_gpu_split_observed_by_nvidia_smi does cupy.linalg.eigh, but is skipif LAPLACE_REQUIRE_GPU != '1' \u2014 NOT the exposure measured above",
+    "the audit's method.empirical re-run SCOPED over these 10 unrowed files (write_tracer, dir_fd-corrected): 80 passed / 1 skipped / 2 failed in 5.14s, 1185 trace rows, ZERO of them outside .pytest-tmp/__pycache__/.pytest_cache; `git status --porcelain` unchanged across the run (the 2 reds are the sibling lane's tests/test_provider_runtime_config.py codex-hook pair) \u2014 this file's only live-root touches are read-only spawns: `/sbin/ldconfig -p`, `nvidia-smi --query-gpu=... --format=csv,noheader`"
+   ],
+   "note": "joins the existing device:gpu-vram group on measured allocation, same class as test_embed_gpu_provider: the card is 4096 MiB and every worker holding a CUDA context competes for it. No file write of any kind outside the pytest basetemp.",
+   "xdist_group": "store:device:gpu-vram"
+  },
+  {
+   "file": "tests/test_meaning_upfold_grade_law.py",
+   "verdict": "needs-serialization",
+   "stores": [
+    "device:gpu-vram"
+   ],
+   "evidence": [
+    "device VRAM measured by polling `nvidia-smi --query-gpu=memory.used` around a solo `pytest -q -p no:randomly <file>` on the 4096 MiB RTX A2000, base 448 MiB -> peak 547 MiB (+99), reproduced twice",
+    "tests/test_meaning_upfold_grade_law.py:36 k, labels = engine._best_split_gpu(vectors, level=1) \u2014 the real GPU split operator, not monkeypatched",
+    "EXACTLY the precedent of the rowed tests/test_meaning_upfold_incremental.py, whose whole evidence is the same unpatched _best_split_gpu call",
+    "the audit's method.empirical re-run SCOPED over these 10 unrowed files (write_tracer, dir_fd-corrected): 80 passed / 1 skipped / 2 failed in 5.14s, 1185 trace rows, ZERO of them outside .pytest-tmp/__pycache__/.pytest_cache; `git status --porcelain` unchanged across the run (the 2 reds are the sibling lane's tests/test_provider_runtime_config.py codex-hook pair) \u2014 every write lands under the pytest basetemp; the only live-root touches are the read-only device probes `/sbin/ldconfig -p` and `lscpu --parse=core`"
+   ],
+   "note": "runs the GPU split operator directly, like test_meaning_upfold_incremental.",
+   "xdist_group": "store:device:gpu-vram"
+  },
+  {
+   "file": "atlas/tests/test_spectral_pour_qrc_measurement.py",
+   "verdict": "needs-serialization",
+   "stores": [
+    "device:gpu-vram"
+   ],
+   "evidence": [
+    "atlas/tests/test_spectral_pour_qrc_measurement.py:23 @pytest.mark.skipif(os.environ.get('RUN_S2_09_QRC') != '1') \u2014 SKIPPED in every default run (`pytest -q` over it -> 1 skipped, reason 'explicit GPU QRC measurement'), so the measured VRAM delta is 0 MiB and the group costs nothing",
+    "atlas/tests/test_spectral_pour_qrc_measurement.py:71-73 when opted in it builds an onnxruntime session with providers=('CUDAExecutionProvider',) and asserts it bound \u2014 a real CUDA session on the 4096 MiB card",
+    "the audit's method.empirical re-run SCOPED over these 10 unrowed files (write_tracer, dir_fd-corrected): 80 passed / 1 skipped / 2 failed in 5.14s, 1185 trace rows, ZERO of them outside .pytest-tmp/__pycache__/.pytest_cache; `git status --porcelain` unchanged across the run (the 2 reds are the sibling lane's tests/test_provider_runtime_config.py codex-hook pair) \u2014 zero trace rows (it never ran)"
+   ],
+   "note": "the conservative call: the file is inert by default but binds CUDA the moment RUN_S2_09_QRC=1, and an opt-in measurement run under -n is exactly when a second CUDA session would be fatal. Grouping a file that usually skips is free.",
+   "xdist_group": "store:device:gpu-vram"
+  },
+  {
+   "file": "atlas/tests/test_bench_routing_measurement.py",
+   "verdict": "safe-parallel",
+   "stores": [],
+   "evidence": [
+    "`pytest --collect-only atlas/tests/test_bench_routing_measurement.py` -> 0 items: the file is a __main__ driver (launch/measure/verify_receipts), it defines no test function",
+    "its `cupy` token is atlas/tests/test_bench_routing_measurement.py:233 env['CUPY_CACHE_DIR']=str(SCRATCH/'cupy-cache') inside launch(), reachable only from `if __name__=='__main__'`",
+    "the audit's method.empirical re-run SCOPED over these 10 unrowed files (write_tracer, dir_fd-corrected): 80 passed / 1 skipped / 2 failed in 5.14s, 1185 trace rows, ZERO of them outside .pytest-tmp/__pycache__/.pytest_cache; `git status --porcelain` unchanged across the run (the 2 reds are the sibling lane's tests/test_provider_runtime_config.py codex-hook pair) \u2014 zero trace rows"
+   ],
+   "note": "pytest collects nothing here, so it cannot contend under -n at all. The GPU child it spawns is an operator-invoked measurement, outside the suite."
+  },
+  {
+   "file": "tests/test_meaning_upfold_cure_a1.py",
+   "verdict": "safe-parallel",
+   "stores": [],
+   "evidence": [
+    "device VRAM measured by polling `nvidia-smi --query-gpu=memory.used` around a solo `pytest -q -p no:randomly <file>` on the 4096 MiB RTX A2000, base 448 MiB -> peak 448 MiB (+0), reproduced twice: the device is never touched",
+    "every GPU path is monkeypatched \u2014 :17 FoldSpectral built by object.__new__ with a SimpleNamespace xp, :112 embed_router.get_backend, :115 mu._best_split, :129 mu._best_split_gpu, :127 mu._fold_backend",
+    "the audit's method.empirical re-run SCOPED over these 10 unrowed files (write_tracer, dir_fd-corrected): 80 passed / 1 skipped / 2 failed in 5.14s, 1185 trace rows, ZERO of them outside .pytest-tmp/__pycache__/.pytest_cache; `git status --porcelain` unchanged across the run (the 2 reds are the sibling lane's tests/test_provider_runtime_config.py codex-hook pair) \u2014 every write lands under the pytest basetemp (its tmp dials store)"
+   ],
+   "note": "same shape as the rowed test_residue.py: it names the GPU operators only to replace them. Importing laplace.representation.spectral_gpu allocates nothing (measured)."
+  },
+  {
+   "file": "tests/test_meaning_upfold_depth_cap.py",
+   "verdict": "safe-parallel",
+   "stores": [],
+   "evidence": [
+    "device VRAM measured by polling `nvidia-smi --query-gpu=memory.used` around a solo `pytest -q -p no:randomly <file>` on the 4096 MiB RTX A2000, base 448 MiB -> peak 448 MiB (+0)",
+    "tests/test_meaning_upfold_depth_cap.py:101 monkeypatch.setattr(embed_router, 'get_backend', lambda: backend) \u2014 the sole token hit, and it is the patch that PREVENTS the real embedder",
+    "the audit's method.empirical re-run SCOPED over these 10 unrowed files (write_tracer, dir_fd-corrected): 80 passed / 1 skipped / 2 failed in 5.14s, 1185 trace rows, ZERO of them outside .pytest-tmp/__pycache__/.pytest_cache; `git status --porcelain` unchanged across the run (the 2 reds are the sibling lane's tests/test_provider_runtime_config.py codex-hook pair) \u2014 every write lands under the pytest basetemp (fold-dials*/contract)"
+   ],
+   "note": "the get_backend token is a monkeypatch target, not a call."
+  },
+  {
+   "file": "tests/test_compaction_boundary.py",
+   "verdict": "safe-parallel",
+   "stores": [],
+   "evidence": [
+    "device VRAM measured by polling `nvidia-smi --query-gpu=memory.used` around a solo `pytest -q -p no:randomly <file>` on the 4096 MiB RTX A2000, base 448 MiB -> peak 448 MiB (+0)",
+    "tests/test_compaction_boundary.py:132,305 'laplace.representation.embed_router.get_backend' appears only as a monkeypatch STRING target",
+    "the audit's method.empirical re-run SCOPED over these 10 unrowed files (write_tracer, dir_fd-corrected): 80 passed / 1 skipped / 2 failed in 5.14s, 1185 trace rows, ZERO of them outside .pytest-tmp/__pycache__/.pytest_cache; `git status --porcelain` unchanged across the run (the 2 reds are the sibling lane's tests/test_provider_runtime_config.py codex-hook pair) \u2014 every write lands under the pytest basetemp"
+   ],
+   "note": "textual token only; no device, no live-tree write."
+  },
+  {
+   "file": "tests/test_front_carrier.py",
+   "verdict": "safe-parallel",
+   "stores": [],
+   "evidence": [
+    "device VRAM measured by polling `nvidia-smi --query-gpu=memory.used` around a solo `pytest -q -p no:randomly <file>` on the 4096 MiB RTX A2000, base 448 MiB -> peak 448 MiB (+0)",
+    "tests/test_front_carrier.py:166 'embedding_providers': ['CUDAExecutionProvider', 'CPUExecutionProvider'] \u2014 a literal inside a fixture dict that is asserted on, never used to construct a session",
+    "the audit's method.empirical re-run SCOPED over these 10 unrowed files (write_tracer, dir_fd-corrected): 80 passed / 1 skipped / 2 failed in 5.14s, 1185 trace rows, ZERO of them outside .pytest-tmp/__pycache__/.pytest_cache; `git status --porcelain` unchanged across the run (the 2 reds are the sibling lane's tests/test_provider_runtime_config.py codex-hook pair) \u2014 every write lands under the pytest basetemp"
+   ],
+   "note": "the CUDAExecutionProvider token is fixture data."
+  },
+  {
+   "file": "tests/test_semantic_cadence.py",
+   "verdict": "safe-parallel",
+   "stores": [],
+   "evidence": [
+    "device VRAM measured by polling `nvidia-smi --query-gpu=memory.used` around a solo `pytest -q -p no:randomly <file>` on the 4096 MiB RTX A2000, base 448 MiB -> peak 448 MiB (+0)",
+    "tests/test_semantic_cadence.py:265 'embedding_providers': ['CUDAExecutionProvider'] \u2014 a literal inside a fixture dict",
+    "the audit's method.empirical re-run SCOPED over these 10 unrowed files (write_tracer, dir_fd-corrected): 80 passed / 1 skipped / 2 failed in 5.14s, 1185 trace rows, ZERO of them outside .pytest-tmp/__pycache__/.pytest_cache; `git status --porcelain` unchanged across the run (the 2 reds are the sibling lane's tests/test_provider_runtime_config.py codex-hook pair) \u2014 every write lands under the pytest basetemp (plus .pytest_cache/v/cache, pytest's own per-rootdir cache)"
+   ],
+   "note": "the CUDAExecutionProvider token is fixture data."
+  },
+  {
+   "file": "tests/test_provider_runtime_config.py",
+   "verdict": "safe-parallel",
+   "stores": [],
+   "evidence": [
+    "device VRAM measured by polling `nvidia-smi --query-gpu=memory.used` around a solo `pytest -q -p no:randomly <file>` on the 4096 MiB RTX A2000, base 448 MiB -> peak 448 MiB (+0)",
+    "every cupy hit (:48,51,52,65,96,105,109-112,135) is a string assertion about pyproject's `gpu` extra and scripts/runtime_truth.py's text \u2014 the file never imports cupy",
+    "the audit's method.empirical re-run SCOPED over these 10 unrowed files (write_tracer, dir_fd-corrected): 80 passed / 1 skipped / 2 failed in 5.14s, 1185 trace rows, ZERO of them outside .pytest-tmp/__pycache__/.pytest_cache; `git status --porcelain` unchanged across the run (the 2 reds are the sibling lane's tests/test_provider_runtime_config.py codex-hook pair) \u2014 every write lands under the pytest basetemp; its one live-root spawn is the read-only `/usr/bin/python3 scripts/runtime_truth.py --json`"
+   ],
+   "note": "declaration-text assertions about the GPU extra, not GPU use."
+  }
+ ],
+ "counts_note": "files_total / tests_collected / safe_parallel / needs_serialization / xdist_groups are recomputed from the rows at every re-derivation. tests_run_in_baseline, trace_rows_*, and serial_baseline_wall_s describe the 2026-08-20T19:34:39Z FULL serial trace at head 979724e0 and are NOT re-measured by a scoped re-derivation - they are that run's numbers.",
+ "regenerations": [
+  {
+   "ts": "2026-08-21T00:00:00Z",
+   "head": "ce8c77f1",
+   "scope": "incremental",
+   "trigger": "tests/test_xdist_isolation.py went red at the close: test_no_audit_row_names_a_vanished_file (tests/test_review_surface_smoke.py) and test_no_test_file_reaches_a_known_live_writer_unaudited (tests/test_device_policy.py)",
+   "method": "the audit's own method.empirical, re-run SCOPED: the write_tracer pytest plugin over the 10 test files on disk with no row plus the 2 rowed files e65e781e changed. run 2026-08-21: PYTHONPATH=<scratch> TRACER_OUT=<scratch>/new_files_trace.jsonl python3 -m pytest -q -p write_tracer <the 10 unrowed files + the 2 changed ones> -> 185 passed in 9.37s; 22 trace rows; `git status --porcelain` byte-identical before and after",
+   "moved": {
+    "dropped": [
+     "tests/test_review_surface_smoke.py \u2014 DELETED in e65e781e (384 lines), not renamed; test_artefact_surface_smoke.py is a new file, not its heir"
+    ],
+    "added": [
+     "tests/test_artefact_surface_smoke.py",
+     "tests/test_atlas_bind_linecite.py",
+     "tests/test_device_policy.py",
+     "tests/test_handoff_effective_status.py",
+     "tests/test_mcp_compat.py",
+     "tests/test_methods_fibre.py",
+     "tests/test_pilot_term.py",
+     "tests/test_register_fold_trace.py",
+     "tests/test_source_anchor.py",
+     "tests/test_store_gate_freshness.py"
+    ],
+    "amended": [
+     "tests/test_storyboard_smoke.py \u2014 safe-parallel -> needs-serialization (.cockpit.json, new since e65e781e)"
+    ],
+    "new_group": "store:.cockpit.json (2 files)"
+   },
+   "not_re_measured": "the FULL serial write trace over all 330 files. This re-derivation traced only the delta; a file whose rows predate 979724e0 and whose content has not moved keeps its verdict. The full trace is owed the next time the suite is re-timed end to end."
+  },
+  {
+   "ts": "2026-09-15T00:00:00Z",
+   "head": "afa683af",
+   "scope": "incremental",
+   "trigger": "tests/test_xdist_isolation.py::test_no_test_file_reaches_a_known_live_writer_unaudited went red at the 2026-09-15 close, naming 10 unrowed files on the GPU token set (cupy / CUDAExecutionProvider / get_backend / _best_split_gpu / spectral_gpu). PRE-EXISTING at head afa683af: replaying the guard against HEAD's own blobs yields the SAME 10 offenders, so the close's widened floor exposed it, it did not cause it.",
+   "method": "two measurements, not a reading. (1) the audit's method.empirical re-run SCOPED: a dir_fd-corrected write_tracer plugin over the 10 files -> `PYTHONPATH=<scratch> TRACER_REPO=<repo> TRACER_OUT=<scratch>/trace.jsonl /usr/bin/python3 -m pytest -q -p write_tracer -p no:randomly -rfE <the 10 files>` -> 2 failed, 80 passed, 1 skipped in 5.14s; 1185 trace rows; ZERO outside .pytest-tmp/__pycache__/.pytest_cache; the only live-root spawns are read-only (ldconfig -p, nvidia-smi --query-gpu, lscpu --parse=core, runtime_truth.py --json). (2) the GPU class is a DEVICE contention, invisible to a write tracer, so VRAM was polled with `nvidia-smi --query-gpu=memory.used` around a solo run of each file on the 4096 MiB RTX A2000 (base 448 MiB): test_runtime_cuda 583 (+135) and test_meaning_upfold_grade_law 547 (+99), both reproduced twice; the other six runnable files 448 (+0).",
+   "moved": {
+    "added_needs_serialization": [
+     "atlas/tests/test_runtime_cuda.py (device:gpu-vram, measured +135 MiB)",
+     "tests/test_meaning_upfold_grade_law.py (device:gpu-vram, measured +99 MiB, unpatched _best_split_gpu)",
+     "atlas/tests/test_spectral_pour_qrc_measurement.py (device:gpu-vram, inert unless RUN_S2_09_QRC=1)"
+    ],
+    "added_safe_parallel": [
+     "atlas/tests/test_bench_routing_measurement.py (collects 0 tests)",
+     "tests/test_compaction_boundary.py",
+     "tests/test_front_carrier.py",
+     "tests/test_meaning_upfold_cure_a1.py",
+     "tests/test_meaning_upfold_depth_cap.py",
+     "tests/test_provider_runtime_config.py",
+     "tests/test_semantic_cadence.py"
+    ],
+    "group_grew": "store:device:gpu-vram 3 -> 6 files"
+   },
+   "not_re_measured": "the FULL serial write trace over all 343 files, and the parallel -n timing. This re-derivation traced only the 10-file delta. The three test files this session ADDED (tests/test_pytest_isolation.py, tests/test_mcp_seat_snapshot_bounded.py, tests/test_wake_budget_derivation.py) trip NEITHER guard tier and so take no row here \u2014 they remain unaudited by the empirical trace and are owed one at the next full re-derivation."
+  }
+ ]
+}

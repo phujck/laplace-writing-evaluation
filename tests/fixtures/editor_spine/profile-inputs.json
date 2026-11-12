@@ -1,0 +1,284 @@
+{
+  "writing_style_summary": {
+    "schema_version": "laplace.writing-style/2",
+    "project": "book",
+    "revision": "sha256:e763b58552d8f06e58b77fac5b71a31389a242caa45540f7ddea7c922a51d804",
+    "profile": "profiles/voice/synthetic-selected.md",
+    "profile_revision": "sha256:09c04e233d6e5d81abe54d9add07769447f64218488dbb6e3d5e7eed6b09abb6",
+    "profile_title": "Synthetic selected voice",
+    "profile_version": null,
+    "profile_editable": true,
+    "profile_edit_reason": "This repository owns the selected profile.",
+    "profile_origin": "project",
+    "runtime_content": "## Current runtime prompt\nUse connected examples.",
+    "guidance": "",
+    "guidance_sha256": "sha256:e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "genre": "",
+    "effective_genre": "article",
+    "genre_resolution": {
+      "authored": "",
+      "effective": "article",
+      "origin": "selected-source",
+      "documentclass": "article",
+      "source_revision": "a638d974f0581009f15f95269acde83572eff7040f0490b63e2b9b33513a6b4c"
+    },
+    "provenance": {
+      "status": "UNRECORDED_LEGACY",
+      "path": null,
+      "revision": null,
+      "sources": 0,
+      "registers": [],
+      "reader": null,
+      "purpose": null,
+      "verification_limit": null,
+      "note": "This legacy profile has no recorded calibration ledger."
+    },
+    "profiles": [
+      {
+        "path": "profiles/voice/gerard-technical-v1.md",
+        "name": "gerard-technical-v1",
+        "origin": "project",
+        "status": "AVAILABLE",
+        "revision": "sha256:c8eb6c9480e87c3b3352bd9bba75dcf9f9220b6be0c45462b226a49c5b35b6b2",
+        "title": "Unselected default",
+        "version": null
+      },
+      {
+        "path": "profiles/voice/synthetic-selected.md",
+        "name": "synthetic-selected",
+        "origin": "project",
+        "status": "AVAILABLE",
+        "revision": "sha256:09c04e233d6e5d81abe54d9add07769447f64218488dbb6e3d5e7eed6b09abb6",
+        "title": "Synthetic selected voice",
+        "version": null
+      }
+    ],
+    "authority": "global profile content; manuscript_spec.json owns profile selection, genre and project guidance",
+    "scope": "global voice profile plus explicit project selection/genre/guidance; project guidance does not promote global law",
+    "selected_profile": "profiles/voice/synthetic-selected.md",
+    "inspected_profile": "profiles/voice/synthetic-selected.md",
+    "read_more": [
+      {
+        "operation": "writing_style",
+        "payload": {
+          "view": "profile"
+        }
+      },
+      {
+        "operation": "writing_style",
+        "payload": {
+          "view": "provenance"
+        }
+      }
+    ]
+  },
+  "writing_style_native_context": {
+    "schema_version": "laplace.writing-style/2",
+    "project": "book",
+    "revision": "sha256:e763b58552d8f06e58b77fac5b71a31389a242caa45540f7ddea7c922a51d804",
+    "selected_profile": "profiles/voice/synthetic-selected.md",
+    "profile_revision": "sha256:09c04e233d6e5d81abe54d9add07769447f64218488dbb6e3d5e7eed6b09abb6",
+    "profile_path": "profiles/voice/synthetic-selected.md",
+    "profile_title": "Synthetic selected voice",
+    "profile_version": null,
+    "profile_editable": true,
+    "profile_edit_reason": "This repository owns the selected profile.",
+    "profile_origin": "project",
+    "profile_read": {
+      "operation": "writing_style",
+      "payload": {
+        "view": "profile"
+      }
+    },
+    "content": "## Current runtime prompt\nUse connected examples.",
+    "content_scope": "Current runtime prompt and confirmed preferences; full profile is lazy",
+    "guidance": "",
+    "guidance_sha256": "sha256:e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "genre": "article",
+    "authored_genre": "",
+    "effective_genre": "article",
+    "genre_resolution": {
+      "authored": "",
+      "effective": "article",
+      "origin": "selected-source",
+      "documentclass": "article",
+      "source_revision": "a638d974f0581009f15f95269acde83572eff7040f0490b63e2b9b33513a6b4c"
+    },
+    "provenance": {
+      "status": "UNRECORDED_LEGACY",
+      "path": null,
+      "revision": null,
+      "sources": 0,
+      "registers": [],
+      "reader": null,
+      "purpose": null,
+      "verification_limit": null,
+      "note": "This legacy profile has no recorded calibration ledger."
+    },
+    "scope": "global voice profile plus explicit project selection/genre/guidance; project guidance does not promote global law",
+    "read_more": {
+      "operation": "writing_style",
+      "payloads": [
+        {
+          "view": "profile"
+        },
+        {
+          "view": "provenance"
+        }
+      ]
+    }
+  },
+  "architecture_summary": {
+    "family": "architecture",
+    "scope": "workspace",
+    "purpose": "Structural and narrative form prior; not scientific evidence or authored reader expectations.",
+    "source": {
+      "path": "profiles/author_architecture.yaml",
+      "origin": "repository"
+    },
+    "profile_revision": "sha256:67273d0b77b98b05b34e32d0791d490a507cd54de0cf7bc4a17c609c1ddc010f",
+    "field_refs": [
+      {
+        "id": "narrative_arc",
+        "ref": "profiles/author_architecture.yaml#profile.narrative_arc"
+      }
+    ],
+    "editable": false,
+    "edit_reason": "This bounded profile input is read-only; shared profile editing and generated candidate application are not implemented here.",
+    "read_more": {
+      "operation": "structure",
+      "payload": {
+        "view": "architecture-profile"
+      }
+    },
+    "currentness_basis": "Current profile bytes only; no scientific acceptance or reader comprehension is asserted.",
+    "status": "AVAILABLE",
+    "reason": "Current workspace architecture prior loaded.",
+    "currentness": "CURRENT",
+    "revision": "sha256:ddb08eeba104a978e3623e7f123459a7c4643b35dffd8ceb797f2da53b67da3a"
+  },
+  "architecture_exact": {
+    "family": "architecture",
+    "scope": "workspace",
+    "purpose": "Structural and narrative form prior; not scientific evidence or authored reader expectations.",
+    "source": {
+      "path": "profiles/author_architecture.yaml",
+      "origin": "repository"
+    },
+    "profile_revision": "sha256:67273d0b77b98b05b34e32d0791d490a507cd54de0cf7bc4a17c609c1ddc010f",
+    "field_refs": [
+      {
+        "id": "narrative_arc",
+        "ref": "profiles/author_architecture.yaml#profile.narrative_arc"
+      }
+    ],
+    "editable": false,
+    "edit_reason": "This bounded profile input is read-only; shared profile editing and generated candidate application are not implemented here.",
+    "read_more": {
+      "operation": "structure",
+      "payload": {
+        "view": "architecture-profile"
+      }
+    },
+    "currentness_basis": "Current profile bytes only; no scientific acceptance or reader comprehension is asserted.",
+    "status": "AVAILABLE",
+    "reason": "Current workspace architecture prior loaded.",
+    "currentness": "CURRENT",
+    "revision": "sha256:ddb08eeba104a978e3623e7f123459a7c4643b35dffd8ceb797f2da53b67da3a",
+    "fields": {
+      "narrative_arc": {
+        "summary": "Use an explicit explanatory sequence.",
+        "confirmed_his": false,
+        "ref": "profiles/author_architecture.yaml#profile.narrative_arc"
+      }
+    }
+  },
+  "native_architecture_body_part": {
+    "key": "operating_brief.architecture_prior",
+    "token": "sha256:ddcc4cdb219241764750718a758eea5990e4375572c33863588d39b6c7d194ef",
+    "value": {
+      "family": "architecture",
+      "scope": "workspace",
+      "purpose": "Structural and narrative form prior; not scientific evidence or authored reader expectations.",
+      "source": {
+        "path": "profiles/author_architecture.yaml",
+        "origin": "repository"
+      },
+      "profile_revision": "sha256:67273d0b77b98b05b34e32d0791d490a507cd54de0cf7bc4a17c609c1ddc010f",
+      "field_refs": [
+        {
+          "id": "narrative_arc",
+          "ref": "profiles/author_architecture.yaml#profile.narrative_arc"
+        }
+      ],
+      "editable": false,
+      "edit_reason": "This bounded profile input is read-only; shared profile editing and generated candidate application are not implemented here.",
+      "read_more": {
+        "operation": "structure",
+        "payload": {
+          "view": "architecture-profile"
+        }
+      },
+      "currentness_basis": "Current profile bytes only; no scientific acceptance or reader comprehension is asserted.",
+      "status": "AVAILABLE",
+      "reason": "Current workspace architecture prior loaded.",
+      "currentness": "CURRENT",
+      "revision": "sha256:ddb08eeba104a978e3623e7f123459a7c4643b35dffd8ceb797f2da53b67da3a"
+    },
+    "text": "LAPLACE OPERATING BRIEF \u2014 CHANGED PROJECT STATE\n{\"architecture_prior\":{\"family\":\"architecture\",\"scope\":\"workspace\",\"purpose\":\"Structural and narrative form prior; not scientific evidence or authored reader expectations.\",\"source\":{\"path\":\"profiles/author_architecture.yaml\",\"origin\":\"repository\"},\"profile_revision\":\"sha256:67273d0b77b98b05b34e32d0791d490a507cd54de0cf7bc4a17c609c1ddc010f\",\"field_refs\":[{\"id\":\"narrative_arc\",\"ref\":\"profiles/author_architecture.yaml#profile.narrative_arc\"}],\"editable\":false,\"edit_reason\":\"This bounded profile input is read-only; shared profile editing and generated candidate application are not implemented here.\",\"read_more\":{\"operation\":\"structure\",\"payload\":{\"view\":\"architecture-profile\"}},\"currentness_basis\":\"Current profile bytes only; no scientific acceptance or reader comprehension is asserted.\",\"status\":\"AVAILABLE\",\"reason\":\"Current workspace architecture prior loaded.\",\"currentness\":\"CURRENT\",\"revision\":\"sha256:ddb08eeba104a978e3623e7f123459a7c4643b35dffd8ceb797f2da53b67da3a\"}}",
+    "chars": 1030,
+    "read": {
+      "operation": "structure",
+      "payload": {
+        "view": "architecture-profile"
+      }
+    }
+  },
+  "structure_architecture_profile": {
+    "project": "book",
+    "family": "architecture",
+    "scope": "workspace",
+    "purpose": "Structural and narrative form prior; not scientific evidence or authored reader expectations.",
+    "source": {
+      "path": "profiles/author_architecture.yaml",
+      "origin": "repository"
+    },
+    "profile_revision": "sha256:67273d0b77b98b05b34e32d0791d490a507cd54de0cf7bc4a17c609c1ddc010f",
+    "field_refs": [
+      {
+        "id": "narrative_arc",
+        "ref": "profiles/author_architecture.yaml#profile.narrative_arc"
+      }
+    ],
+    "editable": false,
+    "edit_reason": "This bounded profile input is read-only; shared profile editing and generated candidate application are not implemented here.",
+    "read_more": {
+      "operation": "structure",
+      "payload": {
+        "view": "architecture-profile"
+      }
+    },
+    "currentness_basis": "Current profile bytes only; no scientific acceptance or reader comprehension is asserted.",
+    "status": "AVAILABLE",
+    "reason": "Current workspace architecture prior loaded.",
+    "currentness": "CURRENT",
+    "revision": "sha256:ddb08eeba104a978e3623e7f123459a7c4643b35dffd8ceb797f2da53b67da3a",
+    "fields": {
+      "narrative_arc": {
+        "summary": "Use an explicit explanatory sequence.",
+        "confirmed_his": false,
+        "ref": "profiles/author_architecture.yaml#profile.narrative_arc"
+      }
+    }
+  },
+  "generic_native_architecture_request": {
+    "verb": "read",
+    "concept": "plan@plan",
+    "target": "book",
+    "expected": [],
+    "payload": {
+      "view": "architecture-profile"
+    },
+    "by": ""
+  }
+}

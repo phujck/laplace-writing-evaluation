@@ -1,0 +1,666 @@
+{
+  "history": [
+    {
+      "archived_at": 1792100605.0426908,
+      "id": "dd-representation-illustrations",
+      "record": {
+        "id": "dd-representation-illustrations",
+        "kind": "result",
+        "limitations": [
+          "No empirical benchmark or independent scientific verification.",
+          "The four-state model is an author-introduced pedagogical construction.",
+          "Lean verification and canonical claim binding remain pending.",
+          "The first result registration was refused on explicit result path scope. This call leaves the optional path to the supervised run owner."
+        ],
+        "provenance": {
+          "dependencies": [
+            {
+              "bytes": 6525,
+              "path": "calculations/representation_illustrations.py",
+              "scope": "project",
+              "sha256": "6fbec2ba4f746abc5e5038455b450e0ef1ca546a64803a6827ac45b3cbcde670",
+              "status": "PRESENT"
+            },
+            {
+              "bytes": 5860,
+              "path": "research_runs/run-c3bb46b0151942ca.result.json",
+              "sha256": "bde08a854b5321c08099984e27c3204fba04397ebc29f6544e53da2dd4d92acb",
+              "status": "PRESENT"
+            }
+          ],
+          "recorded_at": 1792090808.1088884,
+          "scope": "manuscript",
+          "snapshot_schema": "laplace.research-dependencies/3"
+        },
+        "question": "How do explicit representations change a compromise, prediction and training signal?",
+        "result": "research_runs/run-c3bb46b0151942ca.result.json",
+        "result_scope": "manuscript",
+        "revision": "sha256:98a24de947c210243205110fc7fc774a9e91b07fc9b2c1d27c4f8665972a1835",
+        "run_id": "run-c3bb46b0151942ca",
+        "scope": "manuscript",
+        "source": "calculations/representation_illustrations.py",
+        "source_scope": "project",
+        "summary": "The inspected result reports shared-register partition crossing0.8410686705679301 before suppression1.0852782044993055, exact integer checks of the four-state retained-coordinate equations, and analytic Cerezo gradient-variance curves. All three resulting PDFs were visually inspected. Computed mathematical illustrations, not measured performance or independent proof.",
+        "title": "Deterministic illustrations of representation choice"
+      },
+      "replaced_by": "sha256:a87ca75c344b89be076f4a1d1f7a887de5bbd98f8ee02eaaaf30ebe6423ab7f5",
+      "revision": "sha256:98a24de947c210243205110fc7fc774a9e91b07fc9b2c1d27c4f8665972a1835"
+    },
+    {
+      "archived_at": 1792104902.3883867,
+      "id": "dd-memory-reader-controls",
+      "record": {
+        "data": [
+          "evidence-snapshots/memory/reader-relational-controls-20261015.json"
+        ],
+        "data_scope": "project",
+        "id": "dd-memory-reader-controls",
+        "kind": "result",
+        "limitations": [
+          "Reported finite sample, not a new experiment.",
+          "The temporal subset contains nine cases. The bars supply no new uncertainty estimate.",
+          "The separate causal audit distinguishes relational/counting representation from non-nested packing. Better ingestion remains a proposed remedy to test."
+        ],
+        "provenance": {
+          "dependencies": [
+            {
+              "bytes": 3467,
+              "path": "calculations/completion_figures.py",
+              "scope": "project",
+              "sha256": "12a9a8f3d2ca7e133f50452c6d746846cf0c812afd35393920ea2bdb9595f610",
+              "status": "PRESENT"
+            },
+            {
+              "bytes": 3620,
+              "path": "research_runs/run-a12590b7fb624758.result.json",
+              "sha256": "8ac55984523bdff7e68e76b02eeabff784a2f84b25d0dddd57941263532678e2",
+              "status": "PRESENT"
+            },
+            {
+              "bytes": 769,
+              "path": "evidence-snapshots/memory/reader-relational-controls-20261015.json",
+              "scope": "project",
+              "sha256": "3acb5f69700e96090f2011b79675956edb51041396ebd8702f2a46ceb761f3b6",
+              "status": "PRESENT"
+            }
+          ],
+          "recorded_at": 1792103672.1261127,
+          "scope": "manuscript",
+          "snapshot_schema": "laplace.research-dependencies/3"
+        },
+        "result": "research_runs/run-a12590b7fb624758.result.json",
+        "result_scope": "manuscript",
+        "revision": "sha256:715d15d4e55096c59805706cd1a1f5f99add97371f39f121c7ab0f6542c17560",
+        "run_id": "run-a12590b7fb624758",
+        "scope": "manuscript",
+        "source": "calculations/completion_figures.py",
+        "source_scope": "project",
+        "summary": "Faithful replot of the read final Memory in Pieces/Parallax evaluation: 4k LongMem correct30/48,33/48,34/48 for memory witness,dense,hybrid, and temporal subset4/9,7/9,6/9. These counts locate headroom in relation/time representation and evidence selection. No new reader run.",
+        "title": "Archived memory reader and temporal controls"
+      },
+      "replaced_by": "sha256:f2a6a3cbb18bc50a4239c99e5f7fafd0b2c71257f5e6cfade40cd32a2fba6f92",
+      "revision": "sha256:715d15d4e55096c59805706cd1a1f5f99add97371f39f121c7ab0f6542c17560"
+    }
+  ],
+  "history_dropped": 0,
+  "records": [
+    {
+      "data": [
+        "evidence-snapshots/quantum/operator_projection_result.json"
+      ],
+      "id": "dd-archived-operator-projection",
+      "kind": "result",
+      "limitations": [
+        "Archived source/result pair inspected, not independently rerun.",
+        "No original supervised run manifest was supplied with this draft archive. Current snapshots preserve source bytes and embedded configuration, not a retroactive execution certificate.",
+        "Classical dense simulation, not quantum hardware or quantum advantage.",
+        "Norm is normalised by observable Hilbert-Schmidt norm. A raw conserved numerator independent of all circuit parameters is not established.",
+        "Canonical claim binding and independent review remain pending."
+      ],
+      "provenance": {
+        "dependencies": [
+          {
+            "bytes": 14618,
+            "path": "evidence-snapshots/quantum/check_projection.py",
+            "sha256": "04deb4bc5c08f18a3ecc43f98892134bb7b91fb33bf076710734181eb590b0b1",
+            "status": "PRESENT"
+          },
+          {
+            "bytes": 6207,
+            "path": "evidence-snapshots/quantum/operator_projection_result.json",
+            "sha256": "3023e8f5b138983e7d8400cf08bab033b01fa7351465f010fe1731b4fa350754",
+            "status": "PRESENT"
+          }
+        ],
+        "recorded_at": 1792090914.9373088,
+        "scope": "project",
+        "snapshot_schema": "laplace.research-dependencies/3"
+      },
+      "question": "Can a scalar gradient lose signal while the normalised operator gradient remains substantial?",
+      "result": "evidence-snapshots/quantum/operator_projection_result.json",
+      "revision": "sha256:8624db91c7dcf5d37e5c6bb6bd67a03ba52373cf58496e1c3903c414d92c1466",
+      "scope": "project",
+      "source": "evidence-snapshots/quantum/check_projection.py",
+      "summary": "The archived classical exact-state simulation records local/global observable cases at2\u20138qubits,2000random circuit-cut samples per point, seed20240603. At8qubits the mean normalised operator-gradient fractions are0.4999650and0.5000565, while scalar gradient variances are0.0019524and0.0018617. Fixed-operator Haar-state checks at1\u20134qubits agree with the stated second-moment identity to the recorded finite-sample errors. These support the source's projection mechanism on the stated ensembles.",
+      "title": "Archived operator-norm and scalar-gradient comparison"
+    },
+    {
+      "id": "dd-archived-quantum-replot",
+      "kind": "result",
+      "limitations": [
+        "Presentation-only replot of existing archived results, not a new simulation or hardware experiment.",
+        "The original historical execution manifest is not supplied. Exact archived result and producer bytes are retained, without retrospective execution certification.",
+        "The two examples establish their stated finite comparisons, not a general optimisation guarantee or quantum advantage.",
+        "The pool producer ranks amplitude divided by gap. This must not be silently described as the squared-amplitude perturbative energy-gain rule."
+      ],
+      "provenance": {
+        "dependencies": [
+          {
+            "bytes": 4227,
+            "path": "calculations/replot_archived_quantum.py",
+            "scope": "project",
+            "sha256": "3820c52e8a7384dd8e6a04d4a5bdee71d28f1f48e410bc0a79a7d971b6b861da",
+            "status": "PRESENT"
+          },
+          {
+            "bytes": 3230,
+            "path": "research_runs/run-74dbf47f74a14fdc.result.json",
+            "sha256": "b461eab881b7495fd328db092fc1acf6f1b45485a05b5963c9b201cfaed72c33",
+            "status": "PRESENT"
+          }
+        ],
+        "recorded_at": 1792091433.6752474,
+        "scope": "manuscript",
+        "snapshot_schema": "laplace.research-dependencies/3"
+      },
+      "question": "What do the archived operator-projection and gap-aware-selection calculations demonstrate?",
+      "result": "research_runs/run-74dbf47f74a14fdc.result.json",
+      "result_scope": "manuscript",
+      "revision": "sha256:c29ff9e2ebde4447759eddae000b42b0f186dc1ee3d7e113a66d20a31b73840d",
+      "run_id": "run-74dbf47f74a14fdc",
+      "scope": "manuscript",
+      "source": "calculations/replot_archived_quantum.py",
+      "source_scope": "project",
+      "summary": "The archived operator calculation contrasts a diminishing scalar-gradient variance with a roughly stable normalised projected-operator norm. The archived selection sweep shows that accounting for excitation gaps improves the selected reduced space in this finite example. The supervised run only reformats pinned archived values and produces readable vector figures. It does not rerun either scientific calculation.",
+      "title": "Archived quantum-prototype results, presentation-only replot"
+    },
+    {
+      "id": "dd-archived-memory-replot",
+      "kind": "result",
+      "limitations": [
+        "This run only reformats archived results, with exact input hashes. It does not rerun the GPU benchmark.",
+        "Synthetic even-parity law, 262,144 unique rows and fixed declared Boolean coordinates. No natural-language retrieval or semantic-entailment claim.",
+        "Warm API intervals exclude the build, query preparation and process-first compilation. Eleven timed samples within one archived run are not independent campaign replicates.",
+        "The source campaign records refusal for high-width controls and weighted-scan wins for duplicate-heavy controls. These negatives remain part of the interpretation.",
+        "Historical producer and protocol pins are read and documented separately. Successful presentation execution does not retrospectively certify the historical benchmark."
+      ],
+      "provenance": {
+        "dependencies": [
+          {
+            "bytes": 4971,
+            "path": "calculations/replot_archived_memory.py",
+            "scope": "project",
+            "sha256": "fb1d46b4945c2a771c353312f1e02806a20e8190d5f3f6bf3da35535d345715b",
+            "status": "PRESENT"
+          },
+          {
+            "bytes": 2894,
+            "path": "research_runs/run-f1c083bdc9dd4477.result.json",
+            "sha256": "e570d29828841050d8d9978a894f33ca4a2f85f859776cc65ea15e559ccd1d44",
+            "status": "PRESENT"
+          }
+        ],
+        "recorded_at": 1792091626.0070932,
+        "scope": "manuscript",
+        "snapshot_schema": "laplace.research-dependencies/3"
+      },
+      "question": "When does a retained relation reduce query work even though every source row is unique?",
+      "result": "research_runs/run-f1c083bdc9dd4477.result.json",
+      "result_scope": "manuscript",
+      "revision": "sha256:fd83c4e63b068a5c816bebae9119f4cd662622fc40546cedb2a8caf7850e34d0",
+      "run_id": "run-f1c083bdc9dd4477",
+      "scope": "manuscript",
+      "source": "calculations/replot_archived_memory.py",
+      "source_scope": "project",
+      "summary": "The presentation-only producer replots four archived d=19, four-prefix-coordinate cells. For a batch of 1,024 queries, median warm full-API time is 58.984 microseconds for exact continuation, 1491.166 microseconds for packed direct scan and 1739.315 microseconds for weighted unique scan. All displayed cells report exact agreement with the direct integer oracle. The accompanying three-bit parity table is a mathematical explanation of the retained relation, not an additional measurement.",
+      "title": "Archived exact-coordinate memory comparison"
+    },
+    {
+      "id": "dd-publication-figures",
+      "kind": "result",
+      "limitations": [
+        "Presentation-only, not a rerun of scientific simulations or benchmarks and not independent verification.",
+        "The first publication producer attempt failed on a Matplotlib mathtext brace error. Failed run run-614b70d3cd694322 and its partial outputs are preserved and not used as evidence.",
+        "Run run-1a66a345f66d4789 succeeded but a panel-label overlap required a presentation-only revision. Its outputs are retained.",
+        "Final manuscript placement, page-size inspection and full editorial review remain outstanding."
+      ],
+      "provenance": {
+        "dependencies": [
+          {
+            "bytes": 10569,
+            "path": "calculations/publication_figures.py",
+            "scope": "project",
+            "sha256": "c856c2d9d1278b98e57cced2b1a4e14ba131ced47f46fe6e472ca6037b39cd66",
+            "status": "PRESENT"
+          },
+          {
+            "bytes": 11574,
+            "path": "research_runs/run-3af475ad8f2640ed.result.json",
+            "sha256": "54f389799656bed23257038a57ff002440b0fee81d177b76575cfc6c3a8565b6",
+            "status": "PRESENT"
+          }
+        ],
+        "recorded_at": 1792092497.396813,
+        "scope": "manuscript",
+        "snapshot_schema": "laplace.research-dependencies/3"
+      },
+      "result": "research_runs/run-3af475ad8f2640ed.result.json",
+      "result_scope": "manuscript",
+      "revision": "sha256:a70e33ed5d0676decea1ab0c340220b48ff8f254aa8074a70a35eed0c4d2338c",
+      "run_id": "run-3af475ad8f2640ed",
+      "scope": "manuscript",
+      "source": "calculations/publication_figures.py",
+      "source_scope": "project",
+      "summary": "Six figure sets reformatted under the author's global APS-style preference, with serif typography, equation-symbol axes, restrained colour and explicit captions. Original mathematical tables and archival quantum/memory data are unchanged. All six first successful renderings were visually inspected. A memory panel-label overlap was corrected, and its final adopted rendering inspected. The five unchanged figures have identical PNG hashes between successful runs. All six were adopted through canonical visual owners with their appropriate existing interpreted-result bindings.",
+      "title": "Publication-size figures from fixed mathematical and archival tables"
+    },
+    {
+      "id": "dd-superarc-controls",
+      "kind": "result",
+      "limitations": [
+        "Historical report, not an independent rerun.",
+        "Correctness routes differ: A1 formula translation, A2/A3 banked program execution. Recorded formula/program cross-check discrepancies remain relevant.",
+        "As-scored report carries an old outstanding AUD-1 flag; later skeptic records audit discharge, not metric blindness.",
+        "Arm prompts, search resources and text formats differ, so increments do not isolate causal execution or recursion benefits.",
+        "Only fixed-bin stripped comparison has the displayed stripped interval. Re-binned point has no interval here."
+      ],
+      "provenance": {
+        "dependencies": [
+          {
+            "bytes": 3506,
+            "path": "calculations/superarc_figure.py",
+            "scope": "project",
+            "sha256": "938eca3353a04bc720fff670cb21f7177383fcab1cd4a3315b1b7dff1e214b1d",
+            "status": "PRESENT"
+          },
+          {
+            "bytes": 2715,
+            "path": "research_runs/run-97ff1a89c89041e6.result.json",
+            "sha256": "2202cb913f518ab3aa4d41336cee62fc3061c72d2d69e7c520a8f4934b9fab4b",
+            "status": "PRESENT"
+          }
+        ],
+        "recorded_at": 1792093094.2842617,
+        "scope": "manuscript",
+        "snapshot_schema": "laplace.research-dependencies/3"
+      },
+      "result": "research_runs/run-97ff1a89c89041e6.result.json",
+      "result_scope": "manuscript",
+      "revision": "sha256:e485fbe7b8667ddf7a0de69fa9749f350011282ca117165279c02428ff9c445f",
+      "run_id": "run-97ff1a89c89041e6",
+      "scope": "manuscript",
+      "source": "calculations/superarc_figure.py",
+      "source_scope": "project",
+      "summary": "Presentation-only plot of the frozen report's class fractions and the later skeptic's displayed loop-minus-execute/fix controls. The as-scored positive gap is not retained by the commentary-stripped fixed-bin comparison. The figure separates recorded correctness from the score's representation-dependent factors and preserves the reported uncertainty and protocol distinctions.",
+      "title": "Archived SuperARC score decomposition and answer-format controls"
+    },
+    {
+      "artifacts": [
+        {
+          "label": "Derivation and exact scope",
+          "path": "research/root-hmf-ground-state-and-geometry-20261015.md",
+          "scope": "project"
+        },
+        {
+          "caption": "Single-oscillator spin-boson control, H=omega_q sigma_z/2+omega_b b\u2020b+g sigma_x(b+b\u2020), omega_b/omega_q=1.7. (a) Physical reduced-spin Bloch radius approaches the traced ground-state radius (dotted), which remains below one at nonzero coupling. (b) The dimensionless mean-force gap beta Delta_MF approaches the ground-state log eigenvalue ratio (dotted), so Delta_MF itself vanishes as temperature while retaining a mixed reduced ground state. (c) Relative deviation of the excited-spin weight from g\u00b2/(omega_q+omega_b)\u00b2 approaches zero (dashed). (d) Along g(beta)=kappa(omega_q+omega_b) exp(-beta omega_q/2), the scaled excited weight approaches1+kappa\u00b2 (dotted). Displayed thermal curves reach beta30; the independent beta80 endpoint checks ground-state convergence. Independent diagonalization at two oscillator cutoffs checks truncation for this finite-bath control; no continuum or generic exact spin-boson solution is claimed.",
+          "label": "Vector figure",
+          "path": "manuscript/research_runs/run-42b6752ef10c4e6f.result-figures/hmf-zero-temperature-and-joint-path.svg",
+          "scope": "project"
+        },
+        {
+          "caption": "Single-oscillator spin-boson control, H=omega_q sigma_z/2+omega_b b\u2020b+g sigma_x(b+b\u2020), omega_b/omega_q=1.7. (a) Physical reduced-spin Bloch radius approaches the traced ground-state radius (dotted), which remains below one at nonzero coupling. (b) The dimensionless mean-force gap beta Delta_MF approaches the ground-state log eigenvalue ratio (dotted), so Delta_MF itself vanishes as temperature while retaining a mixed reduced ground state. (c) Relative deviation of the excited-spin weight from g\u00b2/(omega_q+omega_b)\u00b2 approaches zero (dashed). (d) Along g(beta)=kappa(omega_q+omega_b) exp(-beta omega_q/2), the scaled excited weight approaches1+kappa\u00b2 (dotted). Displayed thermal curves reach beta30; the independent beta80 endpoint checks ground-state convergence. Independent diagonalization at two oscillator cutoffs checks truncation for this finite-bath control; no continuum or generic exact spin-boson solution is claimed.",
+          "label": "Figure preview",
+          "path": "manuscript/research_runs/run-42b6752ef10c4e6f.result-figures/hmf-zero-temperature-and-joint-path.png",
+          "scope": "project"
+        }
+      ],
+      "config": "calculations/root_hmf_zero_temperature_v1.json",
+      "config_scope": "project",
+      "id": "hmf-ground-state-retention-and-thermal-geometry",
+      "kind": "result",
+      "limitations": [
+        "Single harmonic mode at finite, converged oscillator cutoff; not the continuum bath.",
+        "Weak-coupling and matched low-temperature expressions are asymptotic, not a generic all-coupling solution.",
+        "Lorentz identity is a known matrix correspondence checked here in the thermal filter; it does not establish gravitational field equations.",
+        "Original run690ab failed at JSON serialization and is preserved. Run ea7a095 completed but did not meet the low-temperature convergence target at beta30 for g1; it is preserved. The final run adds beta80 without loosening that target.",
+        "This is Root preliminary derivation and finite-bath control; independent scientific review and manuscript inclusion remain pending."
+      ],
+      "measures": [
+        {
+          "key": "all_checks",
+          "label": "Final controls"
+        },
+        {
+          "key": "elapsed_seconds",
+          "label": "Calculation duration",
+          "unit": "s"
+        }
+      ],
+      "provenance": {
+        "dependencies": [
+          {
+            "bytes": 265,
+            "path": "calculations/root_hmf_zero_temperature_v1.json",
+            "scope": "project",
+            "sha256": "4ad29039fc601ab18f6012a75042389a84dc2637664cf74c1fd229df5f964b04",
+            "status": "PRESENT"
+          },
+          {
+            "bytes": 8256,
+            "path": "calculations/root_hmf_zero_temperature_v1.py",
+            "scope": "project",
+            "sha256": "372216af9d5f05ecec6913be37751631820aa3be0b54a206c074bbc1ceb62169",
+            "status": "PRESENT"
+          },
+          {
+            "bytes": 58816,
+            "path": "research_runs/run-42b6752ef10c4e6f.result.json",
+            "sha256": "a2a16a59ecdb2f5f00fee46516d29a7cb2a92eef3bcbf437d24022b9e3ad513f",
+            "status": "PRESENT"
+          },
+          {
+            "bytes": 7180,
+            "path": "research/root-hmf-ground-state-and-geometry-20261015.md",
+            "scope": "project",
+            "sha256": "7e1488c041ae22141c689cd86eee660c3c11df04a7243f9212b5c6bc0278f410",
+            "status": "PRESENT"
+          },
+          {
+            "bytes": 63248,
+            "path": "manuscript/research_runs/run-42b6752ef10c4e6f.result-figures/hmf-zero-temperature-and-joint-path.svg",
+            "scope": "project",
+            "sha256": "b91b0a9c47bd7387b295de8699df548ff57067064e8d19ee927861851a5802c1",
+            "status": "PRESENT"
+          },
+          {
+            "bytes": 108687,
+            "path": "manuscript/research_runs/run-42b6752ef10c4e6f.result-figures/hmf-zero-temperature-and-joint-path.png",
+            "scope": "project",
+            "sha256": "e7d9308f44b7173f1e60f78a4d4503e183d4c3c666cbe5902d0431a77f5dba74",
+            "status": "PRESENT"
+          }
+        ],
+        "recorded_at": 1792097575.7366078,
+        "scope": "manuscript",
+        "snapshot_schema": "laplace.research-dependencies/3"
+      },
+      "question": "What state information survives the zero-temperature mean-force limit, and how does a joint temperature-coupling path behave?",
+      "result": "research_runs/run-42b6752ef10c4e6f.result.json",
+      "result_scope": "manuscript",
+      "revision": "sha256:f98926aa7b1fffaa90e1bf36b9503e22842ea6c5a6497489765c7b220adfadef",
+      "run_id": "run-42b6752ef10c4e6f",
+      "scope": "manuscript",
+      "source": "calculations/root_hmf_zero_temperature_v1.py",
+      "source_scope": "project",
+      "summary": "Root derived the exact traceless identity beta H_MF = -log rho_S up to its scalar part, a controlled weak-coupling joint-path prediction, and the qubit thermal-congruence Lorentz identity. A supervised single-oscillator calculation checks physical reduced Gibbs states against traced ground eigenvectors, two oscillator cutoffs, weak-coupling dressing and three joint paths. All seven final controls pass. The plotted curves reach beta30; an explicit beta80 endpoint resolves the observed finite-temperature remainder.",
+      "title": "Cooling retains the reduced ground state in the scaled mean-force Hamiltonian"
+    },
+    {
+      "id": "dd-representation-illustrations",
+      "kind": "result",
+      "limitations": [
+        "Mathematical illustrations, not empirical performance or independent scientific verification.",
+        "Four-state model is author-introduced. Formal proof review remains pending.",
+        "The source plan changed, requiring this bounded rerun rather than retrospective currentness of the old execution."
+      ],
+      "provenance": {
+        "dependencies": [
+          {
+            "bytes": 6525,
+            "path": "calculations/representation_illustrations.py",
+            "scope": "project",
+            "sha256": "6fbec2ba4f746abc5e5038455b450e0ef1ca546a64803a6827ac45b3cbcde670",
+            "status": "PRESENT"
+          },
+          {
+            "bytes": 5860,
+            "path": "research_runs/run-3f035af6bb194de9.result.json",
+            "sha256": "ad73d7923242d3a129318ce749a7afb4db4ee0c2473392f0cb7af4268580042f",
+            "status": "PRESENT"
+          }
+        ],
+        "recorded_at": 1792100605.0425174,
+        "scope": "manuscript",
+        "snapshot_schema": "laplace.research-dependencies/3"
+      },
+      "question": "How do explicit representations change a compromise, prediction and training signal?",
+      "result": "research_runs/run-3f035af6bb194de9.result.json",
+      "result_scope": "manuscript",
+      "revision": "sha256:a87ca75c344b89be076f4a1d1f7a887de5bbd98f8ee02eaaaf30ebe6423ab7f5",
+      "run_id": "run-3f035af6bb194de9",
+      "scope": "manuscript",
+      "source": "calculations/representation_illustrations.py",
+      "source_scope": "project",
+      "summary": "Deterministic renewal after the declared reader-plan input changed, using the unchanged producer and parameters. Partition crossing 0.8410686705679301 and suppression boundary 1.0852782044993055, exact integer retained-coordinate checks and analytic gradient-variance tables. The previous run and outputs remain preserved.",
+      "title": "Deterministic illustrations of representation choice"
+    },
+    {
+      "id": "dd-portable-figure-publication",
+      "kind": "result",
+      "limitations": [
+        "File publication and identity check only. No new scientific evidence, figure interpretation or independent review."
+      ],
+      "provenance": {
+        "dependencies": [
+          {
+            "bytes": 3529,
+            "path": "calculations/publish_portable_figures.py",
+            "scope": "project",
+            "sha256": "578ae1ce260b4b479b256f44c5003c360f3a5b3826cbd6a0cd1ef770ee7e278f",
+            "status": "PRESENT"
+          },
+          {
+            "bytes": 4896,
+            "path": "research_runs/run-b69220b3a27348ad.result.json",
+            "sha256": "a36430092419d9d9d75a497d57e1fa478135ef8237e04132c1564a6e846ac3d6",
+            "status": "PRESENT"
+          }
+        ],
+        "recorded_at": 1792101517.0150845,
+        "scope": "manuscript",
+        "snapshot_schema": "laplace.research-dependencies/3"
+      },
+      "result": "research_runs/run-b69220b3a27348ad.result.json",
+      "result_scope": "manuscript",
+      "revision": "sha256:9b733fc35f914974d536f780e368a763bd18575af6c8ddd2f1b67a39693021f2",
+      "run_id": "run-b69220b3a27348ad",
+      "scope": "manuscript",
+      "source": "calculations/publish_portable_figures.py",
+      "source_scope": "project",
+      "summary": "All eleven current PDF figures were copied into a unique selected-edition figures directory and checked byte-for-byte by SHA256. The original generated PDFs and all prior runs remain intact.",
+      "title": "Portable selected-edition figure publication"
+    },
+    {
+      "id": "dd-register-phase-diagram",
+      "kind": "result",
+      "limitations": [
+        "Deterministic finite-model illustration. Grid checks are not independent proof or empirical evidence of a physical phase transition."
+      ],
+      "provenance": {
+        "dependencies": [
+          {
+            "bytes": 4642,
+            "path": "calculations/register_phase_diagram.py",
+            "scope": "project",
+            "sha256": "925882d9ede01dde4b6239efd14c2db1a4c23737647305a47a8fdc3841eae59c",
+            "status": "PRESENT"
+          },
+          {
+            "bytes": 2068,
+            "path": "research_runs/run-939b6a8b76724d02.result.json",
+            "sha256": "a9edbcf2938e9379156b9cf7b2a2bb239f85160d0870f0565110708093572600",
+            "status": "PRESENT"
+          }
+        ],
+        "recorded_at": 1792102149.6491697,
+        "scope": "manuscript",
+        "snapshot_schema": "laplace.research-dependencies/3"
+      },
+      "result": "research_runs/run-939b6a8b76724d02.result.json",
+      "result_scope": "manuscript",
+      "revision": "sha256:c5d24fe4a3106aa96cf5ea4ba153f1f90d89f43dc24ca670aefc377d6953fcf8",
+      "run_id": "run-939b6a8b76724d02",
+      "scope": "manuscript",
+      "source": "calculations/register_phase_diagram.py",
+      "source_scope": "project",
+      "summary": "The exact lower-envelope boundary was plotted in (theta,C_part) at gamma=1, eta=0.8. A finite alpha-grid check agrees with the analytic shared optimum to numerical precision. The C_part=0.25 slice crosses at theta=0.8410686705679301 and the balanced/suppressed sharing regions meet at theta=1.0852782044993055, C_part=0.4.",
+      "title": "Phase boundary for sharing versus splitting a register"
+    },
+    {
+      "data": [
+        "evidence-snapshots/memory/reader-relational-controls-20261015.json"
+      ],
+      "data_scope": "project",
+      "id": "dd-memory-reader-controls",
+      "kind": "result",
+      "limitations": [
+        "Reported finite sample, not a new experiment.",
+        "The temporal subset contains nine cases. The bars supply no new uncertainty estimate.",
+        "The separate causal audit distinguishes relational/counting representation from non-nested packing. Better ingestion remains a proposed remedy to test.",
+        "Plot-only rerun isolates unchanged archived counts from unrelated conceptual-diagram revisions. Prior run and record are preserved."
+      ],
+      "provenance": {
+        "dependencies": [
+          {
+            "bytes": 2452,
+            "path": "calculations/memory_reader_controls.py",
+            "scope": "project",
+            "sha256": "4b4d5e9481842599c9c66b92dd313778f3568ad109a169ef1ffb4b0e0a62aba0",
+            "status": "PRESENT"
+          },
+          {
+            "bytes": 2267,
+            "path": "research_runs/run-7bd75062068b432b.result.json",
+            "sha256": "e215494456d6b0c27e6499ac9180ae5f3a5899664f82e3a88cfa91216c334cef",
+            "status": "PRESENT"
+          },
+          {
+            "bytes": 769,
+            "path": "evidence-snapshots/memory/reader-relational-controls-20261015.json",
+            "scope": "project",
+            "sha256": "3acb5f69700e96090f2011b79675956edb51041396ebd8702f2a46ceb761f3b6",
+            "status": "PRESENT"
+          }
+        ],
+        "recorded_at": 1792104902.388157,
+        "scope": "manuscript",
+        "snapshot_schema": "laplace.research-dependencies/3"
+      },
+      "result": "research_runs/run-7bd75062068b432b.result.json",
+      "result_scope": "manuscript",
+      "revision": "sha256:f2a6a3cbb18bc50a4239c99e5f7fafd0b2c71257f5e6cfade40cd32a2fba6f92",
+      "run_id": "run-7bd75062068b432b",
+      "scope": "manuscript",
+      "source": "calculations/memory_reader_controls.py",
+      "source_scope": "project",
+      "summary": "Faithful replot of the read final Memory in Pieces/Parallax evaluation: 4k LongMem correct30/48,33/48,34/48 for memory witness,dense,hybrid, and temporal subset4/9,7/9,6/9. These counts locate headroom in relation/time representation and evidence selection. No new reader run.",
+      "title": "Archived memory reader and temporal controls"
+    },
+    {
+      "id": "dd-hierarchy-stability",
+      "kind": "result",
+      "limitations": [
+        "Exact linear stability of the specified deterministic sampled map using its iterated Gaussian expected-majority response.",
+        "Not exact finite-block majority combinatorics, realised noisy verdict dynamics, a nonlinear bifurcation proof, general hierarchy advantage or ANF's distinct two-derivative protocol.",
+        "Continuous population interpolation. No empirical or independent scientific verification."
+      ],
+      "measures": [
+        {
+          "key": "N_c_L1",
+          "label": "Flat critical population"
+        },
+        {
+          "key": "N_c_L2",
+          "label": "Two-layer critical population"
+        },
+        {
+          "key": "N_c_L3",
+          "label": "Three-layer critical population"
+        },
+        {
+          "key": "jacobians_checked",
+          "label": "Jacobian classifications checked"
+        },
+        {
+          "key": "classification_mismatches",
+          "label": "Classification mismatches"
+        }
+      ],
+      "provenance": {
+        "dependencies": [
+          {
+            "bytes": 5161,
+            "path": "calculations/hierarchy_stability.py",
+            "scope": "project",
+            "sha256": "3bef369c37be7ec815b2a3226d1f417d4ed1d939089363589b68e94cd5844df9",
+            "status": "PRESENT"
+          },
+          {
+            "bytes": 2285,
+            "path": "research_runs/run-d9f38e92caf64d82.result.json",
+            "sha256": "522f05ce90fc60fb7a8e01593532b108038bc50a2cb5a60c45763fa02e4a74d3",
+            "status": "PRESENT"
+          }
+        ],
+        "recorded_at": 1792107615.0842688,
+        "scope": "manuscript",
+        "snapshot_schema": "laplace.research-dependencies/3"
+      },
+      "question": "How does hierarchical aggregation change the stable population and update size?",
+      "result": "research_runs/run-d9f38e92caf64d82.result.json",
+      "result_scope": "manuscript",
+      "revision": "sha256:ff55f4724d54fda217ccb2b9802c65de17c8645eb81f06eaf9195da9382e5676",
+      "run_id": "run-d9f38e92caf64d82",
+      "scope": "manuscript",
+      "source": "calculations/hierarchy_stability.py",
+      "source_scope": "project",
+      "summary": "At alpha=.35, beta=.6, b=1.2, s=.4 and h/tau=1, critical populations are 138.25414373768885, 217.16910114733528, 341.1284263755836 for depths 1,2,3. All 19557 Jacobian classifications agree with 0<K<K_c. Deterministic source-defined illustration of Phases v4 Appendices B and C.",
+      "title": "Hierarchy moves the sampled-feedback stability boundary"
+    },
+    {
+      "id": "result:public-representation-illustrations-v1",
+      "kind": "result",
+      "project": "eigen-technical-due-diligence-briefing",
+      "provenance": {
+        "dependencies": [
+          {
+            "bytes": 5309,
+            "path": "examples/public_representation_illustrations.py",
+            "scope": "project",
+            "sha256": "79b053a50a35c26931f71f0c79822de7d44b2dfc9c93acba6db1a07c068536e7",
+            "status": "PRESENT"
+          },
+          {
+            "bytes": 7110,
+            "path": "research_runs/run-15031fae63e346f6.result.json",
+            "sha256": "0b5dd99588b866c124bbd5545cb9ce848dc73b92200290c1d212e91cde1e8eaf",
+            "status": "PRESENT"
+          }
+        ],
+        "recorded_at": 1794486845.0541787,
+        "scope": "manuscript",
+        "snapshot_schema": "laplace.research-dependencies/3"
+      },
+      "question": "Does metadata-only public derivation retain the unchanged deterministic illustration's checks, parameters and artifact bytes?",
+      "result": "research_runs/run-15031fae63e346f6.result.json",
+      "result_scope": "manuscript",
+      "revision": "sha256:517688bcff8202e812ba745d187e139d724045467b585c8b3f88d9369e463823",
+      "run_id": "run-15031fae63e346f6",
+      "scope": "manuscript",
+      "source": "examples/public_representation_illustrations.py",
+      "source_scope": "project",
+      "summary": "Bounded public reproducibility/control example. One unchanged calculation invocation; raw result retained with SHA; public metadata derivation only, not a new scientific experiment, empirical benchmark or independent scientific acceptance."
+    }
+  ],
+  "schema_version": "laplace.research-records/1"
+}

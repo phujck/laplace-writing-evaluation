@@ -1,0 +1,470 @@
+{
+  "schema": "laplace.frontend-capability-design-inventory/1",
+  "at": "2026-10-21T09:49:44.658870+00:00",
+  "basis": "Read-only primary current source. Source exposure is not a fresh browser usability or transport acceptance test. Main production implementation unchanged.",
+  "areas": [
+    {
+      "area": "Object identity and guarded operations",
+      "status": "present_in_source",
+      "current_owner_scope": "Home/Token/Request/Affected/Receipt/Refusal plus domain operation contracts and owner reads",
+      "design_join": "No common complete UI facet schema; preserve owner-specific basis/guards and explanations rather than inventing frontend authority.",
+      "source": [
+        {
+          "path": "src/laplace/core/grammar.py",
+          "sha256": "sha256:32f9af36d04bdf3c474f6430393c5d3957e2e1cb8e6dffb532adc7632b837327"
+        },
+        {
+          "path": "src/laplace/core/identity_doors.py",
+          "sha256": "sha256:c1b1a2c3a12072871d234606c671eeb9095a1a7933867ec1cc31caff043778b6"
+        },
+        {
+          "path": "src/laplace/native/declared.py",
+          "sha256": "sha256:e394dea12eb0e1897cc21522934f4c82300b8f420bc922d394383e1bdf52d0be"
+        }
+      ]
+    },
+    {
+      "area": "Work hierarchy and selected relations",
+      "status": "present_in_source",
+      "current_owner_scope": "Work specifications, containment vs prerequisites, scoped detail/graph/actions/currentness",
+      "design_join": "Arbitrary workflow definition editing and semantic feedback relations are not supplied by Work containment.",
+      "source": [
+        {
+          "path": "src/laplace/work/project_work.py",
+          "sha256": "sha256:ccaceca8a856b1599f0869e6ed5ba438da8777afc131dc99309024ff771c660c"
+        },
+        {
+          "path": "src/laplace/work/project_work_navigation.py",
+          "sha256": "sha256:3edacfb7febbb4017f76d60b2910339736ac18268249d63eb3c378dba1ccb8ec"
+        },
+        {
+          "path": "src/laplace/web/static_shared/workspace-work.mjs",
+          "sha256": "sha256:a459faf4459e8664983c02cc74e11516ed4c64de5ec90a828395b5dde020713d"
+        }
+      ]
+    },
+    {
+      "area": "Work observation and expiry",
+      "status": "present_in_source",
+      "current_owner_scope": "Qualified observed activity/expiry and bounded owner-token refresh",
+      "design_join": "No single all-owner event stream or cross-owner replay catalogue; use actual owner cursors/tokens.",
+      "source": [
+        {
+          "path": "src/laplace/work/project_work_activity.py",
+          "sha256": "sha256:45abdbe0d70c37e5a037d0ef2e7c0c9adab3faf2234052c0881bf15d5222a651"
+        },
+        {
+          "path": "src/laplace/web/static_shared/workspace-work-observer.mjs",
+          "sha256": "sha256:293a4724b37809e31abae6bb994654fcc4fd3488973180749930fe362fc9fcdc"
+        }
+      ]
+    },
+    {
+      "area": "Dispatch roles and actual children",
+      "status": "present_in_source",
+      "current_owner_scope": "Admitted packets/roles, scoped child return contracts, actual host states, independent judgement/synthesis",
+      "design_join": "Visual reusable topology editing and complete role configuration need definition/run contract, not new lifecycle store.",
+      "source": [
+        {
+          "path": "src/laplace/writing/dispatch_execution.py",
+          "sha256": "sha256:953bea6aa521b389da33dd9dd028505b60f7e1dbb36d879f7e2338428d6c1dc1"
+        },
+        {
+          "path": "src/laplace/writing/dispatch_returns.py",
+          "sha256": "sha256:b10ecd616468250b3383d84c06ec4badf64dc4f0df8449c2bd779d183d399373"
+        },
+        {
+          "path": "src/laplace/writing/dispatch_parent.py",
+          "sha256": "sha256:fa10340a3887d0236d5e90cc578185d16351d6eb6851f2589056c9917c8eddd9"
+        },
+        {
+          "path": "src/laplace/writing/child_hosts.py",
+          "sha256": "sha256:f28557003c126f640485d97092fbfa44b8e592323d4450a039af285ea8c69cc6"
+        }
+      ]
+    },
+    {
+      "area": "Finite workflow carrier",
+      "status": "owner_without_sufficient_human_control",
+      "current_owner_scope": "Finite file-backed worker/judge/synthesis definitions and existing ledger carrier",
+      "design_join": "Not a universal nested visual workflow compiler; expose supported shapes and extend this owner only where defined.",
+      "source": [
+        {
+          "path": "src/laplace/pipeline/workflow.py",
+          "sha256": "sha256:b6fce7098703be069bc9886cd30fefc350e146042ca2196ee348f71a865396f5"
+        },
+        {
+          "path": "profiles/workflows/build-review-synthesize.json",
+          "sha256": "sha256:4caeb78ca1d4bc3b6f684eacdf4d6aa2357f90a5ac1fdb4152f5c5977d6746c5"
+        }
+      ]
+    },
+    {
+      "area": "Writing pipeline and stage guidance",
+      "status": "present_in_source",
+      "current_owner_scope": "Read-only stage availability/gaps/guidance and exact next owner routes",
+      "design_join": "Stage guidance never launches or sets autonomy; do not represent a stage card as an executing role.",
+      "source": [
+        {
+          "path": "src/laplace/manuscript/writing_pipeline.py",
+          "sha256": "sha256:8813b53a049ef4c6f5e70e06632e2343731995f5cb65117d26de09f997af5c2b"
+        },
+        {
+          "path": "src/laplace/writing/stages.py",
+          "sha256": "sha256:abb6ffbdb84add335d204d1dcff34e64db492ac2893ab9a2eb09c83d4da3ee04"
+        }
+      ]
+    },
+    {
+      "area": "Model/provider settings",
+      "status": "present_in_source",
+      "current_owner_scope": "App observed policy/provider catalogue; project/session model/provider/effort choices",
+      "design_join": "Global default/tier mutation and runtime selection mutation explicitly absent. Active session settings refuse; next-turn only.",
+      "source": [
+        {
+          "path": "src/laplace/projects/library.py",
+          "sha256": "sha256:2941782ebc18f6464c9f4badb4d770aa5f8ddf0d46ecf77e1abb469e97fd2afa"
+        },
+        {
+          "path": "src/laplace/work/project_work.py",
+          "sha256": "sha256:ccaceca8a856b1599f0869e6ed5ba438da8777afc131dc99309024ff771c660c"
+        },
+        {
+          "path": "src/laplace/writing/turn_admission.py",
+          "sha256": "sha256:6c9b9a638c1ffbd91230396b6fd12ad6b79fe88138321f2867abde8cc8814352"
+        },
+        {
+          "path": "src/laplace/web/static_shared/workspace-app.mjs",
+          "sha256": "sha256:e42169b91c017e844ab42633ce3ff1218e562327cbdef817d24d6b7c82137ebd"
+        }
+      ]
+    },
+    {
+      "area": "Instruction sources and role permissions",
+      "status": "owner_without_sufficient_human_control",
+      "current_owner_scope": "Immutable kernel/frame/body delivery, current instruction vs handoff/background roles and guide provenance",
+      "design_join": "No common global→project→workflow→step→role→object effective-setting editor; authority must remain admitted owner/tool/grant ceiling.",
+      "source": [
+        {
+          "path": "src/laplace/writing/operating.py",
+          "sha256": "sha256:64d05faff71f62fdd04da631a9ef50e26442227736d1c3c2eedac92ce11613fb"
+        },
+        {
+          "path": "src/laplace/manuscript/project_protocol.py",
+          "sha256": "sha256:585f301fec6119c527b8594629fc6081a03a4ee7f101d41bd5a409451b90ce85"
+        }
+      ]
+    },
+    {
+      "area": "Profiles and project preferences",
+      "status": "present_in_source",
+      "current_owner_scope": "Architecture preferences are workspace-only through narrative; shared voice profiles and project voice selection/guidance/genre use writing_style, through the profiles adapter. Both have guarded proposal/decision/application consumers.",
+      "design_join": "Expose the actual allowed scope and origin: architecture explicitly has no project override. General hierarchy applies only to keys/scopes their owner admits.",
+      "source": [
+        {
+          "path": "src/laplace/manuscript/profiles.py",
+          "sha256": "sha256:6e4d10ff88cdcac9b554fe68674858c855339c96576cc8990250bc4dbb102099"
+        },
+        {
+          "path": "src/laplace/manuscript/writing_style.py",
+          "sha256": "sha256:a46507596efb529d82dc5e7078f698c3325b7fec4c757621c9ea57c8d459b13e"
+        },
+        {
+          "path": "src/laplace/web/static_shared/profile-preferences.mjs",
+          "sha256": "sha256:5a246e866fb3e7e7d8d843f4968617012f10dd193eeed9627a31d3091b8e0780"
+        }
+      ]
+    },
+    {
+      "area": "Autonomy policy across nested work",
+      "status": "missing_contract",
+      "current_owner_scope": "Existing concrete start/steer/stop/continuation controls remain the constituents",
+      "design_join": "Scoped advance/review/human-wait policy and running-version adoption need explicit owner semantics before general toggles.",
+      "source": [
+        {
+          "path": "src/laplace/writing/turn_admission.py",
+          "sha256": "sha256:6c9b9a638c1ffbd91230396b6fd12ad6b79fe88138321f2867abde8cc8814352"
+        },
+        {
+          "path": "src/laplace/writing/turn_jobs.py",
+          "sha256": "sha256:16fd9c261879fc1ea08e672d2edfde9089f8a3e680906358b245f694df410d9e"
+        },
+        {
+          "path": "src/laplace/writing/child_hosts.py",
+          "sha256": "sha256:f28557003c126f640485d97092fbfa44b8e592323d4450a039af285ea8c69cc6"
+        }
+      ]
+    },
+    {
+      "area": "Origin feedback and passage comments",
+      "status": "present_in_source",
+      "current_owner_scope": "Exact response target with observation/instruction distinction; source-addressed manuscript comment banking",
+      "design_join": "Response identity is not a paragraph anchor. Preserve each original owner identity; do not silently retarget moved text.",
+      "source": [
+        {
+          "path": "src/laplace/work/feedback.py",
+          "sha256": "sha256:6d40aaa42c03026705b04f6c3900d5497040a8009eb213e97b1d31fab24ced74"
+        },
+        {
+          "path": "src/laplace/pipeline/authoring.py",
+          "sha256": "sha256:e35d6fa559146acb4c020c1ca9419a58d5451872ebed6a5ac5f9825064f54145"
+        },
+        {
+          "path": "src/laplace/manuscript/review_surface.py",
+          "sha256": "sha256:ad59e11f641891b0514aad7ba633f873531c12bb2db232c19c68e92a0d8b3080"
+        },
+        {
+          "path": "src/laplace/web/static_shared/walk-bank.mjs",
+          "sha256": "sha256:3c7bb4046293d16b98a79bd2a17cd98483e2a457ae1df51d74b6e7efba1dbc86"
+        }
+      ]
+    },
+    {
+      "area": "Durable routed delivery",
+      "status": "present_in_source",
+      "current_owner_scope": "Bound recipient identity, idempotent handoff, continuation, retry/recovery/return through Work",
+      "design_join": "Not a complete general multi-recipient comment router; define scoped fan-out/dedup/relevance/ack semantics before routing comments.",
+      "source": [
+        {
+          "path": "src/laplace/work/work_delivery.py",
+          "sha256": "sha256:ed1914a8a1cbf4fc0a390d11547cb416af3b162cfd72a1db45c0e591d7ba8c9f"
+        }
+      ]
+    },
+    {
+      "area": "Selective comment fan-out and aggregation",
+      "status": "missing_contract",
+      "current_owner_scope": "Reuse original comment and existing Work delivery/owner relations",
+      "design_join": "One origin, per-recipient reason and consumed basis, stable delivery generation, bounded retry/fan-out and one aggregate return are required.",
+      "source": [
+        {
+          "path": "src/laplace/work/work_delivery.py",
+          "sha256": "sha256:ed1914a8a1cbf4fc0a390d11547cb416af3b162cfd72a1db45c0e591d7ba8c9f"
+        },
+        {
+          "path": "src/laplace/pipeline/authoring.py",
+          "sha256": "sha256:e35d6fa559146acb4c020c1ca9419a58d5451872ebed6a5ac5f9825064f54145"
+        },
+        {
+          "path": "src/laplace/research/research_records.py",
+          "sha256": "sha256:558b26254ef1b5d5779f8bdb90876c06908ea0d0c26bb5c1952f58c5c4cbad3f"
+        }
+      ]
+    },
+    {
+      "area": "Ideas, argument and reader plans",
+      "status": "present_in_source",
+      "current_owner_scope": "Concept relations, framing/connected argument, section/paragraph reader contracts with consumed inputs",
+      "design_join": "Give exploration and competing hypotheses a human route; no automatic reopening of closed science campaigns.",
+      "source": [
+        {
+          "path": "src/laplace/research/concepts.py",
+          "sha256": "sha256:77e1bb2a37cfd299ae2f0f5f6ed1c891caebbd3b3088683968b54cbcb80ef5e5"
+        },
+        {
+          "path": "src/laplace/manuscript/reader_plan.py",
+          "sha256": "sha256:59015cb7de9460127756b2b538318e7e4569adf2df30065e4316d9d36a4d4d46"
+        },
+        {
+          "path": "src/laplace/pipeline/authoring.py",
+          "sha256": "sha256:e35d6fa559146acb4c020c1ca9419a58d5451872ebed6a5ac5f9825064f54145"
+        },
+        {
+          "path": "src/laplace/web/static_shared/workspace-spine.mjs",
+          "sha256": "sha256:0354c0a87ddd27920ab8d0616d6c96a4d4c61acabd1175a2401ca6f0acdcaff2"
+        }
+      ]
+    },
+    {
+      "area": "Literature, simulations and evidence",
+      "status": "present_in_source",
+      "current_owner_scope": "Discovery/read/bind and exact claim evidence; registered producers/results/actual runs",
+      "design_join": "Generic visual relation editing and cross-comment routing missing; source metadata/library presence is not claim support.",
+      "source": [
+        {
+          "path": "src/laplace/research/literature_support.py",
+          "sha256": "sha256:b13c9d82dc119acd7cc60ac7c58ae1c279f95311ab0ce3ffcd2a6c1544c4053f"
+        },
+        {
+          "path": "src/laplace/research/references_surface.py",
+          "sha256": "sha256:85dde6b4032ee91ae5a1800edef5c3411d5def92b232c405055b376f475e9466"
+        },
+        {
+          "path": "src/laplace/research/research_runs.py",
+          "sha256": "sha256:96ff53a1ee2bf951cf99605ee9c8d580fea31fc51b78d648f8e3f050922c36a5"
+        },
+        {
+          "path": "src/laplace/research/research_records.py",
+          "sha256": "sha256:558b26254ef1b5d5779f8bdb90876c06908ea0d0c26bb5c1952f58c5c4cbad3f"
+        },
+        {
+          "path": "src/laplace/web/static_shared/workspace-literature.mjs",
+          "sha256": "sha256:07621593c7fb4a7d2bd2f5918fa74ca441feac263754e54181f1f677fd59e90b"
+        }
+      ]
+    },
+    {
+      "area": "Draft custody and document editing",
+      "status": "present_in_source",
+      "current_owner_scope": "Original issued basis, held/awaiting-postimage drafts, local persistence and explicit reconciliation; existing exact-source CodeMirror/fallback",
+      "design_join": "Extract state from rendering carefully; do not replace source identity or auto-rebase a draft after a stale read.",
+      "source": [
+        {
+          "path": "src/laplace/web/static_shared/walk-drafts.mjs",
+          "sha256": "sha256:2e5798b5224d41e51c75177efc72243c9d9765a1be1d1e5d0369110a5f0a926c"
+        },
+        {
+          "path": "src/laplace/web/static_shared/manuscript-editor.mjs",
+          "sha256": "sha256:088eeeedcb657c58dff28ff94ffa4cf7ad9f20e20f6798fe3b2026161beaea48"
+        },
+        {
+          "path": "src/laplace/web/static_shared/exact-source-editor.mjs",
+          "sha256": "sha256:3652341a533082190848b9a8b7645916460c4759cc1f987278a62aa2ed09946c"
+        }
+      ]
+    },
+    {
+      "area": "Conversation and runtime controls",
+      "status": "present_in_source",
+      "current_owner_scope": "Actual session/history/body expansion, active capability/SSE/cursor observation, draft persistence and scoped controls",
+      "design_join": "Long message fidelity and return context need complete interaction design; no summaries may pretend to be full historical bodies.",
+      "source": [
+        {
+          "path": "src/laplace/writing/session_projection.py",
+          "sha256": "sha256:2bb81a27feb545b9f30b2834bd98328fff8cbe3cc0707e024d4fa58e65cadfc5"
+        },
+        {
+          "path": "src/laplace/writing/session_reads.py",
+          "sha256": "sha256:207ff0bf2c7fb3bea9c7dba080c802ef103c354e745a9a0f6e795f6eb603e6b6"
+        },
+        {
+          "path": "src/laplace/web/static_shared/workspace-session.mjs",
+          "sha256": "sha256:ae229017d53dac140eafa056874344644be8aa645bcfc955f44502d3ed349019"
+        }
+      ]
+    },
+    {
+      "area": "Project material and repository sources",
+      "status": "present_in_source",
+      "current_owner_scope": "Explicit source repositories, pinned material references, source permissions, text artifact owner and preview/download routes",
+      "design_join": "Reference membership grants no write permission. General binary attachment/intake/sharing needs reached owner audit, not invented upload success.",
+      "source": [
+        {
+          "path": "src/laplace/projects/library.py",
+          "sha256": "sha256:2941782ebc18f6464c9f4badb4d770aa5f8ddf0d46ecf77e1abb469e97fd2afa"
+        },
+        {
+          "path": "src/laplace/projects/artifacts.py",
+          "sha256": "sha256:be17938dea247a8cc3146ad847984e466e9bc01493fa321fc63e35eeab236a39"
+        },
+        {
+          "path": "src/laplace/projects/writing_sources.py",
+          "sha256": "sha256:9bca1c487056fb5703601a9a6a2b6f39ec354ccabe1fcb9e947b0ce83b00bf0c"
+        },
+        {
+          "path": "src/laplace/web/static_shared/workspace-material.mjs",
+          "sha256": "sha256:ac686a8549ff8f69b1658fb79d9c75208ef5f1b6dce0afddcc3c4d552e8dfece"
+        }
+      ]
+    },
+    {
+      "area": "Project attachment/intake permissions",
+      "status": "missing_contract",
+      "current_owner_scope": "Existing configured files and material reference collection are constituents",
+      "design_join": "Text store_artifact does not establish binary upload/intake or cross-project sharing. Define retained-original custody and scoped read capabilities before new dropzone.",
+      "source": [
+        {
+          "path": "src/laplace/projects/artifacts.py",
+          "sha256": "sha256:be17938dea247a8cc3146ad847984e466e9bc01493fa321fc63e35eeab236a39"
+        },
+        {
+          "path": "src/laplace/projects/library.py",
+          "sha256": "sha256:2941782ebc18f6464c9f4badb4d770aa5f8ddf0d46ecf77e1abb469e97fd2afa"
+        }
+      ]
+    },
+    {
+      "area": "Graph/list presentation",
+      "status": "present_in_source",
+      "current_owner_scope": "One node/typed-edge array drives graph plus accessible relation list; display-only folding/boundary reads",
+      "design_join": "Accumulated pages grow DOM; proposed editor needs bounded region/window and keyboard/list mutations through same operation contracts.",
+      "source": [
+        {
+          "path": "src/laplace/web/static_shared/workspace-topology.mjs",
+          "sha256": "sha256:f143c662cffbde18debac246bad84d31a55c5d680869be6c03d971fa40fc25b2"
+        }
+      ]
+    },
+    {
+      "area": "Shell navigation, inspector and contextual help",
+      "status": "present_in_source",
+      "current_owner_scope": "Named controllers, capture/release, context/return paths, same-origin+frame bridge, help contracts",
+      "design_join": "Replace ad hoc orchestration through shared lifecycle services; preserve guards/drafts, not a rewrite of all modules.",
+      "source": [
+        {
+          "path": "src/laplace/web/static_shared/workspace.mjs",
+          "sha256": "sha256:d57299bf0c2efd77dc505e5c5cfdc8ee9472b18f2b54d8857ed18d1bbb9c4835"
+        },
+        {
+          "path": "src/laplace/web/static_shared/workspace-inspector.mjs",
+          "sha256": "sha256:3bf4278d451d2c6a0f3dbd227d74df3a3a898788fb7dc0da28e59a1d789db577"
+        },
+        {
+          "path": "src/laplace/web/static_shared/workspace-help.mjs",
+          "sha256": "sha256:72bc14ba32bad72dc4624770ff21d2b586bc5a1defca72a171fc1519aa23af06"
+        },
+        {
+          "path": "src/laplace/web/static_shared/workspace-bridge.mjs",
+          "sha256": "sha256:7bb20bcf48ac45e0867e3a4041ead8fee1bfbf8b1b70226017f6ace326db7d26"
+        }
+      ]
+    },
+    {
+      "area": "Self-description, claims and engineering support",
+      "status": "owner_without_sufficient_human_control",
+      "current_owner_scope": "Structural source map and explicit concept/guide Work-completion/meaning/validation bases",
+      "design_join": "Structural import cone cannot certify semantic doc currentness. General design→code→UI/agent/help claim propagation still incomplete.",
+      "source": [
+        {
+          "path": "src/laplace/system/description.json",
+          "sha256": "sha256:c921ecaff62f20ee6c2bdbf37686c350b9a40d0ea2a3a9a89ad80923421b93a5"
+        },
+        {
+          "path": "src/laplace/research/engineering_support.py",
+          "sha256": "sha256:952fd0338f565963687da6d48255a976e5e0b4b4bf5f6e6f7485080f297909bb"
+        },
+        {
+          "path": "src/laplace/manuscript/project_protocol.py",
+          "sha256": "sha256:585f301fec6119c527b8594629fc6081a03a4ee7f101d41bd5a409451b90ce85"
+        }
+      ]
+    },
+    {
+      "area": "Document-only review admission",
+      "status": "missing_contract",
+      "current_owner_scope": "Existing blind_packet sealing and result banking; ordinary review role carries orientation",
+      "design_join": "No observed public Writing sealed action admits only declared document inputs; label as gap, not a blind review claim.",
+      "source": [
+        {
+          "path": "src/laplace/pipeline/readers/restart_reader.py",
+          "sha256": "sha256:42262076f915af3c8bd2e4a0d5493756ebf142a96f1bc149abb3ff915db2ebb8"
+        },
+        {
+          "path": "src/laplace/writing/operating.py",
+          "sha256": "sha256:64d05faff71f62fdd04da631a9ef50e26442227736d1c3c2eedac92ce11613fb"
+        }
+      ]
+    }
+  ],
+  "ownership_correction": {
+    "at": "2026-10-21T11:26:56.197502+00:00",
+    "status": "GENERAL_LOGICAL_OWNER_SCOPE_JOIN_NOT_IMPLEMENTED",
+    "basis": {
+      "path": "corpus_friction/development/frontend-design-20261021/ownership-custody-observation.json",
+      "sha256": "sha256:0d5e0def9cb0aca7a3b16700ab983068842f8f1295fb49618e00b65652af87c1",
+      "bytes": 4064
+    },
+    "design": "docs/writing-frontend-workflow-design.md",
+    "qualification": "Earlier present-in-source rows describe existing local owners, not a general owner/scope API or mandatory project parent. System/subsystem/contract policy, reference and workflow-definition edits need explicit owner admission; project preferences remain local and cannot authorise cross-scope effects."
+  }
+}

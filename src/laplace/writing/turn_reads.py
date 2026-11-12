@@ -329,7 +329,7 @@ def failure_recovery_reads(root:Path,project:str,turn_id:str,operation:str,paylo
     if not turn or turn.get("project")!=project:return {"reads":[],"reason":"turn unavailable"}
     reads=[]
     def add(op,data,why):
-        if op not in read_contract.READS:return
+        if read_contract.effect(op, data) != 'read':return
         row={"operation":op,"payload":dict(data or {}),"reason":why}
         if not any(existing["operation"]==op and existing["payload"]==row["payload"] for existing in reads):reads.append(row)
     from laplace.writing import operations

@@ -1,0 +1,211 @@
+{
+  "history": [],
+  "history_dropped": 0,
+  "records": [
+    {
+      "artifacts": [
+        {
+          "label": "Byte-exact original raw result JSON",
+          "path": "research_runs/run-5958977f72d23902.result.raw.json",
+          "scope": "manuscript"
+        },
+        {
+          "label": "Original unchanged output: shared-register-price-pdf",
+          "path": "research_runs/run-5958977f72d23902.result.raw-illustrations/shared-register-price.pdf",
+          "scope": "manuscript"
+        },
+        {
+          "label": "Original unchanged output: shared-register-price-svg",
+          "path": "research_runs/run-5958977f72d23902.result.raw-illustrations/shared-register-price.svg",
+          "scope": "manuscript"
+        },
+        {
+          "label": "Original unchanged output: shared-register-price-png",
+          "path": "research_runs/run-5958977f72d23902.result.raw-illustrations/shared-register-price.png",
+          "scope": "manuscript"
+        },
+        {
+          "label": "Original unchanged output: shared-register-price-data",
+          "path": "research_runs/run-5958977f72d23902.result.raw-illustrations/shared-register-price.csv",
+          "scope": "manuscript"
+        },
+        {
+          "label": "Original unchanged output: retention-trajectories-pdf",
+          "path": "research_runs/run-5958977f72d23902.result.raw-illustrations/retention-trajectories.pdf",
+          "scope": "manuscript"
+        },
+        {
+          "label": "Original unchanged output: retention-trajectories-svg",
+          "path": "research_runs/run-5958977f72d23902.result.raw-illustrations/retention-trajectories.svg",
+          "scope": "manuscript"
+        },
+        {
+          "label": "Original unchanged output: retention-trajectories-png",
+          "path": "research_runs/run-5958977f72d23902.result.raw-illustrations/retention-trajectories.png",
+          "scope": "manuscript"
+        },
+        {
+          "label": "Original unchanged output: retention-trajectories-data",
+          "path": "research_runs/run-5958977f72d23902.result.raw-illustrations/retention-trajectories.csv",
+          "scope": "manuscript"
+        },
+        {
+          "label": "Original unchanged output: global-local-feedback-pdf",
+          "path": "research_runs/run-5958977f72d23902.result.raw-illustrations/global-local-feedback.pdf",
+          "scope": "manuscript"
+        },
+        {
+          "label": "Original unchanged output: global-local-feedback-svg",
+          "path": "research_runs/run-5958977f72d23902.result.raw-illustrations/global-local-feedback.svg",
+          "scope": "manuscript"
+        },
+        {
+          "label": "Original unchanged output: global-local-feedback-png",
+          "path": "research_runs/run-5958977f72d23902.result.raw-illustrations/global-local-feedback.png",
+          "scope": "manuscript"
+        },
+        {
+          "label": "Original unchanged output: global-local-feedback-data",
+          "path": "research_runs/run-5958977f72d23902.result.raw-illustrations/global-local-feedback.csv",
+          "scope": "manuscript"
+        }
+      ],
+      "config": "examples/public-illustration-inputs-v1.json",
+      "config_scope": "project",
+      "id": "result-73d8f713f06d1bec3c03",
+      "kind": "result",
+      "limitations": "Author-authored wrapper and same-session comparisons, not independent verification. Public parameter JSON explains hard-coded formulas and is not a runtime override. Original raw historical note names are retained exactly but those notes were not read and are not support. PDF/SVG metadata may be time-dependent; the recorded bytes, not a rerun, define this output. No claim is bound or independently accepted. No extra runs.",
+      "provenance": {
+        "dependencies": [
+          {
+            "bytes": 3143,
+            "path": "examples/public-illustration-inputs-v1.json",
+            "sha256": "61b593fdfa0672b09859c813e28a8dcb6dea12cce56c7607b334da7e6710a713",
+            "status": "PRESENT"
+          },
+          {
+            "bytes": 5309,
+            "path": "examples/public_representation_illustrations.py",
+            "sha256": "79b053a50a35c26931f71f0c79822de7d44b2dfc9c93acba6db1a07c068536e7",
+            "status": "PRESENT"
+          },
+          {
+            "bytes": 6772,
+            "path": "research_runs/run-5958977f72d23902.result.json",
+            "scope": "manuscript",
+            "sha256": "6646bbb6a28bd85644e7f79dec09e446e1019fb8240666d07bec00feedb11dc4",
+            "status": "PRESENT"
+          },
+          {
+            "bytes": 5824,
+            "path": "research_runs/run-5958977f72d23902.result.raw.json",
+            "scope": "manuscript",
+            "sha256": "8b0430adb6f85336ee7148d33fff3a6a651a625bac9fdd45ba48e9c366913f32",
+            "status": "PRESENT"
+          },
+          {
+            "bytes": 26513,
+            "path": "research_runs/run-5958977f72d23902.result.raw-illustrations/shared-register-price.pdf",
+            "scope": "manuscript",
+            "sha256": "557f86ee960da48dbd4376d067222255080a6607cd51742e721c522194dfd3b9",
+            "status": "PRESENT"
+          },
+          {
+            "bytes": 26871,
+            "path": "research_runs/run-5958977f72d23902.result.raw-illustrations/shared-register-price.svg",
+            "scope": "manuscript",
+            "sha256": "539c4b0e8c14ce8b915460ea14875ddc4a18e2e95accd7f83743cf82ec77934e",
+            "status": "PRESENT"
+          },
+          {
+            "bytes": 116122,
+            "path": "research_runs/run-5958977f72d23902.result.raw-illustrations/shared-register-price.png",
+            "scope": "manuscript",
+            "sha256": "fc0cd66d0c3d30be918b899bc6997540fe1ad622cb9dcaa0732de6280d548675",
+            "status": "PRESENT"
+          },
+          {
+            "bytes": 23151,
+            "path": "research_runs/run-5958977f72d23902.result.raw-illustrations/shared-register-price.csv",
+            "scope": "manuscript",
+            "sha256": "8c00092b4c8cbcd69b13269aff5673cbd78b81bffff164dc0a0a0f5388790225",
+            "status": "PRESENT"
+          },
+          {
+            "bytes": 14182,
+            "path": "research_runs/run-5958977f72d23902.result.raw-illustrations/retention-trajectories.pdf",
+            "scope": "manuscript",
+            "sha256": "8e71ef345c9dfca9c2c5b16695cb051e2508a608ba7fb04e52961957a31b3f10",
+            "status": "PRESENT"
+          },
+          {
+            "bytes": 13613,
+            "path": "research_runs/run-5958977f72d23902.result.raw-illustrations/retention-trajectories.svg",
+            "scope": "manuscript",
+            "sha256": "04afad78dfb498bda4596feabdfd1105a39c029314ce97aa87216f35df382717",
+            "status": "PRESENT"
+          },
+          {
+            "bytes": 79943,
+            "path": "research_runs/run-5958977f72d23902.result.raw-illustrations/retention-trajectories.png",
+            "scope": "manuscript",
+            "sha256": "3d6b8876f8d39205ef63691499ee2f709c99abd0e5c4112ae66b6cd6f3fa5243",
+            "status": "PRESENT"
+          },
+          {
+            "bytes": 18996,
+            "path": "research_runs/run-5958977f72d23902.result.raw-illustrations/retention-trajectories.csv",
+            "scope": "manuscript",
+            "sha256": "ac028d56453f1a64b52071ccfa818f9b5cd3a41a5d48ded297a724e21244c6d9",
+            "status": "PRESENT"
+          },
+          {
+            "bytes": 18799,
+            "path": "research_runs/run-5958977f72d23902.result.raw-illustrations/global-local-feedback.pdf",
+            "scope": "manuscript",
+            "sha256": "a403550facf3045ae9ca8275045df15e172718cd763676601c8ff6a597731e78",
+            "status": "PRESENT"
+          },
+          {
+            "bytes": 15294,
+            "path": "research_runs/run-5958977f72d23902.result.raw-illustrations/global-local-feedback.svg",
+            "scope": "manuscript",
+            "sha256": "11dad09f048ec05da34b7198decb7dfc266f585c13ba3f8ee4903096f44e43fd",
+            "status": "PRESENT"
+          },
+          {
+            "bytes": 63920,
+            "path": "research_runs/run-5958977f72d23902.result.raw-illustrations/global-local-feedback.png",
+            "scope": "manuscript",
+            "sha256": "cdafe1db211872af0b83066a1d4bf5e16972e091b07ec7984807638633658b89",
+            "status": "PRESENT"
+          },
+          {
+            "bytes": 1317,
+            "path": "research_runs/run-5958977f72d23902.result.raw-illustrations/global-local-feedback.csv",
+            "scope": "manuscript",
+            "sha256": "568fcf74588da568bd9f99f62ac5fc9ca3a013a345eb4b5a1e7827457d2452fe",
+            "status": "PRESENT"
+          }
+        ],
+        "recorded_at": 1794485586.7549293,
+        "scope": "project",
+        "snapshot_schema": "laplace.research-dependencies/3"
+      },
+      "record_request": {
+        "intent_digest": "sha256:934e4e90584396ecc77f82cb3dd3a48c018aa15c8b51a6b063125718fd1a1859",
+        "request_id": "record-e075a1d386624aecb38ca1048bdf87b7"
+      },
+      "result": "research_runs/run-5958977f72d23902.result.json",
+      "result_scope": "manuscript",
+      "revision": "sha256:3d36b9584c88662ce656eceda8219b9dede6a3c500777f7c7108b2e0a13965dd",
+      "run_id": "run-5958977f72d23902",
+      "scope": "project",
+      "source": "examples/public_representation_illustrations.py",
+      "source_scope": "project",
+      "summary": "One actual unchanged-code smoke completed with exit 0 and verified process cleanup. Raw JSON SHA 8b0430adb6f85336ee7148d33fff3a6a651a625bac9fdd45ba48e9c366913f32; derived JSON SHA 6646bbb6a28bd85644e7f79dec09e446e1019fb8240666d07bec00feedb11dc4. Parsed checks, parameters and all 12 artifact entries compare exactly between raw and derived. Only source_basis and explicitly labelled metadata change. These are local deterministic arithmetic/figure illustrations, not new science.",
+      "title": "Public deterministic illustration metadata derivation (one smoke)"
+    }
+  ],
+  "schema_version": "laplace.research-records/1"
+}

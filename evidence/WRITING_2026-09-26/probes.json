@@ -1,0 +1,371 @@
+{
+  "observed_at": "2026-09-26T13:10:58.679403+00:00",
+  "checkout": "/home/phujck/VScodeProjects/laplace",
+  "head": "6f0fc518f2d741b3718c57b19c3b7326be8278ef",
+  "scope": "fresh-process source reads; isolated parser fixture; no model or compile run",
+  "source_sha256": {
+    "walk.py": "aa4271031ecb6d839b8891020189e162e077e69bdb006253de2c31b20030c243",
+    "projection_viewer.py": "4bf8c1124b9f2d0fe98c1616f97fc1f659592385dfbfd2be7606ebb9980fe6c2",
+    "review_surface.py": "07042bb22644c3115de46a933b7f0f715368be12868f0aebb6b8d2c19e2f4048",
+    "front_door.py": "f5743dbeb6af60734d7fc5c150ae927458daac9fe2a15c7b021741d40f00d238",
+    "pipeline/schema.py": "7adb1f9850fc14fccab0ae79a354684f8c706144290e6db485611b16446de87e",
+    "pipeline/tex_backend.py": "8ddb69986762350a3a26b2d2be0cd5614f97ad88315bcdfd94890e36c9ce42e4"
+  },
+  "projects": [
+    {
+      "project": "corpus-as-a-state",
+      "ok": true,
+      "error": null,
+      "root": "synthetics papers/corpus-as-a-state/manuscript/whitepaper/main.tex",
+      "title": "Untitled",
+      "counts": {
+        "sections": 0,
+        "blocks": 0,
+        "root_blocks": 0,
+        "citations": 26,
+        "refs": 181,
+        "macros": 0
+      },
+      "block_kinds": {},
+      "raw_environments": {},
+      "missing": null,
+      "seconds": 0.0413,
+      "registered_tex_root": "synthetics papers/corpus-as-a-state/manuscript",
+      "stage_artifacts": {
+        "spec": {
+          "present": false
+        },
+        "contracts": {
+          "present": false
+        },
+        "reader_state": {
+          "present": false
+        },
+        "narrative": {
+          "present": false
+        },
+        "provenance": {
+          "present": false
+        },
+        "document_model": {
+          "present": false
+        }
+      },
+      "registered_root_bytes": 400339,
+      "walk_root_directory": "synthetics papers/corpus-as-a-state/manuscript/whitepaper"
+    },
+    {
+      "project": "subset-sum-itqde",
+      "ok": true,
+      "error": null,
+      "root": "synthetics papers/subset-sum-itqde/manuscript/whitepaper/main.tex",
+      "title": "Spectral Surface Generation",
+      "counts": {
+        "sections": 11,
+        "blocks": 360,
+        "root_blocks": 1,
+        "citations": 75,
+        "refs": 60,
+        "macros": 7
+      },
+      "block_kinds": {
+        "raw": 16,
+        "head": 16,
+        "para": 242,
+        "figure": 10,
+        "equation": 76
+      },
+      "raw_environments": {
+        "abstract": 1,
+        "widetext": 11,
+        "table*": 3,
+        "gathered": 1
+      },
+      "missing": null,
+      "seconds": 0.0412,
+      "registered_tex_root": "synthetics papers/subset-sum-itqde/manuscript/tex",
+      "stage_artifacts": {
+        "spec": {
+          "present": true
+        },
+        "contracts": {
+          "present": true
+        },
+        "reader_state": {
+          "present": true
+        },
+        "narrative": {
+          "json_files": 11
+        },
+        "provenance": {
+          "json_files": 11
+        },
+        "document_model": {
+          "present": false
+        }
+      },
+      "registered_root_bytes": 1658,
+      "walk_root_directory": "synthetics papers/subset-sum-itqde/manuscript/whitepaper"
+    },
+    {
+      "project": "synthetics-genesis",
+      "ok": true,
+      "error": null,
+      "root": "synthetics papers/synthetics-genesis/manuscript/main.tex",
+      "title": "Synthetics, genesis",
+      "counts": {
+        "sections": 1,
+        "blocks": 1,
+        "root_blocks": 1,
+        "citations": 0,
+        "refs": 0,
+        "macros": 0
+      },
+      "block_kinds": {
+        "para": 1
+      },
+      "raw_environments": {},
+      "missing": null,
+      "seconds": 0.0021,
+      "registered_tex_root": "synthetics papers/synthetics-genesis/manuscript",
+      "stage_artifacts": {
+        "spec": {
+          "present": false
+        },
+        "contracts": {
+          "present": false
+        },
+        "reader_state": {
+          "present": false
+        },
+        "narrative": {
+          "present": false
+        },
+        "provenance": {
+          "present": false
+        },
+        "document_model": {
+          "present": false
+        }
+      },
+      "registered_root_bytes": 966,
+      "walk_root_directory": "synthetics papers/synthetics-genesis/manuscript"
+    },
+    {
+      "project": "paper_falqon",
+      "ok": true,
+      "error": null,
+      "root": "paper_falqon/manuscript/main.tex",
+      "title": "The Cost of Looking: Fault-Tolerant Resource Estimates for FALQON on the Fermi-Hubbard Model, and a Mid-Circuit Trotter-Error Witness",
+      "counts": {
+        "sections": 13,
+        "blocks": 347,
+        "root_blocks": 0,
+        "citations": 0,
+        "refs": 0,
+        "macros": 6
+      },
+      "block_kinds": {
+        "para": 226,
+        "head": 48,
+        "equation": 62,
+        "figure": 2,
+        "list": 9
+      },
+      "raw_environments": {},
+      "missing": null,
+      "seconds": 0.0285,
+      "registered_tex_root": "paper_falqon/manuscript",
+      "stage_artifacts": {
+        "spec": {
+          "present": true
+        },
+        "contracts": {
+          "present": true
+        },
+        "reader_state": {
+          "present": true
+        },
+        "narrative": {
+          "json_files": 13
+        },
+        "provenance": {
+          "json_files": 13
+        },
+        "document_model": {
+          "present": false
+        }
+      },
+      "registered_root_bytes": 698,
+      "walk_root_directory": "paper_falqon/manuscript"
+    },
+    {
+      "project": "paper_roland_qrc",
+      "ok": true,
+      "error": null,
+      "root": "paper_roland_qrc/manuscript/main.tex",
+      "title": "Spectroscopic Learning: Design Principles for Quantum Reservoirs",
+      "counts": {
+        "sections": 12,
+        "blocks": 187,
+        "root_blocks": 3,
+        "citations": 35,
+        "refs": 64,
+        "macros": 0
+      },
+      "block_kinds": {
+        "para": 123,
+        "head": 11,
+        "equation": 33,
+        "figure": 15,
+        "raw": 3,
+        "list": 2
+      },
+      "raw_environments": {
+        "table": 1,
+        "acknowledgments": 1,
+        "table*": 1
+      },
+      "missing": null,
+      "seconds": 0.0275,
+      "registered_tex_root": "paper_roland_qrc/revision",
+      "stage_artifacts": {
+        "spec": {
+          "present": true
+        },
+        "contracts": {
+          "present": true
+        },
+        "reader_state": {
+          "present": false
+        },
+        "narrative": {
+          "json_files": 9
+        },
+        "provenance": {
+          "json_files": 9
+        },
+        "document_model": {
+          "present": false
+        }
+      },
+      "registered_root_bytes": 62941,
+      "walk_root_directory": "paper_roland_qrc/manuscript"
+    },
+    {
+      "project": "free-snacks",
+      "ok": false,
+      "error": "no main.tex in .",
+      "root": null,
+      "title": null,
+      "counts": null,
+      "block_kinds": {},
+      "raw_environments": {},
+      "missing": null,
+      "seconds": 0.0007,
+      "registered_tex_root": "synthetics papers/free-snacks/manuscript/tex",
+      "stage_artifacts": {
+        "spec": {
+          "present": false
+        },
+        "contracts": {
+          "present": false
+        },
+        "reader_state": {
+          "present": false
+        },
+        "narrative": {
+          "present": false
+        },
+        "provenance": {
+          "present": false
+        },
+        "document_model": {
+          "present": false
+        }
+      },
+      "registered_root_bytes": 419,
+      "walk_root_directory": "synthetics papers/free-snacks/manuscript"
+    },
+    {
+      "project": "superarc",
+      "ok": true,
+      "error": null,
+      "root": "synthetics papers/superarc/manuscript/main.tex",
+      "title": "The Unreasonable Effectiveness of Checking Your Work:  Passing a Test for Superintelligence with a Verifier in the Loop",
+      "counts": {
+        "sections": 17,
+        "blocks": 139,
+        "root_blocks": 139,
+        "citations": 0,
+        "refs": 0,
+        "macros": 12
+      },
+      "block_kinds": {
+        "para": 94,
+        "raw": 12,
+        "head": 25,
+        "figure": 4,
+        "equation": 3,
+        "list": 1
+      },
+      "raw_environments": {
+        "abstract": 1,
+        "table*": 3,
+        "acknowledgments": 1,
+        "quote": 5,
+        "table": 2
+      },
+      "missing": null,
+      "seconds": 0.0154,
+      "registered_tex_root": "synthetics papers/superarc/manuscript",
+      "stage_artifacts": {
+        "spec": {
+          "present": false
+        },
+        "contracts": {
+          "present": false
+        },
+        "reader_state": {
+          "present": false
+        },
+        "narrative": {
+          "present": false
+        },
+        "provenance": {
+          "present": false
+        },
+        "document_model": {
+          "present": false
+        }
+      },
+      "registered_root_bytes": 96906,
+      "walk_root_directory": "synthetics papers/superarc/manuscript"
+    }
+  ],
+  "book_fixture": {
+    "input_files": [
+      "main",
+      "chapters/one"
+    ],
+    "nested_content_present": false,
+    "heading_levels": [],
+    "ok": true,
+    "error": null,
+    "root": "book/main.tex",
+    "title": "",
+    "counts": {
+      "sections": 1,
+      "blocks": 2,
+      "root_blocks": 1,
+      "citations": 0,
+      "refs": 0,
+      "macros": 0
+    },
+    "block_kinds": {
+      "para": 2
+    },
+    "raw_environments": {},
+    "missing": null
+  }
+}

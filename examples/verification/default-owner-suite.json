@@ -1,0 +1,1832 @@
+{
+  "schema_version": "laplace.behaviour-examples/1",
+  "status": "FINITE_GROUPS_EXECUTED",
+  "qualification": "Actual local owner calls on authored synthetic inputs. Not provider replies, independent review, scientific acceptance, or complete behavioural coverage.",
+  "python": "3.12.3 (main, Aug 31 2026, 10:18:26) [GCC 13.3.0]",
+  "executable": "/tmp/laplace-behaviour-fixtures-437xg1mq/venv/bin/python",
+  "origins": {
+    "laplace": {
+      "path": "/tmp/laplace-behaviour-fixtures-437xg1mq/venv/lib/python3.12/site-packages/laplace/__init__.py",
+      "sha256": "8f3de80ec6c70b7f3f0311fb26d4f5334c5a71d080f7f50ebc2cd4a72c0ac2e8"
+    },
+    "atlas": {
+      "path": "/tmp/laplace-behaviour-fixtures-437xg1mq/venv/lib/python3.12/site-packages/atlas/__init__.py",
+      "sha256": "a3f349b52df6f89bc0bf3425435f810ce479975b8c8c84043dc04d9bc0be590f"
+    }
+  },
+  "root": "/tmp/laplace-behaviour-fixtures-437xg1mq/runs/full-02",
+  "groups": {
+    "core": {
+      "status": "EXECUTED",
+      "project": "behaviour-example",
+      "source": {
+        "project": "behaviour-example",
+        "root": "sources/behaviour-example/main.tex",
+        "manuscript_dir": "sources/behaviour-example",
+        "storage_dir": "writing_projects/behaviour-example",
+        "edition": "imported",
+        "status": "resolved",
+        "selection": "manifest",
+        "revision": "32461f82c42b8ddc889a364f7343ea19645f2ed65831da1ce30da9371d3b8ad4",
+        "candidates": [
+          {
+            "root": "sources/behaviour-example/main.tex",
+            "substantive": true
+          }
+        ],
+        "foreign": false,
+        "read_only": false,
+        "diagnostics": []
+      },
+      "work_id": "WORK-example",
+      "work_revision": "sha256:37a7c15133ce9559b44c82bfb21248b61911e7d0c0fdfdc79ecaedc1da3a8014",
+      "context_id": "CTX-606dac92a32a42208fef63d602a8946a",
+      "browser": "Open this output's workspace with the installed Writing app. Select Behaviour example.",
+      "proposal": "NOT_YET_EXERCISED: genuine retained turn or explicit human-origin proposal owner required. No fabricated provider journal.",
+      "independent_review": "NOT_RUN",
+      "source_mutation": "Only authored synthetic initial source files, no Main files touched",
+      "records": "workspace/contract/talk.jsonl and the workspace's own Work/corpus records"
+    },
+    "reader": {
+      "status": "EXECUTED",
+      "section_id": "setting",
+      "paragraphs": [
+        {
+          "section_id": "setting",
+          "paragraph_id": "setting-p9757019700909745876541733856",
+          "function": "Explain",
+          "proposition": "The input is an authored sequence, not an empirical sample.",
+          "input_nodes": [
+            "def:sequence"
+          ],
+          "identity_status": "STABLE",
+          "subject_revision": "sha256:fdefbb68389dd3aa748a057d3f67e79a18d9cfb110aada3f44ca3e56f68335cf",
+          "reader_basis": {
+            "schema_version": "laplace.reader-basis/1",
+            "project": "behaviour-example",
+            "path": "sources/behaviour-example/narrative/setting.json",
+            "section_id": "setting",
+            "subject_id": "setting-p9757019700909745876541733856",
+            "subject_revision": "sha256:fdefbb68389dd3aa748a057d3f67e79a18d9cfb110aada3f44ca3e56f68335cf",
+            "inputs": {
+              "plan-section": "sha256:897b338d6cee7506ae4ed041feeab0dd92b897af83372a396c8d273207bdb129",
+              "architecture": "sha256:8838870b3b9c1733e13e6977ef8aabf1eb35bf69539e977d1a59d5973f7d24a9",
+              "reader-transition": "sha256:10d3d313c6efa172084b10c0d4a3a8527b069bea66fa86489b506ec2df8eebbe",
+              "reader-neighbors": "sha256:3d6f4be21e5fb46a339e73b26ef3729b418169c013433e962a54ba0130732d85",
+              "concept:def:sequence": "sha256:7d47511148f716a720d39a761a752bb35d979a68584fe331b584c2807035e954"
+            },
+            "unobserved_inputs": []
+          },
+          "input_currentness": {
+            "status": "STALE",
+            "unobserved_inputs": [],
+            "changed_inputs": [
+              "reader-transition"
+            ],
+            "reason": "Input observation is not a judgement of intelligibility or accepted review.",
+            "reads": [
+              {
+                "operation": "structure",
+                "payload": {
+                  "view": "detail",
+                  "section_ids": [
+                    "setting"
+                  ],
+                  "paragraph_id": "setting-p9757019700909745876541733856"
+                },
+                "http": {
+                  "method": "GET",
+                  "route": "/work/structure",
+                  "query": {
+                    "project": "behaviour-example",
+                    "view": "detail",
+                    "section_ids": [
+                      "setting"
+                    ],
+                    "paragraph_id": "setting-p9757019700909745876541733856"
+                  }
+                }
+              }
+            ]
+          },
+          "read_handle": {
+            "operation": "structure",
+            "payload": {
+              "view": "detail",
+              "section_ids": [
+                "setting"
+              ],
+              "paragraph_id": "setting-p9757019700909745876541733856"
+            },
+            "http": {
+              "method": "GET",
+              "route": "/work/structure",
+              "query": {
+                "project": "behaviour-example",
+                "view": "detail",
+                "section_ids": [
+                  "setting"
+                ],
+                "paragraph_id": "setting-p9757019700909745876541733856"
+              }
+            }
+          },
+          "links": [
+            {
+              "kind": "argument",
+              "input_key": "concept:def:sequence",
+              "label": "input sequence",
+              "status": "AVAILABLE",
+              "read": {
+                "operation": "concept",
+                "payload": {
+                  "node": "def:sequence"
+                },
+                "http": {
+                  "method": "GET",
+                  "route": "/concepts/context",
+                  "query": {
+                    "corpus": "behaviour-example",
+                    "node": "def:sequence"
+                  }
+                }
+              }
+            }
+          ],
+          "diagnostics": [],
+          "source_occurrences": [],
+          "mapping_precision": "LOGICAL_UNIT_TO_PHYSICAL_OCCURRENCES",
+          "lineage": {
+            "status": "NOT_RECORDED",
+            "items": []
+          },
+          "review": {
+            "status": "NOT_REVIEWED",
+            "records": []
+          },
+          "review_action": {
+            "operation": "task",
+            "payload": {
+              "title": "Review reader transition: setting-p9757019700909745876541733856",
+              "goal": "Review the authored transition or paragraph for intelligibility, support and continuity on this exact basis. Record evidence and findings; current inputs alone do not establish acceptance.",
+              "kind": "reader-review",
+              "section_ids": [
+                "setting"
+              ],
+              "reader_basis": {
+                "schema_version": "laplace.reader-basis/1",
+                "project": "behaviour-example",
+                "path": "sources/behaviour-example/narrative/setting.json",
+                "section_id": "setting",
+                "subject_id": "setting-p9757019700909745876541733856",
+                "subject_revision": "sha256:fdefbb68389dd3aa748a057d3f67e79a18d9cfb110aada3f44ca3e56f68335cf",
+                "inputs": {
+                  "plan-section": "sha256:897b338d6cee7506ae4ed041feeab0dd92b897af83372a396c8d273207bdb129",
+                  "architecture": "sha256:8838870b3b9c1733e13e6977ef8aabf1eb35bf69539e977d1a59d5973f7d24a9",
+                  "reader-transition": "sha256:10d3d313c6efa172084b10c0d4a3a8527b069bea66fa86489b506ec2df8eebbe",
+                  "reader-neighbors": "sha256:3d6f4be21e5fb46a339e73b26ef3729b418169c013433e962a54ba0130732d85",
+                  "concept:def:sequence": "sha256:7d47511148f716a720d39a761a752bb35d979a68584fe331b584c2807035e954"
+                },
+                "unobserved_inputs": []
+              }
+            },
+            "http": {
+              "method": "POST",
+              "route": "/work/task"
+            }
+          },
+          "edit_action": {
+            "operation": "structure_change",
+            "payload": {
+              "operation": "paragraph_plan",
+              "section_id": "setting",
+              "expected_plan_revision": "sha256:1feb1d383bf85dd5b3f4a36a70bf8044f03070329a45b9f05eda68875a35bada",
+              "expected_narrative_revision": "sha256:864043e687dfc09d9133c68ba28de2a6106d892eff224fa048d56bfa68dcf1d6",
+              "expected_reader_basis": {
+                "schema_version": "laplace.reader-basis/1",
+                "project": "behaviour-example",
+                "path": "sources/behaviour-example/narrative/setting.json",
+                "section_id": "setting",
+                "subject_id": "setting-p9757019700909745876541733856",
+                "subject_revision": "sha256:fdefbb68389dd3aa748a057d3f67e79a18d9cfb110aada3f44ca3e56f68335cf",
+                "inputs": {
+                  "plan-section": "sha256:897b338d6cee7506ae4ed041feeab0dd92b897af83372a396c8d273207bdb129",
+                  "architecture": "sha256:8838870b3b9c1733e13e6977ef8aabf1eb35bf69539e977d1a59d5973f7d24a9",
+                  "reader-transition": "sha256:10d3d313c6efa172084b10c0d4a3a8527b069bea66fa86489b506ec2df8eebbe",
+                  "reader-neighbors": "sha256:3d6f4be21e5fb46a339e73b26ef3729b418169c013433e962a54ba0130732d85",
+                  "concept:def:sequence": "sha256:7d47511148f716a720d39a761a752bb35d979a68584fe331b584c2807035e954"
+                },
+                "unobserved_inputs": []
+              },
+              "action": "upsert",
+              "paragraph_id": "setting-p9757019700909745876541733856"
+            },
+            "http": {
+              "method": "POST",
+              "route": "/work/structure/change"
+            },
+            "fields": [
+              {
+                "name": "function",
+                "label": "Function",
+                "type": "string",
+                "multiline": true
+              },
+              {
+                "name": "proposition",
+                "label": "Proposition",
+                "type": "string",
+                "multiline": true
+              },
+              {
+                "name": "explanation",
+                "label": "Explanation",
+                "type": "string",
+                "multiline": true
+              },
+              {
+                "name": "derivation_detail",
+                "label": "Derivation detail",
+                "type": "string",
+                "multiline": true
+              },
+              {
+                "name": "equation_anchor",
+                "label": "Equation anchor",
+                "type": "string",
+                "multiline": true
+              },
+              {
+                "name": "figure_anchor",
+                "label": "Figure anchor",
+                "type": "string",
+                "multiline": true,
+                "choices": []
+              },
+              {
+                "name": "qualification",
+                "label": "Qualification",
+                "type": "string",
+                "multiline": true
+              },
+              {
+                "name": "from_previous",
+                "label": "From previous",
+                "type": "string",
+                "multiline": true
+              },
+              {
+                "name": "to_next",
+                "label": "To next",
+                "type": "string",
+                "multiline": true
+              },
+              {
+                "name": "detail_level",
+                "label": "Detail level",
+                "type": "string",
+                "multiline": true
+              },
+              {
+                "name": "length_range",
+                "label": "Length range",
+                "type": "string",
+                "multiline": true
+              },
+              {
+                "name": "input_nodes",
+                "label": "Input nodes",
+                "type": "string_array",
+                "choices": [
+                  {
+                    "value": "def:sequence",
+                    "label": "input sequence",
+                    "input_key": "concept:def:sequence",
+                    "input_revision": "sha256:7d47511148f716a720d39a761a752bb35d979a68584fe331b584c2807035e954",
+                    "read": {
+                      "operation": "concept",
+                      "payload": {
+                        "node": "def:sequence"
+                      }
+                    }
+                  }
+                ]
+              },
+              {
+                "name": "citations",
+                "label": "Citations",
+                "type": "string_array",
+                "choices": []
+              }
+            ],
+            "values": {
+              "function": "Explain",
+              "proposition": "The input is an authored sequence, not an empirical sample.",
+              "explanation": "",
+              "derivation_detail": "",
+              "equation_anchor": "",
+              "figure_anchor": "",
+              "qualification": "",
+              "from_previous": "",
+              "to_next": "",
+              "detail_level": "",
+              "length_range": "",
+              "input_nodes": [
+                "def:sequence"
+              ],
+              "citations": []
+            },
+            "choices_read": {
+              "operation": "structure",
+              "payload": {
+                "view": "detail",
+                "section_ids": [
+                  "setting"
+                ],
+                "paragraph_id": "setting-p9757019700909745876541733856",
+                "edit_choices": true
+              },
+              "http": {
+                "method": "GET",
+                "route": "/work/structure",
+                "query": {
+                  "project": "behaviour-example",
+                  "view": "detail",
+                  "section_ids": [
+                    "setting"
+                  ],
+                  "paragraph_id": "setting-p9757019700909745876541733856",
+                  "edit_choices": true
+                }
+              }
+            }
+          },
+          "remove_action": {
+            "operation": "structure_change",
+            "payload": {
+              "operation": "paragraph_plan",
+              "section_id": "setting",
+              "expected_plan_revision": "sha256:1feb1d383bf85dd5b3f4a36a70bf8044f03070329a45b9f05eda68875a35bada",
+              "expected_narrative_revision": "sha256:864043e687dfc09d9133c68ba28de2a6106d892eff224fa048d56bfa68dcf1d6",
+              "expected_reader_basis": {
+                "schema_version": "laplace.reader-basis/1",
+                "project": "behaviour-example",
+                "path": "sources/behaviour-example/narrative/setting.json",
+                "section_id": "setting",
+                "subject_id": "setting-p9757019700909745876541733856",
+                "subject_revision": "sha256:fdefbb68389dd3aa748a057d3f67e79a18d9cfb110aada3f44ca3e56f68335cf",
+                "inputs": {
+                  "plan-section": "sha256:897b338d6cee7506ae4ed041feeab0dd92b897af83372a396c8d273207bdb129",
+                  "architecture": "sha256:8838870b3b9c1733e13e6977ef8aabf1eb35bf69539e977d1a59d5973f7d24a9",
+                  "reader-transition": "sha256:10d3d313c6efa172084b10c0d4a3a8527b069bea66fa86489b506ec2df8eebbe",
+                  "reader-neighbors": "sha256:3d6f4be21e5fb46a339e73b26ef3729b418169c013433e962a54ba0130732d85",
+                  "concept:def:sequence": "sha256:7d47511148f716a720d39a761a752bb35d979a68584fe331b584c2807035e954"
+                },
+                "unobserved_inputs": []
+              },
+              "action": "remove",
+              "paragraph_id": "setting-p9757019700909745876541733856"
+            },
+            "http": {
+              "method": "POST",
+              "route": "/work/structure/change"
+            },
+            "fields": [],
+            "values": {}
+          },
+          "restructure_actions": {
+            "split": {
+              "project": "behaviour-example",
+              "operation": "structure_change",
+              "permitted": true,
+              "http": {
+                "method": "POST",
+                "route": "/work/structure/change"
+              },
+              "payload": {
+                "operation": "paragraph_plan",
+                "action": "preview-restructure",
+                "section_id": "setting",
+                "kind": "logical-split",
+                "draft": {
+                  "paragraph_ids": [
+                    "setting-p9757019700909745876541733856"
+                  ],
+                  "successor_count": 2
+                }
+              },
+              "native_request": {
+                "verb": "read",
+                "concept": "plan@plan",
+                "target": "behaviour-example",
+                "expected": [],
+                "payload": {
+                  "view": "restructure",
+                  "section_ids": [
+                    "setting"
+                  ],
+                  "kind": "logical-split",
+                  "draft": {
+                    "paragraph_ids": [
+                      "setting-p9757019700909745876541733856"
+                    ],
+                    "successor_count": 2
+                  }
+                },
+                "by": ""
+              }
+            },
+            "merge": {
+              "project": "behaviour-example",
+              "operation": "structure_change",
+              "permitted": true,
+              "http": {
+                "method": "POST",
+                "route": "/work/structure/change"
+              },
+              "payload": {
+                "operation": "paragraph_plan",
+                "action": "preview-restructure",
+                "section_id": "setting",
+                "kind": "logical-merge",
+                "draft": {
+                  "paragraph_ids": [
+                    "setting-p9757019700909745876541733856"
+                  ]
+                }
+              },
+              "native_request": {
+                "verb": "read",
+                "concept": "plan@plan",
+                "target": "behaviour-example",
+                "expected": [],
+                "payload": {
+                  "view": "restructure",
+                  "section_ids": [
+                    "setting"
+                  ],
+                  "kind": "logical-merge",
+                  "draft": {
+                    "paragraph_ids": [
+                      "setting-p9757019700909745876541733856"
+                    ]
+                  }
+                },
+                "by": ""
+              },
+              "choices_read": {
+                "operation": "structure",
+                "payload": {
+                  "view": "detail",
+                  "section_ids": [
+                    "setting"
+                  ]
+                },
+                "http": {
+                  "method": "GET",
+                  "route": "/work/structure",
+                  "query": {
+                    "project": "behaviour-example",
+                    "view": "detail",
+                    "section_ids": [
+                      "setting"
+                    ]
+                  }
+                }
+              }
+            }
+          }
+        }
+      ],
+      "native_concept": "artifact@section",
+      "http_qualification": "Actual adapter, not a rendered browser or loopback HTTP transport test",
+      "source_binding": {
+        "operation": "bind_source",
+        "section_id": "setting",
+        "file": "sources/behaviour-example/S1.tex",
+        "line": 1,
+        "heading_before": "\\section{Setting}",
+        "expected_plan_revision": "sha256:5b6e4e9260a88ff38475aaa7e6f0f2629ea268c19bc2754c9a79d802137195e1",
+        "expected_selection": "sha256:df56aee95ca538fbab6586d8d5258393c2e452272c26cb24ce8a3799980cec95",
+        "expected_source_digest": "sha256:6c367e8793051a315ac04ae99749854c796e4841a33df64d0dc888cca62c1b6e"
+      },
+      "scientific_review": "NOT_RUN"
+    },
+    "research": {
+      "status": "EXECUTED",
+      "first_run_id": "run-30e02e1b84634a59",
+      "current_run_id": "run-fe7b17376ac343a1",
+      "first_result_currentness": {
+        "status": "UNRESOLVED",
+        "bindings": [
+          {
+            "id": "result:sequence",
+            "revision": "sha256:f4c946e0e3e0e2f1016530480a69a5966c13a1b1dabaa1a99a46b303886251cd",
+            "currentness": "STALE",
+            "reason": "the linked result run is not current",
+            "dependencies": [
+              {
+                "record_id": "result:sequence",
+                "dependencies": [
+                  {
+                    "path": "examples/sequence_producer.py",
+                    "status": "PRESENT",
+                    "bytes": 532,
+                    "sha256": "9344d8e0b8ac7df07acac6ecc5685eaaa4a1d1c6e8955e0df9f7bb28a9f83fba",
+                    "scope": "project"
+                  },
+                  {
+                    "path": "research_runs/run-30e02e1b84634a59.result.json",
+                    "status": "PRESENT",
+                    "bytes": 138,
+                    "sha256": "040f7ec974d92832bbc5448b3cebbc60fd5f84f2d3808df425eb165d865389d2"
+                  }
+                ],
+                "status": "STALE",
+                "reason": "a pinned source, config, data, result, artifact, or explicit figure-evidence manifest changed or is missing",
+                "coverage": {
+                  "snapshot_schema": "laplace.research-dependencies/3",
+                  "newly_untracked": [],
+                  "changed_pins": [
+                    {
+                      "before": {
+                        "bytes": 485,
+                        "path": "examples/sequence_producer.py",
+                        "scope": "project",
+                        "sha256": "05a7188b4f7d5ac30f303a171282401e9b2b665b01114d76e39da832fa8b403e",
+                        "status": "PRESENT"
+                      },
+                      "now": {
+                        "path": "examples/sequence_producer.py",
+                        "status": "PRESENT",
+                        "bytes": 532,
+                        "sha256": "9344d8e0b8ac7df07acac6ecc5685eaaa4a1d1c6e8955e0df9f7bb28a9f83fba",
+                        "scope": "project"
+                      }
+                    }
+                  ],
+                  "removed_pins": [],
+                  "retired_derived_presentation_pins": [],
+                  "historical_verification": "PINNED_DEPENDENCIES_ONLY"
+                }
+              }
+            ]
+          }
+        ],
+        "gaps": [
+          "linked research result is stale: result:sequence"
+        ]
+      },
+      "producer_artifact": "ART-d5895e5a43e54f16978096cbb9dca406",
+      "data_artifact": "ART-74df2a3bab174af193d485df2e9c3dbf",
+      "visual": {
+        "status": "EXECUTED",
+        "render": {
+          "render": {
+            "outputs": [
+              "figures/generated/sequence-plot.svg",
+              "figures/generated/sequence-plot.pdf",
+              "figures/generated/sequence-plot.png"
+            ],
+            "renderer": "matplotlib",
+            "input_digest": "5d782a704fcc7669c0b491a3f9159369a3f80c3010fcf7f9435bac6257a1b454",
+            "drawing_input_digest": "5d782a704fcc7669c0b491a3f9159369a3f80c3010fcf7f9435bac6257a1b454",
+            "drawing_inputs": {
+              "spec": {
+                "id": "sequence-plot",
+                "kind": "plot",
+                "x": "x",
+                "series": [
+                  "y"
+                ],
+                "x_label": null,
+                "y_label": null
+              },
+              "data": "1287d3ea3b1c2964780dd74ea787ebc066bf54fce47cab9d5ae05d2f4eaafd05"
+            },
+            "research_bindings": [
+              {
+                "id": "result:sequence-current",
+                "revision": "sha256:fed89431fe121d45608e24eacf1f23ffa24ae8b52978c88cff44a4808af70504",
+                "currentness": "CURRENT"
+              }
+            ],
+            "presentation_metadata": {
+              "title": "Cumulative sum of the example input",
+              "question": "Where does the total of six come from?",
+              "caption": "Cumulative sums of the authored integers 1, 2, 3. A workflow illustration, not measured data.",
+              "source_data": "examples/sequence.csv",
+              "source": null
+            },
+            "style_version": "a52b7af5b0793b1803d7220d6682ba6564c38bb38650f7366410d709347f3364",
+            "style_profile": "profiles/visual_style.json",
+            "visual_review": "pending",
+            "output_digests": {
+              "figures/generated/sequence-plot.svg": "ad999603488a093cd2c4167bd2c4b6a0e9eb8053fabcab97ec2e2089c1b99734",
+              "figures/generated/sequence-plot.pdf": "8dd36dbf32ba966dab0af22fcb223283fbe2dcb30d2e96f1fff80bc4983c3722",
+              "figures/generated/sequence-plot.png": "9c092895760124944714f23bc42b07544a976f14fffec302558f69fa39e7a632"
+            }
+          },
+          "readiness": "GENERATED",
+          "placement_caption": {
+            "status": "UNPLACED"
+          },
+          "owned_changes": {
+            "schema_version": "laplace.owner-mutation/1",
+            "files": [
+              {
+                "scope": "repository",
+                "path": "sources/behaviour-example/manuscript_spec.json",
+                "before_sha256": "sha256:b27da1df5f7743fbf74117039b318fcd1d5889088d158f35751688ea59fdb79a",
+                "after_sha256": "sha256:987042983fc79851439d9ef9dc68dfe03750a8c131795971b67abacf2c57582b",
+                "observed_after_sha256": "sha256:987042983fc79851439d9ef9dc68dfe03750a8c131795971b67abacf2c57582b"
+              },
+              {
+                "scope": "repository",
+                "path": "sources/behaviour-example/figure_manifest.json",
+                "before_sha256": null,
+                "after_sha256": "sha256:80d369e6e9ffe73ba0c5f3114f044e5355313a9b687cf4fa3681c0019014a46a",
+                "observed_after_sha256": "sha256:80d369e6e9ffe73ba0c5f3114f044e5355313a9b687cf4fa3681c0019014a46a"
+              },
+              {
+                "scope": "repository",
+                "path": "sources/behaviour-example/figures/generated/sequence-plot.svg",
+                "before_sha256": null,
+                "after_sha256": "sha256:ad999603488a093cd2c4167bd2c4b6a0e9eb8053fabcab97ec2e2089c1b99734",
+                "observed_after_sha256": "sha256:ad999603488a093cd2c4167bd2c4b6a0e9eb8053fabcab97ec2e2089c1b99734"
+              },
+              {
+                "scope": "repository",
+                "path": "sources/behaviour-example/figures/generated/sequence-plot.pdf",
+                "before_sha256": null,
+                "after_sha256": "sha256:8dd36dbf32ba966dab0af22fcb223283fbe2dcb30d2e96f1fff80bc4983c3722",
+                "observed_after_sha256": "sha256:8dd36dbf32ba966dab0af22fcb223283fbe2dcb30d2e96f1fff80bc4983c3722"
+              },
+              {
+                "scope": "repository",
+                "path": "sources/behaviour-example/figures/generated/sequence-plot.png",
+                "before_sha256": null,
+                "after_sha256": "sha256:9c092895760124944714f23bc42b07544a976f14fffec302558f69fa39e7a632",
+                "observed_after_sha256": "sha256:9c092895760124944714f23bc42b07544a976f14fffec302558f69fa39e7a632"
+              }
+            ],
+            "objects": [
+              {
+                "owner": "visual-render",
+                "id": "sequence-plot",
+                "before_revision": "5a0efc28efb079dac542ea92a06a0b64cf9df025e0484e3d17f317d6263a2828",
+                "after_revision": "b45c5b97d341ebc31f8b49ba20debec909a42702fc647d1bb46f77e537e12a29"
+              }
+            ],
+            "rewire_records": [],
+            "views": [
+              "visuals",
+              "presentation"
+            ]
+          }
+        }
+      },
+      "tex_pdf": "NOT_YET_EXERCISED: separate declared TeX capability and output delivery required"
+    },
+    "literature": {
+      "status": "EXECUTED",
+      "key": "local:035c38075605c1d292d6ef34",
+      "original_artifact": "ART-a0ff24c8ece24d2d854c323f3c54c6bd",
+      "reading_id": "READ-45dcf2178e09690efa2babda",
+      "binding": {
+        "association": {
+          "bib_path": "sources/behaviour-example/refs.bib",
+          "bibliography_state": "ATTACHED",
+          "binding_state": "BOUND",
+          "canonical_id": "ref:AuthoredSequenceExample",
+          "canonical_records": [
+            "RW-20261112-115433-826558",
+            "RW-20261112-115433-835496"
+          ],
+          "citekey": "AuthoredSequenceExample",
+          "claim_id": "def:sequence",
+          "claim_revision": "sha256:345300dd461197ea78655f242011d39a6ee7068b8880f7a35d68d2e4d464a9d8",
+          "evidence": {
+            "excerpt": "The illustrative ordered sequence is 1, 2, 3.",
+            "locator": "characters 0\u2013186"
+          },
+          "evidence_source_identity": "ab2edf83243046fbcd2e5aea475c981e3d78d63e5a3f8e0d6b063606dd1edd6e",
+          "evidence_status": "authored-passage",
+          "key": "local:035c38075605c1d292d6ef34",
+          "metadata": {
+            "creators": [
+              "Example author"
+            ],
+            "item_type": "unpublished",
+            "key": "local:035c38075605c1d292d6ef34",
+            "provenance": {
+              "description": "Explicitly synthetic local example, not external literature.",
+              "path": "/tmp/laplace-behaviour-fixtures-437xg1mq/runs/full-02/workspace/writing_projects/behaviour-example/examples/original-sequence.txt",
+              "sha256": "sha256:f96253124538a68d54cdfea0fd08c91ea37f2cd2c3d326722fb15e64f1b8eafc"
+            },
+            "title": "Authored sequence fixture",
+            "version": "3c1d604a77708d63d3a25dfeea2ae29bebe047ae77254abdaa860e5779e08104",
+            "year": "2026"
+          },
+          "rationale": "The authored source identifies only this explicit synthetic input.",
+          "reading_assertion": "passage observed; interpretation authored, not independently verified",
+          "reading_receipt": {
+            "id": "READ-45dcf2178e09690efa2babda",
+            "length": 186,
+            "locator": "characters 0\u2013186",
+            "observation": "passage returned by reference_text; not independent comprehension or entailment",
+            "offset": 0,
+            "page_end": 1,
+            "page_start": 1,
+            "reference_key": "local:035c38075605c1d292d6ef34",
+            "source_index": 0,
+            "source_path": "/tmp/laplace-behaviour-fixtures-437xg1mq/runs/full-02/workspace/writing_projects/behaviour-example/examples/original-sequence.txt",
+            "source_sha256": "sha256:f96253124538a68d54cdfea0fd08c91ea37f2cd2c3d326722fb15e64f1b8eafc",
+            "text_sha256": "sha256:f96253124538a68d54cdfea0fd08c91ea37f2cd2c3d326722fb15e64f1b8eafc",
+            "total_characters": 186
+          },
+          "reading_status": "partial",
+          "relation": "supports",
+          "source": {
+            "identity": "ab2edf83243046fbcd2e5aea475c981e3d78d63e5a3f8e0d6b063606dd1edd6e",
+            "provider": "local",
+            "revision": {
+              "modified": "",
+              "version": "3c1d604a77708d63d3a25dfeea2ae29bebe047ae77254abdaa860e5779e08104"
+            }
+          },
+          "state": "CURRENT"
+        },
+        "canonical_source": "ref:AuthoredSequenceExample",
+        "claim": "def:sequence",
+        "effects": [
+          "references",
+          "concepts",
+          "structure",
+          "research",
+          "pipeline",
+          "manuscript"
+        ],
+        "note": "Canonical source relation and passage provenance are joined; informal alignment remains authored.",
+        "ok": true,
+        "owned_changes": {
+          "files": [
+            {
+              "after_sha256": "sha256:48474e87ae026b940efb1eaab43db49b4e2d30a1832d473c886f8d1e4a72415c",
+              "before_sha256": "sha256:5a67639e1d08b192a4f6b7f1dbc276f34a254f9dca6b011d919b5fa0a0235794",
+              "observed_after_sha256": "sha256:48474e87ae026b940efb1eaab43db49b4e2d30a1832d473c886f8d1e4a72415c",
+              "path": "sources/behaviour-example/references.json",
+              "scope": "repository"
+            },
+            {
+              "after_sha256": "sha256:dfa030c35be64f8ffc7b4504eeb4b6e587a6704ce85132e810f9b7781a231711",
+              "before_sha256": "sha256:19f65ddd0e94d0c65829accd0519dab951cbd5082666ae7e39cfbee882ada8df",
+              "observed_after_sha256": "sha256:dfa030c35be64f8ffc7b4504eeb4b6e587a6704ce85132e810f9b7781a231711",
+              "path": "sources/behaviour-example/main.tex",
+              "scope": "repository"
+            },
+            {
+              "after_sha256": "sha256:23764c3039bb8550da3bf62f5ce70b03064e067403ea9756fc1fd902b78c268d",
+              "before_sha256": null,
+              "observed_after_sha256": "sha256:23764c3039bb8550da3bf62f5ce70b03064e067403ea9756fc1fd902b78c268d",
+              "path": "sources/behaviour-example/refs.bib",
+              "scope": "repository"
+            },
+            {
+              "after_sha256": "sha256:0f7c2426220b975ee12833ff42b595e34f25d171d7744999239f37ab65bd6e52",
+              "before_sha256": "sha256:4d50b4b2c02bdce603d8dd5a0f9e3def7aaa6eb4a34dde187d1d18aaaf89c488",
+              "observed_after_sha256": "sha256:0f7c2426220b975ee12833ff42b595e34f25d171d7744999239f37ab65bd6e52",
+              "path": "corpus_friction/behaviour-example.jsonl",
+              "scope": "repository"
+            }
+          ],
+          "objects": [
+            {
+              "after_revision": "sha256:a8648193d73331f88d7b2dbe21fbe3de6f27ea984921095569ceedd7d4d05995",
+              "before_revision": null,
+              "claim_id": "def:sequence",
+              "id": "local:035c38075605c1d292d6ef34|def:sequence",
+              "key": "local:035c38075605c1d292d6ef34",
+              "owner": "references"
+            },
+            {
+              "after_revision": "sha256:3ef39767e6fbc0646a26498e4d15426089476ba0597c16c2b1ca9875e77caf47",
+              "before_revision": null,
+              "id": "ref:AuthoredSequenceExample",
+              "owner": "concepts",
+              "record_id": "RW-20261112-115433-826558",
+              "revision_kind": "owned-rewire-record",
+              "target": null
+            },
+            {
+              "after_revision": "sha256:f9226af4e7e6a726ac07f7eeeca6ad4e9d9f5c369f0eb5a6f2f486feadd0a25f",
+              "before_revision": null,
+              "id": "def:sequence",
+              "owner": "concepts",
+              "record_id": "RW-20261112-115433-835496",
+              "revision_kind": "owned-rewire-record",
+              "target": "ref:AuthoredSequenceExample"
+            }
+          ],
+          "rewire_records": [
+            {
+              "by": "literature-bind",
+              "essence": "Authored sequence fixture",
+              "id": "RW-20261112-115433-826558",
+              "kind": "add-node",
+              "node": "ref:AuthoredSequenceExample",
+              "node_kind": "citation",
+              "parent": "paper://",
+              "projection": {
+                "bibliography": {
+                  "citekey": "AuthoredSequenceExample",
+                  "creators": [
+                    "Example author"
+                  ],
+                  "reference_key": "local:035c38075605c1d292d6ef34",
+                  "title": "Authored sequence fixture",
+                  "year": "2026"
+                },
+                "literature_source": {
+                  "reference_key": "local:035c38075605c1d292d6ef34"
+                }
+              },
+              "ref": {
+                "locator": "characters 0\u2013186",
+                "path": "/tmp/laplace-behaviour-fixtures-437xg1mq/runs/full-02/workspace/writing_projects/behaviour-example/examples/original-sequence.txt",
+                "reference_key": "local:035c38075605c1d292d6ef34",
+                "sha256": "sha256:f96253124538a68d54cdfea0fd08c91ea37f2cd2c3d326722fb15e64f1b8eafc"
+              },
+              "status": "open",
+              "target": null,
+              "ts": "2026-11-12T11:54:33",
+              "value": null
+            },
+            {
+              "by": "literature-bind",
+              "id": "RW-20261112-115433-835496",
+              "kind": "add-edge",
+              "node": "def:sequence",
+              "rationale": "The authored source identifies only this explicit synthetic input.",
+              "rel": "support",
+              "status": "open",
+              "target": "ref:AuthoredSequenceExample",
+              "ts": "2026-11-12T11:54:33",
+              "value": null
+            }
+          ],
+          "schema_version": "laplace.owner-mutation/1",
+          "views": [
+            "references",
+            "concepts",
+            "structure",
+            "research",
+            "pipeline",
+            "manuscript"
+          ]
+        },
+        "plan_sync": {
+          "status": "NOT_NEEDED",
+          "updated": []
+        },
+        "source_effect": {
+          "complete": true,
+          "files": [
+            {
+              "after_sha256": "sha256:dfa030c35be64f8ffc7b4504eeb4b6e587a6704ce85132e810f9b7781a231711",
+              "before_sha256": "sha256:19f65ddd0e94d0c65829accd0519dab951cbd5082666ae7e39cfbee882ada8df",
+              "observed_after_sha256": "sha256:dfa030c35be64f8ffc7b4504eeb4b6e587a6704ce85132e810f9b7781a231711",
+              "path": "sources/behaviour-example/main.tex",
+              "scope": "repository"
+            },
+            {
+              "after_sha256": "sha256:23764c3039bb8550da3bf62f5ce70b03064e067403ea9756fc1fd902b78c268d",
+              "before_sha256": null,
+              "observed_after_sha256": "sha256:23764c3039bb8550da3bf62f5ce70b03064e067403ea9756fc1fd902b78c268d",
+              "path": "sources/behaviour-example/refs.bib",
+              "scope": "repository"
+            }
+          ],
+          "follow_through": {
+            "heading_sync": {
+              "status": "NOT_NEEDED",
+              "updated": []
+            },
+            "maintenance_warnings": [],
+            "required": [
+              {
+                "owner": "bibliography-materialization",
+                "status": "COMPLETE"
+              }
+            ]
+          },
+          "impact": {
+            "accepted_links": {
+              "as_of": "eyJ2IjoxLCJxdWVyeSI6InNoYTI1NjozZmRjNTRhNDY5M2I3OWIzM2Q3Y2IxYjQyYmI2MzJkYTg0OWU3ZTlkNzQ0MWVhMjcyZjgzNjYxMDZhYmE1NzU1IiwidXBwZXIiOjUwLCJyZXZpc2lvbiI6InNoYTI1Njo0ZjUzY2RhMThjMmJhYTBjMDM1NGJiNWY5YTNlY2JlNWVkMTJhYjRkOGUxMWJhODczYzJmMTExNjEyMDJiOTQ1In0",
+              "candidates": [],
+              "coverage": {
+                "body_reads": 0,
+                "candidate_basis": "Accepted declaration metadata; source and semantic basis unchecked.",
+                "journal_status": "AVAILABLE",
+                "legacy_declaration_candidates": 0,
+                "malformed_journal_rows": 0,
+                "status": "COMPLETE",
+                "unknown_scope_candidates": 0,
+                "whole_history_loaded": false
+              },
+              "file_scope": [
+                "sources/behaviour-example/main.tex"
+              ],
+              "pagination": {
+                "candidate_total": 0,
+                "examined": 0,
+                "limit": 40,
+                "next_offset": null,
+                "offset": 0,
+                "remaining_candidates": 0
+              },
+              "project": "behaviour-example"
+            },
+            "bindings": [],
+            "bindings_omitted": 0,
+            "coverage": "Exact changed-source ranges and witnessed plan sections; indexed application candidates require their own currentness read. No scientific status was inferred from whole-file SHA.",
+            "ranges": [
+              {
+                "after": {
+                  "line_end": 9,
+                  "line_start": 6
+                },
+                "before": {
+                  "line_end": 6,
+                  "line_start": 6
+                },
+                "file": "sources/behaviour-example/main.tex"
+              }
+            ],
+            "ranges_omitted": 0,
+            "reads": [
+              {
+                "operation": "document",
+                "payload": {}
+              },
+              {
+                "operation": "source",
+                "payload": {
+                  "files": [
+                    "sources/behaviour-example/main.tex"
+                  ]
+                }
+              }
+            ],
+            "status": "REOBSERVE"
+          },
+          "project": "behaviour-example",
+          "schema_version": "laplace.source-effect/1",
+          "selection_identity": "sha256:df56aee95ca538fbab6586d8d5258393c2e452272c26cb24ce8a3799980cec95",
+          "state": "COMMITTED"
+        },
+        "support": {
+          "authored_proof": false,
+          "citation_assessment": "NOT_REQUESTED",
+          "declared_role": "DECLARED_DEFINITION",
+          "documented_proof": {
+            "source": null,
+            "status": "NOT_RECORDED"
+          },
+          "engineering_support": {
+            "bindings": [],
+            "read_metrics": {},
+            "reason": "No engineering support has been adopted",
+            "status": "UNDECLARED"
+          },
+          "gaps": [],
+          "independent_verification": "NOT_ASSERTED",
+          "meaning_revision": "sha256:345300dd461197ea78655f242011d39a6ee7068b8880f7a35d68d2e4d464a9d8",
+          "node": "def:sequence",
+          "own_evidence": [],
+          "qualification": "DECLARED_DEFINITION",
+          "sources": [
+            {
+              "bound_claim_revision": "sha256:345300dd461197ea78655f242011d39a6ee7068b8880f7a35d68d2e4d464a9d8",
+              "citekey": "AuthoredSequenceExample",
+              "current_claim_revision": "sha256:345300dd461197ea78655f242011d39a6ee7068b8880f7a35d68d2e4d464a9d8",
+              "informal_alignment": "AUTHORED_NOT_INDEPENDENTLY_VERIFIED",
+              "key": "local:035c38075605c1d292d6ef34",
+              "label": "Authored sequence fixture",
+              "manuscript_uses": [],
+              "qualification": "PASSAGE_OBSERVED",
+              "rationale": "The authored source identifies only this explicit synthetic input.",
+              "reading_receipt": {
+                "id": "READ-45dcf2178e09690efa2babda",
+                "length": 186,
+                "locator": "characters 0\u2013186",
+                "observation": "passage returned by reference_text; not independent comprehension or entailment",
+                "offset": 0,
+                "page_end": 1,
+                "page_start": 1,
+                "reference_key": "local:035c38075605c1d292d6ef34",
+                "source_index": 0,
+                "source_path": "/tmp/laplace-behaviour-fixtures-437xg1mq/runs/full-02/workspace/writing_projects/behaviour-example/examples/original-sequence.txt",
+                "source_sha256": "sha256:f96253124538a68d54cdfea0fd08c91ea37f2cd2c3d326722fb15e64f1b8eafc",
+                "text_sha256": "sha256:f96253124538a68d54cdfea0fd08c91ea37f2cd2c3d326722fb15e64f1b8eafc",
+                "total_characters": 186
+              },
+              "relation": "support",
+              "source_id": "ref:AuthoredSequenceExample",
+              "source_refs": {
+                "locator": "characters 0\u2013186",
+                "path": "/tmp/laplace-behaviour-fixtures-437xg1mq/runs/full-02/workspace/writing_projects/behaviour-example/examples/original-sequence.txt",
+                "reference_key": "local:035c38075605c1d292d6ef34",
+                "sha256": "sha256:f96253124538a68d54cdfea0fd08c91ea37f2cd2c3d326722fb15e64f1b8eafc"
+              }
+            }
+          ]
+        }
+      },
+      "manuscript_citation": "NOT_YET_EXERCISED: source fixture and reader placement are distinct",
+      "qualification": "Authored synthetic documentary support only, no invented DOI or external literature verification"
+    },
+    "source": {
+      "status": "EXECUTED",
+      "deleted": {
+        "ok": true,
+        "operation": "delete",
+        "block": {
+          "kind": "equation",
+          "label": null
+        },
+        "edits": [
+          {
+            "file": "S1.tex",
+            "line_start": 1,
+            "line_end": 12,
+            "before": "\\section{Setting}\\label{sec:setting}\nThe input sequence is 1, 2, 3.\n\\begin{figure}[t]\n\\centering\n\\includegraphics[width=\\linewidth]{figures/generated/sequence-plot}\n\\caption{Cumulative sums of the authored integers 1, 2, 3. A workflow illustration, not measured data.}\n\\label{fig:sequence-plot}\n\\end{figure}\n\\begin{equation}\n1 + 2 + 3 = 6 \\label{eq:sequence}\n\\end{equation}\n",
+            "after": "\\section{Setting}\\label{sec:setting}\nThe input sequence is 1, 2, 3.\n\\begin{figure}[t]\n\\centering\n\\includegraphics[width=\\linewidth]{figures/generated/sequence-plot}\n\\caption{Cumulative sums of the authored integers 1, 2, 3. A workflow illustration, not measured data.}\n\\label{fig:sequence-plot}\n\\end{figure}\n"
+          }
+        ],
+        "placement": null,
+        "clip": {
+          "before": "\\begin{equation}\n1 + 2 + 3 = 6 \\label{eq:sequence}\n\\end{equation}",
+          "kind": "equation",
+          "label": null
+        },
+        "undo": {
+          "operation": "undo",
+          "edits": [
+            {
+              "file": "S1.tex",
+              "line_start": 1,
+              "line_end": 12,
+              "before": "\\section{Setting}\\label{sec:setting}\nThe input sequence is 1, 2, 3.\n\\begin{figure}[t]\n\\centering\n\\includegraphics[width=\\linewidth]{figures/generated/sequence-plot}\n\\caption{Cumulative sums of the authored integers 1, 2, 3. A workflow illustration, not measured data.}\n\\label{fig:sequence-plot}\n\\end{figure}\n\\begin{equation}\n1 + 2 + 3 = 6 \\label{eq:sequence}\n\\end{equation}\n",
+              "after": "\\section{Setting}\\label{sec:setting}\nThe input sequence is 1, 2, 3.\n\\begin{figure}[t]\n\\centering\n\\includegraphics[width=\\linewidth]{figures/generated/sequence-plot}\n\\caption{Cumulative sums of the authored integers 1, 2, 3. A workflow illustration, not measured data.}\n\\label{fig:sequence-plot}\n\\end{figure}\n"
+            }
+          ],
+          "placement": null
+        },
+        "owned_changes": {
+          "schema_version": "laplace.owner-mutation/1",
+          "files": [
+            {
+              "scope": "repository",
+              "path": "sources/behaviour-example/S1.tex",
+              "before_sha256": "sha256:3d4f66838779601fe08d4b82ca2540d5b9be2c16dcbda7f68bd4d222e0a35278",
+              "after_sha256": "sha256:095ea573f49e440fb7c3de5cbf66b2ab0e8d33754a50d9f500d2f20fda4e1246",
+              "observed_after_sha256": "sha256:095ea573f49e440fb7c3de5cbf66b2ab0e8d33754a50d9f500d2f20fda4e1246"
+            }
+          ],
+          "objects": [],
+          "rewire_records": [],
+          "views": [
+            "manuscript",
+            "visuals"
+          ]
+        },
+        "source_effect": {
+          "schema_version": "laplace.source-effect/1",
+          "project": "behaviour-example",
+          "selection_identity": "sha256:df56aee95ca538fbab6586d8d5258393c2e452272c26cb24ce8a3799980cec95",
+          "state": "COMMITTED",
+          "complete": true,
+          "files": [
+            {
+              "scope": "repository",
+              "path": "sources/behaviour-example/S1.tex",
+              "before_sha256": "sha256:3d4f66838779601fe08d4b82ca2540d5b9be2c16dcbda7f68bd4d222e0a35278",
+              "after_sha256": "sha256:095ea573f49e440fb7c3de5cbf66b2ab0e8d33754a50d9f500d2f20fda4e1246",
+              "observed_after_sha256": "sha256:095ea573f49e440fb7c3de5cbf66b2ab0e8d33754a50d9f500d2f20fda4e1246"
+            }
+          ],
+          "follow_through": {
+            "required": [
+              {
+                "owner": "block-operation",
+                "status": "COMPLETE"
+              }
+            ],
+            "heading_sync": {
+              "status": "NOT_NEEDED",
+              "updated": []
+            },
+            "maintenance_warnings": []
+          },
+          "impact": {
+            "status": "REOBSERVE",
+            "reads": [
+              {
+                "operation": "document",
+                "payload": {}
+              },
+              {
+                "operation": "source",
+                "payload": {
+                  "files": [
+                    "sources/behaviour-example/S1.tex"
+                  ]
+                }
+              },
+              {
+                "operation": "structure",
+                "payload": {
+                  "view": "detail",
+                  "section_ids": [
+                    "setting"
+                  ]
+                }
+              }
+            ],
+            "coverage": "Exact changed-source ranges and witnessed plan sections; indexed application candidates require their own currentness read. No scientific status was inferred from whole-file SHA.",
+            "bindings": [
+              {
+                "section_id": "setting",
+                "precision": "EXACT_HEADING",
+                "status": "REOBSERVE",
+                "reason": "Source range changed; scientific meaning was not rewritten or adjudicated.",
+                "detail_read": {
+                  "operation": "structure",
+                  "payload": {
+                    "view": "detail",
+                    "section_ids": [
+                      "setting"
+                    ]
+                  }
+                },
+                "concept_reads": [
+                  {
+                    "operation": "concept",
+                    "payload": {
+                      "node": "def:sequence"
+                    }
+                  }
+                ]
+              }
+            ],
+            "bindings_omitted": 0,
+            "ranges": [
+              {
+                "file": "sources/behaviour-example/S1.tex",
+                "before": {
+                  "line_start": 9,
+                  "line_end": 11
+                },
+                "after": {
+                  "line_start": 9,
+                  "line_end": 9
+                }
+              }
+            ],
+            "ranges_omitted": 0,
+            "accepted_links": {
+              "project": "behaviour-example",
+              "candidates": [],
+              "as_of": "eyJ2IjoxLCJxdWVyeSI6InNoYTI1Njo3YTE4ODY0ZDE5NzdhODQ4MTgyMDg1NGNjYzU2OTM4Y2NhNjA0MGZhNGIzOWFlOTJiMmIzOWM0OTM0YTMxZjdjIiwidXBwZXIiOjU2LCJyZXZpc2lvbiI6InNoYTI1Njo0ZjUzY2RhMThjMmJhYTBjMDM1NGJiNWY5YTNlY2JlNWVkMTJhYjRkOGUxMWJhODczYzJmMTExNjEyMDJiOTQ1In0",
+              "file_scope": [
+                "sources/behaviour-example/S1.tex"
+              ],
+              "pagination": {
+                "offset": 0,
+                "limit": 40,
+                "candidate_total": 0,
+                "examined": 0,
+                "remaining_candidates": 0,
+                "next_offset": null
+              },
+              "coverage": {
+                "status": "COMPLETE",
+                "candidate_basis": "Accepted declaration metadata; source and semantic basis unchecked.",
+                "unknown_scope_candidates": 0,
+                "legacy_declaration_candidates": 0,
+                "body_reads": 0,
+                "whole_history_loaded": false,
+                "journal_status": "AVAILABLE",
+                "malformed_journal_rows": 0
+              }
+            }
+          }
+        },
+        "undo_ref": {
+          "kind": "block",
+          "id": "FB-20261112-115434-S1.tex",
+          "project": "behaviour-example"
+        },
+        "corrections": [
+          {
+            "id": "FB-20261112-115434-S1.tex",
+            "file": "S1.tex"
+          }
+        ],
+        "plan_sync": {
+          "status": "NOT_NEEDED",
+          "updated": []
+        }
+      },
+      "restored": {
+        "ok": true,
+        "operation": "undo",
+        "edits": [
+          {
+            "file": "S1.tex",
+            "line_start": 1,
+            "line_end": 12,
+            "before": "\\section{Setting}\\label{sec:setting}\nThe input sequence is 1, 2, 3.\n\\begin{figure}[t]\n\\centering\n\\includegraphics[width=\\linewidth]{figures/generated/sequence-plot}\n\\caption{Cumulative sums of the authored integers 1, 2, 3. A workflow illustration, not measured data.}\n\\label{fig:sequence-plot}\n\\end{figure}\n",
+            "after": "\\section{Setting}\\label{sec:setting}\nThe input sequence is 1, 2, 3.\n\\begin{figure}[t]\n\\centering\n\\includegraphics[width=\\linewidth]{figures/generated/sequence-plot}\n\\caption{Cumulative sums of the authored integers 1, 2, 3. A workflow illustration, not measured data.}\n\\label{fig:sequence-plot}\n\\end{figure}\n\\begin{equation}\n1 + 2 + 3 = 6 \\label{eq:sequence}\n\\end{equation}\n"
+          }
+        ],
+        "placement": null,
+        "owned_changes": {
+          "schema_version": "laplace.owner-mutation/1",
+          "files": [
+            {
+              "scope": "repository",
+              "path": "sources/behaviour-example/S1.tex",
+              "before_sha256": "sha256:095ea573f49e440fb7c3de5cbf66b2ab0e8d33754a50d9f500d2f20fda4e1246",
+              "after_sha256": "sha256:3d4f66838779601fe08d4b82ca2540d5b9be2c16dcbda7f68bd4d222e0a35278",
+              "observed_after_sha256": "sha256:3d4f66838779601fe08d4b82ca2540d5b9be2c16dcbda7f68bd4d222e0a35278"
+            }
+          ],
+          "objects": [],
+          "rewire_records": [],
+          "views": [
+            "manuscript",
+            "visuals"
+          ]
+        },
+        "source_effect": {
+          "schema_version": "laplace.source-effect/1",
+          "project": "behaviour-example",
+          "selection_identity": "sha256:df56aee95ca538fbab6586d8d5258393c2e452272c26cb24ce8a3799980cec95",
+          "state": "COMMITTED",
+          "complete": true,
+          "files": [
+            {
+              "scope": "repository",
+              "path": "sources/behaviour-example/S1.tex",
+              "before_sha256": "sha256:095ea573f49e440fb7c3de5cbf66b2ab0e8d33754a50d9f500d2f20fda4e1246",
+              "after_sha256": "sha256:3d4f66838779601fe08d4b82ca2540d5b9be2c16dcbda7f68bd4d222e0a35278",
+              "observed_after_sha256": "sha256:3d4f66838779601fe08d4b82ca2540d5b9be2c16dcbda7f68bd4d222e0a35278"
+            }
+          ],
+          "follow_through": {
+            "required": [
+              {
+                "owner": "block-operation",
+                "status": "COMPLETE"
+              }
+            ],
+            "heading_sync": {
+              "status": "NOT_NEEDED",
+              "updated": []
+            },
+            "maintenance_warnings": []
+          },
+          "impact": {
+            "status": "REOBSERVE",
+            "reads": [
+              {
+                "operation": "document",
+                "payload": {}
+              },
+              {
+                "operation": "source",
+                "payload": {
+                  "files": [
+                    "sources/behaviour-example/S1.tex"
+                  ]
+                }
+              },
+              {
+                "operation": "structure",
+                "payload": {
+                  "view": "detail",
+                  "section_ids": [
+                    "setting"
+                  ]
+                }
+              }
+            ],
+            "coverage": "Exact changed-source ranges and witnessed plan sections; indexed application candidates require their own currentness read. No scientific status was inferred from whole-file SHA.",
+            "bindings": [
+              {
+                "section_id": "setting",
+                "precision": "EXACT_HEADING",
+                "status": "REOBSERVE",
+                "reason": "Source range changed; scientific meaning was not rewritten or adjudicated.",
+                "detail_read": {
+                  "operation": "structure",
+                  "payload": {
+                    "view": "detail",
+                    "section_ids": [
+                      "setting"
+                    ]
+                  }
+                },
+                "concept_reads": [
+                  {
+                    "operation": "concept",
+                    "payload": {
+                      "node": "def:sequence"
+                    }
+                  }
+                ]
+              }
+            ],
+            "bindings_omitted": 0,
+            "ranges": [
+              {
+                "file": "sources/behaviour-example/S1.tex",
+                "before": {
+                  "line_start": 9,
+                  "line_end": 9
+                },
+                "after": {
+                  "line_start": 9,
+                  "line_end": 11
+                }
+              }
+            ],
+            "ranges_omitted": 0,
+            "accepted_links": {
+              "project": "behaviour-example",
+              "candidates": [],
+              "as_of": "eyJ2IjoxLCJxdWVyeSI6InNoYTI1Njo3YTE4ODY0ZDE5NzdhODQ4MTgyMDg1NGNjYzU2OTM4Y2NhNjA0MGZhNGIzOWFlOTJiMmIzOWM0OTM0YTMxZjdjIiwidXBwZXIiOjU5LCJyZXZpc2lvbiI6InNoYTI1Njo0ZjUzY2RhMThjMmJhYTBjMDM1NGJiNWY5YTNlY2JlNWVkMTJhYjRkOGUxMWJhODczYzJmMTExNjEyMDJiOTQ1In0",
+              "file_scope": [
+                "sources/behaviour-example/S1.tex"
+              ],
+              "pagination": {
+                "offset": 0,
+                "limit": 40,
+                "candidate_total": 0,
+                "examined": 0,
+                "remaining_candidates": 0,
+                "next_offset": null
+              },
+              "coverage": {
+                "status": "COMPLETE",
+                "candidate_basis": "Accepted declaration metadata; source and semantic basis unchecked.",
+                "unknown_scope_candidates": 0,
+                "legacy_declaration_candidates": 0,
+                "body_reads": 0,
+                "whole_history_loaded": false,
+                "journal_status": "AVAILABLE",
+                "malformed_journal_rows": 0
+              }
+            }
+          }
+        },
+        "undo_ref": {
+          "kind": "block",
+          "id": "FB-20261112-115434-S1.tex-2",
+          "project": "behaviour-example"
+        },
+        "corrections": [
+          {
+            "id": "FB-20261112-115434-S1.tex-2",
+            "file": "S1.tex"
+          }
+        ],
+        "undo": {
+          "operation": "undo",
+          "edits": [
+            {
+              "file": "S1.tex",
+              "line_start": 1,
+              "line_end": 12,
+              "before": "\\section{Setting}\\label{sec:setting}\nThe input sequence is 1, 2, 3.\n\\begin{figure}[t]\n\\centering\n\\includegraphics[width=\\linewidth]{figures/generated/sequence-plot}\n\\caption{Cumulative sums of the authored integers 1, 2, 3. A workflow illustration, not measured data.}\n\\label{fig:sequence-plot}\n\\end{figure}\n",
+              "after": "\\section{Setting}\\label{sec:setting}\nThe input sequence is 1, 2, 3.\n\\begin{figure}[t]\n\\centering\n\\includegraphics[width=\\linewidth]{figures/generated/sequence-plot}\n\\caption{Cumulative sums of the authored integers 1, 2, 3. A workflow illustration, not measured data.}\n\\label{fig:sequence-plot}\n\\end{figure}\n\\begin{equation}\n1 + 2 + 3 = 6 \\label{eq:sequence}\n\\end{equation}\n"
+            }
+          ],
+          "placement": null
+        },
+        "plan_sync": {
+          "status": "NOT_NEEDED",
+          "updated": []
+        }
+      },
+      "before_sha256": "sha256:3d4f66838779601fe08d4b82ca2540d5b9be2c16dcbda7f68bd4d222e0a35278",
+      "reopened_equal": true,
+      "qualification": "Actual source-owner undo and fresh read. Browser Manual Undo -> Save -> reopen remains coordinator-owned and is not inferred from this result."
+    },
+    "atlas": {
+      "status": "EXECUTED",
+      "blob": "sha256:3dd3447334c64a8a77480a046d802ea500960fe721ead15b6386b6ecb83cb48f",
+      "compressed_blob": "sha256:15e4928f0257dce10f5f8d2b54d5ef2573f3bf2390b5b4b09b861aec5439fc92",
+      "ledger": "workspace/atlas-example/authored-inputs.jsonl",
+      "qualification": "JSONL inputs are authored fixtures, not fabricated Atlas events or provider messages.",
+      "event_history": {
+        "status": "EXECUTED",
+        "events": 2,
+        "first_event": "sha256:a8ac174d86f04a51ac8788056affdeff34aa228414245037e2e772217e0564f4",
+        "head_event": "sha256:93f6bb71b60bef4058d3f6fa59c22ef08ef31ab6a66414d4fc5fa0977cdcdce1",
+        "record_digest": "sha256:0d9596deea6c17ee7d5a93bf9d0230c89878324ee32df9e701bb2780e9298ac4",
+        "object": "object:example-input",
+        "store": "atlas-example/event-history/store",
+        "reconstruction": "Cold event replay and disposable index rebuild observed",
+        "spectral_reconstruction": "NOT_YET_EXERCISED",
+        "qualification": "Genuine Atlas owner records from explicit synthetic control input, not model history."
+      },
+      "snapshot": {
+        "status": "EXECUTED",
+        "snapshot": "sha256:655d0d7af244db814c76d46d3302716eedccb69e6944f011454947fb77d92089",
+        "path": "atlas-example/snapshot",
+        "span": "sha256:8dca13ddd9da04cc04cdd6be5e405ecf6c2cdba88f09c0463e2c76c03da6047c",
+        "qualification": "Synthetic bundle built here, no repository export or private sealed bytes read",
+        "verification": {
+          "bytes_read_from_sealed": 0,
+          "nodes_scanned": 2,
+          "sealed_nodes": 1,
+          "sealed_prefixes": [
+            "sealed/"
+          ],
+          "sealed_spans": 0,
+          "soul_paths_with_content": 0
+        }
+      },
+      "query_reconstruction": "Exact object query and event/index reconstruction exercised. Spectral reconstruction NOT_YET_EXERCISED",
+      "gpu": "NOT_RUN: separate explicitly opted-in CUDA toy required, not a benchmark"
+    },
+    "source_kernel": {
+      "status": "EXECUTED",
+      "project": "source-kernel-example",
+      "request": {
+        "reference": {
+          "schema_version": "laplace.reference/1",
+          "owner": "domain.work",
+          "kind": "source-contract",
+          "identity": {
+            "operation": "work_review.followup"
+          },
+          "version": {
+            "declaration": "sha256:bc3956871bdaa12c7527d6ccc85656817b0a849305fdd61e3a76256d7d86b56e"
+          }
+        },
+        "selection": {
+          "namespace": "source-kernel-example",
+          "work_id": "WORK-kernel-example",
+          "handoff_id": "PHASE-7dd3a510054338602003b9f5",
+          "obligation_id": "kernel"
+        },
+        "segments": [
+          "authority"
+        ]
+      },
+      "handoff_id": "PHASE-7dd3a510054338602003b9f5",
+      "kernel_state": "UNRESOLVED",
+      "prepared_basis": "sha256:6b21f04c1ccaff76586746bf51b92cd99713f3b57ddac414fada71f3a5b46e70",
+      "publication": "NOT_RUN: active publication requires a separate real retained base and existing local GPU backend",
+      "qualification": "Actual Source/kernel owners and retained exact meaning. A handoff/preparation is not a review, publication, model execution or completed Work."
+    },
+    "http": {
+      "status": "EXECUTED",
+      "source_file": "sources/behaviour-example/S1.tex",
+      "reopened_equal": true,
+      "save": {
+        "ok": true,
+        "source_committed": true,
+        "changed": true,
+        "file": "sources/behaviour-example/S1.tex",
+        "bytes": 436,
+        "lines": 14,
+        "consumed_source_digest": "sha256:3d4f66838779601fe08d4b82ca2540d5b9be2c16dcbda7f68bd4d222e0a35278",
+        "expected_source_digest": "sha256:0856fb61d98519167da697551e2bfd66d5bb2b8dec3f93aa460acd3110e694b8",
+        "source_effect": {
+          "schema_version": "laplace.source-effect/1",
+          "project": "behaviour-example",
+          "selection_identity": "sha256:df56aee95ca538fbab6586d8d5258393c2e452272c26cb24ce8a3799980cec95",
+          "state": "COMMITTED",
+          "complete": true,
+          "files": [
+            {
+              "scope": "repository",
+              "path": "sources/behaviour-example/S1.tex",
+              "before_sha256": "sha256:3d4f66838779601fe08d4b82ca2540d5b9be2c16dcbda7f68bd4d222e0a35278",
+              "after_sha256": "sha256:0856fb61d98519167da697551e2bfd66d5bb2b8dec3f93aa460acd3110e694b8",
+              "observed_after_sha256": "sha256:0856fb61d98519167da697551e2bfd66d5bb2b8dec3f93aa460acd3110e694b8"
+            }
+          ],
+          "follow_through": {
+            "required": [],
+            "heading_sync": {
+              "status": "NOT_NEEDED",
+              "updated": []
+            },
+            "maintenance_warnings": []
+          },
+          "impact": {
+            "status": "REOBSERVE",
+            "reads": [
+              {
+                "operation": "document",
+                "payload": {}
+              },
+              {
+                "operation": "source",
+                "payload": {
+                  "files": [
+                    "sources/behaviour-example/S1.tex"
+                  ]
+                }
+              },
+              {
+                "operation": "structure",
+                "payload": {
+                  "view": "detail",
+                  "section_ids": [
+                    "setting"
+                  ]
+                }
+              }
+            ],
+            "coverage": "Exact changed-source ranges and witnessed plan sections; indexed application candidates require their own currentness read. No scientific status was inferred from whole-file SHA.",
+            "bindings": [
+              {
+                "section_id": "setting",
+                "precision": "EXACT_HEADING",
+                "status": "REOBSERVE",
+                "reason": "Source range changed; scientific meaning was not rewritten or adjudicated.",
+                "detail_read": {
+                  "operation": "structure",
+                  "payload": {
+                    "view": "detail",
+                    "section_ids": [
+                      "setting"
+                    ]
+                  }
+                },
+                "concept_reads": [
+                  {
+                    "operation": "concept",
+                    "payload": {
+                      "node": "def:sequence"
+                    }
+                  }
+                ]
+              }
+            ],
+            "bindings_omitted": 0,
+            "ranges": [
+              {
+                "file": "sources/behaviour-example/S1.tex",
+                "before": {
+                  "line_start": 12,
+                  "line_end": 12
+                },
+                "after": {
+                  "line_start": 12,
+                  "line_end": 13
+                }
+              }
+            ],
+            "ranges_omitted": 0,
+            "accepted_links": {
+              "project": "behaviour-example",
+              "candidates": [],
+              "as_of": "eyJ2IjoxLCJxdWVyeSI6InNoYTI1Njo3YTE4ODY0ZDE5NzdhODQ4MTgyMDg1NGNjYzU2OTM4Y2NhNjA0MGZhNGIzOWFlOTJiMmIzOWM0OTM0YTMxZjdjIiwidXBwZXIiOjYyLCJyZXZpc2lvbiI6InNoYTI1Njo0ZjUzY2RhMThjMmJhYTBjMDM1NGJiNWY5YTNlY2JlNWVkMTJhYjRkOGUxMWJhODczYzJmMTExNjEyMDJiOTQ1In0",
+              "file_scope": [
+                "sources/behaviour-example/S1.tex"
+              ],
+              "pagination": {
+                "offset": 0,
+                "limit": 40,
+                "candidate_total": 0,
+                "examined": 0,
+                "remaining_candidates": 0,
+                "next_offset": null
+              },
+              "coverage": {
+                "status": "COMPLETE",
+                "candidate_basis": "Accepted declaration metadata; source and semantic basis unchecked.",
+                "unknown_scope_candidates": 0,
+                "legacy_declaration_candidates": 0,
+                "body_reads": 0,
+                "whole_history_loaded": false,
+                "journal_status": "AVAILABLE",
+                "malformed_journal_rows": 0
+              }
+            }
+          }
+        },
+        "version_id": "save-2026-11-12_115435-1",
+        "exemplar": {
+          "banked": true,
+          "exemplar_id": "FB-20261112-115435-ex",
+          "passages": 1,
+          "lines": 2,
+          "destination": "writing_projects/behaviour-example/feedback/feedback.jsonl",
+          "scope": "voice",
+          "kind": "author-rewrite"
+        },
+        "plan_sync": {
+          "status": "NOT_NEEDED",
+          "updated": []
+        },
+        "selection_identity": "sha256:df56aee95ca538fbab6586d8d5258393c2e452272c26cb24ce8a3799980cec95",
+        "invalidated": [
+          "manuscript",
+          "document",
+          "template-preview"
+        ],
+        "history_read": {
+          "method": "GET",
+          "route": "/authoring/history",
+          "query": {
+            "project": "behaviour-example",
+            "file": "sources/behaviour-example/S1.tex"
+          }
+        }
+      },
+      "restored": {
+        "ok": true,
+        "source_committed": true,
+        "changed": true,
+        "file": "sources/behaviour-example/S1.tex",
+        "bytes": 374,
+        "lines": 12,
+        "consumed_source_digest": "sha256:0856fb61d98519167da697551e2bfd66d5bb2b8dec3f93aa460acd3110e694b8",
+        "expected_source_digest": "sha256:3d4f66838779601fe08d4b82ca2540d5b9be2c16dcbda7f68bd4d222e0a35278",
+        "source_effect": {
+          "schema_version": "laplace.source-effect/1",
+          "project": "behaviour-example",
+          "selection_identity": "sha256:df56aee95ca538fbab6586d8d5258393c2e452272c26cb24ce8a3799980cec95",
+          "state": "COMMITTED",
+          "complete": true,
+          "files": [
+            {
+              "scope": "repository",
+              "path": "sources/behaviour-example/S1.tex",
+              "before_sha256": "sha256:0856fb61d98519167da697551e2bfd66d5bb2b8dec3f93aa460acd3110e694b8",
+              "after_sha256": "sha256:3d4f66838779601fe08d4b82ca2540d5b9be2c16dcbda7f68bd4d222e0a35278",
+              "observed_after_sha256": "sha256:3d4f66838779601fe08d4b82ca2540d5b9be2c16dcbda7f68bd4d222e0a35278"
+            }
+          ],
+          "follow_through": {
+            "required": [],
+            "heading_sync": {
+              "status": "NOT_NEEDED",
+              "updated": []
+            },
+            "maintenance_warnings": []
+          },
+          "impact": {
+            "status": "REOBSERVE",
+            "reads": [
+              {
+                "operation": "document",
+                "payload": {}
+              },
+              {
+                "operation": "source",
+                "payload": {
+                  "files": [
+                    "sources/behaviour-example/S1.tex"
+                  ]
+                }
+              },
+              {
+                "operation": "structure",
+                "payload": {
+                  "view": "detail",
+                  "section_ids": [
+                    "setting"
+                  ]
+                }
+              }
+            ],
+            "coverage": "Exact changed-source ranges and witnessed plan sections; indexed application candidates require their own currentness read. No scientific status was inferred from whole-file SHA.",
+            "bindings": [
+              {
+                "section_id": "setting",
+                "precision": "EXACT_HEADING",
+                "status": "REOBSERVE",
+                "reason": "Source range changed; scientific meaning was not rewritten or adjudicated.",
+                "detail_read": {
+                  "operation": "structure",
+                  "payload": {
+                    "view": "detail",
+                    "section_ids": [
+                      "setting"
+                    ]
+                  }
+                },
+                "concept_reads": [
+                  {
+                    "operation": "concept",
+                    "payload": {
+                      "node": "def:sequence"
+                    }
+                  }
+                ]
+              }
+            ],
+            "bindings_omitted": 0,
+            "ranges": [
+              {
+                "file": "sources/behaviour-example/S1.tex",
+                "before": {
+                  "line_start": 12,
+                  "line_end": 13
+                },
+                "after": {
+                  "line_start": 12,
+                  "line_end": 12
+                }
+              }
+            ],
+            "ranges_omitted": 0,
+            "accepted_links": {
+              "project": "behaviour-example",
+              "candidates": [],
+              "as_of": "eyJ2IjoxLCJxdWVyeSI6InNoYTI1Njo3YTE4ODY0ZDE5NzdhODQ4MTgyMDg1NGNjYzU2OTM4Y2NhNjA0MGZhNGIzOWFlOTJiMmIzOWM0OTM0YTMxZjdjIiwidXBwZXIiOjYyLCJyZXZpc2lvbiI6InNoYTI1Njo0ZjUzY2RhMThjMmJhYTBjMDM1NGJiNWY5YTNlY2JlNWVkMTJhYjRkOGUxMWJhODczYzJmMTExNjEyMDJiOTQ1In0",
+              "file_scope": [
+                "sources/behaviour-example/S1.tex"
+              ],
+              "pagination": {
+                "offset": 0,
+                "limit": 40,
+                "candidate_total": 0,
+                "examined": 0,
+                "remaining_candidates": 0,
+                "next_offset": null
+              },
+              "coverage": {
+                "status": "COMPLETE",
+                "candidate_basis": "Accepted declaration metadata; source and semantic basis unchecked.",
+                "unknown_scope_candidates": 0,
+                "legacy_declaration_candidates": 0,
+                "body_reads": 0,
+                "whole_history_loaded": false,
+                "journal_status": "AVAILABLE",
+                "malformed_journal_rows": 0
+              }
+            }
+          }
+        },
+        "version_id": "save-2026-11-12_115436-2",
+        "exemplar": {
+          "banked": true,
+          "exemplar_id": "FB-20261112-115436-ex",
+          "passages": 1,
+          "lines": 0,
+          "destination": "writing_projects/behaviour-example/feedback/feedback.jsonl",
+          "scope": "voice",
+          "kind": "author-rewrite"
+        },
+        "plan_sync": {
+          "status": "NOT_NEEDED",
+          "updated": []
+        },
+        "selection_identity": "sha256:df56aee95ca538fbab6586d8d5258393c2e452272c26cb24ce8a3799980cec95",
+        "invalidated": [
+          "manuscript",
+          "document",
+          "template-preview"
+        ],
+        "history_read": {
+          "method": "GET",
+          "route": "/authoring/history",
+          "query": {
+            "project": "behaviour-example",
+            "file": "sources/behaviour-example/S1.tex"
+          }
+        }
+      },
+      "qualification": "Real HTTP Save/readback and owner history. Not a browser keyboard/manual-Undo or rendered-page proof.",
+      "server_log": "evidence/http-server.log"
+    },
+    "catalogue": {
+      "status": "EXECUTED",
+      "native_operation_count": 95,
+      "native_route_count": 208,
+      "control_count": 718,
+      "control_prefix_groups": 39,
+      "qualification": "Counts are actual runtime declarations. Only the declaration reads were executed here. Join evidence is named and pinned, not promoted to PASS or full UI coverage.",
+      "canonical_census": "Coordinator retains release/behaviour-coverage.json unchanged",
+      "cases": "evidence/catalogue-case-joins.json"
+    }
+  },
+  "provider_execution": "NOT_RUN: separate explicit subscription admission required",
+  "standard_tier": {
+    "provider": "codex",
+    "model": "gpt-6.1-sol",
+    "effort": "high",
+    "qualification": "requested configuration, not an observed provider execution"
+  }
+}

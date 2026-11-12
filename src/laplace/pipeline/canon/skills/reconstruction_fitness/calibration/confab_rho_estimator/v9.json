@@ -1,0 +1,18 @@
+{
+  "lost": [
+    "Spectral radius estimation via ratio of consecutive lost-set deltas (the core method)",
+    "Convergence principle: error decays as the ratio of consecutive deltas tends to dominant eigenvalue magnitude",
+    "Minimum threshold: need at least three verdicts to form two deltas for ratio estimation",
+    "Stochasticity of the adjudicator as a source of noise in the estimate",
+    "Explicit return of None when insufficient verdicts are available"
+  ],
+  "added": [
+    "Spectral radius computed directly from a single verdict's lost-set magnitude",
+    "One cycle sufficiency (no multi-verdict delta comparison required)",
+    "Exactness of the result (contradicts the original's characterization as noisy)",
+    "Direct measurement framing (contradicts the original's ratio-based estimation framing)"
+  ],
+  "structured": true,
+  "recurses": false,
+  "justification": "The ghost inverts the fundamental method: the original describes a convergence-based ratio estimator requiring temporal comparison across at least three verdicts, explicitly accounting for stochastic noise and returning None below threshold. The ghost replaces this entire architecture with a single-pass magnitude measurement that claims exactness. This is not a paraphrase or simplification—it is a different algorithm with opposite properties (single vs. multiple verdicts, exact vs. noisy, direct magnitude vs. ratio convergence). The lost set is coherent and named precisely, but the reconstruction is not a partial of the original method; it is a contradictory alternative. The addition of exactness directly negates the original's noise characterization. No recovery path from the ghost rebuilds the original logic."
+}

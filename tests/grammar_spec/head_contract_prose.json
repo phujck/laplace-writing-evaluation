@@ -1,0 +1,4012 @@
+{
+ "base": "706a82047ae90ce79956cb25a4831973f61eec85",
+ "contracts": {
+  "apply_revision": {
+   "summary": "Apply an exact source-addressed manuscript revision in this current turn. New scientific prose may declare already-placed concept snapshots and current bound evidence; ordinary copyedits need neither.",
+   "input": {
+    "anyOf": [
+     {
+      "type": "object",
+      "required": [
+       "edits"
+      ],
+      "properties": {
+       "answer": {
+        "type": "string"
+       },
+       "edits": {
+        "type": "array",
+        "items": {
+         "type": "object",
+         "required": [
+          "file",
+          "line_start",
+          "line_end",
+          "before",
+          "after"
+         ],
+         "properties": {
+          "file": {
+           "type": "string"
+          },
+          "line_start": {
+           "type": "integer"
+          },
+          "line_end": {
+           "type": "integer"
+          },
+          "before": {
+           "type": "string"
+          },
+          "after": {
+           "type": "string"
+          },
+          "reason": {
+           "type": "string"
+          },
+          "develops": {
+           "type": "array",
+           "items": {
+            "type": "object",
+            "required": [
+             "id",
+             "content_revision"
+            ],
+            "properties": {
+             "id": {
+              "type": "string"
+             },
+             "content_revision": {
+              "type": "string"
+             }
+            },
+            "additionalProperties": false
+           }
+          },
+          "evidence_refs": {
+           "type": "array",
+           "items": {
+            "type": "object",
+            "required": [
+             "id",
+             "revision"
+            ],
+            "properties": {
+             "id": {
+              "type": "string"
+             },
+             "revision": {
+              "type": "string"
+             }
+            },
+            "additionalProperties": false
+           }
+          },
+          "source_anchor": {
+           "type": "object",
+           "required": [],
+           "properties": {
+            "sha256": {
+             "type": "string"
+            },
+            "line_start": {
+             "type": "integer"
+            },
+            "line_end": {
+             "type": "integer"
+            },
+            "prefix": {
+             "type": "array",
+             "items": {
+              "type": "string"
+             }
+            },
+            "suffix": {
+             "type": "array",
+             "items": {
+              "type": "string"
+             }
+            },
+            "unique": {
+             "type": "boolean"
+            },
+            "at_start": {
+             "type": "boolean"
+            },
+            "at_end": {
+             "type": "boolean"
+            }
+           },
+           "additionalProperties": false
+          }
+         },
+         "additionalProperties": false
+        }
+       }
+      },
+      "additionalProperties": false
+     },
+     {
+      "type": "object",
+      "required": [
+       "proposal"
+      ],
+      "properties": {
+       "proposal": {
+        "type": "object",
+        "required": [
+         "edits"
+        ],
+        "properties": {
+         "answer": {
+          "type": "string"
+         },
+         "edits": {
+          "type": "array",
+          "items": {
+           "type": "object",
+           "required": [
+            "file",
+            "line_start",
+            "line_end",
+            "before",
+            "after"
+           ],
+           "properties": {
+            "file": {
+             "type": "string"
+            },
+            "line_start": {
+             "type": "integer"
+            },
+            "line_end": {
+             "type": "integer"
+            },
+            "before": {
+             "type": "string"
+            },
+            "after": {
+             "type": "string"
+            },
+            "reason": {
+             "type": "string"
+            },
+            "develops": {
+             "type": "array",
+             "items": {
+              "type": "object",
+              "required": [
+               "id",
+               "content_revision"
+              ],
+              "properties": {
+               "id": {
+                "type": "string"
+               },
+               "content_revision": {
+                "type": "string"
+               }
+              },
+              "additionalProperties": false
+             }
+            },
+            "evidence_refs": {
+             "type": "array",
+             "items": {
+              "type": "object",
+              "required": [
+               "id",
+               "revision"
+              ],
+              "properties": {
+               "id": {
+                "type": "string"
+               },
+               "revision": {
+                "type": "string"
+               }
+              },
+              "additionalProperties": false
+             }
+            },
+            "source_anchor": {
+             "type": "object",
+             "required": [],
+             "properties": {
+              "sha256": {
+               "type": "string"
+              },
+              "line_start": {
+               "type": "integer"
+              },
+              "line_end": {
+               "type": "integer"
+              },
+              "prefix": {
+               "type": "array",
+               "items": {
+                "type": "string"
+               }
+              },
+              "suffix": {
+               "type": "array",
+               "items": {
+                "type": "string"
+               }
+              },
+              "unique": {
+               "type": "boolean"
+              },
+              "at_start": {
+               "type": "boolean"
+              },
+              "at_end": {
+               "type": "boolean"
+              }
+             },
+             "additionalProperties": false
+            }
+           },
+           "additionalProperties": false
+          }
+         }
+        },
+        "additionalProperties": false
+       }
+      },
+      "additionalProperties": false
+     }
+    ]
+   },
+   "example": {
+    "proposal": {
+     "answer": "Applied the requested clarification.",
+     "edits": [
+      {
+       "file": "chapters/method.tex",
+       "line_start": 12,
+       "line_end": 12,
+       "before": "Old sentence.",
+       "after": "Revised sentence.",
+       "reason": "clarity"
+      }
+     ]
+    }
+   },
+   "effects": [
+    "exact TeX revision",
+    "source rewrite receipt"
+   ],
+   "preconditions": [
+    "read the exact source file/span",
+    "develops and evidence_refs belong inside each edits[] item, never the proposal or wrapper; evidence_refs names current bound research results, not literature receipt IDs",
+    "declared develops concepts are canonically placed and current",
+    "declared evidence is current and canonically bound"
+   ]
+  },
+  "argument": {
+   "summary": "Save the sustained project argument at its current revision.",
+   "input": {
+    "type": "object",
+    "required": [
+     "argument",
+     "base_revision"
+    ],
+    "properties": {
+     "argument": {
+      "type": "string"
+     },
+     "framing": {
+      "type": "object",
+      "required": [],
+      "properties": {},
+      "additionalProperties": true
+     },
+     "base_revision": {
+      "type": "integer"
+     }
+    },
+    "additionalProperties": false
+   },
+   "example": {
+    "argument": "The result constrains the mechanism.",
+    "base_revision": 0
+   },
+   "effects": [
+    "project argument"
+   ]
+  },
+  "author_changes": {
+   "summary": "Read author-vs-machine manuscript changes as source-addressed typed blocks; file mode is aggregate baseline history, while id mode reads one exact correction/application record.",
+   "input": {
+    "type": "object",
+    "required": [],
+    "properties": {
+     "file": {
+      "type": "string"
+     },
+     "id": {
+      "type": "string"
+     }
+    },
+    "additionalProperties": false
+   },
+   "example": {
+    "file": "chapters/method.tex"
+   },
+   "effects": [],
+   "preconditions": [
+    "supply exactly one selected-manuscript file or author_history correction id"
+   ],
+   "outputs": [
+    "current source anchors",
+    "readable before/after blocks",
+    "baseline attribution and limitations"
+   ]
+  },
+  "author_history": {
+   "summary": "Read bounded author comments/applied edits, or view=activity for who changed what and when across the project. Read one exact returned activity ID for recorded comparisons and current hash identity checks.",
+   "input": {
+    "type": "object",
+    "required": [],
+    "properties": {
+     "view": {
+      "enum": [
+       "corrections",
+       "activity",
+       "telemetry",
+       "record"
+      ]
+     },
+     "id": {
+      "type": "string"
+     },
+     "file": {
+      "type": "string"
+     },
+     "node": {
+      "type": "string"
+     },
+     "result_id": {
+      "type": "string"
+     },
+     "category": {
+      "enum": [
+       "manuscript",
+       "structure",
+       "notes",
+       "research",
+       "formal",
+       "literature",
+       "session"
+      ]
+     },
+     "actor": {
+      "enum": [
+       "human",
+       "agent",
+       "unknown"
+      ]
+     },
+     "provider": {
+      "type": "string"
+     },
+     "model": {
+      "type": "string"
+     },
+     "operation": {
+      "type": "string"
+     },
+     "session_id": {
+      "type": "string"
+     },
+     "event_kind": {
+      "type": "string"
+     },
+     "day": {
+      "type": "string"
+     },
+     "from": {
+      "type": "string"
+     },
+     "to": {
+      "type": "string"
+     },
+     "outcome": {
+      "type": "string"
+     },
+     "as_of": {
+      "type": "string"
+     },
+     "offset": {
+      "type": "integer"
+     },
+     "limit": {
+      "type": "integer"
+     }
+    },
+    "additionalProperties": false
+   },
+   "example": {
+    "view": "activity",
+    "file": "chapters/method.tex",
+    "offset": 0,
+    "limit": 20
+   },
+   "preconditions": [
+    "Default correction reads retain their existing AC IDs. Activity/record detail accepts an exact activity handle or a unique owner-issued recorded ID such as TOOLFAIL-...; ambiguous IDs require the full handle from the activity list. Never invent a prefix or ID.",
+    "Carry returned as_of when paging; omit it to refresh the timeline. Activity limit is 20.",
+    "Recorded/current hash equality establishes identity, not scientific validity. Missing or pruned history is explicit.",
+    "For a prior conversation, use view activity or telemetry with its session_id; follow returned activity IDs with view record. conversation_history is intentionally limited to the current logical conversation.",
+    "Read the owning current source/concept/evidence before changing it; a historical activity read is not a current source guard."
+   ],
+   "outputs": [
+    "actor and recorded time",
+    "paged scoped activity and owner coverage",
+    "lazy exact comparison and recorded/current identity on id reads"
+   ],
+   "effects": []
+  },
+  "block_change": {
+   "summary": "Delete, move, or undo one whole source-backed typed object such as a figure, custom environment, table, equation, theorem, list, or raw block.",
+   "input": {
+    "type": "object",
+    "required": [
+     "operation"
+    ],
+    "properties": {
+     "operation": {
+      "enum": [
+       "delete",
+       "move",
+       "insert",
+       "insert-at-caret",
+       "undo"
+      ]
+     },
+     "block": {
+      "type": "object",
+      "required": [
+       "file",
+       "line_start",
+       "line_end",
+       "before",
+       "expected_source_digest"
+      ],
+      "properties": {
+       "file": {
+        "type": "string"
+       },
+       "line_start": {
+        "type": "integer"
+       },
+       "line_end": {
+        "type": "integer"
+       },
+       "before": {
+        "type": "string"
+       },
+       "expected_source_digest": {
+        "type": "string"
+       }
+      },
+      "additionalProperties": false
+     },
+     "clip": {
+      "type": "object",
+      "required": [
+       "before"
+      ],
+      "properties": {
+       "before": {
+        "type": "string"
+       },
+       "kind": {
+        "type": "string"
+       },
+       "label": {
+        "type": "string"
+       }
+      },
+      "additionalProperties": false
+     },
+     "destination": {
+      "type": "object",
+      "required": [
+       "file",
+       "line",
+       "expected_source_digest"
+      ],
+      "properties": {
+       "file": {
+        "type": "string"
+       },
+       "line": {
+        "type": "integer"
+       },
+       "before": {
+        "type": "string"
+       },
+       "expected_source_digest": {
+        "type": "string"
+       },
+       "paragraph": {
+        "type": "object",
+        "required": [
+         "line_start",
+         "line_end",
+         "before",
+         "offset"
+        ],
+        "properties": {
+         "line_start": {
+          "type": "integer"
+         },
+         "line_end": {
+          "type": "integer"
+         },
+         "before": {
+          "type": "string"
+         },
+         "offset": {
+          "type": "integer"
+         }
+        },
+        "additionalProperties": false
+       }
+      },
+      "additionalProperties": false
+     },
+     "edits": {
+      "type": "array"
+     }
+    },
+    "additionalProperties": false
+   },
+   "example": {
+    "operation": "move",
+    "block": {
+     "file": "chapter.tex",
+     "line_start": 12,
+     "line_end": 18,
+     "before": "\\begin{figure}...",
+     "expected_source_digest": "sha256:current"
+    },
+    "destination": {
+     "file": "chapter.tex",
+     "line": 42,
+     "before": "Anchor prose.",
+     "expected_source_digest": "sha256:current"
+    }
+   },
+   "preconditions": [
+    "insert-at-caret uses destination.paragraph with an exact current paragraph source span and a character offset in its TeX source; it preserves known inline style scopes",
+    "insert uses a line boundary; use insert-at-caret for paragraph splitting",
+    "old runtimes must reject unknown operations rather than ignoring a requested split"
+   ],
+   "effects": [
+    "whole-object source rewrite",
+    "editor-save history",
+    "directly postable undo edits"
+   ]
+  },
+  "build": {
+   "summary": "Build the selected manuscript source with its configured TeX toolchain.",
+   "input": {
+    "type": "object",
+    "required": [],
+    "properties": {},
+    "additionalProperties": false
+   },
+   "example": {},
+   "effects": [
+    "asynchronous selected-source build"
+   ]
+  },
+  "build_status": {
+   "summary": "Read the selected manuscript build status and freshness.",
+   "input": {
+    "type": "object",
+    "required": [],
+    "properties": {},
+    "additionalProperties": false
+   },
+   "example": {},
+   "effects": []
+  },
+  "chapter": {
+   "summary": "Create one empty titled chapter/section in the selected source.",
+   "input": {
+    "type": "object",
+    "required": [
+     "title"
+    ],
+    "properties": {
+     "title": {
+      "type": "string"
+     },
+     "expected_root_digest": {
+      "type": "string"
+     }
+    },
+    "additionalProperties": false
+   },
+   "example": {
+    "title": "Methods"
+   },
+   "effects": [
+    "empty source chapter",
+    "reader-plan update"
+   ]
+  },
+  "concept": {
+   "summary": "Read one canonical concept/claim, evidence bindings, and any bounded mathematical record with its source ranges. With source_index, read one recorded source locator; label replaces only that locator's fragment.",
+   "input": {
+    "type": "object",
+    "required": [],
+    "properties": {
+     "node": {
+      "type": "string"
+     },
+     "q": {
+      "type": "string"
+     },
+     "source_index": {
+      "type": "integer"
+     },
+     "label": {
+      "type": "string"
+     }
+    },
+    "additionalProperties": false
+   },
+   "example": {
+    "node": "thm:law"
+   },
+   "examples": {
+    "focused_record": {
+     "node": "thm:law"
+    },
+    "located_source": {
+     "node": "thm:law",
+     "source_index": 0,
+     "label": "eq:law"
+    }
+   },
+   "outputs": [
+    "mutation_revision for a one-node change; content_revision is the same focused identity for a develops snapshot",
+    "revision is the distinct global graph guard; do not substitute a mutation_revision into base_revision",
+    "exact statement, sources, dependencies and bounded descent routes"
+   ],
+   "effects": []
+  },
+  "concept_change": {
+   "summary": "Change one canonical concept graph object using its current revision; set_mathematics stores statement/assumptions/sources/formal targets as incomplete unless derived evidence establishes more.",
+   "input": {
+    "type": "object",
+    "required": [
+     "operation",
+     "node",
+     "base_revision"
+    ],
+    "properties": {
+     "operation": {
+      "type": "string"
+     },
+     "node": {
+      "type": "string"
+     },
+     "base_revision": {
+      "type": "string"
+     },
+     "value": {
+      "type": "object",
+      "required": [],
+      "properties": {},
+      "additionalProperties": true
+     }
+    },
+    "additionalProperties": false
+   },
+   "example": {
+    "operation": "set_mathematics",
+    "node": "claim:finite-size",
+    "base_revision": "sha256:concept",
+    "value": {
+     "statement_tex": "\\mathrm{Var}(X_n)\\to0",
+     "assumptions": [
+      {
+       "text": "finite variance"
+      }
+     ]
+    }
+   },
+   "effects": [
+    "concept graph record"
+   ]
+  },
+  "concept_history": {
+   "summary": "Read exact canonical logical edit history and bounded mechanical/semantic impact for one object without replaying prose or claiming reproof.",
+   "input": {
+    "type": "object",
+    "required": [
+     "node"
+    ],
+    "properties": {
+     "node": {
+      "type": "string"
+     },
+     "record": {
+      "type": "string"
+     },
+     "offset": {
+      "type": "integer"
+     },
+     "limit": {
+      "type": "integer"
+     }
+    },
+    "additionalProperties": false
+   },
+   "example": {
+    "node": "claim:finite-size",
+    "offset": 0,
+    "limit": 12
+   },
+   "effects": [],
+   "preconditions": [
+    "use a canonical logical object id from concept, concept_tree, or logical_plan"
+   ],
+   "outputs": [
+    "exact rewire operations",
+    "before/after authored field comparisons",
+    "mechanically recomputed ancestor membership and grade changes",
+    "dependents requiring semantic review",
+    "current source and reader joins",
+    "explicit historical-basis limits"
+   ],
+   "errors": [
+    "unknown project or logical object",
+    "invalid pagination"
+   ]
+  },
+  "concept_tree": {
+   "summary": "Traverse one bounded containment or dependency page; the root also pages explicit uncontained logical objects.",
+   "input": {
+    "type": "object",
+    "required": [],
+    "properties": {
+     "node": {
+      "type": "string"
+     },
+     "direction": {
+      "enum": [
+       "current",
+       "down",
+       "up",
+       "dependency"
+      ]
+     },
+     "from": {
+      "type": "string"
+     },
+     "offset": {
+      "type": "integer"
+     },
+     "uncontained_offset": {
+      "type": "integer"
+     },
+     "limit": {
+      "type": "integer"
+     }
+    },
+    "additionalProperties": false
+   },
+   "example": {
+    "node": "def:basis",
+    "direction": "dependency",
+    "from": "claim:finite-size"
+   },
+   "effects": []
+  },
+  "conversation_history": {
+   "summary": "Read bounded earlier turns in this logical conversation.",
+   "input": {
+    "type": "object",
+    "required": [],
+    "properties": {
+     "before": {
+      "type": "string"
+     },
+     "limit": {
+      "type": "integer"
+     }
+    },
+    "additionalProperties": false
+   },
+   "example": {
+    "limit": 6
+   },
+   "effects": [],
+   "preconditions": [
+    "This does not search other project conversations. For cross-conversation audit, call author_history with view activity or telemetry and session_id, then read exact returned IDs with view record."
+   ]
+  },
+  "document": {
+   "summary": "Read selected document build and presentation status.",
+   "input": {
+    "type": "object",
+    "required": [],
+    "properties": {},
+    "additionalProperties": false
+   },
+   "example": {},
+   "effects": []
+  },
+  "experiment_run": {
+   "summary": "Start a declared producer with only its declared mode and arguments; then read run_status for completion and result provenance.",
+   "input": {
+    "type": "object",
+    "required": [
+     "producer_id",
+     "mode"
+    ],
+    "properties": {
+     "producer_id": {
+      "type": "string"
+     },
+     "mode": {
+      "enum": [
+       "smoke",
+       "full"
+      ]
+     },
+     "args": {
+      "type": "object",
+      "required": [],
+      "properties": {},
+      "additionalProperties": true
+     }
+    },
+    "additionalProperties": false
+   },
+   "example": {
+    "producer_id": "finite-size",
+    "mode": "smoke",
+    "args": {
+     "n": 16
+    }
+   },
+   "effects": [
+    "run receipt",
+    "declared result path"
+   ],
+   "preconditions": [
+    "read the declared producer",
+    "mode and each argument match that declaration"
+   ],
+   "outputs": [
+    "run identity and accepted request",
+    "run_status read route for exit/outcome and pinned dependency receipt"
+   ],
+   "errors": [
+    "unknown producer",
+    "undeclared mode or argument",
+    "dependency currentness failure"
+   ]
+  },
+  "export_pdf": {
+   "summary": "Export the current fresh selected-source PDF by default; style-preview export is explicit.",
+   "input": {
+    "type": "object",
+    "required": [],
+    "properties": {
+     "mode": {
+      "enum": [
+       "selected-source",
+       "style-preview"
+      ]
+     }
+    },
+    "additionalProperties": false
+   },
+   "example": {
+    "mode": "selected-source"
+   },
+   "effects": [
+    "versioned PDF export"
+   ],
+   "preconditions": [
+    "selected-source requires the current selected edition build to be done, successful and fresh; its built PDF must match the selected root",
+    "style-preview explicitly exports the current generated style preview"
+   ],
+   "outputs": [
+    "exported file, source/build identity and PDF digest from the selected mode"
+   ]
+  },
+  "framing": {
+   "summary": "Save purpose, audience, question and form at the current revision.",
+   "input": {
+    "type": "object",
+    "required": [
+     "base_revision"
+    ],
+    "properties": {
+     "purpose": {
+      "type": "string"
+     },
+     "audience": {
+      "type": "string"
+     },
+     "question": {
+      "type": "string"
+     },
+     "form": {
+      "type": "string"
+     },
+     "base_revision": {
+      "type": "integer"
+     }
+    },
+    "additionalProperties": false
+   },
+   "example": {
+    "purpose": "Explain the result.",
+    "base_revision": 0
+   },
+   "effects": [
+    "project framing"
+   ]
+  },
+  "help": {
+   "summary": "Read the exact contract for one deployed operation.",
+   "input": {
+    "type": "object",
+    "required": [],
+    "properties": {
+     "operation": {
+      "type": "string"
+     }
+    },
+    "additionalProperties": false
+   },
+   "example": {
+    "operation": "experiment_run"
+   },
+   "effects": []
+  },
+  "literature_bind": {
+   "summary": "Bind an imported/attached source to a canonical logical object with relation, rationale and honest authored reading/passage status; never independently verifies a claim.",
+   "input": {
+    "type": "object",
+    "required": [
+     "key",
+     "claim_id",
+     "relation",
+     "rationale"
+    ],
+    "properties": {
+     "key": {
+      "type": "string"
+     },
+     "claim_id": {
+      "type": "string"
+     },
+     "relation": {
+      "type": "string",
+      "enum": [
+       "supports",
+       "contradicts",
+       "background",
+       "method",
+       "extends"
+      ]
+     },
+     "rationale": {
+      "type": "string"
+     },
+     "claim_revision": {
+      "type": "string"
+     },
+     "reading_id": {
+      "type": "string"
+     },
+     "reading_status": {
+      "type": "string",
+      "enum": [
+       "unread",
+       "metadata-only",
+       "partial",
+       "read"
+      ]
+     },
+     "evidence": {
+      "type": "object",
+      "required": [
+       "locator"
+      ],
+      "properties": {
+       "locator": {
+        "type": "string"
+       },
+       "excerpt": {
+        "type": "string"
+       },
+       "note": {
+        "type": "string"
+       }
+      },
+      "additionalProperties": false
+     }
+    },
+    "additionalProperties": false
+   },
+   "example": {
+    "key": "doi:10.1147/rd.53.0183",
+    "claim_id": "claim:erasure",
+    "relation": "background",
+    "rationale": "Historical treatment of irreversible computation",
+    "reading_status": "partial",
+    "evidence": {
+     "locator": "page 183, introduction",
+     "note": "Read this passage; broader entailment remains unverified."
+    }
+   },
+   "preconditions": [
+    "One canonical key + claim_id has one current binding. Repeating this pair replaces its rationale, selected reading receipt and evidence; it does not append another passage. Bind a distinct claim separately and inspect literature_uses afterward.",
+    "read source passages before declaring partial/read or supplying evidence",
+    "pass claim_revision from current source_support.meaning_revision when supplied; later changes to scientific statement/premises stale the binding, reader placement does not",
+    "supports/contradicts/method/extends require a current reference_text reading receipt (reading_id or latest observation), partial/read status and located evidence; background may remain metadata-only",
+    "whole-source read requires observed character coverage; otherwise use partial",
+    "source is imported/attached or an existing canonical citation; claim_id exists in logical_plan",
+    "key may be an unambiguous registered citekey/DOI alias; binding reuses its canonical association and citekey, including proven historical aliases"
+   ],
+   "effects": [
+    "creates/reuses canonical citation node and typed claim-source edge through canonical owner",
+    "updates existing reference metadata with selected passage receipt and recoverable binding state",
+    "materializes pending selected bibliography when needed"
+   ],
+   "outputs": [
+    "association, canonical_source, claim and joined support qualification",
+    "canonical record IDs and BOUND/PENDING_CANONICAL state",
+    "owned_changes exact before/intended/observed owner receipt; action_receipt carries bounded owner_evidence file and record-revision identities for lazy History verification"
+   ],
+   "recoverable_errors": [
+    "404 source or claim missing; inspect references_attached/logical_plan",
+    "409 source changed or reading absent; read reference_text",
+    "PENDING_CANONICAL: repeat the same key+claim to repair the joined operation without duplicate nodes",
+    "422 excerpt outside observed passage or whole-source coverage incomplete"
+   ]
+  },
+  "literature_discover": {
+   "summary": "Discover existing shared-corpus/reference_corpus candidates first, then public Crossref metadata; returns local_candidates, items and explicit public availability. None are full-text evidence merely by appearing in search.",
+   "input": {
+    "type": "object",
+    "required": [
+     "q"
+    ],
+    "properties": {
+     "q": {
+      "type": "string"
+     },
+     "limit": {
+      "type": "integer"
+     }
+    },
+    "additionalProperties": false
+   },
+   "example": {
+    "q": "Landauer computation",
+    "limit": 5
+   },
+   "effects": [],
+   "outputs": [
+    "navigation metadata only; public availability, ordering and transient provider errors are not scientific dependency identities"
+   ],
+   "preconditions": [
+    "Import or bind a selected candidate, then inspect its exact source with reference_text/repository read before using it as evidence."
+   ],
+   "recovery": "A repeated discovery query records the query identity, not a volatile public-search snapshot. Scientific source changes remain guarded by the later exact source read."
+  },
+  "literature_import": {
+   "summary": "Import verified DOI metadata or explicitly sourced local/unpublished metadata into the project library and selected bibliography; duplicate identities reuse their citation key.",
+   "input": {
+    "type": "object",
+    "required": [],
+    "properties": {
+     "doi": {
+      "type": "string"
+     },
+     "citekey": {
+      "type": "string"
+     },
+     "canonical_id": {
+      "type": "string"
+     },
+     "metadata": {
+      "type": "object",
+      "required": [
+       "title"
+      ],
+      "properties": {
+       "title": {
+        "type": "string"
+       },
+       "creators": {
+        "type": "array",
+        "items": {
+         "type": "string"
+        }
+       },
+       "year": {
+        "type": "string"
+       },
+       "item_type": {
+        "type": "string",
+        "enum": [
+         "journalArticle",
+         "book",
+         "bookSection",
+         "conferencePaper",
+         "thesis",
+         "preprint",
+         "unpublished",
+         "webpage",
+         "misc"
+        ]
+       },
+       "publication_title": {
+        "type": "string"
+       },
+       "volume": {
+        "type": "string"
+       },
+       "issue": {
+        "type": "string"
+       },
+       "pages": {
+        "type": "string"
+       },
+       "publisher": {
+        "type": "string"
+       },
+       "place": {
+        "type": "string"
+       },
+       "isbn": {
+        "type": "string"
+       },
+       "url": {
+        "type": "string"
+       }
+      },
+      "additionalProperties": false
+     },
+     "provenance": {
+      "type": "object",
+      "required": [
+       "description"
+      ],
+      "properties": {
+       "description": {
+        "type": "string"
+       },
+       "path": {
+        "type": "string"
+       },
+       "url": {
+        "type": "string"
+       }
+      },
+      "additionalProperties": false
+     }
+    },
+    "additionalProperties": false
+   },
+   "example": {
+    "metadata": {
+     "title": "Unpublished methods notes",
+     "creators": [
+      "A. Author"
+     ],
+     "year": "2026",
+     "item_type": "unpublished"
+    },
+    "provenance": {
+     "description": "Author-supplied local manuscript",
+     "path": "notes/methods.tex"
+    },
+    "citekey": "AuthorMethods2026"
+   },
+   "preconditions": [
+    "supply doi OR metadata plus provenance; DOI imports re-verify metadata",
+    "source metadata can be saved before bibliography setup; an editable selected manuscript is needed only when materializing citations",
+    "local provenance path, when supplied, exists; relative paths resolve against repository root"
+   ],
+   "effects": [
+    "existing project references.json association",
+    "selected bibliography entry"
+   ],
+   "outputs": [
+    "association.key, citekey, metadata and source provenance",
+    "reused when an existing identity was retained"
+   ],
+   "recoverable_errors": [
+    "422 missing provenance or DOI in local metadata",
+    "409 citation/identity collision",
+    "404 project/source/DOI missing",
+    "502 upstream unavailable"
+   ]
+  },
+  "literature_lookup": {
+   "summary": "Verify a DOI against official Crossref metadata before import; metadata is not claim evidence.",
+   "input": {
+    "type": "object",
+    "required": [
+     "doi"
+    ],
+    "properties": {
+     "doi": {
+      "type": "string"
+     }
+    },
+    "additionalProperties": false
+   },
+   "example": {
+    "doi": "10.1147/rd.53.0183"
+   },
+   "effects": [],
+   "outputs": [
+    "item with stable doi: key and provenance",
+    "verified_doi",
+    "metadata_only"
+   ],
+   "recoverable_errors": [
+    "422 invalid DOI or incomplete record",
+    "404 unregistered DOI",
+    "502 upstream unavailable; retry"
+   ]
+  },
+  "literature_scope": {
+   "summary": "Inspect a canonical node/subtree and its prerequisite closure: current sources, passage qualification, unsupported and not-yet-cited claims. Use existing task/task_status for a batch acquisition process.",
+   "input": {
+    "type": "object",
+    "required": [],
+    "properties": {
+     "node": {
+      "type": "string"
+     },
+     "task_id": {
+      "type": "string"
+     },
+     "offset": {
+      "type": "integer"
+     },
+     "limit": {
+      "type": "integer"
+     }
+    },
+    "additionalProperties": false
+   },
+   "example": {
+    "node": "thm:law"
+   },
+   "effects": [],
+   "outputs": [
+    "scope revision, claims with canonical source_support, existing citation-direction intent shapes",
+    "gaps and ready_for_completion",
+    "selected source revision and pagination.next_offset"
+   ],
+   "preconditions": [
+    "node/task_id names the intended scope; omitting both inspects the project",
+    "follow next_offset to inspect all claims"
+   ],
+   "recoverable_errors": [
+    "422 unknown node/task"
+   ]
+  },
+  "literature_uses": {
+   "summary": "Read exact selected manuscript citation spans, claim→source/source→claim joins, evidence currentness and unassociated citations.",
+   "input": {
+    "type": "object",
+    "required": [],
+    "properties": {
+     "key": {
+      "type": "string"
+     },
+     "claim_id": {
+      "type": "string"
+     },
+     "offset": {
+      "type": "integer"
+     },
+     "limit": {
+      "type": "integer"
+     },
+     "citation_offset": {
+      "type": "integer"
+     },
+     "citation_limit": {
+      "type": "integer"
+     }
+    },
+    "additionalProperties": false
+   },
+   "example": {},
+   "effects": [],
+   "outputs": [
+    "uses with source and evidence currentness",
+    "claim_sources/source_claims for returned associations",
+    "unassociated_uses",
+    "pagination.next_offset and next_citation_offset; follow both to exhaust results"
+   ],
+   "preconditions": [
+    "default 100 association rows and 200 citation spans; limits capped at 200 and 500"
+   ]
+  },
+  "logical_plan": {
+   "summary": "Read one claim's bounded premises/evidence attention, or page the complete canonical identity catalogue without copying every scientific body.",
+   "input": {
+    "type": "object",
+    "required": [],
+    "properties": {
+     "node": {
+      "type": "string"
+     },
+     "view": {
+      "enum": [
+       "attention",
+       "catalog"
+      ]
+     },
+     "q": {
+      "type": "string"
+     },
+     "offset": {
+      "type": "integer"
+     },
+     "limit": {
+      "type": "integer"
+     }
+    },
+    "additionalProperties": false
+   },
+   "example": {
+    "node": "claim:finite-size"
+   },
+   "examples": {
+    "attention": {
+     "node": "claim:finite-size"
+    },
+    "catalog": {
+     "view": "catalog",
+     "offset": 0,
+     "limit": 80
+    }
+   },
+   "effects": [],
+   "outputs": [
+    "attention: selected object plus immediate logical objects and complete_inventory read handle",
+    "catalog: bounded identity items, total, next_offset/next_read and exact item descent routes",
+    "logical objects with distinct derivational grade and containment_grade, parent and members",
+    "typed relations and source_support qualification/gaps"
+   ],
+   "preconditions": [
+    "node selects scientific attention; view catalog pages the complete logical inventory",
+    "follow next_read until next_offset is null when complete inventory is required"
+   ]
+  },
+  "logical_plan_change": {
+   "summary": "Change one canonical logical object using the current logical-plan revision.",
+   "input": {
+    "type": "object",
+    "required": [
+     "base_revision",
+     "operation"
+    ],
+    "properties": {
+     "base_revision": {
+      "type": "string"
+     },
+     "operation": {
+      "type": "object",
+      "required": [
+       "kind"
+      ],
+      "properties": {
+       "kind": {
+        "type": "string"
+       }
+      },
+      "additionalProperties": false
+     }
+    },
+    "additionalProperties": false
+   },
+   "example": {
+    "base_revision": "sha256:logical",
+    "operation": {
+     "kind": "connect"
+    }
+   },
+   "effects": [
+    "canonical logical-plan record"
+   ]
+  },
+  "note": {
+   "summary": "Save a durable note or anchored review finding without altering manuscript source. Agent project notes are history, not author instructions.",
+   "input": {
+    "type": "object",
+    "required": [
+     "text",
+     "kind",
+     "scope"
+    ],
+    "properties": {
+     "text": {
+      "type": "string"
+     },
+     "kind": {
+      "enum": [
+       "note",
+       "factual",
+       "style",
+       "request"
+      ]
+     },
+     "scope": {
+      "enum": [
+       "project",
+       "passage"
+      ]
+     },
+     "anchor": {
+      "type": "object",
+      "required": [],
+      "properties": {},
+      "additionalProperties": true
+     },
+     "reply_to": {
+      "type": "string"
+     },
+     "supersedes": {
+      "type": "string"
+     }
+    },
+    "additionalProperties": false
+   },
+   "example": {
+    "text": "Interpret this result cautiously.",
+    "kind": "factual",
+    "scope": "passage",
+    "anchor": {
+     "file": "chapters/result.tex"
+    }
+   },
+   "effects": [
+    "durable correction/review history; only human instructions or anchored passage findings enter active writing context"
+   ],
+   "preconditions": [
+    "Agent progress and handoff prose belongs in store_artifact or an existing project task; an unanchored project note remains readable history and never becomes a global author ruling",
+    "A model review finding that must constrain writing uses scope passage plus an exact file/section/node anchor",
+    "reply_to links discussion without retiring its parent and inherits that parent's scope/anchor. A human reply is a new active instruction where the parent applies; an agent project-progress reply remains history by actor/scope. supersedes explicitly replaces an obsolete instruction. Never send both."
+   ]
+  },
+  "note_status": {
+   "summary": "Resolve, dismiss, or reopen one existing author/reviewer note while retaining it in review history.",
+   "input": {
+    "type": "object",
+    "required": [
+     "id",
+     "status"
+    ],
+    "properties": {
+     "id": {
+      "type": "string"
+     },
+     "status": {
+      "enum": [
+       "open",
+       "resolved",
+       "dismissed"
+      ]
+     },
+     "base_revision": {
+      "type": "integer"
+     },
+     "note": {
+      "type": "string"
+     }
+    },
+    "additionalProperties": false
+   },
+   "example": {
+    "id": "AC-current",
+    "status": "resolved",
+    "base_revision": 4,
+    "note": "Addressed in the revised explanation."
+   },
+   "effects": [
+    "canonical correction status",
+    "linked feedback status"
+   ],
+   "preconditions": [
+    "read author_history to obtain the correction id and current authoring revision"
+   ],
+   "outputs": [
+    "updated correction, status and authoring revision"
+   ],
+   "errors": [
+    "unknown correction",
+    "revision conflict",
+    "applied edit history is not unresolved work"
+   ]
+  },
+  "pipeline": {
+   "summary": "Read current project development stages, outputs and gaps. Historical context staleness is an explicit audit view so ordinary workspace reads do not replay all saved contexts.",
+   "input": {
+    "type": "object",
+    "required": [],
+    "properties": {
+     "view": {
+      "enum": [
+       "summary",
+       "audit"
+      ]
+     }
+    },
+    "additionalProperties": false
+   },
+   "example": {
+    "view": "summary"
+   },
+   "effects": [],
+   "outputs": [
+    "summary includes actionable proposal review state and a historical_context_audit handle",
+    "audit additionally evaluates exact saved context staleness"
+   ]
+  },
+  "project": {
+   "summary": "Read project purpose, form, tasks and open work.",
+   "input": {
+    "type": "object",
+    "required": [],
+    "properties": {},
+    "additionalProperties": false
+   },
+   "example": {},
+   "effects": []
+  },
+  "project_guidance": {
+   "summary": "Discover configured project guides by role, or read one exact instruction, handoff, or background document on demand.",
+   "input": {
+    "type": "object",
+    "required": [],
+    "properties": {
+     "path": {
+      "type": "string"
+     }
+    },
+    "additionalProperties": false
+   },
+   "example": {
+    "path": "CURRENT.md"
+   },
+   "effects": [],
+   "outputs": [
+    "all configured path/role/digest identities",
+    "exact body only when path is supplied"
+   ]
+  },
+  "project_guidance_change": {
+   "summary": "Configure guide roles or amend one configured project guide with exact revision/content guards.",
+   "input": {
+    "type": "object",
+    "required": [
+     "operation",
+     "expected_catalog_revision"
+    ],
+    "properties": {
+     "operation": {
+      "enum": [
+       "configure",
+       "write"
+      ]
+     },
+     "expected_catalog_revision": {
+      "type": "string"
+     },
+     "guides": {
+      "type": "array",
+      "maxItems": 4,
+      "items": {
+       "type": "object",
+       "required": [
+        "path",
+        "role"
+       ],
+       "properties": {
+        "path": {
+         "type": "string"
+        },
+        "role": {
+         "enum": [
+          "instructions",
+          "handoff",
+          "background"
+         ]
+        }
+       },
+       "additionalProperties": false
+      }
+     },
+     "path": {
+      "type": "string"
+     },
+     "before": {
+      "type": "string"
+     },
+     "content": {
+      "type": "string"
+     }
+    },
+    "additionalProperties": false
+   },
+   "example": {
+    "operation": "configure",
+    "expected_catalog_revision": "sha256:current",
+    "guides": [
+     {
+      "path": "WORKING_GUIDE.md",
+      "role": "instructions"
+     },
+     {
+      "path": "CURRENT.md",
+      "role": "handoff"
+     }
+    ]
+   },
+   "effects": [
+    "manuscript specification guide configuration or one configured Markdown guide"
+   ],
+   "preconditions": [
+    "read project_guidance first",
+    "write requires exact prior body from project_guidance {path}"
+   ],
+   "errors": [
+    "catalog revision conflict",
+    "body changed",
+    "unconfigured or unsafe path"
+   ]
+  },
+  "project_metadata": {
+   "summary": "Read the selected project's stable ID, display title and exact metadata revision. The display title is separate from the manuscript title and central research question.",
+   "input": {
+    "type": "object",
+    "required": [],
+    "properties": {},
+    "additionalProperties": false
+   },
+   "example": {},
+   "effects": [],
+   "outputs": [
+    "project, title, revision and explicit display-title scope"
+   ]
+  },
+  "project_metadata_change": {
+   "summary": "Change only the project library/display title at an exact metadata revision. Stable project ID, source paths, manuscript title and research question remain unchanged.",
+   "input": {
+    "type": "object",
+    "required": [
+     "title",
+     "expected_revision"
+    ],
+    "properties": {
+     "title": {
+      "type": "string"
+     },
+     "expected_revision": {
+      "type": "string"
+     },
+     "reason": {
+      "type": "string"
+     }
+    },
+    "additionalProperties": false
+   },
+   "example": {
+    "title": "Foundations of Synthetics",
+    "expected_revision": "sha256:current-project-row",
+    "reason": "Use the author-approved display title."
+   },
+   "preconditions": [
+    "Read project_metadata and copy its exact revision.",
+    "Use framing for the central research question and source/document owners for the manuscript title; this action changes neither."
+   ],
+   "outputs": [
+    "new project metadata revision, unchanged flag, exact registry owner receipt and record ID"
+   ],
+   "effects": [
+    "project display metadata only"
+   ]
+  },
+  "proof_check": {
+   "summary": "Check a Lean declaration bound to one exact canonical concept/source revision OR an existing research result revision; no dummy numeric result is required.",
+   "input": {
+    "type": "object",
+    "required": [
+     "file",
+     "declaration"
+    ],
+    "properties": {
+     "file": {
+      "type": "string"
+     },
+     "declaration": {
+      "type": "string"
+     },
+     "concept_id": {
+      "type": "string"
+     },
+     "concept_revision": {
+      "type": "string"
+     },
+     "source_revision": {
+      "type": "string"
+     },
+     "result_id": {
+      "type": "string"
+     },
+     "result_revision": {
+      "type": "string"
+     }
+    },
+    "additionalProperties": false
+   },
+   "example": {
+    "file": "formal/Residue.lean",
+    "declaration": "residue_composition",
+    "concept_id": "thm:residue-composition",
+    "concept_revision": "copy target.revision from proof_targets",
+    "source_revision": "copy target.source_revision from proof_targets"
+   },
+   "effects": [
+    "formal check receipt in the existing formal receipt store"
+   ],
+   "preconditions": [
+    "supply exactly one binding: concept_id/concept_revision/source_revision from proof_targets, OR result_id/result_revision from research",
+    "read the precise intended statement and assumptions",
+    "read proofs.setup for the exact selected-project paths, manifest schema, runtime candidates and setup requirements; a new project does not inherit another project's formal configuration",
+    "formal manifest pins toolchain, library manifest, project root and approved axiom policy",
+    "do not substitute a toy result when a concept is selected; ordinary authorized formal work does not require inventing a numerical record"
+   ],
+   "outputs": [
+    "receipt.concept or receipt.result with exact identities",
+    "proof_status and axioms_audit",
+    "informal_alignment remains UNASSESSED"
+   ],
+   "errors": [
+    "stale concept/source/result revision",
+    "missing precise statement or unreadable source",
+    "untracked research coverage; inspect research_reconcile",
+    "unknown declaration, forbidden axioms or checker failure"
+   ]
+  },
+  "proof_targets": {
+   "summary": "Read canonical mathematical concepts with exact content/source revisions for native formal binding; inspect the intended object rather than substituting an available specimen.",
+   "input": {
+    "type": "object",
+    "required": [],
+    "properties": {
+     "node": {
+      "type": "string"
+     },
+     "offset": {
+      "type": "integer"
+     },
+     "limit": {
+      "type": "integer"
+     }
+    },
+    "additionalProperties": false
+   },
+   "example": {
+    "node": "thm:residue-composition"
+   },
+   "effects": [],
+   "outputs": [
+    "targets: id, revision, source_revision, statement_tex, statement_origin/origin_posture, domain, assumptions, source_locations, qualification/documentation_status, binding_ready and binding_reason",
+    "pagination.next_offset"
+   ],
+   "preconditions": [
+    "selected node is the author's intended target; if none is selected, identify that target before checking"
+   ],
+   "errors": [
+    "unknown or nonmathematical node"
+   ]
+  },
+  "proofs": {
+   "summary": "Read formal receipts/currentness and the exact project-specific setup contract. This read never launches Lean or installs dependencies; formal checking remains separate from informal alignment.",
+   "input": {
+    "type": "object",
+    "required": [],
+    "properties": {},
+    "additionalProperties": false
+   },
+   "example": {},
+   "effects": [],
+   "outputs": [
+    "latest_attempt, last_current_checked_receipt and reproduction_status (LATEST_ATTEMPT_UNAVAILABLE, COULD_NOT_REPRODUCE or CURRENT)",
+    "setup: base_directory, artifact_scope, manifest_path/template, installed toolchain candidates and requirements",
+    "receipts with current source/claim/dependency pins; runtime_check NOT_RUN_ON_READ"
+   ],
+   "recovery": "If UNCONFIGURED, use the returned setup contract and ordinary store_artifact/native project work, then read proof_targets and run proof_check for the intended scientific claim."
+  },
+  "proposal_supersede": {
+   "summary": "Retire one complete obsolete proposal through a named later accepted application. Records exact lineage only; never reads or changes manuscript source.",
+   "input": {
+    "type": "object",
+    "required": [
+     "target_turn_id",
+     "application_id",
+     "reason"
+    ],
+    "properties": {
+     "target_turn_id": {
+      "type": "string"
+     },
+     "application_id": {
+      "type": "string"
+     },
+     "reason": {
+      "type": "string"
+     }
+    },
+    "additionalProperties": false
+   },
+   "example": {
+    "target_turn_id": "WT-original",
+    "application_id": "WA-later-accepted",
+    "reason": "The later accepted revision refines and replaces this complete older proposal."
+   },
+   "preconditions": [
+    "The target turn has one complete saved proposal in this selected project.",
+    "application_id names a complete application from a different later turn in the same manuscript edition.",
+    "That application covers every original proposal edit at the same recorded file/span or source anchor; each effect is either exact or an explicit refinement from the same preimage.",
+    "Use this only to record known lineage after a later revision was accepted. It cannot apply, replace, merge, recover or bless current source bytes."
+   ],
+   "outputs": [
+    "SUPERSEDED status, target/application/application-turn identities, exact/refined effect counts, decision IDs and remaining=0",
+    "idempotent reused=true on the same completed lineage"
+   ],
+   "effects": [
+    "proposal decision history; every older decision and application remains inspectable"
+   ],
+   "errors": [
+    "partial/different-edition/same-turn application",
+    "missing or ambiguous recorded occurrence",
+    "application does not cover the complete old proposal"
+   ]
+  },
+  "propose_revision": {
+   "summary": "Save exact source-addressed edits for later review without applying them. For new scientific work, declare placed develops snapshots and current bound evidence; copyedits need neither.",
+   "input": {
+    "type": "object",
+    "required": [
+     "edits"
+    ],
+    "properties": {
+     "answer": {
+      "type": "string"
+     },
+     "edits": {
+      "type": "array",
+      "items": {
+       "type": "object",
+       "required": [
+        "file",
+        "line_start",
+        "line_end",
+        "before",
+        "after"
+       ],
+       "properties": {
+        "file": {
+         "type": "string"
+        },
+        "line_start": {
+         "type": "integer"
+        },
+        "line_end": {
+         "type": "integer"
+        },
+        "before": {
+         "type": "string"
+        },
+        "after": {
+         "type": "string"
+        },
+        "reason": {
+         "type": "string"
+        },
+        "develops": {
+         "type": "array",
+         "items": {
+          "type": "object",
+          "required": [
+           "id",
+           "content_revision"
+          ],
+          "properties": {
+           "id": {
+            "type": "string"
+           },
+           "content_revision": {
+            "type": "string"
+           }
+          },
+          "additionalProperties": false
+         }
+        },
+        "evidence_refs": {
+         "type": "array",
+         "items": {
+          "type": "object",
+          "required": [
+           "id",
+           "revision"
+          ],
+          "properties": {
+           "id": {
+            "type": "string"
+           },
+           "revision": {
+            "type": "string"
+           }
+          },
+          "additionalProperties": false
+         }
+        },
+        "source_anchor": {
+         "type": "object",
+         "required": [],
+         "properties": {
+          "sha256": {
+           "type": "string"
+          },
+          "line_start": {
+           "type": "integer"
+          },
+          "line_end": {
+           "type": "integer"
+          },
+          "prefix": {
+           "type": "array",
+           "items": {
+            "type": "string"
+           }
+          },
+          "suffix": {
+           "type": "array",
+           "items": {
+            "type": "string"
+           }
+          },
+          "unique": {
+           "type": "boolean"
+          },
+          "at_start": {
+           "type": "boolean"
+          },
+          "at_end": {
+           "type": "boolean"
+          }
+         },
+         "additionalProperties": false
+        }
+       },
+       "additionalProperties": false
+      }
+     }
+    },
+    "additionalProperties": false
+   },
+   "example": {
+    "edits": [
+     {
+      "file": "chapters/method.tex",
+      "line_start": 12,
+      "line_end": 12,
+      "before": "Old.",
+      "after": "New.",
+      "reason": "clarity",
+      "develops": [
+       {
+        "id": "claim:method",
+        "content_revision": "sha256:node"
+       }
+      ],
+      "evidence_refs": [
+       {
+        "id": "result:method",
+        "revision": "sha256:result"
+       }
+      ]
+     }
+    ]
+   },
+   "effects": [
+    "saved revision proposal"
+   ]
+  },
+  "read_artifact": {
+   "summary": "Read a bounded UTF-8 byte chunk of one exact project/manuscript research artifact, by scoped path or a canonical ART-* store receipt.",
+   "input": {
+    "oneOf": [
+     {
+      "type": "object",
+      "required": [
+       "path"
+      ],
+      "properties": {
+       "path": {
+        "type": "string"
+       },
+       "scope": {
+        "enum": [
+         "project",
+         "manuscript"
+        ]
+       },
+       "offset": {
+        "type": "integer"
+       },
+       "limit": {
+        "type": "integer"
+       }
+      },
+      "additionalProperties": false
+     },
+     {
+      "type": "object",
+      "required": [
+       "id"
+      ],
+      "properties": {
+       "id": {
+        "type": "string"
+       },
+       "offset": {
+        "type": "integer"
+       },
+       "limit": {
+        "type": "integer"
+       }
+      },
+      "additionalProperties": false
+     }
+    ]
+   },
+   "example": {
+    "path": "research/interpretation.md",
+    "offset": 0,
+    "limit": 16000
+   },
+   "examples": {
+    "by_path": {
+     "path": "research/interpretation.md"
+    },
+    "by_receipt": {
+     "id": "ART-copy-exact-returned-id"
+    }
+   },
+   "preconditions": [
+    "Supply exactly one of path or an exact returned ART-* id; never derive a path from an id.",
+    "An ART-* id locates its current file; recorded_revision identifies that store receipt while revision/current_revision identify the current bytes. Historical bytes remain in author_history.",
+    "Text artifacts are at most 2 MB; use Research or bounded repository reads for larger data. offset is a returned UTF-8 byte boundary; limit defaults to 16000 bytes and is at most 40000. complete means this chunk reaches the end; offset and size_bytes distinguish a whole-file read."
+   ],
+   "outputs": [
+    "content chunk, offset, next_offset and complete",
+    "revision/current_revision/sha256 of the complete current UTF-8 file, even when content is truncated; recorded_revision is separate on id reads",
+    "scoped artifact_path plus exact read_handle and guarded update_handle"
+   ],
+   "effects": []
+  },
+  "reference": {
+   "summary": "Read one attached reference metadata record.",
+   "input": {
+    "type": "object",
+    "required": [
+     "key"
+    ],
+    "properties": {
+     "key": {
+      "type": "string"
+     }
+    },
+    "additionalProperties": false
+   },
+   "example": {
+    "key": "Landauer1961"
+   },
+   "effects": []
+  },
+  "reference_attach": {
+   "summary": "Attach a Zotero item to this project and add or reuse its BibTeX entry.",
+   "input": {
+    "type": "object",
+    "required": [
+     "key"
+    ],
+    "properties": {
+     "key": {
+      "type": "string"
+     },
+     "citekey": {
+      "type": "string"
+     },
+     "claim_id": {
+      "type": "string"
+     },
+     "note": {
+      "type": "string"
+     }
+    },
+    "additionalProperties": false
+   },
+   "example": {
+    "key": "ABCDEFGH",
+    "claim_id": "claim:method",
+    "note": "Supports the historical comparison."
+   },
+   "effects": [
+    "bibliography entry",
+    "reference association"
+   ]
+  },
+  "reference_fetch": {
+   "summary": "Acquire a bounded accessible PDF/text source for an existing reference identity; acquisition does not mark it read or qualified.",
+   "input": {
+    "type": "object",
+    "required": [
+     "key"
+    ],
+    "properties": {
+     "key": {
+      "type": "string"
+     },
+     "url": {
+      "type": "string"
+     }
+    },
+    "additionalProperties": false
+   },
+   "example": {
+    "key": "doi:10.1234/source",
+    "url": "https://publisher.example/open-paper.pdf"
+   },
+   "effects": [
+    "hash-addressed project source artifact",
+    "source_text acquisition provenance on existing reference metadata"
+   ],
+   "outputs": [
+    "source path/hash/URL/media type and ACQUIRED_UNREAD qualification"
+   ],
+   "preconditions": [
+    "import/choose an existing reference identity",
+    "provide the exact accessible public full-text URL unless verified metadata supplies exactly one",
+    "16 MB maximum; HTTP(S) only; login/paywall failures remain explicit"
+   ],
+   "recoverable_errors": [
+    "422 ambiguous URL, unsupported media or size limit",
+    "502/404 unavailable source; try an accessible version or explicit local source"
+   ]
+  },
+  "reference_refresh": {
+   "summary": "Check every attached reference for changed source metadata.",
+   "input": {
+    "type": "object",
+    "required": [],
+    "properties": {},
+    "additionalProperties": false
+   },
+   "example": {},
+   "effects": [
+    "reference association states"
+   ]
+  },
+  "reference_source": {
+   "summary": "Inspect available local full text or PDF for a reference identity; a PDF URL is returned only for its authorized local attachment or imported provenance path.",
+   "input": {
+    "type": "object",
+    "required": [
+     "key"
+    ],
+    "properties": {
+     "key": {
+      "type": "string"
+     },
+     "source_index": {
+      "type": "integer"
+     }
+    },
+    "additionalProperties": false
+   },
+   "example": {
+    "key": "doi:10.1147/rd.53.0183"
+   },
+   "effects": [],
+   "outputs": [
+    "key (canonical project identity), requested_key and citekey",
+    "available, kind, source_state, currentness, sha256",
+    "pdf_url/text_url when locally available",
+    "publisher_url or honest metadata-only reason"
+   ],
+   "preconditions": [
+    "key accepts the canonical project key or an unambiguous registered citekey/DOI alias; reuse the returned canonical key for later operations",
+    "no arbitrary filesystem path is accepted"
+   ],
+   "recoverable_errors": [
+    "422 unknown reference or unavailable source path",
+    "404 no local PDF for binary URL"
+   ]
+  },
+  "reference_text": {
+   "summary": "Read a bounded original source passage and retain its exact hash/range observation in existing reference metadata. This does not assert comprehension or entailment.",
+   "input": {
+    "type": "object",
+    "required": [
+     "key"
+    ],
+    "properties": {
+     "key": {
+      "type": "string"
+     },
+     "offset": {
+      "type": "integer"
+     },
+     "limit": {
+      "type": "integer"
+     },
+     "source_index": {
+      "type": "integer"
+     }
+    },
+    "additionalProperties": false
+   },
+   "example": {
+    "key": "doi:10.1234/source",
+    "offset": 0,
+    "limit": 12000
+   },
+   "effects": [
+    "passage observation receipt; no scientific status promotion"
+   ],
+   "outputs": [
+    "key (canonical identity), requested_key, citekey, original text and source hash",
+    "reading_receipt.id, reference_key, locator and exact bounds",
+    "next_offset; follow for whole-source coverage",
+    "honest metadata-only when full text is absent"
+   ],
+   "preconditions": [
+    "canonical key or unambiguous registered citekey/DOI alias; observations persist only under the canonical key",
+    "limits 1000–48000 characters; source_index selects a canonical source handle"
+   ],
+   "recoverable_errors": [
+    "source unavailable or changed during reading; retry or reference_fetch accessible full text"
+   ]
+  },
+  "reference_update": {
+   "summary": "Adopt current provider metadata or local source revision into existing BibTeX entries, preserving authored claim links; previous reading evidence becomes stale.",
+   "input": {
+    "type": "object",
+    "required": [
+     "key"
+    ],
+    "properties": {
+     "key": {
+      "type": "string"
+     },
+     "metadata": {
+      "type": "object",
+      "required": [],
+      "properties": {
+       "title": {
+        "type": "string"
+       },
+       "creators": {
+        "type": "array",
+        "items": {
+         "type": "string"
+        }
+       },
+       "year": {
+        "type": "string"
+       },
+       "item_type": {
+        "type": "string"
+       },
+       "publication_title": {
+        "type": "string"
+       },
+       "publisher": {
+        "type": "string"
+       },
+       "volume": {
+        "type": "string"
+       },
+       "issue": {
+        "type": "string"
+       },
+       "pages": {
+        "type": "string"
+       },
+       "place": {
+        "type": "string"
+       },
+       "isbn": {
+        "type": "string"
+       },
+       "url": {
+        "type": "string"
+       }
+      },
+      "additionalProperties": false
+     }
+    },
+    "additionalProperties": false
+   },
+   "example": {
+    "key": "ABCDEFGH"
+   },
+   "preconditions": [
+    "reference is attached to selected bibliography",
+    "optional metadata edits apply only to local: sources; DOI/Zotero metadata is read from its provider"
+   ],
+   "outputs": [
+    "key, updated count, unchanged citekeys, revision, state"
+   ],
+   "recoverable_errors": [
+    "404 reference missing",
+    "409 bibliography identity changed; inspect and reconcile",
+    "422 metadata edit attempted on provider-owned source"
+   ],
+   "effects": [
+    "bibliography entry",
+    "reference association"
+   ]
+  },
+  "references": {
+   "summary": "Search attached project references.",
+   "input": {
+    "type": "object",
+    "required": [],
+    "properties": {
+     "q": {
+      "type": "string"
+     }
+    },
+    "additionalProperties": false
+   },
+   "example": {
+    "q": "finite size"
+   },
+   "effects": []
+  },
+  "references_attached": {
+   "summary": "Read this project's attached bibliography associations.",
+   "input": {
+    "type": "object",
+    "required": [],
+    "properties": {},
+    "additionalProperties": false
+   },
+   "example": {},
+   "effects": []
+  },
+  "repository": {
+   "summary": "Read configured source repositories. PDF view uses a one-based page, never offset; read uses character offsets within selected pages.",
+   "input": {},
+   "example": {
+    "action": "list"
+   },
+   "effects": [],
+   "examples": {
+    "list": {
+     "action": "list"
+    },
+    "files": {
+     "action": "files",
+     "repository": "configured-id",
+     "path": "papers",
+     "glob": "*.pdf",
+     "query": "controlled",
+     "offset": 0,
+     "limit": 20
+    },
+    "search": {
+     "action": "search",
+     "repository": "configured-id",
+     "query": "finite size",
+     "glob": "*.tex",
+     "offset": 0,
+     "limit": 20
+    },
+    "read": {
+     "action": "read",
+     "repository": "configured-id",
+     "path": "paper.pdf",
+     "page": 2,
+     "page_count": 2,
+     "offset": 0,
+     "limit": 12000
+    },
+    "read_text": {
+     "action": "read",
+     "repository": "configured-id",
+     "path": "notes.txt",
+     "offset": 12000,
+     "limit": 12000
+    },
+    "view": {
+     "action": "view",
+     "repository": "configured-id",
+     "path": "paper.pdf",
+     "page": 2
+    },
+    "view_image": {
+     "action": "view",
+     "repository": "configured-id",
+     "path": "figure.png"
+    }
+   },
+   "preconditions": [
+    "Choose an available repository ID from action list; paths stay within that repository",
+    "PDF page is one-based and must exist; view renders one page, read may extract 1–4 pages",
+    "offset/limit mean result rows for files/search and characters for read; they are rejected for view",
+    "page/page_count are rejected on non-PDF files; query/glob belong only to files/search",
+    "list/files/search are navigation only. Use read/view on the exact selected file before treating it as a guarded source dependency."
+   ],
+   "outputs": [
+    "list: configured repository IDs and availability",
+    "files/search: bounded navigation matches and next_offset; neighbouring-file additions, ordering and timeout state are not source dependency identities",
+    "read: guarded source path/SHA256, content, offset, next_offset; text total_lines counts the whole original file using splitlines (a trailing newline adds no phantom line), independent of pagination; PDFs instead include pdf_page_start/pdf_page_end/pdf_total_pages and omit total_lines",
+    "view: guarded source path/SHA256 plus actual image content; PDFs include pdf_page/pdf_total_pages"
+   ],
+   "recovery": "After an engine update from the legacy whole-response digest, repeat the exact discovery/listing once to record its navigation identity. Exact read/view bytes remain separately guarded and must be reread when they change.",
+   "source_locator_recipe": "For a nonempty text file, reuse the returned repository/path and set line_start:1, line_end:result.total_lines for a full-file locator. total_lines:0 means no valid line range. Reuse result.source.sha256 programmatically; do not retype opaque hashes or derive line bounds with JavaScript split('\\n'). PDF page counts are not text-source line bounds.",
+   "recoverable_errors": [
+    "unknown or irrelevant action fields: use the returned action-specific contract",
+    "out-of-range PDF page: choose a page from 1 through pdf_total_pages",
+    "missing path: use files/search; unavailable reader: source is not claimed read"
+   ]
+  },
+  "research": {
+   "summary": "Read the compact Research catalogue, or one exact result with provenance and artifact detail.",
+   "input": {
+    "type": "object",
+    "required": [],
+    "properties": {
+     "view": {
+      "enum": [
+       "summary",
+       "full",
+       "result"
+      ]
+     },
+     "id": {
+      "type": "string"
+     }
+    },
+    "additionalProperties": false
+   },
+   "example": {
+    "view": "summary"
+   },
+   "effects": [],
+   "outputs": [
+    "summary: current result identities, headline interpretation, concept/manuscript use and compact run/visual status",
+    "result: one exact full record selected by stable id",
+    "full: compatibility projection; avoid in ordinary orientation"
+   ],
+   "preconditions": [
+    "Use view summary first; use view result with id only for the result being inspected."
+   ]
+  },
+  "research_producer": {
+   "summary": "Declare one executable producer before running it.",
+   "input": {
+    "type": "object",
+    "required": [
+     "id",
+     "executable",
+     "modes",
+     "allowed_args",
+     "dependencies"
+    ],
+    "properties": {
+     "id": {
+      "type": "string"
+     },
+     "executable": {
+      "type": "string"
+     },
+     "scope": {
+      "enum": [
+       "project",
+       "manuscript"
+      ]
+     },
+     "modes": {
+      "type": "array",
+      "items": {
+       "enum": [
+        "smoke",
+        "full"
+       ]
+      }
+     },
+     "allowed_args": {
+      "type": "object",
+      "required": [],
+      "properties": {},
+      "additionalProperties": true
+     },
+     "dependencies": {
+      "type": "array",
+      "items": {
+       "type": "string"
+      }
+     },
+     "result_path": {
+      "type": "string"
+     },
+     "timeout_seconds": {
+      "type": "integer"
+     }
+    },
+    "additionalProperties": false
+   },
+   "example": {
+    "id": "finite-size",
+    "executable": "numerics/run.py",
+    "scope": "project",
+    "modes": [
+     "smoke",
+     "full"
+    ],
+    "allowed_args": {
+     "n": "int"
+    },
+    "dependencies": [
+     "numerics/run.py",
+     "data/input.csv"
+    ]
+   },
+   "effects": [
+    "producer declaration"
+   ],
+   "preconditions": [
+    "declared executable and every consumed dependency are inside the selected project scope",
+    "Implement the execution_protocol: accept --mode, --args-json and --result, write the JSON result at the supplied absolute --result path, and exit zero; stdout is only a log"
+   ],
+   "outputs": [
+    "producer identity and declaration revision"
+   ],
+   "errors": [
+    "path escapes scope",
+    "undeclared or invalid producer configuration"
+   ]
+  },
+  "research_reconcile": {
+   "summary": "Explicitly pin newly untracked dependency/artifact coverage while preserving scientific content, identities and full prior revision history; this never verifies historical bytes.",
+   "input": {
+    "type": "object",
+    "required": [
+     "records"
+    ],
+    "properties": {
+     "records": {
+      "type": "array",
+      "minItems": 1,
+      "maxItems": 200,
+      "items": {
+       "type": "object",
+       "required": [
+        "id",
+        "expected_revision"
+       ],
+       "properties": {
+        "id": {
+         "type": "string"
+        },
+        "expected_revision": {
+         "type": "string"
+        }
+       },
+       "additionalProperties": false
+      }
+     }
+    },
+    "additionalProperties": false
+   },
+   "example": {
+    "records": [
+     {
+      "id": "result:existing",
+      "expected_revision": "sha256:current-record"
+     }
+    ]
+   },
+   "preconditions": [
+    "inspect research dependency_coverage/newly_untracked before reconciliation",
+    "all previously pinned dependencies still match and newly observed dependencies exist"
+   ],
+   "effects": [
+    "new record revision with coverage_reconciliation provenance; scientific fields unchanged",
+    "old exact record preserved in research history; one atomic batch commit"
+   ],
+   "outputs": [
+    "records with previous_revision, revision and newly_observed coverage",
+    "unchanged current ids",
+    "historical_verification NOT_ESTABLISHED"
+   ],
+   "errors": [
+    "409 stale expected_revision or actually changed/missing old pins; review and renew instead",
+    "409 missing new dependency",
+    "422 invalid/duplicate ids or over 200 records"
+   ]
+  },
+  "research_record": {
+   "summary": "After research/run_status and artifact inspection, record a stable experiment/result/binding with interpretation and limitations; a completed run is not a scientific claim. If a result supports a canonical claim, follow through with structure_change bind_results rather than relying on source_ref or a similarly named concept.",
+   "input": {
+    "type": "object",
+    "required": [
+     "record"
+    ],
+    "properties": {
+     "record": {
+      "type": "object",
+      "required": [
+       "kind",
+       "id"
+      ],
+      "properties": {
+       "kind": {
+        "enum": [
+         "experiment",
+         "result",
+         "figure_binding"
+        ]
+       },
+       "id": {
+        "type": "string"
+       },
+       "scope": {
+        "enum": [
+         "project",
+         "manuscript"
+        ]
+       },
+       "config": {
+        "type": "string"
+       },
+       "data": {
+        "type": "array",
+        "items": {
+         "type": "string"
+        }
+       },
+       "source": {
+        "type": "string"
+       },
+       "result": {
+        "type": "string"
+       },
+       "run_id": {
+        "type": "string"
+       },
+       "result_id": {
+        "type": "string"
+       },
+       "figure_id": {
+        "type": "string"
+       },
+       "figure_ids": {
+        "type": "array",
+        "items": {
+         "type": "string"
+        }
+       },
+       "evidence_for": {
+        "type": "array",
+        "items": {
+         "type": "string"
+        }
+       },
+       "title": {
+        "type": "string"
+       },
+       "question": {
+        "type": "string"
+       },
+       "summary": {
+        "type": "string"
+       },
+       "limitations": {
+        "type": [
+         "string",
+         "array"
+        ],
+        "items": {
+         "type": "string"
+        }
+       },
+       "measures": {
+        "type": "array",
+        "items": {
+         "type": "object",
+         "required": [
+          "label",
+          "key"
+         ],
+         "properties": {
+          "label": {
+           "type": "string"
+          },
+          "key": {
+           "type": "string"
+          },
+          "unit": {
+           "type": "string"
+          }
+         },
+         "additionalProperties": false
+        }
+       },
+       "artifacts": {
+        "type": "array",
+        "items": {
+         "type": "object",
+         "required": [
+          "path"
+         ],
+         "properties": {
+          "path": {
+           "type": "string"
+          },
+          "label": {
+           "type": "string"
+          },
+          "caption": {
+           "type": "string"
+          },
+          "scope": {
+           "enum": [
+            "project",
+            "manuscript"
+           ]
+          },
+          "visual_id": {
+           "type": "string"
+          }
+         },
+         "additionalProperties": false
+        }
+       }
+      },
+      "additionalProperties": false
+     },
+     "expected_revision": {
+      "type": "string"
+     }
+    },
+    "additionalProperties": false
+   },
+   "example": {
+    "record": {
+     "kind": "result",
+     "id": "finite-size-result",
+     "scope": "manuscript",
+     "source": "numerics/run.py",
+     "result": "research_runs/run-0123/result.json",
+     "run_id": "run-0123",
+     "question": "Does the result persist with size?",
+     "summary": "Observed convergence under declared inputs.",
+     "limitations": "Finite sampled range.",
+     "measures": [
+      {
+       "label": "Score",
+       "key": "score",
+       "unit": "dimensionless"
+      }
+     ]
+    }
+   },
+   "effects": [
+    "versioned research record"
+   ],
+   "preconditions": [
+    "inspect research/run_status and the relevant artifact first",
+    "paths are relative to the record scope: manuscript means selected manuscript_dir; project means project workspace",
+    "measured values come from the declared result JSON by each measure key",
+    "an artifact with visual_id is downstream presentation only when that canonical visual spec explicitly names this result in result_ids; its render has separate freshness",
+    "untyped scientific images/artifacts remain pinned result evidence; evidence_for is explicit upstream figure evidence and remains pinned",
+    "renewing a stable ID needs its current expected_revision; omitted existing scientific fields are preserved",
+    "expanded untracked artifact coverage uses research_reconcile instead of reconstructing record payloads",
+    "recording a result does not bind it to a claim: identify the intended claim, read concept and structure revisions, then use structure_change bind_results"
+   ],
+   "outputs": [
+    "stable record identity and new revision",
+    "next_step.bind_result with exact existing operation and required current reads; no target is inferred",
+    "research reads report any retired legacy downstream-presentation pins without rewriting history or claiming old bytes verified"
+   ],
+   "next_steps": {
+    "bind_result": {
+     "when": "the interpreted result supports an existing canonical claim",
+     "reads": [
+      {
+       "operation": "concept",
+       "payload": {
+        "node": "<intended canonical claim id>"
+       }
+      },
+      {
+       "operation": "structure",
+       "payload": {}
+      }
+     ],
+     "write": {
+      "operation": "structure_change",
+      "payload": {
+       "operation": "bind_results",
+       "expected_revision": "copy structure.revision",
+       "expected_concept_revision": "copy concept revision",
+       "node": "<intended canonical claim id>",
+       "results": [
+        {
+         "id": "copy research result id",
+         "revision": "copy research result revision"
+        }
+       ]
+      }
+     },
+     "safeguard": "Do not infer the claim from source_ref, paths, labels, or wording."
+    }
+   },
+   "errors": [
+    "unknown or stale run/result",
+    "stale expected_revision",
+    "artifact outside declared scope"
+   ]
+  },
+  "run_cancel": {
+   "summary": "Request cancellation of one running declared producer, then read run_status for its terminal state.",
+   "input": {
+    "type": "object",
+    "required": [
+     "id"
+    ],
+    "properties": {
+     "id": {
+      "type": "string"
+     }
+    },
+    "additionalProperties": false
+   },
+   "example": {
+    "id": "run-0123abcd"
+   },
+   "effects": [
+    "run cancellation marker"
+   ]
+  },
+  "run_status": {
+   "summary": "Read one declared producer's current supervised state and result provenance; use this after launch or cancellation because completion is asynchronous.",
+   "input": {
+    "type": "object",
+    "required": [
+     "id"
+    ],
+    "properties": {
+     "id": {
+      "type": "string"
+     }
+    },
+    "additionalProperties": false
+   },
+   "example": {
+    "id": "run-0123abcd"
+   },
+   "effects": []
+  },
+  "section_change": {
+   "summary": "Create, convert, undo, delete or restore a source heading and its reader-plan occurrence. Conversion uses an exact current paragraph and preserves its TeX.",
+   "input": {
+    "type": "object",
+    "required": [
+     "operation",
+     "expected_source_digest",
+     "expected_plan_revision"
+    ],
+    "properties": {
+     "operation": {
+      "enum": [
+       "create",
+       "convert",
+       "undo-create",
+       "delete",
+       "restore",
+       "create-section",
+       "insert-heading",
+       "delete-section",
+       "restore-section"
+      ]
+     },
+     "source_file": {
+      "type": "string"
+     },
+     "line_start": {
+      "type": "integer"
+     },
+     "after_line": {
+      "type": "integer"
+     },
+     "after_before": {
+      "type": "string"
+     },
+     "section_id": {
+      "type": "string"
+     },
+     "title": {
+      "type": "string"
+     },
+     "title_tex": {
+      "type": "string"
+     },
+     "replacement": {
+      "type": "object",
+      "required": [
+       "line_start",
+       "line_end",
+       "before"
+      ],
+      "properties": {
+       "line_start": {
+        "type": "integer"
+       },
+       "line_end": {
+        "type": "integer"
+       },
+       "before": {
+        "type": "string"
+       }
+      },
+      "additionalProperties": false
+     },
+     "kind": {
+      "enum": [
+       "chapter",
+       "section",
+       "subsection",
+       "subsubsection"
+      ]
+     },
+     "parent_id": {
+      "type": [
+       "string",
+       "null"
+      ]
+     },
+     "expected_source_digest": {
+      "type": "string"
+     },
+     "expected_plan_revision": {
+      "type": "string"
+     },
+     "receipt_id": {
+      "type": "string"
+     }
+    },
+    "additionalProperties": false
+   },
+   "example": {
+    "operation": "delete",
+    "source_file": "chapters/method.tex",
+    "line_start": 12,
+    "section_id": "sec:method",
+    "expected_source_digest": "sha256:current",
+    "expected_plan_revision": "sha256:plan"
+   },
+   "preconditions": [
+    "convert requires an exact replacement paragraph (line_start, line_end, before); omit title_tex to retain its formatting and mathematics",
+    "create inserts at after_line with an exact after_before boundary",
+    "use the returned undo payload for reversal; it restores converted prose without removing following content"
+   ],
+   "effects": [
+    "source section",
+    "reader-plan occurrence",
+    "undo receipt"
+   ]
+  },
+  "source": {
+   "summary": "Read exact manuscript text with line_start/line_end addresses before an edit. Supply the files/span you need; line-numbered companion text is optional.",
+   "input": {
+    "type": "object",
+    "required": [],
+    "properties": {
+     "files": {
+      "anyOf": [
+       {
+        "type": "string"
+       },
+       {
+        "type": "array",
+        "items": {
+         "type": "string"
+        }
+       }
+      ]
+     },
+     "section_ids": {
+      "anyOf": [
+       {
+        "type": "string"
+       },
+       {
+        "type": "array",
+        "items": {
+         "type": "string"
+        }
+       }
+      ]
+     },
+     "sections": {
+      "anyOf": [
+       {
+        "type": "string"
+       },
+       {
+        "type": "array",
+        "items": {
+         "type": "string"
+        }
+       }
+      ]
+     },
+     "ids": {
+      "anyOf": [
+       {
+        "type": "string"
+       },
+       {
+        "type": "array",
+        "items": {
+         "type": "string"
+        }
+       }
+      ]
+     },
+     "selection": {
+      "anyOf": [
+       {
+        "type": "string"
+       },
+       {
+        "type": "array",
+        "items": {
+         "type": "string"
+        }
+       }
+      ]
+     },
+     "node_ids": {
+      "anyOf": [
+       {
+        "type": "string"
+       },
+       {
+        "type": "array",
+        "items": {
+         "type": "string"
+        }
+       }
+      ]
+     },
+     "line_start": {
+      "type": "integer"
+     },
+     "line_end": {
+      "type": "integer"
+     },
+     "quote": {
+      "type": "string"
+     },
+     "node_id": {
+      "type": "string"
+     },
+     "include_numbered_text": {
+      "type": "boolean"
+     }
+    },
+    "additionalProperties": false
+   },
+   "example": {
+    "files": [
+     "chapters/method.tex"
+    ],
+    "line_start": 20,
+    "line_end": 45
+   },
+   "effects": [],
+   "scope_rules": [
+    "A plain files list reads exactly those physical files, without expanding intervening chapters. Section/range gestures retain the connected document stretch; line_start/line_end or an unambiguous quote narrow a single source.",
+    "node_id/node_ids add canonical concept/structure context; they do not alone authorize editing an unread physical source",
+    "Every call reads current bytes. fresh is not supported; use files naming the actual created/changed chapter, including next_read from source structure actions."
+   ],
+   "outputs": [
+    "sources[].text is one exact raw copy with line_start/line_end; include_numbered_text:true additionally supplies numbered_text when needed. Split text on newline and add line_start to obtain exact addresses without another copy.",
+    "expected_source_digest is the full canonical file-text guard consumed by structural block/section writers, while raw_file_sha256 retains the byte identity",
+    "boundaries are at most2000-character context excerpts with exact source read routes, not editable source spans; historical staleness receipts are excluded",
+    "context_refresh with newly consumed scoped context only when current reads cover every changed dependency"
+   ],
+   "preconditions": [
+    "after an external source change, read the exact current span before proposing against it; unrelated scientific/protocol/correction changes remain uncovered and block apply"
+   ]
+  },
+  "store_artifact": {
+   "summary": "Create or replace a bounded UTF-8 research artifact using an exact current revision guard or legacy exact prior text.",
+   "input": {
+    "oneOf": [
+     {
+      "type": "object",
+      "required": [
+       "path",
+       "before",
+       "content",
+       "reason"
+      ],
+      "properties": {
+       "path": {
+        "type": "string"
+       },
+       "before": {
+        "type": [
+         "string",
+         "null"
+        ]
+       },
+       "content": {
+        "type": "string"
+       },
+       "reason": {
+        "type": "string"
+       },
+       "scope": {
+        "enum": [
+         "project",
+         "manuscript"
+        ]
+       }
+      },
+      "additionalProperties": false
+     },
+     {
+      "type": "object",
+      "required": [
+       "path",
+       "expected_revision",
+       "content",
+       "reason"
+      ],
+      "properties": {
+       "path": {
+        "type": "string"
+       },
+       "expected_revision": {
+        "type": "string"
+       },
+       "artifact_id": {
+        "type": "string"
+       },
+       "content": {
+        "type": "string"
+       },
+       "reason": {
+        "type": "string"
+       },
+       "scope": {
+        "enum": [
+         "project",
+         "manuscript"
+        ]
+       }
+      },
+      "additionalProperties": false
+     }
+    ]
+   },
+   "example": {
+    "path": "research/interpretation.md",
+    "before": null,
+    "content": "Observed limitation.\n",
+    "reason": "record result interpretation"
+   },
+   "examples": {
+    "create": {
+     "path": "research/interpretation.md",
+     "before": null,
+     "content": "Observed limitation.\n",
+     "reason": "record result interpretation"
+    },
+    "update": {
+     "path": "research/interpretation.md",
+     "expected_revision": "copy read_artifact.revision exactly",
+     "content": "Updated interpretation.\n",
+     "reason": "record current result interpretation"
+    }
+   },
+   "preconditions": [
+    "Creation uses before:null and refuses an existing path.",
+    "Update may use expected_revision from read_artifact without echoing the whole prior file, or before with the exact prior text for compatibility; supply exactly one guard.",
+    "Copy artifact_id only when it is present in the returned update_handle; it binds read-by-id baseline refresh to the same exact receipt and path.",
+    "A stale guard or create collision fails before the artifact or its receipt is written."
+   ],
+   "outputs": [
+    "ART-* id, exact byte revision, scoped path, read_more/read_handle and guarded update_handle",
+    "exact owned_changes file receipt for mutation attribution"
+   ],
+   "effects": [
+    "versioned artifact receipt"
+   ]
+  },
+  "structure": {
+   "summary": "Read a compact reader-plan/logical-identity overview, or select exact sections/files/concepts for bounded dependencies, evidence and source correspondence.",
+   "input": {
+    "type": "object",
+    "required": [],
+    "properties": {
+     "section_ids": {
+      "type": "array",
+      "items": {
+       "type": "string"
+      }
+     },
+     "files": {
+      "type": "array",
+      "items": {
+       "type": "string"
+      }
+     },
+     "node_id": {
+      "type": "string"
+     },
+     "node_ids": {
+      "type": "array",
+      "items": {
+       "type": "string"
+      }
+     },
+     "section_offset": {
+      "type": "integer"
+     },
+     "section_limit": {
+      "type": "integer"
+     }
+    },
+    "additionalProperties": false
+   },
+   "example": {},
+   "examples": {
+    "overview": {},
+    "next_sections": {
+     "section_offset": 200,
+     "section_limit": 200
+    },
+    "section": {
+     "section_ids": [
+      "chapter-01"
+     ]
+    },
+    "concept": {
+     "node_id": "claim:finite-size"
+    }
+   },
+   "effects": [],
+   "outputs": [
+    "empty/offset payload: compact reader_plan page, bounded logical object IDs/counts/gaps, explicit omissions, next_read and exact descent routes",
+    "selected payload: canonical scoped structure context with direct dependencies/evidence/currentness"
+   ],
+   "preconditions": [
+    "Start with the compact overview; follow reader_plan.next_read until absent to exhaust section identities, then descend by returned section/concept/inventory routes",
+    "section_offset/section_limit select overview pages; section_ids/files/node_id/node_ids select scientific scope and remain unchanged"
+   ]
+  },
+  "structure_change": {
+   "summary": "Change canonical reader order through initialize, plan, spine, reconcile or bind_results. These operations do not create manuscript source headings; use section_change for source edits.",
+   "input": {
+    "type": "object",
+    "required": [
+     "expected_revision",
+     "operation"
+    ],
+    "properties": {
+     "expected_revision": {
+      "type": "string"
+     },
+     "operation": {
+      "enum": [
+       "initialize",
+       "plan",
+       "spine",
+       "reconcile",
+       "bind_results"
+      ]
+     },
+     "expected_source_revision": {
+      "type": "string"
+     },
+     "sections": {
+      "type": "array"
+     },
+     "op": {
+      "type": "object",
+      "required": [
+       "kind"
+      ],
+      "properties": {
+       "kind": {
+        "type": "string"
+       }
+      },
+      "additionalProperties": true
+     },
+     "expected_concept_revision": {
+      "type": "string"
+     },
+     "node": {
+      "type": "string"
+     },
+     "results": {
+      "type": "array"
+     }
+    },
+    "additionalProperties": false
+   },
+   "example": {
+    "operation": "initialize",
+    "expected_revision": "sha256:structure",
+    "expected_source_revision": "sha256:selected-source"
+   },
+   "examples": {
+    "plan": {
+     "operation": "plan",
+     "expected_revision": "sha256:structure",
+     "op": {
+      "kind": "set-nodes",
+      "section": "methods",
+      "order": [
+       "claim:method"
+      ]
+     }
+    },
+    "bind_results": {
+     "operation": "bind_results",
+     "expected_revision": "sha256:structure",
+     "expected_concept_revision": "sha256:concept",
+     "node": "claim:finite-size",
+     "results": [
+      {
+       "id": "finite-size-result",
+       "revision": "sha256:result"
+      }
+     ]
+    }
+   },
+   "preconditions": [
+    "Read structure for expected_revision and selected_source.revision before initialize; omit sections to use current selected-source headings",
+    "Choose the exact operation variant below; operation is a string and plan/spine actions belong in op",
+    "MIRROR_PENDING is incomplete: read its error and use reconcile after repairing the cause; set-narrative requires a live spine member"
+   ],
+   "effects": [
+    "canonical reader plan or explicit concept result binding"
+   ]
+  },
+  "style": {
+   "summary": "Save document presentation settings and start a separate preview.",
+   "input": {
+    "type": "object",
+    "required": [],
+    "properties": {},
+    "additionalProperties": true
+   },
+   "example": {
+    "font_size": 11,
+    "line_spacing": 1.2
+   },
+   "effects": [
+    "presentation settings",
+    "preview"
+   ]
+  },
+  "task": {
+   "summary": "Create one scoped project task. For literature acquisition use kind literature-acquisition and logical_target {kind:node,node_id}; literature_scope reads coverage and task_status owns progress/completion.",
+   "input": {
+    "type": "object",
+    "required": [
+     "title",
+     "goal"
+    ],
+    "properties": {
+     "id": {
+      "type": "string"
+     },
+     "title": {
+      "type": "string"
+     },
+     "goal": {
+      "type": "string"
+     },
+     "kind": {
+      "type": "string"
+     },
+     "depends_on": {
+      "type": "array",
+      "items": {
+       "type": "string"
+      }
+     },
+     "section_ids": {
+      "type": "array",
+      "items": {
+       "type": "string"
+      }
+     },
+     "logical_target": {
+      "type": "object",
+      "required": [],
+      "properties": {
+       "kind": {
+        "type": "string"
+       },
+       "node_id": {
+        "type": "string"
+       }
+      },
+      "additionalProperties": false
+     }
+    },
+    "additionalProperties": false
+   },
+   "example": {
+    "title": "Acquire sources for the claim",
+    "goal": "Read qualified support, link the canonical claim, cite it in its section and verify the compiled bibliography.",
+    "kind": "literature-acquisition",
+    "logical_target": {
+     "kind": "node",
+     "node_id": "thm:law"
+    }
+   },
+   "effects": [
+    "project task"
+   ]
+  },
+  "task_status": {
+   "summary": "Update an existing project task. literature-acquisition completion requires current scoped source qualification, citations in the claim’s actual sections and a current compiled bibliography; it cannot complete from a queued intent or search alone.",
+   "input": {
+    "type": "object",
+    "required": [
+     "id",
+     "status"
+    ],
+    "properties": {
+     "id": {
+      "type": "string"
+     },
+     "status": {
+      "enum": [
+       "open",
+       "ready",
+       "blocked",
+       "in-progress",
+       "done",
+       "cancelled"
+      ]
+     },
+     "evidence": {
+      "type": "array",
+      "items": {
+       "type": "string"
+      }
+     },
+     "summary": {
+      "type": "string"
+     }
+    },
+    "additionalProperties": false
+   },
+   "example": {
+    "id": "REQUEST-example",
+    "status": "cancelled"
+   },
+   "preconditions": [
+    "evidence entries are existing repository-relative file paths, never READ/PROOF receipt identifiers",
+    "literature-acquisition completion automatically records its selected manuscript and compiled output evidence; evidence may be omitted"
+   ],
+   "effects": [
+    "task state"
+   ]
+  },
+  "visual_create": {
+   "summary": "Create a plot/schematic, adopt output declared by a completed supervised run, or edit the same ID with its current spec revision; this saves a brief without rendering or placement.",
+   "effects": [
+    "canonical manuscript_spec.json figure_specs entry"
+   ],
+   "preconditions": [
+    "Every new spec requires id, title, question, caption and kind plus the chosen renderer fields below. Example content is illustrative, not project evidence",
+    "Plot source_data is relative to the registered project root (manuscript fallback), not automatically to the manuscript: create/read the actual CSV header or JSON row array first, then name numeric x and series fields. Example prerequisite: data/observations.csv containing input,response\\n1,2\\n2,4\\n",
+    "Diagram nodes have distinct IDs; every edge source/target names one of those nodes and rel states the authored relation. Graphviz dot is needed to render",
+    "TikZ requires exactly one inline tikz or project-relative source .tex/.tikz containing one tikzpicture; no document wrapper, packages, file reads or writes. Rendering requires the installed TeX/TikZ toolchain",
+    "For empirical support supply result_ids of existing interpreted research results; inspect research for currentness. Omission means THEORY_ONLY, not verified scientific evidence",
+    "Same-ID edit: read visuals and pass its spec_revision as expected_revision. Omitted authored fields/result_ids are preserved; explicit result_ids:[] removes that binding. Render/placement receipts are owner-managed and retained; changed inputs still become stale. There is no separate visual_update operation",
+    "Updating a brief/caption does not rewrite an already placed TeX caption; use source/apply_revision for that source edit"
+   ],
+   "outputs": [
+    "spec with all persisted scientific fields, spec_revision, readiness SPECIFIED, exact owned_changes; next call visual_render with spec.id",
+    "placement_caption compares the brief with authored TeX: DIFFERS returns exact source next_read and apply_revision route; no manuscript caption is silently replaced"
+   ],
+   "recoverable_errors": [
+    "422 missing/invalid spec: supply the complete chosen renderer example using actual data and scientific content",
+    "409 same-ID revision: read visuals and retry with that exact spec_revision; no visual changed",
+    "Missing data or renderer at render time: repair the named file/tool prerequisite, then retry visual_render; do not pretend the specification is a generated asset"
+   ]
+  },
+  "visual_place": {
+   "summary": "Place a current generated visual in the selected TeX source.",
+   "input": {
+    "type": "object",
+    "required": [
+     "id"
+    ],
+    "properties": {
+     "id": {
+      "type": "string"
+     },
+     "section": {
+      "type": "string"
+     },
+     "file": {
+      "type": "string"
+     },
+     "after_line": {
+      "type": "integer",
+      "minimum": 1
+     },
+     "base_revision": {
+      "type": "string"
+     },
+     "expected_source_revision": {
+      "type": "string"
+     }
+    },
+    "additionalProperties": false,
+    "anyOf": [
+     {
+      "required": [
+       "file"
+      ]
+     },
+     {
+      "required": [
+       "section"
+      ]
+     }
+    ]
+   },
+   "example": {
+    "id": "reasoning-map",
+    "file": "main.tex"
+   },
+   "preconditions": [
+    "Read visuals and the exact selected manuscript source file; file (alias section) must be in its current traversal",
+    "Drawing must be CURRENT and evidence_binding_status CURRENT or THEORY_ONLY; missing/stale results must be repaired rather than removed to bypass qualification",
+    "Optional after_line is a one-based source line; omitted means before end{document}, or fragment tail. Copy base_revision from the exact target source.sources[].raw_file_sha256 and expected_source_revision from source.document.revision, unchanged. The top-level source.source_revision is a traversal digest and MUST NOT be used for expected_source_revision",
+    "Existing fig:<id> placement is reused; this operation does not move the figure or rewrite an already placed caption. Use source/apply_revision for an existing caption, or block_change for movement"
+   ],
+   "outputs": [
+    "repo_file and placed_at, reused, revision and source_revision, owned_changes; figure manifest carries the same result_ids and caption"
+   ],
+   "recoverable_errors": [
+    "409 currentness: read visuals, reconcile the actual linked evidence or rerender changed inputs",
+    "409 source revision: reread the exact target file and selected source before retrying",
+    "422 target: use source/structure to choose an existing selected manuscript file"
+   ],
+   "effects": [
+    "TeX figure block",
+    "figure placement receipt"
+   ]
+  },
+  "visual_render": {
+   "summary": "Render a saved visual and bank drawing/input/output identities; rendering alone does not establish evidence validity or place it.",
+   "input": {
+    "type": "object",
+    "required": [
+     "id"
+    ],
+    "properties": {
+     "id": {
+      "type": "string"
+     }
+    },
+    "additionalProperties": false
+   },
+   "example": {
+    "id": "reasoning-map"
+   },
+   "preconditions": [
+    "Read visuals and use an existing spec.id; create/update the chosen renderer fields first",
+    "Plots need existing project-relative CSV or JSON array rows with finite numeric x/series values; diagrams need Graphviz and valid endpoints; TikZ needs the declared bounded snippet and TeX toolchain",
+    "Read visuals after rendering: drawing, evidence binding and presentation metadata have separate currentness. Stale/missing result_ids remain evidence gaps even if an image was generated"
+   ],
+   "outputs": [
+    "render.outputs (manuscript-relative PDF/SVG/PNG where supported), output_digests, drawing_inputs, research_bindings, visual_review pending, readiness GENERATED and owned_changes; asset figure:<id> appears in existing consumers",
+    "reused and basis_refreshed may be true when drawing bytes stay unchanged; this does not certify the scientific claim",
+    "placement_caption MATCHES/DIFFERS/UNPLACED/UNRESOLVED is separate from drawing currentness. DIFFERS supplies next_read for the authored caption; read it then apply_revision if the manuscript should adopt the brief"
+   ],
+   "recoverable_errors": [
+    "404 spec: read visuals or call visual_create first",
+    "422 source/columns/non-finite values: inspect the actual input and correct the spec/data explicitly",
+    "Unavailable renderer: repair/install the reported runtime prerequisite or retain an explicit unrendered gap"
+   ],
+   "effects": [
+    "rendered visual receipt",
+    "figure_manifest consumer entry"
+   ]
+  },
+  "visuals": {
+   "summary": "Read visual specs, per-spec revisions, drawing freshness and separate evidence currentness.",
+   "input": {
+    "type": "object",
+    "required": [],
+    "properties": {},
+    "additionalProperties": false
+   },
+   "example": {},
+   "effects": [],
+   "outputs": [
+    "specs[] with spec_revision for guarded same-ID edits, input_scope, render_freshness and currentness; this read does not write legacy specs"
+   ]
+  },
+  "writing_stage": {
+   "summary": "Read a versioned stage profile for a scientific, voice, presentation, build, engine, UI or provider-context pass. This prepares bounded guidance and exact owner routes; it never launches a model, edits source or awards a quality score.",
+   "input": {
+    "type": "object",
+    "required": [],
+    "properties": {
+     "stage": {
+      "enum": [
+       "scientific_integration",
+       "voice_integration",
+       "presentation",
+       "build_acceptance",
+       "engine_acceptance",
+       "ui_acceptance",
+       "provider_context"
+      ]
+     },
+     "view": {
+      "enum": [
+       "summary",
+       "guidance",
+       "materials",
+       "full"
+      ]
+     },
+     "known_revision": {
+      "type": "string"
+     }
+    },
+    "additionalProperties": false
+   },
+   "example": {
+    "stage": "voice_integration",
+    "view": "guidance",
+    "known_revision": "sha256:previous-stage-revision"
+   },
+   "preconditions": [
+    "Omit stage for the compact catalogue. A selected stage defaults to guidance view; full is a read-only alias for guidance.",
+    "Use the selected stage's returned reentry_action verbatim for an unchanged handle and empty delta. A catalogue revision is not a selected-stage revision.",
+    "Stage guidance names existing read/apply/verify tools and bounded material handles; execute those tools explicitly for the actual project task."
+   ],
+   "outputs": [
+    "catalogue, or selected stage revision/full_stage_handle and bounded requested view",
+    "selected source/style identities and exact operation routes relevant to that stage",
+    "unchanged=true with delta=[] and handle only when known_revision matches"
+   ],
+   "effects": []
+  },
+  "writing_style": {
+   "summary": "Inspect bounded writing-style identity, one full profile, or its recorded provenance without selecting it.",
+   "input": {
+    "type": "object",
+    "required": [],
+    "properties": {
+     "view": {
+      "enum": [
+       "summary",
+       "profile",
+       "provenance"
+      ]
+     },
+     "profile": {
+      "type": "string"
+     }
+    },
+    "additionalProperties": false
+   },
+   "example": {
+    "view": "summary"
+   },
+   "effects": [],
+   "outputs": [
+    "summary includes compact runtime content and exact profile/provenance revisions",
+    "profile/provenance bodies only on explicit descent"
+   ]
+  },
+  "writing_style_calibration": {
+   "summary": "Verify explicit recorded calibration handles and return bounded excerpts; performs no model call or voice scoring.",
+   "input": {
+    "type": "object",
+    "required": [
+     "sources"
+    ],
+    "properties": {
+     "sources": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+       "oneOf": [
+        {
+         "type": "string"
+        },
+        {
+         "type": "object",
+         "required": [
+          "path"
+         ],
+         "properties": {
+          "path": {
+           "type": "string"
+          },
+          "line_start": {
+           "type": "integer"
+          },
+          "line_end": {
+           "type": "integer"
+          }
+         },
+         "additionalProperties": false
+        }
+       ]
+      }
+     },
+     "purpose": {
+      "type": "string"
+     },
+     "genre": {
+      "type": "string"
+     }
+    },
+    "additionalProperties": false
+   },
+   "example": {
+    "sources": [
+     {
+      "path": "voice_sources/example.tex",
+      "line_start": 1,
+      "line_end": 20
+     }
+    ],
+    "purpose": "Inspect explanatory cadence."
+   },
+   "effects": [],
+   "preconditions": [
+    "sources are exact handles already present in the selected profile provenance ledger"
+   ],
+   "outputs": [
+    "bounded current/stale source observations and authored judgement template; autonomous_analysis false and voice_score null"
+   ]
+  },
+  "writing_style_change": {
+   "summary": "Select a versioned voice profile and save project-local guidance/genre without editing global profile bytes.",
+   "input": {
+    "type": "object",
+    "required": [
+     "profile",
+     "expected_revision"
+    ],
+    "properties": {
+     "profile": {
+      "type": "string"
+     },
+     "guidance": {
+      "type": "string"
+     },
+     "genre": {
+      "type": "string"
+     },
+     "expected_revision": {
+      "type": "string"
+     }
+    },
+    "additionalProperties": false
+   },
+   "example": {
+    "profile": "profiles/voice/gerard-technical-v1.md",
+    "expected_revision": "sha256:current"
+   },
+   "effects": [
+    "project writing-style selection, genre and guidance"
+   ]
+  },
+  "writing_style_profile_change": {
+   "summary": "Apply an explicit global profile edit through exact profile/provenance guards; no automatic model call.",
+   "input": {
+    "oneOf": [
+     {
+      "type": "object",
+      "required": [
+       "profile",
+       "content",
+       "expected_profile_revision",
+       "basis",
+       "reason",
+       "provenance_kind"
+      ],
+      "properties": {
+       "profile": {
+        "type": "string"
+       },
+       "content": {
+        "type": "string"
+       },
+       "expected_profile_revision": {
+        "type": "string"
+       },
+       "expected_provenance_revision": {
+        "type": "string"
+       },
+       "basis": {
+        "const": "author_preference"
+       },
+       "reason": {
+        "type": "string"
+       },
+       "provenance_kind": {
+        "enum": [
+         "direct-author-instruction",
+         "structured-author-edit"
+        ]
+       },
+       "judgement": {
+        "type": "object",
+        "required": [],
+        "properties": {},
+        "additionalProperties": true
+       }
+      },
+      "additionalProperties": false
+     },
+     {
+      "type": "object",
+      "required": [
+       "profile",
+       "content",
+       "expected_profile_revision",
+       "expected_provenance_revision",
+       "basis",
+       "reason",
+       "source_handles",
+       "judgement"
+      ],
+      "properties": {
+       "profile": {
+        "type": "string"
+       },
+       "content": {
+        "type": "string"
+       },
+       "expected_profile_revision": {
+        "type": "string"
+       },
+       "expected_provenance_revision": {
+        "type": "string"
+       },
+       "basis": {
+        "const": "source_calibration"
+       },
+       "reason": {
+        "type": "string"
+       },
+       "source_handles": {
+        "type": "array",
+        "minItems": 1,
+        "items": {
+         "type": "object",
+         "required": [
+          "path",
+          "sha256"
+         ],
+         "properties": {
+          "path": {
+           "type": "string"
+          },
+          "sha256": {
+           "type": "string"
+          }
+         },
+         "additionalProperties": false
+        }
+       },
+       "judgement": {
+        "type": "object",
+        "required": [
+         "summary"
+        ],
+        "properties": {
+         "summary": {
+          "type": "string"
+         },
+         "retained": {
+          "type": "array",
+          "items": {
+           "type": "string"
+          }
+         },
+         "changed": {
+          "type": "array",
+          "items": {
+           "type": "string"
+          }
+         },
+         "genre_boundary": {
+          "type": "string"
+         },
+         "authorship_boundary": {
+          "type": "string"
+         },
+         "verification_limit": {
+          "type": "string"
+         },
+         "author_instruction": {
+          "type": "string"
+         }
+        },
+        "additionalProperties": false
+       }
+      },
+      "additionalProperties": false
+     }
+    ]
+   },
+   "example": {
+    "profile": "profiles/voice/gerard-technical-v1.md",
+    "content": "# Updated profile...",
+    "expected_profile_revision": "sha256:current",
+    "basis": "author_preference",
+    "provenance_kind": "direct-author-instruction",
+    "reason": "The author explicitly requested this preference."
+   },
+   "effects": [
+    "global voice profile bytes with retained provenance receipt"
+   ],
+   "preconditions": [
+    "author_preference requires direct author provenance and claims no calibration sources",
+    "source_calibration requires exact current ledger handles and structured authored judgement"
+   ],
+   "outputs": [
+    "scope_changed global-profile, exact new profile/provenance identity, autonomous_analysis false"
+   ]
+  }
+ }
+}

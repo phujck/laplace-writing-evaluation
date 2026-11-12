@@ -1,0 +1,371 @@
+{
+  "producers": [
+    {
+      "id": "dd-representation-illustrations",
+      "scope": "project",
+      "executable": "calculations/representation_illustrations.py",
+      "modes": [
+        "smoke"
+      ],
+      "allowed_args": {},
+      "dependencies": [
+        "reading/shared-register-and-prx-interpretation-20261015.md",
+        "development/proposed-argument-reader-and-visual-plan-20261015.md",
+        "reading/primary-foundations-passage-interpretation-20261015.md"
+      ],
+      "timeout_seconds": 60,
+      "project": "eigen-technical-due-diligence-briefing"
+    },
+    {
+      "id": "dd-archived-quantum-replot",
+      "scope": "project",
+      "executable": "calculations/replot_archived_quantum.py",
+      "modes": [
+        "smoke"
+      ],
+      "allowed_args": {},
+      "dependencies": [
+        "evidence-snapshots/quantum/operator_projection_result.json",
+        "evidence-snapshots/quantum/metric_pool_sweep.csv",
+        "evidence-snapshots/quantum/check_projection.py",
+        "evidence-snapshots/quantum/metric_preconditioned_pool_benchmark.py",
+        "reading/quantum-prototypes-interpretation-20261015.md"
+      ],
+      "timeout_seconds": 60,
+      "project": "eigen-technical-due-diligence-briefing"
+    },
+    {
+      "id": "dd-archived-memory-replot",
+      "executable": "calculations/replot_archived_memory.py",
+      "scope": "project",
+      "modes": [
+        "smoke"
+      ],
+      "allowed_args": {},
+      "dependencies": [
+        "evidence-snapshots/memory/parity-d19-r4-prefix-q1.json",
+        "evidence-snapshots/memory/parity-d19-r4-prefix-q32.json",
+        "evidence-snapshots/memory/parity-d19-r4-prefix-q256.json",
+        "evidence-snapshots/memory/parity-d19-r4-prefix-q1024.json"
+      ],
+      "timeout_seconds": 60,
+      "project": "eigen-technical-due-diligence-briefing"
+    },
+    {
+      "id": "dd-publication-figures",
+      "scope": "project",
+      "executable": "calculations/publication_figures.py",
+      "modes": [
+        "smoke"
+      ],
+      "allowed_args": {},
+      "dependencies": [
+        "manuscript/research_runs/run-c3bb46b0151942ca.result-illustrations/shared-register-price.csv",
+        "manuscript/research_runs/run-c3bb46b0151942ca.result-illustrations/retention-trajectories.csv",
+        "manuscript/research_runs/run-c3bb46b0151942ca.result-illustrations/global-local-feedback.csv",
+        "evidence-snapshots/quantum/operator_projection_result.json",
+        "evidence-snapshots/quantum/metric_pool_sweep.csv",
+        "evidence-snapshots/memory/parity-d19-r4-prefix-q1.json",
+        "evidence-snapshots/memory/parity-d19-r4-prefix-q32.json",
+        "evidence-snapshots/memory/parity-d19-r4-prefix-q256.json",
+        "evidence-snapshots/memory/parity-d19-r4-prefix-q1024.json"
+      ],
+      "timeout_seconds": 60,
+      "project": "eigen-technical-due-diligence-briefing"
+    },
+    {
+      "id": "dd-superarc-figure",
+      "executable": "calculations/superarc_figure.py",
+      "scope": "project",
+      "modes": [
+        "smoke"
+      ],
+      "allowed_args": {},
+      "dependencies": [
+        "evidence-snapshots/superarc/score-and-format-controls.json"
+      ],
+      "timeout_seconds": 60,
+      "project": "eigen-technical-due-diligence-briefing"
+    },
+    {
+      "id": "root-hmf-zero-temperature-v1",
+      "scope": "project",
+      "executable": "calculations/root_hmf_zero_temperature_v1.py",
+      "modes": [
+        "full"
+      ],
+      "allowed_args": {},
+      "dependencies": [
+        "calculations/root_hmf_zero_temperature_v1.json"
+      ],
+      "timeout_seconds": 120,
+      "project": "eigen-technical-due-diligence-briefing"
+    },
+    {
+      "id": "dd-portable-figure-publication",
+      "executable": "calculations/publish_portable_figures.py",
+      "scope": "project",
+      "modes": [
+        "smoke"
+      ],
+      "allowed_args": {},
+      "dependencies": [
+        "manuscript/figures/generated/dd-backend-change.pdf",
+        "manuscript/figures/generated/dd-shared-register-price.pdf",
+        "manuscript/figures/generated/dd-retention-trajectories.pdf",
+        "manuscript/figures/generated/dd-global-local-feedback.pdf",
+        "manuscript/figures/generated/dd-operator-projection.pdf",
+        "manuscript/figures/generated/dd-gap-selection.pdf",
+        "manuscript/figures/generated/dd-memory-parity.pdf",
+        "manuscript/figures/generated/dd-superarc-controls.pdf",
+        "manuscript/figures/generated/dd-retention-memory.pdf",
+        "manuscript/figures/generated/dd-spectral-window.pdf",
+        "manuscript/figures/generated/dd-memory-mechanism.pdf"
+      ],
+      "timeout_seconds": 30,
+      "project": "eigen-technical-due-diligence-briefing"
+    },
+    {
+      "id": "dd-register-phase-diagram",
+      "executable": "calculations/register_phase_diagram.py",
+      "scope": "project",
+      "modes": [
+        "smoke"
+      ],
+      "allowed_args": {},
+      "dependencies": [
+        "development/register-phase-boundary-20261015.md",
+        "reading/shared-register-and-prx-interpretation-20261015.md"
+      ],
+      "timeout_seconds": 60,
+      "project": "eigen-technical-due-diligence-briefing"
+    },
+    {
+      "id": "dd-completion-figures",
+      "scope": "project",
+      "executable": "calculations/completion_figures.py",
+      "modes": [
+        "smoke"
+      ],
+      "allowed_args": {},
+      "dependencies": [
+        "evidence-snapshots/memory/reader-relational-controls-20261015.json",
+        "manuscript/figures/generated/dd-conceptric-envelope.pdf",
+        "manuscript/figures/generated/dd-ai-tool-harness.pdf",
+        "manuscript/figures/generated/dd-nested-work-sdk.pdf"
+      ],
+      "timeout_seconds": 60,
+      "project": "eigen-technical-due-diligence-briefing"
+    },
+    {
+      "id": "dd-robot-figure-publication",
+      "executable": "calculations/publish_robot_figures.py",
+      "scope": "project",
+      "modes": [
+        "smoke"
+      ],
+      "allowed_args": {},
+      "dependencies": [
+        "manuscript/figures/generated/dd-conceptric-envelope.pdf",
+        "manuscript/figures/generated/dd-ai-tool-harness.pdf",
+        "manuscript/figures/generated/dd-nested-work-sdk.pdf"
+      ],
+      "timeout_seconds": 60,
+      "project": "eigen-technical-due-diligence-briefing"
+    },
+    {
+      "id": "dd-memory-reader-replot",
+      "executable": "calculations/memory_reader_controls.py",
+      "scope": "project",
+      "modes": [
+        "smoke"
+      ],
+      "allowed_args": {},
+      "dependencies": [
+        "evidence-snapshots/memory/reader-relational-controls-20261015.json"
+      ],
+      "timeout_seconds": 60,
+      "project": "eigen-technical-due-diligence-briefing"
+    },
+    {
+      "id": "dd-hierarchy-stability",
+      "scope": "project",
+      "executable": "calculations/hierarchy_stability.py",
+      "modes": [
+        "smoke"
+      ],
+      "allowed_args": {},
+      "dependencies": [
+        "calculations/hierarchy_stability.py"
+      ],
+      "timeout_seconds": 120,
+      "project": "eigen-technical-due-diligence-briefing"
+    },
+    {
+      "id": "dd-hmf-figure-intake-20261016",
+      "executable": "calculations/intake_hmf_figure_20261016.py",
+      "scope": "project",
+      "modes": [
+        "full"
+      ],
+      "allowed_args": {},
+      "dependencies": [
+        "inputs/hmf-physical-ground-figure-20261016.json"
+      ],
+      "timeout_seconds": 30,
+      "project": "eigen-technical-due-diligence-briefing"
+    },
+    {
+      "id": "generic-overview-private-preserve",
+      "executable": "generic-overview-candidate-20261111/presentation.py",
+      "scope": "project",
+      "modes": [
+        "smoke"
+      ],
+      "allowed_args": {},
+      "dependencies": [
+        "generic-overview-candidate-20261111/preservation/original-source-snapshot.json",
+        "manuscript/figures/generated/dd-hmf-physical-ground-state-20261016.pdf",
+        "manuscript/working-draft/Eigen-A-Theory-of-Efficient-Representation-and-Its-Working-Prototypes.tex",
+        "manuscript/working-draft/chapters/chapter-01.tex",
+        "manuscript/working-draft/chapters/from-a-working-core-to-an-extensible-sdk.tex",
+        "manuscript/working-draft/chapters/loss-dynamics-and-the-choice-of-scale.tex",
+        "manuscript/working-draft/chapters/memory-as-a-retained-and-reconstructable-object.tex",
+        "manuscript/working-draft/chapters/quantum-prototypes-changing-the-calculation.tex",
+        "manuscript/working-draft/chapters/research-that-can-inspect-its-own-results.tex",
+        "manuscript/working-draft/chapters/the-backend-objects-authority-and-revision.tex",
+        "manuscript/working-draft/chapters/the-collection-and-the-next-tests.tex",
+        "manuscript/working-draft/chapters/the-price-of-a-shared-description.tex",
+        "manuscript/working-draft/chapters/what-a-useful-summary-must-remember.tex",
+        "manuscript/working-draft/figures/completion-run-7bd75062068b432b.result/dd-memory-reader-controls.pdf",
+        "manuscript/working-draft/figures/hierarchy-run-d9f38e92caf64d82.result/dd-hierarchy-stability.pdf",
+        "manuscript/working-draft/figures/phase-run-939b6a8b76724d02.result/dd-register-phase-diagram.pdf",
+        "manuscript/working-draft/figures/portable-run-b69220b3a27348ad.result/dd-gap-selection.pdf",
+        "manuscript/working-draft/figures/portable-run-b69220b3a27348ad.result/dd-global-local-feedback.pdf",
+        "manuscript/working-draft/figures/portable-run-b69220b3a27348ad.result/dd-memory-mechanism.pdf",
+        "manuscript/working-draft/figures/portable-run-b69220b3a27348ad.result/dd-memory-parity.pdf",
+        "manuscript/working-draft/figures/portable-run-b69220b3a27348ad.result/dd-operator-projection.pdf",
+        "manuscript/working-draft/figures/portable-run-b69220b3a27348ad.result/dd-retention-memory.pdf",
+        "manuscript/working-draft/figures/portable-run-b69220b3a27348ad.result/dd-retention-trajectories.pdf",
+        "manuscript/working-draft/figures/portable-run-b69220b3a27348ad.result/dd-shared-register-price.pdf",
+        "manuscript/working-draft/figures/portable-run-b69220b3a27348ad.result/dd-spectral-window.pdf",
+        "manuscript/working-draft/figures/portable-run-b69220b3a27348ad.result/dd-superarc-controls.pdf",
+        "manuscript/working-draft/figures/robot-run-c4d4b3872a904ec0.result/dd-ai-tool-harness.pdf",
+        "manuscript/working-draft/figures/robot-run-c4d4b3872a904ec0.result/dd-conceptric-envelope.pdf",
+        "manuscript/working-draft/figures/robot-run-c4d4b3872a904ec0.result/dd-nested-work-sdk.pdf",
+        "manuscript/working-draft/refs.bib",
+        "manuscript/working-draft/refs.bib",
+        "manuscript/working-draft/Eigen-A-Theory-of-Efficient-Representation-and-Its-Working-Prototypes.pdf"
+      ],
+      "timeout_seconds": 40,
+      "project": "eigen-technical-due-diligence-briefing"
+    },
+    {
+      "id": "generic-overview-private-render",
+      "executable": "generic-overview-candidate-20261111/presentation.py",
+      "scope": "project",
+      "modes": [
+        "full"
+      ],
+      "allowed_args": {},
+      "dependencies": [
+        "generic-overview-candidate-20261111/preservation/original-source-snapshot.json",
+        "manuscript/figures/generated/dd-hmf-physical-ground-state-20261016.pdf",
+        "manuscript/working-draft/Eigen-A-Theory-of-Efficient-Representation-and-Its-Working-Prototypes.tex",
+        "manuscript/working-draft/chapters/chapter-01.tex",
+        "manuscript/working-draft/chapters/from-a-working-core-to-an-extensible-sdk.tex",
+        "manuscript/working-draft/chapters/loss-dynamics-and-the-choice-of-scale.tex",
+        "manuscript/working-draft/chapters/memory-as-a-retained-and-reconstructable-object.tex",
+        "manuscript/working-draft/chapters/quantum-prototypes-changing-the-calculation.tex",
+        "manuscript/working-draft/chapters/research-that-can-inspect-its-own-results.tex",
+        "manuscript/working-draft/chapters/the-backend-objects-authority-and-revision.tex",
+        "manuscript/working-draft/chapters/the-collection-and-the-next-tests.tex",
+        "manuscript/working-draft/chapters/the-price-of-a-shared-description.tex",
+        "manuscript/working-draft/chapters/what-a-useful-summary-must-remember.tex",
+        "manuscript/working-draft/figures/completion-run-7bd75062068b432b.result/dd-memory-reader-controls.pdf",
+        "manuscript/working-draft/figures/hierarchy-run-d9f38e92caf64d82.result/dd-hierarchy-stability.pdf",
+        "manuscript/working-draft/figures/phase-run-939b6a8b76724d02.result/dd-register-phase-diagram.pdf",
+        "manuscript/working-draft/figures/portable-run-b69220b3a27348ad.result/dd-gap-selection.pdf",
+        "manuscript/working-draft/figures/portable-run-b69220b3a27348ad.result/dd-global-local-feedback.pdf",
+        "manuscript/working-draft/figures/portable-run-b69220b3a27348ad.result/dd-memory-mechanism.pdf",
+        "manuscript/working-draft/figures/portable-run-b69220b3a27348ad.result/dd-memory-parity.pdf",
+        "manuscript/working-draft/figures/portable-run-b69220b3a27348ad.result/dd-operator-projection.pdf",
+        "manuscript/working-draft/figures/portable-run-b69220b3a27348ad.result/dd-retention-memory.pdf",
+        "manuscript/working-draft/figures/portable-run-b69220b3a27348ad.result/dd-retention-trajectories.pdf",
+        "manuscript/working-draft/figures/portable-run-b69220b3a27348ad.result/dd-shared-register-price.pdf",
+        "manuscript/working-draft/figures/portable-run-b69220b3a27348ad.result/dd-spectral-window.pdf",
+        "manuscript/working-draft/figures/portable-run-b69220b3a27348ad.result/dd-superarc-controls.pdf",
+        "manuscript/working-draft/figures/robot-run-c4d4b3872a904ec0.result/dd-ai-tool-harness.pdf",
+        "manuscript/working-draft/figures/robot-run-c4d4b3872a904ec0.result/dd-conceptric-envelope.pdf",
+        "manuscript/working-draft/figures/robot-run-c4d4b3872a904ec0.result/dd-nested-work-sdk.pdf",
+        "manuscript/working-draft/refs.bib",
+        "manuscript/working-draft/Eigen-A-Theory-of-Efficient-Representation-and-Its-Working-Prototypes.pdf",
+        "generic-overview-candidate-20261111/candidate-source-bundle.json",
+        "generic-overview-candidate-20261111/candidate-manifest.json"
+      ],
+      "timeout_seconds": 300,
+      "project": "eigen-technical-due-diligence-briefing"
+    },
+    {
+      "id": "generic-overview-private-render-final",
+      "executable": "generic-overview-candidate-20261111/presentation.py",
+      "scope": "project",
+      "modes": [
+        "full"
+      ],
+      "allowed_args": {},
+      "dependencies": [
+        "generic-overview-candidate-20261111/preservation/original-source-snapshot.json",
+        "manuscript/figures/generated/dd-hmf-physical-ground-state-20261016.pdf",
+        "manuscript/working-draft/Eigen-A-Theory-of-Efficient-Representation-and-Its-Working-Prototypes.tex",
+        "manuscript/working-draft/chapters/chapter-01.tex",
+        "manuscript/working-draft/chapters/from-a-working-core-to-an-extensible-sdk.tex",
+        "manuscript/working-draft/chapters/loss-dynamics-and-the-choice-of-scale.tex",
+        "manuscript/working-draft/chapters/memory-as-a-retained-and-reconstructable-object.tex",
+        "manuscript/working-draft/chapters/quantum-prototypes-changing-the-calculation.tex",
+        "manuscript/working-draft/chapters/research-that-can-inspect-its-own-results.tex",
+        "manuscript/working-draft/chapters/the-backend-objects-authority-and-revision.tex",
+        "manuscript/working-draft/chapters/the-collection-and-the-next-tests.tex",
+        "manuscript/working-draft/chapters/the-price-of-a-shared-description.tex",
+        "manuscript/working-draft/chapters/what-a-useful-summary-must-remember.tex",
+        "manuscript/working-draft/figures/completion-run-7bd75062068b432b.result/dd-memory-reader-controls.pdf",
+        "manuscript/working-draft/figures/hierarchy-run-d9f38e92caf64d82.result/dd-hierarchy-stability.pdf",
+        "manuscript/working-draft/figures/phase-run-939b6a8b76724d02.result/dd-register-phase-diagram.pdf",
+        "manuscript/working-draft/figures/portable-run-b69220b3a27348ad.result/dd-gap-selection.pdf",
+        "manuscript/working-draft/figures/portable-run-b69220b3a27348ad.result/dd-global-local-feedback.pdf",
+        "manuscript/working-draft/figures/portable-run-b69220b3a27348ad.result/dd-memory-mechanism.pdf",
+        "manuscript/working-draft/figures/portable-run-b69220b3a27348ad.result/dd-memory-parity.pdf",
+        "manuscript/working-draft/figures/portable-run-b69220b3a27348ad.result/dd-operator-projection.pdf",
+        "manuscript/working-draft/figures/portable-run-b69220b3a27348ad.result/dd-retention-memory.pdf",
+        "manuscript/working-draft/figures/portable-run-b69220b3a27348ad.result/dd-retention-trajectories.pdf",
+        "manuscript/working-draft/figures/portable-run-b69220b3a27348ad.result/dd-shared-register-price.pdf",
+        "manuscript/working-draft/figures/portable-run-b69220b3a27348ad.result/dd-spectral-window.pdf",
+        "manuscript/working-draft/figures/portable-run-b69220b3a27348ad.result/dd-superarc-controls.pdf",
+        "manuscript/working-draft/figures/robot-run-c4d4b3872a904ec0.result/dd-ai-tool-harness.pdf",
+        "manuscript/working-draft/figures/robot-run-c4d4b3872a904ec0.result/dd-conceptric-envelope.pdf",
+        "manuscript/working-draft/figures/robot-run-c4d4b3872a904ec0.result/dd-nested-work-sdk.pdf",
+        "manuscript/working-draft/refs.bib",
+        "manuscript/working-draft/Eigen-A-Theory-of-Efficient-Representation-and-Its-Working-Prototypes.pdf",
+        "generic-overview-candidate-20261111/candidate-source-bundle.json",
+        "generic-overview-candidate-20261111/candidate-manifest.json"
+      ],
+      "timeout_seconds": 300,
+      "project": "eigen-technical-due-diligence-briefing"
+    },
+    {
+      "id": "public-representation-illustrations-v1",
+      "scope": "project",
+      "executable": "examples/public_representation_illustrations.py",
+      "modes": [
+        "smoke"
+      ],
+      "allowed_args": {},
+      "dependencies": [
+        "calculations/representation_illustrations.py",
+        "examples/public-illustration-inputs-v1.json"
+      ],
+      "timeout_seconds": 60,
+      "project": "eigen-technical-due-diligence-briefing"
+    }
+  ]
+}

@@ -1,0 +1,85 @@
+\documentclass[reprint,aps,prx,showpacs,bibfootnote,preprintnumbers,superscriptaddress,amsmath,amssymb]{revtex4-2}
+% The EigenEngine house layer on the REVTeX4-2 base. Source of truth:
+% templates/eigen-revtex/eigen-revtex.sty (co-located here so the pipeline
+% target resolves the .sty at compile time, matching the repo's co-located-sty
+% idiom, e.g. eigenengine.sty). It pulls the canonical maths/notation/float
+% stack, the shared palette, phys-coloured links and the \claim tag - the
+% documentclass carries the REVTeX options. See tex_template.LAYER_PROVIDES.
+\usepackage{eigen-revtex}
+% The artefact is a NAMED, VERSIONED object (the author's standing law): the
+% PDF carries its identity in its own metadata, never shipped as a bare main.pdf.
+% pdfsubject/pdfkeywords are revision-NEUTRAL here - the version stamp is applied
+% at finalize time (owned by C1), not carried as a stale literal in the source.
+\hypersetup{
+  pdftitle={Spectral Surface Generation},
+  pdfauthor={Gerard McCaul},
+  pdfsubject={Reconstructing Gaussian-filtered spectral surfaces from a single overlap-acquisition campaign, with a controlled subset-sum benchmark},
+  pdfkeywords={spectral surface generation, Gaussian filtering, quantum spectral estimation, overlap acquisition, subset-sum benchmark, ITQDE},
+}
+
+% CONFIDENTIAL marking (internal invention-disclosure white paper).
+% A document-STATUS marking, not a scientific disclaimer. ONE macro holds the text.
+% To drop it for a future external or journal version, delete this block together
+% with the one \notfordistribution banner line after \maketitle. House palette, acc
+% then faint, unobtrusive but present on every page. It uses \textemdash and
+% \textperiodcentered (commands, so the house punctuation surface stays clean).
+\newcommand{\notfordistribution}{%
+  \textcolor{acc}{\textbf{CONFIDENTIAL}}\ \textcolor{faint}{\textemdash\ INTERNAL TECHNICAL DOCUMENT \textperiodcentered\ Prepared in support of an invention-disclosure filing \textperiodcentered\ Not for distribution}}
+% every-page footer, the marking centred (discreet, faint) with the page number right.
+\fancyfoot[C]{\footnotesize\notfordistribution}
+\fancyfoot[R]{\small\textcolor{faint}{\thepage}}
+
+\begin{document}
+
+\title{Spectral Surface Generation}
+\author{Gerard McCaul\orcidlink{0000-0001-7972-456X}}
+% No institutional affiliation on this paper (the author's standing instruction,
+% 2026-07-10 - the prior affiliation and its institutional address are scrubbed).
+% \noaffiliation is REVTeX's sanctioned "no address" declaration - no placeholder
+% institution is invented.
+\noaffiliation
+
+\begin{abstract}
+Spectral Surface Generation (SSG) separates spectral acquisition from spectral interrogation: one overlap-acquisition campaign, acquired to a stated reach, is reused across spectral location and every supported coarser scale without further quantum evolution. A quantum device samples the real-time overlap signal $G(t)=\langle\psi|e^{-iHt}|\psi\rangle$ once, at fixed Gauss-Hermite grid times, and banks the estimates - a classical layer then reconstructs the Gaussian-filtered spectral surface $Z_\tau(s)=\sum_j p_j\,e^{-\tau(E_j-s)^2}$ and its response channels, the filtered mean, variance and higher cumulants, at a spectral location $s$ and inverse-scale resolution $\tau$ chosen after acquisition. The reuse is exact and bounded: the reconstruction identity is an exact continuous transform, and one banked record supports a finite $(s,\tau)$ envelope set by the record's time reach, node retention and the shot-noise floor. A controlled subset-sum family supplies the validation: at the production weight scale every reconstructed quantity carries an independently computable classical reference, and the construction is checked against it by exact diagonalisation to $n=12$ and matrix-product simulation to $n=20$ under synthetic finite-shot sampling. The benchmark tests reconstruction against that reference rather than asserting a complexity separation.
+\end{abstract}
+
+\maketitle
+
+\begin{center}\small\notfordistribution\end{center}
+
+\input{N1}
+\input{figures_tex/fig_nf1}
+\input{N2}
+\input{N3}
+\input{N4}
+\input{figures_tex/fig_nf2}
+\input{tables_tex/tab_resource}
+\input{N5}
+\input{figures_tex/fig_f5-dp-price}
+\input{figures_tex/fig_nf3}
+\input{figures_tex/fig_nf4}
+\input{tables_tex/tab_dp-price}
+\input{N6}
+\input{figures_tex/fig_nf5}
+\input{figures_tex/fig_nf6}
+\input{figures_tex/fig_nf6b}
+\input{N7}
+\input{figures_tex/fig_nf7}
+\input{N8}
+
+\appendix
+\input{NA1}
+\input{NA2}
+\input{tables_tex/tab_manifest}
+\input{figures_tex/fig_N12-identities}
+
+% The disclosure-crosswalk appendix (NA3.tex + tables_tex/tab_crosswalk.tex) was
+% RETIRED at r6 by git rm. The companion invention-disclosure document now carries
+% the crosswalk as its own table and is its home - git history preserves the
+% retired section. A one-sentence pointer closes the back matter (the
+% data-availability appendix above).
+\noindent The disclosure crosswalk mapping each supported statement to its technical backing is carried by the companion invention-disclosure document.
+
+\bibliography{references}
+
+\end{document}

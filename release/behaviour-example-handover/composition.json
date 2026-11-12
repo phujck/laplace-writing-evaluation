@@ -1,0 +1,68 @@
+{
+  "root": "laplace-writing-evaluation",
+  "scope": "Root-authorised mechanical composition of exact INSPECTED owner-exported rows/files and explicit source/profile supplement. No merge API or provider-resume authority is claimed.",
+  "project": "behaviour-example",
+  "owner_handover_sha256": "c5bec5721843a38b55c580e4be99e308320fbffd619e304875edbc7901043040",
+  "copied_files": 367,
+  "shared_source_maps_preserved": true,
+  "ledger_composition": [
+    {
+      "path": "contract/dispatches.jsonl",
+      "original_prefix_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "appended_rows": 1,
+      "all_original_bytes_retained": true,
+      "owner_packet_rows_retained": true
+    },
+    {
+      "path": "contract/journal.jsonl",
+      "original_prefix_sha256": "d1129e9306ed230e0ec2307f9d0e65eaa77e2d85c731ff5002a5d1cfd248cae4",
+      "appended_rows": 710,
+      "all_original_bytes_retained": true,
+      "owner_packet_rows_retained": true
+    },
+    {
+      "path": "contract/talk.jsonl",
+      "original_prefix_sha256": "1a9a2a65b00007da1b7f40ee83a71c29064de1da67af1fc00539248b2e857352",
+      "appended_rows": 329,
+      "all_original_bytes_retained": true,
+      "owner_packet_rows_retained": true
+    },
+    {
+      "path": "corpus_friction/behaviour-example.jsonl",
+      "original_prefix_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "appended_rows": 4,
+      "all_original_bytes_retained": true,
+      "owner_packet_rows_retained": true
+    },
+    {
+      "path": "corpus_friction/work_orders.jsonl",
+      "original_prefix_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "appended_rows": 22,
+      "all_original_bytes_retained": true,
+      "owner_packet_rows_retained": true
+    },
+    {
+      "path": "writing_projects/behaviour-example/examples/proposal-application-records.jsonl",
+      "original_prefix_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "appended_rows": 2,
+      "all_original_bytes_retained": true,
+      "owner_packet_rows_retained": true
+    },
+    {
+      "path": "sources/behaviour-example/feedback/feedback.jsonl",
+      "original_prefix_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "appended_rows": 5,
+      "all_original_bytes_retained": true,
+      "owner_packet_rows_retained": true
+    },
+    {
+      "path": "sources/behaviour-example/projection_plan.friction.jsonl",
+      "original_prefix_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "appended_rows": 4,
+      "all_original_bytes_retained": true,
+      "owner_packet_rows_retained": true
+    }
+  ],
+  "namespace_collision": false,
+  "provider_native_bindings": "Detached by original handover owner; not invented or reattached."
+}

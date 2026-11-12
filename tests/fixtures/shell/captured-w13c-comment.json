@@ -1,0 +1,2885 @@
+{
+ "about": "Wave 13c id-sweep: the owner answers read by the passage comment dialog (feedback-route.mjs openFeedbackComment) on the seeded throwaway project, captured by evidence/WRITING_TAKEOVER_2026-11-05/frontend/redesign/wave13c/id-sweep/gen/capture8.mjs and capture9.mjs, project name rewritten to book. The request ids in the lookup and comparison answers are the run that captured them (retained_request_id); the test substitutes the id of its own retained Save.",
+ "comment_text": "Say what the second pot showed.",
+ "prepare": {
+  "request": {
+   "project": "book",
+   "anchor": {
+    "file": "chapters/chapter-01.tex",
+    "block": "chapters/chapter-01.tex#b2",
+    "section": "introduction",
+    "line_start": 2,
+    "line_end": 2,
+    "source_selection": {
+     "schema": "laplace.comment-source-selection/1",
+     "kind": "whole-block",
+     "units": "unicode-codepoints",
+     "start": 0,
+     "end": 53,
+     "display_quote": "Draft — this opening is ready for authoring."
+    }
+   },
+   "expected": [
+    "rev:prose:book::chapters/chapter-01.tex:2-2:6e20c92df5c9132e4409647a002ed30ea10bb7a78e21ad21815c86dffebce93b"
+   ],
+   "selection_identity": "sha256:2c0b095a16f93a6022cfafc452b05202ea6db3aa69a8d81713facbf66af661a5",
+   "source_sha256": "4ccb9f8abfda29a22b4de7a79cc19173da8459ff202e2ea7d049568c6dfb29ac"
+  },
+  "response": {
+   "project": "book",
+   "source_basis": {
+    "schema_version": "laplace.passage-comment-basis/1",
+    "project": "book",
+    "file": "synthetics papers/book/manuscript/chapters/chapter-01.tex",
+    "selection_identity": "sha256:2c0b095a16f93a6022cfafc452b05202ea6db3aa69a8d81713facbf66af661a5",
+    "source_sha256": "4ccb9f8abfda29a22b4de7a79cc19173da8459ff202e2ea7d049568c6dfb29ac",
+    "line_start": 2,
+    "line_end": 2,
+    "source_ref": "synthetics papers/book/manuscript/chapters/chapter-01.tex:@6e20c92df5c9",
+    "source_quote": "\\textit{Draft — this opening is ready for authoring.}",
+    "ledger": "synthetics papers/book/manuscript/feedback/feedback.jsonl"
+   },
+   "base_revision": 1,
+   "anchor": {
+    "file": "synthetics papers/book/manuscript/chapters/chapter-01.tex",
+    "block": "chapters/chapter-01.tex#b2",
+    "section": "introduction",
+    "line_start": 2,
+    "line_end": 2,
+    "source_selection": {
+     "schema": "laplace.comment-source-selection/1",
+     "kind": "whole-block",
+     "units": "unicode-codepoints",
+     "start": 0,
+     "end": 53,
+     "display_quote": "Draft — this opening is ready for authoring."
+    },
+    "quote": "\\textit{Draft — this opening is ready for authoring.}"
+   },
+   "meaning": "This comment applies as an ordinary author instruction to its passage.",
+   "instruction_eligible": true,
+   "save": {
+    "http": {
+     "method": "POST",
+     "url": "/authoring/correction"
+    }
+   },
+   "reconcile": {
+    "http": {
+     "method": "GET",
+     "route": "/authoring/correction-request",
+     "query": {
+      "project": "book",
+      "ledger": "synthetics papers/book/manuscript/feedback/feedback.jsonl"
+     }
+    },
+    "requires": [
+     "request_id"
+    ]
+   },
+   "settle": {
+    "http": {
+     "method": "POST",
+     "url": "/authoring/correction-settle",
+     "body": {
+      "project": "book",
+      "ledger": "synthetics papers/book/manuscript/feedback/feedback.jsonl"
+     }
+    },
+    "requires": [
+     "submission"
+    ],
+    "meaning": "Settle the original exact Save; preserve any already saved comment."
+   }
+  }
+ },
+ "work_state": {
+  "project": "book",
+  "framing": {
+   "project": "book",
+   "revision": 1,
+   "argument_revision": 1,
+   "argument": "Compare watering observations and write a short, evidence-based account.",
+   "framing": {
+    "purpose": "Compare watering observations and write a short, evidence-based account.",
+    "audience": "A general reader",
+    "question": ""
+   },
+   "section_ids": []
+  },
+  "form": "article",
+  "form_origin": "selected-source",
+  "form_source": {
+   "origin": "selected-source",
+   "documentclass": "article",
+   "source_revision": "51260fc321abc6d19ab348cc7c3b871781c1699b07572d4bafa3fd9b9bc51291"
+  },
+  "style": {},
+  "project_protocol": {
+   "documents": [],
+   "revision": "sha256:4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+   "catalog_revision": "sha256:4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+   "status": "UNCONFIGURED",
+   "semantics": {
+    "revision": "instruction bodies supplied to the writing session",
+    "catalog_revision": "all configured guide identities, including handoff/background"
+   }
+  },
+  "view": "summary",
+  "tasks": [
+   {
+    "id": "WORK-observation-summary",
+    "title": "Summarise the first observation",
+    "task_kind": "writing",
+    "status": "done",
+    "recorded_status": "done",
+    "parent_work_id": null,
+    "depends_on": [],
+    "section_ids": [],
+    "blocked_by": [],
+    "blocked_reason": null,
+    "containment_issue": null,
+    "origin": "author",
+    "ts": "2026-10-29T12:41:46.820Z",
+    "lifecycle": {
+     "status": "done",
+     "completed": true,
+     "closed": true
+    },
+    "readiness": {
+     "status": "CLOSED",
+     "blocked_by": []
+    },
+    "current_acceptance": {
+     "status": "CURRENT",
+     "review_required": false,
+     "kind": null
+    },
+    "currentness": {
+     "status": "CURRENT"
+    },
+    "qualified_id": "book::WORK-observation-summary",
+    "read_handle": {
+     "operation": "project",
+     "payload": {
+      "namespace": "book",
+      "view": "detail",
+      "id": "WORK-observation-summary"
+     },
+     "http": {
+      "method": "GET",
+      "url": "/work/state?project=book&view=detail&id=WORK-observation-summary"
+     }
+    },
+    "review_evidence_read": {
+     "operation": "project",
+     "payload": {
+      "namespace": "book",
+      "view": "review-evidence",
+      "id": "WORK-observation-summary",
+      "request": {
+       "demand": "aggregate",
+       "selector": "all"
+      }
+     },
+     "http": {
+      "method": "GET",
+      "url": "/work/state?project=book&view=review-evidence&id=WORK-observation-summary&request=%7B%22demand%22%3A%22aggregate%22%2C%22selector%22%3A%22all%22%7D"
+     }
+    },
+    "child_count": 0
+   },
+   {
+    "id": "WORK-compare-notes",
+    "title": "Compare the watering notes",
+    "task_kind": "writing",
+    "status": "blocked",
+    "recorded_status": "done",
+    "parent_work_id": null,
+    "depends_on": [],
+    "section_ids": [],
+    "blocked_by": [
+     "evidence"
+    ],
+    "blocked_reason": null,
+    "containment_issue": null,
+    "origin": "author",
+    "ts": "2026-10-29T12:41:46.875Z",
+    "lifecycle": {
+     "status": "done",
+     "completed": true,
+     "closed": true
+    },
+    "readiness": {
+     "status": "CLOSED",
+     "blocked_by": [
+      "evidence"
+     ]
+    },
+    "current_acceptance": {
+     "status": "REVIEW_REQUIRED",
+     "review_required": true,
+     "kind": "WORK_SCOPE_CHANGED"
+    },
+    "currentness": {
+     "status": "STALE",
+     "kind": "WORK_SCOPE_CHANGED"
+    },
+    "qualified_id": "book::WORK-compare-notes",
+    "read_handle": {
+     "operation": "project",
+     "payload": {
+      "namespace": "book",
+      "view": "detail",
+      "id": "WORK-compare-notes"
+     },
+     "http": {
+      "method": "GET",
+      "url": "/work/state?project=book&view=detail&id=WORK-compare-notes"
+     }
+    },
+    "review_evidence_read": {
+     "operation": "project",
+     "payload": {
+      "namespace": "book",
+      "view": "review-evidence",
+      "id": "WORK-compare-notes",
+      "request": {
+       "demand": "aggregate",
+       "selector": "all"
+      }
+     },
+     "http": {
+      "method": "GET",
+      "url": "/work/state?project=book&view=review-evidence&id=WORK-compare-notes&request=%7B%22demand%22%3A%22aggregate%22%2C%22selector%22%3A%22all%22%7D"
+     }
+    },
+    "child_count": 0
+   },
+   {
+    "id": "WORK-next-observation",
+    "title": "Observe both pots tomorrow",
+    "task_kind": "research",
+    "status": "ready",
+    "recorded_status": "open",
+    "parent_work_id": null,
+    "depends_on": [],
+    "section_ids": [],
+    "blocked_by": [],
+    "containment_issue": null,
+    "origin": "author",
+    "ts": "2026-10-29T12:41:46.724Z",
+    "lifecycle": {
+     "status": "open",
+     "completed": false,
+     "closed": false
+    },
+    "readiness": {
+     "status": "READY",
+     "blocked_by": []
+    },
+    "current_acceptance": {
+     "status": "NOT_REQUIRED",
+     "review_required": false,
+     "kind": null
+    },
+    "currentness": {
+     "status": "NOT_REQUIRED"
+    },
+    "qualified_id": "book::WORK-next-observation",
+    "read_handle": {
+     "operation": "project",
+     "payload": {
+      "namespace": "book",
+      "view": "detail",
+      "id": "WORK-next-observation"
+     },
+     "http": {
+      "method": "GET",
+      "url": "/work/state?project=book&view=detail&id=WORK-next-observation"
+     }
+    },
+    "review_evidence_read": {
+     "operation": "project",
+     "payload": {
+      "namespace": "book",
+      "view": "review-evidence",
+      "id": "WORK-next-observation",
+      "request": {
+       "demand": "aggregate",
+       "selector": "all"
+      }
+     },
+     "http": {
+      "method": "GET",
+      "url": "/work/state?project=book&view=review-evidence&id=WORK-next-observation&request=%7B%22demand%22%3A%22aggregate%22%2C%22selector%22%3A%22all%22%7D"
+     }
+    },
+    "child_count": 0
+   },
+   {
+    "id": "WORK-weekly-guidance",
+    "title": "Draft a weekly watering recommendation",
+    "task_kind": "writing",
+    "status": "blocked",
+    "recorded_status": "open",
+    "parent_work_id": null,
+    "depends_on": [
+     "WORK-next-observation"
+    ],
+    "section_ids": [],
+    "blocked_by": [
+     "WORK-next-observation"
+    ],
+    "containment_issue": null,
+    "origin": "author",
+    "ts": "2026-10-29T12:41:46.747Z",
+    "lifecycle": {
+     "status": "open",
+     "completed": false,
+     "closed": false
+    },
+    "readiness": {
+     "status": "BLOCKED",
+     "blocked_by": [
+      "WORK-next-observation"
+     ]
+    },
+    "current_acceptance": {
+     "status": "NOT_REQUIRED",
+     "review_required": false,
+     "kind": null
+    },
+    "currentness": {
+     "status": "NOT_REQUIRED"
+    },
+    "qualified_id": "book::WORK-weekly-guidance",
+    "read_handle": {
+     "operation": "project",
+     "payload": {
+      "namespace": "book",
+      "view": "detail",
+      "id": "WORK-weekly-guidance"
+     },
+     "http": {
+      "method": "GET",
+      "url": "/work/state?project=book&view=detail&id=WORK-weekly-guidance"
+     }
+    },
+    "review_evidence_read": {
+     "operation": "project",
+     "payload": {
+      "namespace": "book",
+      "view": "review-evidence",
+      "id": "WORK-weekly-guidance",
+      "request": {
+       "demand": "aggregate",
+       "selector": "all"
+      }
+     },
+     "http": {
+      "method": "GET",
+      "url": "/work/state?project=book&view=review-evidence&id=WORK-weekly-guidance&request=%7B%22demand%22%3A%22aggregate%22%2C%22selector%22%3A%22all%22%7D"
+     }
+    },
+    "child_count": 0
+   },
+   {
+    "id": "WORK-check-explanation",
+    "title": "Check the draft explanation",
+    "task_kind": "writing",
+    "status": "ready",
+    "recorded_status": "open",
+    "parent_work_id": null,
+    "depends_on": [],
+    "section_ids": [],
+    "blocked_by": [],
+    "containment_issue": null,
+    "origin": "author",
+    "ts": "2026-10-29T12:41:46.769Z",
+    "lifecycle": {
+     "status": "open",
+     "completed": false,
+     "closed": false
+    },
+    "readiness": {
+     "status": "READY",
+     "blocked_by": []
+    },
+    "current_acceptance": {
+     "status": "NOT_REQUIRED",
+     "review_required": false,
+     "kind": null
+    },
+    "currentness": {
+     "status": "NOT_REQUIRED"
+    },
+    "review": {
+     "remaining": 1,
+     "obligations": 1,
+     "next": "handoff",
+     "pending_joins": 0
+    },
+    "qualified_id": "book::WORK-check-explanation",
+    "read_handle": {
+     "operation": "project",
+     "payload": {
+      "namespace": "book",
+      "view": "detail",
+      "id": "WORK-check-explanation"
+     },
+     "http": {
+      "method": "GET",
+      "url": "/work/state?project=book&view=detail&id=WORK-check-explanation"
+     }
+    },
+    "review_evidence_read": {
+     "operation": "project",
+     "payload": {
+      "namespace": "book",
+      "view": "review-evidence",
+      "id": "WORK-check-explanation",
+      "request": {
+       "demand": "aggregate",
+       "selector": "all"
+      }
+     },
+     "http": {
+      "method": "GET",
+      "url": "/work/state?project=book&view=review-evidence&id=WORK-check-explanation&request=%7B%22demand%22%3A%22aggregate%22%2C%22selector%22%3A%22all%22%7D"
+     }
+    },
+    "child_count": 0
+   },
+   {
+    "id": "WORK-evidence-trail",
+    "title": "Explain the watering observations",
+    "task_kind": "execution",
+    "status": "done",
+    "recorded_status": "done",
+    "parent_work_id": null,
+    "depends_on": [],
+    "section_ids": [],
+    "blocked_by": [],
+    "blocked_reason": null,
+    "containment_issue": null,
+    "origin": "author",
+    "ts": "2026-10-29T18:36:31.139Z",
+    "lifecycle": {
+     "status": "done",
+     "completed": true,
+     "closed": true
+    },
+    "readiness": {
+     "status": "CLOSED",
+     "blocked_by": []
+    },
+    "current_acceptance": {
+     "status": "CURRENT",
+     "review_required": false,
+     "kind": null
+    },
+    "currentness": {
+     "status": "CURRENT"
+    },
+    "qualified_id": "book::WORK-evidence-trail",
+    "read_handle": {
+     "operation": "project",
+     "payload": {
+      "namespace": "book",
+      "view": "detail",
+      "id": "WORK-evidence-trail"
+     },
+     "http": {
+      "method": "GET",
+      "url": "/work/state?project=book&view=detail&id=WORK-evidence-trail"
+     }
+    },
+    "review_evidence_read": {
+     "operation": "project",
+     "payload": {
+      "namespace": "book",
+      "view": "review-evidence",
+      "id": "WORK-evidence-trail",
+      "request": {
+       "demand": "aggregate",
+       "selector": "all"
+      }
+     },
+     "http": {
+      "method": "GET",
+      "url": "/work/state?project=book&view=review-evidence&id=WORK-evidence-trail&request=%7B%22demand%22%3A%22aggregate%22%2C%22selector%22%3A%22all%22%7D"
+     }
+    },
+    "child_count": 0
+   },
+   {
+    "id": "WORK-w5-001",
+    "title": "Establish a reproducible watering protocol for both pots across the full spring observation window",
+    "task_kind": "research",
+    "status": "in-progress",
+    "recorded_status": "in-progress",
+    "parent_work_id": null,
+    "depends_on": [],
+    "section_ids": [],
+    "blocked_by": [],
+    "blocked_reason": null,
+    "containment_issue": null,
+    "origin": "author",
+    "ts": "2026-11-09T06:21:25.773Z",
+    "lifecycle": {
+     "status": "in-progress",
+     "completed": false,
+     "closed": false
+    },
+    "readiness": {
+     "status": "IN_PROGRESS",
+     "blocked_by": []
+    },
+    "current_acceptance": {
+     "status": "NOT_REQUIRED",
+     "review_required": false,
+     "kind": null
+    },
+    "currentness": {
+     "status": "NOT_REQUIRED"
+    },
+    "qualified_id": "book::WORK-w5-001",
+    "read_handle": {
+     "operation": "project",
+     "payload": {
+      "namespace": "book",
+      "view": "detail",
+      "id": "WORK-w5-001"
+     },
+     "http": {
+      "method": "GET",
+      "url": "/work/state?project=book&view=detail&id=WORK-w5-001"
+     }
+    },
+    "review_evidence_read": {
+     "operation": "project",
+     "payload": {
+      "namespace": "book",
+      "view": "review-evidence",
+      "id": "WORK-w5-001",
+      "request": {
+       "demand": "aggregate",
+       "selector": "all"
+      }
+     },
+     "http": {
+      "method": "GET",
+      "url": "/work/state?project=book&view=review-evidence&id=WORK-w5-001&request=%7B%22demand%22%3A%22aggregate%22%2C%22selector%22%3A%22all%22%7D"
+     }
+    },
+    "child_count": 12
+   },
+   {
+    "id": "WORK-w5-002",
+    "title": "Calibrate the moisture probe against a measured cup of water before each morning reading",
+    "task_kind": "research",
+    "status": "ready",
+    "recorded_status": "open",
+    "parent_work_id": "WORK-w5-001",
+    "depends_on": [],
+    "section_ids": [],
+    "blocked_by": [],
+    "containment_issue": null,
+    "origin": "author",
+    "ts": "2026-11-09T06:21:25.166Z",
+    "lifecycle": {
+     "status": "open",
+     "completed": false,
+     "closed": false
+    },
+    "readiness": {
+     "status": "READY",
+     "blocked_by": []
+    },
+    "current_acceptance": {
+     "status": "NOT_REQUIRED",
+     "review_required": false,
+     "kind": null
+    },
+    "currentness": {
+     "status": "NOT_REQUIRED"
+    },
+    "qualified_id": "book::WORK-w5-002",
+    "read_handle": {
+     "operation": "project",
+     "payload": {
+      "namespace": "book",
+      "view": "detail",
+      "id": "WORK-w5-002"
+     },
+     "http": {
+      "method": "GET",
+      "url": "/work/state?project=book&view=detail&id=WORK-w5-002"
+     }
+    },
+    "review_evidence_read": {
+     "operation": "project",
+     "payload": {
+      "namespace": "book",
+      "view": "review-evidence",
+      "id": "WORK-w5-002",
+      "request": {
+       "demand": "aggregate",
+       "selector": "all"
+      }
+     },
+     "http": {
+      "method": "GET",
+      "url": "/work/state?project=book&view=review-evidence&id=WORK-w5-002&request=%7B%22demand%22%3A%22aggregate%22%2C%22selector%22%3A%22all%22%7D"
+     }
+    },
+    "child_count": 0
+   },
+   {
+    "id": "WORK-w5-003",
+    "title": "Record the pot weight before and after watering, with the time of day and the room temperature",
+    "task_kind": "research",
+    "status": "in-progress",
+    "recorded_status": "in-progress",
+    "parent_work_id": "WORK-w5-001",
+    "depends_on": [],
+    "section_ids": [],
+    "blocked_by": [],
+    "blocked_reason": null,
+    "containment_issue": null,
+    "origin": "author",
+    "ts": "2026-11-09T06:21:25.222Z",
+    "lifecycle": {
+     "status": "in-progress",
+     "completed": false,
+     "closed": false
+    },
+    "readiness": {
+     "status": "IN_PROGRESS",
+     "blocked_by": []
+    },
+    "current_acceptance": {
+     "status": "NOT_REQUIRED",
+     "review_required": false,
+     "kind": null
+    },
+    "currentness": {
+     "status": "NOT_REQUIRED"
+    },
+    "qualified_id": "book::WORK-w5-003",
+    "read_handle": {
+     "operation": "project",
+     "payload": {
+      "namespace": "book",
+      "view": "detail",
+      "id": "WORK-w5-003"
+     },
+     "http": {
+      "method": "GET",
+      "url": "/work/state?project=book&view=detail&id=WORK-w5-003"
+     }
+    },
+    "review_evidence_read": {
+     "operation": "project",
+     "payload": {
+      "namespace": "book",
+      "view": "review-evidence",
+      "id": "WORK-w5-003",
+      "request": {
+       "demand": "aggregate",
+       "selector": "all"
+      }
+     },
+     "http": {
+      "method": "GET",
+      "url": "/work/state?project=book&view=review-evidence&id=WORK-w5-003&request=%7B%22demand%22%3A%22aggregate%22%2C%22selector%22%3A%22all%22%7D"
+     }
+    },
+    "child_count": 0
+   },
+   {
+    "id": "WORK-w5-004",
+    "title": "Photograph both pots from the same position so that leaf droop can be compared between days",
+    "task_kind": "research",
+    "status": "blocked",
+    "recorded_status": "blocked",
+    "parent_work_id": "WORK-w5-001",
+    "depends_on": [],
+    "section_ids": [],
+    "blocked_by": [],
+    "blocked_reason": "Recorded hold has no explanation; inspect the exact task history.",
+    "containment_issue": null,
+    "origin": "author",
+    "ts": "2026-11-09T06:21:25.281Z",
+    "lifecycle": {
+     "status": "blocked",
+     "completed": false,
+     "closed": false
+    },
+    "readiness": {
+     "status": "BLOCKED",
+     "blocked_by": []
+    },
+    "current_acceptance": {
+     "status": "NOT_REQUIRED",
+     "review_required": false,
+     "kind": null
+    },
+    "currentness": {
+     "status": "NOT_REQUIRED"
+    },
+    "qualified_id": "book::WORK-w5-004",
+    "read_handle": {
+     "operation": "project",
+     "payload": {
+      "namespace": "book",
+      "view": "detail",
+      "id": "WORK-w5-004"
+     },
+     "http": {
+      "method": "GET",
+      "url": "/work/state?project=book&view=detail&id=WORK-w5-004"
+     }
+    },
+    "review_evidence_read": {
+     "operation": "project",
+     "payload": {
+      "namespace": "book",
+      "view": "review-evidence",
+      "id": "WORK-w5-004",
+      "request": {
+       "demand": "aggregate",
+       "selector": "all"
+      }
+     },
+     "http": {
+      "method": "GET",
+      "url": "/work/state?project=book&view=review-evidence&id=WORK-w5-004&request=%7B%22demand%22%3A%22aggregate%22%2C%22selector%22%3A%22all%22%7D"
+     }
+    },
+    "child_count": 0
+   },
+   {
+    "id": "WORK-w5-005",
+    "title": "Write down any watering that happened outside the protocol and the reason it was needed",
+    "task_kind": "research",
+    "status": "done",
+    "recorded_status": "done",
+    "parent_work_id": "WORK-w5-001",
+    "depends_on": [],
+    "section_ids": [],
+    "blocked_by": [],
+    "blocked_reason": null,
+    "containment_issue": null,
+    "origin": "author",
+    "ts": "2026-11-09T06:21:25.352Z",
+    "lifecycle": {
+     "status": "done",
+     "completed": true,
+     "closed": true
+    },
+    "readiness": {
+     "status": "CLOSED",
+     "blocked_by": []
+    },
+    "current_acceptance": {
+     "status": "CURRENT",
+     "review_required": false,
+     "kind": null
+    },
+    "currentness": {
+     "status": "CURRENT"
+    },
+    "qualified_id": "book::WORK-w5-005",
+    "read_handle": {
+     "operation": "project",
+     "payload": {
+      "namespace": "book",
+      "view": "detail",
+      "id": "WORK-w5-005"
+     },
+     "http": {
+      "method": "GET",
+      "url": "/work/state?project=book&view=detail&id=WORK-w5-005"
+     }
+    },
+    "review_evidence_read": {
+     "operation": "project",
+     "payload": {
+      "namespace": "book",
+      "view": "review-evidence",
+      "id": "WORK-w5-005",
+      "request": {
+       "demand": "aggregate",
+       "selector": "all"
+      }
+     },
+     "http": {
+      "method": "GET",
+      "url": "/work/state?project=book&view=review-evidence&id=WORK-w5-005&request=%7B%22demand%22%3A%22aggregate%22%2C%22selector%22%3A%22all%22%7D"
+     }
+    },
+    "child_count": 0
+   },
+   {
+    "id": "WORK-w5-006",
+    "title": "Check whether the drainage saucer held standing water an hour after each watering",
+    "task_kind": "research",
+    "status": "ready",
+    "recorded_status": "open",
+    "parent_work_id": "WORK-w5-001",
+    "depends_on": [],
+    "section_ids": [],
+    "blocked_by": [],
+    "containment_issue": null,
+    "origin": "author",
+    "ts": "2026-11-09T06:21:25.388Z",
+    "lifecycle": {
+     "status": "open",
+     "completed": false,
+     "closed": false
+    },
+    "readiness": {
+     "status": "READY",
+     "blocked_by": []
+    },
+    "current_acceptance": {
+     "status": "NOT_REQUIRED",
+     "review_required": false,
+     "kind": null
+    },
+    "currentness": {
+     "status": "NOT_REQUIRED"
+    },
+    "qualified_id": "book::WORK-w5-006",
+    "read_handle": {
+     "operation": "project",
+     "payload": {
+      "namespace": "book",
+      "view": "detail",
+      "id": "WORK-w5-006"
+     },
+     "http": {
+      "method": "GET",
+      "url": "/work/state?project=book&view=detail&id=WORK-w5-006"
+     }
+    },
+    "review_evidence_read": {
+     "operation": "project",
+     "payload": {
+      "namespace": "book",
+      "view": "review-evidence",
+      "id": "WORK-w5-006",
+      "request": {
+       "demand": "aggregate",
+       "selector": "all"
+      }
+     },
+     "http": {
+      "method": "GET",
+      "url": "/work/state?project=book&view=review-evidence&id=WORK-w5-006&request=%7B%22demand%22%3A%22aggregate%22%2C%22selector%22%3A%22all%22%7D"
+     }
+    },
+    "child_count": 0
+   },
+   {
+    "id": "WORK-w5-007",
+    "title": "Compare the morning and evening readings for the shaded pot over one full week",
+    "task_kind": "research",
+    "status": "in-progress",
+    "recorded_status": "in-progress",
+    "parent_work_id": "WORK-w5-001",
+    "depends_on": [],
+    "section_ids": [],
+    "blocked_by": [],
+    "blocked_reason": null,
+    "containment_issue": null,
+    "origin": "author",
+    "ts": "2026-11-09T06:21:25.455Z",
+    "lifecycle": {
+     "status": "in-progress",
+     "completed": false,
+     "closed": false
+    },
+    "readiness": {
+     "status": "IN_PROGRESS",
+     "blocked_by": []
+    },
+    "current_acceptance": {
+     "status": "NOT_REQUIRED",
+     "review_required": false,
+     "kind": null
+    },
+    "currentness": {
+     "status": "NOT_REQUIRED"
+    },
+    "qualified_id": "book::WORK-w5-007",
+    "read_handle": {
+     "operation": "project",
+     "payload": {
+      "namespace": "book",
+      "view": "detail",
+      "id": "WORK-w5-007"
+     },
+     "http": {
+      "method": "GET",
+      "url": "/work/state?project=book&view=detail&id=WORK-w5-007"
+     }
+    },
+    "review_evidence_read": {
+     "operation": "project",
+     "payload": {
+      "namespace": "book",
+      "view": "review-evidence",
+      "id": "WORK-w5-007",
+      "request": {
+       "demand": "aggregate",
+       "selector": "all"
+      }
+     },
+     "http": {
+      "method": "GET",
+      "url": "/work/state?project=book&view=review-evidence&id=WORK-w5-007&request=%7B%22demand%22%3A%22aggregate%22%2C%22selector%22%3A%22all%22%7D"
+     }
+    },
+    "child_count": 0
+   },
+   {
+    "id": "WORK-w5-008",
+    "title": "Note the first day new leaves appear on either plant and the reading on that day",
+    "task_kind": "research",
+    "status": "blocked",
+    "recorded_status": "blocked",
+    "parent_work_id": "WORK-w5-001",
+    "depends_on": [],
+    "section_ids": [],
+    "blocked_by": [],
+    "blocked_reason": "Recorded hold has no explanation; inspect the exact task history.",
+    "containment_issue": null,
+    "origin": "author",
+    "ts": "2026-11-09T06:21:25.518Z",
+    "lifecycle": {
+     "status": "blocked",
+     "completed": false,
+     "closed": false
+    },
+    "readiness": {
+     "status": "BLOCKED",
+     "blocked_by": []
+    },
+    "current_acceptance": {
+     "status": "NOT_REQUIRED",
+     "review_required": false,
+     "kind": null
+    },
+    "currentness": {
+     "status": "NOT_REQUIRED"
+    },
+    "qualified_id": "book::WORK-w5-008",
+    "read_handle": {
+     "operation": "project",
+     "payload": {
+      "namespace": "book",
+      "view": "detail",
+      "id": "WORK-w5-008"
+     },
+     "http": {
+      "method": "GET",
+      "url": "/work/state?project=book&view=detail&id=WORK-w5-008"
+     }
+    },
+    "review_evidence_read": {
+     "operation": "project",
+     "payload": {
+      "namespace": "book",
+      "view": "review-evidence",
+      "id": "WORK-w5-008",
+      "request": {
+       "demand": "aggregate",
+       "selector": "all"
+      }
+     },
+     "http": {
+      "method": "GET",
+      "url": "/work/state?project=book&view=review-evidence&id=WORK-w5-008&request=%7B%22demand%22%3A%22aggregate%22%2C%22selector%22%3A%22all%22%7D"
+     }
+    },
+    "child_count": 0
+   },
+   {
+    "id": "WORK-w5-009",
+    "title": "Measure how long the topsoil takes to look dry after a full watering in each pot",
+    "task_kind": "research",
+    "status": "done",
+    "recorded_status": "done",
+    "parent_work_id": "WORK-w5-001",
+    "depends_on": [],
+    "section_ids": [],
+    "blocked_by": [],
+    "blocked_reason": null,
+    "containment_issue": null,
+    "origin": "author",
+    "ts": "2026-11-09T06:21:25.563Z",
+    "lifecycle": {
+     "status": "done",
+     "completed": true,
+     "closed": true
+    },
+    "readiness": {
+     "status": "CLOSED",
+     "blocked_by": []
+    },
+    "current_acceptance": {
+     "status": "CURRENT",
+     "review_required": false,
+     "kind": null
+    },
+    "currentness": {
+     "status": "CURRENT"
+    },
+    "qualified_id": "book::WORK-w5-009",
+    "read_handle": {
+     "operation": "project",
+     "payload": {
+      "namespace": "book",
+      "view": "detail",
+      "id": "WORK-w5-009"
+     },
+     "http": {
+      "method": "GET",
+      "url": "/work/state?project=book&view=detail&id=WORK-w5-009"
+     }
+    },
+    "review_evidence_read": {
+     "operation": "project",
+     "payload": {
+      "namespace": "book",
+      "view": "review-evidence",
+      "id": "WORK-w5-009",
+      "request": {
+       "demand": "aggregate",
+       "selector": "all"
+      }
+     },
+     "http": {
+      "method": "GET",
+      "url": "/work/state?project=book&view=review-evidence&id=WORK-w5-009&request=%7B%22demand%22%3A%22aggregate%22%2C%22selector%22%3A%22all%22%7D"
+     }
+    },
+    "child_count": 0
+   },
+   {
+    "id": "WORK-w5-010",
+    "title": "Repeat the calibration after the probe battery is replaced and record both values",
+    "task_kind": "research",
+    "status": "ready",
+    "recorded_status": "open",
+    "parent_work_id": "WORK-w5-001",
+    "depends_on": [],
+    "section_ids": [],
+    "blocked_by": [],
+    "containment_issue": null,
+    "origin": "author",
+    "ts": "2026-11-09T06:21:25.583Z",
+    "lifecycle": {
+     "status": "open",
+     "completed": false,
+     "closed": false
+    },
+    "readiness": {
+     "status": "READY",
+     "blocked_by": []
+    },
+    "current_acceptance": {
+     "status": "NOT_REQUIRED",
+     "review_required": false,
+     "kind": null
+    },
+    "currentness": {
+     "status": "NOT_REQUIRED"
+    },
+    "qualified_id": "book::WORK-w5-010",
+    "read_handle": {
+     "operation": "project",
+     "payload": {
+      "namespace": "book",
+      "view": "detail",
+      "id": "WORK-w5-010"
+     },
+     "http": {
+      "method": "GET",
+      "url": "/work/state?project=book&view=detail&id=WORK-w5-010"
+     }
+    },
+    "review_evidence_read": {
+     "operation": "project",
+     "payload": {
+      "namespace": "book",
+      "view": "review-evidence",
+      "id": "WORK-w5-010",
+      "request": {
+       "demand": "aggregate",
+       "selector": "all"
+      }
+     },
+     "http": {
+      "method": "GET",
+      "url": "/work/state?project=book&view=review-evidence&id=WORK-w5-010&request=%7B%22demand%22%3A%22aggregate%22%2C%22selector%22%3A%22all%22%7D"
+     }
+    },
+    "child_count": 0
+   },
+   {
+    "id": "WORK-w5-011",
+    "title": "Keep a list of the days when the window was open, since airflow changes how fast soil dries",
+    "task_kind": "research",
+    "status": "in-progress",
+    "recorded_status": "in-progress",
+    "parent_work_id": "WORK-w5-001",
+    "depends_on": [],
+    "section_ids": [],
+    "blocked_by": [],
+    "blocked_reason": null,
+    "containment_issue": null,
+    "origin": "author",
+    "ts": "2026-11-09T06:21:25.658Z",
+    "lifecycle": {
+     "status": "in-progress",
+     "completed": false,
+     "closed": false
+    },
+    "readiness": {
+     "status": "IN_PROGRESS",
+     "blocked_by": []
+    },
+    "current_acceptance": {
+     "status": "NOT_REQUIRED",
+     "review_required": false,
+     "kind": null
+    },
+    "currentness": {
+     "status": "NOT_REQUIRED"
+    },
+    "qualified_id": "book::WORK-w5-011",
+    "read_handle": {
+     "operation": "project",
+     "payload": {
+      "namespace": "book",
+      "view": "detail",
+      "id": "WORK-w5-011"
+     },
+     "http": {
+      "method": "GET",
+      "url": "/work/state?project=book&view=detail&id=WORK-w5-011"
+     }
+    },
+    "review_evidence_read": {
+     "operation": "project",
+     "payload": {
+      "namespace": "book",
+      "view": "review-evidence",
+      "id": "WORK-w5-011",
+      "request": {
+       "demand": "aggregate",
+       "selector": "all"
+      }
+     },
+     "http": {
+      "method": "GET",
+      "url": "/work/state?project=book&view=review-evidence&id=WORK-w5-011&request=%7B%22demand%22%3A%22aggregate%22%2C%22selector%22%3A%22all%22%7D"
+     }
+    },
+    "child_count": 0
+   },
+   {
+    "id": "WORK-w5-012",
+    "title": "Ask whether the second probe agrees with the first within the tolerance printed on its box",
+    "task_kind": "research",
+    "status": "blocked",
+    "recorded_status": "blocked",
+    "parent_work_id": "WORK-w5-001",
+    "depends_on": [],
+    "section_ids": [],
+    "blocked_by": [],
+    "blocked_reason": "Recorded hold has no explanation; inspect the exact task history.",
+    "containment_issue": null,
+    "origin": "author",
+    "ts": "2026-11-09T06:21:25.703Z",
+    "lifecycle": {
+     "status": "blocked",
+     "completed": false,
+     "closed": false
+    },
+    "readiness": {
+     "status": "BLOCKED",
+     "blocked_by": []
+    },
+    "current_acceptance": {
+     "status": "NOT_REQUIRED",
+     "review_required": false,
+     "kind": null
+    },
+    "currentness": {
+     "status": "NOT_REQUIRED"
+    },
+    "qualified_id": "book::WORK-w5-012",
+    "read_handle": {
+     "operation": "project",
+     "payload": {
+      "namespace": "book",
+      "view": "detail",
+      "id": "WORK-w5-012"
+     },
+     "http": {
+      "method": "GET",
+      "url": "/work/state?project=book&view=detail&id=WORK-w5-012"
+     }
+    },
+    "review_evidence_read": {
+     "operation": "project",
+     "payload": {
+      "namespace": "book",
+      "view": "review-evidence",
+      "id": "WORK-w5-012",
+      "request": {
+       "demand": "aggregate",
+       "selector": "all"
+      }
+     },
+     "http": {
+      "method": "GET",
+      "url": "/work/state?project=book&view=review-evidence&id=WORK-w5-012&request=%7B%22demand%22%3A%22aggregate%22%2C%22selector%22%3A%22all%22%7D"
+     }
+    },
+    "child_count": 0
+   },
+   {
+    "id": "WORK-w5-013",
+    "title": "Mark the readings taken by someone else so that their method can be checked later",
+    "task_kind": "research",
+    "status": "done",
+    "recorded_status": "done",
+    "parent_work_id": "WORK-w5-001",
+    "depends_on": [],
+    "section_ids": [],
+    "blocked_by": [],
+    "blocked_reason": null,
+    "containment_issue": null,
+    "origin": "author",
+    "ts": "2026-11-09T06:21:25.748Z",
+    "lifecycle": {
+     "status": "done",
+     "completed": true,
+     "closed": true
+    },
+    "readiness": {
+     "status": "CLOSED",
+     "blocked_by": []
+    },
+    "current_acceptance": {
+     "status": "CURRENT",
+     "review_required": false,
+     "kind": null
+    },
+    "currentness": {
+     "status": "CURRENT"
+    },
+    "qualified_id": "book::WORK-w5-013",
+    "read_handle": {
+     "operation": "project",
+     "payload": {
+      "namespace": "book",
+      "view": "detail",
+      "id": "WORK-w5-013"
+     },
+     "http": {
+      "method": "GET",
+      "url": "/work/state?project=book&view=detail&id=WORK-w5-013"
+     }
+    },
+    "review_evidence_read": {
+     "operation": "project",
+     "payload": {
+      "namespace": "book",
+      "view": "review-evidence",
+      "id": "WORK-w5-013",
+      "request": {
+       "demand": "aggregate",
+       "selector": "all"
+      }
+     },
+     "http": {
+      "method": "GET",
+      "url": "/work/state?project=book&view=review-evidence&id=WORK-w5-013&request=%7B%22demand%22%3A%22aggregate%22%2C%22selector%22%3A%22all%22%7D"
+     }
+    },
+    "child_count": 0
+   },
+   {
+    "id": "WORK-w5-014",
+    "title": "Reconcile the soil-moisture readings with the hand-written garden notebook and the weather record",
+    "task_kind": "research",
+    "status": "in-progress",
+    "recorded_status": "in-progress",
+    "parent_work_id": null,
+    "depends_on": [],
+    "section_ids": [],
+    "blocked_by": [],
+    "blocked_reason": null,
+    "containment_issue": null,
+    "origin": "author",
+    "ts": "2026-11-09T06:21:25.996Z",
+    "lifecycle": {
+     "status": "in-progress",
+     "completed": false,
+     "closed": false
+    },
+    "readiness": {
+     "status": "IN_PROGRESS",
+     "blocked_by": []
+    },
+    "current_acceptance": {
+     "status": "NOT_REQUIRED",
+     "review_required": false,
+     "kind": null
+    },
+    "currentness": {
+     "status": "NOT_REQUIRED"
+    },
+    "qualified_id": "book::WORK-w5-014",
+    "read_handle": {
+     "operation": "project",
+     "payload": {
+      "namespace": "book",
+      "view": "detail",
+      "id": "WORK-w5-014"
+     },
+     "http": {
+      "method": "GET",
+      "url": "/work/state?project=book&view=detail&id=WORK-w5-014"
+     }
+    },
+    "review_evidence_read": {
+     "operation": "project",
+     "payload": {
+      "namespace": "book",
+      "view": "review-evidence",
+      "id": "WORK-w5-014",
+      "request": {
+       "demand": "aggregate",
+       "selector": "all"
+      }
+     },
+     "http": {
+      "method": "GET",
+      "url": "/work/state?project=book&view=review-evidence&id=WORK-w5-014&request=%7B%22demand%22%3A%22aggregate%22%2C%22selector%22%3A%22all%22%7D"
+     }
+    },
+    "child_count": 5
+   },
+   {
+    "id": "WORK-w5-015",
+    "title": "Calibrate the moisture probe against a measured cup of water before each morning reading",
+    "task_kind": "research",
+    "status": "ready",
+    "recorded_status": "open",
+    "parent_work_id": "WORK-w5-014",
+    "depends_on": [],
+    "section_ids": [],
+    "blocked_by": [],
+    "containment_issue": null,
+    "origin": "author",
+    "ts": "2026-11-09T06:21:25.814Z",
+    "lifecycle": {
+     "status": "open",
+     "completed": false,
+     "closed": false
+    },
+    "readiness": {
+     "status": "READY",
+     "blocked_by": []
+    },
+    "current_acceptance": {
+     "status": "NOT_REQUIRED",
+     "review_required": false,
+     "kind": null
+    },
+    "currentness": {
+     "status": "NOT_REQUIRED"
+    },
+    "qualified_id": "book::WORK-w5-015",
+    "read_handle": {
+     "operation": "project",
+     "payload": {
+      "namespace": "book",
+      "view": "detail",
+      "id": "WORK-w5-015"
+     },
+     "http": {
+      "method": "GET",
+      "url": "/work/state?project=book&view=detail&id=WORK-w5-015"
+     }
+    },
+    "review_evidence_read": {
+     "operation": "project",
+     "payload": {
+      "namespace": "book",
+      "view": "review-evidence",
+      "id": "WORK-w5-015",
+      "request": {
+       "demand": "aggregate",
+       "selector": "all"
+      }
+     },
+     "http": {
+      "method": "GET",
+      "url": "/work/state?project=book&view=review-evidence&id=WORK-w5-015&request=%7B%22demand%22%3A%22aggregate%22%2C%22selector%22%3A%22all%22%7D"
+     }
+    },
+    "child_count": 0
+   },
+   {
+    "id": "WORK-w5-016",
+    "title": "Record the pot weight before and after watering, with the time of day and the room temperature",
+    "task_kind": "research",
+    "status": "in-progress",
+    "recorded_status": "in-progress",
+    "parent_work_id": "WORK-w5-014",
+    "depends_on": [],
+    "section_ids": [],
+    "blocked_by": [],
+    "blocked_reason": null,
+    "containment_issue": null,
+    "origin": "author",
+    "ts": "2026-11-09T06:21:25.859Z",
+    "lifecycle": {
+     "status": "in-progress",
+     "completed": false,
+     "closed": false
+    },
+    "readiness": {
+     "status": "IN_PROGRESS",
+     "blocked_by": []
+    },
+    "current_acceptance": {
+     "status": "NOT_REQUIRED",
+     "review_required": false,
+     "kind": null
+    },
+    "currentness": {
+     "status": "NOT_REQUIRED"
+    },
+    "qualified_id": "book::WORK-w5-016",
+    "read_handle": {
+     "operation": "project",
+     "payload": {
+      "namespace": "book",
+      "view": "detail",
+      "id": "WORK-w5-016"
+     },
+     "http": {
+      "method": "GET",
+      "url": "/work/state?project=book&view=detail&id=WORK-w5-016"
+     }
+    },
+    "review_evidence_read": {
+     "operation": "project",
+     "payload": {
+      "namespace": "book",
+      "view": "review-evidence",
+      "id": "WORK-w5-016",
+      "request": {
+       "demand": "aggregate",
+       "selector": "all"
+      }
+     },
+     "http": {
+      "method": "GET",
+      "url": "/work/state?project=book&view=review-evidence&id=WORK-w5-016&request=%7B%22demand%22%3A%22aggregate%22%2C%22selector%22%3A%22all%22%7D"
+     }
+    },
+    "child_count": 0
+   },
+   {
+    "id": "WORK-w5-017",
+    "title": "Photograph both pots from the same position so that leaf droop can be compared between days",
+    "task_kind": "research",
+    "status": "blocked",
+    "recorded_status": "blocked",
+    "parent_work_id": "WORK-w5-014",
+    "depends_on": [],
+    "section_ids": [],
+    "blocked_by": [],
+    "blocked_reason": "Recorded hold has no explanation; inspect the exact task history.",
+    "containment_issue": null,
+    "origin": "author",
+    "ts": "2026-11-09T06:21:25.904Z",
+    "lifecycle": {
+     "status": "blocked",
+     "completed": false,
+     "closed": false
+    },
+    "readiness": {
+     "status": "BLOCKED",
+     "blocked_by": []
+    },
+    "current_acceptance": {
+     "status": "NOT_REQUIRED",
+     "review_required": false,
+     "kind": null
+    },
+    "currentness": {
+     "status": "NOT_REQUIRED"
+    },
+    "qualified_id": "book::WORK-w5-017",
+    "read_handle": {
+     "operation": "project",
+     "payload": {
+      "namespace": "book",
+      "view": "detail",
+      "id": "WORK-w5-017"
+     },
+     "http": {
+      "method": "GET",
+      "url": "/work/state?project=book&view=detail&id=WORK-w5-017"
+     }
+    },
+    "review_evidence_read": {
+     "operation": "project",
+     "payload": {
+      "namespace": "book",
+      "view": "review-evidence",
+      "id": "WORK-w5-017",
+      "request": {
+       "demand": "aggregate",
+       "selector": "all"
+      }
+     },
+     "http": {
+      "method": "GET",
+      "url": "/work/state?project=book&view=review-evidence&id=WORK-w5-017&request=%7B%22demand%22%3A%22aggregate%22%2C%22selector%22%3A%22all%22%7D"
+     }
+    },
+    "child_count": 0
+   },
+   {
+    "id": "WORK-w5-018",
+    "title": "Write down any watering that happened outside the protocol and the reason it was needed",
+    "task_kind": "research",
+    "status": "done",
+    "recorded_status": "done",
+    "parent_work_id": "WORK-w5-014",
+    "depends_on": [],
+    "section_ids": [],
+    "blocked_by": [],
+    "blocked_reason": null,
+    "containment_issue": null,
+    "origin": "author",
+    "ts": "2026-11-09T06:21:25.948Z",
+    "lifecycle": {
+     "status": "done",
+     "completed": true,
+     "closed": true
+    },
+    "readiness": {
+     "status": "CLOSED",
+     "blocked_by": []
+    },
+    "current_acceptance": {
+     "status": "CURRENT",
+     "review_required": false,
+     "kind": null
+    },
+    "currentness": {
+     "status": "CURRENT"
+    },
+    "qualified_id": "book::WORK-w5-018",
+    "read_handle": {
+     "operation": "project",
+     "payload": {
+      "namespace": "book",
+      "view": "detail",
+      "id": "WORK-w5-018"
+     },
+     "http": {
+      "method": "GET",
+      "url": "/work/state?project=book&view=detail&id=WORK-w5-018"
+     }
+    },
+    "review_evidence_read": {
+     "operation": "project",
+     "payload": {
+      "namespace": "book",
+      "view": "review-evidence",
+      "id": "WORK-w5-018",
+      "request": {
+       "demand": "aggregate",
+       "selector": "all"
+      }
+     },
+     "http": {
+      "method": "GET",
+      "url": "/work/state?project=book&view=review-evidence&id=WORK-w5-018&request=%7B%22demand%22%3A%22aggregate%22%2C%22selector%22%3A%22all%22%7D"
+     }
+    },
+    "child_count": 0
+   },
+   {
+    "id": "WORK-w5-019",
+    "title": "Check whether the drainage saucer held standing water an hour after each watering",
+    "task_kind": "research",
+    "status": "ready",
+    "recorded_status": "open",
+    "parent_work_id": "WORK-w5-014",
+    "depends_on": [],
+    "section_ids": [],
+    "blocked_by": [],
+    "containment_issue": null,
+    "origin": "author",
+    "ts": "2026-11-09T06:21:25.969Z",
+    "lifecycle": {
+     "status": "open",
+     "completed": false,
+     "closed": false
+    },
+    "readiness": {
+     "status": "READY",
+     "blocked_by": []
+    },
+    "current_acceptance": {
+     "status": "NOT_REQUIRED",
+     "review_required": false,
+     "kind": null
+    },
+    "currentness": {
+     "status": "NOT_REQUIRED"
+    },
+    "qualified_id": "book::WORK-w5-019",
+    "read_handle": {
+     "operation": "project",
+     "payload": {
+      "namespace": "book",
+      "view": "detail",
+      "id": "WORK-w5-019"
+     },
+     "http": {
+      "method": "GET",
+      "url": "/work/state?project=book&view=detail&id=WORK-w5-019"
+     }
+    },
+    "review_evidence_read": {
+     "operation": "project",
+     "payload": {
+      "namespace": "book",
+      "view": "review-evidence",
+      "id": "WORK-w5-019",
+      "request": {
+       "demand": "aggregate",
+       "selector": "all"
+      }
+     },
+     "http": {
+      "method": "GET",
+      "url": "/work/state?project=book&view=review-evidence&id=WORK-w5-019&request=%7B%22demand%22%3A%22aggregate%22%2C%22selector%22%3A%22all%22%7D"
+     }
+    },
+    "child_count": 0
+   },
+   {
+    "id": "WORK-w5-020",
+    "title": "Prepare the summary figures and the plain-language explanation for the neighbourhood garden club",
+    "task_kind": "research",
+    "status": "ready",
+    "recorded_status": "open",
+    "parent_work_id": null,
+    "depends_on": [],
+    "section_ids": [],
+    "blocked_by": [],
+    "containment_issue": null,
+    "origin": "author",
+    "ts": "2026-11-09T06:21:26.016Z",
+    "lifecycle": {
+     "status": "open",
+     "completed": false,
+     "closed": false
+    },
+    "readiness": {
+     "status": "READY",
+     "blocked_by": []
+    },
+    "current_acceptance": {
+     "status": "NOT_REQUIRED",
+     "review_required": false,
+     "kind": null
+    },
+    "currentness": {
+     "status": "NOT_REQUIRED"
+    },
+    "qualified_id": "book::WORK-w5-020",
+    "read_handle": {
+     "operation": "project",
+     "payload": {
+      "namespace": "book",
+      "view": "detail",
+      "id": "WORK-w5-020"
+     },
+     "http": {
+      "method": "GET",
+      "url": "/work/state?project=book&view=detail&id=WORK-w5-020"
+     }
+    },
+    "review_evidence_read": {
+     "operation": "project",
+     "payload": {
+      "namespace": "book",
+      "view": "review-evidence",
+      "id": "WORK-w5-020",
+      "request": {
+       "demand": "aggregate",
+       "selector": "all"
+      }
+     },
+     "http": {
+      "method": "GET",
+      "url": "/work/state?project=book&view=review-evidence&id=WORK-w5-020&request=%7B%22demand%22%3A%22aggregate%22%2C%22selector%22%3A%22all%22%7D"
+     }
+    },
+    "child_count": 3
+   },
+   {
+    "id": "WORK-w5-021",
+    "title": "Calibrate the moisture probe against a measured cup of water before each morning reading",
+    "task_kind": "research",
+    "status": "ready",
+    "recorded_status": "open",
+    "parent_work_id": "WORK-w5-020",
+    "depends_on": [],
+    "section_ids": [],
+    "blocked_by": [],
+    "containment_issue": null,
+    "origin": "author",
+    "ts": "2026-11-09T06:21:26.038Z",
+    "lifecycle": {
+     "status": "open",
+     "completed": false,
+     "closed": false
+    },
+    "readiness": {
+     "status": "READY",
+     "blocked_by": []
+    },
+    "current_acceptance": {
+     "status": "NOT_REQUIRED",
+     "review_required": false,
+     "kind": null
+    },
+    "currentness": {
+     "status": "NOT_REQUIRED"
+    },
+    "qualified_id": "book::WORK-w5-021",
+    "read_handle": {
+     "operation": "project",
+     "payload": {
+      "namespace": "book",
+      "view": "detail",
+      "id": "WORK-w5-021"
+     },
+     "http": {
+      "method": "GET",
+      "url": "/work/state?project=book&view=detail&id=WORK-w5-021"
+     }
+    },
+    "review_evidence_read": {
+     "operation": "project",
+     "payload": {
+      "namespace": "book",
+      "view": "review-evidence",
+      "id": "WORK-w5-021",
+      "request": {
+       "demand": "aggregate",
+       "selector": "all"
+      }
+     },
+     "http": {
+      "method": "GET",
+      "url": "/work/state?project=book&view=review-evidence&id=WORK-w5-021&request=%7B%22demand%22%3A%22aggregate%22%2C%22selector%22%3A%22all%22%7D"
+     }
+    },
+    "child_count": 0
+   },
+   {
+    "id": "WORK-w5-022",
+    "title": "Record the pot weight before and after watering, with the time of day and the room temperature",
+    "task_kind": "research",
+    "status": "in-progress",
+    "recorded_status": "in-progress",
+    "parent_work_id": "WORK-w5-020",
+    "depends_on": [],
+    "section_ids": [],
+    "blocked_by": [],
+    "blocked_reason": null,
+    "containment_issue": null,
+    "origin": "author",
+    "ts": "2026-11-09T06:21:26.084Z",
+    "lifecycle": {
+     "status": "in-progress",
+     "completed": false,
+     "closed": false
+    },
+    "readiness": {
+     "status": "IN_PROGRESS",
+     "blocked_by": []
+    },
+    "current_acceptance": {
+     "status": "NOT_REQUIRED",
+     "review_required": false,
+     "kind": null
+    },
+    "currentness": {
+     "status": "NOT_REQUIRED"
+    },
+    "qualified_id": "book::WORK-w5-022",
+    "read_handle": {
+     "operation": "project",
+     "payload": {
+      "namespace": "book",
+      "view": "detail",
+      "id": "WORK-w5-022"
+     },
+     "http": {
+      "method": "GET",
+      "url": "/work/state?project=book&view=detail&id=WORK-w5-022"
+     }
+    },
+    "review_evidence_read": {
+     "operation": "project",
+     "payload": {
+      "namespace": "book",
+      "view": "review-evidence",
+      "id": "WORK-w5-022",
+      "request": {
+       "demand": "aggregate",
+       "selector": "all"
+      }
+     },
+     "http": {
+      "method": "GET",
+      "url": "/work/state?project=book&view=review-evidence&id=WORK-w5-022&request=%7B%22demand%22%3A%22aggregate%22%2C%22selector%22%3A%22all%22%7D"
+     }
+    },
+    "child_count": 0
+   },
+   {
+    "id": "WORK-w5-023",
+    "title": "Photograph both pots from the same position so that leaf droop can be compared between days",
+    "task_kind": "research",
+    "status": "blocked",
+    "recorded_status": "blocked",
+    "parent_work_id": "WORK-w5-020",
+    "depends_on": [],
+    "section_ids": [],
+    "blocked_by": [],
+    "blocked_reason": "Recorded hold has no explanation; inspect the exact task history.",
+    "containment_issue": null,
+    "origin": "author",
+    "ts": "2026-11-09T06:21:26.129Z",
+    "lifecycle": {
+     "status": "blocked",
+     "completed": false,
+     "closed": false
+    },
+    "readiness": {
+     "status": "BLOCKED",
+     "blocked_by": []
+    },
+    "current_acceptance": {
+     "status": "NOT_REQUIRED",
+     "review_required": false,
+     "kind": null
+    },
+    "currentness": {
+     "status": "NOT_REQUIRED"
+    },
+    "qualified_id": "book::WORK-w5-023",
+    "read_handle": {
+     "operation": "project",
+     "payload": {
+      "namespace": "book",
+      "view": "detail",
+      "id": "WORK-w5-023"
+     },
+     "http": {
+      "method": "GET",
+      "url": "/work/state?project=book&view=detail&id=WORK-w5-023"
+     }
+    },
+    "review_evidence_read": {
+     "operation": "project",
+     "payload": {
+      "namespace": "book",
+      "view": "review-evidence",
+      "id": "WORK-w5-023",
+      "request": {
+       "demand": "aggregate",
+       "selector": "all"
+      }
+     },
+     "http": {
+      "method": "GET",
+      "url": "/work/state?project=book&view=review-evidence&id=WORK-w5-023&request=%7B%22demand%22%3A%22aggregate%22%2C%22selector%22%3A%22all%22%7D"
+     }
+    },
+    "child_count": 0
+   },
+   {
+    "id": "WORK-w5-024",
+    "title": "Decide whether rainwater or tap water is used for the remainder of the study and write down why",
+    "task_kind": "research",
+    "status": "ready",
+    "recorded_status": "open",
+    "parent_work_id": null,
+    "depends_on": [],
+    "section_ids": [],
+    "blocked_by": [],
+    "containment_issue": null,
+    "origin": "author",
+    "ts": "2026-11-09T06:21:26.149Z",
+    "lifecycle": {
+     "status": "open",
+     "completed": false,
+     "closed": false
+    },
+    "readiness": {
+     "status": "READY",
+     "blocked_by": []
+    },
+    "current_acceptance": {
+     "status": "NOT_REQUIRED",
+     "review_required": false,
+     "kind": null
+    },
+    "currentness": {
+     "status": "NOT_REQUIRED"
+    },
+    "qualified_id": "book::WORK-w5-024",
+    "read_handle": {
+     "operation": "project",
+     "payload": {
+      "namespace": "book",
+      "view": "detail",
+      "id": "WORK-w5-024"
+     },
+     "http": {
+      "method": "GET",
+      "url": "/work/state?project=book&view=detail&id=WORK-w5-024"
+     }
+    },
+    "review_evidence_read": {
+     "operation": "project",
+     "payload": {
+      "namespace": "book",
+      "view": "review-evidence",
+      "id": "WORK-w5-024",
+      "request": {
+       "demand": "aggregate",
+       "selector": "all"
+      }
+     },
+     "http": {
+      "method": "GET",
+      "url": "/work/state?project=book&view=review-evidence&id=WORK-w5-024&request=%7B%22demand%22%3A%22aggregate%22%2C%22selector%22%3A%22all%22%7D"
+     }
+    },
+    "child_count": 0
+   }
+  ],
+  "pagination": {
+   "total": 52,
+   "offset": 0,
+   "limit": 30,
+   "next_offset": 30,
+   "next_read": {
+    "operation": "project",
+    "payload": {
+     "namespace": "book",
+     "view": "summary",
+     "limit": 30,
+     "offset": 30,
+     "as_of": "sha256:a8bd9ec90f9f8ee87fe35dc748d22042082527511ce0ecff544a18a415599109"
+    },
+    "http": {
+     "method": "GET",
+     "url": "/work/state?project=book&view=summary&limit=30&offset=30&as_of=sha256%3Aa8bd9ec90f9f8ee87fe35dc748d22042082527511ce0ecff544a18a415599109"
+    }
+   }
+  },
+  "read_cut": {
+   "revision": "sha256:a8bd9ec90f9f8ee87fe35dc748d22042082527511ce0ecff544a18a415599109",
+   "work_records_revision": "sha256:76866c571b2b6193ae096f78f04f7d3f6a20905cf212e30523ccb71a6c55f00c",
+   "currency_scope": "Existing selected-project work records, proof and prerequisite fold; files are observed, not an atomic OS snapshot."
+  },
+  "counts": {
+   "total": 52,
+   "by_status": {
+    "done": 10,
+    "blocked": 11,
+    "ready": 19,
+    "in-progress": 12
+   },
+   "recorded_lifecycle": {
+    "done": 11,
+    "open": 20,
+    "in-progress": 12,
+    "blocked": 9
+   },
+   "current_acceptance": {
+    "CURRENT": 10,
+    "REVIEW_REQUIRED": 1,
+    "NOT_REQUIRED": 41
+   },
+   "pending": 41,
+   "completed": 11,
+   "completed_review_required": 1
+  },
+  "ready_ids": [
+   "WORK-next-observation",
+   "WORK-check-explanation",
+   "WORK-w5-002",
+   "WORK-w5-006",
+   "WORK-w5-010",
+   "WORK-w5-015",
+   "WORK-w5-019",
+   "WORK-w5-020",
+   "WORK-w5-021",
+   "WORK-w5-024",
+   "WORK-w5-028",
+   "WORK-w5-029",
+   "WORK-w5-033",
+   "WORK-w5-034",
+   "WORK-w5-038",
+   "WORK-w5-039",
+   "WORK-w5-043",
+   "WORK-w5-044",
+   "WORK-wdef-2c51a8ec8b26d44e659346d24aedfb3a"
+  ],
+  "ready_total": 19,
+  "next": {
+   "id": "WORK-next-observation",
+   "title": "Observe both pots tomorrow",
+   "task_kind": "research",
+   "status": "ready",
+   "recorded_status": "open",
+   "parent_work_id": null,
+   "depends_on": [],
+   "section_ids": [],
+   "blocked_by": [],
+   "containment_issue": null,
+   "origin": "author",
+   "ts": "2026-10-29T12:41:46.724Z",
+   "lifecycle": {
+    "status": "open",
+    "completed": false,
+    "closed": false
+   },
+   "readiness": {
+    "status": "READY",
+    "blocked_by": []
+   },
+   "current_acceptance": {
+    "status": "NOT_REQUIRED",
+    "review_required": false,
+    "kind": null
+   },
+   "currentness": {
+    "status": "NOT_REQUIRED"
+   },
+   "qualified_id": "book::WORK-next-observation",
+   "read_handle": {
+    "operation": "project",
+    "payload": {
+     "namespace": "book",
+     "view": "detail",
+     "id": "WORK-next-observation"
+    },
+    "http": {
+     "method": "GET",
+     "url": "/work/state?project=book&view=detail&id=WORK-next-observation"
+    }
+   },
+   "review_evidence_read": {
+    "operation": "project",
+    "payload": {
+     "namespace": "book",
+     "view": "review-evidence",
+     "id": "WORK-next-observation",
+     "request": {
+      "demand": "aggregate",
+      "selector": "all"
+     }
+    },
+    "http": {
+     "method": "GET",
+     "url": "/work/state?project=book&view=review-evidence&id=WORK-next-observation&request=%7B%22demand%22%3A%22aggregate%22%2C%22selector%22%3A%22all%22%7D"
+    }
+   },
+   "child_count": 0
+  }
+ },
+ "route_previews": {
+  "WORK-observation-summary": {
+   "request_id": "FR-ecf4c61c-9a9b-4b08-adae-dd21a21cd307",
+   "answer": {
+    "schema_version": "laplace.feedback-route/1",
+    "project": "book",
+    "effect": "preview",
+    "work": {
+     "id": "WORK-observation-summary",
+     "title": "Summarise the first observation",
+     "revision": "sha256:03bfd9a101e1c911008da837747cf28c081f194014f7c5413b3628b0c5f08c49",
+     "declared_targets": {
+      "section_ids": [],
+      "anchor": {}
+     }
+    },
+    "origin": null,
+    "policy": null,
+    "policy_schema": {
+     "type": "object",
+     "additionalProperties": false,
+     "required": [
+      "mode",
+      "recipients",
+      "limits"
+     ],
+     "properties": {
+      "mode": {
+       "enum": [
+        "manual",
+        "automatic"
+       ]
+      },
+      "parent_return": {
+       "type": "object",
+       "additionalProperties": false,
+       "required": [
+        "admit_idle",
+        "max_attempts",
+        "max_depth"
+       ],
+       "properties": {
+        "admit_idle": {
+         "type": "boolean"
+        },
+        "max_attempts": {
+         "type": "integer",
+         "minimum": 1,
+         "maximum": 2
+        },
+        "max_depth": {
+         "type": "integer",
+         "minimum": 1,
+         "maximum": 2
+        }
+       }
+      },
+      "recipients": {
+       "type": "array",
+       "minItems": 1,
+       "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+         "obligation_id",
+         "recipient_binding_id"
+        ],
+        "properties": {
+         "obligation_id": {
+          "type": "string"
+         },
+         "recipient_binding_id": {
+          "type": "string"
+         }
+        }
+       }
+      },
+      "limits": {
+       "type": "object",
+       "additionalProperties": false,
+       "required": [
+        "max_new_admissions",
+        "max_attempts",
+        "admission_seconds",
+        "runtime_seconds"
+       ],
+       "properties": {
+        "max_new_admissions": {
+         "type": "integer",
+         "minimum": 1
+        },
+        "max_attempts": {
+         "type": "integer",
+         "minimum": 1,
+         "maximum": 3
+        },
+        "admission_seconds": {
+         "type": "integer",
+         "minimum": 60,
+         "maximum": 86400
+        },
+        "runtime_seconds": {
+         "type": "number",
+         "exclusiveMinimum": 0
+        }
+       }
+      }
+     }
+    },
+    "bindings": [],
+    "bindings_coverage": {
+     "total": 0,
+     "shown": 0,
+     "complete": true,
+     "read": {
+      "operation": "work_delivery",
+      "payload": {
+       "action": "review-setup",
+       "work_id": "WORK-observation-summary"
+      },
+      "http": {
+       "method": "GET",
+       "url": "/work/delivery?project=book&request=%7B%22action%22%3A%22review-setup%22%2C%22work_id%22%3A%22WORK-observation-summary%22%7D"
+      }
+     }
+    },
+    "obligations": [],
+    "selected_recipients": [],
+    "recipients": [],
+    "policies": [],
+    "issues": [
+     "Select or explicitly save a finite author policy; unconfigured is manual Save-only."
+    ],
+    "origin_required_at_admission": true,
+    "request_read": {
+     "operation": "work_delivery",
+     "payload": {
+      "action": "route-status",
+      "work_id": "WORK-observation-summary",
+      "request_id": "FR-ecf4c61c-9a9b-4b08-adae-dd21a21cd307"
+     },
+     "http": {
+      "method": "GET",
+      "url": "/work/delivery?project=book&request=%7B%22action%22%3A%22route-status%22%2C%22request_id%22%3A%22FR-ecf4c61c-9a9b-4b08-adae-dd21a21cd307%22%2C%22work_id%22%3A%22WORK-observation-summary%22%7D"
+     }
+    },
+    "policy_request_read": {
+     "operation": "work_delivery",
+     "payload": {
+      "action": "route-status",
+      "work_id": "WORK-observation-summary",
+      "request_id": "FR-ecf4c61c-9a9b-4b08-adae-dd21a21cd307",
+      "request_kind": "policy"
+     },
+     "http": {
+      "method": "GET",
+      "url": "/work/delivery?project=book&request=%7B%22action%22%3A%22route-status%22%2C%22request_id%22%3A%22FR-ecf4c61c-9a9b-4b08-adae-dd21a21cd307%22%2C%22request_kind%22%3A%22policy%22%2C%22work_id%22%3A%22WORK-observation-summary%22%7D"
+     }
+    },
+    "actions": {
+     "submit": {
+      "permitted": false,
+      "reason": "Select or explicitly save a finite author policy; unconfigured is manual Save-only.",
+      "operation": "work_delivery",
+      "http": {
+       "method": "POST",
+       "url": "/work/delivery"
+      },
+      "payload": {
+       "project": "book",
+       "action": "route-submit",
+       "work_id": "WORK-observation-summary",
+       "expected_work_revision": "sha256:03bfd9a101e1c911008da837747cf28c081f194014f7c5413b3628b0c5f08c49",
+       "request_id": "FR-ecf4c61c-9a9b-4b08-adae-dd21a21cd307"
+      }
+     },
+     "policy_save": {
+      "permitted": true,
+      "reason": "Only the author saves policy.",
+      "operation": "work_delivery",
+      "http": {
+       "method": "POST",
+       "url": "/work/delivery"
+      },
+      "payload": {
+       "project": "book",
+       "action": "policy-save",
+       "work_id": "WORK-observation-summary",
+       "expected_work_revision": "sha256:03bfd9a101e1c911008da837747cf28c081f194014f7c5413b3628b0c5f08c49",
+       "request_id": "FR-ecf4c61c-9a9b-4b08-adae-dd21a21cd307"
+      }
+     },
+     "compose": {
+      "permitted": false,
+      "reason": "Select or explicitly save a finite author policy; unconfigured is manual Save-only.",
+      "route_spec": {
+       "action": "route-submit",
+       "work_id": "WORK-observation-summary",
+       "expected_work_revision": "sha256:03bfd9a101e1c911008da837747cf28c081f194014f7c5413b3628b0c5f08c49",
+       "request_id": "FR-ecf4c61c-9a9b-4b08-adae-dd21a21cd307"
+      }
+     }
+    },
+    "read": {
+     "operation": "work_delivery",
+     "payload": {
+      "action": "route-preview",
+      "work_id": "WORK-observation-summary",
+      "request_id": "FR-ecf4c61c-9a9b-4b08-adae-dd21a21cd307"
+     },
+     "http": {
+      "method": "GET",
+      "url": "/work/delivery?project=book&request=%7B%22action%22%3A%22route-preview%22%2C%22request_id%22%3A%22FR-ecf4c61c-9a9b-4b08-adae-dd21a21cd307%22%2C%22work_id%22%3A%22WORK-observation-summary%22%7D"
+     }
+    }
+   }
+  },
+  "WORK-compare-notes": {
+   "request_id": "FR-ecf4c61c-9a9b-4b08-adae-dd21a21cd307",
+   "answer": {
+    "schema_version": "laplace.feedback-route/1",
+    "project": "book",
+    "effect": "preview",
+    "work": {
+     "id": "WORK-compare-notes",
+     "title": "Compare the watering notes",
+     "revision": "sha256:ca00b9a293ce2e81b724cd00050f8bfdbc31d546f34c6268815f7d2d221a8ca0",
+     "declared_targets": {
+      "section_ids": [],
+      "anchor": {}
+     }
+    },
+    "origin": null,
+    "policy": null,
+    "policy_schema": {
+     "type": "object",
+     "additionalProperties": false,
+     "required": [
+      "mode",
+      "recipients",
+      "limits"
+     ],
+     "properties": {
+      "mode": {
+       "enum": [
+        "manual",
+        "automatic"
+       ]
+      },
+      "parent_return": {
+       "type": "object",
+       "additionalProperties": false,
+       "required": [
+        "admit_idle",
+        "max_attempts",
+        "max_depth"
+       ],
+       "properties": {
+        "admit_idle": {
+         "type": "boolean"
+        },
+        "max_attempts": {
+         "type": "integer",
+         "minimum": 1,
+         "maximum": 2
+        },
+        "max_depth": {
+         "type": "integer",
+         "minimum": 1,
+         "maximum": 2
+        }
+       }
+      },
+      "recipients": {
+       "type": "array",
+       "minItems": 1,
+       "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+         "obligation_id",
+         "recipient_binding_id"
+        ],
+        "properties": {
+         "obligation_id": {
+          "type": "string"
+         },
+         "recipient_binding_id": {
+          "type": "string"
+         }
+        }
+       }
+      },
+      "limits": {
+       "type": "object",
+       "additionalProperties": false,
+       "required": [
+        "max_new_admissions",
+        "max_attempts",
+        "admission_seconds",
+        "runtime_seconds"
+       ],
+       "properties": {
+        "max_new_admissions": {
+         "type": "integer",
+         "minimum": 1
+        },
+        "max_attempts": {
+         "type": "integer",
+         "minimum": 1,
+         "maximum": 3
+        },
+        "admission_seconds": {
+         "type": "integer",
+         "minimum": 60,
+         "maximum": 86400
+        },
+        "runtime_seconds": {
+         "type": "number",
+         "exclusiveMinimum": 0
+        }
+       }
+      }
+     }
+    },
+    "bindings": [],
+    "bindings_coverage": {
+     "total": 0,
+     "shown": 0,
+     "complete": true,
+     "read": {
+      "operation": "work_delivery",
+      "payload": {
+       "action": "review-setup",
+       "work_id": "WORK-compare-notes"
+      },
+      "http": {
+       "method": "GET",
+       "url": "/work/delivery?project=book&request=%7B%22action%22%3A%22review-setup%22%2C%22work_id%22%3A%22WORK-compare-notes%22%7D"
+      }
+     }
+    },
+    "obligations": [],
+    "selected_recipients": [],
+    "recipients": [],
+    "policies": [],
+    "issues": [
+     "Select or explicitly save a finite author policy; unconfigured is manual Save-only."
+    ],
+    "origin_required_at_admission": true,
+    "request_read": {
+     "operation": "work_delivery",
+     "payload": {
+      "action": "route-status",
+      "work_id": "WORK-compare-notes",
+      "request_id": "FR-ecf4c61c-9a9b-4b08-adae-dd21a21cd307"
+     },
+     "http": {
+      "method": "GET",
+      "url": "/work/delivery?project=book&request=%7B%22action%22%3A%22route-status%22%2C%22request_id%22%3A%22FR-ecf4c61c-9a9b-4b08-adae-dd21a21cd307%22%2C%22work_id%22%3A%22WORK-compare-notes%22%7D"
+     }
+    },
+    "policy_request_read": {
+     "operation": "work_delivery",
+     "payload": {
+      "action": "route-status",
+      "work_id": "WORK-compare-notes",
+      "request_id": "FR-ecf4c61c-9a9b-4b08-adae-dd21a21cd307",
+      "request_kind": "policy"
+     },
+     "http": {
+      "method": "GET",
+      "url": "/work/delivery?project=book&request=%7B%22action%22%3A%22route-status%22%2C%22request_id%22%3A%22FR-ecf4c61c-9a9b-4b08-adae-dd21a21cd307%22%2C%22request_kind%22%3A%22policy%22%2C%22work_id%22%3A%22WORK-compare-notes%22%7D"
+     }
+    },
+    "actions": {
+     "submit": {
+      "permitted": false,
+      "reason": "Select or explicitly save a finite author policy; unconfigured is manual Save-only.",
+      "operation": "work_delivery",
+      "http": {
+       "method": "POST",
+       "url": "/work/delivery"
+      },
+      "payload": {
+       "project": "book",
+       "action": "route-submit",
+       "work_id": "WORK-compare-notes",
+       "expected_work_revision": "sha256:ca00b9a293ce2e81b724cd00050f8bfdbc31d546f34c6268815f7d2d221a8ca0",
+       "request_id": "FR-ecf4c61c-9a9b-4b08-adae-dd21a21cd307"
+      }
+     },
+     "policy_save": {
+      "permitted": true,
+      "reason": "Only the author saves policy.",
+      "operation": "work_delivery",
+      "http": {
+       "method": "POST",
+       "url": "/work/delivery"
+      },
+      "payload": {
+       "project": "book",
+       "action": "policy-save",
+       "work_id": "WORK-compare-notes",
+       "expected_work_revision": "sha256:ca00b9a293ce2e81b724cd00050f8bfdbc31d546f34c6268815f7d2d221a8ca0",
+       "request_id": "FR-ecf4c61c-9a9b-4b08-adae-dd21a21cd307"
+      }
+     },
+     "compose": {
+      "permitted": false,
+      "reason": "Select or explicitly save a finite author policy; unconfigured is manual Save-only.",
+      "route_spec": {
+       "action": "route-submit",
+       "work_id": "WORK-compare-notes",
+       "expected_work_revision": "sha256:ca00b9a293ce2e81b724cd00050f8bfdbc31d546f34c6268815f7d2d221a8ca0",
+       "request_id": "FR-ecf4c61c-9a9b-4b08-adae-dd21a21cd307"
+      }
+     }
+    },
+    "read": {
+     "operation": "work_delivery",
+     "payload": {
+      "action": "route-preview",
+      "work_id": "WORK-compare-notes",
+      "request_id": "FR-ecf4c61c-9a9b-4b08-adae-dd21a21cd307"
+     },
+     "http": {
+      "method": "GET",
+      "url": "/work/delivery?project=book&request=%7B%22action%22%3A%22route-preview%22%2C%22request_id%22%3A%22FR-ecf4c61c-9a9b-4b08-adae-dd21a21cd307%22%2C%22work_id%22%3A%22WORK-compare-notes%22%7D"
+     }
+    }
+   }
+  },
+  "WORK-next-observation": {
+   "request_id": "FR-ecf4c61c-9a9b-4b08-adae-dd21a21cd307",
+   "answer": {
+    "schema_version": "laplace.feedback-route/1",
+    "project": "book",
+    "effect": "preview",
+    "work": {
+     "id": "WORK-next-observation",
+     "title": "Observe both pots tomorrow",
+     "revision": "sha256:ffa9bbab3385b3aeb15a531d70fef8988c8c41c46b36e5327f0d15d3afc1a138",
+     "declared_targets": {
+      "section_ids": [],
+      "anchor": {}
+     }
+    },
+    "origin": null,
+    "policy": null,
+    "policy_schema": {
+     "type": "object",
+     "additionalProperties": false,
+     "required": [
+      "mode",
+      "recipients",
+      "limits"
+     ],
+     "properties": {
+      "mode": {
+       "enum": [
+        "manual",
+        "automatic"
+       ]
+      },
+      "parent_return": {
+       "type": "object",
+       "additionalProperties": false,
+       "required": [
+        "admit_idle",
+        "max_attempts",
+        "max_depth"
+       ],
+       "properties": {
+        "admit_idle": {
+         "type": "boolean"
+        },
+        "max_attempts": {
+         "type": "integer",
+         "minimum": 1,
+         "maximum": 2
+        },
+        "max_depth": {
+         "type": "integer",
+         "minimum": 1,
+         "maximum": 2
+        }
+       }
+      },
+      "recipients": {
+       "type": "array",
+       "minItems": 1,
+       "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+         "obligation_id",
+         "recipient_binding_id"
+        ],
+        "properties": {
+         "obligation_id": {
+          "type": "string"
+         },
+         "recipient_binding_id": {
+          "type": "string"
+         }
+        }
+       }
+      },
+      "limits": {
+       "type": "object",
+       "additionalProperties": false,
+       "required": [
+        "max_new_admissions",
+        "max_attempts",
+        "admission_seconds",
+        "runtime_seconds"
+       ],
+       "properties": {
+        "max_new_admissions": {
+         "type": "integer",
+         "minimum": 1
+        },
+        "max_attempts": {
+         "type": "integer",
+         "minimum": 1,
+         "maximum": 3
+        },
+        "admission_seconds": {
+         "type": "integer",
+         "minimum": 60,
+         "maximum": 86400
+        },
+        "runtime_seconds": {
+         "type": "number",
+         "exclusiveMinimum": 0
+        }
+       }
+      }
+     }
+    },
+    "bindings": [],
+    "bindings_coverage": {
+     "total": 0,
+     "shown": 0,
+     "complete": true,
+     "read": {
+      "operation": "work_delivery",
+      "payload": {
+       "action": "review-setup",
+       "work_id": "WORK-next-observation"
+      },
+      "http": {
+       "method": "GET",
+       "url": "/work/delivery?project=book&request=%7B%22action%22%3A%22review-setup%22%2C%22work_id%22%3A%22WORK-next-observation%22%7D"
+      }
+     }
+    },
+    "obligations": [],
+    "selected_recipients": [],
+    "recipients": [],
+    "policies": [],
+    "issues": [
+     "Select or explicitly save a finite author policy; unconfigured is manual Save-only."
+    ],
+    "origin_required_at_admission": true,
+    "request_read": {
+     "operation": "work_delivery",
+     "payload": {
+      "action": "route-status",
+      "work_id": "WORK-next-observation",
+      "request_id": "FR-ecf4c61c-9a9b-4b08-adae-dd21a21cd307"
+     },
+     "http": {
+      "method": "GET",
+      "url": "/work/delivery?project=book&request=%7B%22action%22%3A%22route-status%22%2C%22request_id%22%3A%22FR-ecf4c61c-9a9b-4b08-adae-dd21a21cd307%22%2C%22work_id%22%3A%22WORK-next-observation%22%7D"
+     }
+    },
+    "policy_request_read": {
+     "operation": "work_delivery",
+     "payload": {
+      "action": "route-status",
+      "work_id": "WORK-next-observation",
+      "request_id": "FR-ecf4c61c-9a9b-4b08-adae-dd21a21cd307",
+      "request_kind": "policy"
+     },
+     "http": {
+      "method": "GET",
+      "url": "/work/delivery?project=book&request=%7B%22action%22%3A%22route-status%22%2C%22request_id%22%3A%22FR-ecf4c61c-9a9b-4b08-adae-dd21a21cd307%22%2C%22request_kind%22%3A%22policy%22%2C%22work_id%22%3A%22WORK-next-observation%22%7D"
+     }
+    },
+    "actions": {
+     "submit": {
+      "permitted": false,
+      "reason": "Select or explicitly save a finite author policy; unconfigured is manual Save-only.",
+      "operation": "work_delivery",
+      "http": {
+       "method": "POST",
+       "url": "/work/delivery"
+      },
+      "payload": {
+       "project": "book",
+       "action": "route-submit",
+       "work_id": "WORK-next-observation",
+       "expected_work_revision": "sha256:ffa9bbab3385b3aeb15a531d70fef8988c8c41c46b36e5327f0d15d3afc1a138",
+       "request_id": "FR-ecf4c61c-9a9b-4b08-adae-dd21a21cd307"
+      }
+     },
+     "policy_save": {
+      "permitted": true,
+      "reason": "Only the author saves policy.",
+      "operation": "work_delivery",
+      "http": {
+       "method": "POST",
+       "url": "/work/delivery"
+      },
+      "payload": {
+       "project": "book",
+       "action": "policy-save",
+       "work_id": "WORK-next-observation",
+       "expected_work_revision": "sha256:ffa9bbab3385b3aeb15a531d70fef8988c8c41c46b36e5327f0d15d3afc1a138",
+       "request_id": "FR-ecf4c61c-9a9b-4b08-adae-dd21a21cd307"
+      }
+     },
+     "compose": {
+      "permitted": false,
+      "reason": "Select or explicitly save a finite author policy; unconfigured is manual Save-only.",
+      "route_spec": {
+       "action": "route-submit",
+       "work_id": "WORK-next-observation",
+       "expected_work_revision": "sha256:ffa9bbab3385b3aeb15a531d70fef8988c8c41c46b36e5327f0d15d3afc1a138",
+       "request_id": "FR-ecf4c61c-9a9b-4b08-adae-dd21a21cd307"
+      }
+     }
+    },
+    "read": {
+     "operation": "work_delivery",
+     "payload": {
+      "action": "route-preview",
+      "work_id": "WORK-next-observation",
+      "request_id": "FR-ecf4c61c-9a9b-4b08-adae-dd21a21cd307"
+     },
+     "http": {
+      "method": "GET",
+      "url": "/work/delivery?project=book&request=%7B%22action%22%3A%22route-preview%22%2C%22request_id%22%3A%22FR-ecf4c61c-9a9b-4b08-adae-dd21a21cd307%22%2C%22work_id%22%3A%22WORK-next-observation%22%7D"
+     }
+    }
+   }
+  }
+ },
+ "retained_request_id": "FC-e230f22a-000a-4b18-9b10-d03bbb2728fb",
+ "lookup": {
+  "project": "book",
+  "request_id": "FC-e230f22a-000a-4b18-9b10-d03bbb2728fb",
+  "ledger": "synthetics papers/book/manuscript/feedback/feedback.jsonl",
+  "settle": {
+   "http": {
+    "method": "POST",
+    "url": "/authoring/correction-settle",
+    "body": {
+     "project": "book",
+     "ledger": "synthetics papers/book/manuscript/feedback/feedback.jsonl",
+     "request_id": "FC-e230f22a-000a-4b18-9b10-d03bbb2728fb"
+    }
+   },
+   "requires": [
+    "submission"
+   ],
+   "meaning": "Settle the original exact Save; preserve any already saved comment."
+  },
+  "reconcile": {
+   "http": {
+    "method": "GET",
+    "url": "/authoring/correction-request?project=book&request_id=FC-e230f22a-000a-4b18-9b10-d03bbb2728fb&ledger=synthetics+papers%2Fbook%2Fmanuscript%2Ffeedback%2Ffeedback.jsonl"
+   }
+  },
+  "compare": {
+   "schema_version": "laplace.feedback-request-comparison/1",
+   "kind": "origin",
+   "project": "book",
+   "context": "synthetics papers/book/manuscript/feedback/feedback.jsonl",
+   "request_id": "FC-e230f22a-000a-4b18-9b10-d03bbb2728fb",
+   "requires": [
+    "submission"
+   ],
+   "carrier": "query-json",
+   "field": "submission",
+   "read": {
+    "http": {
+     "method": "GET",
+     "url": "/authoring/correction-request?project=book&request_id=FC-e230f22a-000a-4b18-9b10-d03bbb2728fb&ledger=synthetics+papers%2Fbook%2Fmanuscript%2Ffeedback%2Ffeedback.jsonl"
+    }
+   },
+   "meaning": "Pure read: compares the original Save intent in the owner domain; it saves, settles and retries nothing."
+  },
+  "effect": "NONE",
+  "receipt": null,
+  "absence_scope": "registered canonical project feedback home at read"
+ },
+ "comparison": {
+  "project": "book",
+  "request_id": "FC-e230f22a-000a-4b18-9b10-d03bbb2728fb",
+  "ledger": "synthetics papers/book/manuscript/feedback/feedback.jsonl",
+  "settle": {
+   "http": {
+    "method": "POST",
+    "url": "/authoring/correction-settle",
+    "body": {
+     "project": "book",
+     "ledger": "synthetics papers/book/manuscript/feedback/feedback.jsonl",
+     "request_id": "FC-e230f22a-000a-4b18-9b10-d03bbb2728fb"
+    }
+   },
+   "requires": [
+    "submission"
+   ],
+   "meaning": "Settle the original exact Save; preserve any already saved comment."
+  },
+  "reconcile": {
+   "http": {
+    "method": "GET",
+    "url": "/authoring/correction-request?project=book&request_id=FC-e230f22a-000a-4b18-9b10-d03bbb2728fb&ledger=synthetics+papers%2Fbook%2Fmanuscript%2Ffeedback%2Ffeedback.jsonl"
+   }
+  },
+  "compare": {
+   "schema_version": "laplace.feedback-request-comparison/1",
+   "kind": "origin",
+   "project": "book",
+   "context": "synthetics papers/book/manuscript/feedback/feedback.jsonl",
+   "request_id": "FC-e230f22a-000a-4b18-9b10-d03bbb2728fb",
+   "requires": [
+    "submission"
+   ],
+   "carrier": "query-json",
+   "field": "submission",
+   "read": {
+    "http": {
+     "method": "GET",
+     "url": "/authoring/correction-request?project=book&request_id=FC-e230f22a-000a-4b18-9b10-d03bbb2728fb&ledger=synthetics+papers%2Fbook%2Fmanuscript%2Ffeedback%2Ffeedback.jsonl"
+    }
+   },
+   "meaning": "Pure read: compares the original Save intent in the owner domain; it saves, settles and retries nothing."
+  },
+  "effect": "NONE",
+  "receipt": null,
+  "absence_scope": "registered canonical project feedback home at read",
+  "association": {
+   "schema_version": "laplace.feedback-request-association/1",
+   "kind": "origin",
+   "project": "book",
+   "context": "synthetics papers/book/manuscript/feedback/feedback.jsonl",
+   "request_id": "FC-e230f22a-000a-4b18-9b10-d03bbb2728fb",
+   "state": "UNRECORDED",
+   "intent_sha256": "sha256:51ed8d03cea36c1e4c30b50afe2d7d9f93d5586d99ed53e7ed896a91e38f7821"
+  }
+ }
+}

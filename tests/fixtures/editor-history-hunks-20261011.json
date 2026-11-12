@@ -1,0 +1,166 @@
+{
+  "provenance": "Actual owner reads of the isolated root UI save, 2026-10-11; fixture source later changed. No live manuscript content.",
+  "detail": {
+    "schema_version": "laplace.activity-history/1",
+    "project": "editor-rehearsal",
+    "item": {
+      "id": "activity:authoring:FB-20261011-134452-ex",
+      "owner": "authoring",
+      "category": "manuscript",
+      "at": "2026-10-11T13:44:52",
+      "actor": {
+        "label": "author",
+        "kind": "human"
+      },
+      "summary": "Recorded save delta by author in rehearsal/source/included.tex: 1 hunk(s), 1 retained after-line(s), against the guarded preimage.",
+      "status": "open",
+      "targets": [
+        {
+          "kind": "manuscript",
+          "file": "rehearsal/source/included.tex",
+          "correction_id": "FB-20261011-134452-ex"
+        }
+      ],
+      "detail_available": true,
+      "project": "editor-rehearsal"
+    },
+    "record_kind": "authoring",
+    "saved_text_available": true,
+    "response_body_status": "stored-public-text",
+    "description": "Recorded save delta by author in rehearsal/source/included.tex: 1 hunk(s), 1 retained after-line(s), against the guarded preimage.",
+    "comparison": {
+      "format": "tex",
+      "title": "rehearsal/source/included.tex \u00b7 recorded lines 3\u20133",
+      "before": "",
+      "after": "The source editor preserves this rehearsal change.",
+      "basis": "exact banked source-change hunk"
+    },
+    "hashes": [
+      {
+        "kind": "file",
+        "label": "Recorded file preimage",
+        "recorded": "sha256:632ca0ac7d5a33d8ca59fe2c66be0dc5bc7932dead742ea563bb841e751d0e8c",
+        "current": null,
+        "status": "recorded",
+        "note": "Preimage digest was banked with this delta; it does not claim an archived whole preimage body."
+      },
+      {
+        "kind": "file",
+        "label": "Saved file postimage compared with current source",
+        "recorded": "sha256:e66c2c0437d58f964f01fe2e08e055c28f621cbccc30186950b08354d88f3a4d",
+        "current": "sha256:ca4198f49b102459de13e1abd6a5902c83eee4117977cfd8440555a4bae84e7c",
+        "status": "changed",
+        "path": "/tmp/laplace-editor-ui-20261011-s_p5eoj1/workspace/rehearsal/source/included.tex"
+      }
+    ],
+    "links": [
+      {
+        "kind": "manuscript",
+        "file": "rehearsal/source/included.tex",
+        "correction_id": "FB-20261011-134452-ex"
+      }
+    ],
+    "conversation": null,
+    "limitations": [
+      "Hash comparison checks recorded bytes and current bytes only; it does not establish scientific validity."
+    ],
+    "warnings": [],
+    "comparisons": [
+      {
+        "format": "tex",
+        "title": "rehearsal/source/included.tex \u00b7 recorded lines 3\u20133",
+        "before": "",
+        "after": "The source editor preserves this rehearsal change.",
+        "basis": "exact banked source-change hunk"
+      }
+    ]
+  },
+  "record": {
+    "schema_version": "laplace.activity-history/1",
+    "project": "editor-rehearsal",
+    "item": {
+      "id": "activity:authoring:FB-20261011-134452-ex",
+      "owner": "authoring",
+      "category": "manuscript",
+      "at": "2026-10-11T13:44:52",
+      "actor": {
+        "label": "author",
+        "kind": "human"
+      },
+      "summary": "Recorded save delta by author in rehearsal/source/included.tex: 1 hunk(s), 1 retained after-line(s), against the guarded preimage.",
+      "status": "open",
+      "targets": [
+        {
+          "kind": "manuscript",
+          "file": "rehearsal/source/included.tex",
+          "correction_id": "FB-20261011-134452-ex"
+        }
+      ],
+      "detail_available": true
+    },
+    "comparisons": [
+      {
+        "format": "tex",
+        "title": "rehearsal/source/included.tex \u00b7 recorded lines 3\u20133",
+        "before": "",
+        "after": "The source editor preserves this rehearsal change.",
+        "basis": "exact banked source-change hunk"
+      }
+    ],
+    "comparison": {
+      "format": "tex",
+      "title": "rehearsal/source/included.tex \u00b7 recorded lines 3\u20133",
+      "before": "",
+      "after": "The source editor preserves this rehearsal change.",
+      "basis": "exact banked source-change hunk"
+    },
+    "record_kind": "authoring",
+    "record": {
+      "id": "FB-20261011-134452-ex",
+      "feedback_id": "FB-20261011-134452-ex",
+      "kind": "author-edit",
+      "origin_kind": "author-rewrite",
+      "scope": "passage",
+      "anchor": {
+        "file": "rehearsal/source/included.tex",
+        "section": ""
+      },
+      "text": "Recorded save delta by author in rehearsal/source/included.tex: 1 hunk(s), 1 retained after-line(s), against the guarded preimage.",
+      "before": null,
+      "after": null,
+      "hunks": [
+        {
+          "start": 3,
+          "end": 3,
+          "before": [],
+          "after": [
+            "The source editor preserves this rehearsal change."
+          ]
+        }
+      ],
+      "baseline": {
+        "kind": "guarded-save-preimage",
+        "source_file": "rehearsal/source/included.tex",
+        "before_sha256": "632ca0ac7d5a33d8ca59fe2c66be0dc5bc7932dead742ea563bb841e751d0e8c",
+        "after_sha256": "e66c2c0437d58f964f01fe2e08e055c28f621cbccc30186950b08354d88f3a4d"
+      },
+      "by": "author",
+      "created": "2026-10-11T13:44:52",
+      "status": "open",
+      "status_note": null,
+      "status_history": [],
+      "applied": true,
+      "context_role": null,
+      "feedback_target": null,
+      "feedback_effect": null
+    },
+    "text": "Recorded save delta by author in rehearsal/source/included.tex: 1 hunk(s), 1 retained after-line(s), against the guarded preimage.",
+    "measurements": [],
+    "saved_text_available": true,
+    "response_body_status": "stored-public-text",
+    "format": "text",
+    "limitations": [
+      "One exact stored public owner row, not reconstructed provider history."
+    ]
+  }
+}

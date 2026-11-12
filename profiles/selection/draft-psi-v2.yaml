@@ -1,0 +1,63 @@
+# draft-psi-v2 — a versioned recalibration, a new file rather than an edit of v1.
+#
+# ψ and φ belong to the author. A recalibration is a new rule file (the threshold is
+# calibrated from ruling history, not hand-nudged), so v2 is a fresh generation of the
+# rule and draft-psi-v1.yaml is left byte-for-byte unchanged.
+#
+# What v2 adds: a fourth admissibility gate, gate_reach. It consumes
+# WO-20260721-120140-selection-derivation-gate under the aspiration-first steer.
+#
+# The steer (PV-20260721T121500Z-author-steer-aspiration-first-isnads), quoted verbatim:
+#   "As always it's best to be Socratic in these things. What is the paper/artefact
+#    actually about? What would demonstrate that? This is particularly important for
+#    novelty, where one must in some sense assume the answer before it can be shown.
+#    Hedging and verification are too often being used as an excuse to do nothing by
+#    you and the pipeline, without any explore/exploit. So preceding anything else, one
+#    must ask themselves what the best possible version of a result is. what would have
+#    the furthest reach, broadest scope and deepest impact? And then the game is to try
+#    to build the chain from the substrate towards that. Think of it like haddiths and
+#    isnads, except it all has to actually be true. In some sense this is the up/down
+#    conjugacy boundary condition. Sets the end point before we know if that end point
+#    is achievable."
+#
+# The isnad frame, derived from the steer:
+#   * The endpoint is banked first: Phase 0 records the maximal true claim (furthest
+#     reach, broadest scope, deepest impact) as the boundary condition, set before it is
+#     known to be reachable (the up/down conjugacy boundary condition).
+#   * Each link is attested: obligations are chain links substrate→aspiration, each one
+#     computed, derived stepwise, or entailment-cited — the isnad, "it all has to
+#     actually be true". An unreachable link banks the gap as structured residual rather
+#     than retreating to a weaker claim.
+#   * Reach is measured generation-over-generation: gate_reach measures how far up the
+#     aspiration the attested chain reached this generation against the previous
+#     generation's banked reach, not mere presence. A generation that banks no
+#     aspiration reads as a null gate and holds, with the absence named.
+#
+# The three original gates, the promotion ledger, and the retire rule are unchanged from
+# v1 (cost-of-complexity §VII "structure is earned, not gifted"; law-of-laws "retention
+# forced by closure"; "Your Brain on Algebra" §4 "the threshold is part of the self-
+# consistent loss geometry"). gate_reach's schema lives in the code defaults
+# (selection_sheet._DRAFT_PSI_DEFAULTS) with both flags off, so v1 keeps exact v1
+# semantics; this file turns them on. The default selection dial stays draft-psi-v1 —
+# changing the live default is the author's or the orchestrator's call, not a silent
+# dial change.
+version: draft-psi-v2
+law: "This file proposes verdicts and adds the reach gate; the author's ruling supersedes and is recorded. Thresholds are calibrated from ruling history, not hand-set."
+gate_self_consistency:
+  r10_must_have_run: true
+  r10_must_be_clean: true
+gate_cost:
+  debt_must_not_rise: true
+  no_new_suite_reds: true
+gate_representation_stability:
+  freeze_substance_must_hold: true
+  mechround_derivative_at_most: 0
+gate_reach:
+  aspiration_must_exist: true
+  reach_must_not_fall: true
+promotion_ledger:
+  residual_gain_source: debt_delta
+  lambda: 1.0
+retire_when:
+  debt_rose_and_r10_unclean: true
+otherwise: hold

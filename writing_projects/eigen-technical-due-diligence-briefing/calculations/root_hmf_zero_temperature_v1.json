@@ -1,0 +1,13 @@
+{
+  "omega_q": 1.0,
+  "omega_b": 1.7,
+  "couplings": [
+    0.05,
+    0.2,
+    1.0
+  ],
+  "cutoff": 32,
+  "check_cutoff": 48,
+  "scope": "bounded finite-bath physical check of exact mean-force limit and derived weak-coupling joint path",
+  "validation_beta": 80.0
+}

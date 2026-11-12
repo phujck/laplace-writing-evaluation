@@ -1,0 +1,55 @@
+{
+  "schema_version": "dd.completion-figures/1",
+  "status": "COMPLETE",
+  "artifacts": [
+    {
+      "id": "dd-memory-reader-controls",
+      "kind": "figure",
+      "sha256_by_format": {
+        "pdf": "7a43c64f42a5d42ce9333e14711729eb2f6eea1ee7ff708ddd38d5c9028afa9d",
+        "svg": "fd0ff11d3ddba2564b05074ed65b176e87d2ca1828857f3f6b8366040e978233",
+        "png": "ea173eac6b552aa7827291bbfebbec96defefcc6adbcd3ad6cdb3e37301a488f"
+      },
+      "pdf": "/home/phujck/VScodeProjects/laplace/writing_projects/eigen-technical-due-diligence-briefing/manuscript/working-draft/figures/completion-run-7bd75062068b432b.result/dd-memory-reader-controls.pdf",
+      "svg": "/home/phujck/VScodeProjects/laplace/writing_projects/eigen-technical-due-diligence-briefing/manuscript/working-draft/figures/completion-run-7bd75062068b432b.result/dd-memory-reader-controls.svg",
+      "png": "/home/phujck/VScodeProjects/laplace/writing_projects/eigen-technical-due-diligence-briefing/manuscript/working-draft/figures/completion-run-7bd75062068b432b.result/dd-memory-reader-controls.png"
+    }
+  ],
+  "memory_tex_path": "figures/completion-run-7bd75062068b432b.result/dd-memory-reader-controls.pdf",
+  "counts": {
+    "schema_version": "dd.archived-memory-reader-controls/1",
+    "source": {
+      "repository": "laplace",
+      "path": "synthetics papers/corpus-as-a-state/reconstruction/output/pdf/v2.1/evaluation-results.tex",
+      "sha256": "5e1c218ba70193d33443be4dffea9e13737fcad138ae7b221c7726df9d5d4547",
+      "locator": "final LongMem evidence/reader trial and temporal reasoning paragraphs"
+    },
+    "protocol": "Same frozen reader and 4000 evidence tokens. Counts transcribed from the read primary evaluation source. No new experiment.",
+    "methods": [
+      "Memory witness",
+      "Dense",
+      "Hybrid"
+    ],
+    "overall": {
+      "correct": [
+        30,
+        33,
+        34
+      ],
+      "total": 48
+    },
+    "temporal": {
+      "correct": [
+        4,
+        7,
+        6
+      ],
+      "total": 9
+    }
+  },
+  "limitations": [
+    "Replot of archived counts, not a new reader trial.",
+    "Temporal sample has nine cases; no uncertainty or causal advantage is inferred from these bars.",
+    "No conceptual-diagram dependency is consumed."
+  ]
+}

@@ -1,0 +1,16 @@
+{
+  "lost": [
+    "The specific mechanism: spectral radius rho computed from successive lost-set deltas",
+    "The distinction between OPEN-with-budget and OPEN-exhausted-while-contracting (budget_exhausted flag)",
+    "The minimum estimator requirement: >= 3 verdicts needed to form a delta ratio",
+    "The distinction within oscillation: rho >= 1 OR limit cycle with period >= 2 and recurrence from >= 2 cycles back",
+    "The precision on degenerate: 'generative node over-contracted below the edge, imagination collapsed to the obvious'"
+  ],
+  "added": [
+    "Framing of 'halt rule' as an estimator rather than a predicate reading spectral radius",
+    "Implicit suggestion that the target depends on 'kind' without specifying the relation to 'grade'"
+  ],
+  "structured": true,
+  "recurses": true,
+  "justification": "The ghost captures the four-state taxonomy (converged-faithful, converged-degenerate, oscillating, open) and the core logic: contraction via lost-set deltas, comparison to a target, and the treatment of degenerate as a plateau requiring upward grade movement rather than local optimization. It correctly omits confabulation from the oscillating case (degenerate is where confabulation lives). However, it strips the technical specificity: the original's 'spectral radius rho of successive deltas' becomes 'contraction rate' (a synonym but less precise); the OPEN state's two sub-cases (budget remaining vs. exhausted-while-contracting, with explicit budget_exhausted flag) collapse into 'still open'; the minimum-sample constraint (>= 3 verdicts) is entirely absent; and the oscillation criterion's two branches (rho >= 1 vs. period >= 2 limit cycle) are compressed to 'at or above one, or in circles'. The lost pieces are structured: they are quantitative refinements and constraint specifications that a next pass could recover from the original. The ghost's paraphrase is faithful to the logical skeleton and decision flow."
+}

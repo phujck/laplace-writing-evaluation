@@ -18,6 +18,7 @@ Use Python 3.12. From this repository, create a fresh environment and install th
 ```sh
 python3.12 -m venv .venv
 .venv/bin/python -m pip install ./atlas .
+.venv/bin/python scripts/configure_writing_runtime.py --python .venv/bin/python --replace
 .venv/bin/python -m laplace.web.writing_server --root . --host 127.0.0.1 --port 8772
 ```
 
@@ -50,6 +51,7 @@ mkdir -p work
 
 It checks nine states and sixteen queries over bundled synthetic documents. Its conditional values are `4/5 → 3/4 → 3/5 → 3/4`, followed by replay/merge/split checks, `0` and `UNDEFINED`. Successful local checks do not reproduce the historical language-model or GPU benchmarks. Keep the new output separate from the retained evidence.
 
+- [Dependency and runtime profiles](docs/evaluation-dependencies.md).
 - [Application code map](docs/writing-code-overview.md) and [owner/source map](docs/writing-source-map.md).
 - [Research workspace](docs/writing-research-workbench.md) and [Work lifecycle](docs/writing-work-review-lifecycle.md).
 - [How the four manuscripts were made](release/manuscript-production.json).

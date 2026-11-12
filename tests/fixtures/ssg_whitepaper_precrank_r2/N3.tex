@@ -1,0 +1,154 @@
+% PLAN:N3
+% NODES: def:protocol-output-specification def:classical-dial def:spectral-surfacing irf:tau-is-a-classical-dial def:spectral-coordinate-s def:probe-target-shift def:spectral-surface def:spectral-weights def:filter-kernel def:generating-surface thm:fourier-reconstruction-identity def:spectral-signal def:coefficient-update def:retained-overlaps def:filtered-partition def:filtered-mean def:filtered-variance def:centered-readout thm:staircase-cumulant-identities def:staircase thm:response-identities-s res:tau-direction-response thm:natural-parameters-cumulants irf:moment-identities ds:insertion-inflates-coefficient-norm ds:variance-amplification-on-kappa-r irf:heat-kernel-scale-space def:surfacing-algorithm ds:uniform-grid-fft-cost ds:scale-family-cost def:observable-surfaces irf:non-hermitian-emulation-boundary irf:non-hermitian-spectral-emulation
+\section{Spectral Surface Generation}\label{sec:N3}
+
+% N3-p1
+Spectral Surface Generation is fixed by its contract. Its inputs are the Hamiltonian $H$, the probe state, a spectral bandwidth bound, and the record $\widehat G(t_k)$ measured once on the retained grid - the target-independent overlap family banked in the acquisition section (Sec.~\ref{sec:N4}) with truncation budget $\bar m$. Its output is
+\begin{equation}\label{def:protocol-output-specification}
+\bigl\{\widehat G(t_k)\bigr\}\ \longmapsto\ \bigl\{\widehat Z_{\tau,m}(s),\ \widehat\mu_\tau(s),\ \widehat\sigma_\tau^{2}(s),\ \widehat\kappa_m(\tau,s),\ \dots\bigr\},
+\end{equation}
+the finite reconstruction of the Gaussian spectral surface over a supported $(s,\tau)$ domain, with its derived response channels - filtered mean, filtered variance, higher cumulants, within-window ratios and optional observable-branch diagnostics - across a polynomial family of post-measurement settings in $s$ and $\tau$. The hat marks finite-record estimators throughout, and the supported domain, bounded by record reach, node retention and the shot-noise floor, is assembled in the acquisition section. The output is a reusable spectral-surface object rather than a single target readout.
+
+% N3-p2
+Every entry in that family of settings is reached by one kind of control. A classical dial is a protocol control adjusted after the quantum measurement by changing the reconstruction coefficients applied to the stored overlap bank,
+\begin{equation}\label{def:classical-dial}
+(s,\ \tau,\ \text{insertion})\ \longmapsto\ \{c_k\},\qquad \{\widehat G_k\}\ \text{fixed},
+\end{equation}
+with no new quantum experiment. The essential surfacing dials are the spectral location $s$, the inverse scale $\tau$ up to the range the measured record supports, and derived coefficient insertions for moments, cumulants, ratios and diagnostic sweeps. The insertions divide by what the stored record already holds: location derivatives and cumulants are read from the denominator record alone as powers of the node time, commuting observable branches require the corresponding branch signal acquired in advance, and non-commuting diagnostic branches need their own separate records (Sec.~\ref{sec:N4}). The term is deliberate - it separates quantum-sourced resources from classical post-measurement choices, and it claims no freedom beyond the acquired record.
+
+% N3-p3
+Spectral Surface Generation turns the parent protocol \cite{mccaul2025snacks} into an interface between Hilbert space and a classical signal,
+\begin{widetext}
+\begin{equation}\label{def:spectral-surfacing}
+G(t)\ \xrightarrow{\ \text{measured once}\ }\ \bigl\{\widehat G(t_k)\bigr\}\ \xrightarrow{\ \text{classical reconstruction}\ }\ Z_\tau(s)\quad \text{over } (s,\tau).
+\end{equation}
+\end{widetext}
+The device samples the spectral characteristic function $G(t)$ once, and the classical layer reconstructs from the banked record a two-parameter Gaussian spectral surface over spectral location and inverse scale, so every filtered spectral readout, with its derivatives and cumulants, follows from one measurement bank by classical post-processing alone. One bank means one acquisition campaign out to a stated time reach, not a single shot, and the shot accounting is the business of the acquisition analysis.
+
+% N3-p4
+That claim rests on a grid fact, asserted here and derived in the acquisition analysis. The retained-node grid is uniform in time with a $\tau$-independent spacing $\Delta t=\pi/(\sqrt{8}\,\|H\|)$, a Nyquist-type spacing at the spectral bandwidth - this uniform grid is the Plancherel-Rotach bulk form of the Gauss-Hermite quadrature of the reconstruction identity derived below, whose retained-node count is the source protocol's quadrature-truncation budget \cite{mccaul2025snacks,leamer2024emulation} - and $\tau$ enters the measurement only through the record reach $t_{\max}$~\eqref{res:aperture-resolution}, the largest retained evolution time. One family measured out to $t_{\max}$ therefore serves every $\tau\le t_{\max}^{2}/(4\log(1/\epsilon_w))$, with $\epsilon_w$ the envelope truncation tolerance, by classical reweighting of the same record - per-$\tau$ retention selects a subset of the measured family, and the reach statement uses the aperture convention $e^{-t^{2}/(4\tau)}$ fixed by the reconstruction identity. Both filter parameters are classical dials in the sense of \eqref{def:classical-dial} - the device measures one family, and every point of the surface is a classical read of it via the surfacing map \eqref{def:spectral-surfacing}.
+
+% N3-p5
+Both dials are phrased on location and scale, and the location coordinate comes first. The spectral coordinate is
+\begin{equation}\label{def:spectral-coordinate-s}
+s = T - \lambda,
+\end{equation}
+the actual spectral position at which the Gaussian window is centred, while the parent probe shift $\lambda$ is a displacement from the chosen target $T$. We carry the derivation in $s$, and $\lambda$ appears only where a statement is translated back to the parent convention - the parent-convention identities are stated on $\lambda$, and the map converts them without loss.
+
+% N3-p6
+At the centre of the contract sits one object. The spectral surface is
+\begin{equation}\label{def:spectral-surface}
+Z_\tau(s)=\int e^{-\tau(E-s)^{2}}\,d\mu_\psi(E)=\sum_j p_j\,e^{-\tau(E_j-s)^{2}},
+\end{equation}
+the filter kernel of the parent convention written at window centre $s$ and integrated against the spectral measure of the probe state, the sum form following by evaluating the measure on the eigenbasis with weights $p_j=|\langle E_j|\psi\rangle|^{2}$. The window is centred at spectral location $s$ with width $1/\sqrt{\tau}$, so the energy resolution at scale $\tau$ is $\Delta E_\tau\sim 1/\sqrt{\tau}$ - small $\tau$ gives a broad survey, large $\tau$ a narrow local readout. $Z_\tau(s)$ is a normalising generating function for the filtered ensemble and not a Gibbs partition function, so no thermodynamic reading is implied.
+
+% N3-p7
+The object every response reads from is the logarithm of the spectral surface \eqref{def:spectral-surface}. The generating surface is
+\begin{equation}\label{def:generating-surface}
+\Phi_\tau(s)=\log Z_\tau(s),
+\end{equation}
+whose derivatives in $s$ and $\tau$ are the response channels of the filtered ensemble, and Spectral Surface Generation is the map from the sampled signal $G(t)$ to $\Phi_\tau(s)$ - from a Hilbert-space signal to a spectral scale surface over location and inverse scale. The continuous surface is strictly positive for $\tau>0$, so the generating surface is defined at every point of the plane, and finite-record caveats enter only with the discrete reconstruction.
+
+% N3-p8
+The reconstruction identity connects both objects to the measured signal. The spectral signal $G(t)=\langle\psi|e^{-iHt}|\psi\rangle=\sum_j p_j\,e^{-iE_j t}$ is the characteristic function of the probe-weighted spectral measure \cite{mccaul2025snacks}, and the retained overlap family $\{A_j, B_{j,\ell}\}$ of the acquisition section (Sec.~\ref{sec:N4}) is precisely its measured realisation at the retained nodes. Writing the Gaussian window as a Fourier integral, $e^{-\tau(E-s)^{2}}=\tfrac{1}{2\sqrt{\pi\tau}}\int e^{-t^{2}/(4\tau)}\,e^{i(s-E)t}\,dt$, and exchanging the time integral with the spectral sum identifies that sum as $G(t)$, giving
+\begin{equation}\label{thm:fourier-reconstruction-identity}
+Z_\tau(s)=\frac{1}{2\sqrt{\pi\tau}}\int_{-\infty}^{\infty}e^{-t^{2}/(4\tau)}\,e^{ist}\,G(t)\,dt.
+\end{equation}
+Both dial claims are visible in the integrand. The spectral location enters only through the phase $e^{ist}$ and the scale only through the Gaussian time aperture $e^{-t^{2}/(4\tau)}$, so measuring $G(t)$ once determines $Z_\tau(s)$ at every $(s,\tau)$ whose aperture the record supports. \emph{Exact} refers to this continuous transform - the finite-record version carries the hat.
+
+% N3-p9
+On the grid $t_k=k\Delta t$ with banked estimates $\widehat G_k$ and node budget $m$ fixed by the truncation budget of the acquisition section (Sec.~\ref{sec:N4}), discretising the identity \eqref{thm:fourier-reconstruction-identity} by Gauss-Hermite quadrature of its Gaussian aperture - whose retained nodes are, in the Plancherel-Rotach bulk, uniformly spaced by $\Delta t$ - gives
+\begin{widetext}
+\begin{equation}\label{def:coefficient-update}
+\widehat Z_{\tau,m}(s)=\sum_{k=-m}^{m}c_k(\tau,s)\,\widehat G_k,\qquad c_k(\tau,s)=\frac{\Delta t}{2\sqrt{\pi\tau}}\,e^{-t_k^{2}/(4\tau)}\,e^{ist_k}.
+\end{equation}
+\end{widetext}
+This is where the contract's dials become operational. The coefficient magnitude $\Delta t\,e^{-t_k^{2}/(4\tau)}/(2\sqrt{\pi\tau})$ is the bulk Gauss-Hermite quadrature weight of the Gaussian aperture, so \eqref{def:coefficient-update} is that quadrature written in Plancherel-Rotach form rather than a uniformly-weighted Riemann sum, and the favourable retained-node count is inherited from the source protocol \cite{mccaul2025snacks,leamer2024emulation}. A retained bank is a sampled characteristic function rather than a list of single-purpose overlaps \cite{somma2019eigenvalue,obrien2019qpe}, and changing $s$, changing $\tau$ or inserting a derived factor is a coefficient update applied to the stored record, with no further quantum evolution. $\widehat Z_{\tau,m}$ is notationally distinct from the continuous $Z_\tau$ - \emph{exact} is reserved for the continuous transform and the algebraic identities and never describes the finite sum - and the two-sided sum is realised from a one-sided record by conjugate completion, established in the acquisition analysis.
+
+% N3-p10
+The identities inherited from the parent protocol are stated on the probe dial. In that convention the filter kernel defines the filtered partition function,
+\begin{equation}\label{def:filtered-partition}
+Z_\tau(\lambda)=\langle\psi|e^{-\tau(H-T+\lambda)^{2}}|\psi\rangle=\sum_j p_j\,e^{-\tau(E_j-T+\lambda)^{2}},
+\end{equation}
+the normalising partition of the spectral weights, whose kernel-weighted first moment is the filtered mean,
+\begin{widetext}
+\begin{equation}\label{def:filtered-mean}
+\mu_\tau(\lambda)=\frac{\langle\psi|H\,e^{-\tau(H-T+\lambda)^{2}}|\psi\rangle}{Z_\tau(\lambda)}=\frac{1}{Z_\tau(\lambda)}\sum_j p_j\,E_j\,e^{-\tau(E_j-T+\lambda)^{2}},
+\end{equation}
+\end{widetext}
+the kernel-weighted average of the eigenvalues, and whose second moment about that average is the filtered variance,
+\begin{equation}\label{def:filtered-variance}
+\sigma_\tau^{2}(\lambda)=\frac{1}{Z_\tau(\lambda)}\sum_j p_j\,\bigl(E_j-\mu_\tau(\lambda)\bigr)^{2}\,e^{-\tau(E_j-T+\lambda)^{2}},
+\end{equation}
+completed by the centred readout,
+\begin{equation}\label{def:centered-readout}
+m_\tau(\lambda)=\mu_\tau(\lambda)-T+\lambda,
+\end{equation}
+the target-relative readout that tends to zero when the window centres on the target cluster. Under the spectral coordinate $s=T-\lambda$ \eqref{def:spectral-coordinate-s} these are the surface objects at window centre $s$, with $m_\tau=\mu_\tau-s$. $Z_\tau(\lambda)$ and $Z_\tau(s)$ denote one object in two conventions, not two different surfaces.
+
+% N3-p11
+For the target-shifted Hamiltonian of the parent convention, write $H_\tau(\lambda)=\mu_\tau(\lambda)-T$ for the staircase, the most legible of the derived response channels. Differentiating $\ln Z_\tau(\lambda)$ of the filtered partition \eqref{def:filtered-partition} under the sum, and differentiating once more for the slope, gives
+\begin{widetext}
+\begin{equation}\label{thm:staircase-cumulant-identities}
+H_\tau(\lambda)+\lambda=-\frac{1}{2\tau}\,\partial_\lambda \ln Z_\tau(\lambda)=m_\tau(\lambda),\qquad \partial_\lambda H_\tau(\lambda)=-2\tau\,\sigma_\tau^{2}(\lambda),
+\end{equation}
+\end{widetext}
+exactly, for every $\lambda$, $\tau$ and coupling. $\ln Z_\tau(\lambda)$ is therefore a cumulant-generating function along the probe dial. The staircase - equal to the centred readout \eqref{def:centered-readout} by the identity above - the filtered variance and every higher filtered cumulant are read from the single measured family by inserting classical factors $(-it_k)^{m}$ into the reconstruction coefficients \eqref{def:coefficient-update}. That factor is the power that differentiating the single-time reconstruction phase $e^{ist_k}$ of \eqref{thm:fourier-reconstruction-identity} in the probe dial brings down. The acquisition and the reference implementation bank the overlap at the doubled node time $2t_k$ of the bidirectional trajectory (Sec.~\ref{sec:N4}), whose phase $e^{-2i\lambda t_k}$ carries the same insertion as $(-2it_k)^{m}$ in that convention. This does not change what the device must record. The $H$-weighted overlap channel is redundant for staircase readout, and the correlation between numerator and denominator shot noise that ratio cancellation requires is native to the log-derivative estimator rather than modelled. The identities are exact algebra for the continuous objects - their finite-record versions carry the hat and inherit the truncation budget of the bank.
+
+% N3-p12
+Carried into the spectral coordinate by the chain rule $\partial_\lambda=-\partial_s$, each probe-dial identity \eqref{thm:staircase-cumulant-identities} maps onto its location form, and the two conventions carry the same content \cite{mccaul2025snacks}. Differentiating the generating surface \eqref{def:generating-surface} in $s$ under the sum gives
+\begin{widetext}
+\begin{equation}\label{thm:response-identities-s}
+\partial_s\log Z_\tau(s)=2\tau\bigl(\mu_\tau(s)-s\bigr),\qquad \partial_s^{2}\log Z_\tau(s)=4\tau^{2}\,\sigma_\tau^{2}(s)-2\tau,
+\end{equation}
+\end{widetext}
+so $\mu_\tau(s)=s+\tfrac{1}{2\tau}\,\partial_s\log Z_\tau(s)$ and, differentiating once more, $\partial_s\mu_\tau=2\tau\,\sigma_\tau^{2}(s)$. The moments are taken under the filtered weights $q_j(\tau,s)=p_j\,e^{-\tau(E_j-s)^{2}}/Z_\tau(s)$, so the filtered mean \eqref{def:filtered-mean} and variance \eqref{def:filtered-variance} are read directly off the surface by differentiation alone. They depend on both dials - they are filtered moments under $q_j$, not spectral moments of the bare weights $p_j$.
+
+% N3-p13
+The scale direction is a response channel of the same surface. Differentiating in $\tau$ under the sum gives the filtered second moment about $s$, and substituting the first response identity \eqref{thm:response-identities-s} isolates the variance:
+\begin{widetext}
+\begin{equation}\label{res:tau-direction-response}
+-\partial_\tau\log Z_\tau(s)=\sigma_\tau^{2}(s)+\bigl(\mu_\tau(s)-s\bigr)^{2},\qquad \sigma_\tau^{2}(s)=-\partial_\tau\log Z_\tau(s)-\frac{1}{4\tau^{2}}\bigl(\partial_s\log Z_\tau(s)\bigr)^{2}.
+\end{equation}
+\end{widetext}
+The scale is therefore a second response direction of the one generating surface, not only a family parameter to scan - the parent account treated $\tau$ as a setting \cite{mccaul2025snacks}, and the scale response is stated as an addition to the inherited identities. It adds no new measured quantity, being another derivative of the same reconstructed surface within the acquired reach.
+
+% N3-p14
+The two response directions - the location identities \eqref{thm:response-identities-s} and the scale response \eqref{res:tau-direction-response} - organise into a single cumulant structure once the square is completed. With the tilt $h=2\tau s$,
+\begin{widetext}
+\begin{equation}\label{thm:natural-parameters-cumulants}
+Z_\tau(s)=e^{-\tau s^{2}}\,\widetilde Z(\tau,h),\qquad \widetilde Z(\tau,h)=\sum_j p_j\,e^{-\tau E_j^{2}+hE_j},\qquad \partial_h^{\,m}\log\widetilde Z\,\Big|_{h=2\tau s}=\kappa_m(\tau,s),
+\end{equation}
+\end{widetext}
+and at fixed $\tau$ the function $\log\widetilde Z$ is a cumulant-generating function in $h$ whose $m$-th derivative at $h=2\tau s$ is the filtered cumulant $\kappa_m(\tau,s)$ of the weights $q_j$. The first cumulant is $\kappa_1=\mu_\tau(s)$ exactly, and not $\mu_\tau(s)-s$, because $\log\widetilde Z=\log Z_\tau+\tau s^{2}$ absorbs precisely the shift that the $s$-derivative of $\log Z_\tau$ carries. Two correct-looking computations disagree here - differentiating $\log Z_\tau$ in the tilt yields $\mu_\tau(s)-s$, both computations are correct, and they name different derivatives, the cumulant reading belonging to $\log\widetilde Z$. The higher cumulants are central and unchanged by the location, $\kappa_2=\sigma_\tau^{2}(s)$ and $\kappa_3$ the filtered third central moment. $(s,\tau)$ are the geometric coordinates of the surface and $(h,\tau)$ the natural ones - moving the window centre is a linear tilt inside a fixed quadratic penalty.
+
+% N3-p15
+The cumulant hierarchy \eqref{thm:natural-parameters-cumulants} is algebraically free on the retained bank and carries a statistical cost. Each order inserts one more power of the node time into the coefficients, upweighting the long-time tail where the aperture is thin. Treated as a Gaussian measure in $t$ of width $\sqrt{2\tau}$, the squared coefficients give a norm growth of order $(2\tau)^{m/2}\sqrt{(2m-1)!!}$, so the variance of the reconstructed $m$-th cumulant - a linear estimator in the noisy samples - grows as $(2\tau)^{m}(2m-1)!!$ relative to the per-node noise. Holding fixed accuracy at higher order requires a super-exponentially larger shot budget or stronger regularisation, while the quantum side is unchanged - no new observable and no additional overlap channel. The cost sits in the insertion route - differencing a noisy surface is ill conditioned, amplifying noise as $(\delta s)^{-m}$.
+
+% N3-p16
+The scale dial carries the same asymmetry in a sharper analytic form. With $u=1/(4\tau)$, the normalised smoothed spectral density satisfies the heat equation in the distributional sense,
+\begin{widetext}
+\begin{equation}\label{irf:heat-kernel-scale-space}
+\partial_u\rho_u(s)=\partial_s^{2}\rho_u(s),\qquad u=\frac{1}{4\tau},\qquad \rho_u(s)=\sqrt{\tau/\pi}\,Z_\tau(s).
+\end{equation}
+\end{widetext}
+Increasing $u$ - coarsening the scale - is the heat semigroup, a contractive smoothing that damps each spectral frequency $\omega$ by $e^{-u\omega^{2}}$, so coarsening within the acquired record is stable. Decreasing $u$ would multiply each frequency by $e^{+u\omega^{2}}$, the ill-posed backward heat flow, so refinement is never computed by inversion. Refinement is instead a resource statement. Recovering scale $\tau$ requires a record reach $t_{\max}(\tau)=2\sqrt{\tau\log(1/\epsilon_w)}$~\eqref{res:aperture-resolution} and per-node accuracy that grows with $\tau$ through the reconstruction coefficient norm, the smallest recoverable scale is set by the acquired reach with $\tau_{\max}\sim t_{\max}^{2}/(4\log(1/\epsilon_w))$, and the read is floored where the surface drops below the per-node shot-noise level propagated through the coefficient norm. Scale space~\cite{witkin1983scale,koenderink1984structure,lindeberg1994scale} is here a forward-stability statement and never a reversibility one - coarsening is post-processing, while refinement demands longer and more accurate real-time data.
+
+% N3-p17
+The analytic asymmetry between location and scale \eqref{irf:heat-kernel-scale-space} reappears as arithmetic once the cost of the classical layer is accounted under an explicit query model, in three output modes. An oracle evaluates $\widehat Z_{\tau,m}(s)$ per $(s,\tau)$ query at cost of order $m$. On a uniform $s$ grid of size $M$ at fixed $\tau$, the apertured bank $g_k=e^{-t_k^{2}/(4\tau)}\,\widehat G_k$ makes the whole $s$ line one discrete Fourier transform, at order $mM$ directly and order $(m+M)\log(m+M)$ by FFT on a commensurate zero-padded grid, the Gaussian aperture being a fixed pre-multiply that adds no order. A scale family at $L$ values of $\tau$ costs $L$ single-scale transforms, because only the phase carries $s$ while the aperture carries $\tau$ and changes the summand itself. These figures cover reconstruction from an already banked record, not acquisition, whose shot costs the acquisition analysis derives.
+
+% N3-p18
+The output family \eqref{def:protocol-output-specification} closes with the observable branches, which reuse the coefficient machinery unchanged. For an observable $O$ diagonal in the spectral basis, the numerator surface is
+\begin{widetext}
+\begin{equation}\label{def:observable-surfaces}
+N_{\tau,O}(s)=\sum_j p_j\,O_j\,e^{-\tau(E_j-s)^{2}}=\frac{1}{2\sqrt{\pi\tau}}\int_{-\infty}^{\infty}e^{-t^{2}/(4\tau)}\,e^{ist}\,G_O(t)\,dt,\qquad \langle O\rangle_{\tau,s}=\frac{N_{\tau,O}(s)}{Z_\tau(s)},
+\end{equation}
+\end{widetext}
+where $G_O(t)$ is the observable-inserted overlap signal banked as the $B$ channel of the acquisition section (Sec.~\ref{sec:N4}) \cite{knill1998power}. The derivation repeats the reconstruction identity with $O_j$ inserted, the filtered observable is the ratio, and the denominator is the spectral surface itself. Inserted branches are therefore observable surfaces \eqref{def:observable-surfaces} over the same $(s,\tau)$ domain, reconstructed by the same coefficients applied to the branch record \cite{chan2025shadow}, the earlier reconstruction identity \eqref{thm:fourier-reconstruction-identity} reused rather than a new one derived. The identity as stated covers observables diagonal in the spectral basis - non-commuting diagnostic branches are separate records, costed separately in the acquisition analysis.
+
+% N3-p19
+One boundary remains to mark. Reweighting the banked record by other admissible time-domain kernels within the acquired support reconstructs other spectral functions $F(H)$ of the Hermitian generator, and this reweighting freedom is the stated boundary of the Gaussian case - non-Gaussian kernels inherit the same reach and noise floors, and this manuscript treats only the Gaussian case. What the record does not determine is the dynamics of an arbitrary non-Hermitian generator,
+\begin{equation}\label{irf:non-hermitian-emulation-boundary}
+K=A-iB,\qquad e^{-iKt}=e^{-iAt-Bt},\qquad [A,B]\neq 0,
+\end{equation}
+whose evolution carries operator-ordering structure absent from the single spectral signal of $H$. Simulating such dynamics \eqref{irf:non-hermitian-emulation-boundary} needs a larger construction - a dilation, a linear-combination-of-unitaries synthesis or additional branch measurements \cite{leamer2024emulation,kamakari2022digital}. The supported claim is spectral non-Hermitian emulation, filtered non-unitary spectral operators from one Hermitian record, and never arbitrary non-Hermitian dynamics.

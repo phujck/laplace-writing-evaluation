@@ -2,7 +2,7 @@
   "projects": [
     {
       "name": "eigen-technical-due-diligence-briefing",
-      "kind": "conceptric",
+      "kind": "project",
       "project_dir": "writing_projects/eigen-technical-due-diligence-briefing",
       "tex_root": "writing_projects/eigen-technical-due-diligence-briefing/manuscript/working-draft",
       "manifest": {
@@ -12,7 +12,7 @@
           "manuscript_dir": "writing_projects/eigen-technical-due-diligence-briefing/manuscript/working-draft",
           "edition": "evaluation",
           "read_only": false,
-          "state_dir": "writing_projects/eigen-technical-due-diligence-briefing"
+          "state_dir": "writing_projects/eigen-technical-due-diligence-briefing/manuscript"
         },
         "writing": {
           "kind": "imported",
@@ -83,6 +83,28 @@
           "audience": "General technical reader"
         }
       }
+    },
+    {
+      "created_by": "projects-import",
+      "kind": "conceptric",
+      "manifest": {
+        "display_name": "Behaviour example",
+        "document": {
+          "edition": "imported",
+          "manuscript_dir": "sources/behaviour-example",
+          "read_only": false,
+          "root": "sources/behaviour-example/main.tex",
+          "state_dir": "writing_projects/behaviour-example"
+        },
+        "writing": {
+          "audience": "",
+          "kind": "imported",
+          "purpose": ""
+        }
+      },
+      "name": "behaviour-example",
+      "project_dir": "writing_projects/behaviour-example",
+      "tex_root": "sources/behaviour-example"
     }
   ]
 }

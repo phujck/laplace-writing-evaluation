@@ -1,0 +1,71 @@
+{
+  "args": {},
+  "cancel_path": "/home/phujck/VScodeProjects/laplace/synthetics papers/self-consistent-loss-geometries/manuscript/imported/research_runs/run-756cd502012e0adb.cancel",
+  "cwd": "/home/phujck/VScodeProjects/laplace/writing_projects/self-consistent-loss-geometries",
+  "deadline_at": 1794411426.3582735,
+  "execution_deadline_monotonic": 109202.744402539,
+  "id": "run-756cd502012e0adb",
+  "launch_token": "38d91f0e4d65493d910deedb2760bed6",
+  "mode": "smoke",
+  "pid": 374174,
+  "producer_argv": [
+    "/home/phujck/.local/share/laplace/runtime/python/current/bin/python3.14",
+    "/home/phujck/VScodeProjects/laplace/writing_projects/self-consistent-loss-geometries/research/slg-policy-coverage-20261111-v3/coverage_checks.py",
+    "--mode",
+    "smoke",
+    "--args-json",
+    "{}",
+    "--result",
+    "/home/phujck/VScodeProjects/laplace/synthetics papers/self-consistent-loss-geometries/manuscript/imported/research_runs/run-756cd502012e0adb.result.json"
+  ],
+  "producer_base": "/home/phujck/VScodeProjects/laplace/writing_projects/self-consistent-loss-geometries",
+  "producer_id": "slg-policy-coverage-20261111-v3",
+  "producer_path": "research/slg-policy-coverage-20261111-v3/coverage_checks.py",
+  "project": "self-consistent-loss-geometries",
+  "provenance": {
+    "dependencies": [
+      {
+        "bytes": 3012,
+        "path": "research/slg-policy-coverage-20261111-v3/parameters.json",
+        "sha256": "53f6884ef78e4b7f3da4c46c0de86ebd3b485e160c14efb1c01ecaea8b3cbe14",
+        "status": "PRESENT"
+      },
+      {
+        "bytes": 14840,
+        "path": "research/slg-analytic-20261111-v2/finite_checks.py",
+        "sha256": "8f39b070b310baaaa58e6b3824ab7a59c0c86a9c8f5d1f3271e00b4a690a6ce7",
+        "status": "PRESENT"
+      },
+      {
+        "bytes": 2081,
+        "path": "research/slg-analytic-20261111-v2/parameters.json",
+        "sha256": "25b9c7b5ded0567f804e1ba88debef5b76512f45a611ca2e229d429e501b5256",
+        "status": "PRESENT"
+      }
+    ],
+    "producer": {
+      "bytes": 10569,
+      "path": "research/slg-policy-coverage-20261111-v3/coverage_checks.py",
+      "scope": "project",
+      "sha256": "6e28d95e704849058e84d87ae414db1e656dbbe73e5d5447af20431049411795",
+      "status": "PRESENT"
+    },
+    "producer_config": "78adc92f61a86bee1fcd22c6aae06a47e9d32c3c1611fa16ccc8fac44eb93e57"
+  },
+  "request_id": "slg-policy-coverage-20261111-v3-run1",
+  "request_intent": "sha256:27e8c2016300fe4a6f7744928f985da8a2432eb1953c2b5dc2989a9d5f86d963",
+  "result_absolute": "/home/phujck/VScodeProjects/laplace/synthetics papers/self-consistent-loss-geometries/manuscript/imported/research_runs/run-756cd502012e0adb.result.json",
+  "result_path": "research_runs/run-756cd502012e0adb.result.json",
+  "started_at": 1794411396.3582733,
+  "state": "RUNNING",
+  "stderr_path": "/home/phujck/VScodeProjects/laplace/synthetics papers/self-consistent-loss-geometries/manuscript/imported/research_runs/run-756cd502012e0adb.stderr.log",
+  "stdout_path": "/home/phujck/VScodeProjects/laplace/synthetics papers/self-consistent-loss-geometries/manuscript/imported/research_runs/run-756cd502012e0adb.stdout.log",
+  "supervision": {
+    "cleanup_limit_seconds": 6.0,
+    "roles": {},
+    "schema_version": "laplace.research-supervision/1"
+  },
+  "supervision_index_path": "/home/phujck/VScodeProjects/laplace/synthetics papers/self-consistent-loss-geometries/manuscript/imported/research_runs/index.json",
+  "supervisor_start_token": "sha256:77c4c32cbf6dc3439478b42e7de2aae4cc8389e84ab6275c0623d4c3345233ec",
+  "timeout_seconds": 30
+}

@@ -1,0 +1,491 @@
+{
+  "provenance": "Actual fixture section operation refused required plan, exact source compensated; direct bank_failure without recovery argument. No provider run.",
+  "immediate": {
+    "ok": false,
+    "operation": "section_change",
+    "error": "controlled fixture plan refusal",
+    "source_effect": {
+      "schema_version": "laplace.source-effect/1",
+      "project": "book",
+      "selection_identity": "sha256:f35f374570dbc183d4aec769c50fb55b0860b11e94183950c18db51bd357ed65",
+      "state": "ROLLED_BACK",
+      "complete": false,
+      "files": [
+        {
+          "scope": "repository",
+          "path": "synthetics papers/book/manuscript/chapters/chapter-01.tex",
+          "before_sha256": "sha256:a3f9c9c474d5c0b6ae33ea349ddf6d0f11be41f3347f7a130309571f5aa47bce",
+          "after_sha256": "sha256:28e1c588d4027be7a7e1d63d955c55e9c7afb54fc54c417a2df48e3f4ad60396",
+          "observed_after_sha256": "sha256:a3f9c9c474d5c0b6ae33ea349ddf6d0f11be41f3347f7a130309571f5aa47bce"
+        }
+      ],
+      "follow_through": {
+        "required": [
+          {
+            "owner": "section-plan-operation",
+            "status": "FAILED"
+          }
+        ],
+        "heading_sync": {
+          "status": "NOT_NEEDED",
+          "updated": [],
+          "reason": "This structure owner performs its required plan operation inside the compensated source transaction."
+        },
+        "maintenance_warnings": []
+      },
+      "impact": {
+        "status": "REOBSERVE",
+        "reads": [
+          {
+            "operation": "document",
+            "payload": {}
+          },
+          {
+            "operation": "structure",
+            "payload": {
+              "view": "summary"
+            }
+          }
+        ],
+        "coverage": "Source files and document only; logical binding membership is not inferred."
+      }
+    },
+    "recovery": "Inspect the exact source effect and required follow-through before another action; do not automatically repeat it.",
+    "help": {
+      "operation": "help",
+      "payload": {
+        "operation": "section_change"
+      }
+    },
+    "contract": {
+      "operation": "section_change",
+      "permitted": true,
+      "verb": "change",
+      "concept": "section@section",
+      "altitude": "section",
+      "does": "Create, convert, undo, delete or restore a source heading and its reader-plan occurrence.",
+      "effects": [
+        "source section",
+        "reader-plan occurrence",
+        "undo receipt"
+      ],
+      "handler": "src/laplace/writing_tools.py:280",
+      "line_numbers": "@706a8204 names the historical commit; @sha256 names the serving source file. `handler` is resolved in this tree.",
+      "acts": [
+        "change section@section <- section_change operation=convert",
+        "create heading@section <- section_change operation=insert-heading",
+        "create section@section <- section_change operation=create",
+        "create section@section <- section_change operation=restore",
+        "delete section@section <- section_change operation=delete",
+        "delete section@section <- section_change operation=undo-create"
+      ],
+      "act_chosen": "first-row-of-mapping.csv (the owner requires its discriminator)",
+      "source_effect_protocol": {
+        "schema_version": "laplace.source-effect/1",
+        "location": "top-level source_effect; nested legacy failure strings are not this schema",
+        "states": [
+          "UNCHANGED",
+          "COMMITTED",
+          "ROLLED_BACK",
+          "PARTIAL",
+          "UNPROVED"
+        ],
+        "required_statuses": [
+          "COMPLETE",
+          "NOT_NEEDED",
+          "COMPENSATED",
+          "FAILED",
+          "UNPROVED"
+        ],
+        "identity": "project and the originally admitted selection_identity; null only for genuine unregistered legacy source",
+        "files": "Nonempty exact owner_mutation.file_receipt observations: scope, path, before_sha256, after_sha256, observed_after_sha256. Null pin means absent file; observation_error distinguishes unproved physical fate.",
+        "completion": "complete:true requires state COMMITTED or UNCHANGED and every required status COMPLETE or NOT_NEEDED. COMPENSATED, FAILED and UNPROVED require complete:false. Physical source fate remains independent; optional heading/history maintenance cannot revoke a known source commit.",
+        "no_op": "Successful no-op requires matching before/intended/observed file pins and complete:true. UNCHANGED with complete:false means source unchanged but required work incomplete, not acknowledgement. Ordinary raw Save mints no version when unchanged; explicit archive/restore retains its distinct audit occurrence.",
+        "refusal": "Pre-admission refusal and metadata-only effects omit this block. Empty file evidence cannot prove a no-op.",
+        "follow_through": "required steps; heading_sync (existing plan_sync); maintenance_warnings",
+        "impact": "status NONE/REOBSERVE/UNPROVED; reads are existing operation/payload handles; coverage explicitly excludes inferred logical membership. Metadata owned_changes remain independent.",
+        "recovery": "Never automatically repeat COMMITTED-incomplete, PARTIAL or UNPROVED outcomes. ROLLED_BACK also requires explicit reinspection. Fresh reads may support a new independent edit but do not repair earlier required work.",
+        "compatibility": "Raw source_committed/changed, native source_applied/source_effect_retained, plan_sync and owned_changes remain explicit compatibility projections while reached callers migrate."
+      },
+      "expected": [
+        {
+          "home_kind": "plan",
+          "optional": false,
+          "asked_for_as": [
+            "expected_plan_revision"
+          ],
+          "read": "structure {} -> revision",
+          "home": "plan:book",
+          "token": "rev:plan:book:a2cab0bd10e5e4c4e4881a47bc22ce7abec92807449b419f919d5139fc60013b"
+        },
+        {
+          "home_kind": "source-file",
+          "optional": false,
+          "asked_for_as": [
+            "expected_source_digest"
+          ],
+          "read": "source {files:[path]} -> sources[0].sha256",
+          "token": null,
+          "needs": "repository-relative path of one .tex file"
+        }
+      ],
+      "input": {
+        "type": "object",
+        "required": [
+          "operation"
+        ],
+        "properties": {
+          "operation": {
+            "enum": [
+              "create",
+              "convert",
+              "undo-create",
+              "delete",
+              "restore",
+              "create-section",
+              "insert-heading",
+              "delete-section",
+              "restore-section"
+            ]
+          },
+          "source_file": {
+            "type": "string"
+          },
+          "line_start": {
+            "type": "integer"
+          },
+          "after_line": {
+            "type": "integer"
+          },
+          "after_before": {
+            "type": "string",
+            "x-laplace-value-form": "text",
+            "x-laplace-value-home": "prose",
+            "description": "Exact current source line at after_line."
+          },
+          "section_id": {
+            "type": "string"
+          },
+          "title": {
+            "type": "string"
+          },
+          "title_tex": {
+            "type": "string"
+          },
+          "replacement": {
+            "type": "object",
+            "required": [
+              "line_start",
+              "line_end",
+              "before"
+            ],
+            "properties": {
+              "line_start": {
+                "type": "integer"
+              },
+              "line_end": {
+                "type": "integer"
+              },
+              "before": {
+                "type": "string",
+                "x-laplace-value-form": "text",
+                "x-laplace-value-home": "prose",
+                "description": "Exact current replacement source text."
+              }
+            },
+            "additionalProperties": false
+          },
+          "kind": {
+            "enum": [
+              "chapter",
+              "section",
+              "subsection",
+              "subsubsection"
+            ]
+          },
+          "parent_id": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "expected_source_digest": {
+            "type": "string"
+          },
+          "expected_plan_revision": {
+            "type": "string"
+          },
+          "receipt_id": {
+            "type": "string"
+          },
+          "expected": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "minLength": 1
+            },
+            "description": "tokens copied from a read's identities block; legacy guards take their published scalar or content, not tokens"
+          }
+        },
+        "additionalProperties": false,
+        "allOf": [
+          {
+            "anyOf": [
+              {
+                "required": [
+                  "expected"
+                ],
+                "properties": {
+                  "expected": {
+                    "minItems": 1
+                  }
+                }
+              },
+              {
+                "required": [
+                  "expected_source_digest",
+                  "expected_plan_revision"
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      "rules": [
+        {
+          "rule": "shape",
+          "says": "Conversion uses an exact current paragraph and preserves its TeX."
+        },
+        {
+          "rule": "shape",
+          "says": "convert requires an exact replacement paragraph (line_start, line_end, before);"
+        },
+        {
+          "rule": "shape",
+          "says": "omit title_tex to retain its formatting and mathematics",
+          "field": "title_tex"
+        },
+        {
+          "rule": "shape",
+          "says": "create inserts at after_line with an exact after_before boundary",
+          "field": "after_before"
+        },
+        {
+          "rule": "shape",
+          "says": "use the returned undo payload for reversal;"
+        },
+        {
+          "rule": "shape",
+          "says": "it restores converted prose without removing following content"
+        },
+        {
+          "rule": "scope",
+          "says": "expected_plan_revision names one of plan|plan-file here; read the home this concept acts on",
+          "field": "expected_plan_revision"
+        }
+      ],
+      "rules_enforced_at": "src/laplace/writing_tools.py:261@706a8204",
+      "example": {
+        "operation": "create",
+        "expected_source_digest": "<source-file digest: read source {files:[path]} -> sources[0].sha256>",
+        "expected_plan_revision": "a2cab0bd10e5e4c4e4881a47bc22ce7abec92807449b419f919d5139fc60013b",
+        "source_file": "chapters/chapter-01.tex"
+      },
+      "native": {
+        "available": false,
+        "why": "current identity unavailable for source-file; use the reads in exact help expected rows"
+      },
+      "unknown_suboperation": "create",
+      "choose_from": []
+    },
+    "next_reads": [
+      {
+        "operation": "structure",
+        "payload": {}
+      },
+      {
+        "operation": "source",
+        "payload": {
+          "files": [
+            "chapters/chapter-01.tex"
+          ]
+        }
+      }
+    ]
+  },
+  "saved_failure": {
+    "record": "writing-tool-failure",
+    "id": "TOOLFAIL-247bd562c11a424bbebdea1350f760f1",
+    "project": "book",
+    "turn_id": null,
+    "operation": "section_change",
+    "payload": {
+      "schema_version": "laplace.writing-public-body-ref/1",
+      "content_handle": "sha256:621776f851129da2ecf0ab644ece3dd2a375298933fcc9ef80b4903948b73dd7",
+      "store": "contract/writing_bodies",
+      "bytes": 343,
+      "encoding": "application/json"
+    },
+    "error_type": "SourceEffectFailure",
+    "error": "controlled fixture plan refusal",
+    "provider": null,
+    "tool_use_id": null,
+    "recovery": {
+      "source_effect": {
+        "schema_version": "laplace.source-effect/1",
+        "project": "book",
+        "selection_identity": "sha256:f35f374570dbc183d4aec769c50fb55b0860b11e94183950c18db51bd357ed65",
+        "state": "ROLLED_BACK",
+        "complete": false,
+        "files": [
+          {
+            "scope": "repository",
+            "path": "synthetics papers/book/manuscript/chapters/chapter-01.tex",
+            "before_sha256": "sha256:a3f9c9c474d5c0b6ae33ea349ddf6d0f11be41f3347f7a130309571f5aa47bce",
+            "after_sha256": "sha256:28e1c588d4027be7a7e1d63d955c55e9c7afb54fc54c417a2df48e3f4ad60396",
+            "observed_after_sha256": "sha256:a3f9c9c474d5c0b6ae33ea349ddf6d0f11be41f3347f7a130309571f5aa47bce"
+          }
+        ],
+        "follow_through": {
+          "required": [
+            {
+              "owner": "section-plan-operation",
+              "status": "FAILED"
+            }
+          ],
+          "heading_sync": {
+            "status": "NOT_NEEDED",
+            "updated": [],
+            "reason": "This structure owner performs its required plan operation inside the compensated source transaction."
+          },
+          "maintenance_warnings": []
+        },
+        "impact": {
+          "status": "REOBSERVE",
+          "reads": [
+            {
+              "operation": "document",
+              "payload": {}
+            },
+            {
+              "operation": "structure",
+              "payload": {
+                "view": "summary"
+              }
+            }
+          ],
+          "coverage": "Source files and document only; logical binding membership is not inferred."
+        }
+      },
+      "recovery": "Inspect the exact source effect and required follow-through before another action; do not automatically repeat it."
+    },
+    "ts": "2026-10-11T14:47:51.639Z"
+  },
+  "history_exact": {
+    "schema_version": "laplace.activity-history/1",
+    "project": "book",
+    "item": {
+      "id": "activity:journal:TOOLFAIL-247bd562c11a424bbebdea1350f760f1",
+      "owner": "journal",
+      "category": "session",
+      "at": "2026-10-11T14:47:51.639Z",
+      "actor": {
+        "label": null,
+        "kind": "unknown"
+      },
+      "summary": "controlled fixture plan refusal",
+      "status": "failed",
+      "targets": [],
+      "detail_available": true,
+      "event_kind": "tool-attempt",
+      "operation": "section_change"
+    },
+    "record_kind": "writing-tool-failure",
+    "record": {
+      "record": "writing-tool-failure",
+      "id": "TOOLFAIL-247bd562c11a424bbebdea1350f760f1",
+      "project": "book",
+      "turn_id": null,
+      "operation": "section_change",
+      "payload": {
+        "after_before": "Child body.",
+        "after_line": 4,
+        "expected_plan_revision": "sha256:a2cab0bd10e5e4c4e4881a47bc22ce7abec92807449b419f919d5139fc60013b",
+        "expected_source_digest": "a3f9c9c474d5c0b6ae33ea349ddf6d0f11be41f3347f7a130309571f5aa47bce",
+        "kind": "subsection",
+        "operation": "create",
+        "source_file": "chapters/chapter-01.tex",
+        "title": "Refused section"
+      },
+      "error_type": "SourceEffectFailure",
+      "error": "controlled fixture plan refusal",
+      "provider": null,
+      "tool_use_id": null,
+      "recovery": {
+        "source_effect": {
+          "schema_version": "laplace.source-effect/1",
+          "project": "book",
+          "selection_identity": "sha256:f35f374570dbc183d4aec769c50fb55b0860b11e94183950c18db51bd357ed65",
+          "state": "ROLLED_BACK",
+          "complete": false,
+          "files": [
+            {
+              "scope": "repository",
+              "path": "synthetics papers/book/manuscript/chapters/chapter-01.tex",
+              "before_sha256": "sha256:a3f9c9c474d5c0b6ae33ea349ddf6d0f11be41f3347f7a130309571f5aa47bce",
+              "after_sha256": "sha256:28e1c588d4027be7a7e1d63d955c55e9c7afb54fc54c417a2df48e3f4ad60396",
+              "observed_after_sha256": "sha256:a3f9c9c474d5c0b6ae33ea349ddf6d0f11be41f3347f7a130309571f5aa47bce"
+            }
+          ],
+          "follow_through": {
+            "required": [
+              {
+                "owner": "section-plan-operation",
+                "status": "FAILED"
+              }
+            ],
+            "heading_sync": {
+              "status": "NOT_NEEDED",
+              "updated": [],
+              "reason": "This structure owner performs its required plan operation inside the compensated source transaction."
+            },
+            "maintenance_warnings": []
+          },
+          "impact": {
+            "status": "REOBSERVE",
+            "reads": [
+              {
+                "operation": "document",
+                "payload": {}
+              },
+              {
+                "operation": "structure",
+                "payload": {
+                  "view": "summary"
+                }
+              }
+            ],
+            "coverage": "Source files and document only; logical binding membership is not inferred."
+          }
+        },
+        "recovery": "Inspect the exact source effect and required follow-through before another action; do not automatically repeat it."
+      },
+      "ts": "2026-10-11T14:47:51.639Z"
+    },
+    "text": "controlled fixture plan refusal",
+    "measurements": [
+      {
+        "kind": "storage_bytes",
+        "value": 1834,
+        "unit": "bytes",
+        "basis": "exact stored journal line"
+      }
+    ],
+    "saved_text_available": true,
+    "response_body_status": "stored-public-text",
+    "format": "text",
+    "limitations": [
+      "This is the exact stored public owner row. It is not a reconstructed conversation or hidden model reasoning."
+    ]
+  }
+}

@@ -1,0 +1,65 @@
+{
+  "args": {},
+  "cancel_path": "/tmp/laplace-behaviour-fixtures-437xg1mq/runs/core-atlas-01/workspace/sources/behaviour-example/research_runs/run-5958977f72d23902.cancel",
+  "cwd": "/tmp/laplace-behaviour-fixtures-437xg1mq/runs/core-atlas-01/workspace/writing_projects/behaviour-example",
+  "deadline_at": 1794485639.7503803,
+  "execution_deadline_monotonic": 183416.136509093,
+  "id": "run-5958977f72d23902",
+  "launch_token": "21aae4dbfc3646e495e818aa8c4f4393",
+  "mode": "smoke",
+  "pid": 880629,
+  "producer_argv": [
+    "/tmp/laplace-behaviour-fixtures-437xg1mq/venv/bin/python",
+    "/tmp/laplace-behaviour-fixtures-437xg1mq/runs/core-atlas-01/workspace/writing_projects/behaviour-example/examples/public_representation_illustrations.py",
+    "--mode",
+    "smoke",
+    "--args-json",
+    "{}",
+    "--result",
+    "/tmp/laplace-behaviour-fixtures-437xg1mq/runs/core-atlas-01/workspace/sources/behaviour-example/research_runs/run-5958977f72d23902.result.json"
+  ],
+  "producer_base": "/tmp/laplace-behaviour-fixtures-437xg1mq/runs/core-atlas-01/workspace/writing_projects/behaviour-example",
+  "producer_id": "public-representation-illustrations-v1",
+  "producer_path": "examples/public_representation_illustrations.py",
+  "project": "behaviour-example",
+  "provenance": {
+    "dependencies": [
+      {
+        "bytes": 6525,
+        "path": "calculations/representation_illustrations.py",
+        "sha256": "6fbec2ba4f746abc5e5038455b450e0ef1ca546a64803a6827ac45b3cbcde670",
+        "status": "PRESENT"
+      },
+      {
+        "bytes": 3143,
+        "path": "examples/public-illustration-inputs-v1.json",
+        "sha256": "61b593fdfa0672b09859c813e28a8dcb6dea12cce56c7607b334da7e6710a713",
+        "status": "PRESENT"
+      }
+    ],
+    "producer": {
+      "bytes": 5309,
+      "path": "examples/public_representation_illustrations.py",
+      "scope": "project",
+      "sha256": "79b053a50a35c26931f71f0c79822de7d44b2dfc9c93acba6db1a07c068536e7",
+      "status": "PRESENT"
+    },
+    "producer_config": "3a91aa0ae5b0dc989d927f4c4b25dd3b8974219fc9cb132e3065d5598afccc11"
+  },
+  "request_id": "public-illustrations-smoke-once-v1",
+  "request_intent": "sha256:48cab18cd09051ed300d315d48e28d767167435e0a34014659b757d88d6eff1b",
+  "result_absolute": "/tmp/laplace-behaviour-fixtures-437xg1mq/runs/core-atlas-01/workspace/sources/behaviour-example/research_runs/run-5958977f72d23902.result.json",
+  "result_path": "research_runs/run-5958977f72d23902.result.json",
+  "started_at": 1794485549.75038,
+  "state": "RUNNING",
+  "stderr_path": "/tmp/laplace-behaviour-fixtures-437xg1mq/runs/core-atlas-01/workspace/sources/behaviour-example/research_runs/run-5958977f72d23902.stderr.log",
+  "stdout_path": "/tmp/laplace-behaviour-fixtures-437xg1mq/runs/core-atlas-01/workspace/sources/behaviour-example/research_runs/run-5958977f72d23902.stdout.log",
+  "supervision": {
+    "cleanup_limit_seconds": 6.0,
+    "roles": {},
+    "schema_version": "laplace.research-supervision/1"
+  },
+  "supervision_index_path": "/tmp/laplace-behaviour-fixtures-437xg1mq/runs/core-atlas-01/workspace/sources/behaviour-example/research_runs/index.json",
+  "supervisor_start_token": "sha256:5fde022cceda18a71e70359c054615cd1e190b38da6db331999aac59ddb2f1ed",
+  "timeout_seconds": 90
+}

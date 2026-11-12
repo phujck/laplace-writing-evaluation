@@ -1,0 +1,94 @@
+% PLAN:N2
+% NODES: def:spectral-signal def:spectral-weights def:probe-target-shift def:hamiltonian-shift def:filter-kernel res:itqde-spectral-readout def:staircase def:itqde-unitary-kernel def:retained-overlaps irf:overlap-reconstruction def:quadrature-truncation-budget irf:retained-overlap-budget irf:lambda-only-scalar-phase def:classical-post-processing
+\section{Relation to ITQDE and record-based spectral methods}\label{sec:N2}
+
+% N2-p1
+Every acquisition in this paper is an estimate of the real-time overlap signal
+\begin{equation}\label{def:spectral-signal}
+G(t) \;=\; \langle\psi|\,e^{-iHt}\,|\psi\rangle \;=\; \int e^{-iEt}\,\mathrm{d}\mu_\psi(E) \;=\; \sum_j p_j\,e^{-iE_j t},
+\end{equation}
+where $\mu_\psi$ is the spectral measure of the probe state $|\psi\rangle$ and the weights $p_j$ are defined below. The signal is the characteristic function of that measure: its frequencies are the eigenvalues of $H$ and its amplitudes are the weights the probe places on them. The device therefore supplies samples of a classical signal - not an eigenvalue, not a density, not a decision bit. The identity is exact for the continuous signal - the finite-shot estimates taken at grid times are the business of later sections.
+
+% N2-p2
+The measure itself is atomic,
+\begin{equation}\label{def:spectral-weights}
+\mu_\psi \;=\; \sum_j p_j\,\delta_{E_j}, \qquad p_j \;=\; |\langle E_j|\psi\rangle|^2, \qquad \sum_j p_j = 1,
+\end{equation}
+with weights that are real, nonnegative and normalised - the squared overlaps of the probe state on the Hamiltonian eigenbasis. These are the quantities every filtered object of this paper reweights. They depend on the probe state, so every filtered surface constructed below is probe-weighted rather than a property of the spectrum alone.
+
+% N2-p3
+Two coordinates locate everything that follows. The target $T$ is the energy value of interest, fixed by the instance, and the spectral coordinate $s$ marks the location at which the spectrum is interrogated. The parent ITQDE convention \cite{mccaul2025snacks} probes at a displacement $\lambda$ from the target, and the two coordinates are related by
+\begin{equation}\label{def:probe-target-shift}
+s \;=\; T - \lambda .
+\end{equation}
+Every statement of the method is carried in $s$. The displacement $\lambda$ appears in this section alone, as the coordinate in which the parent machinery was originally written - it carries no independent physics, and no later section works in it.
+
+% N2-p4
+The coordinate is carried by a family of scalar shifts of the Hamiltonian,
+\begin{equation}\label{def:hamiltonian-shift}
+H_T \;=\; H - T I, \qquad H_T^{(\lambda)} \;=\; H_T + \lambda I \;=\; H - s I,
+\end{equation}
+so in the spectral coordinate the probed operator is the single object $H - sI$. The shift is by a real scalar multiple of the identity, and such a shift changes only the global phase of real-time evolution. That observation is the one on which the record reuse of this section rests - it is stated here and proved once the measured record is in hand.
+
+% N2-p5
+The central object of the parent convention is the Gaussian filter kernel built from the shifted operator \cite{mccaul2025snacks},
+\begin{equation}\label{def:filter-kernel}
+e^{-\tau (H - sI)^2}, \qquad Z_\tau(s) \;=\; \langle\psi|\,e^{-\tau (H - sI)^2}\,|\psi\rangle \;=\; \sum_j p_j\,e^{-\tau (E_j - s)^2}.
+\end{equation}
+The kernel is diagonal in the Hamiltonian eigenbasis with entries $e^{-\tau(E_j - s)^2}$, so it concentrates spectral weight within a window of order $1/\sqrt{\tau}$ around $s$, and its probe expectation defines the filtered surface $Z_\tau(s)$ - the Gaussian-smoothed rendering of the spectral measure at the resolution set by $\tau$. The kernel is an analysis object, diagonal in the eigenbasis. No circuit implements it, and no imaginary-time evolution is performed on the state.
+
+% N2-p6
+The surface supports a family of response channels, and the parent convention reads one of them as its readout \cite{mccaul2025snacks}. The filtered mean
+\begin{equation}\label{def:staircase}
+\mu_\tau(s) \;=\; s + \frac{1}{2\tau}\,\partial_s \log Z_\tau(s), \qquad H_\tau(s) \;=\; \mu_\tau(s) - T,
+\end{equation}
+is the staircase channel of the surface, with $H_\tau(s)$ its target-relative form. As $s$ sweeps across isolated spectral clusters, $\mu_\tau(s)$ holds near the locally dominant cluster energy and steps between clusters, and in the high-$\tau$ regime this produces the staircase surface. The staircase is the most legible of the channels read off $Z_\tau(s)$, though only one among several - the filtered variance and the higher filtered cumulants are derived readouts of the same surface, each following as a response identity of the generating surface.
+
+% N2-p7
+What experiment produces these objects? The parent protocol reaches the Gaussian filter without imaginary-time evolution: the filter is written as a Gauss-Hermite quadrature over imaginary time, and each quadrature node is converted into real-time evolution \cite{leamer2024emulation,mccaul2025snacks}. The circuit element is the unitary kernel
+\begin{equation}\label{def:itqde-unitary-kernel}
+U \;=\; e^{-i\sqrt{\Delta\tau/2}\,H}, \qquad |\psi_{j+1}\rangle = U\,|\psi_j\rangle, \qquad |\psi_{j-1}\rangle = U^{\dagger}\,|\psi_j\rangle, \qquad |\psi_0\rangle = |\psi\rangle,
+\end{equation}
+whose repeated application generates the bidirectional trajectory from the base state. The device therefore runs ordinary unitary evolutions of a fixed elementary step. Here $\Delta\tau$ is a quadrature step of the classical construction rather than a physical imaginary time - the evolution is unitary real time throughout, nothing non-unitary is applied to the state, and the imaginary-time character of the filter survives only in the classical weights later attached to the trajectory.
+
+% N2-p8
+Along this trajectory the device measures the overlap family that constitutes the banked record. For an observable decomposed as $O = \sum_\ell c_\ell O_\ell$, the retained lists and the reconstruction they support are
+\begin{equation}\label{def:retained-overlaps}
+\begin{gathered}
+A_j \;=\; \langle \psi_{2j} | \psi_{-2j} \rangle, \qquad B_{j,\ell} \;=\; \langle \psi_{2j} |\, O_\ell\, | \psi_{-2j} \rangle,\\[2pt]
+\langle N_\tau^{(\lambda)} \rangle \;=\; \sum_{j} \alpha_j(\lambda)\, B_j, \qquad \langle Z_\tau^{(\lambda)} \rangle \;=\; \sum_{j} \beta_j(\lambda)\, A_j, \qquad \langle H_\tau^{(\lambda)} \rangle \;\approx\; \frac{\langle N_\tau^{(\lambda)} \rangle}{\langle Z_\tau^{(\lambda)} \rangle},
+\end{gathered}
+\end{equation}
+following the parent construction \cite{mccaul2025snacks}, where $B_j = \sum_\ell c_\ell B_{j,\ell}$ gathers the decomposed insertions with their coefficients and the sums run over the retained quadrature nodes. The filtered objects therefore reconstruct from the banked lists as discrete sums, with the filtered ratio their quotient. The quadrature coefficients $\alpha_j$ and $\beta_j$ carry the entire coordinate dependence, so the measured entries never reference the location at which the surface is later evaluated. The decomposition also fixes which numerator overlaps exist in the record - an insertion outside the decomposed family requires new measurements.
+
+% N2-p9
+The record is finite because the quadrature is truncated. Keeping $\bar m$ retained overlap pairs discards a tail whose contribution is an additive error
+\begin{equation}\label{def:quadrature-truncation-budget}
+\varepsilon \;\le\; \sum_{k > \bar m} w_k f_k, \qquad \bar m \;\sim\; \|H\|\,\sqrt{\tau \ln(1/\varepsilon_w)},
+\end{equation}
+with $w_k$ the Gaussian quadrature weights, $f_k$ the corresponding integrand values and $\varepsilon_w$ the tolerance on the discarded weight tail. The error decays super-exponentially in $\bar m$ at fixed $\tau\|H\|^2$, because the Gaussian quadrature weights collapse once the grid covers the measured range \cite{leamer2024emulation,mccaul2025snacks}. The $\bar m$-sized retained subset is the device-level measurement load of one acquisition campaign. The square-root budget law and its grid constant follow from the acquisition analysis, which supersedes the compact budget form quoted in the parent convention.
+
+% N2-p10
+How does this record respond to a change of spectral location? Under the shift $H_T^{(\lambda)} = H_T + \lambda I$ the real-time propagator factorises as $e^{-i t H_T^{(\lambda)}} = e^{-i t \lambda}\, e^{-i t H_T}$, so the shift enters only as a global phase \cite{mccaul2025snacks}. The overlap family is measured under the unshifted kernel $U = e^{-i\sqrt{\Delta\tau/2}\,H}$ of Eq.~\eqref{def:itqde-unitary-kernel}, so the phase attaches to the classical coefficients $\alpha_j$ and $\beta_j$ rather than to the measured entries, and the banked family of $A_j$ and $B_{j,\ell}$ is independent of $\lambda$ - equivalently of $s$, and of the target $T$. This proves the one narrow claim of the introduction at the level of the measured objects: one record, acquired once, supports the readout at every spectral location. The independence holds for the measured family itself - the accuracy of any reconstruction evaluated from the finite family is a separate finite-record question.
+
+% N2-p11
+The independence just proved opens the protocol's cost-free zone. Classical post-processing is any computation on the already-banked overlap family that requires no further quantum experiments,
+\begin{equation}\label{def:classical-post-processing}
+\{A_j,\, B_{j,\ell}\}\ \text{fixed at acquisition} \;\longrightarrow\; \bigl\{Z_\tau(s),\ \mu_\tau(s),\ \sigma_\tau^2(s)\bigr\}\ \text{at every } (s, \tau),
+\end{equation}
+and it includes the sweep of the spectral location $s$, the sweep of the resolution $\tau$, the assembly of response channels such as the staircase, and the later benchmark analyses. The reconstruction applies coordinate-dependent coefficients to the stored record, so the quantum cost is fixed at acquisition and every later evaluation is a classical reweighting. Cost-free refers to quantum experiments alone - every classical evaluation remains bounded by the noise floor of the finite banked record.
+
+% N2-p12
+Assembled, the parent machinery reads as follows. For any Hamiltonian $H$, probe state $|\psi\rangle$ and spectral location $s$, it yields the Gaussian-filtered readout $Z_\tau(s) = \sum_j p_j\, e^{-\tau (E_j - s)^2}$ of Eq.~\eqref{def:filter-kernel}, together with the filtered mean $\mu_\tau(s)$ of Eq.~\eqref{def:staircase} and the filtered variance $\sigma_\tau^2(s)$ - all resolving a window of order $1/\sqrt{\tau}$ around $s$, and all evaluated from the same retained overlap family. That family is independent of $s$ at the device level, so the sweep over spectral locations is absorbed entirely into classical post-processing. These readout identities are stated at the level of the continuous quadrature - truncation and shot noise enter through the finite-record analysis of the acquisition section.
+
+% N2-p13
+The assembled readout can now be located against its neighbours, beginning with the methods that invert the same time signal for its poles. Pole recovery treats samples of $G(t)$ as a finite sum of complex exponentials and inverts for the frequencies, from Prony's construction \cite{prony1795essai} through the matrix pencil \cite{hua1990pencil} and ESPRIT \cite{roy1989esprit} estimators, and quantum eigenvalue estimation by phase estimation \cite{obrien2019qpe} or by time-series analysis of $G(t)$ \cite{somma2019eigenvalue} targets the same poles. The inversion step is where poor conditioning concentrates when poles are close or data are noisy. The present method performs no inversion for poles at any point. It evaluates regularised linear functionals of the spectral measure at a chosen scale - a linear map applied to the record - so no eigenvalue estimate is produced or claimed, and the conditioning theory of exponential inversion is neither inherited nor needed.
+
+% N2-p14
+A closer family shares not just the signal but the measured primitive. Real-time subspace methods - variational quantum phase estimation \cite{klymko2022vqpe}, quantum filter diagonalisation \cite{parrish2019qfd}, real-time Krylov diagonalisation \cite{shen2023realtimekrylov} and fast-forwarding constructions \cite{cortes2022fastforward} - measure overlaps of exactly the kind banked here, but assemble them into overlap and Hamiltonian matrices on a time-evolved basis and solve a generalised eigenvalue problem for eigenpairs. The retained family in this method is never assembled into an eigenproblem. It is reweighted by quadrature coefficients. The acquisition primitive is shared while the task and the post-processing are not, and the comparison concerns exactly those - no statement is made about the relative hardware cost of the two families.
+
+% N2-p15
+A third family is organised around the filter itself. On the classical side, the kernel polynomial method \cite{weisse2006kpm} banks Chebyshev moments of the spectral density once and applies damping kernels classically - the closest architectural relative - and Heisenberg-limited estimation \cite{lin2022heisenberg} reconstructs the integrated spectral measure from time samples by classical Fourier weighting. On the quantum side, coherent filter synthesis - ground-state filtering \cite{ge2019filter}, quantum eigenvalue transformation of unitaries \cite{dong2022qetu} and the quantum singular value transformation \cite{martyn2021grandunification} - realises the filter as a circuit, so each target energy and each resolution incurs the quantum resource cost again. Here the Gaussian filter of Eq.~\eqref{def:filter-kernel} is applied entirely in post-processing. Moving the filter from the device to the record is the architectural point, since the moment identities for smoothed measures are not themselves new - the claim concerns where the filter is applied.
+
+% N2-p16
+The record itself has a class. Classical shadows and the randomised-measurement toolbox \cite{huang2020predicting,chan2025shadow,elben2020crossplatform} bank randomised outcomes once and reuse them for many observables, randomised benchmarking \cite{knill2008rb} and cross-entropy benchmarking \cite{gao2024xeblimits} bank sequence and sample statistics reused for many figures of merit, and peaked-circuit constructions \cite{aaronson2024peaked} likewise separate a banked acquisition from later verification analyses. The retained overlap family belongs to this measure-once class, with a difference of object: it is a coherent time record of one fixed probe evolving under the instance Hamiltonian, and its reuse ranges over the spectral location, the resolution and the decomposed observable insertions rather than over arbitrary states or observables. The reuse is probe-fixed - a new probe state, or an observable outside the decomposed family, requires a new acquisition campaign. The contribution of the method is this acquisition-and-reuse architecture together with its finite-record analysis.

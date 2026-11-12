@@ -1,0 +1,274 @@
+{
+  "schema_version": "writing-system-architecture.visual-index/1",
+  "project": "writing-system-architecture",
+  "fixture": {
+    "version": 1,
+    "kind": "minimised-historical-representative",
+    "source_artifact": "blueprint/visual-index.json",
+    "source_sha256": "6fb0f44e4e0d9258ee9f97122ddfd99ffbe51b9c77af40b3d2dd0f7a89697f32",
+    "note": "Seven historical entries retain recorded titles, captions and PDF/SVG identities. Test metadata does not require generated figures or live campaign files. This is not the full or current visual index."
+  },
+  "figures": [
+    {
+      "id": "blueprint-recursive-object",
+      "title": "Open the object, retain its address",
+      "question": "What changes when a coarse object is opened into its interior and then its source?",
+      "caption": "Illustrative recursive object Q, grounded in the inspected parent/member views and source-locator construction. Q remains the addressed object as its interior is opened. The source panel names the actual local revision function definition and its file hash. Dotted green support links denote documentary grounding, not prerequisite arrows. Opening detail does not establish completeness or mathematical validity.",
+      "status": "Illustrative recursive model with inspected code grounding",
+      "proposed_chapter_ids": [
+        "orientation-method",
+        "homes"
+      ],
+      "placement_status": "MATCHES",
+      "spec_revision": "91171c63140d209d09caeb9466939d81d54d5bf908eece014deb5f24269c1c72",
+      "render": {
+        "drawing_currentness": "CURRENT",
+        "evidence_binding_status": "THEORY_ONLY",
+        "outputs": [
+          {
+            "path": "figures/generated/blueprint-recursive-object.pdf",
+            "scope": "manuscript",
+            "repository_path": "synthetics papers/writing-system-architecture/manuscript/figures/generated/blueprint-recursive-object.pdf",
+            "format": "pdf",
+            "sha256": "40bbdc904e6496ffb1b165869d82d60b9692d59eed51c7d6a47657fc4b7b9936"
+          },
+          {
+            "path": "figures/generated/blueprint-recursive-object.svg",
+            "scope": "manuscript",
+            "repository_path": "synthetics papers/writing-system-architecture/manuscript/figures/generated/blueprint-recursive-object.svg",
+            "format": "svg",
+            "sha256": "43e02acb957e7d761bd6ca44ad6c92be1ef9618df92bdfd3275ab01f1a7c344e"
+          }
+        ]
+      },
+      "evidence_bindings": []
+    },
+    {
+      "id": "blueprint-three-orders",
+      "title": "The same objects, three different structures",
+      "question": "How do containment, logical requirements and reader order organise the same objects differently?",
+      "caption": "Illustrative containment and reader placement over A, B, C and D, with the prerequisite diamond used in the observed mechanism fixture. Enclosures mean membership. Solid arrows point from claim to prerequisite. Numbered reader slots can revisit B without creating another B. The small source S is reached by a dotted support link and is not a logical premise. This is an explanatory topology, not the current project's saved reader plan.",
+      "status": "Illustrative containment and reading order, implemented prerequisite direction",
+      "proposed_chapter_ids": [
+        "homes",
+        "lifecycle"
+      ],
+      "placement_status": "MATCHES",
+      "spec_revision": "191b728b7f26296d09120c16c4097753f969aa0f5c9de80e1d619a87f2aa5e5d",
+      "render": {
+        "drawing_currentness": "CURRENT",
+        "evidence_binding_status": "THEORY_ONLY",
+        "outputs": [
+          {
+            "path": "figures/generated/blueprint-three-orders.pdf",
+            "scope": "manuscript",
+            "repository_path": "synthetics papers/writing-system-architecture/manuscript/figures/generated/blueprint-three-orders.pdf",
+            "format": "pdf",
+            "sha256": "fa0041ceddbdcceda3470efa8006982392f2e57e06f876ad9ab456a52dc58e7f"
+          },
+          {
+            "path": "figures/generated/blueprint-three-orders.svg",
+            "scope": "manuscript",
+            "repository_path": "synthetics papers/writing-system-architecture/manuscript/figures/generated/blueprint-three-orders.svg",
+            "format": "svg",
+            "sha256": "77ca5411fb0fdb2f644feeb55cc999ac13c9e33dfbc9e2430f391729bb48bcda"
+          }
+        ]
+      },
+      "evidence_bindings": []
+    },
+    {
+      "id": "blueprint-identity-and-history",
+      "title": "Three identities with three jobs",
+      "question": "How do immutable content addresses, writer revision guards and the Atlas predecessor chain differ?",
+      "caption": "Implemented mechanisms with values from the completed isolated public-API run run-596ee23ce4f9498a. The same uncompressed bytes have the same BlobStore and CompressedHive address despite different layouts. Writer B retains its logical address while its local content revision changes. Atlas StoredEvent rows include sequence, the predecessor digest and the complete event envelope. The arrows in the bottom lane indicate predecessor references and are an actual hash chain. Writer revision guards are not that chain. Hashes are shortened to twelve hexadecimal digits, with full values in the linked result.",
+      "status": "Observed isolated identity/storage trace plus implemented writer guard semantics",
+      "proposed_chapter_ids": [
+        "doors",
+        "homes"
+      ],
+      "placement_status": "MATCHES",
+      "spec_revision": "e50544203de69423901fe23eeecfd629216fa3ec94c73fe5ca61dc7d9c6e83d5",
+      "render": {
+        "drawing_currentness": "CURRENT",
+        "evidence_binding_status": "CURRENT",
+        "outputs": [
+          {
+            "path": "figures/generated/blueprint-identity-and-history.pdf",
+            "scope": "manuscript",
+            "repository_path": "synthetics papers/writing-system-architecture/manuscript/figures/generated/blueprint-identity-and-history.pdf",
+            "format": "pdf",
+            "sha256": "789c746acfb7a9a5aaf5c6b9a53f5c5e65dee0640823eb50ab25c16445cc369a"
+          },
+          {
+            "path": "figures/generated/blueprint-identity-and-history.svg",
+            "scope": "manuscript",
+            "repository_path": "synthetics papers/writing-system-architecture/manuscript/figures/generated/blueprint-identity-and-history.svg",
+            "format": "svg",
+            "sha256": "ed74e66801367e85c0f2f130ce89b19f8573e622427a367e4c9c08987e8d0838"
+          }
+        ]
+      },
+      "evidence_bindings": [
+        {
+          "id": "mechanism-public-api-recovery-observation",
+          "revision": "sha256:6b7db37b3cac41bf1df107303153220f822205f05c7c22e76e19f3ef7bbd0717",
+          "currentness": "CURRENT"
+        }
+      ]
+    },
+    {
+      "id": "blueprint-diamond-mutation",
+      "title": "A source edit reaches one dependency step",
+      "question": "What changed in the observed diamond, and where does revision invalidation stop?",
+      "caption": "Observed isolated fixture, run-596ee23ce4f9498a, using public identity and propagation APIs. Blue arrows read claim requires premise. Orange arrows run in the opposite direction and show the observed source-identity effect: editing line 2 of A's source changes A, B and C revisions, although the selected line-1 excerpt is unchanged. D's transitive revision remains unchanged. No automatic arbitrary-depth propagation is established. The companion formal-target probe run-e96422486f524d69 additionally found unchanged B/C formal target handles. These are current implementation gaps, not claims that the mathematics is false.",
+      "status": "Observed isolated diamond mutation and formal-target limitation",
+      "proposed_chapter_ids": [
+        "doors",
+        "lifecycle",
+        "limits"
+      ],
+      "placement_status": "MATCHES",
+      "spec_revision": "4178d1b1bf6d9e69932e2353ce75842588ecaec9b5fd4a94c3dc0ca58819883b",
+      "render": {
+        "drawing_currentness": "CURRENT",
+        "evidence_binding_status": "CURRENT",
+        "outputs": [
+          {
+            "path": "figures/generated/blueprint-diamond-mutation.pdf",
+            "scope": "manuscript",
+            "repository_path": "synthetics papers/writing-system-architecture/manuscript/figures/generated/blueprint-diamond-mutation.pdf",
+            "format": "pdf",
+            "sha256": "be3ffd5c81fc75e95f4ec597c65d903c2fb9c89e17b5bc759a3513eec5504d85"
+          },
+          {
+            "path": "figures/generated/blueprint-diamond-mutation.svg",
+            "scope": "manuscript",
+            "repository_path": "synthetics papers/writing-system-architecture/manuscript/figures/generated/blueprint-diamond-mutation.svg",
+            "format": "svg",
+            "sha256": "38a2964326d14cdd32ab8c0cbf562d622d665731d21efe09a1c7aa535ee199df"
+          }
+        ]
+      },
+      "evidence_bindings": [
+        {
+          "id": "mechanism-public-api-recovery-observation",
+          "revision": "sha256:6b7db37b3cac41bf1df107303153220f822205f05c7c22e76e19f3ef7bbd0717",
+          "currentness": "CURRENT"
+        },
+        {
+          "id": "mechanism-formal-target-identity-observation",
+          "revision": "sha256:e49a7d2e914cd15c315217c73e42495120d40dc5d83abb193433892a7491f9d4",
+          "currentness": "CURRENT"
+        }
+      ]
+    },
+    {
+      "id": "blueprint-bounded-reconstruction",
+      "title": "A bounded answer carries its boundary",
+      "question": "What distinguishes recovered source, omitted context and an executed result?",
+      "caption": "Illustrative traversal of the inspected keeper ring, beside the writer's separate bounded-read contract. Skipped branches and a depth cap limit what the return establishes. No call joining every writer turn to the ring is claimed. The lower lane distinguishes launch, output and terminal receipt, using the isolated 26-check run as its execution example.",
+      "status": "Source-inspected contracts with illustrative traversal and observed execution inset",
+      "proposed_chapter_ids": [
+        "sessions",
+        "economy"
+      ],
+      "placement_status": "MATCHES",
+      "spec_revision": "e00c4b2ab619c3ab7ee722e21ac00850a7b830953fa423028220d36e23061f42",
+      "render": {
+        "drawing_currentness": "CURRENT",
+        "evidence_binding_status": "CURRENT",
+        "outputs": [
+          {
+            "path": "figures/generated/blueprint-bounded-reconstruction.pdf",
+            "scope": "manuscript",
+            "repository_path": "synthetics papers/writing-system-architecture/manuscript/figures/generated/blueprint-bounded-reconstruction.pdf",
+            "format": "pdf",
+            "sha256": "b9704b2744546be6fb37671ea38570e906974e593fac135c3186939cac9b1ea8"
+          },
+          {
+            "path": "figures/generated/blueprint-bounded-reconstruction.svg",
+            "scope": "manuscript",
+            "repository_path": "synthetics papers/writing-system-architecture/manuscript/figures/generated/blueprint-bounded-reconstruction.svg",
+            "format": "svg",
+            "sha256": "81b39dc27d7dcce5042c978d3a103dd8faf91239e4bc126e8225a330e00d2ffc"
+          }
+        ]
+      },
+      "evidence_bindings": [
+        {
+          "id": "mechanism-public-api-recovery-observation",
+          "revision": "sha256:6b7db37b3cac41bf1df107303153220f822205f05c7c22e76e19f3ef7bbd0717",
+          "currentness": "CURRENT"
+        }
+      ]
+    },
+    {
+      "id": "blueprint-system-boundaries",
+      "title": "Shared code does not imply shared authority",
+      "question": "Which writer, engine and Atlas joins are inspected, and which remain intended?",
+      "caption": "Current source-inspected call map with explicit intended joins. Writer concept reads call the corpus-network builder, whose builder reuses the engine tree and reach builders. Writer public-body custody calls the Atlas bridge's BlobStore. This concrete blob-store reuse does not establish migration of the writer concept graph into Atlas ConceptricStore. The dashed magenta routes identify intended or unproved joins. CanonGraph constructors and engine recursive reconstruction are separately implemented. No live engine service topology or cross-project deployment was tested by this figure.",
+      "status": "Current inspected source calls with explicitly unproved intended joins",
+      "proposed_chapter_ids": [
+        "deployment",
+        "limits"
+      ],
+      "placement_status": "MATCHES",
+      "spec_revision": "421b488c2353fe29eecb7483f8394c75d76100243348e6caf4851112a7aceef2",
+      "render": {
+        "drawing_currentness": "CURRENT",
+        "evidence_binding_status": "THEORY_ONLY",
+        "outputs": [
+          {
+            "path": "figures/generated/blueprint-system-boundaries.pdf",
+            "scope": "manuscript",
+            "repository_path": "synthetics papers/writing-system-architecture/manuscript/figures/generated/blueprint-system-boundaries.pdf",
+            "format": "pdf",
+            "sha256": "45cffc9ce86836c441ca6c97b462322408b5e15bdb5e4859a920cebc4f069bc4"
+          },
+          {
+            "path": "figures/generated/blueprint-system-boundaries.svg",
+            "scope": "manuscript",
+            "repository_path": "synthetics papers/writing-system-architecture/manuscript/figures/generated/blueprint-system-boundaries.svg",
+            "format": "svg",
+            "sha256": "60264175ecf5c7d5b17c764d826429cdc3dd92d3e2e0988318dba3210a07405a"
+          }
+        ]
+      },
+      "evidence_bindings": []
+    },
+    {
+      "id": "blueprint-shared-substrate",
+      "title": "Shared referents produce directional overlap",
+      "question": "Why can A-to-B overlap differ from B-to-A, without either being a proof?",
+      "caption": "Illustrative arithmetic using the inspected directional coupling formula s(A to B)=|R(A) intersection R(B)|/|R(A)|. A reaches definition, parser and ledger. B reaches parser, ledger, renderer and build. The common referents give 2/3 in one direction and 1/2 in the other. These are hand-selected sets, not measured engine output. Overlap supports navigation and does not make a prerequisite or citation claim.",
+      "status": "Illustrative hand arithmetic, not measured",
+      "proposed_chapter_ids": [
+        "homes"
+      ],
+      "placement_status": "MATCHES",
+      "spec_revision": "0abfd6cf961ecb526daaa615ec8d863f536094c2408930e8a7cee4a428684d46",
+      "render": {
+        "drawing_currentness": "CURRENT",
+        "evidence_binding_status": "THEORY_ONLY",
+        "outputs": [
+          {
+            "path": "figures/generated/blueprint-shared-substrate.pdf",
+            "scope": "manuscript",
+            "repository_path": "synthetics papers/writing-system-architecture/manuscript/figures/generated/blueprint-shared-substrate.pdf",
+            "format": "pdf",
+            "sha256": "d8a5d21e03799017790b93b599cfe5d49493776983ae35b28762b04c42b63f21"
+          },
+          {
+            "path": "figures/generated/blueprint-shared-substrate.svg",
+            "scope": "manuscript",
+            "repository_path": "synthetics papers/writing-system-architecture/manuscript/figures/generated/blueprint-shared-substrate.svg",
+            "format": "svg",
+            "sha256": "c825ce647aa65a22d6f7f910403cb365d6ef24ecebed46fafa55298584dec510"
+          }
+        ]
+      },
+      "evidence_bindings": []
+    }
+  ]
+}

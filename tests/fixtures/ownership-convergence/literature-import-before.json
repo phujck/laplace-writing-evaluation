@@ -1,0 +1,312 @@
+{
+  "basis_commit": "5914ce53ae7efb63892045a84d31162e92e87624",
+  "schema": {
+    "oneOf": [
+      {
+        "type": "object",
+        "required": [],
+        "properties": {
+          "doi": {
+            "type": "string"
+          },
+          "citekey": {
+            "type": "string"
+          },
+          "canonical_id": {
+            "type": "string"
+          },
+          "metadata": {
+            "type": "object",
+            "required": [
+              "title"
+            ],
+            "properties": {
+              "title": {
+                "type": "string"
+              },
+              "creators": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "year": {
+                "type": "string"
+              },
+              "item_type": {
+                "type": "string",
+                "enum": [
+                  "journalArticle",
+                  "book",
+                  "bookSection",
+                  "conferencePaper",
+                  "thesis",
+                  "preprint",
+                  "unpublished",
+                  "webpage",
+                  "misc"
+                ]
+              },
+              "publication_title": {
+                "type": "string"
+              },
+              "volume": {
+                "type": "string"
+              },
+              "issue": {
+                "type": "string"
+              },
+              "pages": {
+                "type": "string"
+              },
+              "publisher": {
+                "type": "string"
+              },
+              "place": {
+                "type": "string"
+              },
+              "isbn": {
+                "type": "string"
+              },
+              "url": {
+                "type": "string"
+              }
+            },
+            "additionalProperties": false
+          },
+          "provenance": {
+            "type": "object",
+            "required": [
+              "description"
+            ],
+            "properties": {
+              "description": {
+                "type": "string"
+              },
+              "path": {
+                "type": "string"
+              },
+              "url": {
+                "type": "string"
+              }
+            },
+            "additionalProperties": false
+          }
+        },
+        "additionalProperties": false
+      },
+      {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "original",
+          "metadata",
+          "provenance"
+        ],
+        "properties": {
+          "original": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "artifact_id",
+              "expected_sha256"
+            ],
+            "properties": {
+              "artifact_id": {
+                "type": "string",
+                "pattern": "^ART-[A-Za-z0-9-]+$"
+              },
+              "expected_sha256": {
+                "type": "string",
+                "pattern": "^(sha256:)?[0-9a-f]{64}$"
+              }
+            }
+          },
+          "metadata": {
+            "type": "object",
+            "required": [
+              "title"
+            ],
+            "properties": {
+              "title": {
+                "type": "string"
+              },
+              "creators": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "year": {
+                "type": "string"
+              },
+              "item_type": {
+                "type": "string",
+                "enum": [
+                  "journalArticle",
+                  "book",
+                  "bookSection",
+                  "conferencePaper",
+                  "thesis",
+                  "preprint",
+                  "unpublished",
+                  "webpage",
+                  "misc"
+                ]
+              },
+              "publication_title": {
+                "type": "string"
+              },
+              "volume": {
+                "type": "string"
+              },
+              "issue": {
+                "type": "string"
+              },
+              "pages": {
+                "type": "string"
+              },
+              "publisher": {
+                "type": "string"
+              },
+              "place": {
+                "type": "string"
+              },
+              "isbn": {
+                "type": "string"
+              },
+              "url": {
+                "type": "string"
+              }
+            },
+            "additionalProperties": false
+          },
+          "provenance": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "description"
+            ],
+            "properties": {
+              "description": {
+                "type": "string",
+                "minLength": 1
+              }
+            }
+          },
+          "citekey": {
+            "type": "string"
+          }
+        }
+      }
+    ]
+  },
+  "validation": [
+    {
+      "input": {
+        "metadata": {
+          "title": "Legacy"
+        },
+        "provenance": {
+          "description": "Public",
+          "path": "public.txt"
+        }
+      },
+      "valid": true,
+      "owner_rejection": null
+    },
+    {
+      "input": {
+        "doi": "10.1234/public"
+      },
+      "valid": true,
+      "owner_rejection": null
+    },
+    {
+      "input": {
+        "original": {
+          "artifact_id": "ART-public",
+          "expected_sha256": "sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+        },
+        "metadata": {
+          "title": "Public"
+        },
+        "provenance": {
+          "description": "Public"
+        }
+      },
+      "valid": true,
+      "owner_rejection": null
+    },
+    {
+      "input": {
+        "original": {
+          "artifact_id": "ART-public",
+          "expected_sha256": "sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+        },
+        "metadata": {
+          "title": "Public",
+          "item_type": ""
+        },
+        "provenance": {
+          "description": "Public"
+        }
+      },
+      "valid": false,
+      "owner_rejection": {
+        "error": "Retained source import must match its closed metadata/original contract: {'original': {'artifact_id': 'ART-public', 'expected_sha256': 'sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa'}, 'metadata': {'title': 'Public', 'item_type': ''}, 'provenance': {'description': 'Public'}} is not valid under any of the given schemas",
+        "metadata_saved": false,
+        "disposition": {
+          "state": "REJECTED_BEFORE_EFFECTS",
+          "operation": "literature_import",
+          "reason_code": "INVALID_RETAINED_IMPORT"
+        }
+      }
+    },
+    {
+      "input": {
+        "original": {
+          "artifact_id": "ART-public",
+          "expected_sha256": "sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+        },
+        "metadata": {
+          "title": "   "
+        },
+        "provenance": {
+          "description": "Public"
+        }
+      },
+      "valid": true,
+      "owner_rejection": {
+        "error": "Explicit title and provenance description are required.",
+        "metadata_saved": false,
+        "disposition": {
+          "state": "REJECTED_BEFORE_EFFECTS",
+          "operation": "literature_import",
+          "reason_code": "BLANK_REQUIRED_DETAILS"
+        }
+      }
+    }
+  ],
+  "projected_errors": [
+    {
+      "metadata_saved": false,
+      "disposition": {
+        "state": "REJECTED_BEFORE_EFFECTS",
+        "operation": "literature_import",
+        "reason_code": "INVALID_RETAINED_IMPORT"
+      }
+    },
+    {
+      "metadata_saved": false,
+      "disposition": {
+        "state": "REJECTED_BEFORE_EFFECTS",
+        "operation": "literature_import",
+        "reason_code": "INVALID_RETAINED_IMPORT"
+      }
+    },
+    {},
+    {},
+    {}
+  ]
+}

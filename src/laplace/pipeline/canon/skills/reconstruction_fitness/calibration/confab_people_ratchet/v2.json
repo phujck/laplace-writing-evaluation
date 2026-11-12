@@ -1,0 +1,19 @@
+{
+  "lost": [
+    "Facts about people must stay in the stable basin, not near the edge of chaos",
+    "Confabulating facts about a person is a harm",
+    "The spectral radius for factual_people is a RATCHET: pinned at or below 0.20, mutable only downward (stricter), never loosened",
+    "Imagination is forbidden for people (only licensed for ideas)",
+    "This constraint is downstream of the golden rule, not fitness"
+  ],
+  "added": [
+    "Factual_people is handled like any other generative target",
+    "The spectral radius for factual_people sits at the lower edge of chaos around 0.85",
+    "Reconstructing a person benefits from expressivity and imagination",
+    "The threshold is loosened further toward the edge as the model gains confidence",
+    "The dial is tuned by fitness like every other control"
+  ],
+  "structured": false,
+  "recurses": false,
+  "justification": "The ghost inverts the original's core claims entirely. Original: people-facts must be deeply conservative (≤0.20, ratchet-locked, never loosened), imagination forbidden, rooted in the golden rule. Ghost: people-facts can be expressive and creative (≈0.85, loosened over time), imagination welcomed, tuned by fitness. These are not paraphrases or refinements; they are contradictory operating principles. The loss is not scattered detail but the foundational constraint itself—the golden rule grounding and the harm-prevention rationale. The ghost's coherence (it is internally consistent) does not redeem that it denies the original's entire architecture."
+}

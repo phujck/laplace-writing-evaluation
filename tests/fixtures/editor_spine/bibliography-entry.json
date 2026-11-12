@@ -1,0 +1,64 @@
+{
+  "available": {
+    "project": "fixture",
+    "citekey": "Example2026",
+    "status": "AVAILABLE",
+    "entries": [
+      {
+        "file": "sources/fixture/refs.bib",
+        "citekey": "Example2026",
+        "content": "@article{Example2026,\n title={A fixture source},\n author={Example, A.},\n year={2026}\n}",
+        "complete": true,
+        "revision": "sha256:5405d4df2dec9942cfb27796fe115204fe9028447f1d23a79602d9715882c0e5",
+        "file_revision": "sha256:be82917590cdc0bd4f46ea4c3aa64b6d7bbac780aa6f563dc81eaf145e16587f",
+        "source_read": {
+          "http": {
+            "method": "GET",
+            "route": "/projection/tex",
+            "query": {
+              "corpus": "fixture",
+              "file": "sources/fixture/refs.bib",
+              "view": "source"
+            }
+          }
+        }
+      }
+    ],
+    "meaning": "Bibliography entry metadata, not evidence that the cited source was read.",
+    "read_handle": {
+      "operation": "references_attached",
+      "payload": {
+        "citekey": "Example2026"
+      },
+      "http": {
+        "method": "GET",
+        "route": "/references/attached",
+        "query": {
+          "project": "fixture",
+          "citekey": "Example2026"
+        }
+      }
+    }
+  },
+  "missing": {
+    "project": "fixture",
+    "citekey": "Missing2026",
+    "status": "MISSING",
+    "entries": [],
+    "meaning": "Bibliography entry metadata, not evidence that the cited source was read.",
+    "read_handle": {
+      "operation": "references_attached",
+      "payload": {
+        "citekey": "Missing2026"
+      },
+      "http": {
+        "method": "GET",
+        "route": "/references/attached",
+        "query": {
+          "project": "fixture",
+          "citekey": "Missing2026"
+        }
+      }
+    }
+  }
+}

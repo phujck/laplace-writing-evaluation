@@ -1,0 +1,208 @@
+{
+  "uncertain_empty": {
+    "anchor": {
+      "file": "book/manuscript/main.tex",
+      "line_start": 3,
+      "line_end": 3
+    },
+    "precision": "UNBOUND",
+    "paragraph_marker": null,
+    "paragraph_concepts": [],
+    "basis": {
+      "status": "UNATTRIBUTED_LEGACY",
+      "automatic_sections": [],
+      "automatic_section_concepts": [],
+      "develops": [],
+      "evidence": [],
+      "limitations": [],
+      "errors": []
+    },
+    "obligations": [],
+    "accepted_proposals": [],
+    "accepted_proposal_coverage": {
+      "status": "PARTIAL_CURRENT_SCOPE",
+      "candidate_basis": "Accepted declaration metadata; source and semantic basis unchecked.",
+      "unknown_scope_candidates": 0,
+      "legacy_declaration_candidates": 1,
+      "body_reads": 1,
+      "whole_history_loaded": false,
+      "journal_status": "AVAILABLE",
+      "malformed_journal_rows": 0,
+      "current_span": {
+        "window_hashes": 0,
+        "hashed_bytes_upper_bound": 0,
+        "widths_examined": 0,
+        "incomplete_widths": [],
+        "incomplete_width_count": 0,
+        "unresolved_candidates": 1,
+        "basis": "Current source hash overlap narrows discovery only; exact hydrated text/edition still decide standing."
+      },
+      "source_files_read": 1,
+      "body_read_basis": "Selected field resolutions, including inline fields; custody opens counted separately by records diagnostics.",
+      "currentness_basis": "Current unique after-text and independently checked declared revisions/placement."
+    },
+    "accepted_proposal_recovery": [
+      {
+        "application_id": "WA-selected",
+        "turn_id": "WT-WA-selected",
+        "edit_id": "EDIT-481fe86caa1c2776e384988b",
+        "file": "main.tex",
+        "repository_file": "book/manuscript/main.tex",
+        "scope_status": "FILE",
+        "read_more": {
+          "operation": "author_history",
+          "payload": {
+            "view": "record",
+            "id": "activity:journal:WA-selected"
+          }
+        },
+        "carrier_read_more": null,
+        "scope": "RETAINED_CANDIDATE_INSPECTION",
+        "passage_membership": "NOT_ASSERTED",
+        "declaration_status": "NO_DECLARATION_IN_SELECTED_EDITS",
+        "reason": "Inspect the exact retained application; candidate discovery does not establish that it supports this passage."
+      }
+    ],
+    "accepted_proposal_pagination": {
+      "offset": 0,
+      "limit": 40,
+      "candidate_total": 1,
+      "examined": 1,
+      "remaining_candidates": 0,
+      "next_offset": null
+    },
+    "accepted_proposal_as_of": "eyJ2IjoxLCJxdWVyeSI6InNoYTI1NjpmYjQwZWVhMjYwYzFlNDkxZmY1MmZmMDYxNzkxMDQzZWI0ZWMzODljODFmN2MwMjEwMTQxNTBkYmZkYTZmNmNlIiwidXBwZXIiOjMsInJldmlzaW9uIjoic2hhMjU2OjUxODMwNWE0YjVlOTFiNWExYTc0YjQ5ZmM4MDdiMTRiZmViZWVmN2E4MzI0MzdlMDYzZTc3NTFlODQ4NGExYTkifQ",
+    "document_provenance": [],
+    "limitations": [
+      "Section placement does not assert that every paragraph develops every section concept.",
+      "Historical origins absent from existing owners remain unknown."
+    ]
+  },
+  "stale_unanchored": {
+    "anchor": {
+      "file": "book/manuscript/main.tex",
+      "line_start": 3,
+      "line_end": 3
+    },
+    "precision": "UNBOUND",
+    "paragraph_marker": null,
+    "paragraph_concepts": [],
+    "basis": {
+      "status": "UNATTRIBUTED_LEGACY",
+      "automatic_sections": [],
+      "automatic_section_concepts": [],
+      "develops": [],
+      "evidence": [],
+      "limitations": [],
+      "errors": []
+    },
+    "obligations": [],
+    "accepted_proposals": [
+      {
+        "application_id": "WA-selected",
+        "turn_id": "WT-WA-selected",
+        "edit_id": "EDIT-9a0aa299d4fc1c0c587d50f4",
+        "file": "main.tex",
+        "line_start": 3,
+        "line_end": 3,
+        "develops": [
+          {
+            "id": "res:one",
+            "content_revision": "sha256:1111111111111111111111111111111111111111111111111111111111111111"
+          }
+        ],
+        "evidence_refs": [
+          {
+            "id": "result:one",
+            "revision": "sha256:2222222222222222222222222222222222222222222222222222222222222222"
+          }
+        ],
+        "application_read": {
+          "project": "book",
+          "id": "WA-selected",
+          "row_sha256": "sha256:a9deea1bf4e229eeb7f29c5ca998994b8f6bd0074f1e7ca639ae2c98d71d5553"
+        },
+        "carrier_read": null,
+        "declaration_coverage": "INDEXED",
+        "scope_status": "FILE",
+        "repository_file": "book/manuscript/main.tex",
+        "span_status": "UNRESOLVED_CURRENT_SPAN",
+        "read_more": {
+          "operation": "author_history",
+          "payload": {
+            "view": "record",
+            "id": "activity:journal:WA-selected"
+          }
+        },
+        "carrier_read_more": null,
+        "anchor": null,
+        "basis": null,
+        "origin": {
+          "status": "RECORDED_TURN",
+          "turn_id": "WT-WA-selected",
+          "session_id": "WS-WA-selected",
+          "reason": "Saved authoring application; earlier originating inputs are not inferred."
+        },
+        "status": "STALE_OR_AMBIGUOUS"
+      }
+    ],
+    "accepted_proposal_coverage": {
+      "status": "PARTIAL_CURRENT_SCOPE",
+      "candidate_basis": "Accepted declaration metadata; source and semantic basis unchecked.",
+      "unknown_scope_candidates": 0,
+      "legacy_declaration_candidates": 0,
+      "body_reads": 1,
+      "whole_history_loaded": false,
+      "journal_status": "AVAILABLE",
+      "malformed_journal_rows": 0,
+      "current_span": {
+        "window_hashes": 5,
+        "hashed_bytes_upper_bound": 69,
+        "widths_examined": 1,
+        "incomplete_widths": [],
+        "incomplete_width_count": 0,
+        "unresolved_candidates": 1,
+        "basis": "Current source hash overlap narrows discovery only; exact hydrated text/edition still decide standing."
+      },
+      "source_files_read": 1,
+      "body_read_basis": "Selected field resolutions, including inline fields; custody opens counted separately by records diagnostics.",
+      "currentness_basis": "Current unique after-text and independently checked declared revisions/placement."
+    },
+    "accepted_proposal_recovery": [
+      {
+        "application_id": "WA-selected",
+        "turn_id": "WT-WA-selected",
+        "edit_id": "EDIT-9a0aa299d4fc1c0c587d50f4",
+        "file": "main.tex",
+        "repository_file": "book/manuscript/main.tex",
+        "scope_status": "FILE",
+        "read_more": {
+          "operation": "author_history",
+          "payload": {
+            "view": "record",
+            "id": "activity:journal:WA-selected"
+          }
+        },
+        "carrier_read_more": null,
+        "scope": "RETAINED_CANDIDATE_INSPECTION",
+        "passage_membership": "NOT_ASSERTED",
+        "declaration_status": "DECLARATION_RECORDED",
+        "reason": "Inspect the exact retained application; candidate discovery does not establish that it supports this passage."
+      }
+    ],
+    "accepted_proposal_pagination": {
+      "offset": 0,
+      "limit": 40,
+      "candidate_total": 1,
+      "examined": 1,
+      "remaining_candidates": 0,
+      "next_offset": null
+    },
+    "accepted_proposal_as_of": "eyJ2IjoxLCJxdWVyeSI6InNoYTI1NjpmYjQwZWVhMjYwYzFlNDkxZmY1MmZmMDYxNzkxMDQzZWI0ZWMzODljODFmN2MwMjEwMTQxNTBkYmZkYTZmNmNlIiwidXBwZXIiOjMsInJldmlzaW9uIjoic2hhMjU2OjhkZmYyZjI4ZjZmZTU5NDMxNWU5MDY4MzA5MzJiODYxZTJmOTk1ZjM5ZWI2ZTAyYzg4MmUyOWMyNzI0OWE3YzAifQ",
+    "document_provenance": [],
+    "limitations": [
+      "Section placement does not assert that every paragraph develops every section concept.",
+      "Historical origins absent from existing owners remain unknown."
+    ]
+  }
+}

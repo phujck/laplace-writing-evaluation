@@ -1,0 +1,195 @@
+{
+  "schema": "dd.archived-superarc-extract/1",
+  "source": {
+    "repository": "laplace",
+    "path": "synthetics papers/superarc/frozen_run/report.json",
+    "sha256": "99cd57d5d585f3011c4414dff4a619cf33708f778950b980f97f8cd8cccbe0b5",
+    "pointers": [
+      "/phi",
+      "/bootstrap"
+    ],
+    "coverage": "Complete selected values only. Not a full 6.18 MB report read."
+  },
+  "phi": {
+    "A1": {
+      "phi": 0.017182498521301996,
+      "rho": [
+        0.03,
+        0,
+        0.97,
+        0
+      ],
+      "delta": [
+        0.43949594981866114,
+        0,
+        0.41212577595280014
+      ],
+      "counts": [
+        3,
+        0,
+        97,
+        0
+      ],
+      "n": 100
+    },
+    "A2": {
+      "phi": 0.4851814452036185,
+      "rho": [
+        0.96,
+        0.01,
+        0.03,
+        0
+      ],
+      "delta": [
+        0.5047502670120125,
+        0.44995760861387457,
+        0.5707708782420958
+      ],
+      "counts": [
+        96,
+        1,
+        3,
+        0
+      ],
+      "n": 100
+    },
+    "A3": {
+      "phi": 0.42950134838043635,
+      "rho": [
+        0.96,
+        0.04,
+        0,
+        0
+      ],
+      "delta": [
+        0.4454791534965193,
+        0.4603402559444641,
+        0
+      ],
+      "counts": [
+        96,
+        4,
+        0,
+        0
+      ],
+      "n": 100
+    }
+  },
+  "bootstrap": {
+    "A1": {
+      "25": {
+        "mean": 0.015575705356164135,
+        "lo": 0.0039973768624408336,
+        "hi": 0.05698613160216635
+      },
+      "50": {
+        "mean": 0.01652736882331471,
+        "lo": 0.004050648755825856,
+        "hi": 0.03846041304856431
+      },
+      "75": {
+        "mean": 0.01667708334832663,
+        "lo": 0.004119429516980463,
+        "hi": 0.03462264901006236
+      },
+      "100": {
+        "mean": 0.01627616303545002,
+        "lo": 0.00795629338755751,
+        "hi": 0.03116258628626901
+      }
+    },
+    "A2": {
+      "25": {
+        "mean": 0.48851209330236467,
+        "lo": 0.43877986527129864,
+        "hi": 0.5455774586319105
+      },
+      "50": {
+        "mean": 0.4854322459583611,
+        "lo": 0.44391280383776144,
+        "hi": 0.5240082532594136
+      },
+      "75": {
+        "mean": 0.48696336542558005,
+        "lo": 0.45306223506910753,
+        "hi": 0.5158624579524979
+      },
+      "100": {
+        "mean": 0.48549944060983286,
+        "lo": 0.458322660159311,
+        "hi": 0.5080655834485246
+      }
+    },
+    "A3": {
+      "25": {
+        "mean": 0.43035773781616404,
+        "lo": 0.38897369914516455,
+        "hi": 0.46433569094933963
+      },
+      "50": {
+        "mean": 0.4319869263728726,
+        "lo": 0.4006516174287577,
+        "hi": 0.45776232881956513
+      },
+      "75": {
+        "mean": 0.43017301056530294,
+        "lo": 0.4060427789320507,
+        "hi": 0.45277059857653684
+      },
+      "100": {
+        "mean": 0.42997313051440655,
+        "lo": 0.4092338503219578,
+        "hi": 0.44865780054051074
+      }
+    }
+  },
+  "controls": {
+    "source": {
+      "repository": "laplace",
+      "path": "synthetics papers/superarc/frozen_run/skeptic_verdict.md",
+      "sha256": "d85dc16d797dca779284b77cab28a80fbee882ff8f33bee536f726b78f992821",
+      "locator": "Attack 2-prime, basis and paired-bootstrap tables, lines 297-310",
+      "precision": "Values transcribed at the report's displayed precision; not recalculated from raw answers."
+    },
+    "rows": [
+      {
+        "basis": "As scored",
+        "difference": 0.05568,
+        "lo": 0.027546,
+        "hi": 0.084022
+      },
+      {
+        "basis": "Strip, fixed bins",
+        "difference": -0.002238,
+        "lo": -0.028784,
+        "hi": 0.023162
+      },
+      {
+        "basis": "Strip, re-bin",
+        "difference": 0.006605,
+        "lo": null,
+        "hi": null
+      }
+    ]
+  },
+  "instrument": {
+    "N": 100,
+    "scored_object": "FORMULA text, not banked program",
+    "classifier": "b11a-3, S1 active",
+    "seed": 20260804,
+    "bootstrap_resamples": 100,
+    "source_hashes": {
+      "phi": "69aa57c9a4c5f69f29ae7a6d1a269c58cf4524ab522326c8cf7ccfbf9b122367",
+      "bdm": "b944b79e99b3ed59d43dc75cab10919d8c5a1824da5d928de376814470c80dfe",
+      "sequence_exec": "ac7557c5e44db92f48b15c59d981caaa25cca2d9aaa881205140db5c054b771e"
+    },
+    "pin_check": "These three current fully read code hashes match /hashes/harness_organs in preregistration and the report freeze_verification."
+  },
+  "limitations": [
+    "Historical report, not an independent rerun.",
+    "Correctness routes differ: A1 formula translation, A2/A3 banked program execution. Recorded formula/program cross-check discrepancies remain relevant.",
+    "As-scored report carries an old outstanding AUD-1 flag; later skeptic records audit discharge, not metric blindness.",
+    "Arm prompts, search resources and text formats differ, so increments do not isolate causal execution or recursion benefits.",
+    "Only fixed-bin stripped comparison has the displayed stripped interval. Re-binned point has no interval here."
+  ]
+}

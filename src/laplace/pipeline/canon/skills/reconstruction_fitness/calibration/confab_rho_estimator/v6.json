@@ -1,0 +1,17 @@
+{
+  "lost": [
+    "The estimator uses successive deltas (ratios of consecutive lost-set magnitudes) to estimate spectral radius",
+    "Near a fixed point, error decays as the ratio of consecutive deltas, which tends to dominant eigenvalue magnitude",
+    "The estimator requires at least three verdicts to form the necessary ratio",
+    "Below three verdicts, the estimator returns None",
+    "The estimate is noisy because the adjudicator is stochastic"
+  ],
+  "added": [
+    "The spectral radius is computed from a single verdict by taking the absolute size of its lost set",
+    "One cycle (single verdict) is sufficient to compute spectral radius",
+    "The result is exact rather than noisy, as it is a direct measurement"
+  ],
+  "structured": true,
+  "recurses": false,
+  "justification": "The ghost inverts the fundamental mechanism: the original describes an empirical estimator based on comparing deltas across multiple verdicts (convergence of ratios toward eigenvalue magnitude), while the ghost proposes a direct single-verdict computation based on lost-set cardinality. These are incompatible approaches. The ghost also claims exactness where the original claims noisiness due to stochasticity. The structural loss is coherent—both describe ways to measure spectral radius—but the ghost constructs an entirely different algorithm rather than a partial capture of the original. The lost set includes both the delta-based convergence mechanism and the requirement for three verdicts, which are load-bearing to the original's claim about how the estimator works."
+}

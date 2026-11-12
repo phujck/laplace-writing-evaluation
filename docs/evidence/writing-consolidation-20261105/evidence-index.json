@@ -1,0 +1,15 @@
+{
+  "schema": "laplace.matched-release-evidence-pointer/1",
+  "edition": "writing-consolidation-20261105",
+  "state": "FIXED_RELEASE_COORDINATES_EXTERNAL_VALIDATION_REQUIRED",
+  "software_repository": "phujck/laplace",
+  "software_tag": "writing-consolidation-20261105",
+  "Writing_repository": "phujck/laplace-writing",
+  "Writing_tag": "writing-consolidation-20261105",
+  "writing_repo_evidence_index": "release/evidence/writing-consolidation-20261105/evidence-index.json",
+  "external_validation_asset": "https://github.com/phujck/laplace-writing/releases/download/writing-consolidation-20261105/validation.json",
+  "verification": "Resolve the immutable release tag and verify the separately delivered validation.json and SHA256SUMS against source commit, Writing commit, image, evidence index, ZIP and image part hashes. Internal evidence files verify by their relative index hashes.",
+  "scope": "Accepted writing app, reviewed owner/backend changes and qualified actual proof. Historical failures and unread/UX/runtime limits remain in the indexed evidence.",
+  "visibility": "Repository visibility follows the existing account policy. This pointer changes no access permissions.",
+  "release_validation_asset": "validation.json"
+}

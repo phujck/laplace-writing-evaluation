@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1180" height="750" viewBox="0 0 1180 750" role="img"><title>Observe the boundary that actually succeeded</title><desc>Contract diagram: user action routes and distinct adapter/producer outcomes, with responsibility and scoped repair instead of a global green badge.</desc><rect width="100%" height="100%" fill="#f5f7f9"/>
+<text x="20" y="25" fill="#225c9c" font-family="DejaVu Sans,sans-serif" font-size="12" font-weight="700">DESIGN PROPOSAL · STATIC · SYNTHETIC EXAMPLE</text>
+<text x="20" y="61" fill="#1f2c3b" font-family="DejaVu Sans,sans-serif" font-size="22" font-weight="700">Observe the boundary that actually succeeded</text>
+<rect x="25" y="102" width="1130" height="82" rx="7" fill="#ffffff" stroke="#c2cbd3"/>
+<text x="37" y="128" fill="#1f2c3b" font-family="DejaVu Sans,sans-serif" font-size="14" font-weight="700">Desktop user action</text>
+<text x="43" y="159" fill="#1f2c3b" font-family="DejaVu Sans,sans-serif" font-size="16" font-weight="400">Icon → installed Exec → isolated OS entry → native window → backend → workspace</text>
+<rect x="25" y="211" width="352" height="143" rx="7" fill="#fff3d6" stroke="#c2cbd3"/>
+<text x="37" y="237" fill="#1f2c3b" font-family="DejaVu Sans,sans-serif" font-size="14" font-weight="700">Reached failure · desktop entry</text>
+<text x="42" y="270" fill="#1f2c3b" font-family="DejaVu Sans,sans-serif" font-size="16" font-weight="400">Backend healthy. Isolated script</text>
+<text x="42" y="293" fill="#1f2c3b" font-family="DejaVu Sans,sans-serif" font-size="16" font-weight="400">import failed before a window could</text>
+<text x="42" y="316" fill="#1f2c3b" font-family="DejaVu Sans,sans-serif" font-size="16" font-weight="400">open.</text>
+<rect x="409" y="211" width="352" height="143" rx="7" fill="#ffffff" stroke="#c2cbd3"/>
+<text x="421" y="237" fill="#1f2c3b" font-family="DejaVu Sans,sans-serif" font-size="14" font-weight="700">Responsible owner</text>
+<text x="426" y="270" fill="#1f2c3b" font-family="DejaVu Sans,sans-serif" font-size="16" font-weight="400">Desktop adapter bootstrap; one exact</text>
+<text x="426" y="293" fill="#1f2c3b" font-family="DejaVu Sans,sans-serif" font-size="16" font-weight="400">OS-command subprocess control.</text>
+<rect x="793" y="211" width="362" height="143" rx="7" fill="#ffffff" stroke="#c2cbd3"/>
+<text x="805" y="237" fill="#1f2c3b" font-family="DejaVu Sans,sans-serif" font-size="14" font-weight="700">Local result</text>
+<text x="810" y="270" fill="#1f2c3b" font-family="DejaVu Sans,sans-serif" font-size="16" font-weight="400">Entry repaired. Existing window</text>
+<text x="810" y="293" fill="#1f2c3b" font-family="DejaVu Sans,sans-serif" font-size="16" font-weight="400">reused; backend and drafts</text>
+<text x="810" y="316" fill="#1f2c3b" font-family="DejaVu Sans,sans-serif" font-size="16" font-weight="400">preserved.</text>
+<path d="M377 280 L409 280" stroke="#225c9c" fill="none" stroke-width="2"/>
+<polygon points="409,280 400.8,283.7 400.8,276.3" fill="#225c9c"/>
+<path d="M761 280 L793 280" stroke="#225c9c" fill="none" stroke-width="2"/>
+<polygon points="793,280 784.8,283.7 784.8,276.3" fill="#225c9c"/>
+<rect x="25" y="391" width="1130" height="80" rx="7" fill="#ffffff" stroke="#c2cbd3"/>
+<text x="37" y="417" fill="#1f2c3b" font-family="DejaVu Sans,sans-serif" font-size="14" font-weight="700">Authored publication action</text>
+<text x="43" y="447" fill="#1f2c3b" font-family="DejaVu Sans,sans-serif" font-size="15" font-weight="400">Checkpoint → upfold → wire drain → embeddings / metric → publication guard → published view</text>
+<rect x="25" y="497" width="352" height="143" rx="7" fill="#fff3d6" stroke="#c2cbd3"/>
+<text x="37" y="523" fill="#1f2c3b" font-family="DejaVu Sans,sans-serif" font-size="14" font-weight="700">Reached failure · publication</text>
+<text x="42" y="556" fill="#1f2c3b" font-family="DejaVu Sans,sans-serif" font-size="16" font-weight="400">Fold and metric succeeded. Own wire</text>
+<text x="42" y="579" fill="#1f2c3b" font-family="DejaVu Sans,sans-serif" font-size="16" font-weight="400">outputs misclassified as source</text>
+<text x="42" y="602" fill="#1f2c3b" font-family="DejaVu Sans,sans-serif" font-size="16" font-weight="400">changes.</text>
+<rect x="409" y="497" width="352" height="143" rx="7" fill="#ffffff" stroke="#c2cbd3"/>
+<text x="421" y="523" fill="#1f2c3b" font-family="DejaVu Sans,sans-serif" font-size="14" font-weight="700">Responsible owner</text>
+<text x="426" y="556" fill="#1f2c3b" font-family="DejaVu Sans,sans-serif" font-size="16" font-weight="400">Producer output declaration and real</text>
+<text x="426" y="579" fill="#1f2c3b" font-family="DejaVu Sans,sans-serif" font-size="16" font-weight="400">source-change guard; durable</text>
+<text x="426" y="602" fill="#1f2c3b" font-family="DejaVu Sans,sans-serif" font-size="16" font-weight="400">decisions stay.</text>
+<rect x="793" y="497" width="362" height="143" rx="7" fill="#ffffff" stroke="#c2cbd3"/>
+<text x="805" y="523" fill="#1f2c3b" font-family="DejaVu Sans,sans-serif" font-size="14" font-weight="700">Scoped recovery</text>
+<text x="810" y="556" fill="#1f2c3b" font-family="DejaVu Sans,sans-serif" font-size="16" font-weight="400">Preserve accepted publication,</text>
+<text x="810" y="579" fill="#1f2c3b" font-family="DejaVu Sans,sans-serif" font-size="16" font-weight="400">distinguish outputs, refuse genuine</text>
+<text x="810" y="602" fill="#1f2c3b" font-family="DejaVu Sans,sans-serif" font-size="16" font-weight="400">input change.</text>
+<path d="M377 570 L409 570" stroke="#225c9c" fill="none" stroke-width="2"/>
+<polygon points="409,570 400.8,573.7 400.8,566.3" fill="#225c9c"/>
+<path d="M761 570 L793 570" stroke="#225c9c" fill="none" stroke-width="2"/>
+<polygon points="793,570 784.8,573.7 784.8,566.3" fill="#225c9c"/>
+<text x="28" y="689" fill="#1f2c3b" font-family="DejaVu Sans,sans-serif" font-size="14" font-weight="400">Each boundary shows intent, observed result, evidence time and next admitted recovery. Unknown is explicit. Success at one boundary does</text>
+<text x="28" y="710" fill="#1f2c3b" font-family="DejaVu Sans,sans-serif" font-size="14" font-weight="400">not imply success at the next.</text>
+</svg>

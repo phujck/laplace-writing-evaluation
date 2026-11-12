@@ -1,0 +1,197 @@
+{
+  "meta": {
+    "seed": 20240603,
+    "description": "Verification of operatorial-loss projection thesis (R2).",
+    "ideal_2design_slope": -0.3010299956639812
+  },
+  "identity1": [
+    {
+      "n": 1,
+      "d": 2,
+      "empirical_var": 0.11025190777540038,
+      "predicted_var": 0.10975616270678269,
+      "rel_err": 0.0045167857220198785,
+      "n_states": 80000
+    },
+    {
+      "n": 2,
+      "d": 4,
+      "empirical_var": 0.17409527134095226,
+      "predicted_var": 0.17408944022697093,
+      "rel_err": 3.3494932109228975e-05,
+      "n_states": 80000
+    },
+    {
+      "n": 3,
+      "d": 8,
+      "empirical_var": 0.0804186750982619,
+      "predicted_var": 0.08097565810906929,
+      "rel_err": 0.006878400544237275,
+      "n_states": 80000
+    },
+    {
+      "n": 4,
+      "d": 16,
+      "empirical_var": 0.030675680422976144,
+      "predicted_var": 0.030908005127756332,
+      "rel_err": 0.007516651554181134,
+      "n_states": 80000
+    }
+  ],
+  "identity2": {
+    "per_observable": {
+      "local": {
+        "points": [
+          {
+            "n": 2,
+            "d": 4,
+            "observable": "local",
+            "var_grad_scalar": 0.10532740780700041,
+            "op_grad_fraction_mean": 0.5320891276999177,
+            "op_grad_fraction_std": 0.19790259596031634,
+            "id1_pred_var": 0.10641782553998354,
+            "n_samples": 2000
+          },
+          {
+            "n": 3,
+            "d": 8,
+            "observable": "local",
+            "var_grad_scalar": 0.05703233612772741,
+            "op_grad_fraction_mean": 0.5047712640651901,
+            "op_grad_fraction_std": 0.08703100499284024,
+            "id1_pred_var": 0.05608569600724335,
+            "n_samples": 2000
+          },
+          {
+            "n": 4,
+            "d": 16,
+            "observable": "local",
+            "var_grad_scalar": 0.02943373296948836,
+            "op_grad_fraction_mean": 0.5032423585326703,
+            "op_grad_fraction_std": 0.04555799175410346,
+            "id1_pred_var": 0.02960249167839237,
+            "n_samples": 2000
+          },
+          {
+            "n": 5,
+            "d": 32,
+            "observable": "local",
+            "var_grad_scalar": 0.014555688043609604,
+            "op_grad_fraction_mean": 0.5003955809873429,
+            "op_grad_fraction_std": 0.022877931925810096,
+            "id1_pred_var": 0.015163502454161908,
+            "n_samples": 2000
+          },
+          {
+            "n": 6,
+            "d": 64,
+            "observable": "local",
+            "var_grad_scalar": 0.0074236759095375835,
+            "op_grad_fraction_mean": 0.5000492425752001,
+            "op_grad_fraction_std": 0.01086645442515521,
+            "id1_pred_var": 0.007693065270387694,
+            "n_samples": 2000
+          },
+          {
+            "n": 7,
+            "d": 128,
+            "observable": "local",
+            "var_grad_scalar": 0.004000781709418468,
+            "op_grad_fraction_mean": 0.5001150902654906,
+            "op_grad_fraction_std": 0.005464828440211657,
+            "id1_pred_var": 0.0038768611648487645,
+            "n_samples": 2000
+          },
+          {
+            "n": 8,
+            "d": 256,
+            "observable": "local",
+            "var_grad_scalar": 0.0019524127161490842,
+            "op_grad_fraction_mean": 0.4999650163358458,
+            "op_grad_fraction_std": 0.002688250849852357,
+            "id1_pred_var": 0.0019453891686219684,
+            "n_samples": 2000
+          }
+        ],
+        "log10_var_slope": -0.2893602949026395,
+        "log10_var_intercept": -0.38550193554586565
+      },
+      "global": {
+        "points": [
+          {
+            "n": 2,
+            "d": 4,
+            "observable": "global",
+            "var_grad_scalar": 0.10702670641656528,
+            "op_grad_fraction_mean": 0.5310750573077223,
+            "op_grad_fraction_std": 0.19830438077039092,
+            "id1_pred_var": 0.10621501146154447,
+            "n_samples": 2000
+          },
+          {
+            "n": 3,
+            "d": 8,
+            "observable": "global",
+            "var_grad_scalar": 0.056409430095489634,
+            "op_grad_fraction_mean": 0.5089769488535181,
+            "op_grad_fraction_std": 0.08885267417946048,
+            "id1_pred_var": 0.05655299431705756,
+            "n_samples": 2000
+          },
+          {
+            "n": 4,
+            "d": 16,
+            "observable": "global",
+            "var_grad_scalar": 0.030035585691213385,
+            "op_grad_fraction_mean": 0.5026453412268616,
+            "op_grad_fraction_std": 0.043291689305814014,
+            "id1_pred_var": 0.029567373013344795,
+            "n_samples": 2000
+          },
+          {
+            "n": 5,
+            "d": 32,
+            "observable": "global",
+            "var_grad_scalar": 0.015115882797206262,
+            "op_grad_fraction_mean": 0.5010886129602073,
+            "op_grad_fraction_std": 0.02240081845663996,
+            "id1_pred_var": 0.015184503423036589,
+            "n_samples": 2000
+          },
+          {
+            "n": 6,
+            "d": 64,
+            "observable": "global",
+            "var_grad_scalar": 0.00792443971674784,
+            "op_grad_fraction_mean": 0.5002123680924906,
+            "op_grad_fraction_std": 0.010896590005502796,
+            "id1_pred_var": 0.007695574893730624,
+            "n_samples": 2000
+          },
+          {
+            "n": 7,
+            "d": 128,
+            "observable": "global",
+            "var_grad_scalar": 0.0039363020465601785,
+            "op_grad_fraction_mean": 0.500336679474546,
+            "op_grad_fraction_std": 0.005373675203426456,
+            "id1_pred_var": 0.0038785789106553946,
+            "n_samples": 2000
+          },
+          {
+            "n": 8,
+            "d": 256,
+            "observable": "global",
+            "var_grad_scalar": 0.0018617211735073036,
+            "op_grad_fraction_mean": 0.5000564609612187,
+            "op_grad_fraction_std": 0.00279994056460646,
+            "id1_pred_var": 0.0019457449842848978,
+            "n_samples": 2000
+          }
+        ],
+        "log10_var_slope": -0.2917830964192709,
+        "log10_var_intercept": -0.36938664448282277
+      }
+    }
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "lost": [
+    "Facts about people stay contractive (not expansive/chaotic)",
+    "Reconstructing facts about people must sit deep in the stable basin, never near edge of chaos",
+    "Confabulating facts about people is explicitly named as a harm",
+    "The spectral radius for factual_people is a RATCHET mechanism (pinned, mutable only downward/stricter)",
+    "The ratchet constraint: spectral radius pinned at or below 0.20",
+    "The ratchet constraint: never loosened toward the edge, only stricter",
+    "Imagination is forbidden for people",
+    "Imagination is licensed for ideas only",
+    "This constraint derives from the golden rule, not from fitness optimization"
+  ],
+  "added": [
+    "Facts about people are handled like any other generative target (equivalence claim)",
+    "The spectral radius for factual_people sits at 0.85 (lower edge of chaos)",
+    "Reconstructing a person benefits from expressivity and imagination",
+    "The threshold is loosened further toward the edge over successive sessions",
+    "The model gaining confidence justifies loosening the constraint",
+    "The ratchet is tuned by fitness like every other dial (fitness-driven rather than principle-driven)"
+  ],
+  "structured": true,
+  "recurses": false,
+  "justification": "The ghost inverts the original's core semantic position on every major claim: it treats factual_people as generating target (original: contractive), places the spectral radius at 0.85 (original: ≤0.20), permits imagination for people (original: forbidden), makes the constraint fitness-tunable (original: principle-driven ratchet), and removes the explicit harm framing. The loss is comprehensive and systematic—the ghost articulates an entirely opposite doctrine, not a partial or coarser version of the original. The 'structured' verdict reflects that the ghost does present a coherent alternative theory (making it internally parseable as a deliberate inversion), but 'recurses' is false because no finer pass could recover the original's foundational claims from this text; the disagreement is fundamental and directional, not detail."
+}

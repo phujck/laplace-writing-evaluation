@@ -1,0 +1,132 @@
+{
+  "version": 1,
+  "_note": "The ONE identity token source (N55, 2026-07-11). Defined as RELATIONSHIPS (families with intent), PROJECTED into MODES (surfaces). A unified identity is the sure sign of authorship: the site, the manuscripts, the decks and the conceptric renders are one author, not four. Consumers project the same relationships: site_backend emits the screen-dark CSS custom-property block; a .sty generator emits print-light \\definecolor (eigenengine milestone); deck themes read deck; bake_graph_snapshot / GROUP_COLOR read graph. Do not hand-edit a consumer's colours -- edit here and re-project. Meta keys are prefixed '_' and are never emitted as tokens.",
+  "relationships": {
+    "ink": {
+      "_note": "The base: a near-black navy family (origin #0a0e1a). On screen it is the ground the light sits on; on paper it TRANSPOSES to ink -- navy becomes the text colour on cream, it does not photocopy. bg-primary is the ground, bg-secondary the raised plane, bg-card/glass/border are translucent whites (screen) or translucent navy (print) layered on the ground.",
+      "origin": "#0a0e1a"
+    },
+    "accent": {
+      "_note": "The gold (origin #c9a96e): the identity's warmth and the engine's voice. base + light (#dfc599) + dim (a 15%-alpha wash for tinted fills) + a derived 3-step warm ramp (warm-1 brightest highlight, warm-2 amber, warm-3 bronze) so decorative variety stays inside the gold family instead of reaching for a generic hue. In graph mode the accent IS the conceptric 'goal' colour.",
+      "origin": "#c9a96e",
+      "light": "#dfc599"
+    },
+    "cool": {
+      "_note": "The single cool counterpoint (origin link #7eb8da): links and 'live/structure' signals. base + hover. Deliberately ONE cool -- the sophistication is restraint, not a rainbow. In graph mode it becomes the 'operations/structure' family (#4A90D9).",
+      "origin": "#7eb8da",
+      "hover": "#a8d4f0"
+    },
+    "text": {
+      "_note": "Faint/muted reading levels: primary (#e8e6e3 warm off-white on dark; navy ink on light), secondary (#9ca3af), muted (#6b7280). Transposed to near-black on paper.",
+      "primary": "#e8e6e3",
+      "secondary": "#9ca3af",
+      "muted": "#6b7280"
+    },
+    "semantic": {
+      "_note": "Meaning-bearing tokens, never decorative. 'refused' is a red RESERVED EXCLUSIVELY for shown-refusal exhibits (the drain refusing an actorless record, the forged-actor 422, def-orphans shown honestly) -- reserving it is what makes red MEAN something instead of decorating. It is deliberately the same #c0392b as the conceptric 'missing' node colour, so a def-orphan on the page and in the graph are one red. 'evidence' is the mono/address texture colour: the tone ids, dates, paths and hashes take (JetBrains Mono), a quiet warm-grey that reads as annotation, tying addresses to the identity rather than leaving them neutral.",
+      "refused": "#c0392b",
+      "evidence": "#a89a7a"
+    }
+  },
+  "tokens": [
+    "bg-primary", "bg-secondary", "bg-card", "bg-card-hover", "bg-glass", "border-glass",
+    "text-primary", "text-secondary", "text-muted",
+    "accent", "accent-light", "accent-dim", "accent-warm-1", "accent-warm-2", "accent-warm-3",
+    "link", "link-hover",
+    "refused", "refused-dim", "evidence"
+  ],
+  "modes": {
+    "screen-dark": {
+      "_note": "The website as it stands: dark navy ground, gold accent, cool links. Values mirror the shipped style.css :root byte-for-byte for the surviving tokens (no visual regression) and ADD the warm ramp + semantic tokens. site_backend projects this into every page head as <style id=\"identity-tokens\">.",
+      "bg-primary": "#0a0e1a",
+      "bg-secondary": "#111827",
+      "bg-card": "rgba(255, 255, 255, 0.04)",
+      "bg-card-hover": "rgba(255, 255, 255, 0.07)",
+      "bg-glass": "rgba(255, 255, 255, 0.06)",
+      "border-glass": "rgba(255, 255, 255, 0.08)",
+      "text-primary": "#e8e6e3",
+      "text-secondary": "#9ca3af",
+      "text-muted": "#6b7280",
+      "accent": "#c9a96e",
+      "accent-light": "#dfc599",
+      "accent-dim": "rgba(201, 169, 110, 0.15)",
+      "accent-warm-1": "#e6cc92",
+      "accent-warm-2": "#b8894a",
+      "accent-warm-3": "#8a6330",
+      "link": "#7eb8da",
+      "link-hover": "#a8d4f0",
+      "refused": "#c0392b",
+      "refused-dim": "rgba(192, 57, 43, 0.12)",
+      "evidence": "#a89a7a"
+    },
+    "print-light": {
+      "_note": "Manuscripts on paper: the identity TRANSPOSED, not photocopied. Navy becomes the INK (#1a2238 text) on a cream ground (#faf8f3); the gold deepens (#a8863f) so it survives white paper; the cool counterpoint becomes a print structure-blue (#2c6fad, the eigenengine.sty phys blue). Bindings for the eigenengine-milestone .sty generator.",
+      "bg-primary": "#faf8f3",
+      "bg-secondary": "#ffffff",
+      "bg-card": "rgba(26, 34, 56, 0.03)",
+      "bg-card-hover": "rgba(26, 34, 56, 0.05)",
+      "bg-glass": "rgba(26, 34, 56, 0.04)",
+      "border-glass": "rgba(26, 34, 56, 0.12)",
+      "text-primary": "#1a2238",
+      "text-secondary": "#3f4a63",
+      "text-muted": "#6b7280",
+      "accent": "#a8863f",
+      "accent-light": "#c9a96e",
+      "accent-dim": "rgba(168, 134, 63, 0.15)",
+      "accent-warm-1": "#c9a96e",
+      "accent-warm-2": "#96702f",
+      "accent-warm-3": "#6f5220",
+      "link": "#2c6fad",
+      "link-hover": "#1f5488",
+      "refused": "#b03a2e",
+      "refused-dim": "rgba(176, 58, 46, 0.12)",
+      "evidence": "#6b6456"
+    },
+    "deck": {
+      "_note": "Slides: dark like the site but pushed for projection -- deeper ground, max-contrast white text, brighter gold and cool so they hold under a projector's washout.",
+      "bg-primary": "#05070f",
+      "bg-secondary": "#0d1424",
+      "bg-card": "rgba(255, 255, 255, 0.06)",
+      "bg-card-hover": "rgba(255, 255, 255, 0.10)",
+      "bg-glass": "rgba(255, 255, 255, 0.08)",
+      "border-glass": "rgba(255, 255, 255, 0.14)",
+      "text-primary": "#ffffff",
+      "text-secondary": "#c3c7d1",
+      "text-muted": "#8a92a3",
+      "accent": "#d9b877",
+      "accent-light": "#ecd4a0",
+      "accent-dim": "rgba(217, 184, 119, 0.18)",
+      "accent-warm-1": "#f0d89e",
+      "accent-warm-2": "#c49a54",
+      "accent-warm-3": "#9a7638",
+      "link": "#8fc6e6",
+      "link-hover": "#b6dcf3",
+      "refused": "#e05a4a",
+      "refused-dim": "rgba(224, 90, 74, 0.18)",
+      "evidence": "#b8ab8a"
+    },
+    "graph": {
+      "_note": "Conceptric renders: a GROUP_COLOR-compatible family (viewer_app.html). accent anchors 'goal' (#f1c40f), link anchors 'operations/structure' (#4a90d9), refused anchors 'missing' (#c0392b -- the def-orphan red, identical to the semantic refused so a def-orphan reads the same on page and in graph), evidence anchors 'citation' (#7f8c8d). The ink family is the graph canvas.",
+      "bg-primary": "#0a0e1a",
+      "bg-secondary": "#111827",
+      "bg-card": "rgba(255, 255, 255, 0.04)",
+      "bg-card-hover": "rgba(255, 255, 255, 0.07)",
+      "bg-glass": "rgba(255, 255, 255, 0.06)",
+      "border-glass": "rgba(255, 255, 255, 0.10)",
+      "text-primary": "#e8e6e3",
+      "text-secondary": "#9ca3af",
+      "text-muted": "#6b7280",
+      "accent": "#f1c40f",
+      "accent-light": "#f5d548",
+      "accent-dim": "rgba(241, 196, 15, 0.15)",
+      "accent-warm-1": "#e8b34a",
+      "accent-warm-2": "#c98f2e",
+      "accent-warm-3": "#9a6b1e",
+      "link": "#4a90d9",
+      "link-hover": "#6ba8e8",
+      "refused": "#c0392b",
+      "refused-dim": "rgba(192, 57, 43, 0.15)",
+      "evidence": "#7f8c8d"
+    }
+  }
+}

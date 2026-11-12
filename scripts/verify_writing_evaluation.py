@@ -192,6 +192,7 @@ def document_links(root, report, owners):
     not travel); missing under the home of a registered project this export did not select (reported with that
     project's name, never copied); otherwise a missing common engine/script/doc input (failure). ``owners`` is
     {'selected': {project: [homes]}, 'unselected': {project: [homes]}, 'bindings': {path: [projects]}}."""
+    import writing_eval_manifest as inventory
     rows, failures = [], []
     if owners and all(isinstance(value, str) for value in owners.values()):
         owners = {'selected': {project: [home] for project, home in owners.items()}}   # the earlier {project: dir} form
@@ -217,7 +218,10 @@ def document_links(root, report, owners):
             target = unquote(raw.split('#', 1)[0].split('?', 1)[0])
             if not target:
                 continue
-            resolved = Path(os.path.normpath((Path(rel).parent / target).as_posix()))
+            # Canonical entry templates have an explicit root render location;
+            # ordinary documents keep their own directory. Never guess aliases.
+            render_location = inventory.ROOT_ENTRY_TEMPLATES.get(rel, rel)
+            resolved = Path(os.path.normpath((Path(render_location).parent / target).as_posix()))
             if resolved.is_absolute() or '..' in resolved.parts:
                 failures.append({'path': rel, 'link': raw, 'reason': 'document link leaves the export'})
                 continue

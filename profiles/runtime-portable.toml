@@ -1,0 +1,175 @@
+schema = "laplace-runtime-profiles/1"
+project_python = ">=3.11"
+
+[lifecycle]
+python = ".venv/bin/python"
+expected_python = "NOT_CONFIGURED"
+launcher = "scripts/laplace-python"
+override_env = "LAPLACE_PYTHON"
+source_roots = ["src"]
+user_site = false
+virtual_environment = "explicit selection only"
+install_policy = "Run scripts/configure_writing_runtime.py explicitly; startup installs nothing"
+
+[browser_server]
+entry = "python -m laplace.web.writing_server --root ."
+state_policy = "explicit local checkout; no author-home fallback"
+
+[publication]
+schema = "laplace.publication-artifacts/1"
+git_policy = "Source/configuration and necessary accepted serving state; no per-transition Git commits or disposable caches."
+bootstrap = "Missing local caches require an explicit scripts/laplace-python scripts/reembed.py --full-metric; never a hidden startup rebuild."
+
+[[publication.artifacts]]
+key = "graded_tree"
+path = ".self_graded.json"
+required = true
+role = "serving-state"
+producer = "keeper.write_tree_local"
+consumers = ["conceptric.load_network", "recursive_read"]
+git_tracked = true
+legacy_v1 = true
+legacy_sidecars = true
+
+[[publication.artifacts]]
+key = "graded_index"
+path = "SELF_GRADED_INDEX.md"
+required = true
+role = "projection"
+producer = "keeper.write_skeleton"
+consumers = ["coarse navigation"]
+git_tracked = true
+legacy_v1 = true
+legacy_sidecars = true
+
+[[publication.artifacts]]
+key = "source_index"
+path = "SELF_SHARD_INDEX.md"
+required = true
+role = "projection"
+producer = "self_shard.write_index"
+consumers = ["self_shard.load_index", "reconstruct_by_name"]
+git_tracked = true
+legacy_v1 = true
+legacy_sidecars = true
+
+[[publication.artifacts]]
+key = "meaning_tree"
+path = ".meaning_tree.json"
+required = true
+role = "serving-state"
+producer = "meaning_upfold"
+consumers = ["recursive_read", "incremental upfold"]
+git_tracked = true
+legacy_v1 = true
+legacy_sidecars = true
+
+[[publication.artifacts]]
+key = "embedding_basis"
+path = ".self_embeddings.json"
+required = true
+role = "serving-state"
+producer = "embed_router.ensure_embeddings"
+consumers = ["routing", "metric_distill"]
+git_tracked = true
+legacy_v1 = true
+legacy_sidecars = true
+
+[[publication.artifacts]]
+key = "metric"
+path = ".metric_M.npz"
+required = true
+role = "serving-state"
+producer = "metric_distill"
+consumers = ["embed_router.load_metric", "taste_retrieval"]
+git_tracked = true
+legacy_v1 = true
+legacy_sidecars = true
+
+[[publication.artifacts]]
+key = "metric_receipt"
+path = ".metric_M.receipt.json"
+required = true
+role = "evidence"
+producer = "metric_distill"
+consumers = ["metric_status", "generation compatibility"]
+git_tracked = true
+legacy_v1 = true
+legacy_sidecars = true
+
+[[publication.artifacts]]
+key = "metric_pairs"
+path = ".metric_pairs.json"
+required = true
+role = "local-cache"
+producer = "metric_distill"
+consumers = ["incremental metric fit"]
+git_tracked = false
+legacy_v1 = true
+legacy_sidecars = true
+
+[[publication.artifacts]]
+key = "meaning_vectors"
+path = ".meaning_vectors.f32.npy"
+required = true
+role = "local-cache"
+producer = "meaning_upfold"
+consumers = ["incremental upfold", "recursive_read"]
+git_tracked = false
+legacy_v1 = false
+legacy_sidecars = true
+
+[[publication.artifacts]]
+key = "meaning_vector_index"
+path = ".meaning_vectors.index.json"
+required = true
+role = "local-cache"
+producer = "meaning_upfold"
+consumers = ["vector source compatibility"]
+git_tracked = false
+legacy_v1 = false
+legacy_sidecars = true
+
+[[publication.artifacts]]
+key = "record_floor"
+path = ".self_record_floor.jsonl"
+required = true
+role = "identity-state"
+producer = "record_shard.write_floor"
+consumers = ["keeper", "self_corpus", "value_weld"]
+git_tracked = true
+legacy_v1 = false
+legacy_sidecars = false
+
+[[publication.artifacts]]
+key = "frames"
+path = ".self_isometries.npz"
+required = false
+role = "optional-projection"
+producer = "isometries"
+consumers = ["optional frame routing"]
+git_tracked = false
+legacy_v1 = false
+legacy_sidecars = true
+
+[[publication.artifacts]]
+key = "learned_keywords"
+path = ".learned_keywords.json"
+required = false
+role = "local-cache"
+producer = "embed_router.rebuild_learned_keywords"
+consumers = ["network reconstruction"]
+git_tracked = false
+legacy_v1 = false
+legacy_sidecars = false
+
+[[publication.artifacts]]
+key = "jury_briefs"
+path = ".escalate_briefs.json"
+required = false
+role = "local-cache"
+producer = "drain_proposals"
+consumers = ["wire judgement"]
+git_tracked = false
+legacy_v1 = false
+legacy_sidecars = false

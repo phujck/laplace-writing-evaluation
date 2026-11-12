@@ -1,0 +1,103 @@
+{
+  "status": "PREPARED_AWAITING_HUMAN_APPROVAL",
+  "work_id": "WORK-example",
+  "handoff_id": "PHASE-c7e84e75aba2f877d2a23196",
+  "obligation": {
+    "id": "public-example-traceability",
+    "scope": "other",
+    "label": "Inspect the genuine public wrapper/raw result/prose proposal and exact records: unchanged calculation, public source closure and honest claims. No scientific theorem acceptance.",
+    "required": true,
+    "independent": true,
+    "inputs": [
+      "sources/behaviour-example/S1.tex",
+      "writing_projects/behaviour-example/examples/public_representation_illustrations.py",
+      "writing_projects/behaviour-example/examples/public-illustration-inputs-v1.json"
+    ]
+  },
+  "exact_three_current_pins": {
+    "sources/behaviour-example/S1.tex": "sha256:2e141c78ab602005bc21b8127e0ad192add34bc7db4ca8dff2d1d6325e41b775",
+    "writing_projects/behaviour-example/examples/public_representation_illustrations.py": "sha256:79b053a50a35c26931f71f0c79822de7d44b2dfc9c93acba6db1a07c068536e7",
+    "writing_projects/behaviour-example/examples/public-illustration-inputs-v1.json": "sha256:61b593fdfa0672b09859c813e28a8dcb6dea12cce56c7607b334da7e6710a713"
+  },
+  "fresh_reviewer_context": "The app-owned bind/submit route creates a separate review conversation. Do not reuse the producer session or import Main context/history. No new calculation/model job authorised here.",
+  "human_approval_bind_offer": {
+    "method": "POST",
+    "url": "/work/delivery",
+    "payload": {
+      "project": "behaviour-example",
+      "action": "bind",
+      "work_id": "WORK-example",
+      "expected_work_revision": "sha256:c725dc31c3bded070e47351aa59412e24f2332537198c551e1f2b728ba44f1fc",
+      "kind": "app-owned",
+      "provider": "codex",
+      "model": "gpt-6.1-sol",
+      "effort": "high",
+      "label": "Public example technical traceability only (fresh reviewer)",
+      "lifetime_s": 3600
+    }
+  },
+  "native_offer_for_authorised_coordinator": {
+    "operation": "work_delivery",
+    "payload": {
+      "action": "bind",
+      "work_id": "WORK-example",
+      "expected_work_revision": "sha256:c725dc31c3bded070e47351aa59412e24f2332537198c551e1f2b728ba44f1fc",
+      "kind": "app-owned",
+      "provider": "codex",
+      "model": "gpt-6.1-sol",
+      "effort": "high",
+      "label": "Public example technical traceability only (fresh reviewer)",
+      "lifetime_s": 3600
+    }
+  },
+  "approval_and_binding_current_state": {
+    "state": "NONE",
+    "binding": null,
+    "approval": null,
+    "meaning": "Current desired settings standing only; this does not attribute a lost bind to the caller."
+  },
+  "next_owner_read": {
+    "operation": "work_delivery",
+    "payload": {
+      "action": "review-setup",
+      "work_id": "WORK-example",
+      "limit": 8,
+      "offset": 0,
+      "cut": "sha256:ffec8a43b108bc6b28dc833d5a3f6692d7edf8cbc02bc15122a0f56d2cff76ee"
+    },
+    "http": {
+      "method": "GET",
+      "url": "/work/delivery?project=behaviour-example&request=%7B%22action%22%3A%22review-setup%22%2C%22cut%22%3A%22sha256%3Affec8a43b108bc6b28dc833d5a3f6692d7edf8cbc02bc15122a0f56d2cff76ee%22%2C%22limit%22%3A8%2C%22offset%22%3A0%2C%22work_id%22%3A%22WORK-example%22%7D"
+    }
+  },
+  "status_read": {
+    "operation": "work_delivery",
+    "payload": {
+      "action": "status",
+      "work_id": "WORK-example"
+    },
+    "http": {
+      "method": "GET",
+      "url": "/work/delivery?project=behaviour-example&request=%7B%22action%22%3A%22status%22%2C%22work_id%22%3A%22WORK-example%22%7D"
+    }
+  },
+  "start_offer": {
+    "status": "NOT_ISSUED_BEFORE_BINDING",
+    "reason": "No approved recipient binding exists. After genuine human bind, reinspect the exact current review-setup/status; return and use only the owner's offered submit/start action with real binding ID, this handoff and public-example-traceability. No binding ID, launch or acceptance is fabricated."
+  },
+  "handoff_read": {
+    "operation": "project",
+    "payload": {
+      "namespace": "behaviour-example",
+      "view": "review",
+      "id": "WORK-example",
+      "phase_id": "PHASE-c7e84e75aba2f877d2a23196",
+      "phase_revision": "sha256:c5b92fb6f48a8f0f3326efb9f830608c677c25bd1e29ca0989438fed9c791ab8"
+    },
+    "http": {
+      "method": "GET",
+      "url": "/work/state?project=behaviour-example&view=review&id=WORK-example&phase_id=PHASE-c7e84e75aba2f877d2a23196&phase_revision=sha256%3Ac5b92fb6f48a8f0f3326efb9f830608c677c25bd1e29ca0989438fed9c791ab8"
+    }
+  },
+  "bounded_scope": "Independent technical traceability and unchanged supplied calculation only; no independent science acceptance, broad review, rerun or extra experiment. Work remains open."
+}

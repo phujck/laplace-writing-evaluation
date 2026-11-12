@@ -1,0 +1,20 @@
+{
+  "lost": [
+    "Spectral radius estimated from successive lost-set deltas (ratio of consecutive deltas)",
+    "Error decay behavior near fixed points tending to dominant eigenvalue magnitude",
+    "Requirement for at least two deltas to form a ratio",
+    "Minimum three verdicts needed for the estimator to return a value",
+    "Returns None when insufficient data",
+    "Estimate is noisy due to stochastic adjudicator"
+  ],
+  "added": [
+    "Spectral radius computed from a single verdict by taking absolute size of lost set",
+    "No deltas or ratios involved in computation",
+    "One cycle is sufficient",
+    "Result is exact rather than noisy",
+    "Direct measurement of lost-set magnitude"
+  ],
+  "structured": true,
+  "recurses": false,
+  "justification": "The ghost inverts the core mechanism: original describes a delta-ratio estimator requiring temporal sequence (at least 3 verdicts) that yields noisy approximation of eigenvalue magnitude; ghost describes a static magnitude-based computation from single verdict that claims exactness. These are fundamentally incompatible approaches—not a simplification or paraphrase but a replacement of the method itself. The structured nature of the loss (coherent methodology inverted) and non-recursing nature (no partial recovery path from the ghost's claims would reconstruct the original's delta-based logic) are both clear."
+}

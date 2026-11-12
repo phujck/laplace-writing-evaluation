@@ -1,0 +1,147 @@
+{
+  "schema_version": "dd.mathematical-illustrations/1",
+  "status": "computed",
+  "interpretation": "Deterministic mathematical illustrations of stated models, not empirical performance, independent verification, or a broad theorem proof.",
+  "checks": {
+    "generator_columns_sum_to_zero": true,
+    "two_coordinate_closure_exact_integer_check": true,
+    "shared_crossing": 0.8410686705679301,
+    "attention_suppression_boundary": 1.0852782044993055,
+    "same_coarse_initial_mass": true,
+    "initial_mass_derivatives": [
+      -1.0,
+      -3.0
+    ],
+    "limiting_stationary_mass": 0.5
+  },
+  "parameters": {
+    "gamma": 1.0,
+    "eta": 0.8,
+    "partition_cost": 0.25,
+    "generator": [
+      [
+        -5,
+        4,
+        1,
+        0
+      ],
+      [
+        4,
+        -7,
+        0,
+        3
+      ],
+      [
+        1,
+        0,
+        -5,
+        4
+      ],
+      [
+        0,
+        3,
+        4,
+        -7
+      ]
+    ],
+    "retained_observables": {
+      "y": [
+        1,
+        1,
+        -1,
+        -1
+      ],
+      "z": [
+        1,
+        -1,
+        -1,
+        1
+      ]
+    },
+    "time_end": 1.5,
+    "time_intervals": 300
+  },
+  "source_basis": [
+    "reading/shared-register-and-prx-interpretation-20261015.md",
+    "development/proposed-argument-reader-and-visual-plan-20261015.md",
+    "reading/primary-foundations-passage-interpretation-20261015.md"
+  ],
+  "environment": {
+    "python": "3.12.3",
+    "matplotlib": "3.11.2"
+  },
+  "artifacts": [
+    {
+      "id": "shared-register-price-pdf",
+      "path": "/tmp/laplace-behaviour-fixtures-437xg1mq/runs/core-atlas-01/workspace/sources/behaviour-example/research_runs/run-5958977f72d23902.result.raw-illustrations/shared-register-price.pdf",
+      "kind": "figure",
+      "sha256": "557f86ee960da48dbd4376d067222255080a6607cd51742e721c522194dfd3b9"
+    },
+    {
+      "id": "shared-register-price-svg",
+      "path": "/tmp/laplace-behaviour-fixtures-437xg1mq/runs/core-atlas-01/workspace/sources/behaviour-example/research_runs/run-5958977f72d23902.result.raw-illustrations/shared-register-price.svg",
+      "kind": "figure",
+      "sha256": "539c4b0e8c14ce8b915460ea14875ddc4a18e2e95accd7f83743cf82ec77934e"
+    },
+    {
+      "id": "shared-register-price-png",
+      "path": "/tmp/laplace-behaviour-fixtures-437xg1mq/runs/core-atlas-01/workspace/sources/behaviour-example/research_runs/run-5958977f72d23902.result.raw-illustrations/shared-register-price.png",
+      "kind": "figure",
+      "sha256": "fc0cd66d0c3d30be918b899bc6997540fe1ad622cb9dcaa0732de6280d548675"
+    },
+    {
+      "id": "shared-register-price-data",
+      "path": "/tmp/laplace-behaviour-fixtures-437xg1mq/runs/core-atlas-01/workspace/sources/behaviour-example/research_runs/run-5958977f72d23902.result.raw-illustrations/shared-register-price.csv",
+      "kind": "data",
+      "sha256": "8c00092b4c8cbcd69b13269aff5673cbd78b81bffff164dc0a0a0f5388790225"
+    },
+    {
+      "id": "retention-trajectories-pdf",
+      "path": "/tmp/laplace-behaviour-fixtures-437xg1mq/runs/core-atlas-01/workspace/sources/behaviour-example/research_runs/run-5958977f72d23902.result.raw-illustrations/retention-trajectories.pdf",
+      "kind": "figure",
+      "sha256": "8e71ef345c9dfca9c2c5b16695cb051e2508a608ba7fb04e52961957a31b3f10"
+    },
+    {
+      "id": "retention-trajectories-svg",
+      "path": "/tmp/laplace-behaviour-fixtures-437xg1mq/runs/core-atlas-01/workspace/sources/behaviour-example/research_runs/run-5958977f72d23902.result.raw-illustrations/retention-trajectories.svg",
+      "kind": "figure",
+      "sha256": "04afad78dfb498bda4596feabdfd1105a39c029314ce97aa87216f35df382717"
+    },
+    {
+      "id": "retention-trajectories-png",
+      "path": "/tmp/laplace-behaviour-fixtures-437xg1mq/runs/core-atlas-01/workspace/sources/behaviour-example/research_runs/run-5958977f72d23902.result.raw-illustrations/retention-trajectories.png",
+      "kind": "figure",
+      "sha256": "3d6b8876f8d39205ef63691499ee2f709c99abd0e5c4112ae66b6cd6f3fa5243"
+    },
+    {
+      "id": "retention-trajectories-data",
+      "path": "/tmp/laplace-behaviour-fixtures-437xg1mq/runs/core-atlas-01/workspace/sources/behaviour-example/research_runs/run-5958977f72d23902.result.raw-illustrations/retention-trajectories.csv",
+      "kind": "data",
+      "sha256": "ac028d56453f1a64b52071ccfa818f9b5cd3a41a5d48ded297a724e21244c6d9"
+    },
+    {
+      "id": "global-local-feedback-pdf",
+      "path": "/tmp/laplace-behaviour-fixtures-437xg1mq/runs/core-atlas-01/workspace/sources/behaviour-example/research_runs/run-5958977f72d23902.result.raw-illustrations/global-local-feedback.pdf",
+      "kind": "figure",
+      "sha256": "a403550facf3045ae9ca8275045df15e172718cd763676601c8ff6a597731e78"
+    },
+    {
+      "id": "global-local-feedback-svg",
+      "path": "/tmp/laplace-behaviour-fixtures-437xg1mq/runs/core-atlas-01/workspace/sources/behaviour-example/research_runs/run-5958977f72d23902.result.raw-illustrations/global-local-feedback.svg",
+      "kind": "figure",
+      "sha256": "11dad09f048ec05da34b7198decb7dfc266f585c13ba3f8ee4903096f44e43fd"
+    },
+    {
+      "id": "global-local-feedback-png",
+      "path": "/tmp/laplace-behaviour-fixtures-437xg1mq/runs/core-atlas-01/workspace/sources/behaviour-example/research_runs/run-5958977f72d23902.result.raw-illustrations/global-local-feedback.png",
+      "kind": "figure",
+      "sha256": "cdafe1db211872af0b83066a1d4bf5e16972e091b07ec7984807638633658b89"
+    },
+    {
+      "id": "global-local-feedback-data",
+      "path": "/tmp/laplace-behaviour-fixtures-437xg1mq/runs/core-atlas-01/workspace/sources/behaviour-example/research_runs/run-5958977f72d23902.result.raw-illustrations/global-local-feedback.csv",
+      "kind": "data",
+      "sha256": "568fcf74588da568bd9f99f62ac5fc9ca3a013a345eb4b5a1e7827457d2452fe"
+    }
+  ]
+}

@@ -1,0 +1,2031 @@
+{
+ "project": "book",
+ "outline": {
+  "schema_version": "laplace.source-outline/2",
+  "project": "book",
+  "status": "AVAILABLE",
+  "selected_source": {
+   "root": "synthetics papers/book/manuscript/Fixture-Book.tex",
+   "manuscript_dir": "synthetics papers/book/manuscript",
+   "edition": "draft",
+   "status": "resolved",
+   "read_only": false,
+   "selection_identity": "sha256:f35f374570dbc183d4aec769c50fb55b0860b11e94183950c18db51bd357ed65"
+  },
+  "as_of": "sha256:b3c14e1217ba6182d5c353a6fab4f8188df897808244d77227863a94dbcf32c8",
+  "headings": {
+   "items": [
+    {
+     "title": "First",
+     "kind": "chapter",
+     "file": "synthetics papers/book/manuscript/chapters/chapter-01.tex",
+     "line": 1,
+     "line_end": 4,
+     "heading_line_end": 1,
+     "label": null,
+     "heading_before": "\\chapter{First}",
+     "source_order": 1,
+     "shared_occurrences": 1
+    },
+    {
+     "title": "First child",
+     "kind": "section",
+     "file": "synthetics papers/book/manuscript/chapters/chapter-01.tex",
+     "line": 3,
+     "line_end": 4,
+     "heading_line_end": 3,
+     "label": null,
+     "heading_before": "\\section{First child}",
+     "source_order": 1,
+     "shared_occurrences": 1
+    },
+    {
+     "title": "Second",
+     "kind": "chapter",
+     "file": "synthetics papers/book/manuscript/chapters/chapter-01.tex",
+     "line": 5,
+     "line_end": 6,
+     "heading_line_end": 5,
+     "label": null,
+     "heading_before": "\\chapter{Second}",
+     "source_order": 1,
+     "shared_occurrences": 1
+    }
+   ],
+   "total": 3,
+   "offset": 0,
+   "limit": 80,
+   "omitted_before": 0,
+   "omitted_after": 0
+  },
+  "diagnostics": [],
+  "sources": {
+   "synthetics papers/book/manuscript/chapters/chapter-01.tex": {
+    "source_digest": "sha256:a3f9c9c474d5c0b6ae33ea349ddf6d0f11be41f3347f7a130309571f5aa47bce",
+    "source_orders": [
+     1
+    ],
+    "shared_occurrences": 1
+   }
+  },
+  "read_routes": {
+   "source_read": {
+    "operation": "source",
+    "payload": {
+     "files": [
+      "<file>"
+     ],
+     "line_start": "<line>",
+     "line_end": "<line_end>"
+    },
+    "http": {
+     "method": "GET",
+     "route": "/projection/tex",
+     "query": {
+      "corpus": "book",
+      "file": "<file>",
+      "view": "source"
+     }
+    }
+   },
+   "structure_read": {
+    "operation": "structure",
+    "payload": {
+     "view": "detail",
+     "files": [
+      "<file>"
+     ],
+     "line_start": "<line>",
+     "line_end": "<line_end>"
+    },
+    "http": {
+     "method": "GET",
+     "route": "/work/structure",
+     "query": {
+      "project": "book",
+      "view": "detail",
+      "files": [
+       "<file>"
+      ],
+      "line_start": "<line>",
+      "line_end": "<line_end>"
+     }
+    }
+   }
+  }
+ },
+ "summary_before": {
+  "schema_version": "laplace.project-structure-summary/2",
+  "project": "book",
+  "status": "CURRENT",
+  "eligible_for_authoring": null,
+  "availability": {
+   "reader_plan": "AVAILABLE"
+  },
+  "as_of": "sha256:dd0326cfe0af2a78be7fb785d2c4351005b5bf7763c4a0eddc4764f211d758fa",
+  "read_cut_scope": "Canonical topology/source correspondence; not the full plan-state mutation guard",
+  "identities": {
+   "plan-file:book": "rev:plan-file:book:68e00a458ef81d5b1608e3e9959eea825eb4248324ea4345d4795dddcb8bbcbd"
+  },
+  "authority": {
+   "plan_path": "synthetics papers/book/manuscript/projection_plan.json",
+   "plan_revision": "sha256:68e00a458ef81d5b1608e3e9959eea825eb4248324ea4345d4795dddcb8bbcbd",
+   "conceptric_revision": null,
+   "source_revision": "ec39e3cc81c7317c551fd654cd100571f43b76f57ee8d6103a21e0f192b568f5"
+  },
+  "selected_source": {
+   "project": "book",
+   "root": "synthetics papers/book/manuscript/Fixture-Book.tex",
+   "manuscript_dir": "synthetics papers/book/manuscript",
+   "storage_dir": "synthetics papers/book/manuscript",
+   "edition": "draft",
+   "status": "resolved",
+   "selection": "manifest",
+   "revision": "ec39e3cc81c7317c551fd654cd100571f43b76f57ee8d6103a21e0f192b568f5",
+   "candidates": [],
+   "foreign": false,
+   "read_only": false,
+   "diagnostics": [],
+   "selection_identity": "sha256:f35f374570dbc183d4aec769c50fb55b0860b11e94183950c18db51bd357ed65"
+  },
+  "support_assessment": "NOT_ASSESSED; descend to exact detail for scientific/evidence currentness",
+  "sections": {
+   "items": [
+    {
+     "id": "first",
+     "title": "First",
+     "kind": "chapter",
+     "parent_id": null,
+     "number": "1",
+     "order": 0,
+     "job": "open",
+     "collection": null,
+     "precision": "FILE_ONLY",
+     "binding_status": "MATCHED",
+     "member_count": 1,
+     "detail_read": {
+      "operation": "structure",
+      "payload": {
+       "view": "detail",
+       "section_ids": [
+        "first"
+       ]
+      }
+     }
+    },
+    {
+     "id": "first-child",
+     "title": "First child",
+     "kind": "section",
+     "parent_id": "first",
+     "number": "1.1",
+     "order": 1,
+     "job": "support",
+     "collection": null,
+     "precision": "FILE_ONLY",
+     "binding_status": "MATCHED",
+     "member_count": 0,
+     "detail_read": {
+      "operation": "structure",
+      "payload": {
+       "view": "detail",
+       "section_ids": [
+        "first-child"
+       ]
+      }
+     }
+    },
+    {
+     "id": "second",
+     "title": "Second",
+     "kind": "chapter",
+     "parent_id": null,
+     "number": "2",
+     "order": 2,
+     "job": "close",
+     "collection": null,
+     "precision": "FILE_ONLY",
+     "binding_status": "MATCHED",
+     "member_count": 0,
+     "detail_read": {
+      "operation": "structure",
+      "payload": {
+       "view": "detail",
+       "section_ids": [
+        "second"
+       ]
+      }
+     }
+    }
+   ],
+   "offset": 0,
+   "limit": 40,
+   "total": 3,
+   "omitted_before": 0,
+   "omitted_after": 0
+  },
+  "logical_objects": {
+   "items": [
+    {
+     "id": "concept:first",
+     "label": "concept:first",
+     "label_basis": "address",
+     "status": "NOT_ASSESSED",
+     "placed": true,
+     "detail_read": {
+      "operation": "concept",
+      "payload": {
+       "node": "concept:first"
+      }
+     }
+    }
+   ],
+   "offset": 0,
+   "limit": 40,
+   "total": 1,
+   "omitted_before": 0,
+   "omitted_after": 0
+  },
+  "gaps": {
+   "items": [],
+   "offset": 0,
+   "limit": 40,
+   "total": 0,
+   "omitted_before": 0,
+   "omitted_after": 0,
+   "scope": "Structural gaps only; scientific gaps not assessed"
+  },
+  "full_guard_read": {
+   "operation": "structure",
+   "payload": {
+    "view": "full"
+   }
+  }
+ },
+ "bind_result": {
+  "ok": true,
+  "operation": "bind_source",
+  "status": "CURRENT",
+  "changed": true,
+  "link_established": true,
+  "binding": {
+   "section_id": "first",
+   "source_files": [
+    "synthetics papers/book/manuscript/chapters/chapter-01.tex"
+   ],
+   "status": "MATCHED",
+   "precision": "EXACT_HEADING",
+   "title_status": "MATCHED",
+   "plan_title": "First",
+   "source_titles": [
+    "First"
+   ],
+   "source_label": null,
+   "heading": {
+    "file": "synthetics papers/book/manuscript/chapters/chapter-01.tex",
+    "line": 1,
+    "line_end": 4,
+    "heading_line_end": 1,
+    "title": "First",
+    "kind": "chapter",
+    "label": null,
+    "heading_before": "\\chapter{First}",
+    "source_order": 1,
+    "source_orders": [
+     1
+    ]
+   },
+   "basis": {
+    "synthetics papers/book/manuscript/chapters/chapter-01.tex": {
+     "selection_identity": "sha256:f35f374570dbc183d4aec769c50fb55b0860b11e94183950c18db51bd357ed65",
+     "source_digest": "sha256:a3f9c9c474d5c0b6ae33ea349ddf6d0f11be41f3347f7a130309571f5aa47bce"
+    }
+   },
+   "mapping": "explicit-source-anchor",
+   "selected_root": "synthetics papers/book/manuscript/Fixture-Book.tex",
+   "source_reads": [
+    {
+     "operation": "source",
+     "payload": {
+      "files": [
+       "synthetics papers/book/manuscript/chapters/chapter-01.tex"
+      ],
+      "line_start": 1,
+      "line_end": 4
+     },
+     "http": {
+      "method": "GET",
+      "route": "/projection/tex",
+      "query": {
+       "corpus": "book",
+       "file": "synthetics papers/book/manuscript/chapters/chapter-01.tex",
+       "view": "source"
+      }
+     }
+    }
+   ],
+   "clearing_read": {
+    "operation": "structure",
+    "payload": {
+     "view": "outline"
+    }
+   }
+  },
+  "affected": {
+   "identities": [
+    "first"
+   ]
+  },
+  "detail_read": {
+   "operation": "structure",
+   "payload": {
+    "view": "detail",
+    "section_ids": [
+     "first"
+    ]
+   },
+   "http": {
+    "method": "GET",
+    "route": "/work/structure",
+    "query": {
+     "project": "book",
+     "view": "detail",
+     "section_ids": [
+      "first"
+     ]
+    }
+   }
+  },
+  "owned_changes": {
+   "schema_version": "laplace.owner-mutation/1",
+   "files": [
+    {
+     "scope": "repository",
+     "path": "synthetics papers/book/manuscript/projection_plan.json",
+     "before_sha256": "sha256:68e00a458ef81d5b1608e3e9959eea825eb4248324ea4345d4795dddcb8bbcbd",
+     "after_sha256": "sha256:291f51f47b4518f819f5fe4551235bb1fcaade19349369a9cb8f93a2ce48ffd2",
+     "observed_after_sha256": "sha256:291f51f47b4518f819f5fe4551235bb1fcaade19349369a9cb8f93a2ce48ffd2"
+    }
+   ],
+   "objects": [],
+   "rewire_records": [],
+   "views": [
+    "structure"
+   ]
+  }
+ },
+ "bind_payload": {
+  "operation": "bind_source",
+  "section_id": "first",
+  "file": "synthetics papers/book/manuscript/chapters/chapter-01.tex",
+  "line": 1,
+  "heading_before": "\\chapter{First}",
+  "expected_plan_revision": "sha256:68e00a458ef81d5b1608e3e9959eea825eb4248324ea4345d4795dddcb8bbcbd",
+  "expected_selection": "sha256:f35f374570dbc183d4aec769c50fb55b0860b11e94183950c18db51bd357ed65",
+  "expected_source_digest": "sha256:a3f9c9c474d5c0b6ae33ea349ddf6d0f11be41f3347f7a130309571f5aa47bce"
+ },
+ "summary_after": {
+  "schema_version": "laplace.project-structure-summary/2",
+  "project": "book",
+  "status": "CURRENT",
+  "eligible_for_authoring": null,
+  "availability": {
+   "reader_plan": "AVAILABLE"
+  },
+  "as_of": "sha256:16fa38b7a2ab363dee245a0350a0d6e7bb2035e3682cee6869e1cb7f9d3e6be6",
+  "read_cut_scope": "Canonical topology/source correspondence; not the full plan-state mutation guard",
+  "identities": {
+   "plan-file:book": "rev:plan-file:book:291f51f47b4518f819f5fe4551235bb1fcaade19349369a9cb8f93a2ce48ffd2"
+  },
+  "authority": {
+   "plan_path": "synthetics papers/book/manuscript/projection_plan.json",
+   "plan_revision": "sha256:291f51f47b4518f819f5fe4551235bb1fcaade19349369a9cb8f93a2ce48ffd2",
+   "conceptric_revision": null,
+   "source_revision": "ec39e3cc81c7317c551fd654cd100571f43b76f57ee8d6103a21e0f192b568f5"
+  },
+  "selected_source": {
+   "project": "book",
+   "root": "synthetics papers/book/manuscript/Fixture-Book.tex",
+   "manuscript_dir": "synthetics papers/book/manuscript",
+   "storage_dir": "synthetics papers/book/manuscript",
+   "edition": "draft",
+   "status": "resolved",
+   "selection": "manifest",
+   "revision": "ec39e3cc81c7317c551fd654cd100571f43b76f57ee8d6103a21e0f192b568f5",
+   "candidates": [],
+   "foreign": false,
+   "read_only": false,
+   "diagnostics": [],
+   "selection_identity": "sha256:f35f374570dbc183d4aec769c50fb55b0860b11e94183950c18db51bd357ed65"
+  },
+  "support_assessment": "NOT_ASSESSED; descend to exact detail for scientific/evidence currentness",
+  "sections": {
+   "items": [
+    {
+     "id": "first",
+     "title": "First",
+     "kind": "chapter",
+     "parent_id": null,
+     "number": "1",
+     "order": 0,
+     "job": "open",
+     "collection": null,
+     "precision": "EXACT_HEADING",
+     "binding_status": "MATCHED",
+     "member_count": 1,
+     "detail_read": {
+      "operation": "structure",
+      "payload": {
+       "view": "detail",
+       "section_ids": [
+        "first"
+       ]
+      }
+     }
+    },
+    {
+     "id": "first-child",
+     "title": "First child",
+     "kind": "section",
+     "parent_id": "first",
+     "number": "1.1",
+     "order": 1,
+     "job": "support",
+     "collection": null,
+     "precision": "FILE_ONLY",
+     "binding_status": "MATCHED",
+     "member_count": 0,
+     "detail_read": {
+      "operation": "structure",
+      "payload": {
+       "view": "detail",
+       "section_ids": [
+        "first-child"
+       ]
+      }
+     }
+    },
+    {
+     "id": "second",
+     "title": "Second",
+     "kind": "chapter",
+     "parent_id": null,
+     "number": "2",
+     "order": 2,
+     "job": "close",
+     "collection": null,
+     "precision": "FILE_ONLY",
+     "binding_status": "MATCHED",
+     "member_count": 0,
+     "detail_read": {
+      "operation": "structure",
+      "payload": {
+       "view": "detail",
+       "section_ids": [
+        "second"
+       ]
+      }
+     }
+    }
+   ],
+   "offset": 0,
+   "limit": 40,
+   "total": 3,
+   "omitted_before": 0,
+   "omitted_after": 0
+  },
+  "logical_objects": {
+   "items": [
+    {
+     "id": "concept:first",
+     "label": "concept:first",
+     "label_basis": "address",
+     "status": "NOT_ASSESSED",
+     "placed": true,
+     "detail_read": {
+      "operation": "concept",
+      "payload": {
+       "node": "concept:first"
+      }
+     }
+    }
+   ],
+   "offset": 0,
+   "limit": 40,
+   "total": 1,
+   "omitted_before": 0,
+   "omitted_after": 0
+  },
+  "gaps": {
+   "items": [],
+   "offset": 0,
+   "limit": 40,
+   "total": 0,
+   "omitted_before": 0,
+   "omitted_after": 0,
+   "scope": "Structural gaps only; scientific gaps not assessed"
+  },
+  "full_guard_read": {
+   "operation": "structure",
+   "payload": {
+    "view": "full"
+   }
+  }
+ },
+ "detail": {
+  "schema_version": "laplace.project-structure-context/1",
+  "project": "book",
+  "revision": "sha256:5cdd7ff81ac5f337dcd65be0d263f315355446bc22b6cd047b45007cb54b1116",
+  "structure_revision": "sha256:59b30501f4dec80099c38d8e97679d345002805f33186bf72f7042a0e781def9",
+  "eligible_for_authoring": true,
+  "authority": {
+   "plan_path": "synthetics papers/book/manuscript/projection_plan.json",
+   "plan_revision": "sha256:291f51f47b4518f819f5fe4551235bb1fcaade19349369a9cb8f93a2ce48ffd2",
+   "conceptric_revision": "sha256:ee6597c03f4d8c348ef5d7d83f7073ae18878e2b73c2f581000e960acc7a886f",
+   "research_revision": "sha256:4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+   "source_revision": "ec39e3cc81c7317c551fd654cd100571f43b76f57ee8d6103a21e0f192b568f5"
+  },
+  "selected_source": {
+   "root": "synthetics papers/book/manuscript/Fixture-Book.tex",
+   "manuscript_dir": "synthetics papers/book/manuscript",
+   "edition": "draft",
+   "status": "resolved",
+   "revision": "ec39e3cc81c7317c551fd654cd100571f43b76f57ee8d6103a21e0f192b568f5",
+   "read_only": false,
+   "selection_identity": "sha256:f35f374570dbc183d4aec769c50fb55b0860b11e94183950c18db51bd357ed65"
+  },
+  "sections": [
+   {
+    "id": "first",
+    "title": "First",
+    "kind": "chapter",
+    "parent_id": null,
+    "depth": 0,
+    "number": "1",
+    "ancestor_ids": [],
+    "child_ids": [
+     "first-child"
+    ],
+    "order": 0,
+    "job": "open",
+    "notes": "",
+    "refs": [],
+    "node_ids": [
+     "concept:first"
+    ],
+    "nodes": [
+     {
+      "id": "concept:first",
+      "label": "concept:first",
+      "missing": true,
+      "kind": null,
+      "status": "MISSING",
+      "summary": "",
+      "result_bindings": []
+     }
+    ],
+    "beat_ids": [],
+    "beats": [],
+    "source": {
+     "section_id": "first",
+     "source_files": [
+      "synthetics papers/book/manuscript/chapters/chapter-01.tex"
+     ],
+     "status": "MATCHED",
+     "precision": "EXACT_HEADING",
+     "title_status": "MATCHED",
+     "plan_title": "First",
+     "source_titles": [
+      "First"
+     ],
+     "source_label": null,
+     "heading": {
+      "file": "synthetics papers/book/manuscript/chapters/chapter-01.tex",
+      "line": 1,
+      "line_end": 4,
+      "heading_line_end": 1,
+      "title": "First",
+      "kind": "chapter",
+      "label": null,
+      "heading_before": "\\chapter{First}",
+      "source_order": 1,
+      "source_orders": [
+       1
+      ]
+     },
+     "basis": {
+      "synthetics papers/book/manuscript/chapters/chapter-01.tex": {
+       "selection_identity": "sha256:f35f374570dbc183d4aec769c50fb55b0860b11e94183950c18db51bd357ed65",
+       "source_digest": "sha256:a3f9c9c474d5c0b6ae33ea349ddf6d0f11be41f3347f7a130309571f5aa47bce"
+      }
+     },
+     "mapping": "explicit-source-anchor",
+     "selected_root": "synthetics papers/book/manuscript/Fixture-Book.tex",
+     "source_reads": [
+      {
+       "operation": "source",
+       "payload": {
+        "files": [
+         "synthetics papers/book/manuscript/chapters/chapter-01.tex"
+        ],
+        "line_start": 1,
+        "line_end": 4
+       },
+       "http": {
+        "method": "GET",
+        "route": "/projection/tex",
+        "query": {
+         "corpus": "book",
+         "file": "synthetics papers/book/manuscript/chapters/chapter-01.tex",
+         "view": "source"
+        }
+       }
+      }
+     ],
+     "clearing_read": {
+      "operation": "structure",
+      "payload": {
+       "view": "outline"
+      }
+     }
+    },
+    "clearing_action": {
+     "operation": "structure_change",
+     "payload": {
+      "operation": "bind_source",
+      "section_id": "first",
+      "expected_plan_revision": "sha256:291f51f47b4518f819f5fe4551235bb1fcaade19349369a9cb8f93a2ce48ffd2"
+     },
+     "http": {
+      "method": "POST",
+      "route": "/work/structure/change"
+     },
+     "choose_from": {
+      "operation": "structure",
+      "payload": {
+       "view": "outline"
+      },
+      "http": {
+       "method": "GET",
+       "route": "/work/structure",
+       "query": {
+        "project": "book",
+        "view": "outline"
+       }
+      }
+     },
+     "required_occurrence_fields": [
+      "file",
+      "line",
+      "heading_before",
+      "expected_selection",
+      "expected_source_digest"
+     ]
+    },
+    "source_support": [
+     {
+      "node": "concept:first",
+      "meaning_revision": "sha256:b01ad77de576569ba992bc4ade24fc71cb597672b8dc44a28b7d3baa56b62cba",
+      "citation_assessment": "CANONICAL_SECTIONS",
+      "sources": [],
+      "own_evidence": [],
+      "authored_proof": false,
+      "documented_proof": {
+       "status": "NOT_RECORDED",
+       "source": null
+      },
+      "declared_role": null,
+      "gaps": [],
+      "qualification": "AUTHORED_BASIS",
+      "independent_verification": "NOT_ASSERTED",
+      "engineering_support": {
+       "status": "UNDECLARED",
+       "bindings": [],
+       "reason": "No engineering support has been adopted",
+       "read_metrics": {}
+      }
+     }
+    ],
+    "evidence": []
+   }
+  ],
+  "boundaries": [
+   {
+    "id": "first-child",
+    "title": "First child",
+    "kind": "section",
+    "parent_id": "first",
+    "depth": 1,
+    "number": "1.1",
+    "ancestor_ids": [
+     "first"
+    ],
+    "child_ids": [],
+    "order": 1,
+    "job": "support",
+    "notes": "",
+    "refs": [],
+    "node_ids": [],
+    "nodes": [],
+    "beat_ids": [],
+    "beats": [],
+    "source": {
+     "section_id": "first-child",
+     "source_files": [
+      "synthetics papers/book/manuscript/chapters/chapter-01.tex"
+     ],
+     "status": "MATCHED",
+     "precision": "FILE_ONLY",
+     "title_status": "MATCHED",
+     "plan_title": "First child",
+     "source_titles": [
+      "First child"
+     ],
+     "source_label": null,
+     "heading": {
+      "file": "synthetics papers/book/manuscript/chapters/chapter-01.tex",
+      "line": 3,
+      "line_end": 4,
+      "heading_line_end": 3,
+      "title": "First child",
+      "kind": "section",
+      "label": null,
+      "heading_before": "\\section{First child}",
+      "source_order": 1,
+      "source_orders": [
+       1
+      ]
+     },
+     "basis": {
+      "synthetics papers/book/manuscript/chapters/chapter-01.tex": {
+       "selection_identity": "sha256:f35f374570dbc183d4aec769c50fb55b0860b11e94183950c18db51bd357ed65",
+       "source_digest": "sha256:a3f9c9c474d5c0b6ae33ea349ddf6d0f11be41f3347f7a130309571f5aa47bce"
+      }
+     },
+     "mapping": "explicit-source-file",
+     "selected_root": "synthetics papers/book/manuscript/Fixture-Book.tex",
+     "source_reads": [
+      {
+       "operation": "source",
+       "payload": {
+        "files": [
+         "synthetics papers/book/manuscript/chapters/chapter-01.tex"
+        ]
+       },
+       "http": {
+        "method": "GET",
+        "route": "/projection/tex",
+        "query": {
+         "corpus": "book",
+         "file": "synthetics papers/book/manuscript/chapters/chapter-01.tex",
+         "view": "source"
+        }
+       }
+      }
+     ],
+     "clearing_read": {
+      "operation": "structure",
+      "payload": {
+       "view": "outline"
+      }
+     }
+    },
+    "clearing_action": {
+     "operation": "structure_change",
+     "payload": {
+      "operation": "bind_source",
+      "section_id": "first-child",
+      "expected_plan_revision": "sha256:291f51f47b4518f819f5fe4551235bb1fcaade19349369a9cb8f93a2ce48ffd2"
+     },
+     "http": {
+      "method": "POST",
+      "route": "/work/structure/change"
+     },
+     "choose_from": {
+      "operation": "structure",
+      "payload": {
+       "view": "outline"
+      },
+      "http": {
+       "method": "GET",
+       "route": "/work/structure",
+       "query": {
+        "project": "book",
+        "view": "outline"
+       }
+      }
+     },
+     "required_occurrence_fields": [
+      "file",
+      "line",
+      "heading_before",
+      "expected_selection",
+      "expected_source_digest"
+     ]
+    },
+    "source_support": [],
+    "evidence": []
+   }
+  ],
+  "ancestors": [],
+  "children": [
+   {
+    "id": "first-child",
+    "title": "First child",
+    "kind": "section",
+    "parent_id": "first",
+    "number": "1.1",
+    "job": "support",
+    "child_ids": []
+   }
+  ],
+  "outline": [
+   {
+    "id": "first",
+    "title": "First",
+    "kind": "chapter",
+    "parent_id": null,
+    "number": "1",
+    "job": "open",
+    "child_ids": [
+     "first-child"
+    ]
+   },
+   {
+    "id": "second",
+    "title": "Second",
+    "kind": "chapter",
+    "parent_id": null,
+    "number": "2",
+    "job": "close",
+    "child_ids": []
+   }
+  ],
+  "focus": null,
+  "edges": [],
+  "evidence": [],
+  "gaps": [
+   {
+    "kind": "node",
+    "id": "concept:first",
+    "reason": "plan membership names an unavailable conceptric node"
+   }
+  ],
+  "selected_node_ids": [],
+  "selected_nodes_total": 0,
+  "selected_nodes": [],
+  "selected_nodes_omitted": 0,
+  "selected_node_read_routes": {
+   "concept": {
+    "operation": "concept",
+    "payload": {
+     "node": "<selected_node_id>"
+    }
+   },
+   "history": {
+    "operation": "concept_history",
+    "payload": {
+     "node": "<selected_node_id>"
+    }
+   },
+   "tree": {
+    "operation": "concept_tree",
+    "payload": {
+     "node": "<selected_node_id>"
+    }
+   }
+  },
+  "evidence_total": 0,
+  "evidence_omitted": 0,
+  "gaps_total": 1,
+  "gaps_omitted": 0,
+  "scoped_history": [],
+  "scoped_history_omitted": 0,
+  "direct_dependencies": [],
+  "scope_diagnostics": [],
+  "source_support": [
+   {
+    "node": "concept:first",
+    "meaning_revision": "sha256:b01ad77de576569ba992bc4ade24fc71cb597672b8dc44a28b7d3baa56b62cba",
+    "citation_assessment": "CANONICAL_SECTIONS",
+    "sources": [],
+    "own_evidence": [],
+    "authored_proof": false,
+    "documented_proof": {
+     "status": "NOT_RECORDED",
+     "source": null
+    },
+    "declared_role": null,
+    "gaps": [],
+    "qualification": "AUTHORED_BASIS",
+    "independent_verification": "NOT_ASSERTED",
+    "engineering_support": {
+     "status": "UNDECLARED",
+     "bindings": [],
+     "reason": "No engineering support has been adopted",
+     "read_metrics": {}
+    }
+   }
+  ],
+  "source_support_total": 1,
+  "source_support_omitted": 0
+ },
+ "help": {
+  "schema_version": "laplace.writing-operating-brief/1",
+  "digest": "sha256:2a4cae240de33d648995915c29b66178f2175344a24eceb61ddcf3882100e80b",
+  "requested_operation": "structure_change",
+  "action": {
+   "operation": "structure_change",
+   "permitted": true,
+   "verb": "bind",
+   "concept": "plan-section@section",
+   "altitude": "section",
+   "does": "Change canonical reader order through initialize, plan, spine, reconcile or bind_results.",
+   "effects": [
+    "canonical reader plan or explicit concept result binding"
+   ],
+   "handler": "src/laplace/writing_tools.py:578",
+   "line_numbers": "@706a8204 names the historical commit; @sha256 names the serving source file. `handler` is resolved in this tree.",
+   "acts": [
+    "bind claim-position@section <- structure_change operation=plan op.kind=set-serves",
+    "bind reference@section <- structure_change operation=plan op.kind=set-refs",
+    "change plan-section@section <- structure_change operation=plan op.kind=edit-job [shim: old name only, retire by 2026-11-01 when tools/writing_verbs/shim_retirement.py reports RETIRABLE]",
+    "change plan-section@section <- structure_change operation=plan op.kind=edit-notes [shim: old name only, retire by 2026-11-01 when tools/writing_verbs/shim_retirement.py reports RETIRABLE]",
+    "change plan-section@section <- structure_change operation=plan op.kind=retitle [shim: old name only, retire by 2026-11-01 when tools/writing_verbs/shim_retirement.py reports RETIRABLE]",
+    "change plan-section@section <- structure_change operation=plan op.kind=set-meta [shim: old name only, retire by 2026-11-01 when tools/writing_verbs/shim_retirement.py reports RETIRABLE]",
+    "change plan-section@section <- structure_change operation=plan op.kind=toggle-beat [shim: old name only, retire by 2026-11-01 when tools/writing_verbs/shim_retirement.py reports RETIRABLE]",
+    "change plan@plan <- structure_change operation=plan op.kind=set-outline",
+    "create plan-section@section <- structure_change operation=plan op.kind=add-section",
+    "create plan-section@section <- structure_change operation=plan op.kind=restore-section [shim: old name only, retire by 2026-11-01 when tools/writing_verbs/shim_retirement.py reports RETIRABLE]",
+    "delete claim-position@section <- structure_change operation=plan op.kind=remove-node",
+    "delete plan-section@section <- structure_change operation=plan op.kind=remove-section",
+    "delete spine-position@plan <- structure_change operation=spine op.kind=unset-spine [shim: old name only, retire by 2026-11-01 when tools/writing_verbs/shim_retirement.py reports RETIRABLE]",
+    "move claim-position@section <- structure_change operation=plan op.kind=move-node",
+    "move claim-position@section <- structure_change operation=plan op.kind=reorder-nodes [shim: old name only, retire by 2026-11-01 when tools/writing_verbs/shim_retirement.py reports RETIRABLE]",
+    "move plan-section@section <- structure_change operation=plan op.kind=reorder-appendices",
+    "move plan-section@section <- structure_change operation=plan op.kind=reorder-sections [shim: old name only, retire by 2026-11-01 when tools/writing_verbs/shim_retirement.py reports RETIRABLE]",
+    "move spine-position@plan <- structure_change operation=spine op.kind=reorder-spine [shim: old name only, retire by 2026-11-01 when tools/writing_verbs/shim_retirement.py reports RETIRABLE]",
+    "place claim-position@section <- structure_change operation=plan op.kind=add-node",
+    "place claim-position@section <- structure_change operation=plan op.kind=set-nodes [shim: old name only, retire by 2026-11-01 when tools/writing_verbs/shim_retirement.py reports RETIRABLE]",
+    "place spine-position@plan <- structure_change operation=spine op.kind=set-narrative [shim: old name only, retire by 2026-11-01 when tools/writing_verbs/shim_retirement.py reports RETIRABLE]",
+    "bind plan-section@section <- structure_change operation=bind_source",
+    "bind result@claim <- structure_change operation=bind_results",
+    "change plan-section@section <- structure_change operation=plan",
+    "create plan@plan <- structure_change operation=initialize",
+    "move spine-position@plan <- structure_change operation=spine",
+    "run plan@plan <- structure_change operation=reconcile"
+   ],
+   "act_chosen": "first-row-of-mapping.csv (the owner requires its discriminator)",
+   "expected": [
+    {
+     "home_kind": "concept-network",
+     "optional": false,
+     "asked_for_as": [
+      "expected_concept_revision"
+     ],
+     "read": "concept {node} -> revision",
+     "home": "concept-network:book",
+     "token": "rev:concept-network:book:53cb828a1964eaa2e6b8ca288d462bc197f188af5a3b12583c9bd724e7626783"
+    },
+    {
+     "home_kind": "plan",
+     "optional": false,
+     "asked_for_as": [
+      "expected_revision"
+     ],
+     "read": "structure {} -> revision",
+     "home": "plan:book",
+     "token": "rev:plan:book:59b30501f4dec80099c38d8e97679d345002805f33186bf72f7042a0e781def9"
+    },
+    {
+     "home_kind": "selected-edition",
+     "optional": false,
+     "asked_for_as": [
+      "expected_source_revision"
+     ],
+     "read": "source {} -> document.revision",
+     "home": "selected-edition:book",
+     "token": "rev:selected-edition:book:ec39e3cc81c7317c551fd654cd100571f43b76f57ee8d6103a21e0f192b568f5"
+    }
+   ],
+   "input": {
+    "type": "object",
+    "required": [
+     "operation",
+     "section_id",
+     "file",
+     "line",
+     "heading_before",
+     "expected_selection",
+     "expected_source_digest"
+    ],
+    "properties": {
+     "project": {
+      "type": "string",
+      "minLength": 1
+     },
+     "operation": {
+      "const": "bind_source"
+     },
+     "section_id": {
+      "type": "string",
+      "minLength": 1
+     },
+     "file": {
+      "type": "string",
+      "minLength": 1
+     },
+     "line": {
+      "type": "integer",
+      "minimum": 1
+     },
+     "heading_before": {
+      "type": "string",
+      "minLength": 1
+     },
+     "expected_plan_revision": {
+      "type": "string",
+      "minLength": 1
+     },
+     "expected_selection": {
+      "type": "string",
+      "minLength": 1
+     },
+     "expected_source_digest": {
+      "type": "string",
+      "minLength": 1
+     },
+     "expected": {
+      "type": "array",
+      "items": {
+       "type": "string",
+       "minLength": 1
+      },
+      "description": "only tokens for homes accepted by this write; a read identity alone grants no write authority. Legacy guards take published scalar/content, not tokens"
+     }
+    },
+    "additionalProperties": false,
+    "allOf": [
+     {
+      "anyOf": [
+       {
+        "required": [
+         "expected"
+        ],
+        "properties": {
+         "expected": {
+          "minItems": 1
+         }
+        }
+       },
+       {
+        "required": [
+         "expected_plan_revision"
+        ]
+       }
+      ]
+     }
+    ]
+   },
+   "selected_variant": "bind_source",
+   "rules": [
+    {
+     "rule": "scope",
+     "says": "These operations do not create manuscript source headings;"
+    },
+    {
+     "rule": "shape",
+     "says": "use section_change for source edits."
+    },
+    {
+     "rule": "identity",
+     "says": "Read structure for expected_revision and selected_source.revision before initialize;",
+     "field": "expected_revision",
+     "home": "plan",
+     "read": "structure {} -> revision",
+     "enforced_at": "src/laplace/project_structure.py:308@706a8204"
+    },
+    {
+     "rule": "shape",
+     "says": "omit sections to use current selected-source headings",
+     "field": "sections"
+    },
+    {
+     "rule": "enum",
+     "says": "Choose the exact operation variant below;",
+     "field": "operation",
+     "one_of": [
+      "initialize",
+      "plan",
+      "spine",
+      "reconcile",
+      "bind_results"
+     ]
+    },
+    {
+     "rule": "enum",
+     "says": "operation is a string and plan/spine actions belong in op",
+     "field": "operation",
+     "one_of": [
+      "initialize",
+      "plan",
+      "spine",
+      "reconcile",
+      "bind_results"
+     ]
+    },
+    {
+     "rule": "state",
+     "says": "MIRROR_PENDING is incomplete: read its error and use reconcile after repairing the cause;"
+    },
+    {
+     "rule": "shape",
+     "says": "set-narrative requires a live spine member"
+    }
+   ],
+   "rules_enforced_at": "src/laplace/writing_tools.py:455@706a8204",
+   "example": {
+    "operation": "bind_source",
+    "section_id": "<section_id>",
+    "file": "<file>",
+    "line": 1,
+    "heading_before": "<heading_before>",
+    "expected_selection": "<expected_selection>",
+    "expected_source_digest": "<source-file digest: read source {files:[path]} -> sources[0].sha256>",
+    "expected_plan_revision": "<plan-file digest: read structure {} -> authority.plan_revision>"
+   },
+   "native": {
+    "available": false,
+    "why": "('bind', 'plan-section@section') is not one of the 114 declared pairs (plus 7 a lane declared); the concept exists but no audited work does THAT verb at it. Add it with declare_pair(verb, concept, bec"
+   }
+  }
+ },
+ "sections_before": [
+  {
+   "id": "first",
+   "title": "First",
+   "kind": "chapter",
+   "parent_id": null,
+   "number": "1",
+   "order": 0,
+   "job": "open",
+   "clearing_action": {
+    "operation": "structure_change",
+    "payload": {
+     "operation": "bind_source",
+     "section_id": "first",
+     "expected_plan_revision": "sha256:68e00a458ef81d5b1608e3e9959eea825eb4248324ea4345d4795dddcb8bbcbd"
+    },
+    "http": {
+     "method": "POST",
+     "route": "/work/structure/change"
+    },
+    "choose_from": {
+     "operation": "structure",
+     "payload": {
+      "view": "outline"
+     },
+     "http": {
+      "method": "GET",
+      "route": "/work/structure",
+      "query": {
+       "project": "book",
+       "view": "outline"
+      }
+     }
+    },
+    "required_occurrence_fields": [
+     "file",
+     "line",
+     "heading_before",
+     "expected_selection",
+     "expected_source_digest"
+    ]
+   },
+   "members": {
+    "items": [
+     {
+      "id": "concept:first",
+      "role": "node",
+      "order": 0,
+      "missing": false,
+      "detail_read": {
+       "operation": "concept",
+       "payload": {
+        "node": "concept:first"
+       }
+      }
+     }
+    ],
+    "offset": 0,
+    "limit": 40,
+    "total": 1,
+    "omitted_before": 0,
+    "omitted_after": 0
+   },
+   "source": {
+    "section_id": "first",
+    "source_files": [
+     "synthetics papers/book/manuscript/chapters/chapter-01.tex"
+    ],
+    "status": "MATCHED",
+    "precision": "FILE_ONLY",
+    "title_status": "MATCHED",
+    "plan_title": "First",
+    "source_titles": [
+     "First"
+    ],
+    "source_label": null,
+    "heading": {
+     "file": "synthetics papers/book/manuscript/chapters/chapter-01.tex",
+     "line": 1,
+     "line_end": 4,
+     "heading_line_end": 1,
+     "title": "First",
+     "kind": "chapter",
+     "label": null,
+     "heading_before": "\\chapter{First}",
+     "source_order": 1,
+     "source_orders": [
+      1
+     ]
+    },
+    "basis": {
+     "synthetics papers/book/manuscript/chapters/chapter-01.tex": {
+      "selection_identity": "sha256:f35f374570dbc183d4aec769c50fb55b0860b11e94183950c18db51bd357ed65",
+      "source_digest": "sha256:a3f9c9c474d5c0b6ae33ea349ddf6d0f11be41f3347f7a130309571f5aa47bce"
+     }
+    },
+    "mapping": "explicit-source-file",
+    "selected_root": "synthetics papers/book/manuscript/Fixture-Book.tex",
+    "source_reads": [
+     {
+      "operation": "source",
+      "payload": {
+       "files": [
+        "synthetics papers/book/manuscript/chapters/chapter-01.tex"
+       ]
+      },
+      "http": {
+       "method": "GET",
+       "route": "/projection/tex",
+       "query": {
+        "corpus": "book",
+        "file": "synthetics papers/book/manuscript/chapters/chapter-01.tex",
+        "view": "source"
+       }
+      }
+     }
+    ],
+    "clearing_read": {
+     "operation": "structure",
+     "payload": {
+      "view": "outline"
+     }
+    }
+   },
+   "detail_read": {
+    "operation": "structure",
+    "payload": {
+     "view": "detail",
+     "section_ids": [
+      "first"
+     ]
+    }
+   },
+   "source_reads": [
+    {
+     "operation": "source",
+     "payload": {
+      "files": [
+       "synthetics papers/book/manuscript/chapters/chapter-01.tex"
+      ]
+     },
+     "http": {
+      "method": "GET",
+      "route": "/projection/tex",
+      "query": {
+       "corpus": "book",
+       "file": "synthetics papers/book/manuscript/chapters/chapter-01.tex",
+       "view": "source"
+      }
+     }
+    }
+   ]
+  },
+  {
+   "id": "first-child",
+   "title": "First child",
+   "kind": "section",
+   "parent_id": "first",
+   "number": "1.1",
+   "order": 1,
+   "job": "support",
+   "clearing_action": {
+    "operation": "structure_change",
+    "payload": {
+     "operation": "bind_source",
+     "section_id": "first-child",
+     "expected_plan_revision": "sha256:68e00a458ef81d5b1608e3e9959eea825eb4248324ea4345d4795dddcb8bbcbd"
+    },
+    "http": {
+     "method": "POST",
+     "route": "/work/structure/change"
+    },
+    "choose_from": {
+     "operation": "structure",
+     "payload": {
+      "view": "outline"
+     },
+     "http": {
+      "method": "GET",
+      "route": "/work/structure",
+      "query": {
+       "project": "book",
+       "view": "outline"
+      }
+     }
+    },
+    "required_occurrence_fields": [
+     "file",
+     "line",
+     "heading_before",
+     "expected_selection",
+     "expected_source_digest"
+    ]
+   },
+   "members": {
+    "items": [],
+    "offset": 0,
+    "limit": 40,
+    "total": 0,
+    "omitted_before": 0,
+    "omitted_after": 0
+   },
+   "source": {
+    "section_id": "first-child",
+    "source_files": [
+     "synthetics papers/book/manuscript/chapters/chapter-01.tex"
+    ],
+    "status": "MATCHED",
+    "precision": "FILE_ONLY",
+    "title_status": "MATCHED",
+    "plan_title": "First child",
+    "source_titles": [
+     "First child"
+    ],
+    "source_label": null,
+    "heading": {
+     "file": "synthetics papers/book/manuscript/chapters/chapter-01.tex",
+     "line": 3,
+     "line_end": 4,
+     "heading_line_end": 3,
+     "title": "First child",
+     "kind": "section",
+     "label": null,
+     "heading_before": "\\section{First child}",
+     "source_order": 1,
+     "source_orders": [
+      1
+     ]
+    },
+    "basis": {
+     "synthetics papers/book/manuscript/chapters/chapter-01.tex": {
+      "selection_identity": "sha256:f35f374570dbc183d4aec769c50fb55b0860b11e94183950c18db51bd357ed65",
+      "source_digest": "sha256:a3f9c9c474d5c0b6ae33ea349ddf6d0f11be41f3347f7a130309571f5aa47bce"
+     }
+    },
+    "mapping": "explicit-source-file",
+    "selected_root": "synthetics papers/book/manuscript/Fixture-Book.tex",
+    "source_reads": [
+     {
+      "operation": "source",
+      "payload": {
+       "files": [
+        "synthetics papers/book/manuscript/chapters/chapter-01.tex"
+       ]
+      },
+      "http": {
+       "method": "GET",
+       "route": "/projection/tex",
+       "query": {
+        "corpus": "book",
+        "file": "synthetics papers/book/manuscript/chapters/chapter-01.tex",
+        "view": "source"
+       }
+      }
+     }
+    ],
+    "clearing_read": {
+     "operation": "structure",
+     "payload": {
+      "view": "outline"
+     }
+    }
+   },
+   "detail_read": {
+    "operation": "structure",
+    "payload": {
+     "view": "detail",
+     "section_ids": [
+      "first-child"
+     ]
+    }
+   },
+   "source_reads": [
+    {
+     "operation": "source",
+     "payload": {
+      "files": [
+       "synthetics papers/book/manuscript/chapters/chapter-01.tex"
+      ]
+     },
+     "http": {
+      "method": "GET",
+      "route": "/projection/tex",
+      "query": {
+       "corpus": "book",
+       "file": "synthetics papers/book/manuscript/chapters/chapter-01.tex",
+       "view": "source"
+      }
+     }
+    }
+   ]
+  },
+  {
+   "id": "second",
+   "title": "Second",
+   "kind": "chapter",
+   "parent_id": null,
+   "number": "2",
+   "order": 2,
+   "job": "close",
+   "clearing_action": {
+    "operation": "structure_change",
+    "payload": {
+     "operation": "bind_source",
+     "section_id": "second",
+     "expected_plan_revision": "sha256:68e00a458ef81d5b1608e3e9959eea825eb4248324ea4345d4795dddcb8bbcbd"
+    },
+    "http": {
+     "method": "POST",
+     "route": "/work/structure/change"
+    },
+    "choose_from": {
+     "operation": "structure",
+     "payload": {
+      "view": "outline"
+     },
+     "http": {
+      "method": "GET",
+      "route": "/work/structure",
+      "query": {
+       "project": "book",
+       "view": "outline"
+      }
+     }
+    },
+    "required_occurrence_fields": [
+     "file",
+     "line",
+     "heading_before",
+     "expected_selection",
+     "expected_source_digest"
+    ]
+   },
+   "members": {
+    "items": [],
+    "offset": 0,
+    "limit": 40,
+    "total": 0,
+    "omitted_before": 0,
+    "omitted_after": 0
+   },
+   "source": {
+    "section_id": "second",
+    "source_files": [
+     "synthetics papers/book/manuscript/chapters/chapter-01.tex"
+    ],
+    "status": "MATCHED",
+    "precision": "FILE_ONLY",
+    "title_status": "MATCHED",
+    "plan_title": "Second",
+    "source_titles": [
+     "Second"
+    ],
+    "source_label": null,
+    "heading": {
+     "file": "synthetics papers/book/manuscript/chapters/chapter-01.tex",
+     "line": 5,
+     "line_end": 6,
+     "heading_line_end": 5,
+     "title": "Second",
+     "kind": "chapter",
+     "label": null,
+     "heading_before": "\\chapter{Second}",
+     "source_order": 1,
+     "source_orders": [
+      1
+     ]
+    },
+    "basis": {
+     "synthetics papers/book/manuscript/chapters/chapter-01.tex": {
+      "selection_identity": "sha256:f35f374570dbc183d4aec769c50fb55b0860b11e94183950c18db51bd357ed65",
+      "source_digest": "sha256:a3f9c9c474d5c0b6ae33ea349ddf6d0f11be41f3347f7a130309571f5aa47bce"
+     }
+    },
+    "mapping": "explicit-source-file",
+    "selected_root": "synthetics papers/book/manuscript/Fixture-Book.tex",
+    "source_reads": [
+     {
+      "operation": "source",
+      "payload": {
+       "files": [
+        "synthetics papers/book/manuscript/chapters/chapter-01.tex"
+       ]
+      },
+      "http": {
+       "method": "GET",
+       "route": "/projection/tex",
+       "query": {
+        "corpus": "book",
+        "file": "synthetics papers/book/manuscript/chapters/chapter-01.tex",
+        "view": "source"
+       }
+      }
+     }
+    ],
+    "clearing_read": {
+     "operation": "structure",
+     "payload": {
+      "view": "outline"
+     }
+    }
+   },
+   "detail_read": {
+    "operation": "structure",
+    "payload": {
+     "view": "detail",
+     "section_ids": [
+      "second"
+     ]
+    }
+   },
+   "source_reads": [
+    {
+     "operation": "source",
+     "payload": {
+      "files": [
+       "synthetics papers/book/manuscript/chapters/chapter-01.tex"
+      ]
+     },
+     "http": {
+      "method": "GET",
+      "route": "/projection/tex",
+      "query": {
+       "corpus": "book",
+       "file": "synthetics papers/book/manuscript/chapters/chapter-01.tex",
+       "view": "source"
+      }
+     }
+    }
+   ]
+  }
+ ],
+ "sections_after": [
+  {
+   "id": "first",
+   "title": "First",
+   "kind": "chapter",
+   "parent_id": null,
+   "number": "1",
+   "order": 0,
+   "job": "open",
+   "clearing_action": {
+    "operation": "structure_change",
+    "payload": {
+     "operation": "bind_source",
+     "section_id": "first",
+     "expected_plan_revision": "sha256:291f51f47b4518f819f5fe4551235bb1fcaade19349369a9cb8f93a2ce48ffd2"
+    },
+    "http": {
+     "method": "POST",
+     "route": "/work/structure/change"
+    },
+    "choose_from": {
+     "operation": "structure",
+     "payload": {
+      "view": "outline"
+     },
+     "http": {
+      "method": "GET",
+      "route": "/work/structure",
+      "query": {
+       "project": "book",
+       "view": "outline"
+      }
+     }
+    },
+    "required_occurrence_fields": [
+     "file",
+     "line",
+     "heading_before",
+     "expected_selection",
+     "expected_source_digest"
+    ]
+   },
+   "members": {
+    "items": [
+     {
+      "id": "concept:first",
+      "role": "node",
+      "order": 0,
+      "missing": false,
+      "detail_read": {
+       "operation": "concept",
+       "payload": {
+        "node": "concept:first"
+       }
+      }
+     }
+    ],
+    "offset": 0,
+    "limit": 40,
+    "total": 1,
+    "omitted_before": 0,
+    "omitted_after": 0
+   },
+   "source": {
+    "section_id": "first",
+    "source_files": [
+     "synthetics papers/book/manuscript/chapters/chapter-01.tex"
+    ],
+    "status": "MATCHED",
+    "precision": "EXACT_HEADING",
+    "title_status": "MATCHED",
+    "plan_title": "First",
+    "source_titles": [
+     "First"
+    ],
+    "source_label": null,
+    "heading": {
+     "file": "synthetics papers/book/manuscript/chapters/chapter-01.tex",
+     "line": 1,
+     "line_end": 4,
+     "heading_line_end": 1,
+     "title": "First",
+     "kind": "chapter",
+     "label": null,
+     "heading_before": "\\chapter{First}",
+     "source_order": 1,
+     "source_orders": [
+      1
+     ]
+    },
+    "basis": {
+     "synthetics papers/book/manuscript/chapters/chapter-01.tex": {
+      "selection_identity": "sha256:f35f374570dbc183d4aec769c50fb55b0860b11e94183950c18db51bd357ed65",
+      "source_digest": "sha256:a3f9c9c474d5c0b6ae33ea349ddf6d0f11be41f3347f7a130309571f5aa47bce"
+     }
+    },
+    "mapping": "explicit-source-anchor",
+    "selected_root": "synthetics papers/book/manuscript/Fixture-Book.tex",
+    "source_reads": [
+     {
+      "operation": "source",
+      "payload": {
+       "files": [
+        "synthetics papers/book/manuscript/chapters/chapter-01.tex"
+       ],
+       "line_start": 1,
+       "line_end": 4
+      },
+      "http": {
+       "method": "GET",
+       "route": "/projection/tex",
+       "query": {
+        "corpus": "book",
+        "file": "synthetics papers/book/manuscript/chapters/chapter-01.tex",
+        "view": "source"
+       }
+      }
+     }
+    ],
+    "clearing_read": {
+     "operation": "structure",
+     "payload": {
+      "view": "outline"
+     }
+    }
+   },
+   "detail_read": {
+    "operation": "structure",
+    "payload": {
+     "view": "detail",
+     "section_ids": [
+      "first"
+     ]
+    }
+   },
+   "source_reads": [
+    {
+     "operation": "source",
+     "payload": {
+      "files": [
+       "synthetics papers/book/manuscript/chapters/chapter-01.tex"
+      ],
+      "line_start": 1,
+      "line_end": 4
+     },
+     "http": {
+      "method": "GET",
+      "route": "/projection/tex",
+      "query": {
+       "corpus": "book",
+       "file": "synthetics papers/book/manuscript/chapters/chapter-01.tex",
+       "view": "source"
+      }
+     }
+    }
+   ]
+  },
+  {
+   "id": "first-child",
+   "title": "First child",
+   "kind": "section",
+   "parent_id": "first",
+   "number": "1.1",
+   "order": 1,
+   "job": "support",
+   "clearing_action": {
+    "operation": "structure_change",
+    "payload": {
+     "operation": "bind_source",
+     "section_id": "first-child",
+     "expected_plan_revision": "sha256:291f51f47b4518f819f5fe4551235bb1fcaade19349369a9cb8f93a2ce48ffd2"
+    },
+    "http": {
+     "method": "POST",
+     "route": "/work/structure/change"
+    },
+    "choose_from": {
+     "operation": "structure",
+     "payload": {
+      "view": "outline"
+     },
+     "http": {
+      "method": "GET",
+      "route": "/work/structure",
+      "query": {
+       "project": "book",
+       "view": "outline"
+      }
+     }
+    },
+    "required_occurrence_fields": [
+     "file",
+     "line",
+     "heading_before",
+     "expected_selection",
+     "expected_source_digest"
+    ]
+   },
+   "members": {
+    "items": [],
+    "offset": 0,
+    "limit": 40,
+    "total": 0,
+    "omitted_before": 0,
+    "omitted_after": 0
+   },
+   "source": {
+    "section_id": "first-child",
+    "source_files": [
+     "synthetics papers/book/manuscript/chapters/chapter-01.tex"
+    ],
+    "status": "MATCHED",
+    "precision": "FILE_ONLY",
+    "title_status": "MATCHED",
+    "plan_title": "First child",
+    "source_titles": [
+     "First child"
+    ],
+    "source_label": null,
+    "heading": {
+     "file": "synthetics papers/book/manuscript/chapters/chapter-01.tex",
+     "line": 3,
+     "line_end": 4,
+     "heading_line_end": 3,
+     "title": "First child",
+     "kind": "section",
+     "label": null,
+     "heading_before": "\\section{First child}",
+     "source_order": 1,
+     "source_orders": [
+      1
+     ]
+    },
+    "basis": {
+     "synthetics papers/book/manuscript/chapters/chapter-01.tex": {
+      "selection_identity": "sha256:f35f374570dbc183d4aec769c50fb55b0860b11e94183950c18db51bd357ed65",
+      "source_digest": "sha256:a3f9c9c474d5c0b6ae33ea349ddf6d0f11be41f3347f7a130309571f5aa47bce"
+     }
+    },
+    "mapping": "explicit-source-file",
+    "selected_root": "synthetics papers/book/manuscript/Fixture-Book.tex",
+    "source_reads": [
+     {
+      "operation": "source",
+      "payload": {
+       "files": [
+        "synthetics papers/book/manuscript/chapters/chapter-01.tex"
+       ]
+      },
+      "http": {
+       "method": "GET",
+       "route": "/projection/tex",
+       "query": {
+        "corpus": "book",
+        "file": "synthetics papers/book/manuscript/chapters/chapter-01.tex",
+        "view": "source"
+       }
+      }
+     }
+    ],
+    "clearing_read": {
+     "operation": "structure",
+     "payload": {
+      "view": "outline"
+     }
+    }
+   },
+   "detail_read": {
+    "operation": "structure",
+    "payload": {
+     "view": "detail",
+     "section_ids": [
+      "first-child"
+     ]
+    }
+   },
+   "source_reads": [
+    {
+     "operation": "source",
+     "payload": {
+      "files": [
+       "synthetics papers/book/manuscript/chapters/chapter-01.tex"
+      ]
+     },
+     "http": {
+      "method": "GET",
+      "route": "/projection/tex",
+      "query": {
+       "corpus": "book",
+       "file": "synthetics papers/book/manuscript/chapters/chapter-01.tex",
+       "view": "source"
+      }
+     }
+    }
+   ]
+  },
+  {
+   "id": "second",
+   "title": "Second",
+   "kind": "chapter",
+   "parent_id": null,
+   "number": "2",
+   "order": 2,
+   "job": "close",
+   "clearing_action": {
+    "operation": "structure_change",
+    "payload": {
+     "operation": "bind_source",
+     "section_id": "second",
+     "expected_plan_revision": "sha256:291f51f47b4518f819f5fe4551235bb1fcaade19349369a9cb8f93a2ce48ffd2"
+    },
+    "http": {
+     "method": "POST",
+     "route": "/work/structure/change"
+    },
+    "choose_from": {
+     "operation": "structure",
+     "payload": {
+      "view": "outline"
+     },
+     "http": {
+      "method": "GET",
+      "route": "/work/structure",
+      "query": {
+       "project": "book",
+       "view": "outline"
+      }
+     }
+    },
+    "required_occurrence_fields": [
+     "file",
+     "line",
+     "heading_before",
+     "expected_selection",
+     "expected_source_digest"
+    ]
+   },
+   "members": {
+    "items": [],
+    "offset": 0,
+    "limit": 40,
+    "total": 0,
+    "omitted_before": 0,
+    "omitted_after": 0
+   },
+   "source": {
+    "section_id": "second",
+    "source_files": [
+     "synthetics papers/book/manuscript/chapters/chapter-01.tex"
+    ],
+    "status": "MATCHED",
+    "precision": "FILE_ONLY",
+    "title_status": "MATCHED",
+    "plan_title": "Second",
+    "source_titles": [
+     "Second"
+    ],
+    "source_label": null,
+    "heading": {
+     "file": "synthetics papers/book/manuscript/chapters/chapter-01.tex",
+     "line": 5,
+     "line_end": 6,
+     "heading_line_end": 5,
+     "title": "Second",
+     "kind": "chapter",
+     "label": null,
+     "heading_before": "\\chapter{Second}",
+     "source_order": 1,
+     "source_orders": [
+      1
+     ]
+    },
+    "basis": {
+     "synthetics papers/book/manuscript/chapters/chapter-01.tex": {
+      "selection_identity": "sha256:f35f374570dbc183d4aec769c50fb55b0860b11e94183950c18db51bd357ed65",
+      "source_digest": "sha256:a3f9c9c474d5c0b6ae33ea349ddf6d0f11be41f3347f7a130309571f5aa47bce"
+     }
+    },
+    "mapping": "explicit-source-file",
+    "selected_root": "synthetics papers/book/manuscript/Fixture-Book.tex",
+    "source_reads": [
+     {
+      "operation": "source",
+      "payload": {
+       "files": [
+        "synthetics papers/book/manuscript/chapters/chapter-01.tex"
+       ]
+      },
+      "http": {
+       "method": "GET",
+       "route": "/projection/tex",
+       "query": {
+        "corpus": "book",
+        "file": "synthetics papers/book/manuscript/chapters/chapter-01.tex",
+        "view": "source"
+       }
+      }
+     }
+    ],
+    "clearing_read": {
+     "operation": "structure",
+     "payload": {
+      "view": "outline"
+     }
+    }
+   },
+   "detail_read": {
+    "operation": "structure",
+    "payload": {
+     "view": "detail",
+     "section_ids": [
+      "second"
+     ]
+    }
+   },
+   "source_reads": [
+    {
+     "operation": "source",
+     "payload": {
+      "files": [
+       "synthetics papers/book/manuscript/chapters/chapter-01.tex"
+      ]
+     },
+     "http": {
+      "method": "GET",
+      "route": "/projection/tex",
+      "query": {
+       "corpus": "book",
+       "file": "synthetics papers/book/manuscript/chapters/chapter-01.tex",
+       "view": "source"
+      }
+     }
+    }
+   ]
+  }
+ ]
+}

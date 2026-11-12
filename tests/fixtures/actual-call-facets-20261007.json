@@ -1,0 +1,4567 @@
+{
+  "basis": "Actual read-only live8771 selected owner facts, full selected cut; no provider/source writes",
+  "telemetry": {
+    "schema_version": "laplace.activity-history/1",
+    "project": "writing-system-architecture",
+    "as_of": "2026-10-07T10:04:11.040Z",
+    "scope": {},
+    "tool_calls": {
+      "filter": {
+        "event_kind": "tool-attempt",
+        "as_of": "2026-10-07T10:04:11.040Z"
+      },
+      "total": 4956,
+      "by_operation": [
+        {
+          "operation": "repository",
+          "count": 1358,
+          "filter": {
+            "event_kind": "tool-attempt",
+            "as_of": "2026-10-07T10:04:11.040Z",
+            "operation": "repository"
+          }
+        },
+        {
+          "operation": "concept",
+          "count": 821,
+          "filter": {
+            "event_kind": "tool-attempt",
+            "as_of": "2026-10-07T10:04:11.040Z",
+            "operation": "concept"
+          }
+        },
+        {
+          "operation": "read_artifact",
+          "count": 656,
+          "filter": {
+            "event_kind": "tool-attempt",
+            "as_of": "2026-10-07T10:04:11.040Z",
+            "operation": "read_artifact"
+          }
+        },
+        {
+          "operation": "help",
+          "count": 370,
+          "filter": {
+            "event_kind": "tool-attempt",
+            "as_of": "2026-10-07T10:04:11.040Z",
+            "operation": "help"
+          }
+        },
+        {
+          "operation": "source",
+          "count": 217,
+          "filter": {
+            "event_kind": "tool-attempt",
+            "as_of": "2026-10-07T10:04:11.040Z",
+            "operation": "source"
+          }
+        },
+        {
+          "operation": "author_history",
+          "count": 165,
+          "filter": {
+            "event_kind": "tool-attempt",
+            "as_of": "2026-10-07T10:04:11.040Z",
+            "operation": "author_history"
+          }
+        },
+        {
+          "operation": "store_artifact",
+          "count": 165,
+          "filter": {
+            "event_kind": "tool-attempt",
+            "as_of": "2026-10-07T10:04:11.040Z",
+            "operation": "store_artifact"
+          }
+        },
+        {
+          "operation": "reference_text",
+          "count": 121,
+          "filter": {
+            "event_kind": "tool-attempt",
+            "as_of": "2026-10-07T10:04:11.040Z",
+            "operation": "reference_text"
+          }
+        },
+        {
+          "operation": "structure",
+          "count": 121,
+          "filter": {
+            "event_kind": "tool-attempt",
+            "as_of": "2026-10-07T10:04:11.040Z",
+            "operation": "structure"
+          }
+        },
+        {
+          "operation": "concept_change",
+          "count": 109,
+          "filter": {
+            "event_kind": "tool-attempt",
+            "as_of": "2026-10-07T10:04:11.040Z",
+            "operation": "concept_change"
+          }
+        },
+        {
+          "operation": "structure_change",
+          "count": 103,
+          "filter": {
+            "event_kind": "tool-attempt",
+            "as_of": "2026-10-07T10:04:11.040Z",
+            "operation": "structure_change"
+          }
+        },
+        {
+          "operation": "logical_plan_change",
+          "count": 65,
+          "filter": {
+            "event_kind": "tool-attempt",
+            "as_of": "2026-10-07T10:04:11.040Z",
+            "operation": "logical_plan_change"
+          }
+        },
+        {
+          "operation": "reference_update",
+          "count": 63,
+          "filter": {
+            "event_kind": "tool-attempt",
+            "as_of": "2026-10-07T10:04:11.040Z",
+            "operation": "reference_update"
+          }
+        },
+        {
+          "operation": "literature_bind",
+          "count": 58,
+          "filter": {
+            "event_kind": "tool-attempt",
+            "as_of": "2026-10-07T10:04:11.040Z",
+            "operation": "literature_bind"
+          }
+        },
+        {
+          "operation": "note",
+          "count": 50,
+          "filter": {
+            "event_kind": "tool-attempt",
+            "as_of": "2026-10-07T10:04:11.040Z",
+            "operation": "note"
+          }
+        },
+        {
+          "operation": "apply_revision",
+          "count": 45,
+          "filter": {
+            "event_kind": "tool-attempt",
+            "as_of": "2026-10-07T10:04:11.040Z",
+            "operation": "apply_revision"
+          }
+        },
+        {
+          "operation": "build_status",
+          "count": 42,
+          "filter": {
+            "event_kind": "tool-attempt",
+            "as_of": "2026-10-07T10:04:11.040Z",
+            "operation": "build_status"
+          }
+        },
+        {
+          "operation": "research",
+          "count": 41,
+          "filter": {
+            "event_kind": "tool-attempt",
+            "as_of": "2026-10-07T10:04:11.040Z",
+            "operation": "research"
+          }
+        },
+        {
+          "operation": "visuals",
+          "count": 35,
+          "filter": {
+            "event_kind": "tool-attempt",
+            "as_of": "2026-10-07T10:04:11.040Z",
+            "operation": "visuals"
+          }
+        },
+        {
+          "operation": "run_status",
+          "count": 31,
+          "filter": {
+            "event_kind": "tool-attempt",
+            "as_of": "2026-10-07T10:04:11.040Z",
+            "operation": "run_status"
+          }
+        },
+        {
+          "operation": "literature_scope",
+          "count": 28,
+          "filter": {
+            "event_kind": "tool-attempt",
+            "as_of": "2026-10-07T10:04:11.040Z",
+            "operation": "literature_scope"
+          }
+        },
+        {
+          "operation": "visual_render",
+          "count": 26,
+          "filter": {
+            "event_kind": "tool-attempt",
+            "as_of": "2026-10-07T10:04:11.040Z",
+            "operation": "visual_render"
+          }
+        },
+        {
+          "operation": "logical_plan",
+          "count": 25,
+          "filter": {
+            "event_kind": "tool-attempt",
+            "as_of": "2026-10-07T10:04:11.040Z",
+            "operation": "logical_plan"
+          }
+        },
+        {
+          "operation": "literature_import",
+          "count": 24,
+          "filter": {
+            "event_kind": "tool-attempt",
+            "as_of": "2026-10-07T10:04:11.040Z",
+            "operation": "literature_import"
+          }
+        },
+        {
+          "operation": "experiment_run",
+          "count": 23,
+          "filter": {
+            "event_kind": "tool-attempt",
+            "as_of": "2026-10-07T10:04:11.040Z",
+            "operation": "experiment_run"
+          }
+        },
+        {
+          "operation": "note_status",
+          "count": 21,
+          "filter": {
+            "event_kind": "tool-attempt",
+            "as_of": "2026-10-07T10:04:11.040Z",
+            "operation": "note_status"
+          }
+        },
+        {
+          "operation": "project",
+          "count": 21,
+          "filter": {
+            "event_kind": "tool-attempt",
+            "as_of": "2026-10-07T10:04:11.040Z",
+            "operation": "project"
+          }
+        },
+        {
+          "operation": "visual_create",
+          "count": 21,
+          "filter": {
+            "event_kind": "tool-attempt",
+            "as_of": "2026-10-07T10:04:11.040Z",
+            "operation": "visual_create"
+          }
+        },
+        {
+          "operation": "build",
+          "count": 19,
+          "filter": {
+            "event_kind": "tool-attempt",
+            "as_of": "2026-10-07T10:04:11.040Z",
+            "operation": "build"
+          }
+        },
+        {
+          "operation": "research_producer",
+          "count": 14,
+          "filter": {
+            "event_kind": "tool-attempt",
+            "as_of": "2026-10-07T10:04:11.040Z",
+            "operation": "research_producer"
+          }
+        },
+        {
+          "operation": "literature_uses",
+          "count": 11,
+          "filter": {
+            "event_kind": "tool-attempt",
+            "as_of": "2026-10-07T10:04:11.040Z",
+            "operation": "literature_uses"
+          }
+        },
+        {
+          "operation": "research_record",
+          "count": 10,
+          "filter": {
+            "event_kind": "tool-attempt",
+            "as_of": "2026-10-07T10:04:11.040Z",
+            "operation": "research_record"
+          }
+        },
+        {
+          "operation": "task_status",
+          "count": 10,
+          "filter": {
+            "event_kind": "tool-attempt",
+            "as_of": "2026-10-07T10:04:11.040Z",
+            "operation": "task_status"
+          }
+        },
+        {
+          "operation": "propose_revision",
+          "count": 9,
+          "filter": {
+            "event_kind": "tool-attempt",
+            "as_of": "2026-10-07T10:04:11.040Z",
+            "operation": "propose_revision"
+          }
+        },
+        {
+          "operation": "reference_source",
+          "count": 9,
+          "filter": {
+            "event_kind": "tool-attempt",
+            "as_of": "2026-10-07T10:04:11.040Z",
+            "operation": "reference_source"
+          }
+        },
+        {
+          "operation": "material_references",
+          "count": 7,
+          "filter": {
+            "event_kind": "tool-attempt",
+            "as_of": "2026-10-07T10:04:11.040Z",
+            "operation": "material_references"
+          }
+        },
+        {
+          "operation": "visual_place",
+          "count": 7,
+          "filter": {
+            "event_kind": "tool-attempt",
+            "as_of": "2026-10-07T10:04:11.040Z",
+            "operation": "visual_place"
+          }
+        },
+        {
+          "operation": "references_attached",
+          "count": 6,
+          "filter": {
+            "event_kind": "tool-attempt",
+            "as_of": "2026-10-07T10:04:11.040Z",
+            "operation": "references_attached"
+          }
+        },
+        {
+          "operation": "project_guidance",
+          "count": 5,
+          "filter": {
+            "event_kind": "tool-attempt",
+            "as_of": "2026-10-07T10:04:11.040Z",
+            "operation": "project_guidance"
+          }
+        },
+        {
+          "operation": "conversation_history",
+          "count": 4,
+          "filter": {
+            "event_kind": "tool-attempt",
+            "as_of": "2026-10-07T10:04:11.040Z",
+            "operation": "conversation_history"
+          }
+        },
+        {
+          "operation": "argument",
+          "count": 2,
+          "filter": {
+            "event_kind": "tool-attempt",
+            "as_of": "2026-10-07T10:04:11.040Z",
+            "operation": "argument"
+          }
+        },
+        {
+          "operation": "project_guidance_change",
+          "count": 2,
+          "filter": {
+            "event_kind": "tool-attempt",
+            "as_of": "2026-10-07T10:04:11.040Z",
+            "operation": "project_guidance_change"
+          }
+        },
+        {
+          "operation": "project_metadata",
+          "count": 2,
+          "filter": {
+            "event_kind": "tool-attempt",
+            "as_of": "2026-10-07T10:04:11.040Z",
+            "operation": "project_metadata"
+          }
+        },
+        {
+          "operation": "reference",
+          "count": 2,
+          "filter": {
+            "event_kind": "tool-attempt",
+            "as_of": "2026-10-07T10:04:11.040Z",
+            "operation": "reference"
+          }
+        },
+        {
+          "operation": "app_settings",
+          "count": 1,
+          "filter": {
+            "event_kind": "tool-attempt",
+            "as_of": "2026-10-07T10:04:11.040Z",
+            "operation": "app_settings"
+          }
+        },
+        {
+          "operation": "author_changes",
+          "count": 1,
+          "filter": {
+            "event_kind": "tool-attempt",
+            "as_of": "2026-10-07T10:04:11.040Z",
+            "operation": "author_changes"
+          }
+        },
+        {
+          "operation": "concept_tree",
+          "count": 1,
+          "filter": {
+            "event_kind": "tool-attempt",
+            "as_of": "2026-10-07T10:04:11.040Z",
+            "operation": "concept_tree"
+          }
+        },
+        {
+          "operation": "dispatch_launch",
+          "count": 1,
+          "filter": {
+            "event_kind": "tool-attempt",
+            "as_of": "2026-10-07T10:04:11.040Z",
+            "operation": "dispatch_launch"
+          }
+        },
+        {
+          "operation": "dispatch_plan",
+          "count": 1,
+          "filter": {
+            "event_kind": "tool-attempt",
+            "as_of": "2026-10-07T10:04:11.040Z",
+            "operation": "dispatch_plan"
+          }
+        },
+        {
+          "operation": "dispatch_status",
+          "count": 1,
+          "filter": {
+            "event_kind": "tool-attempt",
+            "as_of": "2026-10-07T10:04:11.040Z",
+            "operation": "dispatch_status"
+          }
+        },
+        {
+          "operation": "document",
+          "count": 1,
+          "filter": {
+            "event_kind": "tool-attempt",
+            "as_of": "2026-10-07T10:04:11.040Z",
+            "operation": "document"
+          }
+        },
+        {
+          "operation": "material_reference_change",
+          "count": 1,
+          "filter": {
+            "event_kind": "tool-attempt",
+            "as_of": "2026-10-07T10:04:11.040Z",
+            "operation": "material_reference_change"
+          }
+        },
+        {
+          "operation": "pipeline",
+          "count": 1,
+          "filter": {
+            "event_kind": "tool-attempt",
+            "as_of": "2026-10-07T10:04:11.040Z",
+            "operation": "pipeline"
+          }
+        },
+        {
+          "operation": "references",
+          "count": 1,
+          "filter": {
+            "event_kind": "tool-attempt",
+            "as_of": "2026-10-07T10:04:11.040Z",
+            "operation": "references"
+          }
+        },
+        {
+          "operation": "writing_stage",
+          "count": 1,
+          "filter": {
+            "event_kind": "tool-attempt",
+            "as_of": "2026-10-07T10:04:11.040Z",
+            "operation": "writing_stage"
+          }
+        },
+        {
+          "operation": "writing_style",
+          "count": 1,
+          "filter": {
+            "event_kind": "tool-attempt",
+            "as_of": "2026-10-07T10:04:11.040Z",
+            "operation": "writing_style"
+          }
+        }
+      ],
+      "by_time_operation": [
+        {
+          "start": "2026-10-04T13:00:00Z",
+          "end": "2026-10-04T14:00:00Z",
+          "operation": "apply_revision",
+          "count": 18,
+          "filter": {
+            "event_kind": "tool-attempt",
+            "as_of": "2026-10-07T10:04:11.040Z",
+            "from": "2026-10-04T13:00:00Z",
+            "to": "2026-10-04T14:00:00Z",
+            "operation": "apply_revision"
+          }
+        },
+        {
+          "start": "2026-10-04T13:00:00Z",
+          "end": "2026-10-04T14:00:00Z",
+          "operation": "argument",
+          "count": 1,
+          "filter": {
+            "event_kind": "tool-attempt",
+            "as_of": "2026-10-07T10:04:11.040Z",
+            "from": "2026-10-04T13:00:00Z",
+            "to": "2026-10-04T14:00:00Z",
+            "operation": "argument"
+          }
+        },
+        {
+          "start": "2026-10-04T13:00:00Z",
+          "end": "2026-10-04T14:00:00Z",
+          "operation": "author_history",
+          "count": 13,
+          "filter": {
+            "event_kind": "tool-attempt",
+            "as_of": "2026-10-07T10:04:11.040Z",
+            "from": "2026-10-04T13:00:00Z",
+            "to": "2026-10-04T14:00:00Z",
+            "operation": "author_history"
+          }
+        },
+        {
+          "start": "2026-10-04T13:00:00Z",
+          "end": "2026-10-04T14:00:00Z",
+          "operation": "build",
+          "count": 5,
+          "filter": {
+            "event_kind": "tool-attempt",
+            "as_of": "2026-10-07T10:04:11.040Z",
+            "from": "2026-10-04T13:00:00Z",
+            "to": "2026-10-04T14:00:00Z",
+            "operation": "build"
+          }
+        },
+        {
+          "start": "2026-10-04T13:00:00Z",
+          "end": "2026-10-04T14:00:00Z",
+          "operation": "build_status",
+          "count": 12,
+          "filter": {
+            "event_kind": "tool-attempt",
+            "as_of": "2026-10-07T10:04:11.040Z",
+            "from": "2026-10-04T13:00:00Z",
+            "to": "2026-10-04T14:00:00Z",
+            "operation": "build_status"
+          }
+        },
+        {
+          "start": "2026-10-04T13:00:00Z",
+          "end": "2026-10-04T14:00:00Z",
+          "operation": "concept",
+          "count": 135,
+          "filter": {
+            "event_kind": "tool-attempt",
+            "as_of": "2026-10-07T10:04:11.040Z",
+            "from": "2026-10-04T13:00:00Z",
+            "to": "2026-10-04T14:00:00Z",
+            "operation": "concept"
+          }
+        },
+        {
+          "start": "2026-10-04T13:00:00Z",
+          "end": "2026-10-04T14:00:00Z",
+          "operation": "document",
+          "count": 1,
+          "filter": {
+            "event_kind": "tool-attempt",
+            "as_of": "2026-10-07T10:04:11.040Z",
+            "from": "2026-10-04T13:00:00Z",
+            "to": "2026-10-04T14:00:00Z",
+            "operation": "document"
+          }
+        },
+        {
+          "start": "2026-10-04T13:00:00Z",
+          "end": "2026-10-04T14:00:00Z",
+          "operation": "experiment_run",
+          "count": 1,
+          "filter": {
+            "event_kind": "tool-attempt",
+            "as_of": "2026-10-07T10:04:11.040Z",
+            "from": "2026-10-04T13:00:00Z",
+            "to": "2026-10-04T14:00:00Z",
+            "operation": "experiment_run"
+          }
+        },
+        {
+          "start": "2026-10-04T13:00:00Z",
+          "end": "2026-10-04T14:00:00Z",
+          "operation": "help",
+          "count": 35,
+          "filter": {
+            "event_kind": "tool-attempt",
+            "as_of": "2026-10-07T10:04:11.040Z",
+            "from": "2026-10-04T13:00:00Z",
+            "to": "2026-10-04T14:00:00Z",
+            "operation": "help"
+          }
+        },
+        {
+          "start": "2026-10-04T13:00:00Z",
+          "end": "2026-10-04T14:00:00Z",
+          "operation": "literature_scope",
+          "count": 5,
+          "filter": {
+            "event_kind": "tool-attempt",
+            "as_of": "2026-10-07T10:04:11.040Z",
+            "from": "2026-10-04T13:00:00Z",
+            "to": "2026-10-04T14:00:00Z",
+            "operation": "literature_scope"
+          }
+        },
+        {
+          "start": "2026-10-04T13:00:00Z",
+          "end": "2026-10-04T14:00:00Z",
+          "operation": "logical_plan",
+          "count": 1,
+          "filter": {
+            "event_kind": "tool-attempt",
+            "as_of": "2026-10-07T10:04:11.040Z",
+            "from": "2026-10-04T13:00:00Z",
+            "to": "2026-10-04T14:00:00Z",
+            "operation": "logical_plan"
+          }
+        },
+        {
+          "start": "2026-10-04T13:00:00Z",
+          "end": "2026-10-04T14:00:00Z",
+          "operation": "note",
+          "count": 10,
+          "filter": {
+            "event_kind": "tool-attempt",
+            "as_of": "2026-10-07T10:04:11.040Z",
+            "from": "2026-10-04T13:00:00Z",
+            "to": "2026-10-04T14:00:00Z",
+            "operation": "note"
+          }
+        },
+        {
+          "start": "2026-10-04T13:00:00Z",
+          "end": "2026-10-04T14:00:00Z",
+          "operation": "project",
+          "count": 4,
+          "filter": {
+            "event_kind": "tool-attempt",
+            "as_of": "2026-10-07T10:04:11.040Z",
+            "from": "2026-10-04T13:00:00Z",
+            "to": "2026-10-04T14:00:00Z",
+            "operation": "project"
+          }
+        },
+        {
+          "start": "2026-10-04T13:00:00Z",
+          "end": "2026-10-04T14:00:00Z",
+          "operation": "read_artifact",
+          "count": 39,
+          "filter": {
+            "event_kind": "tool-attempt",
+            "as_of": "2026-10-07T10:04:11.040Z",
+            "from": "2026-10-04T13:00:00Z",
+            "to": "2026-10-04T14:00:00Z",
+            "operation": "read_artifact"
+          }
+        },
+        {
+          "start": "2026-10-04T13:00:00Z",
+          "end": "2026-10-04T14:00:00Z",
+          "operation": "reference",
+          "count": 1,
+          "filter": {
+            "event_kind": "tool-attempt",
+            "as_of": "2026-10-07T10:04:11.040Z",
+            "from": "2026-10-04T13:00:00Z",
+            "to": "2026-10-04T14:00:00Z",
+            "operation": "reference"
+          }
+        },
+        {
+          "start": "2026-10-04T13:00:00Z",
+          "end": "2026-10-04T14:00:00Z",
+          "operation": "reference_text",
+          "count": 7,
+          "filter": {
+            "event_kind": "tool-attempt",
+            "as_of": "2026-10-07T10:04:11.040Z",
+            "from": "2026-10-04T13:00:00Z",
+            "to": "2026-10-04T14:00:00Z",
+            "operation": "reference_text"
+          }
+        },
+        {
+          "start": "2026-10-04T13:00:00Z",
+          "end": "2026-10-04T14:00:00Z",
+          "operation": "repository",
+          "count": 313,
+          "filter": {
+            "event_kind": "tool-attempt",
+            "as_of": "2026-10-07T10:04:11.040Z",
+            "from": "2026-10-04T13:00:00Z",
+            "to": "2026-10-04T14:00:00Z",
+            "operation": "repository"
+          }
+        },
+        {
+          "start": "2026-10-04T13:00:00Z",
+          "end": "2026-10-04T14:00:00Z",
+          "operation": "research",
+          "count": 5,
+          "filter": {
+            "event_kind": "tool-attempt",
+            "as_of": "2026-10-07T10:04:11.040Z",
+            "from": "2026-10-04T13:00:00Z",
+            "to": "2026-10-04T14:00:00Z",
+            "operation": "research"
+          }
+        },
+        {
+          "start": "2026-10-04T13:00:00Z",
+          "end": "2026-10-04T14:00:00Z",
+          "operation": "research_producer",
+          "count": 1,
+          "filter": {
+            "event_kind": "tool-attempt",
+            "as_of": "2026-10-07T10:04:11.040Z",
+            "from": "2026-10-04T13:00:00Z",
+            "to": "2026-10-04T14:00:00Z",
+            "operation": "research_producer"
+          }
+        },
+        {
+          "start": "2026-10-04T13:00:00Z",
+          "end": "2026-10-04T14:00:00Z",
+          "operation": "run_status",
+          "count": 5,
+          "filter": {
+            "event_kind": "tool-attempt",
+            "as_of": "2026-10-07T10:04:11.040Z",
+            "from": "2026-10-04T13:00:00Z",
+            "to": "2026-10-04T14:00:00Z",
+            "operation": "run_status"
+          }
+        },
+        {
+          "start": "2026-10-04T13:00:00Z",
+          "end": "2026-10-04T14:00:00Z",
+          "operation": "source",
+          "count": 55,
+          "filter": {
+            "event_kind": "tool-attempt",
+            "as_of": "2026-10-07T10:04:11.040Z",
+            "from": "2026-10-04T13:00:00Z",
+            "to": "2026-10-04T14:00:00Z",
+            "operation": "source"
+          }
+        },
+        {
+          "start": "2026-10-04T13:00:00Z",
+          "end": "2026-10-04T14:00:00Z",
+          "operation": "store_artifact",
+          "count": 8,
+          "filter": {
+            "event_kind": "tool-attempt",
+            "as_of": "2026-10-07T10:04:11.040Z",
+            "from": "2026-10-04T13:00:00Z",
+            "to": "2026-10-04T14:00:00Z",
+            "operation": "store_artifact"
+          }
+        },
+        {
+          "start": "2026-10-04T13:00:00Z",
+          "end": "2026-10-04T14:00:00Z",
+          "operation": "structure",
+          "count": 30,
+          "filter": {
+            "event_kind": "tool-attempt",
+            "as_of": "2026-10-07T10:04:11.040Z",
+            "from": "2026-10-04T13:00:00Z",
+            "to": "2026-10-04T14:00:00Z",
+            "operation": "structure"
+          }
+        },
+        {
+          "start": "2026-10-04T13:00:00Z",
+          "end": "2026-10-04T14:00:00Z",
+          "operation": "structure_change",
+          "count": 22,
+          "filter": {
+            "event_kind": "tool-attempt",
+            "as_of": "2026-10-07T10:04:11.040Z",
+            "from": "2026-10-04T13:00:00Z",
+            "to": "2026-10-04T14:00:00Z",
+            "operation": "structure_change"
+          }
+        },
+        {
+          "start": "2026-10-04T13:00:00Z",
+          "end": "2026-10-04T14:00:00Z",
+          "operation": "visual_create",
+          "count": 5,
+          "filter": {
+            "event_kind": "tool-attempt",
+            "as_of": "2026-10-07T10:04:11.040Z",
+            "from": "2026-10-04T13:00:00Z",
+            "to": "2026-10-04T14:00:00Z",
+            "operation": "visual_create"
+          }
+        },
+        {
+          "start": "2026-10-04T13:00:00Z",
+          "end": "2026-10-04T14:00:00Z",
+          "operation": "visual_place",
+          "count": 7,
+          "filter": {
+            "event_kind": "tool-attempt",
+            "as_of": "2026-10-07T10:04:11.040Z",
+            "from": "2026-10-04T13:00:00Z",
+            "to": "2026-10-04T14:00:00Z",
+            "operation": "visual_place"
+          }
+        },
+        {
+          "start": "2026-10-04T13:00:00Z",
+          "end": "2026-10-04T14:00:00Z",
+          "operation": "visual_render",
+          "count": 5,
+          "filter": {
+            "event_kind": "tool-attempt",
+            "as_of": "2026-10-07T10:04:11.040Z",
+            "from": "2026-10-04T13:00:00Z",
+            "to": "2026-10-04T14:00:00Z",
+            "operation": "visual_render"
+          }
+        },
+        {
+          "start": "2026-10-04T13:00:00Z",
+          "end": "2026-10-04T14:00:00Z",
+          "operation": "visuals",
+          "count": 6,
+          "filter": {
+            "event_kind": "tool-attempt",
+            "as_of": "2026-10-07T10:04:11.040Z",
+            "from": "2026-10-04T13:00:00Z",
+            "to": "2026-10-04T14:00:00Z",
+            "operation": "visuals"
+          }
+        },
+        {
+          "start": "2026-10-04T14:00:00Z",
+          "end": "2026-10-04T15:00:00Z",
+          "operation": "apply_revision",
+          "count": 11,
+          "filter": {
+            "event_kind": "tool-attempt",
+            "as_of": "2026-10-07T10:04:11.040Z",
+            "from": "2026-10-04T14:00:00Z",
+            "to": "2026-10-04T15:00:00Z",
+            "operation": "apply_revision"
+          }
+        },
+        {
+          "start": "2026-10-04T14:00:00Z",
+          "end": "2026-10-04T15:00:00Z",
+          "operation": "argument",
+          "count": 1,
+          "filter": {
+            "event_kind": "tool-attempt",
+            "as_of": "2026-10-07T10:04:11.040Z",
+            "from": "2026-10-04T14:00:00Z",
+            "to": "2026-10-04T15:00:00Z",
+            "operation": "argument"
+          }
+        },
+        {
+          "start": "2026-10-04T14:00:00Z",
+          "end": "2026-10-04T15:00:00Z",
+          "operation": "author_history",
+          "count": 20,
+          "filter": {
+            "event_kind": "tool-attempt",
+            "as_of": "2026-10-07T10:04:11.040Z",
+            "from": "2026-10-04T14:00:00Z",
+            "to": "2026-10-04T15:00:00Z",
+            "operation": "author_history"
+          }
+        },
+        {
+          "start": "2026-10-04T14:00:00Z",
+          "end": "2026-10-04T15:00:00Z",
+          "operation": "build",
+          "count": 4,
+          "filter": {
+            "event_kind": "tool-attempt",
+            "as_of": "2026-10-07T10:04:11.040Z",
+            "from": "2026-10-04T14:00:00Z",
+            "to": "2026-10-04T15:00:00Z",
+            "operation": "build"
+          }
+        },
+        {
+          "start": "2026-10-04T14:00:00Z",
+          "end": "2026-10-04T15:00:00Z",
+          "operation": "build_status",
+          "count": 5,
+          "filter": {
+            "event_kind": "tool-attempt",
+            "as_of": "2026-10-07T10:04:11.040Z",
+            "from": "2026-10-04T14:00:00Z",
+            "to": "2026-10-04T15:00:00Z",
+            "operation": "build_status"
+          }
+        },
+        {
+          "start": "2026-10-04T14:00:00Z",
+          "end": "2026-10-04T15:00:00Z",
+          "operation": "concept",
+          "count": 109,
+          "filter": {
+            "event_kind": "tool-attempt",
+            "as_of": "2026-10-07T10:04:11.040Z",
+            "from": "2026-10-04T14:00:00Z",
+            "to": "2026-10-04T15:00:00Z",
+            "operation": "concept"
+          }
+        },
+        {
+          "start": "2026-10-04T14:00:00Z",
+          "end": "2026-10-04T15:00:00Z",
+          "operation": "concept_change",
+          "count": 10,
+          "filter": {
+            "event_kind": "tool-attempt",
+            "as_of": "2026-10-07T10:04:11.040Z",
+            "from": "2026-10-04T14:00:00Z",
+            "to": "2026-10-04T15:00:00Z",
+            "operation": "concept_change"
+          }
+        },
+        {
+          "start": "2026-10-04T14:00:00Z",
+          "end": "2026-10-04T15:00:00Z",
+          "operation": "experiment_run",
+          "count": 3,
+          "filter": {
+            "event_kind": "tool-attempt",
+            "as_of": "2026-10-07T10:04:11.040Z",
+            "from": "2026-10-04T14:00:00Z",
+            "to": "2026-10-04T15:00:00Z",
+            "operation": "experiment_run"
+          }
+        },
+        {
+          "start": "2026-10-04T14:00:00Z",
+          "end": "2026-10-04T15:00:00Z",
+          "operation": "help",
+          "count": 49,
+          "filter": {
+            "event_kind": "tool-attempt",
+            "as_of": "2026-10-07T10:04:11.040Z",
+            "from": "2026-10-04T14:00:00Z",
+            "to": "2026-10-04T15:00:00Z",
+            "operation": "help"
+          }
+        },
+        {
+          "start": "2026-10-04T14:00:00Z",
+          "end": "2026-10-04T15:00:00Z",
+          "operation": "literature_bind",
+          "count": 13,
+          "filter": {
+            "event_kind": "tool-attempt",
+            "as_of": "2026-10-07T10:04:11.040Z",
+            "from": "2026-10-04T14:00:00Z",
+            "to": "2026-10-04T15:00:00Z",
+            "operation": "literature_bind"
+          }
+        },
+        {
+          "start": "2026-10-04T14:00:00Z",
+          "end": "2026-10-04T15:00:00Z",
+          "operation": "literature_import",
+          "count": 2,
+          "filter": {
+            "event_kind": "tool-attempt",
+            "as_of": "2026-10-07T10:04:11.040Z",
+            "from": "2026-10-04T14:00:00Z",
+            "to": "2026-10-04T15:00:00Z",
+            "operation": "literature_import"
+          }
+        },
+        {
+          "start": "2026-10-04T14:00:00Z",
+          "end": "2026-10-04T15:00:00Z",
+          "operation": "literature_scope",
+          "count": 5,
+          "filter": {
+            "event_kind": "tool-attempt",
+            "as_of": "2026-10-07T10:04:11.040Z",
+            "from": "2026-10-04T14:00:00Z",
+            "to": "2026-10-04T15:00:00Z",
+            "operation": "literature_scope"
+          }
+        },
+        {
+          "start": "2026-10-04T14:00:00Z",
+          "end": "2026-10-04T15:00:00Z",
+          "operation": "logical_plan",
+          "count": 2,
+          "filter": {
+            "event_kind": "tool-attempt",
+            "as_of": "2026-10-07T10:04:11.040Z",
+            "from": "2026-10-04T14:00:00Z",
+            "to": "2026-10-04T15:00:00Z",
+            "operation": "logical_plan"
+          }
+        },
+        {
+          "start": "2026-10-04T14:00:00Z",
+          "end": "2026-10-04T15:00:00Z",
+          "operation": "note",
+          "count": 8,
+          "filter": {
+            "event_kind": "tool-attempt",
+            "as_of": "2026-10-07T10:04:11.040Z",
+            "from": "2026-10-04T14:00:00Z",
+            "to": "2026-10-04T15:00:00Z",
+            "operation": "note"
+          }
+        },
+        {
+          "start": "2026-10-04T14:00:00Z",
+          "end": "2026-10-04T15:00:00Z",
+          "operation": "project",
+          "count": 5,
+          "filter": {
+            "event_kind": "tool-attempt",
+            "as_of": "2026-10-07T10:04:11.040Z",
+            "from": "2026-10-04T14:00:00Z",
+            "to": "2026-10-04T15:00:00Z",
+            "operation": "project"
+          }
+        },
+        {
+          "start": "2026-10-04T14:00:00Z",
+          "end": "2026-10-04T15:00:00Z",
+          "operation": "read_artifact",
+          "count": 73,
+          "filter": {
+            "event_kind": "tool-attempt",
+            "as_of": "2026-10-07T10:04:11.040Z",
+            "from": "2026-10-04T14:00:00Z",
+            "to": "2026-10-04T15:00:00Z",
+            "operation": "read_artifact"
+          }
+        },
+        {
+          "start": "2026-10-04T14:00:00Z",
+          "end": "2026-10-04T15:00:00Z",
+          "operation": "reference",
+          "count": 1,
+          "filter": {
+            "event_kind": "tool-attempt",
+            "as_of": "2026-10-07T10:04:11.040Z",
+            "from": "2026-10-04T14:00:00Z",
+            "to": "2026-10-04T15:00:00Z",
+            "operation": "reference"
+          }
+        },
+        {
+          "start": "2026-10-04T14:00:00Z",
+          "end": "2026-10-04T15:00:00Z",
+          "operation": "reference_source",
+          "count": 2,
+          "filter": {
+            "event_kind": "tool-attempt",
+            "as_of": "2026-10-07T10:04:11.040Z",
+            "from": "2026-10-04T14:00:00Z",
+            "to": "2026-10-04T15:00:00Z",
+            "operation": "reference_source"
+          }
+        },
+        {
+          "start": "2026-10-04T14:00:00Z",
+          "end": "2026-10-04T15:00:00Z",
+          "operation": "reference_text",
+          "count": 59,
+          "filter": {
+            "event_kind": "tool-attempt",
+            "as_of": "2026-10-07T10:04:11.040Z",
+            "from": "2026-10-04T14:00:00Z",
+            "to": "2026-10-04T15:00:00Z",
+            "operation": "reference_text"
+          }
+        },
+        {
+          "start": "2026-10-04T14:00:00Z",
+          "end": "2026-10-04T15:00:00Z",
+          "operation": "reference_update",
+          "count": 57,
+          "filter": {
+            "event_kind": "tool-attempt",
+            "as_of": "2026-10-07T10:04:11.040Z",
+            "from": "2026-10-04T14:00:00Z",
+            "to": "2026-10-04T15:00:00Z",
+            "operation": "reference_update"
+          }
+        },
+        {
+          "start": "2026-10-04T14:00:00Z",
+          "end": "2026-10-04T15:00:00Z",
+          "operation": "references_attached",
+          "count": 2,
+          "filter": {
+            "event_kind": "tool-attempt",
+            "as_of": "2026-10-07T10:04:11.040Z",
+            "from": "2026-10-04T14:00:00Z",
+            "to": "2026-10-04T15:00:00Z",
+            "operation": "references_attached"
+          }
+        },
+        {
+          "start": "2026-10-04T14:00:00Z",
+          "end": "2026-10-04T15:00:00Z",
+          "operation": "repository",
+          "count": 197,
+          "filter": {
+            "event_kind": "tool-attempt",
+            "as_of": "2026-10-07T10:04:11.040Z",
+            "from": "2026-10-04T14:00:00Z",
+            "to": "2026-10-04T15:00:00Z",
+            "operation": "repository"
+          }
+        },
+        {
+          "start": "2026-10-04T14:00:00Z",
+          "end": "2026-10-04T15:00:00Z",
+          "operation": "research",
+          "count": 7,
+          "filter": {
+            "event_kind": "tool-attempt",
+            "as_of": "2026-10-07T10:04:11.040Z",
+            "from": "2026-10-04T14:00:00Z",
+            "to": "2026-10-04T15:00:00Z",
+            "operation": "research"
+          }
+        },
+        {
+          "start": "2026-10-04T14:00:00Z",
+          "end": "2026-10-04T15:00:00Z",
+          "operation": "research_producer",
+          "count": 1,
+          "filter": {
+            "event_kind": "tool-attempt",
+            "as_of": "2026-10-07T10:04:11.040Z",
+            "from": "2026-10-04T14:00:00Z",
+            "to": "2026-10-04T15:00:00Z",
+            "operation": "research_producer"
+          }
+        },
+        {
+          "start": "2026-10-04T14:00:00Z",
+          "end": "2026-10-04T15:00:00Z",
+          "operation": "research_record",
+          "count": 3,
+          "filter": {
+            "event_kind": "tool-attempt",
+            "as_of": "2026-10-07T10:04:11.040Z",
+            "from": "2026-10-04T14:00:00Z",
+            "to": "2026-10-04T15:00:00Z",
+            "operation": "research_record"
+          }
+        },
+        {
+          "start": "2026-10-04T14:00:00Z",
+          "end": "2026-10-04T15:00:00Z",
+          "operation": "run_status",
+          "count": 4,
+          "filter": {
+            "event_kind": "tool-attempt",
+            "as_of": "2026-10-07T10:04:11.040Z",
+            "from": "2026-10-04T14:00:00Z",
+            "to": "2026-10-04T15:00:00Z",
+            "operation": "run_status"
+          }
+        },
+        {
+          "start": "2026-10-04T14:00:00Z",
+          "end": "2026-10-04T15:00:00Z",
+          "operation": "source",
+          "count": 36,
+          "filter": {
+            "event_kind": "tool-attempt",
+            "as_of": "2026-10-07T10:04:11.040Z",
+            "from": "2026-10-04T14:00:00Z",
+            "to": "2026-10-04T15:00:00Z",
+            "operation": "source"
+          }
+        },
+        {
+          "start": "2026-10-04T14:00:00Z",
+          "end": "2026-10-04T15:00:00Z",
+          "operation": "store_artifact",
+          "count": 18,
+          "filter": {
+            "event_kind": "tool-attempt",
+            "as_of": "2026-10-07T10:04:11.040Z",
+            "from": "2026-10-04T14:00:00Z",
+            "to": "2026-10-04T15:00:00Z",
+            "operation": "store_artifact"
+          }
+        },
+        {
+          "start": "2026-10-04T14:00:00Z",
+          "end": "2026-10-04T15:00:00Z",
+          "operation": "structure",
+          "count": 38,
+          "filter": {
+            "event_kind": "tool-attempt",
+            "as_of": "2026-10-07T10:04:11.040Z",
+            "from": "2026-10-04T14:00:00Z",
+            "to": "2026-10-04T15:00:00Z",
+            "operation": "structure"
+          }
+        },
+        {
+          "start": "2026-10-04T14:00:00Z",
+          "end": "2026-10-04T15:00:00Z",
+          "operation": "structure_change",
+          "count": 25,
+          "filter": {
+            "event_kind": "tool-attempt",
+            "as_of": "2026-10-07T10:04:11.040Z",
+            "from": "2026-10-04T14:00:00Z",
+            "to": "2026-10-04T15:00:00Z",
+            "operation": "structure_change"
+          }
+        },
+        {
+          "start": "2026-10-04T14:00:00Z",
+          "end": "2026-10-04T15:00:00Z",
+          "operation": "visual_create",
+          "count": 1,
+          "filter": {
+            "event_kind": "tool-attempt",
+            "as_of": "2026-10-07T10:04:11.040Z",
+            "from": "2026-10-04T14:00:00Z",
+            "to": "2026-10-04T15:00:00Z",
+            "operation": "visual_create"
+          }
+        },
+        {
+          "start": "2026-10-04T14:00:00Z",
+          "end": "2026-10-04T15:00:00Z",
+          "operation": "visual_render",
+          "count": 1,
+          "filter": {
+            "event_kind": "tool-attempt",
+            "as_of": "2026-10-07T10:04:11.040Z",
+            "from": "2026-10-04T14:00:00Z",
+            "to": "2026-10-04T15:00:00Z",
+            "operation": "visual_render"
+          }
+        },
+        {
+          "start": "2026-10-04T14:00:00Z",
+          "end": "2026-10-04T15:00:00Z",
+          "operation": "visuals",
+          "count": 3,
+          "filter": {
+            "event_kind": "tool-attempt",
+            "as_of": "2026-10-07T10:04:11.040Z",
+            "from": "2026-10-04T14:00:00Z",
+            "to": "2026-10-04T15:00:00Z",
+            "operation": "visuals"
+          }
+        },
+        {
+          "start": "2026-10-04T14:00:00Z",
+          "end": "2026-10-04T15:00:00Z",
+          "operation": "writing_style",
+          "count": 1,
+          "filter": {
+            "event_kind": "tool-attempt",
+            "as_of": "2026-10-07T10:04:11.040Z",
+            "from": "2026-10-04T14:00:00Z",
+            "to": "2026-10-04T15:00:00Z",
+            "operation": "writing_style"
+          }
+        },
+        {
+          "start": "2026-10-04T15:00:00Z",
+          "end": "2026-10-04T16:00:00Z",
+          "operation": "author_history",
+          "count": 21,
+          "filter": {
+            "event_kind": "tool-attempt",
+            "as_of": "2026-10-07T10:04:11.040Z",
+            "from": "2026-10-04T15:00:00Z",
+            "to": "2026-10-04T16:00:00Z",
+            "operation": "author_history"
+          }
+        },
+        {
+          "start": "2026-10-04T15:00:00Z",
+          "end": "2026-10-04T16:00:00Z",
+          "operation": "build_status",
+          "count": 1,
+          "filter": {
+            "event_kind": "tool-attempt",
+            "as_of": "2026-10-07T10:04:11.040Z",
+            "from": "2026-10-04T15:00:00Z",
+            "to": "2026-10-04T16:00:00Z",
+            "operation": "build_status"
+          }
+        },
+        {
+          "start": "2026-10-04T15:00:00Z",
+          "end": "2026-10-04T16:00:00Z",
+          "operation": "concept",
+          "count": 37,
+          "filter": {
+            "event_kind": "tool-attempt",
+            "as_of": "2026-10-07T10:04:11.040Z",
+            "from": "2026-10-04T15:00:00Z",
+            "to": "2026-10-04T16:00:00Z",
+            "operation": "concept"
+          }
+        },
+        {
+          "start": "2026-10-04T15:00:00Z",
+          "end": "2026-10-04T16:00:00Z",
+          "operation": "experiment_run",
+          "count": 14,
+          "filter": {
+            "event_kind": "tool-attempt",
+            "as_of": "2026-10-07T10:04:11.040Z",
+            "from": "2026-10-04T15:00:00Z",
+            "to": "2026-10-04T16:00:00Z",
+            "operation": "experiment_run"
+          }
+        },
+        {
+          "start": "2026-10-04T15:00:00Z",
+          "end": "2026-10-04T16:00:00Z",
+          "operation": "help",
+          "count": 24,
+          "filter": {
+            "event_kind": "tool-attempt",
+            "as_of": "2026-10-07T10:04:11.040Z",
+            "from": "2026-10-04T15:00:00Z",
+            "to": "2026-10-04T16:00:00Z",
+            "operation": "help"
+          }
+        },
+        {
+          "start": "2026-10-04T15:00:00Z",
+          "end": "2026-10-04T16:00:00Z",
+          "operation": "literature_scope",
+          "count": 1,
+          "filter": {
+            "event_kind": "tool-attempt",
+            "as_of": "2026-10-07T10:04:11.040Z",
+            "from": "2026-10-04T15:00:00Z",
+            "to": "2026-10-04T16:00:00Z",
+            "operation": "literature_scope"
+          }
+        },
+        {
+          "start": "2026-10-04T15:00:00Z",
+          "end": "2026-10-04T16:00:00Z",
+          "operation": "note",
+          "count": 3,
+          "filter": {
+            "event_kind": "tool-attempt",
+            "as_of": "2026-10-07T10:04:11.040Z",
+            "from": "2026-10-04T15:00:00Z",
+            "to": "2026-10-04T16:00:00Z",
+            "operation": "note"
+          }
+        },
+        {
+          "start": "2026-10-04T15:00:00Z",
+          "end": "2026-10-04T16:00:00Z",
+          "operation": "note_status",
+          "count": 11,
+          "filter": {
+            "event_kind": "tool-attempt",
+            "as_of": "2026-10-07T10:04:11.040Z",
+            "from": "2026-10-04T15:00:00Z",
+            "to": "2026-10-04T16:00:00Z",
+            "operation": "note_status"
+          }
+        },
+        {
+          "start": "2026-10-04T15:00:00Z",
+          "end": "2026-10-04T16:00:00Z",
+          "operation": "project",
+          "count": 1,
+          "filter": {
+            "event_kind": "tool-attempt",
+            "as_of": "2026-10-07T10:04:11.040Z",
+            "from": "2026-10-04T15:00:00Z",
+            "to": "2026-10-04T16:00:00Z",
+            "operation": "project"
+          }
+        },
+        {
+          "start": "2026-10-04T15:00:00Z",
+          "end": "2026-10-04T16:00:00Z",
+          "operation": "read_artifact",
+          "count": 106,
+          "filter": {
+            "event_kind": "tool-attempt",
+            "as_of": "2026-10-07T10:04:11.040Z",
+            "from": "2026-10-04T15:00:00Z",
+            "to": "2026-10-04T16:00:00Z",
+            "operation": "read_artifact"
+          }
+        },
+        {
+          "start": "2026-10-04T15:00:00Z",
+          "end": "2026-10-04T16:00:00Z",
+          "operation": "reference_text",
+          "count": 2,
+          "filter": {
+            "event_kind": "tool-attempt",
+            "as_of": "2026-10-07T10:04:11.040Z",
+            "from": "2026-10-04T15:00:00Z",
+            "to": "2026-10-04T16:00:00Z",
+            "operation": "reference_text"
+          }
+        },
+        {
+          "start": "2026-10-04T15:00:00Z",
+          "end": "2026-10-04T16:00:00Z",
+          "operation": "repository",
+          "count": 102,
+          "filter": {
+            "event_kind": "tool-attempt",
+            "as_of": "2026-10-07T10:04:11.040Z",
+            "from": "2026-10-04T15:00:00Z",
+            "to": "2026-10-04T16:00:00Z",
+            "operation": "repository"
+          }
+        },
+        {
+          "start": "2026-10-04T15:00:00Z",
+          "end": "2026-10-04T16:00:00Z",
+          "operation": "research",
+          "count": 5,
+          "filter": {
+            "event_kind": "tool-attempt",
+            "as_of": "2026-10-07T10:04:11.040Z",
+            "from": "2026-10-04T15:00:00Z",
+            "to": "2026-10-04T16:00:00Z",
+            "operation": "research"
+          }
+        },
+        {
+          "start": "2026-10-04T15:00:00Z",
+          "end": "2026-10-04T16:00:00Z",
+          "operation": "research_producer",
+          "count": 9,
+          "filter": {
+            "event_kind": "tool-attempt",
+            "as_of": "2026-10-07T10:04:11.040Z",
+            "from": "2026-10-04T15:00:00Z",
+            "to": "2026-10-04T16:00:00Z",
+            "operation": "research_producer"
+          }
+        },
+        {
+          "start": "2026-10-04T15:00:00Z",
+          "end": "2026-10-04T16:00:00Z",
+          "operation": "research_record",
+          "count": 2,
+          "filter": {
+            "event_kind": "tool-attempt",
+            "as_of": "2026-10-07T10:04:11.040Z",
+            "from": "2026-10-04T15:00:00Z",
+            "to": "2026-10-04T16:00:00Z",
+            "operation": "research_record"
+          }
+        },
+        {
+          "start": "2026-10-04T15:00:00Z",
+          "end": "2026-10-04T16:00:00Z",
+          "operation": "run_status",
+          "count": 14,
+          "filter": {
+            "event_kind": "tool-attempt",
+            "as_of": "2026-10-07T10:04:11.040Z",
+            "from": "2026-10-04T15:00:00Z",
+            "to": "2026-10-04T16:00:00Z",
+            "operation": "run_status"
+          }
+        },
+        {
+          "start": "2026-10-04T15:00:00Z",
+          "end": "2026-10-04T16:00:00Z",
+          "operation": "source",
+          "count": 10,
+          "filter": {
+            "event_kind": "tool-attempt",
+            "as_of": "2026-10-07T10:04:11.040Z",
+            "from": "2026-10-04T15:00:00Z",
+            "to": "2026-10-04T16:00:00Z",
+            "operation": "source"
+          }
+        },
+        {
+          "start": "2026-10-04T15:00:00Z",
+          "end": "2026-10-04T16:00:00Z",
+          "operation": "store_artifact",
+          "count": 27,
+          "filter": {
+            "event_kind": "tool-attempt",
+            "as_of": "2026-10-07T10:04:11.040Z",
+            "from": "2026-10-04T15:00:00Z",
+            "to": "2026-10-04T16:00:00Z",
+            "operation": "store_artifact"
+          }
+        },
+        {
+          "start": "2026-10-04T15:00:00Z",
+          "end": "2026-10-04T16:00:00Z",
+          "operation": "structure",
+          "count": 2,
+          "filter": {
+            "event_kind": "tool-attempt",
+            "as_of": "2026-10-07T10:04:11.040Z",
+            "from": "2026-10-04T15:00:00Z",
+            "to": "2026-10-04T16:00:00Z",
+            "operation": "structure"
+          }
+        },
+        {
+          "start": "2026-10-04T15:00:00Z",
+          "end": "2026-10-04T16:00:00Z",
+          "operation": "visuals",
+          "count": 1,
+          "filter": {
+            "event_kind": "tool-attempt",
+            "as_of": "2026-10-07T10:04:11.040Z",
+            "from": "2026-10-04T15:00:00Z",
+            "to": "2026-10-04T16:00:00Z",
+            "operation": "visuals"
+          }
+        },
+        {
+          "start": "2026-10-04T16:00:00Z",
+          "end": "2026-10-04T17:00:00Z",
+          "operation": "experiment_run",
+          "count": 1,
+          "filter": {
+            "event_kind": "tool-attempt",
+            "as_of": "2026-10-07T10:04:11.040Z",
+            "from": "2026-10-04T16:00:00Z",
+            "to": "2026-10-04T17:00:00Z",
+            "operation": "experiment_run"
+          }
+        },
+        {
+          "start": "2026-10-04T16:00:00Z",
+          "end": "2026-10-04T17:00:00Z",
+          "operation": "read_artifact",
+          "count": 2,
+          "filter": {
+            "event_kind": "tool-attempt",
+            "as_of": "2026-10-07T10:04:11.040Z",
+            "from": "2026-10-04T16:00:00Z",
+            "to": "2026-10-04T17:00:00Z",
+            "operation": "read_artifact"
+          }
+        },
+        {
+          "start": "2026-10-04T16:00:00Z",
+          "end": "2026-10-04T17:00:00Z",
+          "operation": "repository",
+          "count": 7,
+          "filter": {
+            "event_kind": "tool-attempt",
+            "as_of": "2026-10-07T10:04:11.040Z",
+            "from": "2026-10-04T16:00:00Z",
+            "to": "2026-10-04T17:00:00Z",
+            "operation": "repository"
+          }
+        },
+        {
+          "start": "2026-10-04T16:00:00Z",
+          "end": "2026-10-04T17:00:00Z",
+          "operation": "run_status",
+          "count": 2,
+          "filter": {
+            "event_kind": "tool-attempt",
+            "as_of": "2026-10-07T10:04:11.040Z",
+            "from": "2026-10-04T16:00:00Z",
+            "to": "2026-10-04T17:00:00Z",
+            "operation": "run_status"
+          }
+        },
+        {
+          "start": "2026-10-04T16:00:00Z",
+          "end": "2026-10-04T17:00:00Z",
+          "operation": "store_artifact",
+          "count": 2,
+          "filter": {
+            "event_kind": "tool-attempt",
+            "as_of": "2026-10-07T10:04:11.040Z",
+            "from": "2026-10-04T16:00:00Z",
+            "to": "2026-10-04T17:00:00Z",
+            "operation": "store_artifact"
+          }
+        },
+        {
+          "start": "2026-10-05T14:00:00Z",
+          "end": "2026-10-05T15:00:00Z",
+          "operation": "structure",
+          "count": 1,
+          "filter": {
+            "event_kind": "tool-attempt",
+            "as_of": "2026-10-07T10:04:11.040Z",
+            "from": "2026-10-05T14:00:00Z",
+            "to": "2026-10-05T15:00:00Z",
+            "operation": "structure"
+          }
+        },
+        {
+          "start": "2026-10-06T00:00:00Z",
+          "end": "2026-10-06T01:00:00Z",
+          "operation": "concept",
+          "count": 7,
+          "filter": {
+            "event_kind": "tool-attempt",
+            "as_of": "2026-10-07T10:04:11.040Z",
+            "from": "2026-10-06T00:00:00Z",
+            "to": "2026-10-06T01:00:00Z",
+            "operation": "concept"
+          }
+        },
+        {
+          "start": "2026-10-06T00:00:00Z",
+          "end": "2026-10-06T01:00:00Z",
+          "operation": "logical_plan",
+          "count": 5,
+          "filter": {
+            "event_kind": "tool-attempt",
+            "as_of": "2026-10-07T10:04:11.040Z",
+            "from": "2026-10-06T00:00:00Z",
+            "to": "2026-10-06T01:00:00Z",
+            "operation": "logical_plan"
+          }
+        },
+        {
+          "start": "2026-10-06T10:00:00Z",
+          "end": "2026-10-06T11:00:00Z",
+          "operation": "dispatch_launch",
+          "count": 1,
+          "filter": {
+            "event_kind": "tool-attempt",
+            "as_of": "2026-10-07T10:04:11.040Z",
+            "from": "2026-10-06T10:00:00Z",
+            "to": "2026-10-06T11:00:00Z",
+            "operation": "dispatch_launch"
+          }
+        },
+        {
+          "start": "2026-10-06T10:00:00Z",
+          "end": "2026-10-06T11:00:00Z",
+          "operation": "dispatch_plan",
+          "count": 1,
+          "filter": {
+            "event_kind": "tool-attempt",
+            "as_of": "2026-10-07T10:04:11.040Z",
+            "from": "2026-10-06T10:00:00Z",
+            "to": "2026-10-06T11:00:00Z",
+            "operation": "dispatch_plan"
+          }
+        },
+        {
+          "start": "2026-10-06T10:00:00Z",
+          "end": "2026-10-06T11:00:00Z",
+          "operation": "dispatch_status",
+          "count": 1,
+          "filter": {
+            "event_kind": "tool-attempt",
+            "as_of": "2026-10-07T10:04:11.040Z",
+            "from": "2026-10-06T10:00:00Z",
+            "to": "2026-10-06T11:00:00Z",
+            "operation": "dispatch_status"
+          }
+        },
+        {
+          "start": "2026-10-06T10:00:00Z",
+          "end": "2026-10-06T11:00:00Z",
+          "operation": "read_artifact",
+          "count": 3,
+          "filter": {
+            "event_kind": "tool-attempt",
+            "as_of": "2026-10-07T10:04:11.040Z",
+            "from": "2026-10-06T10:00:00Z",
+            "to": "2026-10-06T11:00:00Z",
+            "operation": "read_artifact"
+          }
+        },
+        {
+          "start": "2026-10-06T10:00:00Z",
+          "end": "2026-10-06T11:00:00Z",
+          "operation": "store_artifact",
+          "count": 3,
+          "filter": {
+            "event_kind": "tool-attempt",
+            "as_of": "2026-10-07T10:04:11.040Z",
+            "from": "2026-10-06T10:00:00Z",
+            "to": "2026-10-06T11:00:00Z",
+            "operation": "store_artifact"
+          }
+        },
+        {
+          "start": "2026-10-06T10:00:00Z",
+          "end": "2026-10-06T11:00:00Z",
+          "operation": "task_status",
+          "count": 3,
+          "filter": {
+            "event_kind": "tool-attempt",
+            "as_of": "2026-10-07T10:04:11.040Z",
+            "from": "2026-10-06T10:00:00Z",
+            "to": "2026-10-06T11:00:00Z",
+            "operation": "task_status"
+          }
+        },
+        {
+          "start": "2026-10-07T02:00:00Z",
+          "end": "2026-10-07T03:00:00Z",
+          "operation": "apply_revision",
+          "count": 3,
+          "filter": {
+            "event_kind": "tool-attempt",
+            "as_of": "2026-10-07T10:04:11.040Z",
+            "from": "2026-10-07T02:00:00Z",
+            "to": "2026-10-07T03:00:00Z",
+            "operation": "apply_revision"
+          }
+        },
+        {
+          "start": "2026-10-07T02:00:00Z",
+          "end": "2026-10-07T03:00:00Z",
+          "operation": "author_history",
+          "count": 7,
+          "filter": {
+            "event_kind": "tool-attempt",
+            "as_of": "2026-10-07T10:04:11.040Z",
+            "from": "2026-10-07T02:00:00Z",
+            "to": "2026-10-07T03:00:00Z",
+            "operation": "author_history"
+          }
+        },
+        {
+          "start": "2026-10-07T02:00:00Z",
+          "end": "2026-10-07T03:00:00Z",
+          "operation": "build",
+          "count": 2,
+          "filter": {
+            "event_kind": "tool-attempt",
+            "as_of": "2026-10-07T10:04:11.040Z",
+            "from": "2026-10-07T02:00:00Z",
+            "to": "2026-10-07T03:00:00Z",
+            "operation": "build"
+          }
+        },
+        {
+          "start": "2026-10-07T02:00:00Z",
+          "end": "2026-10-07T03:00:00Z",
+          "operation": "build_status",
+          "count": 6,
+          "filter": {
+            "event_kind": "tool-attempt",
+            "as_of": "2026-10-07T10:04:11.040Z",
+            "from": "2026-10-07T02:00:00Z",
+            "to": "2026-10-07T03:00:00Z",
+            "operation": "build_status"
+          }
+        },
+        {
+          "start": "2026-10-07T02:00:00Z",
+          "end": "2026-10-07T03:00:00Z",
+          "operation": "concept",
+          "count": 60,
+          "filter": {
+            "event_kind": "tool-attempt",
+            "as_of": "2026-10-07T10:04:11.040Z",
+            "from": "2026-10-07T02:00:00Z",
+            "to": "2026-10-07T03:00:00Z",
+            "operation": "concept"
+          }
+        },
+        {
+          "start": "2026-10-07T02:00:00Z",
+          "end": "2026-10-07T03:00:00Z",
+          "operation": "concept_change",
+          "count": 20,
+          "filter": {
+            "event_kind": "tool-attempt",
+            "as_of": "2026-10-07T10:04:11.040Z",
+            "from": "2026-10-07T02:00:00Z",
+            "to": "2026-10-07T03:00:00Z",
+            "operation": "concept_change"
+          }
+        },
+        {
+          "start": "2026-10-07T02:00:00Z",
+          "end": "2026-10-07T03:00:00Z",
+          "operation": "help",
+          "count": 58,
+          "filter": {
+            "event_kind": "tool-attempt",
+            "as_of": "2026-10-07T10:04:11.040Z",
+            "from": "2026-10-07T02:00:00Z",
+            "to": "2026-10-07T03:00:00Z",
+            "operation": "help"
+          }
+        },
+        {
+          "start": "2026-10-07T02:00:00Z",
+          "end": "2026-10-07T03:00:00Z",
+          "operation": "literature_bind",
+          "count": 11,
+          "filter": {
+            "event_kind": "tool-attempt",
+            "as_of": "2026-10-07T10:04:11.040Z",
+            "from": "2026-10-07T02:00:00Z",
+            "to": "2026-10-07T03:00:00Z",
+            "operation": "literature_bind"
+          }
+        },
+        {
+          "start": "2026-10-07T02:00:00Z",
+          "end": "2026-10-07T03:00:00Z",
+          "operation": "literature_import",
+          "count": 1,
+          "filter": {
+            "event_kind": "tool-attempt",
+            "as_of": "2026-10-07T10:04:11.040Z",
+            "from": "2026-10-07T02:00:00Z",
+            "to": "2026-10-07T03:00:00Z",
+            "operation": "literature_import"
+          }
+        },
+        {
+          "start": "2026-10-07T02:00:00Z",
+          "end": "2026-10-07T03:00:00Z",
+          "operation": "literature_scope",
+          "count": 2,
+          "filter": {
+            "event_kind": "tool-attempt",
+            "as_of": "2026-10-07T10:04:11.040Z",
+            "from": "2026-10-07T02:00:00Z",
+            "to": "2026-10-07T03:00:00Z",
+            "operation": "literature_scope"
+          }
+        },
+        {
+          "start": "2026-10-07T02:00:00Z",
+          "end": "2026-10-07T03:00:00Z",
+          "operation": "literature_uses",
+          "count": 3,
+          "filter": {
+            "event_kind": "tool-attempt",
+            "as_of": "2026-10-07T10:04:11.040Z",
+            "from": "2026-10-07T02:00:00Z",
+            "to": "2026-10-07T03:00:00Z",
+            "operation": "literature_uses"
+          }
+        },
+        {
+          "start": "2026-10-07T02:00:00Z",
+          "end": "2026-10-07T03:00:00Z",
+          "operation": "logical_plan",
+          "count": 1,
+          "filter": {
+            "event_kind": "tool-attempt",
+            "as_of": "2026-10-07T10:04:11.040Z",
+            "from": "2026-10-07T02:00:00Z",
+            "to": "2026-10-07T03:00:00Z",
+            "operation": "logical_plan"
+          }
+        },
+        {
+          "start": "2026-10-07T02:00:00Z",
+          "end": "2026-10-07T03:00:00Z",
+          "operation": "material_reference_change",
+          "count": 1,
+          "filter": {
+            "event_kind": "tool-attempt",
+            "as_of": "2026-10-07T10:04:11.040Z",
+            "from": "2026-10-07T02:00:00Z",
+            "to": "2026-10-07T03:00:00Z",
+            "operation": "material_reference_change"
+          }
+        },
+        {
+          "start": "2026-10-07T02:00:00Z",
+          "end": "2026-10-07T03:00:00Z",
+          "operation": "material_references",
+          "count": 3,
+          "filter": {
+            "event_kind": "tool-attempt",
+            "as_of": "2026-10-07T10:04:11.040Z",
+            "from": "2026-10-07T02:00:00Z",
+            "to": "2026-10-07T03:00:00Z",
+            "operation": "material_references"
+          }
+        },
+        {
+          "start": "2026-10-07T02:00:00Z",
+          "end": "2026-10-07T03:00:00Z",
+          "operation": "project",
+          "count": 4,
+          "filter": {
+            "event_kind": "tool-attempt",
+            "as_of": "2026-10-07T10:04:11.040Z",
+            "from": "2026-10-07T02:00:00Z",
+            "to": "2026-10-07T03:00:00Z",
+            "operation": "project"
+          }
+        },
+        {
+          "start": "2026-10-07T02:00:00Z",
+          "end": "2026-10-07T03:00:00Z",
+          "operation": "project_metadata",
+          "count": 2,
+          "filter": {
+            "event_kind": "tool-attempt",
+            "as_of": "2026-10-07T10:04:11.040Z",
+            "from": "2026-10-07T02:00:00Z",
+            "to": "2026-10-07T03:00:00Z",
+            "operation": "project_metadata"
+          }
+        },
+        {
+          "start": "2026-10-07T02:00:00Z",
+          "end": "2026-10-07T03:00:00Z",
+          "operation": "read_artifact",
+          "count": 12,
+          "filter": {
+            "event_kind": "tool-attempt",
+            "as_of": "2026-10-07T10:04:11.040Z",
+            "from": "2026-10-07T02:00:00Z",
+            "to": "2026-10-07T03:00:00Z",
+            "operation": "read_artifact"
+          }
+        },
+        {
+          "start": "2026-10-07T02:00:00Z",
+          "end": "2026-10-07T03:00:00Z",
+          "operation": "reference_source",
+          "count": 1,
+          "filter": {
+            "event_kind": "tool-attempt",
+            "as_of": "2026-10-07T10:04:11.040Z",
+            "from": "2026-10-07T02:00:00Z",
+            "to": "2026-10-07T03:00:00Z",
+            "operation": "reference_source"
+          }
+        },
+        {
+          "start": "2026-10-07T02:00:00Z",
+          "end": "2026-10-07T03:00:00Z",
+          "operation": "reference_text",
+          "count": 11,
+          "filter": {
+            "event_kind": "tool-attempt",
+            "as_of": "2026-10-07T10:04:11.040Z",
+            "from": "2026-10-07T02:00:00Z",
+            "to": "2026-10-07T03:00:00Z",
+            "operation": "reference_text"
+          }
+        },
+        {
+          "start": "2026-10-07T02:00:00Z",
+          "end": "2026-10-07T03:00:00Z",
+          "operation": "references",
+          "count": 1,
+          "filter": {
+            "event_kind": "tool-attempt",
+            "as_of": "2026-10-07T10:04:11.040Z",
+            "from": "2026-10-07T02:00:00Z",
+            "to": "2026-10-07T03:00:00Z",
+            "operation": "references"
+          }
+        },
+        {
+          "start": "2026-10-07T02:00:00Z",
+          "end": "2026-10-07T03:00:00Z",
+          "operation": "references_attached",
+          "count": 1,
+          "filter": {
+            "event_kind": "tool-attempt",
+            "as_of": "2026-10-07T10:04:11.040Z",
+            "from": "2026-10-07T02:00:00Z",
+            "to": "2026-10-07T03:00:00Z",
+            "operation": "references_attached"
+          }
+        },
+        {
+          "start": "2026-10-07T02:00:00Z",
+          "end": "2026-10-07T03:00:00Z",
+          "operation": "repository",
+          "count": 98,
+          "filter": {
+            "event_kind": "tool-attempt",
+            "as_of": "2026-10-07T10:04:11.040Z",
+            "from": "2026-10-07T02:00:00Z",
+            "to": "2026-10-07T03:00:00Z",
+            "operation": "repository"
+          }
+        },
+        {
+          "start": "2026-10-07T02:00:00Z",
+          "end": "2026-10-07T03:00:00Z",
+          "operation": "source",
+          "count": 15,
+          "filter": {
+            "event_kind": "tool-attempt",
+            "as_of": "2026-10-07T10:04:11.040Z",
+            "from": "2026-10-07T02:00:00Z",
+            "to": "2026-10-07T03:00:00Z",
+            "operation": "source"
+          }
+        },
+        {
+          "start": "2026-10-07T02:00:00Z",
+          "end": "2026-10-07T03:00:00Z",
+          "operation": "store_artifact",
+          "count": 11,
+          "filter": {
+            "event_kind": "tool-attempt",
+            "as_of": "2026-10-07T10:04:11.040Z",
+            "from": "2026-10-07T02:00:00Z",
+            "to": "2026-10-07T03:00:00Z",
+            "operation": "store_artifact"
+          }
+        },
+        {
+          "start": "2026-10-07T02:00:00Z",
+          "end": "2026-10-07T03:00:00Z",
+          "operation": "structure",
+          "count": 4,
+          "filter": {
+            "event_kind": "tool-attempt",
+            "as_of": "2026-10-07T10:04:11.040Z",
+            "from": "2026-10-07T02:00:00Z",
+            "to": "2026-10-07T03:00:00Z",
+            "operation": "structure"
+          }
+        },
+        {
+          "start": "2026-10-07T02:00:00Z",
+          "end": "2026-10-07T03:00:00Z",
+          "operation": "task_status",
+          "count": 4,
+          "filter": {
+            "event_kind": "tool-attempt",
+            "as_of": "2026-10-07T10:04:11.040Z",
+            "from": "2026-10-07T02:00:00Z",
+            "to": "2026-10-07T03:00:00Z",
+            "operation": "task_status"
+          }
+        },
+        {
+          "start": "2026-10-07T02:00:00Z",
+          "end": "2026-10-07T03:00:00Z",
+          "operation": "visual_create",
+          "count": 8,
+          "filter": {
+            "event_kind": "tool-attempt",
+            "as_of": "2026-10-07T10:04:11.040Z",
+            "from": "2026-10-07T02:00:00Z",
+            "to": "2026-10-07T03:00:00Z",
+            "operation": "visual_create"
+          }
+        },
+        {
+          "start": "2026-10-07T02:00:00Z",
+          "end": "2026-10-07T03:00:00Z",
+          "operation": "visual_render",
+          "count": 8,
+          "filter": {
+            "event_kind": "tool-attempt",
+            "as_of": "2026-10-07T10:04:11.040Z",
+            "from": "2026-10-07T02:00:00Z",
+            "to": "2026-10-07T03:00:00Z",
+            "operation": "visual_render"
+          }
+        },
+        {
+          "start": "2026-10-07T02:00:00Z",
+          "end": "2026-10-07T03:00:00Z",
+          "operation": "visuals",
+          "count": 9,
+          "filter": {
+            "event_kind": "tool-attempt",
+            "as_of": "2026-10-07T10:04:11.040Z",
+            "from": "2026-10-07T02:00:00Z",
+            "to": "2026-10-07T03:00:00Z",
+            "operation": "visuals"
+          }
+        },
+        {
+          "start": "2026-10-07T03:00:00Z",
+          "end": "2026-10-07T04:00:00Z",
+          "operation": "apply_revision",
+          "count": 4,
+          "filter": {
+            "event_kind": "tool-attempt",
+            "as_of": "2026-10-07T10:04:11.040Z",
+            "from": "2026-10-07T03:00:00Z",
+            "to": "2026-10-07T04:00:00Z",
+            "operation": "apply_revision"
+          }
+        },
+        {
+          "start": "2026-10-07T03:00:00Z",
+          "end": "2026-10-07T04:00:00Z",
+          "operation": "author_changes",
+          "count": 1,
+          "filter": {
+            "event_kind": "tool-attempt",
+            "as_of": "2026-10-07T10:04:11.040Z",
+            "from": "2026-10-07T03:00:00Z",
+            "to": "2026-10-07T04:00:00Z",
+            "operation": "author_changes"
+          }
+        },
+        {
+          "start": "2026-10-07T03:00:00Z",
+          "end": "2026-10-07T04:00:00Z",
+          "operation": "author_history",
+          "count": 14,
+          "filter": {
+            "event_kind": "tool-attempt",
+            "as_of": "2026-10-07T10:04:11.040Z",
+            "from": "2026-10-07T03:00:00Z",
+            "to": "2026-10-07T04:00:00Z",
+            "operation": "author_history"
+          }
+        },
+        {
+          "start": "2026-10-07T03:00:00Z",
+          "end": "2026-10-07T04:00:00Z",
+          "operation": "build",
+          "count": 1,
+          "filter": {
+            "event_kind": "tool-attempt",
+            "as_of": "2026-10-07T10:04:11.040Z",
+            "from": "2026-10-07T03:00:00Z",
+            "to": "2026-10-07T04:00:00Z",
+            "operation": "build"
+          }
+        },
+        {
+          "start": "2026-10-07T03:00:00Z",
+          "end": "2026-10-07T04:00:00Z",
+          "operation": "build_status",
+          "count": 2,
+          "filter": {
+            "event_kind": "tool-attempt",
+            "as_of": "2026-10-07T10:04:11.040Z",
+            "from": "2026-10-07T03:00:00Z",
+            "to": "2026-10-07T04:00:00Z",
+            "operation": "build_status"
+          }
+        },
+        {
+          "start": "2026-10-07T03:00:00Z",
+          "end": "2026-10-07T04:00:00Z",
+          "operation": "concept",
+          "count": 10,
+          "filter": {
+            "event_kind": "tool-attempt",
+            "as_of": "2026-10-07T10:04:11.040Z",
+            "from": "2026-10-07T03:00:00Z",
+            "to": "2026-10-07T04:00:00Z",
+            "operation": "concept"
+          }
+        },
+        {
+          "start": "2026-10-07T03:00:00Z",
+          "end": "2026-10-07T04:00:00Z",
+          "operation": "help",
+          "count": 5,
+          "filter": {
+            "event_kind": "tool-attempt",
+            "as_of": "2026-10-07T10:04:11.040Z",
+            "from": "2026-10-07T03:00:00Z",
+            "to": "2026-10-07T04:00:00Z",
+            "operation": "help"
+          }
+        },
+        {
+          "start": "2026-10-07T03:00:00Z",
+          "end": "2026-10-07T04:00:00Z",
+          "operation": "literature_scope",
+          "count": 2,
+          "filter": {
+            "event_kind": "tool-attempt",
+            "as_of": "2026-10-07T10:04:11.040Z",
+            "from": "2026-10-07T03:00:00Z",
+            "to": "2026-10-07T04:00:00Z",
+            "operation": "literature_scope"
+          }
+        },
+        {
+          "start": "2026-10-07T03:00:00Z",
+          "end": "2026-10-07T04:00:00Z",
+          "operation": "literature_uses",
+          "count": 2,
+          "filter": {
+            "event_kind": "tool-attempt",
+            "as_of": "2026-10-07T10:04:11.040Z",
+            "from": "2026-10-07T03:00:00Z",
+            "to": "2026-10-07T04:00:00Z",
+            "operation": "literature_uses"
+          }
+        },
+        {
+          "start": "2026-10-07T03:00:00Z",
+          "end": "2026-10-07T04:00:00Z",
+          "operation": "logical_plan",
+          "count": 1,
+          "filter": {
+            "event_kind": "tool-attempt",
+            "as_of": "2026-10-07T10:04:11.040Z",
+            "from": "2026-10-07T03:00:00Z",
+            "to": "2026-10-07T04:00:00Z",
+            "operation": "logical_plan"
+          }
+        },
+        {
+          "start": "2026-10-07T03:00:00Z",
+          "end": "2026-10-07T04:00:00Z",
+          "operation": "material_references",
+          "count": 2,
+          "filter": {
+            "event_kind": "tool-attempt",
+            "as_of": "2026-10-07T10:04:11.040Z",
+            "from": "2026-10-07T03:00:00Z",
+            "to": "2026-10-07T04:00:00Z",
+            "operation": "material_references"
+          }
+        },
+        {
+          "start": "2026-10-07T03:00:00Z",
+          "end": "2026-10-07T04:00:00Z",
+          "operation": "read_artifact",
+          "count": 3,
+          "filter": {
+            "event_kind": "tool-attempt",
+            "as_of": "2026-10-07T10:04:11.040Z",
+            "from": "2026-10-07T03:00:00Z",
+            "to": "2026-10-07T04:00:00Z",
+            "operation": "read_artifact"
+          }
+        },
+        {
+          "start": "2026-10-07T03:00:00Z",
+          "end": "2026-10-07T04:00:00Z",
+          "operation": "repository",
+          "count": 9,
+          "filter": {
+            "event_kind": "tool-attempt",
+            "as_of": "2026-10-07T10:04:11.040Z",
+            "from": "2026-10-07T03:00:00Z",
+            "to": "2026-10-07T04:00:00Z",
+            "operation": "repository"
+          }
+        },
+        {
+          "start": "2026-10-07T03:00:00Z",
+          "end": "2026-10-07T04:00:00Z",
+          "operation": "source",
+          "count": 20,
+          "filter": {
+            "event_kind": "tool-attempt",
+            "as_of": "2026-10-07T10:04:11.040Z",
+            "from": "2026-10-07T03:00:00Z",
+            "to": "2026-10-07T04:00:00Z",
+            "operation": "source"
+          }
+        },
+        {
+          "start": "2026-10-07T03:00:00Z",
+          "end": "2026-10-07T04:00:00Z",
+          "operation": "store_artifact",
+          "count": 4,
+          "filter": {
+            "event_kind": "tool-attempt",
+            "as_of": "2026-10-07T10:04:11.040Z",
+            "from": "2026-10-07T03:00:00Z",
+            "to": "2026-10-07T04:00:00Z",
+            "operation": "store_artifact"
+          }
+        },
+        {
+          "start": "2026-10-07T03:00:00Z",
+          "end": "2026-10-07T04:00:00Z",
+          "operation": "structure",
+          "count": 1,
+          "filter": {
+            "event_kind": "tool-attempt",
+            "as_of": "2026-10-07T10:04:11.040Z",
+            "from": "2026-10-07T03:00:00Z",
+            "to": "2026-10-07T04:00:00Z",
+            "operation": "structure"
+          }
+        },
+        {
+          "start": "2026-10-07T03:00:00Z",
+          "end": "2026-10-07T04:00:00Z",
+          "operation": "task_status",
+          "count": 1,
+          "filter": {
+            "event_kind": "tool-attempt",
+            "as_of": "2026-10-07T10:04:11.040Z",
+            "from": "2026-10-07T03:00:00Z",
+            "to": "2026-10-07T04:00:00Z",
+            "operation": "task_status"
+          }
+        },
+        {
+          "start": "2026-10-07T03:00:00Z",
+          "end": "2026-10-07T04:00:00Z",
+          "operation": "visuals",
+          "count": 2,
+          "filter": {
+            "event_kind": "tool-attempt",
+            "as_of": "2026-10-07T10:04:11.040Z",
+            "from": "2026-10-07T03:00:00Z",
+            "to": "2026-10-07T04:00:00Z",
+            "operation": "visuals"
+          }
+        },
+        {
+          "start": "2026-10-07T04:00:00Z",
+          "end": "2026-10-07T05:00:00Z",
+          "operation": "app_settings",
+          "count": 1,
+          "filter": {
+            "event_kind": "tool-attempt",
+            "as_of": "2026-10-07T10:04:11.040Z",
+            "from": "2026-10-07T04:00:00Z",
+            "to": "2026-10-07T05:00:00Z",
+            "operation": "app_settings"
+          }
+        },
+        {
+          "start": "2026-10-07T04:00:00Z",
+          "end": "2026-10-07T05:00:00Z",
+          "operation": "build_status",
+          "count": 1,
+          "filter": {
+            "event_kind": "tool-attempt",
+            "as_of": "2026-10-07T10:04:11.040Z",
+            "from": "2026-10-07T04:00:00Z",
+            "to": "2026-10-07T05:00:00Z",
+            "operation": "build_status"
+          }
+        },
+        {
+          "start": "2026-10-07T04:00:00Z",
+          "end": "2026-10-07T05:00:00Z",
+          "operation": "concept",
+          "count": 1,
+          "filter": {
+            "event_kind": "tool-attempt",
+            "as_of": "2026-10-07T10:04:11.040Z",
+            "from": "2026-10-07T04:00:00Z",
+            "to": "2026-10-07T05:00:00Z",
+            "operation": "concept"
+          }
+        },
+        {
+          "start": "2026-10-07T04:00:00Z",
+          "end": "2026-10-07T05:00:00Z",
+          "operation": "help",
+          "count": 12,
+          "filter": {
+            "event_kind": "tool-attempt",
+            "as_of": "2026-10-07T10:04:11.040Z",
+            "from": "2026-10-07T04:00:00Z",
+            "to": "2026-10-07T05:00:00Z",
+            "operation": "help"
+          }
+        },
+        {
+          "start": "2026-10-07T04:00:00Z",
+          "end": "2026-10-07T05:00:00Z",
+          "operation": "repository",
+          "count": 36,
+          "filter": {
+            "event_kind": "tool-attempt",
+            "as_of": "2026-10-07T10:04:11.040Z",
+            "from": "2026-10-07T04:00:00Z",
+            "to": "2026-10-07T05:00:00Z",
+            "operation": "repository"
+          }
+        },
+        {
+          "start": "2026-10-07T04:00:00Z",
+          "end": "2026-10-07T05:00:00Z",
+          "operation": "source",
+          "count": 10,
+          "filter": {
+            "event_kind": "tool-attempt",
+            "as_of": "2026-10-07T10:04:11.040Z",
+            "from": "2026-10-07T04:00:00Z",
+            "to": "2026-10-07T05:00:00Z",
+            "operation": "source"
+          }
+        },
+        {
+          "start": "2026-10-07T04:00:00Z",
+          "end": "2026-10-07T05:00:00Z",
+          "operation": "structure",
+          "count": 1,
+          "filter": {
+            "event_kind": "tool-attempt",
+            "as_of": "2026-10-07T10:04:11.040Z",
+            "from": "2026-10-07T04:00:00Z",
+            "to": "2026-10-07T05:00:00Z",
+            "operation": "structure"
+          }
+        },
+        {
+          "start": "2026-10-07T04:00:00Z",
+          "end": "2026-10-07T05:00:00Z",
+          "operation": "visuals",
+          "count": 1,
+          "filter": {
+            "event_kind": "tool-attempt",
+            "as_of": "2026-10-07T10:04:11.040Z",
+            "from": "2026-10-07T04:00:00Z",
+            "to": "2026-10-07T05:00:00Z",
+            "operation": "visuals"
+          }
+        },
+        {
+          "start": "2026-10-07T05:00:00Z",
+          "end": "2026-10-07T06:00:00Z",
+          "operation": "apply_revision",
+          "count": 4,
+          "filter": {
+            "event_kind": "tool-attempt",
+            "as_of": "2026-10-07T10:04:11.040Z",
+            "from": "2026-10-07T05:00:00Z",
+            "to": "2026-10-07T06:00:00Z",
+            "operation": "apply_revision"
+          }
+        },
+        {
+          "start": "2026-10-07T05:00:00Z",
+          "end": "2026-10-07T06:00:00Z",
+          "operation": "author_history",
+          "count": 40,
+          "filter": {
+            "event_kind": "tool-attempt",
+            "as_of": "2026-10-07T10:04:11.040Z",
+            "from": "2026-10-07T05:00:00Z",
+            "to": "2026-10-07T06:00:00Z",
+            "operation": "author_history"
+          }
+        },
+        {
+          "start": "2026-10-07T05:00:00Z",
+          "end": "2026-10-07T06:00:00Z",
+          "operation": "build",
+          "count": 2,
+          "filter": {
+            "event_kind": "tool-attempt",
+            "as_of": "2026-10-07T10:04:11.040Z",
+            "from": "2026-10-07T05:00:00Z",
+            "to": "2026-10-07T06:00:00Z",
+            "operation": "build"
+          }
+        },
+        {
+          "start": "2026-10-07T05:00:00Z",
+          "end": "2026-10-07T06:00:00Z",
+          "operation": "build_status",
+          "count": 5,
+          "filter": {
+            "event_kind": "tool-attempt",
+            "as_of": "2026-10-07T10:04:11.040Z",
+            "from": "2026-10-07T05:00:00Z",
+            "to": "2026-10-07T06:00:00Z",
+            "operation": "build_status"
+          }
+        },
+        {
+          "start": "2026-10-07T05:00:00Z",
+          "end": "2026-10-07T06:00:00Z",
+          "operation": "concept",
+          "count": 154,
+          "filter": {
+            "event_kind": "tool-attempt",
+            "as_of": "2026-10-07T10:04:11.040Z",
+            "from": "2026-10-07T05:00:00Z",
+            "to": "2026-10-07T06:00:00Z",
+            "operation": "concept"
+          }
+        },
+        {
+          "start": "2026-10-07T05:00:00Z",
+          "end": "2026-10-07T06:00:00Z",
+          "operation": "concept_change",
+          "count": 4,
+          "filter": {
+            "event_kind": "tool-attempt",
+            "as_of": "2026-10-07T10:04:11.040Z",
+            "from": "2026-10-07T05:00:00Z",
+            "to": "2026-10-07T06:00:00Z",
+            "operation": "concept_change"
+          }
+        },
+        {
+          "start": "2026-10-07T05:00:00Z",
+          "end": "2026-10-07T06:00:00Z",
+          "operation": "conversation_history",
+          "count": 1,
+          "filter": {
+            "event_kind": "tool-attempt",
+            "as_of": "2026-10-07T10:04:11.040Z",
+            "from": "2026-10-07T05:00:00Z",
+            "to": "2026-10-07T06:00:00Z",
+            "operation": "conversation_history"
+          }
+        },
+        {
+          "start": "2026-10-07T05:00:00Z",
+          "end": "2026-10-07T06:00:00Z",
+          "operation": "help",
+          "count": 60,
+          "filter": {
+            "event_kind": "tool-attempt",
+            "as_of": "2026-10-07T10:04:11.040Z",
+            "from": "2026-10-07T05:00:00Z",
+            "to": "2026-10-07T06:00:00Z",
+            "operation": "help"
+          }
+        },
+        {
+          "start": "2026-10-07T05:00:00Z",
+          "end": "2026-10-07T06:00:00Z",
+          "operation": "literature_bind",
+          "count": 9,
+          "filter": {
+            "event_kind": "tool-attempt",
+            "as_of": "2026-10-07T10:04:11.040Z",
+            "from": "2026-10-07T05:00:00Z",
+            "to": "2026-10-07T06:00:00Z",
+            "operation": "literature_bind"
+          }
+        },
+        {
+          "start": "2026-10-07T05:00:00Z",
+          "end": "2026-10-07T06:00:00Z",
+          "operation": "literature_import",
+          "count": 1,
+          "filter": {
+            "event_kind": "tool-attempt",
+            "as_of": "2026-10-07T10:04:11.040Z",
+            "from": "2026-10-07T05:00:00Z",
+            "to": "2026-10-07T06:00:00Z",
+            "operation": "literature_import"
+          }
+        },
+        {
+          "start": "2026-10-07T05:00:00Z",
+          "end": "2026-10-07T06:00:00Z",
+          "operation": "literature_scope",
+          "count": 6,
+          "filter": {
+            "event_kind": "tool-attempt",
+            "as_of": "2026-10-07T10:04:11.040Z",
+            "from": "2026-10-07T05:00:00Z",
+            "to": "2026-10-07T06:00:00Z",
+            "operation": "literature_scope"
+          }
+        },
+        {
+          "start": "2026-10-07T05:00:00Z",
+          "end": "2026-10-07T06:00:00Z",
+          "operation": "literature_uses",
+          "count": 3,
+          "filter": {
+            "event_kind": "tool-attempt",
+            "as_of": "2026-10-07T10:04:11.040Z",
+            "from": "2026-10-07T05:00:00Z",
+            "to": "2026-10-07T06:00:00Z",
+            "operation": "literature_uses"
+          }
+        },
+        {
+          "start": "2026-10-07T05:00:00Z",
+          "end": "2026-10-07T06:00:00Z",
+          "operation": "logical_plan",
+          "count": 2,
+          "filter": {
+            "event_kind": "tool-attempt",
+            "as_of": "2026-10-07T10:04:11.040Z",
+            "from": "2026-10-07T05:00:00Z",
+            "to": "2026-10-07T06:00:00Z",
+            "operation": "logical_plan"
+          }
+        },
+        {
+          "start": "2026-10-07T05:00:00Z",
+          "end": "2026-10-07T06:00:00Z",
+          "operation": "material_references",
+          "count": 2,
+          "filter": {
+            "event_kind": "tool-attempt",
+            "as_of": "2026-10-07T10:04:11.040Z",
+            "from": "2026-10-07T05:00:00Z",
+            "to": "2026-10-07T06:00:00Z",
+            "operation": "material_references"
+          }
+        },
+        {
+          "start": "2026-10-07T05:00:00Z",
+          "end": "2026-10-07T06:00:00Z",
+          "operation": "note",
+          "count": 16,
+          "filter": {
+            "event_kind": "tool-attempt",
+            "as_of": "2026-10-07T10:04:11.040Z",
+            "from": "2026-10-07T05:00:00Z",
+            "to": "2026-10-07T06:00:00Z",
+            "operation": "note"
+          }
+        },
+        {
+          "start": "2026-10-07T05:00:00Z",
+          "end": "2026-10-07T06:00:00Z",
+          "operation": "propose_revision",
+          "count": 4,
+          "filter": {
+            "event_kind": "tool-attempt",
+            "as_of": "2026-10-07T10:04:11.040Z",
+            "from": "2026-10-07T05:00:00Z",
+            "to": "2026-10-07T06:00:00Z",
+            "operation": "propose_revision"
+          }
+        },
+        {
+          "start": "2026-10-07T05:00:00Z",
+          "end": "2026-10-07T06:00:00Z",
+          "operation": "read_artifact",
+          "count": 50,
+          "filter": {
+            "event_kind": "tool-attempt",
+            "as_of": "2026-10-07T10:04:11.040Z",
+            "from": "2026-10-07T05:00:00Z",
+            "to": "2026-10-07T06:00:00Z",
+            "operation": "read_artifact"
+          }
+        },
+        {
+          "start": "2026-10-07T05:00:00Z",
+          "end": "2026-10-07T06:00:00Z",
+          "operation": "reference_text",
+          "count": 10,
+          "filter": {
+            "event_kind": "tool-attempt",
+            "as_of": "2026-10-07T10:04:11.040Z",
+            "from": "2026-10-07T05:00:00Z",
+            "to": "2026-10-07T06:00:00Z",
+            "operation": "reference_text"
+          }
+        },
+        {
+          "start": "2026-10-07T05:00:00Z",
+          "end": "2026-10-07T06:00:00Z",
+          "operation": "repository",
+          "count": 139,
+          "filter": {
+            "event_kind": "tool-attempt",
+            "as_of": "2026-10-07T10:04:11.040Z",
+            "from": "2026-10-07T05:00:00Z",
+            "to": "2026-10-07T06:00:00Z",
+            "operation": "repository"
+          }
+        },
+        {
+          "start": "2026-10-07T05:00:00Z",
+          "end": "2026-10-07T06:00:00Z",
+          "operation": "research",
+          "count": 5,
+          "filter": {
+            "event_kind": "tool-attempt",
+            "as_of": "2026-10-07T10:04:11.040Z",
+            "from": "2026-10-07T05:00:00Z",
+            "to": "2026-10-07T06:00:00Z",
+            "operation": "research"
+          }
+        },
+        {
+          "start": "2026-10-07T05:00:00Z",
+          "end": "2026-10-07T06:00:00Z",
+          "operation": "source",
+          "count": 35,
+          "filter": {
+            "event_kind": "tool-attempt",
+            "as_of": "2026-10-07T10:04:11.040Z",
+            "from": "2026-10-07T05:00:00Z",
+            "to": "2026-10-07T06:00:00Z",
+            "operation": "source"
+          }
+        },
+        {
+          "start": "2026-10-07T05:00:00Z",
+          "end": "2026-10-07T06:00:00Z",
+          "operation": "store_artifact",
+          "count": 7,
+          "filter": {
+            "event_kind": "tool-attempt",
+            "as_of": "2026-10-07T10:04:11.040Z",
+            "from": "2026-10-07T05:00:00Z",
+            "to": "2026-10-07T06:00:00Z",
+            "operation": "store_artifact"
+          }
+        },
+        {
+          "start": "2026-10-07T05:00:00Z",
+          "end": "2026-10-07T06:00:00Z",
+          "operation": "structure",
+          "count": 17,
+          "filter": {
+            "event_kind": "tool-attempt",
+            "as_of": "2026-10-07T10:04:11.040Z",
+            "from": "2026-10-07T05:00:00Z",
+            "to": "2026-10-07T06:00:00Z",
+            "operation": "structure"
+          }
+        },
+        {
+          "start": "2026-10-07T05:00:00Z",
+          "end": "2026-10-07T06:00:00Z",
+          "operation": "structure_change",
+          "count": 10,
+          "filter": {
+            "event_kind": "tool-attempt",
+            "as_of": "2026-10-07T10:04:11.040Z",
+            "from": "2026-10-07T05:00:00Z",
+            "to": "2026-10-07T06:00:00Z",
+            "operation": "structure_change"
+          }
+        },
+        {
+          "start": "2026-10-07T05:00:00Z",
+          "end": "2026-10-07T06:00:00Z",
+          "operation": "task_status",
+          "count": 1,
+          "filter": {
+            "event_kind": "tool-attempt",
+            "as_of": "2026-10-07T10:04:11.040Z",
+            "from": "2026-10-07T05:00:00Z",
+            "to": "2026-10-07T06:00:00Z",
+            "operation": "task_status"
+          }
+        },
+        {
+          "start": "2026-10-07T05:00:00Z",
+          "end": "2026-10-07T06:00:00Z",
+          "operation": "visual_render",
+          "count": 2,
+          "filter": {
+            "event_kind": "tool-attempt",
+            "as_of": "2026-10-07T10:04:11.040Z",
+            "from": "2026-10-07T05:00:00Z",
+            "to": "2026-10-07T06:00:00Z",
+            "operation": "visual_render"
+          }
+        },
+        {
+          "start": "2026-10-07T05:00:00Z",
+          "end": "2026-10-07T06:00:00Z",
+          "operation": "visuals",
+          "count": 4,
+          "filter": {
+            "event_kind": "tool-attempt",
+            "as_of": "2026-10-07T10:04:11.040Z",
+            "from": "2026-10-07T05:00:00Z",
+            "to": "2026-10-07T06:00:00Z",
+            "operation": "visuals"
+          }
+        },
+        {
+          "start": "2026-10-07T06:00:00Z",
+          "end": "2026-10-07T07:00:00Z",
+          "operation": "apply_revision",
+          "count": 4,
+          "filter": {
+            "event_kind": "tool-attempt",
+            "as_of": "2026-10-07T10:04:11.040Z",
+            "from": "2026-10-07T06:00:00Z",
+            "to": "2026-10-07T07:00:00Z",
+            "operation": "apply_revision"
+          }
+        },
+        {
+          "start": "2026-10-07T06:00:00Z",
+          "end": "2026-10-07T07:00:00Z",
+          "operation": "author_history",
+          "count": 31,
+          "filter": {
+            "event_kind": "tool-attempt",
+            "as_of": "2026-10-07T10:04:11.040Z",
+            "from": "2026-10-07T06:00:00Z",
+            "to": "2026-10-07T07:00:00Z",
+            "operation": "author_history"
+          }
+        },
+        {
+          "start": "2026-10-07T06:00:00Z",
+          "end": "2026-10-07T07:00:00Z",
+          "operation": "build",
+          "count": 3,
+          "filter": {
+            "event_kind": "tool-attempt",
+            "as_of": "2026-10-07T10:04:11.040Z",
+            "from": "2026-10-07T06:00:00Z",
+            "to": "2026-10-07T07:00:00Z",
+            "operation": "build"
+          }
+        },
+        {
+          "start": "2026-10-07T06:00:00Z",
+          "end": "2026-10-07T07:00:00Z",
+          "operation": "build_status",
+          "count": 7,
+          "filter": {
+            "event_kind": "tool-attempt",
+            "as_of": "2026-10-07T10:04:11.040Z",
+            "from": "2026-10-07T06:00:00Z",
+            "to": "2026-10-07T07:00:00Z",
+            "operation": "build_status"
+          }
+        },
+        {
+          "start": "2026-10-07T06:00:00Z",
+          "end": "2026-10-07T07:00:00Z",
+          "operation": "concept",
+          "count": 88,
+          "filter": {
+            "event_kind": "tool-attempt",
+            "as_of": "2026-10-07T10:04:11.040Z",
+            "from": "2026-10-07T06:00:00Z",
+            "to": "2026-10-07T07:00:00Z",
+            "operation": "concept"
+          }
+        },
+        {
+          "start": "2026-10-07T06:00:00Z",
+          "end": "2026-10-07T07:00:00Z",
+          "operation": "concept_change",
+          "count": 2,
+          "filter": {
+            "event_kind": "tool-attempt",
+            "as_of": "2026-10-07T10:04:11.040Z",
+            "from": "2026-10-07T06:00:00Z",
+            "to": "2026-10-07T07:00:00Z",
+            "operation": "concept_change"
+          }
+        },
+        {
+          "start": "2026-10-07T06:00:00Z",
+          "end": "2026-10-07T07:00:00Z",
+          "operation": "help",
+          "count": 17,
+          "filter": {
+            "event_kind": "tool-attempt",
+            "as_of": "2026-10-07T10:04:11.040Z",
+            "from": "2026-10-07T06:00:00Z",
+            "to": "2026-10-07T07:00:00Z",
+            "operation": "help"
+          }
+        },
+        {
+          "start": "2026-10-07T06:00:00Z",
+          "end": "2026-10-07T07:00:00Z",
+          "operation": "literature_bind",
+          "count": 4,
+          "filter": {
+            "event_kind": "tool-attempt",
+            "as_of": "2026-10-07T10:04:11.040Z",
+            "from": "2026-10-07T06:00:00Z",
+            "to": "2026-10-07T07:00:00Z",
+            "operation": "literature_bind"
+          }
+        },
+        {
+          "start": "2026-10-07T06:00:00Z",
+          "end": "2026-10-07T07:00:00Z",
+          "operation": "literature_import",
+          "count": 1,
+          "filter": {
+            "event_kind": "tool-attempt",
+            "as_of": "2026-10-07T10:04:11.040Z",
+            "from": "2026-10-07T06:00:00Z",
+            "to": "2026-10-07T07:00:00Z",
+            "operation": "literature_import"
+          }
+        },
+        {
+          "start": "2026-10-07T06:00:00Z",
+          "end": "2026-10-07T07:00:00Z",
+          "operation": "literature_scope",
+          "count": 3,
+          "filter": {
+            "event_kind": "tool-attempt",
+            "as_of": "2026-10-07T10:04:11.040Z",
+            "from": "2026-10-07T06:00:00Z",
+            "to": "2026-10-07T07:00:00Z",
+            "operation": "literature_scope"
+          }
+        },
+        {
+          "start": "2026-10-07T06:00:00Z",
+          "end": "2026-10-07T07:00:00Z",
+          "operation": "literature_uses",
+          "count": 2,
+          "filter": {
+            "event_kind": "tool-attempt",
+            "as_of": "2026-10-07T10:04:11.040Z",
+            "from": "2026-10-07T06:00:00Z",
+            "to": "2026-10-07T07:00:00Z",
+            "operation": "literature_uses"
+          }
+        },
+        {
+          "start": "2026-10-07T06:00:00Z",
+          "end": "2026-10-07T07:00:00Z",
+          "operation": "logical_plan",
+          "count": 5,
+          "filter": {
+            "event_kind": "tool-attempt",
+            "as_of": "2026-10-07T10:04:11.040Z",
+            "from": "2026-10-07T06:00:00Z",
+            "to": "2026-10-07T07:00:00Z",
+            "operation": "logical_plan"
+          }
+        },
+        {
+          "start": "2026-10-07T06:00:00Z",
+          "end": "2026-10-07T07:00:00Z",
+          "operation": "note",
+          "count": 7,
+          "filter": {
+            "event_kind": "tool-attempt",
+            "as_of": "2026-10-07T10:04:11.040Z",
+            "from": "2026-10-07T06:00:00Z",
+            "to": "2026-10-07T07:00:00Z",
+            "operation": "note"
+          }
+        },
+        {
+          "start": "2026-10-07T06:00:00Z",
+          "end": "2026-10-07T07:00:00Z",
+          "operation": "note_status",
+          "count": 7,
+          "filter": {
+            "event_kind": "tool-attempt",
+            "as_of": "2026-10-07T10:04:11.040Z",
+            "from": "2026-10-07T06:00:00Z",
+            "to": "2026-10-07T07:00:00Z",
+            "operation": "note_status"
+          }
+        },
+        {
+          "start": "2026-10-07T06:00:00Z",
+          "end": "2026-10-07T07:00:00Z",
+          "operation": "propose_revision",
+          "count": 4,
+          "filter": {
+            "event_kind": "tool-attempt",
+            "as_of": "2026-10-07T10:04:11.040Z",
+            "from": "2026-10-07T06:00:00Z",
+            "to": "2026-10-07T07:00:00Z",
+            "operation": "propose_revision"
+          }
+        },
+        {
+          "start": "2026-10-07T06:00:00Z",
+          "end": "2026-10-07T07:00:00Z",
+          "operation": "read_artifact",
+          "count": 222,
+          "filter": {
+            "event_kind": "tool-attempt",
+            "as_of": "2026-10-07T10:04:11.040Z",
+            "from": "2026-10-07T06:00:00Z",
+            "to": "2026-10-07T07:00:00Z",
+            "operation": "read_artifact"
+          }
+        },
+        {
+          "start": "2026-10-07T06:00:00Z",
+          "end": "2026-10-07T07:00:00Z",
+          "operation": "reference_text",
+          "count": 4,
+          "filter": {
+            "event_kind": "tool-attempt",
+            "as_of": "2026-10-07T10:04:11.040Z",
+            "from": "2026-10-07T06:00:00Z",
+            "to": "2026-10-07T07:00:00Z",
+            "operation": "reference_text"
+          }
+        },
+        {
+          "start": "2026-10-07T06:00:00Z",
+          "end": "2026-10-07T07:00:00Z",
+          "operation": "repository",
+          "count": 71,
+          "filter": {
+            "event_kind": "tool-attempt",
+            "as_of": "2026-10-07T10:04:11.040Z",
+            "from": "2026-10-07T06:00:00Z",
+            "to": "2026-10-07T07:00:00Z",
+            "operation": "repository"
+          }
+        },
+        {
+          "start": "2026-10-07T06:00:00Z",
+          "end": "2026-10-07T07:00:00Z",
+          "operation": "research",
+          "count": 5,
+          "filter": {
+            "event_kind": "tool-attempt",
+            "as_of": "2026-10-07T10:04:11.040Z",
+            "from": "2026-10-07T06:00:00Z",
+            "to": "2026-10-07T07:00:00Z",
+            "operation": "research"
+          }
+        },
+        {
+          "start": "2026-10-07T06:00:00Z",
+          "end": "2026-10-07T07:00:00Z",
+          "operation": "source",
+          "count": 22,
+          "filter": {
+            "event_kind": "tool-attempt",
+            "as_of": "2026-10-07T10:04:11.040Z",
+            "from": "2026-10-07T06:00:00Z",
+            "to": "2026-10-07T07:00:00Z",
+            "operation": "source"
+          }
+        },
+        {
+          "start": "2026-10-07T06:00:00Z",
+          "end": "2026-10-07T07:00:00Z",
+          "operation": "store_artifact",
+          "count": 18,
+          "filter": {
+            "event_kind": "tool-attempt",
+            "as_of": "2026-10-07T10:04:11.040Z",
+            "from": "2026-10-07T06:00:00Z",
+            "to": "2026-10-07T07:00:00Z",
+            "operation": "store_artifact"
+          }
+        },
+        {
+          "start": "2026-10-07T06:00:00Z",
+          "end": "2026-10-07T07:00:00Z",
+          "operation": "structure",
+          "count": 3,
+          "filter": {
+            "event_kind": "tool-attempt",
+            "as_of": "2026-10-07T10:04:11.040Z",
+            "from": "2026-10-07T06:00:00Z",
+            "to": "2026-10-07T07:00:00Z",
+            "operation": "structure"
+          }
+        },
+        {
+          "start": "2026-10-07T06:00:00Z",
+          "end": "2026-10-07T07:00:00Z",
+          "operation": "visuals",
+          "count": 2,
+          "filter": {
+            "event_kind": "tool-attempt",
+            "as_of": "2026-10-07T10:04:11.040Z",
+            "from": "2026-10-07T06:00:00Z",
+            "to": "2026-10-07T07:00:00Z",
+            "operation": "visuals"
+          }
+        },
+        {
+          "start": "2026-10-07T07:00:00Z",
+          "end": "2026-10-07T08:00:00Z",
+          "operation": "concept",
+          "count": 67,
+          "filter": {
+            "event_kind": "tool-attempt",
+            "as_of": "2026-10-07T10:04:11.040Z",
+            "from": "2026-10-07T07:00:00Z",
+            "to": "2026-10-07T08:00:00Z",
+            "operation": "concept"
+          }
+        },
+        {
+          "start": "2026-10-07T07:00:00Z",
+          "end": "2026-10-07T08:00:00Z",
+          "operation": "help",
+          "count": 20,
+          "filter": {
+            "event_kind": "tool-attempt",
+            "as_of": "2026-10-07T10:04:11.040Z",
+            "from": "2026-10-07T07:00:00Z",
+            "to": "2026-10-07T08:00:00Z",
+            "operation": "help"
+          }
+        },
+        {
+          "start": "2026-10-07T07:00:00Z",
+          "end": "2026-10-07T08:00:00Z",
+          "operation": "logical_plan",
+          "count": 1,
+          "filter": {
+            "event_kind": "tool-attempt",
+            "as_of": "2026-10-07T10:04:11.040Z",
+            "from": "2026-10-07T07:00:00Z",
+            "to": "2026-10-07T08:00:00Z",
+            "operation": "logical_plan"
+          }
+        },
+        {
+          "start": "2026-10-07T07:00:00Z",
+          "end": "2026-10-07T08:00:00Z",
+          "operation": "note",
+          "count": 3,
+          "filter": {
+            "event_kind": "tool-attempt",
+            "as_of": "2026-10-07T10:04:11.040Z",
+            "from": "2026-10-07T07:00:00Z",
+            "to": "2026-10-07T08:00:00Z",
+            "operation": "note"
+          }
+        },
+        {
+          "start": "2026-10-07T07:00:00Z",
+          "end": "2026-10-07T08:00:00Z",
+          "operation": "read_artifact",
+          "count": 35,
+          "filter": {
+            "event_kind": "tool-attempt",
+            "as_of": "2026-10-07T10:04:11.040Z",
+            "from": "2026-10-07T07:00:00Z",
+            "to": "2026-10-07T08:00:00Z",
+            "operation": "read_artifact"
+          }
+        },
+        {
+          "start": "2026-10-07T07:00:00Z",
+          "end": "2026-10-07T08:00:00Z",
+          "operation": "repository",
+          "count": 11,
+          "filter": {
+            "event_kind": "tool-attempt",
+            "as_of": "2026-10-07T10:04:11.040Z",
+            "from": "2026-10-07T07:00:00Z",
+            "to": "2026-10-07T08:00:00Z",
+            "operation": "repository"
+          }
+        },
+        {
+          "start": "2026-10-07T07:00:00Z",
+          "end": "2026-10-07T08:00:00Z",
+          "operation": "research",
+          "count": 2,
+          "filter": {
+            "event_kind": "tool-attempt",
+            "as_of": "2026-10-07T10:04:11.040Z",
+            "from": "2026-10-07T07:00:00Z",
+            "to": "2026-10-07T08:00:00Z",
+            "operation": "research"
+          }
+        },
+        {
+          "start": "2026-10-07T07:00:00Z",
+          "end": "2026-10-07T08:00:00Z",
+          "operation": "source",
+          "count": 2,
+          "filter": {
+            "event_kind": "tool-attempt",
+            "as_of": "2026-10-07T10:04:11.040Z",
+            "from": "2026-10-07T07:00:00Z",
+            "to": "2026-10-07T08:00:00Z",
+            "operation": "source"
+          }
+        },
+        {
+          "start": "2026-10-07T07:00:00Z",
+          "end": "2026-10-07T08:00:00Z",
+          "operation": "store_artifact",
+          "count": 2,
+          "filter": {
+            "event_kind": "tool-attempt",
+            "as_of": "2026-10-07T10:04:11.040Z",
+            "from": "2026-10-07T07:00:00Z",
+            "to": "2026-10-07T08:00:00Z",
+            "operation": "store_artifact"
+          }
+        },
+        {
+          "start": "2026-10-07T07:00:00Z",
+          "end": "2026-10-07T08:00:00Z",
+          "operation": "structure",
+          "count": 3,
+          "filter": {
+            "event_kind": "tool-attempt",
+            "as_of": "2026-10-07T10:04:11.040Z",
+            "from": "2026-10-07T07:00:00Z",
+            "to": "2026-10-07T08:00:00Z",
+            "operation": "structure"
+          }
+        },
+        {
+          "start": "2026-10-07T07:00:00Z",
+          "end": "2026-10-07T08:00:00Z",
+          "operation": "visuals",
+          "count": 1,
+          "filter": {
+            "event_kind": "tool-attempt",
+            "as_of": "2026-10-07T10:04:11.040Z",
+            "from": "2026-10-07T07:00:00Z",
+            "to": "2026-10-07T08:00:00Z",
+            "operation": "visuals"
+          }
+        },
+        {
+          "start": "2026-10-07T08:00:00Z",
+          "end": "2026-10-07T09:00:00Z",
+          "operation": "apply_revision",
+          "count": 1,
+          "filter": {
+            "event_kind": "tool-attempt",
+            "as_of": "2026-10-07T10:04:11.040Z",
+            "from": "2026-10-07T08:00:00Z",
+            "to": "2026-10-07T09:00:00Z",
+            "operation": "apply_revision"
+          }
+        },
+        {
+          "start": "2026-10-07T08:00:00Z",
+          "end": "2026-10-07T09:00:00Z",
+          "operation": "author_history",
+          "count": 8,
+          "filter": {
+            "event_kind": "tool-attempt",
+            "as_of": "2026-10-07T10:04:11.040Z",
+            "from": "2026-10-07T08:00:00Z",
+            "to": "2026-10-07T09:00:00Z",
+            "operation": "author_history"
+          }
+        },
+        {
+          "start": "2026-10-07T08:00:00Z",
+          "end": "2026-10-07T09:00:00Z",
+          "operation": "build",
+          "count": 2,
+          "filter": {
+            "event_kind": "tool-attempt",
+            "as_of": "2026-10-07T10:04:11.040Z",
+            "from": "2026-10-07T08:00:00Z",
+            "to": "2026-10-07T09:00:00Z",
+            "operation": "build"
+          }
+        },
+        {
+          "start": "2026-10-07T08:00:00Z",
+          "end": "2026-10-07T09:00:00Z",
+          "operation": "build_status",
+          "count": 3,
+          "filter": {
+            "event_kind": "tool-attempt",
+            "as_of": "2026-10-07T10:04:11.040Z",
+            "from": "2026-10-07T08:00:00Z",
+            "to": "2026-10-07T09:00:00Z",
+            "operation": "build_status"
+          }
+        },
+        {
+          "start": "2026-10-07T08:00:00Z",
+          "end": "2026-10-07T09:00:00Z",
+          "operation": "concept",
+          "count": 71,
+          "filter": {
+            "event_kind": "tool-attempt",
+            "as_of": "2026-10-07T10:04:11.040Z",
+            "from": "2026-10-07T08:00:00Z",
+            "to": "2026-10-07T09:00:00Z",
+            "operation": "concept"
+          }
+        },
+        {
+          "start": "2026-10-07T08:00:00Z",
+          "end": "2026-10-07T09:00:00Z",
+          "operation": "help",
+          "count": 11,
+          "filter": {
+            "event_kind": "tool-attempt",
+            "as_of": "2026-10-07T10:04:11.040Z",
+            "from": "2026-10-07T08:00:00Z",
+            "to": "2026-10-07T09:00:00Z",
+            "operation": "help"
+          }
+        },
+        {
+          "start": "2026-10-07T08:00:00Z",
+          "end": "2026-10-07T09:00:00Z",
+          "operation": "logical_plan",
+          "count": 1,
+          "filter": {
+            "event_kind": "tool-attempt",
+            "as_of": "2026-10-07T10:04:11.040Z",
+            "from": "2026-10-07T08:00:00Z",
+            "to": "2026-10-07T09:00:00Z",
+            "operation": "logical_plan"
+          }
+        },
+        {
+          "start": "2026-10-07T08:00:00Z",
+          "end": "2026-10-07T09:00:00Z",
+          "operation": "note_status",
+          "count": 3,
+          "filter": {
+            "event_kind": "tool-attempt",
+            "as_of": "2026-10-07T10:04:11.040Z",
+            "from": "2026-10-07T08:00:00Z",
+            "to": "2026-10-07T09:00:00Z",
+            "operation": "note_status"
+          }
+        },
+        {
+          "start": "2026-10-07T08:00:00Z",
+          "end": "2026-10-07T09:00:00Z",
+          "operation": "pipeline",
+          "count": 1,
+          "filter": {
+            "event_kind": "tool-attempt",
+            "as_of": "2026-10-07T10:04:11.040Z",
+            "from": "2026-10-07T08:00:00Z",
+            "to": "2026-10-07T09:00:00Z",
+            "operation": "pipeline"
+          }
+        },
+        {
+          "start": "2026-10-07T08:00:00Z",
+          "end": "2026-10-07T09:00:00Z",
+          "operation": "propose_revision",
+          "count": 1,
+          "filter": {
+            "event_kind": "tool-attempt",
+            "as_of": "2026-10-07T10:04:11.040Z",
+            "from": "2026-10-07T08:00:00Z",
+            "to": "2026-10-07T09:00:00Z",
+            "operation": "propose_revision"
+          }
+        },
+        {
+          "start": "2026-10-07T08:00:00Z",
+          "end": "2026-10-07T09:00:00Z",
+          "operation": "read_artifact",
+          "count": 67,
+          "filter": {
+            "event_kind": "tool-attempt",
+            "as_of": "2026-10-07T10:04:11.040Z",
+            "from": "2026-10-07T08:00:00Z",
+            "to": "2026-10-07T09:00:00Z",
+            "operation": "read_artifact"
+          }
+        },
+        {
+          "start": "2026-10-07T08:00:00Z",
+          "end": "2026-10-07T09:00:00Z",
+          "operation": "reference_source",
+          "count": 6,
+          "filter": {
+            "event_kind": "tool-attempt",
+            "as_of": "2026-10-07T10:04:11.040Z",
+            "from": "2026-10-07T08:00:00Z",
+            "to": "2026-10-07T09:00:00Z",
+            "operation": "reference_source"
+          }
+        },
+        {
+          "start": "2026-10-07T08:00:00Z",
+          "end": "2026-10-07T09:00:00Z",
+          "operation": "reference_text",
+          "count": 6,
+          "filter": {
+            "event_kind": "tool-attempt",
+            "as_of": "2026-10-07T10:04:11.040Z",
+            "from": "2026-10-07T08:00:00Z",
+            "to": "2026-10-07T09:00:00Z",
+            "operation": "reference_text"
+          }
+        },
+        {
+          "start": "2026-10-07T08:00:00Z",
+          "end": "2026-10-07T09:00:00Z",
+          "operation": "reference_update",
+          "count": 6,
+          "filter": {
+            "event_kind": "tool-attempt",
+            "as_of": "2026-10-07T10:04:11.040Z",
+            "from": "2026-10-07T08:00:00Z",
+            "to": "2026-10-07T09:00:00Z",
+            "operation": "reference_update"
+          }
+        },
+        {
+          "start": "2026-10-07T08:00:00Z",
+          "end": "2026-10-07T09:00:00Z",
+          "operation": "references_attached",
+          "count": 2,
+          "filter": {
+            "event_kind": "tool-attempt",
+            "as_of": "2026-10-07T10:04:11.040Z",
+            "from": "2026-10-07T08:00:00Z",
+            "to": "2026-10-07T09:00:00Z",
+            "operation": "references_attached"
+          }
+        },
+        {
+          "start": "2026-10-07T08:00:00Z",
+          "end": "2026-10-07T09:00:00Z",
+          "operation": "repository",
+          "count": 132,
+          "filter": {
+            "event_kind": "tool-attempt",
+            "as_of": "2026-10-07T10:04:11.040Z",
+            "from": "2026-10-07T08:00:00Z",
+            "to": "2026-10-07T09:00:00Z",
+            "operation": "repository"
+          }
+        },
+        {
+          "start": "2026-10-07T08:00:00Z",
+          "end": "2026-10-07T09:00:00Z",
+          "operation": "source",
+          "count": 3,
+          "filter": {
+            "event_kind": "tool-attempt",
+            "as_of": "2026-10-07T10:04:11.040Z",
+            "from": "2026-10-07T08:00:00Z",
+            "to": "2026-10-07T09:00:00Z",
+            "operation": "source"
+          }
+        },
+        {
+          "start": "2026-10-07T08:00:00Z",
+          "end": "2026-10-07T09:00:00Z",
+          "operation": "store_artifact",
+          "count": 19,
+          "filter": {
+            "event_kind": "tool-attempt",
+            "as_of": "2026-10-07T10:04:11.040Z",
+            "from": "2026-10-07T08:00:00Z",
+            "to": "2026-10-07T09:00:00Z",
+            "operation": "store_artifact"
+          }
+        },
+        {
+          "start": "2026-10-07T08:00:00Z",
+          "end": "2026-10-07T09:00:00Z",
+          "operation": "structure",
+          "count": 9,
+          "filter": {
+            "event_kind": "tool-attempt",
+            "as_of": "2026-10-07T10:04:11.040Z",
+            "from": "2026-10-07T08:00:00Z",
+            "to": "2026-10-07T09:00:00Z",
+            "operation": "structure"
+          }
+        },
+        {
+          "start": "2026-10-07T08:00:00Z",
+          "end": "2026-10-07T09:00:00Z",
+          "operation": "structure_change",
+          "count": 7,
+          "filter": {
+            "event_kind": "tool-attempt",
+            "as_of": "2026-10-07T10:04:11.040Z",
+            "from": "2026-10-07T08:00:00Z",
+            "to": "2026-10-07T09:00:00Z",
+            "operation": "structure_change"
+          }
+        },
+        {
+          "start": "2026-10-07T08:00:00Z",
+          "end": "2026-10-07T09:00:00Z",
+          "operation": "visuals",
+          "count": 1,
+          "filter": {
+            "event_kind": "tool-attempt",
+            "as_of": "2026-10-07T10:04:11.040Z",
+            "from": "2026-10-07T08:00:00Z",
+            "to": "2026-10-07T09:00:00Z",
+            "operation": "visuals"
+          }
+        },
+        {
+          "start": "2026-10-07T08:00:00Z",
+          "end": "2026-10-07T09:00:00Z",
+          "operation": "writing_stage",
+          "count": 1,
+          "filter": {
+            "event_kind": "tool-attempt",
+            "as_of": "2026-10-07T10:04:11.040Z",
+            "from": "2026-10-07T08:00:00Z",
+            "to": "2026-10-07T09:00:00Z",
+            "operation": "writing_stage"
+          }
+        },
+        {
+          "start": "2026-10-07T10:00:00Z",
+          "end": "2026-10-07T11:00:00Z",
+          "operation": "project",
+          "count": 5,
+          "filter": {
+            "event_kind": "tool-attempt",
+            "as_of": "2026-10-07T10:04:11.040Z",
+            "from": "2026-10-07T10:00:00Z",
+            "to": "2026-10-07T11:00:00Z",
+            "operation": "project"
+          }
+        }
+      ],
+      "by_outcome": [
+        {
+          "outcome": "current",
+          "count": 156,
+          "filter": {
+            "event_kind": "tool-attempt",
+            "as_of": "2026-10-07T10:04:11.040Z",
+            "outcome": "current"
+          }
+        },
+        {
+          "outcome": "done",
+          "count": 3,
+          "filter": {
+            "event_kind": "tool-attempt",
+            "as_of": "2026-10-07T10:04:11.040Z",
+            "outcome": "done"
+          }
+        },
+        {
+          "outcome": "failed",
+          "count": 60,
+          "filter": {
+            "event_kind": "tool-attempt",
+            "as_of": "2026-10-07T10:04:11.040Z",
+            "outcome": "failed"
+          }
+        },
+        {
+          "outcome": "generated",
+          "count": 25,
+          "filter": {
+            "event_kind": "tool-attempt",
+            "as_of": "2026-10-07T10:04:11.040Z",
+            "outcome": "generated"
+          }
+        },
+        {
+          "outcome": "in-progress",
+          "count": 5,
+          "filter": {
+            "event_kind": "tool-attempt",
+            "as_of": "2026-10-07T10:04:11.040Z",
+            "outcome": "in-progress"
+          }
+        },
+        {
+          "outcome": "loaded",
+          "count": 2,
+          "filter": {
+            "event_kind": "tool-attempt",
+            "as_of": "2026-10-07T10:04:11.040Z",
+            "outcome": "loaded"
+          }
+        },
+        {
+          "outcome": "mirror_pending",
+          "count": 1,
+          "filter": {
+            "event_kind": "tool-attempt",
+            "as_of": "2026-10-07T10:04:11.040Z",
+            "outcome": "mirror_pending"
+          }
+        },
+        {
+          "outcome": "open",
+          "count": 1,
+          "filter": {
+            "event_kind": "tool-attempt",
+            "as_of": "2026-10-07T10:04:11.040Z",
+            "outcome": "open"
+          }
+        },
+        {
+          "outcome": "proposed",
+          "count": 9,
+          "filter": {
+            "event_kind": "tool-attempt",
+            "as_of": "2026-10-07T10:04:11.040Z",
+            "outcome": "proposed"
+          }
+        },
+        {
+          "outcome": "read",
+          "count": 4085,
+          "filter": {
+            "event_kind": "tool-attempt",
+            "as_of": "2026-10-07T10:04:11.040Z",
+            "outcome": "read"
+          }
+        },
+        {
+          "outcome": "resolved",
+          "count": 20,
+          "filter": {
+            "event_kind": "tool-attempt",
+            "as_of": "2026-10-07T10:04:11.040Z",
+            "outcome": "resolved"
+          }
+        },
+        {
+          "outcome": "specified",
+          "count": 21,
+          "filter": {
+            "event_kind": "tool-attempt",
+            "as_of": "2026-10-07T10:04:11.040Z",
+            "outcome": "specified"
+          }
+        },
+        {
+          "outcome": "started",
+          "count": 19,
+          "filter": {
+            "event_kind": "tool-attempt",
+            "as_of": "2026-10-07T10:04:11.040Z",
+            "outcome": "started"
+          }
+        },
+        {
+          "outcome": "succeeded",
+          "count": 549,
+          "filter": {
+            "event_kind": "tool-attempt",
+            "as_of": "2026-10-07T10:04:11.040Z",
+            "outcome": "succeeded"
+          }
+        }
+      ],
+      "coverage": {
+        "dated": 4956,
+        "unrecorded_date": 0,
+        "provider_model_recorded": 4936,
+        "response_bytes_recorded": 0,
+        "storage_bytes_recorded": 4381215,
+        "duration_recorded": 0,
+        "context_tokens_recorded": 0
+      },
+      "operations_omitted": 0,
+      "time_operation_bins_omitted": 36,
+      "limitations": [
+        "Counts include each original writing-tool-read/action/failure row once. Read baselines, context bookkeeping, and reply action copies are excluded.",
+        "Durations, response bytes, and context tokens are reported only when the tool row recorded them. Storage bytes are exact journal-line bytes."
+      ]
+    },
+    "runs": [
+      {
+        "id": "run-e96422486f524d69",
+        "outcome": "COMPLETE",
+        "producer_id": "mechanism-formal-identity-probe",
+        "started_at": 1791116733.4111915,
+        "finished_at": 1791116733.5672584,
+        "duration_seconds": 0.15606689453125,
+        "result_id": "mechanism-formal-target-identity-observation",
+        "filter": {
+          "category": "research",
+          "result_id": "mechanism-formal-target-identity-observation",
+          "as_of": "2026-10-07T10:04:11.040Z"
+        }
+      },
+      {
+        "id": "run-e704ca1de6f343ab",
+        "outcome": "FAILED",
+        "producer_id": "export-recorded-hash-validator",
+        "started_at": 1791129595.1153321,
+        "finished_at": 1791129596.4283264,
+        "duration_seconds": 1.3129942417144775,
+        "result_id": null,
+        "filter": null
+      },
+      {
+        "id": "run-cf5ec86984224329",
+        "outcome": "FAILED",
+        "producer_id": "atlas-portability-existing-fallback",
+        "started_at": 1791127126.5576868,
+        "finished_at": 1791127126.6677587,
+        "duration_seconds": 0.11007189750671387,
+        "result_id": null,
+        "filter": null
+      },
+      {
+        "id": "run-ca0749d84c6648d4",
+        "outcome": "COMPLETE",
+        "producer_id": "friction-evidence-navigation-validator",
+        "started_at": 1791122511.4383373,
+        "finished_at": 1791122512.0609677,
+        "duration_seconds": 0.6226303577423096,
+        "result_id": null,
+        "filter": null
+      },
+      {
+        "id": "run-c39376d5eb26469f",
+        "outcome": "COMPLETE",
+        "producer_id": "export-recorded-hash-validator",
+        "started_at": 1791129648.3515692,
+        "finished_at": 1791129649.6646185,
+        "duration_seconds": 1.31304931640625,
+        "result_id": null,
+        "filter": null
+      },
+      {
+        "id": "run-c0739e64292b480a",
+        "outcome": "COMPLETE",
+        "producer_id": "friction-evidence-navigation-validator",
+        "started_at": 1791127889.5274854,
+        "finished_at": 1791127890.480342,
+        "duration_seconds": 0.9528565406799316,
+        "result_id": null,
+        "filter": null
+      },
+      {
+        "id": "run-b8ee895616fc4169",
+        "outcome": "FAILED",
+        "producer_id": "friction-evidence-navigation-validator",
+        "started_at": 1791127695.059173,
+        "finished_at": 1791127695.9511008,
+        "duration_seconds": 0.8919277191162109,
+        "result_id": null,
+        "filter": null
+      },
+      {
+        "id": "run-acd55251e1074245",
+        "outcome": "COMPLETE",
+        "producer_id": "friction-evidence-navigation-validator",
+        "started_at": 1791123972.9527771,
+        "finished_at": 1791123973.7268896,
+        "duration_seconds": 0.7741124629974365,
+        "result_id": null,
+        "filter": null
+      },
+      {
+        "id": "run-9d6466b112e341d5",
+        "outcome": "FAILED",
+        "producer_id": "mechanism-public-api-probe",
+        "started_at": 1791116628.5251522,
+        "finished_at": 1791116628.845104,
+        "duration_seconds": 0.31995177268981934,
+        "result_id": null,
+        "filter": null
+      },
+      {
+        "id": "run-9728666e88e34181",
+        "outcome": "FAILED",
+        "producer_id": "atlas-portability-existing-fallback",
+        "started_at": 1791127157.1034057,
+        "finished_at": 1791127157.2117927,
+        "duration_seconds": 0.10838699340820312,
+        "result_id": null,
+        "filter": null
+      },
+      {
+        "id": "run-89e2e73032fa4199",
+        "outcome": "FAILED",
+        "producer_id": "atlas-portability-existing-fallback",
+        "started_at": 1791128270.869901,
+        "finished_at": 1791128270.9768188,
+        "duration_seconds": 0.1069178581237793,
+        "result_id": null,
+        "filter": null
+      },
+      {
+        "id": "run-7a756a887f0f48d8",
+        "outcome": "COMPLETE",
+        "producer_id": "friction-evidence-navigation-validator",
+        "started_at": 1791128490.1721644,
+        "finished_at": 1791128491.1247487,
+        "duration_seconds": 0.9525842666625977,
+        "result_id": "friction-evidence-navigation-candidate-validation",
+        "filter": {
+          "category": "research",
+          "result_id": "friction-evidence-navigation-candidate-validation",
+          "as_of": "2026-10-07T10:04:11.040Z"
+        }
+      },
+      {
+        "id": "run-6fe9b8405def405c",
+        "outcome": "FAILED",
+        "producer_id": "atlas-portability-existing-fallback",
+        "started_at": 1791128122.6215336,
+        "finished_at": 1791128122.819876,
+        "duration_seconds": 0.19834232330322266,
+        "result_id": null,
+        "filter": null
+      },
+      {
+        "id": "run-596ee23ce4f9498a",
+        "outcome": "COMPLETE",
+        "producer_id": "mechanism-public-api-recovery",
+        "started_at": 1791116846.0142457,
+        "finished_at": 1791116846.9381742,
+        "duration_seconds": 0.9239284992218018,
+        "result_id": "mechanism-public-api-recovery-observation",
+        "filter": {
+          "category": "research",
+          "result_id": "mechanism-public-api-recovery-observation",
+          "as_of": "2026-10-07T10:04:11.040Z"
+        }
+      },
+      {
+        "id": "run-50071ccc8e854f7b",
+        "outcome": "FAILED",
+        "producer_id": "mechanism-public-api-recovery",
+        "started_at": 1791116813.7777328,
+        "finished_at": 1791116814.609114,
+        "duration_seconds": 0.83138108253479,
+        "result_id": null,
+        "filter": null
+      },
+      {
+        "id": "run-4de01e8956104576",
+        "outcome": "COMPLETE",
+        "producer_id": "friction-evidence-navigation-validator",
+        "started_at": 1791128231.5413268,
+        "finished_at": 1791128232.494311,
+        "duration_seconds": 0.9529843330383301,
+        "result_id": null,
+        "filter": null
+      },
+      {
+        "id": "run-472373cb34ae472d",
+        "outcome": "COMPLETE",
+        "producer_id": "friction-evidence-navigation-validator",
+        "started_at": 1791122703.5333943,
+        "finished_at": 1791122704.1241047,
+        "duration_seconds": 0.5907104015350342,
+        "result_id": null,
+        "filter": null
+      },
+      {
+        "id": "run-31cac28c78404539",
+        "outcome": "COMPLETE",
+        "producer_id": "friction-evidence-navigation-validator",
+        "started_at": 1791128049.8429585,
+        "finished_at": 1791128050.7989705,
+        "duration_seconds": 0.9560120105743408,
+        "result_id": null,
+        "filter": null
+      },
+      {
+        "id": "run-238bc4b01a3a4edb",
+        "outcome": "FAILED",
+        "producer_id": "friction-evidence-navigation-validator",
+        "started_at": 1791122332.8939273,
+        "finished_at": 1791122333.513408,
+        "duration_seconds": 0.6194806098937988,
+        "result_id": null,
+        "filter": null
+      },
+      {
+        "id": "run-1646bef6325d49bc",
+        "outcome": "COMPLETE",
+        "producer_id": "atlas-portability-existing-fallback",
+        "started_at": 1791128438.897151,
+        "finished_at": 1791128439.3365514,
+        "duration_seconds": 0.43940043449401855,
+        "result_id": null,
+        "filter": null
+      }
+    ],
+    "totals": {
+      "activity": 5646,
+      "dated": 5594,
+      "unrecorded_date": 52
+    },
+    "series": {},
+    "identity_coverage": []
+  },
+  "failures": {
+    "schema_version": "laplace.activity-history/1",
+    "project": "writing-system-architecture",
+    "as_of": "2026-10-07T10:04:11.040Z",
+    "scope": {
+      "outcome": "failed"
+    },
+    "tool_calls": {
+      "filter": {
+        "event_kind": "tool-attempt",
+        "as_of": "2026-10-07T10:04:11.040Z",
+        "outcome": "failed"
+      },
+      "total": 60,
+      "by_operation": [
+        {
+          "operation": "apply_revision",
+          "count": 20,
+          "filter": {
+            "event_kind": "tool-attempt",
+            "as_of": "2026-10-07T10:04:11.040Z",
+            "outcome": "failed",
+            "operation": "apply_revision"
+          }
+        },
+        {
+          "operation": "repository",
+          "count": 14,
+          "filter": {
+            "event_kind": "tool-attempt",
+            "as_of": "2026-10-07T10:04:11.040Z",
+            "outcome": "failed",
+            "operation": "repository"
+          }
+        },
+        {
+          "operation": "structure_change",
+          "count": 9,
+          "filter": {
+            "event_kind": "tool-attempt",
+            "as_of": "2026-10-07T10:04:11.040Z",
+            "outcome": "failed",
+            "operation": "structure_change"
+          }
+        },
+        {
+          "operation": "experiment_run",
+          "count": 2,
+          "filter": {
+            "event_kind": "tool-attempt",
+            "as_of": "2026-10-07T10:04:11.040Z",
+            "outcome": "failed",
+            "operation": "experiment_run"
+          }
+        },
+        {
+          "operation": "help",
+          "count": 2,
+          "filter": {
+            "event_kind": "tool-attempt",
+            "as_of": "2026-10-07T10:04:11.040Z",
+            "outcome": "failed",
+            "operation": "help"
+          }
+        },
+        {
+          "operation": "literature_import",
+          "count": 2,
+          "filter": {
+            "event_kind": "tool-attempt",
+            "as_of": "2026-10-07T10:04:11.040Z",
+            "outcome": "failed",
+            "operation": "literature_import"
+          }
+        },
+        {
+          "operation": "read_artifact",
+          "count": 2,
+          "filter": {
+            "event_kind": "tool-attempt",
+            "as_of": "2026-10-07T10:04:11.040Z",
+            "outcome": "failed",
+            "operation": "read_artifact"
+          }
+        },
+        {
+          "operation": "task_status",
+          "count": 2,
+          "filter": {
+            "event_kind": "tool-attempt",
+            "as_of": "2026-10-07T10:04:11.040Z",
+            "outcome": "failed",
+            "operation": "task_status"
+          }
+        },
+        {
+          "operation": "author_changes",
+          "count": 1,
+          "filter": {
+            "event_kind": "tool-attempt",
+            "as_of": "2026-10-07T10:04:11.040Z",
+            "outcome": "failed",
+            "operation": "author_changes"
+          }
+        },
+        {
+          "operation": "concept_change",
+          "count": 1,
+          "filter": {
+            "event_kind": "tool-attempt",
+            "as_of": "2026-10-07T10:04:11.040Z",
+            "outcome": "failed",
+            "operation": "concept_change"
+          }
+        },
+        {
+          "operation": "literature_scope",
+          "count": 1,
+          "filter": {
+            "event_kind": "tool-attempt",
+            "as_of": "2026-10-07T10:04:11.040Z",
+            "outcome": "failed",
+            "operation": "literature_scope"
+          }
+        },
+        {
+          "operation": "logical_plan",
+          "count": 1,
+          "filter": {
+            "event_kind": "tool-attempt",
+            "as_of": "2026-10-07T10:04:11.040Z",
+            "outcome": "failed",
+            "operation": "logical_plan"
+          }
+        },
+        {
+          "operation": "research",
+          "count": 1,
+          "filter": {
+            "event_kind": "tool-attempt",
+            "as_of": "2026-10-07T10:04:11.040Z",
+            "outcome": "failed",
+            "operation": "research"
+          }
+        },
+        {
+          "operation": "research_record",
+          "count": 1,
+          "filter": {
+            "event_kind": "tool-attempt",
+            "as_of": "2026-10-07T10:04:11.040Z",
+            "outcome": "failed",
+            "operation": "research_record"
+          }
+        },
+        {
+          "operation": "visual_render",
+          "count": 1,
+          "filter": {
+            "event_kind": "tool-attempt",
+            "as_of": "2026-10-07T10:04:11.040Z",
+            "outcome": "failed",
+            "operation": "visual_render"
+          }
+        }
+      ],
+      "by_time_operation": [
+        {
+          "start": "2026-10-04T12:00:00Z",
+          "end": "2026-10-04T13:00:00Z",
+          "operation": "logical_plan",
+          "count": 1,
+          "filter": {
+            "event_kind": "tool-attempt",
+            "as_of": "2026-10-07T10:04:11.040Z",
+            "outcome": "failed",
+            "from": "2026-10-04T12:00:00Z",
+            "to": "2026-10-04T13:00:00Z",
+            "operation": "logical_plan"
+          }
+        },
+        {
+          "start": "2026-10-04T12:00:00Z",
+          "end": "2026-10-04T13:00:00Z",
+          "operation": "repository",
+          "count": 2,
+          "filter": {
+            "event_kind": "tool-attempt",
+            "as_of": "2026-10-07T10:04:11.040Z",
+            "outcome": "failed",
+            "from": "2026-10-04T12:00:00Z",
+            "to": "2026-10-04T13:00:00Z",
+            "operation": "repository"
+          }
+        },
+        {
+          "start": "2026-10-04T12:00:00Z",
+          "end": "2026-10-04T13:00:00Z",
+          "operation": "research",
+          "count": 1,
+          "filter": {
+            "event_kind": "tool-attempt",
+            "as_of": "2026-10-07T10:04:11.040Z",
+            "outcome": "failed",
+            "from": "2026-10-04T12:00:00Z",
+            "to": "2026-10-04T13:00:00Z",
+            "operation": "research"
+          }
+        },
+        {
+          "start": "2026-10-04T12:00:00Z",
+          "end": "2026-10-04T13:00:00Z",
+          "operation": "research_record",
+          "count": 1,
+          "filter": {
+            "event_kind": "tool-attempt",
+            "as_of": "2026-10-07T10:04:11.040Z",
+            "outcome": "failed",
+            "from": "2026-10-04T12:00:00Z",
+            "to": "2026-10-04T13:00:00Z",
+            "operation": "research_record"
+          }
+        },
+        {
+          "start": "2026-10-04T12:00:00Z",
+          "end": "2026-10-04T13:00:00Z",
+          "operation": "task_status",
+          "count": 1,
+          "filter": {
+            "event_kind": "tool-attempt",
+            "as_of": "2026-10-07T10:04:11.040Z",
+            "outcome": "failed",
+            "from": "2026-10-04T12:00:00Z",
+            "to": "2026-10-04T13:00:00Z",
+            "operation": "task_status"
+          }
+        },
+        {
+          "start": "2026-10-04T13:00:00Z",
+          "end": "2026-10-04T14:00:00Z",
+          "operation": "apply_revision",
+          "count": 6,
+          "filter": {
+            "event_kind": "tool-attempt",
+            "as_of": "2026-10-07T10:04:11.040Z",
+            "outcome": "failed",
+            "from": "2026-10-04T13:00:00Z",
+            "to": "2026-10-04T14:00:00Z",
+            "operation": "apply_revision"
+          }
+        },
+        {
+          "start": "2026-10-04T13:00:00Z",
+          "end": "2026-10-04T14:00:00Z",
+          "operation": "repository",
+          "count": 1,
+          "filter": {
+            "event_kind": "tool-attempt",
+            "as_of": "2026-10-07T10:04:11.040Z",
+            "outcome": "failed",
+            "from": "2026-10-04T13:00:00Z",
+            "to": "2026-10-04T14:00:00Z",
+            "operation": "repository"
+          }
+        },
+        {
+          "start": "2026-10-04T13:00:00Z",
+          "end": "2026-10-04T14:00:00Z",
+          "operation": "structure_change",
+          "count": 1,
+          "filter": {
+            "event_kind": "tool-attempt",
+            "as_of": "2026-10-07T10:04:11.040Z",
+            "outcome": "failed",
+            "from": "2026-10-04T13:00:00Z",
+            "to": "2026-10-04T14:00:00Z",
+            "operation": "structure_change"
+          }
+        },
+        {
+          "start": "2026-10-04T14:00:00Z",
+          "end": "2026-10-04T15:00:00Z",
+          "operation": "apply_revision",
+          "count": 6,
+          "filter": {
+            "event_kind": "tool-attempt",
+            "as_of": "2026-10-07T10:04:11.040Z",
+            "outcome": "failed",
+            "from": "2026-10-04T14:00:00Z",
+            "to": "2026-10-04T15:00:00Z",
+            "operation": "apply_revision"
+          }
+        },
+        {
+          "start": "2026-10-04T14:00:00Z",
+          "end": "2026-10-04T15:00:00Z",
+          "operation": "literature_import",
+          "count": 2,
+          "filter": {
+            "event_kind": "tool-attempt",
+            "as_of": "2026-10-07T10:04:11.040Z",
+            "outcome": "failed",
+            "from": "2026-10-04T14:00:00Z",
+            "to": "2026-10-04T15:00:00Z",
+            "operation": "literature_import"
+          }
+        },
+        {
+          "start": "2026-10-04T14:00:00Z",
+          "end": "2026-10-04T15:00:00Z",
+          "operation": "structure_change",
+          "count": 8,
+          "filter": {
+            "event_kind": "tool-attempt",
+            "as_of": "2026-10-07T10:04:11.040Z",
+            "outcome": "failed",
+            "from": "2026-10-04T14:00:00Z",
+            "to": "2026-10-04T15:00:00Z",
+            "operation": "structure_change"
+          }
+        },
+        {
+          "start": "2026-10-04T15:00:00Z",
+          "end": "2026-10-04T16:00:00Z",
+          "operation": "experiment_run",
+          "count": 2,
+          "filter": {
+            "event_kind": "tool-attempt",
+            "as_of": "2026-10-07T10:04:11.040Z",
+            "outcome": "failed",
+            "from": "2026-10-04T15:00:00Z",
+            "to": "2026-10-04T16:00:00Z",
+            "operation": "experiment_run"
+          }
+        },
+        {
+          "start": "2026-10-04T15:00:00Z",
+          "end": "2026-10-04T16:00:00Z",
+          "operation": "repository",
+          "count": 1,
+          "filter": {
+            "event_kind": "tool-attempt",
+            "as_of": "2026-10-07T10:04:11.040Z",
+            "outcome": "failed",
+            "from": "2026-10-04T15:00:00Z",
+            "to": "2026-10-04T16:00:00Z",
+            "operation": "repository"
+          }
+        },
+        {
+          "start": "2026-10-04T16:00:00Z",
+          "end": "2026-10-04T17:00:00Z",
+          "operation": "repository",
+          "count": 1,
+          "filter": {
+            "event_kind": "tool-attempt",
+            "as_of": "2026-10-07T10:04:11.040Z",
+            "outcome": "failed",
+            "from": "2026-10-04T16:00:00Z",
+            "to": "2026-10-04T17:00:00Z",
+            "operation": "repository"
+          }
+        },
+        {
+          "start": "2026-10-06T10:00:00Z",
+          "end": "2026-10-06T11:00:00Z",
+          "operation": "task_status",
+          "count": 1,
+          "filter": {
+            "event_kind": "tool-attempt",
+            "as_of": "2026-10-07T10:04:11.040Z",
+            "outcome": "failed",
+            "from": "2026-10-06T10:00:00Z",
+            "to": "2026-10-06T11:00:00Z",
+            "operation": "task_status"
+          }
+        },
+        {
+          "start": "2026-10-07T02:00:00Z",
+          "end": "2026-10-07T03:00:00Z",
+          "operation": "apply_revision",
+          "count": 1,
+          "filter": {
+            "event_kind": "tool-attempt",
+            "as_of": "2026-10-07T10:04:11.040Z",
+            "outcome": "failed",
+            "from": "2026-10-07T02:00:00Z",
+            "to": "2026-10-07T03:00:00Z",
+            "operation": "apply_revision"
+          }
+        },
+        {
+          "start": "2026-10-07T02:00:00Z",
+          "end": "2026-10-07T03:00:00Z",
+          "operation": "repository",
+          "count": 6,
+          "filter": {
+            "event_kind": "tool-attempt",
+            "as_of": "2026-10-07T10:04:11.040Z",
+            "outcome": "failed",
+            "from": "2026-10-07T02:00:00Z",
+            "to": "2026-10-07T03:00:00Z",
+            "operation": "repository"
+          }
+        },
+        {
+          "start": "2026-10-07T02:00:00Z",
+          "end": "2026-10-07T03:00:00Z",
+          "operation": "visual_render",
+          "count": 1,
+          "filter": {
+            "event_kind": "tool-attempt",
+            "as_of": "2026-10-07T10:04:11.040Z",
+            "outcome": "failed",
+            "from": "2026-10-07T02:00:00Z",
+            "to": "2026-10-07T03:00:00Z",
+            "operation": "visual_render"
+          }
+        },
+        {
+          "start": "2026-10-07T03:00:00Z",
+          "end": "2026-10-07T04:00:00Z",
+          "operation": "apply_revision",
+          "count": 3,
+          "filter": {
+            "event_kind": "tool-attempt",
+            "as_of": "2026-10-07T10:04:11.040Z",
+            "outcome": "failed",
+            "from": "2026-10-07T03:00:00Z",
+            "to": "2026-10-07T04:00:00Z",
+            "operation": "apply_revision"
+          }
+        },
+        {
+          "start": "2026-10-07T03:00:00Z",
+          "end": "2026-10-07T04:00:00Z",
+          "operation": "author_changes",
+          "count": 1,
+          "filter": {
+            "event_kind": "tool-attempt",
+            "as_of": "2026-10-07T10:04:11.040Z",
+            "outcome": "failed",
+            "from": "2026-10-07T03:00:00Z",
+            "to": "2026-10-07T04:00:00Z",
+            "operation": "author_changes"
+          }
+        },
+        {
+          "start": "2026-10-07T05:00:00Z",
+          "end": "2026-10-07T06:00:00Z",
+          "operation": "apply_revision",
+          "count": 2,
+          "filter": {
+            "event_kind": "tool-attempt",
+            "as_of": "2026-10-07T10:04:11.040Z",
+            "outcome": "failed",
+            "from": "2026-10-07T05:00:00Z",
+            "to": "2026-10-07T06:00:00Z",
+            "operation": "apply_revision"
+          }
+        },
+        {
+          "start": "2026-10-07T05:00:00Z",
+          "end": "2026-10-07T06:00:00Z",
+          "operation": "help",
+          "count": 2,
+          "filter": {
+            "event_kind": "tool-attempt",
+            "as_of": "2026-10-07T10:04:11.040Z",
+            "outcome": "failed",
+            "from": "2026-10-07T05:00:00Z",
+            "to": "2026-10-07T06:00:00Z",
+            "operation": "help"
+          }
+        },
+        {
+          "start": "2026-10-07T05:00:00Z",
+          "end": "2026-10-07T06:00:00Z",
+          "operation": "read_artifact",
+          "count": 1,
+          "filter": {
+            "event_kind": "tool-attempt",
+            "as_of": "2026-10-07T10:04:11.040Z",
+            "outcome": "failed",
+            "from": "2026-10-07T05:00:00Z",
+            "to": "2026-10-07T06:00:00Z",
+            "operation": "read_artifact"
+          }
+        },
+        {
+          "start": "2026-10-07T05:00:00Z",
+          "end": "2026-10-07T06:00:00Z",
+          "operation": "repository",
+          "count": 1,
+          "filter": {
+            "event_kind": "tool-attempt",
+            "as_of": "2026-10-07T10:04:11.040Z",
+            "outcome": "failed",
+            "from": "2026-10-07T05:00:00Z",
+            "to": "2026-10-07T06:00:00Z",
+            "operation": "repository"
+          }
+        },
+        {
+          "start": "2026-10-07T06:00:00Z",
+          "end": "2026-10-07T07:00:00Z",
+          "operation": "apply_revision",
+          "count": 2,
+          "filter": {
+            "event_kind": "tool-attempt",
+            "as_of": "2026-10-07T10:04:11.040Z",
+            "outcome": "failed",
+            "from": "2026-10-07T06:00:00Z",
+            "to": "2026-10-07T07:00:00Z",
+            "operation": "apply_revision"
+          }
+        },
+        {
+          "start": "2026-10-07T06:00:00Z",
+          "end": "2026-10-07T07:00:00Z",
+          "operation": "concept_change",
+          "count": 1,
+          "filter": {
+            "event_kind": "tool-attempt",
+            "as_of": "2026-10-07T10:04:11.040Z",
+            "outcome": "failed",
+            "from": "2026-10-07T06:00:00Z",
+            "to": "2026-10-07T07:00:00Z",
+            "operation": "concept_change"
+          }
+        },
+        {
+          "start": "2026-10-07T06:00:00Z",
+          "end": "2026-10-07T07:00:00Z",
+          "operation": "literature_scope",
+          "count": 1,
+          "filter": {
+            "event_kind": "tool-attempt",
+            "as_of": "2026-10-07T10:04:11.040Z",
+            "outcome": "failed",
+            "from": "2026-10-07T06:00:00Z",
+            "to": "2026-10-07T07:00:00Z",
+            "operation": "literature_scope"
+          }
+        },
+        {
+          "start": "2026-10-07T06:00:00Z",
+          "end": "2026-10-07T07:00:00Z",
+          "operation": "repository",
+          "count": 1,
+          "filter": {
+            "event_kind": "tool-attempt",
+            "as_of": "2026-10-07T10:04:11.040Z",
+            "outcome": "failed",
+            "from": "2026-10-07T06:00:00Z",
+            "to": "2026-10-07T07:00:00Z",
+            "operation": "repository"
+          }
+        },
+        {
+          "start": "2026-10-07T08:00:00Z",
+          "end": "2026-10-07T09:00:00Z",
+          "operation": "read_artifact",
+          "count": 1,
+          "filter": {
+            "event_kind": "tool-attempt",
+            "as_of": "2026-10-07T10:04:11.040Z",
+            "outcome": "failed",
+            "from": "2026-10-07T08:00:00Z",
+            "to": "2026-10-07T09:00:00Z",
+            "operation": "read_artifact"
+          }
+        },
+        {
+          "start": "2026-10-07T08:00:00Z",
+          "end": "2026-10-07T09:00:00Z",
+          "operation": "repository",
+          "count": 1,
+          "filter": {
+            "event_kind": "tool-attempt",
+            "as_of": "2026-10-07T10:04:11.040Z",
+            "outcome": "failed",
+            "from": "2026-10-07T08:00:00Z",
+            "to": "2026-10-07T09:00:00Z",
+            "operation": "repository"
+          }
+        }
+      ],
+      "by_outcome": [
+        {
+          "outcome": "failed",
+          "count": 60,
+          "filter": {
+            "event_kind": "tool-attempt",
+            "as_of": "2026-10-07T10:04:11.040Z",
+            "outcome": "failed"
+          }
+        }
+      ],
+      "coverage": {
+        "dated": 60,
+        "unrecorded_date": 0,
+        "provider_model_recorded": 60,
+        "response_bytes_recorded": 0,
+        "storage_bytes_recorded": 38653,
+        "duration_recorded": 0,
+        "context_tokens_recorded": 0
+      },
+      "operations_omitted": 0,
+      "time_operation_bins_omitted": 0,
+      "limitations": [
+        "Counts include each original writing-tool-read/action/failure row once. Read baselines, context bookkeeping, and reply action copies are excluded.",
+        "Durations, response bytes, and context tokens are reported only when the tool row recorded them. Storage bytes are exact journal-line bytes."
+      ]
+    },
+    "runs": [],
+    "totals": {
+      "activity": 60,
+      "dated": 60,
+      "unrecorded_date": 0
+    },
+    "series": {},
+    "identity_coverage": []
+  }
+}

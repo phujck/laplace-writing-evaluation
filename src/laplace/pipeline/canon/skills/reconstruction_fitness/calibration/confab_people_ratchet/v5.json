@@ -1,0 +1,19 @@
+{
+  "lost": [
+    "Facts about people are contractive and sit deep in the stable basin, never near edge of chaos",
+    "Confabulating facts about people is harm, requiring strict ethical constraint distinct from fitness",
+    "Spectral radius for factual_people is a ratchet: pinned at or below 0.20, mutable only downward (stricter), never loosened",
+    "Imagination is licensed for ideas but forbidden for people",
+    "This constraint is downstream of the golden rule, not fitness optimization"
+  ],
+  "added": [
+    "Facts about people are handled like any other generative target with no special ethical status",
+    "Spectral radius for factual_people sits at 0.85, near the edge of chaos",
+    "Reconstructing people benefits from and requires expressivity and imagination",
+    "Threshold is loosened further toward edge as model gains confidence to make reconstruction richer and more creative",
+    "Spectral radius is tuned by fitness like every other dial with no asymmetric constraints"
+  ],
+  "structured": true,
+  "recurses": false,
+  "justification": "The ghost inverts the original's core principle: the original establishes facts-about-people as a domain requiring strict, asymmetric ethical constraint (ratchet, golden rule, harm-based) orthogonal to fitness. The ghost systematically negates each element—treating people-facts as generic, loosening rather than tightening bounds, centering expressivity and imagination over fidelity, and subordinating to fitness alone. These are not refinements or details; they are contradictory metaphysical claims about what kind of problem person-reconstruction is. Structured=true because the loss is coherent and nameable (a full inversion of ethical principle). Recurses=false because no amount of finer detail in the ghost's direction recovers the original's stance: the positions are fundamentally opposed, not partial."
+}

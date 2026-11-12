@@ -1,0 +1,15 @@
+import {test} from 'node:test';
+import assert from 'node:assert/strict';
+import {installDOM,Node,findButton} from './helpers/evidence_reader_harness.mjs';
+import {mountTopology,layoutTopology} from '../src/laplace/web/static_shared/workspace-topology.mjs';
+const nodes=Array.from({length:5},(_,i)=>({id:'n'+i,title:'Public task '+i}));
+const edges=[{source:'n0',target:'n1',kind:'contains'},{source:'n0',target:'n2',kind:'contains'},{source:'n1',target:'n3',kind:'contains'},{source:'n2',target:'n4',kind:'contains'}];
+function scene(){const env=installDOM(),oldObserver=globalThis.ResizeObserver;let width=0,height=0;const observers=[];
+ document.createElementNS=(_ns,tag)=>new Node(tag);
+ Object.defineProperty(Node.prototype,'clientWidth',{configurable:true,get:()=>width});Object.defineProperty(Node.prototype,'clientHeight',{configurable:true,get:()=>height});
+ globalThis.ResizeObserver=class{constructor(callback){this.callback=callback;observers.push(this);}observe(target){this.target=target;}disconnect(){this.disconnected=true;}};
+ const host=new Node('main');env.body.append(host);const view=mountTopology(host,{nodes,edges,selected:'n4',readable:true}),svg=host.querySelector('svg'),box=()=>svg.attrs.viewBox.split(' ').map(Number);
+ return {host,view,svg,box,observers,reveal(w,h){width=w;height=h;for(const observer of observers)observer.callback([{target:observer.target}]);},close(){view.destroy();delete Node.prototype.clientWidth;delete Node.prototype.clientHeight;delete document.createElementNS;globalThis.ResizeObserver=oldObserver;env.restore();}};
+}
+test('Hidden readable map reconciles the actual revealed pane and bounds initial/Fit to content, without rebuilding facts',()=>{const s=scene();try{const beforeCards=s.svg.querySelectorAll('[data-topology-node]');s.reveal(593,304);const b=s.box();assert.deepEqual(b.slice(2),[593,304]);assert.equal(s.view.camera.k,1);const world=layoutTopology(nodes,edges).world;assert.ok(b[1]<=world.h-304,'lower selected node cannot leave avoidable empty space below while cropping above');findButton(s.host,'Fit').onclick();assert.deepEqual(s.box(),b);assert.equal(s.host.querySelector('svg'),s.svg);assert.deepEqual(s.svg.querySelectorAll('[data-topology-node]'),beforeCards);s.reveal(800,500);const large=s.box();assert.deepEqual(large.slice(2),[800,500]);assert.ok(large[1]<=0&&large[1]+500>=world.h,'all content visible when it fits at readable scale');assert.equal(s.view.camera.k,1);}finally{s.close();}});
+test('Resize/reveal retains deliberate camera and scale; disposed observer cannot publish',()=>{const s=scene();try{s.view.setCamera({x:25,y:35,k:1.5});s.reveal(593,304);assert.deepEqual(s.view.camera,{x:25,y:35,k:1.5});assert.deepEqual(s.box().slice(2),[593/1.5,304/1.5]);s.reveal(0,0);const hidden=s.box();s.reveal(720,420);assert.deepEqual(s.view.camera,{x:25,y:35,k:1.5});assert.deepEqual(s.box().slice(2),[480,280]);assert.notDeepEqual(s.box(),hidden);s.view.destroy();assert.ok(s.observers.every(o=>o.disconnected));const final=s.box();s.reveal(300,200);assert.deepEqual(s.box(),final);}finally{s.close();}});

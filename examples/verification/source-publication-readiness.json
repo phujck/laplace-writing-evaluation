@@ -1,0 +1,298 @@
+{
+  "schema": "laplace.public-safe-installed-source-publication-readiness/1",
+  "observed_utc": "2026-11-12T12:26:21.055015+00:00",
+  "status": "ACTUALLY_EXECUTED",
+  "run": "/tmp/laplace-positive-publication-1ivq0jq9/run-04",
+  "publication_handle": "sha256:dc1d099d9dabaafd665f40c9684a4d08aa410d15e053a260e12e6e88370e843f",
+  "source_package_origin_boundary": "180 loaded laplace/atlas modules, all from independently wheel-installed target; zero Main/source-checkout imports",
+  "device": {
+    "backend": "fastembed:BAAI/bge-small-en-v1.5",
+    "embedding_backend": "gpu",
+    "embedding_providers": [
+      "CUDAExecutionProvider",
+      "CPUExecutionProvider"
+    ],
+    "required": true,
+    "selected_and_derived": 3,
+    "unselected_entries": "Byte-identical carried values; no unrelated source text re-read or embedding."
+  },
+  "source_kernel_initial": "PREPARED/UNRESOLVED before separate active publication",
+  "active_result": "RECORDED/current -> PUBLISHED counterpart -> RECOVERED exact owner and real engine typed descent",
+  "checks": {
+    "unselected_node_and_embedding_unchanged": true,
+    "completed_replay_no_extra_journal_or_publication_effect": true,
+    "retained_read_after_source_comment_move": true,
+    "fresh_meaning_currentness": "CARRIED",
+    "native_authority_refusal": true,
+    "wrong_parent_refusal": true,
+    "changed_base_refusal": true,
+    "foreign_read_scope_refusal": true,
+    "wrong_history_refusal": true
+  },
+  "generative_provider_calls": 0,
+  "model_execution": "Actual local CUDA embedding of authored retained base and three selected/derived nodes; not an answer model or scientific benchmark.",
+  "fixture_qualification": "Synthetic public retained base, identity metric and explicit lifecycle declaration. Native verifier/guard/recovery unchanged; no test imports, monkeypatches, final-verifier substitutions, personal state, full-world fold or authored close.",
+  "candidate_source_files": [
+    {
+      "candidate_path": "examples/run_source_publication.py",
+      "sha256": "sha256:d8d084107d815dc45a9de51782238f713041012ee59b5a65af79201817570faf",
+      "bytes": 9090,
+      "private_evidence_copy": "evidence/WRITING_EVALUATION_REPAIR_2026-11-12/source-publication-positive/code/run_source_publication.py"
+    },
+    {
+      "candidate_path": "examples/behaviour_domains/source_publication.py",
+      "sha256": "sha256:1c66eb0b59d89f82642e9795176e36b6b0f21dbc391fe6686751fb526b21e256",
+      "bytes": 10224,
+      "private_evidence_copy": "evidence/WRITING_EVALUATION_REPAIR_2026-11-12/source-publication-positive/code/source_publication.py"
+    },
+    {
+      "candidate_path": "examples/SOURCE_PUBLICATION.md",
+      "sha256": "sha256:2b4767cc492172865e5205fd571d0046dff7e51615390289159818488a8f2689",
+      "bytes": 4194,
+      "private_evidence_copy": "evidence/WRITING_EVALUATION_REPAIR_2026-11-12/source-publication-positive/code/SOURCE_PUBLICATION.md"
+    }
+  ],
+  "wheels": [
+    {
+      "name": "atlas-0.1.0-py3-none-any.whl",
+      "bytes": 1059716,
+      "sha256": "sha256:19398fb06f3f658d332dea4318f85ebdbf7e980d063ea61bec96c6c9232df105",
+      "temporary_input": "/tmp/laplace-positive-publication-1ivq0jq9/wheels/atlas-0.1.0-py3-none-any.whl"
+    },
+    {
+      "name": "laplace_engine-0.1.0-py3-none-any.whl",
+      "bytes": 8113480,
+      "sha256": "sha256:25b2c242db604beaa05cac8e96089fadcf34b7832d5ed03d7f7c4b8ad4411932",
+      "temporary_input": "/tmp/laplace-positive-publication-1ivq0jq9/wheels/laplace_engine-0.1.0-py3-none-any.whl"
+    }
+  ],
+  "model_input": {
+    "name": "fast-bge-small-en-v1.5.tar.gz",
+    "bytes": 77796486,
+    "sha256": "sha256:7fe6b39d346dfc80499f17cef3081edf2e5853ee80f20e2cadc3ffc208eebefd"
+  },
+  "explicit_runtime": {
+    "python": "/home/phujck/.local/share/laplace/runtime/python/current/bin/python3.14",
+    "expected_python": "3.14.7"
+  },
+  "evidence_files": [
+    {
+      "path": "evidence/WRITING_EVALUATION_REPAIR_2026-11-12/source-publication-positive/code/SOURCE_PUBLICATION.md",
+      "bytes": 4194,
+      "sha256": "sha256:2b4767cc492172865e5205fd571d0046dff7e51615390289159818488a8f2689"
+    },
+    {
+      "path": "evidence/WRITING_EVALUATION_REPAIR_2026-11-12/source-publication-positive/code/run_source_publication.py",
+      "bytes": 9090,
+      "sha256": "sha256:d8d084107d815dc45a9de51782238f713041012ee59b5a65af79201817570faf"
+    },
+    {
+      "path": "evidence/WRITING_EVALUATION_REPAIR_2026-11-12/source-publication-positive/code/source_publication.py",
+      "bytes": 10224,
+      "sha256": "sha256:1c66eb0b59d89f82642e9795176e36b6b0f21dbc391fe6686751fb526b21e256"
+    },
+    {
+      "path": "evidence/WRITING_EVALUATION_REPAIR_2026-11-12/source-publication-positive/earlier-attempts/run-01-summary.json",
+      "bytes": 4416,
+      "sha256": "sha256:b676c3b152a7b8de2e7ec579791d1cb6cd93acaf4db8b5c53e9aff238e3645a5"
+    },
+    {
+      "path": "evidence/WRITING_EVALUATION_REPAIR_2026-11-12/source-publication-positive/earlier-attempts/run-02-summary.json",
+      "bytes": 26297,
+      "sha256": "sha256:20b4d18352e9e8410cd2036e3bee01efcc21310e7e2ced48a0bf44d6ec768a14"
+    },
+    {
+      "path": "evidence/WRITING_EVALUATION_REPAIR_2026-11-12/source-publication-positive/earlier-attempts/run-03-summary.json",
+      "bytes": 26676,
+      "sha256": "sha256:19661a519fc478b2475a1f78b0e3b8da668122334bc430db4605f0933826e5e7"
+    },
+    {
+      "path": "evidence/WRITING_EVALUATION_REPAIR_2026-11-12/source-publication-positive/run-04-evidence/group-source_kernel.json",
+      "bytes": 1116,
+      "sha256": "sha256:6c2a5d6bd8f36bf600230f464e6f39b2960d5dcf110dee4082c5ef7f1babbf62"
+    },
+    {
+      "path": "evidence/WRITING_EVALUATION_REPAIR_2026-11-12/source-publication-positive/run-04-evidence/group-source_publication.json",
+      "bytes": 23199,
+      "sha256": "sha256:1710ae33bdf334ff3df88f91d28f7df5fff6470cb57e551648df9982581fae00"
+    },
+    {
+      "path": "evidence/WRITING_EVALUATION_REPAIR_2026-11-12/source-publication-positive/run-04-evidence/installed-bootstrap.json",
+      "bytes": 1543,
+      "sha256": "sha256:a401994f67b1822f9dee9961d7ce32f1ae11a2f9798e379c703010f7f3b89cfd"
+    },
+    {
+      "path": "evidence/WRITING_EVALUATION_REPAIR_2026-11-12/source-publication-positive/run-04-evidence/kernel-exact-descent.json",
+      "bytes": 2314,
+      "sha256": "sha256:6cd5b35877f2afe7ab5a3278e143a91fd29a4899c2c50816a7dfec07b906d6c2"
+    },
+    {
+      "path": "evidence/WRITING_EVALUATION_REPAIR_2026-11-12/source-publication-positive/run-04-evidence/kernel-foreign-scope.json",
+      "bytes": 121,
+      "sha256": "sha256:54465070bb6507aed9397a907714a13340687a5498c8ed680bf8fab502c0addd"
+    },
+    {
+      "path": "evidence/WRITING_EVALUATION_REPAIR_2026-11-12/source-publication-positive/run-04-evidence/kernel-handoff.json",
+      "bytes": 7828,
+      "sha256": "sha256:119bb6794372bfd222d69ec0983dc8514fcfbeeedc517564d0efb0e98652158a"
+    },
+    {
+      "path": "evidence/WRITING_EVALUATION_REPAIR_2026-11-12/source-publication-positive/run-04-evidence/kernel-http-read.json",
+      "bytes": 8383,
+      "sha256": "sha256:090c758d99a9f3ed76f46af9f8a2774881f028060569e519c841e1d902675d82"
+    },
+    {
+      "path": "evidence/WRITING_EVALUATION_REPAIR_2026-11-12/source-publication-positive/run-04-evidence/kernel-native-read.json",
+      "bytes": 9997,
+      "sha256": "sha256:fdc74c098416d6c972f6c86490ab4cb969fa93a76a375a692feec95acf281a45"
+    },
+    {
+      "path": "evidence/WRITING_EVALUATION_REPAIR_2026-11-12/source-publication-positive/run-04-evidence/kernel-owner-prepare.json",
+      "bytes": 13699,
+      "sha256": "sha256:76da067af4003c3b6211c6856be1a323196f670697208e95074215461859cd5a"
+    },
+    {
+      "path": "evidence/WRITING_EVALUATION_REPAIR_2026-11-12/source-publication-positive/run-04-evidence/kernel-project-create.json",
+      "bytes": 1241,
+      "sha256": "sha256:6da6ab055a2bcc8e7cf0edd22464dacfdfdd7a7162dab3b935323418ea5a550d"
+    },
+    {
+      "path": "evidence/WRITING_EVALUATION_REPAIR_2026-11-12/source-publication-positive/run-04-evidence/kernel-publication-inputs.json",
+      "bytes": 8148,
+      "sha256": "sha256:f87f657aa4a579e7c27415d5f5b2e53deae39488d5696fd645e012414b6d6d1d"
+    },
+    {
+      "path": "evidence/WRITING_EVALUATION_REPAIR_2026-11-12/source-publication-positive/run-04-evidence/kernel-sdk-prepare.json",
+      "bytes": 9642,
+      "sha256": "sha256:9e2322d42b815d8016cfd97beeabe976260ff0685d1e0a35f26c1ac067e68e73"
+    },
+    {
+      "path": "evidence/WRITING_EVALUATION_REPAIR_2026-11-12/source-publication-positive/run-04-evidence/kernel-selected-request.json",
+      "bytes": 535,
+      "sha256": "sha256:c96656728b90109b274dc7444a46ce67fdea564842114f4fcae8cda7b5b23946"
+    },
+    {
+      "path": "evidence/WRITING_EVALUATION_REPAIR_2026-11-12/source-publication-positive/run-04-evidence/kernel-validate-inputs.json",
+      "bytes": 8148,
+      "sha256": "sha256:f87f657aa4a579e7c27415d5f5b2e53deae39488d5696fd645e012414b6d6d1d"
+    },
+    {
+      "path": "evidence/WRITING_EVALUATION_REPAIR_2026-11-12/source-publication-positive/run-04-evidence/kernel-work-create.json",
+      "bytes": 2575,
+      "sha256": "sha256:dcb308434f51d1dffa016924a14cf7883a2ed4747bde2dad57b7346762463a54"
+    },
+    {
+      "path": "evidence/WRITING_EVALUATION_REPAIR_2026-11-12/source-publication-positive/run-04-evidence/module-origins.json",
+      "bytes": 43104,
+      "sha256": "sha256:6018a077a944cd195f31f7d208de8e6eb13c809ddb0f327b3b13aa360ba33b3c"
+    },
+    {
+      "path": "evidence/WRITING_EVALUATION_REPAIR_2026-11-12/source-publication-positive/run-04-evidence/publication-carried-meaning.json",
+      "bytes": 13995,
+      "sha256": "sha256:7457a45693ccc1a417e344823e71c43c05b456cc8bd1597e9176e029ac0e3f55"
+    },
+    {
+      "path": "evidence/WRITING_EVALUATION_REPAIR_2026-11-12/source-publication-positive/run-04-evidence/publication-changed-base-refusal.json",
+      "bytes": 124,
+      "sha256": "sha256:dc395f71378a5ddc179a1ed4151d29ed1dc8adfbc0040ba17e87f68fec4c2607"
+    },
+    {
+      "path": "evidence/WRITING_EVALUATION_REPAIR_2026-11-12/source-publication-positive/run-04-evidence/publication-commit.json",
+      "bytes": 6886,
+      "sha256": "sha256:a3d96b57d273d6a5170d29744e92ee776c8be53f8f1d79230ef3641945329a71"
+    },
+    {
+      "path": "evidence/WRITING_EVALUATION_REPAIR_2026-11-12/source-publication-positive/run-04-evidence/publication-completed-replay.json",
+      "bytes": 6886,
+      "sha256": "sha256:a3d96b57d273d6a5170d29744e92ee776c8be53f8f1d79230ef3641945329a71"
+    },
+    {
+      "path": "evidence/WRITING_EVALUATION_REPAIR_2026-11-12/source-publication-positive/run-04-evidence/publication-counterpart.json",
+      "bytes": 17322,
+      "sha256": "sha256:77f766df7a6df87b584c3407c3c15d38057340b2f500f378341cfb1e30d42cea"
+    },
+    {
+      "path": "evidence/WRITING_EVALUATION_REPAIR_2026-11-12/source-publication-positive/run-04-evidence/publication-engine-descent.json",
+      "bytes": 8379,
+      "sha256": "sha256:cdaeb4a552a6181ba01b5bc37108181c0a9c0b23df3418ae29de0120308ab0ee"
+    },
+    {
+      "path": "evidence/WRITING_EVALUATION_REPAIR_2026-11-12/source-publication-positive/run-04-evidence/publication-engine-foreign-scope.json",
+      "bytes": 145,
+      "sha256": "sha256:1769e9add8fad91c4f286d81033d372b88fc39754326dba736c652ba38ae7e21"
+    },
+    {
+      "path": "evidence/WRITING_EVALUATION_REPAIR_2026-11-12/source-publication-positive/run-04-evidence/publication-native-authority-refusal.json",
+      "bytes": 135,
+      "sha256": "sha256:d84ec0b65b9dd8c4f5ed2fc3840af718451f9ab77db67ca075522eb233bd8fc5"
+    },
+    {
+      "path": "evidence/WRITING_EVALUATION_REPAIR_2026-11-12/source-publication-positive/run-04-evidence/publication-prepare.json",
+      "bytes": 1730,
+      "sha256": "sha256:ab4a8eb62c70d3c29d15a1de9d832f0b09cc7dbf384e7c242084d53f869842ba"
+    },
+    {
+      "path": "evidence/WRITING_EVALUATION_REPAIR_2026-11-12/source-publication-positive/run-04-evidence/publication-recovered.json",
+      "bytes": 8640,
+      "sha256": "sha256:98006f46f99bc817b16b1f8ee46cdbaa4a3e48e3366c4465f7b2dcf60b835624"
+    },
+    {
+      "path": "evidence/WRITING_EVALUATION_REPAIR_2026-11-12/source-publication-positive/run-04-evidence/publication-replay-after-source-move.json",
+      "bytes": 6886,
+      "sha256": "sha256:a3d96b57d273d6a5170d29744e92ee776c8be53f8f1d79230ef3641945329a71"
+    },
+    {
+      "path": "evidence/WRITING_EVALUATION_REPAIR_2026-11-12/source-publication-positive/run-04-evidence/publication-retained-base.json",
+      "bytes": 2769,
+      "sha256": "sha256:5fa13f4ed634998c2634dc99eedd40f4755e5c7b93886f9c6ab7ad0f8d22c2a3"
+    },
+    {
+      "path": "evidence/WRITING_EVALUATION_REPAIR_2026-11-12/source-publication-positive/run-04-evidence/publication-retained-read-after-source-move.json",
+      "bytes": 8640,
+      "sha256": "sha256:98006f46f99bc817b16b1f8ee46cdbaa4a3e48e3366c4465f7b2dcf60b835624"
+    },
+    {
+      "path": "evidence/WRITING_EVALUATION_REPAIR_2026-11-12/source-publication-positive/run-04-evidence/publication-wrong-history-refusal.json",
+      "bytes": 135,
+      "sha256": "sha256:b582621589e1ba9043d381218f3282eb7b4ee12be08a01772c718742ac4444a1"
+    },
+    {
+      "path": "evidence/WRITING_EVALUATION_REPAIR_2026-11-12/source-publication-positive/run-04-evidence/publication-wrong-parent-refusal.json",
+      "bytes": 121,
+      "sha256": "sha256:c8a54192f811d1831b7ed0118ccc922d85318ee591e19a78154f5f0f0413e7a0"
+    },
+    {
+      "path": "evidence/WRITING_EVALUATION_REPAIR_2026-11-12/source-publication-positive/run-04-evidence/source-publication-summary.json",
+      "bytes": 26676,
+      "sha256": "sha256:4a75a5746101cb7514aa546bf867c12d4872f757423d73527bfdb50e2053f60e"
+    },
+    {
+      "path": "evidence/WRITING_EVALUATION_REPAIR_2026-11-12/source-publication-positive/run-04-evidence/wheel-install.stderr.txt",
+      "bytes": 0,
+      "sha256": "sha256:e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "evidence/WRITING_EVALUATION_REPAIR_2026-11-12/source-publication-positive/run-04-evidence/wheel-install.stdout.txt",
+      "bytes": 217,
+      "sha256": "sha256:c24a1173b19d9162332853483c4b31702e9c5120a04dca9d198e4425c918a0e8"
+    },
+    {
+      "path": "evidence/WRITING_EVALUATION_REPAIR_2026-11-12/source-publication-positive/run-04.stderr.txt",
+      "bytes": 0,
+      "sha256": "sha256:e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "evidence/WRITING_EVALUATION_REPAIR_2026-11-12/source-publication-positive/run-04.stdout.txt",
+      "bytes": 26676,
+      "sha256": "sha256:4a75a5746101cb7514aa546bf867c12d4872f757423d73527bfdb50e2053f60e"
+    },
+    {
+      "path": "evidence/WRITING_EVALUATION_REPAIR_2026-11-12/source-publication-positive/wheel-build.log",
+      "bytes": 1234,
+      "sha256": "sha256:6e38ec0e1397ed71a744bf6ecee77ed2f0ca4764590bab3583e256d20adcc315"
+    }
+  ],
+  "earlier_attempts": "run01 correctly refused the unconfigured public runtime template; run02/03 preserved before final receipt metadata/wording refinements. Final run04 pins exact current runner/module hashes.",
+  "not_copied": "Model weights, dependency packages, installed workspace and personal state are not copied into public repository or this evidence packet.",
+  "source_publication_generic_driver": "The supported positive command is the dedicated run_source_publication.py, whose installed source-layout root equals its synthetic data root. Default model-free driver Source-kernel preparation stays separately qualified."
+}

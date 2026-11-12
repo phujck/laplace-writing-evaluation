@@ -1,0 +1,862 @@
+{
+  "schema_version": "laplace.template-build-ui-fixture/1",
+  "provenance": "FULL actual owner-issued values from disposable registered project and installed latexmk; generated source/caches removed after terminal proof. No browser acceptance asserted.",
+  "candidate_ref": {
+    "id": "PROP-3bf1b83f6aa245fe989c90672e94446b",
+    "version": "sha256:904cc58000f57bc7533cb5ab6bbf0cef10cd604f8f4bbb482b128c507f3d5d51"
+  },
+  "prepared": {
+    "schema_version": "laplace.document-template-candidate/1",
+    "project": "book",
+    "candidate_ref": {
+      "id": "PROP-3bf1b83f6aa245fe989c90672e94446b",
+      "version": "sha256:904cc58000f57bc7533cb5ab6bbf0cef10cd604f8f4bbb482b128c507f3d5d51"
+    },
+    "candidate_kind": "document-template",
+    "author": {
+      "kind": "human"
+    },
+    "read_handle": {
+      "operation": "document",
+      "project": "book",
+      "permitted": true,
+      "payload": {
+        "project": "book",
+        "view": "template",
+        "candidate_ref": {
+          "id": "PROP-3bf1b83f6aa245fe989c90672e94446b",
+          "version": "sha256:904cc58000f57bc7533cb5ab6bbf0cef10cd604f8f4bbb482b128c507f3d5d51"
+        }
+      },
+      "http": {
+        "method": "GET",
+        "url": "/authoring/document?project=book&view=template&candidate_ref=%7B%22id%22%3A%22PROP-3bf1b83f6aa245fe989c90672e94446b%22%2C%22version%22%3A%22sha256%3A904cc58000f57bc7533cb5ab6bbf0cef10cd604f8f4bbb482b128c507f3d5d51%22%7D"
+      },
+      "native_request": {
+        "verb": "read",
+        "concept": "document-form@project",
+        "target": "book",
+        "expected": [],
+        "payload": {
+          "view": "template",
+          "candidate_ref": {
+            "id": "PROP-3bf1b83f6aa245fe989c90672e94446b",
+            "version": "sha256:904cc58000f57bc7533cb5ab6bbf0cef10cd604f8f4bbb482b128c507f3d5d51"
+          }
+        },
+        "by": ""
+      }
+    },
+    "selected_source": {
+      "root": "book/manuscript/main.tex",
+      "manuscript_dir": "book/manuscript",
+      "edition": null,
+      "selection_identity": "sha256:6ba3bb87d6634575d7ca6d76696d53d6e2bef4d77108e36b528fb5641b537adb"
+    },
+    "currentness": {
+      "status": "CURRENT",
+      "changed_inputs": []
+    },
+    "source_changes": [
+      {
+        "file": "book/manuscript/main.tex",
+        "before_sha256": "sha256:c684253b0a6ed2044da9cf77c85d34b886b8547abd06d1d5c2f61e7be03da1d4",
+        "after_sha256": "sha256:99e59b3dd3701bebb290d0c09907dda11989a7fe997b6ffd3bdb2ebc075d6c97",
+        "changed": true,
+        "reads": {
+          "original": {
+            "operation": "document",
+            "project": "book",
+            "permitted": true,
+            "payload": {
+              "project": "book",
+              "view": "template",
+              "candidate_ref": {
+                "id": "PROP-3bf1b83f6aa245fe989c90672e94446b",
+                "version": "sha256:904cc58000f57bc7533cb5ab6bbf0cef10cd604f8f4bbb482b128c507f3d5d51"
+              },
+              "part": "original",
+              "file": "book/manuscript/main.tex"
+            },
+            "http": {
+              "method": "GET",
+              "url": "/authoring/document?project=book&view=template&candidate_ref=%7B%22id%22%3A%22PROP-3bf1b83f6aa245fe989c90672e94446b%22%2C%22version%22%3A%22sha256%3A904cc58000f57bc7533cb5ab6bbf0cef10cd604f8f4bbb482b128c507f3d5d51%22%7D&part=original&file=book%2Fmanuscript%2Fmain.tex"
+            },
+            "native_request": {
+              "verb": "read",
+              "concept": "document-form@project",
+              "target": "book",
+              "expected": [],
+              "payload": {
+                "view": "template",
+                "candidate_ref": {
+                  "id": "PROP-3bf1b83f6aa245fe989c90672e94446b",
+                  "version": "sha256:904cc58000f57bc7533cb5ab6bbf0cef10cd604f8f4bbb482b128c507f3d5d51"
+                },
+                "part": "original",
+                "file": "book/manuscript/main.tex"
+              },
+              "by": ""
+            }
+          },
+          "proposed": {
+            "operation": "document",
+            "project": "book",
+            "permitted": true,
+            "payload": {
+              "project": "book",
+              "view": "template",
+              "candidate_ref": {
+                "id": "PROP-3bf1b83f6aa245fe989c90672e94446b",
+                "version": "sha256:904cc58000f57bc7533cb5ab6bbf0cef10cd604f8f4bbb482b128c507f3d5d51"
+              },
+              "part": "proposed",
+              "file": "book/manuscript/main.tex"
+            },
+            "http": {
+              "method": "GET",
+              "url": "/authoring/document?project=book&view=template&candidate_ref=%7B%22id%22%3A%22PROP-3bf1b83f6aa245fe989c90672e94446b%22%2C%22version%22%3A%22sha256%3A904cc58000f57bc7533cb5ab6bbf0cef10cd604f8f4bbb482b128c507f3d5d51%22%7D&part=proposed&file=book%2Fmanuscript%2Fmain.tex"
+            },
+            "native_request": {
+              "verb": "read",
+              "concept": "document-form@project",
+              "target": "book",
+              "expected": [],
+              "payload": {
+                "view": "template",
+                "candidate_ref": {
+                  "id": "PROP-3bf1b83f6aa245fe989c90672e94446b",
+                  "version": "sha256:904cc58000f57bc7533cb5ab6bbf0cef10cd604f8f4bbb482b128c507f3d5d51"
+                },
+                "part": "proposed",
+                "file": "book/manuscript/main.tex"
+              },
+              "by": ""
+            }
+          },
+          "diff": {
+            "operation": "document",
+            "project": "book",
+            "permitted": true,
+            "payload": {
+              "project": "book",
+              "view": "template",
+              "candidate_ref": {
+                "id": "PROP-3bf1b83f6aa245fe989c90672e94446b",
+                "version": "sha256:904cc58000f57bc7533cb5ab6bbf0cef10cd604f8f4bbb482b128c507f3d5d51"
+              },
+              "part": "diff",
+              "file": "book/manuscript/main.tex"
+            },
+            "http": {
+              "method": "GET",
+              "url": "/authoring/document?project=book&view=template&candidate_ref=%7B%22id%22%3A%22PROP-3bf1b83f6aa245fe989c90672e94446b%22%2C%22version%22%3A%22sha256%3A904cc58000f57bc7533cb5ab6bbf0cef10cd604f8f4bbb482b128c507f3d5d51%22%7D&part=diff&file=book%2Fmanuscript%2Fmain.tex"
+            },
+            "native_request": {
+              "verb": "read",
+              "concept": "document-form@project",
+              "target": "book",
+              "expected": [],
+              "payload": {
+                "view": "template",
+                "candidate_ref": {
+                  "id": "PROP-3bf1b83f6aa245fe989c90672e94446b",
+                  "version": "sha256:904cc58000f57bc7533cb5ab6bbf0cef10cd604f8f4bbb482b128c507f3d5d51"
+                },
+                "part": "diff",
+                "file": "book/manuscript/main.tex"
+              },
+              "by": ""
+            }
+          }
+        }
+      }
+    ],
+    "reason": "Synthetic source-only template preview.",
+    "included_draft": null,
+    "closure": {
+      "status": "COMPLETE",
+      "diagnostics": [],
+      "local_bytes": 232,
+      "input_revision": "sha256:9261e7dfe9bcd2316779890b3caabeb78b04cf7248dcde9555cf2b21b6f904d2",
+      "revision": "sha256:9261e7dfe9bcd2316779890b3caabeb78b04cf7248dcde9555cf2b21b6f904d2",
+      "counts": {
+        "members": 3,
+        "local_bytes": 232
+      }
+    },
+    "closure_read": {
+      "operation": "document",
+      "project": "book",
+      "permitted": true,
+      "payload": {
+        "project": "book",
+        "view": "template",
+        "candidate_ref": {
+          "id": "PROP-3bf1b83f6aa245fe989c90672e94446b",
+          "version": "sha256:904cc58000f57bc7533cb5ab6bbf0cef10cd604f8f4bbb482b128c507f3d5d51"
+        },
+        "part": "closure"
+      },
+      "http": {
+        "method": "GET",
+        "url": "/authoring/document?project=book&view=template&candidate_ref=%7B%22id%22%3A%22PROP-3bf1b83f6aa245fe989c90672e94446b%22%2C%22version%22%3A%22sha256%3A904cc58000f57bc7533cb5ab6bbf0cef10cd604f8f4bbb482b128c507f3d5d51%22%7D&part=closure"
+      },
+      "native_request": {
+        "verb": "read",
+        "concept": "document-form@project",
+        "target": "book",
+        "expected": [],
+        "payload": {
+          "view": "template",
+          "candidate_ref": {
+            "id": "PROP-3bf1b83f6aa245fe989c90672e94446b",
+            "version": "sha256:904cc58000f57bc7533cb5ab6bbf0cef10cd604f8f4bbb482b128c507f3d5d51"
+          },
+          "part": "closure"
+        },
+        "by": ""
+      }
+    },
+    "build": {
+      "state": "UNBUILT",
+      "preview_ref": null
+    },
+    "apply_action": null,
+    "semantic_currentness": "NOT_ASSERTED",
+    "application_recording": {
+      "status": "NOT_APPLIED"
+    },
+    "application_id": null,
+    "build_status_read": {
+      "operation": "build_status",
+      "payload": {
+        "build_target": {
+          "schema_version": "laplace.build-target/1",
+          "kind": "candidate",
+          "project": "book",
+          "candidate_ref": {
+            "id": "PROP-3bf1b83f6aa245fe989c90672e94446b",
+            "version": "sha256:904cc58000f57bc7533cb5ab6bbf0cef10cd604f8f4bbb482b128c507f3d5d51"
+          },
+          "root": ".laplace-cache/writing-style/book/candidates/PROP-3bf1b83f6aa245fe989c90672e94446b/904cc58000f57bc7533cb5ab6bbf0cef10cd604f8f4bbb482b128c507f3d5d51/tree/book/manuscript/main.tex",
+          "selection_identity": "sha256:6ba3bb87d6634575d7ca6d76696d53d6e2bef4d77108e36b528fb5641b537adb",
+          "input_revision": "sha256:9261e7dfe9bcd2316779890b3caabeb78b04cf7248dcde9555cf2b21b6f904d2"
+        }
+      },
+      "http": {
+        "method": "GET",
+        "url": "/authoring/build?project=book&build_target=%7B%22candidate_ref%22%3A%7B%22id%22%3A%22PROP-3bf1b83f6aa245fe989c90672e94446b%22%2C%22version%22%3A%22sha256%3A904cc58000f57bc7533cb5ab6bbf0cef10cd604f8f4bbb482b128c507f3d5d51%22%7D%2C%22input_revision%22%3A%22sha256%3A9261e7dfe9bcd2316779890b3caabeb78b04cf7248dcde9555cf2b21b6f904d2%22%2C%22kind%22%3A%22candidate%22%2C%22project%22%3A%22book%22%2C%22root%22%3A%22.laplace-cache%2Fwriting-style%2Fbook%2Fcandidates%2FPROP-3bf1b83f6aa245fe989c90672e94446b%2F904cc58000f57bc7533cb5ab6bbf0cef10cd604f8f4bbb482b128c507f3d5d51%2Ftree%2Fbook%2Fmanuscript%2Fmain.tex%22%2C%22schema_version%22%3A%22laplace.build-target%2F1%22%2C%22selection_identity%22%3A%22sha256%3A6ba3bb87d6634575d7ca6d76696d53d6e2bef4d77108e36b528fb5641b537adb%22%7D"
+      }
+    },
+    "build_action": {
+      "operation": "build",
+      "payload": {
+        "build_target": {
+          "schema_version": "laplace.build-target/1",
+          "kind": "candidate",
+          "project": "book",
+          "candidate_ref": {
+            "id": "PROP-3bf1b83f6aa245fe989c90672e94446b",
+            "version": "sha256:904cc58000f57bc7533cb5ab6bbf0cef10cd604f8f4bbb482b128c507f3d5d51"
+          },
+          "root": ".laplace-cache/writing-style/book/candidates/PROP-3bf1b83f6aa245fe989c90672e94446b/904cc58000f57bc7533cb5ab6bbf0cef10cd604f8f4bbb482b128c507f3d5d51/tree/book/manuscript/main.tex",
+          "selection_identity": "sha256:6ba3bb87d6634575d7ca6d76696d53d6e2bef4d77108e36b528fb5641b537adb",
+          "input_revision": "sha256:9261e7dfe9bcd2316779890b3caabeb78b04cf7248dcde9555cf2b21b6f904d2"
+        }
+      },
+      "http": {
+        "method": "POST",
+        "route": "/authoring/build"
+      },
+      "project": "book"
+    },
+    "cache": {
+      "schema_version": "laplace.template-candidate-cache/1",
+      "project": "book",
+      "candidate_ref": {
+        "id": "PROP-3bf1b83f6aa245fe989c90672e94446b",
+        "version": "sha256:904cc58000f57bc7533cb5ab6bbf0cef10cd604f8f4bbb482b128c507f3d5d51"
+      },
+      "cache_revision": "sha256:fe4c07f571f9e0563a1d33188d74a78fb10605439069b39b9cd1b622cf6f39b7",
+      "files": 0,
+      "logical_bytes": 0,
+      "available": false,
+      "scope": "Private candidate source copies, compiler auxiliaries and retained PDF caches only",
+      "protected": [
+        "canonical source",
+        "immutable candidate",
+        "terminal build ART",
+        "retained input CAS"
+      ],
+      "effect": "Existing preview outputs become unavailable. Explicit Build can prepare private inputs again.",
+      "prune_action": {
+        "operation": "storage_prune",
+        "project": "book",
+        "payload": {
+          "candidate_ref": {
+            "id": "PROP-3bf1b83f6aa245fe989c90672e94446b",
+            "version": "sha256:904cc58000f57bc7533cb5ab6bbf0cef10cd604f8f4bbb482b128c507f3d5d51"
+          },
+          "guards": {
+            "cache_revision": "sha256:fe4c07f571f9e0563a1d33188d74a78fb10605439069b39b9cd1b622cf6f39b7"
+          },
+          "confirm": true
+        },
+        "http": {
+          "method": "POST",
+          "route": "/work/storage/prune"
+        }
+      }
+    }
+  },
+  "started": {
+    "status": "started",
+    "coalesced": false,
+    "file": ".laplace-cache/writing-style/book/candidates/PROP-3bf1b83f6aa245fe989c90672e94446b/904cc58000f57bc7533cb5ab6bbf0cef10cd604f8f4bbb482b128c507f3d5d51/tree/book/manuscript/main.tex",
+    "corpus": "book",
+    "by": "author",
+    "build_job": {
+      "schema_version": "laplace.build-job/1",
+      "id": "BLD-b64fced7618d4020a8f08c469dfe96b1",
+      "project": "book",
+      "root": ".laplace-cache/writing-style/book/candidates/PROP-3bf1b83f6aa245fe989c90672e94446b/904cc58000f57bc7533cb5ab6bbf0cef10cd604f8f4bbb482b128c507f3d5d51/tree/book/manuscript/main.tex",
+      "target_kind": "candidate",
+      "selection_identity": "sha256:6ba3bb87d6634575d7ca6d76696d53d6e2bef4d77108e36b528fb5641b537adb",
+      "input_revision": "sha256:9261e7dfe9bcd2316779890b3caabeb78b04cf7248dcde9555cf2b21b6f904d2",
+      "build_target": {
+        "schema_version": "laplace.build-target/1",
+        "kind": "candidate",
+        "project": "book",
+        "candidate_ref": {
+          "id": "PROP-3bf1b83f6aa245fe989c90672e94446b",
+          "version": "sha256:904cc58000f57bc7533cb5ab6bbf0cef10cd604f8f4bbb482b128c507f3d5d51"
+        },
+        "root": ".laplace-cache/writing-style/book/candidates/PROP-3bf1b83f6aa245fe989c90672e94446b/904cc58000f57bc7533cb5ab6bbf0cef10cd604f8f4bbb482b128c507f3d5d51/tree/book/manuscript/main.tex",
+        "selection_identity": "sha256:6ba3bb87d6634575d7ca6d76696d53d6e2bef4d77108e36b528fb5641b537adb",
+        "input_revision": "sha256:9261e7dfe9bcd2316779890b3caabeb78b04cf7248dcde9555cf2b21b6f904d2"
+      }
+    },
+    "cancellation": {
+      "available": true,
+      "reason": null
+    },
+    "cleanup_unproved": false,
+    "job_status_read": {
+      "operation": "build_status",
+      "payload": {
+        "build_job": {
+          "schema_version": "laplace.build-job/1",
+          "id": "BLD-b64fced7618d4020a8f08c469dfe96b1",
+          "project": "book",
+          "root": ".laplace-cache/writing-style/book/candidates/PROP-3bf1b83f6aa245fe989c90672e94446b/904cc58000f57bc7533cb5ab6bbf0cef10cd604f8f4bbb482b128c507f3d5d51/tree/book/manuscript/main.tex",
+          "target_kind": "candidate",
+          "selection_identity": "sha256:6ba3bb87d6634575d7ca6d76696d53d6e2bef4d77108e36b528fb5641b537adb",
+          "input_revision": "sha256:9261e7dfe9bcd2316779890b3caabeb78b04cf7248dcde9555cf2b21b6f904d2",
+          "build_target": {
+            "schema_version": "laplace.build-target/1",
+            "kind": "candidate",
+            "project": "book",
+            "candidate_ref": {
+              "id": "PROP-3bf1b83f6aa245fe989c90672e94446b",
+              "version": "sha256:904cc58000f57bc7533cb5ab6bbf0cef10cd604f8f4bbb482b128c507f3d5d51"
+            },
+            "root": ".laplace-cache/writing-style/book/candidates/PROP-3bf1b83f6aa245fe989c90672e94446b/904cc58000f57bc7533cb5ab6bbf0cef10cd604f8f4bbb482b128c507f3d5d51/tree/book/manuscript/main.tex",
+            "selection_identity": "sha256:6ba3bb87d6634575d7ca6d76696d53d6e2bef4d77108e36b528fb5641b537adb",
+            "input_revision": "sha256:9261e7dfe9bcd2316779890b3caabeb78b04cf7248dcde9555cf2b21b6f904d2"
+          }
+        }
+      },
+      "http": {
+        "method": "GET",
+        "url": "/authoring/build?project=book&build_job=%7B%22build_target%22%3A%7B%22candidate_ref%22%3A%7B%22id%22%3A%22PROP-3bf1b83f6aa245fe989c90672e94446b%22%2C%22version%22%3A%22sha256%3A904cc58000f57bc7533cb5ab6bbf0cef10cd604f8f4bbb482b128c507f3d5d51%22%7D%2C%22input_revision%22%3A%22sha256%3A9261e7dfe9bcd2316779890b3caabeb78b04cf7248dcde9555cf2b21b6f904d2%22%2C%22kind%22%3A%22candidate%22%2C%22project%22%3A%22book%22%2C%22root%22%3A%22.laplace-cache%2Fwriting-style%2Fbook%2Fcandidates%2FPROP-3bf1b83f6aa245fe989c90672e94446b%2F904cc58000f57bc7533cb5ab6bbf0cef10cd604f8f4bbb482b128c507f3d5d51%2Ftree%2Fbook%2Fmanuscript%2Fmain.tex%22%2C%22schema_version%22%3A%22laplace.build-target%2F1%22%2C%22selection_identity%22%3A%22sha256%3A6ba3bb87d6634575d7ca6d76696d53d6e2bef4d77108e36b528fb5641b537adb%22%7D%2C%22id%22%3A%22BLD-b64fced7618d4020a8f08c469dfe96b1%22%2C%22input_revision%22%3A%22sha256%3A9261e7dfe9bcd2316779890b3caabeb78b04cf7248dcde9555cf2b21b6f904d2%22%2C%22project%22%3A%22book%22%2C%22root%22%3A%22.laplace-cache%2Fwriting-style%2Fbook%2Fcandidates%2FPROP-3bf1b83f6aa245fe989c90672e94446b%2F904cc58000f57bc7533cb5ab6bbf0cef10cd604f8f4bbb482b128c507f3d5d51%2Ftree%2Fbook%2Fmanuscript%2Fmain.tex%22%2C%22schema_version%22%3A%22laplace.build-job%2F1%22%2C%22selection_identity%22%3A%22sha256%3A6ba3bb87d6634575d7ca6d76696d53d6e2bef4d77108e36b528fb5641b537adb%22%2C%22target_kind%22%3A%22candidate%22%7D"
+      }
+    },
+    "cancel_action": {
+      "operation": "build",
+      "payload": {
+        "action": "cancel",
+        "build_job": {
+          "schema_version": "laplace.build-job/1",
+          "id": "BLD-b64fced7618d4020a8f08c469dfe96b1",
+          "project": "book",
+          "root": ".laplace-cache/writing-style/book/candidates/PROP-3bf1b83f6aa245fe989c90672e94446b/904cc58000f57bc7533cb5ab6bbf0cef10cd604f8f4bbb482b128c507f3d5d51/tree/book/manuscript/main.tex",
+          "target_kind": "candidate",
+          "selection_identity": "sha256:6ba3bb87d6634575d7ca6d76696d53d6e2bef4d77108e36b528fb5641b537adb",
+          "input_revision": "sha256:9261e7dfe9bcd2316779890b3caabeb78b04cf7248dcde9555cf2b21b6f904d2",
+          "build_target": {
+            "schema_version": "laplace.build-target/1",
+            "kind": "candidate",
+            "project": "book",
+            "candidate_ref": {
+              "id": "PROP-3bf1b83f6aa245fe989c90672e94446b",
+              "version": "sha256:904cc58000f57bc7533cb5ab6bbf0cef10cd604f8f4bbb482b128c507f3d5d51"
+            },
+            "root": ".laplace-cache/writing-style/book/candidates/PROP-3bf1b83f6aa245fe989c90672e94446b/904cc58000f57bc7533cb5ab6bbf0cef10cd604f8f4bbb482b128c507f3d5d51/tree/book/manuscript/main.tex",
+            "selection_identity": "sha256:6ba3bb87d6634575d7ca6d76696d53d6e2bef4d77108e36b528fb5641b537adb",
+            "input_revision": "sha256:9261e7dfe9bcd2316779890b3caabeb78b04cf7248dcde9555cf2b21b6f904d2"
+          }
+        }
+      },
+      "http": {
+        "method": "POST",
+        "route": "/authoring/build"
+      },
+      "project": "book"
+    },
+    "build_target": {
+      "schema_version": "laplace.build-target/1",
+      "kind": "candidate",
+      "project": "book",
+      "candidate_ref": {
+        "id": "PROP-3bf1b83f6aa245fe989c90672e94446b",
+        "version": "sha256:904cc58000f57bc7533cb5ab6bbf0cef10cd604f8f4bbb482b128c507f3d5d51"
+      },
+      "root": ".laplace-cache/writing-style/book/candidates/PROP-3bf1b83f6aa245fe989c90672e94446b/904cc58000f57bc7533cb5ab6bbf0cef10cd604f8f4bbb482b128c507f3d5d51/tree/book/manuscript/main.tex",
+      "selection_identity": "sha256:6ba3bb87d6634575d7ca6d76696d53d6e2bef4d77108e36b528fb5641b537adb",
+      "input_revision": "sha256:9261e7dfe9bcd2316779890b3caabeb78b04cf7248dcde9555cf2b21b6f904d2"
+    },
+    "status_read": {
+      "operation": "build_status",
+      "payload": {
+        "build_target": {
+          "schema_version": "laplace.build-target/1",
+          "kind": "candidate",
+          "project": "book",
+          "candidate_ref": {
+            "id": "PROP-3bf1b83f6aa245fe989c90672e94446b",
+            "version": "sha256:904cc58000f57bc7533cb5ab6bbf0cef10cd604f8f4bbb482b128c507f3d5d51"
+          },
+          "root": ".laplace-cache/writing-style/book/candidates/PROP-3bf1b83f6aa245fe989c90672e94446b/904cc58000f57bc7533cb5ab6bbf0cef10cd604f8f4bbb482b128c507f3d5d51/tree/book/manuscript/main.tex",
+          "selection_identity": "sha256:6ba3bb87d6634575d7ca6d76696d53d6e2bef4d77108e36b528fb5641b537adb",
+          "input_revision": "sha256:9261e7dfe9bcd2316779890b3caabeb78b04cf7248dcde9555cf2b21b6f904d2"
+        }
+      },
+      "http": {
+        "method": "GET",
+        "url": "/authoring/build?project=book&build_target=%7B%22candidate_ref%22%3A%7B%22id%22%3A%22PROP-3bf1b83f6aa245fe989c90672e94446b%22%2C%22version%22%3A%22sha256%3A904cc58000f57bc7533cb5ab6bbf0cef10cd604f8f4bbb482b128c507f3d5d51%22%7D%2C%22input_revision%22%3A%22sha256%3A9261e7dfe9bcd2316779890b3caabeb78b04cf7248dcde9555cf2b21b6f904d2%22%2C%22kind%22%3A%22candidate%22%2C%22project%22%3A%22book%22%2C%22root%22%3A%22.laplace-cache%2Fwriting-style%2Fbook%2Fcandidates%2FPROP-3bf1b83f6aa245fe989c90672e94446b%2F904cc58000f57bc7533cb5ab6bbf0cef10cd604f8f4bbb482b128c507f3d5d51%2Ftree%2Fbook%2Fmanuscript%2Fmain.tex%22%2C%22schema_version%22%3A%22laplace.build-target%2F1%22%2C%22selection_identity%22%3A%22sha256%3A6ba3bb87d6634575d7ca6d76696d53d6e2bef4d77108e36b528fb5641b537adb%22%7D"
+      }
+    }
+  },
+  "active_status": {
+    "id": "recompile",
+    "label": "recompile",
+    "scope": "projection",
+    "producer": "latexmk -pdf -synctex=1 (the background recompile)",
+    "built_ts": null,
+    "project": "book",
+    "corpus": "book",
+    "build_target": {
+      "schema_version": "laplace.build-target/1",
+      "kind": "candidate",
+      "project": "book",
+      "candidate_ref": {
+        "id": "PROP-3bf1b83f6aa245fe989c90672e94446b",
+        "version": "sha256:904cc58000f57bc7533cb5ab6bbf0cef10cd604f8f4bbb482b128c507f3d5d51"
+      },
+      "root": ".laplace-cache/writing-style/book/candidates/PROP-3bf1b83f6aa245fe989c90672e94446b/904cc58000f57bc7533cb5ab6bbf0cef10cd604f8f4bbb482b128c507f3d5d51/tree/book/manuscript/main.tex",
+      "selection_identity": "sha256:6ba3bb87d6634575d7ca6d76696d53d6e2bef4d77108e36b528fb5641b537adb",
+      "input_revision": "sha256:9261e7dfe9bcd2316779890b3caabeb78b04cf7248dcde9555cf2b21b6f904d2"
+    },
+    "present": false,
+    "fresh": false,
+    "degraded": true,
+    "state": "running",
+    "running": true,
+    "ok": null,
+    "log_tail": "",
+    "pdf": null,
+    "by": "author",
+    "started": 1791809479.8820627,
+    "finished": null,
+    "dependency_changes": [],
+    "inputs_current": false,
+    "input_revisions": null,
+    "outputs_current": false,
+    "output_proof": "LEGACY_UNVERIFIED",
+    "output_changes": [],
+    "outputs": null,
+    "last_successful_build": null,
+    "reason": "a recompile is running\u2026",
+    "fix": "wait for the recompile to finish",
+    "replacement_blocked": false,
+    "build_job": {
+      "schema_version": "laplace.build-job/1",
+      "id": "BLD-b64fced7618d4020a8f08c469dfe96b1",
+      "project": "book",
+      "root": ".laplace-cache/writing-style/book/candidates/PROP-3bf1b83f6aa245fe989c90672e94446b/904cc58000f57bc7533cb5ab6bbf0cef10cd604f8f4bbb482b128c507f3d5d51/tree/book/manuscript/main.tex",
+      "target_kind": "candidate",
+      "selection_identity": "sha256:6ba3bb87d6634575d7ca6d76696d53d6e2bef4d77108e36b528fb5641b537adb",
+      "input_revision": "sha256:9261e7dfe9bcd2316779890b3caabeb78b04cf7248dcde9555cf2b21b6f904d2",
+      "build_target": {
+        "schema_version": "laplace.build-target/1",
+        "kind": "candidate",
+        "project": "book",
+        "candidate_ref": {
+          "id": "PROP-3bf1b83f6aa245fe989c90672e94446b",
+          "version": "sha256:904cc58000f57bc7533cb5ab6bbf0cef10cd604f8f4bbb482b128c507f3d5d51"
+        },
+        "root": ".laplace-cache/writing-style/book/candidates/PROP-3bf1b83f6aa245fe989c90672e94446b/904cc58000f57bc7533cb5ab6bbf0cef10cd604f8f4bbb482b128c507f3d5d51/tree/book/manuscript/main.tex",
+        "selection_identity": "sha256:6ba3bb87d6634575d7ca6d76696d53d6e2bef4d77108e36b528fb5641b537adb",
+        "input_revision": "sha256:9261e7dfe9bcd2316779890b3caabeb78b04cf7248dcde9555cf2b21b6f904d2"
+      }
+    },
+    "cancellation": {
+      "available": true,
+      "reason": null
+    },
+    "cleanup_unproved": false,
+    "job_status_read": {
+      "operation": "build_status",
+      "payload": {
+        "build_job": {
+          "schema_version": "laplace.build-job/1",
+          "id": "BLD-b64fced7618d4020a8f08c469dfe96b1",
+          "project": "book",
+          "root": ".laplace-cache/writing-style/book/candidates/PROP-3bf1b83f6aa245fe989c90672e94446b/904cc58000f57bc7533cb5ab6bbf0cef10cd604f8f4bbb482b128c507f3d5d51/tree/book/manuscript/main.tex",
+          "target_kind": "candidate",
+          "selection_identity": "sha256:6ba3bb87d6634575d7ca6d76696d53d6e2bef4d77108e36b528fb5641b537adb",
+          "input_revision": "sha256:9261e7dfe9bcd2316779890b3caabeb78b04cf7248dcde9555cf2b21b6f904d2",
+          "build_target": {
+            "schema_version": "laplace.build-target/1",
+            "kind": "candidate",
+            "project": "book",
+            "candidate_ref": {
+              "id": "PROP-3bf1b83f6aa245fe989c90672e94446b",
+              "version": "sha256:904cc58000f57bc7533cb5ab6bbf0cef10cd604f8f4bbb482b128c507f3d5d51"
+            },
+            "root": ".laplace-cache/writing-style/book/candidates/PROP-3bf1b83f6aa245fe989c90672e94446b/904cc58000f57bc7533cb5ab6bbf0cef10cd604f8f4bbb482b128c507f3d5d51/tree/book/manuscript/main.tex",
+            "selection_identity": "sha256:6ba3bb87d6634575d7ca6d76696d53d6e2bef4d77108e36b528fb5641b537adb",
+            "input_revision": "sha256:9261e7dfe9bcd2316779890b3caabeb78b04cf7248dcde9555cf2b21b6f904d2"
+          }
+        }
+      },
+      "http": {
+        "method": "GET",
+        "url": "/authoring/build?project=book&build_job=%7B%22build_target%22%3A%7B%22candidate_ref%22%3A%7B%22id%22%3A%22PROP-3bf1b83f6aa245fe989c90672e94446b%22%2C%22version%22%3A%22sha256%3A904cc58000f57bc7533cb5ab6bbf0cef10cd604f8f4bbb482b128c507f3d5d51%22%7D%2C%22input_revision%22%3A%22sha256%3A9261e7dfe9bcd2316779890b3caabeb78b04cf7248dcde9555cf2b21b6f904d2%22%2C%22kind%22%3A%22candidate%22%2C%22project%22%3A%22book%22%2C%22root%22%3A%22.laplace-cache%2Fwriting-style%2Fbook%2Fcandidates%2FPROP-3bf1b83f6aa245fe989c90672e94446b%2F904cc58000f57bc7533cb5ab6bbf0cef10cd604f8f4bbb482b128c507f3d5d51%2Ftree%2Fbook%2Fmanuscript%2Fmain.tex%22%2C%22schema_version%22%3A%22laplace.build-target%2F1%22%2C%22selection_identity%22%3A%22sha256%3A6ba3bb87d6634575d7ca6d76696d53d6e2bef4d77108e36b528fb5641b537adb%22%7D%2C%22id%22%3A%22BLD-b64fced7618d4020a8f08c469dfe96b1%22%2C%22input_revision%22%3A%22sha256%3A9261e7dfe9bcd2316779890b3caabeb78b04cf7248dcde9555cf2b21b6f904d2%22%2C%22project%22%3A%22book%22%2C%22root%22%3A%22.laplace-cache%2Fwriting-style%2Fbook%2Fcandidates%2FPROP-3bf1b83f6aa245fe989c90672e94446b%2F904cc58000f57bc7533cb5ab6bbf0cef10cd604f8f4bbb482b128c507f3d5d51%2Ftree%2Fbook%2Fmanuscript%2Fmain.tex%22%2C%22schema_version%22%3A%22laplace.build-job%2F1%22%2C%22selection_identity%22%3A%22sha256%3A6ba3bb87d6634575d7ca6d76696d53d6e2bef4d77108e36b528fb5641b537adb%22%2C%22target_kind%22%3A%22candidate%22%7D"
+      }
+    },
+    "cancel_action": {
+      "operation": "build",
+      "payload": {
+        "action": "cancel",
+        "build_job": {
+          "schema_version": "laplace.build-job/1",
+          "id": "BLD-b64fced7618d4020a8f08c469dfe96b1",
+          "project": "book",
+          "root": ".laplace-cache/writing-style/book/candidates/PROP-3bf1b83f6aa245fe989c90672e94446b/904cc58000f57bc7533cb5ab6bbf0cef10cd604f8f4bbb482b128c507f3d5d51/tree/book/manuscript/main.tex",
+          "target_kind": "candidate",
+          "selection_identity": "sha256:6ba3bb87d6634575d7ca6d76696d53d6e2bef4d77108e36b528fb5641b537adb",
+          "input_revision": "sha256:9261e7dfe9bcd2316779890b3caabeb78b04cf7248dcde9555cf2b21b6f904d2",
+          "build_target": {
+            "schema_version": "laplace.build-target/1",
+            "kind": "candidate",
+            "project": "book",
+            "candidate_ref": {
+              "id": "PROP-3bf1b83f6aa245fe989c90672e94446b",
+              "version": "sha256:904cc58000f57bc7533cb5ab6bbf0cef10cd604f8f4bbb482b128c507f3d5d51"
+            },
+            "root": ".laplace-cache/writing-style/book/candidates/PROP-3bf1b83f6aa245fe989c90672e94446b/904cc58000f57bc7533cb5ab6bbf0cef10cd604f8f4bbb482b128c507f3d5d51/tree/book/manuscript/main.tex",
+            "selection_identity": "sha256:6ba3bb87d6634575d7ca6d76696d53d6e2bef4d77108e36b528fb5641b537adb",
+            "input_revision": "sha256:9261e7dfe9bcd2316779890b3caabeb78b04cf7248dcde9555cf2b21b6f904d2"
+          }
+        }
+      },
+      "http": {
+        "method": "POST",
+        "route": "/authoring/build"
+      },
+      "project": "book"
+    },
+    "consumed_build_target": {
+      "schema_version": "laplace.build-target/1",
+      "kind": "candidate",
+      "project": "book",
+      "candidate_ref": {
+        "id": "PROP-3bf1b83f6aa245fe989c90672e94446b",
+        "version": "sha256:904cc58000f57bc7533cb5ab6bbf0cef10cd604f8f4bbb482b128c507f3d5d51"
+      },
+      "root": ".laplace-cache/writing-style/book/candidates/PROP-3bf1b83f6aa245fe989c90672e94446b/904cc58000f57bc7533cb5ab6bbf0cef10cd604f8f4bbb482b128c507f3d5d51/tree/book/manuscript/main.tex",
+      "selection_identity": "sha256:6ba3bb87d6634575d7ca6d76696d53d6e2bef4d77108e36b528fb5641b537adb",
+      "input_revision": "sha256:9261e7dfe9bcd2316779890b3caabeb78b04cf7248dcde9555cf2b21b6f904d2"
+    },
+    "target_basis_current": true,
+    "job_basis_current": true,
+    "owned_processes_active": false
+  },
+  "terminal_status": {
+    "id": "recompile",
+    "label": "recompile",
+    "scope": "projection",
+    "producer": "latexmk -pdf -synctex=1 (the background recompile)",
+    "built_ts": 1791809480.190886,
+    "project": "book",
+    "corpus": "book",
+    "build_target": {
+      "schema_version": "laplace.build-target/1",
+      "kind": "candidate",
+      "project": "book",
+      "candidate_ref": {
+        "id": "PROP-3bf1b83f6aa245fe989c90672e94446b",
+        "version": "sha256:904cc58000f57bc7533cb5ab6bbf0cef10cd604f8f4bbb482b128c507f3d5d51"
+      },
+      "root": ".laplace-cache/writing-style/book/candidates/PROP-3bf1b83f6aa245fe989c90672e94446b/904cc58000f57bc7533cb5ab6bbf0cef10cd604f8f4bbb482b128c507f3d5d51/tree/book/manuscript/main.tex",
+      "selection_identity": "sha256:6ba3bb87d6634575d7ca6d76696d53d6e2bef4d77108e36b528fb5641b537adb",
+      "input_revision": "sha256:9261e7dfe9bcd2316779890b3caabeb78b04cf7248dcde9555cf2b21b6f904d2"
+    },
+    "present": true,
+    "fresh": true,
+    "degraded": false,
+    "state": "done",
+    "running": false,
+    "ok": true,
+    "log_tail": "Rc files read:\n  NONE\nLatexmk: This is Latexmk, John Collins, 31 Jan. 2024. Version 4.83.\nNo existing .aux file, so I'll make a simple one, and require run of *latex.\nForce everything to be remade.\nLatexmk: applying rule 'pdflatex'...\nRule 'pdflatex':  Reasons for rerun\nCategory 'other':\n  Rerun of 'pdflatex' forced or previously required:\n    Reason or flag: 'go_mode'\n\n------------\nRun number 1 of rule 'pdflatex'\n------------\n------------\nRunning 'pdflatex  -no-shell-escape -synctex=1 -interaction=nonstopmode -halt-on-error -recorder  \"main.tex\"'\n------------\nThis is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Debian) (preloaded format=pdflatex)\nentering extended mode\n(./main.tex\nLaTeX2e <2023-11-01> patch level 1\nL3 programming layer <2024-01-22>\n(./custom.cls\nDocument Class: custom \n(/usr/share/texlive/texmf-dist/tex/latex/base/article.cls\nDocument Class: article 2023/05/17 v1.4n Standard LaTeX document class\n(/usr/share/texlive/texmf-dist/tex/latex/base/size10.clo))) (./support.sty)\n(/usr/share/texlive/texmf-dist/tex/latex/l3backend/l3backend-pdftex.def)\n(./main.aux) [1{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}] (./main.aux\n) )</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb>\nOutput written on main.pdf (1 page, 13740 bytes).\nSyncTeX written on main.synctex.gz.\nTranscript written on main.log.\nLatexmk: Getting log file 'main.log'\nLatexmk: Examining 'main.fls'\nLatexmk: Examining 'main.log'\nLatexmk: Log file says output to 'main.pdf'\nLatexmk: All targets (main.pdf) are up-to-date\n\n",
+    "pdf": ".laplace-cache/writing-style/book/candidates/PROP-3bf1b83f6aa245fe989c90672e94446b/904cc58000f57bc7533cb5ab6bbf0cef10cd604f8f4bbb482b128c507f3d5d51/tree/book/manuscript/main.pdf",
+    "by": "author",
+    "started": null,
+    "finished": 1791809480.333133,
+    "dependency_changes": [],
+    "inputs_current": true,
+    "input_revisions": {
+      ".laplace-cache/writing-style/book/candidates/PROP-3bf1b83f6aa245fe989c90672e94446b/904cc58000f57bc7533cb5ab6bbf0cef10cd604f8f4bbb482b128c507f3d5d51/tree/book/manuscript/custom.cls": "ae1f84984072121bbfbddc8ac76eff5a5ea61941bc261396e6300b8eaa425dd1",
+      ".laplace-cache/writing-style/book/candidates/PROP-3bf1b83f6aa245fe989c90672e94446b/904cc58000f57bc7533cb5ab6bbf0cef10cd604f8f4bbb482b128c507f3d5d51/tree/book/manuscript/main.tex": "99e59b3dd3701bebb290d0c09907dda11989a7fe997b6ffd3bdb2ebc075d6c97",
+      ".laplace-cache/writing-style/book/candidates/PROP-3bf1b83f6aa245fe989c90672e94446b/904cc58000f57bc7533cb5ab6bbf0cef10cd604f8f4bbb482b128c507f3d5d51/tree/book/manuscript/support.sty": "56592dd17b58e968be7f9891f8b4439d326796078b1be536e3f933c72af12f23"
+    },
+    "outputs_current": true,
+    "output_proof": "VERIFIED",
+    "output_changes": [],
+    "outputs": {
+      "version": 1,
+      "root": ".laplace-cache/writing-style/book/candidates/PROP-3bf1b83f6aa245fe989c90672e94446b/904cc58000f57bc7533cb5ab6bbf0cef10cd604f8f4bbb482b128c507f3d5d51/tree/book/manuscript/main.tex",
+      "files": {
+        ".laplace-cache/writing-style/book/candidates/PROP-3bf1b83f6aa245fe989c90672e94446b/904cc58000f57bc7533cb5ab6bbf0cef10cd604f8f4bbb482b128c507f3d5d51/tree/book/manuscript/main.aux": "fbabe80c887f95a1ede6847f22dd91b380bda9d17ae8bfaa72e1741b16aa41e9",
+        ".laplace-cache/writing-style/book/candidates/PROP-3bf1b83f6aa245fe989c90672e94446b/904cc58000f57bc7533cb5ab6bbf0cef10cd604f8f4bbb482b128c507f3d5d51/tree/book/manuscript/main.bbl": null,
+        ".laplace-cache/writing-style/book/candidates/PROP-3bf1b83f6aa245fe989c90672e94446b/904cc58000f57bc7533cb5ab6bbf0cef10cd604f8f4bbb482b128c507f3d5d51/tree/book/manuscript/main.bcf": null,
+        ".laplace-cache/writing-style/book/candidates/PROP-3bf1b83f6aa245fe989c90672e94446b/904cc58000f57bc7533cb5ab6bbf0cef10cd604f8f4bbb482b128c507f3d5d51/tree/book/manuscript/main.fls": "3111f70ee1f6ab6a32c894b6bdcb73ae180f8802eaeacaebc8d0d83677254337",
+        ".laplace-cache/writing-style/book/candidates/PROP-3bf1b83f6aa245fe989c90672e94446b/904cc58000f57bc7533cb5ab6bbf0cef10cd604f8f4bbb482b128c507f3d5d51/tree/book/manuscript/main.pdf": "d3b84c9a553105939c0d9a68194eb26f40179e1c626f223f535f0a3482ef65e7",
+        ".laplace-cache/writing-style/book/candidates/PROP-3bf1b83f6aa245fe989c90672e94446b/904cc58000f57bc7533cb5ab6bbf0cef10cd604f8f4bbb482b128c507f3d5d51/tree/book/manuscript/main.run.xml": null,
+        ".laplace-cache/writing-style/book/candidates/PROP-3bf1b83f6aa245fe989c90672e94446b/904cc58000f57bc7533cb5ab6bbf0cef10cd604f8f4bbb482b128c507f3d5d51/tree/book/manuscript/main.synctex": null,
+        ".laplace-cache/writing-style/book/candidates/PROP-3bf1b83f6aa245fe989c90672e94446b/904cc58000f57bc7533cb5ab6bbf0cef10cd604f8f4bbb482b128c507f3d5d51/tree/book/manuscript/main.synctex.gz": "954183d3eff154435f99e20a41684971b883569559143233180e55f1d7df6c99"
+      },
+      "generated": [
+        ".laplace-cache/writing-style/book/candidates/PROP-3bf1b83f6aa245fe989c90672e94446b/904cc58000f57bc7533cb5ab6bbf0cef10cd604f8f4bbb482b128c507f3d5d51/tree/book/manuscript/main.aux"
+      ]
+    },
+    "last_successful_build": {
+      "outputs": {
+        "version": 1,
+        "root": ".laplace-cache/writing-style/book/candidates/PROP-3bf1b83f6aa245fe989c90672e94446b/904cc58000f57bc7533cb5ab6bbf0cef10cd604f8f4bbb482b128c507f3d5d51/tree/book/manuscript/main.tex",
+        "files": {
+          ".laplace-cache/writing-style/book/candidates/PROP-3bf1b83f6aa245fe989c90672e94446b/904cc58000f57bc7533cb5ab6bbf0cef10cd604f8f4bbb482b128c507f3d5d51/tree/book/manuscript/main.aux": "fbabe80c887f95a1ede6847f22dd91b380bda9d17ae8bfaa72e1741b16aa41e9",
+          ".laplace-cache/writing-style/book/candidates/PROP-3bf1b83f6aa245fe989c90672e94446b/904cc58000f57bc7533cb5ab6bbf0cef10cd604f8f4bbb482b128c507f3d5d51/tree/book/manuscript/main.bbl": null,
+          ".laplace-cache/writing-style/book/candidates/PROP-3bf1b83f6aa245fe989c90672e94446b/904cc58000f57bc7533cb5ab6bbf0cef10cd604f8f4bbb482b128c507f3d5d51/tree/book/manuscript/main.bcf": null,
+          ".laplace-cache/writing-style/book/candidates/PROP-3bf1b83f6aa245fe989c90672e94446b/904cc58000f57bc7533cb5ab6bbf0cef10cd604f8f4bbb482b128c507f3d5d51/tree/book/manuscript/main.fls": "3111f70ee1f6ab6a32c894b6bdcb73ae180f8802eaeacaebc8d0d83677254337",
+          ".laplace-cache/writing-style/book/candidates/PROP-3bf1b83f6aa245fe989c90672e94446b/904cc58000f57bc7533cb5ab6bbf0cef10cd604f8f4bbb482b128c507f3d5d51/tree/book/manuscript/main.pdf": "d3b84c9a553105939c0d9a68194eb26f40179e1c626f223f535f0a3482ef65e7",
+          ".laplace-cache/writing-style/book/candidates/PROP-3bf1b83f6aa245fe989c90672e94446b/904cc58000f57bc7533cb5ab6bbf0cef10cd604f8f4bbb482b128c507f3d5d51/tree/book/manuscript/main.run.xml": null,
+          ".laplace-cache/writing-style/book/candidates/PROP-3bf1b83f6aa245fe989c90672e94446b/904cc58000f57bc7533cb5ab6bbf0cef10cd604f8f4bbb482b128c507f3d5d51/tree/book/manuscript/main.synctex": null,
+          ".laplace-cache/writing-style/book/candidates/PROP-3bf1b83f6aa245fe989c90672e94446b/904cc58000f57bc7533cb5ab6bbf0cef10cd604f8f4bbb482b128c507f3d5d51/tree/book/manuscript/main.synctex.gz": "954183d3eff154435f99e20a41684971b883569559143233180e55f1d7df6c99"
+        },
+        "generated": [
+          ".laplace-cache/writing-style/book/candidates/PROP-3bf1b83f6aa245fe989c90672e94446b/904cc58000f57bc7533cb5ab6bbf0cef10cd604f8f4bbb482b128c507f3d5d51/tree/book/manuscript/main.aux"
+        ]
+      },
+      "dependencies": {
+        ".laplace-cache/writing-style/book/candidates/PROP-3bf1b83f6aa245fe989c90672e94446b/904cc58000f57bc7533cb5ab6bbf0cef10cd604f8f4bbb482b128c507f3d5d51/tree/book/manuscript/custom.cls": "ae1f84984072121bbfbddc8ac76eff5a5ea61941bc261396e6300b8eaa425dd1",
+        ".laplace-cache/writing-style/book/candidates/PROP-3bf1b83f6aa245fe989c90672e94446b/904cc58000f57bc7533cb5ab6bbf0cef10cd604f8f4bbb482b128c507f3d5d51/tree/book/manuscript/main.tex": "99e59b3dd3701bebb290d0c09907dda11989a7fe997b6ffd3bdb2ebc075d6c97",
+        ".laplace-cache/writing-style/book/candidates/PROP-3bf1b83f6aa245fe989c90672e94446b/904cc58000f57bc7533cb5ab6bbf0cef10cd604f8f4bbb482b128c507f3d5d51/tree/book/manuscript/support.sty": "56592dd17b58e968be7f9891f8b4439d326796078b1be536e3f933c72af12f23"
+      },
+      "pdf": ".laplace-cache/writing-style/book/candidates/PROP-3bf1b83f6aa245fe989c90672e94446b/904cc58000f57bc7533cb5ab6bbf0cef10cd604f8f4bbb482b128c507f3d5d51/tree/book/manuscript/main.pdf",
+      "build_job": {
+        "schema_version": "laplace.build-job/1",
+        "id": "BLD-b64fced7618d4020a8f08c469dfe96b1",
+        "project": "book",
+        "root": ".laplace-cache/writing-style/book/candidates/PROP-3bf1b83f6aa245fe989c90672e94446b/904cc58000f57bc7533cb5ab6bbf0cef10cd604f8f4bbb482b128c507f3d5d51/tree/book/manuscript/main.tex",
+        "target_kind": "candidate",
+        "selection_identity": "sha256:6ba3bb87d6634575d7ca6d76696d53d6e2bef4d77108e36b528fb5641b537adb",
+        "input_revision": "sha256:9261e7dfe9bcd2316779890b3caabeb78b04cf7248dcde9555cf2b21b6f904d2",
+        "build_target": {
+          "schema_version": "laplace.build-target/1",
+          "kind": "candidate",
+          "project": "book",
+          "candidate_ref": {
+            "id": "PROP-3bf1b83f6aa245fe989c90672e94446b",
+            "version": "sha256:904cc58000f57bc7533cb5ab6bbf0cef10cd604f8f4bbb482b128c507f3d5d51"
+          },
+          "root": ".laplace-cache/writing-style/book/candidates/PROP-3bf1b83f6aa245fe989c90672e94446b/904cc58000f57bc7533cb5ab6bbf0cef10cd604f8f4bbb482b128c507f3d5d51/tree/book/manuscript/main.tex",
+          "selection_identity": "sha256:6ba3bb87d6634575d7ca6d76696d53d6e2bef4d77108e36b528fb5641b537adb",
+          "input_revision": "sha256:9261e7dfe9bcd2316779890b3caabeb78b04cf7248dcde9555cf2b21b6f904d2"
+        }
+      },
+      "finished": 1791809480.3331318
+    },
+    "preview_ref": {
+      "schema_version": "laplace.template-preview-ref/1",
+      "build_job": {
+        "schema_version": "laplace.build-job/1",
+        "id": "BLD-b64fced7618d4020a8f08c469dfe96b1",
+        "project": "book",
+        "root": ".laplace-cache/writing-style/book/candidates/PROP-3bf1b83f6aa245fe989c90672e94446b/904cc58000f57bc7533cb5ab6bbf0cef10cd604f8f4bbb482b128c507f3d5d51/tree/book/manuscript/main.tex",
+        "target_kind": "candidate",
+        "selection_identity": "sha256:6ba3bb87d6634575d7ca6d76696d53d6e2bef4d77108e36b528fb5641b537adb",
+        "input_revision": "sha256:9261e7dfe9bcd2316779890b3caabeb78b04cf7248dcde9555cf2b21b6f904d2",
+        "build_target": {
+          "schema_version": "laplace.build-target/1",
+          "kind": "candidate",
+          "project": "book",
+          "candidate_ref": {
+            "id": "PROP-3bf1b83f6aa245fe989c90672e94446b",
+            "version": "sha256:904cc58000f57bc7533cb5ab6bbf0cef10cd604f8f4bbb482b128c507f3d5d51"
+          },
+          "root": ".laplace-cache/writing-style/book/candidates/PROP-3bf1b83f6aa245fe989c90672e94446b/904cc58000f57bc7533cb5ab6bbf0cef10cd604f8f4bbb482b128c507f3d5d51/tree/book/manuscript/main.tex",
+          "selection_identity": "sha256:6ba3bb87d6634575d7ca6d76696d53d6e2bef4d77108e36b528fb5641b537adb",
+          "input_revision": "sha256:9261e7dfe9bcd2316779890b3caabeb78b04cf7248dcde9555cf2b21b6f904d2"
+        }
+      },
+      "build_receipt_id": "ART-e2889cff52094f56929cef03696a369d",
+      "observed_input_revision": "sha256:0a22fcfa8a7299665df6d365b6ee2ae5b348569f3fa287dea1a9979139b84ab2",
+      "output": {
+        "file": ".laplace-cache/writing-style/book/candidates/PROP-3bf1b83f6aa245fe989c90672e94446b/904cc58000f57bc7533cb5ab6bbf0cef10cd604f8f4bbb482b128c507f3d5d51/outputs/BLD-b64fced7618d4020a8f08c469dfe96b1/d3b84c9a553105939c0d9a68194eb26f40179e1c626f223f535f0a3482ef65e7.pdf",
+        "content_revision": "sha256:d3b84c9a553105939c0d9a68194eb26f40179e1c626f223f535f0a3482ef65e7"
+      }
+    },
+    "build_receipt_id": "ART-e2889cff52094f56929cef03696a369d",
+    "preview_publication": "RECORDED",
+    "preview_diagnostics": [],
+    "reason": null,
+    "fix": "recompile the paper (\u25b6) to rebuild",
+    "replacement_blocked": false,
+    "build_job": {
+      "schema_version": "laplace.build-job/1",
+      "id": "BLD-b64fced7618d4020a8f08c469dfe96b1",
+      "project": "book",
+      "root": ".laplace-cache/writing-style/book/candidates/PROP-3bf1b83f6aa245fe989c90672e94446b/904cc58000f57bc7533cb5ab6bbf0cef10cd604f8f4bbb482b128c507f3d5d51/tree/book/manuscript/main.tex",
+      "target_kind": "candidate",
+      "selection_identity": "sha256:6ba3bb87d6634575d7ca6d76696d53d6e2bef4d77108e36b528fb5641b537adb",
+      "input_revision": "sha256:9261e7dfe9bcd2316779890b3caabeb78b04cf7248dcde9555cf2b21b6f904d2",
+      "build_target": {
+        "schema_version": "laplace.build-target/1",
+        "kind": "candidate",
+        "project": "book",
+        "candidate_ref": {
+          "id": "PROP-3bf1b83f6aa245fe989c90672e94446b",
+          "version": "sha256:904cc58000f57bc7533cb5ab6bbf0cef10cd604f8f4bbb482b128c507f3d5d51"
+        },
+        "root": ".laplace-cache/writing-style/book/candidates/PROP-3bf1b83f6aa245fe989c90672e94446b/904cc58000f57bc7533cb5ab6bbf0cef10cd604f8f4bbb482b128c507f3d5d51/tree/book/manuscript/main.tex",
+        "selection_identity": "sha256:6ba3bb87d6634575d7ca6d76696d53d6e2bef4d77108e36b528fb5641b537adb",
+        "input_revision": "sha256:9261e7dfe9bcd2316779890b3caabeb78b04cf7248dcde9555cf2b21b6f904d2"
+      }
+    },
+    "cancellation": {
+      "available": true,
+      "reason": null
+    },
+    "cleanup_unproved": false,
+    "job_status_read": {
+      "operation": "build_status",
+      "payload": {
+        "build_job": {
+          "schema_version": "laplace.build-job/1",
+          "id": "BLD-b64fced7618d4020a8f08c469dfe96b1",
+          "project": "book",
+          "root": ".laplace-cache/writing-style/book/candidates/PROP-3bf1b83f6aa245fe989c90672e94446b/904cc58000f57bc7533cb5ab6bbf0cef10cd604f8f4bbb482b128c507f3d5d51/tree/book/manuscript/main.tex",
+          "target_kind": "candidate",
+          "selection_identity": "sha256:6ba3bb87d6634575d7ca6d76696d53d6e2bef4d77108e36b528fb5641b537adb",
+          "input_revision": "sha256:9261e7dfe9bcd2316779890b3caabeb78b04cf7248dcde9555cf2b21b6f904d2",
+          "build_target": {
+            "schema_version": "laplace.build-target/1",
+            "kind": "candidate",
+            "project": "book",
+            "candidate_ref": {
+              "id": "PROP-3bf1b83f6aa245fe989c90672e94446b",
+              "version": "sha256:904cc58000f57bc7533cb5ab6bbf0cef10cd604f8f4bbb482b128c507f3d5d51"
+            },
+            "root": ".laplace-cache/writing-style/book/candidates/PROP-3bf1b83f6aa245fe989c90672e94446b/904cc58000f57bc7533cb5ab6bbf0cef10cd604f8f4bbb482b128c507f3d5d51/tree/book/manuscript/main.tex",
+            "selection_identity": "sha256:6ba3bb87d6634575d7ca6d76696d53d6e2bef4d77108e36b528fb5641b537adb",
+            "input_revision": "sha256:9261e7dfe9bcd2316779890b3caabeb78b04cf7248dcde9555cf2b21b6f904d2"
+          }
+        }
+      },
+      "http": {
+        "method": "GET",
+        "url": "/authoring/build?project=book&build_job=%7B%22build_target%22%3A%7B%22candidate_ref%22%3A%7B%22id%22%3A%22PROP-3bf1b83f6aa245fe989c90672e94446b%22%2C%22version%22%3A%22sha256%3A904cc58000f57bc7533cb5ab6bbf0cef10cd604f8f4bbb482b128c507f3d5d51%22%7D%2C%22input_revision%22%3A%22sha256%3A9261e7dfe9bcd2316779890b3caabeb78b04cf7248dcde9555cf2b21b6f904d2%22%2C%22kind%22%3A%22candidate%22%2C%22project%22%3A%22book%22%2C%22root%22%3A%22.laplace-cache%2Fwriting-style%2Fbook%2Fcandidates%2FPROP-3bf1b83f6aa245fe989c90672e94446b%2F904cc58000f57bc7533cb5ab6bbf0cef10cd604f8f4bbb482b128c507f3d5d51%2Ftree%2Fbook%2Fmanuscript%2Fmain.tex%22%2C%22schema_version%22%3A%22laplace.build-target%2F1%22%2C%22selection_identity%22%3A%22sha256%3A6ba3bb87d6634575d7ca6d76696d53d6e2bef4d77108e36b528fb5641b537adb%22%7D%2C%22id%22%3A%22BLD-b64fced7618d4020a8f08c469dfe96b1%22%2C%22input_revision%22%3A%22sha256%3A9261e7dfe9bcd2316779890b3caabeb78b04cf7248dcde9555cf2b21b6f904d2%22%2C%22project%22%3A%22book%22%2C%22root%22%3A%22.laplace-cache%2Fwriting-style%2Fbook%2Fcandidates%2FPROP-3bf1b83f6aa245fe989c90672e94446b%2F904cc58000f57bc7533cb5ab6bbf0cef10cd604f8f4bbb482b128c507f3d5d51%2Ftree%2Fbook%2Fmanuscript%2Fmain.tex%22%2C%22schema_version%22%3A%22laplace.build-job%2F1%22%2C%22selection_identity%22%3A%22sha256%3A6ba3bb87d6634575d7ca6d76696d53d6e2bef4d77108e36b528fb5641b537adb%22%2C%22target_kind%22%3A%22candidate%22%7D"
+      }
+    },
+    "cancel_action": {
+      "operation": "build",
+      "payload": {
+        "action": "cancel",
+        "build_job": {
+          "schema_version": "laplace.build-job/1",
+          "id": "BLD-b64fced7618d4020a8f08c469dfe96b1",
+          "project": "book",
+          "root": ".laplace-cache/writing-style/book/candidates/PROP-3bf1b83f6aa245fe989c90672e94446b/904cc58000f57bc7533cb5ab6bbf0cef10cd604f8f4bbb482b128c507f3d5d51/tree/book/manuscript/main.tex",
+          "target_kind": "candidate",
+          "selection_identity": "sha256:6ba3bb87d6634575d7ca6d76696d53d6e2bef4d77108e36b528fb5641b537adb",
+          "input_revision": "sha256:9261e7dfe9bcd2316779890b3caabeb78b04cf7248dcde9555cf2b21b6f904d2",
+          "build_target": {
+            "schema_version": "laplace.build-target/1",
+            "kind": "candidate",
+            "project": "book",
+            "candidate_ref": {
+              "id": "PROP-3bf1b83f6aa245fe989c90672e94446b",
+              "version": "sha256:904cc58000f57bc7533cb5ab6bbf0cef10cd604f8f4bbb482b128c507f3d5d51"
+            },
+            "root": ".laplace-cache/writing-style/book/candidates/PROP-3bf1b83f6aa245fe989c90672e94446b/904cc58000f57bc7533cb5ab6bbf0cef10cd604f8f4bbb482b128c507f3d5d51/tree/book/manuscript/main.tex",
+            "selection_identity": "sha256:6ba3bb87d6634575d7ca6d76696d53d6e2bef4d77108e36b528fb5641b537adb",
+            "input_revision": "sha256:9261e7dfe9bcd2316779890b3caabeb78b04cf7248dcde9555cf2b21b6f904d2"
+          }
+        }
+      },
+      "http": {
+        "method": "POST",
+        "route": "/authoring/build"
+      },
+      "project": "book"
+    },
+    "consumed_build_target": {
+      "schema_version": "laplace.build-target/1",
+      "kind": "candidate",
+      "project": "book",
+      "candidate_ref": {
+        "id": "PROP-3bf1b83f6aa245fe989c90672e94446b",
+        "version": "sha256:904cc58000f57bc7533cb5ab6bbf0cef10cd604f8f4bbb482b128c507f3d5d51"
+      },
+      "root": ".laplace-cache/writing-style/book/candidates/PROP-3bf1b83f6aa245fe989c90672e94446b/904cc58000f57bc7533cb5ab6bbf0cef10cd604f8f4bbb482b128c507f3d5d51/tree/book/manuscript/main.tex",
+      "selection_identity": "sha256:6ba3bb87d6634575d7ca6d76696d53d6e2bef4d77108e36b528fb5641b537adb",
+      "input_revision": "sha256:9261e7dfe9bcd2316779890b3caabeb78b04cf7248dcde9555cf2b21b6f904d2"
+    },
+    "target_basis_current": true,
+    "job_basis_current": true,
+    "owned_processes_active": false
+  },
+  "preview_ref": {
+    "schema_version": "laplace.template-preview-ref/1",
+    "build_job": {
+      "schema_version": "laplace.build-job/1",
+      "id": "BLD-b64fced7618d4020a8f08c469dfe96b1",
+      "project": "book",
+      "root": ".laplace-cache/writing-style/book/candidates/PROP-3bf1b83f6aa245fe989c90672e94446b/904cc58000f57bc7533cb5ab6bbf0cef10cd604f8f4bbb482b128c507f3d5d51/tree/book/manuscript/main.tex",
+      "target_kind": "candidate",
+      "selection_identity": "sha256:6ba3bb87d6634575d7ca6d76696d53d6e2bef4d77108e36b528fb5641b537adb",
+      "input_revision": "sha256:9261e7dfe9bcd2316779890b3caabeb78b04cf7248dcde9555cf2b21b6f904d2",
+      "build_target": {
+        "schema_version": "laplace.build-target/1",
+        "kind": "candidate",
+        "project": "book",
+        "candidate_ref": {
+          "id": "PROP-3bf1b83f6aa245fe989c90672e94446b",
+          "version": "sha256:904cc58000f57bc7533cb5ab6bbf0cef10cd604f8f4bbb482b128c507f3d5d51"
+        },
+        "root": ".laplace-cache/writing-style/book/candidates/PROP-3bf1b83f6aa245fe989c90672e94446b/904cc58000f57bc7533cb5ab6bbf0cef10cd604f8f4bbb482b128c507f3d5d51/tree/book/manuscript/main.tex",
+        "selection_identity": "sha256:6ba3bb87d6634575d7ca6d76696d53d6e2bef4d77108e36b528fb5641b537adb",
+        "input_revision": "sha256:9261e7dfe9bcd2316779890b3caabeb78b04cf7248dcde9555cf2b21b6f904d2"
+      }
+    },
+    "build_receipt_id": "ART-e2889cff52094f56929cef03696a369d",
+    "observed_input_revision": "sha256:0a22fcfa8a7299665df6d365b6ee2ae5b348569f3fa287dea1a9979139b84ab2",
+    "output": {
+      "file": ".laplace-cache/writing-style/book/candidates/PROP-3bf1b83f6aa245fe989c90672e94446b/904cc58000f57bc7533cb5ab6bbf0cef10cd604f8f4bbb482b128c507f3d5d51/outputs/BLD-b64fced7618d4020a8f08c469dfe96b1/d3b84c9a553105939c0d9a68194eb26f40179e1c626f223f535f0a3482ef65e7.pdf",
+      "content_revision": "sha256:d3b84c9a553105939c0d9a68194eb26f40179e1c626f223f535f0a3482ef65e7"
+    }
+  }
+}

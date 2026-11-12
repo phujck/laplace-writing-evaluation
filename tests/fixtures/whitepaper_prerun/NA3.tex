@@ -1,0 +1,67 @@
+% PLAN:NA3
+% NODES: def:spectral-surfacing def:protocol-output-specification def:native-hardware-V def:iqm-ancilla-readout def:record-architecture-three-tier def:classical-dial res:lambda-sweep-reuse def:coefficient-update thm:fourier-reconstruction-identity def:within-window-ratio-observables def:observable-surfaces irf:non-hermitian-emulation-boundary def:answer-key res:answer-key-certificate res:degeneracy-cartography-single-family def:operating-window def:multiplicity-fingerprint def:null-channel def:numerics-v2-experiment-suite res:integer-decoder irf:classical-mps-simulation-exp-cost res:native-hamiltonian-execution
+\section{Disclosure crosswalk and exactness categories}
+\label{app:NA3}
+
+% NA3-p1
+This crosswalk records the disclosure of Spectral Surface Generation - one acquisition of the spectral signal $G(t)$, then classical reconstruction of the two-parameter surface $Z_\tau(s)$ and its response channels from the banked record \cite{mccaul2025snacks,leamer2024emulation}. Each element receives one five-column row - element, paper definition, supporting result, evidence type, conditions - pointing to body objects by their labels and carrying nothing beyond the body. These are candidate disclosure elements - naming precedes drafting, so no row asserts claim hierarchy or numbering. The list follows the output specification (\texttt{def:protocol-output-specification}): acquisition, storage, post-acquisition selection of $s$ and $\tau$, reconstruction, derived moments, optional observable branches and the benchmark-specific elements.
+
+% NA3-p2
+\begin{description}
+\item[Acquisition of the record.] Defined by the ancilla interferometric readout (\texttt{def:iqm-ancilla-readout}) and the native execution model (\texttt{def:native-hardware-V}), both in Sec.~\ref{sec:N4}. Supported by the grid and aperture results (\texttt{res:bandwidth-grid}, \texttt{res:aperture-resolution}). Evidence: exact readout algebra, with controlled approximation for grid and truncation. Conditions: Hermitian $H$, the bandwidth bound, a coherence window covering $t_{\max}$ and the grid spacing $\pi/(\sqrt{8}\,\lVert H\rVert)$ carrying the stated step convention of the source protocol.
+\item[Storage of the record.] Defined by the three-tier architecture (\texttt{def:record-architecture-three-tier}, Sec.~\ref{sec:N4}) - a one-sided complex denominator record with negative times by conjugation, a commuting moment tier and non-commuting diagnostic branches. Supported by the one-sided reconstruction result (\texttt{res:one-sided-reconstruction}), from the reflection identity $G(-t)=G(t)^{*}$. Evidence: exact for Hermitian $H$. Conditions: both quadratures retained on the half line, two-sided cost confined to the third tier.
+\end{description}
+The stored overlap record is a distinct object from shadow-record spectroscopy \cite{chan2025shadow}, and the half-depth branch implementation under acquisition is a constant-factor architectural gain that lowers no asymptotic complexity.
+
+% NA3-p3
+\begin{description}
+\item[Post-acquisition selection of $s$.] Defined by the classical dial (\texttt{def:classical-dial}, Sec.~\ref{sec:N3}). Supporting result: $s$ enters only through the coefficients of the reconstruction identity (\texttt{thm:fourier-reconstruction-identity}), so a probe sweep is a coefficient update with no new quantum experiment (\texttt{res:lambda-sweep-reuse}). Evidence: exact identity plus finite-grid bound. Conditions: the bandwidth and retained-time assumptions of the acquisition row.
+\item[Post-acquisition selection of $\tau$.] Defined by the same dial vocabulary (Sec.~\ref{sec:N3}). Supporting result: the retained grid is uniform in time with $\tau$-independent spacing, so one family acquired at $\tau_{\max}$ serves every $\tau$ at or below $\tau_{\max}$, with $\tau$ entering through the Gaussian aperture coefficients. Evidence: exact kernel dependence plus truncation bound. Conditions: the acquired time reach $t_{\max}$ and forward-stable coarsening - refinement towards larger-$\tau$ resolution demands longer and more accurate real-time data.
+\end{description}
+Dial reuse never extends the record: settings outside the supported $(s,\tau)$ domain are not reachable by post-processing.
+
+% NA3-p4
+\begin{description}
+\item[Reconstruction of $Z_\tau(s)$.] Defined by the discrete coefficient form (\texttt{def:coefficient-update}, Sec.~\ref{sec:N3}) - $\widehat{Z}_\tau(s)$ is a weighted sum of stored overlaps with coefficients $c_k(\tau,s)$. Supported by the reconstruction identity (\texttt{thm:fourier-reconstruction-identity}). Evidence: exact identity for the continuous transform, controlled approximation for finite grid and truncation, and numerical implementation check between coefficient-insertion and derivative routes on one bank (App.~\ref{app:NA2}). Conditions: the $(s,\tau)$ domain of the finite-record envelope (Sec.~\ref{sec:N4}).
+\item[Derived filtered moments.] Defined in Sec.~\ref{sec:N3} as derivatives of $\log Z_\tau(s)$. Supported by the response identities and the natural-parameter cumulant structure (\texttt{thm:response-identities-s}, \texttt{thm:natural-parameters-cumulants}). Evidence: exact ideal-record identity. Conditions: finite-shot values inherit reconstruction error - higher cumulants inflate the coefficient norm and shot budget while requiring no new quantum observable.
+\end{description}
+Reconstruction from a banked time record stands in the lineage of time-series eigenvalue estimation \cite{somma2019eigenvalue}. Exact applies to the continuous transform and the algebraic identities - the finite reconstruction is notationally distinct, carrying grid and truncation error.
+
+% NA3-p5
+\begin{description}
+\item[Within-window ratio observables.] Defined for probe pairs inside one cluster window (\texttt{def:within-window-ratio-observables}, Sec.~\ref{sec:N4}). Supporting result: the two reconstructions share every shot, so the estimators have nonzero covariance and a derived delta-method variance with a constant-factor common-mode gain (\texttt{irf:shared-bank-ratio-boundary}). Evidence: exact covariance algebra plus delta-method approximation plus synthetic finite-shot study. Conditions: both reconstructions clear the additive shot floor - the element records shared shot noise and possible conditioning improvement under those stated circumstances only.
+\item[Observable branches.] Defined by the observable surfaces (\texttt{def:observable-surfaces}, Sec.~\ref{sec:N3}) and the third record tier (Sec.~\ref{sec:N4}) - observable-inserted signals $G_O(t)$ giving observable surfaces over the same $(s,\tau)$ domain. Evidence: exact spectral form for the ideal record. Conditions: genuinely two-sided acquisition costed separately outside the minimal bank, and kernel reweighting confined to Hermitian-generator spectral emulation (\texttt{irf:non-hermitian-emulation-boundary}).
+\end{description}
+No visibility-floor exemption survives as an element: a window weight below the shot floor stays unreadable at fixed accuracy whatever the ratio structure.
+
+% NA3-p6
+\begin{description}
+\item[Validation reference.] The independently computable classical comparator (\texttt{def:answer-key}, Sec.~\ref{sec:N5}) assigning each part of the measured surface to an exact dynamic-programming check, a perturbative model check or statistical finite-shot validation. Conditions: known instance and perturbation regime.
+\item[Certificate mode.] Supported by \texttt{res:answer-key-certificate}: for known $V$ every measured value has a classical reference - lattice content by dynamic programming \cite{bellman1957dp} plus the perturbation series for the dressing - and the residual surface localises device error per energy window and filter width. Evidence: benchmark-specific model and numerics. Conditions: the measured operating window (\texttt{def:operating-window}) with classically computable edges, certification under trusted physics, not adversarial proof.
+\item[Degeneracy cartography.] Supported by \texttt{res:degeneracy-cartography-single-family}: one retained family at nonzero $V$ delivers the occupancy map, the chained self-normalising degeneracy profile and per-target fingerprints as one function-valued object. Evidence: benchmark-specific inference plus synthetic finite-shot study. Conditions: isolation gap, perturbative regime, probe weights.
+\item[Fingerprint diagnostic.] The $J^{2}$ plateau-tilt response with the $g=1$ null channel (\texttt{def:multiplicity-fingerprint}, Sec.~\ref{sec:N5}). Evidence: benchmark-specific model and numerics. Conditions: nonzero within-cluster variance of the compressed perturbation - never a universal function of $g$.
+\end{description}
+Production-scale instances are solvable by dynamic programming in polynomial time, so no benchmark row inherits worst-case hardness.
+
+% NA3-p7
+The taxonomy assigns each supported statement exactly one of seven categories.
+\begin{description}
+\item[Exact identity.] A mathematical relation for the ideal continuous record. Members: the reconstruction identity, the response and cumulant identities, the one-sided fold for Hermitian generators and the construction-level zero of the $g=1$ null channel in the isolated projected model.
+\item[Controlled approximation.] A finite-time, finite-grid or perturbative result with an explicit error bound. Members: the quadrature truncation bound, the retention law, the Weyl displacement bound and the second-order fingerprint forward model.
+\end{description}
+The null channel (\texttt{def:null-channel}) is typed on both sides - an exact zero in the isolated projected model, a strictly positive empirical floor for any finite-width finite-shot reconstruction, its leading contributions bounded in the body - so no unqualified exact-observable statement attaches to it. Exact is reserved for the ideal continuous record: every finite-record counterpart of an exact identity is typed under another category.
+
+% NA3-p8
+\begin{description}
+\item[Numerical implementation check.] Agreement between two computational routes on the same object. Members: the consistency comparison of the derivative and coefficient-insertion routes on one bank (App.~\ref{app:NA2}), agreement of reconstructed curves with exact diagonalisation of $H_0+V$ at $n$ up to $12$ (\texttt{def:numerics-v2-experiment-suite}), and the exactness-identity residuals at the stated numerical floor.
+\item[Synthetic finite-shot study.] A stochastic simulation of the measurement process at a stated shot count. Members: the finite-$K$ reconstruction studies, the fingerprint separation at the production shot budget, and the decoder coverage, conditional accuracy and full-profile recovery figures (\texttt{res:integer-decoder}).
+\end{description}
+The two categories are distinct kinds of evidence and are never merged. Neither implies hardware data - no quantum hardware data exists in the paper. Exact diagonalisation and tensor-network baselines are classical computations: agreement with them validates implementation and never certifies hardware.
+
+% NA3-p9
+\begin{description}
+\item[Benchmark-specific inference.] A conclusion requiring the subset-sum encoding, probe and reference. Members: the fingerprint verdicts, the cartography and decoder results and the operating-window measurement.
+\item[Candidate embodiment.] A construction demonstrated numerically but not uniquely or asymptotically established. Members: the native execution model (\texttt{res:native-hamiltonian-execution}) with $V$ supplied by residual couplings on superconducting, trapped-ion and neutral-atom platforms, and the planted-family construction.
+\item[Open complexity claim.] An explicitly unresolved statement about classical hardness. Members: the cost of reproducing the perturbed overlap family classically - where bond-dimension growth consistent with exponential over the tested range (\texttt{irf:classical-mps-simulation-exp-cost}, Sec.~\ref{sec:N6}) remains a guide rather than an established law - and the hardness question stated as open. The category records unresolved status - membership asserts neither hardness nor its absence.
+\end{description}
+Every supported statement in the paper carries exactly one of the seven categories, and no crosswalk element exceeds the body's statements under this typing.

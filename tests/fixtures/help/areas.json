@@ -1,0 +1,1195 @@
+{
+ "schema_version": "laplace.help-areas/1",
+ "project": "book",
+ "version": "sha256:873630591a0c9b17eb48443f2370f00fd3edb25174dfda57f0cedd78ecdfa3e3",
+ "observation_facts": [
+  "view",
+  "outline",
+  "returnVisible",
+  "historyOpen",
+  "workSelected",
+  "sessionOpen",
+  "inspectorOpen",
+  "templateOpen",
+  "researchFocus",
+  "researchRepresentation",
+  "researchFocal",
+  "researchReading",
+  "researchInputs",
+  "reviewPanel"
+ ],
+ "predicate_language": [
+  "equals",
+  "not_equals",
+  "truthy",
+  "all"
+ ],
+ "areas": [
+  {
+   "id": "review-evidence",
+   "title": "Review evidence",
+   "view": "review-evidence",
+   "glance": "Read review counts, then selected evidence.",
+   "next_action": "Choose a question list.",
+   "effects": "Counts do not mean bodies were read.",
+   "guide": {
+    "id": "tasks",
+    "section": "organise-tasks-and-reviews",
+    "label": "Task recipe"
+   }
+  },
+  {
+   "id": "source-inspector",
+   "title": "Source inspector",
+   "view": "source-inspector",
+   "glance": "Read developer declarations and retained facts."
+  },
+  {
+   "id": "historical-obligations",
+   "title": "Historical engine obligations",
+   "view": "historical-obligations",
+   "glance": "Read selected engine history; this is separate from Tasks."
+  },
+  {
+   "id": "backlog",
+   "title": "All tasks",
+   "view": "backlog",
+   "glance": "Find tasks across projects.",
+   "next_action": "Inspect a task, then Plan this task.",
+   "effects": "Planning does not start or cancel work.",
+   "guide": {
+    "id": "tasks",
+    "section": "organise-tasks-and-reviews",
+    "label": "Task recipe"
+   },
+   "diagram": {
+    "title": "Work and planning",
+    "nodes": 3,
+    "edges": 2
+   }
+  },
+  {
+   "id": "research-workbench",
+   "title": "Explore across projects",
+   "view": "research-workbench",
+   "glance": "Explore selected objects and their relationships. Reading, message context, execution and scientific judgement are separate; check an uncertain original request.",
+   "shortcuts": [
+    {
+     "key": "?",
+     "does": "Open help"
+    },
+    {
+     "key": "Esc",
+     "does": "Close help or the current inspector"
+    }
+   ],
+   "journeys": [
+    "orient-research-surface"
+   ],
+   "diagram": {
+    "title": "Objects, exact readings and recorded work",
+    "nodes": 4,
+    "edges": 3
+   }
+  },
+  {
+   "id": "overview",
+   "title": "Home",
+   "view": "overview",
+   "glance": "Continue this project.",
+   "states": [
+    {
+     "label": "PDF matches saved document",
+     "tone": "ok"
+    },
+    {
+     "label": "Build out of date",
+     "tone": "attention"
+    }
+   ],
+   "shortcuts": [
+    {
+     "key": "?",
+     "does": "Open help for this view"
+    },
+    {
+     "key": "Esc",
+     "does": "Close help, a cue or the inspector"
+    }
+   ],
+   "journeys": [
+    "welcome"
+   ],
+   "next_action": "Choose Writing, Sources or a task.",
+   "effects": "Opening a view starts nothing.",
+   "guide": {
+    "id": "tasks",
+    "section": "open-or-create-a-project",
+    "label": "Task recipe"
+   },
+   "diagram": {
+    "title": "The four loops of a project",
+    "nodes": 6,
+    "edges": 8
+   }
+  },
+  {
+   "id": "work",
+   "title": "Tasks",
+   "view": "work",
+   "glance": "Read purpose, blockers and the next action.",
+   "states": [
+    {
+     "label": "Waiting",
+     "tone": "neutral"
+    },
+    {
+     "label": "Ready",
+     "tone": "ok"
+    },
+    {
+     "label": "Observed running",
+     "tone": "running"
+    },
+    {
+     "label": "Done; current review separate",
+     "tone": "neutral"
+    }
+   ],
+   "journeys": [
+    "why-waiting"
+   ],
+   "next_action": "Open a task and What led here.",
+   "effects": "Completion, review and running differ.",
+   "guide": {
+    "id": "tasks",
+    "section": "find-what-happened",
+    "label": "Task recipe"
+   },
+   "diagram": {
+    "title": "Work: facets and the dispatch tree",
+    "nodes": 9,
+    "edges": 8
+   }
+  },
+  {
+   "id": "material",
+   "title": "Sources",
+   "view": "material",
+   "glance": "Read and organise research sources.",
+   "states": [
+    {
+     "label": "Not yet inspected",
+     "tone": "attention"
+    },
+    {
+     "label": "Bound",
+     "tone": "ok"
+    }
+   ],
+   "journeys": [
+    "document-reference-actions"
+   ],
+   "next_action": "Add a document or open a file.",
+   "effects": "Only Send asks an AI.",
+   "guide": {
+    "id": "tasks",
+    "section": "read-a-source-and-ask-a-question",
+    "label": "Task recipe"
+   },
+   "diagram": {
+    "title": "Material: readers, files and shared bindings",
+    "nodes": 5,
+    "edges": 4
+   }
+  },
+  {
+   "id": "history",
+   "title": "Activity",
+   "view": "history",
+   "glance": "Inspect saved changes.",
+   "states": [
+    {
+     "label": "Bytes match the saved record",
+     "tone": "ok"
+    },
+    {
+     "label": "Recorded source differs",
+     "tone": "attention"
+    }
+   ],
+   "journeys": [
+    "inspect-change"
+   ],
+   "next_action": "Open a dated outcome and its destination.",
+   "effects": "Recorded history is not current execution.",
+   "guide": {
+    "id": "tasks",
+    "section": "find-what-happened",
+    "label": "Task recipe"
+   },
+   "diagram": {
+    "title": "Activity: from the journal to one record",
+    "nodes": 7,
+    "edges": 6
+   }
+  },
+  {
+   "id": "settings",
+   "title": "Project settings",
+   "view": "settings",
+   "glance": "Set writing guidance and future defaults.",
+   "next_action": "Inspect the relevant settings.",
+   "effects": "Admitted messages stay unchanged.",
+   "guide": {
+    "id": "tasks",
+    "section": "find-help-and-recover",
+    "label": "Task recipe"
+   },
+   "diagram": {
+    "title": "Settings: how scopes layer",
+    "nodes": 4,
+    "edges": 3
+   }
+  },
+  {
+   "id": "argument",
+   "title": "Argument & evidence",
+   "view": "argument",
+   "glance": "Organise claims and evidence.",
+   "states": [
+    {
+     "label": "Current",
+     "tone": "ok"
+    },
+    {
+     "label": "Stale",
+     "tone": "attention"
+    }
+   ],
+   "next_action": "Open a claim or its relationships.",
+   "effects": "A link does not prove a claim.",
+   "guide": {
+    "id": "tasks",
+    "section": "write-save-and-reopen",
+    "label": "Task recipe"
+   },
+   "diagram": {
+    "title": "Argument and evidence",
+    "nodes": 4,
+    "edges": 3
+   }
+  },
+  {
+   "id": "reader-plan",
+   "title": "Reader plan",
+   "view": "reader-plan",
+   "glance": "Plan the reader’s route through the text.",
+   "states": [
+    {
+     "label": "Bound to source heading",
+     "tone": "ok"
+    },
+    {
+     "label": "Source inferred",
+     "tone": "attention"
+    },
+    {
+     "label": "No source link",
+     "tone": "neutral"
+    }
+   ],
+   "journeys": [
+    "plan-to-source"
+   ],
+   "next_action": "Open a plan item or the outline.",
+   "effects": "Planning does not edit writing.",
+   "guide": {
+    "id": "tasks",
+    "section": "write-save-and-reopen",
+    "label": "Task recipe"
+   },
+   "diagram": {
+    "title": "Reader plan: sections, sources, argument and passages",
+    "nodes": 6,
+    "edges": 6
+   }
+  },
+  {
+   "id": "research",
+   "title": "Research",
+   "view": "research",
+   "glance": "Inspect literature, calculations and results.",
+   "states": [
+    {
+     "label": "Current",
+     "tone": "ok"
+    },
+    {
+     "label": "Stale",
+     "tone": "attention"
+    },
+    {
+     "label": "Untracked",
+     "tone": "attention"
+    }
+   ],
+   "journeys": [
+    "document-reference-actions"
+   ],
+   "next_action": "Choose the relevant research view.",
+   "effects": "Output is not scientific acceptance.",
+   "guide": {
+    "id": "tasks",
+    "section": "read-a-source-and-ask-a-question",
+    "label": "Task recipe"
+   },
+   "diagram": {
+    "title": "Research: result, binding, claim",
+    "nodes": 3,
+    "edges": 2
+   }
+  },
+  {
+   "id": "manuscript",
+   "title": "Writing",
+   "view": "manuscript",
+   "glance": "Write locally; wait for Saved.",
+   "states": [
+    {
+     "label": "Saved",
+     "tone": "ok"
+    },
+    {
+     "label": "Unsaved edits",
+     "tone": "attention"
+    },
+    {
+     "label": "Needs review",
+     "tone": "attention"
+    }
+   ],
+   "shortcuts": [
+    {
+     "key": "F",
+     "does": "Focus manuscript / Restore panels"
+    },
+    {
+     "key": "Ctrl-S",
+     "does": "Save every standing edit"
+    },
+    {
+     "key": "Esc",
+     "does": "Revert the paragraph under the caret"
+    }
+   ],
+   "journeys": [
+    "orient-manuscript"
+   ],
+   "next_action": "Click a paragraph to write.",
+   "effects": "Saved draft text is not a PDF build.",
+   "guide": {
+    "id": "tasks",
+    "section": "write-save-and-reopen",
+    "label": "Task recipe"
+   },
+   "diagram": {
+    "title": "Manuscript: from source to saved version",
+    "nodes": 7,
+    "edges": 6
+   }
+  },
+  {
+   "id": "review",
+   "title": "Review & notes",
+   "view": "review",
+   "glance": "Read proposed changes, comments and notes.",
+   "states": [
+    {
+     "label": "Pending",
+     "tone": "attention"
+    },
+    {
+     "label": "Applied",
+     "tone": "ok"
+    }
+   ],
+   "next_action": "Open the relevant review item.",
+   "effects": "A response does not apply an edit.",
+   "guide": {
+    "id": "tasks",
+    "section": "organise-tasks-and-reviews",
+    "label": "Task recipe"
+   },
+   "diagram": {
+    "title": "Review: from a turn to its effect",
+    "nodes": 6,
+    "edges": 5
+   }
+  },
+  {
+   "id": "presentation",
+   "title": "Figures & output",
+   "view": "presentation",
+   "glance": "Read a verified PDF or develop figures.",
+   "states": [
+    {
+     "label": "Build running",
+     "tone": "running"
+    },
+    {
+     "label": "Preview only",
+     "tone": "neutral"
+    }
+   ],
+   "next_action": "Inspect the output or build details.",
+   "effects": "Build is an explicit action.",
+   "guide": {
+    "id": "tasks",
+    "section": "write-save-and-reopen",
+    "label": "Task recipe"
+   },
+   "diagram": {
+    "title": "Figures and output: spec, render, placement",
+    "nodes": 5,
+    "edges": 4
+   }
+  },
+  {
+   "id": "conversation",
+   "title": "Conversation",
+   "view": "conversation",
+   "glance": "Ask about an explicit reading or target.",
+   "states": [
+    {
+     "label": "Reply saved",
+     "tone": "ok"
+    },
+    {
+     "label": "Work acceptance separate",
+     "tone": "neutral"
+    },
+    {
+     "label": "Read-only",
+     "tone": "historical"
+    }
+   ],
+   "journeys": [
+    "what-a-message-carries"
+   ],
+   "next_action": "Inspect context beside the destination; check the reading before Send.",
+   "effects": "Looking elsewhere does not Send.",
+   "guide": {
+    "id": "tasks",
+    "section": "read-a-source-and-ask-a-question",
+    "label": "Task recipe"
+   },
+   "diagram": {
+    "title": "Conversation: what a message carries",
+    "nodes": 8,
+    "edges": 7
+   }
+  },
+  {
+   "id": "now",
+   "title": "Now",
+   "view": "now",
+   "glance": "What is running, what waits for you, and where to continue.",
+   "next_action": "Open a running conversation, a waiting task or a recent project.",
+   "effects": "Opening a row starts nothing.",
+   "parts": [
+    {
+     "name": "Running now",
+     "says": "Work the engine reports running in any project, read every 5 seconds while this page is open, with the time of the read."
+    },
+    {
+     "name": "Waiting for you",
+     "says": "Completed tasks in any project whose evidence needs a current review, and the task the Work catalogue suggests inspecting next."
+    },
+    {
+     "name": "Continue",
+     "says": "Up to six projects you opened most recently in this app, each with Open, its Tasks and, when it has a manuscript, Continue writing."
+    },
+    {
+     "name": "Start",
+     "says": "Create a new project, or bring an existing manuscript in as a project."
+    }
+   ]
+  },
+  {
+   "id": "projects",
+   "title": "Projects",
+   "view": "projects",
+   "glance": "Open or create a writing project.",
+   "next_action": "Choose a title or Create a project.",
+   "effects": "Creation sends no message.",
+   "guide": {
+    "id": "tasks",
+    "section": "open-or-create-a-project",
+    "label": "Task recipe"
+   }
+  },
+  {
+   "id": "workflows",
+   "title": "Workflows",
+   "view": "workflows",
+   "glance": "Optional reusable work steps.",
+   "next_action": "Choose a workflow and read its purpose.",
+   "effects": "Save, prepare and start are separate.",
+   "guide": {
+    "id": "tasks",
+    "section": "use-a-workflow",
+    "label": "Task recipe"
+   }
+  },
+  {
+   "id": "workspace-activity",
+   "title": "Workspace activity",
+   "view": "workspace-activity",
+   "glance": "Find what happened and where it went.",
+   "next_action": "Open the offered conversation or result.",
+   "effects": "Recorded is not necessarily running.",
+   "guide": {
+    "id": "tasks",
+    "section": "find-what-happened",
+    "label": "Task recipe"
+   }
+  },
+  {
+   "id": "dependencies",
+   "title": "Shared-source links",
+   "view": "dependencies",
+   "glance": "Inspect shared sources between projects.",
+   "next_action": "Open a source link.",
+   "effects": "Listed does not mean inspected.",
+   "guide": {
+    "id": "tasks",
+    "section": "read-a-source-and-ask-a-question",
+    "label": "Task recipe"
+   }
+  },
+  {
+   "id": "owners",
+   "title": "System owners",
+   "view": "owners",
+   "glance": "Advanced application reference.",
+   "next_action": "Inspect an owner when needed.",
+   "effects": "Reading grants no source effects.",
+   "guide": {
+    "id": "tasks",
+    "section": "find-help-and-recover",
+    "label": "Task recipe"
+   }
+  },
+  {
+   "id": "app-settings",
+   "title": "App settings",
+   "view": "app-settings",
+   "glance": "Set up optional AI and app preferences.",
+   "next_action": "Read account setup for AI assistance.",
+   "effects": "Refresh may launch discovery; Send is separate.",
+   "guide": {
+    "id": "tasks",
+    "section": "find-help-and-recover",
+    "label": "Task recipe"
+   }
+  },
+  {
+   "id": "document-intake",
+   "title": "Add a document",
+   "view": "document-intake",
+   "glance": "Retain a PDF or text original.",
+   "next_action": "Choose a file and check its destination.",
+   "effects": "Adding and linking are separate.",
+   "guide": {
+    "id": "tasks",
+    "section": "read-a-source-and-ask-a-question",
+    "label": "Task recipe"
+   }
+  },
+  {
+   "id": "source-reading",
+   "title": "Read a source",
+   "view": "source-reading",
+   "glance": "Read the offered source window.",
+   "next_action": "Check coverage before using it.",
+   "effects": "Unseen text is not inspected.",
+   "guide": {
+    "id": "tasks",
+    "section": "read-a-source-and-ask-a-question",
+    "label": "Task recipe"
+   }
+  },
+  {
+   "id": "review-setup",
+   "title": "Set up reviews",
+   "view": "review-setup",
+   "glance": "Define review questions.",
+   "next_action": "Save review questions first.",
+   "effects": "Reviewer approvals are optional.",
+   "guide": {
+    "id": "tasks",
+    "section": "organise-tasks-and-reviews",
+    "label": "Task recipe"
+   }
+  },
+  {
+   "id": "saved-workflow-reading",
+   "title": "Saved workflow version",
+   "view": "saved-workflow-reading",
+   "glance": "Read saved text separately.",
+   "next_action": "Close saved version to return.",
+   "effects": "Reading does not change the draft guard.",
+   "guide": {
+    "id": "tasks",
+    "section": "use-a-workflow",
+    "label": "Task recipe"
+   }
+  }
+ ],
+ "journeys": [
+  {
+   "id": "orient-research-surface",
+   "title": "Find your way around the working surface",
+   "area": "research-workbench",
+   "steps": [
+    {
+     "id": "outline",
+     "title": "Orient in the relation outline",
+     "control": "research:representation",
+     "say": "Choose Relation outline. It shows the same objects as the map; changing representation edits nothing.",
+     "done": {
+      "fact": "researchRepresentation",
+      "equals": "outline"
+     }
+    },
+    {
+     "id": "focus",
+     "title": "Inspect an object without leaving your task",
+     "control": "research:object",
+     "say": "Select an object. Open focused object reads it; the current editor stays available. Comparison is visual.",
+     "done": {
+      "fact": "researchFocus",
+      "truthy": true
+     }
+    },
+    {
+     "id": "read",
+     "title": "Open the full reading or editor",
+     "control": "research:inspect",
+     "say": "Open focused object. Inspect before including a source window. Back returns here; cues record navigation only.",
+     "done": {
+      "all": [
+       {
+        "fact": "researchRepresentation",
+        "equals": "focus"
+       },
+       {
+        "fact": "researchFocal",
+        "truthy": true
+       }
+      ]
+     }
+    }
+   ]
+  },
+  {
+   "id": "welcome",
+   "title": "Find your way around",
+   "area": "overview",
+   "steps": [
+    {
+     "id": "manuscript",
+     "title": "Open the manuscript",
+     "control": "nav:manuscript",
+     "say": "Choose Writing or Continue writing on Home. The status distinguishes saved text from its PDF.",
+     "done": {
+      "fact": "view",
+      "equals": "manuscript"
+     }
+    },
+    {
+     "id": "outline",
+     "title": "See where you are",
+     "control": "manuscript:outline",
+     "say": "Open Document outline under Writing. Choose a heading to move there.",
+     "done": {
+      "all": [
+       {
+        "fact": "view",
+        "equals": "manuscript"
+       },
+       {
+        "fact": "outline",
+        "truthy": true
+       }
+      ]
+     }
+    },
+    {
+     "id": "reader-plan",
+     "title": "Read the plan for the reader",
+     "control": "nav:reader-plan",
+     "say": "Under More, open Reader plan. Its source mark shows whether a section is linked.",
+     "done": {
+      "fact": "view",
+      "equals": "reader-plan"
+     }
+    },
+    {
+     "id": "open-in-manuscript",
+     "title": "Go to a section in the manuscript",
+     "control": "reader-plan:open-in-manuscript",
+     "say": "Select a section and Open in manuscript. Use Back to Reader plan to return.",
+     "done": {
+      "all": [
+       {
+        "fact": "view",
+        "equals": "manuscript"
+       },
+       {
+        "fact": "returnVisible",
+        "truthy": true
+       }
+      ]
+     }
+    },
+    {
+     "id": "return",
+     "title": "Return where you were",
+     "control": "context:return",
+     "say": "Use Back to Reader plan. Your place and any unsaved draft are kept.",
+     "done": {
+      "fact": "view",
+      "equals": "reader-plan"
+     }
+    },
+    {
+     "id": "history",
+     "title": "Inspect one change",
+     "control": "history:entry",
+     "say": "Under More, choose Activity. Open an entry to inspect its changes and saved text.",
+     "done": {
+      "all": [
+       {
+        "fact": "view",
+        "equals": "history"
+       },
+       {
+        "fact": "historyOpen",
+        "truthy": true
+       }
+      ]
+     }
+    },
+    {
+     "id": "work",
+     "title": "Find what is blocking work",
+     "control": "work:item",
+     "say": "Choose Tasks and open a blocked task. Read its blocker and next action.",
+     "done": {
+      "all": [
+       {
+        "fact": "view",
+        "equals": "work"
+       },
+       {
+        "fact": "workSelected",
+        "truthy": true
+       }
+      ]
+     }
+    },
+    {
+     "id": "context-chip",
+     "title": "Keep the selected Work in view",
+     "control": "context:work",
+     "say": "Leave Tasks. The task chip returns to this task; Clear removes that context.",
+     "done": {
+      "all": [
+       {
+        "fact": "view",
+        "not_equals": "work"
+       },
+       {
+        "fact": "workSelected",
+        "truthy": true
+       }
+      ]
+     }
+    },
+    {
+     "id": "conversation",
+     "title": "See what a message will carry",
+     "control": "conversation:context",
+     "say": "Open Conversation, then Options and Context. Check the retained target and reading; Next message sets future preferences.",
+     "done": {
+      "all": [
+       {
+        "fact": "sessionOpen",
+        "truthy": true
+       },
+       {
+        "fact": "inspectorOpen",
+        "truthy": true
+       }
+      ]
+     }
+    },
+    {
+     "id": "template",
+     "title": "Preview a template without saving",
+     "control": "manuscript:document-setup",
+     "say": "In Writing, open Document setup and Template & layout. Preview is separate from Apply this reviewed preview.",
+     "done": {
+      "fact": "templateOpen",
+      "truthy": true
+     }
+    }
+   ]
+  },
+  {
+   "id": "why-waiting",
+   "title": "Find why work is waiting",
+   "area": "work",
+   "steps": [
+    {
+     "id": "open",
+     "title": "Open Work",
+     "control": "nav:work",
+     "say": "Choose Tasks to read their standing.",
+     "done": {
+      "fact": "view",
+      "equals": "work"
+     }
+    },
+    {
+     "id": "select",
+     "title": "Select a waiting item",
+     "control": "work:item",
+     "say": "Open a blocked task to read its blocker and next action.",
+     "done": {
+      "all": [
+       {
+        "fact": "view",
+        "equals": "work"
+       },
+       {
+        "fact": "workSelected",
+        "truthy": true
+       }
+      ]
+     }
+    },
+    {
+     "id": "keep",
+     "title": "Keep it in view",
+     "control": "context:work",
+     "say": "Open another view. The task chip returns to the selected task.",
+     "done": {
+      "all": [
+       {
+        "fact": "view",
+        "not_equals": "work"
+       },
+       {
+        "fact": "workSelected",
+        "truthy": true
+       }
+      ]
+     }
+    }
+   ]
+  },
+  {
+   "id": "plan-to-source",
+   "title": "From the reader plan to the source and back",
+   "area": "reader-plan",
+   "steps": [
+    {
+     "id": "open",
+     "title": "Open the reader plan",
+     "control": "nav:reader-plan",
+     "say": "Under More, open Reader plan and choose a source-linked section.",
+     "done": {
+      "fact": "view",
+      "equals": "reader-plan"
+     }
+    },
+    {
+     "id": "source",
+     "title": "Go to the section's source",
+     "control": "reader-plan:open-in-manuscript",
+     "say": "Select a bound section, then Open in manuscript. A Back control appears at the top for the return.",
+     "done": {
+      "all": [
+       {
+        "fact": "view",
+        "equals": "manuscript"
+       },
+       {
+        "fact": "returnVisible",
+        "truthy": true
+       }
+      ]
+     }
+    },
+    {
+     "id": "back",
+     "title": "Return to the plan",
+     "control": "context:return",
+     "say": "Use Back to Reader plan. The selected section and any unsaved draft are kept.",
+     "done": {
+      "fact": "view",
+      "equals": "reader-plan"
+     }
+    }
+   ]
+  },
+  {
+   "id": "orient-manuscript",
+   "title": "Find your place in the manuscript",
+   "area": "manuscript",
+   "steps": [
+    {
+     "id": "open",
+     "title": "Open the manuscript",
+     "control": "nav:manuscript",
+     "say": "Choose Writing. The status distinguishes saved text from the PDF.",
+     "done": {
+      "fact": "view",
+      "equals": "manuscript"
+     }
+    },
+    {
+     "id": "outline",
+     "title": "Use the outline",
+     "control": "manuscript:outline",
+     "say": "Open Document outline under Writing. Choose a heading to move there.",
+     "done": {
+      "all": [
+       {
+        "fact": "view",
+        "equals": "manuscript"
+       },
+       {
+        "fact": "outline",
+        "truthy": true
+       }
+      ]
+     }
+    },
+    {
+     "id": "setup",
+     "title": "See the document setup",
+     "control": "manuscript:document-setup",
+     "say": "Open Document setup, then Template & layout. Preview makes a candidate; nothing changes until Apply this reviewed preview.",
+     "done": {
+      "fact": "templateOpen",
+      "truthy": true
+     }
+    }
+   ]
+  },
+  {
+   "id": "inspect-change",
+   "title": "Inspect one recorded change",
+   "area": "history",
+   "steps": [
+    {
+     "id": "open",
+     "title": "Open Activity",
+     "control": "nav:history",
+     "say": "Choose Activity. Changes are grouped by day; the category selector is the owner's filter.",
+     "done": {
+      "fact": "view",
+      "equals": "history"
+     }
+    },
+    {
+     "id": "entry",
+     "title": "Open an entry",
+     "control": "history:entry",
+     "say": "Open an entry. Its hunks come first; whole saved text stays behind Show saved text; Open goes to the affected object.",
+     "done": {
+      "all": [
+       {
+        "fact": "view",
+        "equals": "history"
+       },
+       {
+        "fact": "historyOpen",
+        "truthy": true
+       }
+      ]
+     }
+    }
+   ]
+  },
+  {
+   "id": "document-reference-actions",
+   "title": "Find document and reference actions",
+   "area": "material",
+   "steps": [
+    {
+     "id": "material",
+     "title": "Open your document list",
+     "control": "nav:material",
+     "say": "Choose Sources. Add local document accepts PDF or text. Check its destination, then inspect the offered reading.",
+     "done": {
+      "fact": "view",
+      "equals": "material"
+     }
+    },
+    {
+     "id": "conversation",
+     "title": "Find the conversation",
+     "control": "conversation:toggle",
+     "say": "After inspecting document text, Use in conversation selects that reading and keeps your question. Send is separate.",
+     "done": {
+      "fact": "sessionOpen",
+      "truthy": true
+     }
+    },
+    {
+     "id": "context",
+     "title": "Check the reading for your question",
+     "control": "conversation:context",
+     "say": "Inspect Next message context. PDF text does not show figure or equation layout; inspect the original page when needed.",
+     "done": {
+      "all": [
+       {
+        "fact": "sessionOpen",
+        "truthy": true
+       },
+       {
+        "fact": "inspectorOpen",
+        "truthy": true
+       }
+      ]
+     }
+    },
+    {
+     "id": "research",
+     "title": "Open Research for references",
+     "control": "nav:research",
+     "say": "Under More, open Research and Literature. Add to Literature records provenance; Link to claim needs a passage and rationale.",
+     "done": {
+      "fact": "view",
+      "equals": "research"
+     }
+    }
+   ]
+  },
+  {
+   "id": "what-a-message-carries",
+   "title": "See what a message will carry",
+   "area": "conversation",
+   "steps": [
+    {
+     "id": "open",
+     "title": "Open the conversation",
+     "control": "conversation:toggle",
+     "say": "Open Conversation. Its composer names the message target.",
+     "done": {
+      "fact": "sessionOpen",
+      "truthy": true
+     }
+    },
+    {
+     "id": "context",
+     "title": "Inspect the context",
+     "control": "conversation:context",
+     "say": "Open Next message context to inspect the reading, target and AI settings.",
+     "done": {
+      "all": [
+       {
+        "fact": "sessionOpen",
+        "truthy": true
+       },
+       {
+        "fact": "inspectorOpen",
+        "truthy": true
+       }
+      ]
+     }
+    }
+   ]
+  }
+ ],
+ "controls": {
+  "known": 718,
+  "read": {
+   "operation": "help",
+   "payload": {
+    "concept": "controls"
+   },
+   "http": {
+    "method": "GET",
+    "route": "/authoring/help",
+    "query": {
+     "project": "book",
+     "view": "controls"
+    }
+   }
+  }
+ },
+ "reads": {
+  "diagrams": {
+   "operation": "help",
+   "payload": {
+    "concept": "diagrams"
+   },
+   "http": {
+    "method": "GET",
+    "route": "/authoring/help",
+    "query": {
+     "project": "book",
+     "view": "diagrams"
+    }
+   }
+  },
+  "checklist": {
+   "operation": "help",
+   "payload": {
+    "concept": "checklist"
+   },
+   "http": {
+    "method": "GET",
+    "route": "/authoring/help",
+    "query": {
+     "project": "book",
+     "view": "checklist"
+    }
+   }
+  },
+  "guides": {
+   "operation": "help",
+   "payload": {
+    "concept": "guides"
+   },
+   "http": {
+    "method": "GET",
+    "route": "/authoring/help",
+    "query": {
+     "project": "book",
+     "view": "guides"
+    }
+   }
+  },
+  "controls": {
+   "operation": "help",
+   "payload": {
+    "concept": "controls"
+   },
+   "http": {
+    "method": "GET",
+    "route": "/authoring/help",
+    "query": {
+     "project": "book",
+     "view": "controls"
+    }
+   }
+  }
+ }
+}

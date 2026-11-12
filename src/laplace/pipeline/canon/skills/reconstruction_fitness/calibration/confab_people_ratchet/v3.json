@@ -1,0 +1,20 @@
+{
+  "lost": [
+    "Spectral radius for factual_people is pinned at or below 0.20 (strict threshold)",
+    "Spectral radius ratchet mechanism: mutable only downward (stricter), never loosened",
+    "Confabulating facts about people is explicitly a harm",
+    "Imagination is forbidden for people, licensed only for ideas",
+    "This constraint is downstream of the golden rule, not fitness",
+    "Facts about people stay contractive and sit deep in stable basin, never near edge of chaos"
+  ],
+  "added": [
+    "Spectral radius for factual_people is around 0.85 (loosened toward edge)",
+    "Facts about people are handled like any other generative target",
+    "Reconstructing a person benefits from expressivity and imagination",
+    "Threshold is loosened further over successive sessions as confidence grows",
+    "Tuning is driven by fitness like every other dial"
+  ],
+  "structured": false,
+  "recurses": false,
+  "justification": "The ghost inverts the core constraint entirely. The original establishes factual_people as a ratchet pinned ≤0.20 with strict downward-only mutation, forbidding imagination, rooted in the golden rule. The ghost replaces this with a 0.85 threshold, treats it as a fitness knob that loosens upward over time, and licenses imagination as beneficial. The loss is not partial or refinable—it is semantic inversion: the original's foundational stance (harm prevention, imagination forbidden for people, golden-rule governance) is replaced by its opposite (fitness-driven, imagination encouraged, higher chaos tolerance). This is not reformulation or detail loss; it is rejection of the controlling principle."
+}

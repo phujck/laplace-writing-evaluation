@@ -1,0 +1,46 @@
+{
+ "meta": {
+  "project": "behaviour-example",
+  "target_dir": "sources/behaviour-example",
+  "source_root": "sources/behaviour-example/main.tex",
+  "source_revision": "32461f82c42b8ddc889a364f7343ea19645f2ed65831da1ce30da9371d3b8ad4"
+ },
+ "sections": [
+  {
+   "id": "source-heading-1",
+   "title": "Setting",
+   "job": "Introduce the public toy input and state its sum, without a scientific claim.",
+   "kind": "section",
+   "parent_id": null,
+   "notes": "",
+   "refs": [],
+   "beats": [
+    "def:sequence"
+   ],
+   "nodes_in_order": [
+    "def:sequence"
+   ],
+   "figures": [],
+   "source_file": "sources/behaviour-example/S1.tex",
+   "source_title": "Setting",
+   "source_plan_title": "Setting",
+   "source_label": "sec:setting",
+   "source_heading": "\\section{Setting}\\label{sec:setting}",
+   "source_anchor": {
+    "schema_version": "laplace.source-anchor/2",
+    "sha256": "e7950526731d68e36af6c499c5aaa2317add16e4de603120e050308c8d655382",
+    "line_start": 1,
+    "line_end": 1,
+    "prefix": [],
+    "suffix": [
+     "The input sequence is 1, 2, 3.",
+     ""
+    ],
+    "unique": true,
+    "at_start": true,
+    "at_end": false
+   }
+  }
+ ],
+ "appendices": []
+}

@@ -1,0 +1,2445 @@
+{
+  "schema_version": "laplace.profile-ui-fixture/1",
+  "producer": "Real profiles owner, tiny generated fixture; no model call or real manuscript.",
+  "before": {
+    "family": "architecture",
+    "scope": "workspace",
+    "purpose": "Structural and narrative form prior; not scientific evidence or authored reader expectations.",
+    "source": {
+      "path": "profiles/author_architecture.yaml",
+      "origin": "repository"
+    },
+    "profile_revision": "sha256:510ebf6e434eca7e8650100854a51e8081c230d8b1196881b8d35b73e02bfa42",
+    "field_refs": [
+      {
+        "id": "introduction_shape",
+        "ref": "profiles/author_architecture.yaml#profile.introduction_shape"
+      },
+      {
+        "id": "section_rhythm",
+        "ref": "profiles/author_architecture.yaml#profile.section_rhythm"
+      }
+    ],
+    "editable": true,
+    "edit_reason": "Workspace structural preferences use the guarded profile candidate owner.",
+    "read_more": {
+      "operation": "structure",
+      "payload": {
+        "view": "architecture-profile"
+      }
+    },
+    "currentness_basis": "Current profile bytes only; no scientific acceptance or reader comprehension is asserted.",
+    "status": "AVAILABLE",
+    "reason": "Current workspace architecture prior loaded.",
+    "currentness": "CURRENT",
+    "revision": "sha256:5085509477c85eccc538c3605b7dbe5a6c283d1ea5f80fc18ed24d3f60c191a2",
+    "effective_revision": "sha256:aa9261cb609708143d7485bce6a54c5c3fbd8e40e2fb7679eaff1073384a0b65",
+    "profile": "profiles/author_architecture.yaml",
+    "effective_values": {
+      "introduction_shape": {
+        "field_revision": "sha256:26fec80eb1a17f9361fb30c89ad8723f0b515fbdca1c8aecb560eb0ce637e452",
+        "confirmed_his": false,
+        "historical_confirmation_assertion": false
+      },
+      "section_rhythm": {
+        "field_revision": "sha256:cf76ee056b3a938ff1ee993c9f158ec71a9ef429fb70e0b1318e363872127d9d",
+        "confirmed_his": false,
+        "historical_confirmation_assertion": false
+      }
+    },
+    "defaults": {},
+    "overrides": {},
+    "affected_consumers": [
+      "reader-plan architecture basis",
+      "storyboard/narrative planner packets",
+      "dispatch architecture brief",
+      "taste retrieval"
+    ],
+    "content_read": {
+      "operation": "profile",
+      "permitted": true,
+      "payload": {
+        "project": "book",
+        "family": "architecture",
+        "scope": "workspace",
+        "view": "content"
+      },
+      "http": {
+        "method": "GET",
+        "url": "/work/profiles?project=book&family=architecture&scope=workspace&view=content"
+      },
+      "native_request": {
+        "verb": "read",
+        "concept": "architecture-profile@project",
+        "target": "book",
+        "expected": [],
+        "payload": {
+          "family": "architecture",
+          "scope": "workspace",
+          "view": "content"
+        },
+        "by": ""
+      }
+    },
+    "candidates_read": {
+      "operation": "profile",
+      "permitted": true,
+      "payload": {
+        "project": "book",
+        "family": "architecture",
+        "scope": "workspace",
+        "view": "candidates"
+      },
+      "http": {
+        "method": "GET",
+        "url": "/work/profiles?project=book&family=architecture&scope=workspace&view=candidates"
+      },
+      "native_request": {
+        "verb": "read",
+        "concept": "profile-candidate@project",
+        "target": "book",
+        "expected": [],
+        "payload": {
+          "family": "architecture",
+          "scope": "workspace",
+          "view": "candidates"
+        },
+        "by": ""
+      }
+    },
+    "generation": {
+      "uses": "existing project app session",
+      "operation": "profile_change",
+      "instruction": "Inspect the current profile and explicitly selected source material. Propose a profile candidate with the inspected revision; do not apply it or claim personal author confirmation."
+    },
+    "propose_action": {
+      "operation": "profile_change",
+      "permitted": true,
+      "payload": {
+        "project": "book",
+        "action": "propose",
+        "family": "architecture",
+        "scope": "workspace",
+        "guards": {
+          "profile_input_revision": "sha256:5085509477c85eccc538c3605b7dbe5a6c283d1ea5f80fc18ed24d3f60c191a2"
+        }
+      },
+      "http": {
+        "method": "POST",
+        "url": "/work/profiles/change"
+      },
+      "native_request": {
+        "verb": "change",
+        "concept": "architecture-profile@project",
+        "target": "book",
+        "expected": [],
+        "payload": {
+          "action": "propose",
+          "family": "architecture",
+          "scope": "workspace",
+          "guards": {
+            "profile_input_revision": "sha256:5085509477c85eccc538c3605b7dbe5a6c283d1ea5f80fc18ed24d3f60c191a2"
+          }
+        },
+        "by": ""
+      },
+      "kind": "action-template",
+      "complete": false,
+      "required_fields": [
+        "change",
+        "reason"
+      ]
+    },
+    "confirm_action": {
+      "operation": "profile_change",
+      "permitted": true,
+      "payload": {
+        "project": "book",
+        "action": "confirm",
+        "family": "architecture",
+        "scope": "workspace",
+        "guards": {
+          "profile_input_revision": "sha256:5085509477c85eccc538c3605b7dbe5a6c283d1ea5f80fc18ed24d3f60c191a2"
+        }
+      },
+      "http": {
+        "method": "POST",
+        "url": "/work/profiles/change"
+      },
+      "native_request": {
+        "verb": "change",
+        "concept": "architecture-profile@project",
+        "target": "book",
+        "expected": [],
+        "payload": {
+          "action": "confirm",
+          "family": "architecture",
+          "scope": "workspace",
+          "guards": {
+            "profile_input_revision": "sha256:5085509477c85eccc538c3605b7dbe5a6c283d1ea5f80fc18ed24d3f60c191a2"
+          }
+        },
+        "by": ""
+      },
+      "kind": "action-template",
+      "complete": false,
+      "required_fields": [
+        "fields",
+        "reason"
+      ],
+      "authority": "explicit-human-action"
+    },
+    "content_contract": {
+      "schema_version": "laplace.architecture-profile-content/1",
+      "format": "JSON-compatible YAML or JSON",
+      "document_schema": {
+        "type": "object",
+        "required": [
+          "profile"
+        ],
+        "properties": {
+          "profile": {
+            "type": "object",
+            "minProperties": 1,
+            "maxProperties": 64,
+            "propertyNames": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 200
+            },
+            "additionalProperties": {
+              "type": "object",
+              "required": [
+                "summary"
+              ],
+              "properties": {
+                "summary": {
+                  "type": "string",
+                  "minLength": 1,
+                  "pattern": "\\S",
+                  "description": "Nonempty preference summary, at most 8000 UTF-8 bytes."
+                },
+                "evidence": {
+                  "type": [
+                    "object",
+                    "null"
+                  ],
+                  "properties": {
+                    "observation": {
+                      "type": "string"
+                    },
+                    "sources": {
+                      "type": "array",
+                      "maxItems": 64,
+                      "items": {
+                        "type": "string"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "example": {
+        "profile": {
+          "narrative_arc": {
+            "summary": "Describe the intended explanatory sequence."
+          }
+        }
+      },
+      "starter": {
+        "profile": {
+          "narrative_arc": {
+            "summary": ""
+          }
+        }
+      },
+      "delivery": {
+        "whole_paper": "Every field guides whole-paper structure planning.",
+        "sections": "Listed fields guide relevant sections by position, job and derivation needs. Custom fields remain whole-paper preferences.",
+        "taste": "All fields are eligible for taste retrieval; selection is not guaranteed.",
+        "section_fields": [
+          {
+            "id": "narrative_arc",
+            "label": "narrative arc",
+            "contexts": [
+              "Opening",
+              "Body",
+              "Closing",
+              "Derivations"
+            ]
+          },
+          {
+            "id": "register_markers_structural",
+            "label": "register markers structural",
+            "contexts": [
+              "Opening",
+              "Body",
+              "Closing",
+              "Derivations"
+            ]
+          },
+          {
+            "id": "introduction_shape",
+            "label": "introduction shape",
+            "contexts": [
+              "Opening"
+            ]
+          },
+          {
+            "id": "section_rhythm",
+            "label": "section rhythm",
+            "contexts": [
+              "Body",
+              "Derivations"
+            ]
+          },
+          {
+            "id": "conclusion_posture",
+            "label": "conclusion posture",
+            "contexts": [
+              "Closing"
+            ]
+          },
+          {
+            "id": "derivation_granularity",
+            "label": "derivation granularity",
+            "contexts": [
+              "Derivations"
+            ]
+          }
+        ]
+      },
+      "limits": {
+        "stored_utf8_bytes": 65536,
+        "summary_utf8_bytes": 8000
+      },
+      "instruction": "Serialize the complete document under change.content. Each named field belongs inside profile and requires its own summary. Preserve existing fields and qualifications; generated text never confirms authorship."
+    }
+  },
+  "current": {
+    "family": "architecture",
+    "scope": "workspace",
+    "purpose": "Structural and narrative form prior; not scientific evidence or authored reader expectations.",
+    "source": {
+      "path": "profiles/author_architecture.yaml",
+      "origin": "repository"
+    },
+    "profile_revision": "sha256:510ebf6e434eca7e8650100854a51e8081c230d8b1196881b8d35b73e02bfa42",
+    "field_refs": [
+      {
+        "id": "introduction_shape",
+        "ref": "profiles/author_architecture.yaml#profile.introduction_shape"
+      },
+      {
+        "id": "section_rhythm",
+        "ref": "profiles/author_architecture.yaml#profile.section_rhythm"
+      }
+    ],
+    "editable": true,
+    "edit_reason": "Workspace structural preferences use the guarded profile candidate owner.",
+    "read_more": {
+      "operation": "structure",
+      "payload": {
+        "view": "architecture-profile"
+      }
+    },
+    "currentness_basis": "Current profile bytes only; no scientific acceptance or reader comprehension is asserted.",
+    "status": "AVAILABLE",
+    "reason": "Current workspace architecture prior loaded.",
+    "currentness": "CURRENT",
+    "revision": "sha256:5085509477c85eccc538c3605b7dbe5a6c283d1ea5f80fc18ed24d3f60c191a2",
+    "effective_revision": "sha256:aa9261cb609708143d7485bce6a54c5c3fbd8e40e2fb7679eaff1073384a0b65",
+    "profile": "profiles/author_architecture.yaml",
+    "effective_values": {
+      "introduction_shape": {
+        "field_revision": "sha256:26fec80eb1a17f9361fb30c89ad8723f0b515fbdca1c8aecb560eb0ce637e452",
+        "confirmed_his": false,
+        "historical_confirmation_assertion": false
+      },
+      "section_rhythm": {
+        "field_revision": "sha256:cf76ee056b3a938ff1ee993c9f158ec71a9ef429fb70e0b1318e363872127d9d",
+        "confirmed_his": false,
+        "historical_confirmation_assertion": false
+      }
+    },
+    "defaults": {},
+    "overrides": {},
+    "affected_consumers": [
+      "reader-plan architecture basis",
+      "storyboard/narrative planner packets",
+      "dispatch architecture brief",
+      "taste retrieval"
+    ],
+    "content_read": {
+      "operation": "profile",
+      "permitted": true,
+      "payload": {
+        "project": "book",
+        "family": "architecture",
+        "scope": "workspace",
+        "view": "content"
+      },
+      "http": {
+        "method": "GET",
+        "url": "/work/profiles?project=book&family=architecture&scope=workspace&view=content"
+      },
+      "native_request": {
+        "verb": "read",
+        "concept": "architecture-profile@project",
+        "target": "book",
+        "expected": [],
+        "payload": {
+          "family": "architecture",
+          "scope": "workspace",
+          "view": "content"
+        },
+        "by": ""
+      }
+    },
+    "candidates_read": {
+      "operation": "profile",
+      "permitted": true,
+      "payload": {
+        "project": "book",
+        "family": "architecture",
+        "scope": "workspace",
+        "view": "candidates"
+      },
+      "http": {
+        "method": "GET",
+        "url": "/work/profiles?project=book&family=architecture&scope=workspace&view=candidates"
+      },
+      "native_request": {
+        "verb": "read",
+        "concept": "profile-candidate@project",
+        "target": "book",
+        "expected": [],
+        "payload": {
+          "family": "architecture",
+          "scope": "workspace",
+          "view": "candidates"
+        },
+        "by": ""
+      }
+    },
+    "generation": {
+      "uses": "existing project app session",
+      "operation": "profile_change",
+      "instruction": "Inspect the current profile and explicitly selected source material. Propose a profile candidate with the inspected revision; do not apply it or claim personal author confirmation."
+    },
+    "propose_action": {
+      "operation": "profile_change",
+      "permitted": true,
+      "payload": {
+        "project": "book",
+        "action": "propose",
+        "family": "architecture",
+        "scope": "workspace",
+        "guards": {
+          "profile_input_revision": "sha256:5085509477c85eccc538c3605b7dbe5a6c283d1ea5f80fc18ed24d3f60c191a2"
+        }
+      },
+      "http": {
+        "method": "POST",
+        "url": "/work/profiles/change"
+      },
+      "native_request": {
+        "verb": "change",
+        "concept": "architecture-profile@project",
+        "target": "book",
+        "expected": [],
+        "payload": {
+          "action": "propose",
+          "family": "architecture",
+          "scope": "workspace",
+          "guards": {
+            "profile_input_revision": "sha256:5085509477c85eccc538c3605b7dbe5a6c283d1ea5f80fc18ed24d3f60c191a2"
+          }
+        },
+        "by": ""
+      },
+      "kind": "action-template",
+      "complete": false,
+      "required_fields": [
+        "change",
+        "reason"
+      ]
+    },
+    "confirm_action": {
+      "operation": "profile_change",
+      "permitted": true,
+      "payload": {
+        "project": "book",
+        "action": "confirm",
+        "family": "architecture",
+        "scope": "workspace",
+        "guards": {
+          "profile_input_revision": "sha256:5085509477c85eccc538c3605b7dbe5a6c283d1ea5f80fc18ed24d3f60c191a2"
+        }
+      },
+      "http": {
+        "method": "POST",
+        "url": "/work/profiles/change"
+      },
+      "native_request": {
+        "verb": "change",
+        "concept": "architecture-profile@project",
+        "target": "book",
+        "expected": [],
+        "payload": {
+          "action": "confirm",
+          "family": "architecture",
+          "scope": "workspace",
+          "guards": {
+            "profile_input_revision": "sha256:5085509477c85eccc538c3605b7dbe5a6c283d1ea5f80fc18ed24d3f60c191a2"
+          }
+        },
+        "by": ""
+      },
+      "kind": "action-template",
+      "complete": false,
+      "required_fields": [
+        "fields",
+        "reason"
+      ],
+      "authority": "explicit-human-action"
+    },
+    "content": "{\n  \"version\": \"fixture-v1\",\n  \"profile\": {\n    \"introduction_shape\": {\n      \"summary\": \"Open with the question.\",\n      \"evidence\": {\n        \"sources\": [\n          \"fixture-source\"\n        ],\n        \"observation\": \"Observed order.\"\n      }\n    },\n    \"section_rhythm\": {\n      \"summary\": \"Keep derivations explicit.\"\n    }\n  }\n}",
+    "coverage": {
+      "unit": "utf8-bytes",
+      "start": 0,
+      "end": 332,
+      "total": 332,
+      "complete": true,
+      "sha256": "sha256:06ddd4d2259c09afe0d6a4714b4a304dfc2db6a5cf3cd35b4f1cf0c886b114ab"
+    }
+  },
+  "candidate": {
+    "id": "PROP-6d9055668a634c42aceb6a98d2153ebf",
+    "project": "book",
+    "custody_project": "book",
+    "candidate_kind": "profile-change",
+    "candidate_ref": {
+      "id": "PROP-6d9055668a634c42aceb6a98d2153ebf",
+      "version": "sha256:efe4b5761c003dca53acacf61675fe5a88e91208614c2f6748e8c4d9ac00915f"
+    },
+    "family": "architecture",
+    "scope": "workspace",
+    "profile": "profiles/author_architecture.yaml",
+    "status": "PROPOSED",
+    "application_id": null,
+    "read_handle": {
+      "operation": "profile",
+      "permitted": true,
+      "payload": {
+        "project": "book",
+        "view": "candidate",
+        "candidate_ref": {
+          "id": "PROP-6d9055668a634c42aceb6a98d2153ebf",
+          "version": "sha256:efe4b5761c003dca53acacf61675fe5a88e91208614c2f6748e8c4d9ac00915f"
+        }
+      },
+      "http": {
+        "method": "GET",
+        "url": "/work/profiles?project=book&view=candidate&candidate_ref=%7B%22id%22%3A%22PROP-6d9055668a634c42aceb6a98d2153ebf%22%2C%22version%22%3A%22sha256%3Aefe4b5761c003dca53acacf61675fe5a88e91208614c2f6748e8c4d9ac00915f%22%7D"
+      },
+      "native_request": {
+        "verb": "read",
+        "concept": "profile-candidate@project",
+        "target": "book",
+        "expected": [],
+        "payload": {
+          "view": "candidate",
+          "candidate_ref": {
+            "id": "PROP-6d9055668a634c42aceb6a98d2153ebf",
+            "version": "sha256:efe4b5761c003dca53acacf61675fe5a88e91208614c2f6748e8c4d9ac00915f"
+          }
+        },
+        "by": ""
+      }
+    },
+    "reason": "Test scoped preference.",
+    "author": {
+      "kind": "human"
+    },
+    "current": {
+      "family": "architecture",
+      "scope": "workspace",
+      "purpose": "Structural and narrative form prior; not scientific evidence or authored reader expectations.",
+      "source": {
+        "path": "profiles/author_architecture.yaml",
+        "origin": "repository"
+      },
+      "profile_revision": "sha256:510ebf6e434eca7e8650100854a51e8081c230d8b1196881b8d35b73e02bfa42",
+      "field_refs": [
+        {
+          "id": "introduction_shape",
+          "ref": "profiles/author_architecture.yaml#profile.introduction_shape"
+        },
+        {
+          "id": "section_rhythm",
+          "ref": "profiles/author_architecture.yaml#profile.section_rhythm"
+        }
+      ],
+      "editable": true,
+      "edit_reason": "Workspace structural preferences use the guarded profile candidate owner.",
+      "read_more": {
+        "operation": "structure",
+        "payload": {
+          "view": "architecture-profile"
+        }
+      },
+      "currentness_basis": "Current profile bytes only; no scientific acceptance or reader comprehension is asserted.",
+      "status": "AVAILABLE",
+      "reason": "Current workspace architecture prior loaded.",
+      "currentness": "CURRENT",
+      "revision": "sha256:5085509477c85eccc538c3605b7dbe5a6c283d1ea5f80fc18ed24d3f60c191a2",
+      "effective_revision": "sha256:aa9261cb609708143d7485bce6a54c5c3fbd8e40e2fb7679eaff1073384a0b65",
+      "profile": "profiles/author_architecture.yaml",
+      "effective_values": {
+        "introduction_shape": {
+          "field_revision": "sha256:26fec80eb1a17f9361fb30c89ad8723f0b515fbdca1c8aecb560eb0ce637e452",
+          "confirmed_his": false,
+          "historical_confirmation_assertion": false
+        },
+        "section_rhythm": {
+          "field_revision": "sha256:cf76ee056b3a938ff1ee993c9f158ec71a9ef429fb70e0b1318e363872127d9d",
+          "confirmed_his": false,
+          "historical_confirmation_assertion": false
+        }
+      },
+      "defaults": {},
+      "overrides": {}
+    },
+    "expected_revision": "sha256:5085509477c85eccc538c3605b7dbe5a6c283d1ea5f80fc18ed24d3f60c191a2",
+    "currentness": "CURRENT",
+    "candidate_retained": true,
+    "application_tracking": "NOT_APPLIED",
+    "recovery": null,
+    "authority": "Applied preference is separate from explicit personal author confirmation.",
+    "affected_consumers": [
+      "reader-plan architecture basis",
+      "storyboard/narrative planner packets",
+      "dispatch architecture brief",
+      "taste retrieval"
+    ],
+    "apply_action": {
+      "operation": "profile_change",
+      "permitted": true,
+      "payload": {
+        "project": "book",
+        "action": "apply",
+        "candidate_ref": {
+          "id": "PROP-6d9055668a634c42aceb6a98d2153ebf",
+          "version": "sha256:efe4b5761c003dca53acacf61675fe5a88e91208614c2f6748e8c4d9ac00915f"
+        }
+      },
+      "http": {
+        "method": "POST",
+        "url": "/work/profiles/change"
+      },
+      "native_request": {
+        "verb": "change",
+        "concept": "profile-candidate@project",
+        "target": "book",
+        "expected": [],
+        "payload": {
+          "action": "apply",
+          "candidate_ref": {
+            "id": "PROP-6d9055668a634c42aceb6a98d2153ebf",
+            "version": "sha256:efe4b5761c003dca53acacf61675fe5a88e91208614c2f6748e8c4d9ac00915f"
+          }
+        },
+        "by": ""
+      }
+    },
+    "text_reads": {
+      "current": {
+        "operation": "profile",
+        "permitted": true,
+        "payload": {
+          "project": "book",
+          "view": "candidate",
+          "candidate_ref": {
+            "id": "PROP-6d9055668a634c42aceb6a98d2153ebf",
+            "version": "sha256:efe4b5761c003dca53acacf61675fe5a88e91208614c2f6748e8c4d9ac00915f"
+          },
+          "part": "current"
+        },
+        "http": {
+          "method": "GET",
+          "url": "/work/profiles?project=book&view=candidate&candidate_ref=%7B%22id%22%3A%22PROP-6d9055668a634c42aceb6a98d2153ebf%22%2C%22version%22%3A%22sha256%3Aefe4b5761c003dca53acacf61675fe5a88e91208614c2f6748e8c4d9ac00915f%22%7D&part=current"
+        },
+        "native_request": {
+          "verb": "read",
+          "concept": "profile-candidate@project",
+          "target": "book",
+          "expected": [],
+          "payload": {
+            "view": "candidate",
+            "candidate_ref": {
+              "id": "PROP-6d9055668a634c42aceb6a98d2153ebf",
+              "version": "sha256:efe4b5761c003dca53acacf61675fe5a88e91208614c2f6748e8c4d9ac00915f"
+            },
+            "part": "current"
+          },
+          "by": ""
+        }
+      },
+      "proposed": {
+        "operation": "profile",
+        "permitted": true,
+        "payload": {
+          "project": "book",
+          "view": "candidate",
+          "candidate_ref": {
+            "id": "PROP-6d9055668a634c42aceb6a98d2153ebf",
+            "version": "sha256:efe4b5761c003dca53acacf61675fe5a88e91208614c2f6748e8c4d9ac00915f"
+          },
+          "part": "proposed"
+        },
+        "http": {
+          "method": "GET",
+          "url": "/work/profiles?project=book&view=candidate&candidate_ref=%7B%22id%22%3A%22PROP-6d9055668a634c42aceb6a98d2153ebf%22%2C%22version%22%3A%22sha256%3Aefe4b5761c003dca53acacf61675fe5a88e91208614c2f6748e8c4d9ac00915f%22%7D&part=proposed"
+        },
+        "native_request": {
+          "verb": "read",
+          "concept": "profile-candidate@project",
+          "target": "book",
+          "expected": [],
+          "payload": {
+            "view": "candidate",
+            "candidate_ref": {
+              "id": "PROP-6d9055668a634c42aceb6a98d2153ebf",
+              "version": "sha256:efe4b5761c003dca53acacf61675fe5a88e91208614c2f6748e8c4d9ac00915f"
+            },
+            "part": "proposed"
+          },
+          "by": ""
+        }
+      }
+    },
+    "delivery": {
+      "whole_paper": "Every field guides whole-paper structure planning.",
+      "sections": "Listed fields guide relevant sections by position, job and derivation needs. Custom fields remain whole-paper preferences.",
+      "taste": "All fields are eligible for taste retrieval; selection is not guaranteed.",
+      "section_fields": [
+        {
+          "id": "narrative_arc",
+          "label": "narrative arc",
+          "contexts": [
+            "Opening",
+            "Body",
+            "Closing",
+            "Derivations"
+          ]
+        },
+        {
+          "id": "register_markers_structural",
+          "label": "register markers structural",
+          "contexts": [
+            "Opening",
+            "Body",
+            "Closing",
+            "Derivations"
+          ]
+        },
+        {
+          "id": "introduction_shape",
+          "label": "introduction shape",
+          "contexts": [
+            "Opening"
+          ]
+        },
+        {
+          "id": "section_rhythm",
+          "label": "section rhythm",
+          "contexts": [
+            "Body",
+            "Derivations"
+          ]
+        },
+        {
+          "id": "conclusion_posture",
+          "label": "conclusion posture",
+          "contexts": [
+            "Closing"
+          ]
+        },
+        {
+          "id": "derivation_granularity",
+          "label": "derivation granularity",
+          "contexts": [
+            "Derivations"
+          ]
+        }
+      ]
+    }
+  },
+  "parts": {
+    "current": {
+      "candidate_ref": {
+        "id": "PROP-6d9055668a634c42aceb6a98d2153ebf",
+        "version": "sha256:efe4b5761c003dca53acacf61675fe5a88e91208614c2f6748e8c4d9ac00915f"
+      },
+      "family": "architecture",
+      "scope": "workspace",
+      "profile": "profiles/author_architecture.yaml",
+      "currentness": "CURRENT",
+      "candidate_retained": true,
+      "part": "current",
+      "content": "{\n  \"version\": \"fixture-v1\",\n  \"profile\": {\n    \"introduction_shape\": {\n      \"summary\": \"Open with the question.\",\n      \"evidence\": {\n        \"sources\": [\n          \"fixture-source\"\n        ],\n        \"observation\": \"Observed order.\"\n      }\n    },\n    \"section_rhythm\": {\n      \"summary\": \"Keep derivations explicit.\"\n    }\n  }\n}",
+      "coverage": {
+        "unit": "utf8-bytes",
+        "start": 0,
+        "end": 332,
+        "total": 332,
+        "complete": true,
+        "sha256": "sha256:06ddd4d2259c09afe0d6a4714b4a304dfc2db6a5cf3cd35b4f1cf0c886b114ab"
+      }
+    },
+    "proposed": {
+      "candidate_ref": {
+        "id": "PROP-6d9055668a634c42aceb6a98d2153ebf",
+        "version": "sha256:efe4b5761c003dca53acacf61675fe5a88e91208614c2f6748e8c4d9ac00915f"
+      },
+      "family": "architecture",
+      "scope": "workspace",
+      "profile": "profiles/author_architecture.yaml",
+      "currentness": "CURRENT",
+      "candidate_retained": true,
+      "part": "proposed",
+      "content": "{\n  \"version\": \"fixture-v1\",\n  \"profile\": {\n    \"introduction_shape\": {\n      \"summary\": \"Lead with the concrete mechanism.\",\n      \"evidence\": {\n        \"sources\": [\n          \"fixture-source\"\n        ],\n        \"observation\": \"Observed order.\"\n      }\n    },\n    \"section_rhythm\": {\n      \"summary\": \"Keep derivations explicit.\"\n    }\n  }\n}",
+      "coverage": {
+        "unit": "utf8-bytes",
+        "start": 0,
+        "end": 342,
+        "total": 342,
+        "complete": true,
+        "sha256": "sha256:0e1bdb6c73673984a667f76992aac20bb155e69ffb044d5febd5c6866f339ad7"
+      }
+    }
+  },
+  "applied": {
+    "id": "PROP-6d9055668a634c42aceb6a98d2153ebf",
+    "project": "book",
+    "custody_project": "book",
+    "candidate_kind": "profile-change",
+    "candidate_ref": {
+      "id": "PROP-6d9055668a634c42aceb6a98d2153ebf",
+      "version": "sha256:efe4b5761c003dca53acacf61675fe5a88e91208614c2f6748e8c4d9ac00915f"
+    },
+    "family": "architecture",
+    "scope": "workspace",
+    "profile": "profiles/author_architecture.yaml",
+    "status": "APPLIED",
+    "application_id": "APP-1cee6cc55c294c509b8e0a3fc37595a4",
+    "read_handle": {
+      "operation": "profile",
+      "permitted": true,
+      "payload": {
+        "project": "book",
+        "view": "candidate",
+        "candidate_ref": {
+          "id": "PROP-6d9055668a634c42aceb6a98d2153ebf",
+          "version": "sha256:efe4b5761c003dca53acacf61675fe5a88e91208614c2f6748e8c4d9ac00915f"
+        }
+      },
+      "http": {
+        "method": "GET",
+        "url": "/work/profiles?project=book&view=candidate&candidate_ref=%7B%22id%22%3A%22PROP-6d9055668a634c42aceb6a98d2153ebf%22%2C%22version%22%3A%22sha256%3Aefe4b5761c003dca53acacf61675fe5a88e91208614c2f6748e8c4d9ac00915f%22%7D"
+      },
+      "native_request": {
+        "verb": "read",
+        "concept": "profile-candidate@project",
+        "target": "book",
+        "expected": [],
+        "payload": {
+          "view": "candidate",
+          "candidate_ref": {
+            "id": "PROP-6d9055668a634c42aceb6a98d2153ebf",
+            "version": "sha256:efe4b5761c003dca53acacf61675fe5a88e91208614c2f6748e8c4d9ac00915f"
+          }
+        },
+        "by": ""
+      }
+    },
+    "reason": "Test scoped preference.",
+    "author": {
+      "kind": "human"
+    },
+    "current": {
+      "family": "architecture",
+      "scope": "workspace",
+      "purpose": "Structural and narrative form prior; not scientific evidence or authored reader expectations.",
+      "source": {
+        "path": "profiles/author_architecture.yaml",
+        "origin": "repository"
+      },
+      "profile_revision": "sha256:91506f11000577b8ffe6527f415181027577853ab31cc97b4cb9790ae5f00865",
+      "field_refs": [
+        {
+          "id": "introduction_shape",
+          "ref": "profiles/author_architecture.yaml#profile.introduction_shape"
+        },
+        {
+          "id": "section_rhythm",
+          "ref": "profiles/author_architecture.yaml#profile.section_rhythm"
+        }
+      ],
+      "editable": true,
+      "edit_reason": "Workspace structural preferences use the guarded profile candidate owner.",
+      "read_more": {
+        "operation": "structure",
+        "payload": {
+          "view": "architecture-profile"
+        }
+      },
+      "currentness_basis": "Current profile bytes only; no scientific acceptance or reader comprehension is asserted.",
+      "status": "AVAILABLE",
+      "reason": "Current workspace architecture prior loaded.",
+      "currentness": "CURRENT",
+      "revision": "sha256:8afacfe0cef263e4cfc39568d62ba28eead976710cb0563724857c951d8723e1",
+      "effective_revision": "sha256:82f5200ad4cf458fa2e76cc3d325085fa519d8b8487543ddeec824a01c70de43",
+      "profile": "profiles/author_architecture.yaml",
+      "effective_values": {
+        "introduction_shape": {
+          "field_revision": "sha256:177eb09a4bd480b248c3beffaefcabbbbf2e40938f580e0a89f47fc9714e646b",
+          "confirmed_his": false,
+          "historical_confirmation_assertion": false
+        },
+        "section_rhythm": {
+          "field_revision": "sha256:cf76ee056b3a938ff1ee993c9f158ec71a9ef429fb70e0b1318e363872127d9d",
+          "confirmed_his": false,
+          "historical_confirmation_assertion": false
+        }
+      },
+      "defaults": {},
+      "overrides": {}
+    },
+    "expected_revision": "sha256:5085509477c85eccc538c3605b7dbe5a6c283d1ea5f80fc18ed24d3f60c191a2",
+    "currentness": "APPLIED_CURRENT",
+    "candidate_retained": true,
+    "application_tracking": "COMPLETE",
+    "recovery": null,
+    "authority": "Applied preference is separate from explicit personal author confirmation.",
+    "affected_consumers": [
+      "reader-plan architecture basis",
+      "storyboard/narrative planner packets",
+      "dispatch architecture brief",
+      "taste retrieval"
+    ],
+    "apply_action": {
+      "operation": "profile_change",
+      "permitted": false,
+      "payload": {
+        "project": "book",
+        "action": "apply",
+        "candidate_ref": {
+          "id": "PROP-6d9055668a634c42aceb6a98d2153ebf",
+          "version": "sha256:efe4b5761c003dca53acacf61675fe5a88e91208614c2f6748e8c4d9ac00915f"
+        }
+      },
+      "http": {
+        "method": "POST",
+        "url": "/work/profiles/change"
+      },
+      "native_request": {
+        "verb": "change",
+        "concept": "profile-candidate@project",
+        "target": "book",
+        "expected": [],
+        "payload": {
+          "action": "apply",
+          "candidate_ref": {
+            "id": "PROP-6d9055668a634c42aceb6a98d2153ebf",
+            "version": "sha256:efe4b5761c003dca53acacf61675fe5a88e91208614c2f6748e8c4d9ac00915f"
+          }
+        },
+        "by": ""
+      }
+    },
+    "text_reads": {
+      "current": {
+        "operation": "profile",
+        "permitted": true,
+        "payload": {
+          "project": "book",
+          "view": "candidate",
+          "candidate_ref": {
+            "id": "PROP-6d9055668a634c42aceb6a98d2153ebf",
+            "version": "sha256:efe4b5761c003dca53acacf61675fe5a88e91208614c2f6748e8c4d9ac00915f"
+          },
+          "part": "current"
+        },
+        "http": {
+          "method": "GET",
+          "url": "/work/profiles?project=book&view=candidate&candidate_ref=%7B%22id%22%3A%22PROP-6d9055668a634c42aceb6a98d2153ebf%22%2C%22version%22%3A%22sha256%3Aefe4b5761c003dca53acacf61675fe5a88e91208614c2f6748e8c4d9ac00915f%22%7D&part=current"
+        },
+        "native_request": {
+          "verb": "read",
+          "concept": "profile-candidate@project",
+          "target": "book",
+          "expected": [],
+          "payload": {
+            "view": "candidate",
+            "candidate_ref": {
+              "id": "PROP-6d9055668a634c42aceb6a98d2153ebf",
+              "version": "sha256:efe4b5761c003dca53acacf61675fe5a88e91208614c2f6748e8c4d9ac00915f"
+            },
+            "part": "current"
+          },
+          "by": ""
+        }
+      },
+      "proposed": {
+        "operation": "profile",
+        "permitted": true,
+        "payload": {
+          "project": "book",
+          "view": "candidate",
+          "candidate_ref": {
+            "id": "PROP-6d9055668a634c42aceb6a98d2153ebf",
+            "version": "sha256:efe4b5761c003dca53acacf61675fe5a88e91208614c2f6748e8c4d9ac00915f"
+          },
+          "part": "proposed"
+        },
+        "http": {
+          "method": "GET",
+          "url": "/work/profiles?project=book&view=candidate&candidate_ref=%7B%22id%22%3A%22PROP-6d9055668a634c42aceb6a98d2153ebf%22%2C%22version%22%3A%22sha256%3Aefe4b5761c003dca53acacf61675fe5a88e91208614c2f6748e8c4d9ac00915f%22%7D&part=proposed"
+        },
+        "native_request": {
+          "verb": "read",
+          "concept": "profile-candidate@project",
+          "target": "book",
+          "expected": [],
+          "payload": {
+            "view": "candidate",
+            "candidate_ref": {
+              "id": "PROP-6d9055668a634c42aceb6a98d2153ebf",
+              "version": "sha256:efe4b5761c003dca53acacf61675fe5a88e91208614c2f6748e8c4d9ac00915f"
+            },
+            "part": "proposed"
+          },
+          "by": ""
+        }
+      }
+    },
+    "effect": {
+      "family": "architecture",
+      "scope": "workspace",
+      "purpose": "Structural and narrative form prior; not scientific evidence or authored reader expectations.",
+      "source": {
+        "path": "profiles/author_architecture.yaml",
+        "origin": "repository"
+      },
+      "profile_revision": "sha256:91506f11000577b8ffe6527f415181027577853ab31cc97b4cb9790ae5f00865",
+      "field_refs": [
+        {
+          "id": "introduction_shape",
+          "ref": "profiles/author_architecture.yaml#profile.introduction_shape"
+        },
+        {
+          "id": "section_rhythm",
+          "ref": "profiles/author_architecture.yaml#profile.section_rhythm"
+        }
+      ],
+      "editable": true,
+      "edit_reason": "Workspace structural preferences use the guarded profile candidate owner.",
+      "read_more": {
+        "operation": "structure",
+        "payload": {
+          "view": "architecture-profile"
+        }
+      },
+      "currentness_basis": "Current profile bytes only; no scientific acceptance or reader comprehension is asserted.",
+      "status": "AVAILABLE",
+      "reason": "Current workspace architecture prior loaded.",
+      "currentness": "CURRENT",
+      "revision": "sha256:8afacfe0cef263e4cfc39568d62ba28eead976710cb0563724857c951d8723e1",
+      "effective_revision": "sha256:82f5200ad4cf458fa2e76cc3d325085fa519d8b8487543ddeec824a01c70de43",
+      "profile": "profiles/author_architecture.yaml",
+      "effective_values": {
+        "introduction_shape": {
+          "field_revision": "sha256:177eb09a4bd480b248c3beffaefcabbbbf2e40938f580e0a89f47fc9714e646b",
+          "confirmed_his": false,
+          "historical_confirmation_assertion": false
+        },
+        "section_rhythm": {
+          "field_revision": "sha256:cf76ee056b3a938ff1ee993c9f158ec71a9ef429fb70e0b1318e363872127d9d",
+          "confirmed_his": false,
+          "historical_confirmation_assertion": false
+        }
+      },
+      "defaults": {},
+      "overrides": {}
+    },
+    "delivery": {
+      "whole_paper": "Every field guides whole-paper structure planning.",
+      "sections": "Listed fields guide relevant sections by position, job and derivation needs. Custom fields remain whole-paper preferences.",
+      "taste": "All fields are eligible for taste retrieval; selection is not guaranteed.",
+      "section_fields": [
+        {
+          "id": "narrative_arc",
+          "label": "narrative arc",
+          "contexts": [
+            "Opening",
+            "Body",
+            "Closing",
+            "Derivations"
+          ]
+        },
+        {
+          "id": "register_markers_structural",
+          "label": "register markers structural",
+          "contexts": [
+            "Opening",
+            "Body",
+            "Closing",
+            "Derivations"
+          ]
+        },
+        {
+          "id": "introduction_shape",
+          "label": "introduction shape",
+          "contexts": [
+            "Opening"
+          ]
+        },
+        {
+          "id": "section_rhythm",
+          "label": "section rhythm",
+          "contexts": [
+            "Body",
+            "Derivations"
+          ]
+        },
+        {
+          "id": "conclusion_posture",
+          "label": "conclusion posture",
+          "contexts": [
+            "Closing"
+          ]
+        },
+        {
+          "id": "derivation_granularity",
+          "label": "derivation granularity",
+          "contexts": [
+            "Derivations"
+          ]
+        }
+      ]
+    }
+  },
+  "after": {
+    "family": "architecture",
+    "scope": "workspace",
+    "purpose": "Structural and narrative form prior; not scientific evidence or authored reader expectations.",
+    "source": {
+      "path": "profiles/author_architecture.yaml",
+      "origin": "repository"
+    },
+    "profile_revision": "sha256:91506f11000577b8ffe6527f415181027577853ab31cc97b4cb9790ae5f00865",
+    "field_refs": [
+      {
+        "id": "introduction_shape",
+        "ref": "profiles/author_architecture.yaml#profile.introduction_shape"
+      },
+      {
+        "id": "section_rhythm",
+        "ref": "profiles/author_architecture.yaml#profile.section_rhythm"
+      }
+    ],
+    "editable": true,
+    "edit_reason": "Workspace structural preferences use the guarded profile candidate owner.",
+    "read_more": {
+      "operation": "structure",
+      "payload": {
+        "view": "architecture-profile"
+      }
+    },
+    "currentness_basis": "Current profile bytes only; no scientific acceptance or reader comprehension is asserted.",
+    "status": "AVAILABLE",
+    "reason": "Current workspace architecture prior loaded.",
+    "currentness": "CURRENT",
+    "revision": "sha256:8afacfe0cef263e4cfc39568d62ba28eead976710cb0563724857c951d8723e1",
+    "effective_revision": "sha256:82f5200ad4cf458fa2e76cc3d325085fa519d8b8487543ddeec824a01c70de43",
+    "profile": "profiles/author_architecture.yaml",
+    "effective_values": {
+      "introduction_shape": {
+        "field_revision": "sha256:177eb09a4bd480b248c3beffaefcabbbbf2e40938f580e0a89f47fc9714e646b",
+        "confirmed_his": false,
+        "historical_confirmation_assertion": false
+      },
+      "section_rhythm": {
+        "field_revision": "sha256:cf76ee056b3a938ff1ee993c9f158ec71a9ef429fb70e0b1318e363872127d9d",
+        "confirmed_his": false,
+        "historical_confirmation_assertion": false
+      }
+    },
+    "defaults": {},
+    "overrides": {},
+    "affected_consumers": [
+      "reader-plan architecture basis",
+      "storyboard/narrative planner packets",
+      "dispatch architecture brief",
+      "taste retrieval"
+    ],
+    "content_read": {
+      "operation": "profile",
+      "permitted": true,
+      "payload": {
+        "project": "book",
+        "family": "architecture",
+        "scope": "workspace",
+        "view": "content"
+      },
+      "http": {
+        "method": "GET",
+        "url": "/work/profiles?project=book&family=architecture&scope=workspace&view=content"
+      },
+      "native_request": {
+        "verb": "read",
+        "concept": "architecture-profile@project",
+        "target": "book",
+        "expected": [],
+        "payload": {
+          "family": "architecture",
+          "scope": "workspace",
+          "view": "content"
+        },
+        "by": ""
+      }
+    },
+    "candidates_read": {
+      "operation": "profile",
+      "permitted": true,
+      "payload": {
+        "project": "book",
+        "family": "architecture",
+        "scope": "workspace",
+        "view": "candidates"
+      },
+      "http": {
+        "method": "GET",
+        "url": "/work/profiles?project=book&family=architecture&scope=workspace&view=candidates"
+      },
+      "native_request": {
+        "verb": "read",
+        "concept": "profile-candidate@project",
+        "target": "book",
+        "expected": [],
+        "payload": {
+          "family": "architecture",
+          "scope": "workspace",
+          "view": "candidates"
+        },
+        "by": ""
+      }
+    },
+    "generation": {
+      "uses": "existing project app session",
+      "operation": "profile_change",
+      "instruction": "Inspect the current profile and explicitly selected source material. Propose a profile candidate with the inspected revision; do not apply it or claim personal author confirmation."
+    },
+    "propose_action": {
+      "operation": "profile_change",
+      "permitted": true,
+      "payload": {
+        "project": "book",
+        "action": "propose",
+        "family": "architecture",
+        "scope": "workspace",
+        "guards": {
+          "profile_input_revision": "sha256:8afacfe0cef263e4cfc39568d62ba28eead976710cb0563724857c951d8723e1"
+        }
+      },
+      "http": {
+        "method": "POST",
+        "url": "/work/profiles/change"
+      },
+      "native_request": {
+        "verb": "change",
+        "concept": "architecture-profile@project",
+        "target": "book",
+        "expected": [],
+        "payload": {
+          "action": "propose",
+          "family": "architecture",
+          "scope": "workspace",
+          "guards": {
+            "profile_input_revision": "sha256:8afacfe0cef263e4cfc39568d62ba28eead976710cb0563724857c951d8723e1"
+          }
+        },
+        "by": ""
+      },
+      "kind": "action-template",
+      "complete": false,
+      "required_fields": [
+        "change",
+        "reason"
+      ]
+    },
+    "confirm_action": {
+      "operation": "profile_change",
+      "permitted": true,
+      "payload": {
+        "project": "book",
+        "action": "confirm",
+        "family": "architecture",
+        "scope": "workspace",
+        "guards": {
+          "profile_input_revision": "sha256:8afacfe0cef263e4cfc39568d62ba28eead976710cb0563724857c951d8723e1"
+        }
+      },
+      "http": {
+        "method": "POST",
+        "url": "/work/profiles/change"
+      },
+      "native_request": {
+        "verb": "change",
+        "concept": "architecture-profile@project",
+        "target": "book",
+        "expected": [],
+        "payload": {
+          "action": "confirm",
+          "family": "architecture",
+          "scope": "workspace",
+          "guards": {
+            "profile_input_revision": "sha256:8afacfe0cef263e4cfc39568d62ba28eead976710cb0563724857c951d8723e1"
+          }
+        },
+        "by": ""
+      },
+      "kind": "action-template",
+      "complete": false,
+      "required_fields": [
+        "fields",
+        "reason"
+      ],
+      "authority": "explicit-human-action"
+    },
+    "content_contract": {
+      "schema_version": "laplace.architecture-profile-content/1",
+      "format": "JSON-compatible YAML or JSON",
+      "document_schema": {
+        "type": "object",
+        "required": [
+          "profile"
+        ],
+        "properties": {
+          "profile": {
+            "type": "object",
+            "minProperties": 1,
+            "maxProperties": 64,
+            "propertyNames": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 200
+            },
+            "additionalProperties": {
+              "type": "object",
+              "required": [
+                "summary"
+              ],
+              "properties": {
+                "summary": {
+                  "type": "string",
+                  "minLength": 1,
+                  "pattern": "\\S",
+                  "description": "Nonempty preference summary, at most 8000 UTF-8 bytes."
+                },
+                "evidence": {
+                  "type": [
+                    "object",
+                    "null"
+                  ],
+                  "properties": {
+                    "observation": {
+                      "type": "string"
+                    },
+                    "sources": {
+                      "type": "array",
+                      "maxItems": 64,
+                      "items": {
+                        "type": "string"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "example": {
+        "profile": {
+          "narrative_arc": {
+            "summary": "Describe the intended explanatory sequence."
+          }
+        }
+      },
+      "starter": {
+        "profile": {
+          "narrative_arc": {
+            "summary": ""
+          }
+        }
+      },
+      "delivery": {
+        "whole_paper": "Every field guides whole-paper structure planning.",
+        "sections": "Listed fields guide relevant sections by position, job and derivation needs. Custom fields remain whole-paper preferences.",
+        "taste": "All fields are eligible for taste retrieval; selection is not guaranteed.",
+        "section_fields": [
+          {
+            "id": "narrative_arc",
+            "label": "narrative arc",
+            "contexts": [
+              "Opening",
+              "Body",
+              "Closing",
+              "Derivations"
+            ]
+          },
+          {
+            "id": "register_markers_structural",
+            "label": "register markers structural",
+            "contexts": [
+              "Opening",
+              "Body",
+              "Closing",
+              "Derivations"
+            ]
+          },
+          {
+            "id": "introduction_shape",
+            "label": "introduction shape",
+            "contexts": [
+              "Opening"
+            ]
+          },
+          {
+            "id": "section_rhythm",
+            "label": "section rhythm",
+            "contexts": [
+              "Body",
+              "Derivations"
+            ]
+          },
+          {
+            "id": "conclusion_posture",
+            "label": "conclusion posture",
+            "contexts": [
+              "Closing"
+            ]
+          },
+          {
+            "id": "derivation_granularity",
+            "label": "derivation granularity",
+            "contexts": [
+              "Derivations"
+            ]
+          }
+        ]
+      },
+      "limits": {
+        "stored_utf8_bytes": 65536,
+        "summary_utf8_bytes": 8000
+      },
+      "instruction": "Serialize the complete document under change.content. Each named field belongs inside profile and requires its own summary. Preserve existing fields and qualifications; generated text never confirms authorship."
+    }
+  },
+  "effective": {
+    "family": "architecture",
+    "scope": "workspace",
+    "purpose": "Structural and narrative form prior; not scientific evidence or authored reader expectations.",
+    "source": {
+      "path": "profiles/author_architecture.yaml",
+      "origin": "repository"
+    },
+    "profile_revision": "sha256:91506f11000577b8ffe6527f415181027577853ab31cc97b4cb9790ae5f00865",
+    "field_refs": [
+      {
+        "id": "introduction_shape",
+        "ref": "profiles/author_architecture.yaml#profile.introduction_shape"
+      },
+      {
+        "id": "section_rhythm",
+        "ref": "profiles/author_architecture.yaml#profile.section_rhythm"
+      }
+    ],
+    "editable": true,
+    "edit_reason": "Workspace structural preferences use the guarded profile candidate owner.",
+    "read_more": {
+      "operation": "structure",
+      "payload": {
+        "view": "architecture-profile"
+      }
+    },
+    "currentness_basis": "Current profile bytes only; no scientific acceptance or reader comprehension is asserted.",
+    "status": "AVAILABLE",
+    "reason": "Current workspace architecture prior loaded.",
+    "currentness": "CURRENT",
+    "revision": "sha256:8afacfe0cef263e4cfc39568d62ba28eead976710cb0563724857c951d8723e1",
+    "effective_revision": "sha256:82f5200ad4cf458fa2e76cc3d325085fa519d8b8487543ddeec824a01c70de43",
+    "profile": "profiles/author_architecture.yaml",
+    "effective_values": {
+      "introduction_shape": {
+        "field_revision": "sha256:177eb09a4bd480b248c3beffaefcabbbbf2e40938f580e0a89f47fc9714e646b",
+        "confirmed_his": false,
+        "historical_confirmation_assertion": false
+      },
+      "section_rhythm": {
+        "field_revision": "sha256:cf76ee056b3a938ff1ee993c9f158ec71a9ef429fb70e0b1318e363872127d9d",
+        "confirmed_his": false,
+        "historical_confirmation_assertion": false
+      }
+    },
+    "defaults": {},
+    "overrides": {},
+    "affected_consumers": [
+      "reader-plan architecture basis",
+      "storyboard/narrative planner packets",
+      "dispatch architecture brief",
+      "taste retrieval"
+    ],
+    "content_read": {
+      "operation": "profile",
+      "permitted": true,
+      "payload": {
+        "project": "book",
+        "family": "architecture",
+        "scope": "workspace",
+        "view": "content"
+      },
+      "http": {
+        "method": "GET",
+        "url": "/work/profiles?project=book&family=architecture&scope=workspace&view=content"
+      },
+      "native_request": {
+        "verb": "read",
+        "concept": "architecture-profile@project",
+        "target": "book",
+        "expected": [],
+        "payload": {
+          "family": "architecture",
+          "scope": "workspace",
+          "view": "content"
+        },
+        "by": ""
+      }
+    },
+    "candidates_read": {
+      "operation": "profile",
+      "permitted": true,
+      "payload": {
+        "project": "book",
+        "family": "architecture",
+        "scope": "workspace",
+        "view": "candidates"
+      },
+      "http": {
+        "method": "GET",
+        "url": "/work/profiles?project=book&family=architecture&scope=workspace&view=candidates"
+      },
+      "native_request": {
+        "verb": "read",
+        "concept": "profile-candidate@project",
+        "target": "book",
+        "expected": [],
+        "payload": {
+          "family": "architecture",
+          "scope": "workspace",
+          "view": "candidates"
+        },
+        "by": ""
+      }
+    },
+    "generation": {
+      "uses": "existing project app session",
+      "operation": "profile_change",
+      "instruction": "Inspect the current profile and explicitly selected source material. Propose a profile candidate with the inspected revision; do not apply it or claim personal author confirmation."
+    },
+    "propose_action": {
+      "operation": "profile_change",
+      "permitted": true,
+      "payload": {
+        "project": "book",
+        "action": "propose",
+        "family": "architecture",
+        "scope": "workspace",
+        "guards": {
+          "profile_input_revision": "sha256:8afacfe0cef263e4cfc39568d62ba28eead976710cb0563724857c951d8723e1"
+        }
+      },
+      "http": {
+        "method": "POST",
+        "url": "/work/profiles/change"
+      },
+      "native_request": {
+        "verb": "change",
+        "concept": "architecture-profile@project",
+        "target": "book",
+        "expected": [],
+        "payload": {
+          "action": "propose",
+          "family": "architecture",
+          "scope": "workspace",
+          "guards": {
+            "profile_input_revision": "sha256:8afacfe0cef263e4cfc39568d62ba28eead976710cb0563724857c951d8723e1"
+          }
+        },
+        "by": ""
+      },
+      "kind": "action-template",
+      "complete": false,
+      "required_fields": [
+        "change",
+        "reason"
+      ]
+    },
+    "confirm_action": {
+      "operation": "profile_change",
+      "permitted": true,
+      "payload": {
+        "project": "book",
+        "action": "confirm",
+        "family": "architecture",
+        "scope": "workspace",
+        "guards": {
+          "profile_input_revision": "sha256:8afacfe0cef263e4cfc39568d62ba28eead976710cb0563724857c951d8723e1"
+        }
+      },
+      "http": {
+        "method": "POST",
+        "url": "/work/profiles/change"
+      },
+      "native_request": {
+        "verb": "change",
+        "concept": "architecture-profile@project",
+        "target": "book",
+        "expected": [],
+        "payload": {
+          "action": "confirm",
+          "family": "architecture",
+          "scope": "workspace",
+          "guards": {
+            "profile_input_revision": "sha256:8afacfe0cef263e4cfc39568d62ba28eead976710cb0563724857c951d8723e1"
+          }
+        },
+        "by": ""
+      },
+      "kind": "action-template",
+      "complete": false,
+      "required_fields": [
+        "fields",
+        "reason"
+      ],
+      "authority": "explicit-human-action"
+    },
+    "content": "{\n  \"version\": \"fixture-v1\",\n  \"profile\": {\n    \"introduction_shape\": {\n      \"summary\": \"Lead with the concrete mechanism.\",\n      \"evidence\": {\n        \"sources\": [\n          \"fixture-source\"\n        ],\n        \"observation\": \"Observed order.\"\n      }\n    },\n    \"section_rhythm\": {\n      \"summary\": \"Keep derivations explicit.\"\n    }\n  }\n}",
+    "coverage": {
+      "unit": "utf8-bytes",
+      "start": 0,
+      "end": 342,
+      "total": 342,
+      "complete": true,
+      "sha256": "sha256:0e1bdb6c73673984a667f76992aac20bb155e69ffb044d5febd5c6866f339ad7"
+    }
+  },
+  "global_summary": {
+    "family": "architecture",
+    "scope": "workspace",
+    "purpose": "Structural and narrative form prior; not scientific evidence or authored reader expectations.",
+    "source": {
+      "path": "profiles/author_architecture.yaml",
+      "origin": "repository"
+    },
+    "profile_revision": "sha256:91506f11000577b8ffe6527f415181027577853ab31cc97b4cb9790ae5f00865",
+    "field_refs": [
+      {
+        "id": "introduction_shape",
+        "ref": "profiles/author_architecture.yaml#profile.introduction_shape"
+      },
+      {
+        "id": "section_rhythm",
+        "ref": "profiles/author_architecture.yaml#profile.section_rhythm"
+      }
+    ],
+    "editable": true,
+    "edit_reason": "Workspace structural preferences use the guarded profile candidate owner.",
+    "read_more": {
+      "operation": "structure",
+      "payload": {
+        "view": "architecture-profile"
+      }
+    },
+    "currentness_basis": "Current profile bytes only; no scientific acceptance or reader comprehension is asserted.",
+    "status": "AVAILABLE",
+    "reason": "Current workspace architecture prior loaded.",
+    "currentness": "CURRENT",
+    "revision": "sha256:8afacfe0cef263e4cfc39568d62ba28eead976710cb0563724857c951d8723e1",
+    "effective_revision": "sha256:82f5200ad4cf458fa2e76cc3d325085fa519d8b8487543ddeec824a01c70de43",
+    "profile": "profiles/author_architecture.yaml",
+    "effective_values": {
+      "introduction_shape": {
+        "field_revision": "sha256:177eb09a4bd480b248c3beffaefcabbbbf2e40938f580e0a89f47fc9714e646b",
+        "confirmed_his": false,
+        "historical_confirmation_assertion": false
+      },
+      "section_rhythm": {
+        "field_revision": "sha256:cf76ee056b3a938ff1ee993c9f158ec71a9ef429fb70e0b1318e363872127d9d",
+        "confirmed_his": false,
+        "historical_confirmation_assertion": false
+      }
+    },
+    "defaults": {},
+    "overrides": {},
+    "affected_consumers": [
+      "reader-plan architecture basis",
+      "storyboard/narrative planner packets",
+      "dispatch architecture brief",
+      "taste retrieval"
+    ],
+    "content_read": {
+      "operation": "profile",
+      "permitted": true,
+      "payload": {
+        "family": "architecture",
+        "scope": "workspace",
+        "view": "content"
+      },
+      "http": {
+        "method": "GET",
+        "url": "/work/profiles?family=architecture&scope=workspace&view=content"
+      },
+      "native_context_required": "Choose an existing project conversation for native profile actions; workspace scope is unchanged."
+    },
+    "candidates_read": {
+      "operation": "profile",
+      "permitted": true,
+      "payload": {
+        "family": "architecture",
+        "scope": "workspace",
+        "view": "candidates"
+      },
+      "http": {
+        "method": "GET",
+        "url": "/work/profiles?family=architecture&scope=workspace&view=candidates"
+      },
+      "native_context_required": "Choose an existing project conversation for native profile actions; workspace scope is unchanged."
+    },
+    "generation": {
+      "uses": "existing project app session",
+      "operation": "profile_change",
+      "instruction": "Inspect the current profile and explicitly selected source material. Propose a profile candidate with the inspected revision; do not apply it or claim personal author confirmation."
+    },
+    "propose_action": {
+      "operation": "profile_change",
+      "permitted": false,
+      "payload": {
+        "action": "propose",
+        "family": "architecture",
+        "scope": "workspace",
+        "guards": {
+          "profile_input_revision": "sha256:8afacfe0cef263e4cfc39568d62ba28eead976710cb0563724857c951d8723e1"
+        }
+      },
+      "http": {
+        "method": "POST",
+        "url": "/work/profiles/change"
+      },
+      "native_context_required": "Choose an existing project conversation for native profile actions; workspace scope is unchanged.",
+      "kind": "action-template",
+      "complete": false,
+      "required_fields": [
+        "change",
+        "reason"
+      ]
+    },
+    "confirm_action": {
+      "operation": "profile_change",
+      "permitted": false,
+      "payload": {
+        "action": "confirm",
+        "family": "architecture",
+        "scope": "workspace",
+        "guards": {
+          "profile_input_revision": "sha256:8afacfe0cef263e4cfc39568d62ba28eead976710cb0563724857c951d8723e1"
+        }
+      },
+      "http": {
+        "method": "POST",
+        "url": "/work/profiles/change"
+      },
+      "native_context_required": "Choose an existing project conversation for native profile actions; workspace scope is unchanged.",
+      "kind": "action-template",
+      "complete": false,
+      "required_fields": [
+        "fields",
+        "reason"
+      ],
+      "authority": "explicit-human-action",
+      "reason": "Personal confirmation requires a human action in an explicit producing-project context."
+    },
+    "content_contract": {
+      "schema_version": "laplace.architecture-profile-content/1",
+      "format": "JSON-compatible YAML or JSON",
+      "document_schema": {
+        "type": "object",
+        "required": [
+          "profile"
+        ],
+        "properties": {
+          "profile": {
+            "type": "object",
+            "minProperties": 1,
+            "maxProperties": 64,
+            "propertyNames": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 200
+            },
+            "additionalProperties": {
+              "type": "object",
+              "required": [
+                "summary"
+              ],
+              "properties": {
+                "summary": {
+                  "type": "string",
+                  "minLength": 1,
+                  "pattern": "\\S",
+                  "description": "Nonempty preference summary, at most 8000 UTF-8 bytes."
+                },
+                "evidence": {
+                  "type": [
+                    "object",
+                    "null"
+                  ],
+                  "properties": {
+                    "observation": {
+                      "type": "string"
+                    },
+                    "sources": {
+                      "type": "array",
+                      "maxItems": 64,
+                      "items": {
+                        "type": "string"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "example": {
+        "profile": {
+          "narrative_arc": {
+            "summary": "Describe the intended explanatory sequence."
+          }
+        }
+      },
+      "starter": {
+        "profile": {
+          "narrative_arc": {
+            "summary": ""
+          }
+        }
+      },
+      "delivery": {
+        "whole_paper": "Every field guides whole-paper structure planning.",
+        "sections": "Listed fields guide relevant sections by position, job and derivation needs. Custom fields remain whole-paper preferences.",
+        "taste": "All fields are eligible for taste retrieval; selection is not guaranteed.",
+        "section_fields": [
+          {
+            "id": "narrative_arc",
+            "label": "narrative arc",
+            "contexts": [
+              "Opening",
+              "Body",
+              "Closing",
+              "Derivations"
+            ]
+          },
+          {
+            "id": "register_markers_structural",
+            "label": "register markers structural",
+            "contexts": [
+              "Opening",
+              "Body",
+              "Closing",
+              "Derivations"
+            ]
+          },
+          {
+            "id": "introduction_shape",
+            "label": "introduction shape",
+            "contexts": [
+              "Opening"
+            ]
+          },
+          {
+            "id": "section_rhythm",
+            "label": "section rhythm",
+            "contexts": [
+              "Body",
+              "Derivations"
+            ]
+          },
+          {
+            "id": "conclusion_posture",
+            "label": "conclusion posture",
+            "contexts": [
+              "Closing"
+            ]
+          },
+          {
+            "id": "derivation_granularity",
+            "label": "derivation granularity",
+            "contexts": [
+              "Derivations"
+            ]
+          }
+        ]
+      },
+      "limits": {
+        "stored_utf8_bytes": 65536,
+        "summary_utf8_bytes": 8000
+      },
+      "instruction": "Serialize the complete document under change.content. Each named field belongs inside profile and requires its own summary. Preserve existing fields and qualifications; generated text never confirms authorship."
+    }
+  },
+  "absent": {
+    "family": "architecture",
+    "scope": "workspace",
+    "purpose": "Structural and narrative form prior; not scientific evidence or authored reader expectations.",
+    "source": {
+      "path": "profiles/author_architecture.yaml",
+      "origin": "repository"
+    },
+    "profile_revision": null,
+    "field_refs": [],
+    "editable": true,
+    "edit_reason": "Workspace structural preferences use the guarded profile candidate owner.",
+    "read_more": {
+      "operation": "structure",
+      "payload": {
+        "view": "architecture-profile"
+      }
+    },
+    "currentness_basis": "Current profile bytes only; no scientific acceptance or reader comprehension is asserted.",
+    "status": "ABSENT",
+    "reason": "This workspace has no recorded architecture prior; authored reader contracts remain available.",
+    "currentness": "UNAVAILABLE",
+    "revision": "sha256:bb491d095039e1821261bb0167724a7467f4c5e10bdcf68a2f346bd00f3f9afd",
+    "effective_revision": "sha256:08618e805c18b0aa6887829eafbd38e9e89662d38603c4ba3d5826c1791292bc",
+    "profile": "profiles/author_architecture.yaml",
+    "effective_values": {},
+    "defaults": {},
+    "overrides": {},
+    "affected_consumers": [
+      "reader-plan architecture basis",
+      "storyboard/narrative planner packets",
+      "dispatch architecture brief",
+      "taste retrieval"
+    ],
+    "content_read": {
+      "operation": "profile",
+      "permitted": true,
+      "payload": {
+        "project": "book",
+        "family": "architecture",
+        "scope": "workspace",
+        "view": "content"
+      },
+      "http": {
+        "method": "GET",
+        "url": "/work/profiles?project=book&family=architecture&scope=workspace&view=content"
+      },
+      "native_request": {
+        "verb": "read",
+        "concept": "architecture-profile@project",
+        "target": "book",
+        "expected": [],
+        "payload": {
+          "family": "architecture",
+          "scope": "workspace",
+          "view": "content"
+        },
+        "by": ""
+      }
+    },
+    "candidates_read": {
+      "operation": "profile",
+      "permitted": true,
+      "payload": {
+        "project": "book",
+        "family": "architecture",
+        "scope": "workspace",
+        "view": "candidates"
+      },
+      "http": {
+        "method": "GET",
+        "url": "/work/profiles?project=book&family=architecture&scope=workspace&view=candidates"
+      },
+      "native_request": {
+        "verb": "read",
+        "concept": "profile-candidate@project",
+        "target": "book",
+        "expected": [],
+        "payload": {
+          "family": "architecture",
+          "scope": "workspace",
+          "view": "candidates"
+        },
+        "by": ""
+      }
+    },
+    "generation": {
+      "uses": "existing project app session",
+      "operation": "profile_change",
+      "instruction": "Inspect the current profile and explicitly selected source material. Propose a profile candidate with the inspected revision; do not apply it or claim personal author confirmation."
+    },
+    "content_contract": {
+      "schema_version": "laplace.architecture-profile-content/1",
+      "format": "JSON-compatible YAML or JSON",
+      "document_schema": {
+        "type": "object",
+        "required": [
+          "profile"
+        ],
+        "properties": {
+          "profile": {
+            "type": "object",
+            "minProperties": 1,
+            "maxProperties": 64,
+            "propertyNames": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 200
+            },
+            "additionalProperties": {
+              "type": "object",
+              "required": [
+                "summary"
+              ],
+              "properties": {
+                "summary": {
+                  "type": "string",
+                  "minLength": 1,
+                  "pattern": "\\S",
+                  "description": "Nonempty preference summary, at most 8000 UTF-8 bytes."
+                },
+                "evidence": {
+                  "type": [
+                    "object",
+                    "null"
+                  ],
+                  "properties": {
+                    "observation": {
+                      "type": "string"
+                    },
+                    "sources": {
+                      "type": "array",
+                      "maxItems": 64,
+                      "items": {
+                        "type": "string"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "example": {
+        "profile": {
+          "narrative_arc": {
+            "summary": "Describe the intended explanatory sequence."
+          }
+        }
+      },
+      "starter": {
+        "profile": {
+          "narrative_arc": {
+            "summary": ""
+          }
+        }
+      },
+      "delivery": {
+        "whole_paper": "Every field guides whole-paper structure planning.",
+        "sections": "Listed fields guide relevant sections by position, job and derivation needs. Custom fields remain whole-paper preferences.",
+        "taste": "All fields are eligible for taste retrieval; selection is not guaranteed.",
+        "section_fields": [
+          {
+            "id": "narrative_arc",
+            "label": "narrative arc",
+            "contexts": [
+              "Opening",
+              "Body",
+              "Closing",
+              "Derivations"
+            ]
+          },
+          {
+            "id": "register_markers_structural",
+            "label": "register markers structural",
+            "contexts": [
+              "Opening",
+              "Body",
+              "Closing",
+              "Derivations"
+            ]
+          },
+          {
+            "id": "introduction_shape",
+            "label": "introduction shape",
+            "contexts": [
+              "Opening"
+            ]
+          },
+          {
+            "id": "section_rhythm",
+            "label": "section rhythm",
+            "contexts": [
+              "Body",
+              "Derivations"
+            ]
+          },
+          {
+            "id": "conclusion_posture",
+            "label": "conclusion posture",
+            "contexts": [
+              "Closing"
+            ]
+          },
+          {
+            "id": "derivation_granularity",
+            "label": "derivation granularity",
+            "contexts": [
+              "Derivations"
+            ]
+          }
+        ]
+      },
+      "limits": {
+        "stored_utf8_bytes": 65536,
+        "summary_utf8_bytes": 8000
+      },
+      "instruction": "Serialize the complete document under change.content. Each named field belongs inside profile and requires its own summary. Preserve existing fields and qualifications; generated text never confirms authorship."
+    },
+    "propose_action": {
+      "operation": "profile_change",
+      "permitted": true,
+      "payload": {
+        "project": "book",
+        "action": "propose",
+        "family": "architecture",
+        "scope": "workspace",
+        "guards": {
+          "profile_input_revision": "sha256:bb491d095039e1821261bb0167724a7467f4c5e10bdcf68a2f346bd00f3f9afd"
+        }
+      },
+      "http": {
+        "method": "POST",
+        "url": "/work/profiles/change"
+      },
+      "native_request": {
+        "verb": "change",
+        "concept": "architecture-profile@project",
+        "target": "book",
+        "expected": [],
+        "payload": {
+          "action": "propose",
+          "family": "architecture",
+          "scope": "workspace",
+          "guards": {
+            "profile_input_revision": "sha256:bb491d095039e1821261bb0167724a7467f4c5e10bdcf68a2f346bd00f3f9afd"
+          }
+        },
+        "by": ""
+      },
+      "kind": "action-template",
+      "complete": false,
+      "required_fields": [
+        "change",
+        "reason"
+      ]
+    }
+  },
+  "absent_content": {
+    "family": "architecture",
+    "scope": "workspace",
+    "purpose": "Structural and narrative form prior; not scientific evidence or authored reader expectations.",
+    "source": {
+      "path": "profiles/author_architecture.yaml",
+      "origin": "repository"
+    },
+    "profile_revision": null,
+    "field_refs": [],
+    "editable": true,
+    "edit_reason": "Workspace structural preferences use the guarded profile candidate owner.",
+    "read_more": {
+      "operation": "structure",
+      "payload": {
+        "view": "architecture-profile"
+      }
+    },
+    "currentness_basis": "Current profile bytes only; no scientific acceptance or reader comprehension is asserted.",
+    "status": "ABSENT",
+    "reason": "This workspace has no recorded architecture prior; authored reader contracts remain available.",
+    "currentness": "UNAVAILABLE",
+    "revision": "sha256:bb491d095039e1821261bb0167724a7467f4c5e10bdcf68a2f346bd00f3f9afd",
+    "effective_revision": "sha256:08618e805c18b0aa6887829eafbd38e9e89662d38603c4ba3d5826c1791292bc",
+    "profile": "profiles/author_architecture.yaml",
+    "effective_values": {},
+    "defaults": {},
+    "overrides": {},
+    "affected_consumers": [
+      "reader-plan architecture basis",
+      "storyboard/narrative planner packets",
+      "dispatch architecture brief",
+      "taste retrieval"
+    ],
+    "content_read": {
+      "operation": "profile",
+      "permitted": true,
+      "payload": {
+        "project": "book",
+        "family": "architecture",
+        "scope": "workspace",
+        "view": "content"
+      },
+      "http": {
+        "method": "GET",
+        "url": "/work/profiles?project=book&family=architecture&scope=workspace&view=content"
+      },
+      "native_request": {
+        "verb": "read",
+        "concept": "architecture-profile@project",
+        "target": "book",
+        "expected": [],
+        "payload": {
+          "family": "architecture",
+          "scope": "workspace",
+          "view": "content"
+        },
+        "by": ""
+      }
+    },
+    "candidates_read": {
+      "operation": "profile",
+      "permitted": true,
+      "payload": {
+        "project": "book",
+        "family": "architecture",
+        "scope": "workspace",
+        "view": "candidates"
+      },
+      "http": {
+        "method": "GET",
+        "url": "/work/profiles?project=book&family=architecture&scope=workspace&view=candidates"
+      },
+      "native_request": {
+        "verb": "read",
+        "concept": "profile-candidate@project",
+        "target": "book",
+        "expected": [],
+        "payload": {
+          "family": "architecture",
+          "scope": "workspace",
+          "view": "candidates"
+        },
+        "by": ""
+      }
+    },
+    "generation": {
+      "uses": "existing project app session",
+      "operation": "profile_change",
+      "instruction": "Inspect the current profile and explicitly selected source material. Propose a profile candidate with the inspected revision; do not apply it or claim personal author confirmation."
+    },
+    "content_contract": {
+      "schema_version": "laplace.architecture-profile-content/1",
+      "format": "JSON-compatible YAML or JSON",
+      "document_schema": {
+        "type": "object",
+        "required": [
+          "profile"
+        ],
+        "properties": {
+          "profile": {
+            "type": "object",
+            "minProperties": 1,
+            "maxProperties": 64,
+            "propertyNames": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 200
+            },
+            "additionalProperties": {
+              "type": "object",
+              "required": [
+                "summary"
+              ],
+              "properties": {
+                "summary": {
+                  "type": "string",
+                  "minLength": 1,
+                  "pattern": "\\S",
+                  "description": "Nonempty preference summary, at most 8000 UTF-8 bytes."
+                },
+                "evidence": {
+                  "type": [
+                    "object",
+                    "null"
+                  ],
+                  "properties": {
+                    "observation": {
+                      "type": "string"
+                    },
+                    "sources": {
+                      "type": "array",
+                      "maxItems": 64,
+                      "items": {
+                        "type": "string"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "example": {
+        "profile": {
+          "narrative_arc": {
+            "summary": "Describe the intended explanatory sequence."
+          }
+        }
+      },
+      "starter": {
+        "profile": {
+          "narrative_arc": {
+            "summary": ""
+          }
+        }
+      },
+      "delivery": {
+        "whole_paper": "Every field guides whole-paper structure planning.",
+        "sections": "Listed fields guide relevant sections by position, job and derivation needs. Custom fields remain whole-paper preferences.",
+        "taste": "All fields are eligible for taste retrieval; selection is not guaranteed.",
+        "section_fields": [
+          {
+            "id": "narrative_arc",
+            "label": "narrative arc",
+            "contexts": [
+              "Opening",
+              "Body",
+              "Closing",
+              "Derivations"
+            ]
+          },
+          {
+            "id": "register_markers_structural",
+            "label": "register markers structural",
+            "contexts": [
+              "Opening",
+              "Body",
+              "Closing",
+              "Derivations"
+            ]
+          },
+          {
+            "id": "introduction_shape",
+            "label": "introduction shape",
+            "contexts": [
+              "Opening"
+            ]
+          },
+          {
+            "id": "section_rhythm",
+            "label": "section rhythm",
+            "contexts": [
+              "Body",
+              "Derivations"
+            ]
+          },
+          {
+            "id": "conclusion_posture",
+            "label": "conclusion posture",
+            "contexts": [
+              "Closing"
+            ]
+          },
+          {
+            "id": "derivation_granularity",
+            "label": "derivation granularity",
+            "contexts": [
+              "Derivations"
+            ]
+          }
+        ]
+      },
+      "limits": {
+        "stored_utf8_bytes": 65536,
+        "summary_utf8_bytes": 8000
+      },
+      "instruction": "Serialize the complete document under change.content. Each named field belongs inside profile and requires its own summary. Preserve existing fields and qualifications; generated text never confirms authorship."
+    },
+    "propose_action": {
+      "operation": "profile_change",
+      "permitted": true,
+      "payload": {
+        "project": "book",
+        "action": "propose",
+        "family": "architecture",
+        "scope": "workspace",
+        "guards": {
+          "profile_input_revision": "sha256:bb491d095039e1821261bb0167724a7467f4c5e10bdcf68a2f346bd00f3f9afd"
+        }
+      },
+      "http": {
+        "method": "POST",
+        "url": "/work/profiles/change"
+      },
+      "native_request": {
+        "verb": "change",
+        "concept": "architecture-profile@project",
+        "target": "book",
+        "expected": [],
+        "payload": {
+          "action": "propose",
+          "family": "architecture",
+          "scope": "workspace",
+          "guards": {
+            "profile_input_revision": "sha256:bb491d095039e1821261bb0167724a7467f4c5e10bdcf68a2f346bd00f3f9afd"
+          }
+        },
+        "by": ""
+      },
+      "kind": "action-template",
+      "complete": false,
+      "required_fields": [
+        "change",
+        "reason"
+      ]
+    },
+    "content": "",
+    "coverage": {
+      "unit": "utf8-bytes",
+      "start": 0,
+      "end": 0,
+      "total": 0,
+      "complete": true,
+      "sha256": "sha256:e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  }
+}

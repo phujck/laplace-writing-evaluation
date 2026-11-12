@@ -1,0 +1,731 @@
+{
+  "source": "41034609f",
+  "fixture_kind": "isolated owner-returned actual shapes",
+  "queue": {
+    "project": "fixture",
+    "view": "queue",
+    "proposals": [
+      {
+        "id": "WT-x",
+        "turn_id": "WT-x",
+        "project": "fixture",
+        "session_id": "WS-x",
+        "conversation_title": "revise",
+        "application": null,
+        "proposal_version": "sha256:041d761f8eb1eb71c7a8c3ab973bce844ec06182e8603c846b11ecf490d394ed",
+        "proposal_state": "ready",
+        "edit_count": 2,
+        "files": [
+          "main.tex"
+        ],
+        "basis_currentness": "NOT_CHECKED",
+        "allowed_actions": [],
+        "identities": {
+          "proposal:fixture::WT-x": "rev:proposal:fixture::WT-x:041d761f8eb1eb71c7a8c3ab973bce844ec06182e8603c846b11ecf490d394ed"
+        },
+        "action_basis": "Exact current-source preview is required; queue metadata is not mutation authority.",
+        "read_handle": {
+          "native_request": {
+            "verb": "read",
+            "concept": "proposal@paragraph",
+            "target": "fixture::WT-x",
+            "expected": [],
+            "payload": {
+              "id": "WT-x",
+              "record_id": "WR-x",
+              "proposal_version": "sha256:041d761f8eb1eb71c7a8c3ab973bce844ec06182e8603c846b11ecf490d394ed",
+              "view": "summary"
+            },
+            "by": ""
+          },
+          "http": {
+            "method": "GET",
+            "url": "/authoring/proposal-preview?project=fixture&id=WT-x&record_id=WR-x&proposal_version=sha256%3A041d761f8eb1eb71c7a8c3ab973bce844ec06182e8603c846b11ecf490d394ed&view=summary"
+          }
+        }
+      }
+    ],
+    "count": 1,
+    "count_basis": "current rows on this inspected page; total unknown until complete traversal",
+    "as_of": "eyJ2IjoxLCJxdWVyeSI6InNoYTI1NjphODQzNDBmN2QxMGJjYTgxOTFjNzUzZGFjYjMwNjQ2ZWE0NGU5NzE1NWJkMjJhMjJhOGJhNjM5ZGU5ZTZkYzgwIiwidXBwZXIiOjMsInJldmlzaW9uIjoic2hhMjU2OjNlYzM1NzY0MGVkMmY3N2ZhYjhkNDZkNzRlMDMyMDUyMzI4YzMxZDAxMTNkMTQ0Y2M2YWZjNDA5ZTRhYjE1MWQifQ",
+    "pagination": {
+      "examined": 1,
+      "candidate_total": 1,
+      "remaining_candidates": 0,
+      "next_read": null
+    },
+    "scope_basis": "Queue lifecycle at retained owner cut; exact child reads inspect fresh source and do not renew old candidate basis.",
+    "coverage": {
+      "unavailable_candidate_records": [],
+      "body_reads": 0,
+      "body_read_basis": "Only this selected candidate page; enrichment is disposable metadata",
+      "historical_bodies_returned": false
+    },
+    "read_handle": {
+      "native_request": {
+        "verb": "read",
+        "concept": "proposal@paragraph",
+        "target": "fixture",
+        "expected": [],
+        "payload": {},
+        "by": ""
+      },
+      "http": {
+        "method": "GET",
+        "url": "/authoring/proposals?project=fixture"
+      }
+    }
+  },
+  "summary": {
+    "project": "fixture",
+    "turn_id": "WT-x",
+    "identities": {
+      "proposal:fixture::WT-x": "rev:proposal:fixture::WT-x:041d761f8eb1eb71c7a8c3ab973bce844ec06182e8603c846b11ecf490d394ed"
+    },
+    "proposal_version": "sha256:041d761f8eb1eb71c7a8c3ab973bce844ec06182e8603c846b11ecf490d394ed",
+    "reviewable": true,
+    "turn_active": false,
+    "proposal_content_sha256": "sha256:abfeab85bb0ee31c406e3c395f9cfdf6290547a117de1a1f6618a574139f0197",
+    "proposal_state": "ready",
+    "read_only": false,
+    "validation_basis": {
+      "currentness": "CURRENT",
+      "reason": null,
+      "record_id": "WR-x",
+      "context_id": "CTX-93b1087c13094d449331f064f1aacff5",
+      "read_ids": [],
+      "transition_ids": [],
+      "proposal_version": "sha256:041d761f8eb1eb71c7a8c3ab973bce844ec06182e8603c846b11ecf490d394ed"
+    },
+    "edits": [
+      {
+        "edit_id": "EDIT-f1d6a3c4a084a6c5ffb00941",
+        "file": "main.tex",
+        "line_start": 3,
+        "line_end": 3,
+        "status": "pending",
+        "lifecycle": "actionable",
+        "candidate_id": {
+          "turn_id": "WT-x",
+          "proposal_version": "sha256:041d761f8eb1eb71c7a8c3ab973bce844ec06182e8603c846b11ecf490d394ed",
+          "edit_id": "EDIT-f1d6a3c4a084a6c5ffb00941"
+        },
+        "basis_currentness": "CURRENT",
+        "basis_reason": null,
+        "allowed_actions": [
+          "accept",
+          "merge",
+          "replace-current",
+          "reject",
+          "keep-current"
+        ],
+        "read_handle": {
+          "native_request": {
+            "verb": "read",
+            "concept": "proposal@paragraph",
+            "target": "fixture::WT-x",
+            "expected": [],
+            "payload": {
+              "id": "WT-x",
+              "record_id": "WR-x",
+              "proposal_version": "sha256:041d761f8eb1eb71c7a8c3ab973bce844ec06182e8603c846b11ecf490d394ed",
+              "edit_id": "EDIT-f1d6a3c4a084a6c5ffb00941",
+              "view": "edit"
+            },
+            "by": ""
+          },
+          "http": {
+            "method": "GET",
+            "url": "/authoring/proposal-preview?project=fixture&id=WT-x&record_id=WR-x&proposal_version=sha256%3A041d761f8eb1eb71c7a8c3ab973bce844ec06182e8603c846b11ecf490d394ed&edit_id=EDIT-f1d6a3c4a084a6c5ffb00941&view=edit"
+          }
+        },
+        "basis_read": {
+          "native_request": {
+            "verb": "read",
+            "concept": "proposal@paragraph",
+            "target": "fixture::WT-x",
+            "expected": [],
+            "payload": {
+              "id": "WT-x",
+              "record_id": "WR-x",
+              "proposal_version": "sha256:041d761f8eb1eb71c7a8c3ab973bce844ec06182e8603c846b11ecf490d394ed",
+              "edit_id": "EDIT-f1d6a3c4a084a6c5ffb00941",
+              "view": "basis"
+            },
+            "by": ""
+          },
+          "http": {
+            "method": "GET",
+            "url": "/authoring/proposal-preview?project=fixture&id=WT-x&record_id=WR-x&proposal_version=sha256%3A041d761f8eb1eb71c7a8c3ab973bce844ec06182e8603c846b11ecf490d394ed&edit_id=EDIT-f1d6a3c4a084a6c5ffb00941&view=basis"
+          }
+        },
+        "preview_read": {
+          "native_request": {
+            "verb": "read",
+            "concept": "proposal@paragraph",
+            "target": "fixture::WT-x",
+            "expected": [],
+            "payload": {
+              "id": "WT-x",
+              "record_id": "WR-x",
+              "proposal_version": "sha256:041d761f8eb1eb71c7a8c3ab973bce844ec06182e8603c846b11ecf490d394ed",
+              "edit_id": "EDIT-f1d6a3c4a084a6c5ffb00941",
+              "view": "preview"
+            },
+            "by": ""
+          },
+          "http": {
+            "method": "GET",
+            "url": "/authoring/proposal-preview?project=fixture&id=WT-x&record_id=WR-x&proposal_version=sha256%3A041d761f8eb1eb71c7a8c3ab973bce844ec06182e8603c846b11ecf490d394ed&edit_id=EDIT-f1d6a3c4a084a6c5ffb00941&view=preview"
+          }
+        }
+      },
+      {
+        "edit_id": "EDIT-562c44e4063ae8838e8235d5",
+        "file": "main.tex",
+        "line_start": 5,
+        "line_end": 5,
+        "status": "pending",
+        "lifecycle": "actionable",
+        "candidate_id": {
+          "turn_id": "WT-x",
+          "proposal_version": "sha256:041d761f8eb1eb71c7a8c3ab973bce844ec06182e8603c846b11ecf490d394ed",
+          "edit_id": "EDIT-562c44e4063ae8838e8235d5"
+        },
+        "basis_currentness": "CURRENT",
+        "basis_reason": null,
+        "allowed_actions": [
+          "accept",
+          "merge",
+          "replace-current",
+          "reject",
+          "keep-current"
+        ],
+        "read_handle": {
+          "native_request": {
+            "verb": "read",
+            "concept": "proposal@paragraph",
+            "target": "fixture::WT-x",
+            "expected": [],
+            "payload": {
+              "id": "WT-x",
+              "record_id": "WR-x",
+              "proposal_version": "sha256:041d761f8eb1eb71c7a8c3ab973bce844ec06182e8603c846b11ecf490d394ed",
+              "edit_id": "EDIT-562c44e4063ae8838e8235d5",
+              "view": "edit"
+            },
+            "by": ""
+          },
+          "http": {
+            "method": "GET",
+            "url": "/authoring/proposal-preview?project=fixture&id=WT-x&record_id=WR-x&proposal_version=sha256%3A041d761f8eb1eb71c7a8c3ab973bce844ec06182e8603c846b11ecf490d394ed&edit_id=EDIT-562c44e4063ae8838e8235d5&view=edit"
+          }
+        },
+        "basis_read": {
+          "native_request": {
+            "verb": "read",
+            "concept": "proposal@paragraph",
+            "target": "fixture::WT-x",
+            "expected": [],
+            "payload": {
+              "id": "WT-x",
+              "record_id": "WR-x",
+              "proposal_version": "sha256:041d761f8eb1eb71c7a8c3ab973bce844ec06182e8603c846b11ecf490d394ed",
+              "edit_id": "EDIT-562c44e4063ae8838e8235d5",
+              "view": "basis"
+            },
+            "by": ""
+          },
+          "http": {
+            "method": "GET",
+            "url": "/authoring/proposal-preview?project=fixture&id=WT-x&record_id=WR-x&proposal_version=sha256%3A041d761f8eb1eb71c7a8c3ab973bce844ec06182e8603c846b11ecf490d394ed&edit_id=EDIT-562c44e4063ae8838e8235d5&view=basis"
+          }
+        },
+        "preview_read": {
+          "native_request": {
+            "verb": "read",
+            "concept": "proposal@paragraph",
+            "target": "fixture::WT-x",
+            "expected": [],
+            "payload": {
+              "id": "WT-x",
+              "record_id": "WR-x",
+              "proposal_version": "sha256:041d761f8eb1eb71c7a8c3ab973bce844ec06182e8603c846b11ecf490d394ed",
+              "edit_id": "EDIT-562c44e4063ae8838e8235d5",
+              "view": "preview"
+            },
+            "by": ""
+          },
+          "http": {
+            "method": "GET",
+            "url": "/authoring/proposal-preview?project=fixture&id=WT-x&record_id=WR-x&proposal_version=sha256%3A041d761f8eb1eb71c7a8c3ab973bce844ec06182e8603c846b11ecf490d394ed&edit_id=EDIT-562c44e4063ae8838e8235d5&view=preview"
+          }
+        }
+      }
+    ],
+    "applied_elsewhere": [],
+    "remaining": 2,
+    "read_handle": {
+      "native_request": {
+        "verb": "read",
+        "concept": "proposal@paragraph",
+        "target": "fixture::WT-x",
+        "expected": [],
+        "payload": {
+          "id": "WT-x",
+          "record_id": "WR-x",
+          "proposal_version": "sha256:041d761f8eb1eb71c7a8c3ab973bce844ec06182e8603c846b11ecf490d394ed",
+          "view": "summary"
+        },
+        "by": ""
+      },
+      "http": {
+        "method": "GET",
+        "url": "/authoring/proposal-preview?project=fixture&id=WT-x&record_id=WR-x&proposal_version=sha256%3A041d761f8eb1eb71c7a8c3ab973bce844ec06182e8603c846b11ecf490d394ed&view=summary"
+      }
+    },
+    "coverage": {
+      "selected_candidate_bodies": 1,
+      "whole_history_loaded": false,
+      "related_body_reads": 1
+    }
+  },
+  "preview": {
+    "project": "fixture",
+    "turn_id": "WT-x",
+    "answer": "proposal",
+    "identities": {
+      "proposal:fixture::WT-x": "rev:proposal:fixture::WT-x:041d761f8eb1eb71c7a8c3ab973bce844ec06182e8603c846b11ecf490d394ed"
+    },
+    "proposal_version": "sha256:041d761f8eb1eb71c7a8c3ab973bce844ec06182e8603c846b11ecf490d394ed",
+    "reviewable": true,
+    "turn_active": false,
+    "proposal_content_sha256": "sha256:abfeab85bb0ee31c406e3c395f9cfdf6290547a117de1a1f6618a574139f0197",
+    "proposal_state": "ready",
+    "read_only": false,
+    "validation_basis": {
+      "currentness": "CURRENT",
+      "reason": null,
+      "record_id": "WR-x",
+      "context_id": "CTX-93b1087c13094d449331f064f1aacff5",
+      "read_ids": [],
+      "transition_ids": [],
+      "proposal_version": "sha256:041d761f8eb1eb71c7a8c3ab973bce844ec06182e8603c846b11ecf490d394ed"
+    },
+    "edits": [
+      {
+        "file": "main.tex",
+        "line_start": 3,
+        "line_end": 3,
+        "before": "First premise.",
+        "after": "Revised premise.\nExtra explanation.",
+        "reason": "Clarify.",
+        "source_anchor": {
+          "schema_version": "laplace.source-anchor/2",
+          "sha256": "54b2dd78a08c0302bac50eb0bc244127e55f6e903bc7f926345366e27fc99939",
+          "line_start": 3,
+          "line_end": 3,
+          "prefix": [
+            "\\documentclass{article}",
+            "\\begin{document}"
+          ],
+          "suffix": [
+            "",
+            "Second conclusion."
+          ],
+          "unique": true,
+          "at_start": false,
+          "at_end": false
+        },
+        "edit_id": "EDIT-f1d6a3c4a084a6c5ffb00941",
+        "status": "pending",
+        "current_before": "First premise.",
+        "current_anchor": {
+          "file": "main.tex",
+          "line_start": 3,
+          "line_end": 3
+        },
+        "review_token": "36b2f6fad89ffa715ab49fcef38055015bac565f86560cfe040e036d06e4622b",
+        "resolution_available": true,
+        "target_proof": {
+          "status": "CURRENT",
+          "anchor": {
+            "file": "main.tex",
+            "line_start": 3,
+            "line_end": 3
+          },
+          "source_text_sha256": "sha256:54b2dd78a08c0302bac50eb0bc244127e55f6e903bc7f926345366e27fc99939"
+        },
+        "reviewed_current_sha256": "54b2dd78a08c0302bac50eb0bc244127e55f6e903bc7f926345366e27fc99939",
+        "current_mapping": "proven-current-source-occurrence",
+        "anchor": {
+          "file": "main.tex",
+          "line_start": 3,
+          "line_end": 3
+        },
+        "basis": {
+          "status": "UNATTRIBUTED_LEGACY",
+          "automatic_sections": [],
+          "automatic_section_concepts": [],
+          "develops": [],
+          "evidence": [],
+          "limitations": [],
+          "errors": []
+        },
+        "candidate_id": {
+          "turn_id": "WT-x",
+          "proposal_version": "sha256:041d761f8eb1eb71c7a8c3ab973bce844ec06182e8603c846b11ecf490d394ed",
+          "edit_id": "EDIT-f1d6a3c4a084a6c5ffb00941"
+        },
+        "basis_currentness": "CURRENT",
+        "basis_reason": null,
+        "acceptance_unit": {
+          "kind": "edit",
+          "edit_ids": [
+            "EDIT-f1d6a3c4a084a6c5ffb00941"
+          ]
+        },
+        "allowed_actions": [
+          "accept",
+          "merge",
+          "replace-current",
+          "reject",
+          "keep-current"
+        ],
+        "lifecycle": "actionable",
+        "after_blocks": [
+          {
+            "id": "main.tex#b1",
+            "kind": "para",
+            "tex": "Revised premise.\nExtra explanation.",
+            "src": {
+              "file": "main.tex",
+              "repo_file": "sources/fixture/main.tex",
+              "line_start": 1,
+              "line_end": 2
+            },
+            "spec_id": "",
+            "section": "",
+            "pieces": [
+              {
+                "t": "text",
+                "s": "Revised premise. Extra explanation.",
+                "o_start": 0,
+                "o_end": 35
+              }
+            ],
+            "presentation_only": false,
+            "labels": [],
+            "suggestion": true
+          }
+        ],
+        "current_blocks": [
+          {
+            "id": "main.tex#b1",
+            "kind": "para",
+            "tex": "First premise.",
+            "src": {
+              "file": "main.tex",
+              "repo_file": "sources/fixture/main.tex",
+              "line_start": 1,
+              "line_end": 1
+            },
+            "spec_id": "",
+            "section": "",
+            "pieces": [
+              {
+                "t": "text",
+                "s": "First premise.",
+                "o_start": 0,
+                "o_end": 14
+              }
+            ],
+            "presentation_only": false,
+            "labels": [],
+            "suggestion": true
+          }
+        ],
+        "read_handle": {
+          "native_request": {
+            "verb": "read",
+            "concept": "proposal@paragraph",
+            "target": "fixture::WT-x",
+            "expected": [],
+            "payload": {
+              "id": "WT-x",
+              "record_id": "WR-x",
+              "proposal_version": "sha256:041d761f8eb1eb71c7a8c3ab973bce844ec06182e8603c846b11ecf490d394ed",
+              "edit_id": "EDIT-f1d6a3c4a084a6c5ffb00941",
+              "view": "edit"
+            },
+            "by": ""
+          },
+          "http": {
+            "method": "GET",
+            "url": "/authoring/proposal-preview?project=fixture&id=WT-x&record_id=WR-x&proposal_version=sha256%3A041d761f8eb1eb71c7a8c3ab973bce844ec06182e8603c846b11ecf490d394ed&edit_id=EDIT-f1d6a3c4a084a6c5ffb00941&view=edit"
+          }
+        },
+        "basis_read": {
+          "native_request": {
+            "verb": "read",
+            "concept": "proposal@paragraph",
+            "target": "fixture::WT-x",
+            "expected": [],
+            "payload": {
+              "id": "WT-x",
+              "record_id": "WR-x",
+              "proposal_version": "sha256:041d761f8eb1eb71c7a8c3ab973bce844ec06182e8603c846b11ecf490d394ed",
+              "edit_id": "EDIT-f1d6a3c4a084a6c5ffb00941",
+              "view": "basis"
+            },
+            "by": ""
+          },
+          "http": {
+            "method": "GET",
+            "url": "/authoring/proposal-preview?project=fixture&id=WT-x&record_id=WR-x&proposal_version=sha256%3A041d761f8eb1eb71c7a8c3ab973bce844ec06182e8603c846b11ecf490d394ed&edit_id=EDIT-f1d6a3c4a084a6c5ffb00941&view=basis"
+          }
+        },
+        "preview_read": {
+          "native_request": {
+            "verb": "read",
+            "concept": "proposal@paragraph",
+            "target": "fixture::WT-x",
+            "expected": [],
+            "payload": {
+              "id": "WT-x",
+              "record_id": "WR-x",
+              "proposal_version": "sha256:041d761f8eb1eb71c7a8c3ab973bce844ec06182e8603c846b11ecf490d394ed",
+              "edit_id": "EDIT-f1d6a3c4a084a6c5ffb00941",
+              "view": "preview"
+            },
+            "by": ""
+          },
+          "http": {
+            "method": "GET",
+            "url": "/authoring/proposal-preview?project=fixture&id=WT-x&record_id=WR-x&proposal_version=sha256%3A041d761f8eb1eb71c7a8c3ab973bce844ec06182e8603c846b11ecf490d394ed&edit_id=EDIT-f1d6a3c4a084a6c5ffb00941&view=preview"
+          }
+        }
+      }
+    ],
+    "applied_elsewhere": [],
+    "remaining": 1,
+    "read_handle": {
+      "native_request": {
+        "verb": "read",
+        "concept": "proposal@paragraph",
+        "target": "fixture::WT-x",
+        "expected": [],
+        "payload": {
+          "id": "WT-x",
+          "record_id": "WR-x",
+          "proposal_version": "sha256:041d761f8eb1eb71c7a8c3ab973bce844ec06182e8603c846b11ecf490d394ed",
+          "view": "preview",
+          "edit_id": "EDIT-f1d6a3c4a084a6c5ffb00941"
+        },
+        "by": ""
+      },
+      "http": {
+        "method": "GET",
+        "url": "/authoring/proposal-preview?project=fixture&id=WT-x&record_id=WR-x&proposal_version=sha256%3A041d761f8eb1eb71c7a8c3ab973bce844ec06182e8603c846b11ecf490d394ed&view=preview&edit_id=EDIT-f1d6a3c4a084a6c5ffb00941"
+      }
+    },
+    "coverage": {
+      "selected_candidate_bodies": 1,
+      "whole_history_loaded": false,
+      "related_body_reads": 1
+    }
+  },
+  "plain_edit": {
+    "project": "fixture",
+    "turn_id": "WT-x",
+    "answer": "proposal",
+    "identities": {
+      "proposal:fixture::WT-x": "rev:proposal:fixture::WT-x:041d761f8eb1eb71c7a8c3ab973bce844ec06182e8603c846b11ecf490d394ed"
+    },
+    "proposal_version": "sha256:041d761f8eb1eb71c7a8c3ab973bce844ec06182e8603c846b11ecf490d394ed",
+    "reviewable": true,
+    "turn_active": false,
+    "proposal_content_sha256": "sha256:abfeab85bb0ee31c406e3c395f9cfdf6290547a117de1a1f6618a574139f0197",
+    "proposal_state": "ready",
+    "read_only": false,
+    "validation_basis": {
+      "currentness": "CURRENT",
+      "reason": null,
+      "record_id": "WR-x",
+      "context_id": "CTX-93b1087c13094d449331f064f1aacff5",
+      "read_ids": [],
+      "transition_ids": [],
+      "proposal_version": "sha256:041d761f8eb1eb71c7a8c3ab973bce844ec06182e8603c846b11ecf490d394ed"
+    },
+    "edits": [
+      {
+        "file": "main.tex",
+        "line_start": 3,
+        "line_end": 3,
+        "before": "First premise.",
+        "after": "Revised premise.\nExtra explanation.",
+        "reason": "Clarify.",
+        "source_anchor": {
+          "schema_version": "laplace.source-anchor/2",
+          "sha256": "54b2dd78a08c0302bac50eb0bc244127e55f6e903bc7f926345366e27fc99939",
+          "line_start": 3,
+          "line_end": 3,
+          "prefix": [
+            "\\documentclass{article}",
+            "\\begin{document}"
+          ],
+          "suffix": [
+            "",
+            "Second conclusion."
+          ],
+          "unique": true,
+          "at_start": false,
+          "at_end": false
+        },
+        "edit_id": "EDIT-f1d6a3c4a084a6c5ffb00941",
+        "status": "pending",
+        "current_before": "First premise.",
+        "current_anchor": {
+          "file": "main.tex",
+          "line_start": 3,
+          "line_end": 3
+        },
+        "review_token": "36b2f6fad89ffa715ab49fcef38055015bac565f86560cfe040e036d06e4622b",
+        "resolution_available": true,
+        "target_proof": {
+          "status": "CURRENT",
+          "anchor": {
+            "file": "main.tex",
+            "line_start": 3,
+            "line_end": 3
+          },
+          "source_text_sha256": "sha256:54b2dd78a08c0302bac50eb0bc244127e55f6e903bc7f926345366e27fc99939"
+        },
+        "reviewed_current_sha256": "54b2dd78a08c0302bac50eb0bc244127e55f6e903bc7f926345366e27fc99939",
+        "current_mapping": "proven-current-source-occurrence",
+        "anchor": {
+          "file": "main.tex",
+          "line_start": 3,
+          "line_end": 3
+        },
+        "basis": {
+          "status": "UNATTRIBUTED_LEGACY",
+          "automatic_sections": [],
+          "automatic_section_concepts": [],
+          "develops": [],
+          "evidence": [],
+          "limitations": [],
+          "errors": []
+        },
+        "candidate_id": {
+          "turn_id": "WT-x",
+          "proposal_version": "sha256:041d761f8eb1eb71c7a8c3ab973bce844ec06182e8603c846b11ecf490d394ed",
+          "edit_id": "EDIT-f1d6a3c4a084a6c5ffb00941"
+        },
+        "basis_currentness": "CURRENT",
+        "basis_reason": null,
+        "acceptance_unit": {
+          "kind": "edit",
+          "edit_ids": [
+            "EDIT-f1d6a3c4a084a6c5ffb00941"
+          ]
+        },
+        "allowed_actions": [
+          "accept",
+          "merge",
+          "replace-current",
+          "reject",
+          "keep-current"
+        ],
+        "lifecycle": "actionable",
+        "read_handle": {
+          "native_request": {
+            "verb": "read",
+            "concept": "proposal@paragraph",
+            "target": "fixture::WT-x",
+            "expected": [],
+            "payload": {
+              "id": "WT-x",
+              "record_id": "WR-x",
+              "proposal_version": "sha256:041d761f8eb1eb71c7a8c3ab973bce844ec06182e8603c846b11ecf490d394ed",
+              "edit_id": "EDIT-f1d6a3c4a084a6c5ffb00941",
+              "view": "edit"
+            },
+            "by": ""
+          },
+          "http": {
+            "method": "GET",
+            "url": "/authoring/proposal-preview?project=fixture&id=WT-x&record_id=WR-x&proposal_version=sha256%3A041d761f8eb1eb71c7a8c3ab973bce844ec06182e8603c846b11ecf490d394ed&edit_id=EDIT-f1d6a3c4a084a6c5ffb00941&view=edit"
+          }
+        },
+        "basis_read": {
+          "native_request": {
+            "verb": "read",
+            "concept": "proposal@paragraph",
+            "target": "fixture::WT-x",
+            "expected": [],
+            "payload": {
+              "id": "WT-x",
+              "record_id": "WR-x",
+              "proposal_version": "sha256:041d761f8eb1eb71c7a8c3ab973bce844ec06182e8603c846b11ecf490d394ed",
+              "edit_id": "EDIT-f1d6a3c4a084a6c5ffb00941",
+              "view": "basis"
+            },
+            "by": ""
+          },
+          "http": {
+            "method": "GET",
+            "url": "/authoring/proposal-preview?project=fixture&id=WT-x&record_id=WR-x&proposal_version=sha256%3A041d761f8eb1eb71c7a8c3ab973bce844ec06182e8603c846b11ecf490d394ed&edit_id=EDIT-f1d6a3c4a084a6c5ffb00941&view=basis"
+          }
+        },
+        "preview_read": {
+          "native_request": {
+            "verb": "read",
+            "concept": "proposal@paragraph",
+            "target": "fixture::WT-x",
+            "expected": [],
+            "payload": {
+              "id": "WT-x",
+              "record_id": "WR-x",
+              "proposal_version": "sha256:041d761f8eb1eb71c7a8c3ab973bce844ec06182e8603c846b11ecf490d394ed",
+              "edit_id": "EDIT-f1d6a3c4a084a6c5ffb00941",
+              "view": "preview"
+            },
+            "by": ""
+          },
+          "http": {
+            "method": "GET",
+            "url": "/authoring/proposal-preview?project=fixture&id=WT-x&record_id=WR-x&proposal_version=sha256%3A041d761f8eb1eb71c7a8c3ab973bce844ec06182e8603c846b11ecf490d394ed&edit_id=EDIT-f1d6a3c4a084a6c5ffb00941&view=preview"
+          }
+        }
+      }
+    ],
+    "applied_elsewhere": [],
+    "remaining": 1,
+    "read_handle": {
+      "native_request": {
+        "verb": "read",
+        "concept": "proposal@paragraph",
+        "target": "fixture::WT-x",
+        "expected": [],
+        "payload": {
+          "id": "WT-x",
+          "record_id": "WR-x",
+          "proposal_version": "sha256:041d761f8eb1eb71c7a8c3ab973bce844ec06182e8603c846b11ecf490d394ed",
+          "view": "edit",
+          "edit_id": "EDIT-f1d6a3c4a084a6c5ffb00941"
+        },
+        "by": ""
+      },
+      "http": {
+        "method": "GET",
+        "url": "/authoring/proposal-preview?project=fixture&id=WT-x&record_id=WR-x&proposal_version=sha256%3A041d761f8eb1eb71c7a8c3ab973bce844ec06182e8603c846b11ecf490d394ed&view=edit&edit_id=EDIT-f1d6a3c4a084a6c5ffb00941"
+      }
+    },
+    "coverage": {
+      "selected_candidate_bodies": 1,
+      "whole_history_loaded": false,
+      "related_body_reads": 1
+    }
+  }
+}

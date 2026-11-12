@@ -1,0 +1,75 @@
+{
+  "schema_version": "dd.completion-figures/1",
+  "status": "COMPLETE",
+  "artifacts": [
+    {
+      "id": "dd-memory-reader-controls",
+      "kind": "figure",
+      "sha256_by_format": {
+        "pdf": "a20d724a7ad9973969fa8778269b18f76aff3fcba149ba63804da9326df929eb",
+        "svg": "7063c59a32ebac5caa6e9a930e15f6f898075264b8a04865b8a6b3bc5f133a79",
+        "png": "ea173eac6b552aa7827291bbfebbec96defefcc6adbcd3ad6cdb3e37301a488f"
+      },
+      "pdf": "/home/phujck/VScodeProjects/laplace/writing_projects/eigen-technical-due-diligence-briefing/manuscript/working-draft/figures/completion-run-a12590b7fb624758.result/dd-memory-reader-controls.pdf",
+      "svg": "/home/phujck/VScodeProjects/laplace/writing_projects/eigen-technical-due-diligence-briefing/manuscript/working-draft/figures/completion-run-a12590b7fb624758.result/dd-memory-reader-controls.svg",
+      "png": "/home/phujck/VScodeProjects/laplace/writing_projects/eigen-technical-due-diligence-briefing/manuscript/working-draft/figures/completion-run-a12590b7fb624758.result/dd-memory-reader-controls.png"
+    }
+  ],
+  "published_conceptual": [
+    {
+      "id": "dd-conceptric-envelope",
+      "pdf": "/home/phujck/VScodeProjects/laplace/writing_projects/eigen-technical-due-diligence-briefing/manuscript/working-draft/figures/completion-run-a12590b7fb624758.result/dd-conceptric-envelope.pdf",
+      "sha256": "0ad135992f87f8c19b03384ed1e3da093fdf41e0a8420f0a2fd928045289df64",
+      "tex_path": "figures/completion-run-a12590b7fb624758.result/dd-conceptric-envelope.pdf"
+    },
+    {
+      "id": "dd-ai-tool-harness",
+      "pdf": "/home/phujck/VScodeProjects/laplace/writing_projects/eigen-technical-due-diligence-briefing/manuscript/working-draft/figures/completion-run-a12590b7fb624758.result/dd-ai-tool-harness.pdf",
+      "sha256": "67606e1b3946d3288116642f80f30891176fcfbcc51af42779c2475e271f8ef3",
+      "tex_path": "figures/completion-run-a12590b7fb624758.result/dd-ai-tool-harness.pdf"
+    },
+    {
+      "id": "dd-nested-work-sdk",
+      "pdf": "/home/phujck/VScodeProjects/laplace/writing_projects/eigen-technical-due-diligence-briefing/manuscript/working-draft/figures/completion-run-a12590b7fb624758.result/dd-nested-work-sdk.pdf",
+      "sha256": "858997e5fff6cb1979c78c12cf7cff3a6dc4741c6883a050b2b8f9b1a25fd057",
+      "tex_path": "figures/completion-run-a12590b7fb624758.result/dd-nested-work-sdk.pdf"
+    }
+  ],
+  "memory_tex_path": "figures/completion-run-a12590b7fb624758.result/dd-memory-reader-controls.pdf",
+  "counts": {
+    "schema_version": "dd.archived-memory-reader-controls/1",
+    "source": {
+      "repository": "laplace",
+      "path": "synthetics papers/corpus-as-a-state/reconstruction/output/pdf/v2.1/evaluation-results.tex",
+      "sha256": "5e1c218ba70193d33443be4dffea9e13737fcad138ae7b221c7726df9d5d4547",
+      "locator": "final LongMem evidence/reader trial and temporal reasoning paragraphs"
+    },
+    "protocol": "Same frozen reader and 4000 evidence tokens. Counts transcribed from the read primary evaluation source. No new experiment.",
+    "methods": [
+      "Memory witness",
+      "Dense",
+      "Hybrid"
+    ],
+    "overall": {
+      "correct": [
+        30,
+        33,
+        34
+      ],
+      "total": 48
+    },
+    "temporal": {
+      "correct": [
+        4,
+        7,
+        6
+      ],
+      "total": 9
+    }
+  },
+  "limitations": [
+    "Replot of archived counts, not a new reader trial.",
+    "Temporal sample has nine cases; no uncertainty or causal advantage is inferred from these bars.",
+    "Conceptual PDFs are byte-identical copies of the inspected current visual outputs."
+  ]
+}

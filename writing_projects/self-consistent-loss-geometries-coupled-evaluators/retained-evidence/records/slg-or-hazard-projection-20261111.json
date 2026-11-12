@@ -1,0 +1,61 @@
+{
+  "artifacts": [
+    {
+      "label": "or_hazard_projection",
+      "path": "research/slg-scientific-figures-20261111/outputs/run-7f8022a64802820f.result/or_hazard_projection.csv",
+      "scope": "project"
+    }
+  ],
+  "config": "evidence/SLG_VISUAL_PRODUCTION_2026-11-11/finite-figure-protocol.json",
+  "config_scope": "project",
+  "id": "slg-or-hazard-projection-20261111",
+  "kind": "result",
+  "limitations": [
+    "Author-interpreted figure tables awaiting independent science/visual review.",
+    "Finite analytic model and declared parameters, not empirical biological evidence.",
+    "OR schedule is externally frozen and independent, not adaptive path coarse-graining.",
+    "Static register optima are nested feasible sets, not unexpected performance superiority."
+  ],
+  "provenance": {
+    "dependencies": [
+      {
+        "bytes": 5993,
+        "path": "evidence/SLG_VISUAL_PRODUCTION_2026-11-11/finite-figure-protocol.json",
+        "sha256": "58ff935dfb8c3f7a3463d3ecd22a9dc23ebd64fa24214e7d1c084cf4fad27ed1",
+        "status": "PRESENT"
+      },
+      {
+        "bytes": 14945,
+        "path": "research/slg-scientific-figures-20261111/scientific_tables.py",
+        "sha256": "f9c98ffb562216caf9b71a40351777b274b72eb9e4fbdf199d6e99e8a171c905",
+        "status": "PRESENT"
+      },
+      {
+        "bytes": 20027,
+        "path": "research_runs/run-7f8022a64802820f.result.json",
+        "scope": "manuscript",
+        "sha256": "730a153523a22f9abc6d66c6e6527645d1bc43d92eb58273bfb560b0f002210e",
+        "status": "PRESENT"
+      },
+      {
+        "bytes": 14687,
+        "path": "research/slg-scientific-figures-20261111/outputs/run-7f8022a64802820f.result/or_hazard_projection.csv",
+        "scope": "project",
+        "sha256": "b1821dd80de0369065a2891354bde68658217241712fe4dad728ae41dc6b0f05",
+        "status": "PRESENT"
+      }
+    ],
+    "recorded_at": 1794413324.0582533,
+    "scope": "project",
+    "snapshot_schema": "laplace.research-dependencies/3"
+  },
+  "result": "research_runs/run-7f8022a64802820f.result.json",
+  "result_scope": "manuscript",
+  "revision": "sha256:240930490d8a2bf4c27901e15d31adb1695b48324befebb23cc0b45daff10b91",
+  "run_id": "run-7f8022a64802820f",
+  "scope": "project",
+  "source": "research/slg-scientific-figures-20261111/scientific_tables.py",
+  "source_scope": "project",
+  "summary": "81 predeclared prices on four explicitly externally frozen four-event schedules. Exact hazard closure agrees with product probability within1e-12. Mean-intercept approximation TV and conditional-event-count response retained with bounds1..4. No adaptive path coarse-graining or RG eigenvalue, no old1.78 slope transfer.",
+  "title": "Exact OR hazard and mean-intercept projection figure data"
+}

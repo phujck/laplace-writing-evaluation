@@ -1,0 +1,16 @@
+{
+  "lost": [
+    "The specific mechanism of reading rho (spectral radius) off successive lost-set deltas",
+    "The distinction between CONVERGED-DEGENERATE caused by confabulation versus over-contraction of a generative node below the edge",
+    "The explicit rule that a degenerate plateau is a route UP a grade, never minimise it",
+    "The requirement for >= 3 verdicts to form a ratio of deltas (the estimator constraint)",
+    "The OPEN state's two sub-cases: budget left while still contracting, or budget exhausted while still contracting",
+    "The specific flag budget_exhausted and the clause never mislabelled oscillating"
+  ],
+  "added": [
+    "The phrase 'how the lost set changes between cycles' as a simplified restatement of rho estimation (not wrong, but loses the spectral radius framing)"
+  ],
+  "structured": true,
+  "recurses": true,
+  "justification": "The ghost captures the four state logic (CONVERGED-FAITHFUL, CONVERGED-DEGENERATE, OSCILLATING, OPEN) and the core idea that the halt predicate compares contraction rate to a target. It preserves the key distinction about degenerate plateaus and up-grades. However, it omits the precise measurement method (spectral radius off deltas), loses the technical distinction between two types of degenerate failure (confabulation vs. collapsed imagination), drops the >= 3 verdict requirement, and abstracts away the OPEN state's dual interpretation (budget left vs. exhausted) and the never-mislabel-oscillating rule. The losses are coherent and structural—a next pass could recover them. The single addition ('how the lost set changes between cycles') is a simplification, not a falsehood."
+}
