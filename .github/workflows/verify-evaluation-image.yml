@@ -1,0 +1,31 @@
+name: Verify public evaluation image download
+on:
+  workflow_dispatch:
+    inputs:
+      digest:
+        description: Published SHA256 image digest (sha256 followed by colon and64hex digits)
+        required: true
+permissions:
+  contents: read
+jobs:
+  clean-download:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - name: Validate immutable image identity
+        env:
+          DIGEST: ${{ inputs.digest }}
+        run: '[[ "$DIGEST" =~ ^sha256:[0-9a-f]{64}$ ]]'
+      - name: Anonymous pull and fresh-volume verification
+        env:
+          DIGEST: ${{ inputs.digest }}
+        run: |
+          python deploy/evaluation/verify_image.py --image "ghcr.io/phujck/laplace-writing-evaluation@$DIGEST" --output "$RUNNER_TEMP/clean-download" --pull
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: evaluation-image-clean-download
+          path: ${{ runner.temp }}/clean-download
